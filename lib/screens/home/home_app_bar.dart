@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../utils/app_l10n.dart';
 import '../../widgets/dashboard_sidebar.dart';
-import '../../services/file_service.dart';
 
 /// 홈 화면 AppBar (검색·동기화·볼트·AI 도구)
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool isSidebarOpen;
   final bool isSyncing;
+  final bool vaultLinked;
   final VoidCallback onToggleSidebar;
   final VoidCallback onSearch;
   final VoidCallback onClipboardImport;
@@ -27,6 +27,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     required this.isSidebarOpen,
     required this.isSyncing,
+    required this.vaultLinked,
     required this.onToggleSidebar,
     required this.onSearch,
     required this.onClipboardImport,
@@ -49,7 +50,6 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
-    final vaultLinked = AkashaFileService().vaultPath != null;
 
     return AppBar(
       leading: IconButton(

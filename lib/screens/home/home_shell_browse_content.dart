@@ -40,6 +40,7 @@ class HomeShellBrowseContentBuilder {
     this.onLoadMoreCatalog,
     required this.isCuratedLibraryActive,
     required this.personalLibCtrl,
+    required this.vaultLinked,
     required this.workPreviewItem,
     required this.entityPreviewItem,
     required this.onNavigateWorkPreview,
@@ -80,6 +81,7 @@ class HomeShellBrowseContentBuilder {
   final VoidCallback? onLoadMoreCatalog;
   final bool isCuratedLibraryActive;
   final HomePersonalLibraryController personalLibCtrl;
+  final bool vaultLinked;
   final AkashaItem? workPreviewItem;
   final UserCatalogEntity? entityPreviewItem;
   final void Function(AkashaItem item) onNavigateWorkPreview;
@@ -187,6 +189,7 @@ class HomeShellBrowseContentBuilder {
     final workGrid = PersonalLibraryView(
       filteredCards: filteredCards,
       allItems: items,
+      vaultLinked: vaultLinked,
       sectionPrefs: sectionPrefs,
       displayName: displayName,
       isCuratedLibraryActive: isCuratedLibraryActive,

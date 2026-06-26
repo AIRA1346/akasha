@@ -10,7 +10,6 @@ import '../../../core/ports/entity_registry_port.dart';
 import '../../../models/catalog_entity_add_result.dart';
 import '../../../models/akasha_item.dart';
 import '../../../services/catalog_contribution_service.dart';
-import '../../../services/file_service.dart';
 import '../../../services/journal_vault_store.dart';
 import '../../../services/person_seed_registry.dart';
 import '../../../services/timeline_vault_store.dart';
@@ -92,10 +91,11 @@ class HomeDialogsFacade {
   static Future<void> showAddDialog({
     required BuildContext context,
     String? initialTitle,
+    required bool isVaultLinked,
     required void Function(String message) showMessage,
     required Future<void> Function(AkashaItem item) onSavedToVault,
   }) async {
-    if (AkashaFileService().vaultPath == null) {
+    if (!isVaultLinked) {
       showMessage('볼트를 먼저 연결해 주세요.');
       return;
     }
@@ -109,13 +109,14 @@ class HomeDialogsFacade {
   static Future<void> showCustomAddWithTypePicker({
     required BuildContext context,
     required String query,
+    required bool isVaultLinked,
     required void Function(String message) showMessage,
     required Future<void> Function(AkashaItem item) onWorkSavedToVault,
     required Future<void> Function(CatalogEntityAddResult result) onEntitySaved,
     UserCatalogPort? userCatalog,
     List<AkashaItem> vaultItems = const [],
   }) async {
-    if (AkashaFileService().vaultPath == null) {
+    if (!isVaultLinked) {
       showMessage('볼트를 먼저 연결해 주세요.');
       return;
     }
@@ -130,6 +131,7 @@ class HomeDialogsFacade {
       await showAddDialog(
         context: context,
         initialTitle: query,
+        isVaultLinked: isVaultLinked,
         showMessage: showMessage,
         onSavedToVault: onWorkSavedToVault,
       );
@@ -185,9 +187,10 @@ class HomeDialogsFacade {
   static Future<bool> showTimelineQuickCapture({
     required BuildContext context,
     required List<AkashaItem> localItems,
+    required bool isVaultLinked,
     required void Function(String message) showMessage,
   }) async {
-    if (AkashaFileService().vaultPath == null) {
+    if (!isVaultLinked) {
       showMessage('볼트를 먼저 연결해 주세요.');
       return false;
     }
@@ -231,9 +234,10 @@ class HomeDialogsFacade {
   /// Wave 3 — freeform journal quick capture → `vault/journal/`.
   static Future<bool> showJournalQuickCapture({
     required BuildContext context,
+    required bool isVaultLinked,
     required void Function(String message) showMessage,
   }) async {
-    if (AkashaFileService().vaultPath == null) {
+    if (!isVaultLinked) {
       showMessage('볼트를 먼저 연결해 주세요.');
       return false;
     }
@@ -264,6 +268,7 @@ class HomeDialogsFacade {
   static Future<void> showClipboardImport({
     required BuildContext context,
     required List<AkashaItem> existingItems,
+    required bool isVaultLinked,
     required Future<void> Function(AkashaItem item) onItemImportedToVault,
     required void Function(AkashaItem item) onItemImportedInMemory,
   }) async {
@@ -274,7 +279,7 @@ class HomeDialogsFacade {
       initialText: data?.text ?? '',
       existingItems: existingItems,
       onItemImported: (item) async {
-        if (AkashaFileService().vaultPath != null) {
+        if (isVaultLinked) {
           await onItemImportedToVault(item);
         } else {
           onItemImportedInMemory(item);

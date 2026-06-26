@@ -60,6 +60,7 @@ class HomeShellScaffold extends StatelessWidget {
             appBar: HomeAppBar(
               isSidebarOpen: controller.isSidebarOpen,
               isSyncing: controller.isSyncing,
+              vaultLinked: controller.vaultLinked,
               showLibraryThemeButton: controller.isPersonalLibraryMode,
               onLibraryTheme: controller.showLibraryThemePicker,
               libraryThemeAccent: controller.libraryTheme.accentColor,
@@ -98,6 +99,8 @@ class HomeShellScaffold extends StatelessWidget {
                   ? controller.loadMoreCatalog
                   : null,
               canAddToLibrary: controller.canAddToLibrary,
+              vaultLinked: controller.vaultLinked,
+              vaultPath: controller.vaultPath,
               libraryTheme: controller.libraryTheme,
               displayName: controller.displayName,
               items: controller.items,

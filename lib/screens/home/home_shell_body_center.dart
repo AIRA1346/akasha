@@ -10,13 +10,12 @@ import '../../features/workbench/presentation/workbench_shell.dart';
 import '../../models/akasha_item.dart';
 import '../../models/browse_entity_scope.dart';
 import '../../models/entity_link_selection.dart';
-import '../../services/file_service.dart';
-import '../../services/link_candidate_service.dart';
 import '../../models/browse_card.dart';
 import '../../models/collectible_browse_item.dart';
 import '../../models/entity_browse_card.dart';
 import '../../models/enums.dart';
 import '../../models/user_catalog_entity.dart';
+import '../../services/link_candidate_service.dart';
 import '../../utils/recall_picker.dart';
 import '../../widgets/filter_section.dart';
 import '../../widgets/today_recall_card.dart';
@@ -34,6 +33,8 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
   const HomeShellBodyCenterColumn({
     super.key,
     required this.hasNoFilters,
+    required this.vaultLinked,
+    required this.vaultPath,
     required this.dailyRecall,
     required this.isPersonalLibraryMode,
     required this.isCollectibleCollectionMode,
@@ -89,6 +90,8 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
   });
 
   final bool hasNoFilters;
+  final bool vaultLinked;
+  final String? vaultPath;
   final DailyRecall? dailyRecall;
   final bool isPersonalLibraryMode;
   final bool isCollectibleCollectionMode;
@@ -161,7 +164,7 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        if (AkashaFileService().vaultPath == null)
+        if (!vaultLinked)
           HomeVaultBanner(onConnectVault: onConnectVault),
         if (!workbench.hasOpenDetail) ...[
           if (!isTimelineMode &&
@@ -243,6 +246,7 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
   Widget _buildBrowseContent() {
     if (isTimelineMode) {
       return RecordsView(
+        vaultPath: vaultPath,
         vaultItems: items,
         onOpenWork: onOpenBrowseItem,
         onOpenEntity: onOpenEntity,

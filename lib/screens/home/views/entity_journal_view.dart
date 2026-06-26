@@ -6,7 +6,6 @@ import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_vault_loader.dart';
-import '../../../services/file_service.dart';
 import '../../../utils/entity_body_preview.dart';
 import '../dialogs/add_catalog_entity_dialog.dart';
 import '../../../theme/akasha_colors.dart';
@@ -15,6 +14,7 @@ import '../../../theme/akasha_colors.dart';
 class EntityJournalView extends StatefulWidget {
   const EntityJournalView({
     super.key,
+    required this.vaultPath,
     required this.userCatalog,
     required this.linkIndex,
     required this.vaultItems,
@@ -23,6 +23,7 @@ class EntityJournalView extends StatefulWidget {
     this.reloadToken = 0,
   });
 
+  final String? vaultPath;
   final UserCatalogPort userCatalog;
   final RecordLinkPort linkIndex;
   final List<AkashaItem> vaultItems;
@@ -59,7 +60,7 @@ class _EntityJournalViewState extends State<EntityJournalView> {
   Future<void> _reload() async {
     setState(() => _loading = true);
     await widget.userCatalog.load();
-    final path = AkashaFileService().vaultPath;
+    final path = widget.vaultPath;
     final entries = await _loader.loadFromVault(path);
     if (!mounted) return;
     setState(() {
@@ -112,7 +113,7 @@ class _EntityJournalViewState extends State<EntityJournalView> {
 
   @override
   Widget build(BuildContext context) {
-    if (AkashaFileService().vaultPath == null) {
+    if (widget.vaultPath == null) {
       return const Center(
         child: Text('볼트를 연결하면 entity journal을 볼 수 있습니다.'),
       );

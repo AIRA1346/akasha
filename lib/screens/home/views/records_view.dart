@@ -12,6 +12,7 @@ import 'timeline_view.dart';
 class RecordsView extends StatelessWidget {
   const RecordsView({
     super.key,
+    required this.vaultPath,
     required this.vaultItems,
     required this.onOpenWork,
     required this.onOpenEntity,
@@ -22,6 +23,7 @@ class RecordsView extends StatelessWidget {
     this.reloadToken = 0,
   });
 
+  final String? vaultPath;
   final List<AkashaItem> vaultItems;
   final void Function(AkashaItem item) onOpenWork;
   final Future<void> Function(UserCatalogEntity entity) onOpenEntity;
@@ -49,16 +51,19 @@ class RecordsView extends StatelessWidget {
             child: TabBarView(
               children: [
                 TimelineView(
+                  vaultPath: vaultPath,
                   vaultItems: vaultItems,
                   onOpenWork: onOpenWork,
                   onNewEntry: onNewTimelineEntry,
                   reloadToken: reloadToken,
                 ),
                 JournalView(
+                  vaultPath: vaultPath,
                   onNewEntry: onNewJournalEntry,
                   reloadToken: reloadToken,
                 ),
                 EntityJournalView(
+                  vaultPath: vaultPath,
                   userCatalog: userCatalog,
                   linkIndex: linkIndex,
                   vaultItems: vaultItems,

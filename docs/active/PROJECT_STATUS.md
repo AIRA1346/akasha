@@ -1,7 +1,7 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-06-26 (@10048 · test **610+** · Foundation F0~F4 ✅ · B1 ✅ · Vault agent ✅)  
-> **현재 실행:** **M3** Steam Release 준비 · P10 neighbors 분해  
+> **갱신:** 2026-06-24 (@10048 · Foundation Phase 2 · P12~P16 ✅)  
+> **현재 실행:** **Foundation Phase 2** — 코드 정리·분해 (M3 **사용자 지시 전 보류**)  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist](../history/release-readiness-checklist.md)  
 > **정리:** [repo-cleanup-plan](../history/programs/repo-cleanup-plan.md) · Phase 1~2 ✅ (2026-06-12)  
@@ -21,7 +21,7 @@
 | **Phase 6.2** | 전 경로 Workbench 통합 ✅ |
 | **Phase 6.3** | incoming/sameDay·connections coordinator ✅ |
 | **코드 건강** | Phase 0~7 ✅ · **Sanctum C1~C4** ✅ |
-| **다음** | **M3** Steam Release · P10 neighbors 분해 |
+| **다음** | **Foundation Phase 2** — P20 design tokens (M3 보류) |
 | **Scale / Core** | **Phase 2.0~2.3** ✅ @10048 · G1 ✅ · **ADR-010 eager-only batch** ✅ |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `wikidata_ko` active · **10k milestone** ✅ |
@@ -81,7 +81,8 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | **Sprint B** | ✅ B1 dogfood · Vault agent | — |
 | **Wave 1 Home** | ✅ shell **40줄** | — |
 | **Catalog G1** | Sprint C · **관측만** | P2 |
-| **M3 Release** | **착수 가능** | **P0** |
+| **M3 Release** | **보류** (사용자 지시 시 착수) | — |
+| **Foundation P2** | P20 R14-B design tokens | **P0** |
 | **Scale/Core** | **보류** | — |
 
 ---
@@ -101,7 +102,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | **S** | **Sanctum C1~C4** — wiki 칩·출연·갤러리·완성도·템플릿·HTML | ✅ |
 | **F** | **Foundation F0~F4** — 감사·Sanctum 분해·R14-B·레거시 정책 | ✅ |
 
-**대형 파일 (2026-06-26):** `entity_detail_workspace` **~620** · `work_detail_workspace` **~591** · `home_shell_controller` **156** (P11) · `registry_shard_loader` **587**
+**대형 파일 (2026-06-26):** `entity_detail_workspace` **278** (P15) · `work_detail_workspace` **273** (P15) · `poster_card_layouts` **~535**
 
 감사 SSOT: [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md) · Vault: [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)
 
@@ -111,8 +112,9 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | # | 작업 | 우선 |
 |---|------|:----:|
-| 1 | **M3** Steam Release 착수 | **P0** |
-| 2 | `registry_shard_loader` 분해 | P1 |
+| 1 | P20 R14-B design tokens (spacing·radius·typo) | **P0** |
+| 2 | Dialog Port wiring 잔여 (`vault_settings`·`clipboard_import`·`add_work`·`entity_link_picker`) | P1 |
+| 3 | **M3** Steam Release | 보류 |
 
 ---
 

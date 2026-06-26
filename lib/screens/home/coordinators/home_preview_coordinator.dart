@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import '../../../core/archiving/entity_anchor.dart';
+import '../../../core/ports/vault_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../screens/detail/detail_archive_save.dart';
-import '../../../services/file_service.dart';
 import '../../../services/link_candidate_service.dart';
 import '../../../services/works_registry.dart';
 import '../../../utils/vault_work_presence.dart';
@@ -15,6 +15,7 @@ import '../preview_frame.dart';
 /// Home Work/Entity 프리뷰 스택·복귀 스냅샷·연결 픽 pending.
 class HomePreviewCoordinator {
   HomePreviewCoordinator({
+    required this.vault,
     required this.rebuild,
     required this.resolveItemForOpen,
     required this.openBrowseItemInWorkbench,
@@ -28,6 +29,7 @@ class HomePreviewCoordinator {
     required this.resolveEntity,
   });
 
+  final VaultPort vault;
   final void Function() rebuild;
   final AkashaItem Function(AkashaItem item) resolveItemForOpen;
   final void Function(AkashaItem item) openBrowseItemInWorkbench;
@@ -262,7 +264,7 @@ class HomePreviewCoordinator {
     final item = workPreviewItem;
     if (item == null) return;
 
-    if (AkashaFileService().vaultPath == null) {
+    if (vault.vaultPath == null) {
       showSnack('볼트를 먼저 연결해 주세요.');
       return;
     }
@@ -272,6 +274,7 @@ class HomePreviewCoordinator {
     if (registryWork != null) {
       saved = await HomeRegistryArchive.persistRegistryWork(
         registryWork,
+        vault: vault,
         reloadItems: loadItems,
         onDemoAdd: (_) {},
       );

@@ -68,7 +68,13 @@
 | **361** | `catalog_entity_browse_view.dart` | P7 ✅ loader·widgets 분리 |
 | **126** | `poster_card.dart` | P9 ✅ style·layouts 분리 |
 | 590 | `work_link_neighbors_sections.dart` | P10 ✅ **207** + chrome·layouts |
-| 587 | `registry_shard_loader.dart` | |
+| **93** | `registry_shard_loader.dart` | P12 ✅ **93** shell + cache·search·shards·sync |
+| **89** | `file_service.dart` | P13 ✅ **89** shell + paths·watch·scan·save·bootstrap |
+| **278** | `entity_detail_workspace.dart` | P15 ✅ + vault·links·persist parts |
+| **273** | `work_detail_workspace.dart` | P15 ✅ + vault·links·persist parts |
+| **276** | `fusion_search_dialog.dart` | P14 ✅ + tiles·search part |
+| **256** | `entity_link_picker_dialog.dart` | P14 ✅ + widgets·actions part |
+| 239 | `registry_shard_loader_search_index.dart` | P12 추출 |
 | 537 | `home_shell_controller.dart` | P11 ✅ **156** + bundle·mixins |
 | **254** | `work_sanctum_section_editor.dart` | F2 ✅ |
 
@@ -160,8 +166,26 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | P9 | `poster_card` 분해 | ✅ 668→**126** + style·layouts |
 | P10 | `work_link_neighbors_sections` 분해 | ✅ 590→**207** + chrome·character·connected works |
 | P11 | `home_shell_controller` 분해 | ✅ 615→**156** + bundle·mixins |
+| P12 | `registry_shard_loader` 분해 | ✅ 587→**93** + cache·search·shards·sync mixins |
+| P13 | `file_service` 분해 | ✅ 551→**89** + paths·watch·scan·save·bootstrap mixins |
+| P14 | `fusion_search_dialog` · `entity_link_picker_dialog` | ✅ 621→**276** + tiles · 586→**256** + widgets·actions |
+| P15 | `entity_detail` / `work_detail` workspace 재분해 | ✅ 673→**278** · 646→**273** + vault·links·persist |
+| P16 | ADR-007 Port wiring 확대 (coordinator·presentation) | ✅ Home coordinator graph `VaultPort` 주입 · `vaultLinked`/`vaultPath` 스레딩 |
 
 ---
+
+## 11. Foundation Phase 2 (M3 보류 · 2026-06-26~)
+
+| 우선 | 작업 | 상태 |
+|:----:|------|:---:|
+| P12 | `registry_shard_loader` 분해 | ✅ |
+| P13 | `file_service` 분해 | ✅ |
+| P14 | `fusion_search_dialog` · `entity_link_picker_dialog` | ✅ |
+| P15 | workspace 재안정화 (entity/work) | ✅ |
+| P16 | ADR-007 Port wiring 확대 | ✅ coordinator·presentation · dialog 잔여 5건 |
+| P20 | R14-B spacing·radius·typo 토큰 | 대기 |
+
+**금지:** M3 Steam · Discovery Engine · Preview stack · Save Return 정책.
 
 ## 10. 문서 이력
 
@@ -170,6 +194,11 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS |
 | 2026-06-25 | F4 — LEGACY_REMOVAL_POLICY · 9건 게이트 |
 | 2026-06-25 | Post-F4 재검토 — 대형 파일 재실측 · R14·백로그 · P0/P1 정리 |
+| 2026-06-26 | P16 — Home coordinator graph `VaultPort` wiring (`HomeVaultCoordinator`·wiring·browse·preview·workbench·dialogs·membership·library UI) · presentation `vaultLinked`/`vaultPath` 스레딩 |
+| 2026-06-26 | P15 — `entity_detail` / `work_detail` workspace vault·links·persist part 분해 (**278** / **273** shell) |
+| 2026-06-26 | P14 — `fusion_search_dialog` tiles·search · `entity_link_picker` widgets·actions · `FusionSearchEntityIcons` 공유 |
+| 2026-06-26 | P13 — `file_service` paths·watch·scan·save·bootstrap mixin 분해 (**89줄** shell) · `VAULT_README.md` 스캔 제외 |
+| 2026-06-26 | P12 — `registry_shard_loader` cache·search·shards·sync mixin 분해 (**93줄** shell) |
 | 2026-06-26 | P11 — `home_shell_controller` bundle·mixins 분해 (**156줄** shell) |
 | 2026-06-26 | P10 — `work_link_neighbors` chrome·layouts 분해 (**207줄** shell) |
 | 2026-06-26 | Vault agent — VAULT_README · entity_path_index · `VAULT_AGENT_GUIDE` |

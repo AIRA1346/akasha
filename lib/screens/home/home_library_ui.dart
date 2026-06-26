@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/ports/vault_port.dart';
 import '../../models/akasha_item.dart';
 import '../../models/enums.dart';
 import '../../models/user_catalog_entity.dart';
@@ -7,7 +8,6 @@ import '../../models/browse_card.dart';
 import '../../models/membership_apply_result.dart';
 import '../../models/personal_library_config.dart';
 import '../../models/work_drag_payload.dart';
-import '../../services/file_service.dart';
 import '../../services/works_registry.dart';
 import 'coordinators/home_browse_card_builder.dart';
 import 'coordinators/home_library_menu_builder.dart';
@@ -22,6 +22,7 @@ import 'dialogs/personal_library_name_dialog.dart';
 /// 서재 담기·work library 메뉴 Presentation glue (Wave 1.3b).
 class HomeLibraryUi {
   const HomeLibraryUi({
+    required this.vault,
     required this.membershipCoordinator,
     required this.libraryMenuBuilder,
     required this.filterCoordinator,
@@ -29,6 +30,7 @@ class HomeLibraryUi {
     required this.hideActions,
   });
 
+  final VaultPort vault;
   final HomeMembershipCoordinator membershipCoordinator;
   final HomeLibraryMenuBuilder libraryMenuBuilder;
   final HomeFilterCoordinator filterCoordinator;
@@ -83,7 +85,7 @@ class HomeLibraryUi {
     required void Function(void Function()) setState,
     required void Function(String libraryId) selectPersonalLibrary,
   }) async {
-    if (AkashaFileService().vaultPath == null) {
+    if (vault.vaultPath == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text(vaultRequiredMessage)),
       );
@@ -137,7 +139,7 @@ class HomeLibraryUi {
         hideActions.franchiseHideActionFor(card) != null;
     if (!canAddToLibrary && !hasHide) return;
 
-    if (canAddToLibrary && AkashaFileService().vaultPath == null) {
+    if (canAddToLibrary && vault.vaultPath == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text(vaultRequiredMessage)),
       );
@@ -173,7 +175,7 @@ class HomeLibraryUi {
     required void Function(void Function()) setState,
     required Future<PersonalLibraryConfig?> Function() onCreateLibrary,
   }) async {
-    if (AkashaFileService().vaultPath == null) {
+    if (vault.vaultPath == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text(vaultRequiredMessage)),
       );
@@ -296,7 +298,7 @@ class HomeLibraryUi {
     required void Function(void Function()) setState,
     required Future<PersonalLibraryConfig?> Function() onCreateLibrary,
   }) async {
-    if (AkashaFileService().vaultPath == null) {
+    if (vault.vaultPath == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text(vaultRequiredMessage)),
       );

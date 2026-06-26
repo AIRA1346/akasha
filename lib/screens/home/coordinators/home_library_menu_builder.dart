@@ -1,7 +1,7 @@
+import '../../../core/ports/vault_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/browse_card.dart';
 import '../../../models/personal_library_config.dart';
-import '../../../services/file_service.dart';
 import '../../../services/franchise_library_scope.dart';
 import '../../../services/library_membership_apply.dart';
 import '../../../services/personal_library_membership_service.dart';
@@ -11,10 +11,12 @@ import '../home_registry_hide_actions.dart';
 /// Work library popover/dialog 요청 객체 조립 (Presentation 진입 전).
 class HomeLibraryMenuBuilder {
   const HomeLibraryMenuBuilder({
+    required this.vault,
     required this.hideActions,
     required this.membership,
   });
 
+  final VaultPort vault;
   final HomeRegistryHideActions hideActions;
   final PersonalLibraryMembershipService membership;
 
@@ -28,12 +30,11 @@ class HomeLibraryMenuBuilder {
     required Future<PersonalLibraryConfig?> Function()? onCreateLibrary,
     required WorkLibraryPanelApplyCallback? onApply,
   }) {
-    final fileService = AkashaFileService();
     final singleIds = FranchiseLibraryScope.workIdsForSingleFormat(card);
     final ipOption = includeLibraryActions &&
         FranchiseLibraryScope.offersEntireIpOption(card, vaultItems);
     final needsTitle =
-        includeLibraryActions && !fileService.isArchivedInVault(workItem);
+        includeLibraryActions && !vault.isArchivedInVault(workItem);
     return WorkLibraryMenuRequest(
       displayTitle: workItem.title,
       draftItem: workItem,

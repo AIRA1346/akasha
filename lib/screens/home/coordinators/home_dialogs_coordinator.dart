@@ -14,7 +14,6 @@ import '../../../models/library_theme.dart';
 import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../services/entity_archive_service.dart';
 import '../../../services/entity_catalog_sync.dart';
-import '../../../services/file_service.dart';
 import '../../../services/entity_vault_loader.dart';
 import '../../../services/entity_vault_path_conflict.dart';
 import '../../../services/open_collectible.dart';
@@ -109,33 +108,34 @@ class HomeDialogsCoordinator {
       },
       onPromoteCatalogEntity: _promoteCatalogOnlyToArchive,
       onCustomAdd: (query) async {
-        if (AkashaFileService().vaultPath == null) {
+        if (!vault.isVaultLinked) {
           showMessage('볼트를 먼저 연결해 주세요.');
           return;
         }
         await HomeDialogsFacade.showCustomAddWithTypePicker(
           context: ctx,
           query: query,
+          isVaultLinked: vault.isVaultLinked,
           showMessage: showMessage,
           userCatalog: userCatalog,
           vaultItems: getItems(),
           onWorkSavedToVault: (item) async {
-            await AkashaFileService().saveItem(item);
+            await vault.saveVaultItem(item);
             if (WorkIdCodec.isUserLocalWorkId(item.workId)) {
               await userCatalog.upsert(UserCatalogEntity.fromAkashaItem(item));
             }
             await loadItems();
           },
           onEntitySaved: (result) async {
-            final vault = AkashaFileService().vaultPath;
-            if (vault == null || vault.isEmpty) {
+            final vaultPath = vault.vaultPath;
+            if (vaultPath == null || vaultPath.isEmpty) {
               showMessage('볼트를 먼저 연결해 주세요.');
               return;
             }
             try {
               final saved = await EntityArchiveService.saveFromAddResult(
                 result: result,
-                vaultPath: vault,
+                vaultPath: vaultPath,
                 userCatalog: userCatalog,
               );
               await loadItems();
@@ -202,8 +202,8 @@ class HomeDialogsCoordinator {
   }
 
   Future<void> _promoteCatalogOnlyToArchive(RegistryWork work) async {
-    final vault = AkashaFileService().vaultPath;
-    if (vault == null || vault.isEmpty) {
+    final vaultPath = vault.vaultPath;
+    if (vaultPath == null || vaultPath.isEmpty) {
       showMessage('볼트를 먼저 연결해 주세요.');
       return;
     }
@@ -222,7 +222,7 @@ class HomeDialogsCoordinator {
     }
 
     final existing = await const EntityVaultLoader().findByEntityId(
-      vault,
+      vaultPath,
       entity.entityId,
     );
     if (existing != null) {
@@ -233,7 +233,7 @@ class HomeDialogsCoordinator {
     try {
       final entry = await EntityArchiveService.promoteCatalogOnly(
         entity: entity,
-        vaultPath: vault,
+        vaultPath: vaultPath,
       );
       final mirrored = EntityCatalogSync.mirrorFromJournal(
         draft: entity,
@@ -303,6 +303,7 @@ class HomeDialogsCoordinator {
     await HomeDialogsFacade.showClipboardImport(
       context: hostContext(),
       existingItems: getItems(),
+      isVaultLinked: vault.isVaultLinked,
       onItemImportedToVault: (_) async => loadItems(),
       onItemImportedInMemory: addItemInMemory,
     );
@@ -312,6 +313,7 @@ class HomeDialogsCoordinator {
     final saved = await HomeDialogsFacade.showTimelineQuickCapture(
       context: hostContext(),
       localItems: getItems(),
+      isVaultLinked: vault.isVaultLinked,
       showMessage: showMessage,
     );
     if (saved && isMounted()) navigation.onTimelineQuickCaptureSaved();
@@ -320,6 +322,7 @@ class HomeDialogsCoordinator {
   Future<void> openJournalQuickCapture() async {
     final saved = await HomeDialogsFacade.showJournalQuickCapture(
       context: hostContext(),
+      isVaultLinked: vault.isVaultLinked,
       showMessage: showMessage,
     );
     if (saved && isMounted()) navigation.onJournalQuickCaptureSaved();
@@ -329,7 +332,7 @@ class HomeDialogsCoordinator {
     try {
       final selectedDirectory = await FilePicker.getDirectoryPath();
       if (selectedDirectory != null) {
-        await AkashaFileService().setVaultPath(selectedDirectory);
+        await vault.setVaultPath(selectedDirectory);
         await loadPersonalLibraries();
         await loadItems();
         await autoArchiveWorks();
@@ -341,7 +344,7 @@ class HomeDialogsCoordinator {
 
   Future<void> openAddEntityDialog(EntityAnchorType? forceType) async {
     final ctx = hostContext();
-    final vaultPath = AkashaFileService().vaultPath;
+    final vaultPath = vault.vaultPath;
     if (vaultPath == null || vaultPath.isEmpty) {
       showMessage('볼트를 먼저 연결해 주세요.');
       return;
@@ -351,11 +354,12 @@ class HomeDialogsCoordinator {
       await HomeDialogsFacade.showCustomAddWithTypePicker(
         context: ctx,
         query: '',
+        isVaultLinked: vault.isVaultLinked,
         showMessage: showMessage,
         userCatalog: userCatalog,
         vaultItems: getItems(),
         onWorkSavedToVault: (item) async {
-          await AkashaFileService().saveItem(item);
+          await vault.saveVaultItem(item);
           if (WorkIdCodec.isUserLocalWorkId(item.workId)) {
             await userCatalog.upsert(UserCatalogEntity.fromAkashaItem(item));
           }
@@ -370,9 +374,10 @@ class HomeDialogsCoordinator {
       await HomeDialogsFacade.showAddDialog(
         context: ctx,
         initialTitle: '',
+        isVaultLinked: vault.isVaultLinked,
         showMessage: showMessage,
         onSavedToVault: (item) async {
-          await AkashaFileService().saveItem(item);
+          await vault.saveVaultItem(item);
           if (WorkIdCodec.isUserLocalWorkId(item.workId)) {
             await userCatalog.upsert(UserCatalogEntity.fromAkashaItem(item));
           }
@@ -400,7 +405,7 @@ class HomeDialogsCoordinator {
   }
 
   Future<void> _saveEntityResult(CatalogEntityAddResult result) async {
-    final vaultPath = AkashaFileService().vaultPath;
+    final vaultPath = vault.vaultPath;
     if (vaultPath == null || vaultPath.isEmpty) {
       showMessage('볼트를 먼저 연결해 주세요.');
       return;

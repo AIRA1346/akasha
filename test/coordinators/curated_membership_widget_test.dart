@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/models/akasha_item.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/personal_library_config.dart';
+import 'package:akasha/data/adapters/markdown_vault_adapter.dart';
 import 'package:akasha/screens/home/coordinators/home_membership_coordinator.dart';
 import 'package:akasha/screens/home/home_personal_library_controller.dart';
 import 'package:akasha/services/file_service.dart';
@@ -110,6 +111,7 @@ void main() {
       ]);
       membership = PersonalLibraryMembershipService(libraryController, FakeRegistryPort());
       coordinator = HomeMembershipCoordinator(
+        vault: MarkdownVaultAdapter(),
         personalLibraryController: libraryController,
         membership: membership,
         resolveItemForOpen: (item) => item,

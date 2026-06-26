@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 
+import '../../core/ports/vault_port.dart';
 import '../../models/akasha_item.dart';
 import '../../models/browse_card.dart';
 import '../../models/format_slot.dart';
-import '../../services/file_service.dart';
 import '../../services/franchise_registry.dart';
 import '../../services/user_registry_preferences.dart';
 
 /// 포스터 카드 숨기기(사전·프랜차이즈·매체) 액션
 class HomeRegistryHideActions {
+  final VaultPort vault;
   final void Function() onStateChanged;
   final void Function(String message) showMessage;
 
   const HomeRegistryHideActions({
+    required this.vault,
     required this.onStateChanged,
     required this.showMessage,
   });
@@ -36,7 +38,7 @@ class HomeRegistryHideActions {
 
   VoidCallback? registryHideActionFor(AkashaItem item) {
     if (item.workId.isEmpty) return null;
-    if (AkashaFileService().isArchivedInVault(item)) return null;
+    if (vault.isArchivedInVault(item)) return null;
     return () => hideWork(item.workId, label: item.title);
   }
 

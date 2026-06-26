@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../models/akasha_item.dart';
 import '../../../models/personal_library_config.dart';
-import '../../../services/file_service.dart';
 import '../../../services/markdown_parser.dart';
 import '../../../services/personal_library_membership_service.dart';
 import '../../../utils/browse_section_filters.dart';
@@ -20,6 +19,7 @@ class PersonalLibraryView extends StatefulWidget {
     super.key,
     required this.filteredCards,
     required this.allItems,
+    required this.vaultLinked,
     required this.sectionPrefs,
     required this.displayName,
     required this.isCuratedLibraryActive,
@@ -32,6 +32,7 @@ class PersonalLibraryView extends StatefulWidget {
 
   final List<BrowseCard> filteredCards;
   final List<AkashaItem> allItems;
+  final bool vaultLinked;
   final HomeSectionPreferences sectionPrefs;
   final String displayName;
   final bool isCuratedLibraryActive;
@@ -91,7 +92,7 @@ class _PersonalLibraryViewState extends State<PersonalLibraryView> {
   }
 
   Widget _buildEmptyContent() {
-    final vaultLinked = AkashaFileService().vaultPath != null;
+    final vaultLinked = widget.vaultLinked;
     final library = widget.activeLibrary;
     final libName = library?.name ?? '나만의 서재';
     final isCuratedEmpty =

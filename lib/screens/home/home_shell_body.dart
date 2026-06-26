@@ -52,6 +52,8 @@ class HomeShellBody extends StatelessWidget {
   final int catalogTotalEntries;
   final VoidCallback? onLoadMoreCatalog;
   final bool canAddToLibrary;
+  final bool vaultLinked;
+  final String? vaultPath;
   final LibraryTheme libraryTheme;
   final String displayName;
   final List<AkashaItem> items;
@@ -190,6 +192,8 @@ class HomeShellBody extends StatelessWidget {
     this.catalogTotalEntries = 0,
     this.onLoadMoreCatalog,
     required this.canAddToLibrary,
+    required this.vaultLinked,
+    required this.vaultPath,
     required this.libraryTheme,
     required this.displayName,
     required this.items,
@@ -324,6 +328,7 @@ class HomeShellBody extends StatelessWidget {
       onLoadMoreCatalog: onLoadMoreCatalog,
       isCuratedLibraryActive: isCuratedLibraryActive,
       personalLibCtrl: personalLibCtrl,
+      vaultLinked: vaultLinked,
       workPreviewItem: workPreviewItem,
       entityPreviewItem: entityPreviewItem,
       onNavigateWorkPreview: onNavigateWorkPreview,
@@ -383,6 +388,8 @@ class HomeShellBody extends StatelessWidget {
               Expanded(
                 child: HomeShellBodyCenterColumn(
                   hasNoFilters: hasNoFilters,
+                  vaultLinked: vaultLinked,
+                  vaultPath: vaultPath,
                   dailyRecall: dailyRecall,
                   isPersonalLibraryMode: isPersonalLibraryMode,
                   isCollectibleCollectionMode: isCollectibleCollectionMode,

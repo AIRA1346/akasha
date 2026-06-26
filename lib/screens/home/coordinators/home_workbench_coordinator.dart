@@ -1,15 +1,16 @@
 import '../../../core/archiving/entity_journal_entry.dart';
+import '../../../core/ports/vault_port.dart';
 import '../../../features/workbench/data/workbench_controller.dart';
 import '../../../features/workbench/presentation/collectible_tab.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_vault_loader.dart';
-import '../../../services/file_service.dart';
 
 /// 워크벤치 탭·Collectible 열기/저장 (E2-3 · Phase 6).
 class HomeWorkbenchCoordinator {
   HomeWorkbenchCoordinator({
     required this.workbench,
+    required this.vault,
     required this.isMounted,
     required this.rebuild,
     required this.getItems,
@@ -18,6 +19,7 @@ class HomeWorkbenchCoordinator {
   });
 
   final WorkbenchController workbench;
+  final VaultPort vault;
   final bool Function() isMounted;
   final void Function() rebuild;
   final List<AkashaItem> Function() getItems;
@@ -80,7 +82,7 @@ class HomeWorkbenchCoordinator {
     }
 
     EntityJournalEntry? entry;
-    final vaultPath = AkashaFileService().vaultPath;
+    final vaultPath = vault.vaultPath;
     if (vaultPath != null && vaultPath.isNotEmpty) {
       entry = await const EntityVaultLoader().findByEntityId(
         vaultPath,

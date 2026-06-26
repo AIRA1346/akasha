@@ -4,7 +4,6 @@ import '../../../core/archiving/archive_record.dart';
 import '../../../core/archiving/journal_entry.dart';
 import '../../../core/archiving/record_kind.dart';
 import '../../../data/adapters/vault_archive_record_adapter.dart';
-import '../../../services/file_service.dart';
 import '../../../services/journal_vault_loader.dart';
 import '../../../theme/akasha_colors.dart';
 
@@ -12,10 +11,12 @@ import '../../../theme/akasha_colors.dart';
 class JournalView extends StatefulWidget {
   const JournalView({
     super.key,
+    required this.vaultPath,
     required this.onNewEntry,
     this.reloadToken = 0,
   });
 
+  final String? vaultPath;
   final VoidCallback onNewEntry;
   final int reloadToken;
 
@@ -45,7 +46,7 @@ class _JournalViewState extends State<JournalView> {
 
   Future<void> _reload() async {
     setState(() => _loading = true);
-    final path = AkashaFileService().vaultPath;
+    final path = widget.vaultPath;
     final entries = await _loader.loadFromVault(path);
     if (!mounted) return;
     setState(() {
@@ -194,7 +195,7 @@ class _JournalViewState extends State<JournalView> {
 
   @override
   Widget build(BuildContext context) {
-    if (AkashaFileService().vaultPath == null) {
+    if (widget.vaultPath == null) {
       return const Center(
         child: Text('볼트를 연결하면 메모를 볼 수 있습니다.'),
       );

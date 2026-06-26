@@ -105,6 +105,7 @@ class HomeVaultCoordinator {
   }) async {
     final count = await HomeAutoArchive.run(
       registry: registry,
+      vault: vault,
       prefetchFilters: prefetchRegistry,
       showFeedback: showFeedback,
       showMessage: showMessage,
@@ -113,10 +114,22 @@ class HomeVaultCoordinator {
   }
 
   Future<void> runStartupAutoArchiveIfNeeded() async {
-    if (vault.vaultPath != null && autoArchiveRegistry) {
+    if (isVaultLinked && autoArchiveRegistry) {
       await autoArchiveRegistryWorks();
     }
   }
+
+  String? get vaultPath => vault.vaultPath;
+
+  bool get isVaultLinked =>
+      vault.vaultPath != null && vault.vaultPath!.isNotEmpty;
+
+  bool isArchivedInVault(AkashaItem item) => vault.isArchivedInVault(item);
+
+  Future<void> saveVaultItem(AkashaItem item, {String? oldTitle}) =>
+      vault.saveItem(item, oldTitle: oldTitle);
+
+  Future<void> setVaultPath(String path) => vault.setVaultPath(path);
 
   void bindVaultWatch({required VoidCallback onVaultChanged}) {
     vaultUpdateSubscription?.cancel();

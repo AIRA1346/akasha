@@ -4,12 +4,15 @@ import 'package:akasha/screens/home/coordinators/home_preview_coordinator.dart';
 import 'package:akasha/utils/helpers.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import '../fakes/fake_vault_port.dart';
+
 HomePreviewCoordinator _coordinator({
   void Function()? onRebuild,
   void Function(String workId)? onRecordWork,
   void Function()? onShowBrowse,
 }) {
   return HomePreviewCoordinator(
+    vault: FakeVaultPort(),
     rebuild: onRebuild ?? () {},
     resolveItemForOpen: (item) => item,
     openBrowseItemInWorkbench: (_) {},
@@ -94,6 +97,7 @@ void main() {
     );
     var browseShown = false;
     final coord = HomePreviewCoordinator(
+      vault: FakeVaultPort(),
       rebuild: () {},
       resolveItemForOpen: (item) => item,
       openBrowseItemInWorkbench: (_) {},

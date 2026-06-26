@@ -1,9 +1,9 @@
+import '../../../core/ports/vault_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/browse_card.dart';
 import '../../../models/membership_apply_result.dart';
 import '../../../models/personal_library_config.dart';
 import '../../../models/user_catalog_entity.dart';
-import '../../../services/file_service.dart';
 import '../../../services/franchise_library_scope.dart';
 import '../../../services/library_membership_apply.dart';
 import '../../../services/markdown_parser.dart';
@@ -42,14 +42,18 @@ class AddWorkToLibraryOutcome {
 /// curated 서재 담기·패널 적용 오케스트레이션 (Wave 1.1).
 class HomeMembershipCoordinator {
   HomeMembershipCoordinator({
+    required VaultPort vault,
     required HomePersonalLibraryController personalLibraryController,
     required PersonalLibraryMembershipService membership,
     required AkashaItem Function(AkashaItem) resolveItemForOpen,
     required Future<void> Function() reloadItems,
-  })  : _personalLibraryController = personalLibraryController,
+  })  : _vault = vault,
+        _personalLibraryController = personalLibraryController,
         _membership = membership,
         _resolveItemForOpen = resolveItemForOpen,
         _reloadItems = reloadItems;
+
+  final VaultPort _vault;
 
   final HomePersonalLibraryController _personalLibraryController;
   final PersonalLibraryMembershipService _membership;
@@ -66,7 +70,7 @@ class HomeMembershipCoordinator {
     required String libraryId,
     required AkashaItem item,
   }) async {
-    final fileService = AkashaFileService();
+    final fileService = _vault;
     var workItem = _resolveItemForOpen(item);
 
     if (!fileService.isArchivedInVault(workItem)) {

@@ -6,7 +6,6 @@ import '../../../core/archiving/record_kind.dart';
 import '../../../core/archiving/timeline_entry.dart';
 import '../../../data/adapters/vault_archive_record_adapter.dart';
 import '../../../models/akasha_item.dart';
-import '../../../services/file_service.dart';
 import '../../../services/timeline_vault_loader.dart';
 import '../../../theme/akasha_colors.dart';
 
@@ -14,12 +13,14 @@ import '../../../theme/akasha_colors.dart';
 class TimelineView extends StatefulWidget {
   const TimelineView({
     super.key,
+    required this.vaultPath,
     required this.vaultItems,
     required this.onOpenWork,
     required this.onNewEntry,
     this.reloadToken = 0,
   });
 
+  final String? vaultPath;
   final List<AkashaItem> vaultItems;
   final void Function(AkashaItem item) onOpenWork;
   final VoidCallback onNewEntry;
@@ -51,7 +52,7 @@ class _TimelineViewState extends State<TimelineView> {
 
   Future<void> _reload() async {
     setState(() => _loading = true);
-    final path = AkashaFileService().vaultPath;
+    final path = widget.vaultPath;
     final entries = await _loader.loadFromVault(path);
     if (!mounted) return;
     setState(() {
@@ -235,7 +236,7 @@ class _TimelineViewState extends State<TimelineView> {
 
   @override
   Widget build(BuildContext context) {
-    if (AkashaFileService().vaultPath == null) {
+    if (widget.vaultPath == null) {
       return const Center(
         child: Text('볼트를 연결하면 타임라인을 볼 수 있습니다.'),
       );

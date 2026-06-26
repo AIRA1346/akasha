@@ -1,9 +1,12 @@
-import '../../../services/file_service.dart';
 import 'home_section_preferences.dart';
 import 'home_shell_controller_base.dart';
 
 /// Vault·catalog bootstrap and sync.
 mixin HomeShellControllerVaultMixin on HomeShellControllerBase {
+  String? get vaultPath => vault.vaultPath;
+
+  bool get vaultLinked => vault.isVaultLinked;
+
   Future<void> initVault() async {
     await vault.initService();
     await navigation.loadSidebarState();
@@ -20,7 +23,7 @@ mixin HomeShellControllerVaultMixin on HomeShellControllerBase {
     vault.bindVaultWatch(onVaultChanged: () async {
       await loadItems();
       await refreshRecentExploration();
-      final vaultPath = AkashaFileService().vaultPath;
+      final vaultPath = this.vaultPath;
       if (vaultPath != null && vaultPath.isNotEmpty) {
         await workbench.syncEntityTabs(vaultPath);
       }

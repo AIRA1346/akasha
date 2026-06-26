@@ -1,6 +1,7 @@
 import '../../../core/ports/record_link_port.dart';
 import '../../../core/ports/registry_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
+import '../../../core/ports/vault_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../services/browse_pipeline.dart';
 import '../../../services/entity_related_works_discovery.dart';
@@ -64,6 +65,7 @@ class HomeShellWiring {
   }
 
   factory HomeShellWiring.create({
+    required VaultPort vault,
     required RegistryPort registry,
     required HomePersonalLibraryController personalLibCtrl,
     required HomeCollectibleCollectionController collectionCtrl,
@@ -77,12 +79,14 @@ class HomeShellWiring {
     required void Function(String message) showMessage,
   }) {
     final hideActions = HomeRegistryHideActions(
+      vault: vault,
       onStateChanged: rebuild,
       showMessage: showMessage,
     );
     final libraryMembership =
         PersonalLibraryMembershipService(personalLibCtrl, registry);
     final membershipCoordinator = HomeMembershipCoordinator(
+      vault: vault,
       personalLibraryController: personalLibCtrl,
       membership: libraryMembership,
       resolveItemForOpen: workbenchCoord.resolveItemForOpen,
@@ -101,10 +105,12 @@ class HomeShellWiring {
       filterCoordinator: filterCoordinator,
     );
     final libraryMenuBuilder = HomeLibraryMenuBuilder(
+      vault: vault,
       hideActions: hideActions,
       membership: libraryMembership,
     );
     final libraryUi = HomeLibraryUi(
+      vault: vault,
       membershipCoordinator: membershipCoordinator,
       libraryMenuBuilder: libraryMenuBuilder,
       filterCoordinator: filterCoordinator,

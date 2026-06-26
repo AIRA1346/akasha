@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 import '../../core/ports/registry_port.dart';
+import '../../core/ports/vault_port.dart';
 import '../../models/akasha_item.dart';
 import '../../models/enums.dart';
 import '../../models/registry_work.dart';
@@ -14,18 +15,18 @@ class HomeAutoArchive {
   /// 생성된 .md 수. 0이면 신규 없음.
   static Future<int> run({
     required RegistryPort registry,
+    required VaultPort vault,
     required Future<void> Function() prefetchFilters,
     bool showFeedback = false,
     void Function(String message)? showMessage,
   }) async {
     if (!await UserPreferences.isAutoArchiveRegistryEnabled()) return 0;
 
-    final service = AkashaFileService();
-    if (service.vaultPath == null) return 0;
+    if (vault.vaultPath == null) return 0;
 
     await prefetchFilters();
 
-    final onDisk = await service.loadAllItems();
+    final onDisk = await vault.loadAllItems();
     final localWorkIds = onDisk
         .map((e) => e.workId)
         .where((id) => id.isNotEmpty)
@@ -49,7 +50,7 @@ class HomeAutoArchive {
     var createdCount = 0;
     for (final work in pending) {
       final newItem = itemFromRegistryWork(work);
-      await service.saveItem(newItem);
+      await vault.saveItem(newItem);
       createdCount++;
     }
 

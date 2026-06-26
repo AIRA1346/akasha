@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/browse_card.dart';
 import '../../../models/browse_entity_scope.dart';
+import '../../../core/ports/vault_port.dart';
 import '../../../models/enums.dart';
-import '../../../services/file_service.dart';
 import '../home_browse_filter_controller.dart';
 import '../home_personal_library_controller.dart';
 import '../home_poster_card_factory.dart';
@@ -27,6 +27,7 @@ class HomeBrowseCoordinator {
     required this.workbenchCoord,
     required this.filterCtrl,
     required this.personalLibCtrl,
+    required this.vault,
     required this.getItems,
     required this.prefetchRegistry,
     required this.wrapSetState,
@@ -43,6 +44,7 @@ class HomeBrowseCoordinator {
   final HomeWorkbenchCoordinator workbenchCoord;
   final HomeBrowseFilterController filterCtrl;
   final HomePersonalLibraryController personalLibCtrl;
+  final VaultPort vault;
   final List<AkashaItem> Function() getItems;
   final Future<void> Function() prefetchRegistry;
   final void Function(void Function()) wrapSetState;
@@ -54,7 +56,7 @@ class HomeBrowseCoordinator {
   HomeRegistryHideActions get hideActions => wiring.hideActions;
 
   bool get canAddToLibrary =>
-      AkashaFileService().vaultPath != null &&
+      vault.vaultPath != null &&
       personalLibCtrl.libraries.any((l) => l.isCurated);
 
   List<BrowseCard> get filteredBrowseCards => wiring.browsePipeline.build(

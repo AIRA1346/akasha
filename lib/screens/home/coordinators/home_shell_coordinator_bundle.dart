@@ -1,6 +1,7 @@
 import '../../../core/ports/registry_port.dart';
 import '../../../core/ports/registry_sync_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
+import '../../../core/ports/vault_port.dart';
 import '../../../data/adapters/markdown_vault_adapter.dart';
 import '../../../data/adapters/registry_sync_adapter.dart';
 import '../../../data/adapters/user_catalog_store_adapter.dart';
@@ -83,6 +84,7 @@ class HomeShellCoordinatorBundle {
 
     final workbenchCoord = HomeWorkbenchCoordinator(
       workbench: workbench,
+      vault: vault.vault,
       isMounted: () => host.mounted,
       rebuild: rebuild,
       getItems: () => vault.items,
@@ -98,6 +100,7 @@ class HomeShellCoordinatorBundle {
     );
 
     final preview = HomePreviewCoordinator(
+      vault: vault.vault,
       rebuild: rebuild,
       resolveItemForOpen: workbenchCoord.resolveItemForOpen,
       openBrowseItemInWorkbench: workbenchCoord.openBrowseItem,
@@ -112,6 +115,7 @@ class HomeShellCoordinatorBundle {
     );
 
     final wiring = HomeShellWiring.create(
+      vault: vault.vault,
       registry: registry,
       personalLibCtrl: personalLibCtrl,
       collectionCtrl: collectionCtrl,
@@ -164,6 +168,7 @@ class HomeShellCoordinatorBundle {
       workbenchCoord: workbenchCoord,
       filterCtrl: filterCtrl,
       personalLibCtrl: personalLibCtrl,
+      vault: vault.vault,
       getItems: () => vault.items,
       prefetchRegistry: () => catalog.prefetchRegistryForCurrentFilters(),
       wrapSetState: wrapSetState,
@@ -220,4 +225,5 @@ abstract final class HomeShellDefaultPorts {
   static final RegistryPort registry = WorksRegistryAdapter();
   static final UserCatalogPort userCatalog = UserCatalogStoreAdapter();
   static final RegistrySyncPort registrySync = RegistrySyncAdapter();
+  static final VaultPort vault = MarkdownVaultAdapter();
 }
