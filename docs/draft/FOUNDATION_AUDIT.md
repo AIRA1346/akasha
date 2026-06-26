@@ -56,7 +56,7 @@
 | **248** | `home_dashboard_discovery_section.dart` | P5 ✅ loader·cards 분리 |
 | **471** | `home_shell_body.dart` | P6 ✅ browse·center·preview 분리 |
 | 297 | `home_shell_body_center.dart` | P6 추출 |
-| 641 | `catalog_entity_browse_view.dart` | |
+| **361** | `catalog_entity_browse_view.dart` | P7 ✅ loader·widgets 분리 |
 | 630 | `poster_card.dart` | |
 | 590 | `work_link_neighbors_sections.dart` | F3 토큰화 |
 | 587 | `registry_shard_loader.dart` | |
@@ -146,6 +146,7 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | P4 | R14-D Workbench·Sanctum grey pass | ✅ 19파일 · `lib` `Colors.grey` 0 |
 | P5 | `home_dashboard_discovery_section` 분해 | ✅ 713→**248** + loader·cards |
 | P6 | `home_shell_body` 분해 | ✅ 672→**471** + browse·center·preview |
+| P7 | `catalog_entity_browse_view` 분해 | ✅ 694→**361** + loader·widgets |
 
 ---
 
@@ -156,6 +157,7 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS |
 | 2026-06-25 | F4 — LEGACY_REMOVAL_POLICY · 9건 게이트 |
 | 2026-06-25 | Post-F4 재검토 — 대형 파일 재실측 · R14·백로그 · P0/P1 정리 |
+| 2026-06-24 | P7 — `catalog_entity_browse_view` loader·widgets 분해 (**361줄**) |
 | 2026-06-24 | P6 — `home_shell_body` browse·center·preview 분해 (**471줄**) |
 | 2026-06-24 | P5 — `home_dashboard_discovery_section` loader·cards 분해 (**248줄**) |
 | 2026-06-24 | P4 R14-D — Workbench·Sanctum·Editor grey → `AkashaColors` (19파일, lib 전역 0) |
