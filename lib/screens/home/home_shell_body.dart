@@ -8,7 +8,6 @@ import '../../core/ports/user_catalog_port.dart';
 import '../../models/entity_link_selection.dart';
 import '../../models/browse_entity_scope.dart';
 import '../../features/workbench/data/workbench_controller.dart';
-import '../../features/workbench/presentation/workbench_shell.dart';
 import '../../models/akasha_item.dart';
 import '../../models/collectible_browse_item.dart';
 import '../../models/entity_browse_card.dart';
@@ -23,27 +22,17 @@ import '../../models/registry_work.dart';
 import '../../services/link_candidate_service.dart';
 import '../../core/archiving/entity_journal_entry.dart';
 import '../../models/work_drag_payload.dart';
-import '../../services/file_service.dart';
 import '../../services/personal_library_membership_service.dart';
-import 'coordinators/home_shell_wiring.dart';
 import '../../utils/recall_picker.dart';
 import '../../widgets/dashboard_sidebar.dart';
-import '../../widgets/filter_section.dart';
-import '../../widgets/today_recall_card.dart';
 import 'home_browse_filter_controller.dart';
 import 'home_dashboard_controller.dart';
 import 'home_collectible_collection_controller.dart';
 import 'home_personal_library_controller.dart';
 import 'home_section_preferences.dart';
-import 'home_vault_banner.dart';
-import 'views/catalog_entity_browse_view.dart';
-import 'views/browse_view.dart';
-import 'views/personal_library_view.dart';
-import 'views/records_view.dart';
-import 'views/dashboard_preview_panel.dart';
-import 'views/entity_dashboard_preview_panel.dart';
-import 'views/home_dashboard_view.dart';
-import 'views/knowledge_graph_view.dart';
+import 'home_shell_body_center.dart';
+import 'home_shell_body_preview_rail.dart';
+import 'home_shell_browse_content.dart';
 
 /// HomeShell Scaffold body — sidebar · 필터 · workbench browse 영역.
 class HomeShellBody extends StatelessWidget {
@@ -315,6 +304,47 @@ class HomeShellBody extends StatelessWidget {
         ? RecallPicker.pickDailyRecall(items)
         : null;
 
+    final browse = HomeShellBrowseContentBuilder(
+      filterCtrl: filterCtrl,
+      sectionPrefs: sectionPrefs,
+      items: items,
+      recentExploreItems: recentExploreItems,
+      userCatalog: userCatalog,
+      linkIndex: linkIndex,
+      linkIndexRevision: linkIndexRevision,
+      filteredCards: filteredCards,
+      displayName: displayName,
+      posterCardBuilder: posterCardBuilder,
+      onStateChanged: onStateChanged,
+      isCatalogLoading: isCatalogLoading,
+      isCatalogLoadingMore: isCatalogLoadingMore,
+      catalogHasMore: catalogHasMore,
+      catalogLoadedThrough: catalogLoadedThrough,
+      catalogTotalEntries: catalogTotalEntries,
+      onLoadMoreCatalog: onLoadMoreCatalog,
+      isCuratedLibraryActive: isCuratedLibraryActive,
+      personalLibCtrl: personalLibCtrl,
+      workPreviewItem: workPreviewItem,
+      entityPreviewItem: entityPreviewItem,
+      onNavigateWorkPreview: onNavigateWorkPreview,
+      onNavigateEntityPreview: onNavigateEntityPreview,
+      onSearch: onSearch,
+      onGoExplore: onGoExplore,
+      onGoExploreEntities: onGoExploreEntities,
+      onGoKnowledgeGraph: onGoKnowledgeGraph,
+      onSelectTimeline: onSelectTimeline,
+      onConnectSuggestedFromHome: onConnectSuggestedFromHome,
+      onPreviewRegistryWork: onPreviewRegistryWork,
+      onOpenBrowseItem: onOpenBrowseItem,
+      onOpenItemDetail: onOpenItemDetail,
+      onOpenEntityDetail: onOpenEntityDetail,
+      onGraphOpenRecord: onGraphOpenRecord,
+      onPreviewWork: onPreviewWork,
+      onPreviewEntity: onPreviewEntity,
+      onCuratedReorder: onCuratedReorder,
+      onAddNewEntity: onAddNewEntity,
+    );
+
     return Row(
       children: [
         DashboardSidebar(
@@ -351,321 +381,91 @@ class HomeShellBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Expanded(
-                child: Column(
-            children: [
-              if (AkashaFileService().vaultPath == null)
-                HomeVaultBanner(onConnectVault: onConnectVault),
-              if (!workbench.hasOpenDetail) ...[
-                if (!isTimelineMode &&
-                    !isCollectibleCollectionMode &&
-                    (!hasNoFilters ||
-                        isPersonalLibraryMode ||
-                        isExploreBrowseMode ||
-                        isHomeDashboardMode))
-                  FilterSection(
-                    selectedCategories: filterCtrl.categories,
-                    selectedWorkStatuses: filterCtrl.workStatuses,
-                    selectedMyStatuses: filterCtrl.myStatuses,
-                    onToggleCategory: onToggleCategory,
-                    onClearCategories: onClearCategories,
-                    onToggleWorkStatus: onToggleWorkStatus,
-                    onToggleMyStatus: onToggleMyStatus,
-                    selectedEntityScope: filterCtrl.entityScope,
-                    onEntityScopeChanged: onEntityScopeChanged,
-                    onAddNewEntity: onAddNewEntity,
-                  ),
-                if (!isTimelineMode &&
-                    !isCollectibleCollectionMode &&
-                    (!hasNoFilters ||
-                        isPersonalLibraryMode ||
-                        isExploreBrowseMode ||
-                        isHomeDashboardMode))
-                  const Divider(height: 1),
-              ],
-              if (!isPersonalLibraryMode &&
-                  !isCollectibleCollectionMode &&
-                  !isTimelineMode &&
-                  !workbench.hasOpenDetail &&
-                  isCatalogLoading)
-                const LinearProgressIndicator(minHeight: 2),
-              Expanded(
-                child: Column(
-                  children: [
-                    if (dailyRecall != null && !workbench.hasOpenDetail)
-                      TodayRecallCard(
-                        recall: dailyRecall,
-                        onTap: () => onPreviewWork(dailyRecall.item),
-                      ),
-                    Expanded(
-                      child: WorkbenchShell(
-                        controller: workbench,
-                        userCatalog: userCatalog,
-                        linkIndex: linkIndex,
-                        vaultItems: items,
-                        onWorkSaved: onWorkbenchWorkSaved,
-                        onWorkDeleted: onWorkbenchWorkDeleted,
-                        onEntitySaved: onWorkbenchEntitySaved,
-                        onEntityDeleted: onWorkbenchEntityDeleted,
-                        onAddToLibrary: onAddToLibrary,
-                        onAddToLibraryForEntity: onAddToLibraryForEntity,
-                        onWikiLinkTap: onWikiLinkTap,
-                        onRequestEntityLink: onRequestEntityLink,
-                        onGoKnowledgeGraph: () => onGoKnowledgeGraph(),
-                        pendingWorkEntityLinkType: pendingWorkEntityLinkType,
-                        pendingWorkEntityLinkWorkId: pendingWorkEntityLinkWorkId,
-                        pendingWorkEntityLinkCandidate: pendingWorkEntityLinkCandidate,
-                        pendingWorkLinkPick: pendingWorkLinkPick,
-                        onPendingWorkEntityLinkHandled:
-                            onClearPendingWorkEntityLink,
-                        pendingEntityEntityLinkType: pendingEntityEntityLinkType,
-                        pendingEntityLinkEntityId: pendingEntityLinkEntityId,
-                        pendingEntityWorkLinkPick: pendingEntityWorkLinkPick,
-                        onClearPendingEntityLink: onClearPendingEntityLink,
-                        onRecordOpenWork: onOpenBrowseItem,
-                        onRecordOpenEntity: onOpenEntity,
-                        browseContent: isTimelineMode
-                            ? RecordsView(
-                                vaultItems: items,
-                                onOpenWork: onOpenBrowseItem,
-                                onOpenEntity: onOpenEntity,
-                                onNewTimelineEntry: onNewTimelineEntry,
-                                onNewJournalEntry: onNewJournalEntry,
-                                userCatalog: userCatalog,
-                                linkIndex: linkIndex,
-                                reloadToken: timelineReloadToken,
-                              )
-                            : isCollectibleCollectionMode
-                            ? CatalogEntityBrowseView(
-                                userCatalog: userCatalog,
-                                linkIndex: linkIndex,
-                                vaultItems: items,
-                                onOpenWork: onPreviewWork,
-                                onOpenEntity: onPreviewEntity,
-                                scope: BrowseEntityScope.all,
-                                posterCardBuilder: posterCardBuilder,
-                                relatedWorksDiscoveryFactory: () =>
-                                    HomeShellWiring
-                                        .createEntityRelatedWorksDiscovery(
-                                  linkIndex: linkIndex,
-                                  vaultItems: items,
-                                ),
-                                collection: collectionCtrl.activeCollection,
-                                highlightEntityId:
-                                    filterCtrl.highlightEntityId,
-                                entityGallerySort:
-                                    sectionPrefs.entityGallerySort,
-                                onEntityGallerySortChanged: (criteria) {
-                                  sectionPrefs.setEntityGallerySort(
-                                    criteria,
-                                    onStateChanged,
-                                  );
-                                },
-                                onCuratedReorder:
-                                    collectionCtrl.activeCollection?.isCurated ==
-                                            true
-                                        ? onEntityCollectionCuratedReorder
-                                        : null,
-                                onCollectibleCuratedReorder:
-                                    collectionCtrl.activeCollection?.isCurated ==
-                                            true
-                                        ? onCollectibleCollectionCuratedReorder
-                                        : null,
-                                onAddNewEntity: onAddNewEntity,
-                              )
-                            : isPersonalLibraryMode
-                            ? _buildPersonalLibraryBrowseContent()
-                            : _buildDashboardBrowseContent(context),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-                ),
-              ),
-              if (workPreviewItem != null && !workbench.hasOpenDetail)
-                DashboardPreviewPanel(
-                  item: workPreviewItem!,
+                child: HomeShellBodyCenterColumn(
+                  hasNoFilters: hasNoFilters,
+                  dailyRecall: dailyRecall,
+                  isPersonalLibraryMode: isPersonalLibraryMode,
+                  isCollectibleCollectionMode: isCollectibleCollectionMode,
+                  isTimelineMode: isTimelineMode,
+                  isExploreBrowseMode: isExploreBrowseMode,
+                  isKnowledgeGraphMode: isKnowledgeGraphMode,
+                  isHomeDashboardMode: isHomeDashboardMode,
+                  isCatalogLoading: isCatalogLoading,
+                  filterCtrl: filterCtrl,
+                  sectionPrefs: sectionPrefs,
+                  workbench: workbench,
                   userCatalog: userCatalog,
                   linkIndex: linkIndex,
-                  linkIndexRevision: linkIndexRevision,
-                  vaultItems: items,
-                  canGoBack: canPopPreview,
-                  onBack: onPopPreview,
-                  onClose: onCloseAllPreviews,
-                  onOpenDetail: onOpenWorkFromPreview,
-                  onOpenEntity: onPreviewLinkedEntity,
-                  onOpenWork: onPreviewLinkedWork,
-                  onGoKnowledgeGraph: () => onGoKnowledgeGraph(),
-                  onConnectEntityType: onConnectEntityFromPreview,
-                  onConnectWorkFromPreview: onConnectWorkFromPreview,
-                  onConnectSuggested: onConnectSuggestedFromPreview,
-                  onPreviewRegistryWork: onPreviewRegistryWork,
-                  onArchiveRegistryWork: onArchiveRegistryWorkFromPreview,
+                  items: items,
+                  timelineReloadToken: timelineReloadToken,
+                  collectionCtrl: collectionCtrl,
+                  posterCardBuilder: posterCardBuilder,
+                  browse: browse,
+                  onConnectVault: onConnectVault,
+                  onToggleCategory: onToggleCategory,
+                  onClearCategories: onClearCategories,
+                  onToggleWorkStatus: onToggleWorkStatus,
+                  onToggleMyStatus: onToggleMyStatus,
+                  onEntityScopeChanged: onEntityScopeChanged,
+                  onAddNewEntity: onAddNewEntity,
+                  onStateChanged: onStateChanged,
+                  onPreviewWork: onPreviewWork,
+                  onPreviewEntity: onPreviewEntity,
+                  onOpenBrowseItem: onOpenBrowseItem,
+                  onOpenEntity: onOpenEntity,
+                  onWorkbenchWorkSaved: onWorkbenchWorkSaved,
+                  onWorkbenchWorkDeleted: onWorkbenchWorkDeleted,
+                  onWorkbenchEntitySaved: onWorkbenchEntitySaved,
+                  onWorkbenchEntityDeleted: onWorkbenchEntityDeleted,
+                  onAddToLibrary: onAddToLibrary,
+                  onAddToLibraryForEntity: onAddToLibraryForEntity,
+                  onWikiLinkTap: onWikiLinkTap,
+                  onRequestEntityLink: onRequestEntityLink,
+                  onGoKnowledgeGraph: onGoKnowledgeGraph,
+                  pendingWorkEntityLinkType: pendingWorkEntityLinkType,
+                  pendingWorkEntityLinkWorkId: pendingWorkEntityLinkWorkId,
+                  pendingWorkEntityLinkCandidate: pendingWorkEntityLinkCandidate,
+                  pendingWorkLinkPick: pendingWorkLinkPick,
+                  onClearPendingWorkEntityLink: onClearPendingWorkEntityLink,
+                  pendingEntityEntityLinkType: pendingEntityEntityLinkType,
+                  pendingEntityLinkEntityId: pendingEntityLinkEntityId,
+                  pendingEntityWorkLinkPick: pendingEntityWorkLinkPick,
+                  onClearPendingEntityLink: onClearPendingEntityLink,
+                  onNewTimelineEntry: onNewTimelineEntry,
+                  onNewJournalEntry: onNewJournalEntry,
+                  onEntityCollectionCuratedReorder: onEntityCollectionCuratedReorder,
+                  onCollectibleCollectionCuratedReorder:
+                      onCollectibleCollectionCuratedReorder,
                 ),
-              if (entityPreviewItem != null && !workbench.hasOpenDetail)
-                EntityDashboardPreviewPanel(
-                  entity: entityPreviewItem!,
-                  userCatalog: userCatalog,
-                  linkIndex: linkIndex,
-                  linkIndexRevision: linkIndexRevision,
-                  vaultItems: items,
-                  canGoBack: canPopPreview,
-                  onBack: onPopPreview,
-                  onClose: onCloseAllPreviews,
-                  onOpenDetail: onOpenEntityFromPreview,
-                  onOpenEntity: onPreviewLinkedEntity,
-                  onOpenWork: onPreviewLinkedWork,
-                  onGoKnowledgeGraph: () => onGoKnowledgeGraph(),
-                  onPreviewRegistryWork: onPreviewRegistryWork,
-                  onConnectEntityType: onConnectEntityFromEntityPreview,
-                  onConnectWork: onConnectWorkFromEntityPreview,
-                ),
+              ),
+              ...buildHomeShellBodyPreviewPanels(
+                workbenchHasOpenDetail: workbench.hasOpenDetail,
+                workPreviewItem: workPreviewItem,
+                entityPreviewItem: entityPreviewItem,
+                userCatalog: userCatalog,
+                linkIndex: linkIndex,
+                linkIndexRevision: linkIndexRevision,
+                vaultItems: items,
+                canPopPreview: canPopPreview,
+                onPopPreview: onPopPreview,
+                onCloseAllPreviews: onCloseAllPreviews,
+                onOpenWorkFromPreview: onOpenWorkFromPreview,
+                onOpenEntityFromPreview: onOpenEntityFromPreview,
+                onPreviewLinkedEntity: onPreviewLinkedEntity,
+                onPreviewLinkedWork: onPreviewLinkedWork,
+                onGoKnowledgeGraph: onGoKnowledgeGraph,
+                onConnectEntityFromPreview: onConnectEntityFromPreview,
+                onConnectWorkFromPreview: onConnectWorkFromPreview,
+                onConnectEntityFromEntityPreview: onConnectEntityFromEntityPreview,
+                onConnectWorkFromEntityPreview: onConnectWorkFromEntityPreview,
+                onConnectSuggestedFromPreview: onConnectSuggestedFromPreview,
+                onPreviewRegistryWork: onPreviewRegistryWork,
+                onArchiveRegistryWorkFromPreview: onArchiveRegistryWorkFromPreview,
+              ),
             ],
           ),
         ),
       ],
-    );
-  }
-
-  Widget _buildDashboardBrowseContent(BuildContext context) {
-    final scope = filterCtrl.entityScope;
-
-    final hasNoFilters = filterCtrl.categories.isEmpty &&
-        filterCtrl.workStatuses.isEmpty &&
-        filterCtrl.myStatuses.isEmpty &&
-        filterCtrl.highlightEntityId == null;
-
-    if (isKnowledgeGraphMode) {
-      return KnowledgeGraphView(
-        vaultItems: items,
-        userCatalog: userCatalog,
-        linkIndex: linkIndex,
-        onOpenWork: onNavigateWorkPreview,
-        onOpenEntity: onNavigateEntityPreview,
-        onOpenRecord: onGraphOpenRecord,
-        onConnectEntity: onAddNewEntity == null
-            ? null
-            : () => onAddNewEntity!(null),
-      );
-    }
-
-    final showHomeDashboard = hasNoFilters &&
-        !isExploreBrowseMode &&
-        scope.showsWorkGrid;
-
-    if (showHomeDashboard) {
-      return HomeDashboardView(
-        vaultItems: items,
-        recentExploreItems: recentExploreItems,
-        userCatalog: userCatalog,
-        linkIndex: linkIndex,
-        previewItem: workPreviewItem,
-        entityPreviewItem: entityPreviewItem,
-        onPreviewWork: onNavigateWorkPreview,
-        onPreviewEntity: onNavigateEntityPreview,
-        onSearch: onSearch,
-        onGoExplore: onGoExplore,
-        onGoExploreEntities: onGoExploreEntities,
-        onGoKnowledgeGraph: onGoKnowledgeGraph,
-        onTimeline: onSelectTimeline,
-        onConnectSuggested: onConnectSuggestedFromHome,
-        onPreviewRegistryWork: onPreviewRegistryWork,
-        onOpenRecordFromHome: onOpenBrowseItem,
-        onOpenItemDetail: onOpenItemDetail,
-        onOpenEntityDetail: onOpenEntityDetail,
-      );
-    }
-
-    if (!scope.showsWorkGrid) {
-      return _buildCatalogEntityBrowse(scope);
-    }
-
-    final workGrid = BrowseView(
-      filteredCards: filteredCards,
-      sectionPrefs: sectionPrefs,
-      filterCategories: filterCtrl.categories,
-      isCatalogLoading: isCatalogLoading,
-      isCatalogLoadingMore: isCatalogLoadingMore,
-      catalogHasMore: catalogHasMore,
-      catalogLoadedThrough: catalogLoadedThrough,
-      catalogTotalEntries: catalogTotalEntries,
-      onLoadMoreCatalog: onLoadMoreCatalog,
-      displayName: displayName,
-      posterCardBuilder: posterCardBuilder,
-      onStateChanged: onStateChanged,
-    );
-
-    return _wrapWorkGridWithOptionalEntityStrip(scope, workGrid);
-  }
-
-  Widget _buildPersonalLibraryBrowseContent() {
-    final scope = filterCtrl.entityScope;
-
-    if (!scope.showsWorkGrid) {
-      return _buildCatalogEntityBrowse(scope);
-    }
-
-    final workGrid = PersonalLibraryView(
-      filteredCards: filteredCards,
-      allItems: items,
-      sectionPrefs: sectionPrefs,
-      displayName: displayName,
-      isCuratedLibraryActive: isCuratedLibraryActive,
-      activeLibrary: personalLibCtrl.activeLibrary,
-      posterCardBuilder: posterCardBuilder,
-      onStateChanged: onStateChanged,
-      onCuratedReorder: onCuratedReorder,
-      onSearch: onSearch,
-    );
-
-    return _wrapWorkGridWithOptionalEntityStrip(scope, workGrid);
-  }
-
-  Widget _buildCatalogEntityBrowse(BrowseEntityScope scope) {
-    return CatalogEntityBrowseView(
-      userCatalog: userCatalog,
-      linkIndex: linkIndex,
-      vaultItems: items,
-      onOpenWork: onPreviewWork,
-      onOpenEntity: onPreviewEntity,
-      scope: scope,
-      highlightEntityId: filterCtrl.highlightEntityId,
-      entityGallerySort: sectionPrefs.entityGallerySort,
-      onEntityGallerySortChanged: (criteria) {
-        sectionPrefs.setEntityGallerySort(criteria, onStateChanged);
-      },
-      onAddNewEntity: onAddNewEntity,
-    );
-  }
-
-  Widget _wrapWorkGridWithOptionalEntityStrip(
-    BrowseEntityScope scope,
-    Widget workGrid,
-  ) {
-    if (!scope.showsEntityDiscoveryStrip) {
-      return workGrid;
-    }
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        _entityDiscoveryStrip(),
-        Expanded(child: workGrid),
-      ],
-    );
-  }
-
-  Widget _entityDiscoveryStrip() {
-    return CatalogEntityBrowseView(
-      userCatalog: userCatalog,
-      linkIndex: linkIndex,
-      vaultItems: items,
-      onOpenWork: onPreviewWork,
-      onOpenEntity: onPreviewEntity,
-      scope: BrowseEntityScope.all,
-      compact: true,
-      highlightEntityId: filterCtrl.highlightEntityId,
     );
   }
 }
