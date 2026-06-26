@@ -99,12 +99,14 @@ class EntityDetailSanctumPanel extends StatelessWidget {
         userCatalog: userCatalog,
         onOpenLinkedEntity: onOpenLinkedEntity,
         footer: Column(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SanctumArchiveToolbar(
               showTemplates: false,
               canExportHtml: hasJournal,
               onExportHtml: onExportHtml,
+              dense: true,
             ),
             WorkbenchSaveActions(
               isSaving: isSaving,
@@ -118,6 +120,7 @@ class EntityDetailSanctumPanel extends StatelessWidget {
               onAddToLibrary: onAddToLibrary,
               canDeleteMd: hasJournal,
               onDeleteArchive: onDeleteArchive,
+              dense: true,
             ),
           ],
         ),

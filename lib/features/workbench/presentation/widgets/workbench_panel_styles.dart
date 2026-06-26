@@ -91,6 +91,36 @@ abstract final class WorkbenchPanelStyles {
       textStyle: AkashaTypography.caption,
     );
   }
+
+  /// Sanctum footer — 작은 텍스트 버튼 (본문 영역 확보).
+  static ButtonStyle denseToolbarTextStyle({Color? foregroundColor}) {
+    return TextButton.styleFrom(
+      foregroundColor: foregroundColor,
+      visualDensity: VisualDensity.compact,
+      padding: const EdgeInsets.symmetric(
+        horizontal: AkashaSpacing.sm,
+        vertical: AkashaSpacing.xs,
+      ),
+      minimumSize: const Size(0, 28),
+      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      textStyle: AkashaTypography.caption.copyWith(fontWeight: FontWeight.w600),
+    );
+  }
+
+  static ButtonStyle denseFilledStyle() {
+    return FilledButton.styleFrom(
+      backgroundColor: AkashaColors.accent,
+      foregroundColor: AkashaColors.textPrimary,
+      visualDensity: VisualDensity.compact,
+      padding: const EdgeInsets.symmetric(
+        horizontal: AkashaSpacing.md,
+        vertical: AkashaSpacing.xs,
+      ),
+      minimumSize: const Size(0, 30),
+      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      textStyle: AkashaTypography.caption.copyWith(fontWeight: FontWeight.bold),
+    );
+  }
 }
 
 /// Workbench 공통 저장·서재·삭제 블록 (R14-A).
@@ -110,6 +140,7 @@ class WorkbenchSaveActions extends StatelessWidget {
     this.onReset,
     this.canDeleteMd = false,
     this.onDeleteArchive,
+    this.dense = false,
   });
 
   final bool isSaving;
@@ -125,9 +156,76 @@ class WorkbenchSaveActions extends StatelessWidget {
   final VoidCallback? onReset;
   final bool canDeleteMd;
   final VoidCallback? onDeleteArchive;
+  final bool dense;
 
   @override
   Widget build(BuildContext context) {
+    if (dense) {
+      return _buildDense(context);
+    }
+    return _buildStacked(context);
+  }
+
+  Widget _buildDense(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        WorkbenchSaveStatusHint(
+          isDirty: isDirty,
+          isSaving: isSaving,
+          lastSavedAt: lastSavedAt,
+          explicitSaveLabel: explicitSaveLabel ?? saveLabel,
+          dense: true,
+        ),
+        const SizedBox(height: AkashaSpacing.xs),
+        Wrap(
+          spacing: AkashaSpacing.xs,
+          runSpacing: AkashaSpacing.xs,
+          alignment: WrapAlignment.end,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: [
+            if (showAddToLibrary && onAddToLibrary != null)
+              TextButton.icon(
+                onPressed: onAddToLibrary,
+                icon: const Icon(Icons.collections_bookmark_outlined, size: 14),
+                label: Text(libraryLabel),
+                style: WorkbenchPanelStyles.denseToolbarTextStyle(),
+              ),
+            if (showReset && onReset != null)
+              TextButton(
+                onPressed: onReset,
+                style: WorkbenchPanelStyles.denseToolbarTextStyle(),
+                child: const Text('기본값'),
+              ),
+            if (canDeleteMd && onDeleteArchive != null)
+              TextButton.icon(
+                onPressed: isSaving ? null : onDeleteArchive,
+                icon: const Icon(Icons.delete_outline, size: 14),
+                label: const Text('md 삭제'),
+                style: WorkbenchPanelStyles.denseToolbarTextStyle(
+                  foregroundColor: Colors.redAccent,
+                ),
+              ),
+            FilledButton.icon(
+              onPressed: isSaving ? null : onSave,
+              icon: isSaving
+                  ? const SizedBox(
+                      width: 12,
+                      height: 12,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
+                  : const Icon(Icons.save_outlined, size: 14),
+              label: Text(saveLabel),
+              style: WorkbenchPanelStyles.denseFilledStyle(),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildStacked(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [

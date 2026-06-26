@@ -14,6 +14,7 @@ class SanctumArchiveToolbar extends StatelessWidget {
     required this.onExportHtml,
     this.canExportHtml = false,
     this.showTemplates = true,
+    this.dense = false,
   });
 
   final MediaCategory? category;
@@ -21,12 +22,39 @@ class SanctumArchiveToolbar extends StatelessWidget {
   final VoidCallback onExportHtml;
   final bool canExportHtml;
   final bool showTemplates;
+  final bool dense;
 
   bool get _templatesEnabled =>
       showTemplates && category != null && onApplyTemplate != null;
 
   @override
   Widget build(BuildContext context) {
+    if (dense) {
+      return Padding(
+        padding: const EdgeInsets.only(bottom: AkashaSpacing.xs),
+        child: Wrap(
+          spacing: AkashaSpacing.xs,
+          runSpacing: AkashaSpacing.xs,
+          alignment: WrapAlignment.end,
+          children: [
+            if (_templatesEnabled)
+              TextButton.icon(
+                onPressed: () => _showTemplatePicker(context),
+                icon: const Icon(Icons.article_outlined, size: 14),
+                label: const Text('템플릿'),
+                style: WorkbenchPanelStyles.denseToolbarTextStyle(),
+              ),
+            TextButton.icon(
+              onPressed: canExportHtml ? onExportHtml : null,
+              icon: const Icon(Icons.html_outlined, size: 14),
+              label: const Text('HTML보내기'),
+              style: WorkbenchPanelStyles.denseToolbarTextStyle(),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Padding(
       padding: const EdgeInsets.only(bottom: AkashaSpacing.sm),
       child: Row(

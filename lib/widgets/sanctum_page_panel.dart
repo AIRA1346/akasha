@@ -204,14 +204,15 @@ class SanctumPagePanel extends StatelessWidget {
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(12, 0, 12, 4),
-          child: WorkbenchSaveStatusHint(
-            isDirty: isDirty,
-            isSaving: isSaving,
-            lastSavedAt: lastSavedAt,
+        if (footer == null)
+          Padding(
+            padding: const EdgeInsets.fromLTRB(12, 0, 12, 4),
+            child: WorkbenchSaveStatusHint(
+              isDirty: isDirty,
+              isSaving: isSaving,
+              lastSavedAt: lastSavedAt,
+            ),
           ),
-        ),
         if (sectionLayout && archiveCompletionBodyRaw != null)
           SanctumArchiveCompletionBar(
             report: SanctumArchiveCompletion.evaluate(
@@ -287,7 +288,7 @@ class SanctumPagePanel extends StatelessWidget {
               border: Border(top: BorderSide(color: AkashaColors.border)),
             ),
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(12, 8, 12, 10),
+              padding: const EdgeInsets.fromLTRB(10, 6, 10, 8),
               child: footer!,
             ),
           ),

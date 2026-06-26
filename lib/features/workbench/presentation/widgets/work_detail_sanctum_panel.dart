@@ -123,6 +123,7 @@ class WorkDetailSanctumPanel extends StatelessWidget {
         onOpenLinkedEntity: onOpenLinkedEntity,
         archiveCompletionBodyRaw: archiveCompletionBodyRaw,
         footer: Column(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SanctumArchiveToolbar(
@@ -130,6 +131,7 @@ class WorkDetailSanctumPanel extends StatelessWidget {
               canExportHtml: canExportHtml,
               onApplyTemplate: onApplyTemplate,
               onExportHtml: onExportHtml,
+              dense: true,
             ),
             WorkbenchSaveActions(
               isSaving: isSaving,
@@ -144,6 +146,7 @@ class WorkDetailSanctumPanel extends StatelessWidget {
               onReset: onReset,
               canDeleteMd: canDeleteMd,
               onDeleteArchive: onDeleteArchive,
+              dense: true,
             ),
           ],
         ),

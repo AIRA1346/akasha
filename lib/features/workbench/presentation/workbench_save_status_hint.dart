@@ -12,12 +12,14 @@ class WorkbenchSaveStatusHint extends StatelessWidget {
     required this.isSaving,
     this.lastSavedAt,
     this.explicitSaveLabel = 'md 저장',
+    this.dense = false,
   });
 
   final bool isDirty;
   final bool isSaving;
   final DateTime? lastSavedAt;
   final String explicitSaveLabel;
+  final bool dense;
 
   @override
   Widget build(BuildContext context) {
@@ -50,10 +52,14 @@ class WorkbenchSaveStatusHint extends StatelessWidget {
 
   Widget _line(String text, Color color) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: AkashaSpacing.sm),
+      padding: EdgeInsets.only(bottom: dense ? AkashaSpacing.xs : AkashaSpacing.sm),
       child: Text(
         text,
-        style: AkashaTypography.caption.copyWith(color: color, height: 1.35),
+        style: AkashaTypography.caption.copyWith(
+          color: color,
+          height: dense ? 1.2 : 1.35,
+          fontSize: dense ? 10 : null,
+        ),
       ),
     );
   }
