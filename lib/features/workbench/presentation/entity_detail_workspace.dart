@@ -438,6 +438,12 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
     _scheduleAutoSave();
   }
 
+  void _onDraftTagsChanged(List<String> tags) {
+    setState(() => _draftTags = tags);
+    _updatePreview();
+    _markDirty();
+  }
+
   void _scheduleAutoSave() {
     _autosave.schedule(
       persistEnabled: !_suppressPersist,
@@ -661,7 +667,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   Widget build(BuildContext context) {
     return WorkbenchSaveShortcuts(
       onSave: () => _saveJournal(),
-      child: buildEntityDetailWorkspaceBody(this),
+      child: _buildEntityDetailWorkspaceBody(this),
     );
   }
 }

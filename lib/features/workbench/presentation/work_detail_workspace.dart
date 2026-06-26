@@ -416,6 +416,19 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _scheduleAutoSave();
   }
 
+  void _onDraftRatingChanged(double v) => setState(() => _draftRating = v);
+
+  void _onDraftWorkStatusChanged(String v) =>
+      setState(() => _draftWorkStatus = v);
+
+  void _onDraftMyStatusChanged(String v) => setState(() => _draftMyStatus = v);
+
+  void _onDraftHallOfFameChanged(bool v) =>
+      setState(() => _draftHallOfFame = v);
+
+  void _onDraftTagsChanged(List<String> tags) =>
+      setState(() => _draftTags = tags);
+
   void _scheduleAutoSave() {
     _autosave.schedule(
       persistEnabled: !_suppressPersist,
@@ -627,7 +640,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   Widget build(BuildContext context) {
     return WorkbenchSaveShortcuts(
       onSave: _saveArchive,
-      child: buildWorkDetailWorkspaceBody(this),
+      child: _buildWorkDetailWorkspaceBody(this),
     );
   }
 }

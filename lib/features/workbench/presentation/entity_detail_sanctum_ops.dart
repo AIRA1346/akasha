@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../models/akasha_item.dart';
 import '../../../models/enums.dart';
-import '../../../models/user_catalog_entity.dart';
 import '../../../widgets/web_image_search_dialog.dart';
 import 'work_detail_sanctum_ops.dart';
 

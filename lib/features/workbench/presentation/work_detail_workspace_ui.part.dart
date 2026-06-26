@@ -1,6 +1,6 @@
 part of 'work_detail_workspace.dart';
 
-WorkDetailWorkspaceBody buildWorkDetailWorkspaceBody(
+WorkDetailWorkspaceBody _buildWorkDetailWorkspaceBody(
   _WorkDetailWorkspaceState state,
 ) {
   final widget = state.widget;
@@ -51,13 +51,11 @@ WorkDetailWorkspaceBody buildWorkDetailWorkspaceBody(
     onOpenIncoming: state._openIncoming,
     onOpenSameDay: state._openSameDay,
     onMarkDirty: state._markDirty,
-    onDraftRatingChanged: (v) => state.setState(() => state._draftRating = v),
-    onDraftWorkStatusChanged: (v) =>
-        state.setState(() => state._draftWorkStatus = v),
-    onDraftMyStatusChanged: (v) => state.setState(() => state._draftMyStatus = v),
-    onDraftHallOfFameChanged: (v) =>
-        state.setState(() => state._draftHallOfFame = v),
-    onDraftTagsChanged: (tags) => state.setState(() => state._draftTags = tags),
+    onDraftRatingChanged: state._onDraftRatingChanged,
+    onDraftWorkStatusChanged: state._onDraftWorkStatusChanged,
+    onDraftMyStatusChanged: state._onDraftMyStatusChanged,
+    onDraftHallOfFameChanged: state._onDraftHallOfFameChanged,
+    onDraftTagsChanged: state._onDraftTagsChanged,
     onPosterTap: state._openPosterCorrection,
     onResetToDefaults: state._resetToDefaults,
     onSaveArchive: state._saveArchive,

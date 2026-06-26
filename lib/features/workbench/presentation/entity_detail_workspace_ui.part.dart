@@ -1,6 +1,6 @@
 part of 'entity_detail_workspace.dart';
 
-EntityDetailWorkspaceBody buildEntityDetailWorkspaceBody(
+EntityDetailWorkspaceBody _buildEntityDetailWorkspaceBody(
   _EntityDetailWorkspaceState state,
 ) {
   final widget = state.widget;
@@ -64,10 +64,6 @@ EntityDetailWorkspaceBody buildEntityDetailWorkspaceBody(
     ),
     onOpenIncoming: state._openIncoming,
     onOpenSameDay: state._openSameDay,
-    onDraftTagsChanged: (tags) {
-      state.setState(() => state._draftTags = tags);
-      state._updatePreview();
-      state._markDirty();
-    },
+    onDraftTagsChanged: state._onDraftTagsChanged,
   );
 }

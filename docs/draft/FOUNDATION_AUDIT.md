@@ -13,7 +13,7 @@
 |------|--------------------------|
 | `flutter test` | **605/605 PASS** |
 | `dogfood_precheck.ps1` | **PASS** |
-| `flutter analyze lib` | **0 issue** (Post-F4 lint 정리 후) |
+| `flutter analyze lib` | **0 issue** (P8 workspace UI part 정리 후) |
 | Release build | `build_release.ps1` OK (`202236a`) |
 | Git | `main` **origin보다 17+커밋 앞섬** (미 push) |
 | Foundation F0~F4 | **✅ 완료** |
@@ -147,6 +147,7 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | P5 | `home_dashboard_discovery_section` 분해 | ✅ 713→**248** + loader·cards |
 | P6 | `home_shell_body` 분해 | ✅ 672→**471** + browse·center·preview |
 | P7 | `catalog_entity_browse_view` 분해 | ✅ 694→**361** + loader·widgets |
+| P8 | workspace UI part analyze 정리 | ✅ `setState`·private builder · lib 0 issue |
 
 ---
 
@@ -157,6 +158,7 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS |
 | 2026-06-25 | F4 — LEGACY_REMOVAL_POLICY · 9건 게이트 |
 | 2026-06-25 | Post-F4 재검토 — 대형 파일 재실측 · R14·백로그 · P0/P1 정리 |
+| 2026-06-24 | P8 — workspace UI part `setState` 위임 · `flutter analyze lib` 0 issue |
 | 2026-06-24 | P7 — `catalog_entity_browse_view` loader·widgets 분해 (**361줄**) |
 | 2026-06-24 | P6 — `home_shell_body` browse·center·preview 분해 (**471줄**) |
 | 2026-06-24 | P5 — `home_dashboard_discovery_section` loader·cards 분해 (**248줄**) |
