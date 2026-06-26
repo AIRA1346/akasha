@@ -76,6 +76,7 @@ void main() {
             child: PersonalLibraryView(
               filteredCards: cards,
               allItems: const [],
+              vaultLinked: false,
               sectionPrefs: sectionPrefs,
               displayName: '테스터',
               isCuratedLibraryActive: false,
