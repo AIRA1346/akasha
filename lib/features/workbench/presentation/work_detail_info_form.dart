@@ -364,7 +364,7 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
               ),
             ),
             if (widget.onFocusSanctum != null)
-              Icon(Icons.chevron_right_rounded, size: 18, color: Colors.grey[600]),
+              Icon(Icons.chevron_right_rounded, size: 18, color: AkashaColors.textCaption),
           ],
         ),
       ),

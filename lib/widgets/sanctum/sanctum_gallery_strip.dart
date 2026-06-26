@@ -29,7 +29,7 @@ class SanctumGalleryStrip extends StatelessWidget {
             style: TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.bold,
-              color: Colors.grey[400],
+              color: AkashaColors.textSecondary,
             ),
           ),
           const SizedBox(height: 10),

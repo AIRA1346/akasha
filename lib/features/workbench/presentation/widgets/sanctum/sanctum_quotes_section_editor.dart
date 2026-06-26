@@ -42,7 +42,7 @@ class SanctumQuotesSectionEditor extends StatelessWidget {
                   Icon(
                     Icons.format_quote_outlined,
                     size: 16,
-                    color: Colors.grey[500],
+                    color: AkashaColors.textMuted,
                   ),
                   const SizedBox(width: AkashaSpacing.sm),
                   Text(
@@ -55,7 +55,7 @@ class SanctumQuotesSectionEditor extends StatelessWidget {
                   Icon(
                     expanded ? Icons.expand_less : Icons.expand_more,
                     size: 18,
-                    color: Colors.grey[500],
+                    color: AkashaColors.textMuted,
                   ),
                 ],
               ),

@@ -161,7 +161,7 @@ class EntityDetailInfoPanel extends StatelessWidget {
                                         Icon(
                                           Icons.chevron_right_rounded,
                                           size: 18,
-                                          color: Colors.grey[600],
+                                          color: AkashaColors.textCaption,
                                         ),
                                     ],
                                   ),

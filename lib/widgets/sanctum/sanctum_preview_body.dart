@@ -9,6 +9,7 @@ import 'sanctum_cast_strip.dart';
 import 'sanctum_gallery_strip.dart';
 import 'sanctum_quote_cards.dart';
 import 'sanctum_wiki_inline_text.dart';
+import '../../theme/akasha_colors.dart';
 
 /// 슬롯 인지 Sanctum 미리보기 — 출연·갤러리 스트립 + wiki 칩 인라인 본문.
 class SanctumPreviewBody extends StatelessWidget {
@@ -37,7 +38,7 @@ class SanctumPreviewBody extends StatelessWidget {
         child: Text(
           'Sanctum 페이지가 비어 있습니다.\n'
           '「본문」 또는 「.md」 탭에서 감상·메모를 작성해 보세요.',
-          style: TextStyle(fontSize: 13, color: Colors.grey[500], height: 1.5),
+          style: TextStyle(fontSize: 13, color: AkashaColors.textMuted, height: 1.5),
         ),
       );
     }
@@ -50,14 +51,14 @@ class SanctumPreviewBody extends StatelessWidget {
           mdFilePath: mdFilePath,
           userCatalog: userCatalog,
           onWikiLinkTap: onWikiLinkTap,
-          style: TextStyle(fontSize: 14, height: 1.55, color: Colors.grey[200]),
+          style: TextStyle(fontSize: 14, height: 1.55, color: AkashaColors.textPrimary),
         ),
       );
     }
 
     final parsed = _parsePreviewSections(data);
     final bodyStyle =
-        TextStyle(fontSize: 14, height: 1.55, color: Colors.grey[200]);
+        TextStyle(fontSize: 14, height: 1.55, color: AkashaColors.textPrimary);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

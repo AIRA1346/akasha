@@ -25,7 +25,7 @@ class _MarkdownEditorStatusBar extends StatelessWidget {
         children: [
           Text(
             'Ln $lineNumber',
-            style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+            style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
           ),
           const SizedBox(width: 10),
           Expanded(
@@ -33,7 +33,7 @@ class _MarkdownEditorStatusBar extends StatelessWidget {
               sectionLabel,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+              style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
             ),
           ),
           if (isSaving)
@@ -44,13 +44,13 @@ class _MarkdownEditorStatusBar extends StatelessWidget {
           else if (!isDirty && lastSavedAt != null)
             Text(
               '저장됨 ${_formatTime(lastSavedAt!)}',
-              style: TextStyle(fontSize: 10, color: Colors.grey[600]),
+              style: TextStyle(fontSize: 10, color: AkashaColors.textCaption),
             ),
           if (hint != null && !isSaving) ...[
             const SizedBox(width: 8),
             Text(
               hint!,
-              style: TextStyle(fontSize: 10, color: Colors.grey[600]),
+              style: TextStyle(fontSize: 10, color: AkashaColors.textCaption),
             ),
           ],
           if (isDirty && !isSaving)
@@ -205,14 +205,14 @@ class _MarkdownSlashMenu extends StatelessWidget {
                       leading: Icon(
                         _getIconForCommand(cmd.id),
                         size: 18,
-                        color: isSelected ? Colors.tealAccent : Colors.grey[400],
+                        color: isSelected ? Colors.tealAccent : AkashaColors.textSecondary,
                       ),
                       title: Text(
                         cmd.label,
                         style: TextStyle(
                           fontSize: 12,
                           fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                          color: isSelected ? Colors.tealAccent : Colors.grey[200],
+                          color: isSelected ? Colors.tealAccent : AkashaColors.textPrimary,
                         ),
                       ),
                       subtitle: cmd.description.isNotEmpty
@@ -222,7 +222,7 @@ class _MarkdownSlashMenu extends StatelessWidget {
                                 fontSize: 10,
                                 color: isSelected
                                     ? Colors.tealAccent.withValues(alpha: 0.7)
-                                    : Colors.grey[500],
+                                    : AkashaColors.textMuted,
                               ),
                             )
                           : null,
@@ -265,12 +265,12 @@ class _MarkdownTextField extends StatelessWidget {
         fontSize: 13,
         height: 1.45,
         fontFamily: 'Consolas',
-        color: Colors.grey[200],
+        color: AkashaColors.textPrimary,
       ),
       cursorColor: Colors.tealAccent,
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(color: Colors.grey[700], height: 1.45),
+        hintStyle: TextStyle(color: AkashaColors.textCaption, height: 1.45),
         filled: true,
         fillColor: const Color(0xFF0E0E16),
         border: OutlineInputBorder(
@@ -347,7 +347,7 @@ class _MarkdownFindBar extends StatelessWidget {
             const SizedBox(width: 6),
             Text(
               findController.text.isEmpty ? '' : '$matchCount',
-              style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+              style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
             ),
             IconButton(
               onPressed: onFindPrevious,
@@ -504,7 +504,7 @@ class _MarkdownEditorToolbar extends StatelessWidget {
               icon: Icon(
                 Icons.list_alt,
                 size: 18,
-                color: sections.isEmpty ? Colors.grey[700] : Colors.grey[300],
+                color: sections.isEmpty ? AkashaColors.textCaption : AkashaColors.textSecondary,
               ),
               padding: EdgeInsets.zero,
               onSelected: onJumpToSection,
@@ -523,7 +523,7 @@ class _MarkdownEditorToolbar extends StatelessWidget {
             PopupMenuButton<String>(
               tooltip: '섹션 삽입',
               icon: Icon(Icons.add_circle_outline,
-                  size: 18, color: Colors.grey[300]),
+                  size: 18, color: AkashaColors.textSecondary),
               padding: EdgeInsets.zero,
               onSelected: (v) {
                 switch (v) {
@@ -580,8 +580,8 @@ class _MarkdownEditorToolbar extends StatelessWidget {
       visualDensity: VisualDensity.compact,
       padding: const EdgeInsets.all(6),
       constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
-      color: Colors.grey[300],
-      disabledColor: Colors.grey[700],
+      color: AkashaColors.textSecondary,
+      disabledColor: AkashaColors.textCaption,
     );
   }
 }

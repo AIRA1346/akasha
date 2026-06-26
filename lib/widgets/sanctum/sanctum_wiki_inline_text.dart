@@ -5,6 +5,7 @@ import '../../core/ports/user_catalog_port.dart';
 import '../../models/sanctum_gallery_entry.dart';
 import 'entity_wiki_chip.dart';
 import 'sanctum_vault_image.dart';
+import '../../theme/akasha_colors.dart';
 
 /// 본문 텍스트의 `[[entityId|Title]]` 토큰을 인라인 칩으로 렌더.
 class SanctumWikiInlineText extends StatelessWidget {
@@ -29,7 +30,7 @@ class SanctumWikiInlineText extends StatelessWidget {
         TextStyle(
           fontSize: 14,
           height: 1.55,
-          color: Colors.grey[200],
+          color: AkashaColors.textPrimary,
         );
 
     if (!_wikiPattern.hasMatch(text)) {

@@ -66,7 +66,7 @@ class SanctumCastStrip extends StatelessWidget {
             style: TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.bold,
-              color: Colors.grey[400],
+              color: AkashaColors.textSecondary,
             ),
           ),
           const SizedBox(height: 10),
@@ -127,7 +127,7 @@ class SanctumCastStrip extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontSize: 9,
-                                color: Colors.grey[500],
+                                color: AkashaColors.textMuted,
                               ),
                             ),
                         ],

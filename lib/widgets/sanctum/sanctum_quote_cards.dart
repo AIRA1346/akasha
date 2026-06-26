@@ -75,7 +75,7 @@ class SanctumQuoteCards extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 10,
                           fontWeight: FontWeight.w600,
-                          color: Colors.grey[500],
+                          color: AkashaColors.textMuted,
                           letterSpacing: 0.2,
                         ),
                       ),

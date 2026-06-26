@@ -134,7 +134,7 @@ class _WorkDetailConnectionsPanelState extends State<WorkDetailConnectionsPanel>
               child: Text(
                 '섹션의 「추가」로 Entity를 연결합니다. 인물은 출연 슬롯, 그 외는 감상 본문에 [[링크]]가 삽입됩니다.',
                 style: AkashaTypography.caption.copyWith(
-                  color: Colors.grey[500],
+                  color: AkashaColors.textMuted,
                 ),
               ),
             ),
@@ -151,7 +151,7 @@ class _WorkDetailConnectionsPanelState extends State<WorkDetailConnectionsPanel>
             onAddWork: widget.onAddWorkLink,
             sectionTitleStyle: AkashaTypography.caption.copyWith(
               fontWeight: FontWeight.bold,
-              color: Colors.grey[300],
+              color: AkashaColors.textSecondary,
             ),
           ),
           const SizedBox(height: AkashaSpacing.lg),
@@ -252,7 +252,7 @@ class _PanelTab extends StatelessWidget {
           style: TextStyle(
             fontSize: 11,
             fontWeight: selected ? FontWeight.bold : FontWeight.normal,
-            color: selected ? Colors.white : Colors.grey[500],
+            color: selected ? Colors.white : AkashaColors.textMuted,
           ),
         ),
       ),

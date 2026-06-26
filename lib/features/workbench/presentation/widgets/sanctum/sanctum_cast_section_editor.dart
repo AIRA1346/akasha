@@ -195,7 +195,7 @@ class _CastEntryRowState extends State<_CastEntryRow> {
             ),
             IconButton(
               onPressed: widget.onRemove,
-              icon: Icon(Icons.close, size: 16, color: Colors.grey[500]),
+              icon: Icon(Icons.close, size: 16, color: AkashaColors.textMuted),
               visualDensity: VisualDensity.compact,
               padding: EdgeInsets.zero,
               constraints: const BoxConstraints(minWidth: 28, minHeight: 28),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../utils/vault_asset_resolver.dart';
 import '../safe_local_image.dart';
+import '../../theme/akasha_colors.dart';
 
 /// Sanctum 미리보기 — vault 상대 경로 마크다운 이미지.
 class SanctumVaultImage extends StatelessWidget {
@@ -62,7 +63,7 @@ class SanctumVaultImage extends StatelessWidget {
             Text(
               caption!,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+              style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
             ),
           ],
         ],
@@ -75,7 +76,7 @@ class SanctumVaultImage extends StatelessWidget {
       height: height,
       color: Colors.black26,
       child: Center(
-        child: Icon(Icons.broken_image, size: 28, color: Colors.grey[600]),
+        child: Icon(Icons.broken_image, size: 28, color: AkashaColors.textCaption),
       ),
     );
   }

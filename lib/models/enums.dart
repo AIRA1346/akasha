@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'category_descriptor.dart';
+import '../theme/akasha_colors.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  AKASHA — 카테고리 & 상태 Enum 정의
@@ -110,7 +111,7 @@ Color myStatusDotColor(String label) {
     '하차함': Colors.red,
     '중도포기(하차)': Colors.red,
   };
-  return map[label] ?? Colors.grey;
+  return map[label] ?? AkashaColors.textMuted;
 }
 
 /// 카테고리별 대표 그라디언트 색상 (포스터 플레이스홀더용)

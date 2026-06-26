@@ -139,7 +139,7 @@ class _EntityDetailConnectionsPanelState
               child: Text(
                 '섹션의 「추가」로 연결하면 기록 본문에 [[링크]]가 삽입됩니다.',
                 style: AkashaTypography.caption.copyWith(
-                  color: Colors.grey[500],
+                  color: AkashaColors.textMuted,
                 ),
               ),
             ),
@@ -156,7 +156,7 @@ class _EntityDetailConnectionsPanelState
             onRecordCta: widget.onFocusSanctum,
             sectionTitleStyle: AkashaTypography.caption.copyWith(
               fontWeight: FontWeight.bold,
-              color: Colors.grey[300],
+              color: AkashaColors.textSecondary,
             ),
           ),
           const SizedBox(height: AkashaSpacing.lg),
@@ -258,7 +258,7 @@ class _PanelTab extends StatelessWidget {
           label,
           style: AkashaTypography.caption.copyWith(
             fontWeight: selected ? FontWeight.bold : FontWeight.w500,
-            color: selected ? Colors.white : Colors.grey[500],
+            color: selected ? Colors.white : AkashaColors.textMuted,
           ),
         ),
       ),

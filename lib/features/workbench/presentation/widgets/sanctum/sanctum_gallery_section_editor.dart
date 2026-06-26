@@ -56,7 +56,7 @@ class SanctumGallerySectionEditor extends StatelessWidget {
                     label: const Text('붙여넣기', style: TextStyle(fontSize: 11)),
                     style: TextButton.styleFrom(
                       visualDensity: VisualDensity.compact,
-                      foregroundColor: Colors.grey[400],
+                      foregroundColor: AkashaColors.textSecondary,
                     ),
                   ),
                   TextButton.icon(
@@ -135,7 +135,7 @@ class SanctumGallerySectionEditor extends StatelessWidget {
     }
     return ColoredBox(
       color: AkashaColors.workbenchEditor,
-      child: Icon(Icons.broken_image, color: Colors.grey[600]),
+      child: Icon(Icons.broken_image, color: AkashaColors.textCaption),
     );
   }
 }

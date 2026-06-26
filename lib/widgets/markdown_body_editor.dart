@@ -13,6 +13,7 @@ import '../utils/markdown_find_replace.dart';
 import '../utils/markdown_section_index.dart';
 import '../utils/markdown_slash_command_patch.dart';
 import '../utils/markdown_slash_commands.dart';
+import '../theme/akasha_colors.dart';
 
 
 part 'markdown_editor_parts.dart';

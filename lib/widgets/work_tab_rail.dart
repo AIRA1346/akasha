@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../features/workbench/presentation/collectible_tab.dart';
 import '../widgets/poster_image.dart';
+import '../theme/akasha_colors.dart';
 
 /// 열린 작품 탭 레일 (2열)
 class WorkTabRail extends StatelessWidget {
@@ -40,14 +41,14 @@ class WorkTabRail extends StatelessWidget {
                     Icon(
                       collapsed ? Icons.chevron_right : Icons.chevron_left,
                       size: 18,
-                      color: Colors.grey[500],
+                      color: AkashaColors.textMuted,
                     ),
                     if (!collapsed)
                       Text(
                         '탭',
                         style: TextStyle(
                           fontSize: 11,
-                          color: Colors.grey[500],
+                          color: AkashaColors.textMuted,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -64,7 +65,7 @@ class WorkTabRail extends StatelessWidget {
                   quarterTurns: collapsed ? 0 : 0,
                   child: Text(
                     collapsed ? '·' : '작품 없음',
-                    style: TextStyle(fontSize: 10, color: Colors.grey[600]),
+                    style: TextStyle(fontSize: 10, color: AkashaColors.textCaption),
                   ),
                 ),
               ),
@@ -177,7 +178,7 @@ class _TabTile extends StatelessWidget {
                         fontSize: 11,
                         fontWeight:
                             active ? FontWeight.w700 : FontWeight.w500,
-                        color: active ? Colors.white : Colors.grey[400],
+                        color: active ? Colors.white : AkashaColors.textSecondary,
                         height: 1.2,
                       ),
                     ),
@@ -199,7 +200,7 @@ class _TabTile extends StatelessWidget {
                   padding: EdgeInsets.zero,
                   iconSize: 16,
                   onPressed: onClose,
-                  icon: Icon(Icons.close, color: Colors.grey[600]),
+                  icon: Icon(Icons.close, color: AkashaColors.textCaption),
                 ),
               ),
             ],

@@ -26,7 +26,7 @@ class WorkbenchBreadcrumb extends StatelessWidget {
                 child: Icon(
                   Icons.chevron_right,
                   size: 14,
-                  color: Colors.grey[600],
+                  color: AkashaColors.textCaption,
                 ),
               ),
             _SegmentChip(segment: segments[i], isLast: i == segments.length - 1),
@@ -57,7 +57,7 @@ class _SegmentChip extends StatelessWidget {
   Widget build(BuildContext context) {
     final style = isLast
         ? AkashaTypography.caption.copyWith(
-            color: Colors.grey[200],
+            color: AkashaColors.textPrimary,
             fontWeight: FontWeight.w600,
           )
         : AkashaTypography.caption.copyWith(color: AkashaColors.accent);

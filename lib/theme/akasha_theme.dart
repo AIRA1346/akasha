@@ -28,7 +28,7 @@ abstract final class AkashaTheme {
         color: AkashaColors.surfaceElevated,
       ),
       dividerTheme: DividerThemeData(
-        color: Colors.grey.withValues(alpha: 0.15),
+        color: AkashaColors.borderSubtle(0.15),
       ),
       chipTheme: base.chipTheme.copyWith(
         selectedColor: AkashaColors.accent.withValues(alpha: 0.2),

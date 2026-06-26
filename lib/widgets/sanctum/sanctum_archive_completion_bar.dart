@@ -32,7 +32,7 @@ class SanctumArchiveCompletionBar extends StatelessWidget {
                 '기록 완성도',
                 style: AkashaTypography.caption.copyWith(
                   fontWeight: FontWeight.w600,
-                  color: Colors.grey[400],
+                  color: AkashaColors.textSecondary,
                 ),
               ),
               const Spacer(),
@@ -96,14 +96,14 @@ class _SlotChip extends StatelessWidget {
           Icon(
             filled ? Icons.check_circle : Icons.circle_outlined,
             size: 12,
-            color: filled ? AkashaColors.accent : Colors.grey[600],
+            color: filled ? AkashaColors.accent : AkashaColors.textCaption,
           ),
           const SizedBox(width: 4),
           Text(
             criterion.label,
             style: TextStyle(
               fontSize: 10,
-              color: filled ? Colors.grey[200] : Colors.grey[600],
+              color: filled ? AkashaColors.textPrimary : AkashaColors.textCaption,
             ),
           ),
         ],
