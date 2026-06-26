@@ -1,7 +1,7 @@
 # AKASHA Current State (현재 상태)
 
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
-> **갱신:** 2026-06-25 (test **605** · analyze 0 error · Foundation F0 ✅ · Sprint B1 dogfood)  
+> **갱신:** 2026-06-26 (test **610+** · analyze 0 error · B1 ✅ · Vault agent ✅)  
 
 ---
 
@@ -73,10 +73,15 @@
 * **F3** ✅ — R14-B Preview·Neighbors·Sanctum hint 토큰
 * **F4** ✅ — [LEGACY_REMOVAL_POLICY.md](../draft/LEGACY_REMOVAL_POLICY.md) · 9건 게이트 · v1.0 works=false
 
-### Ⅳ. Sprint B1 (Dogfood)
+### Ⅳ. Sprint B1 (Dogfood) — ✅ 완료
+
 * SSOT: [SPRINT_B1_DOGFOOD.md](SPRINT_B1_DOGFOOD.md)
-* 자동: `.\scripts\dogfood_precheck.ps1` (test → ci_registry → preflight → sw1_a → quality_gate --release)
-* 수동: Release 빌드에서 볼트·Work/Entity `.md` 루프 · P0 QA 12/12 재확인
+* Sanctum 컴팩트 푸터 · Release 빌드 UI 검증 완료
+
+### Ⅳ-b. Vault Agent (2026-06-26)
+
+* [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md) — 에이전트·외부 편집 SSOT
+* 볼트 `VAULT_README.md` 자동 생성 · `.akasha/entity_path_index.json`
 
 ---
 
@@ -89,7 +94,7 @@
 | **Phase 2** | 카탈로그 확장성 및 CI (10k scale) | **완료 (100%)** |
 | **Phase 6.2** | 워크벤치 상세 통합 (Workbench Parity) | **완료 (100%)** |
 | **Phase 6.3** | incoming/sameDay·connections coordinator | **완료 (100%)** |
-| **M3** | Steam Release 준비 | **보류 (⏸️)** (M2 depot, IAP, 스토어 등록은 완료되었으나 품질 폴리시 충족을 위해 홀드) |
+| **M3** | Steam Release 준비 | **착수 가능** (M2 depot·IAP·스토어 완료 · B1·Foundation ✅) |
 | **Phase 3** | Entity 타입 다각화 (Work 이외) | **미착수** |
 | **Phase 4** | 타임라인 아카이브 | **미착수** |
 | **Phase 5** | 엔티티 연결성 (Connection) | **미착수** |

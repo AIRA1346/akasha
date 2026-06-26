@@ -15,13 +15,22 @@
 | `dogfood_precheck.ps1` | **PASS** |
 | `flutter analyze lib` | **0 issue** (P8 workspace UI part 정리 후) |
 | Release build | `build_release.ps1` OK (`202236a`) |
-| Git | `main` **origin보다 17+커밋 앞섬** (미 push) |
+| Git | `main` **origin 동기화** (`2af7872` push 완료) |
 | Foundation F0~F4 | **✅ 완료** |
-| B1 수동 dogfood | **사용자 진행** (Q/D 체크리스트 미완) |
+| B1 수동 dogfood | **✅ 완료** |
 
-**판단:** Gate·Registry·Foundation Sprint는 건강. **R14 토큰화 완료.** 출시 전 병목은 B1 수동 검증·대형 파일 분해 잔여.
+**판단:** Gate·Registry·Foundation Sprint는 건강. **R14 토큰화 완료.** Vault agent readme·path index ✅. 다음 병목: 대형 파일 분해·M3.
 
 ---
+
+## 1-b. Vault Agent (2026-06-26)
+
+| 항목 | 상태 |
+|------|------|
+| `VAULT_README.md` 자동 생성 | ✅ `2af7872` |
+| `entity_path_index.json` | ✅ |
+| Entity 제목 변경 → 파일 rename | ✅ |
+| SSOT | [VAULT_AGENT_GUIDE.md](../active/VAULT_AGENT_GUIDE.md) |
 
 ## 2. F0 자동 검증 로그
 
@@ -58,7 +67,7 @@
 | 297 | `home_shell_body_center.dart` | P6 추출 |
 | **361** | `catalog_entity_browse_view.dart` | P7 ✅ loader·widgets 분리 |
 | **126** | `poster_card.dart` | P9 ✅ style·layouts 분리 |
-| 590 | `work_link_neighbors_sections.dart` | F3 토큰화 |
+| 590 | `work_link_neighbors_sections.dart` | P10 ✅ **207** + chrome·layouts |
 | 587 | `registry_shard_loader.dart` | |
 | 537 | `home_shell_controller.dart` | Phase 7 분해 완료 |
 | **254** | `work_sanctum_section_editor.dart` | F2 ✅ |
@@ -149,6 +158,7 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | P7 | `catalog_entity_browse_view` 분해 | ✅ 694→**361** + loader·widgets |
 | P8 | workspace UI part analyze 정리 | ✅ `setState`·private builder · lib 0 issue |
 | P9 | `poster_card` 분해 | ✅ 668→**126** + style·layouts |
+| P10 | `work_link_neighbors_sections` 분해 | ✅ 590→**207** + chrome·character·connected works |
 
 ---
 
@@ -159,6 +169,8 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS |
 | 2026-06-25 | F4 — LEGACY_REMOVAL_POLICY · 9건 게이트 |
 | 2026-06-25 | Post-F4 재검토 — 대형 파일 재실측 · R14·백로그 · P0/P1 정리 |
+| 2026-06-26 | P10 — `work_link_neighbors` chrome·layouts 분해 (**207줄** shell) |
+| 2026-06-26 | Vault agent — VAULT_README · entity_path_index · `VAULT_AGENT_GUIDE` |
 | 2026-06-24 | P9 — `poster_card` style·layouts 분해 (**126줄** shell) |
 | 2026-06-24 | P8 — workspace UI part `setState` 위임 · `flutter analyze lib` 0 issue |
 | 2026-06-24 | P7 — `catalog_entity_browse_view` loader·widgets 분해 (**361줄**) |

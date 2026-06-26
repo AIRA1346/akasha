@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import '../core/archiving/entity_anchor.dart';
 import '../models/akasha_item.dart';
 import '../models/user_catalog_entity.dart';
-import '../theme/akasha_colors.dart';
 import '../theme/akasha_typography.dart';
 import '../utils/work_link_neighbors.dart';
-import '../utils/connection_similarity.dart';
-import 'poster_image.dart';
+import 'link_neighbors_section_chrome.dart';
+import 'work_link_character_layouts.dart';
+import 'work_link_connected_works_list.dart';
 import 'work_preview_theme_clusters_section.dart';
 
 /// 작품·프리뷰·워크벤치 공통 — 링크 이웃 섹션 (연결 우선 UX).
@@ -117,7 +117,7 @@ class WorkLinkNeighborsSections extends StatelessWidget {
           addLabel: '사건 추가',
           child: neighbors.events.isEmpty
               ? null
-              : _EntityChipList(
+              : LinkNeighborsEntityChipList(
                   entities: neighbors.events,
                   onOpenEntity: onOpenEntity,
                 ),
@@ -136,7 +136,7 @@ class WorkLinkNeighborsSections extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     if (neighbors.concepts.isNotEmpty)
-                      _EntityChipList(
+                      LinkNeighborsEntityChipList(
                         entities: neighbors.concepts,
                         onOpenEntity: onOpenEntity,
                       ),
@@ -147,7 +147,7 @@ class WorkLinkNeighborsSections extends StatelessWidget {
                         spacing: 6,
                         runSpacing: 6,
                         children: conceptTags
-                            .map((tag) => _ConceptTagChip(label: tag))
+                            .map((tag) => LinkNeighborsConceptTagChip(label: tag))
                             .toList(),
                       ),
                     ],
@@ -164,7 +164,7 @@ class WorkLinkNeighborsSections extends StatelessWidget {
           addLabel: '장소 추가',
           child: neighbors.places.isEmpty
               ? null
-              : _EntityChipList(
+              : LinkNeighborsEntityChipList(
                   entities: neighbors.places,
                   onOpenEntity: onOpenEntity,
                 ),
@@ -179,7 +179,7 @@ class WorkLinkNeighborsSections extends StatelessWidget {
           addLabel: '조직 추가',
           child: neighbors.organizations.isEmpty
               ? null
-              : _EntityChipList(
+              : LinkNeighborsEntityChipList(
                   entities: neighbors.organizations,
                   onOpenEntity: onOpenEntity,
                 ),
@@ -196,425 +196,20 @@ class WorkLinkNeighborsSections extends StatelessWidget {
     VoidCallback? onAdd,
     String addLabel = '추가',
   }) {
-    if (!showEmptySections && isEmpty) return const SizedBox.shrink();
-
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 14),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            children: [
-              Expanded(child: Text(title, style: titleStyle)),
-              if (onAdd != null)
-                TextButton.icon(
-                  onPressed: onAdd,
-                  icon: const Icon(Icons.add, size: 14),
-                  label: Text(
-                    addLabel,
-                    style: const TextStyle(fontSize: 10),
-                  ),
-                  style: TextButton.styleFrom(
-                    visualDensity: VisualDensity.compact,
-                    padding: const EdgeInsets.symmetric(horizontal: 4),
-                    minimumSize: Size.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    foregroundColor: AkashaColors.accent,
-                  ),
-                ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          if (isEmpty)
-            _EmptyLinkCta(
-              message: '아직 $title 연결이 없습니다.',
-              onPressed: onLinkCta,
-            )
-          else
-            child!,
-        ],
+    return LinkNeighborsSection(
+      title: title,
+      isEmpty: isEmpty,
+      titleStyle: titleStyle,
+      showEmptySections: showEmptySections,
+      onAdd: onAdd,
+      addLabel: addLabel,
+      emptyChild: LinkNeighborsEmptyLinkCta(
+        message: '아직 $title 연결이 없습니다.',
+        onPressed: onLinkCta,
       ),
+      child: child,
     );
   }
 
   static final _defaultSectionTitle = AkashaTypography.sectionTitle;
-}
-
-class _EmptyLinkCta extends StatelessWidget {
-  const _EmptyLinkCta({
-    required this.message,
-    this.onPressed,
-  });
-
-  final String message;
-  final VoidCallback? onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-      decoration: BoxDecoration(
-        color: AkashaColors.surface,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AkashaColors.borderSubtle(0.06)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            message,
-            style: AkashaTypography.caption,
-          ),
-          if (onPressed != null) ...[
-            const SizedBox(height: 6),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: TextButton(
-                onPressed: onPressed,
-                style: TextButton.styleFrom(
-                  visualDensity: VisualDensity.compact,
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                  minimumSize: Size.zero,
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                ),
-                child: const Text(
-                  '본문에서 링크 추가하기',
-                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-          ],
-        ],
-      ),
-    );
-  }
-}
-
-class _EntityChipList extends StatelessWidget {
-  const _EntityChipList({
-    required this.entities,
-    this.onOpenEntity,
-  });
-
-  final List<UserCatalogEntity> entities;
-  final void Function(UserCatalogEntity entity)? onOpenEntity;
-
-  @override
-  Widget build(BuildContext context) {
-    return Wrap(
-      spacing: 6,
-      runSpacing: 6,
-      children: entities.map((entity) {
-        return ActionChip(
-          label: Text(
-            entity.title,
-            style: const TextStyle(fontSize: 10, color: Colors.white),
-          ),
-          backgroundColor: AkashaColors.surface,
-          side: BorderSide(color: Colors.white.withValues(alpha: 0.08)),
-          visualDensity: VisualDensity.compact,
-          onPressed:
-              onOpenEntity == null ? null : () => onOpenEntity!(entity),
-        );
-      }).toList(),
-    );
-  }
-}
-
-class _ConceptTagChip extends StatelessWidget {
-  const _ConceptTagChip({required this.label});
-
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(6),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
-      ),
-      child: Text(
-        label,
-        style: AkashaTypography.caption.copyWith(color: AkashaColors.textSecondary),
-      ),
-    );
-  }
-}
-
-class WorkLinkCharacterRow extends StatelessWidget {
-  const WorkLinkCharacterRow({
-    super.key,
-    required this.characters,
-    this.onOpenEntity,
-  });
-
-  final List<UserCatalogEntity> characters;
-  final void Function(UserCatalogEntity entity)? onOpenEntity;
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: characters.map((person) {
-          final avatarItem = EntityItem(
-            entityType: EntityAnchorType.person,
-            entityId: person.entityId,
-            title: person.title,
-            category: person.subtype,
-            domain: person.domain,
-            creator: person.creator,
-            releaseYear: person.releaseYear,
-            posterPath: person.posterPath,
-            tags: person.tags,
-            addedAt: person.addedAt,
-          );
-
-          return Padding(
-            padding: const EdgeInsets.only(right: 12),
-            child: InkWell(
-              onTap: onOpenEntity == null ? null : () => onOpenEntity!(person),
-              borderRadius: BorderRadius.circular(8),
-              child: SizedBox(
-                width: 56,
-                child: Column(
-                  children: [
-                    ClipOval(
-                      child: SizedBox(
-                        width: 40,
-                        height: 40,
-                        child: PosterImage(item: avatarItem, fit: BoxFit.cover),
-                      ),
-                    ),
-                    const SizedBox(height: 6),
-                    Text(
-                      person.title,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          );
-        }).toList(),
-      ),
-    );
-  }
-}
-
-/// 워크벤치 우측 패널 — 인물 행 (mock 리스트형).
-class WorkLinkCharacterWorkbenchList extends StatelessWidget {
-  const WorkLinkCharacterWorkbenchList({
-    super.key,
-    required this.characters,
-    this.onOpenEntity,
-  });
-
-  final List<UserCatalogEntity> characters;
-  final void Function(UserCatalogEntity entity)? onOpenEntity;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: characters.map((person) {
-        final avatarItem = EntityItem(
-          entityType: EntityAnchorType.person,
-          entityId: person.entityId,
-          title: person.title,
-          category: person.subtype,
-          domain: person.domain,
-          creator: person.creator,
-          releaseYear: person.releaseYear,
-          posterPath: person.posterPath,
-          tags: person.tags,
-          addedAt: person.addedAt,
-        );
-        final role = person.tags.isNotEmpty ? person.tags.first : '인물';
-
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 8),
-          child: Material(
-            color: Colors.white.withValues(alpha: 0.03),
-            borderRadius: BorderRadius.circular(8),
-            child: InkWell(
-              onTap: onOpenEntity == null ? null : () => onOpenEntity!(person),
-              borderRadius: BorderRadius.circular(8),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-                child: Row(
-                  children: [
-                    ClipOval(
-                      child: SizedBox(
-                        width: 36,
-                        height: 36,
-                        child: PosterImage(item: avatarItem, fit: BoxFit.cover),
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            person.title,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
-                              fontSize: 11,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Text(
-                            role,
-                            style: AkashaTypography.caption,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Icon(
-                      Icons.link_rounded,
-                      size: 16,
-                      color: AkashaColors.accent.withValues(alpha: 0.8),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        );
-      }).toList(),
-    );
-  }
-}
-
-class WorkLinkConnectedWorksList extends StatelessWidget {
-  const WorkLinkConnectedWorksList({
-    super.key,
-    required this.works,
-    this.bridgeLabelsByWorkId = const {},
-    this.sourceWork,
-    this.onOpenWork,
-  });
-
-  final List<AkashaItem> works;
-  final Map<String, String> bridgeLabelsByWorkId;
-  final AkashaItem? sourceWork;
-  final void Function(AkashaItem work)? onOpenWork;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: works.map((work) {
-        final bridge = bridgeLabelsByWorkId[work.workId];
-        final percent = sourceWork != null
-            ? workPairSimilarityPercent(sourceWork!, work)
-            : null;
-        final subtitle = bridge ?? (percent != null ? '서사 유사도 $percent%' : null);
-
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 8),
-          child: InkWell(
-            onTap: onOpenWork == null ? null : () => onOpenWork!(work),
-            borderRadius: BorderRadius.circular(6),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4),
-              child: Row(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(4),
-                    child: SizedBox(
-                      width: 28,
-                      height: 40,
-                      child: PosterImage(item: work, fit: BoxFit.cover),
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          work.title,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            fontSize: 11,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        if (subtitle != null) ...[
-                          const SizedBox(height: 2),
-                          Text(
-                            subtitle,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontSize: 9,
-                              color: bridge != null
-                                  ? AkashaColors.accent.withValues(alpha: 0.85)
-                                  : AkashaColors.textCaption,
-                            ),
-                          ),
-                        ],
-                      ],
-                    ),
-                  ),
-                  if (percent != null && bridge == null)
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 6,
-                        vertical: 2,
-                      ),
-                      decoration: BoxDecoration(
-                        color: AkashaColors.accent.withValues(alpha: 0.12),
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                      child: Text(
-                        '$percent%',
-                        style: const TextStyle(
-                          fontSize: 8,
-                          color: AkashaColors.accent,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    )
-                  else if (bridge == null && subtitle == null)
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 6,
-                        vertical: 2,
-                      ),
-                      decoration: BoxDecoration(
-                        color: AkashaColors.surface,
-                        borderRadius: BorderRadius.circular(4),
-                        border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.08),
-                        ),
-                      ),
-                      child: Text(
-                        '링크 연결',
-                        style: AkashaTypography.micro.copyWith(
-                          color: AkashaColors.textMuted,
-                        ),
-                      ),
-                    ),
-                ],
-              ),
-            ),
-          ),
-        );
-      }).toList(),
-    );
-  }
 }

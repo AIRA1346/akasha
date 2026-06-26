@@ -6,7 +6,9 @@ import '../models/user_catalog_entity.dart';
 import '../theme/akasha_colors.dart';
 import '../theme/akasha_typography.dart';
 import '../utils/entity_link_neighbors.dart';
-import 'work_link_neighbors_sections.dart';
+import 'link_neighbors_section_chrome.dart';
+import 'work_link_character_layouts.dart';
+import 'work_link_connected_works_list.dart';
 
 /// Entity 프리뷰·워크벤치 공통 — 연결 섹션 (WorkLinkNeighborsSections와 동일 UX).
 class EntityLinkNeighborsSections extends StatelessWidget {
@@ -114,7 +116,7 @@ class EntityLinkNeighborsSections extends StatelessWidget {
           addLabel: '사건 추가',
           child: neighbors.events.isEmpty
               ? null
-              : _EntityChipList(
+              : LinkNeighborsEntityChipList(
                   entities: neighbors.events,
                   onOpenEntity: onOpenEntity,
                 ),
@@ -133,7 +135,7 @@ class EntityLinkNeighborsSections extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     if (neighbors.concepts.isNotEmpty)
-                      _EntityChipList(
+                      LinkNeighborsEntityChipList(
                         entities: neighbors.concepts,
                         onOpenEntity: onOpenEntity,
                       ),
@@ -144,7 +146,7 @@ class EntityLinkNeighborsSections extends StatelessWidget {
                         spacing: 6,
                         runSpacing: 6,
                         children: entityTags
-                            .map((t) => _ConceptTagChip(label: t))
+                            .map((t) => LinkNeighborsConceptTagChip(label: t))
                             .toList(),
                       ),
                     ],
@@ -161,7 +163,7 @@ class EntityLinkNeighborsSections extends StatelessWidget {
           addLabel: '장소 추가',
           child: neighbors.places.isEmpty
               ? null
-              : _EntityChipList(
+              : LinkNeighborsEntityChipList(
                   entities: neighbors.places,
                   onOpenEntity: onOpenEntity,
                 ),
@@ -176,7 +178,7 @@ class EntityLinkNeighborsSections extends StatelessWidget {
           addLabel: '조직 추가',
           child: neighbors.organizations.isEmpty
               ? null
-              : _EntityChipList(
+              : LinkNeighborsEntityChipList(
                   entities: neighbors.organizations,
                   onOpenEntity: onOpenEntity,
                 ),
@@ -193,122 +195,19 @@ class EntityLinkNeighborsSections extends StatelessWidget {
     VoidCallback? onAdd,
     String addLabel = '추가',
   }) {
-    if (!showEmptySections && isEmpty) return const SizedBox.shrink();
-
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 14),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            children: [
-              Expanded(child: Text(title, style: titleStyle)),
-              if (onAdd != null)
-                TextButton.icon(
-                  onPressed: onAdd,
-                  icon: const Icon(Icons.add, size: 14),
-                  label: Text(
-                    addLabel,
-                    style: const TextStyle(fontSize: 10),
-                  ),
-                  style: TextButton.styleFrom(
-                    visualDensity: VisualDensity.compact,
-                    padding: const EdgeInsets.symmetric(horizontal: 4),
-                    minimumSize: Size.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    foregroundColor: AkashaColors.accent,
-                  ),
-                ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          if (isEmpty)
-            _EmptySectionHint(
-              message: '아직 $title 연결이 없습니다.',
-              onOpenRecord: onRecordCta,
-            )
-          else
-            child!,
-        ],
+    return LinkNeighborsSection(
+      title: title,
+      isEmpty: isEmpty,
+      titleStyle: titleStyle,
+      showEmptySections: showEmptySections,
+      onAdd: onAdd,
+      addLabel: addLabel,
+      emptyChild: LinkNeighborsEmptyHint(
+        message: '아직 $title 연결이 없습니다.',
       ),
+      child: child,
     );
   }
 
   static final _defaultSectionTitle = AkashaTypography.sectionTitle;
-}
-
-class _EmptySectionHint extends StatelessWidget {
-  const _EmptySectionHint({
-    required this.message,
-    this.onOpenRecord,
-  });
-
-  final String message;
-  final VoidCallback? onOpenRecord;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-      decoration: BoxDecoration(
-        color: AkashaColors.surface,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AkashaColors.borderSubtle(0.06)),
-      ),
-      child: Text(message, style: AkashaTypography.caption),
-    );
-  }
-}
-
-class _EntityChipList extends StatelessWidget {
-  const _EntityChipList({
-    required this.entities,
-    this.onOpenEntity,
-  });
-
-  final List<UserCatalogEntity> entities;
-  final void Function(UserCatalogEntity entity)? onOpenEntity;
-
-  @override
-  Widget build(BuildContext context) {
-    return Wrap(
-      spacing: 6,
-      runSpacing: 6,
-      children: entities.map((entity) {
-        return ActionChip(
-          label: Text(
-            entity.title,
-            style: const TextStyle(fontSize: 10, color: Colors.white),
-          ),
-          backgroundColor: AkashaColors.surface,
-          side: BorderSide(color: Colors.white.withValues(alpha: 0.08)),
-          visualDensity: VisualDensity.compact,
-          onPressed:
-              onOpenEntity == null ? null : () => onOpenEntity!(entity),
-        );
-      }).toList(),
-    );
-  }
-}
-
-class _ConceptTagChip extends StatelessWidget {
-  const _ConceptTagChip({required this.label});
-
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(6),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
-      ),
-      child: Text(
-        label,
-        style: AkashaTypography.caption.copyWith(color: AkashaColors.textSecondary),
-      ),
-    );
-  }
 }

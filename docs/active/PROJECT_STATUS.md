@@ -1,7 +1,7 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-06-25 (@10048 · test **605** · **Foundation F0~F4** ✅)  
-> **현재 실행:** **Sprint B1** 수동 dogfood  
+> **갱신:** 2026-06-26 (@10048 · test **610+** · Foundation F0~F4 ✅ · B1 ✅ · Vault agent ✅)  
+> **현재 실행:** **M3** Steam Release 준비 · P10 neighbors 분해  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist](../history/release-readiness-checklist.md)  
 > **정리:** [repo-cleanup-plan](../history/programs/repo-cleanup-plan.md) · Phase 1~2 ✅ (2026-06-12)  
@@ -21,7 +21,7 @@
 | **Phase 6.2** | 전 경로 Workbench 통합 ✅ |
 | **Phase 6.3** | incoming/sameDay·connections coordinator ✅ |
 | **코드 건강** | Phase 0~7 ✅ · **Sanctum C1~C4** ✅ |
-| **다음** | **Sprint B1** 수동 dogfood · M3 (B1 후) |
+| **다음** | **M3** Steam Release · P10 neighbors 분해 |
 | **Scale / Core** | **Phase 2.0~2.3** ✅ @10048 · G1 ✅ · **ADR-010 eager-only batch** ✅ |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `wikidata_ko` active · **10k milestone** ✅ |
@@ -78,10 +78,10 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | 트랙 | 다음 | 우선 |
 |------|------|:----:|
-| **Sprint B** | 품질 다듬기 ← **현재** | **P0** |
+| **Sprint B** | ✅ B1 dogfood · Vault agent | — |
 | **Wave 1 Home** | ✅ shell **40줄** | — |
 | **Catalog G1** | Sprint C · **관측만** | P2 |
-| **M3 Release** | ⏸️ 품질 Ready 시 | — |
+| **M3 Release** | **착수 가능** | **P0** |
 | **Scale/Core** | **보류** | — |
 
 ---
@@ -101,9 +101,9 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | **S** | **Sanctum C1~C4** — wiki 칩·출연·갤러리·완성도·템플릿·HTML | ✅ |
 | **F** | **Foundation F0~F4** — 감사·Sanctum 분해·R14-B·레거시 정책 | ✅ |
 
-**대형 파일 (2026-06-25):** `work_detail_workspace` **~858** · `entity_detail_workspace` **796** · `work_sanctum_section_editor` **254** · `home_shell_controller` **537**
+**대형 파일 (2026-06-26):** `entity_detail_workspace` **~620** · `work_detail_workspace` **~591** · `work_link_neighbors_sections` **~220** (P10) · `home_shell_controller` **537**
 
-감사 SSOT: [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md)
+감사 SSOT: [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md) · Vault: [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)
 
 ---
 
@@ -111,9 +111,9 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | # | 작업 | 우선 |
 |---|------|:----:|
-| 1 | **Sprint B1** 수동 — P0 QA 12/12 · D1~D9 (Sanctum D7~D9) | **P0** |
-| 2 | `git push` — 로컬 커밋 원격 반영 | P1 |
-| 3 | **M3** Steam Release | ⏸️ B1 완료 후 |
+| 1 | **M3** Steam Release 착수 | **P0** |
+| 2 | P10 `work_link_neighbors` 분해 | P1 |
+| 3 | `home_shell_controller` 분해 | P2 |
 
 ---
 
