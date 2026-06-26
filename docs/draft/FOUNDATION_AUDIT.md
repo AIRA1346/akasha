@@ -19,7 +19,7 @@
 | Foundation F0~F4 | **✅ 완료** |
 | B1 수동 dogfood | **사용자 진행** (Q/D 체크리스트 미완) |
 
-**판단:** Gate·Registry·Foundation Sprint는 건강. **출시 전 병목**은 B1 수동 검증과 **워크벤치 대형 파일·R14 전역 토큰** 잔여.
+**판단:** Gate·Registry·Foundation Sprint는 건강. **R14 토큰화 완료.** 출시 전 병목은 B1 수동 검증·대형 파일 분해 잔여.
 
 ---
 
@@ -53,7 +53,7 @@
 |------:|------|------|
 | **583** | `work_detail_workspace.dart` | P2 ✅ (draft bundle·sanctum·link ops) |
 | **615** | `entity_detail_workspace.dart` | P2 ✅ |
-| 713 | `home_dashboard_discovery_section.dart` | FeatureFlags 숨김 |
+| **248** | `home_dashboard_discovery_section.dart` | P5 ✅ loader·cards 분리 |
 | 649 | `home_shell_body.dart` | |
 | 641 | `catalog_entity_browse_view.dart` | |
 | 630 | `poster_card.dart` | |
@@ -125,6 +125,7 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | 4 | Sanctum hint·배너 | ✅ F3 |
 | 5 | `preview_panel_chrome` | ✅ Post-F4 |
 | 6 | Home·Dialog `Colors.grey` ~70파일 | ✅ R14-C (P3) — `lib/screens/home` 33 + home 위젯 24 |
+| 7 | Workbench·Sanctum·Editor `Colors.grey` | ✅ R14-D (P4) — 19파일 · `lib` 전역 0건 |
 
 **금지:** Discovery Engine · Preview stack 정책 · Save Return 문구 변경.
 
@@ -141,6 +142,8 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | P2 | `work_detail_workspace` 분해 | ✅ 857→**583** |
 | P2 | `markdown_body_editor` 분해 | ✅ 730→**455** |
 | P3 | R14-C Home·Dialog grey pass | ✅ 57파일 · `AkashaColors` semantic |
+| P4 | R14-D Workbench·Sanctum grey pass | ✅ 19파일 · `lib` `Colors.grey` 0 |
+| P5 | `home_dashboard_discovery_section` 분해 | ✅ 713→**248** + loader·cards |
 
 ---
 
@@ -151,6 +154,8 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS |
 | 2026-06-25 | F4 — LEGACY_REMOVAL_POLICY · 9건 게이트 |
 | 2026-06-25 | Post-F4 재검토 — 대형 파일 재실측 · R14·백로그 · P0/P1 정리 |
+| 2026-06-24 | P5 — `home_dashboard_discovery_section` loader·cards 분해 (**248줄**) |
+| 2026-06-24 | P4 R14-D — Workbench·Sanctum·Editor grey → `AkashaColors` (19파일, lib 전역 0) |
 | 2026-06-24 | P3 R14-C — Home·Dialog `Colors.grey` → `AkashaColors` (57파일) |
 | 2026-06-24 | P2 work workspace 완료 — draft bundle·sanctum·link session (**583줄**) |
 | 2026-06-24 | P2 `markdown_body_editor` — undo/slash/find/insert ops · shortcuts part |
