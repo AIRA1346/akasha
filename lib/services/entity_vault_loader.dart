@@ -4,10 +4,16 @@ import 'package:path/path.dart' as p;
 
 import '../core/archiving/entity_journal_entry.dart';
 import 'entity_journal_parser.dart';
+import 'entity_path_index_service.dart';
 
 /// `vault/entities/{type}/` 에서 entity journal 로드 — Wave 4.1.
 class EntityVaultLoader {
-  const EntityVaultLoader();
+  const EntityVaultLoader({EntityPathIndexService? pathIndex})
+      : _pathIndex = pathIndex;
+
+  final EntityPathIndexService? _pathIndex;
+
+  EntityPathIndexService get _index => _pathIndex ?? EntityPathIndexService();
 
   Future<List<EntityJournalEntry>> loadFromVault(String? vaultPath) async {
     if (vaultPath == null || vaultPath.isEmpty) return const [];
@@ -39,10 +45,38 @@ class EntityVaultLoader {
     String? vaultPath,
     String entityId,
   ) async {
-    if (entityId.isEmpty) return null;
+    if (entityId.isEmpty || vaultPath == null || vaultPath.isEmpty) {
+      return null;
+    }
+
+    final indexedPath = await _index.lookupAbsolutePath(vaultPath, entityId);
+    if (indexedPath != null) {
+      final file = File(indexedPath);
+      if (await file.exists()) {
+        try {
+          final parsed = EntityJournalParser.parse(
+            await file.readAsString(),
+            indexedPath,
+          );
+          if (parsed != null && parsed.entityId == entityId) {
+            return parsed;
+          }
+        } catch (_) {
+          // fall through to scan + rebuild
+        }
+      }
+    }
+
     final all = await loadFromVault(vaultPath);
     for (final entry in all) {
-      if (entry.entityId == entityId) return entry;
+      if (entry.entityId == entityId) {
+        await _index.upsert(
+          vaultPath: vaultPath,
+          entityId: entityId,
+          absolutePath: entry.storagePath,
+        );
+        return entry;
+      }
     }
     return null;
   }

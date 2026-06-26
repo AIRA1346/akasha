@@ -150,7 +150,7 @@ added_at: "2026-06-19T12:00:00.000Z"
 ---
 entity_type: person
 entity_id: "pe_u_x9y8z7w6"
-record_kind: workJournal       # generic entityJournal — Phase 3 rename 검토
+record_kind: entityJournal
 title: "아인슈타인"
 added_at: "…"
 ---

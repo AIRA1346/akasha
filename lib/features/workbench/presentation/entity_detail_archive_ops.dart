@@ -79,8 +79,10 @@ abstract final class EntityDetailArchiveOps {
       saved = await store.updateEntry(
         entry: existingJournal,
         body: body,
+        title: entityDraft.title,
         tags: tags,
         posterPath: posterPath,
+        vaultPath: vaultPath,
       );
     }
 

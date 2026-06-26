@@ -10,6 +10,8 @@ import '../models/akasha_item.dart';
 import '../utils/app_log.dart';
 import 'markdown_parser.dart';
 import 'user_preferences.dart';
+import 'entity_path_index_service.dart';
+import 'vault_readme_writer.dart';
 import 'vault_work_journal_paths.dart';
 import 'vault_watch_poll_policy.dart';
 
@@ -96,6 +98,8 @@ class AkashaFileService {
       _vaultPath = path;
       await prefs.setString(_prefVaultKey, path);
       await _ensureFolderStructure();
+      await VaultReadmeWriter().write(path);
+      await EntityPathIndexService().ensureIndex(path);
       _startWatching();
     }
     await _refreshVaultFingerprint();
