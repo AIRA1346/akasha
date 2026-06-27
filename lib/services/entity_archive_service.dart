@@ -1,3 +1,4 @@
+import '../core/app_vault.dart';
 import '../core/archiving/entity_anchor.dart';
 import '../core/archiving/entity_journal_entry.dart';
 import '../core/ports/user_catalog_port.dart';
@@ -5,7 +6,6 @@ import '../models/catalog_entity_add_result.dart';
 import '../models/user_catalog_entity.dart';
 import 'entity_catalog_sync.dart';
 import 'entity_vault_store.dart';
-import 'file_service.dart';
 
 /// Person · Event · Concept Archive-First save — R1.
 abstract final class EntityArchiveService {
@@ -40,7 +40,7 @@ abstract final class EntityArchiveService {
       entry: saved,
     );
     await userCatalog.upsert(mirrored);
-    await AkashaFileService().signalVaultChanged();
+    await AppVault.port.signalVaultChanged();
     return (entity: mirrored, entry: saved);
   }
 

@@ -2,8 +2,8 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../core/app_vault.dart';
 import '../models/entity_link_selection.dart';
-import '../services/file_service.dart';
 import '../services/markdown_body_merger.dart';
 import '../utils/markdown_edit_actions.dart';
 import '../utils/markdown_editor_find_controller_ops.dart';
@@ -356,7 +356,7 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
             canUndo: _undoStack.canUndo,
             canRedo: _undoStack.canRedo,
             sections: sections,
-            vaultLinked: AkashaFileService().vaultPath != null,
+            vaultLinked: AppVault.port.vaultPath != null,
             onUndo: _undo,
             onRedo: _redo,
             onBold: () => _wrap('**', '**', placeholder: '굵게'),

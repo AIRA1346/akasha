@@ -5,32 +5,33 @@ import 'package:file_picker/file_picker.dart';
 import 'package:pasteboard/pasteboard.dart';
 import 'package:path/path.dart' as p;
 
-import 'file_service.dart';
+import '../core/app_vault.dart';
+import '../core/ports/vault_port.dart';
 
 /// Sanctum 본문·갤러리 — vault/posters 이미지 가져오기.
 abstract final class SanctumImageImport {
-  static bool get canImport => AkashaFileService().vaultPath != null;
+  static VaultPort get _vault => AppVault.port;
+
+  static bool get canImport => _vault.vaultPath != null;
 
   static Future<String?> pickAndImport() async {
-    final service = AkashaFileService();
-    if (service.vaultPath == null) return null;
+    if (_vault.vaultPath == null) return null;
 
     final result = await FilePicker.pickFiles(type: FileType.image);
     final path = result?.files.single.path;
     if (path == null) return null;
 
     return normalizeRelative(
-      await service.importPosterImage(path),
+      await _vault.importPosterImage(path),
     );
   }
 
   static Future<String?> importFilePath(String absolutePath) async {
-    final service = AkashaFileService();
-    if (service.vaultPath == null) return null;
+    if (_vault.vaultPath == null) return null;
     if (!File(absolutePath).existsSync()) return null;
 
     return normalizeRelative(
-      await service.importPosterImage(absolutePath),
+      await _vault.importPosterImage(absolutePath),
     );
   }
 
@@ -38,11 +39,10 @@ abstract final class SanctumImageImport {
     Uint8List bytes, {
     String extension = 'png',
   }) async {
-    final service = AkashaFileService();
-    if (service.vaultPath == null) return null;
+    if (_vault.vaultPath == null) return null;
 
     return normalizeRelative(
-      await service.importPosterImageFromBytes(bytes, extension: extension),
+      await _vault.importPosterImageFromBytes(bytes, extension: extension),
     );
   }
 

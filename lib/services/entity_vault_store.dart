@@ -11,7 +11,7 @@ import 'entity_journal_parser.dart';
 import 'entity_path_index_service.dart';
 import 'entity_vault_path_conflict.dart';
 import 'event_ledger_service.dart';
-import 'file_service.dart';
+import '../core/app_vault.dart';
 import 'vault_safe_filename.dart';
 
 /// `vault/entities/{type}/` 쓰기 — Wave 4.
@@ -95,7 +95,7 @@ class EntityVaultStore {
       entityId: entity.entityId,
       absolutePath: targetPath,
     );
-    await AkashaFileService().signalVaultChanged();
+    await AppVault.port.signalVaultChanged();
     await _eventLedger.append(
       VaultLedgerEvent(
         type: VaultLedgerEventType.recordSaved,
@@ -179,7 +179,7 @@ class EntityVaultStore {
       entityId: entry.entityId,
       absolutePath: targetPath,
     );
-    await AkashaFileService().signalVaultChanged();
+    await AppVault.port.signalVaultChanged();
     await _eventLedger.append(
       VaultLedgerEvent(
         type: VaultLedgerEventType.recordSaved,
@@ -223,7 +223,7 @@ class EntityVaultStore {
       await _pathIndex.remove(vaultPath: vaultRoot, entityId: entityId);
     }
 
-    await AkashaFileService().signalVaultChanged();
+    await AppVault.port.signalVaultChanged();
     await _eventLedger.append(
       VaultLedgerEvent(
         type: VaultLedgerEventType.recordDeleted,

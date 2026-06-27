@@ -5,12 +5,12 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:path/path.dart' as p;
 
+import '../core/app_vault.dart';
 import '../core/ports/user_catalog_port.dart';
 import '../core/archiving/entity_anchor.dart';
 import '../models/entity_id_codec.dart';
 import '../models/enums.dart';
 import '../models/user_catalog_entity.dart';
-import 'file_service.dart';
 
 /// Tier 1.5 user catalog — `{vault}/catalog/user_entities.json`.
 class UserCatalogStore implements UserCatalogPort {
@@ -45,7 +45,7 @@ class UserCatalogStore implements UserCatalogPort {
   @override
   Future<void> load() async {
     _entities.clear();
-    final vault = AkashaFileService().vaultPath;
+    final vault = AppVault.port.vaultPath;
     if (vault == null || vault.isEmpty) {
       return;
     }
@@ -128,7 +128,7 @@ class UserCatalogStore implements UserCatalogPort {
   Future<void> reloadFromVault() => load();
 
   Future<void> _persist() async {
-    final vault = AkashaFileService().vaultPath;
+    final vault = AppVault.port.vaultPath;
     if (vault == null || vault.isEmpty) return;
 
     final catalogDir = Directory(p.join(vault, 'catalog'));
@@ -145,7 +145,7 @@ class UserCatalogStore implements UserCatalogPort {
       await file.delete();
     }
     await temp.rename(file.path);
-    await AkashaFileService().signalVaultChanged();
+    await AppVault.port.signalVaultChanged();
   }
 
   File _catalogFile(String vaultPath) =>

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/akasha_item.dart';
 import '../models/format_slot.dart';
 import '../models/enums.dart';
-import '../services/file_service.dart';
+import '../core/app_vault.dart';
 import 'poster_card_layouts.dart';
 import 'poster_card_style.dart';
 
@@ -51,7 +51,7 @@ class _PosterCardState extends State<PosterCard> {
   @override
   Widget build(BuildContext context) {
     final item = widget.item;
-    final showArchivedBadge = AkashaFileService().isArchivedInVault(item);
+    final showArchivedBadge = AppVault.port.isArchivedInVault(item);
     final gradColors = categoryGradient(item.category);
     final chrome = PosterCardStyle.resolveChrome(
       item: item,

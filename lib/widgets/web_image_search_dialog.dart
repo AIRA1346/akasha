@@ -3,8 +3,8 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../core/app_vault.dart';
 import '../models/enums.dart';
-import '../services/file_service.dart';
 import '../utils/helpers.dart';
 import '../theme/akasha_colors.dart';
 
@@ -80,11 +80,11 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
     if (fileResult == null || fileResult.files.single.path == null) return;
 
     final path = fileResult.files.single.path!;
-    final service = AkashaFileService();
+    final vault = AppVault.port;
     if (!mounted) return;
 
-    if (service.vaultPath != null) {
-      final relativePath = await service.importPosterImage(path);
+    if (vault.vaultPath != null) {
+      final relativePath = await vault.importPosterImage(path);
       if (relativePath != null && mounted) {
         Navigator.pop(context, relativePath);
       }

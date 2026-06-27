@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'dart:typed_data';
+
 import 'package:akasha/core/ports/vault_port.dart';
 import 'package:akasha/models/akasha_item.dart';
 
@@ -68,6 +70,18 @@ class FakeVaultPort implements VaultPort {
 
   @override
   Future<String?> importPosterImage(String sourceFilePath) async => null;
+
+  @override
+  Future<String?> importPosterImageFromBytes(
+    Uint8List bytes, {
+    String extension = 'png',
+  }) async =>
+      null;
+
+  @override
+  Future<void> signalVaultChanged() async {
+    _updateController.add(null);
+  }
 
   @override
   Stream<void> get onVaultUpdated => _updateController.stream;

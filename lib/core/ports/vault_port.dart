@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import '../../models/akasha_item.dart';
 
 abstract class VaultPort {
@@ -16,6 +18,15 @@ abstract class VaultPort {
 
   /// Copies a local image into the vault assets tree; returns vault-relative path.
   Future<String?> importPosterImage(String sourceFilePath);
+
+  /// Copies in-memory image bytes into the vault assets tree.
+  Future<String?> importPosterImageFromBytes(
+    Uint8List bytes, {
+    String extension = 'png',
+  });
+
+  /// Notifies listeners that vault contents changed outside [saveItem]/[deleteItem].
+  Future<void> signalVaultChanged();
 
   Stream<void> get onVaultUpdated;
   Map<String, AkashaItem> get inMemoryCache;

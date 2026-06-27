@@ -1,10 +1,10 @@
+import '../core/app_vault.dart';
 import '../models/akasha_item.dart';
 import '../models/browse_card.dart';
 import '../models/enums.dart';
 import '../models/format_slot.dart';
 import '../models/franchise_group.dart';
 import '../utils/helpers.dart';
-import 'file_service.dart';
 import 'franchise_registry.dart';
 import 'franchise_representative_picker.dart';
 import 'registry_visibility_service.dart';
@@ -262,13 +262,13 @@ class FranchiseFusionService {
 
   /// 볼트 연동 시 .md 아카이브된 workId만 tracked (배지와 동일 기준)
   static Set<String> _archivedWorkIds(List<AkashaItem> allUserItems) {
-    final service = AkashaFileService();
+    final vault = AppVault.port;
     final ids = <String>{};
     for (final item in allUserItems) {
       if (item.workId.isEmpty) continue;
-      final tracked = service.vaultPath == null
+      final tracked = vault.vaultPath == null
           ? true
-          : service.isArchivedInVault(item);
+          : vault.isArchivedInVault(item);
       if (!tracked) continue;
       ids.add(item.workId);
       final resolved = WorksRegistry.resolveWorkId(item.workId);

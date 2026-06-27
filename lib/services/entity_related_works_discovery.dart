@@ -1,12 +1,13 @@
 import '../core/archiving/entity_anchor.dart';
+import '../core/app_vault.dart';
 import '../core/archiving/entity_journal_entry.dart';
 import '../core/ports/record_link_port.dart';
+import '../core/ports/vault_port.dart';
 import '../models/akasha_item.dart';
 import '../models/entity_id_codec.dart';
 import '../models/entity_related_works.dart';
 import '../utils/work_link_resolution.dart';
 import 'entity_vault_loader.dart';
-import 'file_service.dart';
 import 'record_link_navigator.dart';
 
 /// Discovers Work ids linked to an Entity via vault link index (Phase 4 Step 1).
@@ -38,11 +39,11 @@ class RecordLinkEntityRelatedWorksDiscovery
     required List<AkashaItem> vaultItems,
     EntityVaultLoader? vaultLoader,
     String? vaultPath,
-    AkashaFileService? fileService,
+    VaultPort? vault,
   })  : _linkIndex = linkIndex,
         _vaultItems = vaultItems,
         _vaultLoader = vaultLoader ?? const EntityVaultLoader(),
-        _vaultPath = vaultPath ?? fileService?.vaultPath ?? AkashaFileService().vaultPath;
+        _vaultPath = vaultPath ?? vault?.vaultPath ?? AppVault.port.vaultPath;
 
   final RecordLinkPort _linkIndex;
   final List<AkashaItem> _vaultItems;

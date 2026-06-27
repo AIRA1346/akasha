@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import '../../core/ports/vault_port.dart';
 import '../../models/akasha_item.dart';
 import '../../services/file_service.dart';
@@ -41,6 +43,16 @@ class MarkdownVaultAdapter implements VaultPort {
   @override
   Future<String?> importPosterImage(String sourceFilePath) =>
       _fileService.importPosterImage(sourceFilePath);
+
+  @override
+  Future<String?> importPosterImageFromBytes(
+    Uint8List bytes, {
+    String extension = 'png',
+  }) =>
+      _fileService.importPosterImageFromBytes(bytes, extension: extension);
+
+  @override
+  Future<void> signalVaultChanged() => _fileService.signalVaultChanged();
 
   @override
   Stream<void> get onVaultUpdated => _fileService.onVaultUpdated;

@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
+import '../core/app_vault.dart';
 import '../models/akasha_item.dart';
 import '../models/enums.dart';
-import '../services/file_service.dart';
 import 'safe_local_image.dart';
 
 // ════════════════════════════════════════════════════════════════
@@ -259,7 +259,7 @@ class _PosterImageState extends State<PosterImage> {
     final absFile = File(path);
     if (absFile.existsSync()) return absFile;
 
-    final vaultPath = AkashaFileService().vaultPath;
+    final vaultPath = AppVault.port.vaultPath;
     if (vaultPath != null) {
       final vaultFile = File(p.join(vaultPath, path));
       if (vaultFile.existsSync()) return vaultFile;

@@ -1,6 +1,7 @@
+import '../core/ports/vault_port.dart';
 import '../models/akasha_item.dart';
 import '../models/franchise_group.dart';
-import 'file_service.dart';
+import '../core/app_vault.dart';
 import 'franchise_registry.dart';
 import 'works_registry.dart';
 /// 프랜차이즈 IP당 대표 item 선택 + 로컬 검색 dedupe (단일 규칙)
@@ -9,7 +10,7 @@ class FranchiseRepresentativePicker {
   static AkashaItem pickBest(
     List<AkashaItem> candidates,
     FranchiseGroup group, {
-    AkashaFileService? vault,
+    VaultPort? vault,
   }) {
     if (candidates.isEmpty) {
       throw ArgumentError.value(
@@ -20,11 +21,11 @@ class FranchiseRepresentativePicker {
     }
     if (candidates.length == 1) return candidates.first;
 
-    final service = vault ?? AkashaFileService();
+    final port = vault ?? AppVault.port;
     final primaryResolved = WorksRegistry.resolveWorkId(group.primaryWorkId);
 
     final archived =
-        candidates.where((c) => service.isArchivedInVault(c)).toList();
+        candidates.where((c) => port.isArchivedInVault(c)).toList();
     if (archived.isNotEmpty) {
       archived.sort((a, b) => b.addedAt.compareTo(a.addedAt));
       return archived.first;
@@ -46,7 +47,7 @@ class FranchiseRepresentativePicker {
   static AkashaItem? pickForGroup(
     FranchiseGroup group,
     List<AkashaItem> pool, {
-    AkashaFileService? vault,
+    VaultPort? vault,
   }) {
     final candidates = pool.where((item) {
       return FranchiseRegistry.groupFor(item.workId)?.id == group.id;

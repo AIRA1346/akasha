@@ -189,7 +189,7 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | P16b | Dialog·loader Port wiring | ✅ |
 | P20 | R14-B design tokens (Home 핵심) | ✅ 3차 · dashboard·journal·browse 전역 |
 | P21 | Workbench presentation `VaultPort` | ✅ |
-| P23 | `AppVault` + `DetailArchiveSave` Port | ✅ 1차 · fusion·entity picker |
+| P23 | `AppVault` + `DetailArchiveSave` Port | ✅ 2차 · entity·catalog·library·sanctum import |
 
 **금지:** M3 Steam · Discovery Engine · Preview stack · Save Return 정책.
 

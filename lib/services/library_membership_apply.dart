@@ -1,6 +1,6 @@
+import '../core/app_vault.dart';
 import '../models/akasha_item.dart';
 import '../models/membership_apply_result.dart';
-import 'file_service.dart';
 import 'markdown_parser.dart';
 import 'personal_library_membership_service.dart';
 
@@ -49,8 +49,8 @@ class LibraryMembershipApply {
     required Map<String, bool?> desired,
     required Map<String, bool?> initial,
   }) {
-    final fileService = AkashaFileService();
-    if (fileService.vaultPath == null || fileService.isArchivedInVault(draft)) {
+    final vault = AppVault.port;
+    if (vault.vaultPath == null || vault.isArchivedInVault(draft)) {
       return false;
     }
     for (final entry in desired.entries) {
@@ -65,11 +65,11 @@ class LibraryMembershipApply {
     required AkashaItem draft,
     String? titleOverride,
   }) async {
-    final fileService = AkashaFileService();
-    if (fileService.vaultPath == null) {
+    final vault = AppVault.port;
+    if (vault.vaultPath == null) {
       throw LibraryApplyException('볼트가 연결되지 않았습니다.');
     }
-    if (fileService.isArchivedInVault(draft)) {
+    if (vault.isArchivedInVault(draft)) {
       return draft;
     }
 
@@ -80,7 +80,7 @@ class LibraryMembershipApply {
 
     draft.title = title;
     draft.workId = MarkdownParser.ensureWorkId(draft);
-    await fileService.saveItem(draft);
+    await vault.saveItem(draft);
     return draft;
   }
 
@@ -91,8 +91,7 @@ class LibraryMembershipApply {
     required Future<void> Function() reloadItems,
     required List<String> Function(bool useEntireIp) resolveWorkIds,
   }) async {
-    final fileService = AkashaFileService();
-    if (fileService.vaultPath == null) {
+    if (AppVault.port.vaultPath == null) {
       throw LibraryApplyException('볼트가 연결되지 않았습니다.');
     }
 

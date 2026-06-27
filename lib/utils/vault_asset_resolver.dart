@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-import '../services/file_service.dart';
+import '../core/app_vault.dart';
 
 /// Sanctum vault 내 md·이미지 상대경로 해석
 class VaultAssetResolver {
@@ -21,7 +21,7 @@ class VaultAssetResolver {
     final abs = File(trimmed);
     if (p.isAbsolute(trimmed) && abs.existsSync()) return abs;
 
-    final vaultPath = AkashaFileService().vaultPath;
+    final vaultPath = AppVault.port.vaultPath;
     if (vaultPath != null) {
       final fromVault = File(p.join(vaultPath, trimmed.replaceAll('\\', '/')));
       if (fromVault.existsSync()) return fromVault;

@@ -1,15 +1,15 @@
+import '../core/app_vault.dart';
 import '../models/akasha_item.dart';
 import '../models/browse_card.dart';
-import '../services/file_service.dart';
 import '../services/franchise_registry.dart';
 import '../services/works_registry.dart';
 
 /// 볼트에 아카이브된 작품만 추출 (나의 서재·배지와 동일 기준)
 class ArchivedWorksQuery {
   static bool isArchivedItem(AkashaItem item) {
-    final service = AkashaFileService();
-    if (service.vaultPath == null) return true;
-    return service.isArchivedInVault(item);
+    final vault = AppVault.port;
+    if (vault.vaultPath == null) return true;
+    return vault.isArchivedInVault(item);
   }
 
   static List<AkashaItem> archivedItems(List<AkashaItem> allUserItems) {

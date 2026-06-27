@@ -1,10 +1,10 @@
+import '../core/app_vault.dart';
 import '../core/archiving/entity_journal_entry.dart';
 import '../core/archiving/record_link.dart';
 import '../core/ports/user_catalog_port.dart';
 import '../models/akasha_item.dart';
 import '../models/user_catalog_entity.dart';
 import '../services/entity_vault_loader.dart';
-import '../services/file_service.dart';
 import '../services/record_link_navigator.dart';
 
 /// 링크 대상 entity id 해석 + 카탈로그·볼트 journal 폴백.
@@ -39,7 +39,7 @@ abstract final class CatalogEntityResolver {
     if (unique.isEmpty) return const {};
 
     final loader = vaultLoader ?? const EntityVaultLoader();
-    final root = vaultPath ?? AkashaFileService().vaultPath;
+    final root = vaultPath ?? AppVault.port.vaultPath;
     Map<String, EntityJournalEntry>? journalsById;
 
     Future<EntityJournalEntry?> journalFor(String id) async {
