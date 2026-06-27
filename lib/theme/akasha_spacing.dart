@@ -14,4 +14,19 @@ abstract final class AkashaSpacing {
   /// Home vault banner horizontal/vertical inset (R14-B).
   static const EdgeInsets vaultBanner =
       EdgeInsets.symmetric(horizontal: lg, vertical: 6);
+
+  /// Preview panel header padding (R14-B).
+  static const EdgeInsets previewPanelHeader =
+      EdgeInsets.fromLTRB(md, 10, xs, md);
+
+  static const EdgeInsets previewPanelHeaderCompact =
+      EdgeInsets.fromLTRB(md, 10, xs, 10);
+
+  /// Sanctum page panel top chrome (R14-B).
+  static const EdgeInsets sanctumPanelHeader =
+      EdgeInsets.fromLTRB(md, sm, md, xs);
+
+  /// Knowledge graph page header (R14-B).
+  static const EdgeInsets graphPageHeader =
+      EdgeInsets.fromLTRB(xl, xl, xl, sm);
 }

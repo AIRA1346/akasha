@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import '../../../services/file_service.dart';
+import 'workbench_vault.dart';
 
 /// Workbench 탭 공통 자동 저장 타이머 (Work·Entity).
 class WorkbenchAutosaveScheduler {
@@ -17,7 +17,7 @@ class WorkbenchAutosaveScheduler {
   void dispose() => cancel();
 
   bool get hasVault {
-    final path = AkashaFileService().vaultPath;
+    final path = WorkbenchVault.port.vaultPath;
     return path != null && path.isNotEmpty;
   }
 

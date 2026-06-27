@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/user_catalog_entity.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_radius.dart';
 import '../theme/akasha_typography.dart';
 
 /// Work·Entity 링크 이웃 섹션 공통 chrome (제목 행 · 빈 상태 · 칩).
@@ -45,7 +46,7 @@ class LinkNeighborsSection extends StatelessWidget {
                   icon: const Icon(Icons.add, size: 14),
                   label: Text(
                     addLabel,
-                    style: const TextStyle(fontSize: 10),
+                    style: AkashaTypography.caption,
                   ),
                   style: TextButton.styleFrom(
                     visualDensity: VisualDensity.compact,
@@ -104,7 +105,9 @@ class LinkNeighborsEmptyLinkCta extends StatelessWidget {
                 ),
                 child: Text(
                   actionLabel,
-                  style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                  style: AkashaTypography.caption.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
@@ -153,10 +156,12 @@ class LinkNeighborsEntityChipList extends StatelessWidget {
         return ActionChip(
           label: Text(
             entity.title,
-            style: const TextStyle(fontSize: 10, color: Colors.white),
+            style: AkashaTypography.caption.copyWith(
+              color: AkashaColors.textPrimary,
+            ),
           ),
           backgroundColor: AkashaColors.surface,
-          side: BorderSide(color: Colors.white.withValues(alpha: 0.08)),
+          side: BorderSide(color: AkashaColors.borderSubtle(0.08)),
           visualDensity: VisualDensity.compact,
           onPressed:
               onOpenEntity == null ? null : () => onOpenEntity!(entity),
@@ -176,9 +181,9 @@ class LinkNeighborsConceptTagChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(6),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+        color: AkashaColors.borderSubtle(0.05),
+        borderRadius: AkashaRadius.smBorder,
+        border: Border.all(color: AkashaColors.borderSubtle(0.08)),
       ),
       child: Text(
         label,

@@ -111,7 +111,7 @@ mixin _WorkDetailWorkspacePersist on _WorkDetailWorkspaceStateBase {
     await WorkDetailLibraryOps.addToLibrary(
       item: _item,
       onAddToLibrary: widget.onAddToLibrary,
-      vaultConnected: AkashaFileService().vaultPath != null,
+      vaultConnected: WorkbenchVault.port.vaultPath != null,
       isArchived: () => _isArchived,
       saveArchive: () => _saveArchive(),
       showSnack: _showSnack,

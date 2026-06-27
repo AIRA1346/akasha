@@ -1,8 +1,8 @@
 import '../../../core/archiving/same_day_record_ref.dart';
 import '../../../core/ports/record_link_port.dart';
-import '../../../services/file_service.dart';
 import '../../../services/record_link_stale_label.dart';
 import '../../../services/same_day_record_service.dart';
+import 'workbench_vault.dart';
 
 class WorkbenchIncomingLinksSnapshot {
   const WorkbenchIncomingLinksSnapshot({
@@ -39,7 +39,7 @@ abstract final class WorkbenchRecordLinksLoader {
     String? excludePath,
   }) =>
       SameDayRecordService.findForAnchor(
-        vaultPath: AkashaFileService().vaultPath,
+        vaultPath: WorkbenchVault.port.vaultPath,
         anchor: anchor,
         excludePath: excludePath,
       );

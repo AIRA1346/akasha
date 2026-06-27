@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_radius.dart';
+import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
 import '../../../widgets/poster_image.dart';
 import 'preview_record_view_model.dart';
@@ -14,7 +16,7 @@ class PreviewRecordHero extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: AkashaRadius.xlBorder,
       child: AspectRatio(
         aspectRatio: model.heroAspectRatio,
         child: PosterImage(item: model.posterItem, fit: BoxFit.cover),
@@ -35,16 +37,16 @@ class PreviewRecordTitleBlock extends StatelessWidget {
       children: [
         Text(
           model.title,
-          style: AkashaTypography.headline.copyWith(fontSize: 17, height: 1.25),
+          style: AkashaTypography.previewTitle,
         ),
         if (model.subtitle != null) ...[
-          const SizedBox(height: 4),
+          SizedBox(height: AkashaSpacing.xs),
           Text(
             model.subtitle!,
             style: AkashaTypography.bodySecondary.copyWith(height: 1.3),
           ),
         ],
-        const SizedBox(height: 6),
+        SizedBox(height: AkashaSpacing.xs + 2),
         Text(model.metaLine, style: AkashaTypography.bodySecondary),
       ],
     );
@@ -74,11 +76,11 @@ class PreviewRecordActionBar extends StatelessWidget {
               visualDensity: VisualDensity.compact,
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               foregroundColor: AkashaColors.textSecondary,
-              side: BorderSide(color: Colors.white.withValues(alpha: 0.12)),
+              side: BorderSide(color: AkashaColors.borderSubtle(0.12)),
             ),
             child: const Icon(Icons.arrow_back_rounded, size: 16),
           ),
-          const SizedBox(width: 8),
+          SizedBox(width: AkashaSpacing.sm),
         ],
         Expanded(
           child: FilledButton(
@@ -87,17 +89,14 @@ class PreviewRecordActionBar extends StatelessWidget {
               backgroundColor: AkashaColors.accent,
               padding: const EdgeInsets.symmetric(vertical: 11),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: AkashaRadius.lgBorder,
               ),
             ),
-            child: const Row(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  '상세 정보',
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(width: 2),
+                Text('상세 정보', style: AkashaTypography.buttonLabel),
+                const SizedBox(width: 2),
                 Icon(Icons.chevron_right_rounded, size: 18),
               ],
             ),
@@ -119,21 +118,24 @@ class PreviewRecordCoreInfoSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text('핵심 정보', style: AkashaTypography.sectionLabel),
-        const SizedBox(height: 10),
+        SizedBox(height: AkashaSpacing.sm + 2),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 10,
+            vertical: AkashaSpacing.sm,
+          ),
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.03),
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: Colors.white.withValues(alpha: 0.06)),
+            color: AkashaColors.borderSubtle(0.03),
+            borderRadius: AkashaRadius.lgBorder,
+            border: Border.all(color: AkashaColors.borderSubtle(0.06)),
           ),
           child: Column(
             children: [
               for (var i = 0; i < rows.length; i++) ...[
                 if (i > 0)
                   Divider(
-                    height: 12,
-                    color: Colors.white.withValues(alpha: 0.05),
+                    height: AkashaSpacing.md,
+                    color: AkashaColors.borderSubtle(0.05),
                   ),
                 _CoreInfoRowWidget(row: rows[i]),
               ],

@@ -11,7 +11,7 @@
 
 | 항목 | 결과 (재검토 2026-06-25) |
 |------|--------------------------|
-| `flutter test` | **605/605 PASS** |
+| `flutter test` | **610/610 PASS** |
 | `dogfood_precheck.ps1` | **PASS** |
 | `flutter analyze lib` | **0 issue** (P8 workspace UI part 정리 후) |
 | Release build | `build_release.ps1` OK (`202236a`) |
@@ -172,7 +172,8 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | P15 | `entity_detail` / `work_detail` workspace 재분해 | ✅ 673→**278** · 646→**273** + vault·links·persist |
 | P16 | ADR-007 Port wiring 확대 (coordinator·presentation) | ✅ Home coordinator graph `VaultPort` 주입 · `vaultLinked`/`vaultPath` 스레딩 |
 | P16b | Dialog·loader Port wiring 잔여 | ✅ vault·clipboard·add_work·entity_link_picker·catalog browse loader |
-| P20 | R14-B spacing·radius·typo 토큰 (Home 핵심) | ✅ `dialogBody`·`settingsLabel`·`vaultBanner` · banner·picker·settings dialog |
+| P20 | R14-B spacing·radius·typo 토큰 (Home 핵심) | ✅ `dialogBody`·`settingsLabel`·`vaultBanner` · banner·picker·settings dialog · Preview/Graph/Sanctum 2차 |
+| P21 | Workbench presentation `VaultPort` | ✅ `workbench_vault.dart` · archive·autosave·workspace·poster |
 
 ---
 
@@ -186,7 +187,8 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | P15 | workspace 재안정화 (entity/work) | ✅ |
 | P16 | ADR-007 Port wiring 확대 | ✅ |
 | P16b | Dialog·loader Port wiring | ✅ |
-| P20 | R14-B design tokens (Home 핵심) | ✅ 1차 · Preview/Graph 전역 pass 잔여 |
+| P20 | R14-B design tokens (Home 핵심) | ✅ 2차 · Preview/Graph/Sanctum + `WorkbenchVault` |
+| P21 | Workbench presentation `VaultPort` wiring | ✅ `WorkbenchVault.port` · archive·autosave·workspace |
 
 **금지:** M3 Steam · Discovery Engine · Preview stack · Save Return 정책.
 
@@ -197,7 +199,8 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS |
 | 2026-06-25 | F4 — LEGACY_REMOVAL_POLICY · 9건 게이트 |
 | 2026-06-25 | Post-F4 재검토 — 대형 파일 재실측 · R14·백로그 · P0/P1 정리 |
-| 2026-06-24 | P20 — R14-B Home 토큰 1차 (`dialogBody`·`settingsLabel`·`vaultBanner`) · vault banner·entity link picker·settings dialog |
+| 2026-06-24 | P21 — Workbench presentation `WorkbenchVault.port` wiring · `VaultPort.deleteItem` → `Future<bool>` |
+| 2026-06-24 | P20 2차 — Preview/Graph/Sanctum R14-B 토큰 (`graphTitle`·`editableTitle`·`compactLabel` 등) |
 | 2026-06-24 | P16b — dialog·loader `VaultPort`/`vaultPath` wiring 완료 (`screens/home` `AkashaFileService` 0, `cacheKeyFor` static 제외) |
 | 2026-06-26 | P16 — Home coordinator graph `VaultPort` wiring (`HomeVaultCoordinator`·wiring·browse·preview·workbench·dialogs·membership·library UI) · presentation `vaultLinked`/`vaultPath` 스레딩 |
 | 2026-06-26 | P15 — `entity_detail` / `work_detail` workspace vault·links·persist part 분해 (**278** / **273** shell) |

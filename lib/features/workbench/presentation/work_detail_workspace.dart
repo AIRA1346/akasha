@@ -10,7 +10,6 @@ import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/entity_link_selection.dart';
 import '../../../models/user_catalog_entity.dart';
-import '../../../services/file_service.dart';
 import '../../../services/link_candidate_service.dart';
 import '../../../services/sanctum_body_templates.dart';
 import '../../../widgets/sanctum_page_panel.dart';
@@ -28,6 +27,7 @@ import 'work_detail_save_orchestrator.dart';
 import 'work_detail_save_ui_patch.dart';
 import 'workbench_autosave_scheduler.dart';
 import 'workbench_linked_record_ops.dart';
+import 'workbench_vault.dart';
 import 'workbench_vault_disk_ops.dart';
 import 'workbench_vault_reload_flow.dart';
 import 'workbench_vault_reload_messages.dart';
@@ -217,7 +217,7 @@ class _WorkDetailWorkspaceState extends _WorkDetailWorkspaceStateBase
     _fileCtrl = TextEditingController();
     _applyItem(widget.item, resetPageView: true);
     WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
-    _vaultSub = AkashaFileService().onVaultUpdated.listen((_) {
+    _vaultSub = WorkbenchVault.port.onVaultUpdated.listen((_) {
       _onVaultDiskChanged();
     });
     _connections.refreshDiskMtime(_item.filePath);

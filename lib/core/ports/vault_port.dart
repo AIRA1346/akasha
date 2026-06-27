@@ -12,7 +12,7 @@ abstract class VaultPort {
   Future<int> countMarkdownFiles();
 
   Future<void> saveItem(AkashaItem item, {String? oldTitle});
-  Future<void> deleteItem(AkashaItem item);
+  Future<bool> deleteItem(AkashaItem item);
 
   /// Copies a local image into the vault assets tree; returns vault-relative path.
   Future<String?> importPosterImage(String sourceFilePath);

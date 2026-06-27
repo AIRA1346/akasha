@@ -1,7 +1,8 @@
 import '../../../models/akasha_item.dart';
-import '../../../services/file_service.dart';
 import '../../../screens/detail/detail_archive_save.dart';
+import '../../../services/file_service.dart';
 import '../../../widgets/sanctum_page_panel.dart';
+import 'workbench_vault.dart';
 
 class WorkDetailSaveOutcome {
   const WorkDetailSaveOutcome({
@@ -16,12 +17,12 @@ class WorkDetailSaveOutcome {
 /// WorkDetailWorkspace 저장·아카이브 상태 (E2-6 확장).
 abstract final class WorkDetailArchiveOps {
   static bool isArchivedInVault(AkashaItem item) =>
-      AkashaFileService().isArchivedInVault(item);
+      WorkbenchVault.port.isArchivedInVault(item);
 
   static bool isArchived(AkashaItem item) {
-    final service = AkashaFileService();
+    final vault = WorkbenchVault.port;
     return isArchivedInVault(item) ||
-        service.inMemoryCache.containsKey(AkashaFileService.cacheKeyFor(item));
+        vault.inMemoryCache.containsKey(AkashaFileService.cacheKeyFor(item));
   }
 
   static Future<WorkDetailSaveOutcome> persist({
@@ -39,10 +40,10 @@ abstract final class WorkDetailArchiveOps {
   }
 
   static Future<bool> deleteFromVault(AkashaItem item) =>
-      AkashaFileService().deleteAkashaItem(item);
+      WorkbenchVault.port.deleteItem(item);
 
   static String saveSuccessMessage(AkashaItem saved) {
-    final hasVault = AkashaFileService().vaultPath != null;
+    final hasVault = WorkbenchVault.port.vaultPath != null;
     return hasVault
         ? '"${saved.title}" md 파일을 저장했습니다.'
         : '"${saved.title}"을(를) 임시 저장했습니다.';

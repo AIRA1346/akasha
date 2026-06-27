@@ -214,7 +214,7 @@ mixin _EntityDetailWorkspacePersist on _EntityDetailWorkspaceStateBase {
     await EntityDetailLibraryOps.addToLibrary(
       entity: _entity,
       onAddToLibrary: widget.onAddToLibrary,
-      vaultConnected: AkashaFileService().vaultPath != null,
+      vaultConnected: WorkbenchVault.port.vaultPath != null,
       hasJournal: () => EntityDetailArchiveOps.hasJournal(_journal),
       saveJournal: () => _saveJournal(),
       showSnack: _showSnack,

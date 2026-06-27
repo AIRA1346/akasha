@@ -74,4 +74,47 @@ abstract final class AkashaTypography {
     fontWeight: FontWeight.bold,
     color: AkashaColors.textMuted,
   );
+
+  /// Preview rail title (R14-B).
+  static const previewTitle = TextStyle(
+    fontSize: 17,
+    fontWeight: FontWeight.w700,
+    color: AkashaColors.textPrimary,
+    height: 1.25,
+  );
+
+  /// Compact button / tab labels (R14-B Preview·Sanctum).
+  static const compactLabel = TextStyle(
+    fontSize: 11,
+    fontWeight: FontWeight.w600,
+    color: AkashaColors.textSecondary,
+  );
+
+  /// Primary action button label (R14-B Preview).
+  static const buttonLabel = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
+    color: AkashaColors.textPrimary,
+  );
+
+  /// Graph / browse section titles (R14-B).
+  static const graphTitle = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    color: AkashaColors.textPrimary,
+  );
+
+  /// List row title (R14-B Graph).
+  static const listItemTitle = TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.w600,
+    color: AkashaColors.textPrimary,
+  );
+
+  /// Sanctum editable title field (R14-B).
+  static const editableTitle = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.bold,
+    color: AkashaColors.textPrimary,
+  );
 }

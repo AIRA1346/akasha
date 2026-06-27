@@ -12,7 +12,6 @@ import '../../../models/akasha_item.dart';
 import '../../../models/entity_link_selection.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_vault_store.dart';
-import '../../../services/file_service.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import 'entity_detail_archive_ops.dart';
 import 'entity_detail_connections_coordinator.dart';
@@ -26,6 +25,7 @@ import 'entity_detail_save_orchestrator.dart';
 import 'entity_detail_save_ui_patch.dart';
 import 'workbench_autosave_scheduler.dart';
 import 'workbench_linked_record_ops.dart';
+import 'workbench_vault.dart';
 import 'workbench_vault_disk_ops.dart';
 import 'workbench_vault_reload_flow.dart';
 import 'workbench_vault_reload_messages.dart';
@@ -203,7 +203,7 @@ class _EntityDetailWorkspaceState extends _EntityDetailWorkspaceStateBase
     _fileCtrl = TextEditingController(text: snapshot.fileText);
     _pageView = snapshot.pageView;
     WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
-    _vaultSub = AkashaFileService().onVaultUpdated.listen((_) {
+    _vaultSub = WorkbenchVault.port.onVaultUpdated.listen((_) {
       _onVaultDiskChanged();
     });
     _connections.refreshDiskMtime(_journal?.storagePath);

@@ -9,6 +9,8 @@ import 'sanctum/sanctum_archive_completion_bar.dart';
 import '../models/entity_link_selection.dart';
 import '../models/user_catalog_entity.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_radius.dart';
+import '../theme/akasha_spacing.dart';
 import '../theme/akasha_typography.dart';
 import 'markdown_body_editor.dart';
 import 'sanctum/sanctum_preview_body.dart';
@@ -86,7 +88,7 @@ class SanctumPagePanel extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Padding(
-          padding: const EdgeInsets.fromLTRB(12, 8, 12, 4),
+          padding: AkashaSpacing.sanctumPanelHeader,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -94,23 +96,23 @@ class SanctumPagePanel extends StatelessWidget {
                 builder: (context, constraints) {
                   final viewSwitcher = SegmentedButton<SanctumPageView>(
                     segments: [
-                      const ButtonSegment(
+                      ButtonSegment(
                         value: SanctumPageView.preview,
-                        icon: Icon(Icons.visibility_outlined, size: 16),
-                        label: Text('보기', style: TextStyle(fontSize: 11)),
+                        icon: const Icon(Icons.visibility_outlined, size: 16),
+                        label: Text('보기', style: AkashaTypography.compactLabel),
                       ),
                       ButtonSegment(
                         value: SanctumPageView.body,
                         icon: const Icon(Icons.edit_note_outlined, size: 16),
                         label: Text(
                           sectionLayout ? '기록' : '본문',
-                          style: const TextStyle(fontSize: 11),
+                          style: AkashaTypography.compactLabel,
                         ),
                       ),
-                      const ButtonSegment(
+                      ButtonSegment(
                         value: SanctumPageView.file,
-                        icon: Icon(Icons.description_outlined, size: 16),
-                        label: Text('.md', style: TextStyle(fontSize: 11)),
+                        icon: const Icon(Icons.description_outlined, size: 16),
+                        label: Text('.md', style: AkashaTypography.compactLabel),
                       ),
                     ],
                     selected: {view},
@@ -138,7 +140,7 @@ class SanctumPagePanel extends StatelessWidget {
                           children: [
                             const Icon(Icons.menu_book_outlined,
                                 size: 18, color: AkashaColors.accent),
-                            const SizedBox(width: 8),
+                        const SizedBox(width: AkashaSpacing.sm),
                             Expanded(
                               child: Text(
                                 headerTitle,
@@ -148,7 +150,7 @@ class SanctumPagePanel extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 8),
+                        SizedBox(height: AkashaSpacing.sm),
                         viewSwitcher,
                       ],
                     );
@@ -173,15 +175,11 @@ class SanctumPagePanel extends StatelessWidget {
                 },
               ),
               if (titleController != null) ...[
-                const SizedBox(height: 8),
+                SizedBox(height: AkashaSpacing.sm),
                 TextField(
                   controller: titleController,
                   onChanged: (_) => onTitleChanged?.call(),
-                  style: const TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                  style: AkashaTypography.editableTitle,
                   decoration: InputDecoration(
                     isDense: true,
                     hintText: '작품 제목',
@@ -189,14 +187,12 @@ class SanctumPagePanel extends StatelessWidget {
                       color: AkashaColors.textCaption,
                     ),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide(
-                        color: Colors.white.withValues(alpha: 0.08),
-                      ),
+                      borderRadius: AkashaRadius.smBorder,
+                      borderSide: BorderSide(color: AkashaColors.borderSubtle(0.08)),
                     ),
-                    contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 10,
-                      vertical: 8,
+                    contentPadding: EdgeInsets.symmetric(
+                      horizontal: AkashaSpacing.sm + 2,
+                      vertical: AkashaSpacing.sm,
                     ),
                   ),
                 ),
@@ -247,15 +243,20 @@ class SanctumPagePanel extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: onDismissExternalChange,
-                      child: const Text('유지', style: TextStyle(fontSize: 11)),
+                      child: Text('유지', style: AkashaTypography.compactLabel),
                     ),
                     FilledButton(
                       onPressed: onReloadFromDisk,
                       style: FilledButton.styleFrom(
                         visualDensity: VisualDensity.compact,
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: AkashaSpacing.sm + 2,
+                        ),
                       ),
-                      child: const Text('다시 불러오기', style: TextStyle(fontSize: 11)),
+                      child: Text(
+                        '다시 불러오기',
+                        style: AkashaTypography.compactLabel,
+                      ),
                     ),
                   ],
                 ),

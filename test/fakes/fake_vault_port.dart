@@ -59,10 +59,11 @@ class FakeVaultPort implements VaultPort {
   }
 
   @override
-  Future<void> deleteItem(AkashaItem item) async {
+  Future<bool> deleteItem(AkashaItem item) async {
     final key = item.workId.isNotEmpty ? item.workId : '${item.category.name}::${item.title}';
-    _cache.remove(key);
+    final removed = _cache.remove(key) != null;
     _updateController.add(null);
+    return removed;
   }
 
   @override

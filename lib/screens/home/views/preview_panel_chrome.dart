@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_radius.dart';
+import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
 
 /// Preview 패널 고정 헤더 — 현재 노드 · 이전 · 기록하기 (R4-C P0).
@@ -34,11 +36,13 @@ class PreviewPanelChrome extends StatelessWidget {
         DecoratedBox(
           decoration: BoxDecoration(
             border: Border(
-              bottom: BorderSide(color: Colors.white.withValues(alpha: 0.08)),
+              bottom: BorderSide(color: AkashaColors.borderSubtle(0.08)),
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.fromLTRB(12, 10, compactHeader ? 4 : 4, compactHeader ? 10 : 12),
+            padding: compactHeader
+                ? AkashaSpacing.previewPanelHeaderCompact
+                : AkashaSpacing.previewPanelHeader,
             child: compactHeader
                 ? _buildCompactHeader()
                 : _buildLegacyHeader(),
@@ -53,10 +57,13 @@ class PreviewPanelChrome extends StatelessWidget {
     return Row(
       children: [
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AkashaSpacing.sm,
+            vertical: 3,
+          ),
           decoration: BoxDecoration(
             color: AkashaColors.accent.withValues(alpha: 0.12),
-            borderRadius: BorderRadius.circular(4),
+            borderRadius: AkashaRadius.smBorder,
           ),
           child: Text(
             typeLabel,
@@ -89,12 +96,12 @@ class PreviewPanelChrome extends StatelessWidget {
           children: [
             Container(
               padding: const EdgeInsets.symmetric(
-                horizontal: 6,
+                horizontal: AkashaSpacing.xs + 2,
                 vertical: 2,
               ),
               decoration: BoxDecoration(
                 color: AkashaColors.accent.withValues(alpha: 0.12),
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: AkashaRadius.smBorder,
               ),
               child: Text(
                 typeLabel,
@@ -114,7 +121,7 @@ class PreviewPanelChrome extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 6),
+        SizedBox(height: AkashaSpacing.xs + 2),
         Text('지금 보는 항목', style: AkashaTypography.micro),
         const SizedBox(height: 2),
         Text(
@@ -124,33 +131,25 @@ class PreviewPanelChrome extends StatelessWidget {
           style: AkashaTypography.headline.copyWith(fontSize: 15),
         ),
         if (openDetail != null) ...[
-          const SizedBox(height: 10),
+          SizedBox(height: AkashaSpacing.sm + 2),
           Row(
             children: [
               if (canGoBack && onBack != null) ...[
                 OutlinedButton.icon(
                   onPressed: onBack,
                   icon: const Icon(Icons.arrow_back_rounded, size: 14),
-                  label: const Text(
-                    '이전',
-                    style: TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
+                  label: Text('이전', style: AkashaTypography.compactLabel),
                   style: OutlinedButton.styleFrom(
                     visualDensity: VisualDensity.compact,
                     padding: const EdgeInsets.symmetric(
                       horizontal: 10,
-                      vertical: 8,
+                      vertical: AkashaSpacing.sm,
                     ),
                     foregroundColor: AkashaColors.textSecondary,
-                    side: BorderSide(
-                      color: Colors.white.withValues(alpha: 0.12),
-                    ),
+                    side: BorderSide(color: AkashaColors.borderSubtle(0.12)),
                   ),
                 ),
-                const SizedBox(width: 8),
+                SizedBox(width: AkashaSpacing.sm),
               ],
               Expanded(
                 child: FilledButton(
@@ -159,16 +158,10 @@ class PreviewPanelChrome extends StatelessWidget {
                     backgroundColor: AkashaColors.accent,
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: AkashaRadius.mdBorder,
                     ),
                   ),
-                  child: const Text(
-                    '기록하기',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  child: Text('기록하기', style: AkashaTypography.buttonLabel),
                 ),
               ),
             ],

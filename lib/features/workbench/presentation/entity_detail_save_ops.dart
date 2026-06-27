@@ -5,11 +5,11 @@ import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_vault_path_conflict.dart';
 import '../../../services/entity_vault_store.dart';
-import '../../../services/file_service.dart';
 import '../../../utils/entity_tag_validation.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import 'entity_detail_archive_ops.dart';
 import 'entity_detail_draft_ops.dart';
+import 'workbench_vault.dart';
 
 /// EntityDetailWorkspace 저장 플로우 결과.
 sealed class EntityDetailSaveFlowResult {
@@ -101,7 +101,7 @@ abstract final class EntityDetailSaveOps {
     required EntityVaultStore vaultStore,
   }) async {
     try {
-      final vaultPath = AkashaFileService().vaultPath!;
+      final vaultPath = WorkbenchVault.port.vaultPath!;
       final entityDraft = entity.copyWith(tags: tags, posterPath: posterPath);
       final outcome = await EntityDetailArchiveOps.persist(
         vaultPath: vaultPath,

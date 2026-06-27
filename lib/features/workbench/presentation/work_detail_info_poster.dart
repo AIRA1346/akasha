@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
 
 import '../../../models/akasha_item.dart';
-import '../../../services/file_service.dart';
+import '../../../theme/akasha_colors.dart';
 import '../../../widgets/poster_image.dart';
 import 'work_detail_poster_layout.dart';
+import 'workbench_vault.dart';
 
 /// 워크벤치 작품정보 패널 — 포스터 영역.
 class WorkDetailInfoPoster extends StatelessWidget {
@@ -46,7 +47,7 @@ class WorkDetailInfoPoster extends StatelessWidget {
         child: Container(
           width: maxWidth,
           height: height + 24,
-          color: const Color(0xFF0F0F1A),
+          color: AkashaColors.workbenchEditor,
           child: Stack(
             alignment: Alignment.center,
             children: [
@@ -159,7 +160,7 @@ class _BlurredPosterBackground extends StatelessWidget {
     final absFile = File(path);
     if (absFile.existsSync()) return absFile;
 
-    final vaultPath = AkashaFileService().vaultPath;
+    final vaultPath = WorkbenchVault.port.vaultPath;
     if (vaultPath != null) {
       final vaultFile = File(p.join(vaultPath, path));
       if (vaultFile.existsSync()) return vaultFile;

@@ -9,7 +9,7 @@ WorkDetailWorkspaceBody _buildWorkDetailWorkspaceBody(
     preview: state._draft.applyDraft(),
     infoPanelWidth: widget.infoPanelWidth,
     infoPanelLocked: widget.infoPanelLocked,
-    vaultLinked: AkashaFileService().vaultPath != null,
+    vaultLinked: WorkbenchVault.port.vaultPath != null,
     titleCtrl: state._titleCtrl,
     posterUrlCtrl: state._posterUrlCtrl,
     bodyCtrl: state._bodyCtrl,

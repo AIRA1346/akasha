@@ -35,9 +35,8 @@ class MarkdownVaultAdapter implements VaultPort {
       _fileService.saveItem(item, oldTitle: oldTitle);
 
   @override
-  Future<void> deleteItem(AkashaItem item) async {
-    await _fileService.deleteAkashaItem(item);
-  }
+  Future<bool> deleteItem(AkashaItem item) =>
+      _fileService.deleteAkashaItem(item);
 
   @override
   Future<String?> importPosterImage(String sourceFilePath) =>

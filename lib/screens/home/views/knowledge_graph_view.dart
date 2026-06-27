@@ -6,6 +6,9 @@ import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../screens/home/coordinators/home_shell_wiring.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_radius.dart';
+import '../../../theme/akasha_spacing.dart';
+import '../../../theme/akasha_typography.dart';
 import '../../../utils/work_link_neighbors.dart';
 import '../../../widgets/poster_image.dart';
 import '../../../widgets/work_link_neighbors_sections.dart';
@@ -124,22 +127,15 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(24, 24, 24, 8),
+            padding: AkashaSpacing.graphPageHeader,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  '연결 목록',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                const SizedBox(height: 6),
+                Text('연결 목록', style: AkashaTypography.graphTitle),
+                SizedBox(height: AkashaSpacing.xs + 2),
                 Text(
                   '작품별로 묶인 연결을 목록으로 봅니다. (노드 그래프가 아닙니다)',
-                  style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
+                  style: AkashaTypography.body,
                 ),
               ],
             ),
@@ -157,15 +153,15 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                   children: [
                     Text(
                       '볼트에 작품이 없습니다.',
-                      style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
+                      style: AkashaTypography.body,
                     ),
                     if (widget.onConnectEntity != null) ...[
-                      const SizedBox(height: 12),
+                      SizedBox(height: AkashaSpacing.md),
                       OutlinedButton(
                         onPressed: widget.onConnectEntity,
-                        child: const Text(
+                        child: Text(
                           '엔티티 연결하기',
-                          style: TextStyle(fontSize: 11),
+                          style: AkashaTypography.compactLabel,
                         ),
                       ),
                     ],
@@ -176,7 +172,12 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
           else
             Expanded(
               child: ListView.builder(
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
+                padding: const EdgeInsets.fromLTRB(
+                  AkashaSpacing.lg,
+                  AkashaSpacing.sm,
+                  AkashaSpacing.lg,
+                  AkashaSpacing.xl,
+                ),
                 itemCount: works.length,
                 itemBuilder: (context, index) {
                   final work = works[index];
@@ -185,28 +186,28 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                   final loading = _loadingWorkIds.contains(work.workId);
 
                   return Container(
-                    margin: const EdgeInsets.only(bottom: 8),
-                    decoration: AkashaColors.surfaceCard(radius: 10),
+                    margin: EdgeInsets.only(bottom: AkashaSpacing.sm),
+                    decoration: AkashaColors.surfaceCard(radius: AkashaRadius.lg),
                     child: Theme(
                       data: Theme.of(context).copyWith(
                         dividerColor: Colors.transparent,
                       ),
                       child: ExpansionTile(
                         tilePadding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 4,
+                          horizontal: AkashaSpacing.md,
+                          vertical: AkashaSpacing.xs,
                         ),
                         childrenPadding: const EdgeInsets.fromLTRB(
-                          12,
+                          AkashaSpacing.md,
                           0,
-                          12,
-                          12,
+                          AkashaSpacing.md,
+                          AkashaSpacing.md,
                         ),
                         onExpansionChanged: (open) {
                           if (open) _loadNeighbors(work);
                         },
                         leading: ClipRRect(
-                          borderRadius: BorderRadius.circular(6),
+                          borderRadius: AkashaRadius.smBorder,
                           child: SizedBox(
                             width: 36,
                             height: 52,
@@ -217,18 +218,13 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                           work.title,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
-                          ),
+                          style: AkashaTypography.listItemTitle,
                         ),
                         subtitle: Text(
                           count > 0
                               ? '연결 $count개'
                               : '연결 없음 · 기록에서 링크 추가',
-                          style: TextStyle(
-                            fontSize: 11,
+                          style: AkashaTypography.bodySecondary.copyWith(
                             color: count > 0
                                 ? AkashaColors.accent
                                 : AkashaColors.textCaption,
@@ -236,9 +232,9 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                         ),
                         trailing: TextButton(
                           onPressed: () => widget.onOpenWork(work),
-                          child: const Text(
+                          child: Text(
                             '열기',
-                            style: TextStyle(fontSize: 11),
+                            style: AkashaTypography.compactLabel,
                           ),
                         ),
                         children: [
@@ -263,13 +259,12 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                             )
                           else
                             Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 8),
+                              padding: EdgeInsets.symmetric(
+                                vertical: AkashaSpacing.sm,
+                              ),
                               child: Text(
                                 '펼쳐서 연결을 불러오세요.',
-                                style: TextStyle(
-                                  fontSize: 11,
-                                  color: AkashaColors.textCaption,
-                                ),
+                                style: AkashaTypography.bodySecondary,
                               ),
                             ),
                         ],
@@ -286,54 +281,61 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
 
   Widget _buildEmptyLinksBanner() {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(24, 0, 24, 12),
+      padding: EdgeInsets.fromLTRB(
+        AkashaSpacing.lg + AkashaSpacing.sm,
+        0,
+        AkashaSpacing.lg + AkashaSpacing.sm,
+        AkashaSpacing.md,
+      ),
       child: Container(
-        padding: const EdgeInsets.all(16),
-        decoration: AkashaColors.surfaceCard(radius: 10),
+        padding: EdgeInsets.all(AkashaSpacing.lg),
+        decoration: AkashaColors.surfaceCard(radius: AkashaRadius.lg),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
               '아직 연결된 지식이 없습니다.',
-              style: TextStyle(
-                fontSize: 12,
+              style: AkashaTypography.compactLabel.copyWith(
                 fontWeight: FontWeight.bold,
                 color: AkashaColors.textSecondary,
               ),
             ),
-            const SizedBox(height: 4),
+            SizedBox(height: AkashaSpacing.xs),
             Text(
               '첫 연결을 만들어 보세요. 작품 기록에 링크를 추가하면 여기에 표시됩니다.',
-              style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
+              style: AkashaTypography.bodySecondary,
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: AkashaSpacing.md),
             Wrap(
-              spacing: 8,
-              runSpacing: 8,
+              spacing: AkashaSpacing.sm,
+              runSpacing: AkashaSpacing.sm,
               children: [
                 if (widget.onOpenRecord != null)
                   FilledButton.icon(
                     onPressed: widget.onOpenRecord,
                     icon: const Icon(Icons.edit_note_outlined, size: 14),
-                    label: const Text(
+                    label: Text(
                       '기록 열기',
-                      style: TextStyle(fontSize: 11),
+                      style: AkashaTypography.compactLabel,
                     ),
                     style: FilledButton.styleFrom(
                       backgroundColor: AkashaColors.accent,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 8,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: AkashaSpacing.md,
+                        vertical: AkashaSpacing.sm,
                       ),
                     ),
                   ),
                 if (widget.onConnectEntity != null)
                   OutlinedButton.icon(
                     onPressed: widget.onConnectEntity,
-                    icon: const Icon(Icons.person_add_alt_1_outlined, size: 14),
-                    label: const Text(
+                    icon: const Icon(
+                      Icons.person_add_alt_1_outlined,
+                      size: 14,
+                    ),
+                    label: Text(
                       '엔티티 연결하기',
-                      style: TextStyle(fontSize: 11),
+                      style: AkashaTypography.compactLabel,
                     ),
                   ),
               ],

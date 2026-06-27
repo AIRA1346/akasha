@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_radius.dart';
+import '../../../theme/akasha_spacing.dart';
+import '../../../theme/akasha_typography.dart';
 
 /// 프리뷰 하단 빠른 메모 진입. v1: [FeatureFlags.showPreviewMemoBar].
 class PreviewMemoBar extends StatelessWidget {
@@ -17,11 +20,16 @@ class PreviewMemoBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: AkashaColors.surface,
         border: Border(
-          top: BorderSide(color: Colors.white.withValues(alpha: 0.08)),
+          top: BorderSide(color: AkashaColors.borderSubtle(0.08)),
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(12, 8, 8, 10),
+        padding: const EdgeInsets.fromLTRB(
+          AkashaSpacing.md,
+          AkashaSpacing.sm,
+          AkashaSpacing.sm,
+          10,
+        ),
         child: Row(
           children: [
             Expanded(
@@ -29,24 +37,22 @@ class PreviewMemoBar extends StatelessWidget {
                 onTap: onOpenDetail,
                 child: Container(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 12,
+                    horizontal: AkashaSpacing.md,
                     vertical: 10,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.04),
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(
-                      color: Colors.white.withValues(alpha: 0.06),
-                    ),
+                    color: AkashaColors.borderSubtle(0.04),
+                    borderRadius: AkashaRadius.mdBorder,
+                    border: Border.all(color: AkashaColors.borderSubtle(0.06)),
                   ),
                   child: Text(
                     '메모를 추가하세요…',
-                    style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
+                    style: AkashaTypography.bodySecondary,
                   ),
                 ),
               ),
             ),
-            const SizedBox(width: 6),
+            SizedBox(width: AkashaSpacing.xs + 2),
             IconButton(
               onPressed: onOpenDetail,
               icon: const Icon(Icons.add_circle_outline, size: 20),

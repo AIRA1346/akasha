@@ -3,7 +3,7 @@ import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_archive_service.dart';
 import '../../../services/entity_vault_store.dart';
-import '../../../services/file_service.dart';
+import 'workbench_vault.dart';
 
 const kEntityJournalPlaceholderBody = '(기록 대기중)';
 
@@ -33,7 +33,7 @@ abstract final class EntityDetailArchiveOps {
   static bool hasJournal(EntityJournalEntry? journal) => journal != null;
 
   static bool isVaultConnected() {
-    final vaultPath = AkashaFileService().vaultPath;
+    final vaultPath = WorkbenchVault.port.vaultPath;
     return vaultPath != null && vaultPath.isNotEmpty;
   }
 
