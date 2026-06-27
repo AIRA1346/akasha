@@ -21,7 +21,7 @@
 | **Phase 6.2** | 전 경로 Workbench 통합 ✅ |
 | **Phase 6.3** | incoming/sameDay·connections coordinator ✅ |
 | **코드 건강** | Phase 0~7 ✅ · **Sanctum C1~C4** ✅ |
-| **다음** | **Foundation Phase 2** — storage adapter DI 잔여 · `poster_card_layouts` 분해 (M3 보류) |
+| **다음** | **Foundation Phase 2** — `markdown_editor_parts`·`dashboard_sidebar` 분해 (M3 보류) |
 | **Scale / Core** | **Phase 2.0~2.3** ✅ @10048 · G1 ✅ · **ADR-010 eager-only batch** ✅ |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `wikidata_ko` active · **10k milestone** ✅ |
@@ -50,7 +50,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | 도구 | 결과 |
 |------|:----:|
-| `flutter test` | **605 PASS** |
+| `flutter test` | **610 PASS** |
 | `registry_builder` | PASS |
 | `dedupe_linter` | PASS (10048 works) |
 | `quality_gate --strict` | PASS |
@@ -82,7 +82,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | **Wave 1 Home** | ✅ shell **40줄** | — |
 | **Catalog G1** | Sprint C · **관측만** | P2 |
 | **M3 Release** | **보류** (사용자 지시 시 착수) | — |
-| **Foundation P2** | 서비스층 Port 잔여 · 대형 파일 분해 | **P0** |
+| **Foundation P2** | 대형 파일 분해 잔여 | **P0** |
 | **Scale/Core** | **보류** | — |
 
 ---
@@ -102,7 +102,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | **S** | **Sanctum C1~C4** — wiki 칩·출연·갤러리·완성도·템플릿·HTML | ✅ |
 | **F** | **Foundation F0~F4** — 감사·Sanctum 분해·R14-B·레거시 정책 | ✅ |
 
-**대형 파일 (2026-06-26):** `entity_detail_workspace` **278** (P15) · `work_detail_workspace` **273** (P15) · `poster_card_layouts` **~535**
+**대형 파일 (2026-06-26):** `entity_detail_workspace` **278** · `work_detail_workspace` **273** · `poster_card_layouts` **~270** (P24 분해)
 
 감사 SSOT: [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md) · Vault: [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)
 
@@ -112,8 +112,8 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | # | 작업 | 우선 |
 |---|------|:----:|
-| 1 | storage adapter DI (`event_ledger`·`record_link_index` 등) → `VaultPort` | **P0** |
-| 2 | `poster_card_layouts` (~535줄) 분해 | P1 |
+| 1 | `markdown_editor_parts`·`dashboard_sidebar` 분해 | **P0** |
+| 2 | `poster_card_layouts` R14-B 토큰 잔여 | P1 |
 | 3 | **M3** Steam Release | 보류 |
 
 ---

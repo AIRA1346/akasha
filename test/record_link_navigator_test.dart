@@ -81,7 +81,7 @@ work_id: "wk_u_rezero01"
   group('R2-A dogfood loop', () {
     test('title link indexes incoming and resolves work for return', () async {
       final service = AkashaFileService();
-      final index = RecordLinkIndexService(fileService: service);
+      final index = RecordLinkIndexService();
       final catalog = UserCatalogStore.instance..resetForTesting();
       final tempDir = await Directory.systemTemp.createTemp('akasha_r2a_loop_');
 

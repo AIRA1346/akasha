@@ -79,7 +79,7 @@ void main() {
 
     test('countForEntity uses incoming index without vault rewrite', () async {
       final service = AkashaFileService();
-      final index = RecordLinkIndexService(fileService: service);
+      final index = RecordLinkIndexService();
       final tempDir = await Directory.systemTemp.createTemp('akasha_r2d_stale_');
 
       try {

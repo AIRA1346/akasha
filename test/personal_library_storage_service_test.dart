@@ -35,7 +35,7 @@ void main() {
         '[{"id":"master_archive","name":"master_archive"}]',
       );
 
-      final storage = PersonalLibraryStorageService(fileService);
+      final storage = PersonalLibraryStorageService();
       final loaded = await storage.load();
 
       expect(loaded.first.id, PersonalLibraryConfig.masterArchiveId);
@@ -61,7 +61,7 @@ void main() {
         '[{"id":"master_archive","name":"master_archive"},{"id":"personal_1","name":"커스텀","mode":"curated","memberOrder":["wk_1"]}]',
       );
 
-      final storage = PersonalLibraryStorageService(fileService);
+      final storage = PersonalLibraryStorageService();
       final loaded = await storage.load();
 
       expect(loaded, hasLength(2));
@@ -81,7 +81,7 @@ void main() {
         '[{"id":"master_archive","name":"master_archive"}]',
       );
 
-      final storage = PersonalLibraryStorageService(fileService);
+      final storage = PersonalLibraryStorageService();
       final loaded = await storage.load();
 
       expect(loaded.first.id, PersonalLibraryConfig.masterArchiveId);

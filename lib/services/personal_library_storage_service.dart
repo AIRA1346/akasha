@@ -4,8 +4,9 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../core/app_vault.dart';
+import '../core/ports/vault_port.dart';
 import '../models/personal_library_config.dart';
-import 'file_service.dart';
 
 /// 나만의 서재 목록 영속화 — 볼트 `.akasha/` 우선, 데모는 prefs (D8)
 class PersonalLibraryStorageService {
@@ -13,13 +14,13 @@ class PersonalLibraryStorageService {
   static const akashaDirName = '.akasha';
   static const vaultFileName = 'personal_libraries.json';
 
-  final AkashaFileService _fileService;
+  final VaultPort _vault;
 
-  PersonalLibraryStorageService([AkashaFileService? fileService])
-      : _fileService = fileService ?? AkashaFileService();
+  PersonalLibraryStorageService([VaultPort? vault])
+      : _vault = vault ?? AppVault.port;
 
   String? get _vaultAkashaDir {
-    final vault = _fileService.vaultPath;
+    final vault = _vault.vaultPath;
     if (vault == null || vault.isEmpty) return null;
     return p.join(vault, akashaDirName);
   }

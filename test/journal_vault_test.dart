@@ -105,7 +105,7 @@ body
       final tempDir = await Directory.systemTemp.createTemp('akasha_w3_adapter_');
       try {
         await service.setVaultPath(tempDir.path);
-        final adapter = VaultArchiveRecordAdapter(fileService: service);
+        final adapter = VaultArchiveRecordAdapter();
         const store = JournalVaultStore();
 
         final recordId = JournalVaultStore.generateRecordId();

@@ -118,7 +118,7 @@ void main() {
       vaultDir = await Directory.systemTemp.createTemp('akasha_adapter_');
       fileService = AkashaFileService();
       await fileService.setVaultPath(vaultDir.path);
-      adapter = VaultArchiveRecordAdapter(fileService: fileService);
+      adapter = VaultArchiveRecordAdapter();
     });
 
     tearDown(() async {

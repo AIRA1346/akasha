@@ -42,7 +42,7 @@ void main() {
       const workTitle = 'Re_Zero R2B';
 
       final fileService = AkashaFileService();
-      final index = RecordLinkIndexService(fileService: fileService);
+      final index = RecordLinkIndexService();
       final catalog = UserCatalogStore.instance..resetForTesting();
       final tempDir = await Directory.systemTemp.createTemp('akasha_r2b_e2e_');
       late String workPath;

@@ -1,8 +1,9 @@
+import '../../core/app_vault.dart';
 import '../../core/archiving/archive_record.dart';
 import '../../core/archiving/archive_record_mapper.dart';
 import '../../core/archiving/record_kind.dart';
 import '../../core/ports/archive_record_port.dart';
-import '../../services/file_service.dart';
+import '../../core/ports/vault_port.dart';
 import '../../services/journal_vault_loader.dart';
 import '../../services/journal_vault_store.dart';
 import '../../services/timeline_vault_loader.dart';
@@ -11,18 +12,18 @@ import '../../services/timeline_vault_store.dart';
 /// Sanctum vault → [ArchiveRecord] ([ADR-008] Phase 1 + Phase 4 timeline + Wave 3 journal).
 class VaultArchiveRecordAdapter implements ArchiveRecordPort {
   VaultArchiveRecordAdapter({
-    AkashaFileService? fileService,
+    VaultPort? vault,
     TimelineVaultLoader? timelineLoader,
     TimelineVaultStore? timelineStore,
     JournalVaultLoader? journalLoader,
     JournalVaultStore? journalStore,
-  })  : _fileService = fileService ?? AkashaFileService(),
+  })  : _vault = vault ?? AppVault.port,
         _timelineLoader = timelineLoader ?? const TimelineVaultLoader(),
         _timelineStore = timelineStore ?? const TimelineVaultStore(),
         _journalLoader = journalLoader ?? const JournalVaultLoader(),
         _journalStore = journalStore ?? const JournalVaultStore();
 
-  final AkashaFileService _fileService;
+  final VaultPort _vault;
   final TimelineVaultLoader _timelineLoader;
   final TimelineVaultStore _timelineStore;
   final JournalVaultLoader _journalLoader;
@@ -36,7 +37,7 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
         kinds.contains(RecordKind.workJournal) ||
         kinds.contains(RecordKind.freeformJournal);
     if (includeVault) {
-      final items = await _fileService.loadAllItems();
+      final items = await _vault.loadAllItems();
       for (final item in items) {
         final record = ArchiveRecordMapper.fromAkashaItem(item);
         if (kinds == null || kinds.contains(record.kind)) {
@@ -49,13 +50,13 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
         kinds == null || kinds.contains(RecordKind.freeformJournal);
     if (includeJournal) {
       final journals =
-          await _journalLoader.loadFromVault(_fileService.vaultPath);
+          await _journalLoader.loadFromVault(_vault.vaultPath);
       records.addAll(journals.map(ArchiveRecordMapper.fromJournalEntry));
     }
 
     final includeTimeline = kinds == null || kinds.contains(RecordKind.timelineEntry);
     if (includeTimeline) {
-      final timeline = await _timelineLoader.loadFromVault(_fileService.vaultPath);
+      final timeline = await _timelineLoader.loadFromVault(_vault.vaultPath);
       records.addAll(timeline.map(ArchiveRecordMapper.fromTimelineEntry));
     }
 
@@ -72,20 +73,20 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
   Future<ArchiveRecord?> getById(String recordId) async {
     if (recordId.isEmpty) return null;
 
-    final items = await _fileService.loadAllItems();
+    final items = await _vault.loadAllItems();
     for (final item in items) {
       final record = ArchiveRecordMapper.fromAkashaItem(item);
       if (record.recordId == recordId) return record;
     }
 
-    final journals = await _journalLoader.loadFromVault(_fileService.vaultPath);
+    final journals = await _journalLoader.loadFromVault(_vault.vaultPath);
     for (final entry in journals) {
       if (entry.recordId == recordId) {
         return ArchiveRecordMapper.fromJournalEntry(entry);
       }
     }
 
-    final timeline = await _timelineLoader.loadFromVault(_fileService.vaultPath);
+    final timeline = await _timelineLoader.loadFromVault(_vault.vaultPath);
     for (final entry in timeline) {
       if (entry.recordId == recordId) {
         return ArchiveRecordMapper.fromTimelineEntry(entry);
@@ -97,7 +98,7 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
 
   @override
   Future<void> save(ArchiveRecord record, {String? bodyMarkdown}) async {
-    final vaultPath = _fileService.vaultPath;
+    final vaultPath = _vault.vaultPath;
     if (vaultPath == null || vaultPath.isEmpty) {
       throw StateError('Vault path not set');
     }
@@ -108,7 +109,7 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
         record: record,
         body: bodyMarkdown ?? '',
       );
-      await _fileService.signalVaultChanged();
+      await _vault.signalVaultChanged();
       return;
     }
 
@@ -118,7 +119,7 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
         record: record,
         body: bodyMarkdown ?? '',
       );
-      await _fileService.signalVaultChanged();
+      await _vault.signalVaultChanged();
       return;
     }
 
@@ -131,7 +132,7 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
   Future<void> delete(String recordId) async {
     if (recordId.isEmpty) return;
 
-    final vaultPath = _fileService.vaultPath;
+    final vaultPath = _vault.vaultPath;
     if (vaultPath == null || vaultPath.isEmpty) {
       throw StateError('Vault path not set');
     }
@@ -141,13 +142,13 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
 
     if (existing.kind == RecordKind.timelineEntry) {
       await _timelineStore.delete(vaultPath: vaultPath, recordId: recordId);
-      await _fileService.signalVaultChanged();
+      await _vault.signalVaultChanged();
       return;
     }
 
     if (existing.kind == RecordKind.freeformJournal) {
       await _journalStore.delete(vaultPath: vaultPath, recordId: recordId);
-      await _fileService.signalVaultChanged();
+      await _vault.signalVaultChanged();
       return;
     }
 

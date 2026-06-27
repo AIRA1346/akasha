@@ -24,7 +24,7 @@ void main() {
   group('RecordLinkIndexService', () {
     test('rebuildIndex builds outgoing and incoming for explicit links', () async {
       final service = AkashaFileService();
-      final index = RecordLinkIndexService(fileService: service);
+      final index = RecordLinkIndexService();
       final tempDir = await Directory.systemTemp.createTemp('akasha_w5_link_');
 
       try {
@@ -82,7 +82,7 @@ added_at: "2026-06-19T10:00:00.000"
 
     test('title-only link indexes incoming when catalog resolves title', () async {
       final service = AkashaFileService();
-      final index = RecordLinkIndexService(fileService: service);
+      final index = RecordLinkIndexService();
       final catalog = UserCatalogStore.instance..resetForTesting();
       final tempDir = await Directory.systemTemp.createTemp('akasha_r2a_');
 
@@ -148,7 +148,7 @@ work_id: "wk_u_rezero01"
 
     test('title-only link skipped when title does not resolve', () async {
       final service = AkashaFileService();
-      final index = RecordLinkIndexService(fileService: service);
+      final index = RecordLinkIndexService();
       final catalog = UserCatalogStore.instance..resetForTesting();
       final tempDir = await Directory.systemTemp.createTemp('akasha_w5_title_');
 

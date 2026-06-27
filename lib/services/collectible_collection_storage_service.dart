@@ -4,8 +4,9 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../core/app_vault.dart';
+import '../core/ports/vault_port.dart';
 import '../models/collectible_collection.dart';
-import 'file_service.dart';
 
 /// Entity collection list — vault `.akasha/collectible_collections.json`.
 class CollectibleCollectionStorageService {
@@ -13,13 +14,13 @@ class CollectibleCollectionStorageService {
   static const akashaDirName = '.akasha';
   static const vaultFileName = 'collectible_collections.json';
 
-  final AkashaFileService _fileService;
+  final VaultPort _vault;
 
-  CollectibleCollectionStorageService([AkashaFileService? fileService])
-      : _fileService = fileService ?? AkashaFileService();
+  CollectibleCollectionStorageService([VaultPort? vault])
+      : _vault = vault ?? AppVault.port;
 
   String? get _vaultAkashaDir {
-    final vault = _fileService.vaultPath;
+    final vault = _vault.vaultPath;
     if (vault == null || vault.isEmpty) return null;
     return p.join(vault, akashaDirName);
   }

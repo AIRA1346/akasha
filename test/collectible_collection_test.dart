@@ -597,7 +597,7 @@ void main() {
       final tempDir = await Directory.systemTemp.createTemp('akasha_col_');
       try {
         await fileService.setVaultPath(tempDir.path);
-        final storage = CollectibleCollectionStorageService(fileService);
+        final storage = CollectibleCollectionStorageService();
         final original = [
           CollectibleCollection(
             id: 'col_u_persist1',
@@ -672,7 +672,7 @@ void main() {
       final tempDir = await Directory.systemTemp.createTemp('akasha_col_cast_');
       try {
         await fileService.setVaultPath(tempDir.path);
-        final storage = CollectibleCollectionStorageService(fileService);
+        final storage = CollectibleCollectionStorageService();
         const rezeroWorkId = 'wk_u_rezero01';
         final original = [
           CollectibleCollection(

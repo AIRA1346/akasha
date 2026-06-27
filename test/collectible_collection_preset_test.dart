@@ -82,7 +82,7 @@ void main() {
       final tempDir = await Directory.systemTemp.createTemp('akasha_preset_');
       try {
         await fileService.setVaultPath(tempDir.path);
-        final storage = CollectibleCollectionStorageService(fileService);
+        final storage = CollectibleCollectionStorageService();
         final original = [CollectibleCollectionPresets.rezeroCast.build()];
 
         await storage.save(original);
@@ -106,7 +106,7 @@ void main() {
       final tempDir = await Directory.systemTemp.createTemp('akasha_preset_');
       try {
         await fileService.setVaultPath(tempDir.path);
-        final storage = CollectibleCollectionStorageService(fileService);
+        final storage = CollectibleCollectionStorageService();
         final original = [CollectibleCollectionPresets.fateCast.build()];
 
         await storage.save(original);

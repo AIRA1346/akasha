@@ -27,7 +27,10 @@ class HomeVaultCoordinator {
     required this.scheduleRebuild,
     required this.onVaultItemsSynced,
     required this.prefetchRegistry,
-  });
+  }) {
+    eventLedger = EventLedgerService(vault: vault);
+    linkIndex = RecordLinkIndexService(vault: vault, eventLedger: eventLedger);
+  }
 
   final VaultPort vault;
   final RegistryPort registry;
@@ -48,9 +51,8 @@ class HomeVaultCoordinator {
   StreamSubscription<void>? vaultUpdateSubscription;
   Timer? vaultReloadDebounce;
 
-  final EventLedgerService eventLedger = EventLedgerService();
-  late final RecordLinkIndexService linkIndex =
-      RecordLinkIndexService(eventLedger: eventLedger);
+  late final EventLedgerService eventLedger;
+  late final RecordLinkIndexService linkIndex;
 
   Future<void> initService() async {
     await vault.init();

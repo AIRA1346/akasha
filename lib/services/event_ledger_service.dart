@@ -3,24 +3,25 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
+import '../core/app_vault.dart';
 import '../core/archiving/vault_ledger_event.dart';
-import 'file_service.dart';
+import '../core/ports/vault_port.dart';
 
 /// Wave 6 W6-1 — `{vault}/.akasha/event_ledger.jsonl` append-only.
 class EventLedgerService {
   EventLedgerService({
-    AkashaFileService? fileService,
+    VaultPort? vault,
     String? vaultPathOverride,
-  })  : _fileService = fileService ?? AkashaFileService(),
+  })  : _vault = vault ?? AppVault.port,
         _vaultPathOverride = vaultPathOverride;
 
   static const String akashaDirName = '.akasha';
   static const String ledgerFileName = 'event_ledger.jsonl';
 
-  final AkashaFileService _fileService;
+  final VaultPort _vault;
   final String? _vaultPathOverride;
 
-  String? get _vaultPath => _vaultPathOverride ?? _fileService.vaultPath;
+  String? get _vaultPath => _vaultPathOverride ?? _vault.vaultPath;
 
   Future<void> append(VaultLedgerEvent event) async {
     final vaultPath = _vaultPath;

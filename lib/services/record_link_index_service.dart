@@ -3,23 +3,25 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
+import '../core/app_vault.dart';
 import '../core/archiving/record_link.dart';
 import '../core/ports/record_link_port.dart';
 import '../core/ports/user_catalog_port.dart';
+import '../core/ports/vault_port.dart';
 import '../core/archiving/vault_ledger_event.dart';
 import '../models/akasha_item.dart';
 import 'event_ledger_service.dart';
-import 'file_service.dart';
 import 'record_link_navigator.dart';
 import 'record_link_parser.dart';
 
 /// `vault/.akasha/link_index.json` — Wave 5.
 class RecordLinkIndexService implements RecordLinkPort {
   RecordLinkIndexService({
-    AkashaFileService? fileService,
+    VaultPort? vault,
     EventLedgerService? eventLedger,
-  })  : _fileService = fileService ?? AkashaFileService(),
-        _eventLedger = eventLedger ?? EventLedgerService();
+  })  : _vault = vault ?? AppVault.port,
+        _eventLedger =
+            eventLedger ?? EventLedgerService(vault: vault ?? AppVault.port);
 
   static const int schemaVersion = 1;
   static const String indexDirName = '.akasha';
@@ -36,7 +38,7 @@ class RecordLinkIndexService implements RecordLinkPort {
     indexDirName,
   };
 
-  final AkashaFileService _fileService;
+  final VaultPort _vault;
   final EventLedgerService _eventLedger;
 
   Map<String, List<RecordLink>> _outgoing = {};
@@ -52,7 +54,7 @@ class RecordLinkIndexService implements RecordLinkPort {
     List<AkashaItem> vaultItems = const [],
     Future<void> Function(Map<String, dynamic> stats)? onRebuilt,
   }) async {
-    final vaultPath = _fileService.vaultPath;
+    final vaultPath = _vault.vaultPath;
     if (vaultPath == null || vaultPath.isEmpty) {
       _outgoing = {};
       _incoming = {};
@@ -152,7 +154,7 @@ class RecordLinkIndexService implements RecordLinkPort {
 
   Future<void> _ensureLoaded() async {
     if (_loaded) return;
-    final vaultPath = _fileService.vaultPath;
+    final vaultPath = _vault.vaultPath;
     if (vaultPath == null || vaultPath.isEmpty) {
       _loaded = true;
       return;

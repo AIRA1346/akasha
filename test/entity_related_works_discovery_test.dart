@@ -31,7 +31,7 @@ void main() {
 
     setUp(() async {
       fileService = AkashaFileService();
-      linkIndex = RecordLinkIndexService(fileService: fileService);
+      linkIndex = RecordLinkIndexService();
       catalog = UserCatalogStore.instance..resetForTesting();
       tempDir = await Directory.systemTemp.createTemp('akasha_r2e_disc_');
       await fileService.setVaultPath(tempDir.path);
