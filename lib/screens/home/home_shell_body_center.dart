@@ -263,6 +263,7 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
         userCatalog: userCatalog,
         linkIndex: linkIndex,
         vaultItems: items,
+        vaultPath: vaultPath,
         onOpenWork: onPreviewWork,
         onOpenEntity: onPreviewEntity,
         scope: BrowseEntityScope.all,

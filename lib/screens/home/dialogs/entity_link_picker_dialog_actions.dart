@@ -120,12 +120,12 @@ mixin _EntityLinkPickerDialogActions on _EntityLinkPickerDialogStateBase {
   Future<UserCatalogEntity?> _persistAddResult(
     CatalogEntityAddResult addResult,
   ) async {
-    final vault = AkashaFileService().vaultPath;
-    if (vault != null && vault.isNotEmpty) {
+    final vaultPath = widget.vaultPath;
+    if (vaultPath != null && vaultPath.isNotEmpty) {
       try {
         final saved = await EntityArchiveService.saveFromAddResult(
           result: addResult,
-          vaultPath: vault,
+          vaultPath: vaultPath,
           userCatalog: widget.userCatalog,
         );
         return saved.entity;

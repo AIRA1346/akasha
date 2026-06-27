@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../data/adapters/markdown_vault_adapter.dart';
 import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/akasha_item.dart';
@@ -33,6 +34,7 @@ abstract final class WorkDetailLinkPickOps {
     required EntityAnchorType type,
     required AkashaItem workContext,
     required List<AkashaItem> vaultItems,
+    String? vaultPath,
   }) =>
       WorkbenchLinkPickOps.pickEntityLink(
         context: context,
@@ -40,6 +42,7 @@ abstract final class WorkDetailLinkPickOps {
         type: type,
         workContext: workContext,
         vaultItems: vaultItems,
+        vaultPath: vaultPath ?? MarkdownVaultAdapter().vaultPath,
       );
 
   static Future<EntityLinkSelection?> requestWorkLink({
@@ -189,6 +192,7 @@ abstract final class WorkDetailLinkPickOps {
           type: request.entityLinkType!,
           workContext: item,
           vaultItems: vaultItems,
+          vaultPath: MarkdownVaultAdapter().vaultPath,
           preselected: request.preselected,
         );
         if (picked == null) return;

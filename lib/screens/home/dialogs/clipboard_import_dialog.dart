@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/akasha_item.dart';
-import '../../../services/file_service.dart';
 import '../../../services/markdown_parser.dart';
-import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_spacing.dart';
+import '../../../theme/akasha_typography.dart';
 
 /// AI 마크다운 클립보드 가져오기 다이얼로그
 Future<void> showClipboardImportDialog(
   BuildContext context, {
   required String initialText,
   required List<AkashaItem> existingItems,
-  required Future<void> Function(AkashaItem item) onItemImported,
+  required Future<void> Function(AkashaItem item) onImport,
 }) async {
   final ctrl = TextEditingController(text: initialText);
 
@@ -24,11 +24,11 @@ Future<void> showClipboardImportDialog(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               'AI가 생성한 마크다운 텍스트를 여기에 붙여넣으세요. 파싱하여 작품 목록에 추가합니다.',
-              style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
+              style: AkashaTypography.body,
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: AkashaSpacing.sm),
             Expanded(
               child: TextField(
                 controller: ctrl,
@@ -38,7 +38,7 @@ Future<void> showClipboardImportDialog(
                   border: OutlineInputBorder(),
                   hintText: '---\ntitle: "작품명"\n...',
                 ),
-                style: const TextStyle(fontFamily: 'monospace', fontSize: 12),
+                style: AkashaTypography.body.copyWith(fontFamily: 'monospace'),
               ),
             ),
           ],
@@ -69,10 +69,8 @@ Future<void> showClipboardImportDialog(
                 return;
               }
 
-              final service = AkashaFileService();
-              await service.saveItem(item);
               if (ctx.mounted) Navigator.pop(ctx);
-              await onItemImported(item);
+              await onImport(item);
               if (context.mounted) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(

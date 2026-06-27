@@ -66,6 +66,7 @@ abstract final class WorkbenchLinkPickOps {
     required EntityAnchorType type,
     required AkashaItem workContext,
     required List<AkashaItem> vaultItems,
+    String? vaultPath,
     LinkCandidate? preselected,
   }) async {
     if (preselected != null) {
@@ -80,6 +81,7 @@ abstract final class WorkbenchLinkPickOps {
       anchorTypeFilter: type,
       workContext: workContext,
       vaultItems: vaultItems,
+      vaultPath: vaultPath,
     );
   }
 

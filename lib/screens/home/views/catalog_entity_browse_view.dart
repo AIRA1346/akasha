@@ -29,6 +29,7 @@ class CatalogEntityBrowseView extends StatefulWidget {
     required this.scope,
     this.linkIndex,
     this.vaultItems = const [],
+    this.vaultPath,
     this.onOpenWork,
     this.onOpenEntity,
     this.compact = false,
@@ -47,6 +48,7 @@ class CatalogEntityBrowseView extends StatefulWidget {
   final BrowseEntityScope scope;
   final RecordLinkPort? linkIndex;
   final List<AkashaItem> vaultItems;
+  final String? vaultPath;
   final void Function(AkashaItem item)? onOpenWork;
   final void Function(UserCatalogEntity entity)? onOpenEntity;
   final bool compact;
@@ -132,6 +134,7 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
       var browseItems = await CatalogEntityBrowseLoader.buildCollectibleBrowseItems(
         members: members,
         linkIndex: widget.linkIndex,
+        vaultPath: widget.vaultPath,
         relatedWorksDiscovery: relatedWorksDiscovery,
       );
       if (!collection.isCurated) {
@@ -158,6 +161,7 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
     final cards = await CatalogEntityBrowseLoader.buildBrowseCards(
       entities: filtered,
       linkIndex: widget.linkIndex,
+      vaultPath: widget.vaultPath,
       relatedWorksDiscovery: relatedWorksDiscovery,
     );
     if (!mounted) return;

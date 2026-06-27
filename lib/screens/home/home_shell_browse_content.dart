@@ -40,6 +40,7 @@ class HomeShellBrowseContentBuilder {
     this.onLoadMoreCatalog,
     required this.isCuratedLibraryActive,
     required this.personalLibCtrl,
+    required this.vaultPath,
     required this.vaultLinked,
     required this.workPreviewItem,
     required this.entityPreviewItem,
@@ -81,6 +82,7 @@ class HomeShellBrowseContentBuilder {
   final VoidCallback? onLoadMoreCatalog;
   final bool isCuratedLibraryActive;
   final HomePersonalLibraryController personalLibCtrl;
+  final String? vaultPath;
   final bool vaultLinked;
   final AkashaItem? workPreviewItem;
   final UserCatalogEntity? entityPreviewItem;
@@ -208,6 +210,7 @@ class HomeShellBrowseContentBuilder {
       userCatalog: userCatalog,
       linkIndex: linkIndex,
       vaultItems: items,
+      vaultPath: vaultPath,
       onOpenWork: onPreviewWork,
       onOpenEntity: onPreviewEntity,
       scope: scope,
@@ -242,6 +245,7 @@ class HomeShellBrowseContentBuilder {
       userCatalog: userCatalog,
       linkIndex: linkIndex,
       vaultItems: items,
+      vaultPath: vaultPath,
       onOpenWork: onPreviewWork,
       onOpenEntity: onPreviewEntity,
       scope: BrowseEntityScope.all,

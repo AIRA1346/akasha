@@ -7,7 +7,6 @@ import '../../../models/entity_gallery_sort.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_related_works_discovery.dart';
 import '../../../services/entity_vault_loader.dart';
-import '../../../services/file_service.dart';
 import '../../../utils/entity_body_preview.dart';
 import '../../../utils/entity_browse_sort.dart';
 
@@ -58,6 +57,7 @@ abstract final class CatalogEntityBrowseLoader {
   static Future<List<EntityBrowseCard>> buildBrowseCards({
     required List<UserCatalogEntity> entities,
     required RecordLinkPort? linkIndex,
+    String? vaultPath,
     EntityRelatedWorksDiscovery? relatedWorksDiscovery,
   }) async {
     final cachedJournals = relatedWorksDiscovery?.cachedJournalsByEntityId;
@@ -65,7 +65,6 @@ abstract final class CatalogEntityBrowseLoader {
     if (cachedJournals != null) {
       byId = cachedJournals;
     } else {
-      final vaultPath = AkashaFileService().vaultPath;
       final journals = await const EntityVaultLoader().loadFromVault(vaultPath);
       byId = {for (final j in journals) j.entityId: j};
     }
@@ -119,6 +118,7 @@ abstract final class CatalogEntityBrowseLoader {
   static Future<List<CollectibleBrowseItem>> buildCollectibleBrowseItems({
     required List<CollectibleMember> members,
     required RecordLinkPort? linkIndex,
+    String? vaultPath,
     EntityRelatedWorksDiscovery? relatedWorksDiscovery,
   }) async {
     final entities = members
@@ -128,6 +128,7 @@ abstract final class CatalogEntityBrowseLoader {
     final entityCards = await buildBrowseCards(
       entities: entities,
       linkIndex: linkIndex,
+      vaultPath: vaultPath,
       relatedWorksDiscovery: relatedWorksDiscovery,
     );
     final entityCardById = {

@@ -60,4 +60,18 @@ abstract final class AkashaTypography {
     fontWeight: FontWeight.bold,
     color: AkashaColors.textSecondary,
   );
+
+  /// Dialog body copy (R14-B Home).
+  static const dialogBody = TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.w400,
+    color: AkashaColors.textPrimary,
+  );
+
+  /// Settings / form section labels (R14-B Home).
+  static const settingsLabel = TextStyle(
+    fontSize: 11,
+    fontWeight: FontWeight.bold,
+    color: AkashaColors.textMuted,
+  );
 }

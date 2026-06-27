@@ -11,7 +11,6 @@ import '../../../services/entity_link_picker_candidates.dart';
 import '../../../services/entity_seed_catalog_promotion.dart';
 import '../../../services/entity_vault_loader.dart';
 import '../../../services/entity_vault_path_conflict.dart';
-import '../../../services/file_service.dart';
 import '../../../services/link_candidate_service.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../utils/entity_tag_validation.dart';
@@ -30,6 +29,7 @@ Future<EntityLinkSelection?> showEntityLinkPickerDialog(
   EntityAnchorType? anchorTypeFilter,
   AkashaItem? workContext,
   List<AkashaItem> vaultItems = const [],
+  String? vaultPath,
 }) {
   return showDialog<EntityLinkSelection>(
     context: context,
@@ -40,6 +40,7 @@ Future<EntityLinkSelection?> showEntityLinkPickerDialog(
       anchorTypeFilter: anchorTypeFilter,
       workContext: workContext,
       vaultItems: vaultItems,
+      vaultPath: vaultPath,
     ),
   );
 }
@@ -53,6 +54,7 @@ class EntityLinkPickerDialog extends StatefulWidget {
     this.anchorTypeFilter,
     this.workContext,
     this.vaultItems = const [],
+    this.vaultPath,
   });
 
   final UserCatalogPort userCatalog;
@@ -61,6 +63,7 @@ class EntityLinkPickerDialog extends StatefulWidget {
   final EntityAnchorType? anchorTypeFilter;
   final AkashaItem? workContext;
   final List<AkashaItem> vaultItems;
+  final String? vaultPath;
 
   @override
   State<EntityLinkPickerDialog> createState() => _EntityLinkPickerDialogState();

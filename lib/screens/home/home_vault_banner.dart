@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../theme/akasha_colors.dart';
+import '../../theme/akasha_spacing.dart';
+import '../../theme/akasha_typography.dart';
+
 /// 볼트 미연동 시 compact 안내 (R4-A3 — Hero 시선 우선).
 class HomeVaultBanner extends StatelessWidget {
   final VoidCallback onConnectVault;
@@ -8,34 +12,34 @@ class HomeVaultBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tint = AkashaColors.statusWarning;
     return Material(
-      color: Colors.amber.withValues(alpha: 0.06),
+      color: tint.withValues(alpha: 0.06),
       child: InkWell(
         onTap: onConnectVault,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+          padding: AkashaSpacing.vaultBanner,
           child: Row(
             children: [
               Icon(
                 Icons.info_outline,
-                color: Colors.amber.withValues(alpha: 0.75),
+                color: tint.withValues(alpha: 0.75),
                 size: 14,
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: AkashaSpacing.sm),
               Expanded(
                 child: Text(
                   '카탈로그로 탐험 중입니다. 기록을 저장하려면 로컬 폴더를 연결하세요.',
-                  style: TextStyle(
-                    fontSize: 10,
-                    color: Colors.amber.withValues(alpha: 0.85),
+                  style: AkashaTypography.caption.copyWith(
+                    color: tint.withValues(alpha: 0.85),
                     height: 1.3,
                   ),
                 ),
               ),
               Icon(
                 Icons.chevron_right_rounded,
-                size: 16,
-                color: Colors.amber.withValues(alpha: 0.5),
+                size: AkashaSpacing.lg,
+                color: tint.withValues(alpha: 0.5),
               ),
             ],
           ),

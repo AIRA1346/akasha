@@ -116,6 +116,7 @@ class HomeDialogsCoordinator {
           context: ctx,
           query: query,
           isVaultLinked: vault.isVaultLinked,
+          vault: vault.vault,
           showMessage: showMessage,
           userCatalog: userCatalog,
           vaultItems: getItems(),
@@ -283,6 +284,7 @@ class HomeDialogsCoordinator {
   Future<void> openVaultSettingsDialog() async {
     await HomeDialogsFacade.showVaultSettings(
       context: hostContext(),
+      vault: vault.vault,
       displayName: displayName,
       autoArchiveRegistry: autoArchiveRegistry,
       onDisplayNameSaved: (name) =>
@@ -355,6 +357,7 @@ class HomeDialogsCoordinator {
         context: ctx,
         query: '',
         isVaultLinked: vault.isVaultLinked,
+        vault: vault.vault,
         showMessage: showMessage,
         userCatalog: userCatalog,
         vaultItems: getItems(),
@@ -375,6 +378,7 @@ class HomeDialogsCoordinator {
         context: ctx,
         initialTitle: '',
         isVaultLinked: vault.isVaultLinked,
+        vault: vault.vault,
         showMessage: showMessage,
         onSavedToVault: (item) async {
           await vault.saveVaultItem(item);

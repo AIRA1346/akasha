@@ -16,6 +16,7 @@ import '../../../services/timeline_vault_store.dart';
 import '../../../models/library_theme.dart';
 import '../../../core/ports/registry_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
+import '../../../core/ports/vault_port.dart';
 import '../../../services/works_registry.dart';
 import '../../../utils/entity_tag_validation.dart';
 import '../../../widgets/fusion_search_dialog.dart';
@@ -92,6 +93,7 @@ class HomeDialogsFacade {
     required BuildContext context,
     String? initialTitle,
     required bool isVaultLinked,
+    VaultPort? vault,
     required void Function(String message) showMessage,
     required Future<void> Function(AkashaItem item) onSavedToVault,
   }) async {
@@ -100,7 +102,11 @@ class HomeDialogsFacade {
       return;
     }
 
-    final result = await showAddWorkDialog(context, initialTitle: initialTitle);
+    final result = await showAddWorkDialog(
+      context,
+      initialTitle: initialTitle,
+      vault: vault,
+    );
     if (result == null) return;
     await onSavedToVault(result);
   }
@@ -110,6 +116,7 @@ class HomeDialogsFacade {
     required BuildContext context,
     required String query,
     required bool isVaultLinked,
+    VaultPort? vault,
     required void Function(String message) showMessage,
     required Future<void> Function(AkashaItem item) onWorkSavedToVault,
     required Future<void> Function(CatalogEntityAddResult result) onEntitySaved,
@@ -132,6 +139,7 @@ class HomeDialogsFacade {
         context: context,
         initialTitle: query,
         isVaultLinked: isVaultLinked,
+        vault: vault,
         showMessage: showMessage,
         onSavedToVault: onWorkSavedToVault,
       );
@@ -161,6 +169,7 @@ class HomeDialogsFacade {
 
   static Future<void> showVaultSettings({
     required BuildContext context,
+    required VaultPort vault,
     required String displayName,
     required bool autoArchiveRegistry,
     required void Function(String name) onDisplayNameSaved,
@@ -172,6 +181,7 @@ class HomeDialogsFacade {
   }) async {
     await showVaultSettingsDialog(
       context,
+      vault: vault,
       displayName: displayName,
       autoArchiveRegistry: autoArchiveRegistry,
       onDisplayNameSaved: onDisplayNameSaved,
@@ -278,7 +288,7 @@ class HomeDialogsFacade {
       context,
       initialText: data?.text ?? '',
       existingItems: existingItems,
-      onItemImported: (item) async {
+      onImport: (item) async {
         if (isVaultLinked) {
           await onItemImportedToVault(item);
         } else {

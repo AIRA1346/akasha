@@ -14,6 +14,9 @@ abstract class VaultPort {
   Future<void> saveItem(AkashaItem item, {String? oldTitle});
   Future<void> deleteItem(AkashaItem item);
 
+  /// Copies a local image into the vault assets tree; returns vault-relative path.
+  Future<String?> importPosterImage(String sourceFilePath);
+
   Stream<void> get onVaultUpdated;
   Map<String, AkashaItem> get inMemoryCache;
 }

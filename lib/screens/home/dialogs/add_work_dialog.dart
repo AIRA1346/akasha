@@ -1,10 +1,10 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/ports/vault_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/enums.dart';
 import '../../../models/work_id_codec.dart';
-import '../../../services/file_service.dart';
 import '../../../services/works_registry.dart';
 import '../../../utils/helpers.dart';
 import '../../../widgets/registry_work_autocomplete.dart';
@@ -15,6 +15,7 @@ import '../../../widgets/web_image_search_dialog.dart';
 Future<AkashaItem?> showAddWorkDialog(
   BuildContext context, {
   String? initialTitle,
+  VaultPort? vault,
 }) async {
   final titleCtrl = TextEditingController(text: initialTitle ?? '');
   final creatorCtrl = TextEditingController();
@@ -138,10 +139,9 @@ Future<AkashaItem?> showAddWorkDialog(
                                 if (fileResult != null &&
                                     fileResult.files.single.path != null) {
                                   final path = fileResult.files.single.path!;
-                                  final service = AkashaFileService();
-                                  if (service.vaultPath != null) {
+                                  if (vault?.vaultPath != null) {
                                     final relativePath =
-                                        await service.importPosterImage(path);
+                                        await vault!.importPosterImage(path);
                                     if (relativePath != null) {
                                       posterUrlCtrl.text = relativePath;
                                     }

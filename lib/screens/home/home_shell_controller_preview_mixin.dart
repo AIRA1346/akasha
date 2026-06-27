@@ -95,6 +95,7 @@ mixin HomeShellControllerPreviewMixin on HomeShellControllerBase {
       context,
       userCatalog: userCatalog,
       initialQuery: selectedText,
+      vaultPath: vault.vaultPath,
     );
   }
 }

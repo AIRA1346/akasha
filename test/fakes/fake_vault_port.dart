@@ -66,6 +66,9 @@ class FakeVaultPort implements VaultPort {
   }
 
   @override
+  Future<String?> importPosterImage(String sourceFilePath) async => null;
+
+  @override
   Stream<void> get onVaultUpdated => _updateController.stream;
 
   @override

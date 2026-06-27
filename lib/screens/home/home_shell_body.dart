@@ -328,6 +328,7 @@ class HomeShellBody extends StatelessWidget {
       onLoadMoreCatalog: onLoadMoreCatalog,
       isCuratedLibraryActive: isCuratedLibraryActive,
       personalLibCtrl: personalLibCtrl,
+      vaultPath: vaultPath,
       vaultLinked: vaultLinked,
       workPreviewItem: workPreviewItem,
       entityPreviewItem: entityPreviewItem,

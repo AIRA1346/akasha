@@ -10,4 +10,8 @@ abstract final class AkashaSpacing {
 
   static const EdgeInsets workbenchPanel =
       EdgeInsets.fromLTRB(md, md, md, lg);
+
+  /// Home vault banner horizontal/vertical inset (R14-B).
+  static const EdgeInsets vaultBanner =
+      EdgeInsets.symmetric(horizontal: lg, vertical: 6);
 }

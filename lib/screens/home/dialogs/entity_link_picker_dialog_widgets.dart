@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../services/entity_link_picker_candidates.dart';
 import '../../../services/link_candidate_service.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_radius.dart';
+import '../../../theme/akasha_spacing.dart';
+import '../../../theme/akasha_typography.dart';
 import '../../../widgets/fusion_search_dialog_tiles.dart';
 import 'add_catalog_entity_dialog.dart';
 
@@ -22,20 +25,22 @@ class EntityLinkPickerTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(6),
+      borderRadius: AkashaRadius.smBorder,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 10,
+          vertical: AkashaSpacing.xs + 2,
+        ),
         decoration: BoxDecoration(
           color: selected ? AkashaColors.accent.withValues(alpha: 0.15) : null,
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: AkashaRadius.smBorder,
           border: Border.all(
             color: selected ? AkashaColors.accent : AkashaColors.textCaption,
           ),
         ),
         child: Text(
           label,
-          style: TextStyle(
-            fontSize: 11,
+          style: AkashaTypography.bodySecondary.copyWith(
             fontWeight: FontWeight.w600,
             color: selected ? AkashaColors.accent : AkashaColors.textSecondary,
           ),
@@ -53,15 +58,8 @@ class EntityLinkPickerSectionLabel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 4),
-      child: Text(
-        text,
-        style: TextStyle(
-          fontSize: 10,
-          fontWeight: FontWeight.bold,
-          color: AkashaColors.textSecondary,
-        ),
-      ),
+      padding: EdgeInsets.only(bottom: AkashaSpacing.xs),
+      child: Text(text, style: AkashaTypography.sectionLabel),
     );
   }
 }
@@ -88,16 +86,20 @@ class EntityLinkRecommendationTile extends StatelessWidget {
       ),
       title: Text(
         candidate.title,
-        style: const TextStyle(fontWeight: FontWeight.w600),
+        style: AkashaTypography.body.copyWith(fontWeight: FontWeight.w600),
       ),
       subtitle: Text(
         [
           _reasonLabel(candidate.reason),
           if (candidate.matchDetail != null) candidate.matchDetail!,
         ].join(' · '),
-        style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
+        style: AkashaTypography.caption,
       ),
-      trailing: const Icon(Icons.north_west, size: 14, color: Colors.tealAccent),
+      trailing: const Icon(
+        Icons.north_west,
+        size: 14,
+        color: AkashaColors.linkAccent,
+      ),
     );
   }
 
@@ -132,11 +134,13 @@ class EntityLinkCandidateTile extends StatelessWidget {
       leading: Icon(
         FusionSearchEntityIcons.forType(entity.anchorType),
         size: 20,
-        color: candidate.isArchived ? Colors.tealAccent : AkashaColors.textMuted,
+        color: candidate.isArchived
+            ? AkashaColors.linkAccent
+            : AkashaColors.textMuted,
       ),
       title: Text(
         entity.title,
-        style: const TextStyle(fontWeight: FontWeight.w600),
+        style: AkashaTypography.body.copyWith(fontWeight: FontWeight.w600),
       ),
       subtitle: Text(
         [
@@ -145,12 +149,14 @@ class EntityLinkCandidateTile extends StatelessWidget {
           if (candidate.isArchived) '아카이브',
           if (!candidate.isSeed) entity.entityId,
         ].join(' · '),
-        style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
+        style: AkashaTypography.caption,
       ),
       trailing: entity.aliases.isNotEmpty
           ? Text(
               entity.aliases.take(2).join(', '),
-              style: TextStyle(fontSize: 10, color: AkashaColors.textCaption),
+              style: AkashaTypography.caption.copyWith(
+                color: AkashaColors.textCaption,
+              ),
               overflow: TextOverflow.ellipsis,
             )
           : null,

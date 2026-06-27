@@ -40,6 +40,10 @@ class MarkdownVaultAdapter implements VaultPort {
   }
 
   @override
+  Future<String?> importPosterImage(String sourceFilePath) =>
+      _fileService.importPosterImage(sourceFilePath);
+
+  @override
   Stream<void> get onVaultUpdated => _fileService.onVaultUpdated;
 
   @override
