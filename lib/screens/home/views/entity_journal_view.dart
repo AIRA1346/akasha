@@ -9,6 +9,7 @@ import '../../../services/entity_vault_loader.dart';
 import '../../../utils/entity_body_preview.dart';
 import '../dialogs/add_catalog_entity_dialog.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_typography.dart';
 
 /// Wave 4.1 — entity journal (`vault/entities/`) 시간순 목록.
 class EntityJournalView extends StatefulWidget {
@@ -137,7 +138,7 @@ class _EntityJournalViewState extends State<EntityJournalView> {
             const SizedBox(height: 8),
             Text(
               'Fusion → 직접 추가로 Person · Concept · Event를 아카이브하세요.',
-              style: TextStyle(fontSize: 12, color: AkashaColors.textCaption),
+              style: AkashaTypography.body.copyWith(color: AkashaColors.textCaption),
             ),
           ],
         ),
@@ -153,8 +154,7 @@ class _EntityJournalViewState extends State<EntityJournalView> {
             children: [
               Text(
                 'Entity journal (${_entries.length})',
-                style: const TextStyle(
-                  fontSize: 14,
+                style: AkashaTypography.dashboardPanelTitle.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -175,7 +175,7 @@ class _EntityJournalViewState extends State<EntityJournalView> {
             itemBuilder: (context, index) {
               final entry = _entries[index];
               return Material(
-                color: const Color(0xFF252535),
+                color: AkashaColors.workbenchListTile,
                 borderRadius: BorderRadius.circular(8),
                 child: InkWell(
                   borderRadius: BorderRadius.circular(8),
@@ -189,16 +189,14 @@ class _EntityJournalViewState extends State<EntityJournalView> {
                           children: [
                             Text(
                               entityTypeBadgeLabel(entry.entityType),
-                              style: const TextStyle(
-                                fontSize: 10,
+                              style: AkashaTypography.caption.copyWith(
                                 color: Colors.tealAccent,
                               ),
                             ),
                             const Spacer(),
                             Text(
                               _formatWhen(entry.addedAt),
-                              style: TextStyle(
-                                fontSize: 11,
+                              style: AkashaTypography.bodySecondary.copyWith(
                                 color: AkashaColors.textMuted,
                               ),
                             ),
@@ -212,8 +210,7 @@ class _EntityJournalViewState extends State<EntityJournalView> {
                         const SizedBox(height: 6),
                         Text(
                           EntityBodyPreview.format(entry.body),
-                          style: TextStyle(
-                            fontSize: 13,
+                          style: AkashaTypography.listItemTitle.copyWith(
                             color: AkashaColors.textSecondary,
                             height: 1.35,
                           ),

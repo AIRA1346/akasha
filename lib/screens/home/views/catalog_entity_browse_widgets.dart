@@ -9,6 +9,7 @@ import '../../../models/entity_browse_card.dart';
 import '../../../models/entity_gallery_sort.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_typography.dart';
 import '../../../widgets/entity_collectible_card.dart';
 import '../../../widgets/entity_gallery_sort_dropdown.dart';
 import '../dialogs/add_catalog_entity_dialog.dart';
@@ -101,8 +102,7 @@ class CatalogEntityBrowseCompactStrip extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(12, 8, 12, 4),
             child: Text(
               'Entity Discovery · ${cards.length}',
-              style: const TextStyle(
-                fontSize: 12,
+              style: AkashaTypography.body.copyWith(
                 fontWeight: FontWeight.w600,
                 color: Colors.tealAccent,
               ),
@@ -145,7 +145,9 @@ class CatalogEntityBrowseCompactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: highlighted ? const Color(0xFF2A3540) : const Color(0xFF252535),
+      color: highlighted
+          ? AkashaColors.browseCardHighlight
+          : AkashaColors.workbenchListTile,
       shape: highlighted
           ? RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
@@ -164,8 +166,7 @@ class CatalogEntityBrowseCompactCard extends StatelessWidget {
               children: [
                 Text(
                   entityTypeBadgeLabel(entity.anchorType),
-                  style: const TextStyle(
-                    fontSize: 10,
+                  style: AkashaTypography.caption.copyWith(
                     color: Colors.tealAccent,
                   ),
                 ),
@@ -174,10 +175,7 @@ class CatalogEntityBrowseCompactCard extends StatelessWidget {
                   entity.title,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 13,
-                  ),
+                  style: AkashaTypography.listItemTitle,
                 ),
               ],
             ),
@@ -214,8 +212,7 @@ class CatalogEntityBrowseHeader extends StatelessWidget {
         children: [
           Text(
             title,
-            style: const TextStyle(
-              fontSize: 14,
+            style: AkashaTypography.dashboardPanelTitle.copyWith(
               fontWeight: FontWeight.w600,
             ),
           ),

@@ -128,7 +128,7 @@ class PreviewPanelChrome extends StatelessWidget {
           detailTitle,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: AkashaTypography.headline.copyWith(fontSize: 15),
+          style: AkashaTypography.dashboardSectionTitle,
         ),
         if (openDetail != null) ...[
           SizedBox(height: AkashaSpacing.sm + 2),

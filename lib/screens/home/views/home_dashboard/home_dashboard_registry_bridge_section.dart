@@ -9,6 +9,7 @@ import '../../../../widgets/poster_image.dart';
 import '../../../../widgets/registry_discovery_candidates_section.dart';
 import 'home_dashboard_styles.dart';
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_typography.dart';
 
 /// Home — Vault 작품에서 Registry 사전 작품으로 이어지는 브리지 (R11 P1).
 class HomeDashboardRegistryBridgeSection extends StatefulWidget {
@@ -100,9 +101,9 @@ class _HomeDashboardRegistryBridgeSectionState
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: const Color(0xFF141A28),
+                color: AkashaColors.dashboardRegistryBridge,
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.white.withValues(alpha: 0.06)),
+                border: Border.all(color: AkashaColors.borderSubtle(0.06)),
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,16 +128,17 @@ class _HomeDashboardRegistryBridgeSectionState
                           card.sourceWork.title,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            fontSize: 12,
+                          style: AkashaTypography.body.copyWith(
                             fontWeight: FontWeight.w600,
-                            color: Colors.white,
+                            color: AkashaColors.textPrimary,
                           ),
                         ),
                         const SizedBox(height: 4),
                         Text(
                           '${card.bridgeLabel} → 사전 추천',
-                          style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
+                          style: AkashaTypography.caption.copyWith(
+                            color: AkashaColors.textMuted,
+                          ),
                         ),
                         RegistryDiscoveryCandidatesSection(
                           candidates: card.candidates,

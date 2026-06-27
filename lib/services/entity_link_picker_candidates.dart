@@ -3,9 +3,9 @@ import '../core/ports/user_catalog_port.dart';
 import '../models/entity_fact.dart';
 import '../models/user_catalog_entity.dart';
 import '../utils/discovery_linkable_types.dart';
+import '../core/app_vault.dart';
 import 'entity_seed_catalog_promotion.dart';
 import 'entity_vault_loader.dart';
-import 'file_service.dart';
 import 'person_seed_registry.dart';
 
 /// Entity link picker 후보 출처 (R8 P0).
@@ -42,7 +42,7 @@ abstract final class EntityLinkPickerCandidates {
     EntityVaultLoader? loader,
     String? vaultPath,
   }) async {
-    final path = vaultPath ?? AkashaFileService().vaultPath;
+    final path = vaultPath ?? AppVault.port.vaultPath;
     final vaultLoader = loader ?? const EntityVaultLoader();
     final journals = await vaultLoader.loadFromVault(path);
     return journals.map((e) => e.entityId).where((id) => id.isNotEmpty).toSet();

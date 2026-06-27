@@ -4,6 +4,7 @@ import '../../../../core/archiving/entity_anchor.dart';
 import '../../../../core/ports/user_catalog_port.dart';
 import '../../../../models/akasha_item.dart';
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_typography.dart';
 import '../../../../widgets/poster_image.dart';
 import '../../../../widgets/universe_orbit_painter.dart';
 import 'home_dashboard_styles.dart';
@@ -88,7 +89,9 @@ class HomeDashboardUniverseSection extends StatelessWidget {
                       ),
                       child: Text(
                         '모두 보기',
-                        style: TextStyle(fontSize: 9, color: AkashaColors.textMuted),
+                        style: AkashaTypography.micro.copyWith(
+                          color: AkashaColors.textMuted,
+                        ),
                       ),
                     ),
                   ],
@@ -112,7 +115,9 @@ class HomeDashboardUniverseSection extends StatelessWidget {
       return [
         Text(
           '최근 추가한 작품이 없습니다.',
-          style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
+          style: AkashaTypography.bodySecondary.copyWith(
+            color: AkashaColors.textMuted,
+          ),
         ),
       ];
     }
@@ -155,16 +160,17 @@ class HomeDashboardUniverseSection extends StatelessWidget {
                           work.title,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            fontSize: 12,
+                          style: AkashaTypography.body.copyWith(
                             fontWeight: FontWeight.w600,
-                            color: Colors.white,
+                            color: AkashaColors.textPrimary,
                           ),
                         ),
                         const SizedBox(height: 2),
                         Text(
                           '${work.releaseYear ?? ''} · ${work.category.name}',
-                          style: TextStyle(fontSize: 9, color: AkashaColors.textMuted),
+                          style: AkashaTypography.micro.copyWith(
+                          color: AkashaColors.textMuted,
+                        ),
                         ),
                       ],
                     ),
@@ -184,10 +190,9 @@ class HomeDashboardUniverseSection extends StatelessWidget {
                           width: 0.8,
                         ),
                       ),
-                      child: const Text(
+                      child: Text(
                         'NEW',
-                        style: TextStyle(
-                          fontSize: 8,
+                        style: AkashaTypography.nano.copyWith(
                           fontWeight: FontWeight.bold,
                           color: AkashaColors.newBadgeText,
                         ),

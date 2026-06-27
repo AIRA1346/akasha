@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../theme/akasha_colors.dart';
+
+import '../../../../theme/akasha_spacing.dart';
+import '../../../../theme/akasha_typography.dart';
 
 class HomeDashboardWelcomeHeader extends StatelessWidget {
   const HomeDashboardWelcomeHeader({super.key});
@@ -11,28 +13,24 @@ class HomeDashboardWelcomeHeader extends StatelessWidget {
       children: [
         Row(
           children: [
-            const Text(
+            Text(
               '안녕하세요, 탐험가님!',
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+              style: AkashaTypography.dashboardHero,
             ),
-            const SizedBox(width: 6),
+            SizedBox(width: AkashaSpacing.xs + 2),
             Image.network(
               'https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Emojis/main/Emojis/Hand%20Gestures/Waving%20Hand.png',
               width: 26,
               height: 26,
               errorBuilder: (_, _, _) =>
-                  const Text('👋', style: TextStyle(fontSize: 20)),
+                  Text('👋', style: AkashaTypography.dashboardHero.copyWith(fontSize: 20)),
             ),
           ],
         ),
-        const SizedBox(height: 4),
+        SizedBox(height: AkashaSpacing.xs),
         Text(
           '오늘도 지식의 우주를 탐험해볼까요?',
-          style: TextStyle(fontSize: 13, color: AkashaColors.textMuted),
+          style: AkashaTypography.dashboardLead,
         ),
       ],
     );

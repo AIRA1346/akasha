@@ -10,6 +10,7 @@ import '../../../models/user_catalog_entity.dart';
 import '../../../screens/home/coordinators/home_shell_wiring.dart';
 import '../../../services/registry_discovery_candidate_service.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_typography.dart';
 import '../../../utils/entity_link_neighbors.dart';
 import '../../../widgets/entity_link_neighbors_sections.dart';
 import '../../../widgets/entity_preview_empty_connections.dart';
@@ -165,7 +166,7 @@ class _EntityDashboardPreviewPanelState
       decoration: BoxDecoration(
         color: AkashaColors.surface,
         border: Border(
-          left: BorderSide(color: Colors.white.withValues(alpha: 0.08)),
+          left: BorderSide(color: AkashaColors.borderSubtle(0.08)),
         ),
       ),
       child: Column(
@@ -222,7 +223,7 @@ class _EntityDashboardPreviewPanelState
                             children: [
                               Text(
                                 '그래프에서 보기',
-                                style: TextStyle(fontSize: 11),
+                                style: AkashaTypography.compactLabel,
                               ),
                               Icon(Icons.chevron_right_rounded, size: 16),
                             ],

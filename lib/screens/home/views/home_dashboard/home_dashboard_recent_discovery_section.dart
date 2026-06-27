@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../models/akasha_item.dart';
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_typography.dart';
 import '../../../../widgets/poster_image.dart';
 import 'home_dashboard_styles.dart';
 
@@ -32,7 +33,9 @@ class HomeDashboardRecentDiscoverySection extends StatelessWidget {
         if (recent.isEmpty)
           Text(
             '탐험을 시작하면 최근에 본 작품이 여기에 모입니다.',
-            style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
+            style: AkashaTypography.bodySecondary.copyWith(
+              color: AkashaColors.textMuted,
+            ),
           )
         else
           SizedBox(
@@ -84,7 +87,7 @@ class _DiscoveryCard extends StatelessWidget {
               border: Border.all(
                 color: isSelected
                     ? AkashaColors.accent
-                    : Colors.white.withValues(alpha: 0.06),
+                    : AkashaColors.borderSubtle(0.06),
                 width: isSelected ? 1.5 : 1,
               ),
             ),
@@ -109,16 +112,16 @@ class _DiscoveryCard extends StatelessWidget {
                         item.title,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                        style: AkashaTypography.compactLabel.copyWith(
+                          color: AkashaColors.textPrimary,
                         ),
                       ),
                       const SizedBox(height: 4),
                       Text(
                         item.category.name,
-                        style: TextStyle(fontSize: 9, color: AkashaColors.textMuted),
+                        style: AkashaTypography.micro.copyWith(
+                          color: AkashaColors.textMuted,
+                        ),
                       ),
                     ],
                   ),

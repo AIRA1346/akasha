@@ -29,6 +29,10 @@ abstract final class AkashaColors {
   static const workbenchListTile = Color(0xFF252535);
   static const workbenchMutedButton = Color(0xFF2E2E3E);
 
+  /// Home dashboard surfaces (R14-B).
+  static const dashboardRegistryBridge = Color(0xFF141A28);
+  static const browseCardHighlight = Color(0xFF2A3540);
+
   /// Semantic text (R14-A).
   static const textPrimary = Colors.white;
   static const textSecondary = Color(0xFFB0B0B8);

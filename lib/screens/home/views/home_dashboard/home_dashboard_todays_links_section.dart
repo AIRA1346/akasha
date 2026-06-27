@@ -7,6 +7,7 @@ import '../../../../models/user_catalog_entity.dart';
 import '../../../../screens/home/coordinators/home_shell_wiring.dart';
 import '../../../../services/link_candidate_service.dart';
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_typography.dart';
 import '../../../../utils/work_link_neighbors.dart';
 import '../../../../widgets/poster_image.dart';
 import 'home_dashboard_styles.dart';
@@ -196,7 +197,9 @@ class _HomeDashboardTodaysLinksSectionState
                 padding: const EdgeInsets.symmetric(vertical: 8),
                 child: Text(
                   '기록에서 연결한 작품·인물이 여기에 표시됩니다.',
-                  style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
+                  style: AkashaTypography.bodySecondary.copyWith(
+                    color: AkashaColors.textMuted,
+                  ),
                 ),
               );
             }
@@ -339,17 +342,17 @@ class _LinkCard extends StatelessWidget {
                     highlight.work.title,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                    style: AkashaTypography.sectionLabel.copyWith(
+                      color: AkashaColors.textPrimary,
                     ),
                   ),
                   Text(
                     '$targetType · $targetLabel',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 9, color: AkashaColors.textMuted),
+                    style: AkashaTypography.micro.copyWith(
+                      color: AkashaColors.textMuted,
+                    ),
                   ),
                 ],
               ),

@@ -4,6 +4,7 @@ import '../../../../models/akasha_item.dart';
 import '../../../../models/user_catalog_entity.dart';
 import '../../../../services/link_candidate_service.dart';
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_typography.dart';
 import '../../../../utils/connection_similarity.dart';
 import '../../../../widgets/poster_image.dart';
 import 'home_dashboard_discovery_loader.dart';
@@ -33,7 +34,7 @@ class DiscoverySectionEmptyCta extends StatelessWidget {
           Text(
             message,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
+            style: AkashaTypography.bodySecondary,
           ),
           const SizedBox(height: 10),
           Wrap(
@@ -49,12 +50,12 @@ class DiscoverySectionEmptyCta extends StatelessWidget {
                     vertical: 8,
                   ),
                 ),
-                child: Text(primaryLabel, style: const TextStyle(fontSize: 11)),
+                child: Text(primaryLabel, style: AkashaTypography.compactLabel),
               ),
               if (secondaryLabel != null && onSecondary != null)
                 OutlinedButton(
                   onPressed: onSecondary,
-                  child: Text(secondaryLabel!, style: const TextStyle(fontSize: 11)),
+                  child: Text(secondaryLabel!, style: AkashaTypography.compactLabel),
                 ),
             ],
           ),
@@ -81,12 +82,11 @@ class DiscoverySectionTabButton extends StatelessWidget {
     return TextButton(
       onPressed: onTap,
       style: TextButton.styleFrom(
-        foregroundColor: isActive ? Colors.white : AkashaColors.textCaption,
+        foregroundColor: isActive ? AkashaColors.textPrimary : AkashaColors.textCaption,
       ),
       child: Text(
         label,
-        style: TextStyle(
-          fontSize: 12,
+        style: AkashaTypography.body.copyWith(
           fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
         ),
       ),
@@ -129,9 +129,7 @@ class DiscoverySectionPairCard extends StatelessWidget {
             textAlign: TextAlign.right,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: const TextStyle(
-              fontSize: 10,
-              fontWeight: FontWeight.bold,
+            style: AkashaTypography.sectionLabel.copyWith(
               color: AkashaColors.accent,
             ),
           ),
@@ -226,7 +224,9 @@ class DiscoverySectionSuggestionThumb extends StatelessWidget {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 9, color: AkashaColors.textSecondary),
+                style: AkashaTypography.micro.copyWith(
+                  color: AkashaColors.textSecondary,
+                ),
               ),
             ),
           ],
@@ -261,13 +261,11 @@ class DiscoverySectionSingleCard extends StatelessWidget {
           onDoubleTap: onDoubleTap,
           child: Column(
             children: [
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'NEW',
-                  style: TextStyle(
-                    fontSize: 9,
-                    fontWeight: FontWeight.bold,
+                  style: AkashaTypography.micro.copyWith(
                     color: AkashaColors.newBadgeText,
                   ),
                 ),
@@ -280,7 +278,9 @@ class DiscoverySectionSingleCard extends StatelessWidget {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 10, color: Colors.white),
+                style: AkashaTypography.caption.copyWith(
+                  color: AkashaColors.textPrimary,
+                ),
               ),
             ],
           ),
@@ -341,7 +341,9 @@ class DiscoverySectionEntityCard extends StatelessWidget {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 10, color: Colors.white),
+                style: AkashaTypography.caption.copyWith(
+                  color: AkashaColors.textPrimary,
+                ),
               ),
             ],
           ),

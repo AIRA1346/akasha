@@ -6,6 +6,7 @@ import '../../../core/archiving/record_kind.dart';
 import '../../../data/adapters/vault_archive_record_adapter.dart';
 import '../../../services/journal_vault_loader.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_typography.dart';
 
 /// Wave 3 — freeform journal 시간순 목록.
 class JournalView extends StatefulWidget {
@@ -233,8 +234,7 @@ class _JournalViewState extends State<JournalView> {
             children: [
               Text(
                 '메모 (${_entries.length})',
-                style: const TextStyle(
-                  fontSize: 14,
+                style: AkashaTypography.dashboardPanelTitle.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -260,7 +260,7 @@ class _JournalViewState extends State<JournalView> {
             itemBuilder: (context, index) {
               final entry = _entries[index];
               return Material(
-                color: const Color(0xFF252535),
+                color: AkashaColors.workbenchListTile,
                 borderRadius: BorderRadius.circular(8),
                 child: InkWell(
                   borderRadius: BorderRadius.circular(8),
@@ -282,8 +282,7 @@ class _JournalViewState extends State<JournalView> {
                             ),
                             Text(
                               _formatWhen(entry.addedAt),
-                              style: TextStyle(
-                                fontSize: 11,
+                              style: AkashaTypography.bodySecondary.copyWith(
                                 color: AkashaColors.textMuted,
                               ),
                             ),
@@ -292,8 +291,7 @@ class _JournalViewState extends State<JournalView> {
                         const SizedBox(height: 6),
                         Text(
                           _preview(entry.body),
-                          style: TextStyle(
-                            fontSize: 13,
+                          style: AkashaTypography.listItemTitle.copyWith(
                             color: AkashaColors.textSecondary,
                             height: 1.35,
                           ),

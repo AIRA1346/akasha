@@ -12,6 +12,7 @@ import '../home_personal_library_controller.dart';
 import '../home_section_preferences.dart';
 import '../../../models/browse_card.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_typography.dart';
 
 /// 개인 서재 그리드·curated reorder·섹션 prefs 연동
 class PersonalLibraryView extends StatefulWidget {
@@ -129,8 +130,7 @@ class _PersonalLibraryViewState extends State<PersonalLibraryView> {
                           : isFilterEmpty
                               ? '$libName에 표시할 아카이브 작품이 없습니다'
                               : '$libName에 표시할 작품이 없습니다',
-              style: const TextStyle(
-                fontSize: 15,
+              style: AkashaTypography.dashboardSectionTitle.copyWith(
                 fontWeight: FontWeight.w600,
               ),
               textAlign: TextAlign.center,

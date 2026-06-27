@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../models/akasha_item.dart';
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_typography.dart';
 import '../../../../widgets/poster_image.dart';
 import 'home_dashboard_styles.dart';
 
@@ -32,7 +33,9 @@ class HomeDashboardRecentRecordsSection extends StatelessWidget {
         if (recent.isEmpty)
           Text(
             '작품을 열어 감상을 기록하면 여기에 표시됩니다.',
-            style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
+            style: AkashaTypography.bodySecondary.copyWith(
+              color: AkashaColors.textMuted,
+            ),
           )
         else
           Column(
@@ -66,10 +69,9 @@ class HomeDashboardRecentRecordsSection extends StatelessWidget {
                                   work.title,
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
-                                    fontSize: 12,
+                                  style: AkashaTypography.body.copyWith(
                                     fontWeight: FontWeight.w600,
-                                    color: Colors.white,
+                                    color: AkashaColors.textPrimary,
                                   ),
                                 ),
                                 const SizedBox(height: 4),
@@ -79,8 +81,7 @@ class HomeDashboardRecentRecordsSection extends StatelessWidget {
                                       : '아카이브됨 · 기록 있음',
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    fontSize: 10,
+                                  style: AkashaTypography.caption.copyWith(
                                     color: AkashaColors.textMuted,
                                   ),
                                 ),

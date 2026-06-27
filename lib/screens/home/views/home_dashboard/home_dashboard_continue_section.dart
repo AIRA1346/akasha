@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../models/akasha_item.dart';
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_typography.dart';
 import '../../../../utils/exploration_progress.dart';
 import '../../../../widgets/poster_image.dart';
 import '../../../home/views/preview_record_view_model.dart';
@@ -55,7 +56,9 @@ class HomeDashboardContinueSection extends StatelessWidget {
               isColdStart
                   ? '탐험을 시작하면 최근에 본 작품과 인물이 여기에 표시됩니다.'
                   : '아직 탐색 기록이 없습니다. 작품이나 인물을 열면 여기에 표시됩니다.',
-              style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
+              style: AkashaTypography.bodySecondary.copyWith(
+                color: AkashaColors.textMuted,
+              ),
             ),
           )
         else if (_usingVaultFallback)
@@ -63,7 +66,9 @@ class HomeDashboardContinueSection extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 8),
             child: Text(
               '최근 추가한 작품부터 탐험해 보세요.',
-              style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
+              style: AkashaTypography.bodySecondary.copyWith(
+                color: AkashaColors.textMuted,
+              ),
             ),
           ),
         if (displayItems.isNotEmpty)
@@ -181,10 +186,8 @@ class _ExploreCard extends StatelessWidget {
                         ),
                         child: Text(
                           badgeLabel,
-                          style: const TextStyle(
-                            fontSize: 9,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                          style: AkashaTypography.micro.copyWith(
+                            color: AkashaColors.textPrimary,
                           ),
                         ),
                       ),
@@ -193,10 +196,8 @@ class _ExploreCard extends StatelessWidget {
                         item.title,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                        style: AkashaTypography.compactLabel.copyWith(
+                          color: AkashaColors.textPrimary,
                         ),
                       ),
                       const SizedBox(height: 6),
@@ -211,8 +212,7 @@ class _ExploreCard extends StatelessWidget {
                                 item.tags.take(2).join(', '),
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                  fontSize: 9,
+                                style: AkashaTypography.micro.copyWith(
                                   color: AkashaColors.textSecondary,
                                 ),
                               ),
@@ -227,8 +227,7 @@ class _ExploreCard extends StatelessWidget {
                             const SizedBox(width: 4),
                             Text(
                               '기록 있음',
-                              style: TextStyle(
-                                fontSize: 9,
+                              style: AkashaTypography.micro.copyWith(
                                 color: AkashaColors.textSecondary,
                               ),
                             ),
@@ -243,8 +242,7 @@ class _ExploreCard extends StatelessWidget {
                               child: LinearProgressIndicator(
                                 value: progress,
                                 minHeight: 3,
-                                backgroundColor:
-                                    Colors.white.withValues(alpha: 0.12),
+                                backgroundColor: AkashaColors.borderSubtle(0.12),
                                 valueColor: const AlwaysStoppedAnimation(
                                   AkashaColors.accent,
                                 ),
@@ -254,8 +252,7 @@ class _ExploreCard extends StatelessWidget {
                           const SizedBox(width: 6),
                           Text(
                             '$progressLabel%',
-                            style: TextStyle(
-                              fontSize: 8,
+                            style: AkashaTypography.nano.copyWith(
                               fontWeight: FontWeight.bold,
                               color: AkashaColors.textSecondary,
                             ),

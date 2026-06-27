@@ -11,6 +11,7 @@ import '../../../services/link_candidate_service.dart';
 import '../../../services/registry_discovery_candidate_service.dart';
 import '../../../services/works_registry.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_typography.dart';
 import '../../../utils/vault_work_presence.dart';
 import '../../../utils/work_link_neighbors.dart';
 import '../../../widgets/registry_discovery_candidates_section.dart';
@@ -280,7 +281,7 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
       decoration: BoxDecoration(
         color: AkashaColors.surface,
         border: Border(
-          left: BorderSide(color: Colors.white.withValues(alpha: 0.08)),
+          left: BorderSide(color: AkashaColors.borderSubtle(0.08)),
         ),
       ),
       child: Column(
@@ -345,7 +346,7 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                             children: [
                               Text(
                                 '그래프에서 보기',
-                                style: TextStyle(fontSize: 11),
+                                style: AkashaTypography.compactLabel,
                               ),
                               Icon(Icons.chevron_right_rounded, size: 16),
                             ],

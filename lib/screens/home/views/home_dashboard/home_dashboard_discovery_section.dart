@@ -6,6 +6,7 @@ import '../../../../models/akasha_item.dart';
 import '../../../../models/user_catalog_entity.dart';
 import '../../../../services/link_candidate_service.dart';
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_typography.dart';
 import 'home_dashboard_discovery_cards.dart';
 import 'home_dashboard_discovery_loader.dart';
 import 'home_dashboard_styles.dart';
@@ -139,12 +140,10 @@ class _HomeDashboardDiscoverySectionState
         Center(
           child: TextButton(
             onPressed: widget.onGoExplore,
-            child: const Text(
+            child: Text(
               '더 많은 연결 보기',
-              style: TextStyle(
-                fontSize: 12,
+              style: AkashaTypography.buttonLabel.copyWith(
                 color: AkashaColors.accent,
-                fontWeight: FontWeight.bold,
               ),
             ),
           ),
@@ -191,12 +190,14 @@ class _HomeDashboardDiscoverySectionState
         ..sort((a, b) => b.addedAt.compareTo(a.addedAt));
       final items = sorted.take(3).toList();
       if (items.isEmpty) {
-        return const [
+        return [
           Expanded(
             child: Center(
               child: Text(
                 '최근 추가한 작품이 없습니다.',
-                style: TextStyle(color: AkashaColors.textMuted, fontSize: 12),
+                style: AkashaTypography.body.copyWith(
+                  color: AkashaColors.textMuted,
+                ),
               ),
             ),
           ),

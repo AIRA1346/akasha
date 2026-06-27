@@ -9,6 +9,7 @@ import '../../../widgets/browse_dashboard_sections.dart';
 import '../home_section_preferences.dart';
 import '../../../models/browse_card.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_typography.dart';
 
 /// 비-개인서재(대시보드) browse 그리드·섹션 prefs 연동
 class BrowseView extends StatefulWidget {
@@ -190,7 +191,7 @@ class _CatalogWindowFooter extends StatelessWidget {
             l10n != null
                 ? l10n.browseCatalogIndexed(loadedThrough, totalEntries)
                 : '글로벌 사전 $loadedThrough / $totalEntries 작품 색인 로드됨',
-            style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
+            style: AkashaTypography.body.copyWith(color: AkashaColors.textMuted),
           ),
           if (hasMore) ...[
             const SizedBox(height: 8),

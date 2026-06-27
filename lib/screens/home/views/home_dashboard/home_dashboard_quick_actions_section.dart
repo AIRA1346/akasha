@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../config/feature_flags.dart';
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_typography.dart';
 import 'home_dashboard_styles.dart';
 
 class HomeDashboardQuickActionsSection extends StatelessWidget {
@@ -128,16 +129,16 @@ class _ActionCard extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: const TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                        style: AkashaTypography.buttonLabel.copyWith(
+                          color: AkashaColors.textPrimary,
                         ),
                       ),
                       const SizedBox(height: 2),
                       Text(
                         desc,
-                        style: TextStyle(fontSize: 9, color: AkashaColors.textMuted),
+                        style: AkashaTypography.micro.copyWith(
+                          color: AkashaColors.textMuted,
+                        ),
                       ),
                     ],
                   ),

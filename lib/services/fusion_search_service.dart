@@ -4,8 +4,8 @@ import '../../core/ports/entity_registry_port.dart';
 import '../core/ports/registry_port.dart';
 import '../core/ports/user_catalog_port.dart';
 import '../models/akasha_item.dart';
+import '../core/app_vault.dart';
 import '../services/entity_vault_loader.dart';
-import '../services/file_service.dart';
 import '../services/franchise_registry.dart';
 import '../services/franchise_representative_picker.dart';
 import '../services/registry_visibility_service.dart';
@@ -79,7 +79,7 @@ abstract final class FusionSearchService {
     );
 
     final loader = entityLoader ?? const EntityVaultLoader();
-    final vaultPath = AkashaFileService().vaultPath;
+    final vaultPath = AppVault.port.vaultPath;
     final allEntityJournals = await loader.loadFromVault(vaultPath);
     final localEntityJournals = allEntityJournals.where((entry) {
       if (entry.title.toLowerCase().contains(q)) return true;

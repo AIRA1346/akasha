@@ -8,6 +8,7 @@ import '../../../data/adapters/vault_archive_record_adapter.dart';
 import '../../../models/akasha_item.dart';
 import '../../../services/timeline_vault_loader.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_typography.dart';
 
 /// Phase 4.4 — Timeline entry 시간순 목록.
 class TimelineView extends StatefulWidget {
@@ -274,8 +275,7 @@ class _TimelineViewState extends State<TimelineView> {
             children: [
               Text(
                 '타임라인 (${_entries.length})',
-                style: const TextStyle(
-                  fontSize: 14,
+                style: AkashaTypography.dashboardPanelTitle.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -301,7 +301,7 @@ class _TimelineViewState extends State<TimelineView> {
             itemBuilder: (context, index) {
               final entry = _entries[index];
               return Material(
-                color: const Color(0xFF252535),
+                color: AkashaColors.workbenchListTile,
                 borderRadius: BorderRadius.circular(8),
                 child: InkWell(
                   borderRadius: BorderRadius.circular(8),
@@ -323,8 +323,7 @@ class _TimelineViewState extends State<TimelineView> {
                             ),
                             Text(
                               _formatWhen(entry.occurredAt),
-                              style: TextStyle(
-                                fontSize: 11,
+                              style: AkashaTypography.bodySecondary.copyWith(
                                 color: AkashaColors.textMuted,
                               ),
                             ),
@@ -334,8 +333,7 @@ class _TimelineViewState extends State<TimelineView> {
                           const SizedBox(height: 4),
                           Text(
                             '🔗 ${_workTitleFor(entry.entityId)}',
-                            style: const TextStyle(
-                              fontSize: 11,
+                            style: AkashaTypography.compactLabel.copyWith(
                               color: Colors.tealAccent,
                             ),
                           ),
@@ -343,8 +341,7 @@ class _TimelineViewState extends State<TimelineView> {
                         const SizedBox(height: 6),
                         Text(
                           _preview(entry.body),
-                          style: TextStyle(
-                            fontSize: 13,
+                          style: AkashaTypography.listItemTitle.copyWith(
                             color: AkashaColors.textSecondary,
                             height: 1.35,
                           ),

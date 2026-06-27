@@ -117,4 +117,36 @@ abstract final class AkashaTypography {
     fontWeight: FontWeight.bold,
     color: AkashaColors.textPrimary,
   );
+
+  /// Home dashboard section chrome (R14-B).
+  static const dashboardSectionTitle = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.bold,
+    color: AkashaColors.textPrimary,
+  );
+
+  static const dashboardPanelTitle = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+    color: AkashaColors.textPrimary,
+  );
+
+  static const dashboardHero = TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeight.bold,
+    color: AkashaColors.textPrimary,
+  );
+
+  static const dashboardLead = TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.w400,
+    color: AkashaColors.textMuted,
+  );
+
+  /// Smallest dashboard metadata (R14-B).
+  static const nano = TextStyle(
+    fontSize: 8,
+    fontWeight: FontWeight.w400,
+    color: AkashaColors.textMuted,
+  );
 }

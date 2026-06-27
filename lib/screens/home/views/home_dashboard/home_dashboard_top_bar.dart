@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_typography.dart';
 
 class HomeDashboardTopBar extends StatelessWidget {
   const HomeDashboardTopBar({
@@ -34,20 +35,21 @@ class HomeDashboardTopBar extends StatelessWidget {
                   Expanded(
                     child: Text(
                       '작품, 인물, 사건, 장소, 개념을 검색하세요...',
-                      style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
+                      style: AkashaTypography.bodySecondary.copyWith(
+                        color: AkashaColors.textMuted,
+                      ),
                     ),
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
                     decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.04),
+                      color: AkashaColors.borderSubtle(0.04),
                       borderRadius: BorderRadius.circular(4),
                       border: Border.all(color: AkashaColors.borderSubtle(0.06)),
                     ),
                     child: Text(
                       'Ctrl K',
-                      style: TextStyle(
-                        fontSize: 9,
+                      style: AkashaTypography.micro.copyWith(
                         color: AkashaColors.textMuted,
                         fontFamily: 'Consolas',
                       ),
@@ -72,7 +74,7 @@ class HomeDashboardTopBar extends StatelessWidget {
           height: 28,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(color: Colors.white.withValues(alpha: 0.1), width: 1),
+            border: Border.all(color: AkashaColors.borderSubtle(0.1), width: 1),
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(14),
@@ -84,7 +86,7 @@ class HomeDashboardTopBar extends StatelessWidget {
               },
               fit: BoxFit.cover,
               errorBuilder: (_, _, _) =>
-                  const Icon(Icons.person, size: 14, color: Colors.white),
+                  Icon(Icons.person, size: 14, color: AkashaColors.textPrimary),
             ),
           ),
         ),
