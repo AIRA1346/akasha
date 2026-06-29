@@ -1,6 +1,6 @@
 # Foundation Audit — 기초 다지기 감사 (F0)
 
-> **일자:** 2026-06-25 (F0) · **재검토:** 2026-06-25 (Post-F4)  
+> **일자:** 2026-06-25 (F0) · **재검토:** 2026-06-29 (Post-P30)
 > **지위:** Foundation Sprint 감사 SSOT (draft)  
 > **상위:** [PROJECT_STATUS.md](../active/PROJECT_STATUS.md) · [CURRENT_STATE.md](../active/CURRENT_STATE.md)  
 > **레거시:** [LEGACY_REMOVAL_POLICY.md](LEGACY_REMOVAL_POLICY.md)
@@ -9,17 +9,18 @@
 
 ## 1. Executive Summary
 
-| 항목 | 결과 (재검토 2026-06-25) |
-|------|--------------------------|
+| 항목 | 결과 (재검토 2026-06-29 · Post-P30) |
+|------|--------------------------------------|
 | `flutter test` | **610/610 PASS** |
 | `dogfood_precheck.ps1` | **PASS** |
-| `flutter analyze lib` | **0 issue** (P8 workspace UI part 정리 후) |
-| Release build | `build_release.ps1` OK (`202236a`) |
-| Git | `main` **origin 동기화** (`2af7872` push 완료) |
+| `flutter analyze lib` | **0 issue** |
+| Release build | `build_release.ps1` OK |
+| Git | `main` **origin 동기화** (`9d17f75`) |
 | Foundation F0~F4 | **✅ 완료** |
+| Foundation P2 분해 | **P27~P30** ✅ (sidebar · browse · dialog) |
 | B1 수동 dogfood | **✅ 완료** |
 
-**판단:** Gate·Registry·Foundation Sprint는 건강. **R14 토큰화 완료.** Vault agent readme·path index ✅. 다음 병목: 대형 파일 분해·M3.
+**판단:** Gate·Registry 건강. **600줄+ 대형 파일 분해 거의 완료** — 잔여 P0는 `work_library_panel` (**466**줄). P30 dialog는 session 추출 포함; 저장 플로우 widget test 권장.
 
 ---
 
@@ -36,7 +37,7 @@
 
 | 단계 | 도구 | 결과 |
 |------|------|:----:|
-| 테스트 | `flutter test` | **605 PASS** |
+| 테스트 | `flutter test` | **610 PASS** |
 | Registry | `ci_registry_check` | PASS (@10048) |
 | Preflight | `preflight_check` | PASS |
 | Recall | `sw1_a_validation` | 87/87 recall@10 |
@@ -56,29 +57,41 @@
 
 ---
 
-## 3. 대형 파일 (600줄+, 2026-06-25 재실측)
+## 3. 대형 파일 (400줄+, 2026-06-29 재실측 · Post-P30)
 
-| 줄 수 | 파일 | 비고 |
+### 잔여 후보 (분해 대상)
+
+| 줄 수 | 파일 | 우선 |
+|------:|------|:----:|
+| **503** | `markdown_body_editor.dart` | — (P26 parts 분리 완료) |
+| **479** | `home_shell_body.dart` | P2 (P6 ✅, 추가 여지 적음) |
+| **466** | `work_library_panel.dart` | **P31 P0** |
+| **456** | `franchise_fusion_service.dart` | P2 |
+| **435** | `home_dialogs_coordinator.dart` | P2 |
+| **428** | `home_shell_scaffold.dart` | P2 |
+
+### P27~P30 분해 완료 (shell)
+
+| 작업 | shell | part / 비고 |
+|------|------:|-------------|
+| P27 `dashboard_sidebar` | **152** | 8 part (nav·thumbnail·sections) |
+| P28 R14-B tokens | — | poster·editor·sidebar 인라인 스타일 |
+| P29 `browse_dashboard_sections` | **165** | 6 part + grid `KeyedSubtree`/`findChildIndexCallback` 유지 |
+| P30 `collectible_collection_edit_dialog` | **73** | session·filter·curated·actions·delete parts |
+
+### 이전 분해 (P9~P26 요약)
+
+| shell | 파일 | 비고 |
 |------:|------|------|
-| **583** | `work_detail_workspace.dart` | P2 ✅ (draft bundle·sanctum·link ops) |
-| **615** | `entity_detail_workspace.dart` | P2 ✅ |
-| **248** | `home_dashboard_discovery_section.dart` | P5 ✅ loader·cards 분리 |
-| **471** | `home_shell_body.dart` | P6 ✅ browse·center·preview 분리 |
-| 297 | `home_shell_body_center.dart` | P6 추출 |
-| **361** | `catalog_entity_browse_view.dart` | P7 ✅ loader·widgets 분리 |
-| **126** | `poster_card.dart` | P9 ✅ style·layouts 분리 |
-| 590 | `work_link_neighbors_sections.dart` | P10 ✅ **207** + chrome·layouts |
-| **93** | `registry_shard_loader.dart` | P12 ✅ **93** shell + cache·search·shards·sync |
-| **89** | `file_service.dart` | P13 ✅ **89** shell + paths·watch·scan·save·bootstrap |
-| **278** | `entity_detail_workspace.dart` | P15 ✅ + vault·links·persist parts |
-| **273** | `work_detail_workspace.dart` | P15 ✅ + vault·links·persist parts |
-| **276** | `fusion_search_dialog.dart` | P14 ✅ + tiles·search part |
-| **256** | `entity_link_picker_dialog.dart` | P14 ✅ + widgets·actions part |
-| 239 | `registry_shard_loader_search_index.dart` | P12 추출 |
-| 537 | `home_shell_controller.dart` | P11 ✅ **156** + bundle·mixins |
-| **254** | `work_sanctum_section_editor.dart` | F2 ✅ |
+| **278** | `entity_detail_workspace.dart` | P15 vault·links·persist |
+| **273** | `work_detail_workspace.dart` | P15 |
+| **~270** | `poster_card_layouts.dart` | P24 badges·meta·layouts |
+| **156** | `home_shell_controller.dart` | P11 bundle·mixins |
+| **126** | `poster_card.dart` | P9 style·layouts |
+| **93** | `registry_shard_loader.dart` | P12 cache·search·shards·sync |
+| **89** | `file_service.dart` | P13 paths·watch·scan·save |
 
-> `markdown_body_editor.dart` **455줄** (P2 완료) — `markdown_editor_*_ops`·`markdown_slash_command_patch`·shortcuts part 추출.
+> `markdown_body_editor` shell **503줄** + 6 editor parts (P26) + shortcuts part.
 
 ---
 
@@ -113,7 +126,7 @@
 
 ## 6. Git · 원격
 
-Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin/main` 대비). `git push` 대기.
+`origin/main` = **`9d17f75`** (P30 collectible dialog 분해). 로컬/원격 **동기화 완료**. dirty = registry manifest 4개 (`generatedAt` only).
 
 ---
 
@@ -192,6 +205,12 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | P23 | `AppVault` + storage/widget Port | ✅ 3차 · adapter DI 완료 |
 | P24 | `poster_card_layouts` 분해 | ✅ badges·meta·layouts |
 | P26 | `markdown_editor_parts` 분해 | ✅ 6 part files |
+| P27 | `dashboard_sidebar` 분해 | ✅ shell **152** · 8 part |
+| P28 | R14-B tokens (poster·editor·sidebar) | ✅ |
+| P29 | `browse_dashboard_sections` 분해 | ✅ shell **165** · 6 part |
+| P30 | `collectible_collection_edit_dialog` 분해 | ✅ shell **73** · session + 7 part |
+| P31 | `work_library_panel` 분해 | **다음 P0** |
+| — | dialog 저장 플로우 widget test | P30 후속 P1 |
 
 **금지:** M3 Steam · Discovery Engine · Preview stack · Save Return 정책.
 
@@ -199,9 +218,14 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 
 | 일자 | 변경 |
 |------|------|
+| 2026-06-29 | **Post-P30** — P27~P30 분해·P28 tokens 반영 · 400줄+ 재실측 · `origin/main` **9d17f75** |
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS |
 | 2026-06-25 | F4 — LEGACY_REMOVAL_POLICY · 9건 게이트 |
 | 2026-06-25 | Post-F4 재검토 — 대형 파일 재실측 · R14·백로그 · P0/P1 정리 |
+| 2026-06-24 | P30 — `collectible_collection_edit_dialog` session + 7 part (**73** shell) |
+| 2026-06-24 | P29 — `browse_dashboard_sections` 6 part (**165** shell) |
+| 2026-06-24 | P28 — R14-B poster·editor·sidebar tokens |
+| 2026-06-24 | P27 — `dashboard_sidebar` 8 part (**152** shell) |
 | 2026-06-24 | P26 — `markdown_editor_parts` → status·intents·slash·field·find·toolbar parts |
 | 2026-06-24 | P23 3차 — storage adapter `VaultPort` DI 완료 · `HomeVaultCoordinator` vault 주입 |
 | 2026-06-24 | P22 — Home dashboard·journal·browse R14-B 3차 (`dashboardHero`·`nano`·`AppVault` colors) |
