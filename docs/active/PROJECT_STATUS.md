@@ -21,7 +21,7 @@
 | **Phase 6.2** | 전 경로 Workbench 통합 ✅ |
 | **Phase 6.3** | incoming/sameDay·connections coordinator ✅ |
 | **코드 건강** | Phase 0~7 ✅ · **Sanctum C1~C4** ✅ |
-| **다음** | **Foundation Phase 2** — `markdown_editor_parts`·`dashboard_sidebar` 분해 (M3 보류) |
+| **다음** | **Foundation Phase 2** — `dashboard_sidebar` 분해 (M3 보류) |
 | **Scale / Core** | **Phase 2.0~2.3** ✅ @10048 · G1 ✅ · **ADR-010 eager-only batch** ✅ |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `wikidata_ko` active · **10k milestone** ✅ |
@@ -112,8 +112,8 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | # | 작업 | 우선 |
 |---|------|:----:|
-| 1 | `markdown_editor_parts`·`dashboard_sidebar` 분해 | **P0** |
-| 2 | `poster_card_layouts` R14-B 토큰 잔여 | P1 |
+| 1 | `dashboard_sidebar` 분해 | **P0** |
+| 2 | markdown editor·`poster_card_layout_*` R14-B 토큰 잔여 | P1 |
 | 3 | **M3** Steam Release | 보류 |
 
 ---

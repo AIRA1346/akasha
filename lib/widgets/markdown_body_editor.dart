@@ -16,7 +16,12 @@ import '../utils/markdown_slash_commands.dart';
 import '../theme/akasha_colors.dart';
 
 
-part 'markdown_editor_parts.dart';
+part 'markdown_editor_status_bar_part.dart';
+part 'markdown_editor_intents_part.dart';
+part 'markdown_editor_slash_menu_part.dart';
+part 'markdown_editor_text_field_part.dart';
+part 'markdown_editor_find_bar_part.dart';
+part 'markdown_editor_toolbar_part.dart';
 part 'markdown_editor_shortcuts_part.dart';
 
 /// 편집 대상 — 본문만 또는 YAML 포함 전체 md.

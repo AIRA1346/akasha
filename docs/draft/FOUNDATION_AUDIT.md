@@ -191,6 +191,7 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | P21 | Workbench presentation `VaultPort` | ✅ |
 | P23 | `AppVault` + storage/widget Port | ✅ 3차 · adapter DI 완료 |
 | P24 | `poster_card_layouts` 분해 | ✅ badges·meta·layouts |
+| P26 | `markdown_editor_parts` 분해 | ✅ 6 part files |
 
 **금지:** M3 Steam · Discovery Engine · Preview stack · Save Return 정책.
 
@@ -201,7 +202,7 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS |
 | 2026-06-25 | F4 — LEGACY_REMOVAL_POLICY · 9건 게이트 |
 | 2026-06-25 | Post-F4 재검토 — 대형 파일 재실측 · R14·백로그 · P0/P1 정리 |
-| 2026-06-24 | P24 — `poster_card_layouts` → badges·meta·layouts 분해 |
+| 2026-06-24 | P26 — `markdown_editor_parts` → status·intents·slash·field·find·toolbar parts |
 | 2026-06-24 | P23 3차 — storage adapter `VaultPort` DI 완료 · `HomeVaultCoordinator` vault 주입 |
 | 2026-06-24 | P22 — Home dashboard·journal·browse R14-B 3차 (`dashboardHero`·`nano`·`AppVault` colors) |
 | 2026-06-24 | P16b — dialog·loader `VaultPort`/`vaultPath` wiring 완료 (`screens/home` `AkashaFileService` 0, `cacheKeyFor` static 제외) |
