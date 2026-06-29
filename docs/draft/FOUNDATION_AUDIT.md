@@ -1,6 +1,6 @@
 # Foundation Audit — 기초 다지기 감사 (F0)
 
-> **일자:** 2026-06-25 (F0) · **재검토:** 2026-06-29 (Post-P30)
+> **일자:** 2026-06-25 (F0) · **재검토:** 2026-06-29 (Post-P31)
 > **지위:** Foundation Sprint 감사 SSOT (draft)  
 > **상위:** [PROJECT_STATUS.md](../active/PROJECT_STATUS.md) · [CURRENT_STATE.md](../active/CURRENT_STATE.md)  
 > **레거시:** [LEGACY_REMOVAL_POLICY.md](LEGACY_REMOVAL_POLICY.md)
@@ -9,18 +9,18 @@
 
 ## 1. Executive Summary
 
-| 항목 | 결과 (재검토 2026-06-29 · Post-P30) |
+| 항목 | 결과 (재검토 2026-06-29 · Post-P31) |
 |------|--------------------------------------|
 | `flutter test` | **610/610 PASS** |
 | `dogfood_precheck.ps1` | **PASS** |
 | `flutter analyze lib` | **0 issue** |
 | Release build | `build_release.ps1` OK |
-| Git | `main` **origin 동기화** (`9d17f75`) |
+| Git | `main` **origin 동기화** (`0c92519`) |
 | Foundation F0~F4 | **✅ 완료** |
-| Foundation P2 분해 | **P27~P30** ✅ (sidebar · browse · dialog) |
+| Foundation P2 분해 | **P27~P31** ✅ (sidebar · browse · dialog · work library) |
 | B1 수동 dogfood | **✅ 완료** |
 
-**판단:** Gate·Registry 건강. **600줄+ 대형 파일 분해 거의 완료** — 잔여 P0는 `work_library_panel` (**466**줄). P30 dialog는 session 추출 포함; 저장 플로우 widget test 권장.
+**판단:** Gate·Registry 건강. **P0 대형 파일 분해 완료** — 잔여는 P2 (`home_shell_scaffold` 등). P30 dialog 저장 플로우 widget test 권장.
 
 ---
 
@@ -57,7 +57,7 @@
 
 ---
 
-## 3. 대형 파일 (400줄+, 2026-06-29 재실측 · Post-P30)
+## 3. 대형 파일 (400줄+, 2026-06-29 재실측 · Post-P31)
 
 ### 잔여 후보 (분해 대상)
 
@@ -65,12 +65,11 @@
 |------:|------|:----:|
 | **503** | `markdown_body_editor.dart` | — (P26 parts 분리 완료) |
 | **479** | `home_shell_body.dart` | P2 (P6 ✅, 추가 여지 적음) |
-| **466** | `work_library_panel.dart` | **P31 P0** |
 | **456** | `franchise_fusion_service.dart` | P2 |
 | **435** | `home_dialogs_coordinator.dart` | P2 |
 | **428** | `home_shell_scaffold.dart` | P2 |
 
-### P27~P30 분해 완료 (shell)
+### P27~P31 분해 완료 (shell)
 
 | 작업 | shell | part / 비고 |
 |------|------:|-------------|
@@ -78,6 +77,7 @@
 | P28 R14-B tokens | — | poster·editor·sidebar 인라인 스타일 |
 | P29 `browse_dashboard_sections` | **165** | 6 part + grid `KeyedSubtree`/`findChildIndexCallback` 유지 |
 | P30 `collectible_collection_edit_dialog` | **73** | session·filter·curated·actions·delete parts |
+| P31 `work_library_panel` | **162** | logic·header·library·hide·actions parts |
 
 ### 이전 분해 (P9~P26 요약)
 
@@ -126,7 +126,7 @@
 
 ## 6. Git · 원격
 
-`origin/main` = **`9d17f75`** (P30 collectible dialog 분해). 로컬/원격 **동기화 완료**. dirty = registry manifest 4개 (`generatedAt` only).
+`origin/main` = **`0c92519`** (P31 work library panel 분해). 로컬/원격 **동기화 완료**. dirty = registry manifest 4개 (`generatedAt` only).
 
 ---
 
@@ -209,8 +209,8 @@
 | P28 | R14-B tokens (poster·editor·sidebar) | ✅ |
 | P29 | `browse_dashboard_sections` 분해 | ✅ shell **165** · 6 part |
 | P30 | `collectible_collection_edit_dialog` 분해 | ✅ shell **73** · session + 7 part |
-| P31 | `work_library_panel` 분해 | **다음 P0** |
-| — | dialog 저장 플로우 widget test | P30 후속 P1 |
+| P31 | `work_library_panel` 분해 | ✅ shell **162** · 5 part |
+| — | dialog 저장 플로우 widget test | P30 후속 **P1** |
 
 **금지:** M3 Steam · Discovery Engine · Preview stack · Save Return 정책.
 
@@ -218,6 +218,7 @@
 
 | 일자 | 변경 |
 |------|------|
+| 2026-06-29 | **Post-P31** — P31 `work_library_panel` 분해 (**162** shell) · `origin/main` **0c92519** |
 | 2026-06-29 | **Post-P30** — P27~P30 분해·P28 tokens 반영 · 400줄+ 재실측 · `origin/main` **9d17f75** |
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS |
 | 2026-06-25 | F4 — LEGACY_REMOVAL_POLICY · 9건 게이트 |
