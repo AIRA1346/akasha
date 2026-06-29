@@ -1,6 +1,6 @@
 # Foundation Audit — 기초 다지기 감사 (F0)
 
-> **일자:** 2026-06-25 (F0) · **재검토:** 2026-06-29 (Post-P30 후속)
+> **일자:** 2026-06-25 (F0) · **재검토:** 2026-06-30 (Post-P30 후속 SSOT)
 > **지위:** Foundation Sprint 감사 SSOT (draft)  
 > **상위:** [PROJECT_STATUS.md](../active/PROJECT_STATUS.md) · [CURRENT_STATE.md](../active/CURRENT_STATE.md)  
 > **레거시:** [LEGACY_REMOVAL_POLICY.md](LEGACY_REMOVAL_POLICY.md)
@@ -9,13 +9,13 @@
 
 ## 1. Executive Summary
 
-| 항목 | 결과 (재검토 2026-06-29 · Post-P30 후속) |
+| 항목 | 결과 (재검토 2026-06-30 · Post-P30 후속 SSOT) |
 |------|--------------------------------------|
 | `flutter test` | **614/614 PASS** |
 | `dogfood_precheck.ps1` | **PASS** |
 | `flutter analyze lib` | **0 issue** |
 | Release build | `build_release.ps1` OK |
-| Git | `main` **origin 동기화** (`48c8c39`) |
+| Git | `main` **origin 동기화** (`04ce025`) |
 | Foundation F0~F4 | **✅ 완료** |
 | Foundation P2 분해 | **P27~P31** ✅ (sidebar · browse · dialog · work library) |
 | P30 dialog 저장 widget test | **✅ 완료** (filter·validation·curated **4**) |
@@ -127,7 +127,7 @@
 
 ## 6. Git · 원격
 
-`origin/main` = **`48c8c39`** (P30 dialog 저장 widget test). 로컬/원격 **동기화 완료**. dirty = registry manifest 4개 (`generatedAt` only).
+`origin/main` = **`04ce025`** (docs SSOT · P30 dialog test commit **48c8c39**). 로컬/원격 **동기화 완료**. dirty = registry manifest 4개 (`generatedAt` only).
 
 ---
 
@@ -219,7 +219,8 @@
 
 | 일자 | 변경 |
 |------|------|
-| 2026-06-29 | **Post-P30 후속** — dialog 저장 widget test **4** · `origin/main` **48c8c39** · test **614** |
+| 2026-06-30 | SSOT HEAD 정정 · `origin/main` **04ce025** |
+| 2026-06-29 | **Post-P30 후속** — dialog 저장 widget test **4** · P30 dialog test commit **48c8c39** · test **614** |
 | 2026-06-29 | **Post-P31** — P31 `work_library_panel` 분해 (**162** shell) · `origin/main` **0c92519** |
 | 2026-06-29 | **Post-P30** — P27~P30 분해·P28 tokens 반영 · 400줄+ 재실측 · `origin/main` **9d17f75** |
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS |
