@@ -1,0 +1,127 @@
+part of 'home_shell_scaffold.dart';
+
+Widget _homeShellScaffoldBottomNavigationBar(
+  BuildContext context,
+  HomeShellController controller,
+) {
+  final isHome = controller.isHomeDashboardMode;
+  final isExplore = controller.isExploreModeActive;
+
+  return DecoratedBox(
+    decoration: BoxDecoration(
+      color: AkashaColors.surface,
+      border: Border(
+        top: BorderSide(color: AkashaColors.border.withValues(alpha: 0.85)),
+      ),
+    ),
+    child: SafeArea(
+      top: false,
+      child: SizedBox(
+        height: 56,
+        child: Row(
+          children: [
+            Expanded(
+              child: _homeShellScaffoldBottomTabItem(
+                icon: Icons.home_filled,
+                label: '홈',
+                isSelected: isHome,
+                onTap: () => controller.goHome(),
+              ),
+            ),
+            Expanded(
+              child: _homeShellScaffoldBottomTabItem(
+                icon: Icons.explore_outlined,
+                label: '탐색',
+                isSelected: isExplore,
+                onTap: () => controller.goExplore(),
+              ),
+            ),
+            Expanded(
+              child: _homeShellScaffoldBottomTabItem(
+                icon: Icons.search,
+                label: '검색',
+                isSelected: false,
+                emphasize: true,
+                onTap: controller.openSearchDialog,
+              ),
+            ),
+            Expanded(
+              child: _homeShellScaffoldBottomTabItem(
+                icon: Icons.book_outlined,
+                label: '라이브러리',
+                isSelected: controller.isPersonalLibraryMode,
+                onTap: () {
+                  if (controller.personalLibCtrl.libraries.isNotEmpty) {
+                    controller.selectPersonalLibrary(
+                      controller.personalLibCtrl.libraries.first.id,
+                    );
+                  } else {
+                    controller.showLibraryThemePicker();
+                  }
+                },
+              ),
+            ),
+            Expanded(
+              child: _homeShellScaffoldBottomTabItem(
+                icon: Icons.folder_open_outlined,
+                label: '컬렉션',
+                isSelected: controller.isCollectibleCollectionMode,
+                onTap: () {
+                  if (controller.collectionCtrl.collections.isNotEmpty) {
+                    controller.selectCollectibleCollection(
+                      controller.collectionCtrl.collections.first.id,
+                    );
+                  } else {
+                    controller.collectionUi.promptCreate(
+                      controller.host.context,
+                      personalLibCtrl: controller.personalLibCtrl,
+                      setState: controller.wrapSetState,
+                      vaultItems: controller.items,
+                    );
+                  }
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+Widget _homeShellScaffoldBottomTabItem({
+  required IconData icon,
+  required String label,
+  required bool isSelected,
+  required VoidCallback onTap,
+  bool emphasize = false,
+}) {
+  final color = isSelected || emphasize
+      ? AkashaColors.accent
+      : AkashaColors.textMuted;
+  return Material(
+    color: Colors.transparent,
+    child: InkWell(
+      onTap: onTap,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            icon,
+            color: color,
+            size: 22,
+          ),
+          const SizedBox(height: 4),
+          Text(
+            label,
+            style: TextStyle(
+              color: color,
+              fontSize: 10,
+              fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+}
