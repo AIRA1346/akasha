@@ -1,0 +1,111 @@
+part of 'dashboard_sidebar.dart';
+
+class _SidebarThumbnailTile extends StatefulWidget {
+  const _SidebarThumbnailTile({
+    required this.title,
+    required this.subtitle,
+    required this.onTap,
+    this.item,
+    this.isActive = false,
+    this.fallbackIcon = Icons.image_outlined,
+  });
+
+  final AkashaItem? item;
+  final String title;
+  final String subtitle;
+  final VoidCallback onTap;
+  final bool isActive;
+  final IconData fallbackIcon;
+
+  @override
+  State<_SidebarThumbnailTile> createState() => _SidebarThumbnailTileState();
+}
+
+class _SidebarThumbnailTileState extends State<_SidebarThumbnailTile> {
+  bool _hovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final highlight = widget.isActive || _hovered;
+
+    return MouseRegion(
+      onEnter: (_) => setState(() => _hovered = true),
+      onExit: (_) => setState(() => _hovered = false),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: widget.onTap,
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+              decoration: BoxDecoration(
+                color: highlight
+                    ? AkashaColors.menuSelected.withValues(alpha: 0.7)
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: SizedBox(
+                      width: 36,
+                      height: 36,
+                      child: widget.item != null
+                          ? PosterImage(
+                              item: widget.item!,
+                              width: 36,
+                              height: 36,
+                              fit: BoxFit.cover,
+                            )
+                          : ColoredBox(
+                              color: AkashaColors.thumbPlaceholder,
+                              child: Icon(
+                                widget.fallbackIcon,
+                                size: 16,
+                                color: AkashaColors.textCaption,
+                              ),
+                            ),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.title,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: widget.isActive
+                                ? FontWeight.w600
+                                : FontWeight.w500,
+                            color: AkashaColors.textPrimary,
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                        Text(
+                          widget.subtitle,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            fontSize: 10,
+                            color: AkashaColors.textCaption,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
