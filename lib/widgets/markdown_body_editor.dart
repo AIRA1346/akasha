@@ -14,6 +14,7 @@ import '../utils/markdown_section_index.dart';
 import '../utils/markdown_slash_command_patch.dart';
 import '../utils/markdown_slash_commands.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_typography.dart';
 
 
 part 'markdown_editor_status_bar_part.dart';

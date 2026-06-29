@@ -79,23 +79,16 @@ class _SidebarThumbnailTileState extends State<_SidebarThumbnailTile> {
                           widget.title,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: widget.isActive
-                                ? FontWeight.w600
-                                : FontWeight.w500,
-                            color: AkashaColors.textPrimary,
-                          ),
+                          style: widget.isActive
+                              ? AkashaTypography.sidebarThumbTitleActive
+                              : AkashaTypography.sidebarThumbTitle,
                         ),
                         const SizedBox(height: 2),
                         Text(
                           widget.subtitle,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            fontSize: 10,
-                            color: AkashaColors.textCaption,
-                          ),
+                          style: AkashaTypography.caption,
                         ),
                       ],
                     ),

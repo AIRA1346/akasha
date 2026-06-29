@@ -53,10 +53,10 @@ class _MarkdownSlashMenu extends StatelessWidget {
         filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: Container(
           decoration: BoxDecoration(
-            color: const Color(0xE5181824), // 90% opacity deep navy/black
+            color: AkashaColors.editorSlashMenuBg,
             borderRadius: BorderRadius.circular(10),
             border: Border.all(
-              color: Colors.white.withValues(alpha: 0.08),
+              color: AkashaColors.borderSubtle(0.08),
               width: 1.0,
             ),
             boxShadow: [
@@ -81,7 +81,7 @@ class _MarkdownSlashMenu extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 4),
                   child: Material(
                     color: isSelected
-                        ? const Color(0xFF2E2E42) // Highlighted background
+                        ? AkashaColors.editorSlashMenuSelected
                         : Colors.transparent,
                     borderRadius: BorderRadius.circular(6),
                     child: ListTile(
@@ -91,7 +91,7 @@ class _MarkdownSlashMenu extends StatelessWidget {
                         borderRadius: BorderRadius.circular(6),
                         side: isSelected
                             ? BorderSide(
-                                color: Colors.tealAccent.withValues(alpha: 0.35),
+                                color: AkashaColors.editorAccent.withValues(alpha: 0.35),
                                 width: 1.0,
                               )
                             : BorderSide.none,
@@ -99,23 +99,22 @@ class _MarkdownSlashMenu extends StatelessWidget {
                       leading: Icon(
                         _getIconForCommand(cmd.id),
                         size: 18,
-                        color: isSelected ? Colors.tealAccent : AkashaColors.textSecondary,
+                        color: isSelected
+                            ? AkashaColors.editorAccent
+                            : AkashaColors.textSecondary,
                       ),
                       title: Text(
                         cmd.label,
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                          color: isSelected ? Colors.tealAccent : AkashaColors.textPrimary,
-                        ),
+                        style: isSelected
+                            ? AkashaTypography.editorSlashTitleSelected
+                            : AkashaTypography.editorSlashTitle,
                       ),
                       subtitle: cmd.description.isNotEmpty
                           ? Text(
                               cmd.description,
-                              style: TextStyle(
-                                fontSize: 10,
+                              style: AkashaTypography.editorSlashSubtitle.copyWith(
                                 color: isSelected
-                                    ? Colors.tealAccent.withValues(alpha: 0.7)
+                                    ? AkashaColors.editorAccent.withValues(alpha: 0.7)
                                     : AkashaColors.textMuted,
                               ),
                             )

@@ -44,6 +44,20 @@ abstract final class AkashaColors {
   static const statusSaved = Color(0xFFB9F6CA);
   static const statusSaving = Color(0xFFB0B0B8);
   static const statusWarning = Color(0xFFFFB300);
+  static const editorUnsaved = Color(0xFFFFA000);
+
+  /// Markdown / Sanctum editor chrome (R14-B).
+  static const editorAccent = Colors.tealAccent;
+  static const editorFieldBg = Color(0xFF0E0E16);
+  static const editorPanelBg = Color(0xFF1A1A26);
+  static const editorSlashMenuBg = Color(0xE5181824);
+  static const editorSlashMenuSelected = Color(0xFF2E2E42);
+
+  /// Poster card fact layout (R14-B).
+  static const posterGradientEnd = Color(0xFF252536);
+  static const posterArchivedBadge = Color(0xFFCCCCCC);
+  static const libraryCountBadgeAccent = Colors.amberAccent;
+  static const ratingPendingAccent = Colors.amber;
 
   static Color borderSubtle([double alpha = 0.04]) =>
       Colors.white.withValues(alpha: alpha);

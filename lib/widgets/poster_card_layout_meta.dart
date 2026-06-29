@@ -4,6 +4,7 @@ import '../models/akasha_item.dart';
 import '../models/format_slot.dart';
 import '../screens/home/dialogs/add_catalog_entity_dialog.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_typography.dart';
 import '../utils/catalog_display_title.dart';
 import '../utils/status_helpers.dart';
 import 'format_chip_row.dart';
@@ -49,19 +50,13 @@ class PosterCardRatingStatusRow extends StatelessWidget {
         else
           const Text(
             '⏳ 평가 대기',
-            style: TextStyle(
-              fontSize: 11,
-              color: Colors.amber,
-              fontWeight: FontWeight.w500,
-            ),
+            style: AkashaTypography.posterRatingPending,
           ),
         const SizedBox(width: 8),
         Expanded(
           child: Text(
             watchlistStatusEmojiLabel(item),
-            style: TextStyle(
-              fontSize: 11,
-              color: AkashaColors.textSecondary,
+            style: AkashaTypography.bodySecondary.copyWith(
               fontWeight: FontWeight.w500,
             ),
             maxLines: 1,
@@ -92,30 +87,22 @@ class PosterCardEntityMetaRow extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
           decoration: BoxDecoration(
-            color: Colors.tealAccent.withValues(alpha: 0.15),
+            color: AkashaColors.editorAccent.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(4),
             border: Border.all(
-              color: Colors.tealAccent.withValues(alpha: 0.3),
+              color: AkashaColors.editorAccent.withValues(alpha: 0.3),
             ),
           ),
           child: Text(
             entityTypeBadgeLabel(item.entityType),
-            style: const TextStyle(
-              fontSize: 9,
-              fontWeight: FontWeight.w700,
-              color: Colors.tealAccent,
-            ),
+            style: AkashaTypography.posterEntityTypeBadge,
           ),
         ),
         const Spacer(),
         if (incomingRecordCount > 0)
           Text(
             '🔗 $incomingRecordCount',
-            style: const TextStyle(
-              fontSize: 11,
-              fontWeight: FontWeight.w600,
-              color: Colors.tealAccent,
-            ),
+            style: AkashaTypography.posterEntityLinkCount,
           ),
       ],
     );
@@ -151,11 +138,7 @@ class PosterCardPosterMeta extends StatelessWidget {
               Flexible(
                 child: Text(
                   displayTitle,
-                  style: const TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w700,
-                    height: 1.2,
-                  ),
+                  style: AkashaTypography.posterMetaTitle,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -164,11 +147,7 @@ class PosterCardPosterMeta extends StatelessWidget {
                 const SizedBox(height: 3),
                 Text(
                   item.creator,
-                  style: TextStyle(
-                    fontSize: 11,
-                    color: AkashaColors.textSecondary,
-                    height: 1.2,
-                  ),
+                  style: AkashaTypography.bodySecondary.copyWith(height: 1.2),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -191,8 +170,7 @@ class PosterCardPosterMeta extends StatelessWidget {
               child: item.releaseYear != null
                   ? Text(
                       '🗓️ ${item.releaseYear}년',
-                      style: TextStyle(
-                        fontSize: 10,
+                      style: AkashaTypography.caption.copyWith(
                         color: AkashaColors.textSecondary,
                       ),
                       maxLines: 1,

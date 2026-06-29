@@ -28,7 +28,7 @@ class _MarkdownFindBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: const Color(0xFF1A1A26),
+      color: AkashaColors.editorPanelBg,
       borderRadius: BorderRadius.circular(8),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
@@ -41,7 +41,7 @@ class _MarkdownFindBar extends StatelessWidget {
                 focusNode: findFocusNode,
                 onChanged: (_) => onChanged(),
                 onSubmitted: (_) => onFindNext(),
-                style: const TextStyle(fontSize: 12),
+                style: AkashaTypography.editorFindInput,
                 decoration: const InputDecoration(
                   isDense: true,
                   hintText: '찾기',
@@ -54,7 +54,7 @@ class _MarkdownFindBar extends StatelessWidget {
             const SizedBox(width: 6),
             Text(
               findController.text.isEmpty ? '' : '$matchCount',
-              style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
+              style: AkashaTypography.editorStatus,
             ),
             IconButton(
               onPressed: onFindPrevious,
@@ -73,7 +73,7 @@ class _MarkdownFindBar extends StatelessWidget {
               width: 120,
               child: TextField(
                 controller: replaceController,
-                style: const TextStyle(fontSize: 12),
+                style: AkashaTypography.editorFindInput,
                 decoration: const InputDecoration(
                   isDense: true,
                   hintText: '바꿀 텍스트',

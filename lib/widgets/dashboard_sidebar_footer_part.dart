@@ -22,11 +22,7 @@ class _DashboardSidebarCollapseFooter extends StatelessWidget {
             const SizedBox(width: 6),
             Text(
               '접기',
-              style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.w600,
-                color: AkashaColors.textMuted,
-              ),
+              style: AkashaTypography.sidebarFooterLabel,
             ),
           ],
         ),

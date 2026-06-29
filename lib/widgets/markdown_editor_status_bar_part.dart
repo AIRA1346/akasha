@@ -25,7 +25,7 @@ class _MarkdownEditorStatusBar extends StatelessWidget {
         children: [
           Text(
             'Ln $lineNumber',
-            style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
+            style: AkashaTypography.editorStatus,
           ),
           const SizedBox(width: 10),
           Expanded(
@@ -33,34 +33,30 @@ class _MarkdownEditorStatusBar extends StatelessWidget {
               sectionLabel,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
+              style: AkashaTypography.editorStatus,
             ),
           ),
           if (isSaving)
             Text(
               '저장 중…',
-              style: TextStyle(fontSize: 10, color: Colors.tealAccent),
+              style: AkashaTypography.editorSaving,
             )
           else if (!isDirty && lastSavedAt != null)
             Text(
               '저장됨 ${_formatTime(lastSavedAt!)}',
-              style: TextStyle(fontSize: 10, color: AkashaColors.textCaption),
+              style: AkashaTypography.caption,
             ),
           if (hint != null && !isSaving) ...[
             const SizedBox(width: 8),
             Text(
               hint!,
-              style: TextStyle(fontSize: 10, color: AkashaColors.textCaption),
+              style: AkashaTypography.caption,
             ),
           ],
           if (isDirty && !isSaving)
             Text(
               '● 미저장',
-              style: TextStyle(
-                fontSize: 10,
-                color: Colors.amber[700],
-                fontWeight: FontWeight.w600,
-              ),
+              style: AkashaTypography.editorDirty,
             ),
         ],
       ),

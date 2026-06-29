@@ -12,21 +12,12 @@ class _DashboardSidebarLogoHeader extends StatelessWidget {
         children: [
           Text(
             'AKASHA',
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w800,
-              color: Colors.white,
-              letterSpacing: 1.2,
-            ),
+            style: AkashaTypography.sidebarBrand,
           ),
           SizedBox(height: 4),
           Text(
             'Your Knowledge Universe',
-            style: TextStyle(
-              fontSize: 10,
-              color: AkashaColors.textCaption,
-              letterSpacing: 0.2,
-            ),
+            style: AkashaTypography.sidebarTagline,
           ),
         ],
       ),

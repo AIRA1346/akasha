@@ -30,11 +30,13 @@ class _DashboardSidebarCollectionsSection extends StatelessWidget {
         ),
         const SizedBox(height: 6),
         if (collectibleCollections.isEmpty)
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
             child: Text(
               '컬렉션이 없습니다',
-              style: TextStyle(fontSize: 11, color: AkashaColors.textCaption),
+              style: AkashaTypography.bodySecondary.copyWith(
+                color: AkashaColors.textCaption,
+              ),
             ),
           )
         else

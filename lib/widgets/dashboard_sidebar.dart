@@ -8,6 +8,7 @@ import '../models/collectible_ref.dart';
 import '../screens/home/home_personal_library_controller.dart';
 import '../screens/home/views/preview_record_view_model.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_typography.dart';
 import 'poster_image.dart';
 
 part 'dashboard_sidebar_header_part.dart';

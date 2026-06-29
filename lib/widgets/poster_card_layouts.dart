@@ -4,6 +4,7 @@ import '../models/akasha_item.dart';
 import '../models/format_slot.dart';
 import '../screens/home/dialogs/add_catalog_entity_dialog.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_typography.dart';
 import '../utils/catalog_display_title.dart';
 import '../utils/status_helpers.dart';
 import 'poster_card_layout_badges.dart';
@@ -125,7 +126,7 @@ class PosterCardFactCardLayout extends StatelessWidget {
                       end: Alignment.bottomRight,
                       colors: [
                         accent.withValues(alpha: 0.42),
-                        const Color(0xFF252536),
+                        AkashaColors.posterGradientEnd,
                       ],
                     ),
                     borderRadius: const BorderRadius.vertical(
@@ -142,7 +143,7 @@ class PosterCardFactCardLayout extends StatelessWidget {
                       ? iconForEntityAnchorType(entity!.entityType)
                       : item.category.icon,
                   size: 56,
-                  color: Colors.white.withValues(alpha: 0.08),
+                  color: AkashaColors.borderSubtle(0.08),
                 ),
               ),
               Padding(
@@ -156,7 +157,7 @@ class PosterCardFactCardLayout extends StatelessWidget {
                         color: Colors.black.withValues(alpha: 0.22),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.12),
+                          color: AkashaColors.borderSubtle(0.12),
                         ),
                       ),
                       child: Icon(
@@ -164,7 +165,7 @@ class PosterCardFactCardLayout extends StatelessWidget {
                             ? iconForEntityAnchorType(entity!.entityType)
                             : item.category.icon,
                         size: 16,
-                        color: Colors.white.withValues(alpha: 0.92),
+                        color: AkashaColors.textPrimary.withValues(alpha: 0.92),
                       ),
                     ),
                     const SizedBox(width: 8),
@@ -173,12 +174,7 @@ class PosterCardFactCardLayout extends StatelessWidget {
                         isEntity
                             ? entityTypeBadgeLabel(entity!.entityType)
                             : item.category.label,
-                        style: TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white.withValues(alpha: 0.9),
-                          letterSpacing: 0.15,
-                        ),
+                        style: AkashaTypography.posterCategoryLabel,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -203,11 +199,7 @@ class PosterCardFactCardLayout extends StatelessWidget {
               children: [
                 Text(
                   resolveCatalogDisplayTitle(item),
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w800,
-                    height: 1.25,
-                  ),
+                  style: AkashaTypography.posterFactCardTitle,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -215,11 +207,7 @@ class PosterCardFactCardLayout extends StatelessWidget {
                 if (item.creator.isNotEmpty)
                   Text(
                     item.creator,
-                    style: TextStyle(
-                      fontSize: 11,
-                      color: AkashaColors.textSecondary,
-                      height: 1.2,
-                    ),
+                    style: AkashaTypography.bodySecondary.copyWith(height: 1.2),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -236,11 +224,7 @@ class PosterCardFactCardLayout extends StatelessWidget {
                       if (incomingRecordCount > 0)
                         Text(
                           '🔗 $incomingRecordCount',
-                          style: const TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.tealAccent,
-                          ),
+                          style: AkashaTypography.posterEntityLinkCount,
                         ),
                     ],
                   )

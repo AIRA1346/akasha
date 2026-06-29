@@ -19,12 +19,7 @@ class _DashboardSidebarSectionTitle extends StatelessWidget {
         children: [
           Text(
             title,
-            style: const TextStyle(
-              fontSize: 11,
-              fontWeight: FontWeight.w600,
-              color: AkashaColors.textCaption,
-              letterSpacing: 0.3,
-            ),
+            style: AkashaTypography.sidebarSectionTitle,
           ),
           const Spacer(),
           if (trailingLabel != null && onTrailing != null)
@@ -35,11 +30,7 @@ class _DashboardSidebarSectionTitle extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
                 child: Text(
                   trailingLabel!,
-                  style: const TextStyle(
-                    fontSize: 10,
-                    color: AkashaColors.accent,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: AkashaTypography.sidebarTrailingLink,
                 ),
               ),
             ),

@@ -66,7 +66,7 @@ class _MarkdownEditorToolbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: const Color(0xFF161622),
+      color: AkashaColors.sidebarFooter,
       borderRadius: BorderRadius.circular(8),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
@@ -172,7 +172,7 @@ class _MarkdownEditorToolbar extends StatelessWidget {
         width: 1,
         height: 22,
         margin: const EdgeInsets.symmetric(horizontal: 4),
-        color: const Color(0xFF2D2D44),
+        color: AkashaColors.border,
       );
 
   Widget _btn(

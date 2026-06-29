@@ -74,12 +74,9 @@ class _SidebarNavTileState extends State<_SidebarNavTile> {
                   Expanded(
                     child: Text(
                       widget.label,
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight:
-                            selected ? FontWeight.w600 : FontWeight.w500,
-                        color: selected ? Colors.white : AkashaColors.textSecondary,
-                      ),
+                      style: selected
+                          ? AkashaTypography.sidebarNavLabelSelected
+                          : AkashaTypography.sidebarNavLabel,
                     ),
                   ),
                 ],

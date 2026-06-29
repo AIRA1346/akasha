@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../theme/akasha_colors.dart';
+import '../theme/akasha_typography.dart';
+
 class PosterCardLibraryCountBadge extends StatelessWidget {
   const PosterCardLibraryCountBadge({super.key, required this.count});
 
@@ -13,16 +16,12 @@ class PosterCardLibraryCountBadge extends StatelessWidget {
         color: Colors.black.withValues(alpha: 0.62),
         borderRadius: BorderRadius.circular(6),
         border: Border.all(
-          color: Colors.amberAccent.withValues(alpha: 0.55),
+          color: AkashaColors.libraryCountBadgeAccent.withValues(alpha: 0.55),
         ),
       ),
       child: Text(
         '★$count',
-        style: const TextStyle(
-          fontSize: 10,
-          fontWeight: FontWeight.w700,
-          color: Colors.amberAccent,
-        ),
+        style: AkashaTypography.posterLibraryBadge,
       ),
     );
   }
@@ -46,14 +45,14 @@ class PosterCardArchivedBadge extends StatelessWidget {
             color: Colors.black.withValues(alpha: 0.55),
             shape: BoxShape.circle,
             border: Border.all(
-              color: const Color(0xFFCCCCCC),
+              color: AkashaColors.posterArchivedBadge,
               width: 1,
             ),
           ),
           child: Icon(
             Icons.description_outlined,
             size: size * 0.58,
-            color: const Color(0xFFCCCCCC),
+            color: AkashaColors.posterArchivedBadge,
           ),
         ),
       ),
@@ -84,11 +83,7 @@ class PosterCardMetaPill extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: TextStyle(
-          fontSize: 10,
-          fontWeight: FontWeight.w600,
-          color: foreground,
-        ),
+        style: AkashaTypography.posterMetaPill.copyWith(color: foreground),
       ),
     );
   }

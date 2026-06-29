@@ -22,30 +22,27 @@ class _MarkdownTextField extends StatelessWidget {
       maxLines: null,
       expands: true,
       textAlignVertical: TextAlignVertical.top,
-      style: TextStyle(
-        fontSize: 13,
-        height: 1.45,
-        fontFamily: 'Consolas',
-        color: AkashaColors.textPrimary,
-      ),
-      cursorColor: Colors.tealAccent,
+      style: AkashaTypography.editorMono,
+      cursorColor: AkashaColors.editorAccent,
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(color: AkashaColors.textCaption, height: 1.45),
+        hintStyle: AkashaTypography.editorMono.copyWith(
+          color: AkashaColors.textCaption,
+        ),
         filled: true,
-        fillColor: const Color(0xFF0E0E16),
+        fillColor: AkashaColors.editorFieldBg,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: Color(0xFF2D2D44)),
+          borderSide: const BorderSide(color: AkashaColors.border),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: Color(0xFF2D2D44)),
+          borderSide: const BorderSide(color: AkashaColors.border),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(
-            color: Colors.tealAccent.withValues(alpha: 0.45),
+            color: AkashaColors.editorAccent.withValues(alpha: 0.45),
           ),
         ),
         contentPadding: const EdgeInsets.all(12),
