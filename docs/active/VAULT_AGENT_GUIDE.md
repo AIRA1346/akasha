@@ -1,8 +1,9 @@
 # Vault Agent Guide — Sanctum `.md` SSOT
 
 > **지위:** 볼트 내 파일·에이전트·외부 편집기용 **운영 SSOT**  
-> **갱신:** 2026-06-24  
-> **볼트 현장:** `{vault}/VAULT_README.md` (앱이 볼트 연결 시 자동 생성)  
+> **갱신:** 2026-06-30
+> **볼트 현장:** `{vault}/VAULT_README.md` (앱이 볼트 연결 시 자동 생성)
+> **프로토콜:** [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) — 읽기·쓰기 범위 · operation · 충돌 · dogfood (v1 계약)
 > **상위:** [vault-layout-v2.md](../history/product/vault-layout-v2.md) · [user-local-catalog-policy.md](../history/policy/user-local-catalog-policy.md) · [entity-record-storage-masterplan.md](../history/programs/entity-record-storage-masterplan.md)
 
 ---
@@ -153,3 +154,4 @@ added_at: "2026-06-19T12:00:00.000Z"
 | 일자 | 변경 |
 |------|------|
 | 2026-06-24 | 초판 — VAULT_README 자동 생성 · entity_path_index · 에이전트 SSOT |
+| 2026-06-30 | [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) 링크 |

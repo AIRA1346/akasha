@@ -18,7 +18,7 @@
 | **Phase 1** | Record Foundation ✅ |
 | **Sanctum** | C1~C4 ✅ · Vault agent 가이드 ✅ |
 | **코드 건강** | Phase 0~7 ✅ · Foundation P2 분해 ✅ |
-| **다음** | v1 아카이브 루프 강화 · Agent Vault Protocol · dogfood(사용자 직접) · **M3** 보류 |
+| **다음** | v1 아카이브 루프 E2E · Agent Protocol **구현·dogfood** · **M3** 보류 |
 | **Registry (akasha-db)** | **10,048 works** · optional catalog / starter — **v1 blocking 아님** |
 | **Steam** | depot·스토어·IAP ✅ — **M3 정식 출시 보류** |
 
@@ -41,7 +41,7 @@
 | 직접 작품 추가 · 아카이브 `.md` 생성 | 대규모 registry **확장** 트랙 |
 | 감상·평점·상태·태그·명장면·갤러리 (Sanctum) | Wikidata / 외부 API **확장** |
 | Personal Library · Collection | Discovery / recommendation |
-| Agent Vault Protocol 준비 ([VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)) | CDN·search recall **scale gate**를 v1 출시 조건으로 두지 않음 |
+| Agent Vault Protocol v1 범위 ([AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md)) · 현장 ([VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)) | CDN·search recall **scale gate**를 v1 출시 조건으로 두지 않음 |
 | 예쁜 기록 UI (Workbench · Sanctum) | |
 
 **akasha-db / registry:** 삭제하지 않음 — **optional catalog support** · starter catalog · **post-v1 scale track**.
@@ -122,7 +122,7 @@
 
 **P27~P31·P30 후속:** `work_library_panel` **162** · `dashboard_sidebar` **152** · `browse_dashboard_sections` **165** · `collectible_collection_edit_dialog` **73** · P30 dialog 저장 widget test **4** · `poster_card_layouts` **~270** (P24) · markdown editor 6 parts (P26)
 
-감사 SSOT: [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md) · Vault: [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)
+감사 SSOT: [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md) · Vault: [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) · [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)
 
 ---
 
@@ -131,7 +131,7 @@
 | # | 작업 | 우선 |
 |---|------|:----:|
 | 1 | v1 아카이브 루프 E2E (vault → 기록 → Library) · dogfood | **P0** |
-| 2 | Agent Vault Protocol · 외부 에이전트 편집 시나리오 | P1 |
+| 2 | Agent Vault Protocol v1 **구현·dogfood** ([AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) §8) | P1 |
 | 3 | `home_shell_body` 추가 분해 (선택) | P3 |
 | 4 | **M3** Steam Release | 보류 |
 
@@ -158,6 +158,7 @@
 | 2026-06-24 | 코드 건강 Phase 7b — save ops·collection reorder·docs SSOT · test **591** |
 | 2026-06-25 | **Sanctum C1~C4** · Foundation F0 감사 · test **605** · [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md) |
 | 2026-06-30 | **Steam v1 재정렬** — 개인 Sanctum 아카이브 중심 · registry scale post-v1 · code **5526ce4** |
+| 2026-06-30 | **Agent Vault Protocol v1** — [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) 범위 문서 |
 | 2026-06-30 | **Post-P2 SSOT** — scaffold·dialogs·fusion 분해 · SSOT **57c66fd** · code **5526ce4** · test **614** |
 | 2026-06-29 | **Post-P30 후속** — dialog 저장 widget test **4** · P30 dialog test commit **48c8c39** · test **614** |
 | 2026-06-29 | **Post-P31 SSOT** — P31 `work_library_panel` 분해 (**162** shell) · `origin/main` **0c92519** · test **610** |

@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('TimelineEntryParser', () {
-    test('parse timeline frontmatter and body', () {
+    test('parse legacy timeline record_kind', () {
       const content = '''
 ---
 record_kind: timeline
@@ -30,6 +30,26 @@ entity_id: "wk_test123"
       expect(entry.occurredAt, DateTime.parse('2026-05-01T10:00:00.000'));
     });
 
+    test('parse canonical timelineEntry record_kind', () {
+      const content = '''
+---
+record_kind: timelineEntry
+record_id: "tl_20260502_def"
+title: "canonical"
+occurred_at: "2026-05-02T10:00:00.000"
+added_at: "2026-05-02T12:00:00.000"
+---
+canonical body
+''';
+
+      final entry = TimelineEntryParser.parse(content, r'C:\vault\timeline\b.md');
+
+      expect(entry, isNotNull);
+      expect(entry!.recordId, 'tl_20260502_def');
+      expect(entry.title, 'canonical');
+      expect(entry.body, contains('canonical body'));
+    });
+
     test('returns null for non-timeline record_kind', () {
       const content = '''
 ---
@@ -42,7 +62,7 @@ body
       expect(TimelineEntryParser.parse(content, 'a.md'), isNull);
     });
 
-    test('serialize round-trip', () {
+    test('serialize uses canonical timelineEntry record_kind', () {
       final serialized = TimelineEntryParser.serialize(
         recordId: 'tl_1',
         title: '테스트 "인용"',
@@ -50,6 +70,9 @@ body
         occurredAt: DateTime.parse('2026-06-01T09:00:00.000Z'),
         entityId: 'wk_abc',
       );
+
+      expect(serialized, contains('record_kind: timelineEntry'));
+      expect(serialized, isNot(contains('record_kind: timeline\n')));
 
       final parsed = TimelineEntryParser.parse(serialized, 't.md');
       expect(parsed?.recordId, 'tl_1');

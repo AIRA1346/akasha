@@ -36,7 +36,8 @@
 * **[x] 마크다운 감상 기록:** 워크벤치 내 본문 Markdown 편집 및 저장 기능 완결
 * **[x] Sanctum C1~C4:** wiki 칩 · 출연 · 갤러리 · 완성도 · HTML보내기
 * **[x] AI 가져오기:** 클립보드 파싱 · YAML 자동 생성 · 프롬프트 템플릿
-* **[ ] (v1) Agent Vault Protocol:** 외부 에이전트가 vault 읽기·편집 — [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)
+* **[x] (v1) Agent Vault Protocol v1 범위 문서:** [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) · 현장 [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)
+* **[ ] (v1) Agent Vault Protocol 구현·dogfood:** 대화 → vault operation · 충돌 · watch (§8 체크리스트)
 * **[ ] (v1.1+) 오늘의 회상 카드:** 리마인드 카드 (보류)
 * **[ ] (v1.1+) 타임라인 / 완성 캘린더:** 날짜 기준 시각화 (보류)
 

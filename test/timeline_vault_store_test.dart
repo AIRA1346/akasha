@@ -49,6 +49,8 @@ void main() {
 
       expect(saved.storagePath, isNotEmpty);
       expect(await File(saved.storagePath).exists(), isTrue);
+      final onDisk = await File(saved.storagePath).readAsString();
+      expect(onDisk, contains('record_kind: timelineEntry'));
       expect(saved.body, '힘든 하루였다.');
       expect(saved.recordId, recordId);
     });

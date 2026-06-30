@@ -6,6 +6,17 @@ import '../core/archiving/timeline_entry.dart';
 abstract final class TimelineEntryParser {
   static const String timelineDirName = 'timeline';
 
+  /// Canonical `record_kind` for new writes (matches [RecordKind.timelineEntry]).
+  static const String canonicalRecordKind = 'timelineEntry';
+
+  /// Legacy `record_kind` accepted on read for backward compatibility.
+  static const String legacyRecordKind = 'timeline';
+
+  static bool _isTimelineRecordKind(String? raw) {
+    final kind = raw?.toString();
+    return kind == canonicalRecordKind || kind == legacyRecordKind;
+  }
+
   static TimelineEntry? parse(String content, String filePath) {
     final split = _splitFrontmatter(content);
     if (split == null) return null;
@@ -13,7 +24,7 @@ abstract final class TimelineEntryParser {
     final yaml = YamlMap.wrap(
       loadYaml(split.frontmatter) as YamlMap,
     );
-    if (yaml['record_kind']?.toString() != 'timeline') return null;
+    if (!_isTimelineRecordKind(yaml['record_kind']?.toString())) return null;
 
     final recordId = yaml['record_id']?.toString().trim() ?? '';
     if (recordId.isEmpty) return null;
@@ -47,7 +58,7 @@ abstract final class TimelineEntryParser {
     final added = addedAt ?? DateTime.now();
     final buffer = StringBuffer()
       ..writeln('---')
-      ..writeln('record_kind: timeline')
+      ..writeln('record_kind: $canonicalRecordKind')
       ..writeln('record_id: "$recordId"')
       ..writeln('title: "${_escape(title)}"')
       ..writeln('occurred_at: "${occurredAt.toIso8601String()}"')
