@@ -85,8 +85,7 @@ class PreviewRecordViewModel {
   }
 
   static List<PreviewCoreInfoRow> _workCoreInfo(AkashaItem item) {
-    final genre =
-        item.tags.isNotEmpty ? item.tags.first : item.category.label;
+    final genre = item.category.label;
     final registry = WorksRegistry.getWorkById(item.workId);
     var studio = '정보 없음';
     final ext = registry?.extensions;

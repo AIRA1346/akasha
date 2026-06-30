@@ -7,6 +7,7 @@ import '../../models/sanctum_gallery_entry.dart';
 import '../../models/user_catalog_entity.dart';
 import 'sanctum_cast_strip.dart';
 import 'sanctum_gallery_strip.dart';
+import 'sanctum_memo_card.dart';
 import 'sanctum_quote_cards.dart';
 import 'sanctum_wiki_inline_text.dart';
 import '../../theme/akasha_colors.dart';
@@ -96,7 +97,14 @@ class SanctumPreviewBody extends StatelessWidget {
                     userCatalog: userCatalog,
                     onWikiLinkTap: onWikiLinkTap,
                   )
-                : SanctumWikiParagraphs(
+                : section.kind == _PreviewSectionKind.memo
+                    ? SanctumMemoCard(
+                        content: section.content,
+                        mdFilePath: mdFilePath,
+                        userCatalog: userCatalog,
+                        onWikiLinkTap: onWikiLinkTap,
+                      )
+                    : SanctumWikiParagraphs(
                     content: section.content,
                     mdFilePath: mdFilePath,
                     userCatalog: userCatalog,
@@ -117,7 +125,7 @@ class SanctumPreviewBody extends StatelessWidget {
   }
 }
 
-enum _PreviewSectionKind { prose, quotes, cast, gallery }
+enum _PreviewSectionKind { prose, quotes, cast, gallery, memo }
 
 class _PreviewSection {
   const _PreviewSection({
@@ -162,6 +170,7 @@ _ParsedPreview _parsePreviewSections(String bodyRaw) {
         galleryEntries.addAll(SanctumGalleryFormat.parseBlock(content));
       case _PreviewSectionKind.prose:
       case _PreviewSectionKind.quotes:
+      case _PreviewSectionKind.memo:
         if (currentHeading != null || content.isNotEmpty) {
           sections.add(_PreviewSection(
             heading: currentHeading,
@@ -204,6 +213,13 @@ _PreviewSectionKind _kindForHeading(String headingLine) {
       lower.contains('명장면') ||
       lower.contains('quote')) {
     return _PreviewSectionKind.quotes;
+  }
+  if ((lower.contains('📝') ||
+          lower.contains('메모') ||
+          lower.contains('memo') ||
+          lower.contains('감상')) &&
+      !lower.contains('ost')) {
+    return _PreviewSectionKind.memo;
   }
   return _PreviewSectionKind.prose;
 }

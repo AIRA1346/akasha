@@ -19,6 +19,7 @@ import '../../../widgets/work_link_neighbors_sections.dart';
 import '../../../widgets/work_preview_empty_connections.dart';
 import '../../../widgets/work_preview_next_connections.dart';
 import '../../../widgets/work_preview_registry_surface.dart';
+import 'preview_journal_reflection_card.dart';
 import 'preview_memo_bar.dart';
 import 'preview_panel_chrome.dart';
 import 'preview_record_view_model.dart';
@@ -309,6 +310,14 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                     ),
                     const SizedBox(height: 18),
                     PreviewRecordCoreInfoSection(rows: record.coreInfoRows),
+                    if (!_isRegistryOnly) ...[
+                      const SizedBox(height: 18),
+                      PreviewJournalReflectionCard(
+                        item: widget.item,
+                        isVaultArchived: true,
+                        onOpenDetail: widget.onOpenDetail,
+                      ),
+                    ],
                     if (_isRegistryOnly) ...[
                       const SizedBox(height: 14),
                       WorkPreviewRegistrySurface(
