@@ -1,7 +1,7 @@
 # Project Status Snapshot
  
 > **갱신:** 2026-06-30 (@10048 · Foundation Phase 2 · Post-P2 분해 SSOT)
-> **Git:** `origin/main` HEAD **e0b021d** · code/test baseline **5526ce4** · SSOT baseline **57c66fd**
+> **Git:** `origin/main` HEAD **a2cc3ea** · code/test baseline **5526ce4** · SSOT baseline **57c66fd**
 > **현재 실행:** **Foundation Phase 2** — 대형 파일 분해 마무리 (M3 **사용자 지시 전 보류**)
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist](../history/release-readiness-checklist.md)  

@@ -235,7 +235,7 @@
 
 | 일자 | 변경 |
 |------|------|
-| 2026-06-30 | **Post-P2 SSOT** — scaffold·dialogs·fusion 분해 · HEAD/SSOT **57c66fd** · code **5526ce4** · test **614** |
+| 2026-06-30 | **Post-P2 SSOT** — scaffold·dialogs·fusion 분해 · SSOT **57c66fd** · code **5526ce4** · test **614** |
 | 2026-06-30 | SSOT HEAD 정정 · SSOT baseline **04ce025** · P30 dialog test **48c8c39** |
 | 2026-06-29 | **Post-P30 후속** — dialog 저장 widget test **4** · P30 dialog test commit **48c8c39** · test **614** |
 | 2026-06-29 | **Post-P31** — P31 `work_library_panel` 분해 (**162** shell) · `origin/main` **0c92519** |
