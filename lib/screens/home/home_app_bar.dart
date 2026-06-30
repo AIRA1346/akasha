@@ -230,7 +230,7 @@ class _OverflowMenuRow extends StatelessWidget {
             style: TextStyle(color: color),
           ),
         ),
-        if (trailing != null) trailing!,
+        ?trailing,
       ],
     );
   }

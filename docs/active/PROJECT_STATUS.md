@@ -1,8 +1,8 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-06-30 (@10048 · **Steam v1 개인 아카이브 재정렬**)
-> **Git:** code/test baseline **5526ce4** · SSOT baseline *(본 커밋 직후)* · current tip은 `git log -1` 기준
-> **현재 실행:** **Steam v1 — Personal Sanctum Archive** (M3 **사용자 지시 전 보류**)
+> **갱신:** 2026-06-30 (@10048 · **Home UI 안정화 스프린트**)
+> **Git:** `origin/main` tip **`cb4131e`** · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
+> **현재 실행:** **정리 스프린트** — Home UI · 앱 테마 · 사이드바 서재 · Agent Vault UI slice **안정화** (신규 기능·M3·Agent operation layer **보류**)
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist](../history/release-readiness-checklist.md)  
 > **비전:** [VISION.md](VISION.md) · **구현:** [CURRENT_STATE.md](CURRENT_STATE.md)
@@ -13,12 +13,17 @@
  
 | 항목 | 상태 |
 |------|------|
-| **flutter test** | **614 PASS** |
+| **flutter test** | **641 PASS** |
+| **flutter analyze lib** | **0 issue** |
+| **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
+| **앱 테마 (Slice 1)** | palette 전역 · 하단 라이브러리 탭 서재 추가 흐름 ✅ |
+| **사이드바 서재 (Slice 2)** | `나만의 서재` 목록·active·`+`·select ✅ (DnD/편집/삭제는 후속) |
+| **Agent Vault UI** | Work Journal 감상 카드 slice ✅ · dogfood 관찰은 [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
 | **v1 핵심** | **Personal Sanctum vault 아카이브** — 말하기/쓰기 → `.md`/YAML → 예쁜 UI → Agent 편집 |
 | **Phase 1** | Record Foundation ✅ |
 | **Sanctum** | C1~C4 ✅ · Vault agent 가이드 ✅ |
 | **코드 건강** | Phase 0~7 ✅ · Foundation P2 분해 ✅ |
-| **다음** | v1 아카이브 루프 E2E · Agent Protocol **구현·dogfood** · **M3** 보류 |
+| **다음** | 정리 스프린트 — analyze 0 · dogfood P1 수집 · **신규 기능·M3·Agent operation layer 보류** |
 | **Registry (akasha-db)** | **10,048 works** · optional catalog / starter — **v1 blocking 아님** |
 | **Steam** | depot·스토어·IAP ✅ — **M3 정식 출시 보류** |
 
@@ -62,8 +67,8 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **614 PASS** | ✅ |
-| `flutter analyze lib` | 0 issue | ✅ |
+| `flutter test` | **641 PASS** | ✅ |
+| `flutter analyze lib` | **0 issue** | ✅ |
 | `preflight_check` | PASS | ✅ |
 | `registry_builder` | PASS | — (post-v1 scale) |
 | `dedupe_linter` | PASS (10048) | — |
@@ -77,7 +82,7 @@
 
 | 게이트 | 상태 | v1 blocking | 비고 |
 |--------|:----:|:-----------:|------|
-| **G-AUTO** | ✅ | ✅ | test **614** · analyze 0 · Release build |
+| **G-AUTO** | ✅ | ✅ | test **641** · analyze **0** · Release build |
 | **G-VAULT** | 🔶 | **✅** | 볼트 연동·아카이브·Sanctum 저장·기록 UI — **v1 핵심** |
 | **G-QA** | ✅ | ✅ | P0 수동 **12/12** (2026-06-13) · dogfood **사용자 직접** |
 | **G-STEAM** | ✅ | ✅ (M3 시) | depot·스토어·IAP·Privacy — **M3 보류** |
@@ -91,6 +96,7 @@
 
 | 트랙 | 다음 | v1 우선 |
 |------|------|:-------:|
+| **정리 스프린트** | Home UI·테마·사이드바 서재 안정화 · dogfood P1 | **P0** |
 | **Personal Archive (v1)** | vault 안정성 · Sanctum · Library/Collection · Agent Protocol | **P0** |
 | **Sprint B** | ✅ B1 · Vault agent 가이드 | — |
 | **Wave 1 Home** | ✅ shell 분해 완료 | — |
@@ -130,9 +136,9 @@
 
 | # | 작업 | 우선 |
 |---|------|:----:|
-| 1 | v1 아카이브 루프 E2E (vault → 기록 → Library) · dogfood | **P0** |
-| 2 | Agent Vault Protocol v1 **구현·dogfood** ([AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) §8) | P1 |
-| 3 | `home_shell_body` 추가 분해 (선택) | P3 |
+| 1 | 정리 스프린트 — analyze 0 · test 641 유지 · dogfood P1 ([AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md)) | **P0** |
+| 2 | v1 아카이브 루프 E2E (vault → 기록 → Library) | P1 |
+| 3 | Agent Vault Protocol v1 구현·dogfood | **보류** (operation layer) |
 | 4 | **M3** Steam Release | 보류 |
 
 ---
@@ -161,5 +167,5 @@
 | 2026-06-30 | **Agent Vault Protocol v1** — [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) 범위 문서 |
 | 2026-06-30 | **Post-P2 SSOT** — scaffold·dialogs·fusion 분해 · SSOT **57c66fd** · code **5526ce4** · test **614** |
 | 2026-06-29 | **Post-P30 후속** — dialog 저장 widget test **4** · P30 dialog test commit **48c8c39** · test **614** |
-| 2026-06-29 | **Post-P31 SSOT** — P31 `work_library_panel` 분해 (**162** shell) · `origin/main` **0c92519** · test **610** |
+| 2026-06-30 | **Home UI 안정화** — search-first · Slice 1 앱 테마 · Slice 2 사이드바 `나만의 서재` · `origin/main` **cb4131e** · test **641** · analyze **0** |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |

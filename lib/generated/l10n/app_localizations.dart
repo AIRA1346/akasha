@@ -149,7 +149,7 @@ abstract class AppLocalizations {
   /// No description provided for @appBarLibraryTheme.
   ///
   /// In en, this message translates to:
-  /// **'Library theme'**
+  /// **'App theme'**
   String get appBarLibraryTheme;
 
   /// No description provided for @appBarSearch.

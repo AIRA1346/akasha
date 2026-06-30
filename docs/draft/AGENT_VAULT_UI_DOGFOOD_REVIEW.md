@@ -114,6 +114,9 @@ Home 320px rail (의도된 계층)
 | **P1-5** | 태그 6개+ 시 rail **세로 폭주** | 프리뷰 태그 **max 4 + `+N`** |
 | **P1-6** | Sanctum 제목이 카드 **밖** | `# 📝 메모`를 `SanctumMemoCard` **내부 헤더**로 이동 (quote 카드와 톤 맞춤) |
 | **P1-7** | Home 상단 **필터 칩 2줄**이 검색보다 먼저 — 분류/DB 도구 인상 | **✅ slice 적용** — `HomeBrowseSearchChrome`: 검색 최상단 · 필터 접이식 · Ctrl K |
+| **P1-8** | **raw wiki link** UI 노출 | 링크를 **라벨·도메인 축약** 또는 내부 탐색으로 — §P1-8 관찰 |
+| **P1-9** | Home **중앙** 개인 감상 밀도 부족 | 대시보드 본문에 최근 감상·메모 요약 블록 검토 (rail 보완) |
+| **P1-10** | **앱 테마** 적용 범위 불명확 | Release dogfood — 사이드바·프리뷰·다이얼로그 대비·가독성 체크리스트 |
 
 ### P1-7 관찰 (Home 상단 · 2026-06-30)
 
@@ -129,6 +132,20 @@ Home 320px rail (의도된 계층)
 | 기본 | 필터 칩 **비노출** · 활성 필터 시 badge |
 
 **잔여 (수동 dogfood):** 탐험 그리드 vs 홈 대시보드 동시 노출 시 검색 **이중** 여부 · 필터 펼침 후 스크롤 밀도.
+
+### P1-8~P1-10 Home UI 정리 스프린트 관찰 (2026-06-30)
+
+> **기준 커밋:** `cb4131e` (`origin/main` tip) · Home search-first · Slice 1 앱 테마 · Slice 2 사이드바 `나만의 서재`
+
+| ID | 관찰 | 판정 | 비고 |
+|----|------|:----:|------|
+| — | **검색창 상단 이동** (AppBar → 본문 최상단) | ✅ 긍정 | taxonomy보다 검색·감상 진입이 앞섬 — P1-7 의도와 일치 |
+| — | **preview rail `내 감상` 카드** | ✅ 긍정 | Agent loop 메시지와 정합 · §3.1 양호 판정 유지 |
+| **P1-8** | **raw wiki link 노출** (프리뷰·연결·Sanctum 등) | ⚠️ P1 | 사용자-facing UI에 URL/위키 원문 링크가 그대로 보임 — 마스킹·라벨·내부 링크 처리 필요 |
+| **P1-9** | **Home 중앙 개인 감상 밀도 부족** | ⚠️ P1 | rail·Workbench에는 감상이 보이나 **대시보드 본문**에는 개인 기록이 약함 — 계속 탐험하기·히어로 대비 감상 CTA/요약 밀도 검토 |
+| **P1-10** | **앱 테마 적용 범위** (Slice 1) | 🔶 dogfood 필요 | palette·scaffold 배경은 전역 적용 — **사이드바·프리뷰·다이얼로그** 등 잔여 `AkashaColors` 하드코딩과 대비·가독성은 **수동 dogfood**로 확정 전 |
+
+**정리 스프린트 범위:** 위 P1은 **기록·우선순위만** — 신규 기능·Agent operation layer·M3·폴더 구조 이동은 **진행하지 않음**.
 
 ### P2 — polish
 
@@ -182,7 +199,7 @@ Text(' / 5', style: AkashaTypography.caption),
 | **Sanctum** | 본문 카드는 읽기 좋음. **제목 분리**만 손보면 「감상 카드」 완성도 상승 |
 | **Fixture** | Agent markdown ↔ 파서 ↔ UI **대체로 정합**. watchlist 상태·registry tag edge는 수동 확인 |
 
-**권장 순서:** §7 수동 dogfood → P1-1·P1-2 → 구현 확장(Agent operation layer) 재개.
+**권장 순서:** §7 수동 dogfood → P1-1·P1-2·**P1-8~P1-10** → (정리 스프린트 종료 후) 구현 확장 재개.
 
 ---
 
@@ -193,3 +210,4 @@ Text(' / 5', style: AkashaTypography.caption),
 | 2026-06-30 | 초안 — 코드·fixture 기반 UI/UX dogfood review · P0~P2 분류 |
 | 2026-06-30 | P0-1 적용 — 핵심 정보 평점 `/ 5` · 테스트 추가 |
 | 2026-06-30 | P1-7 Home 검색·접이식 필터 slice · `HomeBrowseSearchChrome` |
+| 2026-06-30 | 정리 스프린트 — P1-8~P1-10 dogfood 관찰 (검색 상단·rail 감상 긍정 · wiki link·중앙 밀도·앱 테마) · tip **cb4131e** |
