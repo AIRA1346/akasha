@@ -16,7 +16,7 @@
 | **내부 repo dirty?** | **148 modified** (untracked 0) — 샘플 검증: shard **138/138**이 앱 repo `HEAD` blob과 **일치** |
 | **앱 repo에 백업됐나?** | **예 (shard·인덱스 본문)** — `origin/main`에 커밋됨. 로컬만 dirty: **manifest 4종** (rebuild 산출물, 커밋 제외 관례) |
 | **내부 remote 대비?** | 내부 `main` = `origin/main` @ `7a27249` — **working tree만** 앞섬 (push 안 된 로컬 diff) |
-| **당장 할 일?** | 구조 결정 전 **내부 repo diff 백업 branch push 제안** (§6) — submodule 전환·`.git` 삭제 **하지 않음** |
+| **당장 할 일?** | ~~구조 변경 전 내부 repo diff 백업 branch push~~ → **✅ 완료** `backup/local-sync-20260630` @ **`bef52e7`** |
 
 ---
 
@@ -122,28 +122,34 @@ manifest working hash는 앱 repo `HEAD` manifest와도 **다름** (최신 rebui
 
 ---
 
-## 6. 제안: 내부 diff 백업 (실행은 사용자 승인 후)
+## 6. 백업 실행 내역 (2026-06-30)
 
-**목적:** 구조 변경 전 `akasha-db` remote에 **현재 working tree 148파일**을 잃지 않도록 스냅샷.
+**상태:** ✅ **완료** — `akasha-db/main`에는 push **하지 않음**.
 
-**제안 명령 (akasha-db 디렉터리):**
+| 항목 | 값 |
+|------|-----|
+| **Remote** | `https://github.com/AIRA1346/akasha-db.git` |
+| **Branch** | `backup/local-sync-20260630` |
+| **Commit** | **`bef52e7`** (`bef52e72b9e2cacfe46296f69bdb69d763fec41c`) |
+| **Message** | `backup: local catalog sync snapshot 20260630` |
+| **변경** | 148 files · +633 / −633 |
+| **base** | internal `main` @ `7a27249` |
+
+**PR:** merge **하지 않음** — backup branch로만 보존.  
+**다음:** `main` merge 여부는 구조 결정(§5) 후 별도 검토.
+
+<details>
+<summary>당시 실행 명령 (기록)</summary>
 
 ```bash
 cd akasha-db
 git checkout -b backup/local-sync-20260630
 git add -A
-git commit -m "backup: local catalog sync snapshot (148 files, matches akasha repo HEAD shards)"
+git commit -m "backup: local catalog sync snapshot 20260630"
 git push -u origin backup/local-sync-20260630
 ```
 
-| 항목 | 내용 |
-|------|------|
-| **포함** | 148 modified (shard·search_index·SCHEMA·manifest) |
-| **제외** | 앱 repo manifest 4종 커밋 제외 관례는 **앱 repo 쪽만** 해당 — 백업 branch에는 manifest 포함 가능 (별도 repo) |
-| **main merge** | **자동 merge 하지 말 것** — backup branch로만 보존 후 diff review |
-| **대안** | tag only: `git tag backup/20260630-local-sync` + push |
-
-**선행 확인:** push 전 `git diff --stat HEAD` · `ci_registry_check` (akasha-db 쪽) 권장.
+</details>
 
 ---
 
@@ -163,3 +169,4 @@ git push -u origin backup/local-sync-20260630
 | 일자 | 변경 |
 |------|------|
 | 2026-06-30 | 초안 — read-only 구조 감사 · 148 dirty 분류 · 백업 branch 제안 |
+| 2026-06-30 | 백업 실행 — `backup/local-sync-20260630` @ **`bef52e7`** pushed (`akasha-db` remote, **main 미변경**) |

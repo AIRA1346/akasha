@@ -137,7 +137,7 @@
 
 | # | 작업 | 우선 |
 |---|------|:----:|
-| 1 | [AKASHA_DB_OWNERSHIP_AUDIT.md](../draft/AKASHA_DB_OWNERSHIP_AUDIT.md) 검토 · 내부 repo **backup branch push** 승인 여부 | **P0** |
+| 1 | ~~내부 repo **backup branch push**~~ → **`backup/local-sync-20260630` @ `bef52e7`** ✅ | **완료** |
 | 2 | dogfood P1 ([AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md)) | P1 |
 | 3 | v1 아카이브 루프 E2E (vault → 기록 → Library) | P1 |
 | 4 | Agent Vault Protocol v1 구현·dogfood | **보류** |
@@ -152,7 +152,7 @@
 | ID | 항목 | 상태 | SSOT |
 |:--:|------|:----:|------|
 | **301** | akasha-db **이중 추적** 구조 감사 (vendored + nested `.git`) | ✅ draft | [AKASHA_DB_OWNERSHIP_AUDIT.md](../draft/AKASHA_DB_OWNERSHIP_AUDIT.md) |
-| **302** | 내부 `akasha-db` **148파일** dirty → `backup/local-sync-20260630` branch push | 🔶 **제안** | audit §6 |
+| **302** | 내부 `akasha-db` **148파일** → `backup/local-sync-20260630` @ **`bef52e7`** | ✅ pushed | audit §6 |
 | **303** | 장기 구조 결정 — **A** vendored+`.git` 제거 · **B** submodule/subtree · **C** dual push | ⏸️ 보류 | audit §5 |
 | **304** | `AIRA1346/akasha-db` remote vs 앱 repo shard 커밋 **동기화** | 🔶 | audit §3.1 |
 | **305** | registry manifest 4파일 — rebuild 산출물 **커밋 제외** 관례 유지 | ✅ 관례 | 본 문서 헤더 |
@@ -188,5 +188,5 @@
 | 2026-06-30 | **Post-P2 SSOT** — scaffold·dialogs·fusion 분해 · SSOT **57c66fd** · code **5526ce4** · test **614** |
 | 2026-06-29 | **Post-P30 후속** — dialog 저장 widget test **4** · P30 dialog test commit **48c8c39** · test **614** |
 | 2026-06-30 | **Home UI 안정화** — search-first · Slice 1 앱 테마 · Slice 2 사이드바 `나만의 서재` · tip **45f89b7** · test **641** |
-| 2026-06-30 | **akasha-db 소유권 감사** — [AKASHA_DB_OWNERSHIP_AUDIT.md](../draft/AKASHA_DB_OWNERSHIP_AUDIT.md) · Ops Watchlist **301+** |
+| 2026-06-30 | **akasha-db 백업** — `backup/local-sync-20260630` @ **`bef52e7`** (`AIRA1346/akasha-db`, main unchanged) |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |
