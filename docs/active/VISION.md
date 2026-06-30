@@ -1,28 +1,33 @@
 # AKASHA Product Vision
 
-> **지위:** 제품 **최상위 SSOT** (정책·ROADMAP·스토어 카피의 북극성)  
-> **갱신:** 2026-06-21 · Registry **10,048** · Phase 6.3 진행 · Steam v1 준비 완료  
-> **법무:** [history/policy/data-policy.md](../history/policy/data-policy.md) · **구현:** [catalog_poster_policy.dart](../lib/config/catalog_poster_policy.dart)
+> **지위:** 제품 **최상위 SSOT** (정책·ROADMAP·스토어 카피의 북극성)
+> **갱신:** 2026-06-30 — **Steam v1 = Personal Sanctum Archive**
+> **Git:** code/test baseline **5526ce4** · current tip은 `git log -1` 기준
+> **법무:** [history/policy/data-policy.md](../history/policy/data-policy.md)
 
 ---
 
 ## 1. 정체성 — 3층 구조
 
-### 한 문장
+### 한 문장 (Steam v1)
 
-> **AKASHA는 작품을 진입점으로 삼아, 인물·개념·사건까지 연결되는 개인 지식 우주(Personal Knowledge Universe)를 구축하는 시스템이다.**
+> **AKASHA v1은 사용자의 감상을 Sanctum vault에 아름답게 남기고, 에이전트와 함께 기록하는 개인 아카이브 앱이다.**
+
+장기 북극성(변하지 않음):
+
+> **작품을 진입점으로 삼아, 인물·개념·사건까지 연결되는 개인 지식 우주(Personal Knowledge Universe)를 구축하는 시스템이다.**
 
 ---
 
-### 층 1 — 표면: Library App
+### 층 1 — 표면: Personal Archive App (v1)
 
 사용자가 처음 보는 모습:
 
-- 작품 수집, 컬렉션 생성, 갤러리 탐색
-- 아카이브 상태, 별점, 나만의 서재
+- **내 vault**에 감상·평점·상태·태그·명장면·갤러리를 남김
+- Personal Library · Collection으로 **내가 아카이브한 것**을 큐레이션
+- (보조) starter catalog로 작품을 찾아 아카이브로 가져옴
 
-겉모습은 Goodreads · MyAnimeList · Letterboxd · Steam Library와 유사하다.  
-그러나 여기서 끝나지 않는다.
+겉모습은 Goodreads · Letterboxd와 겹치지만, **v1 핵심은 글로벌 사전이 아니라 내 기록**이다.
 
 ---
 
@@ -137,24 +142,26 @@ Tier 2는 Tier 1·1.5 Fact를 **덮어쓰지 않음**. Legacy frontmatter `work_
 
 ---
 
-## 5. 유저 여정
+## 5. 유저 여정 (Steam v1)
 
 ```
-검색/발견 → (글로벌 사전 | 내 볼트 | 직접 등록)
+볼트 연결 (또는 신규 작품 직접 추가)
     ↓
-대시보드 서재 — 포스터 없는 Fact 카드로 작품을 찾음
+감상을 말하거나 직접 작성 — Workbench · Sanctum
     ↓
-아카이브 — 앱이 work_id 연결 .md 생성 (poster/rating/status YAML 템플릿)
+Sanctum vault .md / YAML 저장 (원자적 · watch)
     ↓
-감상·기록 — **AKASHA 앱 안에서** Sanctum 페이지 본문 편집 + `.md` 파일 편집 + md 저장
-    · 포스터·별점·상태: 3열 작품정보
-    · Markdown 본문: 4열 「본문」·「.md」 탭
-    · (선택) 외부 에디터와 **같은 볼트 파일** 동기화 — Obsidian 필수 아님
+AKASHA가 예쁘게 정리 — 나만의 서재 · Collection · 갤러리
     ↓
-앱 — 찾기 · 아카이빙 · 감상 · 편집 **완결** (볼트 watch · 그리드/워크벤치)
+(선택) starter catalog 검색으로 작품 발견 → 아카이브
     ↓
-(장기) Timeline · Entity 연결 · Appreciation — [history/product/ultimate-archiving-vision.md §10](../history/product/ultimate-archiving-vision.md)
+에이전트가 vault 읽기·편집 — Agent Vault Protocol
+    ↓
+(장기) Entity Graph · Timeline · Connection
 ```
+
+**v1에서 약화:** 「10k 글로벌 사전을 탐색하는 것」을 제품 정체성의 중심으로 두지 않음.
+catalog는 **있어도 되고 없어도 되는 보조** — 직접 추가·로컬 기록이 항상 가능해야 함.
 
 ---
 
@@ -218,28 +225,34 @@ Tier 2는 Tier 1·1.5 Fact를 **덮어쓰지 않음**. Legacy frontmatter `work_
 
 ---
 
-## 9. Steam v1 범위
+## 9. Steam v1 범위 (2026-06-30 재정렬)
 
-| In | Out |
-|----|-----|
-| 10k+ Fact 사전 · 검색 · 플레이스홀더 그리드 | Tier 1 포스터 |
-| Sanctum 연동 · 아카이브 `.md` | 앱 이미지 큐레이션 |
-| YAML 기본 · 나만의 서재 · IAP 테마 | Discover · Timeline · Recall (v1.1) |
-| (v1.x) Tier 1.5 user catalog · `wk_u_*` | Entity types beyond work (v1.2+) |
+| v1 In (핵심) | v1 Out / post-v1 |
+|--------------|------------------|
+| Sanctum vault 연동 · watch · 원자적 저장 | Tier 1 포스터 |
+| 직접 작품 추가 · 아카이브 `.md` | 앱 이미지 큐레이션 |
+| 감상·평점·상태·태그·명장면·갤러리 | Discover · recommendation |
+| Workbench · Sanctum 예쁜 기록 UI | Timeline (v1.1+) |
+| Personal Library · Collection | Entity types beyond work (v1.2+) |
+| Agent Vault Protocol 준비 | **10k+ scale을 v1 메시지 중심으로 강조** |
+| (보조) starter catalog 검색 | recall·CDN scale을 **v1 blocking**으로 두지 않음 |
+| 나만의 서재 · IAP 테마 | Wikidata / 외부 API **확장** |
 
-스토어: [m2-steam-store-page.md](../history/programs/m2-steam-store-page.md)
+**akasha-db:** 삭제하지 않음 — optional catalog · CI 자산 · post-v1 scale track.
+
+**M3 정식 출시:** 사용자 지시 전 **보류**.
 
 ---
 
 ## 10. 장기 (철학 유지)
 
-| 시점 | Tier 1 | 핵심 확장 |
-|------|--------|----------|
-| 2026 v1 | 10k · Fact only | Sanctum 볼트 · 나만의 서재 |
-| 2027~ | 30k+ · Facts 확장 | Entity Graph · Person · Concept |
-| 2030~ | 500k · Pipeline | 완전한 Personal Knowledge Universe |
+| 시점 | Tier 1 (akasha-db) | 제품 초점 |
+|------|-------------------|----------|
+| **2026 v1** | optional starter · CI 유지 | **Personal Sanctum archive** |
+| 2027~ | post-v1 scale | Entity Graph · Person · Concept |
+| 2030~ | pipeline | Personal Knowledge Universe |
 
-**변하지 않는 것:** Tier 1에 포스터·UGC를 넣지 않음. 성장 = **Fact 수 + 연결 깊이** not 콘텐츠 호스팅.
+**변하지 않는 것:** Tier 1에 포스터·UGC를 넣지 않음. **v1 성공 = 내 vault에 남는 기록의 품질**.
 
 ---
 
@@ -266,4 +279,5 @@ Tier 2는 Tier 1·1.5 Fact를 **덮어쓰지 않음**. Legacy frontmatter `work_
 | 2026-06-14 | ultimate-archiving-vision SSOT 링크 · 유저 여정 장기 축 |
 | 2026-06-19 | §2 Entity·Record·Connection · Tier 1.5 · ADR-011 |
 | 2026-06-19 | §7 Steam v1 · 10k+ · Tier 1.5 v1.x In |
-| 2026-06-21 | **정체성 재정의** — 3층 구조 (Library App → Entity Graph → Personal Knowledge Universe) · 핵심 철학 명문화 |
+| 2026-06-21 | **정체성 재정의** — 3층 구조 · Personal Knowledge Universe |
+| 2026-06-30 | **Steam v1 재정렬** — Personal Sanctum archive 중심 · catalog post-v1 |

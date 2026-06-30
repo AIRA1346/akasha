@@ -1,37 +1,56 @@
 # AKASHA Roadmap (로드맵)
 
-> **지위:** 프로젝트 개발 로드맵 SSOT (5대 정체성 카테고리 기준)  
-> **갱신:** 2026-06-21  
-> **최상위 지침:** [PROJECT_CONSTITUTION.md](PROJECT_CONSTITUTION.md) (프로젝트 헌법)
+> **지위:** 프로젝트 개발 로드맵 SSOT (5대 정체성 카테고리 기준)
+> **갱신:** 2026-06-30 — **Steam v1 = Personal Sanctum Archive**
+> **최상위 지침:** [PROJECT_CONSTITUTION.md](PROJECT_CONSTITUTION.md) · [VISION.md](VISION.md)
+
+---
+
+## Steam v1 우선순위 (2026-06-30)
+
+**v1은 글로벌 작품 사전 앱이 아니라 개인 아카이브 앱이다.**
+
+| 우선 | 카테고리 | v1에서 |
+|:----:|----------|--------|
+| **P0** | **A. Archive** | 핵심 — vault · Sanctum · 기록 UI |
+| **P0** | **D. Personal Library** | 핵심 — 서재 · Collection |
+| P1 | C. Knowledge Graph | 기존 Workbench·연결 — 확장은 post-v1 |
+| — | B. Discovery | **optional** — starter catalog 검색 유지 |
+| — | E. Scale | **post-v1** — akasha-db 확장·CDN 트랙 |
+
+**M3 Steam 정식 출시:** 사용자 지시 전 **보류**. dogfood는 **사용자 직접**.
 
 ---
 
 ## 📌 로드맵 핵심 원칙 (Feature Audit Filter)
-모든 신규 기능은 아래 5개 핵심 카테고리 중 하나에 기여해야 하며, 의사결정 필터(**기록/연결/발견**)를 통과해야 합니다. 단순 UI 미세 튜닝이나 애니메이션 개선 등은 항상 가장 낮은 우선순위(나중)로 밀려납니다.
+모든 신규 기능은 아래 5개 핵심 카테고리 중 하나에 기여해야 하며, 의사결정 필터(**기록 / 연결 / 발견**)를 통과해야 합니다.
+**v1에서는 「기록」이 발견·규모 확장보다 항상 우선**합니다.
 
 ---
 
-## 📂 A. Archive (기록)
+## 📂 A. Archive (기록) — **v1 핵심**
 > **목표:** 사용자가 만난 작품과 감상을 안전하고 자유롭게 기록하는 Sanctum 볼트 시스템
 
 * **[x] Sanctum 볼트 연동:** 폴더 연동, watch, 원자적 저장 및 동기화
 * **[x] 아카이브 자동화:** 아카이브 시 `.md` 파일 자동 생성 및 YAML front-matter 템플릿 적용
 * **[x] 마크다운 감상 기록:** 워크벤치 내 본문 Markdown 편집 및 저장 기능 완결
-* **[x] AI 가져오기:** 클립보드 내 텍스트 정보 파싱을 통한 YAML 자동 생성 및 프롬프트 템플릿 지원
-* **[ ] (v1.1+) 오늘의 회상 카드:** 이전 감상 기록을 리마인드하는 카드 시스템 (보류)
-* **[ ] (v1.1+) 타임라인 / 완성 캘린더:** 기록한 날짜 기준 시각화 뷰 (보류)
+* **[x] Sanctum C1~C4:** wiki 칩 · 출연 · 갤러리 · 완성도 · HTML보내기
+* **[x] AI 가져오기:** 클립보드 파싱 · YAML 자동 생성 · 프롬프트 템플릿
+* **[ ] (v1) Agent Vault Protocol:** 외부 에이전트가 vault 읽기·편집 — [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)
+* **[ ] (v1.1+) 오늘의 회상 카드:** 리마인드 카드 (보류)
+* **[ ] (v1.1+) 타임라인 / 완성 캘린더:** 날짜 기준 시각화 (보류)
 
 ---
 
-## 📂 B. Discovery (검색 및 발견)
-> **목표:** 10k에서 100만+ 규모까지 신뢰할 수 있는 문화 정보 검색 및 탐색
+## 📂 B. Discovery (검색 및 발견) — **v1 optional / post-v1 확장**
+> **목표:** starter catalog로 작품을 **찾는** 보조 수단. v1 핵심은 **내 vault에 기록**하는 것.
 
-* **[x] 글로벌 사전 (akasha-db) 검색:** 로컬 볼트 기록 + 사전 정보 + 직접 등록 연계 검색
-* **[x] 다국어 카탈로그 지원:** 다언어 타이틀 검색 및 검색용 토큰 생성
-* **[x] 검색 Recall@10 100% 확보:** baseline 95개 쿼리에 대한 품질 게이트 수립 (`sw1_a_validation.dart`)
-* **[x] 외부 소스 연동 검증:** Wikidata (wikidata_ko) 연계 검색 및 매핑 검증
-* **[ ] (v1.1+) 취향 기반 추천 (Discover):** 사용자 기록 기반 규칙성 추천 MVP (보류)
-* **[ ] (v1.1+) 외부 API 연동:** TMDB 및 IGDB API 라이선스 검토 후 연동 (보류)
+* **[x] 글로벌 사전 (akasha-db) 검색:** 로컬 볼트 + 사전 + 직접 등록 연계 — **optional catalog**
+* **[x] 다국어 카탈로그 지원:** 다언어 타이틀 검색
+* **[x] 검색 Recall@10:** CI 품질 자산 — **v1 blocking 아님**
+* **[x] Wikidata (wikidata_ko):** post-v1 Discovery spine — 구현 유지
+* **[ ] (post-v1) 취향 기반 추천 (Discover):** 보류
+* **[ ] (post-v1) 외부 API 연동:** TMDB · IGDB — 보류
 
 ---
 
@@ -47,7 +66,7 @@
 
 ---
 
-## 📂 D. Personal Library (나의 서재 & 큐레이션)
+## 📂 D. Personal Library (나의 서재 & 큐레이션) — **v1 핵심**
 > **목표:** 단순 목록을 넘어 사용자가 구성한 의미 있는 지식 공간 (Curated Space)
 
 * **[x] 나의 서재 기본 뷰:** 아카이브한 작품만 모아 보는 전용 홈 모드 구축
@@ -59,15 +78,15 @@
 
 ---
 
-## 📂 E. Scale (인프라 및 성능 확장)
-> **목표:** 8,000+ 작품을 넘어 100만+ 규모까지 성능 저하 없이 작동하는 인프라 구축
+## 📂 E. Scale (인프라 및 성능 확장) — **post-v1 track**
+> **목표:** akasha-db·CDN·대규모 catalog — **v1 출시 blocking 아님**. 엔지니어링 자산으로 유지.
 
-* **[x] v4 해시 샤딩:** manifest v4 및 300+ 버킷 분할로 CDN 로드 비용 최적화
-* **[x] 사전 운영 자동화:** 10k 작품 레지스트리 빌더 (`registry_builder`) 및 CDN 배포 자동화
-* **[x] 품질 검증 게이트 CI:** `preflight_check` 및 `ci_registry_check` 자동 수행
-* **[x] Steam 릴리즈 빌드 패키징:** M2 마일스톤(Windows installer, 스토어 에셋, IAP 스텁 완료)
-* **[ ] (Steam 이후) AI 자동 수집 파이프라인 (E1~E2):** 외부 참고 → AI 후보 생성 → dedupe → 레지스트리 반영 자동화
-* **[ ] (Steam 이후) 50k+ CDN 및 R2 확장:** 대용량 분산 CDN 환경 정밀 튜닝
+* **[x] v4 해시 샤딩:** manifest v4 · CDN — **optional catalog 인프라**
+* **[x] registry_builder · CI gates:** 품질 자동화 — post-v1 scale 관측
+* **[x] 10,048 works milestone:** 성과 보존 — v1 메시지에서 과장하지 않음
+* **[x] Steam 릴리즈 빌드 패키징:** M2 (installer · 스토어 · IAP 스텁)
+* **[ ] (post-v1) AI 자동 수집 파이프라인 (E1~E2):** 보류
+* **[ ] (post-v1) 50k+ CDN 및 R2 확장:** 보류
 * **[ ] (장기) Riverpod 마이그레이션:** 상태 관리 프레임워크 고도화 (보류)
 * **[ ] (장기) 모바일 이관:** Windows 품질 안정화 후 크로스플랫폼 확장 (보류)
 
@@ -80,4 +99,4 @@
 * **M2 (Steam 출시 준비) ✅** — depot, 스토어 페이지, 테마 결제 스텁 완료 (2026-06-13)
 * **Wave 1 (Home 리팩터) ✅** — 홈 화면 뷰어 리팩터링 및 코디네이터 분리 (2026-06-14)
 * **Phase 1 E2E ✅** — 발견/아카이브/기록/큐레이션 E2E 품질 검증 완료 (2026-06-14)
-* **M3 (Steam v1 정식 출시) ⏸️** — 품질 검증 진행 중으로 출시 일시 보류
+* **M3 (Steam v1 정식 출시) ⏸️** — **개인 아카이브 중심** 재정렬 후에도 사용자 지시 전 **보류**

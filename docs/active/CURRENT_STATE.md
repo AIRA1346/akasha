@@ -1,50 +1,75 @@
 # AKASHA Current State (현재 상태)
 
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
-> **갱신:** 2026-06-26 (test **610+** · analyze 0 error · B1 ✅ · Vault agent ✅)  
+> **갱신:** 2026-06-30 (test **614** · analyze 0 · **Steam v1 = Personal Archive**)
+> **Git:** code/test baseline **5526ce4** · current tip은 `git log -1` 기준
 
 ---
 
-## 1. 데이터베이스 및 카탈로그 (akasha-db)
+## 0. Steam v1 제품 초점 (2026-06-30)
 
-### Ⅰ. Tier 1 (Global Fact DB)
-* **등록 작품 수:** **10,048개** (`akasha-db` 내 v4 해시 샤드 관리)
-* **샤딩 아키텍처:** SHA256 해시 기반의 v4 샤딩 시스템 (`manifest.json` + `wk_` 고유 영구 ID).
-* **데이터 원칙 준수:** 
-  * posterPath 및 description 저장 불가 규칙 엄격 준수.
-  * 모든 작품은 `title`, `titles` (다언어), `category`, `domain`, `releaseYear`, `creator`, `externalIds` 식별 데이터만 보유.
-  * 중복 작품(Duplicate) 수: **0개** (CI 검증 통과)
+**구현된 것의 우선순위 재정렬:** 코드 삭제 없음.
 
-### Ⅱ. Tier 2 (Sanctum Vault)
+| 계층 | 역할 | v1 |
+|------|------|:--:|
+| **Tier 2 Sanctum vault** | `.md` / YAML 감상 기록 | **핵심** |
+| **Personal Library · Collection** | 내가 아카이브한 것의 큐레이션 | **핵심** |
+| **Workbench · Sanctum UI** | 예쁜 기록·편집 | **핵심** |
+| **Agent Vault** | 외부 에이전트 읽기·편집 | **준비 중** |
+| **Tier 1 akasha-db** | starter / optional catalog | **보조** |
+| **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
+
+**v1 blocking에 가까운 검증:** `flutter test` **614** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
+**v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.
+
+---
+
+## 1. 데이터 계층
+
+### Ⅰ. Tier 1 (Global Fact DB) — **optional catalog / post-v1 scale**
+
+* **등록 작품 수:** **10,048개** — 엔지니어링·CI 자산. **v1 제품 핵심으로 과장하지 않음.**
+* **샤딩:** v4 hex shards · `wk_` 영구 ID · dedupe **0**
+* **역할:** 작품 **검색·starter catalog** 보조. 삭제·축소 없음.
+* **데이터 원칙:** posterPath·description Tier 1 금지 · Fact-only CI 유지
+
+### Ⅱ. Tier 2 (Sanctum Vault) — **v1 핵심**
 * 로컬 파일 시스템 연동 및 Watch 시스템 구현 완료.
 * YAML front-matter 템플릿 파싱 및 자동 아카이브 생성.
 * 로컬 포스터(`posters/` 하위 이미지) 및 이미지 URL 표시 지원.
 
 ---
 
-## 2. 검색 및 품질 검증 (Search & Validation)
+## 2. 검색 및 품질 검증
 
-### Ⅰ. 검색 시스템 (Global Search)
-* `search_index.json`을 통한 인메모리 고속 검색 구현.
-* 다언어 제목, 동의어(Aliases), 원제 검색 지원.
-* 검색 랭킹: `qualityScore` 가중치 반영.
+### Ⅰ. 검색 (optional catalog)
 
-### Ⅱ. 게이트웨이 및 CI 검증
-* **검색 Recall 검증 (`sw1_a_validation.dart`):** baseline 95개 검색 쿼리에 대해 Recall@10 **100% 달성** (87/87 recall-evaluated).
-* **CI 검증 게이트:** `flutter test` **605 PASS**, `flutter analyze lib/` **0 error**, `ci_registry_check` 통과, `preflight_check` 통과, `quality_gate --locale-minimum` 통과.
+* `search_index` 인메모리 검색 — **볼트·직접 등록과 함께** 작품 찾기 보조.
+* 다언어 제목·aliases 검색.
 
-### Ⅲ. Home Shell (Wave 1 + Phase 7)
-* **프리뷰:** `HomePreviewCoordinator` — 스택·복귀·연결 픽 pending 통합.
-* **최근 탐색:** `HomeRecentExplorationCoordinator` — store + 해석.
-* **컨트롤러:** `home_shell_controller` ~516줄 (coordinator 위임).
+### Ⅱ. CI 검증
+
+| 도구 | 결과 | v1 blocking |
+|------|:----:|:-----------:|
+| `flutter test` | **614 PASS** | ✅ |
+| `flutter analyze lib` | 0 issue | ✅ |
+| `preflight_check` | PASS | ✅ |
+| `sw1_a_validation` recall@10 | 87/87 | — |
+| `ci_registry_check` | PASS | — |
+
+### Ⅲ. Home Shell
+
+* Wave 1 + Foundation P2 분해 완료 — coordinator·preview·scaffold parts.
+* **v1 관점:** browse/catalog UI는 **기록으로 이어지는 진입**이지 제품 정체성 자체가 아님.
 
 ---
 
 ## 3. UI 및 워크벤치 (UI & Workbench)
 
-### Ⅰ. 홈 화면 (HomeScreen)
-* **대시보드 (Dashboard):** 글로벌 카탈로그 검색 및 탐색. 포스터 없는 Fact 카드 그리드 UI 적용.
-* **나의 서재 (Personal Library):** 유저가 아카이빙한 작품들의 포스터 그리드 및 테마 피커(IAP 스텁 포함).
+### Ⅰ. 홈 화면
+
+* **나의 서재 (Personal Library):** v1 핵심 — 아카이브 작품 포스터·테마.
+* **대시보드 (Dashboard):** optional catalog 탐색 — Fact 카드 그리드.
 
 ### Ⅱ. 워크벤치 (4열 상세 편집기)
 * **탭 관리:** 다중 Work 및 Entity 탭을 열어둔 다단계 작업 공간.
@@ -91,10 +116,10 @@
 |:---:|---|:---:|
 | **Phase 0** | 작품 E2E 아카이빙 | **완료 (100%)** |
 | **Phase 1** | Record 기초 (Foundation) | **완료 (100%)** |
-| **Phase 2** | 카탈로그 확장성 및 CI (10k scale) | **완료 (100%)** |
+| **Phase 2** | 카탈로그 CI·10k scale | **완료** — post-v1 scale track |
 | **Phase 6.2** | 워크벤치 상세 통합 (Workbench Parity) | **완료 (100%)** |
 | **Phase 6.3** | incoming/sameDay·connections coordinator | **완료 (100%)** |
-| **M3** | Steam Release 준비 | **착수 가능** (M2 depot·IAP·스토어 완료 · B1·Foundation ✅) |
+| **M3** | Steam Release | **보류** (사용자 지시 전) |
 | **Phase 3** | Entity 타입 다각화 (Work 이외) | **미착수** |
 | **Phase 4** | 타임라인 아카이브 | **미착수** |
 | **Phase 5** | 엔티티 연결성 (Connection) | **미착수** |

@@ -1,12 +1,11 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-06-30 (@10048 · Foundation Phase 2 · Post-P2 분해 SSOT)
-> **Git:** `origin/main` HEAD **56d669f** · code/test baseline **5526ce4** · SSOT baseline **57c66fd**
-> **현재 실행:** **Foundation Phase 2** — 대형 파일 분해 마무리 (M3 **사용자 지시 전 보류**)
+> **갱신:** 2026-06-30 (@10048 · **Steam v1 개인 아카이브 재정렬**)
+> **Git:** code/test baseline **5526ce4** · SSOT baseline *(본 커밋 직후)* · current tip은 `git log -1` 기준
+> **현재 실행:** **Steam v1 — Personal Sanctum Archive** (M3 **사용자 지시 전 보류**)
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist](../history/release-readiness-checklist.md)  
-> **정리:** [repo-cleanup-plan](../history/programs/repo-cleanup-plan.md) · Phase 1~2 ✅ (2026-06-12)  
-> **확장:** catalog-growth-charter — **SD2.6 hold 해제**
+> **비전:** [VISION.md](VISION.md) · **구현:** [CURRENT_STATE.md](CURRENT_STATE.md)
  
 ---
  
@@ -14,77 +13,91 @@
  
 | 항목 | 상태 |
 |------|------|
-| **Registry** | **10048 works** · v4 hex shards · dedupe **0** |
-| **4종 핵심 Gate** | **전부 PASS** |
-| **externalId** | **10048/10048 (100%)** |
 | **flutter test** | **614 PASS** |
+| **v1 핵심** | **Personal Sanctum vault 아카이브** — 말하기/쓰기 → `.md`/YAML → 예쁜 UI → Agent 편집 |
 | **Phase 1** | Record Foundation ✅ |
-| **Phase 6.2** | 전 경로 Workbench 통합 ✅ |
-| **Phase 6.3** | incoming/sameDay·connections coordinator ✅ |
-| **코드 건강** | Phase 0~7 ✅ · **Sanctum C1~C4** ✅ |
-| **다음** | **Foundation Phase 2** 마무리 점검 · `home_shell_body` 추가 분해 여지 · **M3** 보류 |
-| **Scale / Core** | **Phase 2.0~2.3** ✅ @10048 · G1 ✅ · **ADR-010 eager-only batch** ✅ |
-| **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
-| **Discovery** | `wikidata_ko` active · **10k milestone** ✅ |
-| **CDN** | akasha-db.pages.dev — **10048 push 완료** |
+| **Sanctum** | C1~C4 ✅ · Vault agent 가이드 ✅ |
+| **코드 건강** | Phase 0~7 ✅ · Foundation P2 분해 ✅ |
+| **다음** | v1 아카이브 루프 강화 · Agent Vault Protocol · dogfood(사용자 직접) · **M3** 보류 |
+| **Registry (akasha-db)** | **10,048 works** · optional catalog / starter — **v1 blocking 아님** |
+| **Steam** | depot·스토어·IAP ✅ — **M3 정식 출시 보류** |
 
 ---
 
-## 1. 운영 결정 (2026-06-10)
+## 1. Steam v1 제품 방향 (2026-06-30)
 
-**430작은 Steam 출시에 충분하지 않다.**  
-insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** search_index·dedupe·gate 부담을 검증하는 **아키텍처 주도 성장**으로 전환한다.
+**v1 핵심:** 글로벌 작품 사전이 아니라 **개인 Sanctum vault 아카이브 앱**.
 
-| 유지 | 폐기 |
-|------|------|
-| `pre_insert_dedupe_gate` · A급 도구 | SD2.6 **+20 상한** |
-| SD3 Pause (품질·dedupe 회귀 시 감속) | O3를 insert **스위치**로 쓰기 |
-| Fact-only · Wikidata 법무 경계 | 430 **고정 출시** 가정 |
+```
+감상을 말하거나 직접 작성
+  → Sanctum vault .md / YAML 저장
+  → AKASHA가 예쁘게 정리·표시
+  → 에이전트가 vault를 읽고 편집하며 기록을 도움
+```
 
-**2026-06-13:** Steam depot·스토어·P0 QA 12/12 완료. 정식 릴리즈 전 **Wave 1 Home 해부**를 blocking으로 설정 ([release-readiness-checklist](../history/release-readiness-checklist.md) §7).
+| v1 우선 (blocking에 가깝게) | v1에서 낮춤 (구현 유지 · 메시지·우선순위만) |
+|-----------------------------|-----------------------------------------------|
+| 로컬 vault 안정성 · watch · 원자적 저장 | 10k 글로벌 사전 **강조** |
+| 직접 작품 추가 · 아카이브 `.md` 생성 | 대규모 registry **확장** 트랙 |
+| 감상·평점·상태·태그·명장면·갤러리 (Sanctum) | Wikidata / 외부 API **확장** |
+| Personal Library · Collection | Discovery / recommendation |
+| Agent Vault Protocol 준비 ([VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)) | CDN·search recall **scale gate**를 v1 출시 조건으로 두지 않음 |
+| 예쁜 기록 UI (Workbench · Sanctum) | |
+
+**akasha-db / registry:** 삭제하지 않음 — **optional catalog support** · starter catalog · **post-v1 scale track**.
+
+**M3 Steam 정식 출시:** 여전히 **사용자 지시 전 보류**. dogfood는 **사용자 직접** 수행.
+
+### 이전 운영 결정 (2026-06-10, 역사 보존)
+
+당시 **430작은 Steam 출시에 충분하지 않다**는 전제로 catalog 성장·SD2.6 해제를 결정했다.
+2026-06-30 재정렬 이후 **v1 출시를 막는 조건은 개인 아카이브 품질**이며, registry 규모 확장은 **post-v1**로 이동한다.
+아래 Gate 표의 registry·recall 수치는 **엔지니어링 자산**으로 보존한다.
 
 ---
 
 ## 2. Gate (@10048)
 
-> 구현·Registry 상세는 **[CURRENT_STATE.md](CURRENT_STATE.md)** (Reality SSOT)를 따릅니다.
+> Registry·검색 상세는 [CURRENT_STATE.md](CURRENT_STATE.md). **v1 blocking**은 §3 참고.
 
-| 도구 | 결과 |
-|------|:----:|
-| `flutter test` | **614 PASS** |
-| `registry_builder` | PASS |
-| `dedupe_linter` | PASS (10048 works) |
-| `quality_gate --strict` | PASS |
-| `quality_gate --release` | PASS |
-| `coverage_dashboard` | titles_ko 100% · titles_en 100% · invalid_en 0 |
-| `quality_gate --locale-minimum` | PASS |
-| `ci_registry_check` | PASS |
-| `preflight_check` | PASS |
+| 도구 | 결과 | v1 blocking |
+|------|:----:|:-----------:|
+| `flutter test` | **614 PASS** | ✅ |
+| `flutter analyze lib` | 0 issue | ✅ |
+| `preflight_check` | PASS | ✅ |
+| `registry_builder` | PASS | — (post-v1 scale) |
+| `dedupe_linter` | PASS (10048) | — |
+| `quality_gate --strict` | PASS | — |
+| `ci_registry_check` | PASS | — |
+| `sw1_a_validation` recall@10 | 87/87 | — (optional catalog QA) |
 
 ---
 
-## 3. Release Readiness (2026-06-14)
+## 3. Release Readiness — Steam v1
 
-| 게이트 | 상태 | 비고 |
-|--------|:----:|------|
-| **G-AUTO** | ✅ | test **614** · analyze 0 error · Release build OK |
-| **G-QA** | ✅ | P0 수동 **12/12** (2026-06-13) |
-| **G-STEAM** | ✅ | depot·스토어·IAP·Privacy URL |
-| **G-CATALOG** | ✅ | **10048작** · recall@10 **87/87** (SW1-A) |
-| **G-COPY** | ✅ | Privacy doc · 스토어 카피 정합 |
+| 게이트 | 상태 | v1 blocking | 비고 |
+|--------|:----:|:-----------:|------|
+| **G-AUTO** | ✅ | ✅ | test **614** · analyze 0 · Release build |
+| **G-VAULT** | 🔶 | **✅** | 볼트 연동·아카이브·Sanctum 저장·기록 UI — **v1 핵심** |
+| **G-QA** | ✅ | ✅ | P0 수동 **12/12** (2026-06-13) · dogfood **사용자 직접** |
+| **G-STEAM** | ✅ | ✅ (M3 시) | depot·스토어·IAP·Privacy — **M3 보류** |
+| **G-COPY** | ✅ | ✅ (M3 시) | Privacy doc · 스토어 카피 |
+| **G-CATALOG** | ✅ | — | 10048작 · recall 87/87 — **optional / post-v1 scale** |
+| **G-DISCOVERY** | ✅ | — | Wikidata spine — **v1 메시지·blocking 아님** |
 
 ---
 
 ## 4. 병행 트랙
 
-| 트랙 | 다음 | 우선 |
-|------|------|:----:|
-| **Sprint B** | ✅ B1 dogfood · Vault agent | — |
-| **Wave 1 Home** | ✅ shell **40줄** | — |
-| **Catalog G1** | Sprint C · **관측만** | P2 |
-| **M3 Release** | **보류** (사용자 지시 시 착수) | — |
-| **Foundation P2** | scaffold · dialogs coordinator · franchise fusion 분해 | **✅** |
-| **Scale/Core** | **보류** | — |
+| 트랙 | 다음 | v1 우선 |
+|------|------|:-------:|
+| **Personal Archive (v1)** | vault 안정성 · Sanctum · Library/Collection · Agent Protocol | **P0** |
+| **Sprint B** | ✅ B1 · Vault agent 가이드 | — |
+| **Wave 1 Home** | ✅ shell 분해 완료 | — |
+| **Foundation P2** | ✅ scaffold · dialogs · fusion | — |
+| **Catalog / akasha-db** | optional starter · CI 관측 | post-v1 |
+| **Discovery / Scale** | Wikidata · 10k+ 확장 | post-v1 |
+| **M3 Release** | **보류** (사용자 지시) | — |
 
 ---
 
@@ -117,8 +130,10 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | # | 작업 | 우선 |
 |---|------|:----:|
-| 1 | `home_shell_body` 추가 분해 (선택) | P3 |
-| 2 | **M3** Steam Release | 보류 |
+| 1 | v1 아카이브 루프 E2E (vault → 기록 → Library) · dogfood | **P0** |
+| 2 | Agent Vault Protocol · 외부 에이전트 편집 시나리오 | P1 |
+| 3 | `home_shell_body` 추가 분해 (선택) | P3 |
+| 4 | **M3** Steam Release | 보류 |
 
 ---
 
@@ -142,8 +157,8 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | 2026-06-24 | 코드 건강 Phase 0~6 — vault·FeatureFlags·workbench coordinator·`tool/` archive·polling · test **580** |
 | 2026-06-24 | 코드 건강 Phase 7b — save ops·collection reorder·docs SSOT · test **591** |
 | 2026-06-25 | **Sanctum C1~C4** · Foundation F0 감사 · test **605** · [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md) |
+| 2026-06-30 | **Steam v1 재정렬** — 개인 Sanctum 아카이브 중심 · registry scale post-v1 · code **5526ce4** |
 | 2026-06-30 | **Post-P2 SSOT** — scaffold·dialogs·fusion 분해 · SSOT **57c66fd** · code **5526ce4** · test **614** |
-| 2026-06-30 | SSOT HEAD 정정 · SSOT baseline **04ce025** · P30 dialog test **48c8c39** |
 | 2026-06-29 | **Post-P30 후속** — dialog 저장 widget test **4** · P30 dialog test commit **48c8c39** · test **614** |
 | 2026-06-29 | **Post-P31 SSOT** — P31 `work_library_panel` 분해 (**162** shell) · `origin/main` **0c92519** · test **610** |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |
