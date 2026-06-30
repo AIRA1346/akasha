@@ -5,6 +5,7 @@ import '../models/akasha_item.dart';
 import '../models/collectible_collection.dart';
 import '../models/collectible_kind.dart';
 import '../models/collectible_ref.dart';
+import '../models/personal_library_config.dart';
 import '../screens/home/home_personal_library_controller.dart';
 import '../screens/home/views/preview_record_view_model.dart';
 import '../theme/akasha_colors.dart';
@@ -17,6 +18,7 @@ part 'dashboard_sidebar_nav_tile_part.dart';
 part 'dashboard_sidebar_thumbnail_tile_part.dart';
 part 'dashboard_sidebar_nav_part.dart';
 part 'dashboard_sidebar_recent_part.dart';
+part 'dashboard_sidebar_personal_libraries_part.dart';
 part 'dashboard_sidebar_collections_part.dart';
 part 'dashboard_sidebar_footer_part.dart';
 
@@ -40,6 +42,8 @@ class DashboardSidebar extends StatelessWidget {
   final List<AkashaItem> vaultItems;
   final List<CollectibleCollection> collectibleCollections;
   final String? activeCollectibleCollectionId;
+  final List<PersonalLibraryConfig> personalLibraries;
+  final String? activePersonalLibraryId;
   final Future<void> Function() onGoHome;
   final Future<void> Function() onGoExplore;
   final Future<void> Function() onGoLibrary;
@@ -50,6 +54,8 @@ class DashboardSidebar extends StatelessWidget {
   final String? activeDetailWorkId;
   final String? activeDetailEntityId;
   final void Function(String id) onSelectCollectibleCollection;
+  final VoidCallback onAddPersonalLibrary;
+  final void Function(String id) onSelectPersonalLibrary;
   final VoidCallback? onToggleSidebar;
 
   const DashboardSidebar({
@@ -66,6 +72,8 @@ class DashboardSidebar extends StatelessWidget {
     this.vaultItems = const [],
     this.collectibleCollections = const [],
     this.activeCollectibleCollectionId,
+    this.personalLibraries = const [],
+    this.activePersonalLibraryId,
     required this.onGoHome,
     required this.onGoExplore,
     required this.onGoLibrary,
@@ -76,6 +84,8 @@ class DashboardSidebar extends StatelessWidget {
     this.activeDetailWorkId,
     this.activeDetailEntityId,
     required this.onSelectCollectibleCollection,
+    required this.onAddPersonalLibrary,
+    required this.onSelectPersonalLibrary,
     this.onToggleSidebar,
   });
 
@@ -116,6 +126,15 @@ class DashboardSidebar extends StatelessWidget {
                           onGoCollection: onGoCollection,
                           onGoKnowledgeGraph: onGoKnowledgeGraph,
                           onSelectTimeline: onSelectTimeline,
+                        ),
+                        const SizedBox(height: 20),
+                        _DashboardSidebarPersonalLibrariesSection(
+                          selectionMode: selectionMode,
+                          personalLibraries: personalLibraries,
+                          activePersonalLibraryId: activePersonalLibraryId,
+                          vaultItems: vaultItems,
+                          onAddPersonalLibrary: onAddPersonalLibrary,
+                          onSelectPersonalLibrary: onSelectPersonalLibrary,
                         ),
                         if (recentExploreItems.isNotEmpty) ...[
                           const SizedBox(height: 20),

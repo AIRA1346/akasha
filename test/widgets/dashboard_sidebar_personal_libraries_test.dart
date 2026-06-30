@@ -1,0 +1,106 @@
+import 'package:akasha/models/personal_library_config.dart';
+import 'package:akasha/screens/home/home_personal_library_controller.dart';
+import 'package:akasha/theme/akasha_theme.dart';
+import 'package:akasha/widgets/dashboard_sidebar.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+void main() {
+  testWidgets('DashboardSidebar shows personal libraries section with add',
+      (tester) async {
+    var addTapped = false;
+    String? selectedId;
+
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: AkashaTheme.dark(),
+        home: Scaffold(
+          body: DashboardSidebar(
+            isOpen: true,
+            isHomeMode: true,
+            isExploreMode: false,
+            isPersonalLibraryMode: false,
+            isCollectibleCollectionMode: false,
+            isTimelineMode: false,
+            selectionMode: SidebarSelectionMode.dashboard,
+            personalLibraries: const [],
+            onGoHome: () async {},
+            onGoExplore: () async {},
+            onGoLibrary: () async {},
+            onGoCollection: () async {},
+            onGoKnowledgeGraph: () async {},
+            onSelectTimeline: () {},
+            onSelectCollectibleCollection: (_) {},
+            onAddPersonalLibrary: () => addTapped = true,
+            onSelectPersonalLibrary: (id) => selectedId = id,
+          ),
+        ),
+      ),
+    );
+
+    expect(find.text('나만의 서재'), findsOneWidget);
+    expect(find.text('나만의 서재를 만들어 보세요'), findsOneWidget);
+
+    await tester.tap(find.byIcon(Icons.add));
+    expect(addTapped, isTrue);
+    expect(selectedId, isNull);
+  });
+
+  testWidgets('DashboardSidebar personal library rows select and highlight',
+      (tester) async {
+    var selectedId = '';
+
+    final libraries = [
+      PersonalLibraryConfig(
+        id: PersonalLibraryConfig.masterArchiveId,
+        name: '전체 아카이브',
+      ),
+      PersonalLibraryConfig(
+        id: 'curated_demo',
+        name: '인생 명작',
+        mode: PersonalLibraryMode.curated,
+        memberOrder: const ['wk_demo'],
+      ),
+    ];
+
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: AkashaTheme.dark(),
+        home: Scaffold(
+          body: DashboardSidebar(
+            isOpen: true,
+            isHomeMode: false,
+            isExploreMode: false,
+            isPersonalLibraryMode: true,
+            isCollectibleCollectionMode: false,
+            isTimelineMode: false,
+            selectionMode: SidebarSelectionMode.personalLibrary,
+            personalLibraries: libraries,
+            activePersonalLibraryId: 'curated_demo',
+            onGoHome: () async {},
+            onGoExplore: () async {},
+            onGoLibrary: () async {},
+            onGoCollection: () async {},
+            onGoKnowledgeGraph: () async {},
+            onSelectTimeline: () {},
+            onSelectCollectibleCollection: (_) {},
+            onAddPersonalLibrary: () {},
+            onSelectPersonalLibrary: (id) => selectedId = id,
+          ),
+        ),
+      ),
+    );
+
+    expect(find.text('인생 명작'), findsOneWidget);
+    expect(find.text('1 작품'), findsOneWidget);
+
+    await tester.tap(find.text('인생 명작'));
+    expect(selectedId, 'curated_demo');
+
+    await tester.tap(find.text('전체 아카이브').first);
+    expect(selectedId, PersonalLibraryConfig.masterArchiveId);
+
+    final activeTitle = tester.widget<Text>(find.text('인생 명작'));
+    expect(activeTitle.style?.fontWeight, FontWeight.w600);
+  });
+}

@@ -366,6 +366,8 @@ class HomeShellBody extends StatelessWidget {
           vaultItems: items,
           collectibleCollections: collectionCtrl.collections,
           activeCollectibleCollectionId: collectionCtrl.activeCollectionId,
+          personalLibraries: personalLibCtrl.libraries,
+          activePersonalLibraryId: personalLibCtrl.activeLibraryId,
           onGoHome: onGoHome,
           onGoExplore: onGoExplore,
           onGoLibrary: onGoLibrary,
@@ -380,6 +382,8 @@ class HomeShellBody extends StatelessWidget {
               : null,
           onSelectTimeline: onSelectTimeline,
           onSelectCollectibleCollection: onSelectCollectibleCollection,
+          onAddPersonalLibrary: onAddPersonalLibrary,
+          onSelectPersonalLibrary: onSelectPersonalLibrary,
           onToggleSidebar: onToggleSidebar,
         ),
         Expanded(

@@ -5,11 +5,13 @@ class _DashboardSidebarSectionTitle extends StatelessWidget {
     this.title, {
     this.trailingLabel,
     this.onTrailing,
+    this.onAdd,
   });
 
   final String title;
   final String? trailingLabel;
   final VoidCallback? onTrailing;
+  final VoidCallback? onAdd;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +24,19 @@ class _DashboardSidebarSectionTitle extends StatelessWidget {
             style: AkashaTypography.sidebarSectionTitle,
           ),
           const Spacer(),
+          if (onAdd != null)
+            InkWell(
+              onTap: onAdd,
+              borderRadius: BorderRadius.circular(4),
+              child: Padding(
+                padding: const EdgeInsets.all(4),
+                child: Icon(
+                  Icons.add,
+                  size: 16,
+                  color: AkashaColors.textCaption,
+                ),
+              ),
+            ),
           if (trailingLabel != null && onTrailing != null)
             InkWell(
               onTap: onTrailing,
