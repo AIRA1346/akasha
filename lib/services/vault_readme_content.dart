@@ -1,6 +1,7 @@
 /// `VAULT_README.md` 본문 — repo [VAULT_AGENT_GUIDE.md]와 동기화.
 abstract final class VaultReadmeContent {
-  static String build({required String generatedAtIso}) => '''
+  static String build({required String generatedAtIso}) =>
+      '''
 # AKASHA Sanctum Vault
 
 > AKASHA가 볼트 연결 시 자동 생성·갱신합니다. 개인 메모는 `NOTES.md`를 사용하세요.  
@@ -26,6 +27,7 @@ abstract final class VaultReadmeContent {
 │   └── custom/
 ├── timeline/                    # record_kind: timelineEntry
 ├── journal/                     # record_kind: freeformJournal
+├── .trash/                      # 삭제 기록 격리 보관 (복구 안전핀)
 └── .akasha/                     # 앱 인덱스 (직접 편집 비권장)
     ├── entity_path_index.json   # entity_id → 상대 경로
     ├── record_index.json        # record 요약 지도 (id/title/tags/path)
@@ -104,6 +106,7 @@ added_at: "2026-06-19T12:00:00.000Z"
 | 경로 | 이유 |
 |------|------|
 | `.akasha/` | 링크·경로 인덱스 — 앱이 재구축 |
+| `.trash/` | 사용자 삭제 기록 격리 보관 — 앱 복구 경로 |
 | `catalog/user_entities.json` | `.md` 저장 후 앱이 동기화 |
 
 **제품 SSOT = `.md` Record.** 에이전트는 `.md`를 편집하고 ID는 유지하세요.

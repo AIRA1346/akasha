@@ -7,6 +7,7 @@ import '../core/archiving/timeline_entry.dart';
 import 'record_summary_index_service.dart';
 import 'timeline_entry_parser.dart';
 import 'timeline_vault_loader.dart';
+import 'vault_trash_service.dart';
 
 /// `vault/timeline/` 쓰기·삭제 — Phase 4.2.
 class TimelineVaultStore {
@@ -131,7 +132,10 @@ class TimelineVaultStore {
       if (entry.recordId != recordId) continue;
       final file = File(entry.storagePath);
       if (await file.exists()) {
-        await file.delete();
+        await const VaultTrashService().moveFileToTrash(
+          vaultPath: vaultPath,
+          absolutePath: entry.storagePath,
+        );
         await RecordSummaryIndexService().removeByAbsolutePath(
           vaultPath: vaultPath,
           absolutePath: entry.storagePath,

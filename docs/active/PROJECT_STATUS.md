@@ -13,7 +13,7 @@
  
 | 항목 | 상태 |
 |------|------|
-| **flutter test** | **649 PASS** |
+| **flutter test** | **652 PASS** |
 | **flutter analyze lib** | **0 issue** |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
 | **앱 테마 (Slice 1)** | palette 전역 · 하단 라이브러리 탭 서재 추가 흐름 ✅ |
@@ -69,7 +69,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **649 PASS** | ✅ |
+| `flutter test` | **652 PASS** | ✅ |
 | `flutter analyze lib` | **0 issue** | ✅ |
 | `preflight_check` | PASS | ✅ |
 | `registry_builder` | PASS | — (post-v1 scale) |
@@ -84,7 +84,7 @@
 
 | 게이트 | 상태 | v1 blocking | 비고 |
 |--------|:----:|:-----------:|------|
-| **G-AUTO** | ✅ | ✅ | test **649** · analyze **0** · Release build |
+| **G-AUTO** | ✅ | ✅ | test **652** · analyze **0** · Release build |
 | **G-VAULT** | 🔶 | **✅** | 볼트 연동·아카이브·Sanctum 저장·기록 UI — **v1 핵심** |
 | **G-QA** | ✅ | ✅ | P0 수동 **12/12** (2026-06-13) · dogfood **사용자 직접** |
 | **G-STEAM** | ✅ | ✅ (M3 시) | depot·스토어·IAP·Privacy — **M3 보류** |
@@ -159,7 +159,7 @@
 | **304** | `AIRA1346/akasha-db` remote vs 앱 repo shard 커밋 **동기화** | 🔶 | audit §3.1 |
 | **305** | registry manifest 4파일 — rebuild 산출물 **커밋 제외** 관례 유지 | ✅ 관례 | 본 문서 헤더 |
 | **306** | Home UI 정리 — search-first · Slice 1 앱 테마 · Slice 2 사이드바 서재 · dead wiring cleanup | ✅ | `0db21d38` |
-| **307** | `flutter test` **649** · `flutter analyze lib` **0** 유지 | ✅ | §2 Gate |
+| **307** | `flutter test` **652** · `flutter analyze lib` **0** 유지 | ✅ | §2 Gate |
 | **308** | Agent Vault UI dogfood — P1-8 raw wiki link · P1-9 중앙 감상 밀도 · P1-10 앱 테마 범위 | 🔶 | [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
 | **309** | M3 · Agent/player implementation layer · 대규모 index/path migration | 🚫 **금지** (본 스프린트) | — |
 | **310** | `PreviewMemoBar` — post-v1 dormant UI cleanup 후보 (`showPreviewMemoBar` false · `내 감상` 카드와 역할 중복) | ⏸️ v1 비활성 유지 | [preview_memo_bar.dart](../../lib/screens/home/views/preview_memo_bar.dart) · dogfood §P2 |
@@ -167,6 +167,7 @@
 | **312** | Infinite Taste Archive ADR — AI/플레이어가 아닌 외부 도구 친화적 취향 아카이브 경계 | ✅ | [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) |
 | **313** | Steam RC dogfood checklist — 자동 gate green, 수동 vault loop 확인 대기 | 🔶 | [STEAM_RC_DOGFOOD_CHECKLIST_2026-06-30.md](../draft/STEAM_RC_DOGFOOD_CHECKLIST_2026-06-30.md) |
 | **314** | Derived record index — `.akasha/record_index.json`로 record 요약·tagIndex 작성 | ✅ | [record_summary_index_service.dart](../../lib/services/record_summary_index_service.dart) |
+| **315** | Vault trash safety slice — Work/Entity/Journal/Timeline 삭제를 `.trash/` 격리로 전환 | ✅ | [vault_trash_service.dart](../../lib/services/vault_trash_service.dart) |
 
 ---
 
@@ -199,4 +200,5 @@
 | 2026-06-30 | **Poster URL localizing** — URL → vault `posters/` · commit **6922f0a** · 사용자 실기 확인 ✅ |
 | 2026-06-30 | **Infinite Taste Archive ADR / Steam RC gate** — tip **2b3d292c** · analyze **0** · test **647** |
 | 2026-06-30 | **Derived record index slice** — `.akasha/record_index.json` · work/entity/timeline/journal summary · analyze **0** · test **649** |
+| 2026-07-01 | **Vault trash safety slice** — delete paths `.trash/` quarantine · analyze **0** · test **652** |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |

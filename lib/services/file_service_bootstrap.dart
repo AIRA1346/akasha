@@ -55,6 +55,9 @@ mixin _AkashaFileServiceBootstrap
     await Directory(p.join(_vaultPath!, 'works')).create(recursive: true);
     await Directory(p.join(_vaultPath!, 'journal')).create(recursive: true);
     await Directory(p.join(_vaultPath!, 'entities')).create(recursive: true);
+    await Directory(
+      p.join(_vaultPath!, VaultTrashService.trashDirName),
+    ).create(recursive: true);
     for (final type in EntityAnchorType.values) {
       if (type == EntityAnchorType.work ||
           type == EntityAnchorType.phenomenon) {

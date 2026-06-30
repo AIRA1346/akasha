@@ -144,7 +144,10 @@ mixin _AkashaFileServiceSave
     _stopWatching();
     try {
       for (final file in existing) {
-        await file.delete();
+        await const VaultTrashService().moveFileToTrash(
+          vaultPath: _vaultPath!,
+          absolutePath: file.path,
+        );
         await RecordSummaryIndexService().removeByAbsolutePath(
           vaultPath: _vaultPath!,
           absolutePath: file.path,

@@ -8,6 +8,7 @@ import '../core/archiving/record_kind.dart';
 import 'journal_entry_parser.dart';
 import 'journal_vault_loader.dart';
 import 'record_summary_index_service.dart';
+import 'vault_trash_service.dart';
 
 /// `vault/journal/` 쓰기·삭제 — Wave 3.
 class JournalVaultStore {
@@ -125,7 +126,10 @@ class JournalVaultStore {
       if (entry.recordId != recordId) continue;
       final file = File(entry.storagePath);
       if (await file.exists()) {
-        await file.delete();
+        await const VaultTrashService().moveFileToTrash(
+          vaultPath: vaultPath,
+          absolutePath: entry.storagePath,
+        );
         await RecordSummaryIndexService().removeByAbsolutePath(
           vaultPath: vaultPath,
           absolutePath: entry.storagePath,

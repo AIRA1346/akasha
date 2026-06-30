@@ -14,6 +14,7 @@ import 'event_ledger_service.dart';
 import '../core/app_vault.dart';
 import 'record_summary_index_service.dart';
 import 'vault_safe_filename.dart';
+import 'vault_trash_service.dart';
 
 /// `vault/entities/{type}/` 쓰기 — Wave 4.
 class EntityVaultStore {
@@ -231,9 +232,11 @@ class EntityVaultStore {
       entityId = parsed?.entityId;
     } catch (_) {}
 
-    await file.delete();
-
     final vaultRoot = _vaultRootFromStoragePath(storagePath);
+    await const VaultTrashService().moveFileToTrash(
+      vaultPath: vaultRoot,
+      absolutePath: storagePath,
+    );
     if (entityId != null && entityId.isNotEmpty) {
       await _pathIndex.remove(vaultPath: vaultRoot, entityId: entityId);
     }
