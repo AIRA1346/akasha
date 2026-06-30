@@ -113,6 +113,22 @@ Home 320px rail (의도된 계층)
 | **P1-4** | Agent create 시 **상태가 프리뷰에 안 보임** | watchlist 라벨도 **회색 pill**로 표시 (숨기지 않음) 또는 Agent protocol에「의미 있는 상태만 쓰기」가이드 |
 | **P1-5** | 태그 6개+ 시 rail **세로 폭주** | 프리뷰 태그 **max 4 + `+N`** |
 | **P1-6** | Sanctum 제목이 카드 **밖** | `# 📝 메모`를 `SanctumMemoCard` **내부 헤더**로 이동 (quote 카드와 톤 맞춤) |
+| **P1-7** | Home 상단 **필터 칩 2줄**이 검색보다 먼저 — 분류/DB 도구 인상 | **✅ slice 적용** — `HomeBrowseSearchChrome`: 검색 최상단 · 필터 접이식 · Ctrl K |
+
+### P1-7 관찰 (Home 상단 · 2026-06-30)
+
+**문제:** `FilterSection`이 Work/Person/Concept/Event + 매체 칩을 **항상 2줄** 노출 → v1 Personal Sanctum에서 **검색·감상 진입**보다 taxonomy가 앞섬.
+
+**적용 (vertical slice):**
+
+| 항목 | 구현 |
+|------|------|
+| 검색 최상단 | `HomeBrowseSearchChrome` — placeholder `작품, 인물, 감상, 태그를 검색하세요...` |
+| Ctrl K | desktop(≥720px) hint 유지 · compact는 검색 full width + 필터 아이콘 |
+| 필터 | `filter_list` 버튼 → `FilterSection` inline expand (기능·상태 유지) |
+| 기본 | 필터 칩 **비노출** · 활성 필터 시 badge |
+
+**잔여 (수동 dogfood):** 탐험 그리드 vs 홈 대시보드 동시 노출 시 검색 **이중** 여부 · 필터 펼침 후 스크롤 밀도.
 
 ### P2 — polish
 
@@ -176,3 +192,4 @@ Text(' / 5', style: AkashaTypography.caption),
 |------|------|
 | 2026-06-30 | 초안 — 코드·fixture 기반 UI/UX dogfood review · P0~P2 분류 |
 | 2026-06-30 | P0-1 적용 — 핵심 정보 평점 `/ 5` · 테스트 추가 |
+| 2026-06-30 | P1-7 Home 검색·접이식 필터 slice · `HomeBrowseSearchChrome` |

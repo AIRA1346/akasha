@@ -17,7 +17,7 @@ import '../../models/enums.dart';
 import '../../models/user_catalog_entity.dart';
 import '../../services/link_candidate_service.dart';
 import '../../utils/recall_picker.dart';
-import '../../widgets/filter_section.dart';
+import 'home_browse_search_chrome.dart';
 import '../../widgets/today_recall_card.dart';
 import 'coordinators/home_shell_wiring.dart';
 import 'home_browse_filter_controller.dart';
@@ -54,6 +54,7 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
     required this.posterCardBuilder,
     required this.browse,
     required this.onConnectVault,
+    required this.onSearch,
     required this.onToggleCategory,
     required this.onClearCategories,
     required this.onToggleWorkStatus,
@@ -111,6 +112,7 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
   final Widget Function(BrowseCard card) posterCardBuilder;
   final HomeShellBrowseContentBuilder browse;
   final VoidCallback onConnectVault;
+  final VoidCallback onSearch;
   final void Function(MediaCategory category) onToggleCategory;
   final VoidCallback onClearCategories;
   final void Function(String label) onToggleWorkStatus;
@@ -167,13 +169,9 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
         if (!vaultLinked)
           HomeVaultBanner(onConnectVault: onConnectVault),
         if (!workbench.hasOpenDetail) ...[
-          if (!isTimelineMode &&
-              !isCollectibleCollectionMode &&
-              (!hasNoFilters ||
-                  isPersonalLibraryMode ||
-                  isExploreBrowseMode ||
-                  isHomeDashboardMode))
-            FilterSection(
+          if (!isTimelineMode && !isCollectibleCollectionMode)
+            HomeBrowseSearchChrome(
+              onSearch: onSearch,
               selectedCategories: filterCtrl.categories,
               selectedWorkStatuses: filterCtrl.workStatuses,
               selectedMyStatuses: filterCtrl.myStatuses,
@@ -185,13 +183,6 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
               onEntityScopeChanged: onEntityScopeChanged,
               onAddNewEntity: onAddNewEntity,
             ),
-          if (!isTimelineMode &&
-              !isCollectibleCollectionMode &&
-              (!hasNoFilters ||
-                  isPersonalLibraryMode ||
-                  isExploreBrowseMode ||
-                  isHomeDashboardMode))
-            const Divider(height: 1),
         ],
         if (!isPersonalLibraryMode &&
             !isCollectibleCollectionMode &&
