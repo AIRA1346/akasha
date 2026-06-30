@@ -15,7 +15,7 @@
 | `dogfood_precheck.ps1` | **PASS** |
 | `flutter analyze lib` | **0 issue** |
 | Release build | `build_release.ps1` OK |
-| `origin/main` HEAD | **859cc35** |
+| `origin/main` HEAD | **56d669f** |
 | code/test baseline | **5526ce4** |
 | SSOT baseline | **57c66fd** |
 | Foundation F0~F4 | **✅ 완료** |
@@ -136,7 +136,7 @@
 
 | 구분 | SHA | 비고 |
 |------|-----|------|
-| **`origin/main` HEAD** | **e0b021d** | live tip (hash 정정 포함) |
+| **`origin/main` HEAD** | **859cc35** | live tip |
 | **code/test baseline** | **5526ce4** | scaffold `194db17` · dialogs `955967e` · fusion `5526ce4` · test **614** |
 | **SSOT baseline** | **57c66fd** | Post-P2 분해 내용 반영 |
 
