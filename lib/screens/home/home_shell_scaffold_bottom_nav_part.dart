@@ -56,7 +56,10 @@ Widget _homeShellScaffoldBottomNavigationBar(
                       controller.personalLibCtrl.libraries.first.id,
                     );
                   } else {
-                    controller.showLibraryThemePicker();
+                    controller.libraryUi.promptCreateCuratedLibrary(
+                      controller.host.context,
+                      setState: controller.wrapSetState,
+                    );
                   }
                 },
               ),

@@ -5,7 +5,7 @@ import '../services/entitlement_service.dart';
 import '../services/library_theme_preferences.dart';
 import '../theme/akasha_colors.dart';
 
-/// 나만의 서재 테마 선택 바텀시트 + IAP 안내.
+/// 앱 테마 선택 바텀시트 + IAP 안내.
 Future<LibraryTheme?> showLibraryThemePicker(
   BuildContext context, {
   required LibraryTheme current,
@@ -27,7 +27,7 @@ Future<LibraryTheme?> showLibraryThemePicker(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                '서재 테마',
+                '앱 테마',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 4),
@@ -77,9 +77,9 @@ Future<void> _promptIapPurchase(BuildContext context, LibraryTheme theme) async 
   final bought = await showDialog<bool>(
     context: context,
     builder: (ctx) => AlertDialog(
-      title: const Text('프리미엄 서재 테마'),
+      title: const Text('프리미엄 앱 테마'),
       content: Text(
-        '「${theme.name}」 테마는 서재 꾸미기 팩(IAP)에 포함됩니다.\n'
+        '「${theme.name}」 테마는 앱 꾸미기 팩(IAP)에 포함됩니다.\n'
         'Steam에서 인앱 구매로 해제됩니다.',
       ),
       actions: [

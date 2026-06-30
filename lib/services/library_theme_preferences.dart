@@ -2,7 +2,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/library_theme.dart';
 
-/// 나만의 서재 비주얼 테마 영속화.
+/// 앱 비주얼 테마 영속화.
 class LibraryThemePreferences {
   LibraryThemePreferences._();
 

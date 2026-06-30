@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('HomeAppBar exposes vault and overflow menu only on the right',
+  testWidgets('HomeAppBar always exposes app theme, vault, and overflow menu',
       (tester) async {
     await tester.pumpWidget(
       MaterialApp(
@@ -24,12 +24,15 @@ void main() {
             onClearRegistryCache: () {},
             onCatalogInbox: () {},
             catalogContributionCount: 2,
+            onAppTheme: () {},
+            appThemeAccent: Colors.tealAccent,
           ),
         ),
       ),
     );
 
     expect(find.byIcon(Icons.search), findsNothing);
+    expect(find.byTooltip('앱 테마'), findsOneWidget);
     expect(find.byTooltip('도구 더보기'), findsOneWidget);
     expect(find.byTooltip('카탈로그 제안함'), findsOneWidget);
     expect(find.byTooltip('로컬 폴더(Vault) 설정'), findsOneWidget);
@@ -56,6 +59,8 @@ void main() {
             onPromptTemplates: () {},
             onVaultSettings: () {},
             onClearRegistryCache: () {},
+            onAppTheme: () {},
+            appThemeAccent: Colors.tealAccent,
           ),
         ),
       ),

@@ -31,18 +31,15 @@ Widget _homeShellScaffoldRoot(
     child: Focus(
       autofocus: true,
       child: Theme(
-        data: controller.isPersonalLibraryMode
-            ? Theme.of(context).copyWith(
-                scaffoldBackgroundColor: controller.libraryTheme.backgroundColor,
-                colorScheme: Theme.of(context).colorScheme.copyWith(
-                      secondary: controller.libraryTheme.accentColor,
-                    ),
-              )
-            : Theme.of(context),
+        data: Theme.of(context).copyWith(
+          scaffoldBackgroundColor: controller.libraryTheme.backgroundColor,
+          colorScheme: Theme.of(context).colorScheme.copyWith(
+                primary: controller.libraryTheme.accentColor,
+                secondary: controller.libraryTheme.accentColor,
+              ),
+        ),
         child: Scaffold(
-          backgroundColor: controller.isPersonalLibraryMode
-              ? controller.libraryTheme.backgroundColor
-              : null,
+          backgroundColor: controller.libraryTheme.backgroundColor,
           appBar: _homeShellScaffoldAppBar(context, controller),
           body: _homeShellScaffoldBody(context, controller, filtered),
           bottomNavigationBar: _homeShellScaffoldBottomNavigationBar(context, controller),

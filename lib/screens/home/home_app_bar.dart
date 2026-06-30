@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../config/feature_flags.dart';
 import '../../utils/app_l10n.dart';
-import '../../widgets/dashboard_sidebar.dart';
 
 enum _HomeAppBarMenuAction {
   sync,
@@ -30,9 +29,8 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     required this.onClearRegistryCache,
     this.onCatalogInbox,
     this.catalogContributionCount = 0,
-    this.showLibraryThemeButton = false,
-    this.onLibraryTheme,
-    this.libraryThemeAccent,
+    required this.onAppTheme,
+    required this.appThemeAccent,
   });
 
   final bool isSidebarOpen;
@@ -48,9 +46,8 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback onClearRegistryCache;
   final VoidCallback? onCatalogInbox;
   final int catalogContributionCount;
-  final bool showLibraryThemeButton;
-  final VoidCallback? onLibraryTheme;
-  final Color? libraryThemeAccent;
+  final VoidCallback onAppTheme;
+  final Color appThemeAccent;
 
   bool get _showTimelineCapture =>
       FeatureFlags.showTimeline && vaultLinked && onTimelineCapture != null;
@@ -160,15 +157,14 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       centerTitle: true,
       actions: [
-        if (showLibraryThemeButton && onLibraryTheme != null)
-          IconButton(
-            icon: Icon(
-              Icons.palette_outlined,
-              color: libraryThemeAccent ?? DashboardSidebar.personalAccent,
-            ),
-            tooltip: l10n?.appBarLibraryTheme ?? '서재 테마',
-            onPressed: onLibraryTheme,
+        IconButton(
+          icon: Icon(
+            Icons.palette_outlined,
+            color: appThemeAccent,
           ),
+          tooltip: l10n?.appBarLibraryTheme ?? '앱 테마',
+          onPressed: onAppTheme,
+        ),
         if (onCatalogInbox != null)
           IconButton(
             tooltip: l10n?.appBarCatalogInbox ?? '카탈로그 제안함',
