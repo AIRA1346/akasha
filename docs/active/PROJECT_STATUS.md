@@ -1,8 +1,8 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-06-30 (@10048 · **Home UI 안정화 스프린트**)
-> **Git:** `origin/main` tip **`cb4131e`** · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
-> **현재 실행:** **정리 스프린트** — Home UI · 앱 테마 · 사이드바 서재 · Agent Vault UI slice **안정화** (신규 기능·M3·Agent operation layer **보류**)
+> **갱신:** 2026-06-30 (@10048 · **akasha-db 소유권·백업 정리**)
+> **Git:** `origin/main` tip **`45f89b7`** · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
+> **현재 실행:** **akasha-db 소유권 감사** — [AKASHA_DB_OWNERSHIP_AUDIT.md](../draft/AKASHA_DB_OWNERSHIP_AUDIT.md) (read-only) · 신규 기능·M3·Agent operation layer **보류**
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist](../history/release-readiness-checklist.md)  
 > **비전:** [VISION.md](VISION.md) · **구현:** [CURRENT_STATE.md](CURRENT_STATE.md)
@@ -23,8 +23,8 @@
 | **Phase 1** | Record Foundation ✅ |
 | **Sanctum** | C1~C4 ✅ · Vault agent 가이드 ✅ |
 | **코드 건강** | Phase 0~7 ✅ · Foundation P2 분해 ✅ |
-| **다음** | 정리 스프린트 — analyze 0 · dogfood P1 수집 · **신규 기능·M3·Agent operation layer 보류** |
-| **Registry (akasha-db)** | **10,048 works** · optional catalog / starter — **v1 blocking 아님** |
+| **Registry (akasha-db)** | **10,048 works** · **이중 추적 감사 중** — [AKASHA_DB_OWNERSHIP_AUDIT.md](../draft/AKASHA_DB_OWNERSHIP_AUDIT.md) |
+| **다음** | akasha-db 백업 branch 제안 검토 · 구조 A/B/C 결정 **보류** · dogfood P1 |
 | **Steam** | depot·스토어·IAP ✅ — **M3 정식 출시 보류** |
 
 ---
@@ -96,7 +96,8 @@
 
 | 트랙 | 다음 | v1 우선 |
 |------|------|:-------:|
-| **정리 스프린트** | Home UI·테마·사이드바 서재 안정화 · dogfood P1 | **P0** |
+| **정리 스프린트** | Home UI·테마·사이드바 ✅ · analyze 0 · test 641 | — |
+| **akasha-db 소유권** | 구조 감사 · 내부 148파일 dirty · backup branch **제안** | **P0** |
 | **Personal Archive (v1)** | vault 안정성 · Sanctum · Library/Collection · Agent Protocol | **P0** |
 | **Sprint B** | ✅ B1 · Vault agent 가이드 | — |
 | **Wave 1 Home** | ✅ shell 분해 완료 | — |
@@ -136,14 +137,33 @@
 
 | # | 작업 | 우선 |
 |---|------|:----:|
-| 1 | 정리 스프린트 — analyze 0 · test 641 유지 · dogfood P1 ([AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md)) | **P0** |
-| 2 | v1 아카이브 루프 E2E (vault → 기록 → Library) | P1 |
-| 3 | Agent Vault Protocol v1 구현·dogfood | **보류** (operation layer) |
-| 4 | **M3** Steam Release | 보류 |
+| 1 | [AKASHA_DB_OWNERSHIP_AUDIT.md](../draft/AKASHA_DB_OWNERSHIP_AUDIT.md) 검토 · 내부 repo **backup branch push** 승인 여부 | **P0** |
+| 2 | dogfood P1 ([AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md)) | P1 |
+| 3 | v1 아카이브 루프 E2E (vault → 기록 → Library) | P1 |
+| 4 | Agent Vault Protocol v1 구현·dogfood | **보류** |
+| 5 | **M3** Steam Release | 보류 |
 
 ---
 
-## 7. 문서 이력
+## 7. Ops Watchlist (300+)
+
+> 운영·구조 백로그 — 신규 기능 ID와 분리. **301+** 번호대.
+
+| ID | 항목 | 상태 | SSOT |
+|:--:|------|:----:|------|
+| **301** | akasha-db **이중 추적** 구조 감사 (vendored + nested `.git`) | ✅ draft | [AKASHA_DB_OWNERSHIP_AUDIT.md](../draft/AKASHA_DB_OWNERSHIP_AUDIT.md) |
+| **302** | 내부 `akasha-db` **148파일** dirty → `backup/local-sync-20260630` branch push | 🔶 **제안** | audit §6 |
+| **303** | 장기 구조 결정 — **A** vendored+`.git` 제거 · **B** submodule/subtree · **C** dual push | ⏸️ 보류 | audit §5 |
+| **304** | `AIRA1346/akasha-db` remote vs 앱 repo shard 커밋 **동기화** | 🔶 | audit §3.1 |
+| **305** | registry manifest 4파일 — rebuild 산출물 **커밋 제외** 관례 유지 | ✅ 관례 | 본 문서 헤더 |
+| **306** | Home UI 정리 — search-first · Slice 1 앱 테마 · Slice 2 사이드바 서재 | ✅ | `45f89b7` |
+| **307** | `flutter test` **641** · `flutter analyze lib` **0** 유지 | ✅ | §2 Gate |
+| **308** | Agent Vault UI dogfood — P1-8 raw wiki link · P1-9 중앙 감상 밀도 · P1-10 앱 테마 범위 | 🔶 | [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
+| **309** | 신규 기능 · 폴더 구조 이동 · M3 · Agent operation layer | 🚫 **금지** (본 스프린트) | — |
+
+---
+
+## 8. 문서 이력
 
 | 일자 | 변경 |
 |------|------|
@@ -167,5 +187,6 @@
 | 2026-06-30 | **Agent Vault Protocol v1** — [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) 범위 문서 |
 | 2026-06-30 | **Post-P2 SSOT** — scaffold·dialogs·fusion 분해 · SSOT **57c66fd** · code **5526ce4** · test **614** |
 | 2026-06-29 | **Post-P30 후속** — dialog 저장 widget test **4** · P30 dialog test commit **48c8c39** · test **614** |
-| 2026-06-30 | **Home UI 안정화** — search-first · Slice 1 앱 테마 · Slice 2 사이드바 `나만의 서재` · `origin/main` **cb4131e** · test **641** · analyze **0** |
+| 2026-06-30 | **Home UI 안정화** — search-first · Slice 1 앱 테마 · Slice 2 사이드바 `나만의 서재` · tip **45f89b7** · test **641** |
+| 2026-06-30 | **akasha-db 소유권 감사** — [AKASHA_DB_OWNERSHIP_AUDIT.md](../draft/AKASHA_DB_OWNERSHIP_AUDIT.md) · Ops Watchlist **301+** |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |
