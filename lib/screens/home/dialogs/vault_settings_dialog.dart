@@ -1,4 +1,6 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:path/path.dart' as p;
 
 import '../../../config/catalog_locale.dart';
 import '../../../core/ports/vault_port.dart';
@@ -6,6 +8,7 @@ import '../../../utils/app_l10n.dart';
 import '../../../services/catalog_locale_preferences.dart';
 import '../../../services/user_preferences.dart';
 import '../../../services/user_registry_preferences.dart';
+import '../../../services/vault_backup_exporter.dart';
 import '../../../widgets/hidden_registry_dialog.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_spacing.dart';
@@ -26,11 +29,13 @@ Future<void> showVaultSettingsDialog(
 }) async {
   final path = vault.vaultPath;
   final vaultValid = await vault.isVaultPathValid();
-  final mdCount =
-      vaultValid && path != null ? await vault.countMarkdownFiles() : 0;
+  final mdCount = vaultValid && path != null
+      ? await vault.countMarkdownFiles()
+      : 0;
   final nameCtrl = TextEditingController(text: displayName);
   var localAutoArchive = autoArchiveRegistry;
   var localLocale = CatalogLocaleScope.current;
+  var isExportingBackup = false;
 
   if (!context.mounted) return;
 
@@ -46,7 +51,10 @@ Future<void> showVaultSettingsDialog(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               if (l10n != null) ...[
-                Text(l10n.settingsDisplayLanguage, style: AkashaTypography.settingsLabel),
+                Text(
+                  l10n.settingsDisplayLanguage,
+                  style: AkashaTypography.settingsLabel,
+                ),
                 SizedBox(height: AkashaSpacing.xs + 2),
                 DropdownButtonFormField<CatalogLocale>(
                   initialValue: localLocale,
@@ -87,8 +95,56 @@ Future<void> showVaultSettingsDialog(
                       ? '상태: 연동됨 · 아카이브 .md $mdCount개'
                       : '상태: 경로를 찾을 수 없음 (다시 연동해 주세요)',
                   style: AkashaTypography.bodyEmphasis.copyWith(
-                    color: vaultValid ? AkashaColors.linkAccent : Colors.redAccent,
+                    color: vaultValid
+                        ? AkashaColors.linkAccent
+                        : Colors.redAccent,
                   ),
+                ),
+                SizedBox(height: AkashaSpacing.sm),
+                TextButton.icon(
+                  onPressed: vaultValid && !isExportingBackup
+                      ? () async {
+                          final outputDirectory =
+                              await FilePicker.getDirectoryPath();
+                          if (outputDirectory == null) return;
+                          setD(() => isExportingBackup = true);
+                          try {
+                            final result = await const VaultBackupExporter()
+                                .exportVault(
+                                  vaultPath: path,
+                                  outputDirectory: outputDirectory,
+                                );
+                            if (context.mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    '볼트 백업을 저장했습니다: ${p.basename(result.archivePath)} '
+                                    '(${result.fileCount} files)',
+                                  ),
+                                ),
+                              );
+                            }
+                          } catch (e) {
+                            if (context.mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('볼트 백업 실패: $e')),
+                              );
+                            }
+                          } finally {
+                            if (ctx.mounted) {
+                              setD(() => isExportingBackup = false);
+                            }
+                          }
+                        }
+                      : null,
+                  icon: isExportingBackup
+                      ? const SizedBox(
+                          width: 16,
+                          height: 16,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        )
+                      : const Icon(Icons.archive_outlined, size: 16),
+                  label: const Text('볼트 ZIP 백업 내보내기'),
                 ),
                 SizedBox(height: AkashaSpacing.md),
                 Text(
