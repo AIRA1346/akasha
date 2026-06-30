@@ -2,12 +2,15 @@ import '../core/ports/user_catalog_port.dart';
 import '../models/akasha_item.dart';
 import '../models/user_catalog_entity.dart';
 
+/// 홈 「계속 탐험하기」·coordinator가 공유하는 최근 탐색 표시 상한.
+const int homeContinueExploreDisplayLimit = 12;
+
 /// 최근 탐색 키 → 표시용 [AkashaItem] 목록.
 List<AkashaItem> resolveRecentExplorationItems({
   required List<String> itemKeys,
   required List<AkashaItem> vaultItems,
   required UserCatalogPort userCatalog,
-  int limit = 8,
+  int limit = homeContinueExploreDisplayLimit,
 }) {
   final byWorkId = <String, AkashaItem>{
     for (final item in vaultItems)

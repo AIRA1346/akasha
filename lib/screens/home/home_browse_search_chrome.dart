@@ -8,7 +8,7 @@ import '../../theme/akasha_spacing.dart';
 import '../../theme/akasha_typography.dart';
 import '../../widgets/filter_section.dart';
 
-/// AKASHA AppBar 바로 아래 — 검색 진입 + 접이식 필터 (v1 Personal Archive).
+/// Home 중앙 본문 상단 — 검색 진입 + 접이식 필터 (v1 Personal Archive).
 class HomeBrowseSearchChrome extends StatefulWidget {
   const HomeBrowseSearchChrome({
     super.key,
@@ -72,8 +72,8 @@ class _HomeBrowseSearchChromeState extends State<HomeBrowseSearchChrome> {
     final compact =
         MediaQuery.sizeOf(context).width < widget.compactBreakpoint;
 
-    return Material(
-      color: AkashaColors.surface,
+    return ColoredBox(
+      color: AkashaColors.background,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -113,7 +113,7 @@ class _HomeBrowseSearchChromeState extends State<HomeBrowseSearchChrome> {
             ),
             const Divider(height: 1),
           ] else
-            Divider(height: 1, color: AkashaColors.borderSubtle(0.08)),
+            Divider(height: 1, color: AkashaColors.borderSubtle(0.12)),
         ],
       ),
     );

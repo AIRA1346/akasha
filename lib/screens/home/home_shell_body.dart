@@ -410,6 +410,7 @@ class HomeShellBody extends StatelessWidget {
                   posterCardBuilder: posterCardBuilder,
                   browse: browse,
                   onConnectVault: onConnectVault,
+                  onSearch: onSearch,
                   onToggleCategory: onToggleCategory,
                   onClearCategories: onClearCategories,
                   onToggleWorkStatus: onToggleWorkStatus,

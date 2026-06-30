@@ -4,14 +4,9 @@ import '../../../../theme/akasha_colors.dart';
 import '../../../../theme/akasha_spacing.dart';
 import '../../../../theme/akasha_typography.dart';
 
-/// 홈 최상단 — 30초 narrative + Primary CTA (R4-A1).
+/// 홈 최상단 — narrative 헤드라인 (R4-A1).
 class HomeDashboardHero extends StatelessWidget {
-  const HomeDashboardHero({
-    super.key,
-    required this.onStartExplore,
-  });
-
-  final VoidCallback onStartExplore;
+  const HomeDashboardHero({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,24 +23,6 @@ class HomeDashboardHero extends StatelessWidget {
           style: AkashaTypography.body.copyWith(
             color: AkashaColors.textSecondary,
             height: 1.45,
-          ),
-        ),
-        const SizedBox(height: 20),
-        FilledButton(
-          onPressed: onStartExplore,
-          style: FilledButton.styleFrom(
-            backgroundColor: AkashaColors.accent,
-            padding: const EdgeInsets.symmetric(vertical: 14),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-          ),
-          child: Text(
-            '탐험 시작하기',
-            style: AkashaTypography.dashboardLead.copyWith(
-              fontWeight: FontWeight.bold,
-              color: AkashaColors.textPrimary,
-            ),
           ),
         ),
       ],

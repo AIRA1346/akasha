@@ -1,35 +1,26 @@
 import 'package:flutter/material.dart';
 
+import '../../config/feature_flags.dart';
 import '../../utils/app_l10n.dart';
 import '../../widgets/dashboard_sidebar.dart';
 
-/// 홈 화면 AppBar (검색·동기화·볼트·AI 도구)
-class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final bool isSidebarOpen;
-  final bool isSyncing;
-  final bool vaultLinked;
-  final VoidCallback onToggleSidebar;
-  final VoidCallback onSearch;
-  final VoidCallback onClipboardImport;
-  final VoidCallback? onTimelineCapture;
-  final VoidCallback onSync;
-  final VoidCallback onSyncSettings;
-  final VoidCallback onPromptTemplates;
-  final VoidCallback onVaultSettings;
-  final VoidCallback onClearRegistryCache;
-  final VoidCallback? onCatalogInbox;
-  final int catalogContributionCount;
-  final bool showLibraryThemeButton;
-  final VoidCallback? onLibraryTheme;
-  final Color? libraryThemeAccent;
+enum _HomeAppBarMenuAction {
+  sync,
+  syncSettings,
+  clipboardImport,
+  promptTemplates,
+  clearRegistryCache,
+  timelineCapture,
+}
 
+/// 홈 화면 AppBar — 볼트·제안함은 노출, 나머지 도구는 overflow 메뉴.
+class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({
     super.key,
     required this.isSidebarOpen,
     required this.isSyncing,
     required this.vaultLinked,
     required this.onToggleSidebar,
-    required this.onSearch,
     required this.onClipboardImport,
     this.onTimelineCapture,
     required this.onSync,
@@ -44,8 +35,110 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.libraryThemeAccent,
   });
 
+  final bool isSidebarOpen;
+  final bool isSyncing;
+  final bool vaultLinked;
+  final VoidCallback onToggleSidebar;
+  final VoidCallback onClipboardImport;
+  final VoidCallback? onTimelineCapture;
+  final VoidCallback onSync;
+  final VoidCallback onSyncSettings;
+  final VoidCallback onPromptTemplates;
+  final VoidCallback onVaultSettings;
+  final VoidCallback onClearRegistryCache;
+  final VoidCallback? onCatalogInbox;
+  final int catalogContributionCount;
+  final bool showLibraryThemeButton;
+  final VoidCallback? onLibraryTheme;
+  final Color? libraryThemeAccent;
+
+  bool get _showTimelineCapture =>
+      FeatureFlags.showTimeline && vaultLinked && onTimelineCapture != null;
+
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+
+  void _onMenuSelected(_HomeAppBarMenuAction action) {
+    switch (action) {
+      case _HomeAppBarMenuAction.sync:
+        if (!isSyncing) onSync();
+      case _HomeAppBarMenuAction.syncSettings:
+        onSyncSettings();
+      case _HomeAppBarMenuAction.clipboardImport:
+        onClipboardImport();
+      case _HomeAppBarMenuAction.promptTemplates:
+        onPromptTemplates();
+      case _HomeAppBarMenuAction.clearRegistryCache:
+        onClearRegistryCache();
+      case _HomeAppBarMenuAction.timelineCapture:
+        onTimelineCapture?.call();
+    }
+  }
+
+  List<PopupMenuEntry<_HomeAppBarMenuAction>> _buildOverflowMenuItems(
+    BuildContext context,
+  ) {
+    final l10n = lookupAppL10n(context);
+    return [
+      PopupMenuItem(
+        value: _HomeAppBarMenuAction.sync,
+        enabled: !isSyncing,
+        child: _OverflowMenuRow(
+          icon: Icons.sync,
+          label: l10n?.appBarSyncRegistry ?? '글로벌 작품 사전 동기화',
+          trailing: isSyncing
+              ? const SizedBox(
+                  width: 16,
+                  height: 16,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                )
+              : null,
+        ),
+      ),
+      PopupMenuItem(
+        value: _HomeAppBarMenuAction.syncSettings,
+        child: _OverflowMenuRow(
+          icon: Icons.settings_ethernet,
+          label: '사전 동기화 URL 설정',
+        ),
+      ),
+      const PopupMenuDivider(),
+      PopupMenuItem(
+        value: _HomeAppBarMenuAction.clipboardImport,
+        child: _OverflowMenuRow(
+          icon: Icons.smart_toy_outlined,
+          label: l10n?.appBarClipboardImport ?? 'AI 마크다운 가져오기',
+        ),
+      ),
+      PopupMenuItem(
+        value: _HomeAppBarMenuAction.promptTemplates,
+        child: _OverflowMenuRow(
+          icon: Icons.copy_all,
+          label: l10n?.appBarPromptTemplates ?? 'AI 프롬프트 템플릿 복사',
+        ),
+      ),
+      if (_showTimelineCapture) ...[
+        const PopupMenuDivider(),
+        PopupMenuItem(
+          value: _HomeAppBarMenuAction.timelineCapture,
+          child: _OverflowMenuRow(
+            icon: Icons.edit_note_outlined,
+            label: l10n?.appBarTimelineCapture ?? '타임라인 기록',
+          ),
+        ),
+      ],
+      const PopupMenuDivider(),
+      PopupMenuItem(
+        value: _HomeAppBarMenuAction.clearRegistryCache,
+        child: _OverflowMenuRow(
+          icon: Icons.delete_sweep_outlined,
+          label: l10n?.appBarClearRegistryCache ??
+              '글로벌 사전 JSON 캐시 삭제 (이미지 파일 아님)',
+          destructive: true,
+        ),
+      ),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,17 +169,6 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             tooltip: l10n?.appBarLibraryTheme ?? '서재 테마',
             onPressed: onLibraryTheme,
           ),
-        IconButton(
-          icon: const Icon(Icons.search),
-          tooltip: l10n?.appBarSearch ?? '검색',
-          onPressed: onSearch,
-        ),
-        if (vaultLinked && onTimelineCapture != null)
-          IconButton(
-            icon: const Icon(Icons.edit_note_outlined),
-            tooltip: l10n?.appBarTimelineCapture ?? '타임라인 기록',
-            onPressed: onTimelineCapture,
-          ),
         if (onCatalogInbox != null)
           IconButton(
             tooltip: l10n?.appBarCatalogInbox ?? '카탈로그 제안함',
@@ -97,39 +179,15 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               child: const Icon(Icons.inbox_outlined),
             ),
           ),
-        IconButton(
-          icon: const Icon(Icons.smart_toy_outlined),
-          tooltip: l10n?.appBarClipboardImport ?? 'AI 마크다운 가져오기',
-          onPressed: onClipboardImport,
-        ),
         if (isSyncing)
           const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12),
+            padding: EdgeInsets.symmetric(horizontal: 8),
             child: SizedBox(
               width: 20,
               height: 20,
               child: CircularProgressIndicator(strokeWidth: 2),
             ),
-          )
-        else
-          IconButton(
-            icon: const Icon(Icons.sync),
-            tooltip:
-                l10n?.appBarSyncRegistry ?? '글로벌 작품 사전 동기화 (길게 눌러 설정)',
-            onPressed: onSync,
-            onLongPress: onSyncSettings,
           ),
-        IconButton(
-          icon: const Icon(Icons.copy_all),
-          tooltip: l10n?.appBarPromptTemplates ?? 'AI 프롬프트 템플릿 복사',
-          onPressed: onPromptTemplates,
-        ),
-        IconButton(
-          icon: const Icon(Icons.delete_sweep_outlined),
-          tooltip: l10n?.appBarClearRegistryCache ??
-              '글로벌 사전 JSON 캐시 삭제 (이미지 파일 아님)',
-          onPressed: onClearRegistryCache,
-        ),
         IconButton(
           icon: Icon(
             vaultLinked ? Icons.folder : Icons.folder_open_outlined,
@@ -138,6 +196,45 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           tooltip: l10n?.appBarVaultSettings ?? '로컬 폴더(Vault) 설정',
           onPressed: onVaultSettings,
         ),
+        PopupMenuButton<_HomeAppBarMenuAction>(
+          tooltip: '도구 더보기',
+          onSelected: _onMenuSelected,
+          itemBuilder: (context) => _buildOverflowMenuItems(context),
+          icon: const Icon(Icons.more_vert),
+        ),
+      ],
+    );
+  }
+}
+
+class _OverflowMenuRow extends StatelessWidget {
+  const _OverflowMenuRow({
+    required this.icon,
+    required this.label,
+    this.trailing,
+    this.destructive = false,
+  });
+
+  final IconData icon;
+  final String label;
+  final Widget? trailing;
+  final bool destructive;
+
+  @override
+  Widget build(BuildContext context) {
+    final color = destructive ? Colors.redAccent : null;
+
+    return Row(
+      children: [
+        Icon(icon, size: 20, color: color),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Text(
+            label,
+            style: TextStyle(color: color),
+          ),
+        ),
+        if (trailing != null) trailing!,
       ],
     );
   }

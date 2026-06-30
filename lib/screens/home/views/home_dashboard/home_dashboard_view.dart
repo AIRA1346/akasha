@@ -123,7 +123,7 @@ class HomeDashboardView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            HomeDashboardHero(onStartExplore: onSearch),
+            const HomeDashboardHero(),
             const SizedBox(height: 28),
             HomeDashboardContinueSection(
               recentExploreItems: recentExploreItems,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../models/akasha_item.dart';
+import '../../../../services/recent_exploration_resolver.dart';
 import '../../../../theme/akasha_colors.dart';
 import '../../../../theme/akasha_typography.dart';
 import '../../../../utils/exploration_progress.dart';
@@ -8,7 +9,7 @@ import '../../../../widgets/poster_image.dart';
 import '../../../home/views/preview_record_view_model.dart';
 import 'home_dashboard_styles.dart';
 
-class HomeDashboardContinueSection extends StatelessWidget {
+class HomeDashboardContinueSection extends StatefulWidget {
   const HomeDashboardContinueSection({
     super.key,
     required this.recentExploreItems,
@@ -28,17 +29,118 @@ class HomeDashboardContinueSection extends StatelessWidget {
   final bool isColdStart;
   final List<AkashaItem> fallbackVaultItems;
 
+  @override
+  State<HomeDashboardContinueSection> createState() =>
+      _HomeDashboardContinueSectionState();
+}
+
+class _HomeDashboardContinueSectionState
+    extends State<HomeDashboardContinueSection> {
+  static const _railHeight = 180.0;
+  static const _scrollButtonInset = 8.0;
+  static const _scrollPageCardCount = 2.5;
+
+  late final ScrollController _scrollController;
+  var _canScrollBack = false;
+  var _canScrollForward = false;
+
   List<AkashaItem> get _displayItems {
-    if (recentExploreItems.isNotEmpty) {
-      return recentExploreItems.take(4).toList();
+    if (widget.recentExploreItems.isNotEmpty) {
+      return widget.recentExploreItems
+          .take(homeContinueExploreDisplayLimit)
+          .toList();
     }
-    final sorted = List<AkashaItem>.from(fallbackVaultItems)
+    final sorted = List<AkashaItem>.from(widget.fallbackVaultItems)
       ..sort((a, b) => b.addedAt.compareTo(a.addedAt));
-    return sorted.take(4).toList();
+    return sorted.take(homeContinueExploreDisplayLimit).toList();
   }
 
   bool get _usingVaultFallback =>
-      recentExploreItems.isEmpty && _displayItems.isNotEmpty;
+      widget.recentExploreItems.isEmpty && _displayItems.isNotEmpty;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController()..addListener(_updateScrollButtons);
+    WidgetsBinding.instance.addPostFrameCallback((_) => _updateScrollButtons());
+  }
+
+  @override
+  void didUpdateWidget(covariant HomeDashboardContinueSection oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.recentExploreItems != widget.recentExploreItems ||
+        oldWidget.fallbackVaultItems != widget.fallbackVaultItems) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (_scrollController.hasClients) {
+          _scrollController.jumpTo(0);
+        }
+        _updateScrollButtons();
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _scrollController.removeListener(_updateScrollButtons);
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  void _updateScrollButtons() {
+    if (!_scrollController.hasClients) {
+      if (_canScrollBack || _canScrollForward) {
+        setState(() {
+          _canScrollBack = false;
+          _canScrollForward = false;
+        });
+      }
+      return;
+    }
+
+    final position = _scrollController.position;
+    final canBack = position.pixels > position.minScrollExtent + 0.5;
+    final canForward = position.pixels < position.maxScrollExtent - 0.5;
+    if (canBack == _canScrollBack && canForward == _canScrollForward) return;
+
+    setState(() {
+      _canScrollBack = canBack;
+      _canScrollForward = canForward;
+    });
+  }
+
+  void _scrollByPages(double direction) {
+    if (!_scrollController.hasClients) return;
+
+    final stride = _ExploreCard.cardStride;
+    final delta = stride * _scrollPageCardCount * direction;
+    final target = (_scrollController.offset + delta).clamp(
+      _scrollController.position.minScrollExtent,
+      _scrollController.position.maxScrollExtent,
+    );
+    _scrollController.animateTo(
+      target,
+      duration: const Duration(milliseconds: 280),
+      curve: Curves.easeOutCubic,
+    );
+  }
+
+  bool _isSelected(AkashaItem item) {
+    if (item is EntityItem && widget.selectedEntityPreviewId != null) {
+      return widget.selectedEntityPreviewId == item.entityId;
+    }
+    return _isSameExploreItem(widget.selectedPreviewItem, item);
+  }
+
+  static bool _isSameExploreItem(AkashaItem? selected, AkashaItem item) {
+    if (selected == null) return false;
+    if (item is EntityItem && selected is EntityItem) {
+      return selected.entityId == item.entityId;
+    }
+    if (item is! EntityItem && selected is! EntityItem) {
+      return selected.workId == item.workId;
+    }
+    return false;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +155,7 @@ class HomeDashboardContinueSection extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 12),
             child: Text(
-              isColdStart
+              widget.isColdStart
                   ? '탐험을 시작하면 최근에 본 작품과 인물이 여기에 표시됩니다.'
                   : '아직 탐색 기록이 없습니다. 작품이나 인물을 열면 여기에 표시됩니다.',
               style: AkashaTypography.bodySecondary.copyWith(
@@ -73,41 +175,103 @@ class HomeDashboardContinueSection extends StatelessWidget {
           ),
         if (displayItems.isNotEmpty)
           SizedBox(
-            height: 180,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
+            height: _railHeight,
+            child: Stack(
+              clipBehavior: Clip.none,
               children: [
-                ...displayItems.map((item) => _ExploreCard(
+                ListView.builder(
+                  controller: _scrollController,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: displayItems.length,
+                  itemBuilder: (context, index) {
+                    final item = displayItems[index];
+                    return _ExploreCard(
                       item: item,
                       isSelected: _isSelected(item),
-                      onTap: () => onItemTap(item),
-                      onDoubleTap: onItemDoubleTap == null
+                      onTap: () => widget.onItemTap(item),
+                      onDoubleTap: widget.onItemDoubleTap == null
                           ? null
-                          : () => onItemDoubleTap!(item),
-                    )),
+                          : () => widget.onItemDoubleTap!(item),
+                    );
+                  },
+                ),
+                if (_canScrollBack)
+                  Positioned(
+                    left: _scrollButtonInset,
+                    top: 0,
+                    bottom: 0,
+                    child: Center(
+                      child: _ContinueExploreScrollButton(
+                        icon: Icons.chevron_left_rounded,
+                        tooltip: '이전',
+                        onPressed: () => _scrollByPages(-1),
+                      ),
+                    ),
+                  ),
+                if (_canScrollForward)
+                  Positioned(
+                    right: _scrollButtonInset,
+                    top: 0,
+                    bottom: 0,
+                    child: Center(
+                      child: _ContinueExploreScrollButton(
+                        icon: Icons.chevron_right_rounded,
+                        tooltip: '다음',
+                        onPressed: () => _scrollByPages(1),
+                      ),
+                    ),
+                  ),
               ],
             ),
           ),
       ],
     );
   }
+}
 
-  bool _isSelected(AkashaItem item) {
-    if (item is EntityItem && selectedEntityPreviewId != null) {
-      return selectedEntityPreviewId == item.entityId;
-    }
-    return _isSameExploreItem(selectedPreviewItem, item);
-  }
+class _ContinueExploreScrollButton extends StatefulWidget {
+  const _ContinueExploreScrollButton({
+    required this.icon,
+    required this.tooltip,
+    required this.onPressed,
+  });
 
-  static bool _isSameExploreItem(AkashaItem? selected, AkashaItem item) {
-    if (selected == null) return false;
-    if (item is EntityItem && selected is EntityItem) {
-      return selected.entityId == item.entityId;
-    }
-    if (item is! EntityItem && selected is! EntityItem) {
-      return selected.workId == item.workId;
-    }
-    return false;
+  final IconData icon;
+  final String tooltip;
+  final VoidCallback onPressed;
+
+  @override
+  State<_ContinueExploreScrollButton> createState() =>
+      _ContinueExploreScrollButtonState();
+}
+
+class _ContinueExploreScrollButtonState
+    extends State<_ContinueExploreScrollButton> {
+  var _hovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => setState(() => _hovered = true),
+      onExit: (_) => setState(() => _hovered = false),
+      child: Material(
+        color: _hovered
+            ? AkashaColors.surfaceElevated
+            : AkashaColors.surface.withValues(alpha: 0.94),
+        elevation: _hovered ? 2 : 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+          side: BorderSide(color: AkashaColors.borderSubtle(0.14)),
+        ),
+        child: IconButton(
+          onPressed: widget.onPressed,
+          tooltip: widget.tooltip,
+          icon: Icon(widget.icon, size: 22, color: AkashaColors.textSecondary),
+          padding: EdgeInsets.zero,
+          constraints: const BoxConstraints(minWidth: 36, minHeight: 36),
+        ),
+      ),
+    );
   }
 }
 
@@ -118,6 +282,10 @@ class _ExploreCard extends StatelessWidget {
     required this.onTap,
     this.onDoubleTap,
   });
+
+  static const cardWidth = 145.0;
+  static const cardSpacing = 12.0;
+  static const cardStride = cardWidth + cardSpacing;
 
   final AkashaItem item;
   final bool isSelected;
@@ -137,8 +305,8 @@ class _ExploreCard extends StatelessWidget {
         : HomeDashboardStyles.categoryColor(item);
 
     return Container(
-      width: 145,
-      margin: const EdgeInsets.only(right: 12),
+      width: cardWidth,
+      margin: const EdgeInsets.only(right: cardSpacing),
       decoration: BoxDecoration(
         color: AkashaColors.surface,
         borderRadius: BorderRadius.circular(12),

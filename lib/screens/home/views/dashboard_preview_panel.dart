@@ -279,10 +279,10 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
     final record = PreviewRecordViewModel.fromWork(widget.item);
     return Container(
       width: 320,
-      decoration: BoxDecoration(
-        color: AkashaColors.surface,
+      decoration: const BoxDecoration(
+        color: AkashaColors.sidebar,
         border: Border(
-          left: BorderSide(color: AkashaColors.borderSubtle(0.08)),
+          left: BorderSide(color: AkashaColors.border, width: 1),
         ),
       ),
       child: Column(

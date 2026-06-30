@@ -18,6 +18,7 @@ import '../../models/user_catalog_entity.dart';
 import '../../services/link_candidate_service.dart';
 import '../../utils/recall_picker.dart';
 import '../../widgets/today_recall_card.dart';
+import 'home_browse_search_chrome.dart';
 import 'coordinators/home_shell_wiring.dart';
 import 'home_browse_filter_controller.dart';
 import 'home_collectible_collection_controller.dart';
@@ -53,6 +54,7 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
     required this.posterCardBuilder,
     required this.browse,
     required this.onConnectVault,
+    required this.onSearch,
     required this.onToggleCategory,
     required this.onClearCategories,
     required this.onToggleWorkStatus,
@@ -110,6 +112,7 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
   final Widget Function(BrowseCard card) posterCardBuilder;
   final HomeShellBrowseContentBuilder browse;
   final VoidCallback onConnectVault;
+  final VoidCallback onSearch;
   final void Function(MediaCategory category) onToggleCategory;
   final VoidCallback onClearCategories;
   final void Function(String label) onToggleWorkStatus;
@@ -165,6 +168,22 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
       children: [
         if (!vaultLinked)
           HomeVaultBanner(onConnectVault: onConnectVault),
+        if (!workbench.hasOpenDetail &&
+            !isTimelineMode &&
+            !isCollectibleCollectionMode)
+          HomeBrowseSearchChrome(
+            onSearch: onSearch,
+            selectedCategories: filterCtrl.categories,
+            selectedWorkStatuses: filterCtrl.workStatuses,
+            selectedMyStatuses: filterCtrl.myStatuses,
+            onToggleCategory: onToggleCategory,
+            onClearCategories: onClearCategories,
+            onToggleWorkStatus: onToggleWorkStatus,
+            onToggleMyStatus: onToggleMyStatus,
+            selectedEntityScope: filterCtrl.entityScope,
+            onEntityScopeChanged: onEntityScopeChanged,
+            onAddNewEntity: onAddNewEntity,
+          ),
         if (!isPersonalLibraryMode &&
             !isCollectibleCollectionMode &&
             !isTimelineMode &&

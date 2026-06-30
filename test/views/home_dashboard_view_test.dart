@@ -89,10 +89,8 @@ HomeDashboardView _dashboard({
 
 void main() {
   testWidgets('HomeDashboardView v1 shows hero, continue, quick actions', (tester) async {
-    var searchTapped = false;
-
     await tester.pumpWidget(
-      _wrap(_dashboard(onSearch: () => searchTapped = true)),
+      _wrap(_dashboard()),
     );
 
     expect(find.text('기록하고, 연결하고, 발견하세요'), findsOneWidget);
@@ -102,7 +100,7 @@ void main() {
       ),
       findsOneWidget,
     );
-    expect(find.text('탐험 시작하기'), findsOneWidget);
+    expect(find.text('탐험 시작하기'), findsNothing);
     expect(find.text('계속 탐험하기'), findsOneWidget);
     expect(find.text('빠른 액션'), findsOneWidget);
     expect(find.text('작품 검색'), findsOneWidget);
@@ -132,8 +130,5 @@ void main() {
     expect(find.text('안녕하세요, 탐험가님!'), findsNothing);
     expect(find.text('검색으로 탐험 시작'), findsNothing);
     expect(find.text('[[wiki]]'), findsNothing);
-
-    await tester.tap(find.text('탐험 시작하기'));
-    expect(searchTapped, isTrue);
   });
 }

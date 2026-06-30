@@ -17,10 +17,10 @@ class PreviewMemoBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
-      decoration: BoxDecoration(
-        color: AkashaColors.surface,
+      decoration: const BoxDecoration(
+        color: AkashaColors.sidebar,
         border: Border(
-          top: BorderSide(color: AkashaColors.borderSubtle(0.08)),
+          top: BorderSide(color: AkashaColors.border, width: 1),
         ),
       ),
       child: Padding(

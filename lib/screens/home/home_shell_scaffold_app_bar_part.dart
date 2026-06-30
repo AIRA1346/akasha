@@ -12,7 +12,6 @@ PreferredSizeWidget _homeShellScaffoldAppBar(
     onLibraryTheme: controller.showLibraryThemePicker,
     libraryThemeAccent: controller.libraryTheme.accentColor,
     onToggleSidebar: controller.toggleSidebar,
-    onSearch: controller.openSearchDialog,
     onTimelineCapture: controller.openTimelineQuickCapture,
     onClipboardImport: controller.openClipboardImportDialog,
     onSync: controller.syncRegistry,
