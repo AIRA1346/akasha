@@ -74,6 +74,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/branding/
     - assets/registry/manifest.json
     - assets/registry/search_index.json
     - assets/registry/search_index/
