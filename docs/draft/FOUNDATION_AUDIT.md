@@ -1,6 +1,6 @@
 # Foundation Audit — 기초 다지기 감사 (F0)
 
-> **일자:** 2026-06-25 (F0) · **재검토:** 2026-06-30 (Post-P30 후속 SSOT)
+> **일자:** 2026-06-25 (F0) · **재검토:** 2026-06-30 (Post-P2 분해 SSOT)
 > **지위:** Foundation Sprint 감사 SSOT (draft)  
 > **상위:** [PROJECT_STATUS.md](../active/PROJECT_STATUS.md) · [CURRENT_STATE.md](../active/CURRENT_STATE.md)  
 > **레거시:** [LEGACY_REMOVAL_POLICY.md](LEGACY_REMOVAL_POLICY.md)
@@ -9,19 +9,21 @@
 
 ## 1. Executive Summary
 
-| 항목 | 결과 (재검토 2026-06-30 · Post-P30 후속 SSOT) |
+| 항목 | 결과 (재검토 2026-06-30 · Post-P2 SSOT) |
 |------|--------------------------------------|
 | `flutter test` | **614/614 PASS** |
 | `dogfood_precheck.ps1` | **PASS** |
 | `flutter analyze lib` | **0 issue** |
 | Release build | `build_release.ps1` OK |
-| Git | `main` **origin 동기화** (`04ce025`) |
+| `origin/main` HEAD | **0eebc0b** |
+| code/test baseline | **5526ce4** |
+| SSOT baseline | **0eebc0b** |
 | Foundation F0~F4 | **✅ 완료** |
-| Foundation P2 분해 | **P27~P31** ✅ (sidebar · browse · dialog · work library) |
+| Foundation P2 분해 | **P27~P31 + P2 배치** ✅ |
 | P30 dialog 저장 widget test | **✅ 완료** (filter·validation·curated **4**) |
 | B1 수동 dogfood | **✅ 완료** |
 
-**판단:** Gate·Registry 건강. **P0·P1 Foundation P2 완료** — 잔여는 P2 (`home_shell_scaffold` · `home_dialogs_coordinator` · `franchise_fusion_service`).
+**판단:** Gate·Registry 건강. **계획된 Foundation P2 대형 파일 분해 완료** — 400줄+ 잔여는 `home_shell_body`·`markdown_body_editor` shell (parts 분리됨).
 
 ---
 
@@ -58,17 +60,22 @@
 
 ---
 
-## 3. 대형 파일 (400줄+, 2026-06-29 재실측 · Post-P31)
+## 3. 대형 파일 (400줄+, 2026-06-30 재실측 · Post-P2)
 
-### 잔여 후보 (분해 대상)
+### 잔여 후보
 
 | 줄 수 | 파일 | 우선 |
 |------:|------|:----:|
 | **503** | `markdown_body_editor.dart` | — (P26 parts 분리 완료) |
-| **479** | `home_shell_body.dart` | P2 (P6 ✅, 추가 여지 적음) |
-| **456** | `franchise_fusion_service.dart` | P2 |
-| **435** | `home_dialogs_coordinator.dart` | P2 |
-| **428** | `home_shell_scaffold.dart` | P2 |
+| **479** | `home_shell_body.dart` | P3 (P6 ✅, 추가 여지) |
+
+### P2 분해 완료 (shell · code baseline `5526ce4`)
+
+| 파일 | shell | commit | part / 비고 |
+|------|------:|--------|-------------|
+| `home_shell_scaffold` | **31** | `194db17` | layout·app bar·body·bottom nav |
+| `home_dialogs_coordinator` | **124** | `955967e` | search·vault·capture·entity |
+| `franchise_fusion_service` | **76** | `5526ce4` | fuse·slots·grouping·representative |
 
 ### P27~P31 분해 완료 (shell)
 
@@ -127,7 +134,13 @@
 
 ## 6. Git · 원격
 
-`origin/main` = **`04ce025`** (docs SSOT · P30 dialog test commit **48c8c39**). 로컬/원격 **동기화 완료**. dirty = registry manifest 4개 (`generatedAt` only).
+| 구분 | SHA | 비고 |
+|------|-----|------|
+| **`origin/main` HEAD** | **0eebc0b** | docs SSOT (본 스냅샷) |
+| **code/test baseline** | **5526ce4** | scaffold `194db17` · dialogs `955967e` · fusion `5526ce4` · test **614** |
+| **SSOT baseline** | **0eebc0b** | Post-P2 분해 반영 |
+
+로컬/원격 **동기화 완료** (code). dirty = registry manifest 4개 (`generatedAt` only).
 
 ---
 
@@ -212,6 +225,9 @@
 | P30 | `collectible_collection_edit_dialog` 분해 | ✅ shell **73** · session + 7 part |
 | P31 | `work_library_panel` 분해 | ✅ shell **162** · 5 part |
 | P30 후속 | dialog 저장 플로우 widget test | ✅ filter·validation·curated **4** |
+| P2 | `home_shell_scaffold` 분해 | ✅ shell **31** · `194db17` |
+| P2 | `home_dialogs_coordinator` 분해 | ✅ shell **124** · `955967e` |
+| P2 | `franchise_fusion_service` 분해 | ✅ shell **76** · `5526ce4` |
 
 **금지:** M3 Steam · Discovery Engine · Preview stack · Save Return 정책.
 
@@ -219,7 +235,8 @@
 
 | 일자 | 변경 |
 |------|------|
-| 2026-06-30 | SSOT HEAD 정정 · `origin/main` **04ce025** |
+| 2026-06-30 | **Post-P2 SSOT** — scaffold·dialogs·fusion 분해 · HEAD/SSOT **0eebc0b** · code **5526ce4** · test **614** |
+| 2026-06-30 | SSOT HEAD 정정 · SSOT baseline **04ce025** · P30 dialog test **48c8c39** |
 | 2026-06-29 | **Post-P30 후속** — dialog 저장 widget test **4** · P30 dialog test commit **48c8c39** · test **614** |
 | 2026-06-29 | **Post-P31** — P31 `work_library_panel` 분해 (**162** shell) · `origin/main` **0c92519** |
 | 2026-06-29 | **Post-P30** — P27~P30 분해·P28 tokens 반영 · 400줄+ 재실측 · `origin/main` **9d17f75** |

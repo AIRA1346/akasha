@@ -1,6 +1,7 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-06-30 (@10048 · Foundation Phase 2 · Post-P30 후속 SSOT · `origin/main` **04ce025**)
+> **갱신:** 2026-06-30 (@10048 · Foundation Phase 2 · Post-P2 분해 SSOT)
+> **Git:** `origin/main` HEAD **0eebc0b** · code/test baseline **5526ce4** · SSOT baseline **0eebc0b**
 > **현재 실행:** **Foundation Phase 2** — 대형 파일 분해 마무리 (M3 **사용자 지시 전 보류**)
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist](../history/release-readiness-checklist.md)  
@@ -21,7 +22,7 @@
 | **Phase 6.2** | 전 경로 Workbench 통합 ✅ |
 | **Phase 6.3** | incoming/sameDay·connections coordinator ✅ |
 | **코드 건강** | Phase 0~7 ✅ · **Sanctum C1~C4** ✅ |
-| **다음** | **Foundation Phase 2** — P2 대형 파일 분해 (`home_shell_scaffold` 등) |
+| **다음** | **Foundation Phase 2** 마무리 점검 · `home_shell_body` 추가 분해 여지 · **M3** 보류 |
 | **Scale / Core** | **Phase 2.0~2.3** ✅ @10048 · G1 ✅ · **ADR-010 eager-only batch** ✅ |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `wikidata_ko` active · **10k milestone** ✅ |
@@ -82,7 +83,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | **Wave 1 Home** | ✅ shell **40줄** | — |
 | **Catalog G1** | Sprint C · **관측만** | P2 |
 | **M3 Release** | **보류** (사용자 지시 시 착수) | — |
-| **Foundation P2** | `home_shell_scaffold` · `home_dialogs_coordinator` · `franchise_fusion_service` 분해 | **P2** |
+| **Foundation P2** | scaffold · dialogs coordinator · franchise fusion 분해 | **✅** |
 | **Scale/Core** | **보류** | — |
 
 ---
@@ -102,9 +103,11 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | **S** | **Sanctum C1~C4** — wiki 칩·출연·갤러리·완성도·템플릿·HTML | ✅ |
 | **F** | **Foundation F0~F4** — 감사·Sanctum 분해·R14-B·레거시 정책 | ✅ |
 
-**대형 파일 (2026-06-29 재실측 · Post-P31):** `markdown_body_editor` **503** (shell + parts) · `home_shell_body` **479** · `franchise_fusion_service` **456** · `home_dialogs_coordinator` **435** · `home_shell_scaffold` **428**
+**대형 파일 (2026-06-30 재실측 · Post-P2):** `markdown_body_editor` **503** (shell + parts) · `home_shell_body` **479**
 
-**P27~P31 분해 완료 (shell 줄 수):** `work_library_panel` **162** · `dashboard_sidebar` **152** · `browse_dashboard_sections` **165** · `collectible_collection_edit_dialog` **73** · `poster_card_layouts` **~270** (P24) · markdown editor 6 parts (P26) · P30 dialog 저장 widget test **4** (filter·validation·curated)
+**P2 분해 완료 (shell 줄 수 · code baseline `5526ce4`):** `home_shell_scaffold` **31** (`194db17`) · `home_dialogs_coordinator` **124** (`955967e`) · `franchise_fusion_service` **76** (`5526ce4`)
+
+**P27~P31·P30 후속:** `work_library_panel` **162** · `dashboard_sidebar` **152** · `browse_dashboard_sections` **165** · `collectible_collection_edit_dialog` **73** · P30 dialog 저장 widget test **4** · `poster_card_layouts` **~270** (P24) · markdown editor 6 parts (P26)
 
 감사 SSOT: [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md) · Vault: [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)
 
@@ -114,7 +117,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | # | 작업 | 우선 |
 |---|------|:----:|
-| 1 | `home_shell_scaffold` · `home_dialogs_coordinator` · `franchise_fusion_service` 분해 | **P2** |
+| 1 | `home_shell_body` 추가 분해 (선택) | P3 |
 | 2 | **M3** Steam Release | 보류 |
 
 ---
@@ -139,7 +142,8 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | 2026-06-24 | 코드 건강 Phase 0~6 — vault·FeatureFlags·workbench coordinator·`tool/` archive·polling · test **580** |
 | 2026-06-24 | 코드 건강 Phase 7b — save ops·collection reorder·docs SSOT · test **591** |
 | 2026-06-25 | **Sanctum C1~C4** · Foundation F0 감사 · test **605** · [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md) |
-| 2026-06-30 | SSOT HEAD 정정 · `origin/main` **04ce025** |
+| 2026-06-30 | **Post-P2 SSOT** — scaffold·dialogs·fusion 분해 · HEAD/SSOT **0eebc0b** · code **5526ce4** · test **614** |
+| 2026-06-30 | SSOT HEAD 정정 · SSOT baseline **04ce025** · P30 dialog test **48c8c39** |
 | 2026-06-29 | **Post-P30 후속** — dialog 저장 widget test **4** · P30 dialog test commit **48c8c39** · test **614** |
 | 2026-06-29 | **Post-P31 SSOT** — P31 `work_library_panel` 분해 (**162** shell) · `origin/main` **0c92519** · test **610** |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |
