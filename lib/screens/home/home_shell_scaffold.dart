@@ -12,6 +12,7 @@ import 'dialogs/home_dialogs_facade.dart';
 import 'home_app_bar.dart';
 import 'home_shell_body.dart';
 import 'home_shell_controller.dart';
+import 'home_browse_search_chrome.dart';
 
 part 'home_shell_scaffold_layout_part.dart';
 part 'home_shell_scaffold_app_bar_part.dart';

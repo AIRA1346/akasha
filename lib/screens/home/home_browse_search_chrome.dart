@@ -8,7 +8,7 @@ import '../../theme/akasha_spacing.dart';
 import '../../theme/akasha_typography.dart';
 import '../../widgets/filter_section.dart';
 
-/// Home·Browse 상단 — 검색 진입 + 접이식 필터 (v1 Personal Archive).
+/// AKASHA AppBar 바로 아래 — 검색 진입 + 접이식 필터 (v1 Personal Archive).
 class HomeBrowseSearchChrome extends StatefulWidget {
   const HomeBrowseSearchChrome({
     super.key,
@@ -72,45 +72,50 @@ class _HomeBrowseSearchChromeState extends State<HomeBrowseSearchChrome> {
     final compact =
         MediaQuery.sizeOf(context).width < widget.compactBreakpoint;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Padding(
-          padding: AkashaSpacing.vaultBanner,
-          child: Row(
-            children: [
-              Expanded(
-                child: _SearchEntry(
-                  onTap: widget.onSearch,
-                  showCtrlKHint: !compact,
+    return Material(
+      color: AkashaColors.surface,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 10, 16, 10),
+            child: Row(
+              children: [
+                Expanded(
+                  child: _SearchEntry(
+                    onTap: widget.onSearch,
+                    showCtrlKHint: !compact,
+                  ),
                 ),
-              ),
-              const SizedBox(width: AkashaSpacing.sm),
-              _FilterToggleButton(
-                expanded: _filtersExpanded,
-                hasActiveFilters: _hasActiveFilters,
-                onPressed: () =>
-                    setState(() => _filtersExpanded = !_filtersExpanded),
-              ),
-            ],
+                const SizedBox(width: AkashaSpacing.sm),
+                _FilterToggleButton(
+                  expanded: _filtersExpanded,
+                  hasActiveFilters: _hasActiveFilters,
+                  onPressed: () =>
+                      setState(() => _filtersExpanded = !_filtersExpanded),
+                ),
+              ],
+            ),
           ),
-        ),
-        if (_filtersExpanded) ...[
-          FilterSection(
-            selectedCategories: widget.selectedCategories,
-            selectedWorkStatuses: widget.selectedWorkStatuses,
-            selectedMyStatuses: widget.selectedMyStatuses,
-            onToggleCategory: widget.onToggleCategory,
-            onClearCategories: widget.onClearCategories,
-            onToggleWorkStatus: widget.onToggleWorkStatus,
-            onToggleMyStatus: widget.onToggleMyStatus,
-            selectedEntityScope: widget.selectedEntityScope,
-            onEntityScopeChanged: widget.onEntityScopeChanged,
-            onAddNewEntity: widget.onAddNewEntity,
-          ),
-          const Divider(height: 1),
+          if (_filtersExpanded) ...[
+            const Divider(height: 1),
+            FilterSection(
+              selectedCategories: widget.selectedCategories,
+              selectedWorkStatuses: widget.selectedWorkStatuses,
+              selectedMyStatuses: widget.selectedMyStatuses,
+              onToggleCategory: widget.onToggleCategory,
+              onClearCategories: widget.onClearCategories,
+              onToggleWorkStatus: widget.onToggleWorkStatus,
+              onToggleMyStatus: widget.onToggleMyStatus,
+              selectedEntityScope: widget.selectedEntityScope,
+              onEntityScopeChanged: widget.onEntityScopeChanged,
+              onAddNewEntity: widget.onAddNewEntity,
+            ),
+            const Divider(height: 1),
+          ] else
+            Divider(height: 1, color: AkashaColors.borderSubtle(0.08)),
         ],
-      ],
+      ),
     );
   }
 }
@@ -125,29 +130,30 @@ class _SearchEntry extends StatelessWidget {
   final bool showCtrlKHint;
 
   static const String placeholder =
-      '작품, 인물, 감상, 태그를 검색하세요...';
+      '작품, 인물, 시간, 장소, 개념을 검색하세요...';
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 38,
+        height: 40,
         padding: const EdgeInsets.symmetric(horizontal: AkashaSpacing.md),
         decoration: BoxDecoration(
-          color: AkashaColors.surface,
+          color: AkashaColors.borderSubtle(0.04),
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: AkashaColors.borderSubtle(0.06)),
+          border: Border.all(color: AkashaColors.borderSubtle(0.1)),
         ),
         child: Row(
           children: [
-            Icon(Icons.search_rounded, size: 16, color: AkashaColors.textMuted),
+            Icon(Icons.search_rounded, size: 18, color: AkashaColors.textMuted),
             const SizedBox(width: AkashaSpacing.sm),
             Expanded(
               child: Text(
                 placeholder,
                 style: AkashaTypography.bodySecondary.copyWith(
                   color: AkashaColors.textMuted,
+                  fontSize: 12,
                 ),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
@@ -156,11 +162,11 @@ class _SearchEntry extends StatelessWidget {
             if (showCtrlKHint) ...[
               const SizedBox(width: AkashaSpacing.sm),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
                 decoration: BoxDecoration(
-                  color: AkashaColors.borderSubtle(0.04),
+                  color: AkashaColors.borderSubtle(0.06),
                   borderRadius: BorderRadius.circular(4),
-                  border: Border.all(color: AkashaColors.borderSubtle(0.06)),
+                  border: Border.all(color: AkashaColors.borderSubtle(0.08)),
                 ),
                 child: Text(
                   'Ctrl K',
@@ -206,12 +212,12 @@ class _FilterToggleButton extends StatelessWidget {
         ),
       ),
       padding: EdgeInsets.zero,
-      constraints: const BoxConstraints(minWidth: 38, minHeight: 38),
+      constraints: const BoxConstraints(minWidth: 40, minHeight: 40),
       style: IconButton.styleFrom(
         backgroundColor: AkashaColors.borderSubtle(0.04),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
-          side: BorderSide(color: AkashaColors.borderSubtle(0.08)),
+          side: BorderSide(color: AkashaColors.borderSubtle(0.1)),
         ),
       ),
     );

@@ -1,5 +1,42 @@
 part of 'home_shell_scaffold.dart';
 
+bool _homeShellShowsBrowseSearchChrome(HomeShellController controller) {
+  return !controller.isTimelineMode &&
+      !controller.isCollectibleCollectionMode &&
+      !controller.workbench.hasOpenDetail;
+}
+
+Widget _homeShellScaffoldBodyWithSearch(
+  BuildContext context,
+  HomeShellController controller,
+  List<BrowseCard> filtered,
+) {
+  final showChrome = _homeShellShowsBrowseSearchChrome(controller);
+
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.stretch,
+    children: [
+      if (showChrome)
+        HomeBrowseSearchChrome(
+          onSearch: controller.openSearchDialog,
+          selectedCategories: controller.filterCtrl.categories,
+          selectedWorkStatuses: controller.filterCtrl.workStatuses,
+          selectedMyStatuses: controller.filterCtrl.myStatuses,
+          onToggleCategory: controller.toggleCategory,
+          onClearCategories: controller.clearCategories,
+          onToggleWorkStatus: controller.toggleWorkStatus,
+          onToggleMyStatus: controller.toggleMyStatus,
+          selectedEntityScope: controller.filterCtrl.entityScope,
+          onEntityScopeChanged: controller.onEntityScopeChanged,
+          onAddNewEntity: controller.openAddEntityDialog,
+        ),
+      Expanded(
+        child: _homeShellScaffoldBody(context, controller, filtered),
+      ),
+    ],
+  );
+}
+
 List<BrowseCard> _homeShellScaffoldFilteredCards(HomeShellController controller) {
   final scope = controller.filterCtrl.entityScope;
   return controller.isPersonalLibraryMode
@@ -44,7 +81,7 @@ Widget _homeShellScaffoldRoot(
               ? controller.libraryTheme.backgroundColor
               : null,
           appBar: _homeShellScaffoldAppBar(context, controller),
-          body: _homeShellScaffoldBody(context, controller, filtered),
+          body: _homeShellScaffoldBodyWithSearch(context, controller, filtered),
           bottomNavigationBar: _homeShellScaffoldBottomNavigationBar(context, controller),
         ),
       ),
