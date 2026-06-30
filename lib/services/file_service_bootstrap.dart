@@ -1,7 +1,10 @@
 part of 'file_service.dart';
 
 mixin _AkashaFileServiceBootstrap
-    on _AkashaFileServiceBase, _AkashaFileServicePaths, _AkashaFileServiceWatch {
+    on
+        _AkashaFileServiceBase,
+        _AkashaFileServicePaths,
+        _AkashaFileServiceWatch {
   /// SharedPreferences에서 기존에 저장된 볼트 경로를 불러옵니다.
   Future<void> init() async {
     final prefs = await SharedPreferences.getInstance();
@@ -35,6 +38,7 @@ mixin _AkashaFileServiceBootstrap
       await _ensureFolderStructure();
       await VaultReadmeWriter().write(path);
       await EntityPathIndexService().ensureIndex(path);
+      await RecordSummaryIndexService().ensureIndex(path);
       _startWatching();
     }
     await _refreshVaultFingerprint();
@@ -52,7 +56,8 @@ mixin _AkashaFileServiceBootstrap
     await Directory(p.join(_vaultPath!, 'journal')).create(recursive: true);
     await Directory(p.join(_vaultPath!, 'entities')).create(recursive: true);
     for (final type in EntityAnchorType.values) {
-      if (type == EntityAnchorType.work || type == EntityAnchorType.phenomenon) {
+      if (type == EntityAnchorType.work ||
+          type == EntityAnchorType.phenomenon) {
         continue;
       }
       await Directory(
@@ -61,7 +66,9 @@ mixin _AkashaFileServiceBootstrap
     }
 
     for (final cat in MediaCategory.values) {
-      await Directory(p.join(_vaultPath!, 'works', cat.name)).create(recursive: true);
+      await Directory(
+        p.join(_vaultPath!, 'works', cat.name),
+      ).create(recursive: true);
     }
 
     // TODO(remove): L4 — docs/draft/LEGACY_REMOVAL_POLICY.md §2.3

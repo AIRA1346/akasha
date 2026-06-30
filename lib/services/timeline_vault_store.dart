@@ -4,24 +4,27 @@ import 'package:path/path.dart' as p;
 
 import '../core/archiving/archive_record.dart';
 import '../core/archiving/timeline_entry.dart';
+import 'record_summary_index_service.dart';
 import 'timeline_entry_parser.dart';
 import 'timeline_vault_loader.dart';
 
 /// `vault/timeline/` 쓰기·삭제 — Phase 4.2.
 class TimelineVaultStore {
   const TimelineVaultStore({TimelineVaultLoader? loader})
-      : _loader = loader ?? const TimelineVaultLoader();
+    : _loader = loader ?? const TimelineVaultLoader();
 
   final TimelineVaultLoader _loader;
 
   /// `tl_{yyyyMMdd}_{hex6}` — vault 내 안정 ID.
   static String generateRecordId([DateTime? at]) {
     final now = at ?? DateTime.now();
-    final date = '${now.year.toString().padLeft(4, '0')}'
+    final date =
+        '${now.year.toString().padLeft(4, '0')}'
         '${now.month.toString().padLeft(2, '0')}'
         '${now.day.toString().padLeft(2, '0')}';
-    final suffix =
-        (now.microsecondsSinceEpoch & 0xFFFFFF).toRadixString(16).padLeft(6, '0');
+    final suffix = (now.microsecondsSinceEpoch & 0xFFFFFF)
+        .toRadixString(16)
+        .padLeft(6, '0');
     return 'tl_${date}_$suffix';
   }
 
@@ -39,12 +42,20 @@ class TimelineVaultStore {
       throw StateError('Vault path not set');
     }
     if (!record.isTimelineEntry) {
-      throw ArgumentError.value(record.kind, 'record.kind', 'timelineEntry only');
+      throw ArgumentError.value(
+        record.kind,
+        'record.kind',
+        'timelineEntry only',
+      );
     }
 
     final recordId = record.recordId.trim();
     if (recordId.isEmpty) {
-      throw ArgumentError.value(record.recordId, 'recordId', 'must not be empty');
+      throw ArgumentError.value(
+        record.recordId,
+        'recordId',
+        'must not be empty',
+      );
     }
 
     final timelineDir = Directory(
@@ -90,7 +101,7 @@ class TimelineVaultStore {
 
     await _writeAtomic(targetPath, content);
 
-    return TimelineEntry(
+    final entry = TimelineEntry(
       recordId: recordId,
       title: title,
       body: body.trim(),
@@ -99,6 +110,11 @@ class TimelineVaultStore {
       storagePath: targetPath,
       entityId: entityId?.trim().isNotEmpty == true ? entityId!.trim() : null,
     );
+    await RecordSummaryIndexService().upsertTimeline(
+      vaultPath: vaultPath,
+      entry: entry,
+    );
+    return entry;
   }
 
   Future<void> delete({
@@ -116,12 +132,19 @@ class TimelineVaultStore {
       final file = File(entry.storagePath);
       if (await file.exists()) {
         await file.delete();
+        await RecordSummaryIndexService().removeByAbsolutePath(
+          vaultPath: vaultPath,
+          absolutePath: entry.storagePath,
+        );
       }
       return;
     }
   }
 
-  Future<TimelineEntry?> _findByRecordId(String vaultPath, String recordId) async {
+  Future<TimelineEntry?> _findByRecordId(
+    String vaultPath,
+    String recordId,
+  ) async {
     final entries = await _loader.loadFromVault(vaultPath);
     for (final entry in entries) {
       if (entry.recordId == recordId) return entry;

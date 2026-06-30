@@ -12,6 +12,7 @@ import 'entity_path_index_service.dart';
 import 'entity_vault_path_conflict.dart';
 import 'event_ledger_service.dart';
 import '../core/app_vault.dart';
+import 'record_summary_index_service.dart';
 import 'vault_safe_filename.dart';
 
 /// `vault/entities/{type}/` 쓰기 — Wave 4.
@@ -19,8 +20,8 @@ class EntityVaultStore {
   EntityVaultStore({
     EventLedgerService? eventLedger,
     EntityPathIndexService? pathIndex,
-  })  : _eventLedger = eventLedger ?? EventLedgerService(),
-        _pathIndex = pathIndex ?? EntityPathIndexService();
+  }) : _eventLedger = eventLedger ?? EventLedgerService(),
+       _pathIndex = pathIndex ?? EntityPathIndexService();
 
   final EventLedgerService _eventLedger;
   final EntityPathIndexService _pathIndex;
@@ -95,6 +96,20 @@ class EntityVaultStore {
       entityId: entity.entityId,
       absolutePath: targetPath,
     );
+    final entry = EntityJournalEntry(
+      entityType: entity.anchorType,
+      entityId: entity.entityId,
+      title: entity.title,
+      body: body.trim(),
+      addedAt: addedAt,
+      storagePath: targetPath,
+      tags: List<String>.from(entity.tags),
+      posterPath: entity.posterPath,
+    );
+    await RecordSummaryIndexService().upsertEntity(
+      vaultPath: vaultPath,
+      entry: entry,
+    );
     await AppVault.port.signalVaultChanged();
     await _eventLedger.append(
       VaultLedgerEvent(
@@ -105,16 +120,7 @@ class EntityVaultStore {
       ),
     );
 
-    return EntityJournalEntry(
-      entityType: entity.anchorType,
-      entityId: entity.entityId,
-      title: entity.title,
-      body: body.trim(),
-      addedAt: addedAt,
-      storagePath: targetPath,
-      tags: List<String>.from(entity.tags),
-      posterPath: entity.posterPath,
-    );
+    return entry;
   }
 
   Future<EntityJournalEntry> updateEntry({
@@ -171,6 +177,10 @@ class EntityVaultStore {
       final oldFile = File(entry.storagePath);
       if (await oldFile.exists()) {
         await oldFile.delete();
+        await RecordSummaryIndexService().removeByAbsolutePath(
+          vaultPath: vaultRoot,
+          absolutePath: entry.storagePath,
+        );
       }
     }
 
@@ -178,6 +188,20 @@ class EntityVaultStore {
       vaultPath: vaultRoot,
       entityId: entry.entityId,
       absolutePath: targetPath,
+    );
+    final updated = EntityJournalEntry(
+      entityType: entry.entityType,
+      entityId: entry.entityId,
+      title: resolvedTitle,
+      body: body.trim(),
+      addedAt: entry.addedAt,
+      storagePath: targetPath,
+      tags: List<String>.from(resolvedTags),
+      posterPath: posterPath ?? entry.posterPath,
+    );
+    await RecordSummaryIndexService().upsertEntity(
+      vaultPath: vaultRoot,
+      entry: updated,
     );
     await AppVault.port.signalVaultChanged();
     await _eventLedger.append(
@@ -189,16 +213,7 @@ class EntityVaultStore {
       ),
     );
 
-    return EntityJournalEntry(
-      entityType: entry.entityType,
-      entityId: entry.entityId,
-      title: resolvedTitle,
-      body: body.trim(),
-      addedAt: entry.addedAt,
-      storagePath: targetPath,
-      tags: List<String>.from(resolvedTags),
-      posterPath: posterPath ?? entry.posterPath,
-    );
+    return updated;
   }
 
   /// `.md` 삭제 성공 시 `true`. 경로 없음·파일 없음은 `false`.
@@ -218,10 +233,14 @@ class EntityVaultStore {
 
     await file.delete();
 
+    final vaultRoot = _vaultRootFromStoragePath(storagePath);
     if (entityId != null && entityId.isNotEmpty) {
-      final vaultRoot = _vaultRootFromStoragePath(storagePath);
       await _pathIndex.remove(vaultPath: vaultRoot, entityId: entityId);
     }
+    await RecordSummaryIndexService().removeByAbsolutePath(
+      vaultPath: vaultRoot,
+      absolutePath: storagePath,
+    );
 
     await AppVault.port.signalVaultChanged();
     await _eventLedger.append(

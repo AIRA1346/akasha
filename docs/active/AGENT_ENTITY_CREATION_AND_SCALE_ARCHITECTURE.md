@@ -266,6 +266,7 @@ Suggested logical indexes:
 The current JSON files remain useful stepping stones:
 
 - `.akasha/entity_path_index.json`
+- `.akasha/record_index.json`
 - `.akasha/link_index.json`
 
 But they should be treated as transitional indexes for a future sharded or SQLite-backed index.

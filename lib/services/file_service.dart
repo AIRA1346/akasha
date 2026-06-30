@@ -12,6 +12,7 @@ import '../models/enums.dart';
 import '../utils/app_log.dart';
 import 'entity_path_index_service.dart';
 import 'markdown_parser.dart';
+import 'record_summary_index_service.dart';
 import 'user_preferences.dart';
 import 'vault_readme_writer.dart';
 import 'vault_watch_poll_policy.dart';

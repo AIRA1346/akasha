@@ -28,6 +28,7 @@ abstract final class VaultReadmeContent {
 ├── journal/                     # record_kind: freeformJournal
 └── .akasha/                     # 앱 인덱스 (직접 편집 비권장)
     ├── entity_path_index.json   # entity_id → 상대 경로
+    ├── record_index.json        # record 요약 지도 (id/title/tags/path)
     ├── link_index.json
     └── event_ledger.jsonl
 ```

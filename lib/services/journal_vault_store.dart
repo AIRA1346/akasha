@@ -7,21 +7,24 @@ import '../core/archiving/journal_entry.dart';
 import '../core/archiving/record_kind.dart';
 import 'journal_entry_parser.dart';
 import 'journal_vault_loader.dart';
+import 'record_summary_index_service.dart';
 
 /// `vault/journal/` 쓰기·삭제 — Wave 3.
 class JournalVaultStore {
   const JournalVaultStore({JournalVaultLoader? loader})
-      : _loader = loader ?? const JournalVaultLoader();
+    : _loader = loader ?? const JournalVaultLoader();
 
   final JournalVaultLoader _loader;
 
   static String generateRecordId([DateTime? at]) {
     final now = at ?? DateTime.now();
-    final date = '${now.year.toString().padLeft(4, '0')}'
+    final date =
+        '${now.year.toString().padLeft(4, '0')}'
         '${now.month.toString().padLeft(2, '0')}'
         '${now.day.toString().padLeft(2, '0')}';
-    final suffix =
-        (now.microsecondsSinceEpoch & 0xFFFFFF).toRadixString(16).padLeft(6, '0');
+    final suffix = (now.microsecondsSinceEpoch & 0xFFFFFF)
+        .toRadixString(16)
+        .padLeft(6, '0');
     return 'jr_${date}_$suffix';
   }
 
@@ -39,12 +42,20 @@ class JournalVaultStore {
       throw StateError('Vault path not set');
     }
     if (record.kind != RecordKind.freeformJournal) {
-      throw ArgumentError.value(record.kind, 'record.kind', 'freeformJournal only');
+      throw ArgumentError.value(
+        record.kind,
+        'record.kind',
+        'freeformJournal only',
+      );
     }
 
     final recordId = record.recordId.trim();
     if (recordId.isEmpty) {
-      throw ArgumentError.value(record.recordId, 'recordId', 'must not be empty');
+      throw ArgumentError.value(
+        record.recordId,
+        'recordId',
+        'must not be empty',
+      );
     }
 
     final journalDir = Directory(
@@ -86,13 +97,18 @@ class JournalVaultStore {
 
     await _writeAtomic(targetPath, content);
 
-    return JournalEntry(
+    final entry = JournalEntry(
       recordId: recordId,
       title: title,
       body: body.trim(),
       addedAt: addedAt,
       storagePath: targetPath,
     );
+    await RecordSummaryIndexService().upsertJournal(
+      vaultPath: vaultPath,
+      entry: entry,
+    );
+    return entry;
   }
 
   Future<void> delete({
@@ -110,12 +126,19 @@ class JournalVaultStore {
       final file = File(entry.storagePath);
       if (await file.exists()) {
         await file.delete();
+        await RecordSummaryIndexService().removeByAbsolutePath(
+          vaultPath: vaultPath,
+          absolutePath: entry.storagePath,
+        );
       }
       return;
     }
   }
 
-  Future<JournalEntry?> _findByRecordId(String vaultPath, String recordId) async {
+  Future<JournalEntry?> _findByRecordId(
+    String vaultPath,
+    String recordId,
+  ) async {
     final entries = await _loader.loadFromVault(vaultPath);
     for (final entry in entries) {
       if (entry.recordId == recordId) return entry;

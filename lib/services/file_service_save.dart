@@ -1,7 +1,10 @@
 part of 'file_service.dart';
 
 mixin _AkashaFileServiceSave
-    on _AkashaFileServiceBase, _AkashaFileServicePaths, _AkashaFileServiceWatch {
+    on
+        _AkashaFileServiceBase,
+        _AkashaFileServicePaths,
+        _AkashaFileServiceWatch {
   /// AkashaItem을 마크다운 파일로 저장합니다.
   Future<void> saveItem(AkashaItem item, {String? oldTitle}) async {
     item.workId = MarkdownParser.ensureWorkId(item);
@@ -18,6 +21,10 @@ mixin _AkashaFileServiceSave
           _stopWatching();
           try {
             await oldFile.delete();
+            await RecordSummaryIndexService().removeByAbsolutePath(
+              vaultPath: _vaultPath!,
+              absolutePath: oldFile.path,
+            );
           } catch (e) {
             appLog('Error deleting old file: $e');
           } finally {
@@ -53,6 +60,11 @@ mixin _AkashaFileServiceSave
     _stopWatching();
     try {
       await _writeAtomic(targetPath, content);
+      await RecordSummaryIndexService().upsertWork(
+        vaultPath: _vaultPath!,
+        item: item,
+        absolutePath: targetPath,
+      );
       await _refreshVaultFingerprint();
       _notifyVaultUpdated();
     } finally {
@@ -133,6 +145,10 @@ mixin _AkashaFileServiceSave
     try {
       for (final file in existing) {
         await file.delete();
+        await RecordSummaryIndexService().removeByAbsolutePath(
+          vaultPath: _vaultPath!,
+          absolutePath: file.path,
+        );
       }
       _notifyVaultUpdated();
       return true;
