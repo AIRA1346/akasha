@@ -1,7 +1,7 @@
 # Project Status Snapshot
  
 > **갱신:** 2026-06-30 (@10048 · Foundation Phase 2 · Post-P2 분해 SSOT)
-> **Git:** `origin/main` HEAD **57c66fd** · code/test baseline **5526ce4** · SSOT baseline **57c66fd**
+> **Git:** `origin/main` HEAD **e0b021d** · code/test baseline **5526ce4** · SSOT baseline **57c66fd**
 > **현재 실행:** **Foundation Phase 2** — 대형 파일 분해 마무리 (M3 **사용자 지시 전 보류**)
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist](../history/release-readiness-checklist.md)  
@@ -142,7 +142,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | 2026-06-24 | 코드 건강 Phase 0~6 — vault·FeatureFlags·workbench coordinator·`tool/` archive·polling · test **580** |
 | 2026-06-24 | 코드 건강 Phase 7b — save ops·collection reorder·docs SSOT · test **591** |
 | 2026-06-25 | **Sanctum C1~C4** · Foundation F0 감사 · test **605** · [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md) |
-| 2026-06-30 | **Post-P2 SSOT** — scaffold·dialogs·fusion 분해 · HEAD/SSOT **57c66fd** · code **5526ce4** · test **614** |
+| 2026-06-30 | **Post-P2 SSOT** — scaffold·dialogs·fusion 분해 · SSOT **57c66fd** · code **5526ce4** · test **614** |
 | 2026-06-30 | SSOT HEAD 정정 · SSOT baseline **04ce025** · P30 dialog test **48c8c39** |
 | 2026-06-29 | **Post-P30 후속** — dialog 저장 widget test **4** · P30 dialog test commit **48c8c39** · test **614** |
 | 2026-06-29 | **Post-P31 SSOT** — P31 `work_library_panel` 분해 (**162** shell) · `origin/main` **0c92519** · test **610** |

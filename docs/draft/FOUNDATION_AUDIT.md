@@ -15,7 +15,7 @@
 | `dogfood_precheck.ps1` | **PASS** |
 | `flutter analyze lib` | **0 issue** |
 | Release build | `build_release.ps1` OK |
-| `origin/main` HEAD | **57c66fd** |
+| `origin/main` HEAD | **e0b021d** |
 | code/test baseline | **5526ce4** |
 | SSOT baseline | **57c66fd** |
 | Foundation F0~F4 | **✅ 완료** |
@@ -136,9 +136,9 @@
 
 | 구분 | SHA | 비고 |
 |------|-----|------|
-| **`origin/main` HEAD** | **57c66fd** | docs SSOT (본 스냅샷) |
+| **`origin/main` HEAD** | **e0b021d** | live tip (hash 정정 포함) |
 | **code/test baseline** | **5526ce4** | scaffold `194db17` · dialogs `955967e` · fusion `5526ce4` · test **614** |
-| **SSOT baseline** | **57c66fd** | Post-P2 분해 반영 |
+| **SSOT baseline** | **57c66fd** | Post-P2 분해 내용 반영 |
 
 로컬/원격 **동기화 완료** (code). dirty = registry manifest 4개 (`generatedAt` only).
 
