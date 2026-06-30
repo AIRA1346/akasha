@@ -69,8 +69,8 @@ class HomeDashboardQuickActionsSection extends StatelessWidget {
                           onTap: onGoExplore,
                         ),
                 ),
-                const SizedBox(width: 12),
-                if (FeatureFlags.showTimeline)
+                if (FeatureFlags.showTimeline) ...[
+                  const SizedBox(width: 12),
                   Expanded(
                     child: _ActionCard(
                       icon: Icons.access_time_outlined,
@@ -79,6 +79,7 @@ class HomeDashboardQuickActionsSection extends StatelessWidget {
                       onTap: onTimeline,
                     ),
                   ),
+                ],
               ],
             ),
           ],

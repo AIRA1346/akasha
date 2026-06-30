@@ -155,7 +155,7 @@ Home 320px rail (의도된 계층)
 | **P2-2** | Sanctum 제목 `Colors.white` 하드코딩 | `AkashaColors.textPrimary` + typography 토큰 |
 | **P2-3** | `기록하기` CTA가 **완전 빈 기록**에만 | 메모만 있는 경우에도 상세 진입 링크 (선택) |
 | **P2-4** | registry tags vs user tags 미구분 | 개인 태그만 칩 표시 (catalog tags 필터) |
-| **P2-5** | 수동 dogfood용 **긴 감상·다태그 fixture** 없음 | `vault_agent_slice_long.md` 추가 (테스트·문서용) |
+| **P2-6** | `PreviewMemoBar` dormant — `FeatureFlags.showPreviewMemoBar` false · `PreviewJournalReflectionCard`(`내 감상`)와 역할 중복 | v1 비활성 유지 · post-v1에서 bar 제거 또는 통합 검토 |
 
 ---
 

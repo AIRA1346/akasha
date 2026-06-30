@@ -160,6 +160,7 @@
 | **307** | `flutter test` **641** · `flutter analyze lib` **0** 유지 | ✅ | §2 Gate |
 | **308** | Agent Vault UI dogfood — P1-8 raw wiki link · P1-9 중앙 감상 밀도 · P1-10 앱 테마 범위 | 🔶 | [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
 | **309** | 신규 기능 · 폴더 구조 이동 · M3 · Agent operation layer | 🚫 **금지** (본 스프린트) | — |
+| **310** | `PreviewMemoBar` — post-v1 dormant UI cleanup 후보 (`showPreviewMemoBar` false · `내 감상` 카드와 역할 중복) | ⏸️ v1 비활성 유지 | [preview_memo_bar.dart](../../lib/screens/home/views/preview_memo_bar.dart) · dogfood §P2 |
 
 ---
 

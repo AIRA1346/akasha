@@ -44,7 +44,7 @@ class _HomeDashboardContinueSectionState
   var _canScrollBack = false;
   var _canScrollForward = false;
 
-  List<AkashaItem> get _displayItems {
+  List<AkashaItem> _resolveDisplayItems() {
     if (widget.recentExploreItems.isNotEmpty) {
       return widget.recentExploreItems
           .take(homeContinueExploreDisplayLimit)
@@ -54,9 +54,6 @@ class _HomeDashboardContinueSectionState
       ..sort((a, b) => b.addedAt.compareTo(a.addedAt));
     return sorted.take(homeContinueExploreDisplayLimit).toList();
   }
-
-  bool get _usingVaultFallback =>
-      widget.recentExploreItems.isEmpty && _displayItems.isNotEmpty;
 
   @override
   void initState() {
@@ -144,7 +141,9 @@ class _HomeDashboardContinueSectionState
 
   @override
   Widget build(BuildContext context) {
-    final displayItems = _displayItems;
+    final displayItems = _resolveDisplayItems();
+    final usingVaultFallback =
+        widget.recentExploreItems.isEmpty && displayItems.isNotEmpty;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -163,7 +162,7 @@ class _HomeDashboardContinueSectionState
               ),
             ),
           )
-        else if (_usingVaultFallback)
+        else if (usingVaultFallback)
           Padding(
             padding: const EdgeInsets.only(bottom: 8),
             child: Text(

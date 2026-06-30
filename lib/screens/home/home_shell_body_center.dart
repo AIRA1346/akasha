@@ -32,7 +32,6 @@ import 'views/records_view.dart';
 class HomeShellBodyCenterColumn extends StatelessWidget {
   const HomeShellBodyCenterColumn({
     super.key,
-    required this.hasNoFilters,
     required this.vaultLinked,
     required this.vaultPath,
     required this.dailyRecall,
@@ -90,7 +89,6 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
     this.onCollectibleCollectionCuratedReorder,
   });
 
-  final bool hasNoFilters;
   final bool vaultLinked;
   final String? vaultPath;
   final DailyRecall? dailyRecall;

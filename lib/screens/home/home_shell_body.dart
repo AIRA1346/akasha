@@ -296,11 +296,6 @@ class HomeShellBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hasNoFilters = filterCtrl.categories.isEmpty &&
-        filterCtrl.workStatuses.isEmpty &&
-        filterCtrl.myStatuses.isEmpty &&
-        filterCtrl.highlightEntityId == null;
-
     final dailyRecall = FeatureFlags.showRecallCard &&
             !isPersonalLibraryMode &&
             !isCollectibleCollectionMode &&
@@ -392,7 +387,6 @@ class HomeShellBody extends StatelessWidget {
             children: [
               Expanded(
                 child: HomeShellBodyCenterColumn(
-                  hasNoFilters: hasNoFilters,
                   vaultLinked: vaultLinked,
                   vaultPath: vaultPath,
                   dailyRecall: dailyRecall,
