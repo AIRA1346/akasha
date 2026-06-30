@@ -15,7 +15,7 @@
 | `dogfood_precheck.ps1` | **PASS** |
 | `flutter analyze lib` | **0 issue** |
 | Release build | `build_release.ps1` OK |
-| `origin/main` HEAD | **e0b021d** |
+| `origin/main` HEAD | **859cc35** |
 | code/test baseline | **5526ce4** |
 | SSOT baseline | **57c66fd** |
 | Foundation F0~F4 | **✅ 완료** |
