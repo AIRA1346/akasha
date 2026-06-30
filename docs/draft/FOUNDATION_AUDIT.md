@@ -15,9 +15,9 @@
 | `dogfood_precheck.ps1` | **PASS** |
 | `flutter analyze lib` | **0 issue** |
 | Release build | `build_release.ps1` OK |
-| `origin/main` HEAD | **0eebc0b** |
+| `origin/main` HEAD | **57c66fd** |
 | code/test baseline | **5526ce4** |
-| SSOT baseline | **0eebc0b** |
+| SSOT baseline | **57c66fd** |
 | Foundation F0~F4 | **✅ 완료** |
 | Foundation P2 분해 | **P27~P31 + P2 배치** ✅ |
 | P30 dialog 저장 widget test | **✅ 완료** (filter·validation·curated **4**) |
@@ -136,9 +136,9 @@
 
 | 구분 | SHA | 비고 |
 |------|-----|------|
-| **`origin/main` HEAD** | **0eebc0b** | docs SSOT (본 스냅샷) |
+| **`origin/main` HEAD** | **57c66fd** | docs SSOT (본 스냅샷) |
 | **code/test baseline** | **5526ce4** | scaffold `194db17` · dialogs `955967e` · fusion `5526ce4` · test **614** |
-| **SSOT baseline** | **0eebc0b** | Post-P2 분해 반영 |
+| **SSOT baseline** | **57c66fd** | Post-P2 분해 반영 |
 
 로컬/원격 **동기화 완료** (code). dirty = registry manifest 4개 (`generatedAt` only).
 
@@ -235,7 +235,7 @@
 
 | 일자 | 변경 |
 |------|------|
-| 2026-06-30 | **Post-P2 SSOT** — scaffold·dialogs·fusion 분해 · HEAD/SSOT **0eebc0b** · code **5526ce4** · test **614** |
+| 2026-06-30 | **Post-P2 SSOT** — scaffold·dialogs·fusion 분해 · HEAD/SSOT **57c66fd** · code **5526ce4** · test **614** |
 | 2026-06-30 | SSOT HEAD 정정 · SSOT baseline **04ce025** · P30 dialog test **48c8c39** |
 | 2026-06-29 | **Post-P30 후속** — dialog 저장 widget test **4** · P30 dialog test commit **48c8c39** · test **614** |
 | 2026-06-29 | **Post-P31** — P31 `work_library_panel` 분해 (**162** shell) · `origin/main` **0c92519** |
