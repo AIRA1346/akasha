@@ -192,7 +192,7 @@ class PreviewCoreInfoRow {
                     color: AkashaColors.textPrimary,
                   ),
                 ),
-                Text(' / 10', style: AkashaTypography.caption),
+                Text(' / 5', style: AkashaTypography.caption),
               ],
             )
           : Text('평가 없음', style: AkashaTypography.bodySecondary),
