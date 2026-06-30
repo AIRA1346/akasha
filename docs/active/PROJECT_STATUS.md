@@ -1,8 +1,8 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-06-30 (@10048 · **akasha-db 소유권·백업 정리**)
-> **Git:** `origin/main` tip **`45f89b7`** · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
-> **현재 실행:** **akasha-db 소유권 감사** — [AKASHA_DB_OWNERSHIP_AUDIT.md](../draft/AKASHA_DB_OWNERSHIP_AUDIT.md) (read-only) · 신규 기능·M3·Agent operation layer **보류**
+> **갱신:** 2026-06-30 (@10048 · **Steam RC 안정화 / Infinite Taste Archive 정리**)
+> **Git:** current tip은 `git log -1` 기준 · RC code/docs baseline **`2b3d292c`** · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
+> **현재 실행:** **Steam RC dogfood 준비** — [STEAM_RC_DOGFOOD_CHECKLIST_2026-06-30.md](../draft/STEAM_RC_DOGFOOD_CHECKLIST_2026-06-30.md) · M3·Agent/player implementation layer **보류**
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist](../history/release-readiness-checklist.md)  
 > **비전:** [VISION.md](VISION.md) · **구현:** [CURRENT_STATE.md](CURRENT_STATE.md)
@@ -13,18 +13,20 @@
  
 | 항목 | 상태 |
 |------|------|
-| **flutter test** | **641 PASS** |
+| **flutter test** | **647 PASS** |
 | **flutter analyze lib** | **0 issue** |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
 | **앱 테마 (Slice 1)** | palette 전역 · 하단 라이브러리 탭 서재 추가 흐름 ✅ |
 | **사이드바 서재 (Slice 2)** | `나만의 서재` 목록·active·`+`·select ✅ (DnD/편집/삭제는 후속) |
+| **Poster Localizing** | URL 입력 → vault `posters/` 저장 → `poster: "posters/..."` ✅ |
 | **Agent Vault UI** | Work Journal 감상 카드 slice ✅ · dogfood 관찰은 [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
-| **v1 핵심** | **Personal Sanctum vault 아카이브** — 말하기/쓰기 → `.md`/YAML → 예쁜 UI → Agent 편집 |
+| **Infinite Taste Archive** | 외부 도구/AI 친화적 개인 취향 아카이브 ADR ✅ — [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) |
+| **v1 핵심** | **Personal Sanctum vault 아카이브** — 말하기/쓰기 → `.md`/YAML → 예쁜 UI → 외부 도구가 읽기 쉬운 기록 |
 | **Phase 1** | Record Foundation ✅ |
 | **Sanctum** | C1~C4 ✅ · Vault agent 가이드 ✅ |
 | **코드 건강** | Phase 0~7 ✅ · Foundation P2 분해 ✅ |
 | **Registry (akasha-db)** | **10,048 works** · **이중 추적 감사 중** — [AKASHA_DB_OWNERSHIP_AUDIT.md](../draft/AKASHA_DB_OWNERSHIP_AUDIT.md) |
-| **다음** | akasha-db 백업 branch 제안 검토 · 구조 A/B/C 결정 **보류** · dogfood P1 |
+| **다음** | Steam RC dogfood · vault loop E2E · akasha-db 구조 A/B/C 결정 **보류** |
 | **Steam** | depot·스토어·IAP ✅ — **M3 정식 출시 보류** |
 
 ---
@@ -67,7 +69,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **641 PASS** | ✅ |
+| `flutter test` | **647 PASS** | ✅ |
 | `flutter analyze lib` | **0 issue** | ✅ |
 | `preflight_check` | PASS | ✅ |
 | `registry_builder` | PASS | — (post-v1 scale) |
@@ -82,7 +84,7 @@
 
 | 게이트 | 상태 | v1 blocking | 비고 |
 |--------|:----:|:-----------:|------|
-| **G-AUTO** | ✅ | ✅ | test **641** · analyze **0** · Release build |
+| **G-AUTO** | ✅ | ✅ | test **647** · analyze **0** · Release build |
 | **G-VAULT** | 🔶 | **✅** | 볼트 연동·아카이브·Sanctum 저장·기록 UI — **v1 핵심** |
 | **G-QA** | ✅ | ✅ | P0 수동 **12/12** (2026-06-13) · dogfood **사용자 직접** |
 | **G-STEAM** | ✅ | ✅ (M3 시) | depot·스토어·IAP·Privacy — **M3 보류** |
@@ -96,7 +98,7 @@
 
 | 트랙 | 다음 | v1 우선 |
 |------|------|:-------:|
-| **정리 스프린트** | Home UI·테마·사이드바 ✅ · analyze 0 · test 641 | — |
+| **정리 스프린트** | Home UI·테마·사이드바·포스터 로컬라이징 ✅ · analyze 0 · test 647 | — |
 | **akasha-db 소유권** | 구조 감사 · 내부 148파일 dirty · backup branch **제안** | **P0** |
 | **Personal Archive (v1)** | vault 안정성 · Sanctum · Library/Collection · Agent Protocol | **P0** |
 | **Sprint B** | ✅ B1 · Vault agent 가이드 | — |
@@ -138,7 +140,7 @@
 | # | 작업 | 우선 |
 |---|------|:----:|
 | 1 | ~~내부 repo **backup branch push**~~ → **`backup/local-sync-20260630` @ `bef52e7`** ✅ | **완료** |
-| 2 | dogfood P1 ([AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md)) | P1 |
+| 2 | Steam RC dogfood ([STEAM_RC_DOGFOOD_CHECKLIST_2026-06-30.md](../draft/STEAM_RC_DOGFOOD_CHECKLIST_2026-06-30.md)) | P1 |
 | 3 | v1 아카이브 루프 E2E (vault → 기록 → Library) | P1 |
 | 4 | Agent Vault Protocol v1 구현·dogfood | **보류** |
 | 5 | **M3** Steam Release | 보류 |
@@ -156,11 +158,14 @@
 | **303** | 장기 구조 결정 — **A** vendored+`.git` 제거 · **B** submodule/subtree · **C** dual push | ⏸️ 보류 | audit §5 |
 | **304** | `AIRA1346/akasha-db` remote vs 앱 repo shard 커밋 **동기화** | 🔶 | audit §3.1 |
 | **305** | registry manifest 4파일 — rebuild 산출물 **커밋 제외** 관례 유지 | ✅ 관례 | 본 문서 헤더 |
-| **306** | Home UI 정리 — search-first · Slice 1 앱 테마 · Slice 2 사이드바 서재 | ✅ | `45f89b7` |
-| **307** | `flutter test` **641** · `flutter analyze lib` **0** 유지 | ✅ | §2 Gate |
+| **306** | Home UI 정리 — search-first · Slice 1 앱 테마 · Slice 2 사이드바 서재 · dead wiring cleanup | ✅ | `0db21d38` |
+| **307** | `flutter test` **647** · `flutter analyze lib` **0** 유지 | ✅ | §2 Gate |
 | **308** | Agent Vault UI dogfood — P1-8 raw wiki link · P1-9 중앙 감상 밀도 · P1-10 앱 테마 범위 | 🔶 | [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
-| **309** | 신규 기능 · 폴더 구조 이동 · M3 · Agent operation layer | 🚫 **금지** (본 스프린트) | — |
+| **309** | M3 · Agent/player implementation layer · 대규모 index/path migration | 🚫 **금지** (본 스프린트) | — |
 | **310** | `PreviewMemoBar` — post-v1 dormant UI cleanup 후보 (`showPreviewMemoBar` false · `내 감상` 카드와 역할 중복) | ⏸️ v1 비활성 유지 | [preview_memo_bar.dart](../../lib/screens/home/views/preview_memo_bar.dart) · dogfood §P2 |
+| **311** | Poster URL localizing — URL 입력 → vault `posters/` 저장 → YAML 상대경로 | ✅ | `6922f0a` |
+| **312** | Infinite Taste Archive ADR — AI/플레이어가 아닌 외부 도구 친화적 취향 아카이브 경계 | ✅ | [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) |
+| **313** | Steam RC dogfood checklist — 자동 gate green, 수동 vault loop 확인 대기 | 🔶 | [STEAM_RC_DOGFOOD_CHECKLIST_2026-06-30.md](../draft/STEAM_RC_DOGFOOD_CHECKLIST_2026-06-30.md) |
 
 ---
 
@@ -188,6 +193,8 @@
 | 2026-06-30 | **Agent Vault Protocol v1** — [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) 범위 문서 |
 | 2026-06-30 | **Post-P2 SSOT** — scaffold·dialogs·fusion 분해 · SSOT **57c66fd** · code **5526ce4** · test **614** |
 | 2026-06-29 | **Post-P30 후속** — dialog 저장 widget test **4** · P30 dialog test commit **48c8c39** · test **614** |
-| 2026-06-30 | **Home UI 안정화** — search-first · Slice 1 앱 테마 · Slice 2 사이드바 `나만의 서재` · tip **45f89b7** · test **641** |
+| 2026-06-30 | **Home UI 안정화** — search-first · Slice 1 앱 테마 · Slice 2 사이드바 `나만의 서재` · cleanup **0db21d38** |
 | 2026-06-30 | **akasha-db 백업** — `backup/local-sync-20260630` @ **`bef52e7`** (`AIRA1346/akasha-db`, main unchanged) |
+| 2026-06-30 | **Poster URL localizing** — URL → vault `posters/` · commit **6922f0a** · 사용자 실기 확인 ✅ |
+| 2026-06-30 | **Infinite Taste Archive ADR / Steam RC gate** — tip **2b3d292c** · analyze **0** · test **647** |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |
