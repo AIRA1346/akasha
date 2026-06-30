@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../core/app_vault.dart';
+import '../services/poster_url_localizer.dart';
 import '../models/enums.dart';
 import '../utils/helpers.dart';
 import '../theme/akasha_colors.dart';
@@ -73,6 +74,20 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
   void _stopClipboardMonitoring() {
     _clipboardTimer?.cancel();
     _clipboardTimer = null;
+  }
+
+  Future<void> _applyImageUrl(String url) async {
+    final resolved = await PosterUrlLocalizer.applyWithSnackBar(
+      url,
+      showSnack: (message) {
+        if (!mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(message)),
+        );
+      },
+    );
+    if (!mounted) return;
+    Navigator.pop(context, resolved);
   }
 
   Future<void> _pickLocalImage() async {
@@ -295,7 +310,7 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                                           foregroundColor: Colors.black,
                                         ),
                                         onPressed: () {
-                                          Navigator.pop(context, _detectedClipboardUrl);
+                                          _applyImageUrl(_detectedClipboardUrl!);
                                         },
                                         icon: const Icon(Icons.check, size: 16),
                                         label: const Text('이 이미지로 포스터 교정'),
@@ -354,10 +369,10 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                 ),
                 const SizedBox(width: 8),
                 ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     final text = _manualUrlCtrl.text.trim();
                     if (isValidImageUrl(text)) {
-                      Navigator.pop(context, text);
+                      await _applyImageUrl(text);
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('올바르지 않은 이미지 URL 주소입니다.')),

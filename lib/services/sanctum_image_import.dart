@@ -5,6 +5,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:pasteboard/pasteboard.dart';
 import 'package:path/path.dart' as p;
 
+import 'poster_url_localizer.dart';
 import '../core/app_vault.dart';
 import '../core/ports/vault_port.dart';
 
@@ -92,11 +93,16 @@ abstract final class SanctumImageImport {
     if (raw == null) return null;
     final trimmed = raw.trim().replaceAll('"', '');
     if (trimmed.isEmpty) return null;
-    if (!trimmed.startsWith('http://') && !trimmed.startsWith('https://')) {
-      final file = File(trimmed);
-      if (file.existsSync()) {
-        return importFilePath(trimmed);
+    if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
+      final result = await PosterUrlLocalizer.resolve(trimmed);
+      if (result.localized) {
+        return normalizeRelative(result.path);
       }
+      return null;
+    }
+    final file = File(trimmed);
+    if (file.existsSync()) {
+      return importFilePath(trimmed);
     }
     return null;
   }

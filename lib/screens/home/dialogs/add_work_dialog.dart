@@ -5,6 +5,7 @@ import '../../../core/ports/vault_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/enums.dart';
 import '../../../models/work_id_codec.dart';
+import '../../../services/poster_url_localizer.dart';
 import '../../../services/works_registry.dart';
 import '../../../utils/helpers.dart';
 import '../../../widgets/registry_work_autocomplete.dart';
@@ -167,7 +168,15 @@ Future<AkashaItem?> showAddWorkDialog(
                             ),
                           );
                           if (selectedUrl != null) {
-                            posterUrlCtrl.text = selectedUrl;
+                            final resolved = await PosterUrlLocalizer.applyWithSnackBar(
+                              selectedUrl,
+                              showSnack: (message) {
+                                ScaffoldMessenger.of(ctx).showSnackBar(
+                                  SnackBar(content: Text(message)),
+                                );
+                              },
+                            );
+                            posterUrlCtrl.text = resolved;
                           }
                         },
                       ),
@@ -293,7 +302,7 @@ Future<AkashaItem?> showAddWorkDialog(
               child: const Text('취소'),
             ),
             FilledButton.icon(
-              onPressed: () {
+              onPressed: () async {
                 final title = titleCtrl.text.trim();
                 if (title.isEmpty) {
                   ScaffoldMessenger.of(ctx).showSnackBar(
@@ -301,6 +310,18 @@ Future<AkashaItem?> showAddWorkDialog(
                   );
                   return;
                 }
+                final rawPoster = posterUrlCtrl.text.trim();
+                final posterPath = rawPoster.isEmpty
+                    ? null
+                    : await PosterUrlLocalizer.applyWithSnackBar(
+                        rawPoster,
+                        showSnack: (message) {
+                          ScaffoldMessenger.of(ctx).showSnackBar(
+                            SnackBar(content: Text(message)),
+                          );
+                        },
+                      );
+                if (!ctx.mounted) return;
                 Navigator.pop(
                   ctx,
                   createItem(
@@ -314,9 +335,10 @@ Future<AkashaItem?> showAddWorkDialog(
                     creator: creatorCtrl.text.trim(),
                     releaseYear: int.tryParse(yearCtrl.text.trim()),
                     rating: selRating,
-                    posterPath: posterUrlCtrl.text.trim().isNotEmpty
-                        ? posterUrlCtrl.text.trim()
-                        : null,
+                    posterPath:
+                        posterPath != null && posterPath.isNotEmpty
+                            ? posterPath
+                            : null,
                   ),
                 );
               },

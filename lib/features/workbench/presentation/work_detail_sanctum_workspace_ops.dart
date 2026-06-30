@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../models/akasha_item.dart';
 import '../../../services/work_info_defaults.dart';
+import '../../../services/poster_url_localizer.dart';
 import 'work_detail_draft_ops.dart';
 import 'work_detail_sanctum_ops.dart';
 import 'widgets/work_sanctum_section_editor.dart';
@@ -60,7 +61,16 @@ abstract final class WorkDetailSanctumWorkspaceOps {
       category: item.category,
     );
     if (selected == null) return;
-    posterUrlCtrl.text = selected;
+    final resolved = await PosterUrlLocalizer.applyWithSnackBar(
+      selected,
+      showSnack: (message) {
+        if (!context.mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(message)),
+        );
+      },
+    );
+    posterUrlCtrl.text = resolved;
     onApplied();
     onDirty();
     scheduleAutoSave();

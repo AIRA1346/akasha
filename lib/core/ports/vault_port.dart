@@ -25,6 +25,12 @@ abstract class VaultPort {
     String extension = 'png',
   });
 
+  /// Saves image bytes under posters/ using a content hash filename (dedupe).
+  Future<String?> importPosterImageBytesDeduped(
+    Uint8List bytes, {
+    required String extension,
+  });
+
   /// Notifies listeners that vault contents changed outside [saveItem]/[deleteItem].
   Future<void> signalVaultChanged();
 

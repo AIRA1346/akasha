@@ -79,6 +79,13 @@ class FakeVaultPort implements VaultPort {
       null;
 
   @override
+  Future<String?> importPosterImageBytesDeduped(
+    Uint8List bytes, {
+    required String extension,
+  }) async =>
+      null;
+
+  @override
   Future<void> signalVaultChanged() async {
     _updateController.add(null);
   }

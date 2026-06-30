@@ -202,8 +202,12 @@ mixin _EntityDetailWorkspacePersist on _EntityDetailWorkspaceStateBase {
       category: _entity.subtype,
     );
     if (selected != null) {
+      final resolved = await PosterUrlLocalizer.applyWithSnackBar(
+        selected,
+        showSnack: _showSnack,
+      );
       setState(() {
-        _posterUrlCtrl.text = selected;
+        _posterUrlCtrl.text = resolved;
         _updatePreview();
       });
       _markDirty();

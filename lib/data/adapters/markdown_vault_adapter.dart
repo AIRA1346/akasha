@@ -52,6 +52,16 @@ class MarkdownVaultAdapter implements VaultPort {
       _fileService.importPosterImageFromBytes(bytes, extension: extension);
 
   @override
+  Future<String?> importPosterImageBytesDeduped(
+    Uint8List bytes, {
+    required String extension,
+  }) =>
+      _fileService.importPosterImageBytesDeduped(
+        bytes,
+        extension: extension,
+      );
+
+  @override
   Future<void> signalVaultChanged() => _fileService.signalVaultChanged();
 
   @override

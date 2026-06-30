@@ -163,11 +163,54 @@ mixin _AkashaFileServiceSave
   }) async {
     if (_vaultPath == null || bytes.isEmpty) return null;
 
-    final ext = extension.startsWith('.') ? extension.substring(1) : extension;
+    final ext = _normalizePosterExtension(extension);
     final uniqueFilename =
         '${DateTime.now().millisecondsSinceEpoch}_paste.$ext';
     final destinationPath = p.join(_vaultPath!, 'posters', uniqueFilename);
+    await Directory(p.dirname(destinationPath)).create(recursive: true);
     await File(destinationPath).writeAsBytes(bytes, flush: true);
     return p.join('posters', uniqueFilename);
+  }
+
+  /// URL 다운로드 바이트 등 — FNV-1a content hash 기반 파일명으로 posters에 저장 (dedupe).
+  Future<String?> importPosterImageBytesDeduped(
+    Uint8List bytes, {
+    required String extension,
+  }) async {
+    if (_vaultPath == null || bytes.isEmpty) return null;
+
+    final ext = _normalizePosterExtension(extension);
+    final digest = _hashPosterBytes(bytes);
+    final filename = '${digest.substring(0, 16)}.$ext';
+    final postersDir = Directory(p.join(_vaultPath!, 'posters'));
+    await postersDir.create(recursive: true);
+
+    final destinationPath = p.join(postersDir.path, filename);
+    final relative = p.join('posters', filename);
+    if (await File(destinationPath).exists()) {
+      return relative.replaceAll('\\', '/');
+    }
+
+    await File(destinationPath).writeAsBytes(bytes, flush: true);
+    return relative.replaceAll('\\', '/');
+  }
+
+  String _normalizePosterExtension(String extension) {
+    final raw = extension.startsWith('.') ? extension.substring(1) : extension;
+    final lower = raw.toLowerCase();
+    return switch (lower) {
+      'jpeg' => 'jpg',
+      'jpg' || 'png' || 'webp' || 'gif' || 'bmp' => lower,
+      _ => 'jpg',
+    };
+  }
+
+  String _hashPosterBytes(Uint8List bytes) {
+    var hash = 0xcbf29ce484222325;
+    for (final byte in bytes) {
+      hash ^= byte;
+      hash = (hash * 0x100000001b3) & 0xFFFFFFFFFFFFFFFF;
+    }
+    return hash.toRadixString(16).padLeft(16, '0');
   }
 }
