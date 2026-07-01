@@ -20,7 +20,7 @@ class PreviewRecordHero extends StatelessWidget {
       borderRadius: AkashaRadius.xlBorder,
       child: AspectRatio(
         aspectRatio: model.heroAspectRatio,
-        child: PosterImage(item: model.posterItem, fit: BoxFit.cover),
+        child: PosterImage(item: model.posterItem, fit: BoxFit.contain),
       ),
     );
   }
@@ -36,10 +36,7 @@ class PreviewRecordTitleBlock extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          model.title,
-          style: AkashaTypography.previewTitle,
-        ),
+        Text(model.title, style: AkashaTypography.previewTitle),
         if (model.subtitle != null) ...[
           SizedBox(height: AkashaSpacing.xs),
           Text(
@@ -98,7 +95,10 @@ class PreviewRecordActionBar extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(l10n?.previewDetails ?? '상세 정보', style: AkashaTypography.buttonLabel),
+                Text(
+                  l10n?.previewDetails ?? '상세 정보',
+                  style: AkashaTypography.buttonLabel,
+                ),
                 const SizedBox(width: 2),
                 const Icon(Icons.chevron_right_rounded, size: 18),
               ],
@@ -122,7 +122,10 @@ class PreviewRecordCoreInfoSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(l10n?.previewCoreInfo ?? '핵심 정보', style: AkashaTypography.sectionLabel),
+        Text(
+          l10n?.previewCoreInfo ?? '핵심 정보',
+          style: AkashaTypography.sectionLabel,
+        ),
         SizedBox(height: AkashaSpacing.sm + 2),
         Container(
           padding: const EdgeInsets.symmetric(
@@ -169,7 +172,8 @@ class _CoreInfoRowWidget extends StatelessWidget {
           child: Text(row.label, style: AkashaTypography.caption),
         ),
         Expanded(
-          child: row.valueWidget ??
+          child:
+              row.valueWidget ??
               Text(
                 row.value ?? '',
                 style: AkashaTypography.bodySecondary.copyWith(

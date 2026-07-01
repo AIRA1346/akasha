@@ -2,6 +2,7 @@ import 'package:akasha/models/enums.dart';
 import 'package:akasha/screens/home/views/preview_record_view_model.dart';
 import 'package:akasha/screens/home/views/preview_work_panel_content.dart';
 import 'package:akasha/utils/helpers.dart';
+import 'package:akasha/widgets/poster_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -27,15 +28,35 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
-          home: Scaffold(
-            body: PreviewRecordCoreInfoSection(rows: [row]),
-          ),
+          home: Scaffold(body: PreviewRecordCoreInfoSection(rows: [row])),
         ),
       );
 
       expect(find.text(' / 5'), findsOneWidget);
       expect(find.text(' / 10'), findsNothing);
       expect(find.text('4.5'), findsOneWidget);
+    });
+
+    testWidgets('preview hero shows the whole poster without cropping', (
+      tester,
+    ) async {
+      final item = createItem(
+        workId: 'wk_u_previewhero',
+        title: 'Preview Hero',
+        category: MediaCategory.manga,
+      );
+      final model = PreviewRecordViewModel.fromWork(item);
+
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: SizedBox(width: 320, child: PreviewRecordHero(model: model)),
+          ),
+        ),
+      );
+
+      final poster = tester.widget<PosterImage>(find.byType(PosterImage));
+      expect(poster.fit, BoxFit.contain);
     });
   });
 }
