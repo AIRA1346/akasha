@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/akasha_item.dart';
+import '../../../models/enums.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../utils/app_l10n.dart';
 import '../../../utils/work_link_neighbors.dart';
+import '../../../widgets/star_rating.dart';
 import '../../../widgets/work_link_neighbors_sections.dart';
 import 'widgets/workbench_panel_styles.dart';
 
@@ -94,8 +97,10 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
 
   @override
   Widget build(BuildContext context) {
-    final alternativeTitle =
-        widget.item.creator.isNotEmpty ? widget.item.creator : '';
+    final l10n = lookupAppL10n(context);
+    final alternativeTitle = widget.item.creator.isNotEmpty
+        ? widget.item.creator
+        : '';
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -148,9 +153,11 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
             const SizedBox(height: AkashaSpacing.md),
           ],
         ] else ...[
-          _buildInfoTable(),
+          _buildInfoTable(l10n),
           if (widget.draftTags.isNotEmpty) ...[
             const SizedBox(height: AkashaSpacing.sm),
+            Text(l10n?.labelTags ?? '태그', style: AkashaTypography.sectionLabel),
+            const SizedBox(height: 6),
             Wrap(
               spacing: 6,
               runSpacing: 6,
@@ -186,9 +193,7 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
             saveLabel: widget.isArchived ? 'md 저장' : 'md 생성',
             onSave: widget.onSaveArchive,
             showAddToLibrary: widget.showAddToLibrary,
-            libraryLabel: widget.isArchived
-                ? '서재에 담기'
-                : '저장하고 서재에 담기',
+            libraryLabel: widget.isArchived ? '서재에 담기' : '저장하고 서재에 담기',
             onAddToLibrary: widget.onAddToLibrary,
             showReset: true,
             onReset: widget.onResetToDefaults,
@@ -214,7 +219,7 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
                 ),
               ),
               children: [
-                if (!widget.hideConnectionsSection) _buildInfoTable(),
+                if (!widget.hideConnectionsSection) _buildInfoTable(l10n),
                 if (!widget.hideConnectionsSection)
                   const SizedBox(height: AkashaSpacing.md),
                 _buildRelatedConceptsEditor(),
@@ -226,23 +231,18 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
     );
   }
 
-  Widget _buildInfoTable() {
-    final genre = widget.item.category.name;
-    final creator =
-        widget.item.creator.isNotEmpty ? widget.item.creator : '정보 없음';
+  Widget _buildInfoTable(dynamic l10n) {
+    final genre = widget.item.category.localizedLabel(l10n);
+    final creator = widget.item.creator.isNotEmpty
+        ? widget.item.creator
+        : '정보 없음';
     const studio = '정보 없음';
-    final ratingValue = widget.draftRating > 0
-        ? widget.draftRating.toStringAsFixed(1)
-        : '평가 없음';
 
     return Table(
-      columnWidths: const {
-        0: FixedColumnWidth(64),
-        1: FlexColumnWidth(),
-      },
+      columnWidths: const {0: FixedColumnWidth(64), 1: FlexColumnWidth()},
       children: [
         _buildTableRow(
-          '장르',
+          l10n?.labelCategory ?? '장르',
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
             decoration: BoxDecoration(
@@ -259,35 +259,165 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
           ),
         ),
         _buildTableRow(
-          '원작',
-          Text(creator, style: AkashaTypography.caption.copyWith(
-            color: AkashaColors.textPrimary,
-          )),
+          l10n?.labelCreator ?? '원작',
+          Text(
+            creator,
+            style: AkashaTypography.caption.copyWith(
+              color: AkashaColors.textPrimary,
+            ),
+          ),
         ),
         _buildTableRow(
           '제작사',
-          Text(studio, style: AkashaTypography.caption.copyWith(
-            color: AkashaColors.textPrimary,
-          )),
+          Text(
+            studio,
+            style: AkashaTypography.caption.copyWith(
+              color: AkashaColors.textPrimary,
+            ),
+          ),
+        ),
+        _buildTableRow(l10n?.previewRating ?? '평점', _buildRatingEditor(l10n)),
+        _buildTableRow(
+          l10n?.labelWorkStatus ?? '작품 상태',
+          _buildStatusDropdown(
+            value: _resolvedWorkStatusValue(),
+            options: widget.item.workStatusOptions,
+            labelFor: (value) => _localizedWorkStatus(value, l10n),
+            onChanged: (value) {
+              widget.onDraftWorkStatusChanged(value);
+              widget.onMarkDirty();
+            },
+          ),
         ),
         _buildTableRow(
-          '평점',
-          Row(
-            children: [
-              const Icon(Icons.star, size: 12, color: Colors.amber),
-              const SizedBox(width: AkashaSpacing.xs),
-              Text(
-                ratingValue,
-                style: AkashaTypography.caption.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: AkashaColors.textPrimary,
-                ),
-              ),
-            ],
+          l10n?.labelMyStatus ?? '나의 상태',
+          _buildStatusDropdown(
+            value: _resolvedMyStatusValue(),
+            options: widget.item.myStatusOptions,
+            labelFor: (value) => _localizedMyStatus(value, l10n),
+            onChanged: (value) {
+              widget.onDraftMyStatusChanged(value);
+              widget.onMarkDirty();
+            },
           ),
         ),
       ],
     );
+  }
+
+  Widget _buildRatingEditor(dynamic l10n) {
+    final ratingText = widget.draftRating > 0
+        ? widget.draftRating.toStringAsFixed(1)
+        : (l10n?.previewNoRating ?? '평가 없음');
+
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        InteractiveStarRating(
+          rating: widget.draftRating,
+          size: 18,
+          onChanged: (value) {
+            widget.onDraftRatingChanged(value);
+            widget.onMarkDirty();
+          },
+        ),
+        const SizedBox(width: AkashaSpacing.xs),
+        Flexible(
+          child: Text(
+            ratingText,
+            overflow: TextOverflow.ellipsis,
+            style: AkashaTypography.caption.copyWith(
+              fontWeight: FontWeight.bold,
+              color: AkashaColors.textPrimary,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildStatusDropdown({
+    required String value,
+    required List<String> options,
+    required String Function(String value) labelFor,
+    required ValueChanged<String> onChanged,
+  }) {
+    if (options.isEmpty || value.isEmpty) {
+      return Text('정보 없음', style: AkashaTypography.caption);
+    }
+
+    return DropdownButtonHideUnderline(
+      child: DropdownButton<String>(
+        value: value,
+        isExpanded: true,
+        isDense: true,
+        dropdownColor: AkashaColors.surface,
+        style: AkashaTypography.caption.copyWith(
+          color: AkashaColors.textPrimary,
+        ),
+        iconSize: 16,
+        items: options
+            .map(
+              (option) => DropdownMenuItem<String>(
+                value: option,
+                child: Text(labelFor(option), overflow: TextOverflow.ellipsis),
+              ),
+            )
+            .toList(),
+        onChanged: (next) {
+          if (next != null) onChanged(next);
+        },
+      ),
+    );
+  }
+
+  String _resolvedWorkStatusValue() {
+    return _resolveStatusValue(
+      widget.draftWorkStatus,
+      widget.item.workStatusOptions,
+      isWorkStatus: true,
+    );
+  }
+
+  String _resolvedMyStatusValue() {
+    return _resolveStatusValue(
+      widget.draftMyStatus,
+      widget.item.myStatusOptions,
+      isWorkStatus: false,
+    );
+  }
+
+  String _resolveStatusValue(
+    String raw,
+    List<String> options, {
+    required bool isWorkStatus,
+  }) {
+    if (options.isEmpty) return '';
+    if (options.contains(raw)) return raw;
+
+    final normalized = widget.item.category.isContentType
+        ? (isWorkStatus
+              ? ContentWorkStatus.fromStorage(raw).label
+              : ContentMyStatus.fromStorage(raw).label)
+        : (isWorkStatus
+              ? GameWorkStatus.fromStorage(raw).label
+              : GameMyStatus.fromStorage(raw).label);
+
+    return options.contains(normalized) ? normalized : options.first;
+  }
+
+  String _localizedWorkStatus(String value, dynamic l10n) {
+    if (l10n == null) return value;
+    return widget.item.category.isContentType
+        ? ContentWorkStatus.fromStorage(value).localizedLabel(l10n)
+        : GameWorkStatus.fromStorage(value).localizedLabel(l10n);
+  }
+
+  String _localizedMyStatus(String value, dynamic l10n) {
+    if (l10n == null) return value;
+    return widget.item.category.isContentType
+        ? ContentMyStatus.fromStorage(value).localizedLabel(l10n)
+        : GameMyStatus.fromStorage(value).localizedLabel(l10n);
   }
 
   TableRow _buildTableRow(String label, Widget content) {
@@ -299,10 +429,7 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 6),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: content,
-          ),
+          child: Align(alignment: Alignment.centerLeft, child: content),
         ),
       ],
     );
@@ -353,7 +480,11 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
         ),
         child: Row(
           children: [
-            Icon(Icons.edit_note_rounded, size: 18, color: AkashaColors.textMuted),
+            Icon(
+              Icons.edit_note_rounded,
+              size: 18,
+              color: AkashaColors.textMuted,
+            ),
             const SizedBox(width: AkashaSpacing.sm),
             Expanded(
               child: Text(
@@ -364,7 +495,11 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
               ),
             ),
             if (widget.onFocusSanctum != null)
-              Icon(Icons.chevron_right_rounded, size: 18, color: AkashaColors.textCaption),
+              Icon(
+                Icons.chevron_right_rounded,
+                size: 18,
+                color: AkashaColors.textCaption,
+              ),
           ],
         ),
       ),
