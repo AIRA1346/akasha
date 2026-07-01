@@ -140,6 +140,66 @@ abstract class AppLocalizations {
   /// **'English'**
   String get localeEn;
 
+  /// No description provided for @appPreferencesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferences'**
+  String get appPreferencesTitle;
+
+  /// No description provided for @appPreferencesDisplayScale.
+  ///
+  /// In en, this message translates to:
+  /// **'Display scale'**
+  String get appPreferencesDisplayScale;
+
+  /// No description provided for @appPreferencesResetScale.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset to 100%'**
+  String get appPreferencesResetScale;
+
+  /// No description provided for @appPreferencesScaleHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjust text and major control size across the app.'**
+  String get appPreferencesScaleHelp;
+
+  /// No description provided for @appPreferencesThemeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'App theme'**
+  String get appPreferencesThemeTitle;
+
+  /// No description provided for @appPreferencesThemeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Change the color palette.'**
+  String get appPreferencesThemeSubtitle;
+
+  /// No description provided for @appPreferencesVaultTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Vault settings'**
+  String get appPreferencesVaultTitle;
+
+  /// No description provided for @appPreferencesVaultSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage the storage folder, backups, and trash.'**
+  String get appPreferencesVaultSubtitle;
+
+  /// No description provided for @appPreferencesQuit.
+  ///
+  /// In en, this message translates to:
+  /// **'Quit'**
+  String get appPreferencesQuit;
+
+  /// No description provided for @appPreferencesClose.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get appPreferencesClose;
+
   /// No description provided for @appBarToggleSidebar.
   ///
   /// In en, this message translates to:

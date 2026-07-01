@@ -34,6 +34,38 @@ class AppLocalizationsEn extends AppLocalizations {
   String get localeEn => 'English';
 
   @override
+  String get appPreferencesTitle => 'Preferences';
+
+  @override
+  String get appPreferencesDisplayScale => 'Display scale';
+
+  @override
+  String get appPreferencesResetScale => 'Reset to 100%';
+
+  @override
+  String get appPreferencesScaleHelp =>
+      'Adjust text and major control size across the app.';
+
+  @override
+  String get appPreferencesThemeTitle => 'App theme';
+
+  @override
+  String get appPreferencesThemeSubtitle => 'Change the color palette.';
+
+  @override
+  String get appPreferencesVaultTitle => 'Vault settings';
+
+  @override
+  String get appPreferencesVaultSubtitle =>
+      'Manage the storage folder, backups, and trash.';
+
+  @override
+  String get appPreferencesQuit => 'Quit';
+
+  @override
+  String get appPreferencesClose => 'Close';
+
+  @override
   String get appBarToggleSidebar => 'Toggle sidebar (Tab)';
 
   @override

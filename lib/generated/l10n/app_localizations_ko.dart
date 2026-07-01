@@ -34,6 +34,36 @@ class AppLocalizationsKo extends AppLocalizations {
   String get localeEn => 'English';
 
   @override
+  String get appPreferencesTitle => '환경설정';
+
+  @override
+  String get appPreferencesDisplayScale => '표시 배율';
+
+  @override
+  String get appPreferencesResetScale => '100%로 재설정';
+
+  @override
+  String get appPreferencesScaleHelp => '앱 전체 글자와 주요 컨트롤 크기를 조정합니다.';
+
+  @override
+  String get appPreferencesThemeTitle => '앱 테마';
+
+  @override
+  String get appPreferencesThemeSubtitle => '색상 팔레트를 바꿉니다.';
+
+  @override
+  String get appPreferencesVaultTitle => '볼트 설정';
+
+  @override
+  String get appPreferencesVaultSubtitle => '저장 폴더, 백업, 휴지통을 관리합니다.';
+
+  @override
+  String get appPreferencesQuit => '종료';
+
+  @override
+  String get appPreferencesClose => '닫기';
+
+  @override
   String get appBarToggleSidebar => '사이드바 토글 (Tab)';
 
   @override
