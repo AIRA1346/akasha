@@ -22,6 +22,24 @@ class VaultTrashEntry {
     'trashPath': trashPath,
     'trashedAt': trashedAt.toUtc().toIso8601String(),
   };
+
+  factory VaultTrashEntry.fromJson(Map<String, dynamic> json) {
+    return VaultTrashEntry(
+      vaultPath: json['vaultPath']?.toString() ?? '',
+      originalPath: json['originalPath']?.toString() ?? '',
+      trashPath: json['trashPath']?.toString() ?? '',
+      trashedAt:
+          DateTime.tryParse(json['trashedAt']?.toString() ?? '') ??
+          DateTime.fromMillisecondsSinceEpoch(0, isUtc: true),
+    );
+  }
+
+  String get originalFileName => p.basename(originalPath);
+
+  String originalPathRelativeToVault() {
+    if (vaultPath.isEmpty || originalPath.isEmpty) return originalPath;
+    return p.relative(originalPath, from: vaultPath);
+  }
 }
 
 class VaultTrashService {
@@ -94,7 +112,52 @@ class VaultTrashService {
 
     await originalFile.parent.create(recursive: true);
     await trashFile.rename(originalFile.path);
+    await _deleteTrashRootForEntry(entry);
     return true;
+  }
+
+  Future<List<VaultTrashEntry>> listEntries({required String vaultPath}) async {
+    final normalizedVault = _normalizeAbsolute(vaultPath);
+    final trashRoot = Directory(p.join(normalizedVault, trashDirName));
+    if (!await trashRoot.exists()) return const [];
+
+    final entries = <VaultTrashEntry>[];
+    await for (final entity in trashRoot.list(
+      recursive: true,
+      followLinks: false,
+    )) {
+      if (entity is! File) continue;
+      if (p.basename(entity.path) != manifestFileName) continue;
+      try {
+        final decoded = jsonDecode(await entity.readAsString());
+        if (decoded is! Map<String, dynamic>) continue;
+        final entry = VaultTrashEntry.fromJson(decoded);
+        if (entry.vaultPath.isEmpty ||
+            entry.originalPath.isEmpty ||
+            entry.trashPath.isEmpty) {
+          continue;
+        }
+        if (!await File(entry.trashPath).exists()) continue;
+        entries.add(entry);
+      } catch (_) {}
+    }
+
+    entries.sort((a, b) => b.trashedAt.compareTo(a.trashedAt));
+    return entries;
+  }
+
+  Future<bool> deleteEntryPermanently(VaultTrashEntry entry) async {
+    final trashFile = File(entry.trashPath);
+    final trashRoot = _trashRootForEntry(entry);
+    if (await trashRoot.exists()) {
+      await trashRoot.delete(recursive: true);
+      return true;
+    }
+    if (await trashFile.exists()) {
+      await trashFile.delete();
+      return true;
+    }
+    return false;
   }
 
   Future<Directory> _createTrashRoot({
@@ -126,6 +189,25 @@ class VaultTrashService {
       const JsonEncoder.withIndent('  ').convert(entry.toJson()),
       flush: true,
     );
+  }
+
+  Future<void> _deleteTrashRootForEntry(VaultTrashEntry entry) async {
+    final trashRoot = _trashRootForEntry(entry);
+    if (await trashRoot.exists()) {
+      await trashRoot.delete(recursive: true);
+    }
+  }
+
+  Directory _trashRootForEntry(VaultTrashEntry entry) {
+    var current = Directory(p.dirname(entry.trashPath));
+    while (p.basename(current.path) != trashDirName) {
+      final manifest = File(p.join(current.path, manifestFileName));
+      if (manifest.existsSync()) return current;
+      final parent = current.parent;
+      if (parent.path == current.path) break;
+      current = parent;
+    }
+    return Directory(p.dirname(entry.trashPath));
   }
 
   static String _normalizeAbsolute(String path) =>

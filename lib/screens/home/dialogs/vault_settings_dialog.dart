@@ -13,6 +13,7 @@ import '../../../widgets/hidden_registry_dialog.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
+import 'vault_trash_dialog.dart';
 
 /// 로컬 볼트(Vault) 설정 다이얼로그
 Future<void> showVaultSettingsDialog(
@@ -145,6 +146,19 @@ Future<void> showVaultSettingsDialog(
                         )
                       : const Icon(Icons.archive_outlined, size: 16),
                   label: const Text('볼트 ZIP 백업 내보내기'),
+                ),
+                TextButton.icon(
+                  onPressed: vaultValid
+                      ? () async {
+                          await showVaultTrashDialog(
+                            ctx,
+                            vaultPath: path,
+                            onRestored: reloadItems,
+                          );
+                        }
+                      : null,
+                  icon: const Icon(Icons.delete_outline, size: 16),
+                  label: const Text('Vault 휴지통 보기'),
                 ),
                 SizedBox(height: AkashaSpacing.md),
                 Text(
