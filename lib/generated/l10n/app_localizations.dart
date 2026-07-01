@@ -1646,6 +1646,18 @@ abstract class AppLocalizations {
   /// **'Personal Library Settings'**
   String get personalLibraryEditTitle;
 
+  /// No description provided for @personalLibraryDeleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Personal Library'**
+  String get personalLibraryDeleteTitle;
+
+  /// No description provided for @personalLibraryDeleteMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete \"{libraryName}\"?\nArchived works and md files will not be deleted.'**
+  String personalLibraryDeleteMessage(String libraryName);
+
   /// No description provided for @hintLibraryNameEdit.
   ///
   /// In en, this message translates to:

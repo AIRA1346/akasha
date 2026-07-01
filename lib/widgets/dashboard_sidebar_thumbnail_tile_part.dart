@@ -8,6 +8,7 @@ class _SidebarThumbnailTile extends StatefulWidget {
     this.item,
     this.isActive = false,
     this.fallbackIcon = Icons.image_outlined,
+    this.trailing,
   });
 
   final AkashaItem? item;
@@ -16,6 +17,7 @@ class _SidebarThumbnailTile extends StatefulWidget {
   final VoidCallback onTap;
   final bool isActive;
   final IconData fallbackIcon;
+  final Widget? trailing;
 
   @override
   State<_SidebarThumbnailTile> createState() => _SidebarThumbnailTileState();
@@ -93,6 +95,10 @@ class _SidebarThumbnailTileState extends State<_SidebarThumbnailTile> {
                       ],
                     ),
                   ),
+                  if (widget.trailing != null) ...[
+                    const SizedBox(width: 4),
+                    widget.trailing!,
+                  ],
                 ],
               ),
             ),

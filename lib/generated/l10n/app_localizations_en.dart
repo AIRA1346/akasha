@@ -867,6 +867,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get personalLibraryEditTitle => 'Personal Library Settings';
 
   @override
+  String get personalLibraryDeleteTitle => 'Delete Personal Library';
+
+  @override
+  String personalLibraryDeleteMessage(String libraryName) {
+    return 'Delete \"$libraryName\"?\nArchived works and md files will not be deleted.';
+  }
+
+  @override
   String get hintLibraryNameEdit => 'e.g. All-time Favorites, Completed List…';
 
   @override

@@ -480,6 +480,15 @@
   "hintLibraryName": "e.g. All-time Favorites, Reading Backlog 2026…",
   "helperLibraryCreate": "Add works after creating. Filters can be adjusted in settings.",
   "personalLibraryEditTitle": "Personal Library Settings",
+  "personalLibraryDeleteTitle": "Delete Personal Library",
+  "personalLibraryDeleteMessage": "Delete \"{libraryName}\"?\nArchived works and md files will not be deleted.",
+  "@personalLibraryDeleteMessage": {
+    "placeholders": {
+      "libraryName": {
+        "type": "String"
+      }
+    }
+  },
   "hintLibraryNameEdit": "e.g. All-time Favorites, Completed List…",
   "helperMasterArchiveReadonly": "The master_archive name cannot be changed.",
   "helperCuratedMode": "Only included works are shown. Filters narrow further.",

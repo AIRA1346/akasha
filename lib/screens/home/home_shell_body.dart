@@ -91,7 +91,7 @@ class HomeShellBody extends StatelessWidget {
   final void Function(CollectibleCollection col) onEditCollectibleCollection;
   final void Function(String id) onDeleteCollectibleCollection;
   final Future<void> Function(String libraryId, WorkDragPayload payload)?
-      onDropWorkToLibrary;
+  onDropWorkToLibrary;
   final VoidCallback? onLibraryDragStarted;
   final VoidCallback onConnectVault;
   final void Function(MediaCategory category) onToggleCategory;
@@ -103,31 +103,38 @@ class HomeShellBody extends StatelessWidget {
   final void Function(UserCatalogEntity entity) onOpenEntityDetail;
   final void Function(AkashaItem item) onOpenRecentExplore;
   final Future<void> Function(UserCatalogEntity entity) onOpenEntity;
-  final Future<void> Function(AkashaItem saved, {bool silent}) onWorkbenchWorkSaved;
-  final Future<void> Function(String tabId, AkashaItem item) onWorkbenchWorkDeleted;
+  final Future<void> Function(AkashaItem saved, {bool silent})
+  onWorkbenchWorkSaved;
+  final Future<void> Function(String tabId, AkashaItem item)
+  onWorkbenchWorkDeleted;
   final Future<void> Function(
     UserCatalogEntity entity,
     EntityJournalEntry? journal, {
     bool silent,
-  }) onWorkbenchEntitySaved;
+  })
+  onWorkbenchEntitySaved;
   final Future<void> Function(String tabId) onWorkbenchEntityDeleted;
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
-  final Future<void> Function(UserCatalogEntity entity)? onAddToLibraryForEntity;
+  final Future<void> Function(UserCatalogEntity entity)?
+  onAddToLibraryForEntity;
   final Future<void> Function(
     List<BrowseCard> cards,
     int oldIndex,
     int newIndex,
-  ) onCuratedReorder;
+  )
+  onCuratedReorder;
   final Future<void> Function(
     List<EntityBrowseCard> visibleCards,
     int oldIndex,
     int newIndex,
-  )? onEntityCollectionCuratedReorder;
+  )?
+  onEntityCollectionCuratedReorder;
   final Future<void> Function(
     List<CollectibleBrowseItem> visibleItems,
     int oldIndex,
     int newIndex,
-  )? onCollectibleCollectionCuratedReorder;
+  )?
+  onCollectibleCollectionCuratedReorder;
   final VoidCallback onSearch;
   final VoidCallback onNewTimelineEntry;
   final VoidCallback onNewJournalEntry;
@@ -138,7 +145,8 @@ class HomeShellBody extends StatelessWidget {
   final Future<EntityLinkSelection?> Function(
     BuildContext context,
     String selectedText,
-  ) onRequestEntityLink;
+  )
+  onRequestEntityLink;
   final void Function(EntityAnchorType? type)? onAddNewEntity;
   final VoidCallback? onToggleSidebar;
   final AkashaItem? workPreviewItem;
@@ -169,7 +177,7 @@ class HomeShellBody extends StatelessWidget {
   final VoidCallback onConnectWorkFromEntityPreview;
   final void Function(LinkCandidate candidate) onConnectSuggestedFromPreview;
   final void Function(LinkCandidate candidate, AkashaItem work)
-      onConnectSuggestedFromHome;
+  onConnectSuggestedFromHome;
   final VoidCallback onGraphOpenRecord;
   final void Function(RegistryWork work) onPreviewRegistryWork;
   final Future<void> Function() onArchiveRegistryWorkFromPreview;
@@ -296,7 +304,8 @@ class HomeShellBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dailyRecall = FeatureFlags.showRecallCard &&
+    final dailyRecall =
+        FeatureFlags.showRecallCard &&
             !isPersonalLibraryMode &&
             !isCollectibleCollectionMode &&
             !isTimelineMode
@@ -379,6 +388,8 @@ class HomeShellBody extends StatelessWidget {
           onSelectCollectibleCollection: onSelectCollectibleCollection,
           onAddPersonalLibrary: onAddPersonalLibrary,
           onSelectPersonalLibrary: onSelectPersonalLibrary,
+          onEditPersonalLibrary: onEditPersonalLibrary,
+          onDeletePersonalLibrary: onDeletePersonalLibrary,
           onToggleSidebar: onToggleSidebar,
         ),
         Expanded(
@@ -431,7 +442,8 @@ class HomeShellBody extends StatelessWidget {
                   onGoKnowledgeGraph: onGoKnowledgeGraph,
                   pendingWorkEntityLinkType: pendingWorkEntityLinkType,
                   pendingWorkEntityLinkWorkId: pendingWorkEntityLinkWorkId,
-                  pendingWorkEntityLinkCandidate: pendingWorkEntityLinkCandidate,
+                  pendingWorkEntityLinkCandidate:
+                      pendingWorkEntityLinkCandidate,
                   pendingWorkLinkPick: pendingWorkLinkPick,
                   onClearPendingWorkEntityLink: onClearPendingWorkEntityLink,
                   pendingEntityEntityLinkType: pendingEntityEntityLinkType,
@@ -440,7 +452,8 @@ class HomeShellBody extends StatelessWidget {
                   onClearPendingEntityLink: onClearPendingEntityLink,
                   onNewTimelineEntry: onNewTimelineEntry,
                   onNewJournalEntry: onNewJournalEntry,
-                  onEntityCollectionCuratedReorder: onEntityCollectionCuratedReorder,
+                  onEntityCollectionCuratedReorder:
+                      onEntityCollectionCuratedReorder,
                   onCollectibleCollectionCuratedReorder:
                       onCollectibleCollectionCuratedReorder,
                 ),
@@ -463,11 +476,13 @@ class HomeShellBody extends StatelessWidget {
                 onGoKnowledgeGraph: onGoKnowledgeGraph,
                 onConnectEntityFromPreview: onConnectEntityFromPreview,
                 onConnectWorkFromPreview: onConnectWorkFromPreview,
-                onConnectEntityFromEntityPreview: onConnectEntityFromEntityPreview,
+                onConnectEntityFromEntityPreview:
+                    onConnectEntityFromEntityPreview,
                 onConnectWorkFromEntityPreview: onConnectWorkFromEntityPreview,
                 onConnectSuggestedFromPreview: onConnectSuggestedFromPreview,
                 onPreviewRegistryWork: onPreviewRegistryWork,
-                onArchiveRegistryWorkFromPreview: onArchiveRegistryWorkFromPreview,
+                onArchiveRegistryWorkFromPreview:
+                    onArchiveRegistryWorkFromPreview,
               ),
             ],
           ),

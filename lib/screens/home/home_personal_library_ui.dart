@@ -26,7 +26,17 @@ class HomePersonalLibraryUi {
     required void Function(void Function()) setState,
   }) async {
     if (id == PersonalLibraryConfig.masterArchiveId) return;
-    final confirmed = await showDeletePersonalLibraryConfirmDialog(context);
+    PersonalLibraryConfig? library;
+    for (final lib in personalLibCtrl.libraries) {
+      if (lib.id == id) {
+        library = lib;
+        break;
+      }
+    }
+    final confirmed = await showDeletePersonalLibraryConfirmDialog(
+      context,
+      libraryName: library?.name ?? id,
+    );
     if (confirmed != true || !context.mounted) return;
     setState(() => personalLibCtrl.remove(id));
     await personalLibCtrl.save();
@@ -59,17 +69,13 @@ class HomePersonalLibraryUi {
 
     final memberOrderChanged =
         memberOrderBefore.length != updated.memberOrder.length ||
-            !_memberOrderListsEqual(memberOrderBefore, updated.memberOrder);
+        !_memberOrderListsEqual(memberOrderBefore, updated.memberOrder);
     if (updated.isCurated &&
         !sectionPrefs.librarySort.isManualOrder &&
         memberOrderChanged) {
       if (!context.mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text(
-            '멤버 구성이 바뀌었습니다. 정렬을 수동 순서로 바꿀 수 있습니다.',
-          ),
-        ),
+        const SnackBar(content: Text('멤버 구성이 바뀌었습니다. 정렬을 수동 순서로 바꿀 수 있습니다.')),
       );
     }
   }

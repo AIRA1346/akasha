@@ -58,6 +58,8 @@ class DashboardSidebar extends StatelessWidget {
   final void Function(String id) onSelectCollectibleCollection;
   final VoidCallback onAddPersonalLibrary;
   final void Function(String id) onSelectPersonalLibrary;
+  final void Function(PersonalLibraryConfig library)? onEditPersonalLibrary;
+  final void Function(String id)? onDeletePersonalLibrary;
   final VoidCallback? onToggleSidebar;
 
   const DashboardSidebar({
@@ -88,6 +90,8 @@ class DashboardSidebar extends StatelessWidget {
     required this.onSelectCollectibleCollection,
     required this.onAddPersonalLibrary,
     required this.onSelectPersonalLibrary,
+    this.onEditPersonalLibrary,
+    this.onDeletePersonalLibrary,
     this.onToggleSidebar,
   });
 
@@ -99,9 +103,7 @@ class DashboardSidebar extends StatelessWidget {
       width: isOpen ? _sidebarWidth : 0.0,
       decoration: const BoxDecoration(
         color: AkashaColors.sidebar,
-        border: Border(
-          right: BorderSide(color: AkashaColors.border, width: 1),
-        ),
+        border: Border(right: BorderSide(color: AkashaColors.border, width: 1)),
       ),
       clipBehavior: Clip.hardEdge,
       child: isOpen
@@ -119,7 +121,8 @@ class DashboardSidebar extends StatelessWidget {
                           isHomeMode: isHomeMode,
                           isExploreMode: isExploreMode,
                           isPersonalLibraryMode: isPersonalLibraryMode,
-                          isCollectibleCollectionMode: isCollectibleCollectionMode,
+                          isCollectibleCollectionMode:
+                              isCollectibleCollectionMode,
                           isKnowledgeGraphMode: isKnowledgeGraphMode,
                           isTimelineMode: isTimelineMode,
                           onGoHome: onGoHome,
@@ -137,6 +140,8 @@ class DashboardSidebar extends StatelessWidget {
                           vaultItems: vaultItems,
                           onAddPersonalLibrary: onAddPersonalLibrary,
                           onSelectPersonalLibrary: onSelectPersonalLibrary,
+                          onEditPersonalLibrary: onEditPersonalLibrary,
+                          onDeletePersonalLibrary: onDeletePersonalLibrary,
                         ),
                         if (recentExploreItems.isNotEmpty) ...[
                           const SizedBox(height: 20),

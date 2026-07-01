@@ -6,8 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('DashboardSidebar shows personal libraries section with add',
-      (tester) async {
+  testWidgets('DashboardSidebar shows personal libraries section with add', (
+    tester,
+  ) async {
     var addTapped = false;
     String? selectedId;
 
@@ -46,9 +47,12 @@ void main() {
     expect(selectedId, isNull);
   });
 
-  testWidgets('DashboardSidebar personal library rows select and highlight',
-      (tester) async {
+  testWidgets('DashboardSidebar personal library rows select and highlight', (
+    tester,
+  ) async {
     var selectedId = '';
+    PersonalLibraryConfig? editedLibrary;
+    String? deletedId;
 
     final libraries = [
       PersonalLibraryConfig(
@@ -86,6 +90,8 @@ void main() {
             onSelectCollectibleCollection: (_) {},
             onAddPersonalLibrary: () {},
             onSelectPersonalLibrary: (id) => selectedId = id,
+            onEditPersonalLibrary: (library) => editedLibrary = library,
+            onDeletePersonalLibrary: (id) => deletedId = id,
           ),
         ),
       ),
@@ -102,5 +108,21 @@ void main() {
 
     final activeTitle = tester.widget<Text>(find.text('인생 명작'));
     expect(activeTitle.style?.fontWeight, FontWeight.w600);
+
+    await tester.tap(find.byIcon(Icons.more_horiz).last);
+    await tester.pumpAndSettle();
+
+    expect(find.text('편집'), findsOneWidget);
+    expect(find.text('삭제'), findsOneWidget);
+
+    await tester.tap(find.text('편집'));
+    await tester.pumpAndSettle();
+    expect(editedLibrary?.id, 'curated_demo');
+
+    await tester.tap(find.byIcon(Icons.more_horiz).last);
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('삭제'));
+    await tester.pumpAndSettle();
+    expect(deletedId, 'curated_demo');
   });
 }

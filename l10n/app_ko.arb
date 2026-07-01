@@ -258,6 +258,15 @@
   "hintLibraryName": "예: 인생 명작, 읽을 예정 2026…",
   "helperLibraryCreate": "만든 뒤 작품을 담아 채웁니다. 필터는 설정에서 조정할 수 있습니다.",
   "personalLibraryEditTitle": "나만의 서재 설정",
+  "personalLibraryDeleteTitle": "나만의 서재 삭제",
+  "personalLibraryDeleteMessage": "「{libraryName}」 서재를 삭제할까요?\n아카이브된 작품과 md 파일은 삭제되지 않습니다.",
+  "@personalLibraryDeleteMessage": {
+    "placeholders": {
+      "libraryName": {
+        "type": "String"
+      }
+    }
+  },
   "hintLibraryNameEdit": "예: 인생 명작, 감상 완료 목록…",
   "helperMasterArchiveReadonly": "master_archive 이름은 변경할 수 없습니다.",
   "helperCuratedMode": "담긴 작품만 표시됩니다. 필터는 2차로 좁힙니다.",

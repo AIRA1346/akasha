@@ -849,6 +849,14 @@ class AppLocalizationsKo extends AppLocalizations {
   String get personalLibraryEditTitle => '나만의 서재 설정';
 
   @override
+  String get personalLibraryDeleteTitle => '나만의 서재 삭제';
+
+  @override
+  String personalLibraryDeleteMessage(String libraryName) {
+    return '「$libraryName」 서재를 삭제할까요?\n아카이브된 작품과 md 파일은 삭제되지 않습니다.';
+  }
+
+  @override
   String get hintLibraryNameEdit => '예: 인생 명작, 감상 완료 목록…';
 
   @override
