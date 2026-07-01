@@ -8,6 +8,7 @@ import '../../../../utils/exploration_progress.dart';
 import '../../../../widgets/poster_image.dart';
 import '../../../home/views/preview_record_view_model.dart';
 import 'home_dashboard_styles.dart';
+import '../../../../utils/app_l10n.dart';
 
 class HomeDashboardContinueSection extends StatefulWidget {
   const HomeDashboardContinueSection({
@@ -144,19 +145,24 @@ class _HomeDashboardContinueSectionState
     final displayItems = _resolveDisplayItems();
     final usingVaultFallback =
         widget.recentExploreItems.isEmpty && displayItems.isNotEmpty;
+    final l10n = lookupAppL10n(context);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        HomeDashboardStyles.sectionHeader('계속 탐험하기'),
+        HomeDashboardStyles.sectionHeader(
+          l10n?.labelDashboardContinueExplore ?? '계속 탐험하기',
+        ),
         const SizedBox(height: 12),
         if (displayItems.isEmpty)
           Padding(
             padding: const EdgeInsets.only(bottom: 12),
             child: Text(
               widget.isColdStart
-                  ? '탐험을 시작하면 최근에 본 작품과 인물이 여기에 표시됩니다.'
-                  : '아직 탐색 기록이 없습니다. 작품이나 인물을 열면 여기에 표시됩니다.',
+                  ? (l10n?.helpDashboardContinueExploreColdStart ??
+                        '탐험을 시작하면 최근에 본 작품과 인물이 여기에 표시됩니다.')
+                  : (l10n?.helpDashboardContinueExploreEmpty ??
+                        '아직 탐색 기록이 없습니다. 작품이나 인물을 열면 여기에 표시됩니다.'),
               style: AkashaTypography.bodySecondary.copyWith(
                 color: AkashaColors.textMuted,
               ),
@@ -166,7 +172,8 @@ class _HomeDashboardContinueSectionState
           Padding(
             padding: const EdgeInsets.only(bottom: 8),
             child: Text(
-              '최근 추가한 작품부터 탐험해 보세요.',
+              l10n?.helpDashboardContinueExploreFallback ??
+                  '최근 추가한 작품부터 탐험해 보세요.',
               style: AkashaTypography.bodySecondary.copyWith(
                 color: AkashaColors.textMuted,
               ),
@@ -202,7 +209,7 @@ class _HomeDashboardContinueSectionState
                     child: Center(
                       child: _ContinueExploreScrollButton(
                         icon: Icons.chevron_left_rounded,
-                        tooltip: '이전',
+                        tooltip: l10n?.actionPrev ?? '이전',
                         onPressed: () => _scrollByPages(-1),
                       ),
                     ),
@@ -215,7 +222,7 @@ class _HomeDashboardContinueSectionState
                     child: Center(
                       child: _ContinueExploreScrollButton(
                         icon: Icons.chevron_right_rounded,
-                        tooltip: '다음',
+                        tooltip: l10n?.actionNext ?? '다음',
                         onPressed: () => _scrollByPages(1),
                       ),
                     ),
@@ -293,12 +300,15 @@ class _ExploreCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final progress = explorationProgress(item);
     final progressLabel = explorationProgressPercent(item);
-    final badgeLabel = switch (item) {
-      EntityItem(:final entityType) => entityTypeDisplayLabel(entityType),
-      _ => item.category.label,
-    };
+    final badgeLabel = l10n != null
+        ? _getLocalizedBadgeLabel(item, l10n)
+        : (switch (item) {
+            EntityItem(:final entityType) => entityTypeDisplayLabel(entityType),
+            _ => item.category.label,
+          });
     final badgeColor = item is EntityItem
         ? HomeDashboardStyles.categoryColorFor(badgeLabel)
         : HomeDashboardStyles.categoryColor(item);
@@ -310,7 +320,9 @@ class _ExploreCard extends StatelessWidget {
         color: AkashaColors.surface,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: isSelected ? AkashaColors.accent : AkashaColors.borderSubtle(0.08),
+          color: isSelected
+              ? AkashaColors.accent
+              : AkashaColors.borderSubtle(0.08),
           width: isSelected ? 2.0 : 1.0,
         ),
       ),
@@ -346,7 +358,10 @@ class _ExploreCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 6,
+                          vertical: 2,
+                        ),
                         decoration: BoxDecoration(
                           color: badgeColor.withValues(alpha: 0.85),
                           borderRadius: BorderRadius.circular(4),
@@ -371,8 +386,11 @@ class _ExploreCard extends StatelessWidget {
                       if (item.tags.isNotEmpty)
                         Row(
                           children: [
-                            Icon(Icons.local_offer_outlined,
-                                size: 10, color: AkashaColors.textSecondary),
+                            Icon(
+                              Icons.local_offer_outlined,
+                              size: 10,
+                              color: AkashaColors.textSecondary,
+                            ),
                             const SizedBox(width: 4),
                             Expanded(
                               child: Text(
@@ -389,11 +407,14 @@ class _ExploreCard extends StatelessWidget {
                       else if (item.review.isNotEmpty)
                         Row(
                           children: [
-                            Icon(Icons.edit_document,
-                                size: 10, color: AkashaColors.textSecondary),
+                            Icon(
+                              Icons.edit_document,
+                              size: 10,
+                              color: AkashaColors.textSecondary,
+                            ),
                             const SizedBox(width: 4),
                             Text(
-                              '기록 있음',
+                              l10n?.labelHasRecord ?? '기록 있음',
                               style: AkashaTypography.micro.copyWith(
                                 color: AkashaColors.textSecondary,
                               ),
@@ -409,7 +430,9 @@ class _ExploreCard extends StatelessWidget {
                               child: LinearProgressIndicator(
                                 value: progress,
                                 minHeight: 3,
-                                backgroundColor: AkashaColors.borderSubtle(0.12),
+                                backgroundColor: AkashaColors.borderSubtle(
+                                  0.12,
+                                ),
                                 valueColor: const AlwaysStoppedAnimation(
                                   AkashaColors.accent,
                                 ),
@@ -435,5 +458,47 @@ class _ExploreCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _getLocalizedBadgeLabel(AkashaItem item, dynamic l10n) {
+    if (item is EntityItem) {
+      switch (item.entityType.name) {
+        case 'work':
+          return l10n.entityTypeWork;
+        case 'person':
+          return l10n.entityTypePerson;
+        case 'concept':
+          return l10n.entityTypeConcept;
+        case 'event':
+          return l10n.entityTypeEvent;
+        case 'place':
+          return l10n.entityTypePlace;
+        case 'organization':
+          return l10n.entityTypeOrganization;
+        case 'custom':
+          return l10n.entityTypeCustom;
+        case 'phenomenon':
+          return l10n.entityTypePhenomenon;
+        default:
+          return item.entityType.name;
+      }
+    } else {
+      switch (item.category.name) {
+        case 'manga':
+          return l10n.categoryManga;
+        case 'game':
+          return l10n.categoryGame;
+        case 'animation':
+          return l10n.categoryAnimation;
+        case 'book':
+          return l10n.categoryBook;
+        case 'movie':
+          return l10n.categoryMovie;
+        case 'drama':
+          return l10n.categoryDrama;
+        default:
+          return item.category.label;
+      }
+    }
   }
 }

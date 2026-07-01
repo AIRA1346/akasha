@@ -5,10 +5,11 @@ List<Widget> _collectibleCollectionEditFilterSection(
   _CollectibleCollectionEditSession session,
   void Function(void Function()) setLocal,
 ) {
+  final l10n = lookupAppL10n(ctx);
   return [
     const SizedBox(height: 12),
     const Text(
-      '태그 (tagsAll · exact match)',
+      'Tags (tagsAll · exact match)',
       style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
     ),
     const SizedBox(height: 4),
@@ -18,31 +19,33 @@ List<Widget> _collectibleCollectionEditFilterSection(
     ),
     const SizedBox(height: 12),
     const Text(
-      '관련 작품 (relatedWorkId · Cast)',
+      'Related Work (relatedWorkId · Cast)',
       style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
     ),
     const SizedBox(height: 4),
     if (session.pickableWorks.isEmpty)
       Text(
-        '카탈로그·볼트에 Work가 없습니다.',
+        l10n?.noWorksInCatalogVault ?? '카탈로그·볼트에 Work가 없습니다.',
         style: TextStyle(color: AkashaColors.textMuted, fontSize: 12),
       )
     else
       DropdownButtonFormField<String?>(
-        initialValue: session.relatedWorkId != null &&
-                session.pickableWorks
-                    .any((w) => w.workId == session.relatedWorkId)
+        initialValue:
+            session.relatedWorkId != null &&
+                session.pickableWorks.any(
+                  (w) => w.workId == session.relatedWorkId,
+                )
             ? session.relatedWorkId
             : null,
-        decoration: const InputDecoration(
-          labelText: '작품 선택',
-          border: OutlineInputBorder(),
+        decoration: InputDecoration(
+          labelText: l10n?.labelSelectWork ?? '작품 선택',
+          border: const OutlineInputBorder(),
         ),
         isExpanded: true,
         items: [
-          const DropdownMenuItem<String?>(
+          DropdownMenuItem<String?>(
             value: null,
-            child: Text('선택 안 함'),
+            child: Text(l10n?.optionNone ?? '선택 안 함'),
           ),
           for (final work in session.pickableWorks)
             DropdownMenuItem<String?>(
@@ -74,14 +77,11 @@ List<Widget> _collectibleCollectionEditFilterSection(
           final castTitle = name.isEmpty ? '${work.title} Cast' : name;
           Navigator.pop(
             ctx,
-            buildRelatedWorkCollection(
-              title: castTitle,
-              workId: work.workId,
-            ),
+            buildRelatedWorkCollection(title: castTitle, workId: work.workId),
           );
         },
         icon: const Icon(Icons.groups_outlined, size: 18),
-        label: const Text('선택한 작품으로 Cast 만들기'),
+        label: Text(l10n?.createCastFromWork ?? '선택한 작품으로 Cast 만들기'),
       ),
     ],
     const SizedBox(height: 8),
@@ -91,15 +91,16 @@ List<Widget> _collectibleCollectionEditFilterSection(
         for (final kind in CollectibleKind.values)
           if (kind != CollectibleKind.work)
             FilterChip(
-              label: Text(kind.name),
+              label: Text(kind.localizedLabel(l10n)),
               selected: session.kinds.contains(kind),
               onSelected: (selected) {
                 setLocal(() {
                   if (selected) {
                     session.kinds = [...session.kinds, kind];
                   } else {
-                    session.kinds =
-                        session.kinds.where((k) => k != kind).toList();
+                    session.kinds = session.kinds
+                        .where((k) => k != kind)
+                        .toList();
                   }
                   if (session.kinds.isEmpty) {
                     session.kinds = [CollectibleKind.person];

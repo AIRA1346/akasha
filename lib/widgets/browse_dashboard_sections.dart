@@ -6,6 +6,7 @@ import '../models/enums.dart';
 import '../utils/browse_category_groups.dart';
 import '../utils/browse_grid_metrics.dart';
 import '../utils/browse_year_groups.dart';
+import '../utils/app_l10n.dart';
 import '../utils/helpers.dart';
 import 'curated_reorder_grid.dart';
 import 'section_header.dart';
@@ -63,7 +64,7 @@ class BrowseDashboardSections extends StatelessWidget {
   final Widget? catalogFooter;
   final bool Function(MediaCategory category)? catalogCategoryExpanded;
   final void Function(MediaCategory category, bool expanded)?
-      onCatalogCategoryExpandedChanged;
+  onCatalogCategoryExpandedChanged;
 
   const BrowseDashboardSections({
     super.key,
@@ -129,7 +130,7 @@ class BrowseDashboardSections extends StatelessWidget {
               controller: scrollController,
               primary: false,
               slivers: [
-                ..._buildSlivers(metrics),
+                ..._buildSlivers(context, metrics),
                 const SliverPadding(padding: EdgeInsets.only(bottom: 80)),
               ],
             ),
@@ -139,13 +140,13 @@ class BrowseDashboardSections extends StatelessWidget {
     );
   }
 
-  List<Widget> _buildSlivers(BrowseGridMetrics metrics) {
+  List<Widget> _buildSlivers(BuildContext context, BrowseGridMetrics metrics) {
     final slivers = <Widget>[];
 
-    slivers.addAll(_buildHofSlivers(this, metrics));
+    slivers.addAll(_buildHofSlivers(context, this, metrics));
 
     if (libraryCards.isNotEmpty) {
-      slivers.addAll(_buildLibrarySectionSlivers(this, metrics));
+      slivers.addAll(_buildLibrarySectionSlivers(context, this, metrics));
     }
 
     if (showYearlySection &&
@@ -153,11 +154,11 @@ class BrowseDashboardSections extends StatelessWidget {
         libraryCards.isNotEmpty &&
         onYearlyExpandedChanged != null &&
         onYearlySortChanged != null) {
-      slivers.addAll(_buildYearlySlivers(this, metrics));
+      slivers.addAll(_buildYearlySlivers(context, this, metrics));
     }
 
     if (showWatchlist) {
-      slivers.addAll(_buildWatchlistSlivers(this, metrics));
+      slivers.addAll(_buildWatchlistSlivers(context, this, metrics));
     }
 
     return slivers;

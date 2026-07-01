@@ -16,9 +16,7 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
-          home: Scaffold(
-            body: PreviewJournalReflectionCard(item: item),
-          ),
+          home: Scaffold(body: PreviewJournalReflectionCard(item: item)),
         ),
       );
 
@@ -36,20 +34,17 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
-          home: Scaffold(
-            body: PreviewJournalReflectionCard(item: item),
-          ),
+          home: Scaffold(body: PreviewJournalReflectionCard(item: item)),
         ),
       );
 
       expect(find.text('평가 없음'), findsOneWidget);
-      expect(
-        find.textContaining('아직 메모가 없습니다'),
-        findsOneWidget,
-      );
+      expect(find.textContaining('아직 메모가 없습니다'), findsOneWidget);
     });
 
-    testWidgets('shows rating status tags and memo for full slice', (tester) async {
+    testWidgets('shows rating status tags and memo for full slice', (
+      tester,
+    ) async {
       final item = createItem(
         workId: 'wk_u_agnt0001',
         title: 'Agent Slice',
@@ -62,13 +57,11 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
-          home: Scaffold(
-            body: PreviewJournalReflectionCard(item: item),
-          ),
+          home: Scaffold(body: PreviewJournalReflectionCard(item: item)),
         ),
       );
 
-      expect(find.textContaining('전부 봄'), findsOneWidget);
+      expect(find.textContaining('Finished'), findsOneWidget);
       expect(find.text('#재미있음'), findsOneWidget);
       expect(find.text('#감동'), findsOneWidget);
       expect(find.textContaining('2화부터 몰입'), findsOneWidget);

@@ -12,6 +12,7 @@ import 'sanctum/sanctum_cast_section_editor.dart';
 import 'sanctum/sanctum_gallery_section_editor.dart';
 import 'sanctum/sanctum_quotes_section_editor.dart';
 import 'sanctum/sanctum_section_card.dart';
+import '../../../../utils/app_l10n.dart';
 
 /// 워크벤치 중앙 Sanctum 슬롯 섹션 편집 (출연 · 갤러리 · 설명 · 감상 · 명장면). 본문 md와 동기화.
 class WorkSanctumSectionEditor extends StatefulWidget {
@@ -179,12 +180,16 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
   }
 
   Future<void> _addGalleryImage() async {
+    final l10n = lookupAppL10n(context);
     if (!SanctumImageImport.canImport) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('이미지 추가는 Sanctum 볼트 연결 후 사용할 수 있습니다.'),
-          duration: Duration(seconds: 2),
+        SnackBar(
+          content: Text(
+            l10n?.errorAddImageVaultRequired ??
+                '이미지 추가는 Sanctum 볼트 연결 후 사용할 수 있습니다.',
+          ),
+          duration: const Duration(seconds: 2),
         ),
       );
       return;
@@ -196,12 +201,16 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
   }
 
   Future<void> _pasteGalleryFromClipboard() async {
+    final l10n = lookupAppL10n(context);
     if (!SanctumImageImport.canImport) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('붙여넣기는 Sanctum 볼트 연결 후 사용할 수 있습니다.'),
-          duration: Duration(seconds: 2),
+        SnackBar(
+          content: Text(
+            l10n?.errorPasteVaultRequired ??
+                '붙여넣기는 Sanctum 볼트 연결 후 사용할 수 있습니다.',
+          ),
+          duration: const Duration(seconds: 2),
         ),
       );
       return;
@@ -211,9 +220,9 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
     if (!mounted) return;
     if (imported.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('클립보드에 이미지가 없습니다.'),
-          duration: Duration(seconds: 2),
+        SnackBar(
+          content: Text(l10n?.errorNoImageInClipboard ?? '클립보드에 이미지가 없습니다.'),
+          duration: const Duration(seconds: 2),
         ),
       );
       return;
@@ -232,6 +241,8 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return SingleChildScrollView(
       padding: const EdgeInsets.only(bottom: AkashaSpacing.lg),
       child: Column(
@@ -254,16 +265,22 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
           const SizedBox(height: AkashaSpacing.md),
           SanctumSectionCard(
             icon: Icons.description_outlined,
-            title: '설명',
-            hint: '줄거리·세계관·배경을 적어 보세요.',
+            title: l10n != null
+                ? l10n.workbenchSynopsisSectionTitle.replaceAll('📋', '').trim()
+                : '설명',
+            hint: l10n?.hintSynopsisEditor ?? '줄거리·세계관·배경을 적어 보세요.',
             controller: _synopsisCtrl,
             minLines: 5,
           ),
           const SizedBox(height: AkashaSpacing.md),
           SanctumSectionCard(
             icon: Icons.rate_review_outlined,
-            title: '감상',
-            hint: '기록·평가·느낀 점. 우측 「추가」로 [[링크]]를 넣을 수 있습니다.',
+            title: l10n != null
+                ? l10n.workbenchMemoSectionTitle.replaceAll('📝', '').trim()
+                : '감상',
+            hint:
+                l10n?.hintMemoEditor ??
+                '기록·평가·느낀 점. 우측 「추가」로 [[링크]]를 넣을 수 있습니다.',
             controller: _memoCtrl,
             minLines: 8,
           ),

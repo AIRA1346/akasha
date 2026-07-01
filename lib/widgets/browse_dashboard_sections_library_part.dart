@@ -1,24 +1,33 @@
 part of 'browse_dashboard_sections.dart';
 
 List<Widget> _buildLibrarySectionSlivers(
+  BuildContext context,
   BrowseDashboardSections section,
   BrowseGridMetrics metrics,
 ) {
+  final l10n = lookupAppL10n(context);
+
   final slivers = <Widget>[
     SliverToBoxAdapter(
       child: _sectionHeader(
         emoji: '📚',
         title: section.isPersonalLibraryMode
-            ? '내 아카이브'
-            : '작품 카탈로그 (사전 + 아카이브)',
+            ? (l10n?.myArchiveLabel ?? '내 아카이브')
+            : (l10n?.catalogTitle ?? '작품 카탈로그 (사전 + 아카이브)'),
         titleColor: section.isPersonalLibraryMode
             ? const Color(0xFFFFB74D)
             : const Color(0xFFF09819),
         subtitle: section.isPersonalLibraryMode
-            ? '${section.libraryCards.length}개 아카이브 작품'
+            ? (l10n != null
+                  ? l10n.personalLibraryCountDesc(section.libraryCards.length)
+                  : '${section.libraryCards.length}개 아카이브 작품')
             : section.categoryGroups != null
-                ? '${section.libraryCards.length}개 표시 · 매체별로 정렬 · 아카이브된 작품은 카드에 표시됩니다'
-                : '${section.libraryCards.length}개 표시 · 엄선 아카이브는 사이드바 「나만의 서재」를 이용하세요.',
+            ? (l10n != null
+                  ? l10n.catalogMediaSortDesc(section.libraryCards.length)
+                  : '${section.libraryCards.length}개 표시 · 매체별로 정렬 · 아카이브된 작품은 카드에 표시됩니다')
+            : (l10n != null
+                  ? l10n.catalogGeneralDesc(section.libraryCards.length)
+                  : '${section.libraryCards.length}개 표시 · 엄선 아카이브는 사이드바 「나만의 서재」를 이용하세요.'),
         expanded: section.libraryExpanded,
         onExpandedChanged: section.onLibraryExpandedChanged,
         sortCriteria: section.librarySortCriteria,
@@ -31,7 +40,7 @@ List<Widget> _buildLibrarySectionSlivers(
   ];
 
   if (section.libraryExpanded) {
-    slivers.addAll(_buildLibrarySlivers(section, metrics));
+    slivers.addAll(_buildLibrarySlivers(context, section, metrics));
     if (section.catalogFooter != null) {
       slivers.add(SliverToBoxAdapter(child: section.catalogFooter));
     }
@@ -42,6 +51,7 @@ List<Widget> _buildLibrarySectionSlivers(
 }
 
 List<Widget> _buildLibrarySlivers(
+  BuildContext context,
   BrowseDashboardSections section,
   BrowseGridMetrics metrics,
 ) {
@@ -49,7 +59,9 @@ List<Widget> _buildLibrarySlivers(
     final slivers = <Widget>[];
     for (final category in section.categoryGroups!.orderedCategories) {
       slivers.add(
-        SliverToBoxAdapter(child: _catalogCategoryHeader(section, category)),
+        SliverToBoxAdapter(
+          child: _catalogCategoryHeader(context, section, category),
+        ),
       );
       if (_isCatalogCategoryExpanded(section, category)) {
         slivers.addAll(
@@ -92,9 +104,11 @@ bool _isCatalogCategoryExpanded(
 }
 
 Widget _catalogCategoryHeader(
+  BuildContext context,
   BrowseDashboardSections section,
   MediaCategory category,
 ) {
+  final l10n = lookupAppL10n(context);
   final expanded = _isCatalogCategoryExpanded(section, category);
   final count = section.categoryGroups!.byCategory[category]!.length;
   return GestureDetector(
@@ -108,9 +122,7 @@ Widget _catalogCategoryHeader(
         children: [
           if (section.onCatalogCategoryExpandedChanged != null) ...[
             Icon(
-              expanded
-                  ? Icons.keyboard_arrow_down
-                  : Icons.keyboard_arrow_right,
+              expanded ? Icons.keyboard_arrow_down : Icons.keyboard_arrow_right,
               size: 20,
               color: AkashaColors.textSecondary,
             ),
@@ -123,7 +135,7 @@ Widget _catalogCategoryHeader(
           ),
           const SizedBox(width: 8),
           Text(
-            category.label,
+            category.localizedLabel(l10n),
             style: const TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.bold,
@@ -132,7 +144,7 @@ Widget _catalogCategoryHeader(
           ),
           const SizedBox(width: 8),
           Text(
-            '($count개 작품)',
+            l10n != null ? l10n.worksCountSuffix(count) : '($count개 작품)',
             style: TextStyle(fontSize: 12, color: AkashaColors.textSecondary),
           ),
         ],

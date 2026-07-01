@@ -142,5 +142,619 @@
   "statusDirtyHint": "변경됨 · 자동 저장은 편집 화면에 유지 · 탐험 복귀는 「{saveLabel}」",
   "statusSavedHint": "저장됨 {time} · 자동 저장 · 탐험 복귀는 「{saveLabel}」",
   "statusReturnHint": "「{saveLabel}」하면 탐험 화면(Preview)으로 돌아갑니다",
-  "actionSaveMd": "md 저장"
+  "actionSaveMd": "md 저장",
+  "mediaCategoryManga": "만화",
+  "mediaCategoryWebtoon": "웹툰",
+  "mediaCategoryAnimation": "애니메이션",
+  "mediaCategoryGame": "게임",
+  "mediaCategoryBook": "책/소설/라노벨",
+  "mediaCategoryMovie": "영화",
+  "mediaCategoryDrama": "드라마",
+  "statusContentWorkSerializing": "연재중",
+  "statusContentWorkHiatus": "휴재중",
+  "statusContentWorkCompleted": "완결",
+  "statusContentMyNotStarted": "볼 예정",
+  "statusContentMyWatching": "보는 중",
+  "statusContentMyFinished": "전부 봄",
+  "statusContentMyDropped": "하차함",
+  "statusGameWorkReleased": "출시됨",
+  "statusGameWorkEarlyAccess": "얼리액세스",
+  "statusGameWorkUpcoming": "출시예정",
+  "statusGameMyBacklog": "볼 예정",
+  "statusGameMyPlaying": "플레이 중",
+  "statusGameMyCleared": "클리어(완결)",
+  "statusGameMyAbandoned": "중도포기(하차)",
+  "sortCriteriaManual": "직접 배치 순",
+  "sortCriteriaTitle": "작품/제목명 순",
+  "sortCriteriaRating": "별점 높은 순",
+  "sortCriteriaRecentlyAdded": "최근 추가 순",
+  "sortCriteriaYear": "출시 연도 순",
+  "addWorkDialogTitle": "새 작품 등록 (아카이브 추가)",
+  "registryWorkSearch": "공통 작품 사전 검색",
+  "labelTitle": "제목",
+  "labelCreator": "작가 / 제작사",
+  "labelReleaseYear": "출시 연도",
+  "posterImageLabel": "포스터 이미지 (웹 URL 또는 로컬 파일)",
+  "posterUrlHint": "https://... 또는 로컬 경로 입력",
+  "tooltipPickLocalImage": "로컬 이미지 파일 선택",
+  "tooltipWebImageSearch": "인터넷 이미지 검색",
+  "myRating": "나의 별점",
+  "labelCategory": "카테고리",
+  "labelWorkStatus": "작품 상태",
+  "labelMyStatus": "나의 상태",
+  "actionRegister": "등록",
+  "validationEnterTitle": "제목을 입력해 주세요.",
+  "catalogAddContributionTitle": "글로벌 사전 — 작품 추가 제안",
+  "labelTitleRequired": "제목 *",
+  "labelPosterUrl": "포스터 URL (https)",
+  "tooltipImageSearch": "이미지 검색",
+  "labelDescriptionBrief": "설명 (직접 작성, 짧게)",
+  "labelAnilistId": "AniList ID (선택, 숫자만)",
+  "labelProposalNote": "제안 메모 (선택)",
+  "actionSaveProposal": "제안 저장",
+  "validationPosterHttpsOnly": "포스터는 https URL만 제안할 수 있습니다.",
+  "catalogContributionDisclaimer": "제안은 로컬에 저장됩니다. 글로벌 사전 반영은 운영자 검수·akasha-db merge 후 앱 동기화로 이루어집니다.",
+  "catalogFixContributionTitle": "글로벌 사전 — 정보 수정 제안",
+  "labelWhatIsWrong": "무엇이 틀렸나요? *",
+  "hintWhatIsWrong": "예: 포스터가 다른 작품 이미지입니다",
+  "fixPosterUrl": "포스터 URL 수정",
+  "labelProposedPosterUrl": "제안 포스터 URL",
+  "fixReleaseYear": "출시 연도 수정",
+  "labelProposedYear": "제안 연도",
+  "fixTitle": "제목 수정",
+  "labelProposedTitle": "제안 제목",
+  "fixCreator": "작가/제작사 수정",
+  "labelProposedCreator": "제안 작가/제작사",
+  "labelAdditionalNote": "추가 메모",
+  "validationEnterIssue": "문제 설명을 입력해 주세요.",
+  "validationSelectFixField": "수정할 항목을 선택해 주세요.",
+  "validationPosterHttpsRequired": "포스터는 https URL만 가능합니다.",
+  "validationEnterYearNumber": "연도를 숫자로 입력해 주세요.",
+  "clipboardImportTitle": "🤖 AI 마크다운 가져오기",
+  "clipboardImportDescription": "AI가 생성한 마크다운 텍스트를 여기에 붙여넣으세요. 파싱하여 작품 목록에 추가합니다.",
+  "untitledWork": "이름 없는 작품",
+  "clipboardImportAlreadyExists": "\"{title}\"은(는) 이미 아카이브에 있습니다.",
+  "clipboardImportAdded": "\"{title}\" 추가됨 (work_id: {workId})",
+  "clipboardImportParseFailed": "파싱에 실패했습니다: {error}",
+  "actionParseAndImport": "파싱 및 가져오기",
+  "noWorksInCatalogVault": "카탈로그·볼트에 Work가 없습니다.",
+  "labelSelectWork": "작품 선택",
+  "optionNone": "선택 안 함",
+  "createCastFromWork": "선택한 작품으로 Cast 만들기",
+  "labelCollectionName": "컬렉션 이름",
+  "labelMode": "모드",
+  "modeFilter": "필터 (태그·작품·kind)",
+  "modeCurated": "큐레이션 (직접 선택)",
+  "collectionAddTitle": "컬렉션 추가",
+  "collectionEditTitle": "컬렉션 설정",
+  "noEntitiesInCatalog": "카탈로그에 Person·Concept 등 Entity가 없습니다.",
+  "selectedCountReorderHint": "선택 {count}개 · 갤러리에서 순서 변경",
+  "deleteCollectionTitle": "컬렉션 삭제",
+  "deleteCollectionConfirm": "이 컬렉션을 삭제할까요? Entity 데이터는 유지됩니다.",
+  "actionDelete": "삭제",
+  "presetAvailabilityNote": "볼트·카탈로그에 해당 Work가 있을 때만 활성화됩니다.",
+  "customCreate": "직접 만들기",
+  "customCreateDescription": "태그 기반 · 작품 기반 · 혼합 — 아래에서 설정 후 「추가」",
+  "tabExistingLink": "기존 연결",
+  "tabCreateNew": "새로 만들기",
+  "hintSearchNameAlias": "이름 · 별칭 검색",
+  "noEntitiesAvailable": "연결할 Entity가 없습니다.",
+  "noMatchingEntity": "「{query}」과(와) 일치하는 항목이 없습니다.",
+  "sectionRelatedToWork": "이 작품과 관련",
+  "sectionSearchResults": "검색 결과",
+  "createEntityAndLink": "카탈로그에 없는 {typeLabel}을(를) 새로 등록하고, 이 작품 본문에 바로 연결합니다.",
+  "useSearchQueryAsName": "검색어를 이름으로 사용",
+  "createNewEntityType": "{typeLabel} 새로 만들기",
+  "subtitleRecommendations": "추천 후보 · Person · Event · Concept · Place · Org",
+  "subtitleSeedAvailable": "내 카탈로그에 없습니다 · 사전 인물에서 연결할 수 있습니다",
+  "subtitleCatalog": "카탈로그 · Person · Event · Concept · Place · Org",
+  "journalQuickCaptureTitle": "메모 기록",
+  "labelBody": "본문",
+  "hintJournalBody": "아이디어, 메모, 생각…",
+  "labelTitleOptional": "제목 (선택)",
+  "hintTitleAutoFill": "비우면 본문 앞부분을 사용합니다",
+  "personalLibraryAddTitle": "나만의 서재 추가",
+  "labelLibraryName": "서재 이름",
+  "hintLibraryName": "예: 인생 명작, 읽을 예정 2026…",
+  "helperLibraryCreate": "만든 뒤 작품을 담아 채웁니다. 필터는 설정에서 조정할 수 있습니다.",
+  "personalLibraryEditTitle": "나만의 서재 설정",
+  "hintLibraryNameEdit": "예: 인생 명작, 감상 완료 목록…",
+  "helperMasterArchiveReadonly": "master_archive 이름은 변경할 수 없습니다.",
+  "helperCuratedMode": "담긴 작품만 표시됩니다. 필터는 2차로 좁힙니다.",
+  "helperFilterMode": "볼트에 아카이브된 작품만 필터로 표시됩니다.",
+  "addWorkSearch": "작품 추가 (검색)",
+  "includedWorksCount": "담긴 작품 ({count})",
+  "noIncludedWorks": "아직 담긴 작품이 없습니다.",
+  "cleanOrphanIds": "고아 ID 정리 ({count}건)",
+  "labelCategoryFilter": "소분류 (카테고리) 필터 (다중 선택 가능)",
+  "labelWorkStatusFilter": "작품 상태 조건 필터 (다중 선택 가능)",
+  "labelMyStatusFilter": "나의 상태 조건 필터 (다중 선택 가능)",
+  "promptTemplateTitle": "AI 프롬프트 템플릿",
+  "promptTemplateDescription": "이 템플릿을 AI에게 제공하면, 규격에 맞는 마크다운을 쉽게 받아올 수 있습니다.",
+  "templateCopiedToClipboard": "템플릿이 클립보드에 복사되었습니다.",
+  "registrySyncTitle": "글로벌 사전 동기화",
+  "lastSyncTime": "마지막 동기화: {time}",
+  "actionSyncNow": "지금 동기화",
+  "labelCustomDbUrl": "커스텀 사전 DB Base URL",
+  "customDbUrlDescription": "manifest.json, search_index.json, shards/ 파일을 이 주소에서 내려받습니다.",
+  "syncUrlChanged": "동기화 주소가 변경되었습니다.",
+  "actionSaveUrl": "URL 저장",
+  "timelineQuickCaptureTitle": "타임라인 기록",
+  "hintTimelineBody": "오늘의 생각, 일기, 아이디어…",
+  "labelWorkLinkOptional": "작품 연결 (선택)",
+  "optionNoLink": "연결 없음",
+  "timelineSaveLocationInfo": "vault/timeline/ 에 저장됩니다.",
+  "workLinkPickerTitle": "작품 추가",
+  "hintSearchTitleCreatorId": "제목 · 작가 · work_id 검색",
+  "workLinkPickerDescription": "서재에 저장된 작품을 본문에 [[링크]]로 연결합니다.",
+  "noOtherWorksToLink": "연결할 다른 작품이 없습니다.",
+  "noMatchingWork": "「{query}」과(와) 일치하는 작품이 없습니다.",
+  "catalogContributionsTitle": "카탈로그 제안 ({count})",
+  "noSavedProposals": "저장된 제안이 없습니다.",
+  "suggestNewWork": "작품 추가 제안",
+  "actionCopyJson": "JSON 복사",
+  "actionOpenGithubIssue": "GitHub Issue 열기",
+  "actionCopyAllJson": "전체 JSON 복사",
+  "proposalJsonCopied": "제안 JSON이 클립보드에 복사되었습니다.",
+  "jsonCopiedWithFile": "JSON 복사됨 · 파일: {path}",
+  "jsonCopiedFileFailed": "JSON 복사됨 (파일 저장 실패: {error})",
+  "deleteUnsavedWarning": "저장하지 않은 편집 내용도 함께 사라집니다.",
+  "detailDeleteTitle": "작품 삭제",
+  "detailDeleteConfirmVault": "\"{title}\" 작품을 아카이브에서 삭제할까요?\n로컬 볼트의 .md 파일이 영구 삭제됩니다.{unsavedNote}\n탐색·사전 목록에서는 사라지지 않으며, 자동 아카이빙 설정 시 .md가 다시 생성될 수 있습니다.",
+  "detailDeleteConfirmNoVault": "\"{title}\" 작품을 목록에서 제거할까요?\n(데모 모드 — 볼트 연동 시 .md 파일이 삭제됩니다){unsavedNote}",
+  "workbenchCloseTabDialogTitle": "미저장 변경",
+  "workbenchCloseTabDialogMessage": "미저장 변경사항이 있습니다. 저장하지 않고 닫으시겠습니까?",
+  "workbenchCloseTabDialogSaveAndClose": "저장 후 닫기",
+  "workbenchCloseTabDialogDiscard": "저장 안 함",
+  "workbenchIncomingLinksRefresh": "Incoming Links 새로고침",
+  "workbenchBreadcrumbLibrary": "서재",
+  "workbenchBreadcrumbWork": "작품",
+  "workbenchTabConnections": "연결",
+  "workbenchTabDetails": "정보",
+  "workbenchTabType": "유형",
+  "workbenchTabConnectionCount": "연결 수",
+  "workbenchTabAliases": "별칭",
+  "workbenchTabStoragePath": "저장 경로",
+  "workbenchCastSectionTitle": "👥 출연",
+  "workbenchQuotesSectionTitle": "🎬 명장면 & 명대사",
+  "workbenchSynopsisSectionTitle": "📋 시놉시스",
+  "workbenchGallerySectionTitle": "🖼 갤러리",
+  "workbenchMemoSectionTitle": "📝 메모",
+  "workbenchEditorAddSection": "섹션 삽입",
+  "workbenchEditorAddSectionTitle": "섹션 추가",
+  "workbenchEditorFind": "찾기",
+  "workbenchEditorReplace": "바꿀 텍스트",
+  "workbenchEditorNext": "다음",
+  "workbenchEditorPrev": "이전",
+  "sidebarRecent": "최근 탐색",
+  "sidebarMyCollections": "내 컬렉션",
+  "sidebarViewAll": "모두 보기",
+  "sidebarNoCollections": "컬렉션이 없습니다",
+  "labelDashboardSearchWorks": "작품 검색",
+  "labelDashboardExploreEntities": "인물 탐색",
+  "labelDashboardConnectionMap": "연결 맵",
+  "labelDashboardAllBrowse": "전체 탐색",
+  "labelDashboardWrite": "기록",
+  "akashaPromptTemplate": "당신은 서브컬처(만화, 게임, 애니메이션, 책) 아카이빙 전문가입니다.\n사용자가 요청한 작품의 정보를 아래 YAML Front-Matter 형식을 포함한 마크다운 문서로 작성해 주세요.\n\n---\nwork_id: \"\" (비워두면 AKASHA가 사전 매칭 또는 custom ID를 부여)\ntitle: \"작품의 정확한 제목\"\ncategory: manga | game | animation | book | movie | drama (하나만)\ncreator: \"원작자 / 제작사 / 감독 등\"\nrelease_year: 출시 또는 연재 시작 연도 (숫자만, 예: 2011)\nrating: 5.0 (0.0~5.0 범위의 실수)\nwork_status: \"serializing\" | \"hiatus\" | \"completed\" (game 카테고리인 경우: \"released\" | \"earlyAccess\" | \"upcoming\")\nmy_status: \"notStarted\" | \"watching\" | \"finished\" | \"dropped\" (game 카테고리인 경우: \"backlog\" | \"playing\" | \"cleared\" | \"abandoned\")\nis_hall_of_fame: true | false (인생 명작 여부)\ntags: [태그1, 태그2] (예: [청춘, 감동, 음악])\nposter: \"\" (비워둠)\nadded_at: \"현재 날짜 및 시간 (ISO 8601 형식, 예: 2026-06-05T19:00:00)\"\n---\n\n# 👥 출연\n\n# 🎬 명장면 & 명대사\n> \"명대사 내용 1\" — 캐릭터 이름 / 상황 설명 (화수 등)\n\n# 📋 시놉시스\n\n# 🖼 갤러리\n\n# 📝 메모\n",
+  "labelTags": "태그",
+  "recordKindTimeline": "타임라인",
+  "recordKindJournal": "메모",
+  "recordKindWorkJournal": "작품 저널",
+  "recordKindEntityJournal": "엔티티 저널",
+  "recordKindFreeformJournal": "자유 저널",
+  "connectedRecordsCount": "연결된 Record {count}개",
+  "@connectedRecordsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "titleUpdateNeededCount": "제목 갱신 필요 {count}개",
+  "@titleUpdateNeededCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sameDayRecordsCount": "같은 날 기록 · {date} ({count})",
+  "@sameDayRecordsCount": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "actionSaveMd": "md 저장",
+  "actionCreateMd": "md 생성",
+  "actionSaveAndAddToLibrary": "저장하고 서재에 담기",
+  "workbenchCloseTabMessageWithTitle": "\"{title}\"에 저장하지 않은 변경이 있습니다.",
+  "@workbenchCloseTabMessageWithTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "workbenchCloseTabMessageWithTitleNoSave": "\"{title}\"에 저장하지 않은 변경이 있습니다.\n다른 탭이므로 저장하려면 먼저 해당 작품을 선택하세요.",
+  "@workbenchCloseTabMessageWithTitleNoSave": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "entityJournalDeleteConfirm": "「{title}」 entity journal을 삭제할까요?",
+  "@entityJournalDeleteConfirm": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "entityJournalPlaceholderBody": "(기록 대기중)",
+  "entityJournalSaveSuccess": "\"{title}\" entity journal을 저장했습니다.",
+  "@entityJournalSaveSuccess": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "errorVaultRequired": "볼트를 먼저 연결해 주세요.",
+  "errorEmptyBody": "본문을 입력해 주세요.",
+  "errorSaveFailed": "저장 실패: {error}",
+  "@errorSaveFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorNoMdFileToDelete": "삭제할 md 파일이 없습니다.",
+  "errorCatalogRequired": "catalog 연결이 필요합니다.",
+  "helpWorkbenchCastEditorEmpty": "우측 「인물 추가」로 출연진을 넣으면 미리보기 상단에 카드로 표시됩니다.",
+  "hintCastRole": "역할 (예: 주인공)",
+  "actionPaste": "붙여넣기",
+  "actionAddImage": "이미지 추가",
+  "helpWorkbenchGalleryEditorEmpty": "이미지를 끌어다 놓거나, 붙여넣기·추가로 스크린샷·콜라주를 넣을 수 있습니다.",
+  "hintQuotesEditor": "한 줄에 한 문장씩 입력하세요.",
+  "errorAddImageVaultRequired": "이미지 추가는 Sanctum 볼트 연결 후 사용할 수 있습니다.",
+  "errorPasteVaultRequired": "붙여넣기는 Sanctum 볼트 연결 후 사용할 수 있습니다.",
+  "errorNoImageInClipboard": "클립보드에 이미지가 없습니다.",
+  "hintSynopsisEditor": "줄거리·세계관·배경을 적어 보세요.",
+  "hintMemoEditor": "기록·평가·느낀 점. 우측 「추가」로 [[링크]]를 넣을 수 있습니다.",
+  "navHome": "홈",
+  "navExplore": "탐색",
+  "navSearch": "검색",
+  "navLibrary": "라이브러리",
+  "navCollections": "컬렉션",
+  "errorVaultRequiredToAddToLibrary": "볼트를 먼저 연결해야 서재에 담을 수 있습니다.",
+  "alreadyInLibrary": "이미 「{name}」 서재에 있습니다.",
+  "@alreadyInLibrary": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "addedToLibrary": "「{name}」 서재에 담았습니다.",
+  "@addedToLibrary": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "actionView": "보기",
+  "errorArchiveFailed": "아카이브 실패: {error}",
+  "@errorArchiveFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "successRegistryCacheCleared": "사전 캐시를 삭제하고 번들 사전으로 복원했습니다.",
+  "errorClearCacheFailed": "캐시 삭제 실패: {error}",
+  "@errorClearCacheFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "labelDashboardContinueExplore": "계속 탐험하기",
+  "helpDashboardContinueExploreColdStart": "탐험을 시작하면 최근에 본 작품과 인물이 여기에 표시됩니다.",
+  "helpDashboardContinueExploreEmpty": "아직 탐색 기록이 없습니다. 작품이나 인물을 열면 여기에 표시됩니다.",
+  "helpDashboardContinueExploreFallback": "최근 추가한 작품부터 탐험해 보세요.",
+  "actionPrev": "이전",
+  "actionNext": "다음",
+  "labelHasRecord": "기록 있음",
+  "tooltipVaultSettings": "볼트 설정",
+  "labelDashboardQuickActions": "빠른 액션",
+  "descDashboardSearchWorks": "볼트·카탈로그에서 작품과 인물을 찾습니다.",
+  "descDashboardExploreEntities": "등록된 인물 엔티티를 갤러리로 봅니다.",
+  "descDashboardConnectionMap": "볼트의 [[wiki]] 링크로 이어진 작품·인물 관계를 봅니다.",
+  "descDashboardAllBrowse": "라이브러리 작품을 그리드로 탐색합니다.",
+  "descDashboardWrite": "타임라인과 일지에서 시간순 기록을 확인합니다.",
+  "actionClose": "닫기",
+  "labelNowViewing": "지금 보는 항목",
+  "actionWrite": "기록하기",
+  "hintMemoBar": "메모를 추가하세요…",
+  "actionEditMemo": "메모 편집",
+  "labelTitle": "제목",
+  "labelBody": "본문",
+  "actionEdit": "편집",
+  "actionSave": "저장",
+  "confirmDeleteMemo": "이 메모를 삭제할까요?",
+  "helpJournalConnectVault": "볼트를 연결하면 메모를 볼 수 있습니다.",
+  "helpJournalEmpty": "아직 메모가 없습니다.",
+  "actionWriteFirstMemo": "첫 메모 작성",
+  "countMemos": "메모 ({count})",
+  "@countMemos": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tooltipNewMemo": "새 메모",
+  "tooltipRefresh": "새로고침",
+  "actionEditTimeline": "타임라인 편집",
+  "confirmDeleteTimeline": "이 타임라인 기록을 삭제할까요?",
+  "helpTimelineConnectVault": "볼트를 연결하면 타임라인을 볼 수 있습니다.",
+  "helpTimelineEmpty": "아직 타임라인 기록이 없습니다.",
+  "actionWriteFirstRecord": "첫 기록 작성",
+  "countTimelineRecords": "타임라인 ({count})",
+  "@countTimelineRecords": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tooltipNewRecord": "새 기록",
+  "helpEntityJournalConnectVault": "볼트를 연결하면 entity journal을 볼 수 있습니다.",
+  "helpEntityJournalEmpty": "아직 entity journal이 없습니다.",
+  "helpEntityJournalTip": "Fusion → 직접 추가로 Person · Concept · Event를 아카이브하세요.",
+  "countEntityJournalEntries": "Entity journal ({count})",
+  "@countEntityJournalEntries": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "errorConnectVaultFirst": "볼트를 먼저 연결해 주세요.",
+  "errorEntityNotFound": "「{id}」을(를) 찾을 수 없습니다.",
+  "@errorEntityNotFound": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "errorVaultConnectionFailed": "볼트 연결에 실패했습니다: {error}",
+  "@errorVaultConnectionFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "successEntityArchived": "{badge} 「{title}」 아카이브에 추가됨 · 기록 → Entity에서 확인",
+  "@successEntityArchived": {
+    "placeholders": {
+      "badge": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "successEntityRegisteredOnly": "{badge} 「{title}」 이름만 등록됨 · Fusion에서 아카이브 가능",
+  "@successEntityRegisteredOnly": {
+    "placeholders": {
+      "badge": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "successArchivedWork": "\"{title}\"을(를) 아카이브했습니다.",
+  "@successArchivedWork": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "actionAddCustomSection": "직접 섹션 추가",
+  "actionAddCustomWithType": "직접 추가 (유형 선택)",
+  "actionAddToLibrary": "서재에 담기",
+  "actionApplyManual": "수동 적용",
+  "actionApplyThisImage": "이 이미지 적용",
+  "actionArchive": "아카이브",
+  "actionCopy": "복사하기",
+  "actionCreate": "만들기",
+  "actionKeep": "유지",
+  "actionOpenGoogleImageSearch": "Google 이미지 검색 열기",
+  "actionOpenPinterestSearch": "Pinterest 검색 열기",
+  "actionPrevious": "이전",
+  "actionProposeToGlobalRegistry": "글로벌 사전에 추가 제안",
+  "actionRedo": "다시 실행",
+  "actionReload": "다시 불러오기",
+  "actionReplace": "바꾸기",
+  "actionReplaceAll": "모두 바꾸기",
+  "actionSelectLocalImage": "로컬 이미지 선택",
+  "actionUndo": "실행 취소",
+  "addConcept": "개념 추가",
+  "addEvent": "사건 추가",
+  "addOrganization": "조직 추가",
+  "addPerson": "인물 추가",
+  "addPlace": "장소 추가",
+  "addWork": "작품 추가",
+  "breadcrumbLibrary": "서재",
+  "breadcrumbWork": "작품",
+  "clipboardImageDetected": "클립보드 이미지 감지됨",
+  "errorBrowserLaunchFailed": "브라우저를 열지 못했습니다: {error}",
+  "@errorBrowserLaunchFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorCannotOpenBrowser": "브라우저를 열 수 없습니다.",
+  "externalFileChanged": "외부 파일이 변경되었습니다",
+  "globalRegistryLabel": "글로벌 사전",
+  "helpFullFileEdit": "전체 마크다운 파일을 편집합니다.",
+  "helpMarkdownBodyEdit": "마크다운 본문을 편집합니다.",
+  "helpSectionEdit": "이 섹션을 편집합니다.",
+  "hintEnterDirectImageUrl": "직접 이미지 URL을 입력하세요",
+  "hintEnterPosterSearchQuery": "포스터 검색어를 입력하세요",
+  "hintFind": "찾기",
+  "hintHidden": "숨김",
+  "hintNotArchived": "아카이브 안 됨",
+  "hintReplaceText": "바꿀 텍스트",
+  "hintSearchEverything": "작품, 인물, 사건, 장소, 개념을 검색하세요...",
+  "hintSearchExplain": "내 아카이브와 스타터 카탈로그를 검색합니다.",
+  "hintSearchWorkFromRegistry": "사전에서 작품 검색",
+  "hintSiblingTracked": "관련 항목이 이미 기록되어 있습니다",
+  "hintWorkTitle": "작품 제목",
+  "imageCorrectionGuideSteps": "이미지를 복사하거나 URL을 붙여넣거나 로컬 파일을 선택하세요.",
+  "imageCorrectionGuideTitle": "이미지 교정 가이드",
+  "incomingLinkCount": "이 엔티티를 가리키는 기록 {count}건",
+  "@incomingLinkCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "invalidImageUrl": "올바른 이미지 URL이 아닙니다",
+  "labelRegistry": "사전",
+  "labelWarning": "주의",
+  "myArchiveLabel": "내 아카이브",
+  "myRegistrationLabel": "내 등록",
+  "noLinksYet": "아직 {title} 연결이 없습니다.",
+  "@noLinksYet": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "noSearchResults": "검색 결과가 없습니다",
+  "posterSearchQuery": "포스터 검색어",
+  "posterSuffix": "포스터",
+  "recordBody": "기록 본문",
+  "searchTitle": "검색",
+  "sectionCast": "출연진",
+  "sectionConnectedConcepts": "연결된 개념",
+  "sectionConnectedEvents": "연결된 사건",
+  "sectionConnectedOrganizations": "연결된 조직",
+  "sectionConnectedPersons": "연결된 인물",
+  "sectionConnectedPlaces": "연결된 장소",
+  "sectionConnectedWorks": "연결된 작품",
+  "sectionGallery": "갤러리",
+  "sectionGlobalRegistryEntity": "글로벌 사전 엔티티",
+  "sectionGlobalRegistryWork": "글로벌 사전 작품",
+  "sectionMainCharacters": "주요 인물",
+  "sectionMemo": "메모",
+  "sectionMyArchiveEntity": "내 아카이브 엔티티",
+  "sectionMyArchiveWork": "내 아카이브 작품",
+  "sectionMyArchiveWorkRegisteredOnly": "등록만 된 작품",
+  "sectionNotArchived": "아카이브 안 됨",
+  "sectionQuotes": "인용",
+  "sectionSynopsis": "시놉시스",
+  "tabBody": "본문",
+  "tabConnection": "연결",
+  "tabInfo": "정보",
+  "tabRecord": "기록",
+  "tabView": "보기",
+  "tooltipBlockquote": "인용문",
+  "tooltipBold": "굵게 (Ctrl+B)",
+  "tooltipBulletedList": "글머리 목록",
+  "tooltipFind": "찾기",
+  "tooltipH1": "제목 1",
+  "tooltipH2": "제목 2",
+  "tooltipH3": "제목 3",
+  "tooltipImageVaultRequired": "이미지를 삽입하려면 볼트를 연결하세요",
+  "tooltipInlineCode": "인라인 코드",
+  "tooltipInsertImage": "이미지 삽입",
+  "tooltipInsertSection": "섹션 삽입",
+  "tooltipItalic": "기울임 (Ctrl+I)",
+  "tooltipLink": "링크",
+  "tooltipLinkEntity": "엔티티 링크",
+  "tooltipNumberedList": "번호 목록",
+  "tooltipSmartPaste": "스마트 붙여넣기",
+  "tooltipStrikethrough": "취소선",
+  "tooltipTableOfContents": "목차",
+  "waitingForClipboardImage": "클립보드 이미지를 기다리는 중...",
+  "webImageSearchTitle": "아카이브 포스터 이미지 교정",
+  "sectionHofTitle": "S-Tier 인생 명작 컬렉션 (Hall of Fame)",
+  "catalogTitle": "작품 카탈로그 (사전 + 아카이브)",
+  "personalLibraryCountDesc": "{count}개 아카이브 작품",
+  "@personalLibraryCountDesc": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogMediaSortDesc": "{count}개 표시 · 매체별 정렬 · 아카이브한 작품은 카드로 표시됩니다",
+  "@catalogMediaSortDesc": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogGeneralDesc": "{count}개 표시 · 아카이브 우선 항목은 사이드바의 나만의 서재를 이용하세요",
+  "@catalogGeneralDesc": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "worksCountSuffix": "({count}개 작품)",
+  "@worksCountSuffix": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "watchlistTitle": "감상 예정 보관함",
+  "watchlistDescription": "{displayName}님이 나중에 감상하려고 표시한 작품입니다.",
+  "@watchlistDescription": {
+    "placeholders": {
+      "displayName": {
+        "type": "String"
+      }
+    }
+  },
+  "watchlistEmptyTitle": "아직 감상 예정 작품이 없습니다.",
+  "watchlistEmptyHelp": "새 작품을 추가하거나 작품 편집에서 나의 상태를 감상 예정으로 설정하세요.",
+  "yearlyLibraryTitle": "연도별 라이브러리",
+  "yearlyLibraryDescription": "출시 연도별로 라이브러리를 둘러봅니다.",
+  "yearlyHeader": "{year}년",
+  "@yearlyHeader": {
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "yearlyNoYear": "연도 미상"
 }

@@ -4,24 +4,22 @@ import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../utils/app_l10n.dart';
 
 /// 프리뷰 하단 빠른 메모 진입. v1: [FeatureFlags.showPreviewMemoBar].
 class PreviewMemoBar extends StatelessWidget {
-  const PreviewMemoBar({
-    super.key,
-    required this.onOpenDetail,
-  });
+  const PreviewMemoBar({super.key, required this.onOpenDetail});
 
   final VoidCallback onOpenDetail;
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return DecoratedBox(
       decoration: const BoxDecoration(
         color: AkashaColors.sidebar,
-        border: Border(
-          top: BorderSide(color: AkashaColors.border, width: 1),
-        ),
+        border: Border(top: BorderSide(color: AkashaColors.border, width: 1)),
       ),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(
@@ -46,7 +44,7 @@ class PreviewMemoBar extends StatelessWidget {
                     border: Border.all(color: AkashaColors.borderSubtle(0.06)),
                   ),
                   child: Text(
-                    '메모를 추가하세요…',
+                    l10n?.hintMemoBar ?? '메모를 추가하세요…',
                     style: AkashaTypography.bodySecondary,
                   ),
                 ),
@@ -57,7 +55,7 @@ class PreviewMemoBar extends StatelessWidget {
               onPressed: onOpenDetail,
               icon: const Icon(Icons.add_circle_outline, size: 20),
               color: AkashaColors.accent,
-              tooltip: '기록하기',
+              tooltip: l10n?.actionWrite ?? '기록하기',
             ),
           ],
         ),

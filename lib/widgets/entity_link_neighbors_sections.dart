@@ -9,6 +9,7 @@ import '../utils/entity_link_neighbors.dart';
 import 'link_neighbors_section_chrome.dart';
 import 'work_link_character_layouts.dart';
 import 'work_link_connected_works_list.dart';
+import '../utils/app_l10n.dart';
 
 /// Entity 프리뷰·워크벤치 공통 — 연결 섹션 (WorkLinkNeighborsSections와 동일 UX).
 class EntityLinkNeighborsSections extends StatelessWidget {
@@ -54,6 +55,7 @@ class EntityLinkNeighborsSections extends StatelessWidget {
       );
     }
 
+    final l10n = lookupAppL10n(context);
     final titleStyle = sectionTitleStyle ?? _defaultSectionTitle;
 
     return Column(
@@ -64,21 +66,24 @@ class EntityLinkNeighborsSections extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 12),
             child: Row(
               children: [
-                Icon(Icons.link, size: 14, color: AkashaColors.textCaption),
+                const Icon(Icons.link, size: 14, color: AkashaColors.textMuted),
                 const SizedBox(width: 6),
                 Text(
-                  '이 엔티티를 가리키는 기록 ${neighbors.incomingLinkCount}건',
+                  l10n != null
+                      ? l10n.incomingLinkCount(neighbors.incomingLinkCount)
+                      : '이 엔티티를 가리키는 기록 ${neighbors.incomingLinkCount}건',
                   style: AkashaTypography.bodySecondary,
                 ),
               ],
             ),
           ),
         _section(
-          title: '연결된 작품',
+          context: context,
+          title: l10n?.sectionConnectedWorks ?? '연결된 작품',
           isEmpty: neighbors.connectedWorks.isEmpty,
           titleStyle: titleStyle,
           onAdd: onAddWork,
-          addLabel: '작품 추가',
+          addLabel: l10n?.addWork ?? '작품 추가',
           child: neighbors.connectedWorks.isEmpty
               ? null
               : WorkLinkConnectedWorksList(
@@ -87,33 +92,35 @@ class EntityLinkNeighborsSections extends StatelessWidget {
                 ),
         ),
         _section(
-          title: '연결된 인물',
+          context: context,
+          title: l10n?.sectionConnectedPersons ?? '연결된 인물',
           isEmpty: neighbors.persons.isEmpty,
           titleStyle: titleStyle,
           onAdd: onAddEntity == null
               ? null
               : () => onAddEntity!(EntityAnchorType.person),
-          addLabel: '인물 추가',
+          addLabel: l10n?.addPerson ?? '인물 추가',
           child: neighbors.persons.isEmpty
               ? null
               : workbenchLayout
-                  ? WorkLinkCharacterWorkbenchList(
-                      characters: neighbors.persons,
-                      onOpenEntity: onOpenEntity,
-                    )
-                  : WorkLinkCharacterRow(
-                      characters: neighbors.persons,
-                      onOpenEntity: onOpenEntity,
-                    ),
+              ? WorkLinkCharacterWorkbenchList(
+                  characters: neighbors.persons,
+                  onOpenEntity: onOpenEntity,
+                )
+              : WorkLinkCharacterRow(
+                  characters: neighbors.persons,
+                  onOpenEntity: onOpenEntity,
+                ),
         ),
         _section(
-          title: '관련 사건',
+          context: context,
+          title: l10n?.sectionConnectedEvents ?? '관련 사건',
           isEmpty: neighbors.events.isEmpty,
           titleStyle: titleStyle,
           onAdd: onAddEntity == null
               ? null
               : () => onAddEntity!(EntityAnchorType.event),
-          addLabel: '사건 추가',
+          addLabel: l10n?.addEvent ?? '사건 추가',
           child: neighbors.events.isEmpty
               ? null
               : LinkNeighborsEntityChipList(
@@ -122,13 +129,14 @@ class EntityLinkNeighborsSections extends StatelessWidget {
                 ),
         ),
         _section(
-          title: '관련 개념',
+          context: context,
+          title: l10n?.sectionConnectedConcepts ?? '관련 개념',
           isEmpty: neighbors.concepts.isEmpty && entityTags.isEmpty,
           titleStyle: titleStyle,
           onAdd: onAddEntity == null
               ? null
               : () => onAddEntity!(EntityAnchorType.concept),
-          addLabel: '개념 추가',
+          addLabel: l10n?.addConcept ?? '개념 추가',
           child: neighbors.concepts.isEmpty && entityTags.isEmpty
               ? null
               : Column(
@@ -154,13 +162,14 @@ class EntityLinkNeighborsSections extends StatelessWidget {
                 ),
         ),
         _section(
-          title: '관련 장소',
+          context: context,
+          title: l10n?.sectionConnectedPlaces ?? '관련 장소',
           isEmpty: neighbors.places.isEmpty,
           titleStyle: titleStyle,
           onAdd: onAddEntity == null
               ? null
               : () => onAddEntity!(EntityAnchorType.place),
-          addLabel: '장소 추가',
+          addLabel: l10n?.addPlace ?? '장소 추가',
           child: neighbors.places.isEmpty
               ? null
               : LinkNeighborsEntityChipList(
@@ -169,13 +178,14 @@ class EntityLinkNeighborsSections extends StatelessWidget {
                 ),
         ),
         _section(
-          title: '관련 조직',
+          context: context,
+          title: l10n?.sectionConnectedOrganizations ?? '관련 조직',
           isEmpty: neighbors.organizations.isEmpty,
           titleStyle: titleStyle,
           onAdd: onAddEntity == null
               ? null
               : () => onAddEntity!(EntityAnchorType.organization),
-          addLabel: '조직 추가',
+          addLabel: l10n?.addOrganization ?? '조직 추가',
           child: neighbors.organizations.isEmpty
               ? null
               : LinkNeighborsEntityChipList(
@@ -188,6 +198,7 @@ class EntityLinkNeighborsSections extends StatelessWidget {
   }
 
   Widget _section({
+    required BuildContext context,
     required String title,
     required bool isEmpty,
     required TextStyle titleStyle,
@@ -195,6 +206,7 @@ class EntityLinkNeighborsSections extends StatelessWidget {
     VoidCallback? onAdd,
     String addLabel = '추가',
   }) {
+    final l10n = lookupAppL10n(context);
     return LinkNeighborsSection(
       title: title,
       isEmpty: isEmpty,
@@ -203,7 +215,7 @@ class EntityLinkNeighborsSections extends StatelessWidget {
       onAdd: onAdd,
       addLabel: addLabel,
       emptyChild: LinkNeighborsEmptyHint(
-        message: '아직 $title 연결이 없습니다.',
+        message: l10n != null ? l10n.noLinksYet(title) : '아직 $title 연결이 없습니다.',
       ),
       child: child,
     );

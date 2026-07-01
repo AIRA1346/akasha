@@ -6,6 +6,7 @@ Widget _homeShellScaffoldBottomNavigationBar(
 ) {
   final isHome = controller.isHomeDashboardMode;
   final isExplore = controller.isExploreModeActive;
+  final l10n = lookupAppL10n(context);
 
   return DecoratedBox(
     decoration: BoxDecoration(
@@ -23,7 +24,7 @@ Widget _homeShellScaffoldBottomNavigationBar(
             Expanded(
               child: _homeShellScaffoldBottomTabItem(
                 icon: Icons.home_filled,
-                label: '홈',
+                label: l10n?.navHome ?? '홈',
                 isSelected: isHome,
                 onTap: () => controller.goHome(),
               ),
@@ -31,7 +32,7 @@ Widget _homeShellScaffoldBottomNavigationBar(
             Expanded(
               child: _homeShellScaffoldBottomTabItem(
                 icon: Icons.explore_outlined,
-                label: '탐색',
+                label: l10n?.navExplore ?? '탐색',
                 isSelected: isExplore,
                 onTap: () => controller.goExplore(),
               ),
@@ -39,7 +40,7 @@ Widget _homeShellScaffoldBottomNavigationBar(
             Expanded(
               child: _homeShellScaffoldBottomTabItem(
                 icon: Icons.search,
-                label: '검색',
+                label: l10n?.navSearch ?? '검색',
                 isSelected: false,
                 emphasize: true,
                 onTap: controller.openSearchDialog,
@@ -48,7 +49,7 @@ Widget _homeShellScaffoldBottomNavigationBar(
             Expanded(
               child: _homeShellScaffoldBottomTabItem(
                 icon: Icons.book_outlined,
-                label: '라이브러리',
+                label: l10n?.navLibrary ?? '라이브러리',
                 isSelected: controller.isPersonalLibraryMode,
                 onTap: () {
                   if (controller.personalLibCtrl.libraries.isNotEmpty) {
@@ -67,7 +68,7 @@ Widget _homeShellScaffoldBottomNavigationBar(
             Expanded(
               child: _homeShellScaffoldBottomTabItem(
                 icon: Icons.folder_open_outlined,
-                label: '컬렉션',
+                label: l10n?.navCollections ?? '컬렉션',
                 isSelected: controller.isCollectibleCollectionMode,
                 onTap: () {
                   if (controller.collectionCtrl.collections.isNotEmpty) {
@@ -109,11 +110,7 @@ Widget _homeShellScaffoldBottomTabItem({
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            icon,
-            color: color,
-            size: 22,
-          ),
+          Icon(icon, color: color, size: 22),
           const SizedBox(height: 4),
           Text(
             label,

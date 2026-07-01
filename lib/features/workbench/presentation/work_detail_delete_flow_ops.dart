@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../generated/l10n/app_localizations.dart';
 import '../../../models/akasha_item.dart';
 import 'work_detail_delete_ops.dart';
+import '../../../utils/app_l10n.dart';
 
 /// Work md 삭제 플로우 결과.
 sealed class WorkDetailDeleteFlowResult {
@@ -43,11 +44,14 @@ abstract final class WorkDetailDeleteFlowOps {
     required Future<void> Function() waitWhileSaving,
     required Future<void> Function() onConfirmed,
   }) async {
+    final l10n = lookupAppL10n(context);
     if (isSaving) {
       return const WorkDetailDeleteBlocked('');
     }
     if (!isArchivedInVault) {
-      return const WorkDetailDeleteBlocked('삭제할 md 파일이 없습니다.');
+      return WorkDetailDeleteBlocked(
+        l10n?.errorNoMdFileToDelete ?? '삭제할 md 파일이 없습니다.',
+      );
     }
 
     final confirmed = await WorkDetailDeleteOps.confirmDelete(
@@ -67,7 +71,9 @@ abstract final class WorkDetailDeleteFlowOps {
     if (deleted) {
       return WorkDetailDeleteSucceeded(displayTitle);
     }
-    return const WorkDetailDeleteFailed('삭제할 파일을 찾지 못했습니다.');
+    return WorkDetailDeleteFailed(
+      l10n?.trashDeleteFailedNotFound ?? '삭제할 파일을 찾지 못했습니다.',
+    );
   }
 
   static void handleResult({
@@ -83,11 +89,18 @@ abstract final class WorkDetailDeleteFlowOps {
       case WorkDetailDeleteCancelled():
         return;
       case WorkDetailDeleteSucceeded(:final displayTitle):
-        showSnack(l10n?.vaultFileDeleted(displayTitle) ?? '"$displayTitle" md 파일을 삭제했습니다.');
+        showSnack(
+          l10n?.vaultFileDeleted(displayTitle) ??
+              '"$displayTitle" md 파일을 삭제했습니다.',
+        );
         onDeleted();
       case WorkDetailDeleteFailed(:final message):
         restorePersist();
-        showSnack(message);
+        showSnack(
+          l10n != null && message == '삭제할 파일을 찾지 못했습니다.'
+              ? l10n.trashDeleteFailedNotFound
+              : message,
+        );
     }
   }
 }

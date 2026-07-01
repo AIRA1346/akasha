@@ -28,6 +28,7 @@ abstract class AkashaItem {
   bool isHallOfFame;
   List<String> tags;
   DateTime addedAt;
+
   /// frontmatter 이후 마크다운 원문 (커스텀 섹션 round-trip)
   String bodyRaw;
 
@@ -47,9 +48,9 @@ abstract class AkashaItem {
     List<String>? tags,
     DateTime? addedAt,
     this.bodyRaw = '',
-  })  : memorableQuotes = memorableQuotes ?? [],
-        tags = tags ?? [],
-        addedAt = addedAt ?? DateTime.now();
+  }) : memorableQuotes = memorableQuotes ?? [],
+       tags = tags ?? [],
+       addedAt = addedAt ?? DateTime.now();
 
   // ── 상태 접근 (서브클래스에서 구현) ──
 
@@ -103,8 +104,10 @@ class ContentItem extends AkashaItem {
     super.tags,
     super.addedAt,
     super.bodyRaw,
-  }) : assert(CategoryRegistry.isContentType(category),
-            '콘텐츠 아이템에 게임 카테고리를 할당할 수 없습니다.');
+  }) : assert(
+         CategoryRegistry.isContentType(category),
+         'Cannot assign game category to a content item.',
+       );
 
   @override
   String get workStatusLabel => workStatus.label;
@@ -120,12 +123,12 @@ class ContentItem extends AkashaItem {
 
   @override
   void setWorkStatus(String label) {
-    workStatus = ContentWorkStatus.values.firstWhere((e) => e.label == label);
+    workStatus = ContentWorkStatus.fromStorage(label);
   }
 
   @override
   void setMyStatus(String label) {
-    myStatus = ContentMyStatus.values.firstWhere((e) => e.label == label);
+    myStatus = ContentMyStatus.fromStorage(label);
   }
 }
 
@@ -170,12 +173,12 @@ class GameItem extends AkashaItem {
 
   @override
   void setWorkStatus(String label) {
-    workStatus = GameWorkStatus.values.firstWhere((e) => e.label == label);
+    workStatus = GameWorkStatus.fromStorage(label);
   }
 
   @override
   void setMyStatus(String label) {
-    myStatus = GameMyStatus.values.firstWhere((e) => e.label == label);
+    myStatus = GameMyStatus.fromStorage(label);
   }
 }
 
@@ -204,8 +207,8 @@ class EntityItem extends AkashaItem {
     super.tags,
     super.addedAt,
     super.bodyRaw = '',
-  })  : entityId = entityId,
-        super(workId: entityId);
+  }) : entityId = entityId,
+       super(workId: entityId);
 
   @override
   String get workStatusLabel => '';

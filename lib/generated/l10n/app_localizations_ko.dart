@@ -485,4 +485,1294 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get actionSaveMd => 'md 저장';
+
+  @override
+  String get mediaCategoryManga => '만화';
+
+  @override
+  String get mediaCategoryWebtoon => '웹툰';
+
+  @override
+  String get mediaCategoryAnimation => '애니메이션';
+
+  @override
+  String get mediaCategoryGame => '게임';
+
+  @override
+  String get mediaCategoryBook => '책/소설/라노벨';
+
+  @override
+  String get mediaCategoryMovie => '영화';
+
+  @override
+  String get mediaCategoryDrama => '드라마';
+
+  @override
+  String get statusContentWorkSerializing => '연재중';
+
+  @override
+  String get statusContentWorkHiatus => '휴재중';
+
+  @override
+  String get statusContentWorkCompleted => '완결';
+
+  @override
+  String get statusContentMyNotStarted => '볼 예정';
+
+  @override
+  String get statusContentMyWatching => '보는 중';
+
+  @override
+  String get statusContentMyFinished => '전부 봄';
+
+  @override
+  String get statusContentMyDropped => '하차함';
+
+  @override
+  String get statusGameWorkReleased => '출시됨';
+
+  @override
+  String get statusGameWorkEarlyAccess => '얼리액세스';
+
+  @override
+  String get statusGameWorkUpcoming => '출시예정';
+
+  @override
+  String get statusGameMyBacklog => '볼 예정';
+
+  @override
+  String get statusGameMyPlaying => '플레이 중';
+
+  @override
+  String get statusGameMyCleared => '클리어(완결)';
+
+  @override
+  String get statusGameMyAbandoned => '중도포기(하차)';
+
+  @override
+  String get sortCriteriaManual => '직접 배치 순';
+
+  @override
+  String get sortCriteriaTitle => '작품/제목명 순';
+
+  @override
+  String get sortCriteriaRating => '별점 높은 순';
+
+  @override
+  String get sortCriteriaRecentlyAdded => '최근 추가 순';
+
+  @override
+  String get sortCriteriaYear => '출시 연도 순';
+
+  @override
+  String get addWorkDialogTitle => '새 작품 등록 (아카이브 추가)';
+
+  @override
+  String get registryWorkSearch => '공통 작품 사전 검색';
+
+  @override
+  String get labelTitle => '제목';
+
+  @override
+  String get labelCreator => '작가 / 제작사';
+
+  @override
+  String get labelReleaseYear => '출시 연도';
+
+  @override
+  String get posterImageLabel => '포스터 이미지 (웹 URL 또는 로컬 파일)';
+
+  @override
+  String get posterUrlHint => 'https://... 또는 로컬 경로 입력';
+
+  @override
+  String get tooltipPickLocalImage => '로컬 이미지 파일 선택';
+
+  @override
+  String get tooltipWebImageSearch => '인터넷 이미지 검색';
+
+  @override
+  String get myRating => '나의 별점';
+
+  @override
+  String get labelCategory => '카테고리';
+
+  @override
+  String get labelWorkStatus => '작품 상태';
+
+  @override
+  String get labelMyStatus => '나의 상태';
+
+  @override
+  String get actionRegister => '등록';
+
+  @override
+  String get validationEnterTitle => '제목을 입력해 주세요.';
+
+  @override
+  String get catalogAddContributionTitle => '글로벌 사전 — 작품 추가 제안';
+
+  @override
+  String get labelTitleRequired => '제목 *';
+
+  @override
+  String get labelPosterUrl => '포스터 URL (https)';
+
+  @override
+  String get tooltipImageSearch => '이미지 검색';
+
+  @override
+  String get labelDescriptionBrief => '설명 (직접 작성, 짧게)';
+
+  @override
+  String get labelAnilistId => 'AniList ID (선택, 숫자만)';
+
+  @override
+  String get labelProposalNote => '제안 메모 (선택)';
+
+  @override
+  String get actionSaveProposal => '제안 저장';
+
+  @override
+  String get validationPosterHttpsOnly => '포스터는 https URL만 제안할 수 있습니다.';
+
+  @override
+  String get catalogContributionDisclaimer =>
+      '제안은 로컬에 저장됩니다. 글로벌 사전 반영은 운영자 검수·akasha-db merge 후 앱 동기화로 이루어집니다.';
+
+  @override
+  String get catalogFixContributionTitle => '글로벌 사전 — 정보 수정 제안';
+
+  @override
+  String get labelWhatIsWrong => '무엇이 틀렸나요? *';
+
+  @override
+  String get hintWhatIsWrong => '예: 포스터가 다른 작품 이미지입니다';
+
+  @override
+  String get fixPosterUrl => '포스터 URL 수정';
+
+  @override
+  String get labelProposedPosterUrl => '제안 포스터 URL';
+
+  @override
+  String get fixReleaseYear => '출시 연도 수정';
+
+  @override
+  String get labelProposedYear => '제안 연도';
+
+  @override
+  String get fixTitle => '제목 수정';
+
+  @override
+  String get labelProposedTitle => '제안 제목';
+
+  @override
+  String get fixCreator => '작가/제작사 수정';
+
+  @override
+  String get labelProposedCreator => '제안 작가/제작사';
+
+  @override
+  String get labelAdditionalNote => '추가 메모';
+
+  @override
+  String get validationEnterIssue => '문제 설명을 입력해 주세요.';
+
+  @override
+  String get validationSelectFixField => '수정할 항목을 선택해 주세요.';
+
+  @override
+  String get validationPosterHttpsRequired => '포스터는 https URL만 가능합니다.';
+
+  @override
+  String get validationEnterYearNumber => '연도를 숫자로 입력해 주세요.';
+
+  @override
+  String get clipboardImportTitle => '🤖 AI 마크다운 가져오기';
+
+  @override
+  String get clipboardImportDescription =>
+      'AI가 생성한 마크다운 텍스트를 여기에 붙여넣으세요. 파싱하여 작품 목록에 추가합니다.';
+
+  @override
+  String get untitledWork => '이름 없는 작품';
+
+  @override
+  String clipboardImportAlreadyExists(String title) {
+    return '\"$title\"은(는) 이미 아카이브에 있습니다.';
+  }
+
+  @override
+  String clipboardImportAdded(String title, String workId) {
+    return '\"$title\" 추가됨 (work_id: $workId)';
+  }
+
+  @override
+  String clipboardImportParseFailed(String error) {
+    return '파싱에 실패했습니다: $error';
+  }
+
+  @override
+  String get actionParseAndImport => '파싱 및 가져오기';
+
+  @override
+  String get noWorksInCatalogVault => '카탈로그·볼트에 Work가 없습니다.';
+
+  @override
+  String get labelSelectWork => '작품 선택';
+
+  @override
+  String get optionNone => '선택 안 함';
+
+  @override
+  String get createCastFromWork => '선택한 작품으로 Cast 만들기';
+
+  @override
+  String get labelCollectionName => '컬렉션 이름';
+
+  @override
+  String get labelMode => '모드';
+
+  @override
+  String get modeFilter => '필터 (태그·작품·kind)';
+
+  @override
+  String get modeCurated => '큐레이션 (직접 선택)';
+
+  @override
+  String get collectionAddTitle => '컬렉션 추가';
+
+  @override
+  String get collectionEditTitle => '컬렉션 설정';
+
+  @override
+  String get noEntitiesInCatalog => '카탈로그에 Person·Concept 등 Entity가 없습니다.';
+
+  @override
+  String selectedCountReorderHint(int count) {
+    return '선택 $count개 · 갤러리에서 순서 변경';
+  }
+
+  @override
+  String get deleteCollectionTitle => '컬렉션 삭제';
+
+  @override
+  String get deleteCollectionConfirm => '이 컬렉션을 삭제할까요? Entity 데이터는 유지됩니다.';
+
+  @override
+  String get actionDelete => '삭제';
+
+  @override
+  String get presetAvailabilityNote => '볼트·카탈로그에 해당 Work가 있을 때만 활성화됩니다.';
+
+  @override
+  String get customCreate => '직접 만들기';
+
+  @override
+  String get customCreateDescription => '태그 기반 · 작품 기반 · 혼합 — 아래에서 설정 후 「추가」';
+
+  @override
+  String get tabExistingLink => '기존 연결';
+
+  @override
+  String get tabCreateNew => '새로 만들기';
+
+  @override
+  String get hintSearchNameAlias => '이름 · 별칭 검색';
+
+  @override
+  String get noEntitiesAvailable => '연결할 Entity가 없습니다.';
+
+  @override
+  String noMatchingEntity(String query) {
+    return '「$query」과(와) 일치하는 항목이 없습니다.';
+  }
+
+  @override
+  String get sectionRelatedToWork => '이 작품과 관련';
+
+  @override
+  String get sectionSearchResults => '검색 결과';
+
+  @override
+  String createEntityAndLink(String typeLabel) {
+    return '카탈로그에 없는 $typeLabel을(를) 새로 등록하고, 이 작품 본문에 바로 연결합니다.';
+  }
+
+  @override
+  String get useSearchQueryAsName => '검색어를 이름으로 사용';
+
+  @override
+  String createNewEntityType(String typeLabel) {
+    return '$typeLabel 새로 만들기';
+  }
+
+  @override
+  String get subtitleRecommendations =>
+      '추천 후보 · Person · Event · Concept · Place · Org';
+
+  @override
+  String get subtitleSeedAvailable => '내 카탈로그에 없습니다 · 사전 인물에서 연결할 수 있습니다';
+
+  @override
+  String get subtitleCatalog => '카탈로그 · Person · Event · Concept · Place · Org';
+
+  @override
+  String get journalQuickCaptureTitle => '메모 기록';
+
+  @override
+  String get labelBody => '본문';
+
+  @override
+  String get hintJournalBody => '아이디어, 메모, 생각…';
+
+  @override
+  String get labelTitleOptional => '제목 (선택)';
+
+  @override
+  String get hintTitleAutoFill => '비우면 본문 앞부분을 사용합니다';
+
+  @override
+  String get personalLibraryAddTitle => '나만의 서재 추가';
+
+  @override
+  String get labelLibraryName => '서재 이름';
+
+  @override
+  String get hintLibraryName => '예: 인생 명작, 읽을 예정 2026…';
+
+  @override
+  String get helperLibraryCreate => '만든 뒤 작품을 담아 채웁니다. 필터는 설정에서 조정할 수 있습니다.';
+
+  @override
+  String get personalLibraryEditTitle => '나만의 서재 설정';
+
+  @override
+  String get hintLibraryNameEdit => '예: 인생 명작, 감상 완료 목록…';
+
+  @override
+  String get helperMasterArchiveReadonly => 'master_archive 이름은 변경할 수 없습니다.';
+
+  @override
+  String get helperCuratedMode => '담긴 작품만 표시됩니다. 필터는 2차로 좁힙니다.';
+
+  @override
+  String get helperFilterMode => '볼트에 아카이브된 작품만 필터로 표시됩니다.';
+
+  @override
+  String get addWorkSearch => '작품 추가 (검색)';
+
+  @override
+  String includedWorksCount(int count) {
+    return '담긴 작품 ($count)';
+  }
+
+  @override
+  String get noIncludedWorks => '아직 담긴 작품이 없습니다.';
+
+  @override
+  String cleanOrphanIds(int count) {
+    return '고아 ID 정리 ($count건)';
+  }
+
+  @override
+  String get labelCategoryFilter => '소분류 (카테고리) 필터 (다중 선택 가능)';
+
+  @override
+  String get labelWorkStatusFilter => '작품 상태 조건 필터 (다중 선택 가능)';
+
+  @override
+  String get labelMyStatusFilter => '나의 상태 조건 필터 (다중 선택 가능)';
+
+  @override
+  String get promptTemplateTitle => 'AI 프롬프트 템플릿';
+
+  @override
+  String get promptTemplateDescription =>
+      '이 템플릿을 AI에게 제공하면, 규격에 맞는 마크다운을 쉽게 받아올 수 있습니다.';
+
+  @override
+  String get templateCopiedToClipboard => '템플릿이 클립보드에 복사되었습니다.';
+
+  @override
+  String get registrySyncTitle => '글로벌 사전 동기화';
+
+  @override
+  String lastSyncTime(String time) {
+    return '마지막 동기화: $time';
+  }
+
+  @override
+  String get actionSyncNow => '지금 동기화';
+
+  @override
+  String get labelCustomDbUrl => '커스텀 사전 DB Base URL';
+
+  @override
+  String get customDbUrlDescription =>
+      'manifest.json, search_index.json, shards/ 파일을 이 주소에서 내려받습니다.';
+
+  @override
+  String get syncUrlChanged => '동기화 주소가 변경되었습니다.';
+
+  @override
+  String get actionSaveUrl => 'URL 저장';
+
+  @override
+  String get timelineQuickCaptureTitle => '타임라인 기록';
+
+  @override
+  String get hintTimelineBody => '오늘의 생각, 일기, 아이디어…';
+
+  @override
+  String get labelWorkLinkOptional => '작품 연결 (선택)';
+
+  @override
+  String get optionNoLink => '연결 없음';
+
+  @override
+  String get timelineSaveLocationInfo => 'vault/timeline/ 에 저장됩니다.';
+
+  @override
+  String get workLinkPickerTitle => '작품 추가';
+
+  @override
+  String get hintSearchTitleCreatorId => '제목 · 작가 · work_id 검색';
+
+  @override
+  String get workLinkPickerDescription => '서재에 저장된 작품을 본문에 [[링크]]로 연결합니다.';
+
+  @override
+  String get noOtherWorksToLink => '연결할 다른 작품이 없습니다.';
+
+  @override
+  String noMatchingWork(String query) {
+    return '「$query」과(와) 일치하는 작품이 없습니다.';
+  }
+
+  @override
+  String catalogContributionsTitle(int count) {
+    return '카탈로그 제안 ($count)';
+  }
+
+  @override
+  String get noSavedProposals => '저장된 제안이 없습니다.';
+
+  @override
+  String get suggestNewWork => '작품 추가 제안';
+
+  @override
+  String get actionCopyJson => 'JSON 복사';
+
+  @override
+  String get actionOpenGithubIssue => 'GitHub Issue 열기';
+
+  @override
+  String get actionCopyAllJson => '전체 JSON 복사';
+
+  @override
+  String get proposalJsonCopied => '제안 JSON이 클립보드에 복사되었습니다.';
+
+  @override
+  String jsonCopiedWithFile(String path) {
+    return 'JSON 복사됨 · 파일: $path';
+  }
+
+  @override
+  String jsonCopiedFileFailed(String error) {
+    return 'JSON 복사됨 (파일 저장 실패: $error)';
+  }
+
+  @override
+  String get deleteUnsavedWarning => '저장하지 않은 편집 내용도 함께 사라집니다.';
+
+  @override
+  String get detailDeleteTitle => '작품 삭제';
+
+  @override
+  String detailDeleteConfirmVault(String title, String unsavedNote) {
+    return '\"$title\" 작품을 아카이브에서 삭제할까요?\n로컬 볼트의 .md 파일이 영구 삭제됩니다.$unsavedNote\n탐색·사전 목록에서는 사라지지 않으며, 자동 아카이빙 설정 시 .md가 다시 생성될 수 있습니다.';
+  }
+
+  @override
+  String detailDeleteConfirmNoVault(String title, String unsavedNote) {
+    return '\"$title\" 작품을 목록에서 제거할까요?\n(데모 모드 — 볼트 연동 시 .md 파일이 삭제됩니다)$unsavedNote';
+  }
+
+  @override
+  String get workbenchCloseTabDialogTitle => '미저장 변경';
+
+  @override
+  String get workbenchCloseTabDialogMessage =>
+      '미저장 변경사항이 있습니다. 저장하지 않고 닫으시겠습니까?';
+
+  @override
+  String get workbenchCloseTabDialogSaveAndClose => '저장 후 닫기';
+
+  @override
+  String get workbenchCloseTabDialogDiscard => '저장 안 함';
+
+  @override
+  String get workbenchIncomingLinksRefresh => 'Incoming Links 새로고침';
+
+  @override
+  String get workbenchBreadcrumbLibrary => '서재';
+
+  @override
+  String get workbenchBreadcrumbWork => '작품';
+
+  @override
+  String get workbenchTabConnections => '연결';
+
+  @override
+  String get workbenchTabDetails => '정보';
+
+  @override
+  String get workbenchTabType => '유형';
+
+  @override
+  String get workbenchTabConnectionCount => '연결 수';
+
+  @override
+  String get workbenchTabAliases => '별칭';
+
+  @override
+  String get workbenchTabStoragePath => '저장 경로';
+
+  @override
+  String get workbenchCastSectionTitle => '👥 출연';
+
+  @override
+  String get workbenchQuotesSectionTitle => '🎬 명장면 & 명대사';
+
+  @override
+  String get workbenchSynopsisSectionTitle => '📋 시놉시스';
+
+  @override
+  String get workbenchGallerySectionTitle => '🖼 갤러리';
+
+  @override
+  String get workbenchMemoSectionTitle => '📝 메모';
+
+  @override
+  String get workbenchEditorAddSection => '섹션 삽입';
+
+  @override
+  String get workbenchEditorAddSectionTitle => '섹션 추가';
+
+  @override
+  String get workbenchEditorFind => '찾기';
+
+  @override
+  String get workbenchEditorReplace => '바꿀 텍스트';
+
+  @override
+  String get workbenchEditorNext => '다음';
+
+  @override
+  String get workbenchEditorPrev => '이전';
+
+  @override
+  String get sidebarRecent => '최근 탐색';
+
+  @override
+  String get labelDashboardSearchWorks => '작품 검색';
+
+  @override
+  String get labelDashboardExploreEntities => '인물 탐색';
+
+  @override
+  String get labelDashboardConnectionMap => '연결 맵';
+
+  @override
+  String get labelDashboardAllBrowse => '전체 탐색';
+
+  @override
+  String get labelDashboardWrite => '기록';
+
+  @override
+  String get akashaPromptTemplate =>
+      '당신은 서브컬처(만화, 게임, 애니메이션, 책) 아카이빙 전문가입니다.\n사용자가 요청한 작품의 정보를 아래 YAML Front-Matter 형식을 포함한 마크다운 문서로 작성해 주세요.\n\n---\nwork_id: \"\" (비워두면 AKASHA가 사전 매칭 또는 custom ID를 부여)\ntitle: \"작품의 정확한 제목\"\ncategory: manga | game | animation | book | movie | drama (하나만)\ncreator: \"원작자 / 제작사 / 감독 등\"\nrelease_year: 출시 또는 연재 시작 연도 (숫자만, 예: 2011)\nrating: 5.0 (0.0~5.0 범위의 실수)\nwork_status: \"serializing\" | \"hiatus\" | \"completed\" (game 카테고리인 경우: \"released\" | \"earlyAccess\" | \"upcoming\")\nmy_status: \"notStarted\" | \"watching\" | \"finished\" | \"dropped\" (game 카테고리인 경우: \"backlog\" | \"playing\" | \"cleared\" | \"abandoned\")\nis_hall_of_fame: true | false (인생 명작 여부)\ntags: [태그1, 태그2] (예: [청춘, 감동, 음악])\nposter: \"\" (비워둠)\nadded_at: \"현재 날짜 및 시간 (ISO 8601 형식, 예: 2026-06-05T19:00:00)\"\n---\n\n# 👥 출연\n\n# 🎬 명장면 & 명대사\n> \"명대사 내용 1\" — 캐릭터 이름 / 상황 설명 (화수 등)\n\n# 📋 시놉시스\n\n# 🖼 갤러리\n\n# 📝 메모\n';
+
+  @override
+  String get labelTags => '태그';
+
+  @override
+  String get recordKindTimeline => '타임라인';
+
+  @override
+  String get recordKindJournal => '메모';
+
+  @override
+  String get recordKindWorkJournal => '작품 저널';
+
+  @override
+  String get recordKindEntityJournal => '엔티티 저널';
+
+  @override
+  String get recordKindFreeformJournal => '자유 저널';
+
+  @override
+  String connectedRecordsCount(int count) {
+    return '연결된 Record $count개';
+  }
+
+  @override
+  String titleUpdateNeededCount(int count) {
+    return '제목 갱신 필요 $count개';
+  }
+
+  @override
+  String sameDayRecordsCount(String date, int count) {
+    return '같은 날 기록 · $date ($count)';
+  }
+
+  @override
+  String get actionCreateMd => 'md 생성';
+
+  @override
+  String get actionSaveAndAddToLibrary => '저장하고 서재에 담기';
+
+  @override
+  String workbenchCloseTabMessageWithTitle(String title) {
+    return '\"$title\"에 저장하지 않은 변경이 있습니다.';
+  }
+
+  @override
+  String workbenchCloseTabMessageWithTitleNoSave(String title) {
+    return '\"$title\"에 저장하지 않은 변경이 있습니다.\n다른 탭이므로 저장하려면 먼저 해당 작품을 선택하세요.';
+  }
+
+  @override
+  String entityJournalDeleteConfirm(String title) {
+    return '「$title」 entity journal을 삭제할까요?';
+  }
+
+  @override
+  String get entityJournalPlaceholderBody => '(기록 대기중)';
+
+  @override
+  String entityJournalSaveSuccess(String title) {
+    return '\"$title\" entity journal을 저장했습니다.';
+  }
+
+  @override
+  String get errorVaultRequired => '볼트를 먼저 연결해 주세요.';
+
+  @override
+  String get errorEmptyBody => '본문을 입력해 주세요.';
+
+  @override
+  String errorSaveFailed(String error) {
+    return '저장 실패: $error';
+  }
+
+  @override
+  String get errorNoMdFileToDelete => '삭제할 md 파일이 없습니다.';
+
+  @override
+  String get errorCatalogRequired => 'catalog 연결이 필요합니다.';
+
+  @override
+  String get helpWorkbenchCastEditorEmpty =>
+      '우측 「인물 추가」로 출연진을 넣으면 미리보기 상단에 카드로 표시됩니다.';
+
+  @override
+  String get hintCastRole => '역할 (예: 주인공)';
+
+  @override
+  String get actionPaste => '붙여넣기';
+
+  @override
+  String get actionAddImage => '이미지 추가';
+
+  @override
+  String get helpWorkbenchGalleryEditorEmpty =>
+      '이미지를 끌어다 놓거나, 붙여넣기·추가로 스크린샷·콜라주를 넣을 수 있습니다.';
+
+  @override
+  String get hintQuotesEditor => '한 줄에 한 문장씩 입력하세요.';
+
+  @override
+  String get errorAddImageVaultRequired =>
+      '이미지 추가는 Sanctum 볼트 연결 후 사용할 수 있습니다.';
+
+  @override
+  String get errorPasteVaultRequired => '붙여넣기는 Sanctum 볼트 연결 후 사용할 수 있습니다.';
+
+  @override
+  String get errorNoImageInClipboard => '클립보드에 이미지가 없습니다.';
+
+  @override
+  String get hintSynopsisEditor => '줄거리·세계관·배경을 적어 보세요.';
+
+  @override
+  String get hintMemoEditor => '기록·평가·느낀 점. 우측 「추가」로 [[링크]]를 넣을 수 있습니다.';
+
+  @override
+  String get navHome => '홈';
+
+  @override
+  String get navExplore => '탐색';
+
+  @override
+  String get navSearch => '검색';
+
+  @override
+  String get navLibrary => '라이브러리';
+
+  @override
+  String get navCollections => '컬렉션';
+
+  @override
+  String get errorVaultRequiredToAddToLibrary => '볼트를 먼저 연결해야 서재에 담을 수 있습니다.';
+
+  @override
+  String alreadyInLibrary(String name) {
+    return '이미 「$name」 서재에 있습니다.';
+  }
+
+  @override
+  String addedToLibrary(String name) {
+    return '「$name」 서재에 담았습니다.';
+  }
+
+  @override
+  String get actionView => '보기';
+
+  @override
+  String errorArchiveFailed(String error) {
+    return '아카이브 실패: $error';
+  }
+
+  @override
+  String get successRegistryCacheCleared => '사전 캐시를 삭제하고 번들 사전으로 복원했습니다.';
+
+  @override
+  String errorClearCacheFailed(String error) {
+    return '캐시 삭제 실패: $error';
+  }
+
+  @override
+  String get labelDashboardContinueExplore => '계속 탐험하기';
+
+  @override
+  String get helpDashboardContinueExploreColdStart =>
+      '탐험을 시작하면 최근에 본 작품과 인물이 여기에 표시됩니다.';
+
+  @override
+  String get helpDashboardContinueExploreEmpty =>
+      '아직 탐색 기록이 없습니다. 작품이나 인물을 열면 여기에 표시됩니다.';
+
+  @override
+  String get helpDashboardContinueExploreFallback => '최근 추가한 작품부터 탐험해 보세요.';
+
+  @override
+  String get actionPrev => '이전';
+
+  @override
+  String get actionNext => '다음';
+
+  @override
+  String get labelHasRecord => '기록 있음';
+
+  @override
+  String get tooltipVaultSettings => '볼트 설정';
+
+  @override
+  String get labelDashboardQuickActions => '빠른 액션';
+
+  @override
+  String get descDashboardSearchWorks => '볼트·카탈로그에서 작품과 인물을 찾습니다.';
+
+  @override
+  String get descDashboardExploreEntities => '등록된 인물 엔티티를 갤러리로 봅니다.';
+
+  @override
+  String get descDashboardConnectionMap =>
+      '볼트의 [[wiki]] 링크로 이어진 작품·인물 관계를 봅니다.';
+
+  @override
+  String get descDashboardAllBrowse => '라이브러리 작품을 그리드로 탐색합니다.';
+
+  @override
+  String get descDashboardWrite => '타임라인과 일지에서 시간순 기록을 확인합니다.';
+
+  @override
+  String get actionClose => '닫기';
+
+  @override
+  String get labelNowViewing => '지금 보는 항목';
+
+  @override
+  String get actionWrite => '기록하기';
+
+  @override
+  String get hintMemoBar => '메모를 추가하세요…';
+
+  @override
+  String get actionEditMemo => '메모 편집';
+
+  @override
+  String get actionEdit => '편집';
+
+  @override
+  String get confirmDeleteMemo => '이 메모를 삭제할까요?';
+
+  @override
+  String get helpJournalConnectVault => '볼트를 연결하면 메모를 볼 수 있습니다.';
+
+  @override
+  String get helpJournalEmpty => '아직 메모가 없습니다.';
+
+  @override
+  String get actionWriteFirstMemo => '첫 메모 작성';
+
+  @override
+  String countMemos(int count) {
+    return '메모 ($count)';
+  }
+
+  @override
+  String get tooltipNewMemo => '새 메모';
+
+  @override
+  String get tooltipRefresh => '새로고침';
+
+  @override
+  String get actionEditTimeline => '타임라인 편집';
+
+  @override
+  String get confirmDeleteTimeline => '이 타임라인 기록을 삭제할까요?';
+
+  @override
+  String get helpTimelineConnectVault => '볼트를 연결하면 타임라인을 볼 수 있습니다.';
+
+  @override
+  String get helpTimelineEmpty => '아직 타임라인 기록이 없습니다.';
+
+  @override
+  String get actionWriteFirstRecord => '첫 기록 작성';
+
+  @override
+  String countTimelineRecords(int count) {
+    return '타임라인 ($count)';
+  }
+
+  @override
+  String get tooltipNewRecord => '새 기록';
+
+  @override
+  String get helpEntityJournalConnectVault =>
+      '볼트를 연결하면 entity journal을 볼 수 있습니다.';
+
+  @override
+  String get helpEntityJournalEmpty => '아직 entity journal이 없습니다.';
+
+  @override
+  String get helpEntityJournalTip =>
+      'Fusion → 직접 추가로 Person · Concept · Event를 아카이브하세요.';
+
+  @override
+  String countEntityJournalEntries(int count) {
+    return 'Entity journal ($count)';
+  }
+
+  @override
+  String get errorConnectVaultFirst => '볼트를 먼저 연결해 주세요.';
+
+  @override
+  String errorEntityNotFound(String id) {
+    return '「$id」을(를) 찾을 수 없습니다.';
+  }
+
+  @override
+  String errorVaultConnectionFailed(String error) {
+    return '볼트 연결에 실패했습니다: $error';
+  }
+
+  @override
+  String successEntityArchived(String badge, String title) {
+    return '$badge 「$title」 아카이브에 추가됨 · 기록 → Entity에서 확인';
+  }
+
+  @override
+  String successEntityRegisteredOnly(String badge, String title) {
+    return '$badge 「$title」 이름만 등록됨 · Fusion에서 아카이브 가능';
+  }
+
+  @override
+  String successArchivedWork(String title) {
+    return '\"$title\"을(를) 아카이브했습니다.';
+  }
+
+  @override
+  String get actionAddCustomSection => '직접 섹션 추가';
+
+  @override
+  String get actionAddCustomWithType => '직접 추가 (유형 선택)';
+
+  @override
+  String get actionAddToLibrary => '서재에 담기';
+
+  @override
+  String get actionApplyManual => '수동 적용';
+
+  @override
+  String get actionApplyThisImage => '이 이미지 적용';
+
+  @override
+  String get actionArchive => '아카이브';
+
+  @override
+  String get actionCopy => '복사하기';
+
+  @override
+  String get actionCreate => '만들기';
+
+  @override
+  String get actionKeep => '유지';
+
+  @override
+  String get actionOpenGoogleImageSearch => 'Google 이미지 검색 열기';
+
+  @override
+  String get actionOpenPinterestSearch => 'Pinterest 검색 열기';
+
+  @override
+  String get actionPrevious => '이전';
+
+  @override
+  String get actionProposeToGlobalRegistry => '글로벌 사전에 추가 제안';
+
+  @override
+  String get actionRedo => '다시 실행';
+
+  @override
+  String get actionReload => '다시 불러오기';
+
+  @override
+  String get actionReplace => '바꾸기';
+
+  @override
+  String get actionReplaceAll => '모두 바꾸기';
+
+  @override
+  String get actionSelectLocalImage => '로컬 이미지 선택';
+
+  @override
+  String get actionUndo => '실행 취소';
+
+  @override
+  String get addConcept => '개념 추가';
+
+  @override
+  String get addEvent => '사건 추가';
+
+  @override
+  String get addOrganization => '조직 추가';
+
+  @override
+  String get addPerson => '인물 추가';
+
+  @override
+  String get addPlace => '장소 추가';
+
+  @override
+  String get addWork => '작품 추가';
+
+  @override
+  String get breadcrumbLibrary => '서재';
+
+  @override
+  String get breadcrumbWork => '작품';
+
+  @override
+  String get clipboardImageDetected => '클립보드 이미지 감지됨';
+
+  @override
+  String errorBrowserLaunchFailed(String error) {
+    return '브라우저를 열지 못했습니다: $error';
+  }
+
+  @override
+  String get errorCannotOpenBrowser => '브라우저를 열 수 없습니다.';
+
+  @override
+  String get externalFileChanged => '외부 파일이 변경되었습니다';
+
+  @override
+  String get globalRegistryLabel => '글로벌 사전';
+
+  @override
+  String get helpFullFileEdit => '전체 마크다운 파일을 편집합니다.';
+
+  @override
+  String get helpMarkdownBodyEdit => '마크다운 본문을 편집합니다.';
+
+  @override
+  String get helpSectionEdit => '이 섹션을 편집합니다.';
+
+  @override
+  String get hintEnterDirectImageUrl => '직접 이미지 URL을 입력하세요';
+
+  @override
+  String get hintEnterPosterSearchQuery => '포스터 검색어를 입력하세요';
+
+  @override
+  String get hintFind => '찾기';
+
+  @override
+  String get hintHidden => '숨김';
+
+  @override
+  String get hintNotArchived => '아카이브 안 됨';
+
+  @override
+  String get hintReplaceText => '바꿀 텍스트';
+
+  @override
+  String get hintSearchEverything => '작품, 인물, 사건, 장소, 개념을 검색하세요...';
+
+  @override
+  String get hintSearchExplain => '내 아카이브와 스타터 카탈로그를 검색합니다.';
+
+  @override
+  String get hintSearchWorkFromRegistry => '사전에서 작품 검색';
+
+  @override
+  String get hintSiblingTracked => '관련 항목이 이미 기록되어 있습니다';
+
+  @override
+  String get hintWorkTitle => '작품 제목';
+
+  @override
+  String get imageCorrectionGuideSteps => '이미지를 복사하거나 URL을 붙여넣거나 로컬 파일을 선택하세요.';
+
+  @override
+  String get imageCorrectionGuideTitle => '이미지 교정 가이드';
+
+  @override
+  String incomingLinkCount(int count) {
+    return '이 엔티티를 가리키는 기록 $count건';
+  }
+
+  @override
+  String get invalidImageUrl => '올바른 이미지 URL이 아닙니다';
+
+  @override
+  String get labelRegistry => '사전';
+
+  @override
+  String get labelWarning => '주의';
+
+  @override
+  String get myArchiveLabel => '내 아카이브';
+
+  @override
+  String get myRegistrationLabel => '내 등록';
+
+  @override
+  String noLinksYet(String title) {
+    return '아직 $title 연결이 없습니다.';
+  }
+
+  @override
+  String get noSearchResults => '검색 결과가 없습니다';
+
+  @override
+  String get posterSearchQuery => '포스터 검색어';
+
+  @override
+  String get posterSuffix => '포스터';
+
+  @override
+  String get recordBody => '기록 본문';
+
+  @override
+  String get searchTitle => '검색';
+
+  @override
+  String get sectionCast => '출연진';
+
+  @override
+  String get sectionConnectedConcepts => '연결된 개념';
+
+  @override
+  String get sectionConnectedEvents => '연결된 사건';
+
+  @override
+  String get sectionConnectedOrganizations => '연결된 조직';
+
+  @override
+  String get sectionConnectedPersons => '연결된 인물';
+
+  @override
+  String get sectionConnectedPlaces => '연결된 장소';
+
+  @override
+  String get sectionConnectedWorks => '연결된 작품';
+
+  @override
+  String get sectionGallery => '갤러리';
+
+  @override
+  String get sectionGlobalRegistryEntity => '글로벌 사전 엔티티';
+
+  @override
+  String get sectionGlobalRegistryWork => '글로벌 사전 작품';
+
+  @override
+  String get sectionMainCharacters => '주요 인물';
+
+  @override
+  String get sectionMemo => '메모';
+
+  @override
+  String get sectionMyArchiveEntity => '내 아카이브 엔티티';
+
+  @override
+  String get sectionMyArchiveWork => '내 아카이브 작품';
+
+  @override
+  String get sectionMyArchiveWorkRegisteredOnly => '등록만 된 작품';
+
+  @override
+  String get sectionNotArchived => '아카이브 안 됨';
+
+  @override
+  String get sectionQuotes => '인용';
+
+  @override
+  String get sectionSynopsis => '시놉시스';
+
+  @override
+  String get tabBody => '본문';
+
+  @override
+  String get tabConnection => '연결';
+
+  @override
+  String get tabInfo => '정보';
+
+  @override
+  String get tabRecord => '기록';
+
+  @override
+  String get tabView => '보기';
+
+  @override
+  String get tooltipBlockquote => '인용문';
+
+  @override
+  String get tooltipBold => '굵게 (Ctrl+B)';
+
+  @override
+  String get tooltipBulletedList => '글머리 목록';
+
+  @override
+  String get tooltipFind => '찾기';
+
+  @override
+  String get tooltipH1 => '제목 1';
+
+  @override
+  String get tooltipH2 => '제목 2';
+
+  @override
+  String get tooltipH3 => '제목 3';
+
+  @override
+  String get tooltipImageVaultRequired => '이미지를 삽입하려면 볼트를 연결하세요';
+
+  @override
+  String get tooltipInlineCode => '인라인 코드';
+
+  @override
+  String get tooltipInsertImage => '이미지 삽입';
+
+  @override
+  String get tooltipInsertSection => '섹션 삽입';
+
+  @override
+  String get tooltipItalic => '기울임 (Ctrl+I)';
+
+  @override
+  String get tooltipLink => '링크';
+
+  @override
+  String get tooltipLinkEntity => '엔티티 링크';
+
+  @override
+  String get tooltipNumberedList => '번호 목록';
+
+  @override
+  String get tooltipSmartPaste => '스마트 붙여넣기';
+
+  @override
+  String get tooltipStrikethrough => '취소선';
+
+  @override
+  String get tooltipTableOfContents => '목차';
+
+  @override
+  String get waitingForClipboardImage => '클립보드 이미지를 기다리는 중...';
+
+  @override
+  String get webImageSearchTitle => '아카이브 포스터 이미지 교정';
+
+  @override
+  String get sectionHofTitle => 'S-Tier 인생 명작 컬렉션 (Hall of Fame)';
+
+  @override
+  String get catalogTitle => '작품 카탈로그 (사전 + 아카이브)';
+
+  @override
+  String personalLibraryCountDesc(int count) {
+    return '$count개 아카이브 작품';
+  }
+
+  @override
+  String catalogMediaSortDesc(int count) {
+    return '$count개 표시 · 매체별 정렬 · 아카이브한 작품은 카드로 표시됩니다';
+  }
+
+  @override
+  String catalogGeneralDesc(int count) {
+    return '$count개 표시 · 아카이브 우선 항목은 사이드바의 나만의 서재를 이용하세요';
+  }
+
+  @override
+  String worksCountSuffix(int count) {
+    return '($count개 작품)';
+  }
+
+  @override
+  String get watchlistTitle => '감상 예정 보관함';
+
+  @override
+  String watchlistDescription(String displayName) {
+    return '$displayName님이 나중에 감상하려고 표시한 작품입니다.';
+  }
+
+  @override
+  String get watchlistEmptyTitle => '아직 감상 예정 작품이 없습니다.';
+
+  @override
+  String get watchlistEmptyHelp => '새 작품을 추가하거나 작품 편집에서 나의 상태를 감상 예정으로 설정하세요.';
+
+  @override
+  String get yearlyLibraryTitle => '연도별 라이브러리';
+
+  @override
+  String get yearlyLibraryDescription => '출시 연도별로 라이브러리를 둘러봅니다.';
+
+  @override
+  String yearlyHeader(int year) {
+    return '$year년';
+  }
+
+  @override
+  String get yearlyNoYear => '연도 미상';
 }

@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 
 import '../../../core/ports/vault_port.dart';
 import '../../../models/akasha_item.dart';
+import '../../../models/category_descriptor.dart';
 import '../../../models/enums.dart';
 import '../../../models/work_id_codec.dart';
 import '../../../services/poster_url_localizer.dart';
 import '../../../services/works_registry.dart';
+import '../../../utils/app_l10n.dart';
 import '../../../utils/helpers.dart';
 import '../../../widgets/registry_work_autocomplete.dart';
 import '../../../widgets/star_rating.dart';
@@ -18,6 +20,7 @@ Future<AkashaItem?> showAddWorkDialog(
   String? initialTitle,
   VaultPort? vault,
 }) async {
+  final l10n = lookupAppL10n(context);
   final titleCtrl = TextEditingController(text: initialTitle ?? '');
   final creatorCtrl = TextEditingController();
   final yearCtrl = TextEditingController();
@@ -42,7 +45,7 @@ Future<AkashaItem?> showAddWorkDialog(
         final bool isPreRegistered = selectedRegistryWork != null;
 
         return AlertDialog(
-          title: const Text('새 작품 등록 (아카이브 추가)'),
+          title: Text(l10n?.addWorkDialogTitle ?? '새 작품 등록 (아카이브 추가)'),
           content: SizedBox(
             width: 450,
             child: SingleChildScrollView(
@@ -50,9 +53,12 @@ Future<AkashaItem?> showAddWorkDialog(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    '공통 작품 사전 검색',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                  Text(
+                    l10n?.registryWorkSearch ?? '공통 작품 사전 검색',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 13,
+                    ),
                   ),
                   const SizedBox(height: 6),
                   RegistryWorkAutocomplete(
@@ -71,8 +77,7 @@ Future<AkashaItem?> showAddWorkDialog(
                         selectedRegistryWork = selection;
                         titleCtrl.text = selection.title;
                         creatorCtrl.text = selection.creator;
-                        yearCtrl.text =
-                            selection.releaseYear?.toString() ?? '';
+                        yearCtrl.text = selection.releaseYear?.toString() ?? '';
                         posterUrlCtrl.text = selection.posterPath ?? '';
                         selCategory = selection.category;
                         selDomain = selection.domain;
@@ -85,10 +90,10 @@ Future<AkashaItem?> showAddWorkDialog(
                   TextField(
                     controller: titleCtrl,
                     enabled: !isPreRegistered,
-                    decoration: const InputDecoration(
-                      labelText: '제목',
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(Icons.title),
+                    decoration: InputDecoration(
+                      labelText: l10n?.labelTitle ?? '제목',
+                      border: const OutlineInputBorder(),
+                      prefixIcon: const Icon(Icons.title),
                       isDense: true,
                     ),
                   ),
@@ -96,10 +101,10 @@ Future<AkashaItem?> showAddWorkDialog(
                   TextField(
                     controller: creatorCtrl,
                     enabled: !isPreRegistered,
-                    decoration: const InputDecoration(
-                      labelText: '작가 / 제작사',
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(Icons.person),
+                    decoration: InputDecoration(
+                      labelText: l10n?.labelCreator ?? '작가 / 제작사',
+                      border: const OutlineInputBorder(),
+                      prefixIcon: const Icon(Icons.person),
                       isDense: true,
                     ),
                   ),
@@ -108,17 +113,20 @@ Future<AkashaItem?> showAddWorkDialog(
                     controller: yearCtrl,
                     enabled: !isPreRegistered,
                     keyboardType: TextInputType.number,
-                    decoration: const InputDecoration(
-                      labelText: '출시 연도',
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(Icons.calendar_today),
+                    decoration: InputDecoration(
+                      labelText: l10n?.labelReleaseYear ?? '출시 연도',
+                      border: const OutlineInputBorder(),
+                      prefixIcon: const Icon(Icons.calendar_today),
                       isDense: true,
                     ),
                   ),
                   const SizedBox(height: 14),
-                  const Text(
-                    '포스터 이미지 (웹 URL 또는 로컬 파일)',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                  Text(
+                    l10n?.posterImageLabel ?? '포스터 이미지 (웹 URL 또는 로컬 파일)',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 13,
+                    ),
                   ),
                   const SizedBox(height: 6),
                   Row(
@@ -127,12 +135,15 @@ Future<AkashaItem?> showAddWorkDialog(
                         child: TextField(
                           controller: posterUrlCtrl,
                           decoration: InputDecoration(
-                            hintText: 'https://... 또는 로컬 경로 입력',
+                            hintText:
+                                l10n?.posterUrlHint ??
+                                'https://... 또는 로컬 경로 입력',
                             border: const OutlineInputBorder(),
                             isDense: true,
                             suffixIcon: IconButton(
                               icon: const Icon(Icons.folder_open),
-                              tooltip: '로컬 이미지 파일 선택',
+                              tooltip:
+                                  l10n?.tooltipPickLocalImage ?? '로컬 이미지 파일 선택',
                               onPressed: () async {
                                 final fileResult = await FilePicker.pickFiles(
                                   type: FileType.image,
@@ -141,8 +152,8 @@ Future<AkashaItem?> showAddWorkDialog(
                                     fileResult.files.single.path != null) {
                                   final path = fileResult.files.single.path!;
                                   if (vault?.vaultPath != null) {
-                                    final relativePath =
-                                        await vault!.importPosterImage(path);
+                                    final relativePath = await vault!
+                                        .importPosterImage(path);
                                     if (relativePath != null) {
                                       posterUrlCtrl.text = relativePath;
                                     }
@@ -158,7 +169,7 @@ Future<AkashaItem?> showAddWorkDialog(
                       const SizedBox(width: 8),
                       IconButton.filledTonal(
                         icon: const Icon(Icons.image_search),
-                        tooltip: '인터넷 이미지 검색',
+                        tooltip: l10n?.tooltipWebImageSearch ?? '인터넷 이미지 검색',
                         onPressed: () async {
                           final selectedUrl = await showDialog<String>(
                             context: context,
@@ -168,14 +179,15 @@ Future<AkashaItem?> showAddWorkDialog(
                             ),
                           );
                           if (selectedUrl != null) {
-                            final resolved = await PosterUrlLocalizer.applyWithSnackBar(
-                              selectedUrl,
-                              showSnack: (message) {
-                                ScaffoldMessenger.of(ctx).showSnackBar(
-                                  SnackBar(content: Text(message)),
+                            final resolved =
+                                await PosterUrlLocalizer.applyWithSnackBar(
+                                  selectedUrl,
+                                  showSnack: (message) {
+                                    ScaffoldMessenger.of(ctx).showSnackBar(
+                                      SnackBar(content: Text(message)),
+                                    );
+                                  },
                                 );
-                              },
-                            );
                             posterUrlCtrl.text = resolved;
                           }
                         },
@@ -183,9 +195,12 @@ Future<AkashaItem?> showAddWorkDialog(
                     ],
                   ),
                   const SizedBox(height: 14),
-                  const Text(
-                    '나의 별점',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                  Text(
+                    l10n?.myRating ?? '나의 별점',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 13,
+                    ),
                   ),
                   const SizedBox(height: 6),
                   InteractiveStarRating(
@@ -193,9 +208,12 @@ Future<AkashaItem?> showAddWorkDialog(
                     onChanged: (v) => setD(() => selRating = v),
                   ),
                   const SizedBox(height: 18),
-                  const Text(
-                    '카테고리',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                  Text(
+                    l10n?.labelCategory ?? '카테고리',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 13,
+                    ),
                   ),
                   const SizedBox(height: 6),
                   DropdownButtonFormField<MediaCategory>(
@@ -204,8 +222,10 @@ Future<AkashaItem?> showAddWorkDialog(
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       isDense: true,
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 10,
+                      ),
                     ),
                     items: isPreRegistered
                         ? [
@@ -215,25 +235,25 @@ Future<AkashaItem?> showAddWorkDialog(
                                 children: [
                                   Icon(selCategory.icon, size: 18),
                                   const SizedBox(width: 8),
-                                  Text(selCategory.label),
+                                  Text(selCategory.localizedLabel(l10n)),
                                 ],
                               ),
                             ),
                           ]
                         : MediaCategory.values
-                            .map(
-                              (c) => DropdownMenuItem(
-                                value: c,
-                                child: Row(
-                                  children: [
-                                    Icon(c.icon, size: 18),
-                                    const SizedBox(width: 8),
-                                    Text(c.label),
-                                  ],
+                              .map(
+                                (c) => DropdownMenuItem(
+                                  value: c,
+                                  child: Row(
+                                    children: [
+                                      Icon(c.icon, size: 18),
+                                      const SizedBox(width: 8),
+                                      Text(c.localizedLabel(l10n)),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            )
-                            .toList(),
+                              )
+                              .toList(),
                     onChanged: isPreRegistered
                         ? null
                         : (v) {
@@ -247,9 +267,12 @@ Future<AkashaItem?> showAddWorkDialog(
                           },
                   ),
                   const SizedBox(height: 14),
-                  const Text(
-                    '작품 상태',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                  Text(
+                    l10n?.labelWorkStatus ?? '작품 상태',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 13,
+                    ),
                   ),
                   const SizedBox(height: 6),
                   DropdownButtonFormField<String>(
@@ -259,20 +282,32 @@ Future<AkashaItem?> showAddWorkDialog(
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       isDense: true,
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 10,
+                      ),
                     ),
-                    items: workOpts
-                        .map((s) => DropdownMenuItem(value: s, child: Text(s)))
-                        .toList(),
+                    items: workOpts.map((s) {
+                      final status = CategoryRegistry.isContentType(selCategory)
+                          ? ContentWorkStatus.fromStorage(s)
+                          : GameWorkStatus.fromStorage(s);
+                      final display =
+                          CategoryRegistry.isContentType(selCategory)
+                          ? (status as ContentWorkStatus).localizedLabel(l10n)
+                          : (status as GameWorkStatus).localizedLabel(l10n);
+                      return DropdownMenuItem(value: s, child: Text(display));
+                    }).toList(),
                     onChanged: (v) {
                       if (v != null) setD(() => selWork = v);
                     },
                   ),
                   const SizedBox(height: 14),
-                  const Text(
-                    '나의 상태',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                  Text(
+                    l10n?.labelMyStatus ?? '나의 상태',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 13,
+                    ),
                   ),
                   const SizedBox(height: 6),
                   DropdownButtonFormField<String>(
@@ -282,12 +317,21 @@ Future<AkashaItem?> showAddWorkDialog(
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       isDense: true,
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 10,
+                      ),
                     ),
-                    items: myOpts
-                        .map((s) => DropdownMenuItem(value: s, child: Text(s)))
-                        .toList(),
+                    items: myOpts.map((s) {
+                      final status = CategoryRegistry.isContentType(selCategory)
+                          ? ContentMyStatus.fromStorage(s)
+                          : GameMyStatus.fromStorage(s);
+                      final display =
+                          CategoryRegistry.isContentType(selCategory)
+                          ? (status as ContentMyStatus).localizedLabel(l10n)
+                          : (status as GameMyStatus).localizedLabel(l10n);
+                      return DropdownMenuItem(value: s, child: Text(display));
+                    }).toList(),
                     onChanged: (v) {
                       if (v != null) setD(() => selMy = v);
                     },
@@ -299,14 +343,18 @@ Future<AkashaItem?> showAddWorkDialog(
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx),
-              child: const Text('취소'),
+              child: Text(l10n?.actionCancel ?? '취소'),
             ),
             FilledButton.icon(
               onPressed: () async {
                 final title = titleCtrl.text.trim();
                 if (title.isEmpty) {
                   ScaffoldMessenger.of(ctx).showSnackBar(
-                    const SnackBar(content: Text('제목을 입력해 주세요.')),
+                    SnackBar(
+                      content: Text(
+                        l10n?.validationEnterTitle ?? '제목을 입력해 주세요.',
+                      ),
+                    ),
                   );
                   return;
                 }
@@ -316,16 +364,17 @@ Future<AkashaItem?> showAddWorkDialog(
                     : await PosterUrlLocalizer.applyWithSnackBar(
                         rawPoster,
                         showSnack: (message) {
-                          ScaffoldMessenger.of(ctx).showSnackBar(
-                            SnackBar(content: Text(message)),
-                          );
+                          ScaffoldMessenger.of(
+                            ctx,
+                          ).showSnackBar(SnackBar(content: Text(message)));
                         },
                       );
                 if (!ctx.mounted) return;
                 Navigator.pop(
                   ctx,
                   createItem(
-                    workId: selectedRegistryWork?.workId ??
+                    workId:
+                        selectedRegistryWork?.workId ??
                         WorkIdCodec.buildUserLocal(),
                     title: title,
                     category: selCategory,
@@ -335,15 +384,14 @@ Future<AkashaItem?> showAddWorkDialog(
                     creator: creatorCtrl.text.trim(),
                     releaseYear: int.tryParse(yearCtrl.text.trim()),
                     rating: selRating,
-                    posterPath:
-                        posterPath != null && posterPath.isNotEmpty
-                            ? posterPath
-                            : null,
+                    posterPath: posterPath != null && posterPath.isNotEmpty
+                        ? posterPath
+                        : null,
                   ),
                 );
               },
               icon: const Icon(Icons.check),
-              label: const Text('등록'),
+              label: Text(l10n?.actionRegister ?? '등록'),
             ),
           ],
         );

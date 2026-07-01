@@ -1,19 +1,21 @@
 part of 'collectible_collection_edit_dialog.dart';
 
 List<Widget> _collectibleCollectionEditCuratedSection(
+  BuildContext context,
   _CollectibleCollectionEditSession session,
   void Function(void Function()) setLocal,
 ) {
+  final l10n = lookupAppL10n(context);
   return [
     const SizedBox(height: 12),
     const Text(
-      'Work (작품)',
+      'Work',
       style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
     ),
     const SizedBox(height: 4),
     if (session.pickableWorks.isEmpty)
       Text(
-        '카탈로그·볼트에 Work가 없습니다.',
+        l10n?.noWorksInCatalogVault ?? '카탈로그·볼트에 Work가 없습니다.',
         style: TextStyle(color: AkashaColors.textMuted, fontSize: 12),
       )
     else
@@ -55,7 +57,7 @@ List<Widget> _collectibleCollectionEditCuratedSection(
     const SizedBox(height: 4),
     if (session.pickableEntities.isEmpty)
       Text(
-        '카탈로그에 Person·Concept 등 Entity가 없습니다.',
+        l10n?.noEntitiesInCatalog ?? '카탈로그에 Person·Concept 등 Entity가 없습니다.',
         style: TextStyle(color: AkashaColors.textMuted, fontSize: 12),
       )
     else
@@ -93,7 +95,9 @@ List<Widget> _collectibleCollectionEditCuratedSection(
       Padding(
         padding: const EdgeInsets.only(top: 8),
         child: Text(
-          '선택 ${session.selectedRefs.length}개 · 갤러리에서 순서 변경',
+          l10n != null
+              ? l10n.selectedCountReorderHint(session.selectedRefs.length)
+              : '선택 ${session.selectedRefs.length}개 · 갤러리에서 순서 변경',
           style: TextStyle(color: AkashaColors.textMuted, fontSize: 12),
         ),
       ),

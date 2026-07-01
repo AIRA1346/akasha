@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/ports/vault_port.dart';
 import '../../../models/akasha_item.dart';
@@ -11,10 +12,12 @@ import '../../../utils/vault_work_presence.dart';
 import '../home_auto_archive.dart';
 import '../home_registry_archive.dart';
 import '../preview_frame.dart';
+import '../../../utils/app_l10n.dart';
 
 /// Home Work/Entity 프리뷰 스택·복귀 스냅샷·연결 픽 pending.
 class HomePreviewCoordinator {
   HomePreviewCoordinator({
+    required this.hostContext,
     required this.vault,
     required this.rebuild,
     required this.resolveItemForOpen,
@@ -29,6 +32,7 @@ class HomePreviewCoordinator {
     required this.resolveEntity,
   });
 
+  final BuildContext Function() hostContext;
   final VaultPort vault;
   final void Function() rebuild;
   final AkashaItem Function(AkashaItem item) resolveItemForOpen;
@@ -88,19 +92,33 @@ class HomePreviewCoordinator {
   }
 
   void openWorkFromPreviewToConnect(EntityAnchorType type) {
-    unawaited(_openWorkFromPreviewToConnect(type: type, candidate: null, pickWork: false));
+    unawaited(
+      _openWorkFromPreviewToConnect(
+        type: type,
+        candidate: null,
+        pickWork: false,
+      ),
+    );
   }
 
   void openWorkFromPreviewToConnectWork() {
-    unawaited(_openWorkFromPreviewToConnect(type: null, candidate: null, pickWork: true));
+    unawaited(
+      _openWorkFromPreviewToConnect(
+        type: null,
+        candidate: null,
+        pickWork: true,
+      ),
+    );
   }
 
   void openWorkFromPreviewToConnectSuggested(LinkCandidate candidate) {
-    unawaited(_openWorkFromPreviewToConnect(
-      type: candidate.anchorType,
-      candidate: candidate,
-      pickWork: false,
-    ));
+    unawaited(
+      _openWorkFromPreviewToConnect(
+        type: candidate.anchorType,
+        candidate: candidate,
+        pickWork: false,
+      ),
+    );
   }
 
   Future<void> _openWorkFromPreviewToConnect({
@@ -264,8 +282,9 @@ class HomePreviewCoordinator {
     final item = workPreviewItem;
     if (item == null) return;
 
+    final l10n = lookupAppL10n(hostContext());
     if (vault.vaultPath == null) {
-      showSnack('볼트를 먼저 연결해 주세요.');
+      showSnack(l10n?.errorConnectVaultFirst ?? '볼트를 먼저 연결해 주세요.');
       return;
     }
 
@@ -284,13 +303,19 @@ class HomePreviewCoordinator {
     }
 
     openWorkPreview(resolveItemForOpen(saved));
-    showSnack('"${saved.title}"을(를) 아카이브했습니다.');
+    showSnack(
+      l10n != null
+          ? l10n.successArchivedWork(saved.title)
+          : '"${saved.title}"을(를) 아카이브했습니다.',
+    );
   }
 
   void maybeClearReturnForWork(String workId) {
     final snapshot = _returnSnapshot;
     if (snapshot == null) return;
-    if (snapshot.current case WorkPreviewFrame(:final item) when item.workId == workId) {
+    if (snapshot.current case WorkPreviewFrame(
+      :final item,
+    ) when item.workId == workId) {
       clearReturnSnapshot();
     }
   }
@@ -298,8 +323,9 @@ class HomePreviewCoordinator {
   void maybeClearReturnForEntity(String entityId) {
     final snapshot = _returnSnapshot;
     if (snapshot == null) return;
-    if (snapshot.current case EntityPreviewFrame(:final entity)
-        when entity.entityId == entityId) {
+    if (snapshot.current case EntityPreviewFrame(
+      :final entity,
+    ) when entity.entityId == entityId) {
       clearReturnSnapshot();
     }
   }
@@ -309,8 +335,7 @@ class HomePreviewCoordinator {
     if (snapshot == null) return;
 
     final matches = switch (snapshot.current) {
-      WorkPreviewFrame(:final item) =>
-        workId != null && item.workId == workId,
+      WorkPreviewFrame(:final item) => workId != null && item.workId == workId,
       EntityPreviewFrame(:final entity) =>
         entityId != null && entity.entityId == entityId,
     };

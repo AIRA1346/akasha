@@ -8,6 +8,7 @@ import '../services/poster_url_localizer.dart';
 import '../models/enums.dart';
 import '../utils/helpers.dart';
 import '../theme/akasha_colors.dart';
+import '../utils/app_l10n.dart';
 
 class WebImageSearchDialog extends StatefulWidget {
   final String initialQuery;
@@ -39,6 +40,16 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final l10n = lookupAppL10n(context);
+    final suffix = l10n?.posterSuffix ?? ' 포스터';
+    if (_searchCtrl.text == '${widget.initialQuery} 포스터') {
+      _searchCtrl.text = '${widget.initialQuery}$suffix';
+    }
+  }
+
+  @override
   void dispose() {
     _stopClipboardMonitoring();
     _searchCtrl.dispose();
@@ -48,7 +59,9 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
 
   /// 클립보드를 주기적으로 모니터링하여 이미지 주소를 감지합니다.
   void _startClipboardMonitoring() {
-    _clipboardTimer = Timer.periodic(const Duration(milliseconds: 500), (timer) async {
+    _clipboardTimer = Timer.periodic(const Duration(milliseconds: 500), (
+      timer,
+    ) async {
       try {
         final data = await Clipboard.getData(Clipboard.kTextPlain);
         final text = data?.text?.trim() ?? '';
@@ -81,9 +94,9 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
       url,
       showSnack: (message) {
         if (!mounted) return;
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(message)),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(message)));
       },
     );
     if (!mounted) return;
@@ -110,6 +123,7 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
 
   /// 시스템 브라우저를 띄워 검색 수행
   Future<void> _launchBrowser(String baseUrl) async {
+    final l10n = lookupAppL10n(context);
     final query = _searchCtrl.text.trim();
     if (query.isEmpty) return;
 
@@ -122,14 +136,25 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
       } else {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('브라우저를 열 수 없습니다. 주소를 수동 복사해주세요.')),
+            SnackBar(
+              content: Text(
+                l10n?.errorCannotOpenBrowser ??
+                    '브라우저를 열 수 없습니다. 주소를 수동 복사해주세요.',
+              ),
+            ),
           );
         }
       }
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('브라우저 실행 중 오류가 발생했습니다: $e')),
+          SnackBar(
+            content: Text(
+              l10n != null
+                  ? l10n.errorBrowserLaunchFailed(e.toString())
+                  : '브라우저 실행 중 오류가 발생했습니다: $e',
+            ),
+          ),
         );
       }
     }
@@ -137,12 +162,14 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return AlertDialog(
-      title: const Row(
+      title: Row(
         children: [
-          Icon(Icons.image_search, color: Colors.tealAccent),
-          SizedBox(width: 10),
-          Text('🌐 아카이브 포스터 이미지 교정'),
+          const Icon(Icons.image_search, color: Colors.tealAccent),
+          const SizedBox(width: 10),
+          Text(l10n?.webImageSearchTitle ?? '🌐 아카이브 포스터 이미지 교정'),
         ],
       ),
       content: SizedBox(
@@ -159,23 +186,28 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: Colors.teal.withValues(alpha: 0.2)),
               ),
-              child: const Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '💡 스마트 이미지 교정 방법',
-                    style: TextStyle(
+                    l10n?.imageCorrectionGuideTitle ?? '💡 스마트 이미지 교정 방법',
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 13,
                       color: Colors.tealAccent,
                     ),
                   ),
-                  SizedBox(height: 6),
+                  const SizedBox(height: 6),
                   Text(
-                    '1. 아래 검색어로 구글/핀터레스트에서 포스터를 검색합니다.\n'
-                    '2. 마음에 드는 이미지를 우클릭하여 [이미지 주소 복사]를 실행합니다.\n'
-                    '3. 앱이 클립보드의 복사된 주소를 자동으로 감지하여 바로 적용해 줍니다.',
-                    style: TextStyle(fontSize: 11, color: Colors.white70, height: 1.4),
+                    l10n?.imageCorrectionGuideSteps ??
+                        '1. 아래 검색어로 구글/핀터레스트에서 포스터를 검색합니다.\n'
+                            '2. 마음에 드는 이미지를 우클릭하여 [이미지 주소 복사]를 실행합니다.\n'
+                            '3. 앱이 클립보드의 복사된 주소를 자동으로 감지하여 바로 적용해 줍니다.',
+                    style: const TextStyle(
+                      fontSize: 11,
+                      color: Colors.white70,
+                      height: 1.4,
+                    ),
                   ),
                 ],
               ),
@@ -183,9 +215,13 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
             const SizedBox(height: 16),
 
             // 검색어 및 브라우저 열기 버튼
-            const Text(
-              '포스터 검색어',
-              style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AkashaColors.textMuted),
+            Text(
+              l10n?.posterSearchQuery ?? '포스터 검색어',
+              style: const TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: AkashaColors.textMuted,
+              ),
             ),
             const SizedBox(height: 6),
             Row(
@@ -193,11 +229,16 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                 Expanded(
                   child: TextField(
                     controller: _searchCtrl,
-                    decoration: const InputDecoration(
-                      hintText: '작품 포스터 검색어 입력...',
-                      border: OutlineInputBorder(),
+                    decoration: InputDecoration(
+                      hintText:
+                          l10n?.hintEnterPosterSearchQuery ??
+                          '작품 포스터 검색어 입력...',
+                      border: const OutlineInputBorder(),
                       isDense: true,
-                      contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 10,
+                      ),
                     ),
                   ),
                 ),
@@ -212,9 +253,17 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                       backgroundColor: const Color(0xFF2C2C3E),
                       foregroundColor: Colors.white,
                     ),
-                    onPressed: () => _launchBrowser('https://www.google.com/search?tbm=isch&q='),
-                    icon: const Icon(Icons.travel_explore, size: 16, color: Colors.blueAccent),
-                    label: const Text('구글 이미지 검색 열기'),
+                    onPressed: () => _launchBrowser(
+                      'https://www.google.com/search?tbm=isch&q=',
+                    ),
+                    icon: const Icon(
+                      Icons.travel_explore,
+                      size: 16,
+                      color: Colors.blueAccent,
+                    ),
+                    label: Text(
+                      l10n?.actionOpenGoogleImageSearch ?? '구글 이미지 검색 열기',
+                    ),
                   ),
                 ),
                 const SizedBox(width: 8),
@@ -224,9 +273,17 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                       foregroundColor: Colors.redAccent,
                       side: const BorderSide(color: Colors.redAccent),
                     ),
-                    onPressed: () => _launchBrowser('https://www.pinterest.co.kr/search/pins/?q='),
-                    icon: const Icon(Icons.push_pin, size: 16, color: Colors.redAccent),
-                    label: const Text('핀터레스트 검색 열기'),
+                    onPressed: () => _launchBrowser(
+                      'https://www.pinterest.co.kr/search/pins/?q=',
+                    ),
+                    icon: const Icon(
+                      Icons.push_pin,
+                      size: 16,
+                      color: Colors.redAccent,
+                    ),
+                    label: Text(
+                      l10n?.actionOpenPinterestSearch ?? '핀터레스트 검색 열기',
+                    ),
                   ),
                 ),
               ],
@@ -242,8 +299,8 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                   color: const Color(0xFF161622),
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: _isClipboardUrlValid 
-                        ? Colors.tealAccent.withValues(alpha: 0.3) 
+                    color: _isClipboardUrlValid
+                        ? Colors.tealAccent.withValues(alpha: 0.3)
                         : Colors.white.withValues(alpha: 0.05),
                     width: _isClipboardUrlValid ? 1.5 : 1,
                   ),
@@ -251,14 +308,19 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                 child: _isClipboardUrlValid && _detectedClipboardUrl != null
                     ? Column(
                         children: [
-                          const Row(
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(Icons.check_circle_outline, color: Colors.tealAccent, size: 16),
-                              SizedBox(width: 6),
+                              const Icon(
+                                Icons.check_circle_outline,
+                                color: Colors.tealAccent,
+                                size: 16,
+                              ),
+                              const SizedBox(width: 6),
                               Text(
-                                '클립보드에서 이미지 주소 감지 완료!',
-                                style: TextStyle(
+                                l10n?.clipboardImageDetected ??
+                                    '클립보드에서 이미지 주소 감지 완료!',
+                                style: const TextStyle(
                                   color: Colors.tealAccent,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 12,
@@ -282,7 +344,10 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                                     _detectedClipboardUrl!,
                                     fit: BoxFit.cover,
                                     errorBuilder: (_, _, _) => const Center(
-                                      child: Icon(Icons.broken_image, color: AkashaColors.textMuted),
+                                      child: Icon(
+                                        Icons.broken_image,
+                                        color: AkashaColors.textMuted,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -290,7 +355,8 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                                 // 주소 정보 및 적용 버튼
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
@@ -310,10 +376,15 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                                           foregroundColor: Colors.black,
                                         ),
                                         onPressed: () {
-                                          _applyImageUrl(_detectedClipboardUrl!);
+                                          _applyImageUrl(
+                                            _detectedClipboardUrl!,
+                                          );
                                         },
                                         icon: const Icon(Icons.check, size: 16),
-                                        label: const Text('이 이미지로 포스터 교정'),
+                                        label: Text(
+                                          l10n?.actionApplyThisImage ??
+                                              '이 이미지로 포스터 교정',
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -336,9 +407,13 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                               ),
                             ),
                             const SizedBox(height: 10),
-                            const Text(
-                              '인터넷 브라우저에서 포스터 주소를 복사하기를 기다리는 중...',
-                              style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
+                            Text(
+                              l10n?.waitingForClipboardImage ??
+                                  '인터넷 브라우저에서 포스터 주소를 복사하기를 기다리는 중...',
+                              style: const TextStyle(
+                                fontSize: 11,
+                                color: AkashaColors.textMuted,
+                              ),
                             ),
                           ],
                         ),
@@ -349,7 +424,7 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
             OutlinedButton.icon(
               onPressed: _pickLocalImage,
               icon: const Icon(Icons.folder_open, size: 18),
-              label: const Text('로컬 이미지 선택'),
+              label: Text(l10n?.actionSelectLocalImage ?? '로컬 이미지 선택'),
             ),
             const SizedBox(height: 12),
 
@@ -359,11 +434,16 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                 Expanded(
                   child: TextField(
                     controller: _manualUrlCtrl,
-                    decoration: const InputDecoration(
-                      hintText: '또는 여기에 직접 이미지 URL 입력...',
-                      border: OutlineInputBorder(),
+                    decoration: InputDecoration(
+                      hintText:
+                          l10n?.hintEnterDirectImageUrl ??
+                          '또는 여기에 직접 이미지 URL 입력...',
+                      border: const OutlineInputBorder(),
                       isDense: true,
-                      contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 10,
+                      ),
                     ),
                   ),
                 ),
@@ -375,11 +455,15 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                       await _applyImageUrl(text);
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('올바르지 않은 이미지 URL 주소입니다.')),
+                        SnackBar(
+                          content: Text(
+                            l10n?.invalidImageUrl ?? '올바르지 않은 이미지 URL 주소입니다.',
+                          ),
+                        ),
                       );
                     }
                   },
-                  child: const Text('수동 적용'),
+                  child: Text(l10n?.actionApplyManual ?? '수동 적용'),
                 ),
               ],
             ),
@@ -389,7 +473,7 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('닫기'),
+          child: Text(l10n?.actionClose ?? '닫기'),
         ),
       ],
     );

@@ -6,6 +6,7 @@ import '../../../models/enums.dart';
 import '../../../services/catalog_contribution_service.dart';
 import '../../../widgets/web_image_search_dialog.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../utils/app_l10n.dart';
 
 /// 글로벌 사전에 **신규 작품 추가 제안** (로컬 큐 — 자동 반영 없음)
 Future<bool?> showCatalogAddContributionDialog(
@@ -13,6 +14,7 @@ Future<bool?> showCatalogAddContributionDialog(
   String? initialTitle,
   String? searchQuery,
 }) async {
+  final l10n = lookupAppL10n(context);
   final titleCtrl = TextEditingController(text: initialTitle ?? '');
   final creatorCtrl = TextEditingController();
   final yearCtrl = TextEditingController();
@@ -27,7 +29,7 @@ Future<bool?> showCatalogAddContributionDialog(
     context: context,
     builder: (ctx) => StatefulBuilder(
       builder: (ctx, setD) => AlertDialog(
-        title: const Text('글로벌 사전 — 작품 추가 제안'),
+        title: Text(l10n?.catalogAddContributionTitle ?? '글로벌 사전 — 작품 추가 제안'),
         content: SizedBox(
           width: 460,
           child: SingleChildScrollView(
@@ -36,24 +38,25 @@ Future<bool?> showCatalogAddContributionDialog(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  CatalogContributionConfig.disclaimerKo,
+                  l10n?.catalogContributionDisclaimer ??
+                      CatalogContributionConfig.disclaimerKo,
                   style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
                 ),
                 const SizedBox(height: 14),
                 TextField(
                   controller: titleCtrl,
-                  decoration: const InputDecoration(
-                    labelText: '제목 *',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: l10n?.labelTitleRequired ?? '제목 *',
+                    border: const OutlineInputBorder(),
                     isDense: true,
                   ),
                 ),
                 const SizedBox(height: 10),
                 TextField(
                   controller: creatorCtrl,
-                  decoration: const InputDecoration(
-                    labelText: '작가 / 제작사',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: l10n?.labelCreator ?? '작가 / 제작사',
+                    border: const OutlineInputBorder(),
                     isDense: true,
                   ),
                 ),
@@ -61,25 +64,25 @@ Future<bool?> showCatalogAddContributionDialog(
                 TextField(
                   controller: yearCtrl,
                   keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    labelText: '출시 연도',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: l10n?.labelReleaseYear ?? '출시 연도',
+                    border: const OutlineInputBorder(),
                     isDense: true,
                   ),
                 ),
                 const SizedBox(height: 10),
                 DropdownButtonFormField<MediaCategory>(
                   initialValue: category,
-                  decoration: const InputDecoration(
-                    labelText: '카테고리',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: l10n?.labelCategory ?? '카테고리',
+                    border: const OutlineInputBorder(),
                     isDense: true,
                   ),
                   items: MediaCategory.values
                       .map(
                         (c) => DropdownMenuItem(
                           value: c,
-                          child: Text(c.label),
+                          child: Text(c.localizedLabel(l10n)),
                         ),
                       )
                       .toList(),
@@ -93,16 +96,16 @@ Future<bool?> showCatalogAddContributionDialog(
                     Expanded(
                       child: TextField(
                         controller: posterCtrl,
-                        decoration: const InputDecoration(
-                          labelText: '포스터 URL (https)',
-                          border: OutlineInputBorder(),
+                        decoration: InputDecoration(
+                          labelText: l10n?.labelPosterUrl ?? '포스터 URL (https)',
+                          border: const OutlineInputBorder(),
                           isDense: true,
                         ),
                       ),
                     ),
                     IconButton(
                       icon: const Icon(Icons.image_search),
-                      tooltip: '이미지 검색',
+                      tooltip: l10n?.tooltipImageSearch ?? '이미지 검색',
                       onPressed: () async {
                         final url = await showDialog<String>(
                           context: context,
@@ -120,18 +123,18 @@ Future<bool?> showCatalogAddContributionDialog(
                 TextField(
                   controller: descCtrl,
                   maxLines: 3,
-                  decoration: const InputDecoration(
-                    labelText: '설명 (직접 작성, 짧게)',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: l10n?.labelDescriptionBrief ?? '설명 (직접 작성, 짧게)',
+                    border: const OutlineInputBorder(),
                     alignLabelWithHint: true,
                   ),
                 ),
                 const SizedBox(height: 10),
                 TextField(
                   controller: anilistCtrl,
-                  decoration: const InputDecoration(
-                    labelText: 'AniList ID (선택, 숫자만)',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: l10n?.labelAnilistId ?? 'AniList ID (선택, 숫자만)',
+                    border: const OutlineInputBorder(),
                     isDense: true,
                   ),
                 ),
@@ -139,9 +142,9 @@ Future<bool?> showCatalogAddContributionDialog(
                 TextField(
                   controller: noteCtrl,
                   maxLines: 2,
-                  decoration: const InputDecoration(
-                    labelText: '제안 메모 (선택)',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: l10n?.labelProposalNote ?? '제안 메모 (선택)',
+                    border: const OutlineInputBorder(),
                     alignLabelWithHint: true,
                   ),
                 ),
@@ -152,22 +155,27 @@ Future<bool?> showCatalogAddContributionDialog(
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: const Text('취소'),
+            child: Text(l10n?.actionCancel ?? '취소'),
           ),
           FilledButton(
             onPressed: () async {
               final title = titleCtrl.text.trim();
               if (title.isEmpty) {
                 ScaffoldMessenger.of(ctx).showSnackBar(
-                  const SnackBar(content: Text('제목을 입력해 주세요.')),
+                  SnackBar(
+                    content: Text(l10n?.validationEnterTitle ?? '제목을 입력해 주세요.'),
+                  ),
                 );
                 return;
               }
               final poster = posterCtrl.text.trim();
               if (poster.isNotEmpty && !poster.startsWith('http')) {
                 ScaffoldMessenger.of(ctx).showSnackBar(
-                  const SnackBar(
-                    content: Text('포스터는 https URL만 제안할 수 있습니다.'),
+                  SnackBar(
+                    content: Text(
+                      l10n?.validationPosterHttpsOnly ??
+                          '포스터는 https URL만 제안할 수 있습니다.',
+                    ),
                   ),
                 );
                 return;
@@ -183,14 +191,17 @@ Future<bool?> showCatalogAddContributionDialog(
                   posterPath: poster.isEmpty ? null : poster,
                   description: descCtrl.text.trim(),
                   searchQuery: searchQuery ?? initialTitle,
-                  externalIds:
-                      anilist.isNotEmpty ? {'anilist': anilist} : const {},
+                  externalIds: anilist.isNotEmpty
+                      ? {'anilist': anilist}
+                      : const {},
                 ),
-                note: noteCtrl.text.trim().isEmpty ? null : noteCtrl.text.trim(),
+                note: noteCtrl.text.trim().isEmpty
+                    ? null
+                    : noteCtrl.text.trim(),
               );
               if (ctx.mounted) Navigator.pop(ctx, true);
             },
-            child: const Text('제안 저장'),
+            child: Text(l10n?.actionSaveProposal ?? '제안 저장'),
           ),
         ],
       ),

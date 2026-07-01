@@ -11,6 +11,7 @@ import '../../../utils/entity_link_neighbors.dart';
 import '../../../widgets/editable_tag_chips.dart';
 import '../../../widgets/entity_link_neighbors_sections.dart';
 import 'widgets/workbench_record_links_sections.dart';
+import '../../../utils/app_l10n.dart';
 
 /// 워크벤치 우측 연결 패널 — Entity (WorkDetailConnectionsPanel과 동일 3열 구조).
 class EntityDetailConnectionsPanel extends StatefulWidget {
@@ -70,6 +71,8 @@ class _EntityDetailConnectionsPanelState
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return SizedBox(
       width: widget.width,
       child: ColoredBox(
@@ -87,13 +90,13 @@ class _EntityDetailConnectionsPanelState
               child: Row(
                 children: [
                   _PanelTab(
-                    label: '연결',
+                    label: l10n?.tabConnection ?? '연결',
                     selected: _tab == 0,
                     onTap: () => setState(() => _tab = 0),
                   ),
                   const SizedBox(width: 8),
                   _PanelTab(
-                    label: '정보',
+                    label: l10n?.tabInfo ?? '정보',
                     selected: _tab == 1,
                     onTap: () => setState(() => _tab = 1),
                   ),
@@ -108,7 +111,7 @@ class _EntityDetailConnectionsPanelState
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       ),
                       child: Text(
-                        '연결 맵',
+                        l10n?.labelDashboardConnectionMap ?? '연결 맵',
                         style: AkashaTypography.caption.copyWith(
                           color: AkashaColors.accent,
                         ),
@@ -118,7 +121,9 @@ class _EntityDetailConnectionsPanelState
               ),
             ),
             Expanded(
-              child: _tab == 0 ? _buildConnectionsTab() : _buildInfoTab(),
+              child: _tab == 0
+                  ? _buildConnectionsTab(l10n)
+                  : _buildInfoTab(l10n),
             ),
           ],
         ),
@@ -126,18 +131,18 @@ class _EntityDetailConnectionsPanelState
     );
   }
 
-  Widget _buildConnectionsTab() {
+  Widget _buildConnectionsTab(dynamic l10n) {
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: AkashaSpacing.md),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          if (!widget.loadingLinkNeighbors &&
-              !widget.linkNeighbors.hasAnyLink)
+          if (!widget.loadingLinkNeighbors && !widget.linkNeighbors.hasAnyLink)
             Padding(
               padding: const EdgeInsets.only(bottom: AkashaSpacing.sm),
               child: Text(
-                '섹션의 「추가」로 연결하면 기록 본문에 [[링크]]가 삽입됩니다.',
+                l10n?.helpEntityConnectionExplain ??
+                    '섹션의 「추가」로 연결하면 기록 본문에 [[링크]]가 삽입됩니다.',
                 style: AkashaTypography.caption.copyWith(
                   color: AkashaColors.textMuted,
                 ),
@@ -165,9 +170,10 @@ class _EntityDetailConnectionsPanelState
     );
   }
 
-  Widget _buildInfoTab() {
+  Widget _buildInfoTab(dynamic l10n) {
     final n = widget.linkNeighbors;
-    final linkCount = n.connectedWorks.length +
+    final linkCount =
+        n.connectedWorks.length +
         n.persons.length +
         n.events.length +
         n.concepts.length +
@@ -179,16 +185,23 @@ class _EntityDetailConnectionsPanelState
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _InfoRow(label: '유형', value: widget.entity.entityType),
-          _InfoRow(label: '연결 수', value: '$linkCount'),
+          _InfoRow(
+            label: l10n?.labelType ?? '유형',
+            value: _getLocalizedEntityType(widget.entity.entityType, l10n),
+          ),
+          _InfoRow(
+            label: l10n?.labelConnectionCount ?? '연결 수',
+            value: '$linkCount',
+          ),
           if (widget.entity.aliases.isNotEmpty)
             _InfoRow(
-              label: '별칭',
+              label: l10n?.labelAliases ?? '별칭',
               value: widget.entity.aliases.join(', '),
             ),
-          if (widget.draftTags.isNotEmpty || widget.onDraftTagsChanged != null) ...[
+          if (widget.draftTags.isNotEmpty ||
+              widget.onDraftTagsChanged != null) ...[
             const SizedBox(height: AkashaSpacing.sm),
-            Text('태그', style: AkashaTypography.caption),
+            Text(l10n?.labelTags ?? '태그', style: AkashaTypography.caption),
             const SizedBox(height: 4),
             if (widget.onDraftTagsChanged != null)
               EditableTagChips(
@@ -197,10 +210,7 @@ class _EntityDetailConnectionsPanelState
                 compact: true,
               )
             else
-              Text(
-                widget.draftTags.join(', '),
-                style: AkashaTypography.body,
-              ),
+              Text(widget.draftTags.join(', '), style: AkashaTypography.body),
           ],
           const SizedBox(height: AkashaSpacing.md),
           WorkbenchIncomingLinksSection(
@@ -222,6 +232,30 @@ class _EntityDetailConnectionsPanelState
         ],
       ),
     );
+  }
+
+  String _getLocalizedEntityType(String entityType, dynamic l10n) {
+    if (l10n == null) return entityType;
+    switch (entityType) {
+      case 'work':
+        return l10n.entityTypeWork;
+      case 'person':
+        return l10n.entityTypePerson;
+      case 'concept':
+        return l10n.entityTypeConcept;
+      case 'event':
+        return l10n.entityTypeEvent;
+      case 'place':
+        return l10n.entityTypePlace;
+      case 'organization':
+        return l10n.entityTypeOrganization;
+      case 'custom':
+        return l10n.entityTypeCustom;
+      case 'phenomenon':
+        return l10n.entityTypePhenomenon;
+      default:
+        return entityType;
+    }
   }
 }
 
@@ -283,9 +317,7 @@ class _InfoRow extends StatelessWidget {
             width: 56,
             child: Text(label, style: AkashaTypography.caption),
           ),
-          Expanded(
-            child: Text(value, style: AkashaTypography.body),
-          ),
+          Expanded(child: Text(value, style: AkashaTypography.body)),
         ],
       ),
     );

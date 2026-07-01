@@ -9,11 +9,11 @@ import '../theme/akasha_colors.dart';
 /// Registry·YAML 레거시 메타. 신규·UI에서는 **subculture만** 사용.
 /// @see [DOMAIN_DEPRECATION_PLAN.md](../../docs/active/DOMAIN_DEPRECATION_PLAN.md)
 enum AppDomain {
-  subculture('서브컬처', Icons.auto_awesome),
+  subculture('Subculture', Icons.auto_awesome),
 
   /// @deprecated AppDomain 폐기 — 읽기 호환만. [fromStorage]는 항상 [subculture].
   @Deprecated('Use AppDomain.subculture / AppDomain.fromStorage')
-  generalCulture('일반 문화', Icons.account_balance);
+  generalCulture('General Culture', Icons.account_balance);
 
   final String label;
   final IconData icon;
@@ -36,13 +36,13 @@ enum AppDomain {
 
 /// 매체 카테고리
 enum MediaCategory {
-  manga('만화', Icons.menu_book),
-  webtoon('웹툰', Icons.web_stories),
-  animation('애니메이션', Icons.movie_filter),
-  game('게임', Icons.sports_esports),
-  book('책/소설/라노벨', Icons.auto_stories),
-  movie('영화', Icons.movie),
-  drama('드라마', Icons.live_tv);
+  manga('Manga', Icons.menu_book),
+  webtoon('Webtoon', Icons.web_stories),
+  animation('Animation', Icons.movie_filter),
+  game('Game', Icons.sports_esports),
+  book('Book / Novel / Light Novel', Icons.auto_stories),
+  movie('Movie', Icons.movie),
+  drama('Drama', Icons.live_tv);
 
   final String label;
   final IconData icon;
@@ -54,60 +54,130 @@ enum MediaCategory {
 
 /// 콘텐츠(만화·책·애니) — 작품 상태
 enum ContentWorkStatus {
-  serializing('연재중'),
-  hiatus('휴재중'),
-  completed('완결');
+  serializing('Serializing'),
+  hiatus('Hiatus'),
+  completed('Completed');
 
   final String label;
   const ContentWorkStatus(this.label);
+
+  /// YAML에서 읽을 때 한국어 레거시 값도 인식
+  static ContentWorkStatus fromStorage(String raw) {
+    // 영어 label 매칭
+    for (final v in values) {
+      if (v.label == raw || v.name == raw) return v;
+    }
+    // 한국어 레거시 호환
+    const legacy = {
+      '연재중': ContentWorkStatus.serializing,
+      '휴재중': ContentWorkStatus.hiatus,
+      '완결': ContentWorkStatus.completed,
+    };
+    return legacy[raw] ?? serializing;
+  }
 }
 
 /// 콘텐츠(만화·책·애니) — 나의 상태
 enum ContentMyStatus {
-  notStarted('볼 예정'),
-  watching('보는 중'),
-  finished('전부 봄'),
-  dropped('하차함');
+  notStarted('Plan to Watch'),
+  watching('Watching'),
+  finished('Finished'),
+  dropped('Dropped');
 
   final String label;
   const ContentMyStatus(this.label);
+
+  /// YAML에서 읽을 때 한국어 레거시 값도 인식
+  static ContentMyStatus fromStorage(String raw) {
+    for (final v in values) {
+      if (v.label == raw || v.name == raw) return v;
+    }
+    const legacy = {
+      '볼 예정': ContentMyStatus.notStarted,
+      '아직 안 봄': ContentMyStatus.notStarted,
+      '보는 중': ContentMyStatus.watching,
+      '전부 봄': ContentMyStatus.finished,
+      '하차함': ContentMyStatus.dropped,
+    };
+    return legacy[raw] ?? notStarted;
+  }
 }
 
 /// 게임 — 작품 상태
 enum GameWorkStatus {
-  released('출시됨'),
-  earlyAccess('얼리액세스'),
-  upcoming('출시예정');
+  released('Released'),
+  earlyAccess('Early Access'),
+  upcoming('Upcoming');
 
   final String label;
   const GameWorkStatus(this.label);
+
+  /// YAML에서 읽을 때 한국어 레거시 값도 인식
+  static GameWorkStatus fromStorage(String raw) {
+    for (final v in values) {
+      if (v.label == raw || v.name == raw) return v;
+    }
+    const legacy = {
+      '출시됨': GameWorkStatus.released,
+      '얼리액세스': GameWorkStatus.earlyAccess,
+      '출시예정': GameWorkStatus.upcoming,
+    };
+    return legacy[raw] ?? released;
+  }
 }
 
 /// 게임 — 나의 상태
 enum GameMyStatus {
-  backlog('볼 예정'),
-  playing('플레이 중'),
-  cleared('클리어(완결)'),
-  abandoned('중도포기(하차)');
+  backlog('Backlog'),
+  playing('Playing'),
+  cleared('Cleared'),
+  abandoned('Abandoned');
 
   final String label;
   const GameMyStatus(this.label);
+
+  /// YAML에서 읽을 때 한국어 레거시 값도 인식
+  static GameMyStatus fromStorage(String raw) {
+    for (final v in values) {
+      if (v.label == raw || v.name == raw) return v;
+    }
+    const legacy = {
+      '볼 예정': GameMyStatus.backlog,
+      '할 예정(백로그)': GameMyStatus.backlog,
+      '플레이 중': GameMyStatus.playing,
+      '클리어(완결)': GameMyStatus.cleared,
+      '중도포기(하차)': GameMyStatus.abandoned,
+    };
+    return legacy[raw] ?? backlog;
+  }
 }
 
 // ────────────────────────────────────────────
 //  상태 표시용 컬러 유틸리티
 // ────────────────────────────────────────────
 
-/// 나의 상태 라벨에 대응하는 컬러 도트 색상
+/// 나의 상태 enum 값에 대응하는 컬러 도트 색상
 Color myStatusDotColor(String label) {
+  // 영어 label 기반 매핑
   const map = {
-    '볼 예정': Color(0xFF9D4EDD), // 보라색
-    '아직 안 봄': Color(0xFF9D4EDD), // 하위 호환
-    '할 예정(백로그)': Color(0xFF9D4EDD), // 하위 호환
+    // ContentMyStatus
+    'Plan to Watch': Color(0xFF9D4EDD),
+    'Watching': Colors.lightGreen,
+    'Finished': Color(0xFF9D4EDD),
+    'Dropped': Colors.red,
+    // GameMyStatus
+    'Backlog': Color(0xFF9D4EDD),
+    'Playing': Colors.lightGreen,
+    'Cleared': Color(0xFF9D4EDD),
+    'Abandoned': Colors.red,
+    // 한국어 레거시 호환
+    '볼 예정': Color(0xFF9D4EDD),
+    '아직 안 봄': Color(0xFF9D4EDD),
+    '할 예정(백로그)': Color(0xFF9D4EDD),
     '보는 중': Colors.lightGreen,
     '플레이 중': Colors.lightGreen,
-    '전부 봄': Color(0xFF9D4EDD), // 보라색
-    '클리어(완결)': Color(0xFF9D4EDD), // 보라색
+    '전부 봄': Color(0xFF9D4EDD),
+    '클리어(완결)': Color(0xFF9D4EDD),
     '하차함': Colors.red,
     '중도포기(하차)': Colors.red,
   };
@@ -118,4 +188,90 @@ Color myStatusDotColor(String label) {
 List<Color> categoryGradient(MediaCategory category) {
   // 모든 카테고리에 대해 차분한 연한 회색 그라디언트로 통일 (Phase 9)
   return [const Color(0xFF374151), const Color(0xFF4B5563)];
+}
+
+// ────────────────────────────────────────────
+//  다국어 번역 확장 메서드
+// ────────────────────────────────────────────
+
+extension MediaCategoryL10n on MediaCategory {
+  String localizedLabel(dynamic l10n) {
+    if (l10n == null) return label;
+    switch (this) {
+      case MediaCategory.manga:
+        return l10n.mediaCategoryManga;
+      case MediaCategory.webtoon:
+        return l10n.mediaCategoryWebtoon;
+      case MediaCategory.animation:
+        return l10n.mediaCategoryAnimation;
+      case MediaCategory.game:
+        return l10n.mediaCategoryGame;
+      case MediaCategory.book:
+        return l10n.mediaCategoryBook;
+      case MediaCategory.movie:
+        return l10n.mediaCategoryMovie;
+      case MediaCategory.drama:
+        return l10n.mediaCategoryDrama;
+    }
+  }
+}
+
+extension ContentWorkStatusL10n on ContentWorkStatus {
+  String localizedLabel(dynamic l10n) {
+    if (l10n == null) return label;
+    switch (this) {
+      case ContentWorkStatus.serializing:
+        return l10n.statusContentWorkSerializing;
+      case ContentWorkStatus.hiatus:
+        return l10n.statusContentWorkHiatus;
+      case ContentWorkStatus.completed:
+        return l10n.statusContentWorkCompleted;
+    }
+  }
+}
+
+extension ContentMyStatusL10n on ContentMyStatus {
+  String localizedLabel(dynamic l10n) {
+    if (l10n == null) return label;
+    switch (this) {
+      case ContentMyStatus.notStarted:
+        return l10n.statusContentMyNotStarted;
+      case ContentMyStatus.watching:
+        return l10n.statusContentMyWatching;
+      case ContentMyStatus.finished:
+        return l10n.statusContentMyFinished;
+      case ContentMyStatus.dropped:
+        return l10n.statusContentMyDropped;
+    }
+  }
+}
+
+extension GameWorkStatusL10n on GameWorkStatus {
+  String localizedLabel(dynamic l10n) {
+    if (l10n == null) return label;
+    switch (this) {
+      case GameWorkStatus.released:
+        return l10n.statusGameWorkReleased;
+      case GameWorkStatus.earlyAccess:
+        return l10n.statusGameWorkEarlyAccess;
+      case GameWorkStatus.upcoming:
+        return l10n.statusGameWorkUpcoming;
+    }
+  }
+}
+
+extension GameMyStatusL10n on GameMyStatus {
+  String localizedLabel(dynamic l10n) {
+    if (l10n == null) return label;
+    switch (this) {
+      case GameMyStatus.backlog:
+        return l10n.statusGameMyBacklog;
+      case GameMyStatus.playing:
+        return l10n.statusGameMyPlaying;
+      case GameMyStatus.cleared:
+        return l10n.statusGameMyCleared;
+      case GameMyStatus.abandoned:
+        return l10n.statusGameMyAbandoned;
+    }
+  }
 }

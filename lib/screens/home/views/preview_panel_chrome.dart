@@ -4,6 +4,7 @@ import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../utils/app_l10n.dart';
 
 /// Preview 패널 고정 헤더 — 현재 노드 · 이전 · 기록하기 (R4-C P0).
 class PreviewPanelChrome extends StatelessWidget {
@@ -44,8 +45,8 @@ class PreviewPanelChrome extends StatelessWidget {
                 ? AkashaSpacing.previewPanelHeaderCompact
                 : AkashaSpacing.previewPanelHeader,
             child: compactHeader
-                ? _buildCompactHeader()
-                : _buildLegacyHeader(),
+                ? _buildCompactHeader(context)
+                : _buildLegacyHeader(context),
           ),
         ),
         Expanded(child: body),
@@ -53,7 +54,8 @@ class PreviewPanelChrome extends StatelessWidget {
     );
   }
 
-  Widget _buildCompactHeader() {
+  Widget _buildCompactHeader(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     return Row(
       children: [
         Container(
@@ -79,15 +81,16 @@ class PreviewPanelChrome extends StatelessWidget {
           color: AkashaColors.textCaption,
           onPressed: onClose,
           splashRadius: 20,
-          tooltip: '닫기',
+          tooltip: l10n?.actionClose ?? '닫기',
         ),
       ],
     );
   }
 
-  Widget _buildLegacyHeader() {
+  Widget _buildLegacyHeader(BuildContext context) {
     final detailTitle = title ?? '';
     final openDetail = onOpenDetail;
+    final l10n = lookupAppL10n(context);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -117,12 +120,15 @@ class PreviewPanelChrome extends StatelessWidget {
               color: AkashaColors.textCaption,
               onPressed: onClose,
               splashRadius: 20,
-              tooltip: '닫기',
+              tooltip: l10n?.actionClose ?? '닫기',
             ),
           ],
         ),
         SizedBox(height: AkashaSpacing.xs + 2),
-        Text('지금 보는 항목', style: AkashaTypography.micro),
+        Text(
+          l10n?.labelNowViewing ?? '지금 보는 항목',
+          style: AkashaTypography.micro,
+        ),
         const SizedBox(height: 2),
         Text(
           detailTitle,
@@ -138,7 +144,10 @@ class PreviewPanelChrome extends StatelessWidget {
                 OutlinedButton.icon(
                   onPressed: onBack,
                   icon: const Icon(Icons.arrow_back_rounded, size: 14),
-                  label: Text('이전', style: AkashaTypography.compactLabel),
+                  label: Text(
+                    l10n?.actionPrev ?? '이전',
+                    style: AkashaTypography.compactLabel,
+                  ),
                   style: OutlinedButton.styleFrom(
                     visualDensity: VisualDensity.compact,
                     padding: const EdgeInsets.symmetric(
@@ -161,7 +170,10 @@ class PreviewPanelChrome extends StatelessWidget {
                       borderRadius: AkashaRadius.mdBorder,
                     ),
                   ),
-                  child: Text('기록하기', style: AkashaTypography.buttonLabel),
+                  child: Text(
+                    l10n?.actionWrite ?? '기록하기',
+                    style: AkashaTypography.buttonLabel,
+                  ),
                 ),
               ),
             ],

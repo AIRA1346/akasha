@@ -5,6 +5,7 @@ import 'dialogs/clear_registry_cache_confirm_dialog.dart';
 import 'home_registry_prefetch.dart';
 import 'home_browse_filter_controller.dart';
 import 'home_dashboard_controller.dart';
+import '../../utils/app_l10n.dart';
 
 /// 글로벌 사전 캐시 삭제·prefetch Presentation glue.
 class HomeRegistryUi {
@@ -23,6 +24,8 @@ class HomeRegistryUi {
     final confirmed = await showClearRegistryCacheConfirmDialog(context);
     if (confirmed != true || !context.mounted) return;
 
+    final l10n = lookupAppL10n(context);
+
     onCatalogLoadingChanged(true);
     setState(() {});
     try {
@@ -37,8 +40,11 @@ class HomeRegistryUi {
       );
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('사전 캐시를 삭제하고 번들 사전으로 복원했습니다.'),
+          SnackBar(
+            content: Text(
+              l10n?.successRegistryCacheCleared ??
+                  '사전 캐시를 삭제하고 번들 사전으로 복원했습니다.',
+            ),
           ),
         );
         setState(() {});
@@ -46,7 +52,13 @@ class HomeRegistryUi {
     } catch (e) {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('캐시 삭제 실패: $e')),
+          SnackBar(
+            content: Text(
+              l10n != null
+                  ? l10n.errorClearCacheFailed(e.toString())
+                  : '캐시 삭제 실패: $e',
+            ),
+          ),
         );
       }
     } finally {

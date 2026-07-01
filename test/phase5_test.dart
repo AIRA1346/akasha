@@ -48,15 +48,16 @@ is_hall_of_fame: true
       expect(item.domain, AppDomain.subculture);
       expect(item.rating, 4.5);
       expect(item.isHallOfFame, true);
-      expect(item.myStatusLabel, '플레이 중');
-      expect(item.workStatusLabel, '출시됨');
+      expect(item.myStatusLabel, 'Playing');
+      expect(item.workStatusLabel, 'Released');
       expect(item.memorableQuotes, contains('"나는 Malenia"'));
       expect(item.review, '정말 재미있다.');
     });
 
     test('deserialize without poster does not fuse Tier 1 registry poster', () {
       const masterId = 'sub_manga_shigatsu-wa-kimi-no-uso_2011';
-      const yaml = '''
+      const yaml =
+          '''
 ---
 work_id: "$masterId"
 title: "4월은 너의 거짓말"
@@ -108,66 +109,78 @@ category: manga
       expect(item.posterPath, isNull);
     });
 
-    test('MarkdownParser persists user-customized URL and posters/ relative path', () {
-      const masterId = 'sub_manga_shigatsu-wa-kimi-no-uso_2011';
-      final customUrlItem = createItem(
-        workId: masterId,
-        title: '4월은 너의 거짓말',
-        category: MediaCategory.manga,
-        domain: AppDomain.subculture,
-        posterPath: 'https://example.com/my-custom-poster.jpg',
-        memorableQuotes: [],
-        review: '',
-      );
-      expect(MarkdownParser.shouldPersistPosterToYaml(customUrlItem), isTrue);
-      final customSerialized = MarkdownParser.serialize(customUrlItem);
-      expect(
-        customSerialized,
-        contains('poster: "https://example.com/my-custom-poster.jpg"'),
-      );
+    test(
+      'MarkdownParser persists user-customized URL and posters/ relative path',
+      () {
+        const masterId = 'sub_manga_shigatsu-wa-kimi-no-uso_2011';
+        final customUrlItem = createItem(
+          workId: masterId,
+          title: '4월은 너의 거짓말',
+          category: MediaCategory.manga,
+          domain: AppDomain.subculture,
+          posterPath: 'https://example.com/my-custom-poster.jpg',
+          memorableQuotes: [],
+          review: '',
+        );
+        expect(MarkdownParser.shouldPersistPosterToYaml(customUrlItem), isTrue);
+        final customSerialized = MarkdownParser.serialize(customUrlItem);
+        expect(
+          customSerialized,
+          contains('poster: "https://example.com/my-custom-poster.jpg"'),
+        );
 
-      final localItem = createItem(
-        workId: masterId,
-        title: '4월은 너의 거짓말',
-        category: MediaCategory.manga,
-        domain: AppDomain.subculture,
-        posterPath: 'posters/custom_poster.jpg',
-        memorableQuotes: [],
-        review: 'Excellent.',
-      );
-      expect(MarkdownParser.shouldPersistPosterToYaml(localItem), isTrue);
-      final localSerialized = MarkdownParser.serialize(localItem);
-      expect(localSerialized, contains('poster: "posters/custom_poster.jpg"'));
-    });
+        final localItem = createItem(
+          workId: masterId,
+          title: '4월은 너의 거짓말',
+          category: MediaCategory.manga,
+          domain: AppDomain.subculture,
+          posterPath: 'posters/custom_poster.jpg',
+          memorableQuotes: [],
+          review: 'Excellent.',
+        );
+        expect(MarkdownParser.shouldPersistPosterToYaml(localItem), isTrue);
+        final localSerialized = MarkdownParser.serialize(localItem);
+        expect(
+          localSerialized,
+          contains('poster: "posters/custom_poster.jpg"'),
+        );
+      },
+    );
 
-    test('MarkdownParser deserializes custom poster path prioritizing it over registry defaults', () async {
-      const masterId = 'sub_manga_shigatsu-wa-kimi-no-uso_2011';
-      final item = createItem(
-        workId: masterId,
-        title: '4월은 너의 거짓말',
-        category: MediaCategory.manga,
-        domain: AppDomain.subculture,
-        workStatus: '완결',
-        myStatus: '전부 봄',
-        creator: '아라카와 나오시',
-        releaseYear: 2011,
-        rating: 5.0,
-        posterPath: 'posters/custom_poster.jpg',
-        description: 'Mock description',
-        memorableQuotes: [],
-        review: 'Excellent.',
-        isHallOfFame: true,
-        tags: [],
-      );
+    test(
+      'MarkdownParser deserializes custom poster path prioritizing it over registry defaults',
+      () async {
+        const masterId = 'sub_manga_shigatsu-wa-kimi-no-uso_2011';
+        final item = createItem(
+          workId: masterId,
+          title: '4월은 너의 거짓말',
+          category: MediaCategory.manga,
+          domain: AppDomain.subculture,
+          workStatus: '완결',
+          myStatus: '전부 봄',
+          creator: '아라카와 나오시',
+          releaseYear: 2011,
+          rating: 5.0,
+          posterPath: 'posters/custom_poster.jpg',
+          description: 'Mock description',
+          memorableQuotes: [],
+          review: 'Excellent.',
+          isHallOfFame: true,
+          tags: [],
+        );
 
-      final serialized = MarkdownParser.serialize(item);
-      expect(serialized, contains('poster: "posters/custom_poster.jpg"'));
+        final serialized = MarkdownParser.serialize(item);
+        expect(serialized, contains('poster: "posters/custom_poster.jpg"'));
 
-      final deserialized = MarkdownParser.deserialize(serialized, '4월은 너의 거짓말');
+        final deserialized = MarkdownParser.deserialize(
+          serialized,
+          '4월은 너의 거짓말',
+        );
 
-      expect(deserialized.posterPath, equals('posters/custom_poster.jpg'));
-      expect(deserialized.creator, equals('아라카와 나오시'));
-      expect(deserialized.releaseYear, equals(2011));
-    });
+        expect(deserialized.posterPath, equals('posters/custom_poster.jpg'));
+        expect(deserialized.creator, equals('아라카와 나오시'));
+        expect(deserialized.releaseYear, equals(2011));
+      },
+    );
   });
 }

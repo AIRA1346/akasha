@@ -4,6 +4,7 @@ import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../services/entity_vault_store.dart';
 import 'entity_detail_delete_ops.dart';
+import '../../../utils/app_l10n.dart';
 
 /// Entity journal 삭제 플로우 결과.
 sealed class EntityDetailDeleteFlowResult {
@@ -43,6 +44,7 @@ abstract final class EntityDetailDeleteFlowOps {
     required EntityVaultStore vaultStore,
     required Future<void> Function() onConfirmed,
   }) async {
+    final l10n = lookupAppL10n(context);
     if (journal == null || isSaving) {
       return const EntityDetailDeleteBlocked('');
     }
@@ -56,7 +58,9 @@ abstract final class EntityDetailDeleteFlowOps {
     }
 
     if (catalog == null) {
-      return const EntityDetailDeleteBlocked('catalog 연결이 필요합니다.');
+      return EntityDetailDeleteBlocked(
+        l10n?.errorCatalogRequired ?? 'catalog 연결이 필요합니다.',
+      );
     }
 
     await onConfirmed();
@@ -69,6 +73,8 @@ abstract final class EntityDetailDeleteFlowOps {
     if (deleted) {
       return EntityDetailDeleteSucceeded(title);
     }
-    return const EntityDetailDeleteFailed('삭제할 파일을 찾지 못했습니다.');
+    return EntityDetailDeleteFailed(
+      l10n?.trashDeleteFailedNotFound ?? '삭제할 파일을 찾지 못했습니다.',
+    );
   }
 }

@@ -88,11 +88,11 @@ List<String> myStatusOptionsFor(MediaCategory category) {
 /// 정렬 기준 열거형
 enum SortCriteria {
   /// curated 서재 — `memberOrder` SSOT (DnD-B·E9와 동일)
-  manualOrder('직접 배치 순'),
-  titleAsc('작품/제목명 순'),
-  ratingDesc('별점 높은 순'),
-  recentlyAdded('최근 추가 순'),
-  yearDesc('출시 연도 순');
+  manualOrder('Manual Order'),
+  titleAsc('By Name'),
+  ratingDesc('Highest Rating'),
+  recentlyAdded('Recently Added'),
+  yearDesc('Release Year');
 
   final String label;
   const SortCriteria(this.label);
@@ -136,7 +136,10 @@ List<AkashaItem> sortItems(List<AkashaItem> items, SortCriteria criteria) {
 }
 
 /// BrowseCard 리스트 정렬 (대표 item 기준)
-List<BrowseCard> sortBrowseCards(List<BrowseCard> cards, SortCriteria criteria) {
+List<BrowseCard> sortBrowseCards(
+  List<BrowseCard> cards,
+  SortCriteria criteria,
+) {
   final sorted = List<BrowseCard>.from(cards);
   int compare(AkashaItem a, AkashaItem b) {
     switch (criteria) {

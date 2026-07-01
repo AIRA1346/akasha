@@ -1,9 +1,11 @@
+import 'package:flutter/material.dart';
 import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_archive_service.dart';
 import '../../../services/entity_vault_store.dart';
 import 'workbench_vault.dart';
+import '../../../utils/app_l10n.dart';
 
 const kEntityJournalPlaceholderBody = '(기록 대기중)';
 
@@ -19,10 +21,7 @@ class EntityBodyResolveResult {
 }
 
 class EntityDetailSaveOutcome {
-  const EntityDetailSaveOutcome({
-    required this.mirrored,
-    required this.saved,
-  });
+  const EntityDetailSaveOutcome({required this.mirrored, required this.saved});
 
   final UserCatalogEntity mirrored;
   final EntityJournalEntry saved;
@@ -37,7 +36,8 @@ abstract final class EntityDetailArchiveOps {
     return vaultPath != null && vaultPath.isNotEmpty;
   }
 
-  static EntityBodyResolveResult resolveBodyForSave({
+  static EntityBodyResolveResult resolveBodyForSave(
+    BuildContext context, {
     required String rawBody,
     required String posterPath,
     required List<String> tags,
@@ -46,13 +46,13 @@ abstract final class EntityDetailArchiveOps {
     if (body.isNotEmpty) {
       return EntityBodyResolveResult(body: body);
     }
-    final hasMetaChanges =
-        posterPath.trim().isNotEmpty || tags.isNotEmpty;
+    final hasMetaChanges = posterPath.trim().isNotEmpty || tags.isNotEmpty;
     if (!hasMetaChanges) {
       return const EntityBodyResolveResult(body: null);
     }
-    return const EntityBodyResolveResult(
-      body: kEntityJournalPlaceholderBody,
+    final l10n = lookupAppL10n(context);
+    return EntityBodyResolveResult(
+      body: l10n?.entityJournalPlaceholderBody ?? kEntityJournalPlaceholderBody,
       usedPlaceholder: true,
     );
   }
@@ -102,19 +102,34 @@ abstract final class EntityDetailArchiveOps {
     required EntityJournalEntry entry,
     required UserCatalogPort userCatalog,
     EntityVaultStore? vaultStore,
-  }) =>
-      EntityArchiveService.deleteArchivedEntity(
-        entry: entry,
-        userCatalog: userCatalog,
-        vaultStore: vaultStore,
-      );
+  }) => EntityArchiveService.deleteArchivedEntity(
+    entry: entry,
+    userCatalog: userCatalog,
+    vaultStore: vaultStore,
+  );
 
-  static String saveSuccessMessage(UserCatalogEntity entity) =>
-      '"${entity.title}" entity journal을 저장했습니다.';
+  static String saveSuccessMessage(
+    BuildContext context,
+    UserCatalogEntity entity,
+  ) {
+    final l10n = lookupAppL10n(context);
+    return l10n != null
+        ? l10n.entityJournalSaveSuccess(entity.title)
+        : '"${entity.title}" entity journal을 저장했습니다.';
+  }
 
-  static String? vaultRequiredSnack({required bool silent}) =>
-      silent ? null : '볼트를 먼저 연결해 주세요.';
+  static String? vaultRequiredSnack(
+    BuildContext context, {
+    required bool silent,
+  }) {
+    if (silent) return null;
+    final l10n = lookupAppL10n(context);
+    return l10n?.errorVaultRequired ?? '볼트를 먼저 연결해 주세요.';
+  }
 
-  static String? emptyBodySnack({required bool silent}) =>
-      silent ? null : '본문을 입력해 주세요.';
+  static String? emptyBodySnack(BuildContext context, {required bool silent}) {
+    if (silent) return null;
+    final l10n = lookupAppL10n(context);
+    return l10n?.errorEmptyBody ?? '본문을 입력해 주세요.';
+  }
 }

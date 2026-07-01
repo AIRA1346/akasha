@@ -11,6 +11,8 @@ import '../services/registry_visibility_service.dart';
 import '../theme/akasha_colors.dart';
 import '../widgets/star_rating.dart';
 import 'fusion_remote_search_entry.dart';
+import '../utils/app_l10n.dart';
+import '../models/enums.dart';
 
 class FusionSearchSectionLabel extends StatelessWidget {
   const FusionSearchSectionLabel(this.title, this.count, {super.key});
@@ -48,13 +50,16 @@ class FusionSearchLocalWorkTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final franchise = FranchiseRegistry.groupFor(item.workId);
     final formatLabels = franchise != null
         ? FranchiseFusionService.franchiseFormatLabels(franchise)
         : null;
 
     final subtitle = [
-      item.creator.isNotEmpty ? item.creator : '내 아카이브',
+      item.creator.isNotEmpty
+          ? item.creator
+          : (l10n?.myArchiveLabel ?? '내 아카이브'),
       if (formatLabels != null && formatLabels.isNotEmpty) formatLabels,
     ].join(' · ');
 
@@ -65,17 +70,14 @@ class FusionSearchLocalWorkTile extends StatelessWidget {
         franchise?.displayName ?? item.title,
         style: const TextStyle(fontSize: 13),
       ),
-      subtitle: Text(
-        subtitle,
-        style: const TextStyle(fontSize: 11),
-      ),
+      subtitle: Text(subtitle, style: const TextStyle(fontSize: 11)),
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           if (onAddToLibrary != null)
             IconButton(
               icon: const Icon(Icons.collections_bookmark_outlined, size: 18),
-              tooltip: '서재에 담기',
+              tooltip: l10n?.actionAddToLibrary ?? '서재에 담기',
               visualDensity: VisualDensity.compact,
               onPressed: onAddToLibrary,
             ),
@@ -99,13 +101,17 @@ class FusionSearchLocalEntityTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final badge = entityTypeBadgeLabel(entry.entityType);
     return ListTile(
       dense: true,
-      leading: Icon(FusionSearchEntityIcons.forType(entry.entityType), size: 20),
+      leading: Icon(
+        FusionSearchEntityIcons.forType(entry.entityType),
+        size: 20,
+      ),
       title: Text(entry.title, style: const TextStyle(fontSize: 13)),
       subtitle: Text(
-        '$badge · 내 아카이브',
+        '$badge · ${l10n?.myArchiveLabel ?? '내 아카이브'}',
         style: const TextStyle(fontSize: 11),
       ),
       trailing: Container(
@@ -142,6 +148,7 @@ class FusionSearchRemoteTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final work = entry.work;
     final hint = entry.hint;
     final isUserLocal = entry.isUserLocal;
@@ -152,15 +159,16 @@ class FusionSearchRemoteTile extends StatelessWidget {
     String? hintText;
     switch (hint) {
       case RegistryRemoteHint.siblingTracked:
-        hintText = '다른 매체 버전 추적 중';
+        hintText = l10n?.hintSiblingTracked ?? '다른 매체 버전 추적 중';
       case RegistryRemoteHint.hidden:
-        hintText = '숨김됨';
+        hintText = l10n?.hintHidden ?? '숨김됨';
       case RegistryRemoteHint.available:
-        if (catalogOnly) hintText = '아카이브되지 않음';
+        if (catalogOnly) hintText = l10n?.hintNotArchived ?? '아카이브되지 않음';
     }
 
-    final formatLabels =
-        franchise != null ? FranchiseFusionService.franchiseFormatLabels(franchise) : null;
+    final formatLabels = franchise != null
+        ? FranchiseFusionService.franchiseFormatLabels(franchise)
+        : null;
 
     final typeBadge = entry.entityType != EntityAnchorType.work
         ? entityTypeBadgeLabel(entry.entityType)
@@ -169,13 +177,15 @@ class FusionSearchRemoteTile extends StatelessWidget {
     final subtitle = [
       work.creator.isNotEmpty
           ? work.creator
-          : (isUserLocal ? '내 등록' : '글로벌 사전'),
+          : (isUserLocal
+                ? (l10n?.myRegistrationLabel ?? '내 등록')
+                : (l10n?.globalRegistryLabel ?? '글로벌 사전')),
       if (typeBadge != null)
         typeBadge
       else if (formatLabels != null && formatLabels.isNotEmpty)
         formatLabels
       else
-        work.category.label,
+        work.category.localizedLabel(l10n),
       ?hintText,
     ].whereType<String>().join(' · ');
 
@@ -201,10 +211,10 @@ class FusionSearchRemoteTile extends StatelessWidget {
             color: catalogOnly
                 ? Colors.orange[300]
                 : hint == RegistryRemoteHint.siblingTracked
-                    ? Colors.orange[300]
-                    : hint == RegistryRemoteHint.hidden
-                        ? AkashaColors.textMuted
-                        : null,
+                ? Colors.orange[300]
+                : hint == RegistryRemoteHint.hidden
+                ? AkashaColors.textMuted
+                : null,
           ),
         ),
         trailing: Row(
@@ -221,7 +231,10 @@ class FusionSearchRemoteTile extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 8),
                   minimumSize: Size.zero,
                 ),
-                child: const Text('아카이브하기', style: TextStyle(fontSize: 11)),
+                child: Text(
+                  l10n?.actionArchive ?? '아카이브하기',
+                  style: const TextStyle(fontSize: 11),
+                ),
               )
             else if (onAddRemoteToLibrary != null &&
                 (isUserLocal || hint == RegistryRemoteHint.available))
@@ -232,25 +245,33 @@ class FusionSearchRemoteTile extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 8),
                   minimumSize: Size.zero,
                 ),
-                child: const Text('담기', style: TextStyle(fontSize: 11)),
+                child: Text(
+                  l10n?.actionAdd ?? '담기',
+                  style: const TextStyle(fontSize: 11),
+                ),
               ),
             if (!catalogOnly)
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                 decoration: BoxDecoration(
-                  color: (isUserLocal ? Colors.teal : Colors.blue)
-                      .withValues(alpha: dimmed ? 0.08 : 0.15),
+                  color: (isUserLocal ? Colors.teal : Colors.blue).withValues(
+                    alpha: dimmed ? 0.08 : 0.15,
+                  ),
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: Text(
                   isUserLocal
-                      ? (typeBadge ?? '내 아카이브')
-                      : (hint == RegistryRemoteHint.available ? '사전' : '주의'),
+                      ? (typeBadge ?? (l10n?.myArchiveLabel ?? '내 아카이브'))
+                      : (hint == RegistryRemoteHint.available
+                            ? (l10n?.labelRegistry ?? '사전')
+                            : (l10n?.labelWarning ?? '주의')),
                   style: TextStyle(
                     fontSize: 10,
                     color: dimmed && !isUserLocal
                         ? AkashaColors.textMuted
-                        : (isUserLocal ? Colors.tealAccent : Colors.lightBlueAccent),
+                        : (isUserLocal
+                              ? Colors.tealAccent
+                              : Colors.lightBlueAccent),
                   ),
                 ),
               ),

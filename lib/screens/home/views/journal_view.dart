@@ -7,6 +7,7 @@ import '../../../data/adapters/vault_archive_record_adapter.dart';
 import '../../../services/journal_vault_loader.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../utils/app_l10n.dart';
 
 /// Wave 3 — freeform journal 시간순 목록.
 class JournalView extends StatefulWidget {
@@ -64,106 +65,125 @@ class _JournalViewState extends State<JournalView> {
     final deleted = await showDialog<bool>(
       context: context,
       builder: (ctx) => StatefulBuilder(
-        builder: (ctx, setLocal) => AlertDialog(
-          title: Text(editing ? '메모 편집' : entry.title),
-          content: SizedBox(
-            width: 480,
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    _formatWhen(entry.addedAt),
-                    style: Theme.of(ctx).textTheme.bodySmall?.copyWith(
-                          color: AkashaColors.textMuted,
+        builder: (ctx, setLocal) {
+          final l10n = lookupAppL10n(ctx);
+          return AlertDialog(
+            title: Text(
+              editing ? (l10n?.actionEditMemo ?? '메모 편집') : entry.title,
+            ),
+            content: SizedBox(
+              width: 480,
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      _formatWhen(entry.addedAt),
+                      style: Theme.of(ctx).textTheme.bodySmall?.copyWith(
+                        color: AkashaColors.textMuted,
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    if (editing) ...[
+                      TextField(
+                        controller: titleCtrl,
+                        decoration: InputDecoration(
+                          labelText: l10n?.labelTitle ?? '제목',
+                          border: const OutlineInputBorder(),
+                          isDense: true,
                         ),
-                  ),
-                  const SizedBox(height: 12),
-                  if (editing) ...[
-                    TextField(
-                      controller: titleCtrl,
-                      decoration: const InputDecoration(
-                        labelText: '제목',
-                        border: OutlineInputBorder(),
-                        isDense: true,
                       ),
-                    ),
-                    const SizedBox(height: 8),
-                    TextField(
-                      controller: bodyCtrl,
-                      minLines: 6,
-                      maxLines: 12,
-                      decoration: const InputDecoration(
-                        labelText: '본문',
-                        border: OutlineInputBorder(),
-                        alignLabelWithHint: true,
+                      const SizedBox(height: 8),
+                      TextField(
+                        controller: bodyCtrl,
+                        minLines: 6,
+                        maxLines: 12,
+                        decoration: InputDecoration(
+                          labelText: l10n?.labelBody ?? '본문',
+                          border: const OutlineInputBorder(),
+                          alignLabelWithHint: true,
+                        ),
                       ),
-                    ),
-                  ] else
-                    SelectableText(entry.body),
-                ],
+                    ] else
+                      SelectableText(entry.body),
+                  ],
+                ),
               ),
             ),
-          ),
-          actions: [
-            if (!editing)
+            actions: [
+              if (!editing)
+                TextButton(
+                  onPressed: () => setLocal(() => editing = true),
+                  child: Text(l10n?.actionEdit ?? '편집'),
+                ),
+              if (editing)
+                FilledButton(
+                  onPressed: () async {
+                    final body = bodyCtrl.text.trim();
+                    if (body.isEmpty) return;
+                    var title = titleCtrl.text.trim();
+                    if (title.isEmpty) {
+                      title = body.length <= 40
+                          ? body
+                          : '${body.substring(0, 40)}…';
+                    }
+                    await _adapter.save(
+                      ArchiveRecord(
+                        recordId: entry.recordId,
+                        kind: RecordKind.freeformJournal,
+                        title: title,
+                        timeAnchor: entry.addedAt,
+                        storagePath: entry.storagePath,
+                      ),
+                      bodyMarkdown: body,
+                    );
+                    if (ctx.mounted) Navigator.pop(ctx);
+                  },
+                  child: Text(l10n?.actionSave ?? '저장'),
+                ),
               TextButton(
-                onPressed: () => setLocal(() => editing = true),
-                child: const Text('편집'),
-              ),
-            if (editing)
-              FilledButton(
                 onPressed: () async {
-                  final body = bodyCtrl.text.trim();
-                  if (body.isEmpty) return;
-                  var title = titleCtrl.text.trim();
-                  if (title.isEmpty) {
-                    title = body.length <= 40 ? body : '${body.substring(0, 40)}…';
-                  }
-                  await _adapter.save(
-                    ArchiveRecord(
-                      recordId: entry.recordId,
-                      kind: RecordKind.freeformJournal,
-                      title: title,
-                      timeAnchor: entry.addedAt,
-                      storagePath: entry.storagePath,
-                    ),
-                    bodyMarkdown: body,
+                  final ok = await showDialog<bool>(
+                    context: ctx,
+                    builder: (c) {
+                      final l10nDelete = lookupAppL10n(c);
+                      return AlertDialog(
+                        title: Text(l10nDelete?.actionDelete ?? '삭제'),
+                        content: Text(
+                          l10nDelete?.confirmDeleteMemo ?? '이 메모를 삭제할까요?',
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(c, false),
+                            child: Text(l10nDelete?.actionCancel ?? '취소'),
+                          ),
+                          FilledButton(
+                            onPressed: () => Navigator.pop(c, true),
+                            child: Text(l10nDelete?.actionDelete ?? '삭제'),
+                          ),
+                        ],
+                      );
+                    },
                   );
-                  if (ctx.mounted) Navigator.pop(ctx);
+                  if (ok == true && ctx.mounted) Navigator.pop(ctx, true);
                 },
-                child: const Text('저장'),
+                child: Text(
+                  l10n?.actionDelete ?? '삭제',
+                  style: const TextStyle(color: Colors.redAccent),
+                ),
               ),
-            TextButton(
-              onPressed: () async {
-                final ok = await showDialog<bool>(
-                  context: ctx,
-                  builder: (c) => AlertDialog(
-                    title: const Text('삭제'),
-                    content: const Text('이 메모를 삭제할까요?'),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.pop(c, false),
-                        child: const Text('취소'),
-                      ),
-                      FilledButton(
-                        onPressed: () => Navigator.pop(c, true),
-                        child: const Text('삭제'),
-                      ),
-                    ],
-                  ),
-                );
-                if (ok == true && ctx.mounted) Navigator.pop(ctx, true);
-              },
-              child: const Text('삭제', style: TextStyle(color: Colors.redAccent)),
-            ),
-            TextButton(
-              onPressed: () => Navigator.pop(ctx),
-              child: Text(editing ? '취소' : '닫기'),
-            ),
-          ],
-        ),
+              TextButton(
+                onPressed: () => Navigator.pop(ctx),
+                child: Text(
+                  editing
+                      ? (l10n?.actionCancel ?? '취소')
+                      : (l10n?.actionClose ?? '닫기'),
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
 
@@ -196,9 +216,11 @@ class _JournalViewState extends State<JournalView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     if (widget.vaultPath == null) {
-      return const Center(
-        child: Text('볼트를 연결하면 메모를 볼 수 있습니다.'),
+      return Center(
+        child: Text(l10n?.helpJournalConnectVault ?? '볼트를 연결하면 메모를 볼 수 있습니다.'),
       );
     }
 
@@ -211,14 +233,18 @@ class _JournalViewState extends State<JournalView> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(Icons.note_alt_outlined, size: 48, color: AkashaColors.textMuted),
+            const Icon(
+              Icons.note_alt_outlined,
+              size: 48,
+              color: AkashaColors.textMuted,
+            ),
             const SizedBox(height: 12),
-            const Text('아직 메모가 없습니다.'),
+            Text(l10n?.helpJournalEmpty ?? '아직 메모가 없습니다.'),
             const SizedBox(height: 16),
             FilledButton.icon(
               onPressed: widget.onNewEntry,
               icon: const Icon(Icons.edit_note_outlined),
-              label: const Text('첫 메모 작성'),
+              label: Text(l10n?.actionWriteFirstMemo ?? '첫 메모 작성'),
             ),
           ],
         ),
@@ -233,19 +259,21 @@ class _JournalViewState extends State<JournalView> {
           child: Row(
             children: [
               Text(
-                '메모 (${_entries.length})',
+                l10n != null
+                    ? l10n.countMemos(_entries.length)
+                    : '메모 (${_entries.length})',
                 style: AkashaTypography.dashboardPanelTitle.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
               const Spacer(),
               IconButton(
-                tooltip: '새 메모',
+                tooltip: l10n?.tooltipNewMemo ?? '새 메모',
                 onPressed: widget.onNewEntry,
                 icon: const Icon(Icons.add),
               ),
               IconButton(
-                tooltip: '새로고침',
+                tooltip: l10n?.tooltipRefresh ?? '새로고침',
                 onPressed: _reload,
                 icon: const Icon(Icons.refresh),
               ),

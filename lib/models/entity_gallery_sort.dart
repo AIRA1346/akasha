@@ -1,9 +1,9 @@
 /// Entity gallery sort — independent from Work [SortCriteria].
 enum EntityGallerySortCriteria {
-  recentlyAdded('최근 추가순'),
-  titleAsc('이름순'),
-  archivedFirst('아카이브 우선'),
-  manualOrder('수동 순서');
+  recentlyAdded('Recently Added'),
+  titleAsc('By Name'),
+  archivedFirst('Archived First'),
+  manualOrder('Manual Order');
 
   final String label;
   const EntityGallerySortCriteria(this.label);

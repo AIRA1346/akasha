@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import '../theme/akasha_colors.dart';
 import '../services/works_registry.dart';
+import '../utils/app_l10n.dart';
+import '../models/enums.dart';
 
 /// debounce + searchAsync 기반 작품 사전 Autocomplete
 class RegistryWorkAutocomplete extends StatefulWidget {
@@ -103,6 +105,8 @@ class _RegistryWorkAutocompleteState extends State<RegistryWorkAutocomplete> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -110,7 +114,8 @@ class _RegistryWorkAutocompleteState extends State<RegistryWorkAutocomplete> {
           controller: _ctrl,
           focusNode: _focusNode,
           decoration: InputDecoration(
-            hintText: '사전에서 작품을 검색하여 선택해 보세요...',
+            hintText:
+                l10n?.hintSearchWorkFromRegistry ?? '사전에서 작품을 검색하여 선택해 보세요...',
             border: const OutlineInputBorder(),
             isDense: true,
             prefixIcon: const Icon(Icons.search, size: 18),
@@ -120,15 +125,15 @@ class _RegistryWorkAutocompleteState extends State<RegistryWorkAutocomplete> {
                     onPressed: _clearSelection,
                   )
                 : _isSearching
-                    ? const Padding(
-                        padding: EdgeInsets.all(12),
-                        child: SizedBox(
-                          width: 16,
-                          height: 16,
-                          child: CircularProgressIndicator(strokeWidth: 2),
-                        ),
-                      )
-                    : null,
+                ? const Padding(
+                    padding: EdgeInsets.all(12),
+                    child: SizedBox(
+                      width: 16,
+                      height: 16,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    ),
+                  )
+                : null,
           ),
           onChanged: _onQueryChanged,
         ),
@@ -147,12 +152,9 @@ class _RegistryWorkAutocompleteState extends State<RegistryWorkAutocomplete> {
                 final work = _options[i];
                 return ListTile(
                   dense: true,
-                  title: Text(
-                    work.title,
-                    style: const TextStyle(fontSize: 13),
-                  ),
+                  title: Text(work.title, style: const TextStyle(fontSize: 13)),
                   subtitle: Text(
-                    work.category.label,
+                    work.category.localizedLabel(l10n),
                     style: const TextStyle(fontSize: 11),
                   ),
                   onTap: () => _pick(work),

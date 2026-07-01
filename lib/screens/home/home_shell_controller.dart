@@ -88,7 +88,8 @@ class HomeShellController extends HomeShellControllerBase
   @override
   HomeDialogsCoordinator get dialogs => coordinators.dialogs;
   @override
-  HomeRecentExplorationCoordinator get recentExplore => coordinators.recentExplore;
+  HomeRecentExplorationCoordinator get recentExplore =>
+      coordinators.recentExplore;
   @override
   HomePreviewCoordinator get preview => coordinators.preview;
 
@@ -104,9 +105,9 @@ class HomeShellController extends HomeShellControllerBase
   @override
   void showSnack(String msg) {
     if (!host.mounted) return;
-    ScaffoldMessenger.of(host.context).showSnackBar(
-      SnackBar(content: Text(msg)),
-    );
+    ScaffoldMessenger.of(
+      host.context,
+    ).showSnackBar(SnackBar(content: Text(msg)));
   }
 
   void installCoordinators() {
@@ -138,6 +139,7 @@ class HomeShellController extends HomeShellControllerBase
 
   void onEntityArchived(UserCatalogEntity entity, EntityJournalEntry? entry) {
     HomeEntityArchiveOps.onEntityArchived(
+      context: host.context,
       entity: entity,
       entry: entry,
       filterCtrl: filterCtrl,

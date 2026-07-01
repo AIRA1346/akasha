@@ -16,6 +16,7 @@ import '../entity_detail_connections_panel.dart';
 import '../entity_detail_info_panel.dart';
 import 'entity_detail_sanctum_panel.dart';
 import 'workbench_breadcrumb.dart';
+import '../../../../utils/app_l10n.dart';
 
 /// Entity 워크벤치 — breadcrumb + 3열 본문.
 class EntityDetailWorkspaceBody extends StatelessWidget {
@@ -107,7 +108,8 @@ class EntityDetailWorkspaceBody extends StatelessWidget {
   final Future<EntityLinkSelection?> Function(
     BuildContext context,
     String selectedText,
-  )? onRequestEntityLink;
+  )?
+  onRequestEntityLink;
   final ValueChanged<double>? onInfoWidthChanged;
   final VoidCallback? onToggleInfoLock;
   final Future<void> Function() onPosterTap;
@@ -133,7 +135,10 @@ class EntityDetailWorkspaceBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final typeLabel = entityTypeDisplayLabel(entity.anchorType);
+    final l10n = lookupAppL10n(context);
+    final typeLabel = l10n != null
+        ? _getLocalizedEntityType(entity.anchorType.name, l10n)
+        : entityTypeDisplayLabel(entity.anchorType);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -142,7 +147,7 @@ class EntityDetailWorkspaceBody extends StatelessWidget {
           WorkbenchBreadcrumb(
             segments: [
               WorkbenchBreadcrumbSegment(
-                label: '서재',
+                label: l10n?.breadcrumbLibrary ?? '서재',
                 onTap: onClose,
               ),
               WorkbenchBreadcrumbSegment(label: typeLabel),
@@ -192,8 +197,9 @@ class EntityDetailWorkspaceBody extends StatelessWidget {
                   onSave: onSave,
                   onExportHtml: onExportHtml,
                   showAddToLibrary: showAddToLibrary,
-                  libraryLabel:
-                      hasJournal ? '서재에 담기' : '저장하고 서재에 담기',
+                  libraryLabel: hasJournal
+                      ? (l10n?.actionAddToLibrary ?? '서재에 담기')
+                      : (l10n?.actionSaveAndAddToLibrary ?? '저장하고 서재에 담기'),
                   onAddToLibrary: onAddToLibrary,
                   onDeleteArchive: onDeleteArchive,
                 ),
@@ -224,5 +230,29 @@ class EntityDetailWorkspaceBody extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  String _getLocalizedEntityType(String entityType, dynamic l10n) {
+    if (l10n == null) return entityType;
+    switch (entityType) {
+      case 'work':
+        return l10n.entityTypeWork;
+      case 'person':
+        return l10n.entityTypePerson;
+      case 'concept':
+        return l10n.entityTypeConcept;
+      case 'event':
+        return l10n.entityTypeEvent;
+      case 'place':
+        return l10n.entityTypePlace;
+      case 'organization':
+        return l10n.entityTypeOrganization;
+      case 'custom':
+        return l10n.entityTypeCustom;
+      case 'phenomenon':
+        return l10n.entityTypePhenomenon;
+      default:
+        return entityType;
+    }
   }
 }

@@ -9,6 +9,7 @@ import '../../../models/akasha_item.dart';
 import '../../../services/timeline_vault_loader.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../utils/app_l10n.dart';
 
 /// Phase 4.4 — Timeline entry 시간순 목록.
 class TimelineView extends StatefulWidget {
@@ -78,133 +79,153 @@ class _TimelineViewState extends State<TimelineView> {
     final deleted = await showDialog<bool>(
       context: context,
       builder: (ctx) => StatefulBuilder(
-        builder: (ctx, setLocal) => AlertDialog(
-          title: Text(editing ? '타임라인 편집' : entry.title),
-          content: SizedBox(
-            width: 480,
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    _formatWhen(entry.occurredAt),
-                    style: Theme.of(ctx).textTheme.bodySmall?.copyWith(
-                          color: AkashaColors.textMuted,
-                        ),
-                  ),
-                  if (entry.entityId != null && !editing) ...[
-                    const SizedBox(height: 8),
-                    InkWell(
-                      onTap: () {
-                        for (final item in widget.vaultItems) {
-                          if (item.workId == entry.entityId) {
-                            Navigator.pop(ctx);
-                            widget.onOpenWork(item);
-                            return;
-                          }
-                        }
-                      },
-                      child: Text(
-                        '🔗 ${_workTitleFor(entry.entityId)}',
-                        style: const TextStyle(color: Colors.tealAccent),
-                      ),
-                    ),
-                  ],
-                  const SizedBox(height: 12),
-                  if (editing) ...[
-                    TextField(
-                      controller: titleCtrl,
-                      decoration: const InputDecoration(
-                        labelText: '제목',
-                        border: OutlineInputBorder(),
-                        isDense: true,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    TextField(
-                      controller: bodyCtrl,
-                      minLines: 6,
-                      maxLines: 12,
-                      decoration: const InputDecoration(
-                        labelText: '본문',
-                        border: OutlineInputBorder(),
-                        alignLabelWithHint: true,
-                      ),
-                    ),
-                  ] else
-                    SelectableText(entry.body),
-                ],
-              ),
+        builder: (ctx, setLocal) {
+          final l10n = lookupAppL10n(ctx);
+          return AlertDialog(
+            title: Text(
+              editing ? (l10n?.actionEditTimeline ?? '타임라인 편집') : entry.title,
             ),
-          ),
-          actions: [
-            if (!editing)
-              TextButton(
-                onPressed: () => setLocal(() => editing = true),
-                child: const Text('편집'),
-              ),
-            if (editing)
-              FilledButton(
-                onPressed: () async {
-                  final body = bodyCtrl.text.trim();
-                  if (body.isEmpty) return;
-                  var title = titleCtrl.text.trim();
-                  if (title.isEmpty) {
-                    title = body.length <= 40 ? body : '${body.substring(0, 40)}…';
-                  }
-                  EntityAnchor? entity;
-                  final entityId = entry.entityId?.trim();
-                  if (entityId != null && entityId.isNotEmpty) {
-                    entity = EntityAnchor(
-                      entityId: entityId,
-                      type: EntityAnchor.typeForEntityId(entityId),
-                    );
-                  }
-                  await _adapter.save(
-                    ArchiveRecord(
-                      recordId: entry.recordId,
-                      kind: RecordKind.timelineEntry,
-                      title: title,
-                      timeAnchor: entry.occurredAt,
-                      storagePath: entry.storagePath,
-                      entity: entity,
-                    ),
-                    bodyMarkdown: body,
-                  );
-                  if (ctx.mounted) Navigator.pop(ctx);
-                },
-                child: const Text('저장'),
-              ),
-            TextButton(
-              onPressed: () async {
-                final ok = await showDialog<bool>(
-                  context: ctx,
-                  builder: (c) => AlertDialog(
-                    title: const Text('삭제'),
-                    content: const Text('이 타임라인 기록을 삭제할까요?'),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.pop(c, false),
-                        child: const Text('취소'),
+            content: SizedBox(
+              width: 480,
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      _formatWhen(entry.occurredAt),
+                      style: Theme.of(ctx).textTheme.bodySmall?.copyWith(
+                        color: AkashaColors.textMuted,
                       ),
-                      FilledButton(
-                        onPressed: () => Navigator.pop(c, true),
-                        child: const Text('삭제'),
+                    ),
+                    if (entry.entityId != null && !editing) ...[
+                      const SizedBox(height: 8),
+                      InkWell(
+                        onTap: () {
+                          for (final item in widget.vaultItems) {
+                            if (item.workId == entry.entityId) {
+                              Navigator.pop(ctx);
+                              widget.onOpenWork(item);
+                              return;
+                            }
+                          }
+                        },
+                        child: Text(
+                          '🔗 ${_workTitleFor(entry.entityId)}',
+                          style: const TextStyle(color: Colors.tealAccent),
+                        ),
                       ),
                     ],
-                  ),
-                );
-                if (ok == true && ctx.mounted) Navigator.pop(ctx, true);
-              },
-              child: const Text('삭제', style: TextStyle(color: Colors.redAccent)),
+                    const SizedBox(height: 12),
+                    if (editing) ...[
+                      TextField(
+                        controller: titleCtrl,
+                        decoration: InputDecoration(
+                          labelText: l10n?.labelTitle ?? '제목',
+                          border: const OutlineInputBorder(),
+                          isDense: true,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      TextField(
+                        controller: bodyCtrl,
+                        minLines: 6,
+                        maxLines: 12,
+                        decoration: InputDecoration(
+                          labelText: l10n?.labelBody ?? '본문',
+                          border: const OutlineInputBorder(),
+                          alignLabelWithHint: true,
+                        ),
+                      ),
+                    ] else
+                      SelectableText(entry.body),
+                  ],
+                ),
+              ),
             ),
-            TextButton(
-              onPressed: () => Navigator.pop(ctx),
-              child: Text(editing ? '취소' : '닫기'),
-            ),
-          ],
-        ),
+            actions: [
+              if (!editing)
+                TextButton(
+                  onPressed: () => setLocal(() => editing = true),
+                  child: Text(l10n?.actionEdit ?? '편집'),
+                ),
+              if (editing)
+                FilledButton(
+                  onPressed: () async {
+                    final body = bodyCtrl.text.trim();
+                    if (body.isEmpty) return;
+                    var title = titleCtrl.text.trim();
+                    if (title.isEmpty) {
+                      title = body.length <= 40
+                          ? body
+                          : '${body.substring(0, 40)}…';
+                    }
+                    EntityAnchor? entity;
+                    final entityId = entry.entityId?.trim();
+                    if (entityId != null && entityId.isNotEmpty) {
+                      entity = EntityAnchor(
+                        entityId: entityId,
+                        type: EntityAnchor.typeForEntityId(entityId),
+                      );
+                    }
+                    await _adapter.save(
+                      ArchiveRecord(
+                        recordId: entry.recordId,
+                        kind: RecordKind.timelineEntry,
+                        title: title,
+                        timeAnchor: entry.occurredAt,
+                        storagePath: entry.storagePath,
+                        entity: entity,
+                      ),
+                      bodyMarkdown: body,
+                    );
+                    if (ctx.mounted) Navigator.pop(ctx);
+                  },
+                  child: Text(l10n?.actionSave ?? '저장'),
+                ),
+              TextButton(
+                onPressed: () async {
+                  final ok = await showDialog<bool>(
+                    context: ctx,
+                    builder: (c) {
+                      final l10nDelete = lookupAppL10n(c);
+                      return AlertDialog(
+                        title: Text(l10nDelete?.actionDelete ?? '삭제'),
+                        content: Text(
+                          l10nDelete?.confirmDeleteTimeline ??
+                              '이 타임라인 기록을 삭제할까요?',
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(c, false),
+                            child: Text(l10nDelete?.actionCancel ?? '취소'),
+                          ),
+                          FilledButton(
+                            onPressed: () => Navigator.pop(c, true),
+                            child: Text(l10nDelete?.actionDelete ?? '삭제'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                  if (ok == true && ctx.mounted) Navigator.pop(ctx, true);
+                },
+                child: Text(
+                  l10n?.actionDelete ?? '삭제',
+                  style: const TextStyle(color: Colors.redAccent),
+                ),
+              ),
+              TextButton(
+                onPressed: () => Navigator.pop(ctx),
+                child: Text(
+                  editing
+                      ? (l10n?.actionCancel ?? '취소')
+                      : (l10n?.actionClose ?? '닫기'),
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
 
@@ -237,9 +258,13 @@ class _TimelineViewState extends State<TimelineView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     if (widget.vaultPath == null) {
-      return const Center(
-        child: Text('볼트를 연결하면 타임라인을 볼 수 있습니다.'),
+      return Center(
+        child: Text(
+          l10n?.helpTimelineConnectVault ?? '볼트를 연결하면 타임라인을 볼 수 있습니다.',
+        ),
       );
     }
 
@@ -254,12 +279,12 @@ class _TimelineViewState extends State<TimelineView> {
           children: [
             const Icon(Icons.timeline, size: 48, color: AkashaColors.textMuted),
             const SizedBox(height: 12),
-            const Text('아직 타임라인 기록이 없습니다.'),
+            Text(l10n?.helpTimelineEmpty ?? '아직 타임라인 기록이 없습니다.'),
             const SizedBox(height: 16),
             FilledButton.icon(
               onPressed: widget.onNewEntry,
               icon: const Icon(Icons.edit_note_outlined),
-              label: const Text('첫 기록 작성'),
+              label: Text(l10n?.actionWriteFirstRecord ?? '첫 기록 작성'),
             ),
           ],
         ),
@@ -274,19 +299,21 @@ class _TimelineViewState extends State<TimelineView> {
           child: Row(
             children: [
               Text(
-                '타임라인 (${_entries.length})',
+                l10n != null
+                    ? l10n.countTimelineRecords(_entries.length)
+                    : '타임라인 (${_entries.length})',
                 style: AkashaTypography.dashboardPanelTitle.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
               const Spacer(),
               IconButton(
-                tooltip: '새 기록',
+                tooltip: l10n?.tooltipNewRecord ?? '새 기록',
                 onPressed: widget.onNewEntry,
                 icon: const Icon(Icons.add),
               ),
               IconButton(
-                tooltip: '새로고침',
+                tooltip: l10n?.tooltipRefresh ?? '새로고침',
                 onPressed: _reload,
                 icon: const Icon(Icons.refresh),
               ),

@@ -52,10 +52,7 @@ void main() {
         domain: AppDomain.subculture,
       ),
     );
-    expect(
-      addPending.repoRelativePath,
-      'contributions/add/pending/a1.json',
-    );
+    expect(addPending.repoRelativePath, 'contributions/add/pending/a1.json');
 
     final fixMerged = CatalogContribution(
       id: 'f1',
@@ -81,7 +78,7 @@ void main() {
 
     expect(
       CatalogContributionExport.issueTitle(contribution),
-      '[catalog-add] 원피스 (만화)',
+      '[catalog-add] 원피스 (Manga)',
     );
 
     final bundle = CatalogContributionBundle(

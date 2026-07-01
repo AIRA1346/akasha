@@ -15,6 +15,7 @@ import '../theme/akasha_typography.dart';
 import 'markdown_body_editor.dart';
 import 'sanctum/sanctum_preview_body.dart';
 import 'vault_markdown_body.dart';
+import '../utils/app_l10n.dart';
 
 /// Sanctum 4열 — 미리보기 · 본문 편집 · .md 파일 편집
 enum SanctumPageView { preview, body, file }
@@ -39,7 +40,8 @@ class SanctumPagePanel extends StatelessWidget {
   final Future<EntityLinkSelection?> Function(
     BuildContext context,
     String selectedText,
-  )? onRequestEntityLink;
+  )?
+  onRequestEntityLink;
   final String headerTitle;
   final TextEditingController? titleController;
   final VoidCallback? onTitleChanged;
@@ -84,6 +86,8 @@ class SanctumPagePanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -99,20 +103,28 @@ class SanctumPagePanel extends StatelessWidget {
                       ButtonSegment(
                         value: SanctumPageView.preview,
                         icon: const Icon(Icons.visibility_outlined, size: 16),
-                        label: Text('보기', style: AkashaTypography.compactLabel),
+                        label: Text(
+                          l10n?.tabView ?? '보기',
+                          style: AkashaTypography.compactLabel,
+                        ),
                       ),
                       ButtonSegment(
                         value: SanctumPageView.body,
                         icon: const Icon(Icons.edit_note_outlined, size: 16),
                         label: Text(
-                          sectionLayout ? '기록' : '본문',
+                          sectionLayout
+                              ? (l10n?.tabRecord ?? '기록')
+                              : (l10n?.tabBody ?? '본문'),
                           style: AkashaTypography.compactLabel,
                         ),
                       ),
                       ButtonSegment(
                         value: SanctumPageView.file,
                         icon: const Icon(Icons.description_outlined, size: 16),
-                        label: Text('.md', style: AkashaTypography.compactLabel),
+                        label: Text(
+                          '.md',
+                          style: AkashaTypography.compactLabel,
+                        ),
                       ),
                     ],
                     selected: {view},
@@ -138,12 +150,17 @@ class SanctumPagePanel extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            const Icon(Icons.menu_book_outlined,
-                                size: 18, color: AkashaColors.accent),
-                        const SizedBox(width: AkashaSpacing.sm),
+                            const Icon(
+                              Icons.menu_book_outlined,
+                              size: 18,
+                              color: AkashaColors.accent,
+                            ),
+                            const SizedBox(width: AkashaSpacing.sm),
                             Expanded(
                               child: Text(
-                                headerTitle,
+                                headerTitle == '기록 본문'
+                                    ? (l10n?.recordBody ?? '기록 본문')
+                                    : headerTitle,
                                 overflow: TextOverflow.ellipsis,
                                 style: titleStyle,
                               ),
@@ -158,12 +175,17 @@ class SanctumPagePanel extends StatelessWidget {
 
                   return Row(
                     children: [
-                      const Icon(Icons.menu_book_outlined,
-                          size: 18, color: AkashaColors.accent),
+                      const Icon(
+                        Icons.menu_book_outlined,
+                        size: 18,
+                        color: AkashaColors.accent,
+                      ),
                       const SizedBox(width: 8),
                       Flexible(
                         child: Text(
-                          headerTitle,
+                          headerTitle == '기록 본문'
+                              ? (l10n?.recordBody ?? '기록 본문')
+                              : headerTitle,
                           overflow: TextOverflow.ellipsis,
                           style: titleStyle,
                         ),
@@ -182,13 +204,15 @@ class SanctumPagePanel extends StatelessWidget {
                   style: AkashaTypography.editableTitle,
                   decoration: InputDecoration(
                     isDense: true,
-                    hintText: '작품 제목',
+                    hintText: l10n?.hintWorkTitle ?? '작품 제목',
                     hintStyle: AkashaTypography.headline.copyWith(
                       color: AkashaColors.textCaption,
                     ),
                     border: OutlineInputBorder(
                       borderRadius: AkashaRadius.smBorder,
-                      borderSide: BorderSide(color: AkashaColors.borderSubtle(0.08)),
+                      borderSide: BorderSide(
+                        color: AkashaColors.borderSubtle(0.08),
+                      ),
                     ),
                     contentPadding: EdgeInsets.symmetric(
                       horizontal: AkashaSpacing.sm + 2,
@@ -227,15 +251,21 @@ class SanctumPagePanel extends StatelessWidget {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 8,
+                ),
                 child: Row(
                   children: [
-                    Icon(Icons.sync_problem,
-                        size: 16, color: AkashaColors.statusWarning),
+                    Icon(
+                      Icons.sync_problem,
+                      size: 16,
+                      color: AkashaColors.statusWarning,
+                    ),
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
-                        '외부에서 md 파일이 변경되었습니다.',
+                        l10n?.externalFileChanged ?? '외부에서 md 파일이 변경되었습니다.',
                         style: AkashaTypography.bodySecondary.copyWith(
                           color: AkashaColors.textPrimary,
                         ),
@@ -243,7 +273,10 @@ class SanctumPagePanel extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: onDismissExternalChange,
-                      child: Text('유지', style: AkashaTypography.compactLabel),
+                      child: Text(
+                        l10n?.actionKeep ?? '유지',
+                        style: AkashaTypography.compactLabel,
+                      ),
                     ),
                     FilledButton(
                       onPressed: onReloadFromDisk,
@@ -254,7 +287,7 @@ class SanctumPagePanel extends StatelessWidget {
                         ),
                       ),
                       child: Text(
-                        '다시 불러오기',
+                        l10n?.actionReload ?? '다시 불러오기',
                         style: AkashaTypography.compactLabel,
                       ),
                     ),
@@ -268,8 +301,10 @@ class SanctumPagePanel extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 6),
             child: Text(
               sectionLayout
-                  ? '설명·감상을 섹션별로 편집합니다. 고급 편집은 「.md」 탭을 사용하세요.'
-                  : '마크다운 본문을 편집합니다. 메타데이터(평점·태그 등)는 왼쪽 작품 정보, YAML은 「.md」 탭에서 다룹니다.',
+                  ? (l10n?.helpSectionEdit ??
+                        '설명·감상을 섹션별로 편집합니다. 고급 편집은 「.md」 탭을 사용하세요.')
+                  : (l10n?.helpMarkdownBodyEdit ??
+                        '마크다운 본문을 편집합니다. 메타데이터(평점·태그 등)는 왼쪽 작품 정보, YAML은 「.md」 탭에서 다룹니다.'),
               style: AkashaTypography.caption,
             ),
           ),
@@ -277,7 +312,8 @@ class SanctumPagePanel extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 6),
             child: Text(
-              'YAML frontmatter + 본문 전체입니다. 하단 「md 저장」으로 vault에 기록됩니다.',
+              l10n?.helpFullFileEdit ??
+                  'YAML frontmatter + 본문 전체입니다. 하단 「md 저장」으로 vault에 기록됩니다.',
               style: AkashaTypography.caption,
             ),
           ),

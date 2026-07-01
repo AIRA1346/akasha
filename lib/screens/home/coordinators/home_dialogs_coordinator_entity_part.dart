@@ -7,7 +7,9 @@ Future<void> _homeDialogsCoordinatorOpenAddEntityDialog(
   final ctx = coord.hostContext();
   final vaultPath = coord.vault.vaultPath;
   if (vaultPath == null || vaultPath.isEmpty) {
-    coord.showMessage('볼트를 먼저 연결해 주세요.');
+    coord.showMessage(
+      lookupAppL10n(ctx)?.errorConnectVaultFirst ?? '볼트를 먼저 연결해 주세요.',
+    );
     return;
   }
 
@@ -23,7 +25,9 @@ Future<void> _homeDialogsCoordinatorOpenAddEntityDialog(
       onWorkSavedToVault: (item) async {
         await coord.vault.saveVaultItem(item);
         if (WorkIdCodec.isUserLocalWorkId(item.workId)) {
-          await coord.userCatalog.upsert(UserCatalogEntity.fromAkashaItem(item));
+          await coord.userCatalog.upsert(
+            UserCatalogEntity.fromAkashaItem(item),
+          );
         }
         await coord.loadItems();
       },
@@ -43,7 +47,9 @@ Future<void> _homeDialogsCoordinatorOpenAddEntityDialog(
       onSavedToVault: (item) async {
         await coord.vault.saveVaultItem(item);
         if (WorkIdCodec.isUserLocalWorkId(item.workId)) {
-          await coord.userCatalog.upsert(UserCatalogEntity.fromAkashaItem(item));
+          await coord.userCatalog.upsert(
+            UserCatalogEntity.fromAkashaItem(item),
+          );
         }
         await coord.loadItems();
       },
@@ -74,7 +80,10 @@ Future<void> _homeDialogsCoordinatorSaveEntityResult(
 ) async {
   final vaultPath = coord.vault.vaultPath;
   if (vaultPath == null || vaultPath.isEmpty) {
-    coord.showMessage('볼트를 먼저 연결해 주세요.');
+    final ctx = coord.hostContext();
+    coord.showMessage(
+      lookupAppL10n(ctx)?.errorConnectVaultFirst ?? '볼트를 먼저 연결해 주세요.',
+    );
     return;
   }
   try {

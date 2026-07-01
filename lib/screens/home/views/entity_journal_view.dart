@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../core/ports/record_link_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
@@ -10,6 +11,7 @@ import '../../../utils/entity_body_preview.dart';
 import '../dialogs/add_catalog_entity_dialog.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../utils/app_l10n.dart';
 
 /// Wave 4.1 — entity journal (`vault/entities/`) 시간순 목록.
 class EntityJournalView extends StatefulWidget {
@@ -83,16 +85,19 @@ class _EntityJournalViewState extends State<EntityJournalView> {
       if (!mounted) return;
       await showDialog<void>(
         context: context,
-        builder: (ctx) => AlertDialog(
-          title: Text(entry.title),
-          content: SelectableText(entry.body),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx),
-              child: const Text('닫기'),
-            ),
-          ],
-        ),
+        builder: (ctx) {
+          final l10n = lookupAppL10n(ctx);
+          return AlertDialog(
+            title: Text(entry.title),
+            content: SelectableText(entry.body),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx),
+                child: Text(l10n?.actionClose ?? '닫기'),
+              ),
+            ],
+          );
+        },
       );
       return;
     }
@@ -111,12 +116,16 @@ class _EntityJournalViewState extends State<EntityJournalView> {
     return '$y-$m-$d $h:$min';
   }
 
-
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     if (widget.vaultPath == null) {
-      return const Center(
-        child: Text('볼트를 연결하면 entity journal을 볼 수 있습니다.'),
+      return Center(
+        child: Text(
+          l10n?.helpEntityJournalConnectVault ??
+              '볼트를 연결하면 entity journal을 볼 수 있습니다.',
+        ),
       );
     }
 
@@ -129,16 +138,23 @@ class _EntityJournalViewState extends State<EntityJournalView> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.category_outlined, size: 48, color: AkashaColors.textCaption),
+            Icon(
+              Icons.category_outlined,
+              size: 48,
+              color: AkashaColors.textCaption,
+            ),
             const SizedBox(height: 12),
             Text(
-              '아직 entity journal이 없습니다.',
-              style: TextStyle(color: AkashaColors.textMuted),
+              l10n?.helpEntityJournalEmpty ?? '아직 entity journal이 없습니다.',
+              style: const TextStyle(color: AkashaColors.textMuted),
             ),
             const SizedBox(height: 8),
             Text(
-              'Fusion → 직접 추가로 Person · Concept · Event를 아카이브하세요.',
-              style: AkashaTypography.body.copyWith(color: AkashaColors.textCaption),
+              l10n?.helpEntityJournalTip ??
+                  'Fusion → 직접 추가로 Person · Concept · Event를 아카이브하세요.',
+              style: AkashaTypography.body.copyWith(
+                color: AkashaColors.textCaption,
+              ),
             ),
           ],
         ),
@@ -153,14 +169,16 @@ class _EntityJournalViewState extends State<EntityJournalView> {
           child: Row(
             children: [
               Text(
-                'Entity journal (${_entries.length})',
+                l10n != null
+                    ? l10n.countEntityJournalEntries(_entries.length)
+                    : 'Entity journal (${_entries.length})',
                 style: AkashaTypography.dashboardPanelTitle.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
               const Spacer(),
               IconButton(
-                tooltip: '새로고침',
+                tooltip: l10n?.tooltipRefresh ?? '새로고침',
                 onPressed: _reload,
                 icon: const Icon(Icons.refresh),
               ),
@@ -174,6 +192,10 @@ class _EntityJournalViewState extends State<EntityJournalView> {
             separatorBuilder: (_, _) => const SizedBox(height: 8),
             itemBuilder: (context, index) {
               final entry = _entries[index];
+              final badgeLabel = _getLocalizedEntityTypeLabel(
+                entry.entityType,
+                l10n,
+              );
               return Material(
                 color: AkashaColors.workbenchListTile,
                 borderRadius: BorderRadius.circular(8),
@@ -188,7 +210,7 @@ class _EntityJournalViewState extends State<EntityJournalView> {
                         Row(
                           children: [
                             Text(
-                              entityTypeBadgeLabel(entry.entityType),
+                              badgeLabel,
                               style: AkashaTypography.caption.copyWith(
                                 color: Colors.tealAccent,
                               ),
@@ -225,5 +247,34 @@ class _EntityJournalViewState extends State<EntityJournalView> {
         ),
       ],
     );
+  }
+
+  String _getLocalizedEntityTypeLabel(EntityAnchorType type, dynamic l10n) {
+    if (l10n == null) return entityTypeBadgeLabel(type);
+    switch (type.name.toLowerCase()) {
+      case '인물':
+      case 'person':
+        return l10n.entityTypePerson;
+      case '개념':
+      case 'concept':
+        return l10n.entityTypeConcept;
+      case '사건':
+      case 'event':
+        return l10n.entityTypeEvent;
+      case '장소':
+      case 'place':
+        return l10n.entityTypePlace;
+      case '조직':
+      case 'organization':
+        return l10n.entityTypeOrganization;
+      case '현상':
+      case 'phenomenon':
+        return l10n.entityTypePhenomenon;
+      case '작품':
+      case 'work':
+        return l10n.entityTypeWork;
+      default:
+        return entityTypeBadgeLabel(type);
+    }
   }
 }

@@ -38,7 +38,7 @@ void main() {
       expect(eightySix.first.formatSlots, hasLength(2));
       expect(
         eightySix.first.formatSlots.map((s) => s.shortLabel).toList(),
-        containsAll(['만화', '라노벨']),
+        containsAll(['Manga', 'Novel']),
       );
     });
 
@@ -63,53 +63,55 @@ void main() {
       expect(cards, hasLength(1));
       expect(cards.first.franchiseId, 'franchise_86');
       final mangaSlot = cards.first.formatSlots.firstWhere(
-        (s) => s.shortLabel == '만화',
+        (s) => s.shortLabel == 'Manga',
       );
       expect(mangaSlot.state.name, 'tracked');
     });
 
-    test('rezero manga + anime + light novel fuse to one card with unified title',
-        () {
-      final manga = createItem(
-        workId: 'sub_manga_rezero_2014',
-        title: 'Re:제로부터 시작하는 이세계 생활',
-        category: MediaCategory.manga,
-        domain: AppDomain.subculture,
-        myStatus: ContentMyStatus.notStarted.label,
-        workStatus: ContentWorkStatus.completed.label,
-        rating: 0.0,
-      );
-      final novel = createItem(
-        workId: 'sub_book_rezero-light-novel_2014',
-        title: 'Re:제로 라이트노벨',
-        category: MediaCategory.book,
-        domain: AppDomain.subculture,
-        myStatus: ContentMyStatus.notStarted.label,
-        workStatus: ContentWorkStatus.completed.label,
-        rating: 0.0,
-      );
-      final anime = createItem(
-        workId: 'sub_animation_rezero-anime_2016',
-        title: 'Re:제로',
-        category: MediaCategory.animation,
-        domain: AppDomain.subculture,
-        myStatus: ContentMyStatus.notStarted.label,
-        workStatus: ContentWorkStatus.completed.label,
-        rating: 0.0,
-      );
+    test(
+      'rezero manga + anime + light novel fuse to one card with unified title',
+      () {
+        final manga = createItem(
+          workId: 'sub_manga_rezero_2014',
+          title: 'Re:제로부터 시작하는 이세계 생활',
+          category: MediaCategory.manga,
+          domain: AppDomain.subculture,
+          myStatus: ContentMyStatus.notStarted.label,
+          workStatus: ContentWorkStatus.completed.label,
+          rating: 0.0,
+        );
+        final novel = createItem(
+          workId: 'sub_book_rezero-light-novel_2014',
+          title: 'Re:제로 라이트노벨',
+          category: MediaCategory.book,
+          domain: AppDomain.subculture,
+          myStatus: ContentMyStatus.notStarted.label,
+          workStatus: ContentWorkStatus.completed.label,
+          rating: 0.0,
+        );
+        final anime = createItem(
+          workId: 'sub_animation_rezero-anime_2016',
+          title: 'Re:제로',
+          category: MediaCategory.animation,
+          domain: AppDomain.subculture,
+          myStatus: ContentMyStatus.notStarted.label,
+          workStatus: ContentWorkStatus.completed.label,
+          rating: 0.0,
+        );
 
-      final cards = FranchiseFusionService.fuse(
-        userFiltered: [manga, novel, anime],
-        registryWorks: const [],
-        allUserItems: [manga, novel, anime],
-        selectedCategories: {},
-      );
+        final cards = FranchiseFusionService.fuse(
+          userFiltered: [manga, novel, anime],
+          registryWorks: const [],
+          allUserItems: [manga, novel, anime],
+          selectedCategories: {},
+        );
 
-      final rezero = cards.where((c) => c.franchiseId == 'franchise_rezero');
-      expect(rezero, hasLength(1));
-      expect(rezero.first.item.title, 'Re:제로부터 시작하는 이세계 생활');
-      expect(rezero.first.formatSlots, hasLength(3));
-    });
+        final rezero = cards.where((c) => c.franchiseId == 'franchise_rezero');
+        expect(rezero, hasLength(1));
+        expect(rezero.first.item.title, 'Re:제로부터 시작하는 이세계 생활');
+        expect(rezero.first.formatSlots, hasLength(3));
+      },
+    );
 
     test('fuseScoped emits single manga card when only manga is member', () {
       final manga = createItem(
@@ -132,7 +134,7 @@ void main() {
       expect(cards, hasLength(1));
       expect(cards.first.franchiseId, isNull);
       expect(cards.first.formatSlots, hasLength(1));
-      expect(cards.first.formatSlots.first.shortLabel, '만화');
+      expect(cards.first.formatSlots.first.shortLabel, 'Manga');
     });
 
     test('fuseScoped fuses when two franchise members are in scope', () {

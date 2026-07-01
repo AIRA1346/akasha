@@ -7,12 +7,14 @@ import '../../../services/catalog_contribution_service.dart';
 import '../../../services/works_registry.dart';
 import '../../../widgets/web_image_search_dialog.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../utils/app_l10n.dart';
 
 /// 기존 사전 작품 **수정 제안** (포스터·연도·제목 등)
 Future<bool?> showCatalogFixContributionDialog(
   BuildContext context, {
   required AkashaItem item,
 }) async {
+  final l10n = lookupAppL10n(context);
   final resolvedId = WorksRegistry.resolveWorkId(item.workId);
   final registry = WorksRegistry.getWorkById(resolvedId);
 
@@ -21,7 +23,8 @@ Future<bool?> showCatalogFixContributionDialog(
   final titleCtrl = TextEditingController(text: item.title);
   final creatorCtrl = TextEditingController(text: item.creator);
   final yearCtrl = TextEditingController(
-    text: item.releaseYear?.toString() ?? registry?.releaseYear?.toString() ?? '',
+    text:
+        item.releaseYear?.toString() ?? registry?.releaseYear?.toString() ?? '',
   );
   final posterCtrl = TextEditingController(
     text: item.posterPath ?? registry?.posterPath ?? '',
@@ -36,7 +39,7 @@ Future<bool?> showCatalogFixContributionDialog(
     context: context,
     builder: (ctx) => StatefulBuilder(
       builder: (ctx, setD) => AlertDialog(
-        title: const Text('글로벌 사전 — 정보 수정 제안'),
+        title: Text(l10n?.catalogFixContributionTitle ?? '글로벌 사전 — 정보 수정 제안'),
         content: SizedBox(
           width: 460,
           child: SingleChildScrollView(
@@ -45,7 +48,8 @@ Future<bool?> showCatalogFixContributionDialog(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  CatalogContributionConfig.disclaimerKo,
+                  l10n?.catalogContributionDisclaimer ??
+                      CatalogContributionConfig.disclaimerKo,
                   style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
                 ),
                 const SizedBox(height: 8),
@@ -57,10 +61,10 @@ Future<bool?> showCatalogFixContributionDialog(
                 TextField(
                   controller: issueCtrl,
                   maxLines: 2,
-                  decoration: const InputDecoration(
-                    labelText: '무엇이 틀렸나요? *',
-                    hintText: '예: 포스터가 다른 작품 이미지입니다',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: l10n?.labelWhatIsWrong ?? '무엇이 틀렸나요? *',
+                    hintText: l10n?.hintWhatIsWrong ?? '예: 포스터가 다른 작품 이미지입니다',
+                    border: const OutlineInputBorder(),
                     alignLabelWithHint: true,
                   ),
                 ),
@@ -68,7 +72,7 @@ Future<bool?> showCatalogFixContributionDialog(
                 CheckboxListTile(
                   value: fixPoster,
                   onChanged: (v) => setD(() => fixPoster = v ?? false),
-                  title: const Text('포스터 URL 수정'),
+                  title: Text(l10n?.fixPosterUrl ?? '포스터 URL 수정'),
                   controlAffinity: ListTileControlAffinity.leading,
                   contentPadding: EdgeInsets.zero,
                 ),
@@ -78,9 +82,10 @@ Future<bool?> showCatalogFixContributionDialog(
                       Expanded(
                         child: TextField(
                           controller: posterCtrl,
-                          decoration: const InputDecoration(
-                            labelText: '제안 포스터 URL',
-                            border: OutlineInputBorder(),
+                          decoration: InputDecoration(
+                            labelText:
+                                l10n?.labelProposedPosterUrl ?? '제안 포스터 URL',
+                            border: const OutlineInputBorder(),
                             isDense: true,
                           ),
                         ),
@@ -105,7 +110,7 @@ Future<bool?> showCatalogFixContributionDialog(
                 CheckboxListTile(
                   value: fixYear,
                   onChanged: (v) => setD(() => fixYear = v ?? false),
-                  title: const Text('출시 연도 수정'),
+                  title: Text(l10n?.fixReleaseYear ?? '출시 연도 수정'),
                   controlAffinity: ListTileControlAffinity.leading,
                   contentPadding: EdgeInsets.zero,
                 ),
@@ -113,41 +118,41 @@ Future<bool?> showCatalogFixContributionDialog(
                   TextField(
                     controller: yearCtrl,
                     keyboardType: TextInputType.number,
-                    decoration: const InputDecoration(
-                      labelText: '제안 연도',
-                      border: OutlineInputBorder(),
+                    decoration: InputDecoration(
+                      labelText: l10n?.labelProposedYear ?? '제안 연도',
+                      border: const OutlineInputBorder(),
                       isDense: true,
                     ),
                   ),
                 CheckboxListTile(
                   value: fixTitle,
                   onChanged: (v) => setD(() => fixTitle = v ?? false),
-                  title: const Text('제목 수정'),
+                  title: Text(l10n?.fixTitle ?? '제목 수정'),
                   controlAffinity: ListTileControlAffinity.leading,
                   contentPadding: EdgeInsets.zero,
                 ),
                 if (fixTitle)
                   TextField(
                     controller: titleCtrl,
-                    decoration: const InputDecoration(
-                      labelText: '제안 제목',
-                      border: OutlineInputBorder(),
+                    decoration: InputDecoration(
+                      labelText: l10n?.labelProposedTitle ?? '제안 제목',
+                      border: const OutlineInputBorder(),
                       isDense: true,
                     ),
                   ),
                 CheckboxListTile(
                   value: fixCreator,
                   onChanged: (v) => setD(() => fixCreator = v ?? false),
-                  title: const Text('작가/제작사 수정'),
+                  title: Text(l10n?.fixCreator ?? '작가/제작사 수정'),
                   controlAffinity: ListTileControlAffinity.leading,
                   contentPadding: EdgeInsets.zero,
                 ),
                 if (fixCreator)
                   TextField(
                     controller: creatorCtrl,
-                    decoration: const InputDecoration(
-                      labelText: '제안 작가/제작사',
-                      border: OutlineInputBorder(),
+                    decoration: InputDecoration(
+                      labelText: l10n?.labelProposedCreator ?? '제안 작가/제작사',
+                      border: const OutlineInputBorder(),
                       isDense: true,
                     ),
                   ),
@@ -155,9 +160,9 @@ Future<bool?> showCatalogFixContributionDialog(
                 TextField(
                   controller: noteCtrl,
                   maxLines: 2,
-                  decoration: const InputDecoration(
-                    labelText: '추가 메모',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: l10n?.labelAdditionalNote ?? '추가 메모',
+                    border: const OutlineInputBorder(),
                     alignLabelWithHint: true,
                   ),
                 ),
@@ -168,20 +173,28 @@ Future<bool?> showCatalogFixContributionDialog(
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: const Text('취소'),
+            child: Text(l10n?.actionCancel ?? '취소'),
           ),
           FilledButton(
             onPressed: () async {
               final issue = issueCtrl.text.trim();
               if (issue.isEmpty) {
                 ScaffoldMessenger.of(ctx).showSnackBar(
-                  const SnackBar(content: Text('문제 설명을 입력해 주세요.')),
+                  SnackBar(
+                    content: Text(
+                      l10n?.validationEnterIssue ?? '문제 설명을 입력해 주세요.',
+                    ),
+                  ),
                 );
                 return;
               }
               if (!fixPoster && !fixYear && !fixTitle && !fixCreator) {
                 ScaffoldMessenger.of(ctx).showSnackBar(
-                  const SnackBar(content: Text('수정할 항목을 선택해 주세요.')),
+                  SnackBar(
+                    content: Text(
+                      l10n?.validationSelectFixField ?? '수정할 항목을 선택해 주세요.',
+                    ),
+                  ),
                 );
                 return;
               }
@@ -191,7 +204,12 @@ Future<bool?> showCatalogFixContributionDialog(
                 final poster = posterCtrl.text.trim();
                 if (poster.isNotEmpty && !poster.startsWith('http')) {
                   ScaffoldMessenger.of(ctx).showSnackBar(
-                    const SnackBar(content: Text('포스터는 https URL만 가능합니다.')),
+                    SnackBar(
+                      content: Text(
+                        l10n?.validationPosterHttpsRequired ??
+                            '포스터는 https URL만 가능합니다.',
+                      ),
+                    ),
                   );
                   return;
                 }
@@ -201,7 +219,11 @@ Future<bool?> showCatalogFixContributionDialog(
                 final year = int.tryParse(yearCtrl.text.trim());
                 if (year == null) {
                   ScaffoldMessenger.of(ctx).showSnackBar(
-                    const SnackBar(content: Text('연도를 숫자로 입력해 주세요.')),
+                    SnackBar(
+                      content: Text(
+                        l10n?.validationEnterYearNumber ?? '연도를 숫자로 입력해 주세요.',
+                      ),
+                    ),
                   );
                   return;
                 }
@@ -211,7 +233,11 @@ Future<bool?> showCatalogFixContributionDialog(
                 final title = titleCtrl.text.trim();
                 if (title.isEmpty) {
                   ScaffoldMessenger.of(ctx).showSnackBar(
-                    const SnackBar(content: Text('제목을 입력해 주세요.')),
+                    SnackBar(
+                      content: Text(
+                        l10n?.validationEnterTitle ?? '제목을 입력해 주세요.',
+                      ),
+                    ),
                   );
                   return;
                 }
@@ -227,11 +253,13 @@ Future<bool?> showCatalogFixContributionDialog(
                   fields: fields,
                   issue: issue,
                 ),
-                note: noteCtrl.text.trim().isEmpty ? null : noteCtrl.text.trim(),
+                note: noteCtrl.text.trim().isEmpty
+                    ? null
+                    : noteCtrl.text.trim(),
               );
               if (ctx.mounted) Navigator.pop(ctx, true);
             },
-            child: const Text('제안 저장'),
+            child: Text(l10n?.actionSaveProposal ?? '제안 저장'),
           ),
         ],
       ),

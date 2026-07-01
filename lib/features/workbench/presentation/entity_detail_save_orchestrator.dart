@@ -5,29 +5,34 @@ import '../../../services/entity_vault_store.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import 'entity_detail_save_ops.dart';
 import 'entity_detail_save_ui_patch.dart';
+import 'package:flutter/material.dart';
 
 /// EntityDetailWorkspace 저장 오케스트레이션 결과.
 sealed class EntityDetailSaveOrchestrationResult {
   const EntityDetailSaveOrchestrationResult();
 }
 
-class EntityDetailSaveOrchestrationSkipped extends EntityDetailSaveOrchestrationResult {
+class EntityDetailSaveOrchestrationSkipped
+    extends EntityDetailSaveOrchestrationResult {
   const EntityDetailSaveOrchestrationSkipped();
 }
 
-class EntityDetailSaveOrchestrationBlocked extends EntityDetailSaveOrchestrationResult {
+class EntityDetailSaveOrchestrationBlocked
+    extends EntityDetailSaveOrchestrationResult {
   const EntityDetailSaveOrchestrationBlocked(this.message);
 
   final String message;
 }
 
-class EntityDetailSaveOrchestrationFailed extends EntityDetailSaveOrchestrationResult {
+class EntityDetailSaveOrchestrationFailed
+    extends EntityDetailSaveOrchestrationResult {
   const EntityDetailSaveOrchestrationFailed(this.error);
 
   final Object error;
 }
 
-class EntityDetailSaveOrchestrationSucceeded extends EntityDetailSaveOrchestrationResult {
+class EntityDetailSaveOrchestrationSucceeded
+    extends EntityDetailSaveOrchestrationResult {
   const EntityDetailSaveOrchestrationSucceeded({
     required this.patch,
     required this.body,
@@ -41,7 +46,8 @@ class EntityDetailSaveOrchestrationSucceeded extends EntityDetailSaveOrchestrati
 
 /// EntityDetailWorkspace — 검증·persist·UI 패치 생성.
 abstract final class EntityDetailSaveOrchestrator {
-  static Future<EntityDetailSaveOrchestrationResult> run({
+  static Future<EntityDetailSaveOrchestrationResult> run(
+    BuildContext context, {
     required bool suppressPersist,
     required bool isSaving,
     required String rawBody,
@@ -65,6 +71,7 @@ abstract final class EntityDetailSaveOrchestrator {
     }
 
     final prepare = EntityDetailSavePrepareOps.prepare(
+      context,
       rawBody: rawBody,
       posterPath: posterPath,
       tags: tags,

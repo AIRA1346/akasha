@@ -167,6 +167,7 @@ mixin _EntityDetailWorkspacePersist on _EntityDetailWorkspaceStateBase {
     setState(() => _isSaving = true);
     try {
       final result = await EntityDetailSaveOrchestrator.run(
+        context,
         suppressPersist: _suppressPersist,
         isSaving: false,
         rawBody: _bodyCtrl.text,
@@ -194,6 +195,7 @@ mixin _EntityDetailWorkspacePersist on _EntityDetailWorkspaceStateBase {
           _showSnack(message);
         case EntityDetailSaveOrchestrationFailed(:final error):
           final msg = EntityDetailSavePrepareOps.saveFailedMessage(
+            context,
             error: error,
             silent: silent,
           );
@@ -219,12 +221,15 @@ mixin _EntityDetailWorkspacePersist on _EntityDetailWorkspaceStateBase {
             }
           });
           widget.onDirtyChanged(false);
+          final successMessage = !silent
+              ? EntityDetailArchiveOps.saveSuccessMessage(context, patch.entity)
+              : null;
           await _deleteRecoveryDraft();
           widget.onSaved(patch.entity, patch.journal, silent: silent);
           _refreshRecordLinks();
           _connections.refreshDiskMtime(_journal?.storagePath);
-          if (!silent) {
-            _showSnack(EntityDetailArchiveOps.saveSuccessMessage(patch.entity));
+          if (successMessage != null) {
+            _showSnack(successMessage);
           }
       }
     } finally {

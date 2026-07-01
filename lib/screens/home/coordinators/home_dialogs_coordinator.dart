@@ -26,6 +26,7 @@ import 'home_navigation_coordinator.dart';
 import 'home_shell_wiring.dart';
 import 'home_vault_coordinator.dart';
 import 'home_workbench_coordinator.dart';
+import '../../../utils/app_l10n.dart';
 
 part 'home_dialogs_coordinator_search_part.dart';
 part 'home_dialogs_coordinator_vault_part.dart';
@@ -78,7 +79,7 @@ class HomeDialogsCoordinator {
   final bool Function() canAddToLibrary;
   final UserCatalogPort userCatalog;
   final void Function(UserCatalogEntity entity, EntityJournalEntry? entry)?
-      onEntityArchived;
+  onEntityArchived;
   final RecordLinkPort Function()? getLinkIndex;
   final void Function(AkashaItem item)? onPreviewLocalWork;
   final void Function(UserCatalogEntity entity)? onPreviewEntity;

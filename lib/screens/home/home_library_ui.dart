@@ -18,6 +18,7 @@ import 'home_auto_archive.dart';
 import 'home_personal_library_controller.dart';
 import 'home_registry_hide_actions.dart';
 import 'dialogs/personal_library_name_dialog.dart';
+import '../../utils/app_l10n.dart';
 
 /// 서재 담기·work library 메뉴 Presentation glue (Wave 1.3b).
 class HomeLibraryUi {
@@ -37,9 +38,6 @@ class HomeLibraryUi {
   final HomePersonalLibraryController personalLibCtrl;
   final HomeRegistryHideActions hideActions;
 
-  static const vaultRequiredMessage =
-      '볼트를 먼저 연결해야 서재에 담을 수 있습니다.';
-
   WorkLibraryMenuRequest buildMenuRequest({
     required BrowseCard card,
     required AkashaItem workItem,
@@ -58,11 +56,11 @@ class HomeLibraryUi {
       onCreateLibrary: onCreateLibrary,
       onApply: includeLibraryActions
           ? (input) => membershipCoordinator.applyWorkLibraryPanel(
-                card,
-                draft: workItem,
-                input: input,
-                vaultItems: vaultItems,
-              )
+              card,
+              draft: workItem,
+              input: input,
+              vaultItems: vaultItems,
+            )
           : null,
     );
   }
@@ -72,9 +70,9 @@ class HomeLibraryUi {
     MembershipApplyResult? result,
   ) {
     if (result == null) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(result.toSnackBarMessage())),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(result.toSnackBarMessage())));
   }
 
   Future<void> addWorkToLibrary(
@@ -85,9 +83,15 @@ class HomeLibraryUi {
     required void Function(void Function()) setState,
     required void Function(String libraryId) selectPersonalLibrary,
   }) async {
+    final l10n = lookupAppL10n(context);
     if (vault.vaultPath == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text(vaultRequiredMessage)),
+        SnackBar(
+          content: Text(
+            l10n?.errorVaultRequiredToAddToLibrary ??
+                '볼트를 먼저 연결해야 서재에 담을 수 있습니다.',
+          ),
+        ),
       );
       return;
     }
@@ -100,7 +104,13 @@ class HomeLibraryUi {
 
     if (outcome.vaultMdError != null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('아카이브 실패: ${outcome.vaultMdError}')),
+        SnackBar(
+          content: Text(
+            l10n != null
+                ? l10n.errorArchiveFailed(outcome.vaultMdError.toString())
+                : '아카이브 실패: ${outcome.vaultMdError}',
+          ),
+        ),
       );
       return;
     }
@@ -111,12 +121,16 @@ class HomeLibraryUi {
       SnackBar(
         content: Text(
           outcome.alreadyInLibrary
-              ? '이미 「${outcome.libraryName}」 서재에 있습니다.'
-              : '「${outcome.libraryName}」 서재에 담았습니다.',
+              ? (l10n != null
+                    ? l10n.alreadyInLibrary(outcome.libraryName!)
+                    : '이미 「${outcome.libraryName}」 서재에 있습니다.')
+              : (l10n != null
+                    ? l10n.addedToLibrary(outcome.libraryName!)
+                    : '「${outcome.libraryName}」 서재에 담았습니다.'),
         ),
         action: switchToLibrary
             ? SnackBarAction(
-                label: '보기',
+                label: l10n?.actionView ?? '보기',
                 onPressed: () => selectPersonalLibrary(libraryId),
               )
             : null,
@@ -135,13 +149,20 @@ class HomeLibraryUi {
     required void Function(void Function()) setState,
     required Future<PersonalLibraryConfig?> Function() onCreateLibrary,
   }) async {
-    final hasHide = hideActions.registryHideActionFor(card.item) != null ||
+    final hasHide =
+        hideActions.registryHideActionFor(card.item) != null ||
         hideActions.franchiseHideActionFor(card) != null;
     if (!canAddToLibrary && !hasHide) return;
 
+    final l10n = lookupAppL10n(context);
     if (canAddToLibrary && vault.vaultPath == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text(vaultRequiredMessage)),
+        SnackBar(
+          content: Text(
+            l10n?.errorVaultRequiredToAddToLibrary ??
+                '볼트를 먼저 연결해야 서재에 담을 수 있습니다.',
+          ),
+        ),
       );
       return;
     }
@@ -175,9 +196,15 @@ class HomeLibraryUi {
     required void Function(void Function()) setState,
     required Future<PersonalLibraryConfig?> Function() onCreateLibrary,
   }) async {
+    final l10n = lookupAppL10n(context);
     if (vault.vaultPath == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text(vaultRequiredMessage)),
+        SnackBar(
+          content: Text(
+            l10n?.errorVaultRequiredToAddToLibrary ??
+                '볼트를 먼저 연결해야 서재에 담을 수 있습니다.',
+          ),
+        ),
       );
       return;
     }
@@ -298,9 +325,15 @@ class HomeLibraryUi {
     required void Function(void Function()) setState,
     required Future<PersonalLibraryConfig?> Function() onCreateLibrary,
   }) async {
+    final l10n = lookupAppL10n(context);
     if (vault.vaultPath == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text(vaultRequiredMessage)),
+        SnackBar(
+          content: Text(
+            l10n?.errorVaultRequiredToAddToLibrary ??
+                '볼트를 먼저 연결해야 서재에 담을 수 있습니다.',
+          ),
+        ),
       );
       return;
     }
@@ -326,18 +359,13 @@ class HomeLibraryUi {
       membership: membershipCoordinator.membership,
       activeLibraryId: personalLibCtrl.activeLibraryId,
       onCreateLibrary: onCreateLibrary,
-      onApply: (input) => membershipCoordinator.applyEntityLibraryPanel(
-        entity,
-        input: input,
-      ),
+      onApply: (input) =>
+          membershipCoordinator.applyEntityLibraryPanel(entity, input: input),
     );
 
     if (!context.mounted) return;
 
-    final result = await showWorkLibraryDialog(
-      context,
-      request: request,
-    );
+    final result = await showWorkLibraryDialog(context, request: request);
     if (!context.mounted) return;
     showMembershipApplySnackBar(context, result);
     setState(() {});

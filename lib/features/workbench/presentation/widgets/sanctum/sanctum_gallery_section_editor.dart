@@ -9,6 +9,7 @@ import '../../../../../theme/akasha_typography.dart';
 import '../../../../../utils/vault_asset_resolver.dart';
 import '../../../../../widgets/safe_local_image.dart';
 import '../../../../../widgets/sanctum/sanctum_image_drop_zone.dart';
+import '../../../../../utils/app_l10n.dart';
 
 /// Sanctum 기록 탭 — `# 🖼 갤러리` 편집 UI.
 class SanctumGallerySectionEditor extends StatelessWidget {
@@ -29,6 +30,8 @@ class SanctumGallerySectionEditor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return SanctumImageDropZone(
       enabled: SanctumImageImport.canImport,
       onImagesDropped: onImportPaths,
@@ -45,15 +48,28 @@ class SanctumGallerySectionEditor extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  const Icon(Icons.photo_library_outlined,
-                      size: 16, color: AkashaColors.accent),
+                  const Icon(
+                    Icons.photo_library_outlined,
+                    size: 16,
+                    color: AkashaColors.accent,
+                  ),
                   const SizedBox(width: AkashaSpacing.sm),
-                  Text('갤러리', style: AkashaTypography.sectionTitle),
+                  Text(
+                    l10n != null
+                        ? l10n.workbenchGallerySectionTitle
+                              .replaceAll('🖼', '')
+                              .trim()
+                        : '갤러리',
+                    style: AkashaTypography.sectionTitle,
+                  ),
                   const Spacer(),
                   TextButton.icon(
                     onPressed: onPaste,
                     icon: const Icon(Icons.content_paste_go_outlined, size: 16),
-                    label: const Text('붙여넣기', style: TextStyle(fontSize: 11)),
+                    label: Text(
+                      l10n?.actionPaste ?? '붙여넣기',
+                      style: const TextStyle(fontSize: 11),
+                    ),
                     style: TextButton.styleFrom(
                       visualDensity: VisualDensity.compact,
                       foregroundColor: AkashaColors.textSecondary,
@@ -61,10 +77,14 @@ class SanctumGallerySectionEditor extends StatelessWidget {
                   ),
                   TextButton.icon(
                     onPressed: onAdd,
-                    icon:
-                        const Icon(Icons.add_photo_alternate_outlined, size: 16),
-                    label:
-                        const Text('이미지 추가', style: TextStyle(fontSize: 11)),
+                    icon: const Icon(
+                      Icons.add_photo_alternate_outlined,
+                      size: 16,
+                    ),
+                    label: Text(
+                      l10n?.actionAddImage ?? '이미지 추가',
+                      style: const TextStyle(fontSize: 11),
+                    ),
                     style: TextButton.styleFrom(
                       visualDensity: VisualDensity.compact,
                       foregroundColor: AkashaColors.accent,
@@ -75,7 +95,8 @@ class SanctumGallerySectionEditor extends StatelessWidget {
               const SizedBox(height: AkashaSpacing.sm),
               if (entries.isEmpty)
                 Text(
-                  '이미지를 끌어다 놓거나, 붙여넣기·추가로 스크린샷·콜라주를 넣을 수 있습니다.',
+                  l10n?.helpWorkbenchGalleryEditorEmpty ??
+                      '이미지를 끌어다 놓거나, 붙여넣기·추가로 스크린샷·콜라주를 넣을 수 있습니다.',
                   style: AkashaTypography.bodySecondary,
                 )
               else

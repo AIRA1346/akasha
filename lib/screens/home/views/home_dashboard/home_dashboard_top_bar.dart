@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../theme/akasha_colors.dart';
 import '../../../../theme/akasha_typography.dart';
+import '../../../../utils/app_l10n.dart';
 
 class HomeDashboardTopBar extends StatelessWidget {
   const HomeDashboardTopBar({
@@ -15,6 +16,8 @@ class HomeDashboardTopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return Row(
       children: [
         Expanded(
@@ -30,22 +33,31 @@ class HomeDashboardTopBar extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  Icon(Icons.search_rounded, size: 16, color: AkashaColors.textMuted),
+                  Icon(
+                    Icons.search_rounded,
+                    size: 16,
+                    color: AkashaColors.textMuted,
+                  ),
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      '작품, 인물, 사건, 장소, 개념을 검색하세요...',
+                      l10n?.searchPlaceholder ?? '작품, 인물, 사건, 장소, 개념을 검색하세요...',
                       style: AkashaTypography.bodySecondary.copyWith(
                         color: AkashaColors.textMuted,
                       ),
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 5,
+                      vertical: 2,
+                    ),
                     decoration: BoxDecoration(
                       color: AkashaColors.borderSubtle(0.04),
                       borderRadius: BorderRadius.circular(4),
-                      border: Border.all(color: AkashaColors.borderSubtle(0.06)),
+                      border: Border.all(
+                        color: AkashaColors.borderSubtle(0.06),
+                      ),
                     ),
                     child: Text(
                       'Ctrl K',
@@ -63,8 +75,12 @@ class HomeDashboardTopBar extends StatelessWidget {
         const SizedBox(width: 16),
         IconButton(
           onPressed: onVaultSettings,
-          tooltip: '볼트 설정',
-          icon: Icon(Icons.settings_outlined, size: 18, color: AkashaColors.textSecondary),
+          tooltip: l10n?.tooltipVaultSettings ?? '볼트 설정',
+          icon: Icon(
+            Icons.settings_outlined,
+            size: 18,
+            color: AkashaColors.textSecondary,
+          ),
           padding: EdgeInsets.zero,
           constraints: const BoxConstraints(),
         ),

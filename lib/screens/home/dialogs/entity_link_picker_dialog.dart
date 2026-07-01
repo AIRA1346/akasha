@@ -13,6 +13,7 @@ import '../../../services/entity_vault_loader.dart';
 import '../../../services/entity_vault_path_conflict.dart';
 import '../../../services/link_candidate_service.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../utils/app_l10n.dart';
 import '../../../utils/entity_tag_validation.dart';
 import '../../../widgets/fusion_search_dialog_tiles.dart';
 import 'add_catalog_entity_dialog.dart';
@@ -69,7 +70,8 @@ class EntityLinkPickerDialog extends StatefulWidget {
   State<EntityLinkPickerDialog> createState() => _EntityLinkPickerDialogState();
 }
 
-abstract class _EntityLinkPickerDialogStateBase extends State<EntityLinkPickerDialog> {
+abstract class _EntityLinkPickerDialogStateBase
+    extends State<EntityLinkPickerDialog> {
   late final TextEditingController _queryCtrl;
   List<EntityLinkPickerCandidate> _candidates = const [];
   List<LinkCandidate> _recommendations = const [];
@@ -101,12 +103,13 @@ class _EntityLinkPickerDialogState extends _EntityLinkPickerDialogStateBase
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final hasRecommendations = _recommendations.isNotEmpty;
     final hasCandidates = _candidates.isNotEmpty;
     final showEmpty = !hasRecommendations && !hasCandidates;
 
     return AlertDialog(
-      title: Text(_dialogTitle()),
+      title: Text(_dialogTitle(l10n)),
       content: SizedBox(
         width: 420,
         height: 440,
@@ -117,13 +120,13 @@ class _EntityLinkPickerDialogState extends _EntityLinkPickerDialogStateBase
               Row(
                 children: [
                   EntityLinkPickerTab(
-                    label: '기존 연결',
+                    label: l10n?.tabExistingLink ?? '기존 연결',
                     selected: _tab == 0,
                     onTap: () => setState(() => _tab = 0),
                   ),
                   const SizedBox(width: 8),
                   EntityLinkPickerTab(
-                    label: '새로 만들기',
+                    label: l10n?.tabCreateNew ?? '새로 만들기',
                     selected: _tab == 1,
                     onTap: () => setState(() => _tab = 1),
                   ),
@@ -135,16 +138,16 @@ class _EntityLinkPickerDialogState extends _EntityLinkPickerDialogStateBase
               TextField(
                 controller: _queryCtrl,
                 autofocus: true,
-                decoration: const InputDecoration(
-                  hintText: '이름 · 별칭 검색',
-                  prefixIcon: Icon(Icons.search, size: 20),
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  hintText: l10n?.hintSearchNameAlias ?? '이름 · 별칭 검색',
+                  prefixIcon: const Icon(Icons.search, size: 20),
+                  border: const OutlineInputBorder(),
                   isDense: true,
                 ),
               ),
               const SizedBox(height: 8),
               Text(
-                _subtitleText(),
+                _subtitleText(l10n),
                 style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
               ),
               const SizedBox(height: 8),
@@ -154,59 +157,68 @@ class _EntityLinkPickerDialogState extends _EntityLinkPickerDialogStateBase
                         child: CircularProgressIndicator(strokeWidth: 2),
                       )
                     : showEmpty
-                        ? Center(
-                            child: Text(
-                              _queryCtrl.text.trim().isEmpty
-                                  ? '연결할 Entity가 없습니다.'
-                                  : '「${_queryCtrl.text.trim()}」과(와) 일치하는 항목이 없습니다.',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: AkashaColors.textMuted,
+                    ? Center(
+                        child: Text(
+                          _queryCtrl.text.trim().isEmpty
+                              ? (l10n?.noEntitiesAvailable ??
+                                    '연결할 Entity가 없습니다.')
+                              : (l10n != null
+                                    ? l10n.noMatchingEntity(
+                                        _queryCtrl.text.trim(),
+                                      )
+                                    : '「${_queryCtrl.text.trim()}」과(와) 일치하는 항목이 없습니다.'),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: AkashaColors.textMuted,
+                          ),
+                        ),
+                      )
+                    : ListView(
+                        children: [
+                          if (hasRecommendations) ...[
+                            EntityLinkPickerSectionLabel(
+                              l10n?.sectionRelatedToWork ?? '이 작품과 관련',
+                            ),
+                            ..._recommendations.map(
+                              (item) => EntityLinkRecommendationTile(
+                                candidate: item,
+                                onTap: () => _selectRecommendation(item),
                               ),
                             ),
-                          )
-                        : ListView(
-                            children: [
-                              if (hasRecommendations) ...[
-                                const EntityLinkPickerSectionLabel('이 작품과 관련'),
-                                ..._recommendations.map(
-                                  (item) => EntityLinkRecommendationTile(
-                                    candidate: item,
-                                    onTap: () => _selectRecommendation(item),
-                                  ),
-                                ),
-                                if (hasCandidates) ...[
-                                  const SizedBox(height: 8),
-                                  const Divider(height: 1),
-                                  const SizedBox(height: 8),
-                                  const EntityLinkPickerSectionLabel('검색 결과'),
-                                ],
-                              ],
-                              ..._candidates.map(
-                                (item) => EntityLinkCandidateTile(
-                                  candidate: item,
-                                  onTap: () => _select(item),
-                                ),
+                            if (hasCandidates) ...[
+                              const SizedBox(height: 8),
+                              const Divider(height: 1),
+                              const SizedBox(height: 8),
+                              EntityLinkPickerSectionLabel(
+                                l10n?.sectionSearchResults ?? '검색 결과',
                               ),
                             ],
+                          ],
+                          ..._candidates.map(
+                            (item) => EntityLinkCandidateTile(
+                              candidate: item,
+                              onTap: () => _select(item),
+                            ),
                           ),
+                        ],
+                      ),
               ),
             ] else
-              Expanded(child: _buildCreateTab()),
+              Expanded(child: _buildCreateTab(l10n)),
           ],
         ),
       ),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('취소'),
+          child: Text(l10n?.actionCancel ?? '취소'),
         ),
       ],
     );
   }
 
-  Widget _buildCreateTab() {
+  Widget _buildCreateTab(dynamic l10n) {
     final type = widget.anchorTypeFilter!;
     final typeLabel = entityTypeBadgeLabel(type);
 
@@ -214,7 +226,9 @@ class _EntityLinkPickerDialogState extends _EntityLinkPickerDialogStateBase
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          '카탈로그에 없는 $typeLabel을(를) 새로 등록하고, 이 작품 본문에 바로 연결합니다.',
+          l10n != null
+              ? l10n.createEntityAndLink(typeLabel)
+              : '카탈로그에 없는 $typeLabel을(를) 새로 등록하고, 이 작품 본문에 바로 연결합니다.',
           style: TextStyle(fontSize: 12, color: AkashaColors.textSecondary),
         ),
         const SizedBox(height: 16),
@@ -232,7 +246,7 @@ class _EntityLinkPickerDialogState extends _EntityLinkPickerDialogStateBase
               style: const TextStyle(fontWeight: FontWeight.w600),
             ),
             subtitle: Text(
-              '검색어를 이름으로 사용',
+              l10n?.useSearchQueryAsName ?? '검색어를 이름으로 사용',
               style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
             ),
           ),
@@ -246,30 +260,46 @@ class _EntityLinkPickerDialogState extends _EntityLinkPickerDialogStateBase
                   child: CircularProgressIndicator(strokeWidth: 2),
                 )
               : const Icon(Icons.add, size: 16),
-          label: Text('$typeLabel 새로 만들기'),
+          label: Text(
+            l10n != null
+                ? l10n.createNewEntityType(typeLabel)
+                : '$typeLabel 새로 만들기',
+          ),
         ),
       ],
     );
   }
 
-  String _dialogTitle() {
+  String _dialogTitle(dynamic l10n) {
+    if (l10n == null) {
+      return switch (widget.anchorTypeFilter) {
+        EntityAnchorType.person => '인물 추가',
+        EntityAnchorType.event => '사건 추가',
+        EntityAnchorType.concept => '개념 추가',
+        EntityAnchorType.place => '장소 추가',
+        EntityAnchorType.organization => '조직 추가',
+        _ => 'Entity 연결',
+      };
+    }
     return switch (widget.anchorTypeFilter) {
-      EntityAnchorType.person => '인물 추가',
-      EntityAnchorType.event => '사건 추가',
-      EntityAnchorType.concept => '개념 추가',
-      EntityAnchorType.place => '장소 추가',
-      EntityAnchorType.organization => '조직 추가',
-      _ => 'Entity 연결',
+      EntityAnchorType.person => l10n.addPerson,
+      EntityAnchorType.event => l10n.addEvent,
+      EntityAnchorType.concept => l10n.addConcept,
+      EntityAnchorType.place => l10n.addPlace,
+      EntityAnchorType.organization => l10n.addOrganization,
+      _ => l10n.linkEntity,
     };
   }
 
-  String _subtitleText() {
+  String _subtitleText(dynamic l10n) {
     if (_recommendations.isNotEmpty) {
-      return '추천 후보 · Person · Event · Concept · Place · Org';
+      return l10n?.subtitleRecommendations ??
+          '추천 후보 · Person · Event · Concept · Place · Org';
     }
     if (_candidates.any((c) => c.isSeed)) {
-      return '내 카탈로그에 없습니다 · 사전 인물에서 연결할 수 있습니다';
+      return l10n?.subtitleSeedAvailable ?? '내 카탈로그에 없습니다 · 사전 인물에서 연결할 수 있습니다';
     }
-    return '카탈로그 · Person · Event · Concept · Place · Org';
+    return l10n?.subtitleCatalog ??
+        '카탈로그 · Person · Event · Concept · Place · Org';
   }
 }

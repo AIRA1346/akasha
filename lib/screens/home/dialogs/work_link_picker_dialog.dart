@@ -4,6 +4,8 @@ import '../../../models/akasha_item.dart';
 import '../../../models/entity_link_selection.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../utils/app_l10n.dart';
+import '../../../models/enums.dart';
 
 /// 서재 작품 검색 — 워크벤치 「작품 추가」용.
 Future<EntityLinkSelection?> showWorkLinkPickerDialog(
@@ -106,10 +108,11 @@ class _WorkLinkPickerDialogState extends State<WorkLinkPickerDialog> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final query = _queryCtrl.text.trim();
 
     return AlertDialog(
-      title: const Text('작품 추가'),
+      title: Text(l10n?.workLinkPickerTitle ?? '작품 추가'),
       content: SizedBox(
         width: 420,
         height: 400,
@@ -119,17 +122,22 @@ class _WorkLinkPickerDialogState extends State<WorkLinkPickerDialog> {
             TextField(
               controller: _queryCtrl,
               autofocus: true,
-              decoration: const InputDecoration(
-                hintText: '제목 · 작가 · work_id 검색',
-                prefixIcon: Icon(Icons.search, size: 20),
-                border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                hintText:
+                    l10n?.hintSearchTitleCreatorId ?? '제목 · 작가 · work_id 검색',
+                prefixIcon: const Icon(Icons.search, size: 20),
+                border: const OutlineInputBorder(),
                 isDense: true,
               ),
             ),
             const SizedBox(height: 8),
             Text(
-              '서재에 저장된 작품을 본문에 [[링크]]로 연결합니다.',
-              style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
+              l10n?.workLinkPickerDescription ??
+                  '서재에 저장된 작품을 본문에 [[링크]]로 연결합니다.',
+              style: const TextStyle(
+                fontSize: 11,
+                color: AkashaColors.textMuted,
+              ),
             ),
             const SizedBox(height: 8),
             Expanded(
@@ -137,17 +145,25 @@ class _WorkLinkPickerDialogState extends State<WorkLinkPickerDialog> {
                   ? Center(
                       child: Text(
                         query.isEmpty
-                            ? '연결할 다른 작품이 없습니다.'
-                            : '「$query」과(와) 일치하는 작품이 없습니다.',
+                            ? (l10n?.noOtherWorksToLink ?? '연결할 다른 작품이 없습니다.')
+                            : (l10n != null
+                                  ? l10n.noMatchingWork(query)
+                                  : '「$query」과(와) 일치하는 작품이 없습니다.'),
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
+                        style: const TextStyle(
+                          fontSize: 12,
+                          color: AkashaColors.textMuted,
+                        ),
                       ),
                     )
                   : ListView.builder(
                       itemCount: _matches.length,
                       itemBuilder: (context, index) {
                         final work = _matches[index];
-                        return _WorkTile(work: work, onTap: () => _select(work));
+                        return _WorkTile(
+                          work: work,
+                          onTap: () => _select(work),
+                        );
                       },
                     ),
             ),
@@ -157,7 +173,7 @@ class _WorkLinkPickerDialogState extends State<WorkLinkPickerDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('취소'),
+          child: Text(l10n?.actionCancel ?? '취소'),
         ),
       ],
     );
@@ -172,8 +188,9 @@ class _WorkTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final subtitle = [
-      work.category.label,
+      work.category.localizedLabel(l10n),
       if (work.creator.isNotEmpty) work.creator,
       if (work.releaseYear != null) '${work.releaseYear}',
     ].join(' · ');
@@ -192,7 +209,7 @@ class _WorkTile extends StatelessWidget {
       ),
       subtitle: Text(
         subtitle,
-        style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
+        style: const TextStyle(fontSize: 10, color: AkashaColors.textMuted),
       ),
       trailing: const Icon(Icons.link, size: 14, color: Colors.tealAccent),
     );

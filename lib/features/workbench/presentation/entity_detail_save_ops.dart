@@ -49,27 +49,31 @@ abstract final class EntityDetailSaveOps {
   static bool shouldSkip({
     required bool suppressPersist,
     required bool isSaving,
-  }) =>
-      suppressPersist || isSaving;
+  }) => suppressPersist || isSaving;
 
-  static String? vaultBlockedMessage({required bool silent}) {
+  static String? vaultBlockedMessage(
+    BuildContext context, {
+    required bool silent,
+  }) {
     if (EntityDetailArchiveOps.isVaultConnected()) return null;
-    return EntityDetailArchiveOps.vaultRequiredSnack(silent: silent);
+    return EntityDetailArchiveOps.vaultRequiredSnack(context, silent: silent);
   }
 
-  static String? emptyBodyBlockedMessage({
+  static String? emptyBodyBlockedMessage(
+    BuildContext context, {
     required String rawBody,
     required String posterPath,
     required List<String> tags,
     required bool silent,
   }) {
     final bodyResolve = EntityDetailArchiveOps.resolveBodyForSave(
+      context,
       rawBody: rawBody,
       posterPath: posterPath,
       tags: tags,
     );
     if (bodyResolve.body != null) return null;
-    return EntityDetailArchiveOps.emptyBodySnack(silent: silent);
+    return EntityDetailArchiveOps.emptyBodySnack(context, silent: silent);
   }
 
   static Future<void> warnWorkTitleTagsIfNeeded({

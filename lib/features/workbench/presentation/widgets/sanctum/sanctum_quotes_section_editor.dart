@@ -4,6 +4,7 @@ import '../../../../../theme/akasha_colors.dart';
 import '../../../../../theme/akasha_radius.dart';
 import '../../../../../theme/akasha_spacing.dart';
 import '../../../../../theme/akasha_typography.dart';
+import '../../../../../utils/app_l10n.dart';
 
 /// Sanctum 기록 탭 — `# 🎬 명장면` 접이식 편집 UI.
 class SanctumQuotesSectionEditor extends StatelessWidget {
@@ -20,6 +21,8 @@ class SanctumQuotesSectionEditor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return DecoratedBox(
       decoration: BoxDecoration(
         color: AkashaColors.surface.withValues(alpha: 0.2),
@@ -46,7 +49,11 @@ class SanctumQuotesSectionEditor extends StatelessWidget {
                   ),
                   const SizedBox(width: AkashaSpacing.sm),
                   Text(
-                    '명장면 & 명대사',
+                    l10n != null
+                        ? l10n.workbenchQuotesSectionTitle
+                              .replaceAll('🎬', '')
+                              .trim()
+                        : '명장면 & 명대사',
                     style: AkashaTypography.bodySecondary.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
@@ -71,7 +78,7 @@ class SanctumQuotesSectionEditor extends StatelessWidget {
                 maxLines: null,
                 style: AkashaTypography.body,
                 decoration: InputDecoration(
-                  hintText: '한 줄에 한 문장씩 입력하세요.',
+                  hintText: l10n?.hintQuotesEditor ?? '한 줄에 한 문장씩 입력하세요.',
                   hintStyle: AkashaTypography.bodySecondary,
                   filled: true,
                   fillColor: AkashaColors.workbenchEditor,

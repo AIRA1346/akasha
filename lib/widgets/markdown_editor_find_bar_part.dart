@@ -27,6 +27,8 @@ class _MarkdownFindBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return Material(
       color: AkashaColors.editorPanelBg,
       borderRadius: BorderRadius.circular(8),
@@ -42,12 +44,14 @@ class _MarkdownFindBar extends StatelessWidget {
                 onChanged: (_) => onChanged(),
                 onSubmitted: (_) => onFindNext(),
                 style: AkashaTypography.editorFindInput,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   isDense: true,
-                  hintText: '찾기',
-                  border: OutlineInputBorder(),
-                  contentPadding:
-                      EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                  hintText: l10n?.hintFind ?? '찾기',
+                  border: const OutlineInputBorder(),
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 8,
+                  ),
                 ),
               ),
             ),
@@ -59,13 +63,13 @@ class _MarkdownFindBar extends StatelessWidget {
             IconButton(
               onPressed: onFindPrevious,
               icon: const Icon(Icons.keyboard_arrow_up, size: 18),
-              tooltip: '이전',
+              tooltip: l10n?.actionPrevious ?? '이전',
               visualDensity: VisualDensity.compact,
             ),
             IconButton(
               onPressed: onFindNext,
               icon: const Icon(Icons.keyboard_arrow_down, size: 18),
-              tooltip: '다음',
+              tooltip: l10n?.actionNext ?? '다음',
               visualDensity: VisualDensity.compact,
             ),
             const SizedBox(width: 8),
@@ -74,22 +78,30 @@ class _MarkdownFindBar extends StatelessWidget {
               child: TextField(
                 controller: replaceController,
                 style: AkashaTypography.editorFindInput,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   isDense: true,
-                  hintText: '바꿀 텍스트',
-                  border: OutlineInputBorder(),
-                  contentPadding:
-                      EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                  hintText: l10n?.hintReplaceText ?? '바꿀 텍스트',
+                  border: const OutlineInputBorder(),
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 8,
+                  ),
                 ),
               ),
             ),
             const SizedBox(width: 4),
-            TextButton(onPressed: onReplace, child: const Text('바꾸기')),
-            TextButton(onPressed: onReplaceAll, child: const Text('전체')),
+            TextButton(
+              onPressed: onReplace,
+              child: Text(l10n?.actionReplace ?? '바꾸기'),
+            ),
+            TextButton(
+              onPressed: onReplaceAll,
+              child: Text(l10n?.actionReplaceAll ?? '전체'),
+            ),
             IconButton(
               onPressed: onClose,
               icon: const Icon(Icons.close, size: 16),
-              tooltip: '닫기',
+              tooltip: l10n?.actionClose ?? '닫기',
               visualDensity: VisualDensity.compact,
             ),
           ],

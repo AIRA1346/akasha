@@ -6,6 +6,8 @@ import '../../../widgets/sanctum_page_panel.dart';
 import 'entity_detail_archive_ops.dart';
 import 'entity_detail_draft_ops.dart';
 import 'entity_detail_save_ops.dart';
+import 'package:flutter/material.dart';
+import '../../../utils/app_l10n.dart';
 
 /// EntityDetailWorkspace — 저장 성공 후 UI·상태 패치.
 class EntityDetailSaveUiPatch {
@@ -80,7 +82,8 @@ class EntityDetailSaveReady extends EntityDetailSavePrepareResult {
 }
 
 abstract final class EntityDetailSavePrepareOps {
-  static EntityDetailSavePrepareResult prepare({
+  static EntityDetailSavePrepareResult prepare(
+    BuildContext context, {
     required String rawBody,
     required String posterPath,
     required List<String> tags,
@@ -88,7 +91,10 @@ abstract final class EntityDetailSavePrepareOps {
     required SanctumPageView pageView,
     required void Function() syncBodyFromEditor,
   }) {
-    final vaultMsg = EntityDetailSaveOps.vaultBlockedMessage(silent: silent);
+    final vaultMsg = EntityDetailSaveOps.vaultBlockedMessage(
+      context,
+      silent: silent,
+    );
     if (vaultMsg != null) {
       return EntityDetailSaveBlocked(vaultMsg);
     }
@@ -98,6 +104,7 @@ abstract final class EntityDetailSavePrepareOps {
     }
 
     final emptyMsg = EntityDetailSaveOps.emptyBodyBlockedMessage(
+      context,
       rawBody: rawBody,
       posterPath: posterPath,
       tags: tags,
@@ -108,6 +115,7 @@ abstract final class EntityDetailSavePrepareOps {
     }
 
     final bodyResolve = EntityDetailArchiveOps.resolveBodyForSave(
+      context,
       rawBody: rawBody,
       posterPath: posterPath,
       tags: tags,
@@ -119,12 +127,16 @@ abstract final class EntityDetailSavePrepareOps {
     );
   }
 
-  static String? saveFailedMessage({
+  static String? saveFailedMessage(
+    BuildContext context, {
     required Object error,
     required bool silent,
   }) {
     if (silent) return null;
     if (error is EntityVaultPathConflict) return error.userMessage;
-    return '저장 실패: $error';
+    final l10n = lookupAppL10n(context);
+    return l10n != null
+        ? l10n.errorSaveFailed(error.toString())
+        : '저장 실패: $error';
   }
 }

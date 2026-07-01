@@ -34,11 +34,16 @@ Future<CollectibleCollection?> showCollectibleCollectionEditDialog(
     vaultItems: vaultItems,
   );
 
+  final l10n = lookupAppL10n(context);
   final result = await showDialog<CollectibleCollection>(
     context: context,
     builder: (ctx) => StatefulBuilder(
       builder: (ctx, setLocal) => AlertDialog(
-        title: Text(session.isNew ? '컬렉션 추가' : '컬렉션 설정'),
+        title: Text(
+          session.isNew
+              ? (l10n?.collectionAddTitle ?? '컬렉션 추가')
+              : (l10n?.collectionEditTitle ?? '컬렉션 설정'),
+        ),
         content: SizedBox(
           width: 420,
           child: SingleChildScrollView(
@@ -47,6 +52,7 @@ Future<CollectibleCollection?> showCollectibleCollectionEditDialog(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 ..._collectibleCollectionEditTitleAndModeSection(
+                  ctx,
                   session,
                   setLocal,
                 ),
@@ -59,7 +65,11 @@ Future<CollectibleCollection?> showCollectibleCollectionEditDialog(
                     setLocal,
                   )
                 else
-                  ..._collectibleCollectionEditCuratedSection(session, setLocal),
+                  ..._collectibleCollectionEditCuratedSection(
+                    ctx,
+                    session,
+                    setLocal,
+                  ),
               ],
             ),
           ),

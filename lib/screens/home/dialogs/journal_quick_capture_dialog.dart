@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/app_l10n.dart';
+
 /// Wave 3 — freeform journal quick capture 입력.
 class JournalQuickCaptureResult {
-  const JournalQuickCaptureResult({
-    required this.title,
-    required this.body,
-  });
+  const JournalQuickCaptureResult({required this.title, required this.body});
 
   final String title;
   final String body;
@@ -14,13 +13,14 @@ class JournalQuickCaptureResult {
 Future<JournalQuickCaptureResult?> showJournalQuickCaptureDialog(
   BuildContext context,
 ) async {
+  final l10n = lookupAppL10n(context);
   final titleCtrl = TextEditingController();
   final bodyCtrl = TextEditingController();
 
   final result = await showDialog<JournalQuickCaptureResult>(
     context: context,
     builder: (ctx) => AlertDialog(
-      title: const Text('메모 기록'),
+      title: Text(l10n?.journalQuickCaptureTitle ?? '메모 기록'),
       content: SizedBox(
         width: 420,
         child: SingleChildScrollView(
@@ -33,20 +33,20 @@ Future<JournalQuickCaptureResult?> showJournalQuickCaptureDialog(
                 autofocus: true,
                 minLines: 4,
                 maxLines: 8,
-                decoration: const InputDecoration(
-                  labelText: '본문',
-                  hintText: '아이디어, 메모, 생각…',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: l10n?.labelBody ?? '본문',
+                  hintText: l10n?.hintJournalBody ?? '아이디어, 메모, 생각…',
+                  border: const OutlineInputBorder(),
                   alignLabelWithHint: true,
                 ),
               ),
               const SizedBox(height: 12),
               TextField(
                 controller: titleCtrl,
-                decoration: const InputDecoration(
-                  labelText: '제목 (선택)',
-                  hintText: '비우면 본문 앞부분을 사용합니다',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: l10n?.labelTitleOptional ?? '제목 (선택)',
+                  hintText: l10n?.hintTitleAutoFill ?? '비우면 본문 앞부분을 사용합니다',
+                  border: const OutlineInputBorder(),
                   isDense: true,
                 ),
               ),
@@ -57,7 +57,7 @@ Future<JournalQuickCaptureResult?> showJournalQuickCaptureDialog(
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(ctx),
-          child: const Text('취소'),
+          child: Text(l10n?.actionCancel ?? '취소'),
         ),
         FilledButton(
           onPressed: () {
@@ -72,7 +72,7 @@ Future<JournalQuickCaptureResult?> showJournalQuickCaptureDialog(
               JournalQuickCaptureResult(title: title, body: body),
             );
           },
-          child: const Text('저장'),
+          child: Text(l10n?.actionSave ?? '저장'),
         ),
       ],
     ),

@@ -16,6 +16,7 @@ import '../work_detail_info_panel.dart';
 import 'work_detail_sanctum_panel.dart';
 import 'work_sanctum_section_editor.dart';
 import 'workbench_breadcrumb.dart';
+import '../../../../utils/app_l10n.dart';
 
 /// Work 워크벤치 — breadcrumb + 3열 본문.
 class WorkDetailWorkspaceBody extends StatelessWidget {
@@ -129,7 +130,8 @@ class WorkDetailWorkspaceBody extends StatelessWidget {
   final Future<EntityLinkSelection?> Function(
     BuildContext context,
     String selectedText,
-  )? onRequestEntityLink;
+  )?
+  onRequestEntityLink;
   final ValueChanged<double>? onInfoWidthChanged;
   final VoidCallback? onToggleInfoLock;
   final VoidCallback onRefreshIncoming;
@@ -143,7 +145,8 @@ class WorkDetailWorkspaceBody extends StatelessWidget {
   final ValueChanged<List<String>> onDraftTagsChanged;
   final Future<void> Function() onPosterTap;
   final VoidCallback onResetToDefaults;
-  final Future<void> Function({bool silent, bool switchToPreview}) onSaveArchive;
+  final Future<void> Function({bool silent, bool switchToPreview})
+  onSaveArchive;
   final Future<void> Function() onAddToLibrary;
   final Future<void> Function() onDeleteArchive;
   final void Function(UserCatalogEntity entity) onOpenLinkedEntity;
@@ -163,6 +166,7 @@ class WorkDetailWorkspaceBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final titleLabel = titleCtrl.text.trim().isNotEmpty
         ? titleCtrl.text.trim()
         : item.title;
@@ -174,10 +178,10 @@ class WorkDetailWorkspaceBody extends StatelessWidget {
           WorkbenchBreadcrumb(
             segments: [
               WorkbenchBreadcrumbSegment(
-                label: '서재',
+                label: l10n?.breadcrumbLibrary ?? '서재',
                 onTap: onClose,
               ),
-              const WorkbenchBreadcrumbSegment(label: '작품'),
+              WorkbenchBreadcrumbSegment(label: l10n?.breadcrumbWork ?? '작품'),
               WorkbenchBreadcrumbSegment(label: titleLabel),
             ],
           ),
@@ -263,11 +267,14 @@ class WorkDetailWorkspaceBody extends StatelessWidget {
                   canExportHtml: isArchivedInVault,
                   onApplyTemplate: onApplyTemplate,
                   onExportHtml: onExportHtml,
-                  saveLabel: isArchived ? 'md 저장' : 'md 생성',
+                  saveLabel: isArchived
+                      ? (l10n?.actionSaveMd ?? 'md 저장')
+                      : (l10n?.actionCreateMd ?? 'md 생성'),
                   onSave: () => onSaveArchive(),
                   showAddToLibrary: showAddToLibrary,
-                  libraryLabel:
-                      isArchived ? '서재에 담기' : '저장하고 서재에 담기',
+                  libraryLabel: isArchived
+                      ? (l10n?.actionAddToLibrary ?? '서재에 담기')
+                      : (l10n?.actionSaveAndAddToLibrary ?? '저장하고 서재에 담기'),
                   onAddToLibrary: onAddToLibrary,
                   onReset: onResetToDefaults,
                   canDeleteMd: isArchivedInVault,

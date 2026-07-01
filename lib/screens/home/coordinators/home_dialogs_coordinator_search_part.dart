@@ -29,7 +29,9 @@ Future<void> _homeDialogsCoordinatorOpenSearchDialog(
         _homeDialogsCoordinatorPromoteCatalogOnlyToArchive(coord, work),
     onCustomAdd: (query) async {
       if (!coord.vault.isVaultLinked) {
-        coord.showMessage('볼트를 먼저 연결해 주세요.');
+        coord.showMessage(
+          lookupAppL10n(ctx)?.errorConnectVaultFirst ?? '볼트를 먼저 연결해 주세요.',
+        );
         return;
       }
       await HomeDialogsFacade.showCustomAddWithTypePicker(
@@ -43,14 +45,18 @@ Future<void> _homeDialogsCoordinatorOpenSearchDialog(
         onWorkSavedToVault: (item) async {
           await coord.vault.saveVaultItem(item);
           if (WorkIdCodec.isUserLocalWorkId(item.workId)) {
-            await coord.userCatalog.upsert(UserCatalogEntity.fromAkashaItem(item));
+            await coord.userCatalog.upsert(
+              UserCatalogEntity.fromAkashaItem(item),
+            );
           }
           await coord.loadItems();
         },
         onEntitySaved: (result) async {
           final vaultPath = coord.vault.vaultPath;
           if (vaultPath == null || vaultPath.isEmpty) {
-            coord.showMessage('볼트를 먼저 연결해 주세요.');
+            coord.showMessage(
+              lookupAppL10n(ctx)?.errorConnectVaultFirst ?? '볼트를 먼저 연결해 주세요.',
+            );
             return;
           }
           try {
@@ -80,33 +86,27 @@ Future<void> _homeDialogsCoordinatorOpenSearchDialog(
     ),
     onAddLocalToLibrary: coord.canAddToLibrary()
         ? (item) => coord.wiring.libraryUi.showAddToLibraryForItem(
-              ctx,
-              item: item,
-              isCuratedLibraryActive: coord.navigation.isCuratedLibraryActive,
-              items: coord.getItems(),
-              resolveItemForOpen: coord.workbenchCoord.resolveItemForOpen,
-              setState: coord.wrapSetState,
-              onCreateLibrary: () =>
-                  coord.wiring.libraryUi.promptCreateCuratedLibrary(
-                ctx,
-                setState: coord.wrapSetState,
-              ),
-            )
+            ctx,
+            item: item,
+            isCuratedLibraryActive: coord.navigation.isCuratedLibraryActive,
+            items: coord.getItems(),
+            resolveItemForOpen: coord.workbenchCoord.resolveItemForOpen,
+            setState: coord.wrapSetState,
+            onCreateLibrary: () => coord.wiring.libraryUi
+                .promptCreateCuratedLibrary(ctx, setState: coord.wrapSetState),
+          )
         : null,
     onAddRemoteToLibrary: coord.canAddToLibrary()
         ? (work) => coord.wiring.libraryUi.addRegistryWorkToLibrary(
-              ctx,
-              work: work,
-              isCuratedLibraryActive: coord.navigation.isCuratedLibraryActive,
-              items: coord.getItems(),
-              resolveItemForOpen: coord.workbenchCoord.resolveItemForOpen,
-              setState: coord.wrapSetState,
-              onCreateLibrary: () =>
-                  coord.wiring.libraryUi.promptCreateCuratedLibrary(
-                ctx,
-                setState: coord.wrapSetState,
-              ),
-            )
+            ctx,
+            work: work,
+            isCuratedLibraryActive: coord.navigation.isCuratedLibraryActive,
+            items: coord.getItems(),
+            resolveItemForOpen: coord.workbenchCoord.resolveItemForOpen,
+            setState: coord.wrapSetState,
+            onCreateLibrary: () => coord.wiring.libraryUi
+                .promptCreateCuratedLibrary(ctx, setState: coord.wrapSetState),
+          )
         : null,
   );
 }
@@ -115,9 +115,17 @@ Future<void> _homeDialogsCoordinatorOpenEntityFromSearch(
   HomeDialogsCoordinator coord,
   String entityId,
 ) async {
-  final entity = await CollectibleOpener.findEntity(coord.userCatalog, entityId);
+  final l10n = lookupAppL10n(coord.hostContext());
+  final entity = await CollectibleOpener.findEntity(
+    coord.userCatalog,
+    entityId,
+  );
   if (entity == null) {
-    coord.showMessage('「$entityId」을(를) 찾을 수 없습니다.');
+    coord.showMessage(
+      l10n != null
+          ? l10n.errorEntityNotFound(entityId)
+          : '「$entityId」을(를) 찾을 수 없습니다.',
+    );
     return;
   }
   if (coord.onPreviewEntity != null) {
@@ -131,9 +139,13 @@ Future<void> _homeDialogsCoordinatorPromoteCatalogOnlyToArchive(
   HomeDialogsCoordinator coord,
   RegistryWork work,
 ) async {
+  final l10n = lookupAppL10n(coord.hostContext());
   final vaultPath = coord.vault.vaultPath;
   if (vaultPath == null || vaultPath.isEmpty) {
-    coord.showMessage('볼트를 먼저 연결해 주세요.');
+    final ctx = coord.hostContext();
+    coord.showMessage(
+      lookupAppL10n(ctx)?.errorConnectVaultFirst ?? '볼트를 먼저 연결해 주세요.',
+    );
     return;
   }
 
@@ -146,7 +158,11 @@ Future<void> _homeDialogsCoordinatorPromoteCatalogOnlyToArchive(
     }
   }
   if (entity == null) {
-    coord.showMessage('「${work.title}」을(를) 찾을 수 없습니다.');
+    coord.showMessage(
+      l10n != null
+          ? l10n.errorEntityNotFound(work.title)
+          : '「${work.title}」을(를) 찾을 수 없습니다.',
+    );
     return;
   }
 

@@ -65,10 +65,11 @@ class HomeShellCoordinatorBundle {
     required void Function() rebuild,
     required void Function(void Function()) wrapSetState,
     required void Function(UserCatalogEntity entity, EntityJournalEntry? entry)
-        onEntityArchived,
+    onEntityArchived,
     required void Function(AkashaItem item, {bool push}) onPreviewWork,
     required Future<void> Function(AkashaItem item) onOpenWorkDetail,
-    required Future<void> Function({bool showFeedback}) autoArchiveRegistryWorks,
+    required Future<void> Function({bool showFeedback})
+    autoArchiveRegistryWorks,
   }) {
     late final HomeCatalogCoordinator catalog;
 
@@ -100,6 +101,7 @@ class HomeShellCoordinatorBundle {
     );
 
     final preview = HomePreviewCoordinator(
+      hostContext: () => host.context,
       vault: vault.vault,
       rebuild: rebuild,
       resolveItemForOpen: workbenchCoord.resolveItemForOpen,
@@ -187,7 +189,8 @@ class HomeShellCoordinatorBundle {
       navigation: navigation,
       workbenchCoord: workbenchCoord,
       getItems: () => vault.items,
-      addItemInMemory: (item) => host.scheduleRebuild(() => vault.items.add(item)),
+      addItemInMemory: (item) =>
+          host.scheduleRebuild(() => vault.items.add(item)),
       loadItems: () => vault.loadItems(),
       loadPersonalLibraries: () => navigation.loadPersonalLibraries(),
       autoArchiveWorks: autoArchiveRegistryWorks,

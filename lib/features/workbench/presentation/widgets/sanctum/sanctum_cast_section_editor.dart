@@ -10,6 +10,7 @@ import '../../../../../theme/akasha_radius.dart';
 import '../../../../../theme/akasha_spacing.dart';
 import '../../../../../theme/akasha_typography.dart';
 import '../../../../../widgets/poster_image.dart';
+import '../../../../../utils/app_l10n.dart';
 
 /// Sanctum 기록 탭 — `# 👥 출연` 편집 UI.
 class SanctumCastSectionEditor extends StatelessWidget {
@@ -28,6 +29,8 @@ class SanctumCastSectionEditor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return DecoratedBox(
       decoration: BoxDecoration(
         color: AkashaColors.surface.withValues(alpha: 0.35),
@@ -41,16 +44,27 @@ class SanctumCastSectionEditor extends StatelessWidget {
           children: [
             Row(
               children: [
-                const Icon(Icons.people_outline,
-                    size: 16, color: AkashaColors.accent),
+                const Icon(
+                  Icons.people_outline,
+                  size: 16,
+                  color: AkashaColors.accent,
+                ),
                 const SizedBox(width: AkashaSpacing.sm),
-                Text('출연', style: AkashaTypography.sectionTitle),
+                Text(
+                  l10n != null
+                      ? l10n.workbenchCastSectionTitle
+                            .replaceAll('👥', '')
+                            .trim()
+                      : '출연',
+                  style: AkashaTypography.sectionTitle,
+                ),
               ],
             ),
             const SizedBox(height: AkashaSpacing.sm),
             if (entries.isEmpty)
               Text(
-                '우측 「인물 추가」로 출연진을 넣으면 미리보기 상단에 카드로 표시됩니다.',
+                l10n?.helpWorkbenchCastEditorEmpty ??
+                    '우측 「인물 추가」로 출연진을 넣으면 미리보기 상단에 카드로 표시됩니다.',
                 style: AkashaTypography.bodySecondary,
               )
             else
@@ -118,6 +132,7 @@ class _CastEntryRowState extends State<_CastEntryRow> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final catalogEntity = widget.userCatalog?.getById(widget.entry.entityId);
     final avatarItem = catalogEntity != null
         ? EntityItem(
@@ -176,7 +191,7 @@ class _CastEntryRowState extends State<_CastEntryRow> {
                     style: AkashaTypography.caption,
                     decoration: InputDecoration(
                       isDense: true,
-                      hintText: '역할 (예: 주인공)',
+                      hintText: l10n?.hintCastRole ?? '역할 (예: 주인공)',
                       hintStyle: AkashaTypography.bodySecondary,
                       border: OutlineInputBorder(
                         borderRadius: AkashaRadius.smBorder,
@@ -195,7 +210,11 @@ class _CastEntryRowState extends State<_CastEntryRow> {
             ),
             IconButton(
               onPressed: widget.onRemove,
-              icon: Icon(Icons.close, size: 16, color: AkashaColors.textMuted),
+              icon: const Icon(
+                Icons.close,
+                size: 16,
+                color: AkashaColors.textMuted,
+              ),
               visualDensity: VisualDensity.compact,
               padding: EdgeInsets.zero,
               constraints: const BoxConstraints(minWidth: 28, minHeight: 28),

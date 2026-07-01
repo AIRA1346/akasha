@@ -65,6 +65,8 @@ class _MarkdownEditorToolbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return Material(
       color: AkashaColors.sidebarFooter,
       borderRadius: BorderRadius.circular(8),
@@ -75,44 +77,82 @@ class _MarkdownEditorToolbar extends StatelessWidget {
           spacing: 0,
           runSpacing: 0,
           children: [
-            _btn(Icons.undo, '되돌리기', onUndo, enabled: canUndo),
-            _btn(Icons.redo, '다시실행', onRedo, enabled: canRedo),
+            _btn(
+              Icons.undo,
+              l10n?.actionUndo ?? '되돌리기',
+              onUndo,
+              enabled: canUndo,
+            ),
+            _btn(
+              Icons.redo,
+              l10n?.actionRedo ?? '다시실행',
+              onRedo,
+              enabled: canRedo,
+            ),
             _sep(),
-            _btn(Icons.format_bold, '굵게 (Ctrl+B)', onBold),
-            _btn(Icons.format_italic, '기울임 (Ctrl+I)', onItalic),
-            _btn(Icons.format_strikethrough, '취소선', onStrike),
-            _btn(Icons.code, '인라인 코드', onCode),
+            _btn(Icons.format_bold, l10n?.tooltipBold ?? '굵게 (Ctrl+B)', onBold),
+            _btn(
+              Icons.format_italic,
+              l10n?.tooltipItalic ?? '기울임 (Ctrl+I)',
+              onItalic,
+            ),
+            _btn(
+              Icons.format_strikethrough,
+              l10n?.tooltipStrikethrough ?? '취소선',
+              onStrike,
+            ),
+            _btn(Icons.code, l10n?.tooltipInlineCode ?? '인라인 코드', onCode),
             _sep(),
-            _btn(Icons.title, '제목 1', onH1),
-            _btn(Icons.format_size, '제목 2', onH2),
-            _btn(Icons.text_fields, '제목 3', onH3),
+            _btn(Icons.title, l10n?.tooltipH1 ?? '제목 1', onH1),
+            _btn(Icons.format_size, l10n?.tooltipH2 ?? '제목 2', onH2),
+            _btn(Icons.text_fields, l10n?.tooltipH3 ?? '제목 3', onH3),
             _sep(),
-            _btn(Icons.format_quote, '인용 (> )', onQuote),
-            _btn(Icons.format_list_bulleted, '글머리', onBullet),
-            _btn(Icons.format_list_numbered, '번호 목록', onNumbered),
-            _btn(Icons.link, '링크', onLink),
+            _btn(
+              Icons.format_quote,
+              l10n?.tooltipBlockquote ?? '인용 (> )',
+              onQuote,
+            ),
+            _btn(
+              Icons.format_list_bulleted,
+              l10n?.tooltipBulletedList ?? '글머리',
+              onBullet,
+            ),
+            _btn(
+              Icons.format_list_numbered,
+              l10n?.tooltipNumberedList ?? '번호 목록',
+              onNumbered,
+            ),
+            _btn(Icons.link, l10n?.tooltipLink ?? '링크', onLink),
             _btn(
               Icons.hub_outlined,
-              'Entity 연결',
+              l10n?.tooltipLinkEntity ?? 'Entity 연결',
               onEntityLink,
               enabled: entityLinkEnabled,
             ),
             _btn(
               Icons.image_outlined,
-              vaultLinked ? '이미지 삽입' : '이미지 (볼트 필요)',
+              vaultLinked
+                  ? (l10n?.tooltipInsertImage ?? '이미지 삽입')
+                  : (l10n?.tooltipImageVaultRequired ?? '이미지 (볼트 필요)'),
               onImage,
               enabled: vaultLinked,
             ),
-            _btn(Icons.search, '찾기 (Ctrl+F)', onFind),
-            _btn(Icons.content_paste_go, '스마트 붙여넣기 (Ctrl+Shift+V)', onSmartPaste),
+            _btn(Icons.search, l10n?.tooltipFind ?? '찾기 (Ctrl+F)', onFind),
+            _btn(
+              Icons.content_paste_go,
+              l10n?.tooltipSmartPaste ?? '스마트 붙여넣기 (Ctrl+Shift+V)',
+              onSmartPaste,
+            ),
             _sep(),
             PopupMenuButton<MarkdownSectionEntry>(
-              tooltip: '섹션 목차',
+              tooltip: l10n?.tooltipTableOfContents ?? '섹션 목차',
               enabled: sections.isNotEmpty,
               icon: Icon(
                 Icons.list_alt,
                 size: 18,
-                color: sections.isEmpty ? AkashaColors.textCaption : AkashaColors.textSecondary,
+                color: sections.isEmpty
+                    ? AkashaColors.textCaption
+                    : AkashaColors.textSecondary,
               ),
               padding: EdgeInsets.zero,
               onSelected: onJumpToSection,
@@ -129,9 +169,12 @@ class _MarkdownEditorToolbar extends StatelessWidget {
               ],
             ),
             PopupMenuButton<String>(
-              tooltip: '섹션 삽입',
-              icon: Icon(Icons.add_circle_outline,
-                  size: 18, color: AkashaColors.textSecondary),
+              tooltip: l10n?.tooltipInsertSection ?? '섹션 삽입',
+              icon: Icon(
+                Icons.add_circle_outline,
+                size: 18,
+                color: AkashaColors.textSecondary,
+              ),
               padding: EdgeInsets.zero,
               onSelected: (v) {
                 switch (v) {
@@ -149,17 +192,32 @@ class _MarkdownEditorToolbar extends StatelessWidget {
                     onInsertCustom();
                 }
               },
-              itemBuilder: (_) => const [
-                PopupMenuItem(value: 'cast', child: Text('👥 출연')),
-                PopupMenuItem(value: 'gallery', child: Text('🖼 갤러리')),
-                PopupMenuItem(value: 'synopsis', child: Text('📋 시놉시스')),
+              itemBuilder: (_) => [
+                PopupMenuItem(
+                  value: 'cast',
+                  child: Text(l10n?.sectionCast ?? '👥 출연'),
+                ),
+                PopupMenuItem(
+                  value: 'gallery',
+                  child: Text(l10n?.sectionGallery ?? '🖼 갤러리'),
+                ),
+                PopupMenuItem(
+                  value: 'synopsis',
+                  child: Text(l10n?.sectionSynopsis ?? '📋 시놉시스'),
+                ),
                 PopupMenuItem(
                   value: 'quotes',
-                  child: Text('🎬 명장면 & 명대사'),
+                  child: Text(l10n?.sectionQuotes ?? '🎬 명장면 & 명대사'),
                 ),
-                PopupMenuItem(value: 'memo', child: Text('📝 메모')),
-                PopupMenuDivider(),
-                PopupMenuItem(value: 'custom', child: Text('＋ 커스텀 섹션…')),
+                PopupMenuItem(
+                  value: 'memo',
+                  child: Text(l10n?.sectionMemo ?? '📝 메모'),
+                ),
+                const PopupMenuDivider(),
+                PopupMenuItem(
+                  value: 'custom',
+                  child: Text(l10n?.actionAddCustomSection ?? '＋ 커스텀 섹션…'),
+                ),
               ],
             ),
           ],
@@ -169,11 +227,11 @@ class _MarkdownEditorToolbar extends StatelessWidget {
   }
 
   Widget _sep() => Container(
-        width: 1,
-        height: 22,
-        margin: const EdgeInsets.symmetric(horizontal: 4),
-        color: AkashaColors.border,
-      );
+    width: 1,
+    height: 22,
+    margin: const EdgeInsets.symmetric(horizontal: 4),
+    color: AkashaColors.border,
+  );
 
   Widget _btn(
     IconData icon,

@@ -2,16 +2,19 @@ import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/screens/home/coordinators/home_preview_coordinator.dart';
 import 'package:akasha/utils/helpers.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../fakes/fake_vault_port.dart';
 
 HomePreviewCoordinator _coordinator({
+  required BuildContext context,
   void Function()? onRebuild,
   void Function(String workId)? onRecordWork,
   void Function()? onShowBrowse,
 }) {
   return HomePreviewCoordinator(
+    hostContext: () => context,
     vault: FakeVaultPort(),
     rebuild: onRebuild ?? () {},
     resolveItemForOpen: (item) => item,
@@ -38,10 +41,13 @@ UserCatalogEntity _entity({required String id, required String title}) {
 }
 
 void main() {
-  test('openWorkPreview replaces entity preview', () {
+  testWidgets('openWorkPreview replaces entity preview', (tester) async {
+    await tester.pumpWidget(const MaterialApp(home: SizedBox()));
+    final context = tester.element(find.byType(SizedBox));
     var rebuilds = 0;
     String? recordedWorkId;
     final coord = _coordinator(
+      context: context,
       onRebuild: () => rebuilds++,
       onRecordWork: (id) => recordedWorkId = id,
     );
@@ -60,7 +66,9 @@ void main() {
     expect(rebuilds, greaterThanOrEqualTo(2));
   });
 
-  test('push stacks prior preview and pop restores it', () {
+  testWidgets('push stacks prior preview and pop restores it', (tester) async {
+    await tester.pumpWidget(const MaterialApp(home: SizedBox()));
+    final context = tester.element(find.byType(SizedBox));
     final first = createItem(
       workId: 'wk_a',
       title: 'A',
@@ -71,7 +79,7 @@ void main() {
       title: 'B',
       category: MediaCategory.manga,
     );
-    final coord = _coordinator();
+    final coord = _coordinator(context: context);
     coord.openWorkPreview(first);
     coord.openWorkPreview(second, push: true);
 
@@ -84,7 +92,11 @@ void main() {
     expect(coord.canPopPreview, isFalse);
   });
 
-  test('openWorkFromPreview captures return snapshot for save restore', () async {
+  testWidgets('openWorkFromPreview captures return snapshot for save restore', (
+    tester,
+  ) async {
+    await tester.pumpWidget(const MaterialApp(home: SizedBox()));
+    final context = tester.element(find.byType(SizedBox));
     final work = createItem(
       workId: 'wk_save',
       title: 'Saved',
@@ -97,6 +109,7 @@ void main() {
     );
     var browseShown = false;
     final coord = HomePreviewCoordinator(
+      hostContext: () => context,
       vault: FakeVaultPort(),
       rebuild: () {},
       resolveItemForOpen: (item) => item,

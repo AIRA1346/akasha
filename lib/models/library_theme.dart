@@ -18,20 +18,20 @@ class LibraryTheme {
 
   static const LibraryTheme classic = LibraryTheme(
     id: 'classic',
-    name: '클래식 다크',
+    name: 'Classic Dark',
     backgroundColor: Color(0xFF13131D),
   );
 
   static const LibraryTheme midnight = LibraryTheme(
     id: 'midnight',
-    name: '미드나잇 블루',
+    name: 'Midnight Blue',
     backgroundColor: Color(0xFF0D1B2A),
     accentColor: Color(0xFF64B5F6),
   );
 
   static const LibraryTheme sakura = LibraryTheme(
     id: 'sakura',
-    name: '사쿠라 (IAP)',
+    name: 'Sakura (IAP)',
     backgroundColor: Color(0xFF2A1A22),
     accentColor: Color(0xFFF48FB1),
     requiresIap: true,
@@ -39,18 +39,13 @@ class LibraryTheme {
 
   static const LibraryTheme amethyst = LibraryTheme(
     id: 'amethyst',
-    name: '자수정 (IAP)',
+    name: 'Amethyst (IAP)',
     backgroundColor: Color(0xFF1A1A1A),
     accentColor: Color(0xFFB39DDB),
     requiresIap: true,
   );
 
-  static const List<LibraryTheme> all = [
-    classic,
-    midnight,
-    sakura,
-    amethyst,
-  ];
+  static const List<LibraryTheme> all = [classic, midnight, sakura, amethyst];
 
   static LibraryTheme? byId(String id) {
     final normalized = id == 'obsidian' ? 'amethyst' : id;

@@ -10,6 +10,7 @@ import '../../../theme/akasha_typography.dart';
 import '../../../utils/work_link_neighbors.dart';
 import '../../../widgets/work_link_neighbors_sections.dart';
 import 'widgets/workbench_record_links_sections.dart';
+import '../../../utils/app_l10n.dart';
 
 /// 워크벤치 우측 연결 패널 — 연결|정보 탭. 실데이터 link neighbors 연동.
 class WorkDetailConnectionsPanel extends StatefulWidget {
@@ -61,11 +62,14 @@ class WorkDetailConnectionsPanel extends StatefulWidget {
       _WorkDetailConnectionsPanelState();
 }
 
-class _WorkDetailConnectionsPanelState extends State<WorkDetailConnectionsPanel> {
+class _WorkDetailConnectionsPanelState
+    extends State<WorkDetailConnectionsPanel> {
   int _tab = 0;
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return SizedBox(
       width: widget.width,
       child: ColoredBox(
@@ -83,13 +87,13 @@ class _WorkDetailConnectionsPanelState extends State<WorkDetailConnectionsPanel>
               child: Row(
                 children: [
                   _PanelTab(
-                    label: '연결',
+                    label: l10n?.tabConnection ?? '연결',
                     selected: _tab == 0,
                     onTap: () => setState(() => _tab = 0),
                   ),
                   const SizedBox(width: 8),
                   _PanelTab(
-                    label: '정보',
+                    label: l10n?.tabInfo ?? '정보',
                     selected: _tab == 1,
                     onTap: () => setState(() => _tab = 1),
                   ),
@@ -104,7 +108,7 @@ class _WorkDetailConnectionsPanelState extends State<WorkDetailConnectionsPanel>
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       ),
                       child: Text(
-                        '연결 맵',
+                        l10n?.labelDashboardConnectionMap ?? '연결 맵',
                         style: AkashaTypography.caption.copyWith(
                           color: AkashaColors.accent,
                         ),
@@ -114,7 +118,9 @@ class _WorkDetailConnectionsPanelState extends State<WorkDetailConnectionsPanel>
               ),
             ),
             Expanded(
-              child: _tab == 0 ? _buildConnectionsTab() : _buildInfoTab(),
+              child: _tab == 0
+                  ? _buildConnectionsTab(l10n)
+                  : _buildInfoTab(l10n),
             ),
           ],
         ),
@@ -122,7 +128,7 @@ class _WorkDetailConnectionsPanelState extends State<WorkDetailConnectionsPanel>
     );
   }
 
-  Widget _buildConnectionsTab() {
+  Widget _buildConnectionsTab(dynamic l10n) {
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: AkashaSpacing.md),
       child: Column(
@@ -132,7 +138,8 @@ class _WorkDetailConnectionsPanelState extends State<WorkDetailConnectionsPanel>
             Padding(
               padding: const EdgeInsets.only(bottom: AkashaSpacing.sm),
               child: Text(
-                '섹션의 「추가」로 Entity를 연결합니다. 인물은 출연 슬롯, 그 외는 감상 본문에 [[링크]]가 삽입됩니다.',
+                l10n?.helpWorkbenchConnectionExplain ??
+                    '섹션의 「추가」로 Entity를 연결합니다. 인물은 출연 슬롯, 그 외는 감상 본문에 [[링크]]가 삽입됩니다.',
                 style: AkashaTypography.caption.copyWith(
                   color: AkashaColors.textMuted,
                 ),
@@ -160,9 +167,10 @@ class _WorkDetailConnectionsPanelState extends State<WorkDetailConnectionsPanel>
     );
   }
 
-  Widget _buildInfoTab() {
+  Widget _buildInfoTab(dynamic l10n) {
     final n = widget.linkNeighbors;
-    final linkCount = n.characters.length +
+    final linkCount =
+        n.characters.length +
         n.connectedWorks.length +
         n.events.length +
         n.concepts.length +
@@ -174,12 +182,18 @@ class _WorkDetailConnectionsPanelState extends State<WorkDetailConnectionsPanel>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _InfoRow(label: '연결 수', value: '$linkCount'),
+          _InfoRow(
+            label: l10n?.labelConnectionCount ?? '연결 수',
+            value: '$linkCount',
+          ),
           if (widget.item.filePath != null)
-            _InfoRow(label: '저장 경로', value: widget.item.filePath!),
+            _InfoRow(
+              label: l10n?.labelSavePath ?? '저장 경로',
+              value: widget.item.filePath!,
+            ),
           if (widget.draftTags.isNotEmpty) ...[
             const SizedBox(height: AkashaSpacing.sm),
-            Text('태그', style: AkashaTypography.sectionLabel),
+            Text(l10n?.labelTags ?? '태그', style: AkashaTypography.sectionLabel),
             const SizedBox(height: 6),
             Wrap(
               spacing: 6,

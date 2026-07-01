@@ -17,6 +17,7 @@ import '../services/user_registry_preferences.dart';
 import '../theme/akasha_colors.dart';
 import 'fusion_remote_search_entry.dart';
 import 'fusion_search_dialog_tiles.dart';
+import '../utils/app_l10n.dart';
 
 part 'fusion_search_dialog_search.dart';
 
@@ -75,6 +76,7 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final query = _ctrl.text.trim();
     final groups = FusionSearchSections.group(
       localWork: _localWorkResults,
@@ -82,12 +84,11 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
       catalogHits: _catalogHits,
       globalHits: _globalHits,
     );
-    final showCustomCta = query.isNotEmpty &&
-        !_isSearching &&
-        !groups.hasAnyHits;
+    final showCustomCta =
+        query.isNotEmpty && !_isSearching && !groups.hasAnyHits;
 
     return AlertDialog(
-      title: const Text('🔍 검색'),
+      title: Text(l10n?.searchTitle ?? '🔍 검색'),
       content: SizedBox(
         width: 440,
         height: 460,
@@ -97,7 +98,7 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
               controller: _ctrl,
               autofocus: true,
               decoration: InputDecoration(
-                hintText: '제목, 작가, 태그, Entity…',
+                hintText: l10n?.hintSearchEverything ?? '제목, 작가, 태그, Entity…',
                 border: const OutlineInputBorder(),
                 prefixIcon: const Icon(Icons.search),
                 suffixIcon: _isSearching
@@ -125,16 +126,20 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
               child: query.isEmpty
                   ? Center(
                       child: Text(
-                        '검색어를 입력하세요.\n로컬 아카이브 · 내 등록 · 글로벌 사전을 함께 검색합니다.',
+                        l10n?.hintSearchExplain ??
+                            '검색어를 입력하세요.\n로컬 아카이브 · 내 등록 · 글로벌 사전을 함께 검색합니다.',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
+                        style: const TextStyle(
+                          fontSize: 12,
+                          color: AkashaColors.textMuted,
+                        ),
                       ),
                     )
                   : ListView(
                       children: [
                         if (groups.localWork.isNotEmpty) ...[
                           FusionSearchSectionLabel(
-                            '📂 내 아카이브 — Work',
+                            l10n?.sectionMyArchiveWork ?? '📂 내 아카이브 — Work',
                             groups.localWork.length,
                           ),
                           ...groups.localWork.map(
@@ -153,7 +158,8 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
                         ],
                         if (groups.localEntity.isNotEmpty) ...[
                           FusionSearchSectionLabel(
-                            '📂 내 아카이브 — Entity',
+                            l10n?.sectionMyArchiveEntity ??
+                                '📂 내 아카이브 — Entity',
                             groups.localEntity.length,
                           ),
                           ...groups.localEntity.map(
@@ -171,7 +177,8 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
                         ],
                         if (groups.catalogWork.isNotEmpty) ...[
                           FusionSearchSectionLabel(
-                            '📂 내 아카이브 — Work (등록만)',
+                            l10n?.sectionMyArchiveWorkRegisteredOnly ??
+                                '📂 내 아카이브 — Work (등록만)',
                             groups.catalogWork.length,
                           ),
                           ...groups.catalogWork.map(
@@ -179,7 +186,8 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
                               entry: entryFromHit(hit),
                               onSelectRemote: widget.onSelectRemote,
                               onAddRemoteToLibrary: widget.onAddRemoteToLibrary,
-                              onPromoteCatalogEntity: widget.onPromoteCatalogEntity,
+                              onPromoteCatalogEntity:
+                                  widget.onPromoteCatalogEntity,
                               onRemoteTap: _handleRemoteTap,
                             ),
                           ),
@@ -187,7 +195,7 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
                         ],
                         if (groups.catalogEntityOnly.isNotEmpty) ...[
                           FusionSearchSectionLabel(
-                            '⏳ 아카이브되지 않음',
+                            l10n?.sectionNotArchived ?? '⏳ 아카이브되지 않음',
                             groups.catalogEntityOnly.length,
                           ),
                           ...groups.catalogEntityOnly.map(
@@ -195,7 +203,8 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
                               entry: entryFromHit(hit),
                               onSelectRemote: widget.onSelectRemote,
                               onAddRemoteToLibrary: widget.onAddRemoteToLibrary,
-                              onPromoteCatalogEntity: widget.onPromoteCatalogEntity,
+                              onPromoteCatalogEntity:
+                                  widget.onPromoteCatalogEntity,
                               onRemoteTap: _handleRemoteTap,
                             ),
                           ),
@@ -203,7 +212,8 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
                         ],
                         if (groups.globalWork.isNotEmpty) ...[
                           FusionSearchSectionLabel(
-                            '🌐 글로벌 사전 — Work',
+                            l10n?.sectionGlobalRegistryWork ??
+                                '🌐 글로벌 사전 — Work',
                             groups.globalWork.length,
                           ),
                           ...groups.globalWork.map(
@@ -211,7 +221,8 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
                               entry: entryFromHit(hit),
                               onSelectRemote: widget.onSelectRemote,
                               onAddRemoteToLibrary: widget.onAddRemoteToLibrary,
-                              onPromoteCatalogEntity: widget.onPromoteCatalogEntity,
+                              onPromoteCatalogEntity:
+                                  widget.onPromoteCatalogEntity,
                               onRemoteTap: _handleRemoteTap,
                             ),
                           ),
@@ -219,7 +230,8 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
                         ],
                         if (groups.globalEntity.isNotEmpty) ...[
                           FusionSearchSectionLabel(
-                            '🌐 글로벌 — Entity',
+                            l10n?.sectionGlobalRegistryEntity ??
+                                '🌐 글로벌 — Entity',
                             groups.globalEntity.length,
                           ),
                           ...groups.globalEntity.map(
@@ -227,7 +239,8 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
                               entry: entryFromHit(hit),
                               onSelectRemote: widget.onSelectRemote,
                               onAddRemoteToLibrary: widget.onAddRemoteToLibrary,
-                              onPromoteCatalogEntity: widget.onPromoteCatalogEntity,
+                              onPromoteCatalogEntity:
+                                  widget.onPromoteCatalogEntity,
                               onRemoteTap: _handleRemoteTap,
                             ),
                           ),
@@ -244,7 +257,10 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
                                     widget.onCustomAdd(query);
                                   },
                                   icon: const Icon(Icons.person_add_outlined),
-                                  label: const Text('직접 추가 (유형 선택)'),
+                                  label: Text(
+                                    l10n?.actionAddCustomWithType ??
+                                        '직접 추가 (유형 선택)',
+                                  ),
                                 ),
                                 if (widget.onCatalogPropose != null) ...[
                                   const SizedBox(height: 8),
@@ -253,8 +269,13 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
                                       Navigator.pop(context);
                                       widget.onCatalogPropose!(query);
                                     },
-                                    icon: const Icon(Icons.library_add_outlined),
-                                    label: const Text('글로벌 사전에 추가 제안'),
+                                    icon: const Icon(
+                                      Icons.library_add_outlined,
+                                    ),
+                                    label: Text(
+                                      l10n?.actionProposeToGlobalRegistry ??
+                                          '글로벌 사전에 추가 제안',
+                                    ),
                                   ),
                                 ],
                               ],
@@ -265,9 +286,13 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
                             query.isNotEmpty &&
                             !groups.hasAnyHits &&
                             _searchError == null)
-                          const Padding(
-                            padding: EdgeInsets.only(top: 24),
-                            child: Center(child: Text('검색 결과가 없습니다.')),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 24),
+                            child: Center(
+                              child: Text(
+                                l10n?.noSearchResults ?? '검색 결과가 없습니다.',
+                              ),
+                            ),
                           ),
                       ],
                     ),
@@ -278,7 +303,7 @@ class _FusionSearchDialogState extends _FusionSearchDialogStateBase
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('닫기'),
+          child: Text(l10n?.actionClose ?? '닫기'),
         ),
       ],
     );

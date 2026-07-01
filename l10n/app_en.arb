@@ -312,5 +312,741 @@
       }
     }
   },
-  "actionSaveMd": "Save MD"
+  "actionSaveMd": "Save MD",
+  "mediaCategoryManga": "Manga",
+  "mediaCategoryWebtoon": "Webtoon",
+  "mediaCategoryAnimation": "Animation",
+  "mediaCategoryGame": "Game",
+  "mediaCategoryBook": "Book/Novel/Light Novel",
+  "mediaCategoryMovie": "Movie",
+  "mediaCategoryDrama": "Drama",
+  "statusContentWorkSerializing": "Serializing",
+  "statusContentWorkHiatus": "Hiatus",
+  "statusContentWorkCompleted": "Completed",
+  "statusContentMyNotStarted": "Plan to Watch",
+  "statusContentMyWatching": "Watching",
+  "statusContentMyFinished": "Finished",
+  "statusContentMyDropped": "Dropped",
+  "statusGameWorkReleased": "Released",
+  "statusGameWorkEarlyAccess": "Early Access",
+  "statusGameWorkUpcoming": "Upcoming",
+  "statusGameMyBacklog": "Backlog",
+  "statusGameMyPlaying": "Playing",
+  "statusGameMyCleared": "Cleared",
+  "statusGameMyAbandoned": "Abandoned",
+  "sortCriteriaManual": "Manual Order",
+  "sortCriteriaTitle": "By Name",
+  "sortCriteriaRating": "Highest Rating",
+  "sortCriteriaRecentlyAdded": "Recently Added",
+  "sortCriteriaYear": "Release Year",
+  "addWorkDialogTitle": "New Work (Add to Archive)",
+  "registryWorkSearch": "Search Global Catalog",
+  "labelTitle": "Title",
+  "labelCreator": "Creator / Studio",
+  "labelReleaseYear": "Release Year",
+  "posterImageLabel": "Poster Image (Web URL or Local File)",
+  "posterUrlHint": "Enter https://... or local path",
+  "tooltipPickLocalImage": "Select Local Image File",
+  "tooltipWebImageSearch": "Search Web Images",
+  "myRating": "My Rating",
+  "labelCategory": "Category",
+  "labelWorkStatus": "Work Status",
+  "labelMyStatus": "My Status",
+  "actionRegister": "Register",
+  "validationEnterTitle": "Please enter a title.",
+  "catalogAddContributionTitle": "Global Catalog — Suggest New Work",
+  "labelTitleRequired": "Title *",
+  "labelPosterUrl": "Poster URL (https)",
+  "tooltipImageSearch": "Image Search",
+  "labelDescriptionBrief": "Description (write briefly)",
+  "labelAnilistId": "AniList ID (optional, numbers only)",
+  "labelProposalNote": "Proposal Note (optional)",
+  "actionSaveProposal": "Save Proposal",
+  "validationPosterHttpsOnly": "Poster must be an https URL.",
+  "catalogContributionDisclaimer": "Proposals are saved locally. They will be reflected in the global catalog after review, merge into akasha-db, and app sync.",
+  "catalogFixContributionTitle": "Global Catalog — Suggest Fix",
+  "labelWhatIsWrong": "What is wrong? *",
+  "hintWhatIsWrong": "e.g. Poster image belongs to a different work",
+  "fixPosterUrl": "Fix Poster URL",
+  "labelProposedPosterUrl": "Proposed Poster URL",
+  "fixReleaseYear": "Fix Release Year",
+  "labelProposedYear": "Proposed Year",
+  "fixTitle": "Fix Title",
+  "labelProposedTitle": "Proposed Title",
+  "fixCreator": "Fix Creator / Studio",
+  "labelProposedCreator": "Proposed Creator / Studio",
+  "labelAdditionalNote": "Additional Note",
+  "validationEnterIssue": "Please describe the issue.",
+  "validationSelectFixField": "Please select a field to fix.",
+  "validationPosterHttpsRequired": "Poster must be an https URL.",
+  "validationEnterYearNumber": "Please enter the year as a number.",
+  "clipboardImportTitle": "🤖 AI Markdown Import",
+  "clipboardImportDescription": "Paste AI-generated markdown text here. It will be parsed and added to your work list.",
+  "untitledWork": "Untitled Work",
+  "clipboardImportAlreadyExists": "\"{title}\" is already in the archive.",
+  "@clipboardImportAlreadyExists": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "clipboardImportAdded": "\"{title}\" added (work_id: {workId})",
+  "@clipboardImportAdded": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "workId": {
+        "type": "String"
+      }
+    }
+  },
+  "clipboardImportParseFailed": "Parsing failed: {error}",
+  "@clipboardImportParseFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "actionParseAndImport": "Parse & Import",
+  "noWorksInCatalogVault": "No works in catalog or vault.",
+  "labelSelectWork": "Select Work",
+  "optionNone": "None",
+  "createCastFromWork": "Create Cast from Selected Work",
+  "labelCollectionName": "Collection Name",
+  "labelMode": "Mode",
+  "modeFilter": "Filter (tags · works · kind)",
+  "modeCurated": "Curated (manual selection)",
+  "collectionAddTitle": "Add Collection",
+  "collectionEditTitle": "Collection Settings",
+  "noEntitiesInCatalog": "No Person, Concept, or other entities in catalog.",
+  "selectedCountReorderHint": "{count} selected · reorder in gallery",
+  "@selectedCountReorderHint": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deleteCollectionTitle": "Delete Collection",
+  "deleteCollectionConfirm": "Delete this collection? Entity data will be preserved.",
+  "actionDelete": "Delete",
+  "presetAvailabilityNote": "Only enabled when the work exists in vault or catalog.",
+  "customCreate": "Create Manually",
+  "customCreateDescription": "Tag-based · Work-based · Mixed — configure below, then tap \"Add\"",
+  "tabExistingLink": "Existing Links",
+  "tabCreateNew": "Create New",
+  "hintSearchNameAlias": "Search by name or alias",
+  "noEntitiesAvailable": "No entities to link.",
+  "noMatchingEntity": "No items matching \"{query}\".",
+  "@noMatchingEntity": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "sectionRelatedToWork": "Related to this Work",
+  "sectionSearchResults": "Search Results",
+  "createEntityAndLink": "Register a new {typeLabel} not in the catalog and link it to this work.",
+  "@createEntityAndLink": {
+    "placeholders": {
+      "typeLabel": {
+        "type": "String"
+      }
+    }
+  },
+  "useSearchQueryAsName": "Use search term as name",
+  "createNewEntityType": "Create New {typeLabel}",
+  "@createNewEntityType": {
+    "placeholders": {
+      "typeLabel": {
+        "type": "String"
+      }
+    }
+  },
+  "subtitleRecommendations": "Recommendations · Person · Event · Concept · Place · Org",
+  "subtitleSeedAvailable": "Not in your catalog · Can link from seed catalog",
+  "subtitleCatalog": "Catalog · Person · Event · Concept · Place · Org",
+  "journalQuickCaptureTitle": "Quick Memo",
+  "labelBody": "Body",
+  "hintJournalBody": "Ideas, memos, thoughts…",
+  "labelTitleOptional": "Title (optional)",
+  "hintTitleAutoFill": "Leave empty to use beginning of body",
+  "personalLibraryAddTitle": "Add Personal Library",
+  "labelLibraryName": "Library Name",
+  "hintLibraryName": "e.g. All-time Favorites, Reading Backlog 2026…",
+  "helperLibraryCreate": "Add works after creating. Filters can be adjusted in settings.",
+  "personalLibraryEditTitle": "Personal Library Settings",
+  "hintLibraryNameEdit": "e.g. All-time Favorites, Completed List…",
+  "helperMasterArchiveReadonly": "The master_archive name cannot be changed.",
+  "helperCuratedMode": "Only included works are shown. Filters narrow further.",
+  "helperFilterMode": "Only archived vault works are shown via filters.",
+  "addWorkSearch": "Add Work (Search)",
+  "includedWorksCount": "Included Works ({count})",
+  "@includedWorksCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noIncludedWorks": "No works included yet.",
+  "cleanOrphanIds": "Clean Orphan IDs ({count})",
+  "@cleanOrphanIds": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "labelCategoryFilter": "Category Filter (multi-select)",
+  "labelWorkStatusFilter": "Work Status Filter (multi-select)",
+  "labelMyStatusFilter": "My Status Filter (multi-select)",
+  "promptTemplateTitle": "AI Prompt Template",
+  "promptTemplateDescription": "Provide this template to an AI to easily get properly formatted markdown.",
+  "templateCopiedToClipboard": "Template copied to clipboard.",
+  "registrySyncTitle": "Global Catalog Sync",
+  "lastSyncTime": "Last sync: {time}",
+  "@lastSyncTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "actionSyncNow": "Sync Now",
+  "labelCustomDbUrl": "Custom Catalog DB Base URL",
+  "customDbUrlDescription": "Downloads manifest.json, search_index.json, and shards/ files from this address.",
+  "syncUrlChanged": "Sync URL has been updated.",
+  "actionSaveUrl": "Save URL",
+  "timelineQuickCaptureTitle": "Timeline Entry",
+  "hintTimelineBody": "Today's thoughts, diary, ideas…",
+  "labelWorkLinkOptional": "Link Work (optional)",
+  "optionNoLink": "No Link",
+  "timelineSaveLocationInfo": "Saved to vault/timeline/.",
+  "workLinkPickerTitle": "Add Work",
+  "hintSearchTitleCreatorId": "Search by title, creator, or work_id",
+  "workLinkPickerDescription": "Link library works to the document as [[links]].",
+  "noOtherWorksToLink": "No other works to link.",
+  "noMatchingWork": "No works matching \"{query}\".",
+  "@noMatchingWork": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogContributionsTitle": "Catalog Proposals ({count})",
+  "@catalogContributionsTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noSavedProposals": "No saved proposals.",
+  "suggestNewWork": "Suggest New Work",
+  "actionCopyJson": "Copy JSON",
+  "actionOpenGithubIssue": "Open GitHub Issue",
+  "actionCopyAllJson": "Copy All JSON",
+  "proposalJsonCopied": "Proposal JSON copied to clipboard.",
+  "jsonCopiedWithFile": "JSON copied · File: {path}",
+  "@jsonCopiedWithFile": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "jsonCopiedFileFailed": "JSON copied (file save failed: {error})",
+  "@jsonCopiedFileFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteUnsavedWarning": "Unsaved changes will also be lost.",
+  "detailDeleteTitle": "Delete Work",
+  "detailDeleteConfirmVault": "Delete \"{title}\" from the archive?\nThe local vault .md file will be permanently deleted.{unsavedNote}\nIt won't disappear from browse/catalog lists, and auto-archiving may recreate the .md.",
+  "@detailDeleteConfirmVault": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "unsavedNote": {
+        "type": "String"
+      }
+    }
+  },
+  "detailDeleteConfirmNoVault": "Remove \"{title}\" from the list?\n(Demo mode — .md files will be deleted when vault is connected){unsavedNote}",
+  "@detailDeleteConfirmNoVault": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "unsavedNote": {
+        "type": "String"
+      }
+    }
+  },
+  "workbenchCloseTabDialogTitle": "Unsaved Changes",
+  "workbenchCloseTabDialogMessage": "You have unsaved changes. Do you want to close without saving?",
+  "workbenchCloseTabDialogSaveAndClose": "Save & Close",
+  "workbenchCloseTabDialogDiscard": "Discard",
+  "workbenchIncomingLinksRefresh": "Refresh Incoming Links",
+  "workbenchBreadcrumbLibrary": "Library",
+  "workbenchBreadcrumbWork": "Work",
+  "workbenchTabConnections": "Connections",
+  "workbenchTabDetails": "Info",
+  "workbenchTabType": "Type",
+  "workbenchTabConnectionCount": "Connections Count",
+  "workbenchTabAliases": "Aliases",
+  "workbenchTabStoragePath": "Storage Path",
+  "workbenchCastSectionTitle": "👥 Cast",
+  "workbenchQuotesSectionTitle": "🎬 Moments & Quotes",
+  "workbenchSynopsisSectionTitle": "📋 Synopsis",
+  "workbenchGallerySectionTitle": "🖼 Gallery",
+  "workbenchMemoSectionTitle": "📝 Notes",
+  "workbenchEditorAddSection": "Insert Section",
+  "workbenchEditorAddSectionTitle": "Add Section",
+  "workbenchEditorFind": "Find",
+  "workbenchEditorReplace": "Replace",
+  "workbenchEditorNext": "Next",
+  "workbenchEditorPrev": "Prev",
+  "sidebarRecent": "Recent",
+  "sidebarMyCollections": "My Collections",
+  "sidebarViewAll": "View All",
+  "sidebarNoCollections": "No Collections",
+  "labelDashboardSearchWorks": "Search Works",
+  "labelDashboardExploreEntities": "Explore Entities",
+  "labelDashboardConnectionMap": "Connection Map",
+  "labelDashboardAllBrowse": "Browse All",
+  "labelDashboardWrite": "Write",
+  "akashaPromptTemplate": "You are a subculture (manga, game, anime, book) archiving expert.\nPlease write the requested work information in a markdown document, including the YAML Front-Matter format below.\n\n---\nwork_id: \"\" (Leave empty for AKASHA to auto-match or assign a custom ID)\ntitle: \"Exact Title of the Work\"\ncategory: manga | game | animation | book | movie | drama (Choose one)\ncreator: \"Creator / Studio / Director etc.\"\nrelease_year: Year of release or serialization start (number only, e.g. 2011)\nrating: 5.0 (Float in range 0.0~5.0)\nwork_status: \"serializing\" | \"hiatus\" | \"completed\" (For game category: \"released\" | \"earlyAccess\" | \"upcoming\")\nmy_status: \"notStarted\" | \"watching\" | \"finished\" | \"dropped\" (For game category: \"backlog\" | \"playing\" | \"cleared\" | \"abandoned\")\nis_hall_of_fame: true | false (Is all-time favorite)\ntags: [tag1, tag2] (e.g. [youth, touching, music])\nposter: \"\" (Leave empty)\nadded_at: \"Current date & time (ISO 8601, e.g. 2026-06-05T19:00:00)\"\n---\n\n# 👥 Cast\n\n# 🎬 Moments & Quotes\n> \"Moment description or quote\" — Character name / Context description\n\n# 📋 Synopsis\n\n# 🖼 Gallery\n\n# 📝 Notes\n",
+  "labelTags": "Tags",
+  "recordKindTimeline": "Timeline",
+  "recordKindJournal": "Memo",
+  "recordKindWorkJournal": "Work Journal",
+  "recordKindEntityJournal": "Entity Journal",
+  "recordKindFreeformJournal": "Freeform Journal",
+  "connectedRecordsCount": "Connected Records ({count})",
+  "@connectedRecordsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "titleUpdateNeededCount": "Title update needed ({count})",
+  "@titleUpdateNeededCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sameDayRecordsCount": "Same Day Records · {date} ({count})",
+  "@sameDayRecordsCount": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "actionSaveMd": "Save md",
+  "actionCreateMd": "Create md",
+  "actionSaveAndAddToLibrary": "Save & Add to Library",
+  "workbenchCloseTabMessageWithTitle": "There are unsaved changes in \"{title}\".",
+  "@workbenchCloseTabMessageWithTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "workbenchCloseTabMessageWithTitleNoSave": "There are unsaved changes in \"{title}\".\nPlease select this tab first to save changes.",
+  "@workbenchCloseTabMessageWithTitleNoSave": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "entityJournalDeleteConfirm": "Are you sure you want to delete the entity journal for \"{title}\"?",
+  "@entityJournalDeleteConfirm": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "entityJournalPlaceholderBody": "(Awaiting record)",
+  "entityJournalSaveSuccess": "Saved entity journal for \"{title}\".",
+  "@entityJournalSaveSuccess": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "errorVaultRequired": "Please link the vault first.",
+  "errorEmptyBody": "Please enter the body text.",
+  "errorSaveFailed": "Save failed: {error}",
+  "@errorSaveFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorNoMdFileToDelete": "No md file found to delete.",
+  "errorCatalogRequired": "Catalog connection is required.",
+  "helpWorkbenchCastEditorEmpty": "Add members using \"Add Person\" on the right to display them as cards in the preview.",
+  "hintCastRole": "Role (e.g. Protagonist)",
+  "actionPaste": "Paste",
+  "actionAddImage": "Add Image",
+  "helpWorkbenchGalleryEditorEmpty": "Drag and drop images, or use paste/add to insert screenshots and collages.",
+  "hintQuotesEditor": "Enter one quote per line.",
+  "errorAddImageVaultRequired": "Adding images is available after connecting the Sanctum vault.",
+  "errorPasteVaultRequired": "Pasting is available after connecting the Sanctum vault.",
+  "errorNoImageInClipboard": "No image found in the clipboard.",
+  "hintSynopsisEditor": "Write the plot, world setting, background, etc.",
+  "hintMemoEditor": "Thoughts, reviews, notes. Use \"Add\" on the right to insert [[links]].",
+  "navHome": "Home",
+  "navExplore": "Explore",
+  "navSearch": "Search",
+  "navLibrary": "Library",
+  "navCollections": "Collections",
+  "errorVaultRequiredToAddToLibrary": "Please connect the vault first to add to the library.",
+  "alreadyInLibrary": "Already in the library \"{name}\".",
+  "@alreadyInLibrary": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "addedToLibrary": "Added to the library \"{name}\".",
+  "@addedToLibrary": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "actionView": "View",
+  "errorArchiveFailed": "Archive failed: {error}",
+  "@errorArchiveFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "successRegistryCacheCleared": "Cleared registry cache and restored bundle dictionary.",
+  "errorClearCacheFailed": "Failed to clear cache: {error}",
+  "@errorClearCacheFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "labelDashboardContinueExplore": "Continue Exploring",
+  "helpDashboardContinueExploreColdStart": "Recent works and entities you viewed will appear here once you start exploring.",
+  "helpDashboardContinueExploreEmpty": "No exploration history yet. Open a work or entity to see it here.",
+  "helpDashboardContinueExploreFallback": "Try exploring from the recently added works.",
+  "actionPrev": "Prev",
+  "actionNext": "Next",
+  "labelHasRecord": "Has Record",
+  "tooltipVaultSettings": "Vault Settings",
+  "labelDashboardQuickActions": "Quick Actions",
+  "descDashboardSearchWorks": "Find works and entities in the vault and catalog.",
+  "descDashboardExploreEntities": "View registered person entities in a gallery.",
+  "descDashboardConnectionMap": "View the relationships of works and entities linked via [[wiki]].",
+  "descDashboardAllBrowse": "Explore library works in a grid view.",
+  "descDashboardWrite": "Check chronological logs in the timeline and journal.",
+  "actionClose": "Close",
+  "labelNowViewing": "Now Viewing",
+  "actionWrite": "Write",
+  "hintMemoBar": "Add a memo...",
+  "actionEditMemo": "Edit Memo",
+  "labelTitle": "Title",
+  "labelBody": "Body",
+  "actionEdit": "Edit",
+  "actionSave": "Save",
+  "confirmDeleteMemo": "Delete this memo?",
+  "helpJournalConnectVault": "Connect a vault to view memos.",
+  "helpJournalEmpty": "No memos yet.",
+  "actionWriteFirstMemo": "Write First Memo",
+  "countMemos": "Memos ({count})",
+  "@countMemos": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tooltipNewMemo": "New Memo",
+  "tooltipRefresh": "Refresh",
+  "actionEditTimeline": "Edit Timeline",
+  "confirmDeleteTimeline": "Delete this timeline record?",
+  "helpTimelineConnectVault": "Connect a vault to view the timeline.",
+  "helpTimelineEmpty": "No timeline records yet.",
+  "actionWriteFirstRecord": "Write First Record",
+  "countTimelineRecords": "Timeline ({count})",
+  "@countTimelineRecords": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tooltipNewRecord": "New Record",
+  "helpEntityJournalConnectVault": "Connect a vault to view the entity journal.",
+  "helpEntityJournalEmpty": "No entity journal entries yet.",
+  "helpEntityJournalTip": "Archive Person, Concept, or Event via Fusion → Add Direct.",
+  "countEntityJournalEntries": "Entity Journal ({count})",
+  "@countEntityJournalEntries": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "errorConnectVaultFirst": "Please connect the vault first.",
+  "errorEntityNotFound": "Could not find \"{id}\".",
+  "@errorEntityNotFound": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "errorVaultConnectionFailed": "Failed to connect vault: {error}",
+  "@errorVaultConnectionFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "successEntityArchived": "{badge} \"{title}\" added to archive · Check in Logs → Entity",
+  "@successEntityArchived": {
+    "placeholders": {
+      "badge": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "successEntityRegisteredOnly": "{badge} \"{title}\" registered name only · Can archive in Fusion",
+  "@successEntityRegisteredOnly": {
+    "placeholders": {
+      "badge": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "successArchivedWork": "\"{title}\" has been archived.",
+  "@successArchivedWork": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "actionAddCustomSection": "Add custom section",
+  "actionAddCustomWithType": "Add directly (choose type)",
+  "actionAddToLibrary": "Add to library",
+  "actionApplyManual": "Apply manually",
+  "actionApplyThisImage": "Apply this image",
+  "actionArchive": "Archive",
+  "actionCopy": "Copy",
+  "actionCreate": "Create",
+  "actionKeep": "Keep",
+  "actionOpenGoogleImageSearch": "Open Google Image Search",
+  "actionOpenPinterestSearch": "Open Pinterest Search",
+  "actionPrevious": "Previous",
+  "actionProposeToGlobalRegistry": "Propose to global registry",
+  "actionRedo": "Redo",
+  "actionReload": "Reload",
+  "actionReplace": "Replace",
+  "actionReplaceAll": "Replace all",
+  "actionSelectLocalImage": "Select local image",
+  "actionUndo": "Undo",
+  "addConcept": "Add concept",
+  "addEvent": "Add event",
+  "addOrganization": "Add organization",
+  "addPerson": "Add person",
+  "addPlace": "Add place",
+  "addWork": "Add work",
+  "breadcrumbLibrary": "Library",
+  "breadcrumbWork": "Work",
+  "clipboardImageDetected": "Clipboard image detected",
+  "errorBrowserLaunchFailed": "Failed to open browser: {error}",
+  "@errorBrowserLaunchFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorCannotOpenBrowser": "Cannot open browser.",
+  "externalFileChanged": "External file changed",
+  "globalRegistryLabel": "Global registry",
+  "helpFullFileEdit": "Edit the full markdown file.",
+  "helpMarkdownBodyEdit": "Edit the markdown body.",
+  "helpSectionEdit": "Edit this section.",
+  "hintEnterDirectImageUrl": "Enter a direct image URL",
+  "hintEnterPosterSearchQuery": "Enter a poster search query",
+  "hintFind": "Find",
+  "hintHidden": "Hidden",
+  "hintNotArchived": "Not archived",
+  "hintReplaceText": "Replace text",
+  "hintSearchEverything": "Search works, people, events, places, and concepts...",
+  "hintSearchExplain": "Search your archive and the starter catalog.",
+  "hintSearchWorkFromRegistry": "Search works from the registry",
+  "hintSiblingTracked": "A related entry is already tracked",
+  "hintWorkTitle": "Work title",
+  "imageCorrectionGuideSteps": "Copy an image, paste a URL, or choose a local file.",
+  "imageCorrectionGuideTitle": "Image correction guide",
+  "incomingLinkCount": "{count} incoming record(s)",
+  "@incomingLinkCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "invalidImageUrl": "Invalid image URL",
+  "labelRegistry": "Registry",
+  "labelWarning": "Warning",
+  "myArchiveLabel": "My archive",
+  "myRegistrationLabel": "My registration",
+  "noLinksYet": "No {title} links yet.",
+  "@noLinksYet": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "noSearchResults": "No search results",
+  "posterSearchQuery": "Poster search query",
+  "posterSuffix": "poster",
+  "recordBody": "Record body",
+  "searchTitle": "Search",
+  "sectionCast": "Cast",
+  "sectionConnectedConcepts": "Connected concepts",
+  "sectionConnectedEvents": "Connected events",
+  "sectionConnectedOrganizations": "Connected organizations",
+  "sectionConnectedPersons": "Connected people",
+  "sectionConnectedPlaces": "Connected places",
+  "sectionConnectedWorks": "Connected works",
+  "sectionGallery": "Gallery",
+  "sectionGlobalRegistryEntity": "Global registry entities",
+  "sectionGlobalRegistryWork": "Global registry works",
+  "sectionMainCharacters": "Main characters",
+  "sectionMemo": "Memo",
+  "sectionMyArchiveEntity": "My archive entities",
+  "sectionMyArchiveWork": "My archive works",
+  "sectionMyArchiveWorkRegisteredOnly": "Registered works only",
+  "sectionNotArchived": "Not archived",
+  "sectionQuotes": "Quotes",
+  "sectionSynopsis": "Synopsis",
+  "tabBody": "Body",
+  "tabConnection": "Connection",
+  "tabInfo": "Info",
+  "tabRecord": "Record",
+  "tabView": "View",
+  "tooltipBlockquote": "Blockquote",
+  "tooltipBold": "Bold (Ctrl+B)",
+  "tooltipBulletedList": "Bulleted list",
+  "tooltipFind": "Find",
+  "tooltipH1": "Heading 1",
+  "tooltipH2": "Heading 2",
+  "tooltipH3": "Heading 3",
+  "tooltipImageVaultRequired": "Connect a vault to insert images",
+  "tooltipInlineCode": "Inline code",
+  "tooltipInsertImage": "Insert image",
+  "tooltipInsertSection": "Insert section",
+  "tooltipItalic": "Italic (Ctrl+I)",
+  "tooltipLink": "Link",
+  "tooltipLinkEntity": "Link entity",
+  "tooltipNumberedList": "Numbered list",
+  "tooltipSmartPaste": "Smart paste",
+  "tooltipStrikethrough": "Strikethrough",
+  "tooltipTableOfContents": "Table of contents",
+  "waitingForClipboardImage": "Waiting for clipboard image...",
+  "webImageSearchTitle": "Archive poster image correction"
+  ,
+  "sectionHofTitle": "S-Tier Life Favorites (Hall of Fame)",
+  "catalogTitle": "Work Catalog (Registry + Archive)",
+  "personalLibraryCountDesc": "{count} archived work(s)",
+  "@personalLibraryCountDesc": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogMediaSortDesc": "{count} shown · sorted by media · archived works appear as cards",
+  "@catalogMediaSortDesc": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogGeneralDesc": "{count} shown · archive-first items are available in the sidebar library",
+  "@catalogGeneralDesc": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "worksCountSuffix": "({count} works)",
+  "@worksCountSuffix": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "watchlistTitle": "Watchlist",
+  "watchlistDescription": "Works {displayName} marked to watch later.",
+  "@watchlistDescription": {
+    "placeholders": {
+      "displayName": {
+        "type": "String"
+      }
+    }
+  },
+  "watchlistEmptyTitle": "No watchlist items yet.",
+  "watchlistEmptyHelp": "Add a new work or set its personal status to Watchlist.",
+  "yearlyLibraryTitle": "Yearly Library",
+  "yearlyLibraryDescription": "Browse your library by release year.",
+  "yearlyHeader": "{year}",
+  "@yearlyHeader": {
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "yearlyNoYear": "Year unknown"
 }

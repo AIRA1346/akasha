@@ -7,6 +7,7 @@ import '../../../services/works_registry.dart';
 import '../../../utils/archived_works_query.dart';
 import '../../../utils/helpers.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../utils/app_l10n.dart';
 
 String _memberTitle(String workId, List<AkashaItem> vaultItems) {
   for (final item in vaultItems) {
@@ -21,6 +22,36 @@ String _memberTitle(String workId, List<AkashaItem> vaultItems) {
   return workId;
 }
 
+String _getLocalizedWorkStatus(String raw, dynamic l10n) {
+  if (l10n == null) return raw;
+  try {
+    return ContentWorkStatus.values
+        .firstWhere((e) => e.label == raw || e.name == raw)
+        .localizedLabel(l10n);
+  } catch (_) {}
+  try {
+    return GameWorkStatus.values
+        .firstWhere((e) => e.label == raw || e.name == raw)
+        .localizedLabel(l10n);
+  } catch (_) {}
+  return raw;
+}
+
+String _getLocalizedMyStatus(String raw, dynamic l10n) {
+  if (l10n == null) return raw;
+  try {
+    return ContentMyStatus.values
+        .firstWhere((e) => e.label == raw || e.name == raw)
+        .localizedLabel(l10n);
+  } catch (_) {}
+  try {
+    return GameMyStatus.values
+        .firstWhere((e) => e.label == raw || e.name == raw)
+        .localizedLabel(l10n);
+  } catch (_) {}
+  return raw;
+}
+
 /// 나만의 서재 설정 수정 (필터·멤버 관리)
 Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
   BuildContext context, {
@@ -28,6 +59,7 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
   List<AkashaItem> vaultItems = const [],
   Future<void> Function()? onAddWorks,
 }) async {
+  final l10n = lookupAppL10n(context);
   final isMasterArchive = config.id == PersonalLibraryConfig.masterArchiveId;
   final nameCtrl = TextEditingController(text: config.name);
   final Set<MediaCategory> tempCategories = Set.from(config.categories);
@@ -58,7 +90,7 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
             .length;
 
         return AlertDialog(
-          title: const Text('⚙️ 나만의 서재 설정'),
+          title: Text(l10n?.personalLibraryEditTitle ?? '⚙️ 나만의 서재 설정'),
           content: SizedBox(
             width: 460,
             child: SingleChildScrollView(
@@ -66,9 +98,9 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    '서재 이름',
-                    style: TextStyle(
+                  Text(
+                    l10n?.labelLibraryName ?? '서재 이름',
+                    style: const TextStyle(
                       fontSize: 11,
                       color: AkashaColors.textMuted,
                       fontWeight: FontWeight.bold,
@@ -79,14 +111,18 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                     controller: nameCtrl,
                     readOnly: isMasterArchive,
                     decoration: InputDecoration(
-                      hintText: '예: 인생 명작, 감상 완료 목록…',
+                      hintText:
+                          l10n?.hintLibraryNameEdit ?? '예: 인생 명작, 감상 완료 목록…',
                       border: const OutlineInputBorder(),
                       isDense: true,
                       helperText: isMasterArchive
-                          ? 'master_archive 이름은 변경할 수 없습니다.'
+                          ? (l10n?.helperMasterArchiveReadonly ??
+                                'master_archive 이름은 변경할 수 없습니다.')
                           : config.isCurated
-                              ? '담긴 작품만 표시됩니다. 필터는 2차로 좁힙니다.'
-                              : '볼트에 아카이브된 작품만 필터로 표시됩니다.',
+                          ? (l10n?.helperCuratedMode ??
+                                '담긴 작품만 표시됩니다. 필터는 2차로 좁힙니다.')
+                          : (l10n?.helperFilterMode ??
+                                '볼트에 아카이브된 작품만 필터로 표시됩니다.'),
                       helperMaxLines: 2,
                     ),
                   ),
@@ -99,17 +135,20 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                           onPressed: () async {
                             await onAddWorks();
                             setD(() {
-                              tempMemberOrder =
-                                  List<String>.from(config.memberOrder);
+                              tempMemberOrder = List<String>.from(
+                                config.memberOrder,
+                              );
                             });
                           },
                           icon: const Icon(Icons.search, size: 16),
-                          label: const Text('작품 추가 (검색)'),
+                          label: Text(l10n?.addWorkSearch ?? '작품 추가 (검색)'),
                         ),
                       ),
                     if (onAddWorks != null) const SizedBox(height: 8),
                     Text(
-                      '담긴 작품 (${tempMemberOrder.length})',
+                      l10n != null
+                          ? l10n.includedWorksCount(tempMemberOrder.length)
+                          : '담긴 작품 (${tempMemberOrder.length})',
                       style: const TextStyle(
                         fontSize: 11,
                         color: AkashaColors.textMuted,
@@ -119,8 +158,11 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                     const SizedBox(height: 8),
                     if (tempMemberOrder.isEmpty)
                       Text(
-                        '아직 담긴 작품이 없습니다.',
-                        style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
+                        l10n?.noIncludedWorks ?? '아직 담긴 작품이 없습니다.',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: AkashaColors.textMuted,
+                        ),
                       )
                     else
                       ReorderableListView(
@@ -177,17 +219,23 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                                 )
                                 .toList();
                           }),
-                          icon: const Icon(Icons.cleaning_services_outlined,
-                              size: 16),
-                          label: Text('고아 ID 정리 ($orphanCount건)'),
+                          icon: const Icon(
+                            Icons.cleaning_services_outlined,
+                            size: 16,
+                          ),
+                          label: Text(
+                            l10n != null
+                                ? l10n.cleanOrphanIds(orphanCount)
+                                : '고아 ID 정리 ($orphanCount건)',
+                          ),
                         ),
                       ),
                     ],
                   ],
                   const SizedBox(height: 16),
-                  const Text(
-                    '소분류 (카테고리) 필터 (다중 선택 가능)',
-                    style: TextStyle(
+                  Text(
+                    l10n?.labelCategoryFilter ?? '소분류 (카테고리) 필터 (다중 선택 가능)',
+                    style: const TextStyle(
                       fontSize: 11,
                       color: AkashaColors.textMuted,
                       fontWeight: FontWeight.bold,
@@ -200,7 +248,10 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                     children: MediaCategory.values.map((cat) {
                       final isSelected = tempCategories.contains(cat);
                       return FilterChip(
-                        label: Text(cat.label, style: const TextStyle(fontSize: 11)),
+                        label: Text(
+                          cat.localizedLabel(l10n),
+                          style: const TextStyle(fontSize: 11),
+                        ),
                         avatar: Icon(cat.icon, size: 12),
                         selected: isSelected,
                         showCheckmark: false,
@@ -217,9 +268,9 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                     }).toList(),
                   ),
                   const SizedBox(height: 16),
-                  const Text(
-                    '작품 상태 조건 필터 (다중 선택 가능)',
-                    style: TextStyle(
+                  Text(
+                    l10n?.labelWorkStatusFilter ?? '작품 상태 조건 필터 (다중 선택 가능)',
+                    style: const TextStyle(
                       fontSize: 11,
                       color: AkashaColors.textMuted,
                       fontWeight: FontWeight.bold,
@@ -232,7 +283,10 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                     children: availableWorkOpts.map((status) {
                       final isSelected = tempWorkStatuses.contains(status);
                       return FilterChip(
-                        label: Text(status, style: const TextStyle(fontSize: 11)),
+                        label: Text(
+                          _getLocalizedWorkStatus(status, l10n),
+                          style: const TextStyle(fontSize: 11),
+                        ),
                         selected: isSelected,
                         showCheckmark: false,
                         onSelected: (selected) {
@@ -248,9 +302,9 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                     }).toList(),
                   ),
                   const SizedBox(height: 16),
-                  const Text(
-                    '나의 상태 조건 필터 (다중 선택 가능)',
-                    style: TextStyle(
+                  Text(
+                    l10n?.labelMyStatusFilter ?? '나의 상태 조건 필터 (다중 선택 가능)',
+                    style: const TextStyle(
                       fontSize: 11,
                       color: AkashaColors.textMuted,
                       fontWeight: FontWeight.bold,
@@ -263,7 +317,10 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                     children: availableMyOpts.map((status) {
                       final isSelected = tempMyStatuses.contains(status);
                       return FilterChip(
-                        label: Text(status, style: const TextStyle(fontSize: 11)),
+                        label: Text(
+                          _getLocalizedMyStatus(status, l10n),
+                          style: const TextStyle(fontSize: 11),
+                        ),
                         selected: isSelected,
                         showCheckmark: false,
                         onSelected: (selected) {
@@ -285,7 +342,7 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx),
-              child: const Text('취소'),
+              child: Text(l10n?.actionCancel ?? '취소'),
             ),
             FilledButton(
               onPressed: () {
@@ -297,13 +354,14 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                 config.workStatuses = tempWorkStatuses;
                 config.myStatuses = tempMyStatuses;
                 if (config.isCurated) {
-                  config.memberOrder = PersonalLibraryConfig.normalizeMemberOrder(
-                    tempMemberOrder,
-                  );
+                  config.memberOrder =
+                      PersonalLibraryConfig.normalizeMemberOrder(
+                        tempMemberOrder,
+                      );
                 }
                 Navigator.pop(ctx, config);
               },
-              child: const Text('저장'),
+              child: Text(l10n?.actionSave ?? '저장'),
             ),
           ],
         );

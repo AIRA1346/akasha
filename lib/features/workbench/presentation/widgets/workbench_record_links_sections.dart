@@ -7,6 +7,7 @@ import '../../../../theme/akasha_colors.dart';
 import '../../../../theme/akasha_radius.dart';
 import '../../../../theme/akasha_spacing.dart';
 import '../../../../theme/akasha_typography.dart';
+import '../../../../utils/app_l10n.dart';
 
 /// Workbench 공통 — Incoming Record · 같은 날 기록 (R14-A).
 class WorkbenchIncomingLinksSection extends StatelessWidget {
@@ -36,6 +37,8 @@ class WorkbenchIncomingLinksSection extends StatelessWidget {
       );
     }
 
+    final l10n = lookupAppL10n(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -47,13 +50,17 @@ class WorkbenchIncomingLinksSection extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '연결된 Record ${paths.length}개',
+                    l10n != null
+                        ? l10n.connectedRecordsCount(paths.length)
+                        : '연결된 Record ${paths.length}개',
                     style: AkashaTypography.bodyEmphasis,
                   ),
                   if (staleLabelRecordCount > 0) ...[
                     const SizedBox(height: 2),
                     Text(
-                      '제목 갱신 필요 $staleLabelRecordCount개',
+                      l10n != null
+                          ? l10n.titleUpdateNeededCount(staleLabelRecordCount)
+                          : '제목 갱신 필요 $staleLabelRecordCount개',
                       style: AkashaTypography.bodySecondary.copyWith(
                         color: AkashaColors.statusDirty,
                       ),
@@ -66,7 +73,9 @@ class WorkbenchIncomingLinksSection extends StatelessWidget {
               IconButton(
                 key: refreshKey,
                 icon: const Icon(Icons.refresh, size: 18),
-                tooltip: 'Incoming Links 새로고침',
+                tooltip:
+                    l10n?.workbenchIncomingLinksRefresh ??
+                    'Incoming Links 새로고침',
                 visualDensity: VisualDensity.compact,
                 padding: EdgeInsets.zero,
                 constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
@@ -130,6 +139,7 @@ class WorkbenchSameDayRecordsSection extends StatelessWidget {
 
     if (refs.isEmpty) return const SizedBox.shrink();
 
+    final l10n = lookupAppL10n(context);
     final local = anchor.toLocal();
     final dateLabel =
         '${local.year}-${local.month.toString().padLeft(2, '0')}-${local.day.toString().padLeft(2, '0')}';
@@ -140,7 +150,9 @@ class WorkbenchSameDayRecordsSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            '같은 날 기록 · $dateLabel (${refs.length})',
+            l10n != null
+                ? l10n.sameDayRecordsCount(dateLabel, refs.length)
+                : '같은 날 기록 · $dateLabel (${refs.length})',
             style: AkashaTypography.bodyEmphasis,
           ),
           const SizedBox(height: AkashaSpacing.sm),
@@ -160,7 +172,12 @@ class WorkbenchSameDayRecordsSection extends StatelessWidget {
                     size: 16,
                   ),
                   title: Text(ref.title, style: AkashaTypography.body),
-                  subtitle: Text(ref.kindLabel, style: AkashaTypography.caption),
+                  subtitle: Text(
+                    l10n != null
+                        ? _getLocalizedRecordKindLabel(ref.kind, l10n)
+                        : ref.kindLabel,
+                    style: AkashaTypography.caption,
+                  ),
                   onTap: () => onOpen(ref),
                 ),
               ),
@@ -169,5 +186,18 @@ class WorkbenchSameDayRecordsSection extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String _getLocalizedRecordKindLabel(RecordKind kind, dynamic l10n) {
+    switch (kind) {
+      case RecordKind.timelineEntry:
+        return l10n.recordKindTimeline;
+      case RecordKind.workJournal:
+        return l10n.recordKindWorkJournal;
+      case RecordKind.entityJournal:
+        return l10n.recordKindEntityJournal;
+      case RecordKind.freeformJournal:
+        return l10n.recordKindFreeformJournal;
+    }
   }
 }

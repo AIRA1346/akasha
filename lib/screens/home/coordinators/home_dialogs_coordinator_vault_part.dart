@@ -61,6 +61,7 @@ Future<void> _homeDialogsCoordinatorOpenClipboardImportDialog(
 Future<void> _homeDialogsCoordinatorSelectVaultFolder(
   HomeDialogsCoordinator coord,
 ) async {
+  final l10n = lookupAppL10n(coord.hostContext());
   try {
     final selectedDirectory = await FilePicker.getDirectoryPath();
     if (selectedDirectory != null) {
@@ -70,6 +71,12 @@ Future<void> _homeDialogsCoordinatorSelectVaultFolder(
       await coord.autoArchiveWorks();
     }
   } catch (e) {
-    if (coord.isMounted()) coord.showMessage('볼트 연결에 실패했습니다: $e');
+    if (coord.isMounted()) {
+      coord.showMessage(
+        l10n != null
+            ? l10n.errorVaultConnectionFailed(e.toString())
+            : '볼트 연결에 실패했습니다: $e',
+      );
+    }
   }
 }

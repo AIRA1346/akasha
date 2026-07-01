@@ -9,6 +9,7 @@ import '../../../services/catalog_contribution_service.dart';
 import '../../../utils/catalog_contribution_export.dart';
 import 'catalog_add_contribution_dialog.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../utils/app_l10n.dart';
 
 /// 저장된 카탈로그 제안 목록 — export·GitHub Issue·삭제
 Future<void> showCatalogContributionsInboxDialog(BuildContext context) async {
@@ -40,11 +41,16 @@ class _CatalogContributionsInboxDialogState
     extends State<_CatalogContributionsInboxDialog> {
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final service = CatalogContributionService.instance;
     final items = service.pending;
 
     return AlertDialog(
-      title: Text('카탈로그 제안 (${items.length})'),
+      title: Text(
+        l10n != null
+            ? l10n.catalogContributionsTitle(items.length)
+            : '카탈로그 제안 (${items.length})',
+      ),
       content: SizedBox(
         width: 480,
         height: 400,
@@ -54,8 +60,8 @@ class _CatalogContributionsInboxDialogState
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      '저장된 제안이 없습니다.',
-                      style: TextStyle(color: AkashaColors.textMuted),
+                      l10n?.noSavedProposals ?? '저장된 제안이 없습니다.',
+                      style: const TextStyle(color: AkashaColors.textMuted),
                     ),
                     const SizedBox(height: 16),
                     OutlinedButton.icon(
@@ -65,7 +71,7 @@ class _CatalogContributionsInboxDialogState
                         widget.onChanged();
                       },
                       icon: const Icon(Icons.add),
-                      label: const Text('작품 추가 제안'),
+                      label: Text(l10n?.suggestNewWork ?? '작품 추가 제안'),
                     ),
                   ],
                 ),
@@ -83,18 +89,20 @@ class _CatalogContributionsInboxDialogState
                     ),
                     trailing: PopupMenuButton<String>(
                       onSelected: (action) => _onAction(context, c, action),
-                      itemBuilder: (_) => const [
+                      itemBuilder: (_) => [
                         PopupMenuItem(
                           value: 'copy',
-                          child: Text('JSON 복사'),
+                          child: Text(l10n?.actionCopyJson ?? 'JSON 복사'),
                         ),
                         PopupMenuItem(
                           value: 'github',
-                          child: Text('GitHub Issue 열기'),
+                          child: Text(
+                            l10n?.actionOpenGithubIssue ?? 'GitHub Issue 열기',
+                          ),
                         ),
                         PopupMenuItem(
                           value: 'delete',
-                          child: Text('삭제'),
+                          child: Text(l10n?.actionDelete ?? '삭제'),
                         ),
                       ],
                     ),
@@ -106,11 +114,11 @@ class _CatalogContributionsInboxDialogState
         if (items.isNotEmpty)
           TextButton(
             onPressed: () => _exportAll(context),
-            child: const Text('전체 JSON 복사'),
+            child: Text(l10n?.actionCopyAllJson ?? '전체 JSON 복사'),
           ),
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('닫기'),
+          child: Text(l10n?.actionClose ?? '닫기'),
         ),
       ],
     );
@@ -121,6 +129,7 @@ class _CatalogContributionsInboxDialogState
     CatalogContribution c,
     String action,
   ) async {
+    final l10n = lookupAppL10n(context);
     switch (action) {
       case 'copy':
         await Clipboard.setData(
@@ -130,7 +139,11 @@ class _CatalogContributionsInboxDialogState
         );
         if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('제안 JSON이 클립보드에 복사되었습니다.')),
+            SnackBar(
+              content: Text(
+                l10n?.proposalJsonCopied ?? '제안 JSON이 클립보드에 복사되었습니다.',
+              ),
+            ),
           );
         }
       case 'github':
@@ -143,6 +156,7 @@ class _CatalogContributionsInboxDialogState
   }
 
   Future<void> _exportAll(BuildContext context) async {
+    final l10n = lookupAppL10n(context);
     final json = CatalogContributionService.instance.exportJson();
     await Clipboard.setData(ClipboardData(text: json));
     try {
@@ -150,14 +164,24 @@ class _CatalogContributionsInboxDialogState
       if (!context.mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('JSON 복사됨 · 파일: ${file.path}'),
+          content: Text(
+            l10n != null
+                ? l10n.jsonCopiedWithFile(file.path)
+                : 'JSON 복사됨 · 파일: ${file.path}',
+          ),
           duration: const Duration(seconds: 4),
         ),
       );
     } catch (e) {
       if (!context.mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('JSON 복사됨 (파일 저장 실패: $e)')),
+        SnackBar(
+          content: Text(
+            l10n != null
+                ? l10n.jsonCopiedFileFailed(e.toString())
+                : 'JSON 복사됨 (파일 저장 실패: $e)',
+          ),
+        ),
       );
     }
   }
