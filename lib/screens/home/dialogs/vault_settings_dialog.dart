@@ -46,7 +46,9 @@ Future<void> showVaultSettingsDialog(
       builder: (ctx, setD) {
         final l10n = lookupAppL10n(ctx);
         return AlertDialog(
-          title: const Text('📂 로컬 볼트(Vault) 설정'),
+          title: Text(
+            l10n != null ? '📂 ${l10n.vaultSettingsTitle}' : '📂 로컬 볼트(Vault) 설정',
+          ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,16 +87,16 @@ Future<void> showVaultSettingsDialog(
               ],
               Text(
                 path != null
-                    ? '현재 연동된 폴더:\n$path'
-                    : '연동된 폴더가 없습니다. 마크다운 파일로 영속적으로 기록하려면 Sanctum Vault 폴더를 연동해 주세요.',
+                    ? (l10n?.vaultPathLinked(path) ?? '현재 연동된 폴더:\n$path')
+                    : (l10n?.vaultPathNotLinked ?? '연동된 폴더가 없습니다. 마크다운 파일로 영속적으로 기록하려면 Sanctum Vault 폴더를 연동해 주세요.'),
                 style: AkashaTypography.dialogBody,
               ),
               if (path != null) ...[
                 SizedBox(height: AkashaSpacing.sm),
                 Text(
                   vaultValid
-                      ? '상태: 연동됨 · 아카이브 .md $mdCount개'
-                      : '상태: 경로를 찾을 수 없음 (다시 연동해 주세요)',
+                      ? (l10n?.vaultStatusLinked(mdCount) ?? '상태: 연동됨 · 아카이브 .md $mdCount개')
+                      : (l10n?.vaultStatusPathNotFound ?? '상태: 경로를 찾을 수 없음 (다시 연동해 주세요)'),
                   style: AkashaTypography.bodyEmphasis.copyWith(
                     color: vaultValid
                         ? AkashaColors.linkAccent
@@ -119,6 +121,7 @@ Future<void> showVaultSettingsDialog(
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   content: Text(
+                                    l10n?.vaultBackupSuccess(p.basename(result.archivePath), result.fileCount) ??
                                     '볼트 백업을 저장했습니다: ${p.basename(result.archivePath)} '
                                     '(${result.fileCount} files)',
                                   ),
@@ -128,7 +131,11 @@ Future<void> showVaultSettingsDialog(
                           } catch (e) {
                             if (context.mounted) {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text('볼트 백업 실패: $e')),
+                                SnackBar(
+                                  content: Text(
+                                    l10n?.vaultBackupFailed(e.toString()) ?? '볼트 백업 실패: $e',
+                                  ),
+                                ),
                               );
                             }
                           } finally {
@@ -145,7 +152,7 @@ Future<void> showVaultSettingsDialog(
                           child: CircularProgressIndicator(strokeWidth: 2),
                         )
                       : const Icon(Icons.archive_outlined, size: 16),
-                  label: const Text('볼트 ZIP 백업 내보내기'),
+                  label: Text(l10n?.vaultBackupExport ?? '볼트 ZIP 백업 내보내기'),
                 ),
                 TextButton.icon(
                   onPressed: vaultValid
@@ -158,19 +165,20 @@ Future<void> showVaultSettingsDialog(
                         }
                       : null,
                   icon: const Icon(Icons.delete_outline, size: 16),
-                  label: const Text('Vault 휴지통 보기'),
+                  label: Text(l10n?.vaultViewTrash ?? 'Vault 휴지통 보기'),
                 ),
                 SizedBox(height: AkashaSpacing.md),
                 Text(
-                  '※ manga, game, animation 등 카테고리 폴더에 .md가 생성됩니다. work_id는 YAML에 기록됩니다.',
+                  l10n?.vaultArchivingNotice ??
+                      '※ manga, game, animation 등 카테고리 폴더에 .md가 생성됩니다. work_id는 YAML에 기록됩니다.',
                   style: AkashaTypography.caption,
                 ),
                 SizedBox(height: AkashaSpacing.sm),
                 SwitchListTile(
                   contentPadding: EdgeInsets.zero,
-                  title: Text('사전 작품 자동 아카이빙', style: AkashaTypography.body),
+                  title: Text(l10n?.vaultAutoArchiveRegistry ?? '사전 작품 자동 아카이빙', style: AkashaTypography.body),
                   subtitle: Text(
-                    '켜면 현재 필터 범위의 사전 작품을 .md로 자동 생성합니다. (기본: 끔)',
+                    l10n?.vaultAutoArchiveRegistryHelp ?? '켜면 현재 필터 범위의 사전 작품을 .md로 자동 생성합니다. (기본: 끔)',
                     style: AkashaTypography.caption,
                   ),
                   value: localAutoArchive,
@@ -194,7 +202,7 @@ Future<void> showVaultSettingsDialog(
                         await runAutoArchive(showFeedback: true);
                       },
                       icon: const Icon(Icons.archive_outlined, size: 16),
-                      label: const Text('지금 사전 작품 아카이빙 실행'),
+                      label: Text(l10n?.vaultAutoArchiveRegistryRunNow ?? '지금 사전 작품 아카이빙 실행'),
                     ),
                   ),
               ],
@@ -211,18 +219,19 @@ Future<void> showVaultSettingsDialog(
                 },
                 icon: const Icon(Icons.visibility_off_outlined, size: 16),
                 label: Text(
-                  '숨긴 사전 항목 관리 (${UserRegistryPreferences.instance.hiddenWorkIds.length})',
+                  l10n?.vaultHiddenRegistryManage(UserRegistryPreferences.instance.hiddenWorkIds.length) ??
+                      '숨긴 사전 항목 관리 (${UserRegistryPreferences.instance.hiddenWorkIds.length})',
                   style: AkashaTypography.body,
                 ),
               ),
               SizedBox(height: AkashaSpacing.lg),
-              Text('표시 이름 (워치리스트 등)', style: AkashaTypography.settingsLabel),
+              Text(l10n?.vaultDisplayNameLabel ?? '표시 이름 (워치리스트 등)', style: AkashaTypography.settingsLabel),
               SizedBox(height: AkashaSpacing.xs + 2),
               TextField(
                 controller: nameCtrl,
-                decoration: const InputDecoration(
-                  hintText: '사용자',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  hintText: l10n?.vaultDisplayNameDefault ?? '사용자',
+                  border: const OutlineInputBorder(),
                   isDense: true,
                 ),
               ),
@@ -239,7 +248,7 @@ Future<void> showVaultSettingsDialog(
                   }
                 },
                 style: TextButton.styleFrom(foregroundColor: Colors.redAccent),
-                child: const Text('연동 해제'),
+                child: Text(l10n?.vaultDisconnect ?? '연동 해제'),
               ),
             TextButton(
               onPressed: () async {
@@ -250,18 +259,22 @@ Future<void> showVaultSettingsDialog(
                 );
                 if (ctx.mounted) Navigator.pop(ctx);
               },
-              child: const Text('이름 저장'),
+              child: Text(l10n?.vaultSaveName ?? '이름 저장'),
             ),
             TextButton(
               onPressed: () {
                 Navigator.pop(ctx);
                 selectVaultFolder();
               },
-              child: Text(path != null ? '폴더 변경' : '폴더 연동'),
+              child: Text(
+                path != null
+                    ? (l10n?.vaultChangeFolder ?? '폴더 변경')
+                    : (l10n?.vaultLinkFolder ?? '폴더 연동'),
+              ),
             ),
             TextButton(
               onPressed: () => Navigator.pop(ctx),
-              child: const Text('닫기'),
+              child: Text(l10n?.appPreferencesClose ?? '닫기'),
             ),
           ],
         );

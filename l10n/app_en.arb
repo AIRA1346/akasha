@@ -133,5 +133,89 @@
   "entityTypeOrganization": "Organization",
   "entityTypeCustom": "Custom",
   "entityTypePhenomenon": "Legacy",
-  "actionRecord": "Record"
+  "actionRecord": "Record",
+  "vaultSettingsTitle": "Local Vault Settings",
+  "vaultPathLinked": "Currently linked folder:\n{path}",
+  "@vaultPathLinked": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultPathNotLinked": "No folder linked. Link a Sanctum Vault folder to save records as markdown permanently.",
+  "vaultStatusLinked": "Status: Linked · {count} archive .md files",
+  "@vaultStatusLinked": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultStatusPathNotFound": "Status: Path not found (please link again)",
+  "vaultBackupSuccess": "Saved vault backup: {archiveName} ({fileCount} files)",
+  "@vaultBackupSuccess": {
+    "placeholders": {
+      "archiveName": {
+        "type": "String"
+      },
+      "fileCount": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultBackupFailed": "Vault backup failed: {error}",
+  "@vaultBackupFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultBackupExport": "Export Vault Backup ZIP",
+  "vaultViewTrash": "View Vault Trash",
+  "vaultArchivingNotice": "* Markdown files will be created in category folders (manga, game, animation, etc.). work_id is stored in YAML.",
+  "vaultAutoArchiveRegistry": "Auto-archive catalog works",
+  "vaultAutoArchiveRegistryHelp": "When enabled, automatically generates markdown for catalog works within the current filter. (Default: Off)",
+  "vaultAutoArchiveRegistryRunNow": "Run catalog archiving now",
+  "vaultHiddenRegistryManage": "Manage hidden catalog items ({count})",
+  "@vaultHiddenRegistryManage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vaultDisplayNameLabel": "Display Name (Watchlist, etc.)",
+  "vaultDisplayNameDefault": "User",
+  "vaultDisconnect": "Disconnect",
+  "vaultSaveName": "Save Name",
+  "vaultChangeFolder": "Change Folder",
+  "vaultLinkFolder": "Link Folder",
+  "trashRestoredSuccess": "Successfully restored from trash.",
+  "trashRestoredFailedFileExists": "Could not restore. File already exists at original location.",
+  "trashRestore": "Restore",
+  "trashDeletePermanently": "Delete Permanently",
+  "trashDeleteConfirm": "Permanently delete '{fileName}' from trash?\nThis action cannot be undone.",
+  "@trashDeleteConfirm": {
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "actionCancel": "Cancel",
+  "trashDeletedSuccess": "Permanently deleted from trash.",
+  "trashDeleteFailedNotFound": "Could not find file to delete.",
+  "vaultTrashTitle": "Vault Trash",
+  "trashEmpty": "Trash is empty.",
+  "trashRefresh": "Refresh",
+  "trashDeletedTime": "Deleted {time}",
+  "@trashDeletedTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  }
 }

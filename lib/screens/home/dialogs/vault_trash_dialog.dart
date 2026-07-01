@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../../generated/l10n/app_localizations.dart';
 import '../../../services/vault_trash_service.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../utils/app_l10n.dart';
 
 Future<void> showVaultTrashDialog(
   BuildContext context, {
@@ -46,36 +48,37 @@ class _VaultTrashDialogState extends State<_VaultTrashDialog> {
     });
   }
 
-  Future<void> _restore(VaultTrashEntry entry) async {
+  Future<void> _restore(VaultTrashEntry entry, AppLocalizations? l10n) async {
     final restored = await _trash.restoreFile(entry);
     if (!mounted) return;
     if (restored) {
       await widget.onRestored?.call();
-      _showSnack('휴지통에서 복구했습니다.');
+      _showSnack(l10n?.trashRestoredSuccess ?? '휴지통에서 복구했습니다.');
       _refresh();
     } else {
-      _showSnack('원래 위치에 파일이 있어 복구하지 못했습니다.');
+      _showSnack(l10n?.trashRestoredFailedFileExists ?? '원래 위치에 파일이 있어 복구하지 못했습니다.');
     }
   }
 
-  Future<void> _deletePermanently(VaultTrashEntry entry) async {
+  Future<void> _deletePermanently(VaultTrashEntry entry, AppLocalizations? l10n) async {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('영구 삭제'),
+        title: Text(l10n?.trashDeletePermanently ?? '영구 삭제'),
         content: Text(
+          l10n?.trashDeleteConfirm(entry.originalFileName) ??
           '「${entry.originalFileName}」을(를) 휴지통에서도 삭제할까요?\n'
           '이 작업은 되돌릴 수 없습니다.',
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: const Text('취소'),
+            child: Text(l10n?.actionCancel ?? '취소'),
           ),
           TextButton(
             onPressed: () => Navigator.pop(ctx, true),
             style: TextButton.styleFrom(foregroundColor: Colors.redAccent),
-            child: const Text('영구 삭제'),
+            child: Text(l10n?.trashDeletePermanently ?? '영구 삭제'),
           ),
         ],
       ),
@@ -84,7 +87,11 @@ class _VaultTrashDialogState extends State<_VaultTrashDialog> {
 
     final deleted = await _trash.deleteEntryPermanently(entry);
     if (!mounted) return;
-    _showSnack(deleted ? '휴지통에서 영구 삭제했습니다.' : '삭제할 파일을 찾지 못했습니다.');
+    _showSnack(
+      deleted
+          ? (l10n?.trashDeletedSuccess ?? '휴지통에서 영구 삭제했습니다.')
+          : (l10n?.trashDeleteFailedNotFound ?? '삭제할 파일을 찾지 못했습니다.'),
+    );
     _refresh();
   }
 
@@ -96,8 +103,10 @@ class _VaultTrashDialogState extends State<_VaultTrashDialog> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return AlertDialog(
-      title: const Text('Vault 휴지통'),
+      title: Text(l10n?.vaultTrashTitle ?? 'Vault 휴지통'),
       content: SizedBox(
         width: 560,
         child: FutureBuilder<List<VaultTrashEntry>>(
@@ -111,11 +120,11 @@ class _VaultTrashDialogState extends State<_VaultTrashDialog> {
             }
             final entries = snapshot.data ?? const [];
             if (entries.isEmpty) {
-              return const SizedBox(
+              return SizedBox(
                 height: 120,
                 child: Center(
                   child: Text(
-                    '휴지통이 비어 있습니다.',
+                    l10n?.trashEmpty ?? '휴지통이 비어 있습니다.',
                     style: AkashaTypography.bodySecondary,
                   ),
                 ),
@@ -132,8 +141,8 @@ class _VaultTrashDialogState extends State<_VaultTrashDialog> {
                   final entry = entries[index];
                   return _VaultTrashTile(
                     entry: entry,
-                    onRestore: () => _restore(entry),
-                    onDeletePermanently: () => _deletePermanently(entry),
+                    onRestore: () => _restore(entry, l10n),
+                    onDeletePermanently: () => _deletePermanently(entry, l10n),
                   );
                 },
               ),
@@ -145,11 +154,11 @@ class _VaultTrashDialogState extends State<_VaultTrashDialog> {
         TextButton.icon(
           onPressed: _refresh,
           icon: const Icon(Icons.refresh, size: 16),
-          label: const Text('새로고침'),
+          label: Text(l10n?.trashRefresh ?? '새로고침'),
         ),
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('닫기'),
+          child: Text(l10n?.appPreferencesClose ?? '닫기'),
         ),
       ],
     );
@@ -169,6 +178,7 @@ class _VaultTrashTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final trashedAt = entry.trashedAt.toLocal();
     final time =
         '${trashedAt.year.toString().padLeft(4, '0')}-'
@@ -210,18 +220,21 @@ class _VaultTrashTile extends StatelessWidget {
                     style: AkashaTypography.caption,
                   ),
                   const SizedBox(height: AkashaSpacing.xs),
-                  Text('삭제됨 $time', style: AkashaTypography.caption),
+                  Text(
+                    l10n?.trashDeletedTime(time) ?? '삭제됨 $time',
+                    style: AkashaTypography.caption,
+                  ),
                 ],
               ),
             ),
             const SizedBox(width: AkashaSpacing.md),
             IconButton(
-              tooltip: '복구',
+              tooltip: l10n?.trashRestore ?? '복구',
               onPressed: onRestore,
               icon: const Icon(Icons.restore, size: 18),
             ),
             IconButton(
-              tooltip: '영구 삭제',
+              tooltip: l10n?.trashDeletePermanently ?? '영구 삭제',
               onPressed: onDeletePermanently,
               color: Colors.redAccent,
               icon: const Icon(Icons.delete_forever_outlined, size: 18),
