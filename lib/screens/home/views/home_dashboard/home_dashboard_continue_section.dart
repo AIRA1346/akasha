@@ -485,17 +485,19 @@ class _ExploreCard extends StatelessWidget {
     } else {
       switch (item.category.name) {
         case 'manga':
-          return l10n.categoryManga;
+          return l10n.mediaCategoryManga;
+        case 'webtoon':
+          return l10n.mediaCategoryWebtoon;
         case 'game':
-          return l10n.categoryGame;
+          return l10n.mediaCategoryGame;
         case 'animation':
-          return l10n.categoryAnimation;
+          return l10n.mediaCategoryAnimation;
         case 'book':
-          return l10n.categoryBook;
+          return l10n.mediaCategoryBook;
         case 'movie':
-          return l10n.categoryMovie;
+          return l10n.mediaCategoryMovie;
         case 'drama':
-          return l10n.categoryDrama;
+          return l10n.mediaCategoryDrama;
         default:
           return item.category.label;
       }
