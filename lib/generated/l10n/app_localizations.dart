@@ -1988,6 +1988,18 @@ abstract class AppLocalizations {
   /// **'Storage Path'**
   String get workbenchTabStoragePath;
 
+  /// No description provided for @helpWorkbenchConnectionExplain.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Add in each section to connect entities. People go into cast slots; other entities are inserted as [[links]] in the journal body.'**
+  String get helpWorkbenchConnectionExplain;
+
+  /// No description provided for @helpEntityConnectionExplain.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Add in each section to connect records. [[links]] are inserted into the journal body.'**
+  String get helpEntityConnectionExplain;
+
   /// No description provided for @workbenchCastSectionTitle.
   ///
   /// In en, this message translates to:
@@ -2767,6 +2779,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Add place'**
   String get addPlace;
+
+  /// No description provided for @linkEntity.
+  ///
+  /// In en, this message translates to:
+  /// **'Link entity'**
+  String get linkEntity;
 
   /// No description provided for @addWork.
   ///

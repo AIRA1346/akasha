@@ -1063,6 +1063,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get workbenchTabStoragePath => 'Storage Path';
 
   @override
+  String get helpWorkbenchConnectionExplain =>
+      'Use Add in each section to connect entities. People go into cast slots; other entities are inserted as [[links]] in the journal body.';
+
+  @override
+  String get helpEntityConnectionExplain =>
+      'Use Add in each section to connect records. [[links]] are inserted into the journal body.';
+
+  @override
   String get workbenchCastSectionTitle => '👥 Cast';
 
   @override
@@ -1510,6 +1518,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get addPlace => 'Add place';
+
+  @override
+  String get linkEntity => 'Link entity';
 
   @override
   String get addWork => 'Add work';

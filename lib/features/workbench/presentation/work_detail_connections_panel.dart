@@ -183,12 +183,12 @@ class _WorkDetailConnectionsPanelState
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _InfoRow(
-            label: l10n?.labelConnectionCount ?? '연결 수',
+            label: l10n?.workbenchTabConnectionCount ?? '연결 수',
             value: '$linkCount',
           ),
           if (widget.item.filePath != null)
             _InfoRow(
-              label: l10n?.labelSavePath ?? '저장 경로',
+              label: l10n?.workbenchTabStoragePath ?? '저장 경로',
               value: widget.item.filePath!,
             ),
           if (widget.draftTags.isNotEmpty) ...[

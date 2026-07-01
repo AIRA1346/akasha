@@ -1041,6 +1041,14 @@ class AppLocalizationsKo extends AppLocalizations {
   String get workbenchTabStoragePath => '저장 경로';
 
   @override
+  String get helpWorkbenchConnectionExplain =>
+      '섹션의 「추가」로 Entity를 연결합니다. 인물은 출연 슬롯, 그 외는 감상 본문에 [[링크]]가 삽입됩니다.';
+
+  @override
+  String get helpEntityConnectionExplain =>
+      '섹션의 「추가」로 연결하면 기록 본문에 [[링크]]가 삽입됩니다.';
+
+  @override
   String get workbenchCastSectionTitle => '👥 출연';
 
   @override
@@ -1478,6 +1486,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get addPlace => '장소 추가';
+
+  @override
+  String get linkEntity => 'Entity 연결';
 
   @override
   String get addWork => '작품 추가';

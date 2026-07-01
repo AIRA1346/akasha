@@ -186,16 +186,16 @@ class _EntityDetailConnectionsPanelState
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _InfoRow(
-            label: l10n?.labelType ?? '유형',
+            label: l10n?.workbenchTabType ?? '유형',
             value: _getLocalizedEntityType(widget.entity.entityType, l10n),
           ),
           _InfoRow(
-            label: l10n?.labelConnectionCount ?? '연결 수',
+            label: l10n?.workbenchTabConnectionCount ?? '연결 수',
             value: '$linkCount',
           ),
           if (widget.entity.aliases.isNotEmpty)
             _InfoRow(
-              label: l10n?.labelAliases ?? '별칭',
+              label: l10n?.workbenchTabAliases ?? '별칭',
               value: widget.entity.aliases.join(', '),
             ),
           if (widget.draftTags.isNotEmpty ||

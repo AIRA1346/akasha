@@ -1,4 +1,5 @@
 import 'package:akasha/features/workbench/presentation/work_detail_workspace.dart';
+import 'package:akasha/generated/l10n/app_localizations.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/utils/helpers.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,9 @@ void main() {
 
     await tester.pumpWidget(
       MaterialApp(
+        locale: const Locale('ko'),
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
         home: Scaffold(
           body: SizedBox(
             width: 1280,
@@ -45,10 +49,17 @@ void main() {
       ),
     );
 
+    expect(tester.takeException(), isNull);
     expect(find.text('Navigation Smoke'), findsAtLeastNWidgets(1));
     expect(find.text('연결'), findsOneWidget);
-    expect(find.text('설명'), findsOneWidget);
+    expect(find.text('정보'), findsOneWidget);
     expect(find.text('기록 완성도'), findsOneWidget);
     expect(find.text('감상'), findsAtLeastNWidgets(1));
+
+    await tester.tap(find.text('기록'));
+    await tester.pumpAndSettle();
+
+    expect(tester.takeException(), isNull);
+    expect(find.text('줄거리·세계관·배경을 적어 보세요.'), findsOneWidget);
   });
 }
