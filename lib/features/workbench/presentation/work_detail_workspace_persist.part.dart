@@ -14,6 +14,7 @@ mixin _WorkDetailWorkspacePersist on _WorkDetailWorkspaceStateBase {
     if (!wasDirty && _pageView == SanctumPageView.preview) {
       setState(() {});
     }
+    _scheduleRecoveryDraftSave();
     _scheduleAutoSave();
   }
 
@@ -50,6 +51,105 @@ mixin _WorkDetailWorkspacePersist on _WorkDetailWorkspaceStateBase {
       blockOnExternalChange: true,
       externalChangePending: () => _externalChangePending,
     );
+  }
+
+  void _scheduleRecoveryDraftSave() {
+    _recoveryDraftTimer?.cancel();
+    if (_suppressPersist) return;
+    _recoveryDraftTimer = Timer(const Duration(milliseconds: 500), () {
+      unawaited(_saveRecoveryDraftNow());
+    });
+  }
+
+  Future<void> _saveRecoveryDraftNow() async {
+    final vaultPath = WorkbenchVault.port.vaultPath;
+    if (_suppressPersist || vaultPath == null || vaultPath.isEmpty) return;
+    try {
+      await _recoveryDraftStore.save(
+        vaultPath: vaultPath,
+        draft: WorkbenchRecoveryDraft(
+          kind: WorkbenchRecoveryRecordKind.work,
+          recordId: widget.tabId,
+          updatedAt: DateTime.now().toUtc(),
+          title: _titleCtrl.text.trim().isNotEmpty
+              ? _titleCtrl.text.trim()
+              : _item.title,
+          posterPath: _posterUrlCtrl.text.trim().isNotEmpty
+              ? _posterUrlCtrl.text.trim()
+              : null,
+          bodyText: _bodyCtrl.text,
+          fileText: _fileCtrl.text,
+          tags: List<String>.from(_draftTags),
+          pageView: _pageView.name,
+          rating: _draftRating,
+          workStatus: _draftWorkStatus,
+          myStatus: _draftMyStatus,
+          hallOfFame: _draftHallOfFame,
+        ),
+      );
+    } catch (_) {}
+  }
+
+  Future<void> _deleteRecoveryDraft() async {
+    final vaultPath = WorkbenchVault.port.vaultPath;
+    if (vaultPath == null || vaultPath.isEmpty) return;
+    try {
+      await _recoveryDraftStore.delete(
+        vaultPath: vaultPath,
+        kind: WorkbenchRecoveryRecordKind.work,
+        recordId: widget.tabId,
+      );
+    } catch (_) {}
+  }
+
+  Future<void> _maybeOfferRecoveryDraft() async {
+    if (_recoveryPromptShown || _suppressPersist) return;
+    final vaultPath = WorkbenchVault.port.vaultPath;
+    if (vaultPath == null || vaultPath.isEmpty) return;
+    final draft = await _recoveryDraftStore.load(
+      vaultPath: vaultPath,
+      kind: WorkbenchRecoveryRecordKind.work,
+      recordId: widget.tabId,
+    );
+    if (!mounted || draft == null) return;
+    if (draft.hasSameText(body: _bodyCtrl.text, file: _fileCtrl.text)) {
+      await _deleteRecoveryDraft();
+      return;
+    }
+    _recoveryPromptShown = true;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: const Text('임시 저장본이 있습니다.'),
+        duration: const Duration(seconds: 8),
+        action: SnackBarAction(
+          label: '복구',
+          onPressed: () => _restoreRecoveryDraft(draft),
+        ),
+      ),
+    );
+  }
+
+  void _restoreRecoveryDraft(WorkbenchRecoveryDraft draft) {
+    if (!mounted) return;
+    setState(() {
+      if (draft.title != null && draft.title!.trim().isNotEmpty) {
+        _titleCtrl.text = draft.title!;
+      }
+      _posterUrlCtrl.text = draft.posterPath ?? '';
+      _bodyCtrl.text = draft.bodyText;
+      _fileCtrl.text = draft.fileText;
+      _draftTags = List<String>.from(draft.tags);
+      _draftRating = draft.rating ?? _draftRating;
+      _draftWorkStatus = draft.workStatus ?? _draftWorkStatus;
+      _draftMyStatus = draft.myStatus ?? _draftMyStatus;
+      _draftHallOfFame = draft.hallOfFame ?? _draftHallOfFame;
+      _pageView = SanctumPageView.values.firstWhere(
+        (view) => view.name == draft.pageView,
+        orElse: () => _pageView,
+      );
+    });
+    widget.onDirtyChanged(true);
+    _scheduleAutoSave();
   }
 
   bool get _isArchivedInVault => WorkDetailArchiveOps.isArchivedInVault(_item);
@@ -155,7 +255,9 @@ mixin _WorkDetailWorkspacePersist on _WorkDetailWorkspaceStateBase {
           setState(() => _applySaveUiPatch(result.patch));
           if (!result.stillDirty) {
             widget.onDirtyChanged(false);
+            await _deleteRecoveryDraft();
           } else {
+            _scheduleRecoveryDraftSave();
             _scheduleAutoSave();
           }
           widget.onSaved(_item, silent: silent, dirty: result.stillDirty);

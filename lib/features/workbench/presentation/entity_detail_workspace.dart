@@ -13,6 +13,7 @@ import '../../../models/entity_link_selection.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_vault_store.dart';
 import '../../../services/poster_url_localizer.dart';
+import '../../../services/workbench_recovery_draft_store.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import 'entity_detail_archive_ops.dart';
 import 'entity_detail_connections_coordinator.dart';
@@ -87,7 +88,8 @@ class EntityDetailWorkspace extends StatefulWidget {
     UserCatalogEntity entity,
     EntityJournalEntry? journal, {
     required bool silent,
-  }) onSaved;
+  })
+  onSaved;
   final VoidCallback onDeleted;
   final ValueChanged<bool> onDirtyChanged;
   final void Function(Future<void> Function()? save) onBindSave;
@@ -97,14 +99,16 @@ class EntityDetailWorkspace extends StatefulWidget {
     EntityJournalEntry? journal,
     List<String> tags,
     String body,
-  )? onPreserveDraft;
+  )?
+  onPreserveDraft;
   final ValueChanged<double>? onInfoWidthChanged;
   final VoidCallback? onToggleInfoLock;
   final void Function(ParsedRecordLink link)? onWikiLinkTap;
   final Future<EntityLinkSelection?> Function(
     BuildContext context,
     String selectedText,
-  )? onRequestEntityLink;
+  )?
+  onRequestEntityLink;
   final Future<void> Function(UserCatalogEntity entity)? onAddToLibrary;
   final VoidCallback? onClose;
   final VoidCallback? onGoKnowledgeGraph;
@@ -119,7 +123,8 @@ class EntityDetailWorkspace extends StatefulWidget {
   State<EntityDetailWorkspace> createState() => _EntityDetailWorkspaceState();
 }
 
-abstract class _EntityDetailWorkspaceStateBase extends State<EntityDetailWorkspace> {
+abstract class _EntityDetailWorkspaceStateBase
+    extends State<EntityDetailWorkspace> {
   late UserCatalogEntity _entity;
   EntityJournalEntry? _journal;
   late EntityItem _item;
@@ -133,6 +138,10 @@ abstract class _EntityDetailWorkspaceStateBase extends State<EntityDetailWorkspa
   bool _suppressPersist = false;
   DateTime? _lastSavedAt;
   final WorkbenchAutosaveScheduler _autosave = WorkbenchAutosaveScheduler();
+  final WorkbenchRecoveryDraftStore _recoveryDraftStore =
+      const WorkbenchRecoveryDraftStore();
+  Timer? _recoveryDraftTimer;
+  bool _recoveryPromptShown = false;
   StreamSubscription<void>? _vaultSub;
   late final EntityDetailConnectionsCoordinator _connections;
 
@@ -148,8 +157,10 @@ abstract class _EntityDetailWorkspaceStateBase extends State<EntityDetailWorkspa
     );
   }
 
-  EntityItem _buildEntityItem(UserCatalogEntity entity, EntityJournalEntry? journal) =>
-      EntityDetailDraftOps.buildEntityItem(entity, journal);
+  EntityItem _buildEntityItem(
+    UserCatalogEntity entity,
+    EntityJournalEntry? journal,
+  ) => EntityDetailDraftOps.buildEntityItem(entity, journal);
 
   void _applySnapshot(EntityDetailWorkspaceSnapshot snapshot) {
     _entity = snapshot.entity;
@@ -210,6 +221,7 @@ class _EntityDetailWorkspaceState extends _EntityDetailWorkspaceStateBase
     _connections.refreshDiskMtime(_journal?.storagePath);
     _refreshRecordLinks();
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      _maybeOfferRecoveryDraft();
       _maybeRunPendingEntityLinkPick();
     });
   }
@@ -261,12 +273,17 @@ class _EntityDetailWorkspaceState extends _EntityDetailWorkspaceStateBase
   @override
   void deactivate() {
     _autosave.cancel();
+    _recoveryDraftTimer?.cancel();
+    if (!_suppressPersist && widget.isDirty) {
+      unawaited(_saveRecoveryDraftNow());
+    }
     super.deactivate();
   }
 
   @override
   void dispose() {
     _autosave.dispose();
+    _recoveryDraftTimer?.cancel();
     if (!_suppressPersist && widget.isDirty) {
       if (_pageView == SanctumPageView.file) {
         _syncBodyFromEditor();

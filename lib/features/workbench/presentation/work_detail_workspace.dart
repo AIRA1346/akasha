@@ -12,6 +12,7 @@ import '../../../models/entity_link_selection.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/link_candidate_service.dart';
 import '../../../services/sanctum_body_templates.dart';
+import '../../../services/workbench_recovery_draft_store.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import 'work_detail_archive_ops.dart';
 import 'work_detail_connections_coordinator.dart';
@@ -54,7 +55,7 @@ class WorkDetailWorkspace extends StatefulWidget {
   final ValueChanged<double>? onInfoWidthChanged;
   final VoidCallback? onToggleInfoLock;
   final void Function(AkashaItem saved, {required bool silent, bool dirty})
-      onSaved;
+  onSaved;
   final VoidCallback onDeleted;
   final ValueChanged<bool> onDirtyChanged;
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
@@ -64,7 +65,8 @@ class WorkDetailWorkspace extends StatefulWidget {
   final Future<EntityLinkSelection?> Function(
     BuildContext context,
     String selectedText,
-  )? onRequestEntityLink;
+  )?
+  onRequestEntityLink;
   final VoidCallback? onClose;
   final VoidCallback? onGoKnowledgeGraph;
   final EntityAnchorType? pendingEntityLinkType;
@@ -110,7 +112,8 @@ class WorkDetailWorkspace extends StatefulWidget {
   State<WorkDetailWorkspace> createState() => _WorkDetailWorkspaceState();
 }
 
-abstract class _WorkDetailWorkspaceStateBase extends State<WorkDetailWorkspace> {
+abstract class _WorkDetailWorkspaceStateBase
+    extends State<WorkDetailWorkspace> {
   late AkashaItem _item;
   bool _isSaving = false;
 
@@ -131,6 +134,10 @@ abstract class _WorkDetailWorkspaceStateBase extends State<WorkDetailWorkspace> 
   late final WorkDetailConnectionsCoordinator _connections;
   DateTime? _lastSavedAt;
   final WorkbenchAutosaveScheduler _autosave = WorkbenchAutosaveScheduler();
+  final WorkbenchRecoveryDraftStore _recoveryDraftStore =
+      const WorkbenchRecoveryDraftStore();
+  Timer? _recoveryDraftTimer;
+  bool _recoveryPromptShown = false;
   bool _suppressPersist = false;
 
   final GlobalKey<WorkSanctumSectionEditorState> _sectionEditorKey =
@@ -139,18 +146,18 @@ abstract class _WorkDetailWorkspaceStateBase extends State<WorkDetailWorkspace> 
   bool get _externalChangePending => _connections.externalChangePending;
 
   WorkDetailDraftBundle get _draft => WorkDetailDraftBundle(
-        item: _item,
-        pageView: _pageView,
-        titleCtrl: _titleCtrl,
-        bodyCtrl: _bodyCtrl,
-        fileCtrl: _fileCtrl,
-        posterUrlCtrl: _posterUrlCtrl,
-        draftRating: _draftRating,
-        draftWorkStatus: _draftWorkStatus,
-        draftMyStatus: _draftMyStatus,
-        draftHallOfFame: _draftHallOfFame,
-        draftTags: _draftTags,
-      );
+    item: _item,
+    pageView: _pageView,
+    titleCtrl: _titleCtrl,
+    bodyCtrl: _bodyCtrl,
+    fileCtrl: _fileCtrl,
+    posterUrlCtrl: _posterUrlCtrl,
+    draftRating: _draftRating,
+    draftWorkStatus: _draftWorkStatus,
+    draftMyStatus: _draftMyStatus,
+    draftHallOfFame: _draftHallOfFame,
+    draftTags: _draftTags,
+  );
 
   void _refreshRecordLinks() {
     _connections.refreshAll(
@@ -223,6 +230,7 @@ class _WorkDetailWorkspaceState extends _WorkDetailWorkspaceStateBase
     _connections.refreshDiskMtime(_item.filePath);
     _refreshRecordLinks();
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      _maybeOfferRecoveryDraft();
       _maybeRunPendingEntityLinkPick();
     });
   }
@@ -252,8 +260,12 @@ class _WorkDetailWorkspaceState extends _WorkDetailWorkspaceStateBase
   @override
   void deactivate() {
     _autosave.cancel();
+    _recoveryDraftTimer?.cancel();
     if (!_suppressPersist) {
       _flushAutoSaveIfNeeded();
+      if (widget.isDirty) {
+        unawaited(_saveRecoveryDraftNow());
+      }
     }
     super.deactivate();
   }
@@ -261,6 +273,7 @@ class _WorkDetailWorkspaceState extends _WorkDetailWorkspaceStateBase
   @override
   void dispose() {
     _autosave.dispose();
+    _recoveryDraftTimer?.cancel();
     if (!_suppressPersist && widget.isDirty) {
       if (_pageView == SanctumPageView.file) {
         WorkDetailDraftOps.applyFileEditorToItem(

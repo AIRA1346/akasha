@@ -6,12 +6,12 @@ mixin _EntityDetailWorkspacePersist on _EntityDetailWorkspaceStateBase {
   }
 
   String _serializeFile() => EntityDetailDraftOps.serializeFile(
-        entity: _entity,
-        journal: _journal,
-        body: _bodyCtrl.text,
-        tags: _draftTags,
-        posterPath: _posterUrlCtrl.text,
-      );
+    entity: _entity,
+    journal: _journal,
+    body: _bodyCtrl.text,
+    tags: _draftTags,
+    posterPath: _posterUrlCtrl.text,
+  );
 
   void _syncBodyFromEditor() {
     if (_pageView != SanctumPageView.file) return;
@@ -43,6 +43,7 @@ mixin _EntityDetailWorkspacePersist on _EntityDetailWorkspaceStateBase {
 
   void _markDirty() {
     widget.onDirtyChanged(true);
+    _scheduleRecoveryDraftSave();
     _scheduleAutoSave();
   }
 
@@ -59,6 +60,99 @@ mixin _EntityDetailWorkspacePersist on _EntityDetailWorkspaceStateBase {
       isActive: () => mounted,
       save: () => _saveJournal(silent: true),
     );
+  }
+
+  void _scheduleRecoveryDraftSave() {
+    _recoveryDraftTimer?.cancel();
+    if (_suppressPersist) return;
+    _recoveryDraftTimer = Timer(const Duration(milliseconds: 500), () {
+      unawaited(_saveRecoveryDraftNow());
+    });
+  }
+
+  Future<void> _saveRecoveryDraftNow() async {
+    final vaultPath = WorkbenchVault.port.vaultPath;
+    if (_suppressPersist || vaultPath == null || vaultPath.isEmpty) return;
+    try {
+      await _recoveryDraftStore.save(
+        vaultPath: vaultPath,
+        draft: WorkbenchRecoveryDraft(
+          kind: WorkbenchRecoveryRecordKind.entity,
+          recordId: widget.tabId,
+          updatedAt: DateTime.now().toUtc(),
+          title: _entity.title,
+          posterPath: _posterUrlCtrl.text.trim().isNotEmpty
+              ? _posterUrlCtrl.text.trim()
+              : null,
+          bodyText: _bodyCtrl.text,
+          fileText: _fileCtrl.text,
+          tags: List<String>.from(_draftTags),
+          pageView: _pageView.name,
+        ),
+      );
+    } catch (_) {}
+  }
+
+  Future<void> _deleteRecoveryDraft() async {
+    final vaultPath = WorkbenchVault.port.vaultPath;
+    if (vaultPath == null || vaultPath.isEmpty) return;
+    try {
+      await _recoveryDraftStore.delete(
+        vaultPath: vaultPath,
+        kind: WorkbenchRecoveryRecordKind.entity,
+        recordId: widget.tabId,
+      );
+    } catch (_) {}
+  }
+
+  Future<void> _maybeOfferRecoveryDraft() async {
+    if (_recoveryPromptShown || _suppressPersist) return;
+    final vaultPath = WorkbenchVault.port.vaultPath;
+    if (vaultPath == null || vaultPath.isEmpty) return;
+    final draft = await _recoveryDraftStore.load(
+      vaultPath: vaultPath,
+      kind: WorkbenchRecoveryRecordKind.entity,
+      recordId: widget.tabId,
+    );
+    if (!mounted || draft == null) return;
+    if (draft.hasSameText(body: _bodyCtrl.text, file: _fileCtrl.text)) {
+      await _deleteRecoveryDraft();
+      return;
+    }
+    _recoveryPromptShown = true;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: const Text('임시 저장본이 있습니다.'),
+        duration: const Duration(seconds: 8),
+        action: SnackBarAction(
+          label: '복구',
+          onPressed: () => _restoreRecoveryDraft(draft),
+        ),
+      ),
+    );
+  }
+
+  void _restoreRecoveryDraft(WorkbenchRecoveryDraft draft) {
+    if (!mounted) return;
+    setState(() {
+      _posterUrlCtrl.text = draft.posterPath ?? '';
+      _bodyCtrl.text = draft.bodyText;
+      _fileCtrl.text = draft.fileText;
+      _draftTags = List<String>.from(draft.tags);
+      _pageView = SanctumPageView.values.firstWhere(
+        (view) => view.name == draft.pageView,
+        orElse: () => _pageView,
+      );
+      _preview = EntityDetailDraftOps.buildPreviewItem(
+        entity: _entity,
+        journal: _journal,
+        posterPath: _posterUrlCtrl.text,
+        tags: _draftTags,
+        bodyRaw: _bodyCtrl.text,
+      );
+    });
+    widget.onDirtyChanged(true);
+    _scheduleAutoSave();
   }
 
   Future<void> _saveJournal({bool silent = false}) async {
@@ -124,6 +218,7 @@ mixin _EntityDetailWorkspacePersist on _EntityDetailWorkspaceStateBase {
             }
           });
           widget.onDirtyChanged(false);
+          await _deleteRecoveryDraft();
           widget.onSaved(patch.entity, patch.journal, silent: silent);
           _refreshRecordLinks();
           _connections.refreshDiskMtime(_journal?.storagePath);
