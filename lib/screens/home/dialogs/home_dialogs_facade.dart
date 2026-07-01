@@ -13,6 +13,7 @@ import '../../../services/catalog_contribution_service.dart';
 import '../../../services/journal_vault_store.dart';
 import '../../../services/person_seed_registry.dart';
 import '../../../services/timeline_vault_store.dart';
+import '../../../utils/app_l10n.dart';
 import '../../../models/library_theme.dart';
 import '../../../core/ports/registry_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
@@ -78,6 +79,7 @@ class HomeDialogsFacade {
     required Future<void> Function() refreshContributionCount,
     required void Function(String message) showMessage,
   }) async {
+    final l10n = lookupAppL10n(context);
     final saved = await showCatalogAddContributionDialog(
       context,
       initialTitle: query,
@@ -85,7 +87,7 @@ class HomeDialogsFacade {
     );
     if (saved == true) {
       await refreshContributionCount();
-      showMessage('글로벌 사전 추가 제안이 저장되었습니다. (제안함에서 export)');
+      showMessage(l10n?.proposalSaved ?? '글로벌 사전 추가 제안이 저장되었습니다. (제안함에서 export)');
     }
   }
 
@@ -97,8 +99,9 @@ class HomeDialogsFacade {
     required void Function(String message) showMessage,
     required Future<void> Function(AkashaItem item) onSavedToVault,
   }) async {
+    final l10n = lookupAppL10n(context);
     if (!isVaultLinked) {
-      showMessage('볼트를 먼저 연결해 주세요.');
+      showMessage(l10n?.validationLinkVaultFirst ?? '볼트를 먼저 연결해 주세요.');
       return;
     }
 
@@ -123,8 +126,9 @@ class HomeDialogsFacade {
     UserCatalogPort? userCatalog,
     List<AkashaItem> vaultItems = const [],
   }) async {
+    final l10n = lookupAppL10n(context);
     if (!isVaultLinked) {
-      showMessage('볼트를 먼저 연결해 주세요.');
+      showMessage(l10n?.validationLinkVaultFirst ?? '볼트를 먼저 연결해 주세요.');
       return;
     }
 

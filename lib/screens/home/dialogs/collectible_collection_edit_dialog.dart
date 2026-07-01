@@ -11,6 +11,7 @@ import '../../../models/collectible_ref.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../widgets/editable_tag_chips.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../utils/app_l10n.dart';
 
 part 'collectible_collection_edit_dialog_picker_part.dart';
 part 'collectible_collection_edit_dialog_session_part.dart';

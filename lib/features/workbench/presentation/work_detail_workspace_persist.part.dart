@@ -334,6 +334,7 @@ mixin _WorkDetailWorkspacePersist on _WorkDetailWorkspaceStateBase {
       showSnack: _showSnack,
       onDeleted: widget.onDeleted,
       restorePersist: () => setState(() => _suppressPersist = false),
+      l10n: lookupAppL10n(context),
     );
   }
 }

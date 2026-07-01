@@ -217,5 +217,62 @@
         "type": "String"
       }
     }
+  },
+  "validationInputName": "Please enter a name.",
+  "archiveTitle": "Archive {type}",
+  "@archiveTitle": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "archiveNameLabel": "{type} Name",
+  "@archiveNameLabel": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "archiveAliasesLabel": "Aliases (comma-separated, optional)",
+  "archiveAliasesHint": "tiger, white tiger",
+  "archiveTagsLabel": "Tags (semantic evaluation)",
+  "archiveMemoLabel": "Notes (optional)",
+  "archiveNameOnly": "Register name only (advanced)",
+  "archiveNameOnlyHelp": "ID for linking only, no journal created",
+  "archiveAdd": "Add to Archive",
+  "actionAdd": "Add",
+  "archiveChooseType": "Select Type to Add",
+  "archiveDescWork": "Archive .md to Vault",
+  "archiveDescEntity": "Archive .md to entities/{type}",
+  "@archiveDescEntity": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "validationSpecifyTagOrWork": "Please specify at least one tag or work.",
+  "actionSave": "Save",
+  "proposalSaved": "Global catalog addition proposal saved. (Export from proposal box)",
+  "validationLinkVaultFirst": "Please link a vault first.",
+  "draftRecoveryAvailable": "Temporary draft available.",
+  "journalDeleted": "Deleted journal for '{title}'.",
+  "@journalDeleted": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "journalSaveBeforeHtml": "Please save the journal before exporting to HTML.",
+  "vaultFileDeleted": "Deleted markdown file '{title}'.",
+  "@vaultFileDeleted": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
   }
 }

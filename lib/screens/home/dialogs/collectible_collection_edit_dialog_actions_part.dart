@@ -4,17 +4,19 @@ List<Widget> _collectibleCollectionEditActions(
   BuildContext ctx,
   _CollectibleCollectionEditSession session,
 ) {
+  final l10n = lookupAppL10n(ctx);
+
   return [
     TextButton(
       onPressed: () => Navigator.pop(ctx),
-      child: const Text('취소'),
+      child: Text(l10n?.actionCancel ?? '취소'),
     ),
     FilledButton(
       onPressed: () {
         final title = session.titleCtrl.text.trim();
         if (title.isEmpty) {
           ScaffoldMessenger.of(ctx).showSnackBar(
-            const SnackBar(content: Text('이름을 입력해 주세요.')),
+            SnackBar(content: Text(l10n?.validationInputName ?? '이름을 입력해 주세요.')),
           );
           return;
         }
@@ -24,8 +26,8 @@ List<Widget> _collectibleCollectionEditActions(
               relatedWorkId: session.relatedWorkId,
             )) {
           ScaffoldMessenger.of(ctx).showSnackBar(
-            const SnackBar(
-              content: Text('태그 또는 작품을 하나 이상 지정해 주세요.'),
+            SnackBar(
+              content: Text(l10n?.validationSpecifyTagOrWork ?? '태그 또는 작품을 하나 이상 지정해 주세요.'),
             ),
           );
           return;
@@ -62,7 +64,11 @@ List<Widget> _collectibleCollectionEditActions(
         config.touch();
         Navigator.pop(ctx, config);
       },
-      child: Text(session.isNew ? '추가' : '저장'),
+      child: Text(
+        session.isNew
+            ? (l10n?.actionAdd ?? '추가')
+            : (l10n?.actionSave ?? '저장'),
+      ),
     ),
   ];
 }

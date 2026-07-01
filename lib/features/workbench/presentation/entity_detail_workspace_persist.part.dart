@@ -120,12 +120,13 @@ mixin _EntityDetailWorkspacePersist on _EntityDetailWorkspaceStateBase {
       return;
     }
     _recoveryPromptShown = true;
+    final l10n = lookupAppL10n(context);
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: const Text('임시 저장본이 있습니다.'),
+        content: Text(l10n?.draftRecoveryAvailable ?? '임시 저장본이 있습니다.'),
         duration: const Duration(seconds: 8),
         action: SnackBarAction(
-          label: '복구',
+          label: l10n?.trashRestore ?? '복구',
           onPressed: () => _restoreRecoveryDraft(draft),
         ),
       ),
@@ -247,13 +248,14 @@ mixin _EntityDetailWorkspacePersist on _EntityDetailWorkspaceStateBase {
     );
     if (!mounted) return;
 
+    final l10n = lookupAppL10n(context);
     switch (result) {
       case EntityDetailDeleteBlocked(:final message):
         if (message.isNotEmpty) _showSnack(message);
       case EntityDetailDeleteCancelled():
         return;
       case EntityDetailDeleteSucceeded(:final title):
-        _showSnack('「$title」 journal을 삭제했습니다.');
+        _showSnack(l10n?.journalDeleted(title) ?? '「$title」 journal을 삭제했습니다.');
         widget.onDeleted();
       case EntityDetailDeleteFailed(:final message):
         setState(() => _suppressPersist = false);
@@ -270,7 +272,8 @@ mixin _EntityDetailWorkspacePersist on _EntityDetailWorkspaceStateBase {
   Future<void> _exportHtml() async {
     final storagePath = _journal?.storagePath;
     if (storagePath == null || storagePath.isEmpty) {
-      _showSnack('HTML보내기 전에 journal을 저장해 주세요.');
+      final l10n = lookupAppL10n(context);
+      _showSnack(l10n?.journalSaveBeforeHtml ?? 'HTML보내기 전에 journal을 저장해 주세요.');
       return;
     }
 

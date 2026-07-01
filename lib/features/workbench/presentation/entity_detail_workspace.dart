@@ -12,6 +12,7 @@ import '../../../models/akasha_item.dart';
 import '../../../models/entity_link_selection.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_vault_store.dart';
+import '../../../utils/app_l10n.dart';
 import '../../../services/poster_url_localizer.dart';
 import '../../../services/workbench_recovery_draft_store.dart';
 import '../../../widgets/sanctum_page_panel.dart';

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../generated/l10n/app_localizations.dart';
 import '../../../models/akasha_item.dart';
 import 'work_detail_delete_ops.dart';
 
@@ -74,6 +75,7 @@ abstract final class WorkDetailDeleteFlowOps {
     required void Function(String message) showSnack,
     required VoidCallback onDeleted,
     required VoidCallback restorePersist,
+    AppLocalizations? l10n,
   }) {
     switch (result) {
       case WorkDetailDeleteBlocked(:final message):
@@ -81,7 +83,7 @@ abstract final class WorkDetailDeleteFlowOps {
       case WorkDetailDeleteCancelled():
         return;
       case WorkDetailDeleteSucceeded(:final displayTitle):
-        showSnack('"$displayTitle" md 파일을 삭제했습니다.');
+        showSnack(l10n?.vaultFileDeleted(displayTitle) ?? '"$displayTitle" md 파일을 삭제했습니다.');
         onDeleted();
       case WorkDetailDeleteFailed(:final message):
         restorePersist();

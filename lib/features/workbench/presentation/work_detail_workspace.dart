@@ -12,6 +12,7 @@ import '../../../models/entity_link_selection.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/link_candidate_service.dart';
 import '../../../services/sanctum_body_templates.dart';
+import '../../../utils/app_l10n.dart';
 import '../../../services/workbench_recovery_draft_store.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import 'work_detail_archive_ops.dart';
