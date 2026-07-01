@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// 유저 표시 설정 (스팀 persona name 연동 대비)
@@ -5,6 +6,36 @@ class UserPreferences {
   static const String displayNameKey = 'akasha_display_name';
   static const String autoArchiveRegistryKey = 'akasha_auto_archive_registry';
   static const String vaultWorksLayoutKey = 'akasha_vault_use_works_layout';
+  static const String uiScaleKey = 'akasha_ui_scale';
+  static const double defaultUiScale = 1.0;
+  static const double minUiScale = 0.9;
+  static const double maxUiScale = 1.25;
+
+  static final ValueNotifier<double> uiScaleListenable = ValueNotifier(
+    defaultUiScale,
+  );
+
+  static double normalizeUiScale(double scale) {
+    if (scale.isNaN || scale.isInfinite) return defaultUiScale;
+    return scale.clamp(minUiScale, maxUiScale).toDouble();
+  }
+
+  static Future<double> loadInitialUiScale() async {
+    final prefs = await SharedPreferences.getInstance();
+    final scale = normalizeUiScale(
+      prefs.getDouble(uiScaleKey) ?? defaultUiScale,
+    );
+    uiScaleListenable.value = scale;
+    return scale;
+  }
+
+  static Future<void> setUiScale(double scale) async {
+    final normalized = normalizeUiScale(scale);
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setDouble(uiScaleKey, normalized);
+    uiScaleListenable.value = normalized;
+  }
+
   static const String defaultDisplayName = '사용자';
 
   static Future<String> getDisplayName() async {

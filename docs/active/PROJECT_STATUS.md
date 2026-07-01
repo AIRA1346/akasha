@@ -1,6 +1,6 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-06-30 (@10048 · **Steam RC 안정화 / Infinite Taste Archive 정리**)
+> **갱신:** 2026-07-01 (@10048 · **Steam RC 안정화 / Desktop preferences slice**)
 > **Git:** current tip은 `git log -1` 기준 · RC code/docs baseline **`2b3d292c`** · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
 > **현재 실행:** **Steam RC dogfood 준비** — [STEAM_RC_DOGFOOD_CHECKLIST_2026-06-30.md](../draft/STEAM_RC_DOGFOOD_CHECKLIST_2026-06-30.md) · M3·Agent/player implementation layer **보류**
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
@@ -13,7 +13,7 @@
  
 | 항목 | 상태 |
 |------|------|
-| **flutter test** | **658 PASS** |
+| **flutter test** | **662 PASS** |
 | **flutter analyze lib** | **0 issue** |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
 | **앱 테마 (Slice 1)** | palette 전역 · 하단 라이브러리 탭 서재 추가 흐름 ✅ |
@@ -69,7 +69,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **658 PASS** | ✅ |
+| `flutter test` | **662 PASS** | ✅ |
 | `flutter analyze lib` | **0 issue** | ✅ |
 | `preflight_check` | PASS | ✅ |
 | `registry_builder` | PASS | — (post-v1 scale) |
@@ -84,7 +84,7 @@
 
 | 게이트 | 상태 | v1 blocking | 비고 |
 |--------|:----:|:-----------:|------|
-| **G-AUTO** | ✅ | ✅ | test **658** · analyze **0** · Release build |
+| **G-AUTO** | ✅ | ✅ | test **662** · analyze **0** · Release build |
 | **G-VAULT** | 🔶 | **✅** | 볼트 연동·아카이브·Sanctum 저장·기록 UI — **v1 핵심** |
 | **G-QA** | ✅ | ✅ | P0 수동 **12/12** (2026-06-13) · dogfood **사용자 직접** |
 | **G-STEAM** | ✅ | ✅ (M3 시) | depot·스토어·IAP·Privacy — **M3 보류** |
@@ -159,7 +159,7 @@
 | **304** | `AIRA1346/akasha-db` remote vs 앱 repo shard 커밋 **동기화** | 🔶 | audit §3.1 |
 | **305** | registry manifest 4파일 — rebuild 산출물 **커밋 제외** 관례 유지 | ✅ 관례 | 본 문서 헤더 |
 | **306** | Home UI 정리 — search-first · Slice 1 앱 테마 · Slice 2 사이드바 서재 · dead wiring cleanup | ✅ | `0db21d38` |
-| **307** | `flutter test` **658** · `flutter analyze lib` **0** 유지 | ✅ | §2 Gate |
+| **307** | `flutter test` **662** · `flutter analyze lib` **0** 유지 | ✅ | §2 Gate |
 | **308** | Agent Vault UI dogfood — P1-8 raw wiki link · P1-9 중앙 감상 밀도 · P1-10 앱 테마 범위 | 🔶 | [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
 | **309** | M3 · Agent/player implementation layer · 대규모 index/path migration | 🚫 **금지** (본 스프린트) | — |
 | **310** | `PreviewMemoBar` — post-v1 dormant UI cleanup 후보 (`showPreviewMemoBar` false · `내 감상` 카드와 역할 중복) | ⏸️ v1 비활성 유지 | [preview_memo_bar.dart](../../lib/screens/home/views/preview_memo_bar.dart) · dogfood §P2 |
@@ -171,6 +171,7 @@
 | **316** | Vault ZIP backup export — 볼트 전체를 표준 `.zip`으로 내보내기 | ✅ | [vault_backup_exporter.dart](../../lib/services/vault_backup_exporter.dart) |
 | **317** | Workbench recovery drafts — Work/Entity 편집 중 `.akasha/recovery/` 임시 스냅샷 · Snackbar 복구 제안 | ✅ | [workbench_recovery_draft_store.dart](../../lib/services/workbench_recovery_draft_store.dart) |
 | **318** | Vault trash UI — Vault 설정에서 휴지통 목록·복구·영구 삭제 | ✅ | [vault_trash_dialog.dart](../../lib/screens/home/dialogs/vault_trash_dialog.dart) |
+| **319** | Desktop preferences slice — `Esc` 앱 메뉴 · 표시 배율 저장 · 종료 버튼 | ✅ | [app_preferences_dialog.dart](../../lib/screens/home/dialogs/app_preferences_dialog.dart) |
 
 ---
 
@@ -207,4 +208,5 @@
 | 2026-07-01 | **Vault ZIP backup export** — Vault settings에서 `.zip` 백업 생성 · analyze **0** · test **654** |
 | 2026-07-01 | **Workbench recovery drafts** — `.akasha/recovery/` 임시 스냅샷 · Work/Entity 복구 Snackbar · analyze **0** · test **657** |
 | 2026-07-01 | **Vault trash UI** — Vault 설정에서 휴지통 목록·복구·영구 삭제 · analyze **0** · test **658** |
+| 2026-07-01 | **Desktop preferences slice** — `Esc` 앱 메뉴 · 표시 배율 · 종료 버튼 · analyze **0** · test **662** · release build **PASS** |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |

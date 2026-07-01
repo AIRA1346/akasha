@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -8,6 +10,7 @@ import '../../models/user_catalog_entity.dart';
 import '../../models/browse_card.dart';
 import '../../models/browse_entity_scope.dart';
 import '../../models/work_drag_payload.dart';
+import 'dialogs/app_preferences_dialog.dart';
 import 'dialogs/home_dialogs_facade.dart';
 import 'home_app_bar.dart';
 import 'home_shell_body.dart';

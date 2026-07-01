@@ -7,6 +7,7 @@ import 'data/adapters/works_registry_adapter.dart';
 import 'screens/home/home_shell.dart';
 import 'services/catalog_locale_preferences.dart';
 import 'services/franchise_registry.dart';
+import 'services/user_preferences.dart';
 import 'theme/akasha_theme.dart';
 
 // ════════════════════════════════════════════════════════════════
@@ -18,6 +19,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   CatalogLocaleScope.setCurrent(await CatalogLocalePreferences.loadInitial());
+  await UserPreferences.loadInitialUiScale();
 
   // 어댑터를 통한 글로벌 사전 및 볼트 초기화
   await WorksRegistryAdapter().init();
@@ -40,15 +42,18 @@ class _AkashaAppState extends State<AkashaApp> {
   void initState() {
     super.initState();
     CatalogLocaleScope.localeListenable.addListener(_onLocaleChanged);
+    UserPreferences.uiScaleListenable.addListener(_onUiScaleChanged);
   }
 
   @override
   void dispose() {
     CatalogLocaleScope.localeListenable.removeListener(_onLocaleChanged);
+    UserPreferences.uiScaleListenable.removeListener(_onUiScaleChanged);
     super.dispose();
   }
 
   void _onLocaleChanged() => setState(() {});
+  void _onUiScaleChanged() => setState(() {});
 
   Locale get _appLocale => Locale(CatalogLocaleScope.current.tag);
 
@@ -61,6 +66,18 @@ class _AkashaAppState extends State<AkashaApp> {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: AkashaTheme.dark(),
+      builder: (context, child) {
+        final mediaQuery = MediaQuery.maybeOf(context);
+        if (mediaQuery == null) return child ?? const SizedBox.shrink();
+        return MediaQuery(
+          data: mediaQuery.copyWith(
+            textScaler: TextScaler.linear(
+              UserPreferences.uiScaleListenable.value,
+            ),
+          ),
+          child: child ?? const SizedBox.shrink(),
+        );
+      },
       home: const HomeShell(),
     );
   }
