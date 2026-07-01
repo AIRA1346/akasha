@@ -43,5 +43,34 @@
   "appBarSyncRegistry": "Sync global works catalog (long-press for settings)",
   "appBarPromptTemplates": "Copy AI prompt templates",
   "appBarClearRegistryCache": "Clear catalog JSON cache (not poster images)",
-  "appBarVaultSettings": "Local vault settings"
+  "appBarVaultSettings": "Local vault settings",
+  "sidebarHome": "Home",
+  "sidebarExplore": "Explore",
+  "sidebarLibrary": "Library",
+  "sidebarCollections": "Collections",
+  "sidebarGraph": "Graph",
+  "sidebarTimeline": "Timeline",
+  "sidebarMyLibraries": "My Libraries",
+  "sidebarCreateMyLibraryPrompt": "Create your own library",
+  "libraryMasterArchive": "Master Archive",
+  "libraryCurated": "Curated Library",
+  "libraryFiltered": "Filtered Library",
+  "libraryWorkCount": "{count} works",
+  "@libraryWorkCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "itemKindWork": "Work",
+  "sidebarRecentExplore": "Recent",
+  "sidebarMyCollections": "My Collections",
+  "sidebarViewAll": "View all",
+  "sidebarNoCollections": "No collections",
+  "searchPlaceholder": "Search works, cast, timeline, places, concepts...",
+  "filterTooltip": "Filter",
+  "filterCloseTooltip": "Close filter",
+  "appBarSyncUrlSettings": "Sync URL Settings",
+  "appBarMoreToolsTooltip": "More tools"
 }

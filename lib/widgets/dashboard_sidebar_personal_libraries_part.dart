@@ -19,11 +19,13 @@ class _DashboardSidebarPersonalLibrariesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         _DashboardSidebarSectionTitle(
-          '나만의 서재',
+          l10n?.sidebarMyLibraries ?? '나만의 서재',
           onAdd: onAddPersonalLibrary,
         ),
         const SizedBox(height: 6),
@@ -31,28 +33,31 @@ class _DashboardSidebarPersonalLibrariesSection extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
             child: Text(
-              '나만의 서재를 만들어 보세요',
+              l10n?.sidebarCreateMyLibraryPrompt ?? '나만의 서재를 만들어 보세요',
               style: AkashaTypography.bodySecondary.copyWith(
                 color: AkashaColors.textCaption,
               ),
             ),
           )
         else
-          ...personalLibraries.map(_buildLibraryRow),
+          ...personalLibraries.map((lib) => _buildLibraryRow(lib, l10n)),
       ],
     );
   }
 
-  Widget _buildLibraryRow(PersonalLibraryConfig library) {
+  Widget _buildLibraryRow(PersonalLibraryConfig library, AppLocalizations? l10n) {
     final isActive = selectionMode == SidebarSelectionMode.personalLibrary &&
         library.id == activePersonalLibraryId;
     final memberCount =
         library.isCurated ? library.memberOrder.length : 0;
+    
     final subtitle = library.isMasterArchive
-        ? '전체 아카이브'
+        ? (l10n?.libraryMasterArchive ?? '전체 아카이브')
         : library.isCurated
-            ? (memberCount > 0 ? '$memberCount 작품' : '큐레이션 서재')
-            : '필터 서재';
+            ? (memberCount > 0
+                ? (l10n?.libraryWorkCount(memberCount) ?? '$memberCount 작품')
+                : (l10n?.libraryCurated ?? '큐레이션 서재'))
+            : (l10n?.libraryFiltered ?? '필터 서재');
 
     return _SidebarThumbnailTile(
       item: _coverItemForLibrary(library),

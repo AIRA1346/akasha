@@ -6,6 +6,7 @@ import '../../models/enums.dart';
 import '../../theme/akasha_colors.dart';
 import '../../theme/akasha_spacing.dart';
 import '../../theme/akasha_typography.dart';
+import '../../utils/app_l10n.dart';
 import '../../widgets/filter_section.dart';
 
 /// Home 중앙 본문 상단 — 검색 진입 + 접이식 필터 (v1 Personal Archive).
@@ -39,7 +40,7 @@ class HomeBrowseSearchChrome extends StatefulWidget {
   final void Function(EntityAnchorType? type)? onAddNewEntity;
   final double compactBreakpoint;
 
-  static const String searchPlaceholder = _SearchEntry.placeholder;
+  static const String searchPlaceholder = '작품, 인물, 시간, 장소, 개념을 검색하세요...';
 
   static bool hasActiveFilters({
     required Set<MediaCategory> categories,
@@ -129,11 +130,11 @@ class _SearchEntry extends StatelessWidget {
   final VoidCallback onTap;
   final bool showCtrlKHint;
 
-  static const String placeholder =
-      '작품, 인물, 시간, 장소, 개념을 검색하세요...';
-
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+    final placeholder = l10n?.searchPlaceholder ?? HomeBrowseSearchChrome.searchPlaceholder;
+
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -197,9 +198,14 @@ class _FilterToggleButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+    final tooltip = expanded
+        ? (l10n?.filterCloseTooltip ?? '필터 닫기')
+        : (l10n?.filterTooltip ?? '필터');
+
     return IconButton(
       onPressed: onPressed,
-      tooltip: expanded ? '필터 닫기' : '필터',
+      tooltip: tooltip,
       icon: Badge(
         isLabelVisible: hasActiveFilters && !expanded,
         smallSize: 8,

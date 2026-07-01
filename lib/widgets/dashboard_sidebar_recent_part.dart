@@ -15,20 +15,22 @@ class _DashboardSidebarRecentSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const _DashboardSidebarSectionTitle('최근 탐색'),
+        _DashboardSidebarSectionTitle(l10n?.sidebarRecentExplore ?? '최근 탐색'),
         const SizedBox(height: 6),
-        ...recentExploreItems.take(5).map(_buildRecentRow),
+        ...recentExploreItems.take(5).map((item) => _buildRecentRow(item, l10n)),
       ],
     );
   }
 
-  Widget _buildRecentRow(AkashaItem item) {
+  Widget _buildRecentRow(AkashaItem item, AppLocalizations? l10n) {
     final subtitle = switch (item) {
       EntityItem(:final entityType) => entityTypeDisplayLabel(entityType),
-      _ => '작품',
+      _ => l10n?.itemKindWork ?? '작품',
     };
     final isActive = switch (item) {
       EntityItem(:final entityId) =>

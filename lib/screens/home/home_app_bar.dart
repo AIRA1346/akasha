@@ -96,7 +96,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         value: _HomeAppBarMenuAction.syncSettings,
         child: _OverflowMenuRow(
           icon: Icons.settings_ethernet,
-          label: '사전 동기화 URL 설정',
+          label: l10n?.appBarSyncUrlSettings ?? '사전 동기화 URL 설정',
         ),
       ),
       const PopupMenuDivider(),
@@ -193,7 +193,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: onVaultSettings,
         ),
         PopupMenuButton<_HomeAppBarMenuAction>(
-          tooltip: '도구 더보기',
+          tooltip: l10n?.appBarMoreToolsTooltip ?? '도구 더보기',
           onSelected: _onMenuSelected,
           itemBuilder: (context) => _buildOverflowMenuItems(context),
           icon: const Icon(Icons.more_vert),

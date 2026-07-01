@@ -31,44 +31,46 @@ class _DashboardSidebarPrimaryNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: Column(
         children: [
           _SidebarNavTile(
             icon: Icons.home_outlined,
-            label: '홈',
+            label: l10n?.sidebarHome ?? '홈',
             isSelected: isHomeMode,
             onTap: () => onGoHome(),
           ),
           _SidebarNavTile(
             icon: Icons.explore_outlined,
-            label: '탐색',
+            label: l10n?.sidebarExplore ?? '탐색',
             isSelected: isExploreMode,
             onTap: () => onGoExplore(),
           ),
           _SidebarNavTile(
             icon: Icons.menu_book_outlined,
-            label: '라이브러리',
+            label: l10n?.sidebarLibrary ?? '라이브러리',
             isSelected: isPersonalLibraryMode,
             onTap: () => onGoLibrary(),
           ),
           _SidebarNavTile(
             icon: Icons.collections_bookmark_outlined,
-            label: '컬렉션',
+            label: l10n?.sidebarCollections ?? '컬렉션',
             isSelected: isCollectibleCollectionMode,
             onTap: () => onGoCollection(),
           ),
           if (FeatureFlags.showKnowledgeGraph)
             _SidebarNavTile(
               icon: Icons.hub_outlined,
-              label: '그래프',
+              label: l10n?.sidebarGraph ?? '그래프',
               isSelected: isKnowledgeGraphMode,
               onTap: () => onGoKnowledgeGraph(),
             ),
           _SidebarNavTile(
             icon: Icons.access_time_outlined,
-            label: '타임라인',
+            label: l10n?.sidebarTimeline ?? '타임라인',
             isSelected: isTimelineMode,
             onTap: onSelectTimeline,
           ),

@@ -19,12 +19,15 @@ class _DashboardSidebarCollectionsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         _DashboardSidebarSectionTitle(
-          '내 컬렉션',
-          trailingLabel: collectibleCollections.isNotEmpty ? '모두 보기' : null,
+          l10n?.sidebarMyCollections ?? '내 컬렉션',
+          trailingLabel:
+              collectibleCollections.isNotEmpty ? (l10n?.sidebarViewAll ?? '모두 보기') : null,
           onTrailing:
               collectibleCollections.isNotEmpty ? () => onGoCollection() : null,
         ),
@@ -33,24 +36,26 @@ class _DashboardSidebarCollectionsSection extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
             child: Text(
-              '컬렉션이 없습니다',
+              l10n?.sidebarNoCollections ?? '컬렉션이 없습니다',
               style: AkashaTypography.bodySecondary.copyWith(
                 color: AkashaColors.textCaption,
               ),
             ),
           )
         else
-          ...collectibleCollections.take(4).map(_buildCollectionRow),
+          ...collectibleCollections.take(4).map((col) => _buildCollectionRow(col, l10n)),
       ],
     );
   }
 
-  Widget _buildCollectionRow(CollectibleCollection col) {
+  Widget _buildCollectionRow(CollectibleCollection col, AppLocalizations? l10n) {
     final isActive =
         selectionMode == SidebarSelectionMode.collectibleCollection &&
             activeCollectibleCollectionId == col.id;
     final count = col.isCurated ? col.memberOrder.length : 0;
-    final subtitle = count > 0 ? '$count 작품' : '컬렉션';
+    final subtitle = count > 0
+        ? (l10n?.libraryWorkCount(count) ?? '$count 작품')
+        : (l10n?.sidebarCollections ?? '컬렉션');
     final coverItem = _coverItemForCollection(col);
 
     return _SidebarThumbnailTile(
