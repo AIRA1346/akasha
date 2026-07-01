@@ -22,13 +22,67 @@ part 'home_shell_scaffold_body_part.dart';
 part 'home_shell_scaffold_bottom_nav_part.dart';
 
 /// CallbackShortcuts · Scaffold · AppBar · HomeShellBody (Wave 1.4).
-class HomeShellScaffold extends StatelessWidget {
+class HomeShellScaffold extends StatefulWidget {
   const HomeShellScaffold({super.key, required this.controller});
 
   final HomeShellController controller;
 
   @override
+  State<HomeShellScaffold> createState() => _HomeShellScaffoldState();
+}
+
+class _HomeShellScaffoldState extends State<HomeShellScaffold> {
+  late final FocusNode _shortcutFocusNode = FocusNode(
+    debugLabel: 'HomeShellScaffold.shortcuts',
+  );
+  late bool _hadOpenWorkbenchDetail;
+
+  @override
+  void initState() {
+    super.initState();
+    _hadOpenWorkbenchDetail = widget.controller.workbench.hasOpenDetail;
+    widget.controller.workbench.addListener(_handleWorkbenchFocusTransition);
+  }
+
+  @override
+  void didUpdateWidget(HomeShellScaffold oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.controller == widget.controller) return;
+    oldWidget.controller.workbench.removeListener(
+      _handleWorkbenchFocusTransition,
+    );
+    _hadOpenWorkbenchDetail = widget.controller.workbench.hasOpenDetail;
+    widget.controller.workbench.addListener(_handleWorkbenchFocusTransition);
+  }
+
+  @override
+  void dispose() {
+    widget.controller.workbench.removeListener(_handleWorkbenchFocusTransition);
+    _shortcutFocusNode.dispose();
+    super.dispose();
+  }
+
+  void _handleWorkbenchFocusTransition() {
+    final hasOpenDetail = widget.controller.workbench.hasOpenDetail;
+    if (_hadOpenWorkbenchDetail && !hasOpenDetail) {
+      _requestShortcutFocusAfterFrame();
+    }
+    _hadOpenWorkbenchDetail = hasOpenDetail;
+  }
+
+  void _requestShortcutFocusAfterFrame() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || ModalRoute.of(context)?.isCurrent != true) return;
+      _shortcutFocusNode.requestFocus();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return _homeShellScaffoldRoot(context, controller);
+    return _homeShellScaffoldRoot(
+      context,
+      widget.controller,
+      _shortcutFocusNode,
+    );
   }
 }

@@ -34,6 +34,7 @@ void _homeShellHandleEscape(
 Widget _homeShellScaffoldRoot(
   BuildContext context,
   HomeShellController controller,
+  FocusNode shortcutFocusNode,
 ) {
   final filtered = _homeShellScaffoldFilteredCards(controller);
 
@@ -54,6 +55,7 @@ Widget _homeShellScaffoldRoot(
       },
     },
     child: Focus(
+      focusNode: shortcutFocusNode,
       autofocus: true,
       child: Theme(
         data: Theme.of(context).copyWith(
