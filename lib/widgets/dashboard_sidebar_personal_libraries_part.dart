@@ -10,6 +10,7 @@ class _DashboardSidebarPersonalLibrariesSection extends StatelessWidget {
     required this.onSelectPersonalLibrary,
     this.onEditPersonalLibrary,
     this.onDeletePersonalLibrary,
+    this.onDropWorkToLibrary,
   });
 
   final SidebarSelectionMode selectionMode;
@@ -20,6 +21,8 @@ class _DashboardSidebarPersonalLibrariesSection extends StatelessWidget {
   final void Function(String id) onSelectPersonalLibrary;
   final void Function(PersonalLibraryConfig library)? onEditPersonalLibrary;
   final void Function(String id)? onDeletePersonalLibrary;
+  final Future<void> Function(String libraryId, WorkDragPayload payload)?
+  onDropWorkToLibrary;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +69,7 @@ class _DashboardSidebarPersonalLibrariesSection extends StatelessWidget {
               : (l10n?.libraryCurated ?? '큐레이션 서재'))
         : (l10n?.libraryFiltered ?? '필터 서재');
 
-    return _SidebarThumbnailTile(
+    final tile = _SidebarThumbnailTile(
       item: _coverItemForLibrary(library),
       title: library.name,
       subtitle: subtitle,
@@ -74,6 +77,16 @@ class _DashboardSidebarPersonalLibrariesSection extends StatelessWidget {
       fallbackIcon: _iconForLibrary(library),
       onTap: () => onSelectPersonalLibrary(library.id),
       trailing: _libraryMenu(library, l10n),
+    );
+
+    if (!library.isCurated || onDropWorkToLibrary == null) return tile;
+
+    return PersonalLibraryDropTarget(
+      accentColor: DashboardSidebar.personalAccent,
+      onAccept: (payload) {
+        onDropWorkToLibrary?.call(library.id, payload);
+      },
+      child: tile,
     );
   }
 

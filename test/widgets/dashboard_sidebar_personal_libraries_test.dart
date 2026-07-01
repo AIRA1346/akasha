@@ -1,7 +1,11 @@
+import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/personal_library_config.dart';
+import 'package:akasha/models/work_drag_payload.dart';
 import 'package:akasha/screens/home/home_personal_library_controller.dart';
 import 'package:akasha/theme/akasha_theme.dart';
+import 'package:akasha/utils/helpers.dart';
 import 'package:akasha/widgets/dashboard_sidebar.dart';
+import 'package:akasha/widgets/personal_library_drop_target.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -124,5 +128,72 @@ void main() {
     await tester.tap(find.text('삭제'));
     await tester.pumpAndSettle();
     expect(deletedId, 'curated_demo');
+  });
+
+  testWidgets('DashboardSidebar curated library rows accept work drops', (
+    tester,
+  ) async {
+    String? droppedLibraryId;
+    String? droppedWorkId;
+
+    final libraries = [
+      PersonalLibraryConfig(
+        id: PersonalLibraryConfig.masterArchiveId,
+        name: 'master_archive',
+      ),
+      PersonalLibraryConfig(
+        id: 'curated_demo',
+        name: '러브코미디',
+        mode: PersonalLibraryMode.curated,
+      ),
+      PersonalLibraryConfig(id: 'filter_demo', name: '필터 서재'),
+    ];
+    final item = createItem(
+      workId: 'wk_drag_demo',
+      title: '드래그 테스트',
+      category: MediaCategory.manga,
+    );
+
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: AkashaTheme.dark(),
+        home: Scaffold(
+          body: DashboardSidebar(
+            isOpen: true,
+            isHomeMode: false,
+            isExploreMode: false,
+            isPersonalLibraryMode: true,
+            isCollectibleCollectionMode: false,
+            isTimelineMode: false,
+            selectionMode: SidebarSelectionMode.personalLibrary,
+            personalLibraries: libraries,
+            activePersonalLibraryId: PersonalLibraryConfig.masterArchiveId,
+            onGoHome: () async {},
+            onGoExplore: () async {},
+            onGoLibrary: () async {},
+            onGoCollection: () async {},
+            onGoKnowledgeGraph: () async {},
+            onSelectTimeline: () {},
+            onSelectCollectibleCollection: (_) {},
+            onAddPersonalLibrary: () {},
+            onSelectPersonalLibrary: (_) {},
+            onDropWorkToLibrary: (libraryId, payload) async {
+              droppedLibraryId = libraryId;
+              droppedWorkId = payload.workId;
+            },
+          ),
+        ),
+      ),
+    );
+
+    expect(find.byType(PersonalLibraryDropTarget), findsOneWidget);
+
+    final target = tester.widget<PersonalLibraryDropTarget>(
+      find.byType(PersonalLibraryDropTarget),
+    );
+    target.onAccept(WorkDragPayload(workId: item.workId, item: item));
+
+    expect(droppedLibraryId, 'curated_demo');
+    expect(droppedWorkId, 'wk_drag_demo');
   });
 }

@@ -6,12 +6,14 @@ import '../models/collectible_collection.dart';
 import '../models/collectible_kind.dart';
 import '../models/collectible_ref.dart';
 import '../models/personal_library_config.dart';
+import '../models/work_drag_payload.dart';
 import '../screens/home/home_personal_library_controller.dart';
 import '../screens/home/views/preview_record_view_model.dart';
 import '../theme/akasha_colors.dart';
 import '../theme/akasha_typography.dart';
 import '../generated/l10n/app_localizations.dart';
 import '../utils/app_l10n.dart';
+import 'personal_library_drop_target.dart';
 import 'poster_image.dart';
 
 part 'dashboard_sidebar_header_part.dart';
@@ -60,6 +62,8 @@ class DashboardSidebar extends StatelessWidget {
   final void Function(String id) onSelectPersonalLibrary;
   final void Function(PersonalLibraryConfig library)? onEditPersonalLibrary;
   final void Function(String id)? onDeletePersonalLibrary;
+  final Future<void> Function(String libraryId, WorkDragPayload payload)?
+  onDropWorkToLibrary;
   final VoidCallback? onToggleSidebar;
 
   const DashboardSidebar({
@@ -92,6 +96,7 @@ class DashboardSidebar extends StatelessWidget {
     required this.onSelectPersonalLibrary,
     this.onEditPersonalLibrary,
     this.onDeletePersonalLibrary,
+    this.onDropWorkToLibrary,
     this.onToggleSidebar,
   });
 
@@ -142,6 +147,7 @@ class DashboardSidebar extends StatelessWidget {
                           onSelectPersonalLibrary: onSelectPersonalLibrary,
                           onEditPersonalLibrary: onEditPersonalLibrary,
                           onDeletePersonalLibrary: onDeletePersonalLibrary,
+                          onDropWorkToLibrary: onDropWorkToLibrary,
                         ),
                         if (recentExploreItems.isNotEmpty) ...[
                           const SizedBox(height: 20),
