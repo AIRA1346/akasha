@@ -11,6 +11,7 @@ import '../../../screens/home/coordinators/home_shell_wiring.dart';
 import '../../../services/registry_discovery_candidate_service.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../utils/app_l10n.dart';
 import '../../../utils/entity_link_neighbors.dart';
 import '../../../widgets/entity_link_neighbors_sections.dart';
 import '../../../widgets/entity_preview_empty_connections.dart';
@@ -159,7 +160,8 @@ class _EntityDashboardPreviewPanelState
 
   @override
   Widget build(BuildContext context) {
-    final record = PreviewRecordViewModel.fromEntity(widget.entity);
+    final l10n = lookupAppL10n(context);
+    final record = PreviewRecordViewModel.fromEntity(widget.entity, l10n);
 
     return Container(
       width: 320,
@@ -199,13 +201,14 @@ class _EntityDashboardPreviewPanelState
                     FutureBuilder<List<RegistryDiscoveryCandidate>>(
                       future: _registryFuture,
                       builder: (context, registrySnap) {
+                        final bridgeHint = widget.entity.title.isNotEmpty
+                            ? (l10n?.relatedRegistryWorks(widget.entity.title) ?? '${widget.entity.title} 관련 사전 작품')
+                            : null;
                         return RegistryDiscoveryCandidatesSection(
                           candidates: registrySnap.data ?? const [],
                           loading: registrySnap.connectionState ==
                               ConnectionState.waiting,
-                          bridgeHint: widget.entity.title.isNotEmpty
-                              ? '${widget.entity.title} 관련 사전 작품'
-                              : null,
+                          bridgeHint: bridgeHint,
                           onPreviewRegistryWork: widget.onPreviewRegistryWork,
                         );
                       },
@@ -218,14 +221,14 @@ class _EntityDashboardPreviewPanelState
                         child: FilledButton.icon(
                           onPressed: widget.onGoKnowledgeGraph,
                           icon: const Icon(Icons.hub_outlined, size: 14),
-                          label: const Row(
+                          label: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                '그래프에서 보기',
+                                l10n?.previewViewInGraph ?? '그래프에서 보기',
                                 style: AkashaTypography.compactLabel,
                               ),
-                              Icon(Icons.chevron_right_rounded, size: 16),
+                              const Icon(Icons.chevron_right_rounded, size: 16),
                             ],
                           ),
                           style: FilledButton.styleFrom(

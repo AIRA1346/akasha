@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/archiving/record_link.dart';
+import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../utils/app_l10n.dart';
 import '../../../utils/journal_reflection_preview.dart';
 import '../../../utils/status_helpers.dart';
+import '../../../widgets/sanctum/sanctum_wiki_inline_text.dart';
 import '../../../widgets/star_rating.dart';
 
 /// Home 프리뷰 — Agent·사용자 Work journal 감상 카드.
@@ -16,14 +20,19 @@ class PreviewJournalReflectionCard extends StatelessWidget {
     required this.item,
     this.isVaultArchived = true,
     this.onOpenDetail,
+    this.userCatalog,
+    this.onWikiLinkTap,
   });
 
   final AkashaItem item;
   final bool isVaultArchived;
   final VoidCallback? onOpenDetail;
+  final UserCatalogPort? userCatalog;
+  final void Function(ParsedRecordLink link)? onWikiLinkTap;
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final memo = JournalReflectionPreview.formatMemo(item.review);
     final hasMemo = JournalReflectionPreview.hasMemo(item.review);
     final hasTags = JournalReflectionPreview.hasTags(item);
@@ -32,7 +41,7 @@ class PreviewJournalReflectionCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text('내 감상', style: AkashaTypography.sectionLabel),
+        Text(l10n?.previewMyNotes ?? '내 감상', style: AkashaTypography.sectionLabel),
         SizedBox(height: AkashaSpacing.sm + 2),
         DecoratedBox(
           decoration: BoxDecoration(
@@ -52,8 +61,10 @@ class PreviewJournalReflectionCard extends StatelessWidget {
                 ],
                 SizedBox(height: AkashaSpacing.sm),
                 if (hasMemo)
-                  Text(
-                    memo,
+                  SanctumWikiParagraphs(
+                    content: memo,
+                    userCatalog: userCatalog,
+                    onWikiLinkTap: onWikiLinkTap,
                     style: AkashaTypography.dialogBody.copyWith(
                       color: AkashaColors.textPrimary,
                       height: 1.45,
@@ -77,7 +88,7 @@ class PreviewJournalReflectionCard extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 8),
                       ),
                       child: Text(
-                        '기록하기',
+                        l10n?.actionRecord ?? '기록하기',
                         style: AkashaTypography.bodyEmphasis.copyWith(fontSize: 11),
                       ),
                     ),
@@ -99,6 +110,7 @@ class _MetaRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final hasRating = JournalReflectionPreview.hasRating(item);
     final hasStatus = JournalReflectionPreview.hasMeaningfulStatus(item);
 
@@ -109,7 +121,7 @@ class _MetaRow extends StatelessWidget {
           StarRating(rating: item.rating, size: 14)
         else
           Text(
-            '평가 없음',
+            l10n?.previewNoRating ?? '평가 없음',
             style: AkashaTypography.caption.copyWith(
               color: AkashaColors.textMuted,
             ),

@@ -72,5 +72,66 @@
   "filterTooltip": "Filter",
   "filterCloseTooltip": "Close filter",
   "appBarSyncUrlSettings": "Sync URL Settings",
-  "appBarMoreToolsTooltip": "More tools"
+  "appBarMoreToolsTooltip": "More tools",
+  "previewDetails": "Details",
+  "previewCoreInfo": "Core Info",
+  "previewMyNotes": "My Notes",
+  "previewMainCast": "Main Cast",
+  "previewRelatedConcepts": "Related Concepts",
+  "previewExploreNext": "Explore Next",
+  "previewViewInCatalog": "View in Catalog",
+  "previewAddPerson": "Add Person",
+  "previewAddConcept": "Add Concept",
+  "previewNoRating": "No Rating",
+  "previewInfoNone": "No info",
+  "previewGenre": "Genre",
+  "previewAuthor": "Author",
+  "previewStudio": "Studio",
+  "previewType": "Type",
+  "previewAliases": "Aliases",
+  "previewDomain": "Domain",
+  "previewTags": "Tags",
+  "previewRating": "Rating",
+  "previewViewInGraph": "View in Graph",
+  "catalogPrefix": "Catalog · {category}",
+  "@catalogPrefix": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "relatedRegistryWorks": "Catalog works related to {title}",
+  "@relatedRegistryWorks": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "creatorWorks": "{creator}'s works",
+  "@creatorWorks": {
+    "placeholders": {
+      "creator": {
+        "type": "String"
+      }
+    }
+  },
+  "bridgeRelated": "Related to {bridge}",
+  "@bridgeRelated": {
+    "placeholders": {
+      "bridge": {
+        "type": "String"
+      }
+    }
+  },
+  "entityTypeWork": "Work",
+  "entityTypePerson": "Person",
+  "entityTypeConcept": "Concept",
+  "entityTypeEvent": "Event",
+  "entityTypePlace": "Place",
+  "entityTypeOrganization": "Organization",
+  "entityTypeCustom": "Custom",
+  "entityTypePhenomenon": "Legacy",
+  "actionRecord": "Record"
 }

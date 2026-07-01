@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../config/feature_flags.dart';
 import '../../../core/archiving/entity_anchor.dart';
+import '../../../core/archiving/record_link.dart';
 import '../../../core/ports/record_link_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/akasha_item.dart';
@@ -10,8 +11,10 @@ import '../../../screens/home/coordinators/home_shell_wiring.dart';
 import '../../../services/link_candidate_service.dart';
 import '../../../services/registry_discovery_candidate_service.dart';
 import '../../../services/works_registry.dart';
+import '../../../generated/l10n/app_localizations.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../utils/app_l10n.dart';
 import '../../../utils/vault_work_presence.dart';
 import '../../../utils/work_link_neighbors.dart';
 import '../../../widgets/registry_discovery_candidates_section.dart';
@@ -172,15 +175,15 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
     );
   }
 
-  String? _registryBridgeHint(List<RegistryDiscoveryCandidate> candidates) {
+  String? _registryBridgeHint(List<RegistryDiscoveryCandidate> candidates, AppLocalizations? l10n) {
     if (candidates.isEmpty) return null;
     final creator = widget.item.creator.trim();
     if (creator.isNotEmpty &&
         candidates.any((c) => c.reason == RegistryDiscoveryReason.creator)) {
-      return '$creator 작품';
+      return l10n?.creatorWorks(creator) ?? '$creator 작품';
     }
     final bridge = candidates.first.bridgeLabel;
-    return bridge != null && bridge.isNotEmpty ? '$bridge 관련' : null;
+    return bridge != null && bridge.isNotEmpty ? (l10n?.bridgeRelated(bridge) ?? '$bridge 관련') : null;
   }
 
   Future<void> _handleArchive() async {
@@ -190,6 +193,21 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
       await widget.onArchiveRegistryWork!();
     } finally {
       if (mounted) setState(() => _archiving = false);
+    }
+  }
+
+  void _handleWikiLinkTap(ParsedRecordLink link) {
+    final id = link.unresolvedKey;
+    final entity = widget.userCatalog.getById(id);
+    if (entity != null) {
+      if (widget.onOpenEntity != null) {
+        widget.onOpenEntity!(entity);
+      }
+    } else {
+      final matched = widget.vaultItems.where((x) => x.workId == id);
+      if (matched.isNotEmpty && widget.onOpenWork != null) {
+        widget.onOpenWork!(matched.first);
+      }
     }
   }
 
@@ -273,10 +291,11 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final typeLabel = _isRegistryOnly
-        ? '사전 · ${widget.item.category.name}'
+        ? (l10n?.catalogPrefix(widget.item.category.name) ?? '사전 · ${widget.item.category.name}')
         : widget.item.category.name;
-    final record = PreviewRecordViewModel.fromWork(widget.item);
+    final record = PreviewRecordViewModel.fromWork(widget.item, l10n);
     return Container(
       width: 320,
       decoration: const BoxDecoration(
@@ -316,6 +335,8 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                         item: widget.item,
                         isVaultArchived: true,
                         onOpenDetail: widget.onOpenDetail,
+                        userCatalog: widget.userCatalog,
+                        onWikiLinkTap: _handleWikiLinkTap,
                       ),
                     ],
                     if (_isRegistryOnly) ...[
@@ -337,7 +358,7 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                           loading: registrySnap.connectionState ==
                               ConnectionState.waiting,
                           bridgeHint:
-                              _registryBridgeHint(registrySnap.data ?? const []),
+                              _registryBridgeHint(registrySnap.data ?? const [], l10n),
                           onPreviewRegistryWork: widget.onPreviewRegistryWork,
                         );
                       },
@@ -350,14 +371,14 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                         child: FilledButton.icon(
                           onPressed: widget.onGoKnowledgeGraph,
                           icon: const Icon(Icons.hub_outlined, size: 14),
-                          label: const Row(
+                          label: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                '그래프에서 보기',
+                                l10n?.previewViewInGraph ?? '그래프에서 보기',
                                 style: AkashaTypography.compactLabel,
                               ),
-                              Icon(Icons.chevron_right_rounded, size: 16),
+                              const Icon(Icons.chevron_right_rounded, size: 16),
                             ],
                           ),
                           style: FilledButton.styleFrom(

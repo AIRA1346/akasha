@@ -4,6 +4,7 @@ import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../utils/app_l10n.dart';
 import '../../../widgets/poster_image.dart';
 import 'preview_record_view_model.dart';
 
@@ -67,6 +68,8 @@ class PreviewRecordActionBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return Row(
       children: [
         if (canGoBack && onBack != null) ...[
@@ -95,9 +98,9 @@ class PreviewRecordActionBar extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('상세 정보', style: AkashaTypography.buttonLabel),
+                Text(l10n?.previewDetails ?? '상세 정보', style: AkashaTypography.buttonLabel),
                 const SizedBox(width: 2),
-                Icon(Icons.chevron_right_rounded, size: 18),
+                const Icon(Icons.chevron_right_rounded, size: 18),
               ],
             ),
           ),
@@ -114,10 +117,12 @@ class PreviewRecordCoreInfoSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text('핵심 정보', style: AkashaTypography.sectionLabel),
+        Text(l10n?.previewCoreInfo ?? '핵심 정보', style: AkashaTypography.sectionLabel),
         SizedBox(height: AkashaSpacing.sm + 2),
         Container(
           padding: const EdgeInsets.symmetric(
