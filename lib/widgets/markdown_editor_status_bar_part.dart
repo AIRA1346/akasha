@@ -19,6 +19,8 @@ class _MarkdownEditorStatusBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 2),
       child: Row(
@@ -38,12 +40,12 @@ class _MarkdownEditorStatusBar extends StatelessWidget {
           ),
           if (isSaving)
             Text(
-              '저장 중…',
+              l10n?.statusSaving ?? '저장 중…',
               style: AkashaTypography.editorSaving,
             )
           else if (!isDirty && lastSavedAt != null)
             Text(
-              '저장됨 ${_formatTime(lastSavedAt!)}',
+              l10n?.statusSavedText(_formatTime(lastSavedAt!)) ?? '저장됨 ${_formatTime(lastSavedAt!)}',
               style: AkashaTypography.caption,
             ),
           if (hint != null && !isSaving) ...[
@@ -55,7 +57,7 @@ class _MarkdownEditorStatusBar extends StatelessWidget {
           ],
           if (isDirty && !isSaving)
             Text(
-              '● 미저장',
+              l10n?.statusUnsaved ?? '● 미저장',
               style: AkashaTypography.editorDirty,
             ),
         ],

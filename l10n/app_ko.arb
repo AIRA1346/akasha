@@ -135,5 +135,12 @@
   "draftRecoveryAvailable": "임시 저장본이 있습니다.",
   "journalDeleted": "「{title}」 journal을 삭제했습니다.",
   "journalSaveBeforeHtml": "HTML보내기 전에 journal을 저장해 주세요.",
-  "vaultFileDeleted": "\"{title}\" md 파일을 삭제했습니다."
+  "vaultFileDeleted": "\"{title}\" md 파일을 삭제했습니다.",
+  "statusSaving": "저장 중…",
+  "statusUnsaved": "● 미저장",
+  "statusSavedText": "저장됨 {time}",
+  "statusDirtyHint": "변경됨 · 자동 저장은 편집 화면에 유지 · 탐험 복귀는 「{saveLabel}」",
+  "statusSavedHint": "저장됨 {time} · 자동 저장 · 탐험 복귀는 「{saveLabel}」",
+  "statusReturnHint": "「{saveLabel}」하면 탐험 화면(Preview)으로 돌아갑니다",
+  "actionSaveMd": "md 저장"
 }

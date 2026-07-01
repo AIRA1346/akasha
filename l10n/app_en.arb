@@ -274,5 +274,43 @@
         "type": "String"
       }
     }
-  }
+  },
+  "statusSaving": "Saving...",
+  "statusUnsaved": "● Unsaved",
+  "statusSavedText": "Saved {time}",
+  "@statusSavedText": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "statusDirtyHint": "Modified · Auto-saved locally · Use '{saveLabel}' to reflect on dashboard",
+  "@statusDirtyHint": {
+    "placeholders": {
+      "saveLabel": {
+        "type": "String"
+      }
+    }
+  },
+  "statusSavedHint": "Saved {time} · Auto-saved · Use '{saveLabel}' to reflect on dashboard",
+  "@statusSavedHint": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      },
+      "saveLabel": {
+        "type": "String"
+      }
+    }
+  },
+  "statusReturnHint": "Use '{saveLabel}' to return to dashboard preview",
+  "@statusReturnHint": {
+    "placeholders": {
+      "saveLabel": {
+        "type": "String"
+      }
+    }
+  },
+  "actionSaveMd": "Save MD"
 }

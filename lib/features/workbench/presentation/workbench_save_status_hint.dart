@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../utils/app_l10n.dart';
 
 /// Autosave vs 명시 저장 차이 안내 (R4-C P2 — 정책 변경 없음).
 class WorkbenchSaveStatusHint extends StatelessWidget {
@@ -23,13 +24,19 @@ class WorkbenchSaveStatusHint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+    final resolvedSaveLabel = explicitSaveLabel == 'md 저장'
+        ? (l10n?.actionSaveMd ?? 'md 저장')
+        : explicitSaveLabel;
+
     if (isSaving) {
-      return _line('저장 중…', AkashaColors.statusSaving);
+      return _line(l10n?.statusSaving ?? '저장 중…', AkashaColors.statusSaving);
     }
 
     if (isDirty) {
       return _line(
-        '변경됨 · 자동 저장은 편집 화면에 유지 · 탐험 복귀는 「$explicitSaveLabel」',
+        l10n?.statusDirtyHint(resolvedSaveLabel) ??
+            '변경됨 · 자동 저장은 편집 화면에 유지 · 탐험 복귀는 「$resolvedSaveLabel」',
         AkashaColors.statusDirty,
       );
     }
@@ -39,13 +46,15 @@ class WorkbenchSaveStatusHint extends StatelessWidget {
       final hh = t.hour.toString().padLeft(2, '0');
       final mm = t.minute.toString().padLeft(2, '0');
       return _line(
-        '저장됨 $hh:$mm · 자동 저장 · 탐험 복귀는 「$explicitSaveLabel」',
+        l10n?.statusSavedHint('$hh:$mm', resolvedSaveLabel) ??
+            '저장됨 $hh:$mm · 자동 저장 · 탐험 복귀는 「$resolvedSaveLabel」',
         AkashaColors.statusSaved,
       );
     }
 
     return _line(
-      '「$explicitSaveLabel」하면 탐험 화면(Preview)으로 돌아갑니다',
+      l10n?.statusReturnHint(resolvedSaveLabel) ??
+          '「$resolvedSaveLabel」하면 탐험 화면(Preview)으로 돌아갑니다',
       AkashaColors.textMuted,
     );
   }
