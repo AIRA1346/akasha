@@ -3,11 +3,11 @@ part of 'home_shell_scaffold.dart';
 Widget _homeShellScaffoldBottomNavigationBar(
   BuildContext context,
   HomeShellController controller,
+  AkashaPalette palette,
 ) {
   final isHome = controller.isHomeDashboardMode;
   final isExplore = controller.isExploreModeActive;
   final l10n = lookupAppL10n(context);
-  final palette = context.akashaPalette;
 
   return DecoratedBox(
     decoration: BoxDecoration(

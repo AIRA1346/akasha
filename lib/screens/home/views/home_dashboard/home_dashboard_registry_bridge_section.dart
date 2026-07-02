@@ -9,6 +9,7 @@ import '../../../../widgets/poster_image.dart';
 import '../../../../widgets/registry_discovery_candidates_section.dart';
 import 'home_dashboard_styles.dart';
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_palette.dart';
 import '../../../../theme/akasha_typography.dart';
 
 /// Home — Vault 작품에서 Registry 사전 작품으로 이어지는 브리지 (R11 P1).
@@ -61,12 +62,12 @@ class _HomeDashboardRegistryBridgeSectionState
 
       final candidates =
           await RegistryDiscoveryCandidateService.candidatesForVaultWork(
-        work: work,
-        vaultItems: widget.vaultItems,
-        userCatalog: widget.userCatalog,
-        linkIndex: widget.linkIndex,
-        limit: 3,
-      );
+            work: work,
+            vaultItems: widget.vaultItems,
+            userCatalog: widget.userCatalog,
+            linkIndex: widget.linkIndex,
+            limit: 3,
+          );
       if (candidates.isEmpty) continue;
 
       final bridgeLabel = work.creator.trim().isNotEmpty
@@ -84,6 +85,7 @@ class _HomeDashboardRegistryBridgeSectionState
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return FutureBuilder<_BridgeCard?>(
       future: _future,
       builder: (context, snapshot) {
@@ -100,10 +102,9 @@ class _HomeDashboardRegistryBridgeSectionState
             const SizedBox(height: 12),
             Container(
               padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: AkashaColors.dashboardRegistryBridge,
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: AkashaColors.borderSubtle(0.06)),
+              decoration: palette.surfaceCard(
+                radius: 10,
+                borderColor: palette.borderSubtle(0.28),
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,

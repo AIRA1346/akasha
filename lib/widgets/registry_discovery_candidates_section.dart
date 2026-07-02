@@ -77,9 +77,14 @@ class RegistryDiscoveryCandidatesSection extends StatelessWidget {
               for (final candidate in candidates)
                 ActionChip(
                   visualDensity: VisualDensity.compact,
+                  backgroundColor: palette.hoverSurface,
+                  side: BorderSide(color: palette.borderSubtle(0.28)),
                   label: Text(
                     candidate.work.displayTitle(),
-                    style: TextStyle(fontSize: compact ? 9 : 10),
+                    style: TextStyle(
+                      fontSize: compact ? 9 : 10,
+                      color: AkashaColors.textPrimary,
+                    ),
                   ),
                   avatar: Icon(
                     _iconFor(candidate.reason),

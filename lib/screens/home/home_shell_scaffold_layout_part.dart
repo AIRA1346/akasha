@@ -72,6 +72,7 @@ Widget _homeShellScaffoldRoot(
           bottomNavigationBar: _homeShellScaffoldBottomNavigationBar(
             context,
             controller,
+            palette,
           ),
         ),
       ),
