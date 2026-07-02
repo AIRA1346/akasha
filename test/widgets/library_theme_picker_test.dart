@@ -35,5 +35,7 @@ void main() {
 
     expect(find.text('앱 테마'), findsOneWidget);
     expect(find.text('서재 테마'), findsNothing);
+    expect(find.text('현재 제공되는 앱 테마는 모두 무료입니다.'), findsOneWidget);
+    expect(find.text('Steam에서 구매'), findsNothing);
   });
 }

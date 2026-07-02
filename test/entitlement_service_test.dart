@@ -18,17 +18,14 @@ void main() {
       expect(svc.canUseTheme(LibraryTheme.midnight), isTrue);
     });
 
-    test('IAP themes locked until entitlement granted', () async {
+    test('bundled themes are usable without entitlement', () async {
       final svc = EntitlementService.instance;
       await svc.load();
-      expect(svc.canUseTheme(LibraryTheme.sakura), isFalse);
-
-      await svc.grantEntitlement(EntitlementService.libraryThemePackId);
       expect(svc.canUseTheme(LibraryTheme.sakura), isTrue);
       expect(svc.canUseTheme(LibraryTheme.amethyst), isTrue);
     });
 
-    test('purchase stub returns false before Steam integration', () async {
+    test('purchase stub remains dormant before Steam integration', () async {
       final svc = EntitlementService.instance;
       await svc.load();
       expect(

@@ -31,7 +31,7 @@ AKASHA v1의 제품 핵심은 **글로벌 catalog가 아니라 Personal Sanctum 
 | catalog 대량 변경 · registry · akasha-db | ❌ | optional automation |
 | Entity 파일 rename · 경로 일괄 이동 | ❌ | R2-C path guard 연동 |
 | Collection / Library **앱 설정** 직접 쓰기 | ❌ | 전용 API 또는 vault-side manifest |
-| M3 Steam 정식 출시 | — | **사용자 지시 전 보류** |
+| Steam 무료 출시 | — | 앱 내 구매/Agent operation layer와 분리 |
 
 ---
 
@@ -256,7 +256,7 @@ Agent 저장은 **앱 native save**와 동일 형식을 따른다.
 | conflict | bak · diff · 사용자 확인 | merge UI · lock |
 | catalog / akasha-db | 읽기만 · optional search | scale track · automation |
 | Discovery / Wikidata | 앱 기능 유지 · **메시지 비핵심** | spine 확장 |
-| M3 Steam | **보류** | 사용자 지시 시 |
+| Steam release | 무료 출시 진행 | Agent operation layer는 post-launch |
 
 ---
 

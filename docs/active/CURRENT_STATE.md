@@ -120,7 +120,7 @@
 | **Phase 2** | 카탈로그 CI·10k scale | **완료** — post-v1 scale track |
 | **Phase 6.2** | 워크벤치 상세 통합 (Workbench Parity) | **완료 (100%)** |
 | **Phase 6.3** | incoming/sameDay·connections coordinator | **완료 (100%)** |
-| **M3** | Steam Release | **보류** (사용자 지시 전) |
+| **M3** | Steam 무료 출시 | **진행 중** — no-IAP BuildID **24015480** 업로드 완료, Set Live/review 대기 |
 | **Phase 3** | Entity 타입 다각화 (Work 이외) | **미착수** |
 | **Phase 4** | 타임라인 아카이브 | **미착수** |
 | **Phase 5** | 엔티티 연결성 (Connection) | **미착수** |

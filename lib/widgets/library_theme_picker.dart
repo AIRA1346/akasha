@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../models/library_theme.dart';
-import '../services/entitlement_service.dart';
 import '../services/library_theme_preferences.dart';
 import '../theme/akasha_colors.dart';
 
-/// 앱 테마 선택 바텀시트 + IAP 안내.
+/// 앱 테마 선택 바텀시트.
 Future<LibraryTheme?> showLibraryThemePicker(
   BuildContext context, {
   required LibraryTheme current,
 }) async {
-  await EntitlementService.instance.load();
-  if (!context.mounted) return null;
-
-  final entitlements = EntitlementService.instance;
-
   return showModalBottomSheet<LibraryTheme>(
     context: context,
     backgroundColor: const Color(0xFF1E1E2E),
@@ -32,18 +26,17 @@ Future<LibraryTheme?> showLibraryThemePicker(
               ),
               const SizedBox(height: 4),
               Text(
-                '기본 테마는 무료 · 프리미엄 테마는 Steam IAP',
+                '현재 제공되는 앱 테마는 모두 무료입니다.',
                 style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
               ),
               const SizedBox(height: 12),
               ...LibraryTheme.all.map((theme) {
-                final locked = !entitlements.canUseTheme(theme);
                 final selected = current.id == theme.id;
                 return ListTile(
                   leading: CircleAvatar(
                     backgroundColor: theme.backgroundColor,
                     child: Icon(
-                      locked ? Icons.lock_outline : Icons.palette_outlined,
+                      Icons.palette_outlined,
                       color: theme.accentColor,
                       size: 18,
                     ),
@@ -53,13 +46,6 @@ Future<LibraryTheme?> showLibraryThemePicker(
                       ? Icon(Icons.check, color: theme.accentColor)
                       : null,
                   onTap: () async {
-                    if (locked) {
-                      Navigator.pop(ctx);
-                      if (context.mounted) {
-                        await _promptIapPurchase(context, theme);
-                      }
-                      return;
-                    }
                     await LibraryThemePreferences.save(theme);
                     if (ctx.mounted) Navigator.pop(ctx, theme);
                   },
@@ -70,44 +56,5 @@ Future<LibraryTheme?> showLibraryThemePicker(
         ),
       );
     },
-  );
-}
-
-Future<void> _promptIapPurchase(BuildContext context, LibraryTheme theme) async {
-  final bought = await showDialog<bool>(
-    context: context,
-    builder: (ctx) => AlertDialog(
-      title: const Text('프리미엄 앱 테마'),
-      content: Text(
-        '「${theme.name}」 테마는 앱 꾸미기 팩(IAP)에 포함됩니다.\n'
-        'Steam에서 인앱 구매로 해제됩니다.',
-      ),
-      actions: [
-        TextButton(
-          onPressed: () => Navigator.pop(ctx, false),
-          child: const Text('닫기'),
-        ),
-        FilledButton(
-          onPressed: () => Navigator.pop(ctx, true),
-          child: const Text('Steam에서 구매'),
-        ),
-      ],
-    ),
-  );
-
-  if (bought != true || !context.mounted) return;
-
-  final success = await EntitlementService.instance
-      .purchaseCosmetic(EntitlementService.libraryThemePackId);
-  if (!context.mounted) return;
-
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(
-      content: Text(
-        success
-            ? '구매가 완료되었습니다.'
-            : 'Steam IAP 연동 전입니다. 출시 빌드에서 활성화됩니다.',
-      ),
-    ),
   );
 }

@@ -408,7 +408,7 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 ### Phase E — Steam v1 출시
 
 - [ ] akasha-db push · dogfood 재검증  
-- [ ] Steamworks · 스토어 · IAP · 출시  
+- [ ] Steamworks · 스토어 · 무료 출시 · IAP post-launch 보류
 
 ### Phase F — Registry Pipeline (출시 후)
 

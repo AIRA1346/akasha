@@ -1,7 +1,7 @@
 # AKASHA Roadmap (로드맵)
 
 > **지위:** 프로젝트 개발 로드맵 SSOT (5대 정체성 카테고리 기준)
-> **갱신:** 2026-06-30 — **Steam v1 = Personal Sanctum Archive**
+> **갱신:** 2026-07-02 — **Steam v1 = Free Personal Sanctum Archive**
 > **최상위 지침:** [PROJECT_CONSTITUTION.md](PROJECT_CONSTITUTION.md) · [VISION.md](VISION.md)
 
 ---
@@ -18,7 +18,7 @@
 | — | B. Discovery | **optional** — starter catalog 검색 유지 |
 | — | E. Scale | **post-v1** — akasha-db 확장·CDN 트랙 |
 
-**M3 Steam 정식 출시:** 사용자 지시 전 **보류**. dogfood는 **사용자 직접**.
+**Steam v1 무료 출시:** 사용자 지시에 따라 진행. dogfood는 **사용자 직접 완료**. 유료 테마/IAP는 post-launch 보류.
 
 ---
 
@@ -35,9 +35,9 @@
 * **[x] 아카이브 자동화:** 아카이브 시 `.md` 파일 자동 생성 및 YAML front-matter 템플릿 적용
 * **[x] 마크다운 감상 기록:** 워크벤치 내 본문 Markdown 편집 및 저장 기능 완결
 * **[x] Sanctum C1~C4:** wiki 칩 · 출연 · 갤러리 · 완성도 · HTML보내기
-* **[x] AI 가져오기:** 클립보드 파싱 · YAML 자동 생성 · 프롬프트 템플릿
+* **[x] 클립보드 가져오기:** YAML/Markdown 파싱 · 수동 가져오기
 * **[x] (v1) Agent Vault Protocol v1 범위 문서:** [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) · 현장 [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)
-* **[ ] (v1) Agent Vault Protocol 구현·dogfood:** 대화 → vault operation · 충돌 · watch (§8 체크리스트)
+* **[ ] (post-launch) Agent Vault Protocol 구현·dogfood:** 대화 → vault operation · 충돌 · watch (§8 체크리스트)
 * **[ ] (v1.1+) 오늘의 회상 카드:** 리마인드 카드 (보류)
 * **[ ] (v1.1+) 타임라인 / 완성 캘린더:** 날짜 기준 시각화 (보류)
 
@@ -72,7 +72,7 @@
 
 * **[x] 나의 서재 기본 뷰:** 아카이브한 작품만 모아 보는 전용 홈 모드 구축
 * **[x] 대시보드-서재 역할 분리:** 카탈로그 탐색 공간(Dashboard)과 나의 기록 공간(Library) 정비
-* **[x] 나의 서재 테마 커스텀:** 배경색/테마 프리셋 피커 및 스토어 결제(IAP) 연동 스텁
+* **[x] 나의 서재 테마 커스텀:** 배경색/테마 프리셋 피커. v1 테마는 무료 제공, 결제 연동은 post-launch 보류
 * **[x] Cast Collection / Hero Collection:** 인물·속성별 큐레이션 컬렉션 연동 기능
 * **[ ] (v1.1+) 서재 진열 방식 커스텀:** 그리드 밀도 및 표시 항목 개인화 (보류)
 * **[ ] (장기) Mixed Library:** 서로 다른 매체의 기록을 하나의 컬렉션으로 통합 (보류)
@@ -85,7 +85,7 @@
 * **[x] v4 해시 샤딩:** manifest v4 · CDN — **optional catalog 인프라**
 * **[x] registry_builder · CI gates:** 품질 자동화 — post-v1 scale 관측
 * **[x] 10,048 works milestone:** 성과 보존 — v1 메시지에서 과장하지 않음
-* **[x] Steam 릴리즈 빌드 패키징:** M2 (installer · 스토어 · IAP 스텁)
+* **[x] Steam 릴리즈 빌드 패키징:** M2 (installer · 스토어 · 무료 출시)
 * **[ ] (post-v1) AI 자동 수집 파이프라인 (E1~E2):** 보류
 * **[ ] (post-v1) 50k+ CDN 및 R2 확장:** 보류
 * **[ ] (장기) Riverpod 마이그레이션:** 상태 관리 프레임워크 고도화 (보류)
@@ -97,7 +97,7 @@
 
 * **M1 (기능 동결) ✅** — 기본 체크리스트 완료 및 430작 카탈로그 배포 (2026 Q2)
 * **M-v4 (데이터 아키텍처 v4) ✅** — `wk_` 영구 ID, 해시 샤딩 v4 CDN 배포 완료 (2026-06-10)
-* **M2 (Steam 출시 준비) ✅** — depot, 스토어 페이지, 테마 결제 스텁 완료 (2026-06-13)
+* **M2 (Steam 출시 준비) ✅** — depot, 스토어 페이지, 무료 출시 기준 정리 (2026-06-13)
 * **Wave 1 (Home 리팩터) ✅** — 홈 화면 뷰어 리팩터링 및 코디네이터 분리 (2026-06-14)
 * **Phase 1 E2E ✅** — 발견/아카이브/기록/큐레이션 E2E 품질 검증 완료 (2026-06-14)
-* **M3 (Steam v1 정식 출시) ⏸️** — **개인 아카이브 중심** 재정렬 후에도 사용자 지시 전 **보류**
+* **M3 (Steam v1 무료 출시) 🔶** — **개인 아카이브 중심** 무료 출시 진행 중

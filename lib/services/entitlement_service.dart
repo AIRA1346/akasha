@@ -2,15 +2,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/library_theme.dart';
 
-/// IAP·제휴 권한 종류 — Steam 수수료 회피를 위해 결제 채널 분리
+/// Post-launch 권한 종류. Steam v1 무료 출시에서는 앱 내 구매를 노출하지 않는다.
 enum EntitlementKind {
-  /// Steam microtxn — 서재 테마·서포터 등 코스메틱만
+  /// 향후 Steam microtxn 후보 — 테마·서포터 등 코스메틱만.
   cosmetic,
-  /// 제휴사 웹결제·OAuth — 작품 구매·스트리밍 권한 (Steam 밖)
+  /// 향후 외부 콘텐츠 권한 후보.
   content,
 }
 
-/// 등록 상품 메타 (Steamworks / 제휴 SKU 공통)
+/// 등록 상품 메타. 현재는 post-launch 실험용 스텁으로만 유지한다.
 class CommerceProduct {
   final String id;
   final EntitlementKind kind;
@@ -23,7 +23,7 @@ class CommerceProduct {
   });
 }
 
-/// Steam IAP / 서재 꾸미기 권한 (v1 스텁 — 출시 전 실결제 배선)
+/// 유료 권한 스텁. v1 무료 출시에서는 테마 잠금이나 구매 UI에 연결하지 않는다.
 class EntitlementService {
   EntitlementService._();
   static final EntitlementService instance = EntitlementService._();
@@ -74,7 +74,7 @@ class EntitlementService {
     return owns(libraryThemePackId);
   }
 
-  /// Steam microtxn — cosmetic SKU만
+  /// Post-launch cosmetic purchase placeholder.
   Future<bool> purchaseCosmetic(String productId) async {
     await load();
     CommerceProduct? product;
@@ -87,7 +87,7 @@ class EntitlementService {
     if (product == null || product.kind != EntitlementKind.cosmetic) {
       return false;
     }
-    // TODO(steam): Steamworks IAP 콜백에서 grantCosmeticEntitlement 호출
+    // TODO(steam): 결제 기능을 실제 출시할 때 Steamworks 콜백에서 grant 호출.
     return false;
   }
 
@@ -101,7 +101,7 @@ class EntitlementService {
   Future<void> grantEntitlement(String productId) =>
       grantCosmeticEntitlement(productId);
 
-  /// 제휴사 웹결제·OAuth 콜백 — Steam과 분리 저장
+  /// Post-launch external content entitlement placeholder.
   Future<void> grantContentEntitlement(String entitlementKey) async {
     await load();
     _contentOwned.add(entitlementKey);
@@ -109,7 +109,7 @@ class EntitlementService {
     await prefs.setStringList(_contentPrefsKey, _contentOwned.toList());
   }
 
-  /// 개발·QA용 — IAP 없이 테마 팩 잠금 해제
+  /// 개발·QA용 legacy helper.
   Future<void> devUnlockLibraryThemes() async {
     await grantEntitlement(libraryThemePackId);
   }

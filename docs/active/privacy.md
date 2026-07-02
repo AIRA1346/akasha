@@ -47,7 +47,7 @@ Steam may collect platform data per [Valve's privacy policy](https://store.steam
 
 ## In-app purchases
 
-AKASHA's Early Access store copy does not rely on paid IAP. If cosmetic/supporter IAP is enabled later, purchases will be processed by **Steam**. Rune Atelier does not receive your payment card details.
+AKASHA v1 launches as a free app and does not rely on paid IAP. If cosmetic/supporter purchases are enabled later, purchases will be processed by **Steam**. Rune Atelier does not receive your payment card details.
 
 ---
 

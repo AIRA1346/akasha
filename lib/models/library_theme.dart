@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// 나의 서재 비주얼 테마 (기본 무료 + IAP 팩)
+/// 앱 비주얼 테마. Steam v1 무료 출시에서는 모든 기본 테마를 무료로 제공한다.
 class LibraryTheme {
   final String id;
   final String name;
@@ -31,18 +31,16 @@ class LibraryTheme {
 
   static const LibraryTheme sakura = LibraryTheme(
     id: 'sakura',
-    name: 'Sakura (IAP)',
+    name: 'Sakura',
     backgroundColor: Color(0xFF2A1A22),
     accentColor: Color(0xFFF48FB1),
-    requiresIap: true,
   );
 
   static const LibraryTheme amethyst = LibraryTheme(
     id: 'amethyst',
-    name: 'Amethyst (IAP)',
+    name: 'Amethyst',
     backgroundColor: Color(0xFF1A1A1A),
     accentColor: Color(0xFFB39DDB),
-    requiresIap: true,
   );
 
   static const List<LibraryTheme> all = [classic, midnight, sakura, amethyst];

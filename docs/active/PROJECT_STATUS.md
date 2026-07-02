@@ -1,10 +1,10 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-07-02 (@10048 · **Steam Early Access RC 정리**)
-> **Git:** current tip은 `git log -1` 기준 · EA code baseline **`089c198d`** · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
-> **현재 실행:** **Steam Early Access 준비** — [STEAM_EARLY_ACCESS.md](STEAM_EARLY_ACCESS.md) · Agent/player implementation layer **보류**
+> **갱신:** 2026-07-02 (@10048 · **Steam 무료 출시 / no-IAP build 정리**)
+> **Git:** current tip은 `git log -1` 기준 · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
+> **현재 실행:** **Steam 무료 출시 준비** — [STEAM_RELEASE.md](STEAM_RELEASE.md) · IAP/Agent/player implementation layer **post-launch**
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
-> **출시:** [STEAM_EARLY_ACCESS.md](STEAM_EARLY_ACCESS.md)
+> **출시:** [STEAM_RELEASE.md](STEAM_RELEASE.md)
 > **비전:** [VISION.md](VISION.md) · **구현:** [CURRENT_STATE.md](CURRENT_STATE.md)
  
 ---
@@ -26,8 +26,8 @@
 | **Sanctum** | C1~C4 ✅ · Vault agent 가이드 ✅ |
 | **코드 건강** | Phase 0~7 ✅ · Foundation P2 분해 ✅ |
 | **Registry (akasha-db)** | **10,048 works** · **이중 추적 감사 중** — [AKASHA_DB_OWNERSHIP_AUDIT.md](../draft/AKASHA_DB_OWNERSHIP_AUDIT.md) |
-| **다음** | release baseline push · Steamworks 업로드/리뷰 제출 · akasha-db 구조 A/B/C 결정 **보류** |
-| **Steam** | 자동 gate ✅ · 수동 dogfood ✅ · Early Access copy ✅ · SteamPipe upload/review 대기 |
+| **다음** | BuildID **24015480** default branch Set Live · Steamworks Build review 갱신 · akasha-db 구조 A/B/C 결정 **보류** |
+| **Steam** | 자동 gate ✅ · 수동 dogfood ✅ · 무료 출시 copy ✅ · no-IAP BuildID **24015480** 업로드 완료 |
 
 ---
 
@@ -53,7 +53,7 @@
 
 **akasha-db / registry:** 삭제하지 않음 — **optional catalog support** · starter catalog · **post-v1 scale track**.
 
-**M3 Steam 정식 출시:** 여전히 **사용자 지시 전 보류**. dogfood는 **사용자 직접** 수행.
+**Steam 출시:** Early Access가 아니라 **무료 일반 출시**로 진행. 앱 내 구매/유료 테마는 post-launch로 보류.
 
 ### 이전 운영 결정 (2026-06-10, 역사 보존)
 
@@ -87,9 +87,9 @@
 |--------|:----:|:-----------:|------|
 | **G-AUTO** | ✅ | ✅ | test **671** · analyze **0** · `dogfood_precheck -Build` PASS |
 | **G-VAULT** | ✅ | **✅** | 볼트 연동·아카이브·Sanctum 저장·기록 UI — 사용자 수동 dogfood 완료 |
-| **G-QA** | ✅ | ✅ | P0 수동 **12/12** (2026-06-13) · EA dogfood 사용자 확인 |
+| **G-QA** | ✅ | ✅ | P0 수동 **12/12** (2026-06-13) · 사용자 dogfood 확인 |
 | **G-STEAM** | 🔶 | ✅ | SteamPipe 스크립트/SDK 확인 · 실제 upload/review 대기 |
-| **G-COPY** | ✅ | ✅ | Privacy doc · [STEAM_EARLY_ACCESS.md](STEAM_EARLY_ACCESS.md) copy |
+| **G-COPY** | ✅ | ✅ | Privacy doc · [STEAM_RELEASE.md](STEAM_RELEASE.md) copy |
 | **G-CATALOG** | ✅ | — | 10048작 · recall 87/87 — **optional / post-v1 scale** |
 | **G-DISCOVERY** | ✅ | — | Wikidata spine — **v1 메시지·blocking 아님** |
 
@@ -107,7 +107,7 @@
 | **Foundation P2** | ✅ scaffold · dialogs · fusion | — |
 | **Catalog / akasha-db** | optional starter · CI 관측 | post-v1 |
 | **Discovery / Scale** | Wikidata · 10k+ 확장 | post-v1 |
-| **Steam Early Access** | **진행** (사용자 지시) | ✅ |
+| **Steam 무료 출시** | **진행** (사용자 지시) | ✅ |
 
 ---
 
@@ -142,9 +142,9 @@
 |---|------|:----:|
 | 1 | ~~내부 repo **backup branch push**~~ → **`backup/local-sync-20260630` @ `bef52e7`** ✅ | **완료** |
 | 2 | `main` release baseline push | P0 |
-| 3 | SteamPipe upload + Steamworks Store/Build review 제출 | P0 |
+| 3 | BuildID **24015480** default branch Set Live + Steamworks Build review 갱신 | P0 |
 | 4 | Store screenshots 촬영 (demo/owned/generated images only) | P0 |
-| 5 | Agent Vault Protocol v1 구현·dogfood | **post-EA** |
+| 5 | Agent Vault Protocol v1 구현·dogfood | **post-launch** |
 
 ---
 
@@ -166,7 +166,7 @@
 | **310** | `PreviewMemoBar` — post-v1 dormant UI cleanup 후보 (`showPreviewMemoBar` false · `내 감상` 카드와 역할 중복) | ⏸️ v1 비활성 유지 | [preview_memo_bar.dart](../../lib/screens/home/views/preview_memo_bar.dart) · dogfood §P2 |
 | **311** | Poster URL localizing — URL 입력 → vault `posters/` 저장 → YAML 상대경로 | ✅ | `6922f0a` |
 | **312** | Infinite Taste Archive ADR — AI/플레이어가 아닌 외부 도구 친화적 취향 아카이브 경계 | ✅ | [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) |
-| **313** | Steam Early Access RC — 자동 gate green, 수동 dogfood 완료, upload/review 대기 | 🔶 | [STEAM_EARLY_ACCESS.md](STEAM_EARLY_ACCESS.md) |
+| **313** | Steam 무료 출시 RC — 자동 gate green, 수동 dogfood 완료, no-IAP BuildID **24015480** 업로드 완료 · Set Live/review 대기 | 🔶 | [STEAM_RELEASE.md](STEAM_RELEASE.md) |
 | **314** | Derived record index — `.akasha/record_index.json`로 record 요약·tagIndex 작성 | ✅ | [record_summary_index_service.dart](../../lib/services/record_summary_index_service.dart) |
 | **315** | Vault trash safety slice — Work/Entity/Journal/Timeline 삭제를 `.trash/` 격리로 전환 | ✅ | [vault_trash_service.dart](../../lib/services/vault_trash_service.dart) |
 | **316** | Vault ZIP backup export — 볼트 전체를 표준 `.zip`으로 내보내기 | ✅ | [vault_backup_exporter.dart](../../lib/services/vault_backup_exporter.dart) |
@@ -210,5 +210,5 @@
 | 2026-07-01 | **Workbench recovery drafts** — `.akasha/recovery/` 임시 스냅샷 · Work/Entity 복구 Snackbar · analyze **0** · test **657** |
 | 2026-07-01 | **Vault trash UI** — Vault 설정에서 휴지통 목록·복구·영구 삭제 · analyze **0** · test **658** |
 | 2026-07-01 | **Desktop preferences slice** — `Esc` 앱 메뉴 · 한국어/English 전환 · 표시 배율 · 종료 버튼 · analyze **0** · test **664** · release build **PASS** |
-| 2026-07-02 | **Steam Early Access RC 정리** — 자동 gate **671/671** · analyze **0** · release build **PASS** · 수동 dogfood 사용자 완료 · [STEAM_EARLY_ACCESS.md](STEAM_EARLY_ACCESS.md) |
+| 2026-07-02 | **Steam 무료 출시 정리** — Early Access 미사용 · 앱 내 구매 post-launch · no-IAP 테마 UI 정리 · [STEAM_RELEASE.md](STEAM_RELEASE.md) |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |
