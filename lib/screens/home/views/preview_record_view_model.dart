@@ -28,12 +28,17 @@ class PreviewRecordViewModel {
   final String metaLine;
   final List<PreviewCoreInfoRow> coreInfoRows;
 
-  factory PreviewRecordViewModel.fromWork(AkashaItem item, [AppLocalizations? l10n]) {
-    final typeLabel = l10n != null ? entityTypeDisplayLabel(EntityAnchorType.work, l10n) : item.category.label;
+  factory PreviewRecordViewModel.fromWork(
+    AkashaItem item, [
+    AppLocalizations? l10n,
+  ]) {
+    final typeLabel = l10n != null
+        ? entityTypeDisplayLabel(EntityAnchorType.work, l10n)
+        : item.category.label;
     return PreviewRecordViewModel(
       typeLabel: typeLabel,
       posterItem: item,
-      heroAspectRatio: 16 / 9,
+      heroAspectRatio: 2 / 3,
       title: item.title,
       subtitle: _workAlternateTitle(item),
       metaLine: [
@@ -45,7 +50,10 @@ class PreviewRecordViewModel {
     );
   }
 
-  factory PreviewRecordViewModel.fromEntity(UserCatalogEntity entity, [AppLocalizations? l10n]) {
+  factory PreviewRecordViewModel.fromEntity(
+    UserCatalogEntity entity, [
+    AppLocalizations? l10n,
+  ]) {
     final posterItem = EntityItem(
       entityType: entity.anchorType,
       entityId: entity.entityId,
@@ -88,7 +96,10 @@ class PreviewRecordViewModel {
     return null;
   }
 
-  static List<PreviewCoreInfoRow> _workCoreInfo(AkashaItem item, [AppLocalizations? l10n]) {
+  static List<PreviewCoreInfoRow> _workCoreInfo(
+    AkashaItem item, [
+    AppLocalizations? l10n,
+  ]) {
     final genre = item.category.label;
     final registry = WorksRegistry.getWorkById(item.workId);
     var studio = l10n?.previewInfoNone ?? '정보 없음';
@@ -117,7 +128,9 @@ class PreviewRecordViewModel {
       PreviewCoreInfoRow(
         icon: Icons.auto_stories_outlined,
         label: l10n?.previewAuthor ?? '원작',
-        value: item.creator.isNotEmpty ? item.creator : (l10n?.previewInfoNone ?? '정보 없음'),
+        value: item.creator.isNotEmpty
+            ? item.creator
+            : (l10n?.previewInfoNone ?? '정보 없음'),
       ),
       PreviewCoreInfoRow(
         icon: Icons.business_outlined,
@@ -141,7 +154,10 @@ class PreviewRecordViewModel {
     return null;
   }
 
-  static List<PreviewCoreInfoRow> _entityCoreInfo(UserCatalogEntity entity, [AppLocalizations? l10n]) {
+  static List<PreviewCoreInfoRow> _entityCoreInfo(
+    UserCatalogEntity entity, [
+    AppLocalizations? l10n,
+  ]) {
     return [
       PreviewCoreInfoRow(
         icon: Icons.label_outline,
@@ -199,7 +215,10 @@ class PreviewCoreInfoRow {
                 Text(' / 5', style: AkashaTypography.caption),
               ],
             )
-          : Text(l10n?.previewNoRating ?? '평가 없음', style: AkashaTypography.bodySecondary),
+          : Text(
+              l10n?.previewNoRating ?? '평가 없음',
+              style: AkashaTypography.bodySecondary,
+            ),
     );
   }
 

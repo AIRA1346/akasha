@@ -23,6 +23,18 @@ void main() {
       expect(ratingRow.valueWidget, isNotNull);
     });
 
+    test('work hero uses a poster-shaped aspect ratio', () {
+      final item = createItem(
+        workId: 'wk_u_posterhero',
+        title: 'Poster Hero',
+        category: MediaCategory.manga,
+      );
+
+      final model = PreviewRecordViewModel.fromWork(item);
+
+      expect(model.heroAspectRatio, closeTo(2 / 3, 0.001));
+    });
+
     testWidgets('core info rating row shows / 5 not / 10', (tester) async {
       final row = PreviewCoreInfoRow.rating(4.5);
 
