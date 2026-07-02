@@ -37,7 +37,8 @@ AKASHA가 예쁘게 정리해서 보여준다.
 | `dogfood_precheck.ps1 -Build` | PASS |
 | Windows release build | PASS |
 | Manual dogfood | PASS, user-confirmed |
-| SteamPipe upload | Pending |
+| Store Presence | Coming Soon posted, user-confirmed |
+| SteamPipe upload | PASS, BuildID **24013902** |
 | Store page review | Pending |
 | Build review | Pending |
 
@@ -49,8 +50,8 @@ Known non-blockers for Early Access:
 
 Blocking before Steam review submission:
 
-- Push the release baseline to `origin/main`.
-- Use the copy in this document, not older M2/M3 store drafts.
+- Set BuildID **24013902** live on the Steam `default` branch and publish the SteamPipe change.
+- Submit the uploaded build with **Mark as ready for review** in Steamworks.
 - Capture store screenshots with demo/owned/generated images, not copyrighted anime/manga/game posters from user dogfood data.
 
 ---
@@ -217,6 +218,12 @@ Then:
 5. In Steamworks, submit Store Page review.
 6. Submit Build review.
 7. After Steam review approval and required Coming Soon time, use Steamworks release controls.
+
+### Upload Log
+
+| Date | BuildID | Result | Notes |
+|------|---------|--------|-------|
+| 2026-07-02 | **24013902** | Uploaded | SteamCMD cached login as `royal_herobrine`; set-live/review submission still requires Steamworks UI confirmation. |
 
 ---
 
