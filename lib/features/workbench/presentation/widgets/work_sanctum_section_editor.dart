@@ -130,6 +130,7 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
         .map((line) => line.trim().replaceFirst(RegExp(r'^>\s*'), ''))
         .where((line) => line.isNotEmpty)
         .toList();
+    final headings = MarkdownSlotHeadings.fromL10n(lookupAppL10n(context));
 
     final merged = MarkdownBodyMerger.mergeBody(
       bodyRaw: widget.bodyController.text,
@@ -138,6 +139,7 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
       synopsis: _synopsisCtrl.text,
       quotes: quotes,
       memo: _memoCtrl.text,
+      headings: headings,
     );
 
     if (merged == widget.bodyController.text) return;

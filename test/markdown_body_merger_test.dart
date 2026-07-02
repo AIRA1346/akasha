@@ -1,4 +1,5 @@
 import 'package:akasha/features/workbench/presentation/work_detail_draft_ops.dart';
+import 'package:akasha/generated/l10n/app_localizations_en.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/sanctum_cast_entry.dart';
 import 'package:akasha/models/sanctum_gallery_entry.dart';
@@ -91,6 +92,32 @@ void main() {
     expect(merged, contains('# 📝 메모'));
   });
 
+  test('appends missing slot sections with localized headings', () {
+    final merged = MarkdownBodyMerger.mergeBody(
+      bodyRaw: '',
+      cast: const [SanctumCastEntry(entityId: 'pe_u_a', title: 'Alice')],
+      gallery: const [SanctumGalleryEntry(imagePath: 'posters/a.jpg')],
+      synopsis: 'Localized synopsis',
+      quotes: const ['Localized quote'],
+      memo: 'Localized memo',
+      headings: MarkdownSlotHeadings.fromL10n(AppLocalizationsEn()),
+    );
+
+    expect(merged, contains('# 👥 Cast'));
+    expect(merged, contains('# 🖼 Gallery'));
+    expect(merged, contains('# 📋 Synopsis'));
+    expect(merged, contains('# 🎬 Moments & Quotes'));
+    expect(merged, contains('# 📝 Notes'));
+    expect(merged, isNot(contains(MarkdownBodyMerger.castHeading)));
+
+    final slots = MarkdownBodyMerger.parseSlots(merged);
+    expect(slots.cast.single.entityId, 'pe_u_a');
+    expect(slots.gallery.single.imagePath, 'posters/a.jpg');
+    expect(slots.synopsis, 'Localized synopsis');
+    expect(slots.quotes, ['Localized quote']);
+    expect(slots.memo, 'Localized memo');
+  });
+
   test('parseSlots and mergeBody preserve trailing blank lines in memo', () {
     const body = '# 📝 메모\n내용\n\n\n';
     final slots = MarkdownBodyMerger.parseSlots(body);
@@ -139,7 +166,10 @@ void main() {
     final body = serialized.substring(bodyStart).split('\n---').first;
 
     expect(body, '# 📝 메모\n내용');
-    expect(MarkdownParser.deserialize(serialized, '줄바꿈').bodyRaw, '# 📝 메모\n내용');
+    expect(
+      MarkdownParser.deserialize(serialized, '줄바꿈').bodyRaw,
+      '# 📝 메모\n내용',
+    );
   });
 
   group('MarkdownBodyMerger cast slot', () {
@@ -174,15 +204,8 @@ void main() {
       final merged = MarkdownBodyMerger.mergeBody(
         bodyRaw: bodyRaw,
         cast: const [
-          SanctumCastEntry(
-            entityId: 'pe_u_alice',
-            title: '앨리스',
-            role: '히로인',
-          ),
-          SanctumCastEntry(
-            entityId: 'pe_u_bob',
-            title: '밥',
-          ),
+          SanctumCastEntry(entityId: 'pe_u_alice', title: '앨리스', role: '히로인'),
+          SanctumCastEntry(entityId: 'pe_u_bob', title: '밥'),
         ],
         synopsis: '줄거리',
         quotes: const ['명대사'],
@@ -201,9 +224,7 @@ void main() {
     test('appends cast slot when missing', () {
       final merged = MarkdownBodyMerger.mergeBody(
         bodyRaw: '',
-        cast: const [
-          SanctumCastEntry(entityId: 'pe_u_x', title: '엑스'),
-        ],
+        cast: const [SanctumCastEntry(entityId: 'pe_u_x', title: '엑스')],
         synopsis: '',
         quotes: const [],
         memo: '',
@@ -237,10 +258,7 @@ void main() {
         bodyRaw: '',
         gallery: const [
           SanctumGalleryEntry(imagePath: 'posters/a.jpg'),
-          SanctumGalleryEntry(
-            imagePath: 'posters/b.jpg',
-            caption: '장면',
-          ),
+          SanctumGalleryEntry(imagePath: 'posters/b.jpg', caption: '장면'),
         ],
         synopsis: '',
         quotes: const [],

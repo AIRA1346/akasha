@@ -67,13 +67,17 @@ class MarkdownParser {
       ).toLazyWriteFields();
       for (final entry in entityFields.entries) {
         if (entry.key == 'entity_id') {
-          buffer.writeln('${entry.key}: "${entry.value.replaceAll('"', '\\"')}"');
+          buffer.writeln(
+            '${entry.key}: "${entry.value.replaceAll('"', '\\"')}"',
+          );
         } else {
           buffer.writeln('${entry.key}: ${entry.value}');
         }
       }
     }
-    buffer.writeln('title: "${item.title.replaceAll('"', '\\"')}"'); // YAML title (외부 편집기 호환)
+    buffer.writeln(
+      'title: "${item.title.replaceAll('"', '\\"')}"',
+    ); // YAML title (외부 편집기 호환)
     buffer.writeln('category: ${item.category.name}');
     buffer.writeln('domain: ${item.domain.name}');
     buffer.writeln('# poster: "https://..." 또는 "posters/파일명.jpg"');
@@ -83,26 +87,30 @@ class MarkdownParser {
       buffer.writeln('poster: ""');
     }
     buffer.writeln('rating: ${item.rating}');
-    
+
     // 작품 상태 및 나의 상태 저장 (Sanctum vault 호환성 극대화)
-    buffer.writeln('work_status: "${item.workStatusLabel}"');
-    buffer.writeln('status: "${item.myStatusLabel}"');
-    buffer.writeln('my_status: "${item.myStatusLabel}"');
+    final workStatus = _canonicalWorkStatus(item);
+    final myStatus = _canonicalMyStatus(item);
+    buffer.writeln('work_status: "$workStatus"');
+    buffer.writeln('status: "$myStatus"');
+    buffer.writeln('my_status: "$myStatus"');
     buffer.writeln('is_hall_of_fame: ${item.isHallOfFame}');
-    
+
     if (item.creator.isNotEmpty) {
       buffer.writeln('creator: "${item.creator.replaceAll('"', '\\"')}"');
     }
     if (item.releaseYear != null) {
       buffer.writeln('release_year: ${item.releaseYear}');
     }
-    
+
     if (item.tags.isNotEmpty) {
-      buffer.writeln('tags: [${item.tags.map((t) => '"${t.replaceAll('"', '\\"')}"').join(', ')}]');
+      buffer.writeln(
+        'tags: [${item.tags.map((t) => '"${t.replaceAll('"', '\\"')}"').join(', ')}]',
+      );
     } else {
       buffer.writeln('tags: []');
     }
-    
+
     buffer.writeln('added_at: "${item.addedAt.toIso8601String()}"');
     buffer.writeln('---');
     buffer.writeln();
@@ -123,11 +131,23 @@ class MarkdownParser {
   }
 
   /// 마크다운 파일 내용을 파싱하고 공통 사전을 융합(UI Fusion)하여 AkashaItem을 생성합니다.
+  static String _canonicalWorkStatus(AkashaItem item) {
+    if (item is ContentItem) return item.workStatus.name;
+    if (item is GameItem) return item.workStatus.name;
+    return item.workStatusLabel;
+  }
+
+  static String _canonicalMyStatus(AkashaItem item) {
+    if (item is ContentItem) return item.myStatus.name;
+    if (item is GameItem) return item.myStatus.name;
+    return item.myStatusLabel;
+  }
+
   static AkashaItem deserialize(String content, String fallbackTitle) {
     final lines = content.split('\n');
     int frontMatterStart = -1;
     int frontMatterEnd = -1;
-    
+
     // YAML Front-matter 영역 찾기
     for (int i = 0; i < lines.length; i++) {
       final line = lines[i].trim();
@@ -144,7 +164,9 @@ class MarkdownParser {
     Map<dynamic, dynamic> yamlMap = {};
     int bodyStartLine = 0;
     if (frontMatterStart != -1 && frontMatterEnd != -1) {
-      final yamlStr = lines.sublist(frontMatterStart + 1, frontMatterEnd).join('\n');
+      final yamlStr = lines
+          .sublist(frontMatterStart + 1, frontMatterEnd)
+          .join('\n');
       try {
         final parsed = loadYaml(yamlStr);
         if (parsed is Map) {
@@ -195,7 +217,9 @@ class MarkdownParser {
 
     String workId = WorksRegistry.resolveWorkId(entityMeta.resolvedWorkId);
     if (workId.isEmpty && yamlMap['work_id'] != null) {
-      workId = WorksRegistry.resolveWorkId(yamlMap['work_id']?.toString() ?? '');
+      workId = WorksRegistry.resolveWorkId(
+        yamlMap['work_id']?.toString() ?? '',
+      );
     }
 
     final title = yamlMap['title']?.toString() ?? fallbackTitle;
@@ -204,30 +228,40 @@ class MarkdownParser {
 
     final rating = double.tryParse(yamlMap['rating']?.toString() ?? '') ?? 0.0;
     final workStatusStr = yamlMap['work_status']?.toString();
-    var myStatusStr = yamlMap['my_status']?.toString() ?? yamlMap['status']?.toString();
-    
+    var myStatusStr =
+        yamlMap['my_status']?.toString() ?? yamlMap['status']?.toString();
+
     // 이전 버전 상태 또는 구버전 라벨 호환 처리
     if (myStatusStr == '아직 안 봄' || myStatusStr == '할 예정(백로그)') {
       myStatusStr = '볼 예정';
     }
-    
-    final isHallOfFame = yamlMap['is_hall_of_fame'] == true || yamlMap['is_hall_of_fame']?.toString() == 'true';
-    
+
+    final isHallOfFame =
+        yamlMap['is_hall_of_fame'] == true ||
+        yamlMap['is_hall_of_fame']?.toString() == 'true';
+
     List<String> tags = [];
     if (yamlMap['tags'] is List) {
       tags = (yamlMap['tags'] as List).map((e) => e.toString()).toList();
     } else if (yamlMap['tags'] is String) {
-      tags = (yamlMap['tags'] as String).split(',').map((e) => e.trim()).where((e) => e.isNotEmpty).toList();
+      tags = (yamlMap['tags'] as String)
+          .split(',')
+          .map((e) => e.trim())
+          .where((e) => e.isNotEmpty)
+          .toList();
     }
-    
+
     DateTime addedAt = DateTime.now();
     if (yamlMap['added_at'] != null) {
-      addedAt = DateTime.tryParse(yamlMap['added_at'].toString()) ?? DateTime.now();
+      addedAt =
+          DateTime.tryParse(yamlMap['added_at'].toString()) ?? DateTime.now();
     }
 
     // 마크다운 바디 — 원문 보존 + 슬롯 필드 추출
-    final bodyRaw =
-        lines.sublist(bodyStartLine).join('\n').replaceFirst(RegExp(r'^\n+'), '');
+    final bodyRaw = lines
+        .sublist(bodyStartLine)
+        .join('\n')
+        .replaceFirst(RegExp(r'^\n+'), '');
     final slots = MarkdownBodyMerger.parseSlots(bodyRaw);
     final quotes = slots.quotes;
     final userSynopsis = slots.synopsis;
@@ -245,7 +279,11 @@ class MarkdownParser {
     } else if (title.isNotEmpty) {
       // 제목이 완전히 일치하는 사전 항목이 있는지 탐색 (공백/대소문자 무시)
       final matchedWorks = WorksRegistry.search(title);
-      final exactMatch = matchedWorks.where((w) => w.title.replaceAll(' ', '').toLowerCase() == title.replaceAll(' ', '').toLowerCase());
+      final exactMatch = matchedWorks.where(
+        (w) =>
+            w.title.replaceAll(' ', '').toLowerCase() ==
+            title.replaceAll(' ', '').toLowerCase(),
+      );
       if (exactMatch.isNotEmpty) {
         registryWork = exactMatch.first;
         // 객체에도 workId를 바인딩하여 저장 시 반영되도록 함

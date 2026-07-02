@@ -1,6 +1,41 @@
 import '../models/sanctum_cast_entry.dart';
 import '../models/sanctum_gallery_entry.dart';
 
+class MarkdownSlotHeadings {
+  const MarkdownSlotHeadings({
+    required this.cast,
+    required this.gallery,
+    required this.synopsis,
+    required this.quotes,
+    required this.memo,
+  });
+
+  static const fallback = MarkdownSlotHeadings(
+    cast: MarkdownBodyMerger.castHeading,
+    gallery: MarkdownBodyMerger.galleryHeading,
+    synopsis: MarkdownBodyMerger.synopsisHeading,
+    quotes: MarkdownBodyMerger.quotesHeading,
+    memo: MarkdownBodyMerger.memoHeading,
+  );
+
+  factory MarkdownSlotHeadings.fromL10n(dynamic l10n) {
+    if (l10n == null) return fallback;
+    return MarkdownSlotHeadings(
+      cast: '# ${l10n.workbenchCastSectionTitle}',
+      gallery: '# ${l10n.workbenchGallerySectionTitle}',
+      synopsis: '# ${l10n.workbenchSynopsisSectionTitle}',
+      quotes: '# ${l10n.workbenchQuotesSectionTitle}',
+      memo: '# ${l10n.workbenchMemoSectionTitle}',
+    );
+  }
+
+  final String cast;
+  final String gallery;
+  final String synopsis;
+  final String quotes;
+  final String memo;
+}
+
 /// Sanctum vault 본문 — 슬롯 섹션 merge·round-trip
 class MarkdownBodyMerger {
   MarkdownBodyMerger._();
@@ -51,7 +86,9 @@ class MarkdownBodyMerger {
     required String synopsis,
     required List<String> quotes,
     required String memo,
+    MarkdownSlotHeadings? headings,
   }) {
+    final activeHeadings = headings ?? MarkdownSlotHeadings.fallback;
     final sections = _parseSections(bodyRaw);
     final foundSlots = <MarkdownSlotKind>{};
 
@@ -90,40 +127,50 @@ class MarkdownBodyMerger {
 
     final trailing = <_BodySection>[];
     if (!foundSlots.contains(MarkdownSlotKind.cast) && cast.isNotEmpty) {
-      trailing.add(_BodySection(
-        headingLine: castHeading,
-        content: SanctumCastFormat.formatBlock(cast),
-        slotKind: MarkdownSlotKind.cast,
-      ));
+      trailing.add(
+        _BodySection(
+          headingLine: activeHeadings.cast,
+          content: SanctumCastFormat.formatBlock(cast),
+          slotKind: MarkdownSlotKind.cast,
+        ),
+      );
     }
     if (!foundSlots.contains(MarkdownSlotKind.gallery) && gallery.isNotEmpty) {
-      trailing.add(_BodySection(
-        headingLine: galleryHeading,
-        content: SanctumGalleryFormat.formatBlock(gallery),
-        slotKind: MarkdownSlotKind.gallery,
-      ));
+      trailing.add(
+        _BodySection(
+          headingLine: activeHeadings.gallery,
+          content: SanctumGalleryFormat.formatBlock(gallery),
+          slotKind: MarkdownSlotKind.gallery,
+        ),
+      );
     }
     if (!foundSlots.contains(MarkdownSlotKind.synopsis) &&
         synopsis.trim().isNotEmpty) {
-      trailing.add(_BodySection(
-        headingLine: synopsisHeading,
-        content: synopsis.trim(),
-        slotKind: MarkdownSlotKind.synopsis,
-      ));
+      trailing.add(
+        _BodySection(
+          headingLine: activeHeadings.synopsis,
+          content: synopsis.trim(),
+          slotKind: MarkdownSlotKind.synopsis,
+        ),
+      );
     }
     if (!foundSlots.contains(MarkdownSlotKind.quotes) && quotes.isNotEmpty) {
-      trailing.add(_BodySection(
-        headingLine: quotesHeading,
-        content: _formatQuotes(quotes),
-        slotKind: MarkdownSlotKind.quotes,
-      ));
+      trailing.add(
+        _BodySection(
+          headingLine: activeHeadings.quotes,
+          content: _formatQuotes(quotes),
+          slotKind: MarkdownSlotKind.quotes,
+        ),
+      );
     }
     if (!foundSlots.contains(MarkdownSlotKind.memo) && memo.trim().isNotEmpty) {
-      trailing.add(_BodySection(
-        headingLine: memoHeading,
-        content: memo.trim(),
-        slotKind: MarkdownSlotKind.memo,
-      ));
+      trailing.add(
+        _BodySection(
+          headingLine: activeHeadings.memo,
+          content: memo.trim(),
+          slotKind: MarkdownSlotKind.memo,
+        ),
+      );
     }
 
     if (trailing.isNotEmpty) {
@@ -149,15 +196,16 @@ class MarkdownBodyMerger {
     required String synopsis,
     required List<String> quotes,
     required String memo,
-  }) =>
-      mergeBody(
-        bodyRaw: '',
-        cast: cast,
-        gallery: gallery,
-        synopsis: synopsis,
-        quotes: quotes,
-        memo: memo,
-      );
+    MarkdownSlotHeadings? headings,
+  }) => mergeBody(
+    bodyRaw: '',
+    cast: cast,
+    gallery: gallery,
+    synopsis: synopsis,
+    quotes: quotes,
+    memo: memo,
+    headings: headings,
+  );
 
   static String _normalizeSlotContent(String content) {
     if (content.isEmpty) return content;
@@ -210,11 +258,13 @@ class MarkdownBodyMerger {
     final contentLines = <String>[];
 
     void flush() {
-      sections.add(_BodySection(
-        headingLine: currentHeading,
-        content: contentLines.join('\n'),
-        slotKind: currentSlot,
-      ));
+      sections.add(
+        _BodySection(
+          headingLine: currentHeading,
+          content: contentLines.join('\n'),
+          slotKind: currentSlot,
+        ),
+      );
       contentLines.clear();
     }
 
@@ -249,9 +299,8 @@ class MarkdownBodyMerger {
     String synopsis,
     List<String> quotes,
     String memo,
-  }) parseSlots(
-    String bodyRaw,
-  ) {
+  })
+  parseSlots(String bodyRaw) {
     final sections = _parseSections(bodyRaw);
     final cast = <SanctumCastEntry>[];
     final gallery = <SanctumGalleryEntry>[];
