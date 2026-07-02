@@ -12,7 +12,7 @@ class LibraryTheme {
     required this.id,
     required this.name,
     required this.backgroundColor,
-    this.accentColor = Colors.tealAccent,
+    this.accentColor = const Color(0xFF6C63FF),
     this.requiresIap = false,
   });
 

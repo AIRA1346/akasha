@@ -9,7 +9,7 @@ import '../../../models/registry_work.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../screens/home/coordinators/home_shell_wiring.dart';
 import '../../../services/registry_discovery_candidate_service.dart';
-import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_typography.dart';
 import '../../../utils/app_l10n.dart';
 import '../../../utils/entity_link_neighbors.dart';
@@ -140,8 +140,9 @@ class _EntityDashboardPreviewPanelState
                 : () => widget.onConnectEntityType!(EntityAnchorType.place),
             onConnectOrganization: widget.onConnectEntityType == null
                 ? null
-                : () =>
-                    widget.onConnectEntityType!(EntityAnchorType.organization),
+                : () => widget.onConnectEntityType!(
+                    EntityAnchorType.organization,
+                  ),
             onOpenRecord: widget.onOpenDetail,
           );
         }
@@ -162,14 +163,13 @@ class _EntityDashboardPreviewPanelState
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
     final record = PreviewRecordViewModel.fromEntity(widget.entity, l10n);
+    final palette = context.akashaPalette;
 
     return Container(
       width: 320,
-      decoration: const BoxDecoration(
-        color: AkashaColors.sidebar,
-        border: Border(
-          left: BorderSide(color: AkashaColors.border, width: 1),
-        ),
+      decoration: BoxDecoration(
+        color: palette.previewRail,
+        border: Border(left: BorderSide(color: palette.borderSubtle(0.52))),
       ),
       child: Column(
         children: [
@@ -202,11 +202,15 @@ class _EntityDashboardPreviewPanelState
                       future: _registryFuture,
                       builder: (context, registrySnap) {
                         final bridgeHint = widget.entity.title.isNotEmpty
-                            ? (l10n?.relatedRegistryWorks(widget.entity.title) ?? '${widget.entity.title} 관련 사전 작품')
+                            ? (l10n?.relatedRegistryWorks(
+                                    widget.entity.title,
+                                  ) ??
+                                  '${widget.entity.title} 관련 사전 작품')
                             : null;
                         return RegistryDiscoveryCandidatesSection(
                           candidates: registrySnap.data ?? const [],
-                          loading: registrySnap.connectionState ==
+                          loading:
+                              registrySnap.connectionState ==
                               ConnectionState.waiting,
                           bridgeHint: bridgeHint,
                           onPreviewRegistryWork: widget.onPreviewRegistryWork,

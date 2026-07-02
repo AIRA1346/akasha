@@ -37,6 +37,12 @@ Widget _homeShellScaffoldRoot(
   FocusNode shortcutFocusNode,
 ) {
   final filtered = _homeShellScaffoldFilteredCards(controller);
+  final themedData = AkashaTheme.withAppTheme(
+    Theme.of(context),
+    controller.libraryTheme,
+  );
+  final palette =
+      themedData.extension<AkashaPalette>() ?? AkashaPalette.classic;
 
   return CallbackShortcuts(
     bindings: {
@@ -58,15 +64,9 @@ Widget _homeShellScaffoldRoot(
       focusNode: shortcutFocusNode,
       autofocus: true,
       child: Theme(
-        data: Theme.of(context).copyWith(
-          scaffoldBackgroundColor: controller.libraryTheme.backgroundColor,
-          colorScheme: Theme.of(context).colorScheme.copyWith(
-            primary: controller.libraryTheme.accentColor,
-            secondary: controller.libraryTheme.accentColor,
-          ),
-        ),
+        data: themedData,
         child: Scaffold(
-          backgroundColor: controller.libraryTheme.backgroundColor,
+          backgroundColor: palette.background,
           appBar: _homeShellScaffoldAppBar(context, controller),
           body: _homeShellScaffoldBody(context, controller, filtered),
           bottomNavigationBar: _homeShellScaffoldBottomNavigationBar(

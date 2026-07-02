@@ -34,7 +34,7 @@ AKASHA가 예쁘게 정리해서 보여준다.
 
 | Gate | Result |
 |------|--------|
-| `flutter test` | PASS, **671/671** |
+| `flutter test` | PASS, **672/672** |
 | `flutter analyze lib` | PASS, **0 issue** |
 | `dogfood_precheck.ps1 -Build` | PASS |
 | Windows release build | PASS |

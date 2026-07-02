@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../config/feature_flags.dart';
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_palette.dart';
 import '../../../../theme/akasha_typography.dart';
 import 'home_dashboard_styles.dart';
 import '../../../../utils/app_l10n.dart';
@@ -119,8 +120,10 @@ class _ActionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
+
     return Container(
-      decoration: AkashaColors.surfaceCard(radius: 10),
+      decoration: palette.surfaceCard(radius: 10),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
@@ -133,10 +136,10 @@ class _ActionCard extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(6),
                   decoration: BoxDecoration(
-                    color: AkashaColors.accent.withValues(alpha: 0.1),
+                    color: palette.accentSoft,
                     borderRadius: BorderRadius.circular(6),
                   ),
-                  child: Icon(icon, size: 18, color: AkashaColors.accent),
+                  child: Icon(icon, size: 18, color: palette.accent),
                 ),
                 const SizedBox(width: 10),
                 Expanded(

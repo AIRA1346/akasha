@@ -7,13 +7,12 @@ Widget _homeShellScaffoldBottomNavigationBar(
   final isHome = controller.isHomeDashboardMode;
   final isExplore = controller.isExploreModeActive;
   final l10n = lookupAppL10n(context);
+  final palette = context.akashaPalette;
 
   return DecoratedBox(
     decoration: BoxDecoration(
-      color: AkashaColors.surface,
-      border: Border(
-        top: BorderSide(color: AkashaColors.border.withValues(alpha: 0.85)),
-      ),
+      color: palette.bottomBar,
+      border: Border(top: BorderSide(color: palette.borderSubtle(0.52))),
     ),
     child: SafeArea(
       top: false,
@@ -100,28 +99,33 @@ Widget _homeShellScaffoldBottomTabItem({
   required VoidCallback onTap,
   bool emphasize = false,
 }) {
-  final color = isSelected || emphasize
-      ? AkashaColors.accent
-      : AkashaColors.textMuted;
-  return Material(
-    color: Colors.transparent,
-    child: InkWell(
-      onTap: onTap,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(icon, color: color, size: 22),
-          const SizedBox(height: 4),
-          Text(
-            label,
-            style: TextStyle(
-              color: color,
-              fontSize: 10,
-              fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
-            ),
+  return Builder(
+    builder: (context) {
+      final palette = context.akashaPalette;
+      final color = isSelected || emphasize
+          ? palette.accent
+          : AkashaColors.textMuted;
+      return Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onTap,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(icon, color: color, size: 22),
+              const SizedBox(height: 4),
+              Text(
+                label,
+                style: TextStyle(
+                  color: color,
+                  fontSize: 10,
+                  fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
-    ),
+        ),
+      );
+    },
   );
 }

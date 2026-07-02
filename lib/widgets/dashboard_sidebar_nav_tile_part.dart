@@ -23,11 +23,12 @@ class _SidebarNavTileState extends State<_SidebarNavTile> {
   @override
   Widget build(BuildContext context) {
     final selected = widget.isSelected;
+    final palette = context.akashaPalette;
     final bg = selected
-        ? AkashaColors.accent.withValues(alpha: 0.14)
+        ? palette.accentSoft
         : _hovered
-            ? AkashaColors.surface.withValues(alpha: 0.6)
-            : Colors.transparent;
+        ? palette.hoverSurface.withValues(alpha: 0.62)
+        : Colors.transparent;
 
     return MouseRegion(
       onEnter: (_) => setState(() => _hovered = true),
@@ -53,11 +54,11 @@ class _SidebarNavTileState extends State<_SidebarNavTile> {
                       height: 18,
                       margin: const EdgeInsets.only(right: 10),
                       decoration: BoxDecoration(
-                        color: AkashaColors.accent,
+                        color: palette.accent,
                         borderRadius: BorderRadius.circular(2),
                         boxShadow: [
                           BoxShadow(
-                            color: AkashaColors.accent.withValues(alpha: 0.45),
+                            color: palette.accent.withValues(alpha: 0.45),
                             blurRadius: 6,
                           ),
                         ],
@@ -68,15 +69,21 @@ class _SidebarNavTileState extends State<_SidebarNavTile> {
                   Icon(
                     widget.icon,
                     size: 18,
-                    color: selected ? AkashaColors.accent : AkashaColors.textSecondary,
+                    color: selected
+                        ? palette.accent
+                        : AkashaColors.textSecondary,
                   ),
                   const SizedBox(width: 12),
                   Expanded(
                     child: Text(
                       widget.label,
-                      style: selected
-                          ? AkashaTypography.sidebarNavLabelSelected
-                          : AkashaTypography.sidebarNavLabel,
+                      style:
+                          (selected
+                                  ? AkashaTypography.sidebarNavLabelSelected
+                                  : AkashaTypography.sidebarNavLabel)
+                              .copyWith(
+                                color: selected ? palette.accent : null,
+                              ),
                     ),
                   ),
                 ],

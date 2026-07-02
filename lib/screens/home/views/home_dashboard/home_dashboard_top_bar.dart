@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_palette.dart';
 import '../../../../theme/akasha_typography.dart';
 import '../../../../utils/app_l10n.dart';
 
@@ -17,6 +18,7 @@ class HomeDashboardTopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
 
     return Row(
       children: [
@@ -27,9 +29,9 @@ class HomeDashboardTopBar extends StatelessWidget {
               height: 38,
               padding: const EdgeInsets.symmetric(horizontal: 12),
               decoration: BoxDecoration(
-                color: AkashaColors.surface,
+                color: palette.searchField,
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: AkashaColors.borderSubtle(0.06)),
+                border: Border.all(color: palette.borderSubtle(0.38)),
               ),
               child: Row(
                 children: [
@@ -53,11 +55,9 @@ class HomeDashboardTopBar extends StatelessWidget {
                       vertical: 2,
                     ),
                     decoration: BoxDecoration(
-                      color: AkashaColors.borderSubtle(0.04),
+                      color: palette.hoverSurface.withValues(alpha: 0.55),
                       borderRadius: BorderRadius.circular(4),
-                      border: Border.all(
-                        color: AkashaColors.borderSubtle(0.06),
-                      ),
+                      border: Border.all(color: palette.borderSubtle(0.28)),
                     ),
                     child: Text(
                       'Ctrl K',
@@ -90,7 +90,7 @@ class HomeDashboardTopBar extends StatelessWidget {
           height: 28,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(color: AkashaColors.borderSubtle(0.1), width: 1),
+            border: Border.all(color: palette.borderSubtle(0.34), width: 1),
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(14),

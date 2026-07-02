@@ -10,6 +10,7 @@ import '../models/work_drag_payload.dart';
 import '../screens/home/home_personal_library_controller.dart';
 import '../screens/home/views/preview_record_view_model.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_palette.dart';
 import '../theme/akasha_typography.dart';
 import '../generated/l10n/app_localizations.dart';
 import '../utils/app_l10n.dart';
@@ -102,13 +103,15 @@ class DashboardSidebar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
+
     return AnimatedContainer(
       duration: const Duration(milliseconds: 200),
       curve: Curves.easeInOut,
       width: isOpen ? _sidebarWidth : 0.0,
-      decoration: const BoxDecoration(
-        color: AkashaColors.sidebar,
-        border: Border(right: BorderSide(color: AkashaColors.border, width: 1)),
+      decoration: BoxDecoration(
+        color: palette.sidebar,
+        border: Border(right: BorderSide(color: palette.borderSubtle(0.52))),
       ),
       clipBehavior: Clip.hardEdge,
       child: isOpen

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/library_theme.dart';
 import '../services/library_theme_preferences.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_palette.dart';
 
 /// 앱 테마 선택 바텀시트.
 Future<LibraryTheme?> showLibraryThemePicker(
@@ -11,7 +12,7 @@ Future<LibraryTheme?> showLibraryThemePicker(
 }) async {
   return showModalBottomSheet<LibraryTheme>(
     context: context,
-    backgroundColor: const Color(0xFF1E1E2E),
+    backgroundColor: context.akashaPalette.surfaceElevated,
     builder: (ctx) {
       return SafeArea(
         child: Padding(
@@ -33,14 +34,13 @@ Future<LibraryTheme?> showLibraryThemePicker(
               ...LibraryTheme.all.map((theme) {
                 final selected = current.id == theme.id;
                 return ListTile(
-                  leading: CircleAvatar(
-                    backgroundColor: theme.backgroundColor,
-                    child: Icon(
-                      Icons.palette_outlined,
-                      color: theme.accentColor,
-                      size: 18,
-                    ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
                   ),
+                  tileColor: selected
+                      ? theme.accentColor.withValues(alpha: 0.08)
+                      : null,
+                  leading: _ThemeSwatch(theme: theme),
                   title: Text(theme.name),
                   trailing: selected
                       ? Icon(Icons.check, color: theme.accentColor)
@@ -57,4 +57,51 @@ Future<LibraryTheme?> showLibraryThemePicker(
       );
     },
   );
+}
+
+class _ThemeSwatch extends StatelessWidget {
+  const _ThemeSwatch({required this.theme});
+
+  final LibraryTheme theme;
+
+  @override
+  Widget build(BuildContext context) {
+    final preview = AkashaPalette.fromLibraryTheme(theme);
+
+    return Container(
+      width: 42,
+      height: 30,
+      decoration: BoxDecoration(
+        color: preview.background,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: preview.borderSubtle(0.5)),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: Row(
+        children: [
+          Expanded(child: ColoredBox(color: preview.sidebar)),
+          Expanded(
+            flex: 2,
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                ColoredBox(color: preview.surface),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    height: 5,
+                    margin: const EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: preview.accent,
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }

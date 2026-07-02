@@ -29,6 +29,7 @@ class _SidebarThumbnailTileState extends State<_SidebarThumbnailTile> {
   @override
   Widget build(BuildContext context) {
     final highlight = widget.isActive || _hovered;
+    final palette = context.akashaPalette;
 
     return MouseRegion(
       onEnter: (_) => setState(() => _hovered = true),
@@ -44,9 +45,12 @@ class _SidebarThumbnailTileState extends State<_SidebarThumbnailTile> {
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
               decoration: BoxDecoration(
                 color: highlight
-                    ? AkashaColors.menuSelected.withValues(alpha: 0.7)
+                    ? palette.menuSelected.withValues(alpha: 0.74)
                     : Colors.transparent,
                 borderRadius: BorderRadius.circular(10),
+                border: widget.isActive
+                    ? Border.all(color: palette.accent.withValues(alpha: 0.18))
+                    : null,
               ),
               child: Row(
                 children: [
@@ -63,7 +67,7 @@ class _SidebarThumbnailTileState extends State<_SidebarThumbnailTile> {
                               fit: BoxFit.cover,
                             )
                           : ColoredBox(
-                              color: AkashaColors.thumbPlaceholder,
+                              color: palette.thumbPlaceholder,
                               child: Icon(
                                 widget.fallbackIcon,
                                 size: 16,

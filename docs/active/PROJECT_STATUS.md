@@ -1,6 +1,6 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-07-02 (@10048 · **Steam 무료 출시 / no-IAP build 정리**)
+> **갱신:** 2026-07-02 (@10048 · **App theme palette 확장**)
 > **Git:** current tip은 `git log -1` 기준 · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
 > **현재 실행:** **Steam 무료 출시 준비** — [STEAM_RELEASE.md](STEAM_RELEASE.md) · IAP/Agent/player implementation layer **post-launch**
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
@@ -13,10 +13,10 @@
  
 | 항목 | 상태 |
 |------|------|
-| **flutter test** | **671 PASS** |
+| **flutter test** | **672 PASS** |
 | **flutter analyze lib** | **0 issue** |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
-| **앱 테마 (Slice 1)** | palette 전역 · 하단 라이브러리 탭 서재 추가 흐름 ✅ |
+| **앱 테마** | `AkashaPalette` ThemeExtension · sidebar/bottom/search/card/preview rail 반영 ✅ |
 | **사이드바 서재** | `나만의 서재` 목록·active·`+`·select·삭제·DnD ✅ |
 | **Poster Localizing** | URL 입력 → vault `posters/` 저장 → `poster: "posters/..."` ✅ |
 | **Agent Vault UI** | Work Journal 감상 카드 slice ✅ · dogfood 관찰은 [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
@@ -69,7 +69,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **671 PASS** | ✅ |
+| `flutter test` | **672 PASS** | ✅ |
 | `flutter analyze lib` | **0 issue** | ✅ |
 | `preflight_check` | PASS | ✅ |
 | `registry_builder` | PASS | — (post-v1 scale) |
@@ -85,7 +85,7 @@
 
 | 게이트 | 상태 | v1 blocking | 비고 |
 |--------|:----:|:-----------:|------|
-| **G-AUTO** | ✅ | ✅ | test **671** · analyze **0** · `dogfood_precheck -Build` PASS |
+| **G-AUTO** | ✅ | ✅ | test **672** · analyze **0** · release build **PASS** |
 | **G-VAULT** | ✅ | **✅** | 볼트 연동·아카이브·Sanctum 저장·기록 UI — 사용자 수동 dogfood 완료 |
 | **G-QA** | ✅ | ✅ | P0 수동 **12/12** (2026-06-13) · 사용자 dogfood 확인 |
 | **G-STEAM** | 🔶 | ✅ | SteamPipe 스크립트/SDK 확인 · 실제 upload/review 대기 |
@@ -99,7 +99,7 @@
 
 | 트랙 | 다음 | v1 우선 |
 |------|------|:-------:|
-| **정리 스프린트** | Home UI·테마·사이드바·포스터 로컬라이징 ✅ · analyze 0 · test 671 | — |
+| **정리 스프린트** | Home UI·테마·사이드바·포스터 로컬라이징 ✅ · analyze 0 · test 672 | — |
 | **akasha-db 소유권** | 구조 감사 · 내부 148파일 dirty · backup branch **제안** | **P0** |
 | **Personal Archive (v1)** | vault 안정성 · Sanctum · Library/Collection · Agent Protocol | **P0** |
 | **Sprint B** | ✅ B1 · Vault agent 가이드 | — |
@@ -160,7 +160,7 @@
 | **304** | `AIRA1346/akasha-db` remote vs 앱 repo shard 커밋 **동기화** | 🔶 | audit §3.1 |
 | **305** | registry manifest 4파일 — rebuild 산출물 **커밋 제외** 관례 유지 | ✅ 관례 | 본 문서 헤더 |
 | **306** | Home UI 정리 — search-first · Slice 1 앱 테마 · Slice 2 사이드바 서재 · dead wiring cleanup | ✅ | `0db21d38` |
-| **307** | `flutter test` **671** · `flutter analyze lib` **0** 유지 | ✅ | §2 Gate |
+| **307** | `flutter test` **672** · `flutter analyze lib` **0** 유지 | ✅ | §2 Gate |
 | **308** | Agent Vault UI dogfood — P1-8 raw wiki link · P1-9 중앙 감상 밀도 · P1-10 앱 테마 범위 | 🔶 | [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
 | **309** | M3 · Agent/player implementation layer · 대규모 index/path migration | 🚫 **금지** (본 스프린트) | — |
 | **310** | `PreviewMemoBar` — post-v1 dormant UI cleanup 후보 (`showPreviewMemoBar` false · `내 감상` 카드와 역할 중복) | ⏸️ v1 비활성 유지 | [preview_memo_bar.dart](../../lib/screens/home/views/preview_memo_bar.dart) · dogfood §P2 |
@@ -211,4 +211,5 @@
 | 2026-07-01 | **Vault trash UI** — Vault 설정에서 휴지통 목록·복구·영구 삭제 · analyze **0** · test **658** |
 | 2026-07-01 | **Desktop preferences slice** — `Esc` 앱 메뉴 · 한국어/English 전환 · 표시 배율 · 종료 버튼 · analyze **0** · test **664** · release build **PASS** |
 | 2026-07-02 | **Steam 무료 출시 정리** — Early Access 미사용 · 앱 내 구매 post-launch · no-IAP 테마 UI 정리 · [STEAM_RELEASE.md](STEAM_RELEASE.md) |
+| 2026-07-02 | **App theme palette 확장** — `AkashaPalette` ThemeExtension · sidebar/bottom/search/card/preview rail 테마 반영 · analyze **0** · test **672** · release build **PASS** |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |

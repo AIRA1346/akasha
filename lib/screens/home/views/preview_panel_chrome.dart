@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
@@ -31,13 +32,15 @@ class PreviewPanelChrome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         DecoratedBox(
           decoration: BoxDecoration(
             border: Border(
-              bottom: BorderSide(color: AkashaColors.borderSubtle(0.08)),
+              bottom: BorderSide(color: palette.borderSubtle(0.36)),
             ),
           ),
           child: Padding(
@@ -56,6 +59,7 @@ class PreviewPanelChrome extends StatelessWidget {
 
   Widget _buildCompactHeader(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
     return Row(
       children: [
         Container(
@@ -64,7 +68,7 @@ class PreviewPanelChrome extends StatelessWidget {
             vertical: 3,
           ),
           decoration: BoxDecoration(
-            color: AkashaColors.accent.withValues(alpha: 0.12),
+            color: palette.accentSoft,
             borderRadius: AkashaRadius.smBorder,
           ),
           child: Text(
@@ -91,6 +95,7 @@ class PreviewPanelChrome extends StatelessWidget {
     final detailTitle = title ?? '';
     final openDetail = onOpenDetail;
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -103,7 +108,7 @@ class PreviewPanelChrome extends StatelessWidget {
                 vertical: 2,
               ),
               decoration: BoxDecoration(
-                color: AkashaColors.accent.withValues(alpha: 0.12),
+                color: palette.accentSoft,
                 borderRadius: AkashaRadius.smBorder,
               ),
               child: Text(
@@ -155,7 +160,7 @@ class PreviewPanelChrome extends StatelessWidget {
                       vertical: AkashaSpacing.sm,
                     ),
                     foregroundColor: AkashaColors.textSecondary,
-                    side: BorderSide(color: AkashaColors.borderSubtle(0.12)),
+                    side: BorderSide(color: palette.borderSubtle(0.28)),
                   ),
                 ),
                 SizedBox(width: AkashaSpacing.sm),
@@ -164,7 +169,7 @@ class PreviewPanelChrome extends StatelessWidget {
                 child: FilledButton(
                   onPressed: openDetail,
                   style: FilledButton.styleFrom(
-                    backgroundColor: AkashaColors.accent,
+                    backgroundColor: palette.accent,
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     shape: RoundedRectangleBorder(
                       borderRadius: AkashaRadius.mdBorder,

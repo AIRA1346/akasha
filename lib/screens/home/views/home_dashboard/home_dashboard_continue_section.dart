@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../models/akasha_item.dart';
 import '../../../../services/recent_exploration_resolver.dart';
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_palette.dart';
 import '../../../../theme/akasha_typography.dart';
 import '../../../../utils/exploration_progress.dart';
 import '../../../../widgets/poster_image.dart';
@@ -257,17 +258,19 @@ class _ContinueExploreScrollButtonState
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
+
     return MouseRegion(
       onEnter: (_) => setState(() => _hovered = true),
       onExit: (_) => setState(() => _hovered = false),
       child: Material(
         color: _hovered
-            ? AkashaColors.surfaceElevated
-            : AkashaColors.surface.withValues(alpha: 0.94),
+            ? palette.surfaceElevated
+            : palette.surface.withValues(alpha: 0.94),
         elevation: _hovered ? 2 : 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
-          side: BorderSide(color: AkashaColors.borderSubtle(0.14)),
+          side: BorderSide(color: palette.borderSubtle(0.36)),
         ),
         child: IconButton(
           onPressed: widget.onPressed,
@@ -300,6 +303,7 @@ class _ExploreCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     final l10n = lookupAppL10n(context);
     final progress = explorationProgress(item);
     final progressLabel = explorationProgressPercent(item);
@@ -317,12 +321,10 @@ class _ExploreCard extends StatelessWidget {
       width: cardWidth,
       margin: const EdgeInsets.only(right: cardSpacing),
       decoration: BoxDecoration(
-        color: AkashaColors.surface,
+        color: palette.surface,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: isSelected
-              ? AkashaColors.accent
-              : AkashaColors.borderSubtle(0.08),
+          color: isSelected ? palette.accent : palette.borderSubtle(0.28),
           width: isSelected ? 2.0 : 1.0,
         ),
       ),
@@ -430,11 +432,9 @@ class _ExploreCard extends StatelessWidget {
                               child: LinearProgressIndicator(
                                 value: progress,
                                 minHeight: 3,
-                                backgroundColor: AkashaColors.borderSubtle(
-                                  0.12,
-                                ),
-                                valueColor: const AlwaysStoppedAnimation(
-                                  AkashaColors.accent,
+                                backgroundColor: palette.borderSubtle(0.25),
+                                valueColor: AlwaysStoppedAnimation(
+                                  palette.accent,
                                 ),
                               ),
                             ),

@@ -12,7 +12,7 @@ import '../../../services/link_candidate_service.dart';
 import '../../../services/registry_discovery_candidate_service.dart';
 import '../../../services/works_registry.dart';
 import '../../../generated/l10n/app_localizations.dart';
-import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_typography.dart';
 import '../../../utils/app_l10n.dart';
 import '../../../utils/vault_work_presence.dart';
@@ -175,7 +175,10 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
     );
   }
 
-  String? _registryBridgeHint(List<RegistryDiscoveryCandidate> candidates, AppLocalizations? l10n) {
+  String? _registryBridgeHint(
+    List<RegistryDiscoveryCandidate> candidates,
+    AppLocalizations? l10n,
+  ) {
     if (candidates.isEmpty) return null;
     final creator = widget.item.creator.trim();
     if (creator.isNotEmpty &&
@@ -183,7 +186,9 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
       return l10n?.creatorWorks(creator) ?? '$creator 작품';
     }
     final bridge = candidates.first.bridgeLabel;
-    return bridge != null && bridge.isNotEmpty ? (l10n?.bridgeRelated(bridge) ?? '$bridge 관련') : null;
+    return bridge != null && bridge.isNotEmpty
+        ? (l10n?.bridgeRelated(bridge) ?? '$bridge 관련')
+        : null;
   }
 
   Future<void> _handleArchive() async {
@@ -231,29 +236,23 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                 onSelectSuggested: widget.onConnectSuggested,
                 onConnectPerson: widget.onConnectEntityType == null
                     ? null
-                    : () => widget.onConnectEntityType!(
-                          EntityAnchorType.person,
-                        ),
+                    : () =>
+                          widget.onConnectEntityType!(EntityAnchorType.person),
                 onConnectEvent: widget.onConnectEntityType == null
                     ? null
-                    : () => widget.onConnectEntityType!(
-                          EntityAnchorType.event,
-                        ),
+                    : () => widget.onConnectEntityType!(EntityAnchorType.event),
                 onConnectConcept: widget.onConnectEntityType == null
                     ? null
-                    : () => widget.onConnectEntityType!(
-                          EntityAnchorType.concept,
-                        ),
+                    : () =>
+                          widget.onConnectEntityType!(EntityAnchorType.concept),
                 onConnectPlace: widget.onConnectEntityType == null
                     ? null
-                    : () => widget.onConnectEntityType!(
-                          EntityAnchorType.place,
-                        ),
+                    : () => widget.onConnectEntityType!(EntityAnchorType.place),
                 onConnectOrganization: widget.onConnectEntityType == null
                     ? null
                     : () => widget.onConnectEntityType!(
-                          EntityAnchorType.organization,
-                        ),
+                        EntityAnchorType.organization,
+                      ),
                 onOpenRecord: widget.onOpenDetail,
               );
             },
@@ -293,16 +292,16 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
     final typeLabel = _isRegistryOnly
-        ? (l10n?.catalogPrefix(widget.item.category.name) ?? '사전 · ${widget.item.category.name}')
+        ? (l10n?.catalogPrefix(widget.item.category.name) ??
+              '사전 · ${widget.item.category.name}')
         : widget.item.category.name;
     final record = PreviewRecordViewModel.fromWork(widget.item, l10n);
+    final palette = context.akashaPalette;
     return Container(
       width: 320,
-      decoration: const BoxDecoration(
-        color: AkashaColors.sidebar,
-        border: Border(
-          left: BorderSide(color: AkashaColors.border, width: 1),
-        ),
+      decoration: BoxDecoration(
+        color: palette.previewRail,
+        border: Border(left: BorderSide(color: palette.borderSubtle(0.52))),
       ),
       child: Column(
         children: [
@@ -355,10 +354,13 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                       builder: (context, registrySnap) {
                         return RegistryDiscoveryCandidatesSection(
                           candidates: registrySnap.data ?? const [],
-                          loading: registrySnap.connectionState ==
+                          loading:
+                              registrySnap.connectionState ==
                               ConnectionState.waiting,
-                          bridgeHint:
-                              _registryBridgeHint(registrySnap.data ?? const [], l10n),
+                          bridgeHint: _registryBridgeHint(
+                            registrySnap.data ?? const [],
+                            l10n,
+                          ),
                           onPreviewRegistryWork: widget.onPreviewRegistryWork,
                         );
                       },
