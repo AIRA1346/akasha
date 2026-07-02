@@ -1,7 +1,7 @@
 # AKASHA 데이터 아키텍처 재설계
 
-> **상태:** 설계 확정 v2 · **v4 런타임 운영 중** (490작 · 382 해시 샤드)  
-> **기준일:** 2026-06-21  
+> **상태:** 설계 확정 v2 · **v4 런타임 운영 중** (10,048 works · 1,713 shards)
+> **기준일:** 2026-07-02
 > **제품·포스터 SSOT:** [VISION.md](VISION.md) · **아카이빙 북극성:** [history/product/ultimate-archiving-vision.md](../history/product/ultimate-archiving-vision.md)
 
 관련: [history/policy/akasha-db-policy.md](../history/policy/akasha-db-policy.md) · [history/policy/catalog-ownership.md](../history/policy/catalog-ownership.md) · [ROADMAP.md](ROADMAP.md)

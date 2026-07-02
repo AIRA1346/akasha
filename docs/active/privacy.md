@@ -41,13 +41,13 @@ Optional: registry sync checks for catalog updates. No account is required.
 - No analytics SDK in the open-source v1 scope described here
 - No upload of your vault contents to Rune Atelier servers
 
-Steam may collect platform data per [Valve's privacy policy](https://store.steampowered.com/privacy_agreement/) when you use Steam features (install, IAP).
+Steam may collect platform data per [Valve's privacy policy](https://store.steampowered.com/privacy_agreement/) when you use Steam features such as install, updates, purchases, or store/community features.
 
 ---
 
 ## In-app purchases
 
-Cosmetic IAP (library themes, supporter pack) is processed by **Steam**. Rune Atelier does not receive your payment card details.
+AKASHA's Early Access store copy does not rely on paid IAP. If cosmetic/supporter IAP is enabled later, purchases will be processed by **Steam**. Rune Atelier does not receive your payment card details.
 
 ---
 
