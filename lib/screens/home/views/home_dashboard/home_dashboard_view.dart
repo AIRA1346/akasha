@@ -8,7 +8,7 @@ import '../../../../models/registry_work.dart';
 import '../../../../services/link_candidate_service.dart';
 import '../../../../core/ports/record_link_port.dart';
 import '../../../../core/ports/user_catalog_port.dart';
-import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_palette.dart';
 import 'home_dashboard_hero.dart';
 import 'home_dashboard_continue_section.dart';
 import 'home_dashboard_discovery_section.dart';
@@ -54,7 +54,7 @@ class HomeDashboardView extends StatelessWidget {
   final AkashaItem? previewItem;
   final UserCatalogEntity? entityPreviewItem;
   final void Function(LinkCandidate candidate, AkashaItem work)?
-      onConnectSuggested;
+  onConnectSuggested;
   final void Function(RegistryWork work)? onPreviewRegistryWork;
   final void Function(AkashaItem work)? onOpenRecordFromHome;
   final void Function(AkashaItem item)? onOpenItemDetail;
@@ -115,9 +115,10 @@ class HomeDashboardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isColdStart = recentExploreItems.isEmpty;
+    final palette = context.akashaPalette;
 
     return Container(
-      decoration: const BoxDecoration(color: AkashaColors.background),
+      decoration: BoxDecoration(color: palette.background),
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(32.0),
         child: Column(

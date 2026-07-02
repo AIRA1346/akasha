@@ -53,7 +53,7 @@ class AkashaPalette extends ThemeExtension<AkashaPalette> {
     final surfaceElevated = _mix(background, Colors.white, 0.085);
     final sidebar = _mix(background, accent, 0.08);
     final sidebarFooter = _mix(background, Colors.black, 0.16);
-    final bottomBar = _mix(background, Colors.black, 0.08);
+    final bottomBar = _mix(background, accent, 0.16);
     final menuSelected = _mix(background, accent, 0.22);
     final hoverSurface = _mix(background, accent, 0.12);
     final searchField = _mix(background, Colors.white, 0.035);

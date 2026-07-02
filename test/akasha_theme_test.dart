@@ -19,5 +19,11 @@ void main() {
     expect(palette!.background, LibraryTheme.sakura.backgroundColor);
     expect(palette.accent, LibraryTheme.sakura.accentColor);
     expect(palette.sidebar, isNot(LibraryTheme.classic.backgroundColor));
+    expect(
+      palette.bottomBar,
+      isNot(
+        Color.lerp(LibraryTheme.sakura.backgroundColor, Colors.black, 0.08),
+      ),
+    );
   });
 }

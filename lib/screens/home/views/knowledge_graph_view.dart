@@ -6,6 +6,7 @@ import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../screens/home/coordinators/home_shell_wiring.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
@@ -109,6 +110,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     final works = List<AkashaItem>.from(widget.vaultItems)
       ..sort((a, b) {
         final ca = _linkCounts[a.workId] ?? 0;
@@ -117,12 +119,13 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
         return a.title.compareTo(b.title);
       });
 
-    final allLinksEmpty = !_loadingCounts &&
+    final allLinksEmpty =
+        !_loadingCounts &&
         works.isNotEmpty &&
         works.every((w) => (_linkCounts[w.workId] ?? 0) == 0);
 
     return Container(
-      color: AkashaColors.background,
+      color: palette.background,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -151,10 +154,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      '볼트에 작품이 없습니다.',
-                      style: AkashaTypography.body,
-                    ),
+                    Text('볼트에 작품이 없습니다.', style: AkashaTypography.body),
                     if (widget.onConnectEntity != null) ...[
                       SizedBox(height: AkashaSpacing.md),
                       OutlinedButton(
@@ -187,11 +187,11 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
 
                   return Container(
                     margin: EdgeInsets.only(bottom: AkashaSpacing.sm),
-                    decoration: AkashaColors.surfaceCard(radius: AkashaRadius.lg),
+                    decoration: palette.surfaceCard(radius: AkashaRadius.lg),
                     child: Theme(
-                      data: Theme.of(context).copyWith(
-                        dividerColor: Colors.transparent,
-                      ),
+                      data: Theme.of(
+                        context,
+                      ).copyWith(dividerColor: Colors.transparent),
                       child: ExpansionTile(
                         tilePadding: const EdgeInsets.symmetric(
                           horizontal: AkashaSpacing.md,
@@ -221,12 +221,10 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                           style: AkashaTypography.listItemTitle,
                         ),
                         subtitle: Text(
-                          count > 0
-                              ? '연결 $count개'
-                              : '연결 없음 · 기록에서 링크 추가',
+                          count > 0 ? '연결 $count개' : '연결 없음 · 기록에서 링크 추가',
                           style: AkashaTypography.bodySecondary.copyWith(
                             color: count > 0
-                                ? AkashaColors.accent
+                                ? palette.accent
                                 : AkashaColors.textCaption,
                           ),
                         ),
@@ -289,7 +287,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
       ),
       child: Container(
         padding: EdgeInsets.all(AkashaSpacing.lg),
-        decoration: AkashaColors.surfaceCard(radius: AkashaRadius.lg),
+        decoration: context.akashaPalette.surfaceCard(radius: AkashaRadius.lg),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -314,12 +312,9 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                   FilledButton.icon(
                     onPressed: widget.onOpenRecord,
                     icon: const Icon(Icons.edit_note_outlined, size: 14),
-                    label: Text(
-                      '기록 열기',
-                      style: AkashaTypography.compactLabel,
-                    ),
+                    label: Text('기록 열기', style: AkashaTypography.compactLabel),
                     style: FilledButton.styleFrom(
-                      backgroundColor: AkashaColors.accent,
+                      backgroundColor: context.akashaPalette.accent,
                       padding: EdgeInsets.symmetric(
                         horizontal: AkashaSpacing.md,
                         vertical: AkashaSpacing.sm,
@@ -329,10 +324,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                 if (widget.onConnectEntity != null)
                   OutlinedButton.icon(
                     onPressed: widget.onConnectEntity,
-                    icon: const Icon(
-                      Icons.person_add_alt_1_outlined,
-                      size: 14,
-                    ),
+                    icon: const Icon(Icons.person_add_alt_1_outlined, size: 14),
                     label: Text(
                       '엔티티 연결하기',
                       style: AkashaTypography.compactLabel,
