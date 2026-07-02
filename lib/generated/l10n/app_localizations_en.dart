@@ -1347,6 +1347,141 @@ class AppLocalizationsEn extends AppLocalizations {
       'Check chronological logs in the timeline and journal.';
 
   @override
+  String get appThemePickerFreeNotice =>
+      'All currently available app themes are free.';
+
+  @override
+  String get dashboardHeroTitle => 'Record, connect, and discover';
+
+  @override
+  String get dashboardHeroSubtitle =>
+      'Record works, people, events, and concepts to form connections and find new discoveries.';
+
+  @override
+  String get dashboardDiscoveryTitle => 'Discovery Journey';
+
+  @override
+  String get dashboardDiscoveryTabConnections => 'Recommended Links';
+
+  @override
+  String get dashboardDiscoveryTabNewWorks => 'New Works';
+
+  @override
+  String get dashboardDiscoveryTabPeople => 'People to Notice';
+
+  @override
+  String get dashboardDiscoveryEmptyConnections =>
+      'Recommended links will appear here once you add [[links]] to records.';
+
+  @override
+  String get dashboardDiscoveryMoreConnections => 'View more connections';
+
+  @override
+  String get dashboardDiscoveryEmptyVault =>
+      'Add works to your vault to begin the discovery journey.';
+
+  @override
+  String get dashboardDiscoveryNoRecentWorks => 'No recently added works.';
+
+  @override
+  String get dashboardDiscoveryNoPeople =>
+      'No people have been registered yet. Add people and connect them with works.';
+
+  @override
+  String get dashboardThemeClustersTitle => 'Recurring Themes';
+
+  @override
+  String get dashboardRecentDiscoveryTitle => 'Recent Discoveries';
+
+  @override
+  String get dashboardRecentDiscoveryEmpty =>
+      'Works you recently viewed will gather here once you start exploring.';
+
+  @override
+  String get dashboardRecentRecordsTitle => 'Recent Records';
+
+  @override
+  String get dashboardRecentRecordsEmpty =>
+      'Open a work and record your thoughts to see it here.';
+
+  @override
+  String get dashboardRecentRecordsArchived => 'Archived · Record available';
+
+  @override
+  String get dashboardRegistryBridgeTitle => 'Discover from Catalog';
+
+  @override
+  String dashboardRegistryRecommendation(String bridge) {
+    return '$bridge → catalog recommendations';
+  }
+
+  @override
+  String get dashboardUniverseTitle => 'Knowledge Universe';
+
+  @override
+  String get dashboardUniverseRecentWorks => 'Recently Added Works';
+
+  @override
+  String get dashboardUniverseViewAll => 'View all';
+
+  @override
+  String get dashboardUniverseNoRecentWorks => 'No recently added works.';
+
+  @override
+  String get dashboardTodaysLinksTitle => 'Today\'s Links';
+
+  @override
+  String get dashboardTodaysLinksEmpty =>
+      'Works and people linked from your records will appear here.';
+
+  @override
+  String get dashboardTodaysLinksConnectedWork => 'Connected work';
+
+  @override
+  String get dashboardTodaysLinksSuggestion => 'Connection suggestion';
+
+  @override
+  String get registryDiscoveryMoreFromCatalog => 'More from Catalog';
+
+  @override
+  String get knowledgeGraphTitle => 'Connection List';
+
+  @override
+  String get knowledgeGraphSubtitle =>
+      'View connections grouped by work. (This is not a node graph.)';
+
+  @override
+  String get knowledgeGraphEmptyVault => 'No works in the vault.';
+
+  @override
+  String get knowledgeGraphConnectEntity => 'Connect Entity';
+
+  @override
+  String knowledgeGraphConnectionCount(int count) {
+    return '$count connections';
+  }
+
+  @override
+  String get knowledgeGraphNoConnections =>
+      'No connections · Add links from records';
+
+  @override
+  String get knowledgeGraphOpen => 'Open';
+
+  @override
+  String get knowledgeGraphExpandToLoad => 'Expand to load connections.';
+
+  @override
+  String get knowledgeGraphEmptyTitle => 'No connected knowledge yet.';
+
+  @override
+  String get knowledgeGraphEmptyBody =>
+      'Create your first connection. Add links to work records and they will appear here.';
+
+  @override
+  String get knowledgeGraphOpenRecord => 'Open record';
+
+  @override
   String get actionClose => 'Close';
 
   @override

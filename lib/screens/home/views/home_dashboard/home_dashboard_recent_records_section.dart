@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../models/akasha_item.dart';
 import '../../../../theme/akasha_colors.dart';
 import '../../../../theme/akasha_typography.dart';
+import '../../../../utils/app_l10n.dart';
 import '../../../../widgets/poster_image.dart';
 import 'home_dashboard_styles.dart';
 
@@ -19,20 +20,24 @@ class HomeDashboardRecentRecordsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final withRecords = vaultItems
-        .where((w) => w.review.isNotEmpty || w.filePath != null)
-        .toList()
-      ..sort((a, b) => b.addedAt.compareTo(a.addedAt));
+    final l10n = lookupAppL10n(context);
+    final withRecords =
+        vaultItems
+            .where((w) => w.review.isNotEmpty || w.filePath != null)
+            .toList()
+          ..sort((a, b) => b.addedAt.compareTo(a.addedAt));
     final recent = withRecords.take(4).toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        HomeDashboardStyles.sectionHeader('최근 기록'),
+        HomeDashboardStyles.sectionHeader(
+          l10n?.dashboardRecentRecordsTitle ?? '최근 기록',
+        ),
         const SizedBox(height: 12),
         if (recent.isEmpty)
           Text(
-            '작품을 열어 감상을 기록하면 여기에 표시됩니다.',
+            l10n?.dashboardRecentRecordsEmpty ?? '작품을 열어 감상을 기록하면 여기에 표시됩니다.',
             style: AkashaTypography.bodySecondary.copyWith(
               color: AkashaColors.textMuted,
             ),
@@ -78,7 +83,8 @@ class HomeDashboardRecentRecordsSection extends StatelessWidget {
                                 Text(
                                   work.review.isNotEmpty
                                       ? work.review
-                                      : '아카이브됨 · 기록 있음',
+                                      : (l10n?.dashboardRecentRecordsArchived ??
+                                            '아카이브됨 · 기록 있음'),
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: AkashaTypography.caption.copyWith(
@@ -88,8 +94,11 @@ class HomeDashboardRecentRecordsSection extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Icon(Icons.edit_note_outlined,
-                              size: 16, color: AkashaColors.textCaption),
+                          Icon(
+                            Icons.edit_note_outlined,
+                            size: 16,
+                            color: AkashaColors.textCaption,
+                          ),
                         ],
                       ),
                     ),

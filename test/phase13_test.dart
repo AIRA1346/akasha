@@ -13,10 +13,10 @@ void main() {
 
     setUp(() async {
       SharedPreferences.setMockInitialValues({});
-      
+
       // 임시 볼트 디렉토리 생성
       tempVaultDir = await Directory.systemTemp.createTemp('akasha_test_vault');
-      
+
       // 임시 원본 이미지 파일 생성
       tempSourceFile = File(p.join(tempVaultDir.path, 'source_poster.jpg'));
       await tempSourceFile.writeAsString('fake_image_bytes');
@@ -29,38 +29,71 @@ void main() {
       }
     });
 
-    test('importPosterImage copies local image file to vault posters folder and returns relative path', () async {
-      try {
-        final fileService = AkashaFileService();
-        await fileService.setVaultPath(''); // singleton reset
-        
-        // 볼트가 설정되지 않은 경우 null 반환
-        expect(fileService.vaultPath, isNull);
-        final nullResult = await fileService.importPosterImage(tempSourceFile.path);
-        expect(nullResult, isNull);
+    test(
+      'importPosterImage copies local image file to vault posters folder and returns relative path',
+      () async {
+        try {
+          final fileService = AkashaFileService();
+          await fileService.setVaultPath(''); // singleton reset
 
-        // 볼트 경로 설정
-        await fileService.setVaultPath(tempVaultDir.path);
-        expect(fileService.vaultPath, equals(tempVaultDir.path));
+          // 볼트가 설정되지 않은 경우 null 반환
+          expect(fileService.vaultPath, isNull);
+          final nullResult = await fileService.importPosterImage(
+            tempSourceFile.path,
+          );
+          expect(nullResult, isNull);
 
-        // posters 폴더 자동 생성 확인
-        final postersDir = Directory(p.join(tempVaultDir.path, 'posters'));
-        expect(postersDir.existsSync(), isTrue);
+          // 볼트 경로 설정
+          await fileService.setVaultPath(tempVaultDir.path);
+          expect(fileService.vaultPath, equals(tempVaultDir.path));
 
-        // 이미지 파일 가져오기 (이관)
-        final relativePath = await fileService.importPosterImage(tempSourceFile.path);
-        expect(relativePath, isNotNull);
-        expect(relativePath!.startsWith('posters${p.separator}') || relativePath.startsWith('posters/'), isTrue);
-        expect(relativePath.endsWith('source_poster.jpg'), isTrue);
+          // posters 폴더 자동 생성 확인
+          final postersDir = Directory(p.join(tempVaultDir.path, 'posters'));
+          expect(postersDir.existsSync(), isTrue);
 
-        // 볼트 내부 복사본 존재 확인
-        final copiedFile = File(p.join(tempVaultDir.path, relativePath));
-        expect(copiedFile.existsSync(), isTrue);
-        expect(copiedFile.readAsStringSync(), equals('fake_image_bytes'));
-      } catch (e, stack) {
-        print('TEST EXCEPTION: $e\n$stack');
-        rethrow;
+          // 이미지 파일 가져오기 (이관)
+          final relativePath = await fileService.importPosterImage(
+            tempSourceFile.path,
+          );
+          expect(relativePath, isNotNull);
+          expect(
+            relativePath!.startsWith('posters${p.separator}') ||
+                relativePath.startsWith('posters/'),
+            isTrue,
+          );
+          expect(relativePath.endsWith('source_poster.jpg'), isTrue);
+
+          // 볼트 내부 복사본 존재 확인
+          final copiedFile = File(p.join(tempVaultDir.path, relativePath));
+          expect(copiedFile.existsSync(), isTrue);
+          expect(copiedFile.readAsStringSync(), equals('fake_image_bytes'));
+        } catch (e, stack) {
+          print('TEST EXCEPTION: $e\n$stack');
+          rethrow;
+        }
+      },
+    );
+
+    test('importPosterImage recreates posters folder when missing', () async {
+      final fileService = AkashaFileService();
+      await fileService.setVaultPath('');
+      await fileService.setVaultPath(tempVaultDir.path);
+
+      final postersDir = Directory(p.join(tempVaultDir.path, 'posters'));
+      if (await postersDir.exists()) {
+        await postersDir.delete(recursive: true);
       }
+
+      final relativePath = await fileService.importPosterImage(
+        tempSourceFile.path,
+      );
+
+      expect(relativePath, isNotNull);
+      expect(await postersDir.exists(), isTrue);
+      expect(
+        await File(p.join(tempVaultDir.path, relativePath!)).exists(),
+        isTrue,
+      );
     });
   });
 }

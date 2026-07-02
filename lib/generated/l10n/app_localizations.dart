@@ -2468,6 +2468,246 @@ abstract class AppLocalizations {
   /// **'Check chronological logs in the timeline and journal.'**
   String get descDashboardWrite;
 
+  /// No description provided for @appThemePickerFreeNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'All currently available app themes are free.'**
+  String get appThemePickerFreeNotice;
+
+  /// No description provided for @dashboardHeroTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Record, connect, and discover'**
+  String get dashboardHeroTitle;
+
+  /// No description provided for @dashboardHeroSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Record works, people, events, and concepts to form connections and find new discoveries.'**
+  String get dashboardHeroSubtitle;
+
+  /// No description provided for @dashboardDiscoveryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discovery Journey'**
+  String get dashboardDiscoveryTitle;
+
+  /// No description provided for @dashboardDiscoveryTabConnections.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommended Links'**
+  String get dashboardDiscoveryTabConnections;
+
+  /// No description provided for @dashboardDiscoveryTabNewWorks.
+  ///
+  /// In en, this message translates to:
+  /// **'New Works'**
+  String get dashboardDiscoveryTabNewWorks;
+
+  /// No description provided for @dashboardDiscoveryTabPeople.
+  ///
+  /// In en, this message translates to:
+  /// **'People to Notice'**
+  String get dashboardDiscoveryTabPeople;
+
+  /// No description provided for @dashboardDiscoveryEmptyConnections.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommended links will appear here once you add [[links]] to records.'**
+  String get dashboardDiscoveryEmptyConnections;
+
+  /// No description provided for @dashboardDiscoveryMoreConnections.
+  ///
+  /// In en, this message translates to:
+  /// **'View more connections'**
+  String get dashboardDiscoveryMoreConnections;
+
+  /// No description provided for @dashboardDiscoveryEmptyVault.
+  ///
+  /// In en, this message translates to:
+  /// **'Add works to your vault to begin the discovery journey.'**
+  String get dashboardDiscoveryEmptyVault;
+
+  /// No description provided for @dashboardDiscoveryNoRecentWorks.
+  ///
+  /// In en, this message translates to:
+  /// **'No recently added works.'**
+  String get dashboardDiscoveryNoRecentWorks;
+
+  /// No description provided for @dashboardDiscoveryNoPeople.
+  ///
+  /// In en, this message translates to:
+  /// **'No people have been registered yet. Add people and connect them with works.'**
+  String get dashboardDiscoveryNoPeople;
+
+  /// No description provided for @dashboardThemeClustersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Recurring Themes'**
+  String get dashboardThemeClustersTitle;
+
+  /// No description provided for @dashboardRecentDiscoveryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent Discoveries'**
+  String get dashboardRecentDiscoveryTitle;
+
+  /// No description provided for @dashboardRecentDiscoveryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Works you recently viewed will gather here once you start exploring.'**
+  String get dashboardRecentDiscoveryEmpty;
+
+  /// No description provided for @dashboardRecentRecordsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent Records'**
+  String get dashboardRecentRecordsTitle;
+
+  /// No description provided for @dashboardRecentRecordsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a work and record your thoughts to see it here.'**
+  String get dashboardRecentRecordsEmpty;
+
+  /// No description provided for @dashboardRecentRecordsArchived.
+  ///
+  /// In en, this message translates to:
+  /// **'Archived · Record available'**
+  String get dashboardRecentRecordsArchived;
+
+  /// No description provided for @dashboardRegistryBridgeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover from Catalog'**
+  String get dashboardRegistryBridgeTitle;
+
+  /// No description provided for @dashboardRegistryRecommendation.
+  ///
+  /// In en, this message translates to:
+  /// **'{bridge} → catalog recommendations'**
+  String dashboardRegistryRecommendation(String bridge);
+
+  /// No description provided for @dashboardUniverseTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Knowledge Universe'**
+  String get dashboardUniverseTitle;
+
+  /// No description provided for @dashboardUniverseRecentWorks.
+  ///
+  /// In en, this message translates to:
+  /// **'Recently Added Works'**
+  String get dashboardUniverseRecentWorks;
+
+  /// No description provided for @dashboardUniverseViewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View all'**
+  String get dashboardUniverseViewAll;
+
+  /// No description provided for @dashboardUniverseNoRecentWorks.
+  ///
+  /// In en, this message translates to:
+  /// **'No recently added works.'**
+  String get dashboardUniverseNoRecentWorks;
+
+  /// No description provided for @dashboardTodaysLinksTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s Links'**
+  String get dashboardTodaysLinksTitle;
+
+  /// No description provided for @dashboardTodaysLinksEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Works and people linked from your records will appear here.'**
+  String get dashboardTodaysLinksEmpty;
+
+  /// No description provided for @dashboardTodaysLinksConnectedWork.
+  ///
+  /// In en, this message translates to:
+  /// **'Connected work'**
+  String get dashboardTodaysLinksConnectedWork;
+
+  /// No description provided for @dashboardTodaysLinksSuggestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection suggestion'**
+  String get dashboardTodaysLinksSuggestion;
+
+  /// No description provided for @registryDiscoveryMoreFromCatalog.
+  ///
+  /// In en, this message translates to:
+  /// **'More from Catalog'**
+  String get registryDiscoveryMoreFromCatalog;
+
+  /// No description provided for @knowledgeGraphTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection List'**
+  String get knowledgeGraphTitle;
+
+  /// No description provided for @knowledgeGraphSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'View connections grouped by work. (This is not a node graph.)'**
+  String get knowledgeGraphSubtitle;
+
+  /// No description provided for @knowledgeGraphEmptyVault.
+  ///
+  /// In en, this message translates to:
+  /// **'No works in the vault.'**
+  String get knowledgeGraphEmptyVault;
+
+  /// No description provided for @knowledgeGraphConnectEntity.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect Entity'**
+  String get knowledgeGraphConnectEntity;
+
+  /// No description provided for @knowledgeGraphConnectionCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} connections'**
+  String knowledgeGraphConnectionCount(int count);
+
+  /// No description provided for @knowledgeGraphNoConnections.
+  ///
+  /// In en, this message translates to:
+  /// **'No connections · Add links from records'**
+  String get knowledgeGraphNoConnections;
+
+  /// No description provided for @knowledgeGraphOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get knowledgeGraphOpen;
+
+  /// No description provided for @knowledgeGraphExpandToLoad.
+  ///
+  /// In en, this message translates to:
+  /// **'Expand to load connections.'**
+  String get knowledgeGraphExpandToLoad;
+
+  /// No description provided for @knowledgeGraphEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No connected knowledge yet.'**
+  String get knowledgeGraphEmptyTitle;
+
+  /// No description provided for @knowledgeGraphEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Create your first connection. Add links to work records and they will appear here.'**
+  String get knowledgeGraphEmptyBody;
+
+  /// No description provided for @knowledgeGraphOpenRecord.
+  ///
+  /// In en, this message translates to:
+  /// **'Open record'**
+  String get knowledgeGraphOpenRecord;
+
   /// No description provided for @actionClose.
   ///
   /// In en, this message translates to:

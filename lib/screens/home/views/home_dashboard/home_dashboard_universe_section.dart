@@ -5,6 +5,7 @@ import '../../../../core/ports/user_catalog_port.dart';
 import '../../../../models/akasha_item.dart';
 import '../../../../theme/akasha_colors.dart';
 import '../../../../theme/akasha_typography.dart';
+import '../../../../utils/app_l10n.dart';
 import '../../../../widgets/poster_image.dart';
 import '../../../../widgets/universe_orbit_painter.dart';
 import 'home_dashboard_styles.dart';
@@ -29,13 +30,17 @@ class HomeDashboardUniverseSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final allEntities = userCatalog.all;
-    final personCount =
-        allEntities.where((e) => e.anchorType == EntityAnchorType.person).length;
-    final placeCount =
-        allEntities.where((e) => e.anchorType == EntityAnchorType.place).length;
-    final eventCount =
-        allEntities.where((e) => e.anchorType == EntityAnchorType.event).length;
+    final personCount = allEntities
+        .where((e) => e.anchorType == EntityAnchorType.person)
+        .length;
+    final placeCount = allEntities
+        .where((e) => e.anchorType == EntityAnchorType.place)
+        .length;
+    final eventCount = allEntities
+        .where((e) => e.anchorType == EntityAnchorType.event)
+        .length;
 
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,7 +53,10 @@ class HomeDashboardUniverseSection extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Text('지식 우주 현황', style: HomeDashboardStyles.panelTitle),
+                Text(
+                  l10n?.dashboardUniverseTitle ?? '지식 우주 현황',
+                  style: HomeDashboardStyles.panelTitle,
+                ),
                 const SizedBox(height: 12),
                 UniverseOrbitWidget(
                   workCount: vaultItems.length,
@@ -71,9 +79,9 @@ class HomeDashboardUniverseSection extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    const Expanded(
+                    Expanded(
                       child: Text(
-                        '최근 추가된 작품',
+                        l10n?.dashboardUniverseRecentWorks ?? '최근 추가된 작품',
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: HomeDashboardStyles.panelTitle,
@@ -88,7 +96,7 @@ class HomeDashboardUniverseSection extends StatelessWidget {
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       ),
                       child: Text(
-                        '모두 보기',
+                        l10n?.dashboardUniverseViewAll ?? '모두 보기',
                         style: AkashaTypography.micro.copyWith(
                           color: AkashaColors.textMuted,
                         ),
@@ -97,7 +105,7 @@ class HomeDashboardUniverseSection extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 14),
-                ..._recentlyAddedRows(),
+                ..._recentlyAddedRows(l10n),
               ],
             ),
           ),
@@ -106,7 +114,7 @@ class HomeDashboardUniverseSection extends StatelessWidget {
     );
   }
 
-  List<Widget> _recentlyAddedRows() {
+  List<Widget> _recentlyAddedRows(dynamic l10n) {
     final sortedItems = List<AkashaItem>.from(vaultItems)
       ..sort((a, b) => b.addedAt.compareTo(a.addedAt));
     final recentItems = sortedItems.take(5).toList();
@@ -114,7 +122,7 @@ class HomeDashboardUniverseSection extends StatelessWidget {
     if (recentItems.isEmpty) {
       return [
         Text(
-          '최근 추가한 작품이 없습니다.',
+          l10n?.dashboardUniverseNoRecentWorks ?? '최근 추가한 작품이 없습니다.',
           style: AkashaTypography.bodySecondary.copyWith(
             color: AkashaColors.textMuted,
           ),
@@ -169,8 +177,8 @@ class HomeDashboardUniverseSection extends StatelessWidget {
                         Text(
                           '${work.releaseYear ?? ''} · ${work.category.name}',
                           style: AkashaTypography.micro.copyWith(
-                          color: AkashaColors.textMuted,
-                        ),
+                            color: AkashaColors.textMuted,
+                          ),
                         ),
                       ],
                     ),

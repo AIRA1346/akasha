@@ -6,6 +6,7 @@ import '../../../../models/akasha_item.dart';
 import '../../../../models/user_catalog_entity.dart';
 import '../../../../screens/home/coordinators/home_shell_wiring.dart';
 import '../../../../services/relationship_discovery_service.dart';
+import '../../../../utils/app_l10n.dart';
 import '../../../../widgets/work_preview_theme_clusters_section.dart';
 import 'home_dashboard_styles.dart';
 
@@ -63,6 +64,7 @@ class _HomeDashboardThemeClustersSectionState
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     return FutureBuilder<List<ConceptThemeCluster>>(
       future: _future,
       builder: (context, snapshot) {
@@ -75,13 +77,14 @@ class _HomeDashboardThemeClustersSectionState
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            HomeDashboardStyles.sectionHeader('반복되는 주제'),
+            HomeDashboardStyles.sectionHeader(
+              l10n?.dashboardThemeClustersTitle ?? '반복되는 주제',
+            ),
             const SizedBox(height: 12),
             WorkPreviewThemeClustersSection(
               clusters: clusters,
               compact: true,
-              onOpenConcept: (cluster) =>
-                  widget.onOpenConcept(cluster.concept),
+              onOpenConcept: (cluster) => widget.onOpenConcept(cluster.concept),
             ),
           ],
         );

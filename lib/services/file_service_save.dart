@@ -171,6 +171,7 @@ mixin _AkashaFileServiceSave
     final uniqueFilename = '${DateTime.now().millisecondsSinceEpoch}_$filename';
     final destinationPath = p.join(_vaultPath!, 'posters', uniqueFilename);
 
+    await Directory(p.dirname(destinationPath)).create(recursive: true);
     await file.copy(destinationPath);
     return p.join('posters', uniqueFilename);
   }

@@ -1316,6 +1316,134 @@ class AppLocalizationsKo extends AppLocalizations {
   String get descDashboardWrite => '타임라인과 일지에서 시간순 기록을 확인합니다.';
 
   @override
+  String get appThemePickerFreeNotice => '현재 제공되는 앱 테마는 모두 무료입니다.';
+
+  @override
+  String get dashboardHeroTitle => '기록하고, 연결하고, 발견하세요';
+
+  @override
+  String get dashboardHeroSubtitle =>
+      '작품, 사람, 사건, 개념을 기록하면 연결이 생기고 새로운 발견으로 이어집니다.';
+
+  @override
+  String get dashboardDiscoveryTitle => '발견의 여정';
+
+  @override
+  String get dashboardDiscoveryTabConnections => '추천 연결';
+
+  @override
+  String get dashboardDiscoveryTabNewWorks => '새로운 작품';
+
+  @override
+  String get dashboardDiscoveryTabPeople => '주목할 인물';
+
+  @override
+  String get dashboardDiscoveryEmptyConnections =>
+      '기록에 [[링크]]를 추가하면 추천 연결이 여기에 표시됩니다.';
+
+  @override
+  String get dashboardDiscoveryMoreConnections => '더 많은 연결 보기';
+
+  @override
+  String get dashboardDiscoveryEmptyVault => '볼트에 작품을 추가하면 발견의 여정이 시작됩니다.';
+
+  @override
+  String get dashboardDiscoveryNoRecentWorks => '최근 추가한 작품이 없습니다.';
+
+  @override
+  String get dashboardDiscoveryNoPeople =>
+      '등록된 인물이 없습니다. 인물을 추가하고 작품과 연결해 보세요.';
+
+  @override
+  String get dashboardThemeClustersTitle => '반복되는 주제';
+
+  @override
+  String get dashboardRecentDiscoveryTitle => '최근 발견';
+
+  @override
+  String get dashboardRecentDiscoveryEmpty => '탐험을 시작하면 최근에 본 작품이 여기에 모입니다.';
+
+  @override
+  String get dashboardRecentRecordsTitle => '최근 기록';
+
+  @override
+  String get dashboardRecentRecordsEmpty => '작품을 열어 감상을 기록하면 여기에 표시됩니다.';
+
+  @override
+  String get dashboardRecentRecordsArchived => '아카이브됨 · 기록 있음';
+
+  @override
+  String get dashboardRegistryBridgeTitle => '사전에서 발견';
+
+  @override
+  String dashboardRegistryRecommendation(String bridge) {
+    return '$bridge → 사전 추천';
+  }
+
+  @override
+  String get dashboardUniverseTitle => '지식 우주 현황';
+
+  @override
+  String get dashboardUniverseRecentWorks => '최근 추가된 작품';
+
+  @override
+  String get dashboardUniverseViewAll => '모두 보기';
+
+  @override
+  String get dashboardUniverseNoRecentWorks => '최근 추가한 작품이 없습니다.';
+
+  @override
+  String get dashboardTodaysLinksTitle => '오늘의 연결';
+
+  @override
+  String get dashboardTodaysLinksEmpty => '기록에서 연결한 작품·인물이 여기에 표시됩니다.';
+
+  @override
+  String get dashboardTodaysLinksConnectedWork => '연결 작품';
+
+  @override
+  String get dashboardTodaysLinksSuggestion => '연결 제안';
+
+  @override
+  String get registryDiscoveryMoreFromCatalog => '사전에서 더 보기';
+
+  @override
+  String get knowledgeGraphTitle => '연결 목록';
+
+  @override
+  String get knowledgeGraphSubtitle => '작품별로 묶인 연결을 목록으로 봅니다. (노드 그래프가 아닙니다)';
+
+  @override
+  String get knowledgeGraphEmptyVault => '볼트에 작품이 없습니다.';
+
+  @override
+  String get knowledgeGraphConnectEntity => '엔티티 연결하기';
+
+  @override
+  String knowledgeGraphConnectionCount(int count) {
+    return '연결 $count개';
+  }
+
+  @override
+  String get knowledgeGraphNoConnections => '연결 없음 · 기록에서 링크 추가';
+
+  @override
+  String get knowledgeGraphOpen => '열기';
+
+  @override
+  String get knowledgeGraphExpandToLoad => '펼쳐서 연결을 불러오세요.';
+
+  @override
+  String get knowledgeGraphEmptyTitle => '아직 연결된 지식이 없습니다.';
+
+  @override
+  String get knowledgeGraphEmptyBody =>
+      '첫 연결을 만들어 보세요. 작품 기록에 링크를 추가하면 여기에 표시됩니다.';
+
+  @override
+  String get knowledgeGraphOpenRecord => '기록 열기';
+
+  @override
   String get actionClose => '닫기';
 
   @override

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/archiving/entity_anchor.dart';
 import '../../../../core/ports/record_link_port.dart';
 import '../../../../core/ports/user_catalog_port.dart';
 import '../../../../models/akasha_item.dart';
@@ -7,7 +8,9 @@ import '../../../../models/user_catalog_entity.dart';
 import '../../../../screens/home/coordinators/home_shell_wiring.dart';
 import '../../../../services/link_candidate_service.dart';
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_palette.dart';
 import '../../../../theme/akasha_typography.dart';
+import '../../../../utils/app_l10n.dart';
 import '../../../../utils/work_link_neighbors.dart';
 import '../../../../widgets/poster_image.dart';
 import 'home_dashboard_styles.dart';
@@ -30,7 +33,7 @@ class HomeDashboardTodaysLinksSection extends StatefulWidget {
   final void Function(AkashaItem work) onOpenWork;
   final void Function(UserCatalogEntity entity) onOpenEntity;
   final void Function(LinkCandidate candidate, AkashaItem work)?
-      onConnectSuggested;
+  onConnectSuggested;
 
   @override
   State<HomeDashboardTodaysLinksSection> createState() =>
@@ -66,8 +69,9 @@ class _HomeDashboardTodaysLinksSectionState
     final linkCounts = <String, int>{};
     for (final work in widget.vaultItems) {
       if (work.workId.isEmpty) continue;
-      linkCounts[work.workId] =
-          (await discovery.entityIdsForWork(work.workId)).length;
+      linkCounts[work.workId] = (await discovery.entityIdsForWork(
+        work.workId,
+      )).length;
     }
 
     final sorted = List<AkashaItem>.from(widget.vaultItems)
@@ -118,11 +122,7 @@ class _HomeDashboardTodaysLinksSectionState
     for (final person in neighbors.characters) {
       if (highlights.length >= 3) return;
       highlights.add(
-        _LinkHighlight.entity(
-          work: work,
-          entity: person,
-          relationLabel: '인물',
-        ),
+        _LinkHighlight.entity(work: work, entity: person, relationLabel: '인물'),
       );
     }
     for (final connected in neighbors.connectedWorks) {
@@ -140,41 +140,32 @@ class _HomeDashboardTodaysLinksSectionState
     for (final concept in neighbors.concepts) {
       if (highlights.length >= 3) return;
       highlights.add(
-        _LinkHighlight.entity(
-          work: work,
-          entity: concept,
-          relationLabel: '개념',
-        ),
+        _LinkHighlight.entity(work: work, entity: concept, relationLabel: '개념'),
       );
     }
     for (final place in neighbors.places) {
       if (highlights.length >= 3) return;
       highlights.add(
-        _LinkHighlight.entity(
-          work: work,
-          entity: place,
-          relationLabel: '장소',
-        ),
+        _LinkHighlight.entity(work: work, entity: place, relationLabel: '장소'),
       );
     }
     for (final org in neighbors.organizations) {
       if (highlights.length >= 3) return;
       highlights.add(
-        _LinkHighlight.entity(
-          work: work,
-          entity: org,
-          relationLabel: '조직',
-        ),
+        _LinkHighlight.entity(work: work, entity: org, relationLabel: '조직'),
       );
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        HomeDashboardStyles.sectionHeader('오늘의 연결'),
+        HomeDashboardStyles.sectionHeader(
+          l10n?.dashboardTodaysLinksTitle ?? '오늘의 연결',
+        ),
         const SizedBox(height: 12),
         FutureBuilder<List<_LinkHighlight>>(
           future: _future,
@@ -196,7 +187,8 @@ class _HomeDashboardTodaysLinksSectionState
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8),
                 child: Text(
-                  '기록에서 연결한 작품·인물이 여기에 표시됩니다.',
+                  l10n?.dashboardTodaysLinksEmpty ??
+                      '기록에서 연결한 작품·인물이 여기에 표시됩니다.',
                   style: AkashaTypography.bodySecondary.copyWith(
                     color: AkashaColors.textMuted,
                   ),
@@ -225,11 +217,7 @@ class _HomeDashboardTodaysLinksSectionState
   }
 }
 
-enum _HighlightKind {
-  entity,
-  connectedWork,
-  suggestion,
-}
+enum _HighlightKind { entity, connectedWork, suggestion }
 
 class _LinkHighlight {
   const _LinkHighlight._({
@@ -298,20 +286,21 @@ class _LinkCard extends StatelessWidget {
   final void Function(AkashaItem work) onOpenWork;
   final void Function(UserCatalogEntity entity) onOpenEntity;
   final void Function(LinkCandidate candidate, AkashaItem work)?
-      onConnectSuggested;
+  onConnectSuggested;
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     final targetLabel = switch (highlight.kind) {
       _HighlightKind.entity => highlight.entity?.title ?? '',
       _HighlightKind.connectedWork => highlight.connectedWork?.title ?? '',
       _HighlightKind.suggestion => highlight.candidate?.title ?? '',
     };
-    final targetType = highlight.relationLabel ?? '';
+    final targetType = _targetType(context);
 
     return Container(
       padding: const EdgeInsets.all(12),
-      decoration: AkashaColors.surfaceCard(),
+      decoration: palette.surfaceCard(),
       child: InkWell(
         onTap: () => _onTap(),
         borderRadius: BorderRadius.circular(8),
@@ -331,7 +320,7 @@ class _LinkCard extends StatelessWidget {
                   ? Icons.lightbulb_outline
                   : Icons.arrow_forward_rounded,
               size: 14,
-              color: AkashaColors.accent,
+              color: palette.accent,
             ),
             const SizedBox(width: 8),
             Expanded(
@@ -361,6 +350,28 @@ class _LinkCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _targetType(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+    switch (highlight.kind) {
+      case _HighlightKind.entity:
+        return switch (highlight.entity?.anchorType) {
+          EntityAnchorType.person => l10n?.entityTypePerson ?? '인물',
+          EntityAnchorType.concept => l10n?.entityTypeConcept ?? '개념',
+          EntityAnchorType.event => l10n?.entityTypeEvent ?? '사건',
+          EntityAnchorType.place => l10n?.entityTypePlace ?? '장소',
+          EntityAnchorType.organization => l10n?.entityTypeOrganization ?? '조직',
+          EntityAnchorType.work => l10n?.entityTypeWork ?? '작품',
+          EntityAnchorType.custom => l10n?.entityTypeCustom ?? '사용자',
+          EntityAnchorType.phenomenon => l10n?.entityTypePhenomenon ?? '레거시',
+          null => highlight.relationLabel ?? '',
+        };
+      case _HighlightKind.connectedWork:
+        return l10n?.dashboardTodaysLinksConnectedWork ?? '연결 작품';
+      case _HighlightKind.suggestion:
+        return l10n?.dashboardTodaysLinksSuggestion ?? '연결 제안';
+    }
   }
 
   void _onTap() {

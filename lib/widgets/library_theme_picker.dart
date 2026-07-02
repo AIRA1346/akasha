@@ -4,6 +4,7 @@ import '../models/library_theme.dart';
 import '../services/library_theme_preferences.dart';
 import '../theme/akasha_colors.dart';
 import '../theme/akasha_palette.dart';
+import '../utils/app_l10n.dart';
 
 /// 앱 테마 선택 바텀시트.
 Future<LibraryTheme?> showLibraryThemePicker(
@@ -14,6 +15,7 @@ Future<LibraryTheme?> showLibraryThemePicker(
     context: context,
     backgroundColor: context.akashaPalette.surfaceElevated,
     builder: (ctx) {
+      final l10n = lookupAppL10n(ctx);
       return SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
@@ -21,13 +23,16 @@ Future<LibraryTheme?> showLibraryThemePicker(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                '앱 테마',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              Text(
+                l10n?.appPreferencesThemeTitle ?? '앱 테마',
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(height: 4),
               Text(
-                '현재 제공되는 앱 테마는 모두 무료입니다.',
+                l10n?.appThemePickerFreeNotice ?? '현재 제공되는 앱 테마는 모두 무료입니다.',
                 style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
               ),
               const SizedBox(height: 12),

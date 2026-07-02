@@ -4,6 +4,7 @@ import '../models/registry_work.dart';
 import '../services/registry_discovery_candidate_service.dart';
 import '../theme/akasha_colors.dart';
 import '../theme/akasha_palette.dart';
+import '../utils/app_l10n.dart';
 
 /// Registry Discovery Bridge — 사전 작품 추천 섹션 (R11).
 class RegistryDiscoveryCandidatesSection extends StatelessWidget {
@@ -25,6 +26,7 @@ class RegistryDiscoveryCandidatesSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final palette = context.akashaPalette;
+    final l10n = lookupAppL10n(context);
     if (loading) {
       return const Padding(
         padding: EdgeInsets.symmetric(vertical: 8),
@@ -53,7 +55,7 @@ class RegistryDiscoveryCandidatesSection extends StatelessWidget {
               ),
               const SizedBox(width: 6),
               Text(
-                '사전에서 더 보기',
+                l10n?.registryDiscoveryMoreFromCatalog ?? '사전에서 더 보기',
                 style: TextStyle(
                   fontSize: compact ? 10 : 11,
                   fontWeight: FontWeight.bold,

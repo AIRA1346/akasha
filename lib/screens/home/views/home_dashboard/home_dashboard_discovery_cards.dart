@@ -4,6 +4,7 @@ import '../../../../models/akasha_item.dart';
 import '../../../../models/user_catalog_entity.dart';
 import '../../../../services/link_candidate_service.dart';
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_palette.dart';
 import '../../../../theme/akasha_typography.dart';
 import '../../../../utils/connection_similarity.dart';
 import '../../../../widgets/poster_image.dart';
@@ -27,6 +28,7 @@ class DiscoverySectionEmptyCta extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Column(
@@ -44,7 +46,7 @@ class DiscoverySectionEmptyCta extends StatelessWidget {
               FilledButton(
                 onPressed: onPrimary,
                 style: FilledButton.styleFrom(
-                  backgroundColor: AkashaColors.accent,
+                  backgroundColor: palette.accent,
                   padding: const EdgeInsets.symmetric(
                     horizontal: 14,
                     vertical: 8,
@@ -55,7 +57,10 @@ class DiscoverySectionEmptyCta extends StatelessWidget {
               if (secondaryLabel != null && onSecondary != null)
                 OutlinedButton(
                   onPressed: onSecondary,
-                  child: Text(secondaryLabel!, style: AkashaTypography.compactLabel),
+                  child: Text(
+                    secondaryLabel!,
+                    style: AkashaTypography.compactLabel,
+                  ),
                 ),
             ],
           ),
@@ -82,7 +87,9 @@ class DiscoverySectionTabButton extends StatelessWidget {
     return TextButton(
       onPressed: onTap,
       style: TextButton.styleFrom(
-        foregroundColor: isActive ? AkashaColors.textPrimary : AkashaColors.textCaption,
+        foregroundColor: isActive
+            ? AkashaColors.textPrimary
+            : AkashaColors.textCaption,
       ),
       child: Text(
         label,
@@ -109,10 +116,11 @@ class DiscoverySectionPairCard extends StatelessWidget {
   final void Function(AkashaItem item)? onItemDoubleTap;
   final void Function(UserCatalogEntity entity) onOpenEntity;
   final void Function(LinkCandidate candidate, AkashaItem work)?
-      onConnectSuggested;
+  onConnectSuggested;
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     final badge = similarityBadgeLabel(
       axis: highlight.axis,
       percent: highlight.percent,
@@ -120,7 +128,7 @@ class DiscoverySectionPairCard extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.all(14),
-      decoration: AkashaColors.surfaceCard(),
+      decoration: palette.surfaceCard(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -130,7 +138,7 @@ class DiscoverySectionPairCard extends StatelessWidget {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: AkashaTypography.sectionLabel.copyWith(
-              color: AkashaColors.accent,
+              color: palette.accent,
             ),
           ),
           const SizedBox(height: 12),
@@ -146,12 +154,12 @@ class DiscoverySectionPairCard extends StatelessWidget {
                       ? null
                       : () => onItemDoubleTap!(highlight.left),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Icon(
                     Icons.arrow_forward_rounded,
                     size: 16,
-                    color: AkashaColors.accent,
+                    color: palette.accent,
                   ),
                 ),
                 if (highlight.isSuggestion)
@@ -160,9 +168,9 @@ class DiscoverySectionPairCard extends StatelessWidget {
                     onTap: onConnectSuggested == null
                         ? null
                         : () => onConnectSuggested!(
-                              highlight.candidate!,
-                              highlight.left,
-                            ),
+                            highlight.candidate!,
+                            highlight.left,
+                          ),
                   )
                 else
                   DiscoverySectionWorkThumb(
@@ -193,6 +201,7 @@ class DiscoverySectionSuggestionThumb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return Material(
       color: Colors.transparent,
       child: InkWell(
@@ -204,15 +213,15 @@ class DiscoverySectionSuggestionThumb extends StatelessWidget {
               width: 52,
               height: 52,
               decoration: BoxDecoration(
-                color: AkashaColors.accent.withValues(alpha: 0.12),
+                color: palette.accent.withValues(alpha: 0.12),
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(
-                  color: AkashaColors.accent.withValues(alpha: 0.35),
+                  color: palette.accent.withValues(alpha: 0.35),
                 ),
               ),
-              child: const Icon(
+              child: Icon(
                 Icons.add_link_rounded,
-                color: AkashaColors.accent,
+                color: palette.accent,
                 size: 20,
               ),
             ),
@@ -250,9 +259,10 @@ class DiscoverySectionSingleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return Container(
       padding: const EdgeInsets.all(14),
-      decoration: AkashaColors.surfaceCard(),
+      decoration: palette.surfaceCard(),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
@@ -304,6 +314,7 @@ class DiscoverySectionEntityCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     final avatarItem = EntityItem(
       entityType: entity.anchorType,
       entityId: entity.entityId,
@@ -319,7 +330,7 @@ class DiscoverySectionEntityCard extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.all(14),
-      decoration: AkashaColors.surfaceCard(),
+      decoration: palette.surfaceCard(),
       child: Material(
         color: Colors.transparent,
         child: InkWell(

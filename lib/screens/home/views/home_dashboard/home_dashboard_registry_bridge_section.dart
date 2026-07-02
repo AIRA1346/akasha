@@ -5,6 +5,7 @@ import '../../../../core/ports/user_catalog_port.dart';
 import '../../../../models/akasha_item.dart';
 import '../../../../models/registry_work.dart';
 import '../../../../services/registry_discovery_candidate_service.dart';
+import '../../../../utils/app_l10n.dart';
 import '../../../../widgets/poster_image.dart';
 import '../../../../widgets/registry_discovery_candidates_section.dart';
 import 'home_dashboard_styles.dart';
@@ -85,6 +86,7 @@ class _HomeDashboardRegistryBridgeSectionState
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final palette = context.akashaPalette;
     return FutureBuilder<_BridgeCard?>(
       future: _future,
@@ -98,7 +100,9 @@ class _HomeDashboardRegistryBridgeSectionState
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            HomeDashboardStyles.sectionHeader('사전에서 발견'),
+            HomeDashboardStyles.sectionHeader(
+              l10n?.dashboardRegistryBridgeTitle ?? '사전에서 발견',
+            ),
             const SizedBox(height: 12),
             Container(
               padding: const EdgeInsets.all(12),
@@ -136,7 +140,10 @@ class _HomeDashboardRegistryBridgeSectionState
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          '${card.bridgeLabel} → 사전 추천',
+                          l10n?.dashboardRegistryRecommendation(
+                                card.bridgeLabel,
+                              ) ??
+                              '${card.bridgeLabel} → 사전 추천',
                           style: AkashaTypography.caption.copyWith(
                             color: AkashaColors.textMuted,
                           ),

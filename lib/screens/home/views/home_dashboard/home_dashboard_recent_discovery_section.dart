@@ -4,6 +4,7 @@ import '../../../../models/akasha_item.dart';
 import '../../../../theme/akasha_colors.dart';
 import '../../../../theme/akasha_palette.dart';
 import '../../../../theme/akasha_typography.dart';
+import '../../../../utils/app_l10n.dart';
 import '../../../../widgets/poster_image.dart';
 import 'home_dashboard_styles.dart';
 
@@ -22,6 +23,7 @@ class HomeDashboardRecentDiscoverySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final sorted = List<AkashaItem>.from(vaultItems)
       ..sort((a, b) => b.addedAt.compareTo(a.addedAt));
     final recent = sorted.take(4).toList();
@@ -29,11 +31,14 @@ class HomeDashboardRecentDiscoverySection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        HomeDashboardStyles.sectionHeader('최근 발견'),
+        HomeDashboardStyles.sectionHeader(
+          l10n?.dashboardRecentDiscoveryTitle ?? '최근 발견',
+        ),
         const SizedBox(height: 12),
         if (recent.isEmpty)
           Text(
-            '탐험을 시작하면 최근에 본 작품이 여기에 모입니다.',
+            l10n?.dashboardRecentDiscoveryEmpty ??
+                '탐험을 시작하면 최근에 본 작품이 여기에 모입니다.',
             style: AkashaTypography.bodySecondary.copyWith(
               color: AkashaColors.textMuted,
             ),

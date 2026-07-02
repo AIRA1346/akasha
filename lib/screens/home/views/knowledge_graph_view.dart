@@ -10,6 +10,7 @@ import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../utils/app_l10n.dart';
 import '../../../utils/work_link_neighbors.dart';
 import '../../../widgets/poster_image.dart';
 import '../../../widgets/work_link_neighbors_sections.dart';
@@ -44,6 +45,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
   final Map<String, WorkLinkNeighbors> _expandedNeighbors = {};
   final Set<String> _loadingWorkIds = {};
   var _loadingCounts = true;
+  var _loadGeneration = 0;
 
   @override
   void initState() {
@@ -59,12 +61,14 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
       setState(() {
         _loadingCounts = true;
         _expandedNeighbors.clear();
+        _loadingWorkIds.clear();
       });
       _loadCounts();
     }
   }
 
   Future<void> _loadCounts() async {
+    final generation = ++_loadGeneration;
     final discovery = HomeShellWiring.createEntityRelatedWorksDiscovery(
       linkIndex: widget.linkIndex,
       vaultItems: widget.vaultItems,
@@ -75,7 +79,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
       final linked = await discovery.entityIdsForWork(item.workId);
       counts[item.workId] = linked.length;
     }
-    if (!mounted) return;
+    if (!mounted || generation != _loadGeneration) return;
     setState(() {
       _linkCounts
         ..clear()
@@ -89,6 +93,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
         _loadingWorkIds.contains(work.workId)) {
       return;
     }
+    final generation = _loadGeneration;
     setState(() => _loadingWorkIds.add(work.workId));
     final discovery = HomeShellWiring.createEntityRelatedWorksDiscovery(
       linkIndex: widget.linkIndex,
@@ -101,7 +106,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
       linkIndex: widget.linkIndex,
       vaultItems: widget.vaultItems,
     );
-    if (!mounted) return;
+    if (!mounted || generation != _loadGeneration) return;
     setState(() {
       _loadingWorkIds.remove(work.workId);
       _expandedNeighbors[work.workId] = neighbors;
@@ -110,6 +115,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final palette = context.akashaPalette;
     final works = List<AkashaItem>.from(widget.vaultItems)
       ..sort((a, b) {
@@ -134,10 +140,14 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('연결 목록', style: AkashaTypography.graphTitle),
+                Text(
+                  l10n?.knowledgeGraphTitle ?? '연결 목록',
+                  style: AkashaTypography.graphTitle,
+                ),
                 SizedBox(height: AkashaSpacing.xs + 2),
                 Text(
-                  '작품별로 묶인 연결을 목록으로 봅니다. (노드 그래프가 아닙니다)',
+                  l10n?.knowledgeGraphSubtitle ??
+                      '작품별로 묶인 연결을 목록으로 봅니다. (노드 그래프가 아닙니다)',
                   style: AkashaTypography.body,
                 ),
               ],
@@ -154,13 +164,16 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text('볼트에 작품이 없습니다.', style: AkashaTypography.body),
+                    Text(
+                      l10n?.knowledgeGraphEmptyVault ?? '볼트에 작품이 없습니다.',
+                      style: AkashaTypography.body,
+                    ),
                     if (widget.onConnectEntity != null) ...[
                       SizedBox(height: AkashaSpacing.md),
                       OutlinedButton(
                         onPressed: widget.onConnectEntity,
                         child: Text(
-                          '엔티티 연결하기',
+                          l10n?.knowledgeGraphConnectEntity ?? '엔티티 연결하기',
                           style: AkashaTypography.compactLabel,
                         ),
                       ),
@@ -221,7 +234,11 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                           style: AkashaTypography.listItemTitle,
                         ),
                         subtitle: Text(
-                          count > 0 ? '연결 $count개' : '연결 없음 · 기록에서 링크 추가',
+                          count > 0
+                              ? (l10n?.knowledgeGraphConnectionCount(count) ??
+                                    '연결 $count개')
+                              : (l10n?.knowledgeGraphNoConnections ??
+                                    '연결 없음 · 기록에서 링크 추가'),
                           style: AkashaTypography.bodySecondary.copyWith(
                             color: count > 0
                                 ? palette.accent
@@ -231,7 +248,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                         trailing: TextButton(
                           onPressed: () => widget.onOpenWork(work),
                           child: Text(
-                            '열기',
+                            l10n?.knowledgeGraphOpen ?? '열기',
                             style: AkashaTypography.compactLabel,
                           ),
                         ),
@@ -261,7 +278,8 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                                 vertical: AkashaSpacing.sm,
                               ),
                               child: Text(
-                                '펼쳐서 연결을 불러오세요.',
+                                l10n?.knowledgeGraphExpandToLoad ??
+                                    '펼쳐서 연결을 불러오세요.',
                                 style: AkashaTypography.bodySecondary,
                               ),
                             ),
@@ -278,6 +296,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
   }
 
   Widget _buildEmptyLinksBanner() {
+    final l10n = lookupAppL10n(context);
     return Padding(
       padding: EdgeInsets.fromLTRB(
         AkashaSpacing.lg + AkashaSpacing.sm,
@@ -292,7 +311,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              '아직 연결된 지식이 없습니다.',
+              l10n?.knowledgeGraphEmptyTitle ?? '아직 연결된 지식이 없습니다.',
               style: AkashaTypography.compactLabel.copyWith(
                 fontWeight: FontWeight.bold,
                 color: AkashaColors.textSecondary,
@@ -300,7 +319,8 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
             ),
             SizedBox(height: AkashaSpacing.xs),
             Text(
-              '첫 연결을 만들어 보세요. 작품 기록에 링크를 추가하면 여기에 표시됩니다.',
+              l10n?.knowledgeGraphEmptyBody ??
+                  '첫 연결을 만들어 보세요. 작품 기록에 링크를 추가하면 여기에 표시됩니다.',
               style: AkashaTypography.bodySecondary,
             ),
             SizedBox(height: AkashaSpacing.md),
@@ -312,7 +332,10 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                   FilledButton.icon(
                     onPressed: widget.onOpenRecord,
                     icon: const Icon(Icons.edit_note_outlined, size: 14),
-                    label: Text('기록 열기', style: AkashaTypography.compactLabel),
+                    label: Text(
+                      l10n?.knowledgeGraphOpenRecord ?? '기록 열기',
+                      style: AkashaTypography.compactLabel,
+                    ),
                     style: FilledButton.styleFrom(
                       backgroundColor: context.akashaPalette.accent,
                       padding: EdgeInsets.symmetric(
@@ -326,7 +349,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                     onPressed: widget.onConnectEntity,
                     icon: const Icon(Icons.person_add_alt_1_outlined, size: 14),
                     label: Text(
-                      '엔티티 연결하기',
+                      l10n?.knowledgeGraphConnectEntity ?? '엔티티 연결하기',
                       style: AkashaTypography.compactLabel,
                     ),
                   ),

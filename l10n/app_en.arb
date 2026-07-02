@@ -784,6 +784,60 @@
   "descDashboardConnectionMap": "View the relationships of works and entities linked via [[wiki]].",
   "descDashboardAllBrowse": "Explore library works in a grid view.",
   "descDashboardWrite": "Check chronological logs in the timeline and journal.",
+  "appThemePickerFreeNotice": "All currently available app themes are free.",
+  "dashboardHeroTitle": "Record, connect, and discover",
+  "dashboardHeroSubtitle": "Record works, people, events, and concepts to form connections and find new discoveries.",
+  "dashboardDiscoveryTitle": "Discovery Journey",
+  "dashboardDiscoveryTabConnections": "Recommended Links",
+  "dashboardDiscoveryTabNewWorks": "New Works",
+  "dashboardDiscoveryTabPeople": "People to Notice",
+  "dashboardDiscoveryEmptyConnections": "Recommended links will appear here once you add [[links]] to records.",
+  "dashboardDiscoveryMoreConnections": "View more connections",
+  "dashboardDiscoveryEmptyVault": "Add works to your vault to begin the discovery journey.",
+  "dashboardDiscoveryNoRecentWorks": "No recently added works.",
+  "dashboardDiscoveryNoPeople": "No people have been registered yet. Add people and connect them with works.",
+  "dashboardThemeClustersTitle": "Recurring Themes",
+  "dashboardRecentDiscoveryTitle": "Recent Discoveries",
+  "dashboardRecentDiscoveryEmpty": "Works you recently viewed will gather here once you start exploring.",
+  "dashboardRecentRecordsTitle": "Recent Records",
+  "dashboardRecentRecordsEmpty": "Open a work and record your thoughts to see it here.",
+  "dashboardRecentRecordsArchived": "Archived · Record available",
+  "dashboardRegistryBridgeTitle": "Discover from Catalog",
+  "dashboardRegistryRecommendation": "{bridge} → catalog recommendations",
+  "@dashboardRegistryRecommendation": {
+    "placeholders": {
+      "bridge": {
+        "type": "String"
+      }
+    }
+  },
+  "dashboardUniverseTitle": "Knowledge Universe",
+  "dashboardUniverseRecentWorks": "Recently Added Works",
+  "dashboardUniverseViewAll": "View all",
+  "dashboardUniverseNoRecentWorks": "No recently added works.",
+  "dashboardTodaysLinksTitle": "Today's Links",
+  "dashboardTodaysLinksEmpty": "Works and people linked from your records will appear here.",
+  "dashboardTodaysLinksConnectedWork": "Connected work",
+  "dashboardTodaysLinksSuggestion": "Connection suggestion",
+  "registryDiscoveryMoreFromCatalog": "More from Catalog",
+  "knowledgeGraphTitle": "Connection List",
+  "knowledgeGraphSubtitle": "View connections grouped by work. (This is not a node graph.)",
+  "knowledgeGraphEmptyVault": "No works in the vault.",
+  "knowledgeGraphConnectEntity": "Connect Entity",
+  "knowledgeGraphConnectionCount": "{count} connections",
+  "@knowledgeGraphConnectionCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "knowledgeGraphNoConnections": "No connections · Add links from records",
+  "knowledgeGraphOpen": "Open",
+  "knowledgeGraphExpandToLoad": "Expand to load connections.",
+  "knowledgeGraphEmptyTitle": "No connected knowledge yet.",
+  "knowledgeGraphEmptyBody": "Create your first connection. Add links to work records and they will appear here.",
+  "knowledgeGraphOpenRecord": "Open record",
   "actionClose": "Close",
   "labelNowViewing": "Now Viewing",
   "actionWrite": "Write",
