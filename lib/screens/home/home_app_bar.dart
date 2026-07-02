@@ -142,7 +142,11 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     final l10n = lookupAppL10n(context);
 
     return AppBar(
-      automaticallyImplyLeading: false,
+      leading: IconButton(
+        icon: Icon(isSidebarOpen ? Icons.menu_open : Icons.menu),
+        tooltip: l10n?.appBarToggleSidebar ?? '사이드바 토글 (Tab)',
+        onPressed: onToggleSidebar,
+      ),
       title: const Text(
         'A K A S H A',
         style: TextStyle(

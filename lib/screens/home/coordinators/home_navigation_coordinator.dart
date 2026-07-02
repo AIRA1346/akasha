@@ -27,7 +27,7 @@ class HomeNavigationCoordinator {
   final Future<void> Function() prefetchRegistry;
   final void Function() rebuild;
 
-  bool isSidebarOpen = true;
+  bool isSidebarOpen = false;
   int timelineReloadToken = 0;
 
   /// master_index에서 browse 그리드를 보여줄 때 true (프리미엄 홈 대시보드 대신).
@@ -66,13 +66,19 @@ class HomeNavigationCoordinator {
       isOnMasterDashboard && isKnowledgeGraphMode;
 
   Future<void> loadSidebarState() async {
-    if (isMounted()) scheduleRebuild(() => isSidebarOpen = true);
+    final open = await HomeSidebarPreferences.loadOpen();
+    if (isMounted()) scheduleRebuild(() => isSidebarOpen = open);
   }
 
   Future<void> saveSidebarState(bool open) =>
       HomeSidebarPreferences.saveOpen(open);
 
-  void toggleSidebar() {}
+  void toggleSidebar() {
+    scheduleRebuild(() {
+      isSidebarOpen = !isSidebarOpen;
+      saveSidebarState(isSidebarOpen);
+    });
+  }
 
   Future<void> loadDashboards() async {
     final needsPrefetch = await sidebarCoordinator.loadDashboards();

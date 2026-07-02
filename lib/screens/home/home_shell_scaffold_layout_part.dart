@@ -46,6 +46,11 @@ Widget _homeShellScaffoldRoot(
 
   return CallbackShortcuts(
     bindings: {
+      const SingleActivator(LogicalKeyboardKey.tab): () {
+        if (ModalRoute.of(context)?.isCurrent == true) {
+          controller.toggleSidebar();
+        }
+      },
       const SingleActivator(LogicalKeyboardKey.keyK, control: true): () {
         if (ModalRoute.of(context)?.isCurrent == true) {
           controller.openSearchDialog();
