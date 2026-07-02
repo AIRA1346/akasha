@@ -391,7 +391,7 @@ class HomeShellBody extends StatelessWidget {
           onEditPersonalLibrary: onEditPersonalLibrary,
           onDeletePersonalLibrary: onDeletePersonalLibrary,
           onDropWorkToLibrary: onDropWorkToLibrary,
-          onToggleSidebar: onToggleSidebar,
+          onToggleSidebar: null,
         ),
         Expanded(
           child: Row(
