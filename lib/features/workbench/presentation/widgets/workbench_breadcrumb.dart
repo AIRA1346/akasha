@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_palette.dart';
 import '../../../../theme/akasha_typography.dart';
 
 /// 워크벤치 상단 경로 breadcrumb. v1: [FeatureFlags.showWorkbenchBreadcrumb].
 class WorkbenchBreadcrumb extends StatelessWidget {
-  const WorkbenchBreadcrumb({
-    super.key,
-    required this.segments,
-  });
+  const WorkbenchBreadcrumb({super.key, required this.segments});
 
   final List<WorkbenchBreadcrumbSegment> segments;
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return Container(
-      color: AkashaColors.workbenchEditor,
+      color: palette.workbenchEditor,
       padding: const EdgeInsets.fromLTRB(12, 6, 12, 4),
       child: Row(
         children: [
@@ -29,7 +28,10 @@ class WorkbenchBreadcrumb extends StatelessWidget {
                   color: AkashaColors.textCaption,
                 ),
               ),
-            _SegmentChip(segment: segments[i], isLast: i == segments.length - 1),
+            _SegmentChip(
+              segment: segments[i],
+              isLast: i == segments.length - 1,
+            ),
           ],
         ],
       ),
@@ -38,10 +40,7 @@ class WorkbenchBreadcrumb extends StatelessWidget {
 }
 
 class WorkbenchBreadcrumbSegment {
-  const WorkbenchBreadcrumbSegment({
-    required this.label,
-    this.onTap,
-  });
+  const WorkbenchBreadcrumbSegment({required this.label, this.onTap});
 
   final String label;
   final VoidCallback? onTap;
@@ -55,14 +54,19 @@ class _SegmentChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     final style = isLast
         ? AkashaTypography.caption.copyWith(
             color: AkashaColors.textPrimary,
             fontWeight: FontWeight.w600,
           )
-        : AkashaTypography.caption.copyWith(color: AkashaColors.accent);
+        : AkashaTypography.caption.copyWith(color: palette.accent);
 
-    final child = Text(segment.label, style: style, overflow: TextOverflow.ellipsis);
+    final child = Text(
+      segment.label,
+      style: style,
+      overflow: TextOverflow.ellipsis,
+    );
 
     if (segment.onTap == null || isLast) {
       return Flexible(child: child);

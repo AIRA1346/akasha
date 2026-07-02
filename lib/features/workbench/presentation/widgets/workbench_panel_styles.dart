@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_palette.dart';
 import '../../../../theme/akasha_radius.dart';
 import '../../../../theme/akasha_spacing.dart';
 import '../../../../theme/akasha_typography.dart';
@@ -11,11 +12,7 @@ abstract final class WorkbenchPanelStyles {
   static const panelPadding = AkashaSpacing.workbenchPanel;
 
   static Widget panelDivider({double vertical = AkashaSpacing.lg}) {
-    return Divider(
-      color: AkashaColors.border,
-      height: vertical,
-      thickness: 1,
-    );
+    return Divider(color: AkashaColors.border, height: vertical, thickness: 1);
   }
 
   static Widget sectionLabel(String title) {
@@ -32,10 +29,7 @@ abstract final class WorkbenchPanelStyles {
   static Widget connectionsHeader() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        sectionLabel('연결'),
-        sectionHint('기록 본문의 [[링크]]로 연결됩니다'),
-      ],
+      children: [sectionLabel('연결'), sectionHint('기록 본문의 [[링크]]로 연결됩니다')],
     );
   }
 
@@ -64,17 +58,18 @@ abstract final class WorkbenchPanelStyles {
     );
   }
 
-  static ButtonStyle compactOutlinedStyle() {
+  static ButtonStyle compactOutlinedStyle({Color? borderColor}) {
     return OutlinedButton.styleFrom(
+      side: borderColor == null ? null : BorderSide(color: borderColor),
       visualDensity: VisualDensity.compact,
       padding: const EdgeInsets.symmetric(vertical: AkashaSpacing.sm),
       textStyle: AkashaTypography.caption,
     );
   }
 
-  static ButtonStyle compactFilledStyle() {
+  static ButtonStyle compactFilledStyle({Color? backgroundColor}) {
     return FilledButton.styleFrom(
-      backgroundColor: AkashaColors.accent,
+      backgroundColor: backgroundColor ?? AkashaColors.accent,
       foregroundColor: AkashaColors.textPrimary,
       visualDensity: VisualDensity.compact,
       padding: const EdgeInsets.symmetric(vertical: AkashaSpacing.sm),
@@ -107,9 +102,9 @@ abstract final class WorkbenchPanelStyles {
     );
   }
 
-  static ButtonStyle denseFilledStyle() {
+  static ButtonStyle denseFilledStyle({Color? backgroundColor}) {
     return FilledButton.styleFrom(
-      backgroundColor: AkashaColors.accent,
+      backgroundColor: backgroundColor ?? AkashaColors.accent,
       foregroundColor: AkashaColors.textPrimary,
       visualDensity: VisualDensity.compact,
       padding: const EdgeInsets.symmetric(
@@ -167,6 +162,7 @@ class WorkbenchSaveActions extends StatelessWidget {
   }
 
   Widget _buildDense(BuildContext context) {
+    final palette = context.akashaPalette;
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -190,12 +186,16 @@ class WorkbenchSaveActions extends StatelessWidget {
                 onPressed: onAddToLibrary,
                 icon: const Icon(Icons.collections_bookmark_outlined, size: 14),
                 label: Text(libraryLabel),
-                style: WorkbenchPanelStyles.denseToolbarTextStyle(),
+                style: WorkbenchPanelStyles.denseToolbarTextStyle(
+                  foregroundColor: palette.accent,
+                ),
               ),
             if (showReset && onReset != null)
               TextButton(
                 onPressed: onReset,
-                style: WorkbenchPanelStyles.denseToolbarTextStyle(),
+                style: WorkbenchPanelStyles.denseToolbarTextStyle(
+                  foregroundColor: palette.accent,
+                ),
                 child: const Text('기본값'),
               ),
             if (canDeleteMd && onDeleteArchive != null)
@@ -217,7 +217,9 @@ class WorkbenchSaveActions extends StatelessWidget {
                     )
                   : const Icon(Icons.save_outlined, size: 14),
               label: Text(saveLabel),
-              style: WorkbenchPanelStyles.denseFilledStyle(),
+              style: WorkbenchPanelStyles.denseFilledStyle(
+                backgroundColor: palette.accent,
+              ),
             ),
           ],
         ),
@@ -226,6 +228,7 @@ class WorkbenchSaveActions extends StatelessWidget {
   }
 
   Widget _buildStacked(BuildContext context) {
+    final palette = context.akashaPalette;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -236,7 +239,9 @@ class WorkbenchSaveActions extends StatelessWidget {
               onPressed: onAddToLibrary,
               icon: const Icon(Icons.collections_bookmark_outlined, size: 14),
               label: Text(libraryLabel),
-              style: WorkbenchPanelStyles.compactOutlinedStyle(),
+              style: WorkbenchPanelStyles.compactOutlinedStyle(
+                borderColor: palette.borderSubtle(0.38),
+              ),
             ),
           ),
           const SizedBox(height: AkashaSpacing.sm),
@@ -253,19 +258,18 @@ class WorkbenchSaveActions extends StatelessWidget {
               Expanded(
                 child: OutlinedButton(
                   onPressed: onReset,
-                  style: WorkbenchPanelStyles.compactOutlinedStyle(),
+                  style: WorkbenchPanelStyles.compactOutlinedStyle(
+                    borderColor: palette.borderSubtle(0.38),
+                  ),
                   child: const Text('기본값'),
                 ),
               ),
               const SizedBox(width: AkashaSpacing.sm),
-              Expanded(
-                flex: 2,
-                child: _saveButton(),
-              ),
+              Expanded(flex: 2, child: _saveButton(context)),
             ],
           )
         else
-          _saveButton(),
+          _saveButton(context),
         if (canDeleteMd && onDeleteArchive != null) ...[
           const SizedBox(height: AkashaSpacing.sm),
           SizedBox(
@@ -282,7 +286,7 @@ class WorkbenchSaveActions extends StatelessWidget {
     );
   }
 
-  Widget _saveButton() {
+  Widget _saveButton(BuildContext context) {
     return FilledButton.icon(
       onPressed: isSaving ? null : onSave,
       icon: isSaving
@@ -293,7 +297,9 @@ class WorkbenchSaveActions extends StatelessWidget {
             )
           : const Icon(Icons.save_outlined, size: 14),
       label: Text(saveLabel),
-      style: WorkbenchPanelStyles.compactFilledStyle(),
+      style: WorkbenchPanelStyles.compactFilledStyle(
+        backgroundColor: context.akashaPalette.accent,
+      ),
     );
   }
 }

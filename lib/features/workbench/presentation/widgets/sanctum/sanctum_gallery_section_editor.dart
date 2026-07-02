@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../models/sanctum_gallery_entry.dart';
 import '../../../../../services/sanctum_image_import.dart';
 import '../../../../../theme/akasha_colors.dart';
+import '../../../../../theme/akasha_palette.dart';
 import '../../../../../theme/akasha_radius.dart';
 import '../../../../../theme/akasha_spacing.dart';
 import '../../../../../theme/akasha_typography.dart';
@@ -31,15 +32,16 @@ class SanctumGallerySectionEditor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
 
     return SanctumImageDropZone(
       enabled: SanctumImageImport.canImport,
       onImagesDropped: onImportPaths,
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: AkashaColors.surface.withValues(alpha: 0.35),
+          color: palette.workbenchTile,
           borderRadius: AkashaRadius.mdBorder,
-          border: Border.all(color: AkashaColors.borderSubtle(0.06)),
+          border: Border.all(color: palette.borderSubtle(0.2)),
         ),
         child: Padding(
           padding: const EdgeInsets.all(AkashaSpacing.md),
@@ -48,10 +50,10 @@ class SanctumGallerySectionEditor extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.photo_library_outlined,
                     size: 16,
-                    color: AkashaColors.accent,
+                    color: palette.accent,
                   ),
                   const SizedBox(width: AkashaSpacing.sm),
                   Text(
@@ -87,7 +89,7 @@ class SanctumGallerySectionEditor extends StatelessWidget {
                     ),
                     style: TextButton.styleFrom(
                       visualDensity: VisualDensity.compact,
-                      foregroundColor: AkashaColors.accent,
+                      foregroundColor: palette.accent,
                     ),
                   ),
                 ],
@@ -124,7 +126,7 @@ class SanctumGallerySectionEditor extends StatelessWidget {
                               top: -6,
                               right: -6,
                               child: Material(
-                                color: AkashaColors.workbenchPanel,
+                                color: palette.workbenchPanel,
                                 shape: const CircleBorder(),
                                 child: InkWell(
                                   onTap: () => onRemove(index),

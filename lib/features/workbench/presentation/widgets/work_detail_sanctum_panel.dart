@@ -6,7 +6,7 @@ import '../../../../models/entity_link_selection.dart';
 import '../../../../models/enums.dart';
 import '../../../../services/sanctum_body_templates.dart';
 import '../../../../models/user_catalog_entity.dart';
-import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_palette.dart';
 import '../../../../widgets/sanctum/sanctum_archive_toolbar.dart';
 import '../../../../widgets/sanctum_page_panel.dart';
 import '../widgets/workbench_panel_styles.dart';
@@ -75,7 +75,8 @@ class WorkDetailSanctumPanel extends StatelessWidget {
   final Future<EntityLinkSelection?> Function(
     BuildContext context,
     String selectedText,
-  )? onRequestEntityLink;
+  )?
+  onRequestEntityLink;
   final UserCatalogPort? userCatalog;
   final void Function(UserCatalogEntity entity)? onOpenLinkedEntity;
   final MediaCategory category;
@@ -95,7 +96,7 @@ class WorkDetailSanctumPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
-      color: AkashaColors.workbenchEditor,
+      color: context.akashaPalette.workbenchEditor,
       child: SanctumPagePanel(
         view: pageView,
         onViewChanged: onViewChanged,

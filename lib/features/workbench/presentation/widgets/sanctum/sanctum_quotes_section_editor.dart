@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../theme/akasha_colors.dart';
+import '../../../../../theme/akasha_palette.dart';
 import '../../../../../theme/akasha_radius.dart';
 import '../../../../../theme/akasha_spacing.dart';
 import '../../../../../theme/akasha_typography.dart';
@@ -22,12 +23,13 @@ class SanctumQuotesSectionEditor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
 
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: AkashaColors.surface.withValues(alpha: 0.2),
+        color: palette.workbenchTile,
         borderRadius: AkashaRadius.mdBorder,
-        border: Border.all(color: AkashaColors.borderSubtle(0.05)),
+        border: Border.all(color: palette.borderSubtle(0.18)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -81,18 +83,14 @@ class SanctumQuotesSectionEditor extends StatelessWidget {
                   hintText: l10n?.hintQuotesEditor ?? '한 줄에 한 문장씩 입력하세요.',
                   hintStyle: AkashaTypography.bodySecondary,
                   filled: true,
-                  fillColor: AkashaColors.workbenchEditor,
+                  fillColor: palette.workbenchEditor,
                   border: OutlineInputBorder(
                     borderRadius: AkashaRadius.smBorder,
-                    borderSide: BorderSide(
-                      color: AkashaColors.borderSubtle(0.08),
-                    ),
+                    borderSide: BorderSide(color: palette.borderSubtle(0.18)),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: AkashaRadius.smBorder,
-                    borderSide: BorderSide(
-                      color: AkashaColors.borderSubtle(0.08),
-                    ),
+                    borderSide: BorderSide(color: palette.borderSubtle(0.18)),
                   ),
                   contentPadding: const EdgeInsets.all(AkashaSpacing.md),
                 ),

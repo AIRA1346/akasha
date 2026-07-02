@@ -6,6 +6,7 @@ import '../core/archiving/record_link.dart';
 import '../services/record_link_markdown.dart';
 import 'safe_local_image.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_palette.dart';
 
 /// Sanctum vault md 본문 렌더러 — vault 상대 이미지·외부 URL 지원
 class VaultMarkdownBody extends StatelessWidget {
@@ -27,13 +28,18 @@ class VaultMarkdownBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     if (data.trim().isEmpty) {
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         child: Text(
           'Sanctum 페이지가 비어 있습니다.\n'
           '「본문」 또는 「.md」 탭에서 감상·메모를 작성해 보세요.',
-          style: TextStyle(fontSize: 13, color: AkashaColors.textMuted, height: 1.5),
+          style: TextStyle(
+            fontSize: 13,
+            color: AkashaColors.textMuted,
+            height: 1.5,
+          ),
         ),
       );
     }
@@ -45,19 +51,19 @@ class VaultMarkdownBody extends StatelessWidget {
       h3: base.h3?.copyWith(fontSize: 15, fontWeight: FontWeight.w600),
       p: base.p?.copyWith(fontSize: 14, height: 1.55),
       blockquote: base.blockquote?.copyWith(
-        color: Colors.tealAccent.withValues(alpha: 0.85),
+        color: palette.accent.withValues(alpha: 0.85),
         fontStyle: FontStyle.italic,
       ),
       blockquoteDecoration: BoxDecoration(
         border: Border(
           left: BorderSide(
-            color: Colors.tealAccent.withValues(alpha: 0.4),
+            color: palette.accent.withValues(alpha: 0.4),
             width: 3,
           ),
         ),
       ),
       code: base.code?.copyWith(
-        backgroundColor: const Color(0xFF2A2A3A),
+        backgroundColor: palette.workbenchTile,
         fontFamily: 'monospace',
         fontSize: 12,
       ),

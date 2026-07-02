@@ -5,6 +5,7 @@ import '../../../core/archiving/same_day_record_ref.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
 import '../../../utils/work_link_neighbors.dart';
@@ -69,11 +70,12 @@ class _WorkDetailConnectionsPanelState
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
 
     return SizedBox(
       width: widget.width,
       child: ColoredBox(
-        color: AkashaColors.workbenchPanel,
+        color: palette.workbenchPanel,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -110,7 +112,7 @@ class _WorkDetailConnectionsPanelState
                       child: Text(
                         l10n?.labelDashboardConnectionMap ?? '연결 맵',
                         style: AkashaTypography.caption.copyWith(
-                          color: AkashaColors.accent,
+                          color: palette.accent,
                         ),
                       ),
                     ),
@@ -168,6 +170,7 @@ class _WorkDetailConnectionsPanelState
   }
 
   Widget _buildInfoTab(dynamic l10n) {
+    final palette = context.akashaPalette;
     final n = widget.linkNeighbors;
     final linkCount =
         n.characters.length +
@@ -203,7 +206,7 @@ class _WorkDetailConnectionsPanelState
                     (t) => Chip(
                       label: Text(t, style: const TextStyle(fontSize: 10)),
                       visualDensity: VisualDensity.compact,
-                      backgroundColor: AkashaColors.surface,
+                      backgroundColor: palette.workbenchTile,
                     ),
                   )
                   .toList(),
@@ -245,20 +248,19 @@ class _PanelTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(6),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
         decoration: BoxDecoration(
-          color: selected
-              ? AkashaColors.accent.withValues(alpha: 0.15)
-              : Colors.transparent,
+          color: selected ? palette.accentSoft : Colors.transparent,
           borderRadius: BorderRadius.circular(6),
           border: Border.all(
             color: selected
-                ? AkashaColors.accent.withValues(alpha: 0.4)
-                : Colors.white.withValues(alpha: 0.08),
+                ? palette.accent.withValues(alpha: 0.4)
+                : palette.borderSubtle(0.18),
           ),
         ),
         child: Text(

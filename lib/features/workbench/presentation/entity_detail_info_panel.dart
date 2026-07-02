@@ -6,6 +6,7 @@ import '../../../models/user_catalog_entity.dart';
 import '../../../screens/home/views/preview_record_view_model.dart';
 import '../../../screens/home/views/preview_work_panel_content.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
 import '../../../widgets/workbench_resizable_panel.dart';
@@ -43,6 +44,7 @@ class EntityDetailInfoPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     final record = PreviewRecordViewModel.fromEntity(entity);
     final gradColors = categoryGradient(entity.subtype);
 
@@ -54,7 +56,7 @@ class EntityDetailInfoPanel extends StatelessWidget {
       onWidthChanged: onInfoWidthChanged,
       onToggleLock: onToggleInfoLock,
       child: ColoredBox(
-        color: AkashaColors.workbenchPanel,
+        color: palette.workbenchPanel,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -106,15 +108,13 @@ class EntityDetailInfoPanel extends StatelessWidget {
                                   ),
                                   const SizedBox(width: AkashaSpacing.sm),
                                   Text(
-                                    hasJournal
-                                        ? '기록 있음'
-                                        : '기록 없음 (카탈로그만)',
+                                    hasJournal ? '기록 있음' : '기록 없음 (카탈로그만)',
                                     style: AkashaTypography.bodySecondary
                                         .copyWith(
-                                      color: hasJournal
-                                          ? AkashaColors.statusSaved
-                                          : AkashaColors.textMuted,
-                                    ),
+                                          color: hasJournal
+                                              ? AkashaColors.statusSaved
+                                              : AkashaColors.textMuted,
+                                        ),
                                   ),
                                 ],
                               ),
@@ -133,10 +133,10 @@ class EntityDetailInfoPanel extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(8),
                                 child: Container(
                                   decoration: BoxDecoration(
-                                    color: AkashaColors.surface,
+                                    color: palette.workbenchTile,
                                     borderRadius: BorderRadius.circular(8),
                                     border: Border.all(
-                                      color: AkashaColors.borderSubtle(0.06),
+                                      color: palette.borderSubtle(0.2),
                                     ),
                                   ),
                                   padding: const EdgeInsets.symmetric(

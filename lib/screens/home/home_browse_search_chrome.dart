@@ -4,6 +4,7 @@ import '../../core/archiving/entity_anchor.dart';
 import '../../models/browse_entity_scope.dart';
 import '../../models/enums.dart';
 import '../../theme/akasha_colors.dart';
+import '../../theme/akasha_palette.dart';
 import '../../theme/akasha_spacing.dart';
 import '../../theme/akasha_typography.dart';
 import '../../utils/app_l10n.dart';
@@ -62,19 +63,19 @@ class _HomeBrowseSearchChromeState extends State<HomeBrowseSearchChrome> {
   var _filtersExpanded = false;
 
   bool get _hasActiveFilters => HomeBrowseSearchChrome.hasActiveFilters(
-        categories: widget.selectedCategories,
-        workStatuses: widget.selectedWorkStatuses,
-        myStatuses: widget.selectedMyStatuses,
-        entityScope: widget.selectedEntityScope,
-      );
+    categories: widget.selectedCategories,
+    workStatuses: widget.selectedWorkStatuses,
+    myStatuses: widget.selectedMyStatuses,
+    entityScope: widget.selectedEntityScope,
+  );
 
   @override
   Widget build(BuildContext context) {
-    final compact =
-        MediaQuery.sizeOf(context).width < widget.compactBreakpoint;
+    final compact = MediaQuery.sizeOf(context).width < widget.compactBreakpoint;
+    final palette = context.akashaPalette;
 
     return ColoredBox(
-      color: AkashaColors.background,
+      color: palette.background,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -99,7 +100,7 @@ class _HomeBrowseSearchChromeState extends State<HomeBrowseSearchChrome> {
             ),
           ),
           if (_filtersExpanded) ...[
-            const Divider(height: 1),
+            Divider(height: 1, color: palette.borderSubtle(0.18)),
             FilterSection(
               selectedCategories: widget.selectedCategories,
               selectedWorkStatuses: widget.selectedWorkStatuses,
@@ -112,9 +113,9 @@ class _HomeBrowseSearchChromeState extends State<HomeBrowseSearchChrome> {
               onEntityScopeChanged: widget.onEntityScopeChanged,
               onAddNewEntity: widget.onAddNewEntity,
             ),
-            const Divider(height: 1),
+            Divider(height: 1, color: palette.borderSubtle(0.18)),
           ] else
-            Divider(height: 1, color: AkashaColors.borderSubtle(0.12)),
+            Divider(height: 1, color: palette.borderSubtle(0.12)),
         ],
       ),
     );
@@ -122,10 +123,7 @@ class _HomeBrowseSearchChromeState extends State<HomeBrowseSearchChrome> {
 }
 
 class _SearchEntry extends StatelessWidget {
-  const _SearchEntry({
-    required this.onTap,
-    required this.showCtrlKHint,
-  });
+  const _SearchEntry({required this.onTap, required this.showCtrlKHint});
 
   final VoidCallback onTap;
   final bool showCtrlKHint;
@@ -133,7 +131,9 @@ class _SearchEntry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
-    final placeholder = l10n?.searchPlaceholder ?? HomeBrowseSearchChrome.searchPlaceholder;
+    final placeholder =
+        l10n?.searchPlaceholder ?? HomeBrowseSearchChrome.searchPlaceholder;
+    final palette = context.akashaPalette;
 
     return GestureDetector(
       onTap: onTap,
@@ -141,9 +141,9 @@ class _SearchEntry extends StatelessWidget {
         height: 40,
         padding: const EdgeInsets.symmetric(horizontal: AkashaSpacing.md),
         decoration: BoxDecoration(
-          color: AkashaColors.borderSubtle(0.04),
+          color: palette.searchField,
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: AkashaColors.borderSubtle(0.1)),
+          border: Border.all(color: palette.borderSubtle(0.28)),
         ),
         child: Row(
           children: [
@@ -165,9 +165,9 @@ class _SearchEntry extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
                 decoration: BoxDecoration(
-                  color: AkashaColors.borderSubtle(0.06),
+                  color: palette.hoverSurface,
                   borderRadius: BorderRadius.circular(4),
-                  border: Border.all(color: AkashaColors.borderSubtle(0.08)),
+                  border: Border.all(color: palette.borderSubtle(0.24)),
                 ),
                 child: Text(
                   'Ctrl K',
@@ -199,6 +199,7 @@ class _FilterToggleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
     final tooltip = expanded
         ? (l10n?.filterCloseTooltip ?? '필터 닫기')
         : (l10n?.filterTooltip ?? '필터');
@@ -212,18 +213,16 @@ class _FilterToggleButton extends StatelessWidget {
         child: Icon(
           expanded ? Icons.filter_list_off : Icons.filter_list,
           size: 20,
-          color: hasActiveFilters
-              ? AkashaColors.accent
-              : AkashaColors.textSecondary,
+          color: hasActiveFilters ? palette.accent : AkashaColors.textSecondary,
         ),
       ),
       padding: EdgeInsets.zero,
       constraints: const BoxConstraints(minWidth: 40, minHeight: 40),
       style: IconButton.styleFrom(
-        backgroundColor: AkashaColors.borderSubtle(0.04),
+        backgroundColor: palette.searchField,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
-          side: BorderSide(color: AkashaColors.borderSubtle(0.1)),
+          side: BorderSide(color: palette.borderSubtle(0.28)),
         ),
       ),
     );

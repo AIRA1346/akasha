@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/registry_work.dart';
 import '../services/registry_discovery_candidate_service.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_palette.dart';
 
 /// Registry Discovery Bridge — 사전 작품 추천 섹션 (R11).
 class RegistryDiscoveryCandidatesSection extends StatelessWidget {
@@ -23,6 +24,7 @@ class RegistryDiscoveryCandidatesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     if (loading) {
       return const Padding(
         padding: EdgeInsets.symmetric(vertical: 8),
@@ -44,7 +46,11 @@ class RegistryDiscoveryCandidatesSection extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(Icons.cloud_outlined, size: 14, color: AkashaColors.textMuted),
+              Icon(
+                Icons.cloud_outlined,
+                size: 14,
+                color: AkashaColors.textMuted,
+              ),
               const SizedBox(width: 6),
               Text(
                 '사전에서 더 보기',
@@ -78,7 +84,7 @@ class RegistryDiscoveryCandidatesSection extends StatelessWidget {
                   avatar: Icon(
                     _iconFor(candidate.reason),
                     size: 14,
-                    color: AkashaColors.accent,
+                    color: palette.accent,
                   ),
                   onPressed: onPreviewRegistryWork == null
                       ? null

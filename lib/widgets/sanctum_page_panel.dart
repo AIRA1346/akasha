@@ -9,6 +9,7 @@ import 'sanctum/sanctum_archive_completion_bar.dart';
 import '../models/entity_link_selection.dart';
 import '../models/user_catalog_entity.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_palette.dart';
 import '../theme/akasha_radius.dart';
 import '../theme/akasha_spacing.dart';
 import '../theme/akasha_typography.dart';
@@ -87,6 +88,7 @@ class SanctumPagePanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -150,10 +152,10 @@ class SanctumPagePanel extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.menu_book_outlined,
                               size: 18,
-                              color: AkashaColors.accent,
+                              color: palette.accent,
                             ),
                             const SizedBox(width: AkashaSpacing.sm),
                             Expanded(
@@ -175,10 +177,10 @@ class SanctumPagePanel extends StatelessWidget {
 
                   return Row(
                     children: [
-                      const Icon(
+                      Icon(
                         Icons.menu_book_outlined,
                         size: 18,
-                        color: AkashaColors.accent,
+                        color: palette.accent,
                       ),
                       const SizedBox(width: 8),
                       Flexible(
@@ -321,8 +323,8 @@ class SanctumPagePanel extends StatelessWidget {
         if (footer != null)
           DecoratedBox(
             decoration: BoxDecoration(
-              color: AkashaColors.workbenchPanel,
-              border: Border(top: BorderSide(color: AkashaColors.border)),
+              color: palette.workbenchPanel,
+              border: Border(top: BorderSide(color: palette.border)),
             ),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(10, 6, 10, 8),

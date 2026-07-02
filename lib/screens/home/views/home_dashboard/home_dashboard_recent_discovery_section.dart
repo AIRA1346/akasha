@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../models/akasha_item.dart';
 import '../../../../theme/akasha_colors.dart';
+import '../../../../theme/akasha_palette.dart';
 import '../../../../theme/akasha_typography.dart';
 import '../../../../widgets/poster_image.dart';
 import 'home_dashboard_styles.dart';
@@ -73,6 +74,7 @@ class _DiscoveryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return SizedBox(
       width: 200,
       child: Material(
@@ -82,12 +84,10 @@ class _DiscoveryCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           child: Container(
             decoration: BoxDecoration(
-              color: AkashaColors.surface,
+              color: palette.surfaceElevated,
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
-                color: isSelected
-                    ? AkashaColors.accent
-                    : AkashaColors.borderSubtle(0.06),
+                color: isSelected ? palette.accent : palette.borderSubtle(0.18),
                 width: isSelected ? 1.5 : 1,
               ),
             ),

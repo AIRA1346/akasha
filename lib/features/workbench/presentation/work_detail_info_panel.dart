@@ -4,6 +4,7 @@ import '../../../core/archiving/same_day_record_ref.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
 import '../../../utils/work_link_neighbors.dart';
@@ -116,6 +117,7 @@ class WorkDetailInfoPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     final gradColors = categoryGradient(item.category);
     final metaLine = [
       if (item.creator.isNotEmpty) item.creator,
@@ -130,7 +132,7 @@ class WorkDetailInfoPanel extends StatelessWidget {
       onWidthChanged: onInfoWidthChanged,
       onToggleLock: onToggleInfoLock,
       child: ColoredBox(
-        color: AkashaColors.workbenchPanel,
+        color: palette.workbenchPanel,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

@@ -2,19 +2,18 @@ import 'package:flutter/material.dart';
 
 import '../../services/sanctum_archive_completion.dart';
 import '../../theme/akasha_colors.dart';
+import '../../theme/akasha_palette.dart';
 import '../../theme/akasha_typography.dart';
 
 /// Sanctum 기록 완성도 — 진행 바 + 슬롯 칩.
 class SanctumArchiveCompletionBar extends StatelessWidget {
-  const SanctumArchiveCompletionBar({
-    super.key,
-    required this.report,
-  });
+  const SanctumArchiveCompletionBar({super.key, required this.report});
 
   final SanctumArchiveCompletionReport report;
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     final color = switch (report.percent) {
       >= 80 => AkashaColors.statusSaved,
       >= 40 => AkashaColors.statusDirty,
@@ -52,7 +51,7 @@ class SanctumArchiveCompletionBar extends StatelessWidget {
               value: report.percent / 100,
               minHeight: 6,
               backgroundColor: AkashaColors.borderSubtle(0.12),
-              color: AkashaColors.accent,
+              color: palette.accent,
             ),
           ),
           const SizedBox(height: 8),
@@ -77,17 +76,16 @@ class _SlotChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final filled = criterion.filled;
+    final palette = context.akashaPalette;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
       decoration: BoxDecoration(
-        color: filled
-            ? AkashaColors.accent.withValues(alpha: 0.15)
-            : AkashaColors.surface.withValues(alpha: 0.35),
+        color: filled ? palette.accentSoft : palette.workbenchTile,
         borderRadius: BorderRadius.circular(999),
         border: Border.all(
           color: filled
-              ? AkashaColors.accent.withValues(alpha: 0.45)
-              : AkashaColors.borderSubtle(0.1),
+              ? palette.accent.withValues(alpha: 0.45)
+              : palette.borderSubtle(0.2),
         ),
       ),
       child: Row(
@@ -96,14 +94,16 @@ class _SlotChip extends StatelessWidget {
           Icon(
             filled ? Icons.check_circle : Icons.circle_outlined,
             size: 12,
-            color: filled ? AkashaColors.accent : AkashaColors.textCaption,
+            color: filled ? palette.accent : AkashaColors.textCaption,
           ),
           const SizedBox(width: 4),
           Text(
             criterion.label,
             style: TextStyle(
               fontSize: 10,
-              color: filled ? AkashaColors.textPrimary : AkashaColors.textCaption,
+              color: filled
+                  ? AkashaColors.textPrimary
+                  : AkashaColors.textCaption,
             ),
           ),
         ],

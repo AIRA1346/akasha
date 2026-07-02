@@ -12,6 +12,7 @@ import 'curated_reorder_grid.dart';
 import 'section_header.dart';
 import 'section_sort_dropdown.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_palette.dart';
 
 part 'browse_dashboard_sections_header_part.dart';
 part 'browse_dashboard_sections_grid_part.dart';

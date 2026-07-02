@@ -6,6 +6,7 @@ List<Widget> _buildWatchlistSlivers(
   BrowseGridMetrics metrics,
 ) {
   final l10n = lookupAppL10n(context);
+  final palette = context.akashaPalette;
 
   return [
     SliverToBoxAdapter(
@@ -31,9 +32,9 @@ List<Widget> _buildWatchlistSlivers(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 36, horizontal: 16),
               decoration: BoxDecoration(
-                color: const Color(0xFF1E1E2E),
+                color: palette.surfaceElevated,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
+                border: Border.all(color: palette.borderSubtle(0.18)),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

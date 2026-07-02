@@ -4,6 +4,7 @@ import '../../../models/akasha_item.dart';
 import '../../../models/enums.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
@@ -98,6 +99,7 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
     final alternativeTitle = widget.item.creator.isNotEmpty
         ? widget.item.creator
         : '';
@@ -166,7 +168,7 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
                     (tag) => Chip(
                       label: Text(tag, style: const TextStyle(fontSize: 10)),
                       visualDensity: VisualDensity.compact,
-                      backgroundColor: AkashaColors.surface,
+                      backgroundColor: palette.workbenchTile,
                     ),
                   )
                   .toList(),
@@ -232,6 +234,7 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
   }
 
   Widget _buildInfoTable(dynamic l10n) {
+    final palette = context.akashaPalette;
     final genre = widget.item.category.localizedLabel(l10n);
     final creator = widget.item.creator.isNotEmpty
         ? widget.item.creator
@@ -246,13 +249,13 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
             decoration: BoxDecoration(
-              color: AkashaColors.personAccent.withValues(alpha: 0.1),
+              color: palette.accentSoft,
               borderRadius: AkashaRadius.smBorder,
             ),
             child: Text(
               genre,
               style: AkashaTypography.caption.copyWith(
-                color: AkashaColors.personAccent,
+                color: palette.accent,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -342,6 +345,7 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
     required String Function(String value) labelFor,
     required ValueChanged<String> onChanged,
   }) {
+    final palette = context.akashaPalette;
     if (options.isEmpty || value.isEmpty) {
       return Text('정보 없음', style: AkashaTypography.caption);
     }
@@ -351,7 +355,7 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
         value: value,
         isExpanded: true,
         isDense: true,
-        dropdownColor: AkashaColors.surface,
+        dropdownColor: palette.workbenchTile,
         style: AkashaTypography.caption.copyWith(
           color: AkashaColors.textPrimary,
         ),
@@ -436,6 +440,7 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
   }
 
   Widget _buildRelatedConceptsEditor() {
+    final palette = context.akashaPalette;
     final concepts = widget.draftTags;
     if (concepts.isEmpty) {
       return Text('설정된 태그가 없습니다', style: AkashaTypography.caption);
@@ -449,9 +454,9 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
             vertical: AkashaSpacing.sm,
           ),
           decoration: BoxDecoration(
-            color: AkashaColors.surface,
+            color: palette.workbenchTile,
             borderRadius: AkashaRadius.mdBorder,
-            border: Border.all(color: AkashaColors.borderSubtle(0.04)),
+            border: Border.all(color: palette.borderSubtle(0.18)),
           ),
           child: Text(
             tag,
@@ -465,14 +470,15 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
   }
 
   Widget _buildQuickMemoField() {
+    final palette = context.akashaPalette;
     return InkWell(
       onTap: widget.onFocusSanctum,
       borderRadius: AkashaRadius.mdBorder,
       child: Container(
         decoration: BoxDecoration(
-          color: AkashaColors.surface,
+          color: palette.workbenchTile,
           borderRadius: AkashaRadius.mdBorder,
-          border: Border.all(color: AkashaColors.borderSubtle(0.06)),
+          border: Border.all(color: palette.borderSubtle(0.2)),
         ),
         padding: const EdgeInsets.symmetric(
           horizontal: AkashaSpacing.md,

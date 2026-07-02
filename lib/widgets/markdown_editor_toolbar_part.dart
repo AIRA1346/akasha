@@ -66,9 +66,10 @@ class _MarkdownEditorToolbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
 
     return Material(
-      color: AkashaColors.sidebarFooter,
+      color: palette.workbenchTile,
       borderRadius: BorderRadius.circular(8),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),

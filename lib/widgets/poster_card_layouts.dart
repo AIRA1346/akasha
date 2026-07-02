@@ -4,6 +4,7 @@ import '../models/akasha_item.dart';
 import '../models/format_slot.dart';
 import '../screens/home/dialogs/add_catalog_entity_dialog.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_palette.dart';
 import '../theme/akasha_typography.dart';
 import '../utils/catalog_display_title.dart';
 import '../utils/status_helpers.dart';
@@ -58,7 +59,9 @@ class PosterCardPosterLayout extends StatelessWidget {
                 Positioned(
                   top: 8,
                   left: 8,
-                  child: PosterCardLibraryCountBadge(count: curatedLibraryCount),
+                  child: PosterCardLibraryCountBadge(
+                    count: curatedLibraryCount,
+                  ),
                 ),
               if (showArchivedBadge)
                 const Positioned(
@@ -108,7 +111,8 @@ class PosterCardFactCardLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     final isEntity = item is EntityItem;
     final entity = isEntity ? item as EntityItem : null;
-    final accent = PosterCardStyle.categoryAccent(item);
+    final palette = context.akashaPalette;
+    final accent = PosterCardStyle.categoryAccent(item, palette: palette);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -126,7 +130,7 @@ class PosterCardFactCardLayout extends StatelessWidget {
                       end: Alignment.bottomRight,
                       colors: [
                         accent.withValues(alpha: 0.42),
-                        AkashaColors.posterGradientEnd,
+                        palette.posterCard,
                       ],
                     ),
                     borderRadius: const BorderRadius.vertical(

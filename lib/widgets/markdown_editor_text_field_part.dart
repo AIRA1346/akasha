@@ -15,6 +15,7 @@ class _MarkdownTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return TextField(
       controller: controller,
       focusNode: focusNode,
@@ -23,27 +24,25 @@ class _MarkdownTextField extends StatelessWidget {
       expands: true,
       textAlignVertical: TextAlignVertical.top,
       style: AkashaTypography.editorMono,
-      cursorColor: AkashaColors.editorAccent,
+      cursorColor: palette.accent,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: AkashaTypography.editorMono.copyWith(
           color: AkashaColors.textCaption,
         ),
         filled: true,
-        fillColor: AkashaColors.editorFieldBg,
+        fillColor: palette.workbenchEditor,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: AkashaColors.border),
+          borderSide: BorderSide(color: palette.borderSubtle(0.22)),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: AkashaColors.border),
+          borderSide: BorderSide(color: palette.borderSubtle(0.22)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(
-            color: AkashaColors.editorAccent.withValues(alpha: 0.45),
-          ),
+          borderSide: BorderSide(color: palette.accent.withValues(alpha: 0.45)),
         ),
         contentPadding: const EdgeInsets.all(12),
       ),

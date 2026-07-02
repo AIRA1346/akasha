@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/user_catalog_entity.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_palette.dart';
 import '../theme/akasha_radius.dart';
 import '../theme/akasha_typography.dart';
 
@@ -31,6 +32,7 @@ class LinkNeighborsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (!showEmptySections && isEmpty) return const SizedBox.shrink();
+    final palette = context.akashaPalette;
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 14),
@@ -44,16 +46,13 @@ class LinkNeighborsSection extends StatelessWidget {
                 TextButton.icon(
                   onPressed: onAdd,
                   icon: const Icon(Icons.add, size: 14),
-                  label: Text(
-                    addLabel,
-                    style: AkashaTypography.caption,
-                  ),
+                  label: Text(addLabel, style: AkashaTypography.caption),
                   style: TextButton.styleFrom(
                     visualDensity: VisualDensity.compact,
                     padding: const EdgeInsets.symmetric(horizontal: 4),
                     minimumSize: Size.zero,
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    foregroundColor: AkashaColors.accent,
+                    foregroundColor: palette.accent,
                   ),
                 ),
             ],
@@ -80,12 +79,13 @@ class LinkNeighborsEmptyLinkCta extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       decoration: BoxDecoration(
-        color: AkashaColors.surface,
+        color: palette.workbenchTile,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AkashaColors.borderSubtle(0.06)),
+        border: Border.all(color: palette.borderSubtle(0.2)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -99,7 +99,10 @@ class LinkNeighborsEmptyLinkCta extends StatelessWidget {
                 onPressed: onPressed,
                 style: TextButton.styleFrom(
                   visualDensity: VisualDensity.compact,
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 2,
+                  ),
                   minimumSize: Size.zero,
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 ),
@@ -125,12 +128,13 @@ class LinkNeighborsEmptyHint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       decoration: BoxDecoration(
-        color: AkashaColors.surface,
+        color: palette.workbenchTile,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AkashaColors.borderSubtle(0.06)),
+        border: Border.all(color: palette.borderSubtle(0.2)),
       ),
       child: Text(message, style: AkashaTypography.caption),
     );
@@ -149,6 +153,7 @@ class LinkNeighborsEntityChipList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return Wrap(
       spacing: 6,
       runSpacing: 6,
@@ -160,11 +165,10 @@ class LinkNeighborsEntityChipList extends StatelessWidget {
               color: AkashaColors.textPrimary,
             ),
           ),
-          backgroundColor: AkashaColors.surface,
-          side: BorderSide(color: AkashaColors.borderSubtle(0.08)),
+          backgroundColor: palette.workbenchTile,
+          side: BorderSide(color: palette.borderSubtle(0.22)),
           visualDensity: VisualDensity.compact,
-          onPressed:
-              onOpenEntity == null ? null : () => onOpenEntity!(entity),
+          onPressed: onOpenEntity == null ? null : () => onOpenEntity!(entity),
         );
       }).toList(),
     );
@@ -178,16 +182,19 @@ class LinkNeighborsConceptTagChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: AkashaColors.borderSubtle(0.05),
+        color: palette.hoverSurface,
         borderRadius: AkashaRadius.smBorder,
-        border: Border.all(color: AkashaColors.borderSubtle(0.08)),
+        border: Border.all(color: palette.borderSubtle(0.22)),
       ),
       child: Text(
         label,
-        style: AkashaTypography.caption.copyWith(color: AkashaColors.textSecondary),
+        style: AkashaTypography.caption.copyWith(
+          color: AkashaColors.textSecondary,
+        ),
       ),
     );
   }

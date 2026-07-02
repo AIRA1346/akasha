@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
 
 import '../../../models/akasha_item.dart';
-import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_palette.dart';
 import '../../../widgets/poster_image.dart';
 import 'work_detail_poster_layout.dart';
 import 'workbench_vault.dart';
@@ -32,6 +32,7 @@ class WorkDetailInfoPoster extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     final bounds = infoPosterDisplayBounds(
       maxWidth: maxWidth,
       maxHeight: maxHeight,
@@ -47,7 +48,7 @@ class WorkDetailInfoPoster extends StatelessWidget {
         child: Container(
           width: maxWidth,
           height: height + 24,
-          color: AkashaColors.workbenchEditor,
+          color: palette.workbenchEditor,
           child: Stack(
             alignment: Alignment.center,
             children: [
@@ -58,9 +59,7 @@ class WorkDetailInfoPoster extends StatelessWidget {
                     imageFilter: ui.ImageFilter.blur(sigmaX: 16, sigmaY: 16),
                     child: Opacity(
                       opacity: 0.35,
-                      child: _BlurredPosterBackground(
-                        path: posterUrlCtrl.text,
-                      ),
+                      child: _BlurredPosterBackground(path: posterUrlCtrl.text),
                     ),
                   ),
                 ),
@@ -78,7 +77,7 @@ class WorkDetailInfoPoster extends StatelessWidget {
                     ),
                   ],
                   border: Border.all(
-                    color: Colors.white.withValues(alpha: 0.08),
+                    color: palette.borderSubtle(0.24),
                     width: 1.0,
                   ),
                 ),
@@ -99,11 +98,14 @@ class WorkDetailInfoPoster extends StatelessWidget {
                 left: 12,
                 top: 12,
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.black.withValues(alpha: 0.65),
                     borderRadius: BorderRadius.circular(6),
-                    border: Border.all(color: Colors.white.withValues(alpha: 0.15)),
+                    border: Border.all(color: palette.borderSubtle(0.32)),
                   ),
                   child: Text(
                     preview.category.label,
@@ -128,7 +130,7 @@ class WorkDetailInfoPoster extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.black.withValues(alpha: 0.65),
                         shape: BoxShape.circle,
-                        border: Border.all(color: Colors.white.withValues(alpha: 0.15)),
+                        border: Border.all(color: palette.borderSubtle(0.32)),
                       ),
                       child: const Icon(
                         Icons.close_rounded,
@@ -149,9 +151,7 @@ class WorkDetailInfoPoster extends StatelessWidget {
 class _BlurredPosterBackground extends StatelessWidget {
   final String path;
 
-  const _BlurredPosterBackground({
-    required this.path,
-  });
+  const _BlurredPosterBackground({required this.path});
 
   bool _isNetworkUrl(String path) =>
       path.startsWith('http://') || path.startsWith('https://');

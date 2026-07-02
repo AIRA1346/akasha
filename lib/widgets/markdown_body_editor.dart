@@ -14,9 +14,9 @@ import '../utils/markdown_section_index.dart';
 import '../utils/markdown_slash_command_patch.dart';
 import '../utils/markdown_slash_commands.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_palette.dart';
 import '../theme/akasha_typography.dart';
 import '../utils/app_l10n.dart';
-
 
 part 'markdown_editor_status_bar_part.dart';
 part 'markdown_editor_intents_part.dart';
@@ -41,7 +41,8 @@ class MarkdownBodyEditor extends StatefulWidget {
   final Future<EntityLinkSelection?> Function(
     BuildContext context,
     String selectedText,
-  )? onRequestEntityLink;
+  )?
+  onRequestEntityLink;
 
   const MarkdownBodyEditor({
     super.key,
@@ -115,8 +116,7 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
         ? widget.controller.selection.start
         : text.length;
     final line = MarkdownSectionIndex.lineNumberAtOffset(text, offset);
-    final section =
-        MarkdownSectionIndex.sectionLabelAtOffset(text, offset);
+    final section = MarkdownSectionIndex.sectionLabelAtOffset(text, offset);
     if (line != _lineNumber || section != _sectionLabel) {
       setState(() {
         _lineNumber = line;
@@ -150,13 +150,15 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
   }
 
   void _wrap(String left, String right, {String placeholder = ''}) {
-    _applyPatch(MarkdownEditActions.wrapSelection(
-      text: widget.controller.text,
-      selection: widget.controller.selection,
-      left: left,
-      right: right,
-      placeholder: placeholder,
-    ));
+    _applyPatch(
+      MarkdownEditActions.wrapSelection(
+        text: widget.controller.text,
+        selection: widget.controller.selection,
+        left: left,
+        right: right,
+        placeholder: placeholder,
+      ),
+    );
   }
 
   void _onEditorChanged(String _) {
@@ -275,11 +277,13 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
   void _replaceAll() {
     final query = _findCtrl.text;
     if (query.isEmpty) return;
-    _applyPatch(MarkdownFindReplace.replaceAll(
-      text: widget.controller.text,
-      query: query,
-      replacement: _replaceCtrl.text,
-    ));
+    _applyPatch(
+      MarkdownFindReplace.replaceAll(
+        text: widget.controller.text,
+        query: query,
+        replacement: _replaceCtrl.text,
+      ),
+    );
   }
 
   Future<void> _smartPaste() async {
@@ -370,40 +374,54 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
             onItalic: () => _wrap('*', '*', placeholder: '기울임'),
             onStrike: () => _wrap('~~', '~~', placeholder: '취소선'),
             onCode: () => _wrap('`', '`', placeholder: 'code'),
-            onH1: () => _applyPatch(MarkdownEditActions.insertHeading(
-              text: controller.text,
-              selection: controller.selection,
-              level: 1,
-            )),
-            onH2: () => _applyPatch(MarkdownEditActions.insertHeading(
-              text: controller.text,
-              selection: controller.selection,
-              level: 2,
-            )),
-            onH3: () => _applyPatch(MarkdownEditActions.insertHeading(
-              text: controller.text,
-              selection: controller.selection,
-              level: 3,
-            )),
-            onQuote: () => _applyPatch(MarkdownEditActions.prefixLines(
-              text: controller.text,
-              selection: controller.selection,
-              prefix: '> ',
-            )),
-            onBullet: () => _applyPatch(MarkdownEditActions.prefixLines(
-              text: controller.text,
-              selection: controller.selection,
-              prefix: '- ',
-            )),
-            onNumbered: () => _applyPatch(MarkdownEditActions.prefixLines(
-              text: controller.text,
-              selection: controller.selection,
-              prefix: '1. ',
-            )),
-            onLink: () => _applyPatch(MarkdownEditActions.insertLink(
-              text: controller.text,
-              selection: controller.selection,
-            )),
+            onH1: () => _applyPatch(
+              MarkdownEditActions.insertHeading(
+                text: controller.text,
+                selection: controller.selection,
+                level: 1,
+              ),
+            ),
+            onH2: () => _applyPatch(
+              MarkdownEditActions.insertHeading(
+                text: controller.text,
+                selection: controller.selection,
+                level: 2,
+              ),
+            ),
+            onH3: () => _applyPatch(
+              MarkdownEditActions.insertHeading(
+                text: controller.text,
+                selection: controller.selection,
+                level: 3,
+              ),
+            ),
+            onQuote: () => _applyPatch(
+              MarkdownEditActions.prefixLines(
+                text: controller.text,
+                selection: controller.selection,
+                prefix: '> ',
+              ),
+            ),
+            onBullet: () => _applyPatch(
+              MarkdownEditActions.prefixLines(
+                text: controller.text,
+                selection: controller.selection,
+                prefix: '- ',
+              ),
+            ),
+            onNumbered: () => _applyPatch(
+              MarkdownEditActions.prefixLines(
+                text: controller.text,
+                selection: controller.selection,
+                prefix: '1. ',
+              ),
+            ),
+            onLink: () => _applyPatch(
+              MarkdownEditActions.insertLink(
+                text: controller.text,
+                selection: controller.selection,
+              ),
+            ),
             onEntityLink: _insertEntityLink,
             entityLinkEnabled: widget.onRequestEntityLink != null,
             onImage: _insertImage,
@@ -461,7 +479,7 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
                     setState(() {
                       _slashSelectedIndex =
                           (_slashSelectedIndex - 1 + candidates.length) %
-                              candidates.length;
+                          candidates.length;
                     });
                     return KeyEventResult.handled;
                   } else if (event.logicalKey == LogicalKeyboardKey.enter) {

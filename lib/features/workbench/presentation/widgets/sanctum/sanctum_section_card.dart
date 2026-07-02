@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../theme/akasha_colors.dart';
+import '../../../../../theme/akasha_palette.dart';
 import '../../../../../theme/akasha_radius.dart';
 import '../../../../../theme/akasha_spacing.dart';
 import '../../../../../theme/akasha_typography.dart';
@@ -24,11 +24,12 @@ class SanctumSectionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: AkashaColors.surface.withValues(alpha: 0.35),
+        color: palette.workbenchTile,
         borderRadius: AkashaRadius.mdBorder,
-        border: Border.all(color: AkashaColors.borderSubtle(0.06)),
+        border: Border.all(color: palette.borderSubtle(0.2)),
       ),
       child: Padding(
         padding: const EdgeInsets.all(AkashaSpacing.md),
@@ -37,7 +38,7 @@ class SanctumSectionCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(icon, size: 16, color: AkashaColors.accent),
+                Icon(icon, size: 16, color: palette.accent),
                 const SizedBox(width: AkashaSpacing.sm),
                 Text(title, style: AkashaTypography.sectionTitle),
               ],
@@ -52,22 +53,18 @@ class SanctumSectionCard extends StatelessWidget {
                 hintText: hint,
                 hintStyle: AkashaTypography.bodySecondary,
                 filled: true,
-                fillColor: AkashaColors.workbenchEditor,
+                fillColor: palette.workbenchEditor,
                 border: OutlineInputBorder(
                   borderRadius: AkashaRadius.smBorder,
-                  borderSide: BorderSide(
-                    color: AkashaColors.borderSubtle(0.08),
-                  ),
+                  borderSide: BorderSide(color: palette.borderSubtle(0.18)),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: AkashaRadius.smBorder,
-                  borderSide: BorderSide(
-                    color: AkashaColors.borderSubtle(0.08),
-                  ),
+                  borderSide: BorderSide(color: palette.borderSubtle(0.18)),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: AkashaRadius.smBorder,
-                  borderSide: const BorderSide(color: AkashaColors.accent),
+                  borderSide: BorderSide(color: palette.accent),
                 ),
                 contentPadding: const EdgeInsets.all(AkashaSpacing.md),
               ),

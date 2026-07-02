@@ -6,6 +6,7 @@ List<Widget> _buildYearlySlivers(
   BrowseGridMetrics metrics,
 ) {
   final l10n = lookupAppL10n(context);
+  final palette = context.akashaPalette;
   final groups = section.yearGroups!;
   final slivers = <Widget>[
     SliverToBoxAdapter(
@@ -35,10 +36,10 @@ List<Widget> _buildYearlySlivers(
               children: [
                 Text(
                   l10n != null ? l10n.yearlyHeader(year) : '🗓️ $year년',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
-                    color: Colors.tealAccent,
+                    color: palette.accent,
                   ),
                 ),
                 const SizedBox(width: 8),
@@ -67,10 +68,10 @@ List<Widget> _buildYearlySlivers(
               children: [
                 Text(
                   l10n?.yearlyNoYear ?? '🗓️ 연도 미지정',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
-                    color: Colors.tealAccent,
+                    color: palette.accent,
                   ),
                 ),
                 const SizedBox(width: 8),

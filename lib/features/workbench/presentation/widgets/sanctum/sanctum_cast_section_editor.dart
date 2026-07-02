@@ -6,6 +6,7 @@ import '../../../../../models/akasha_item.dart';
 import '../../../../../models/enums.dart';
 import '../../../../../models/sanctum_cast_entry.dart';
 import '../../../../../theme/akasha_colors.dart';
+import '../../../../../theme/akasha_palette.dart';
 import '../../../../../theme/akasha_radius.dart';
 import '../../../../../theme/akasha_spacing.dart';
 import '../../../../../theme/akasha_typography.dart';
@@ -30,12 +31,13 @@ class SanctumCastSectionEditor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
 
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: AkashaColors.surface.withValues(alpha: 0.35),
+        color: palette.workbenchTile,
         borderRadius: AkashaRadius.mdBorder,
-        border: Border.all(color: AkashaColors.borderSubtle(0.06)),
+        border: Border.all(color: palette.borderSubtle(0.2)),
       ),
       child: Padding(
         padding: const EdgeInsets.all(AkashaSpacing.md),
@@ -44,11 +46,7 @@ class SanctumCastSectionEditor extends StatelessWidget {
           children: [
             Row(
               children: [
-                const Icon(
-                  Icons.people_outline,
-                  size: 16,
-                  color: AkashaColors.accent,
-                ),
+                Icon(Icons.people_outline, size: 16, color: palette.accent),
                 const SizedBox(width: AkashaSpacing.sm),
                 Text(
                   l10n != null
@@ -133,6 +131,7 @@ class _CastEntryRowState extends State<_CastEntryRow> {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
     final catalogEntity = widget.userCatalog?.getById(widget.entry.entityId);
     final avatarItem = catalogEntity != null
         ? EntityItem(
@@ -158,9 +157,9 @@ class _CastEntryRowState extends State<_CastEntryRow> {
 
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: AkashaColors.workbenchEditor,
+        color: palette.workbenchEditor,
         borderRadius: AkashaRadius.smBorder,
-        border: Border.all(color: AkashaColors.borderSubtle(0.08)),
+        border: Border.all(color: palette.borderSubtle(0.18)),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
@@ -196,7 +195,7 @@ class _CastEntryRowState extends State<_CastEntryRow> {
                       border: OutlineInputBorder(
                         borderRadius: AkashaRadius.smBorder,
                         borderSide: BorderSide(
-                          color: AkashaColors.borderSubtle(0.08),
+                          color: palette.borderSubtle(0.18),
                         ),
                       ),
                       contentPadding: const EdgeInsets.symmetric(

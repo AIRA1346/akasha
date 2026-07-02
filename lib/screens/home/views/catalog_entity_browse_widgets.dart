@@ -9,6 +9,7 @@ import '../../../models/entity_browse_card.dart';
 import '../../../models/entity_gallery_sort.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_typography.dart';
 import '../../../widgets/entity_collectible_card.dart';
 import '../../../widgets/entity_gallery_sort_dropdown.dart';
@@ -28,17 +29,18 @@ class CatalogEntityBrowseEmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.inventory_2_outlined,
-              size: 48, color: AkashaColors.textCaption),
-          const SizedBox(height: 12),
-          Text(
-            message,
-            style: TextStyle(color: AkashaColors.textMuted),
+          Icon(
+            Icons.inventory_2_outlined,
+            size: 48,
+            color: AkashaColors.textCaption,
           ),
+          const SizedBox(height: 12),
+          Text(message, style: TextStyle(color: AkashaColors.textMuted)),
           if (onAddNewEntity != null) ...[
             const SizedBox(height: 16),
             FilledButton.icon(
@@ -46,11 +48,9 @@ class CatalogEntityBrowseEmptyState extends StatelessWidget {
               icon: const Icon(Icons.add),
               label: const Text('아카이브에 추가'),
               style: FilledButton.styleFrom(
-                backgroundColor: Colors.tealAccent.withValues(alpha: 0.15),
-                foregroundColor: Colors.tealAccent,
-                side: BorderSide(
-                  color: Colors.tealAccent.withValues(alpha: 0.3),
-                ),
+                backgroundColor: palette.accentSoft,
+                foregroundColor: palette.accent,
+                side: BorderSide(color: palette.accent.withValues(alpha: 0.3)),
               ),
             ),
           ],
@@ -93,6 +93,7 @@ class CatalogEntityBrowseCompactStrip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return SizedBox(
       height: 132,
       child: Column(
@@ -104,7 +105,7 @@ class CatalogEntityBrowseCompactStrip extends StatelessWidget {
               'Entity Discovery · ${cards.length}',
               style: AkashaTypography.body.copyWith(
                 fontWeight: FontWeight.w600,
-                color: Colors.tealAccent,
+                color: palette.accent,
               ),
             ),
           ),
@@ -144,14 +145,13 @@ class CatalogEntityBrowseCompactCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return Material(
-      color: highlighted
-          ? AkashaColors.browseCardHighlight
-          : AkashaColors.workbenchListTile,
+      color: highlighted ? palette.hoverSurface : palette.workbenchTile,
       shape: highlighted
           ? RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
-              side: const BorderSide(color: Colors.tealAccent, width: 1.5),
+              side: BorderSide(color: palette.accent, width: 1.5),
             )
           : RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       child: InkWell(
@@ -167,7 +167,7 @@ class CatalogEntityBrowseCompactCard extends StatelessWidget {
                 Text(
                   entityTypeBadgeLabel(entity.anchorType),
                   style: AkashaTypography.caption.copyWith(
-                    color: Colors.tealAccent,
+                    color: palette.accent,
                   ),
                 ),
                 const SizedBox(height: 4),
@@ -206,6 +206,7 @@ class CatalogEntityBrowseHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
       child: Row(
@@ -222,9 +223,7 @@ class CatalogEntityBrowseHeader extends StatelessWidget {
               onPressed: () => onAddNewEntity?.call(catalogEntityType),
               icon: const Icon(Icons.add, size: 16),
               label: const Text('추가'),
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.tealAccent,
-              ),
+              style: TextButton.styleFrom(foregroundColor: palette.accent),
             ),
             const SizedBox(width: 8),
           ],
@@ -325,8 +324,9 @@ class CatalogEntityBrowseMixedGalleryGrid extends StatelessWidget {
         if (maxWidth <= 0) return const SizedBox.shrink();
 
         final crossAxisCount = (maxWidth / cardMinWidth).floor().clamp(2, 8);
-        final aspectRatio =
-            isMixedBrowse ? mixedChildAspectRatio : childAspectRatio;
+        final aspectRatio = isMixedBrowse
+            ? mixedChildAspectRatio
+            : childAspectRatio;
 
         return Scrollbar(
           thumbVisibility: true,
@@ -343,14 +343,13 @@ class CatalogEntityBrowseMixedGalleryGrid extends StatelessWidget {
               final item = items[index];
               return switch (item) {
                 WorkCollectibleBrowseItem(:final card) => GestureDetector(
-                    onTap: () => onOpenWork(card),
-                    child: posterCardBuilder(card),
-                  ),
+                  onTap: () => onOpenWork(card),
+                  child: posterCardBuilder(card),
+                ),
                 EntityCollectibleBrowseItem(:final card) =>
                   EntityCollectibleCard(
                     card: card,
-                    highlighted:
-                        card.entity.entityId == highlightEntityId,
+                    highlighted: card.entity.entityId == highlightEntityId,
                     onTap: () => onOpenEntity(card),
                   ),
               };

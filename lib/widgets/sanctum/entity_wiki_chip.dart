@@ -5,7 +5,7 @@ import '../../core/archiving/record_link.dart';
 import '../../core/ports/user_catalog_port.dart';
 import '../../models/akasha_item.dart';
 import '../../models/enums.dart';
-import '../../theme/akasha_colors.dart';
+import '../../theme/akasha_palette.dart';
 import '../poster_image.dart';
 
 /// Sanctum 미리보기 — wiki 링크 인라인 칩 (아바타 + 제목).
@@ -65,6 +65,7 @@ class EntityWikiChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     final avatarSize = compact ? 18.0 : 24.0;
     final fontSize = compact ? 12.0 : 13.0;
     final link = ParsedRecordLink(
@@ -85,9 +86,9 @@ class EntityWikiChip extends StatelessWidget {
             vertical: compact ? 2 : 4,
           ),
           decoration: BoxDecoration(
-            color: AkashaColors.surface.withValues(alpha: 0.55),
+            color: palette.workbenchTile,
             borderRadius: BorderRadius.circular(999),
-            border: Border.all(color: AkashaColors.accent.withValues(alpha: 0.25)),
+            border: Border.all(color: palette.accent.withValues(alpha: 0.25)),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
@@ -105,7 +106,7 @@ class EntityWikiChip extends StatelessWidget {
                 style: TextStyle(
                   fontSize: fontSize,
                   fontWeight: FontWeight.w600,
-                  color: AkashaColors.accent,
+                  color: palette.accent,
                   height: 1.2,
                 ),
               ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../core/archiving/entity_anchor.dart';
 import '../models/akasha_item.dart';
 import '../models/enums.dart';
+import '../theme/akasha_palette.dart';
 import '../utils/status_helpers.dart';
 
 /// PosterCard border·glow·shadow 스타일 상수·해석.
@@ -18,11 +19,20 @@ abstract final class PosterCardStyle {
   static const double hoverGlowBlur = 21;
   static const double hoverGlowOffsetY = 8;
 
-  static Color categoryAccent(AkashaItem item) {
+  static Color categoryAccent(AkashaItem item, {AkashaPalette? palette}) {
     if (item is EntityItem) {
-      return Colors.tealAccent;
+      return palette?.accent ?? Colors.tealAccent;
     }
-    return switch (item.category) {
+    final accent = palette?.accent;
+    if (accent != null) {
+      return Color.lerp(accent, _categoryBaseAccent(item.category), 0.34) ??
+          accent;
+    }
+    return _categoryBaseAccent(item.category);
+  }
+
+  static Color _categoryBaseAccent(MediaCategory category) {
+    return switch (category) {
       MediaCategory.manga => const Color(0xFF818CF8),
       MediaCategory.webtoon => const Color(0xFF34D399),
       MediaCategory.animation => const Color(0xFFF472B6),
@@ -38,26 +48,31 @@ abstract final class PosterCardStyle {
     required bool highlighted,
     required bool showPoster,
     required List<Color> gradColors,
+    required AkashaPalette palette,
   }) {
     final isEntity = item is EntityItem;
     final isNotStarted = isWatchlistItem(item);
     final isFinished = isFinishedItem(item);
-    final categoryAccent = PosterCardStyle.categoryAccent(item);
+    final categoryAccent = PosterCardStyle.categoryAccent(
+      item,
+      palette: palette,
+    );
+    final activeAccent = palette.accent;
 
     if (highlighted) {
       return (
-        border: Border.all(color: Colors.tealAccent, width: 2.0),
-        glowColor: Colors.tealAccent,
+        border: Border.all(color: activeAccent, width: 2.0),
+        glowColor: activeAccent,
         softGlow: false,
       );
     }
     if (isEntity) {
       return (
         border: Border.all(
-          color: Colors.tealAccent.withValues(alpha: 0.35),
+          color: activeAccent.withValues(alpha: 0.42),
           width: 1.0,
         ),
-        glowColor: Colors.tealAccent,
+        glowColor: activeAccent,
         softGlow: true,
       );
     }
@@ -76,19 +91,21 @@ abstract final class PosterCardStyle {
     if (isFinished) {
       return (
         border: Border.all(
-          color: const Color(0xFF9D4EDD).withValues(alpha: 0.75),
+          color: activeAccent.withValues(alpha: 0.76),
           width: borderWidthActive,
         ),
-        glowColor: const Color(0xFF9D4EDD),
+        glowColor: activeAccent,
         softGlow: false,
       );
     }
+    final watchingAccent =
+        Color.lerp(activeAccent, Colors.greenAccent, 0.32) ?? activeAccent;
     return (
       border: Border.all(
-        color: Colors.greenAccent.withValues(alpha: 0.65),
+        color: watchingAccent.withValues(alpha: 0.65),
         width: borderWidthActive,
       ),
-      glowColor: Colors.greenAccent,
+      glowColor: watchingAccent,
       softGlow: false,
     );
   }

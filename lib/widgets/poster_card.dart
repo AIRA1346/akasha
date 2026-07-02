@@ -4,6 +4,7 @@ import '../models/akasha_item.dart';
 import '../models/format_slot.dart';
 import '../models/enums.dart';
 import '../core/app_vault.dart';
+import '../theme/akasha_palette.dart';
 import 'poster_card_layouts.dart';
 import 'poster_card_style.dart';
 
@@ -51,6 +52,7 @@ class _PosterCardState extends State<PosterCard> {
   @override
   Widget build(BuildContext context) {
     final item = widget.item;
+    final palette = context.akashaPalette;
     final showArchivedBadge = AppVault.port.isArchivedInVault(item);
     final gradColors = categoryGradient(item.category);
     final chrome = PosterCardStyle.resolveChrome(
@@ -58,6 +60,7 @@ class _PosterCardState extends State<PosterCard> {
       highlighted: widget.highlighted,
       showPoster: widget.showPoster,
       gradColors: gradColors,
+      palette: palette,
     );
 
     final cardBody = GestureDetector(
@@ -66,8 +69,9 @@ class _PosterCardState extends State<PosterCard> {
       onSecondaryTapDown: _hasContextMenu
           ? (d) => _openContextMenu(d.globalPosition)
           : null,
-      onLongPress:
-          _hasContextMenu ? () => _openContextMenu(_cardCenterGlobal()) : null,
+      onLongPress: _hasContextMenu
+          ? () => _openContextMenu(_cardCenterGlobal())
+          : null,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
         curve: Curves.easeOut,
@@ -75,7 +79,7 @@ class _PosterCardState extends State<PosterCard> {
             ? Matrix4.translationValues(0.0, -4.0, 0.0)
             : Matrix4.identity(),
         decoration: BoxDecoration(
-          color: const Color(0xFF1E1E2E),
+          color: palette.posterCard,
           borderRadius: BorderRadius.circular(10),
           border: chrome.border,
           boxShadow: PosterCardStyle.cardShadows(
