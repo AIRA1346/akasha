@@ -13,7 +13,7 @@ import 'entity_vault_path_conflict.dart';
 import 'event_ledger_service.dart';
 import 'entity_vault_loader.dart';
 import '../core/app_vault.dart';
-import 'record_summary_index_service.dart';
+import 'archive_index_manager.dart';
 import 'vault_record_path_resolver.dart';
 import 'vault_trash_service.dart';
 
@@ -130,9 +130,9 @@ class EntityVaultStore {
       posterPath: entity.posterPath,
       sourceOperationId: sourceOperationId,
     );
-    await RecordSummaryIndexService().upsertEntity(
+    await ArchiveIndexManager().updateChangedRecord(
       vaultPath: vaultPath,
-      entry: entry,
+      absolutePath: targetPath,
     );
     await AppVault.port.signalVaultChanged();
     await _eventLedger.append(
@@ -206,9 +206,10 @@ class EntityVaultStore {
       final oldFile = File(entry.storagePath);
       if (await oldFile.exists()) {
         await oldFile.delete();
-        await RecordSummaryIndexService().removeByAbsolutePath(
+        await ArchiveIndexManager().removeRecord(
           vaultPath: vaultRoot,
           absolutePath: entry.storagePath,
+          sourceRecordId: _entitySourceRecordId(entry.entityId),
         );
       }
     }
@@ -230,9 +231,9 @@ class EntityVaultStore {
       posterPath: posterPath ?? entry.posterPath,
       sourceOperationId: entry.sourceOperationId,
     );
-    await RecordSummaryIndexService().upsertEntity(
+    await ArchiveIndexManager().updateChangedRecord(
       vaultPath: vaultRoot,
-      entry: updated,
+      absolutePath: targetPath,
     );
     await AppVault.port.signalVaultChanged();
     await _eventLedger.append(
@@ -270,9 +271,10 @@ class EntityVaultStore {
     if (entityId != null && entityId.isNotEmpty) {
       await _pathIndex.remove(vaultPath: vaultRoot, entityId: entityId);
     }
-    await RecordSummaryIndexService().removeByAbsolutePath(
+    await ArchiveIndexManager().removeRecord(
       vaultPath: vaultRoot,
       absolutePath: storagePath,
+      sourceRecordId: _entitySourceRecordId(entityId),
     );
 
     await AppVault.port.signalVaultChanged();
@@ -297,6 +299,11 @@ class EntityVaultStore {
       return p.dirname(p.dirname(p.dirname(normalized)));
     }
     return p.joinAll(segments.sublist(0, idx));
+  }
+
+  static String? _entitySourceRecordId(String? entityId) {
+    final trimmed = entityId?.trim();
+    return trimmed == null || trimmed.isEmpty ? null : 'rec_$trimmed';
   }
 
   Future<void> _assertPathAvailable({

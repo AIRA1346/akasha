@@ -29,7 +29,7 @@
 | **Candidate Store Scale** | `.akasha/candidates/*` sharded queue · name-index duplicate lookup · legacy candidate JSON read compatibility · full tests **718 PASS** |
 | **Taste Index** | `.akasha/indexes/taste_index.json` evidence-backed rating/status/favorite/tag/memo/quote/link signals · focused tests **2 PASS** · full tests **720 PASS** · analyze **0** |
 | **Index Manager** | `ArchiveIndexManager` record/entity/link/candidate/taste rebuild coordinator · candidate name-index recovery · focused tests **17 PASS** · full tests **723 PASS** · analyze **0** |
-| **Incremental Indexing** | changed/deleted Markdown path updates record/taste indexes without full vault scan · path guard · focused tests **10 PASS** · full tests **727 PASS** · analyze **0** |
+| **Incremental Indexing** | changed/deleted Markdown path updates record/taste indexes without full vault scan · Work/Entity/Journal/Timeline save-delete wiring · focused write-flow tests **19 PASS** · full tests **727 PASS** · analyze **0** |
 | **Operation Executor** | validated `promoteCandidate` → Entity journal · catalog mirror · candidate close ✅ · focused contract tests **34 PASS** · full tests **709 PASS** |
 | **Operation Applied Log** | `.akasha/ops/applied.jsonl` · `operationId` retry-safe · `alreadyApplied` result ✅ |
 | **Operation Conflict Guard** | `expectedRevision` · mtime/length/hash revision · existing target overwrite block ✅ |
@@ -203,6 +203,7 @@
 | **330** | Taste Index slice — `.akasha/indexes/taste_index.json` evidence-backed signals for future external tools | ✅ code | [taste_index_service.dart](../../lib/services/taste_index_service.dart) |
 | **331** | Index Manager slice — one rebuild coordinator for record/entity/link/candidate/taste indexes plus candidate name-index recovery | ✅ code | [archive_index_manager.dart](../../lib/services/archive_index_manager.dart) |
 | **332** | Incremental Indexing slice — changed/deleted Markdown path updates record/taste indexes without full rebuild | ✅ code | [archive_index_manager.dart](../../lib/services/archive_index_manager.dart) |
+| **333** | Incremental Index Wiring slice — Work/Entity/Journal/Timeline save-delete flows use `ArchiveIndexManager` for record+taste updates | ✅ code | [file_service_save.dart](../../lib/services/file_service_save.dart) |
 
 ## 8. 문서 이력
 
@@ -252,4 +253,5 @@
 | 2026-07-03 | **Taste Index slice** — `.akasha/indexes/taste_index.json` · rating/status/favorite/tag/memo/quote/link signals · focused tests **2 PASS** · analyze **0** |
 | 2026-07-03 | **Index Manager slice** — `ArchiveIndexManager` rebuild coordinator · candidate name-index recovery · focused tests **17 PASS** · full tests **723 PASS** · analyze **0** |
 | 2026-07-04 | **Incremental Indexing slice** — changed/deleted Markdown path updates record/taste indexes · vault-contained path guard · focused tests **10 PASS** · full tests **727 PASS** · analyze **0** |
+| 2026-07-04 | **Incremental Index Wiring slice** — Work/Entity/Journal/Timeline save-delete flows now update record+taste indexes through `ArchiveIndexManager` · focused write-flow tests **19 PASS** · analyze **0** |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |

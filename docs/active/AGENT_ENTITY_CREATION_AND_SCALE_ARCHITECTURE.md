@@ -299,7 +299,8 @@ tools and maintenance flows.
 
 The first incremental path is also centralized there:
 `updateChangedRecord` and `removeRecord` update record/taste derived indexes for
-one Markdown file. Full rebuild remains the recovery path.
+one Markdown file. Work, Entity, Journal, and Timeline save/delete flows now use
+that manager path, while full rebuild remains the recovery path.
 
 ---
 

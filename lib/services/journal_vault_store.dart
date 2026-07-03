@@ -5,9 +5,9 @@ import 'package:path/path.dart' as p;
 import '../core/archiving/archive_record.dart';
 import '../core/archiving/journal_entry.dart';
 import '../core/archiving/record_kind.dart';
+import 'archive_index_manager.dart';
 import 'journal_entry_parser.dart';
 import 'journal_vault_loader.dart';
-import 'record_summary_index_service.dart';
 import 'vault_trash_service.dart';
 
 /// `vault/journal/` 쓰기·삭제 — Wave 3.
@@ -105,9 +105,9 @@ class JournalVaultStore {
       addedAt: addedAt,
       storagePath: targetPath,
     );
-    await RecordSummaryIndexService().upsertJournal(
+    await ArchiveIndexManager().updateChangedRecord(
       vaultPath: vaultPath,
-      entry: entry,
+      absolutePath: targetPath,
     );
     return entry;
   }
@@ -130,9 +130,10 @@ class JournalVaultStore {
           vaultPath: vaultPath,
           absolutePath: entry.storagePath,
         );
-        await RecordSummaryIndexService().removeByAbsolutePath(
+        await ArchiveIndexManager().removeRecord(
           vaultPath: vaultPath,
           absolutePath: entry.storagePath,
+          sourceRecordId: entry.recordId,
         );
       }
       return;

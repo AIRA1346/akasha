@@ -4,7 +4,7 @@ import 'package:path/path.dart' as p;
 
 import '../core/archiving/archive_record.dart';
 import '../core/archiving/timeline_entry.dart';
-import 'record_summary_index_service.dart';
+import 'archive_index_manager.dart';
 import 'timeline_entry_parser.dart';
 import 'timeline_vault_loader.dart';
 import 'vault_trash_service.dart';
@@ -111,9 +111,9 @@ class TimelineVaultStore {
       storagePath: targetPath,
       entityId: entityId?.trim().isNotEmpty == true ? entityId!.trim() : null,
     );
-    await RecordSummaryIndexService().upsertTimeline(
+    await ArchiveIndexManager().updateChangedRecord(
       vaultPath: vaultPath,
-      entry: entry,
+      absolutePath: targetPath,
     );
     return entry;
   }
@@ -136,9 +136,10 @@ class TimelineVaultStore {
           vaultPath: vaultPath,
           absolutePath: entry.storagePath,
         );
-        await RecordSummaryIndexService().removeByAbsolutePath(
+        await ArchiveIndexManager().removeRecord(
           vaultPath: vaultPath,
           absolutePath: entry.storagePath,
+          sourceRecordId: entry.recordId,
         );
       }
       return;

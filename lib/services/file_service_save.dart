@@ -21,9 +21,10 @@ mixin _AkashaFileServiceSave
           _stopWatching();
           try {
             await oldFile.delete();
-            await RecordSummaryIndexService().removeByAbsolutePath(
+            await ArchiveIndexManager().removeRecord(
               vaultPath: _vaultPath!,
               absolutePath: oldFile.path,
+              sourceRecordId: _workSourceRecordId(item.workId),
             );
           } catch (e) {
             appLog('Error deleting old file: $e');
@@ -66,9 +67,8 @@ mixin _AkashaFileServiceSave
     _stopWatching();
     try {
       await _writeAtomic(targetPath, content);
-      await RecordSummaryIndexService().upsertWork(
+      await ArchiveIndexManager().updateChangedRecord(
         vaultPath: _vaultPath!,
-        item: item,
         absolutePath: targetPath,
       );
       await _refreshVaultFingerprint();
@@ -208,7 +208,10 @@ mixin _AkashaFileServiceSave
       filePath: item.filePath,
       workId: item.workId,
     );
-    return _deleteAtCandidatePaths(candidates);
+    return _deleteAtCandidatePaths(
+      candidates,
+      sourceRecordId: _workSourceRecordId(item.workId),
+    );
   }
 
   /// 제목·카테고리 기반 삭제 (파일명 변경 시 saveItem 내부용)
@@ -227,7 +230,10 @@ mixin _AkashaFileServiceSave
     await _deleteAtCandidatePaths(candidates);
   }
 
-  Future<bool> _deleteAtCandidatePaths(List<String> candidatePaths) async {
+  Future<bool> _deleteAtCandidatePaths(
+    List<String> candidatePaths, {
+    String? sourceRecordId,
+  }) async {
     final existing = <File>[];
     for (final path in candidatePaths) {
       final file = File(path);
@@ -244,9 +250,10 @@ mixin _AkashaFileServiceSave
           vaultPath: _vaultPath!,
           absolutePath: file.path,
         );
-        await RecordSummaryIndexService().removeByAbsolutePath(
+        await ArchiveIndexManager().removeRecord(
           vaultPath: _vaultPath!,
           absolutePath: file.path,
+          sourceRecordId: sourceRecordId,
         );
       }
       _notifyVaultUpdated();
@@ -254,6 +261,11 @@ mixin _AkashaFileServiceSave
     } finally {
       _startWatching();
     }
+  }
+
+  String? _workSourceRecordId(String workId) {
+    final trimmed = workId.trim();
+    return trimmed.isEmpty ? null : 'rec_$trimmed';
   }
 
   /// 외부 이미지를 볼트의 posters 폴더로 복사하고 상대 경로를 반환합니다.

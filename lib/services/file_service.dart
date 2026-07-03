@@ -11,6 +11,7 @@ import '../core/archiving/entity_anchor.dart';
 import '../models/akasha_item.dart';
 import '../models/enums.dart';
 import '../utils/app_log.dart';
+import 'archive_index_manager.dart';
 import 'entity_path_index_service.dart';
 import 'markdown_parser.dart';
 import 'record_summary_index_service.dart';

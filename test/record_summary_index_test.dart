@@ -9,6 +9,7 @@ import 'package:akasha/services/entity_vault_store.dart';
 import 'package:akasha/services/file_service.dart';
 import 'package:akasha/services/journal_vault_store.dart';
 import 'package:akasha/services/record_summary_index_service.dart';
+import 'package:akasha/services/taste_index_service.dart';
 import 'package:akasha/services/timeline_vault_store.dart';
 import 'package:akasha/utils/helpers.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -106,6 +107,22 @@ void main() {
         nightRecords.map((s) => s.id),
         containsAll(['wk_u_idx00001', 'co_u_record01']),
       );
+
+      final taste = TasteIndexService();
+      expect(
+        (await taste.queryByTarget(
+          vaultDir.path,
+          'tag:vocaloid',
+        )).map((signal) => signal.sourceRecordId),
+        contains('rec_wk_u_idx00001'),
+      );
+      expect(
+        (await taste.queryByTarget(
+          vaultDir.path,
+          'tag:night',
+        )).map((signal) => signal.sourceRecordId),
+        containsAll(['rec_wk_u_idx00001', 'rec_co_u_record01']),
+      );
     },
   );
 
@@ -125,6 +142,10 @@ void main() {
       final deleted = await vault.deleteAkashaItem(work);
       expect(deleted, isTrue);
       expect(await index.lookupById(vaultDir.path, 'wk_u_del00001'), isNull);
+      expect(
+        await TasteIndexService().queryByTarget(vaultDir.path, 'tag:cleanup'),
+        isEmpty,
+      );
 
       final survivor = createItem(
         workId: 'wk_u_reb00001',

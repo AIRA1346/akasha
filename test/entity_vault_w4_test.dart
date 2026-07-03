@@ -12,6 +12,7 @@ import 'package:akasha/services/entity_vault_store.dart';
 import 'package:akasha/services/file_service.dart';
 import 'package:akasha/services/fusion_search_service.dart';
 import 'package:akasha/services/person_seed_registry.dart';
+import 'package:akasha/services/taste_index_service.dart';
 import 'fakes/fake_registry_port.dart';
 import 'fakes/fake_user_catalog_port.dart';
 
@@ -174,12 +175,20 @@ aliases: ["Tiger King", "Tora"]
           entityId: 'co_u_round01',
           type: EntityAnchorType.concept,
           title: 'Tiger',
+          tags: const ['Round Tag'],
         );
 
         final saved = await store.saveCatalogEntity(
           vaultPath: tempDir.path,
           entity: entity,
           body: 'v1',
+        );
+        expect(
+          (await TasteIndexService().queryByTarget(
+            tempDir.path,
+            'tag:round-tag',
+          )).map((signal) => signal.sourceRecordId),
+          contains('rec_co_u_round01'),
         );
 
         final updated = await store.updateEntry(
@@ -196,6 +205,13 @@ aliases: ["Tiger King", "Tora"]
         expect(
           await loader.findByEntityId(tempDir.path, 'co_u_round01'),
           isNull,
+        );
+        expect(
+          await TasteIndexService().queryByTarget(
+            tempDir.path,
+            'tag:round-tag',
+          ),
+          isEmpty,
         );
       } finally {
         await service.setVaultPath('');
