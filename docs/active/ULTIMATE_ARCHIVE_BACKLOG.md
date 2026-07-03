@@ -32,6 +32,7 @@ These are done enough to treat as current architecture baseline.
 | UA-202a | Incremental record/taste index update API | done | `ArchiveIndexManager.updateChangedRecord/removeRecord` updates record and taste indexes for one Markdown path |
 | UA-202b | Incremental index wiring into archive writes | done | Work/Entity/Journal/Timeline save/delete flows now call the manager instead of directly mutating record-only indexes |
 | UA-206a | Link/entity-path incremental coverage | done | changed/deleted Markdown paths update link outgoing/incoming and entity path indexes through `ArchiveIndexManager` |
+| UA-204 | Sharded title/alias lookup index | done | `.akasha/title_alias_index/names/{shard}.json` resolves normalized title/alias/original/localized names to stable IDs without Markdown scans |
 | UA-209 | Candidate store sharded scale path | done | candidates write to `.akasha/candidates/{type}/{shard}.json` with sharded name indexes |
 | UA-209a | Candidate name index rebuild/fallback | done | candidate duplicate guard falls back to source shards and `rebuildDerivedIndexes` restores name indexes |
 | UA-301 | Taste index schema and first extractor | done | `.akasha/indexes/taste_index.json` derives evidence-backed rating/status/favorite/tag/memo/quote/link signals |
@@ -58,9 +59,10 @@ These are what make "infinite archive" fast instead of merely correct.
 | ID | Work | Why It Matters | Suggested Direction |
 | --- | --- | --- | --- |
 | UA-201 | Index manager wrapper | Indexes were fragmented JSON services | Landed `ArchiveIndexManager`; continue expanding callers around it |
-| UA-202 | Incremental index updates | Full scans will degrade as vault grows | Record/taste/link/entity-path incremental paths are landed; keep full rebuild as recovery |
+| UA-202 | Incremental index updates | Full scans will degrade as vault grows | Record/taste/link/entity-path/title-alias incremental paths are landed; keep full rebuild as recovery |
 | UA-203 | Sharded or SQLite-derived index | Large JSON files will eventually become too slow | Move toward `.akasha/vault_index.db` or sharded `.akasha/indexes/*` |
-| UA-204 | Title/alias index | AI and natural language lookup need fast title resolution | Index `title`, `aliases`, `original_title`, localized titles |
+| UA-204 | Title/alias index | AI and natural language lookup need fast title resolution | Landed sharded exact lookup; next wire query/API surfaces and ambiguity handling |
+| UA-204b | Title/alias query integration | Agents need a stable read surface, not direct Markdown scans | Expose lookup through scoped local query APIs and title-only link resolution |
 | UA-205 | Tag index expansion | Taste/theme/mood lookup should not parse all Markdown | Keep normalized tag -> record ids |
 | UA-206 | Link and incoming graph hardening | Backlinks and graph exploration need stable relationship lookup | Incremental outgoing/incoming updates landed; next add validation/reporting for unresolved title links |
 | UA-207 | Snippet/quote/scene index | Search should find meaningful passages without full-file reads | Store short derived excerpts with evidence paths |
@@ -98,8 +100,8 @@ These fields were identified as useful but are not fully standardized everywhere
 
 | Field | Need | Status |
 | --- | --- | --- |
-| `aliases` | Natural lookup and duplicate detection | entity journals landed; Work/frontmatter-wide standard still pending |
-| `original_title` | Translated/localized title stability | planned |
+| `aliases` | Natural lookup and duplicate detection | entity journals and title/alias index landed; Work/frontmatter-wide write standard still pending |
+| `original_title` | Translated/localized title stability | lookup index supports it; serializer standard still pending |
 | `external_ids` | Wikidata/Steam/ISBN/etc. identity joins | planned |
 | `created_at` | Durable creation timestamp separate from `added_at` | planned |
 | `updated_at` | Conflict checks and index freshness | planned |
@@ -141,12 +143,12 @@ These matter, but they are not the current ultimate-archive core.
 
 The next architecture slice should be:
 
-> **UA-204 Title/alias index:** give agents and tools a fast, deterministic way to resolve natural-language names to Work/Entity IDs without scanning every Markdown file.
+> **UA-208 Index rebuild validator:** prove every derived index can be deleted, rebuilt, and checked against the Markdown vault without silent ID/path drift.
 
 Minimum done condition:
 
-- derive normalized title and alias keys from Work and Entity Markdown
-- keep the index disposable and rebuildable under `.akasha/indexes/`
-- support lookup by exact normalized title/alias and return stable IDs plus evidence paths
-- keep full rebuild as the recovery path
-- prove mixed Work/Entity/title/alias lookup with focused tests
+- run a maintenance validation that rebuilds record/entity-path/title-alias/link/candidate/taste indexes
+- compare core counts and required IDs/paths across indexes
+- report stale paths, duplicate IDs, and unresolved index references
+- keep it read-only unless the user explicitly runs a repair
+- prove mixed v1/v2/v3 vault fixtures stay index-consistent

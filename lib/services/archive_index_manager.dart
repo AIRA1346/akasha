@@ -12,6 +12,7 @@ import 'event_ledger_service.dart';
 import 'record_link_index_service.dart';
 import 'record_summary_index_service.dart';
 import 'taste_index_service.dart';
+import 'title_alias_index_service.dart';
 
 enum ArchiveIndexRebuildStatus { rebuilt, failed }
 
@@ -80,23 +81,27 @@ class ArchiveIndexManager {
   ArchiveIndexManager({
     RecordSummaryIndexService? recordIndex,
     EntityPathIndexService? entityPathIndex,
+    TitleAliasIndexService? titleAliasIndex,
     RecordLinkIndexService? linkIndex,
     ArchiveCandidateStore? candidateStore,
     TasteIndexService? tasteIndex,
   }) : _recordIndex = recordIndex ?? RecordSummaryIndexService(),
        _entityPathIndex = entityPathIndex ?? EntityPathIndexService(),
+       _titleAliasIndex = titleAliasIndex ?? TitleAliasIndexService(),
        _linkIndex = linkIndex,
        _candidateStore = candidateStore ?? ArchiveCandidateStore(),
        _tasteIndex = tasteIndex ?? TasteIndexService();
 
   static const String recordIndexName = 'record';
   static const String entityPathIndexName = 'entityPath';
+  static const String titleAliasIndexName = 'titleAlias';
   static const String linkIndexName = 'link';
   static const String candidateIndexName = 'candidate';
   static const String tasteIndexName = 'taste';
 
   final RecordSummaryIndexService _recordIndex;
   final EntityPathIndexService _entityPathIndex;
+  final TitleAliasIndexService _titleAliasIndex;
   final RecordLinkIndexService? _linkIndex;
   final ArchiveCandidateStore _candidateStore;
   final TasteIndexService _tasteIndex;
@@ -152,6 +157,20 @@ class ArchiveIndexManager {
         await _entityPathIndex.rebuildFromVault(vaultPath);
         final paths = await _entityPathIndex.loadPaths(vaultPath);
         return {'entities': paths.length};
+      },
+    );
+
+    await _run(
+      entries,
+      indexName: titleAliasIndexName,
+      outputPath: p.join(
+        vaultPath,
+        TitleAliasIndexService.akashaDirName,
+        TitleAliasIndexService.indexDirName,
+      ),
+      action: () async {
+        final stats = await _titleAliasIndex.rebuildFromVault(vaultPath);
+        return stats.toJson();
       },
     );
 
@@ -290,6 +309,27 @@ class ArchiveIndexManager {
 
     await _run(
       entries,
+      indexName: titleAliasIndexName,
+      outputPath: p.join(
+        vaultPath,
+        TitleAliasIndexService.akashaDirName,
+        TitleAliasIndexService.indexDirName,
+      ),
+      action: () async {
+        final entries = await _titleAliasIndex.upsertMarkdownFile(
+          vaultPath: vaultPath,
+          absolutePath: absolutePath,
+        );
+        return {
+          'mode': 'incremental',
+          'lookupEntries': entries.length,
+          'changedPath': _relativePath(vaultPath, absolutePath),
+        };
+      },
+    );
+
+    await _run(
+      entries,
       indexName: linkIndexName,
       outputPath: p.join(
         vaultPath,
@@ -416,6 +456,27 @@ class ArchiveIndexManager {
           'removedPath': _relativePath(vaultPath, absolutePath),
           if (removedEntityId != null && removedEntityId.isNotEmpty)
             'entityId': removedEntityId,
+        };
+      },
+    );
+
+    await _run(
+      entries,
+      indexName: titleAliasIndexName,
+      outputPath: p.join(
+        vaultPath,
+        TitleAliasIndexService.akashaDirName,
+        TitleAliasIndexService.indexDirName,
+      ),
+      action: () async {
+        final removed = await _titleAliasIndex.removeByAbsolutePath(
+          vaultPath: vaultPath,
+          absolutePath: absolutePath,
+        );
+        return {
+          'mode': 'incrementalRemove',
+          'removedPath': _relativePath(vaultPath, absolutePath),
+          'lookupEntriesRemoved': removed,
         };
       },
     );

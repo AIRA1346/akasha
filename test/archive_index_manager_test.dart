@@ -11,6 +11,7 @@ import 'package:akasha/services/entity_journal_parser.dart';
 import 'package:akasha/services/markdown_parser.dart';
 import 'package:akasha/services/record_summary_index_service.dart';
 import 'package:akasha/services/taste_index_service.dart';
+import 'package:akasha/services/title_alias_index_service.dart';
 import 'package:akasha/utils/helpers.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
@@ -80,6 +81,9 @@ void main() {
     await _deleteIfExists(
       File(p.join(vaultDir.path, '.akasha', 'entity_path_index.json')),
     );
+    await _deleteDirIfExists(
+      Directory(p.join(vaultDir.path, '.akasha', 'title_alias_index')),
+    );
     await _deleteIfExists(
       File(p.join(vaultDir.path, '.akasha', 'link_index.json')),
     );
@@ -101,6 +105,7 @@ void main() {
       containsAll([
         ArchiveIndexManager.recordIndexName,
         ArchiveIndexManager.entityPathIndexName,
+        ArchiveIndexManager.titleAliasIndexName,
         ArchiveIndexManager.linkIndexName,
         ArchiveIndexManager.candidateIndexName,
         ArchiveIndexManager.tasteIndexName,
@@ -113,6 +118,10 @@ void main() {
     expect(
       result.entry(ArchiveIndexManager.entityPathIndexName)?.stats['entities'],
       1,
+    );
+    expect(
+      result.entry(ArchiveIndexManager.titleAliasIndexName)?.stats['targets'],
+      2,
     );
     expect(
       result.entry(ArchiveIndexManager.linkIndexName)?.stats['outgoingSources'],
@@ -138,6 +147,12 @@ void main() {
     expect(
       await File(
         p.join(vaultDir.path, '.akasha', 'entity_path_index.json'),
+      ).exists(),
+      isTrue,
+    );
+    expect(
+      await File(
+        p.join(vaultDir.path, '.akasha', 'title_alias_index', 'manifest.json'),
       ).exists(),
       isTrue,
     );
@@ -211,6 +226,7 @@ void main() {
       expect(result.entries.map((entry) => entry.indexName), [
         ArchiveIndexManager.recordIndexName,
         ArchiveIndexManager.entityPathIndexName,
+        ArchiveIndexManager.titleAliasIndexName,
         ArchiveIndexManager.linkIndexName,
         ArchiveIndexManager.tasteIndexName,
       ]);
@@ -221,6 +237,12 @@ void main() {
       expect(
         result.entry(ArchiveIndexManager.linkIndexName)?.stats['outgoingLinks'],
         1,
+      );
+      expect(
+        result
+            .entry(ArchiveIndexManager.titleAliasIndexName)
+            ?.stats['lookupEntries'],
+        greaterThan(0),
       );
 
       final record = await RecordSummaryIndexService().lookupById(
@@ -268,6 +290,7 @@ void main() {
     expect(result.entries.map((entry) => entry.indexName), [
       ArchiveIndexManager.recordIndexName,
       ArchiveIndexManager.entityPathIndexName,
+      ArchiveIndexManager.titleAliasIndexName,
       ArchiveIndexManager.linkIndexName,
       ArchiveIndexManager.tasteIndexName,
     ]);
@@ -319,6 +342,13 @@ void main() {
           'pe_u_incr0001',
         ),
         isNotNull,
+      );
+      expect(
+        (await TitleAliasIndexService().lookup(
+          vaultDir.path,
+          'Incremental Person',
+        )).map((entry) => entry.targetId),
+        contains('pe_u_incr0001'),
       );
     },
   );

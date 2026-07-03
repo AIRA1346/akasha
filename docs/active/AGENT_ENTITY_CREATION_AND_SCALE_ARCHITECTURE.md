@@ -282,6 +282,7 @@ The current JSON files remain useful stepping stones:
 
 - `.akasha/entity_path_index.json`
 - `.akasha/record_index.json`
+- `.akasha/title_alias_index/names/{shard}.json`
 - `.akasha/link_index.json`
 - `.akasha/indexes/taste_index.json`
 
@@ -293,15 +294,15 @@ quotes, and wiki links. It does not invent preferences and it does not replace
 the Markdown vault.
 
 `ArchiveIndexManager` is the current rebuild coordinator for these stepping
-stones. It rebuilds record, entity path, link, candidate, and taste indexes
-without writing archive records, then returns per-index stats/failures for
-tools and maintenance flows.
+stones. It rebuilds record, entity path, title/alias, link, candidate, and
+taste indexes without writing archive records, then returns per-index
+stats/failures for tools and maintenance flows.
 
 The first incremental path is also centralized there:
-`updateChangedRecord` and `removeRecord` update record, taste, link, and
-entity-path derived indexes for one Markdown file. Work, Entity, Journal, and
-Timeline save/delete flows now use that manager path, while full rebuild remains
-the recovery path.
+`updateChangedRecord` and `removeRecord` update record, taste, link,
+entity-path, and title/alias derived indexes for one Markdown file. Work,
+Entity, Journal, and Timeline save/delete flows now use that manager path, while
+full rebuild remains the recovery path.
 
 ---
 
