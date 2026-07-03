@@ -80,6 +80,91 @@ class TasteIndexService {
     return index;
   }
 
+  Future<List<TasteSignal>> upsertMarkdownFile({
+    required String vaultPath,
+    required String absolutePath,
+  }) async {
+    if (vaultPath.trim().isEmpty || absolutePath.trim().isEmpty) {
+      return const [];
+    }
+    if (!_isWithinVault(vaultPath, absolutePath)) return const [];
+
+    final file = File(absolutePath);
+    if (!await file.exists() || _shouldSkipPath(file.path)) {
+      await removeByEvidencePath(
+        vaultPath: vaultPath,
+        absolutePath: absolutePath,
+      );
+      return const [];
+    }
+
+    final nextSignals = await _extractSignals(vaultPath, file);
+    final relativePath = _relativePath(vaultPath, absolutePath);
+    final sourceIds = nextSignals
+        .map((signal) => signal.sourceRecordId)
+        .where((sourceId) => sourceId.isNotEmpty)
+        .toSet();
+    if (sourceIds.isEmpty) {
+      final sourceRecordId = await _sourceRecordIdForFile(vaultPath, file);
+      if (sourceRecordId != null && sourceRecordId.isNotEmpty) {
+        sourceIds.add(sourceRecordId);
+      }
+    }
+    final current = await load(vaultPath);
+    final retained =
+        current.signals
+            .where((signal) {
+              if (signal.evidencePath == relativePath) return false;
+              if (sourceIds.contains(signal.sourceRecordId)) return false;
+              return true;
+            })
+            .toList(growable: true)
+          ..addAll(nextSignals);
+
+    await _write(
+      vaultPath,
+      TasteIndex(
+        generatedAt: DateTime.now().toUtc(),
+        signals: _dedupeAndSort(retained),
+      ),
+    );
+    return nextSignals;
+  }
+
+  Future<void> removeBySourceRecord({
+    required String vaultPath,
+    required String sourceRecordId,
+  }) async {
+    if (vaultPath.trim().isEmpty || sourceRecordId.trim().isEmpty) return;
+    final current = await load(vaultPath);
+    final next = current.signals
+        .where((signal) => signal.sourceRecordId != sourceRecordId)
+        .toList(growable: false);
+    if (next.length == current.signals.length) return;
+    await _write(
+      vaultPath,
+      TasteIndex(generatedAt: DateTime.now().toUtc(), signals: next),
+    );
+  }
+
+  Future<void> removeByEvidencePath({
+    required String vaultPath,
+    required String absolutePath,
+  }) async {
+    if (vaultPath.trim().isEmpty || absolutePath.trim().isEmpty) return;
+    if (!_isWithinVault(vaultPath, absolutePath)) return;
+    final relativePath = _relativePath(vaultPath, absolutePath);
+    final current = await load(vaultPath);
+    final next = current.signals
+        .where((signal) => signal.evidencePath != relativePath)
+        .toList(growable: false);
+    if (next.length == current.signals.length) return;
+    await _write(
+      vaultPath,
+      TasteIndex(generatedAt: DateTime.now().toUtc(), signals: next),
+    );
+  }
+
   Future<List<TasteSignal>> _extractSignals(String vaultPath, File file) async {
     try {
       final content = await file.readAsString();
@@ -236,6 +321,27 @@ class TasteIndexService {
     }
   }
 
+  Future<String?> _sourceRecordIdForFile(String vaultPath, File file) async {
+    try {
+      final content = await file.readAsString();
+      final split = _splitFrontmatter(content);
+      if (split == null) return null;
+
+      final parsed = loadYaml(split.frontmatter);
+      if (parsed is! YamlMap) return null;
+
+      final stat = await _tryStat(file.path);
+      final meta = _TasteRecordMeta.fromYaml(
+        parsed,
+        relativePath: _relativePath(vaultPath, file.path),
+        updatedAt: stat?.modified.toUtc(),
+      );
+      return meta.sourceRecordId.isEmpty ? null : meta.sourceRecordId;
+    } catch (_) {
+      return null;
+    }
+  }
+
   Future<void> _write(String vaultPath, TasteIndex index) async {
     if (vaultPath.trim().isEmpty) return;
     final file = _indexFile(vaultPath);
@@ -382,6 +488,15 @@ class TasteIndexService {
 
   static String _relativePath(String vaultPath, String absolutePath) =>
       p.relative(absolutePath, from: vaultPath).replaceAll('\\', '/');
+
+  static bool _isWithinVault(String vaultPath, String absolutePath) {
+    final vaultRoot = p.normalize(p.absolute(vaultPath));
+    final target = p.normalize(p.absolute(absolutePath));
+    final relative = p.relative(target, from: vaultRoot);
+    if (relative == '.') return true;
+    if (p.isAbsolute(relative)) return false;
+    return relative != '..' && !relative.startsWith('..${p.separator}');
+  }
 }
 
 class _TasteRecordMeta {

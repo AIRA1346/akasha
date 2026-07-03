@@ -104,6 +104,37 @@ class RecordSummaryIndexService {
     await _write(vaultPath, _dedupe(records));
   }
 
+  Future<VaultRecordSummary?> upsertMarkdownFile({
+    required String vaultPath,
+    required String absolutePath,
+  }) async {
+    if (vaultPath.isEmpty || absolutePath.isEmpty) return null;
+    if (!_isWithinVault(vaultPath, absolutePath)) return null;
+    final file = File(absolutePath);
+    if (!await file.exists() || _shouldSkipPath(file.path)) {
+      await removeByAbsolutePath(
+        vaultPath: vaultPath,
+        absolutePath: absolutePath,
+      );
+      return null;
+    }
+
+    final summary = await VaultRecordSummary.fromMarkdownFile(
+      vaultPath: vaultPath,
+      file: file,
+    );
+    if (summary == null) {
+      await removeByAbsolutePath(
+        vaultPath: vaultPath,
+        absolutePath: absolutePath,
+      );
+      return null;
+    }
+
+    await _upsert(vaultPath, summary);
+    return summary;
+  }
+
   Future<void> upsertWork({
     required String vaultPath,
     required AkashaItem item,
@@ -155,6 +186,7 @@ class RecordSummaryIndexService {
     required String absolutePath,
   }) async {
     if (vaultPath.isEmpty || absolutePath.isEmpty) return;
+    if (!_isWithinVault(vaultPath, absolutePath)) return;
     final relative = _relativePath(vaultPath, absolutePath);
     final records = await load(vaultPath);
     final next = records
@@ -266,6 +298,15 @@ class RecordSummaryIndexService {
 
   static String _relativePath(String vaultPath, String absolutePath) =>
       p.relative(absolutePath, from: vaultPath).replaceAll('\\', '/');
+
+  static bool _isWithinVault(String vaultPath, String absolutePath) {
+    final vaultRoot = p.normalize(p.absolute(vaultPath));
+    final target = p.normalize(p.absolute(absolutePath));
+    final relative = p.relative(target, from: vaultRoot);
+    if (relative == '.') return true;
+    if (p.isAbsolute(relative)) return false;
+    return relative != '..' && !relative.startsWith('..${p.separator}');
+  }
 
   static String _normalizeTag(String tag) => tag.trim().toLowerCase();
 }

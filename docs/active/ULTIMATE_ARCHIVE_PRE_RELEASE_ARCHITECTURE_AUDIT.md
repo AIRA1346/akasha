@@ -367,18 +367,22 @@ Implemented:
 - `TasteIndexService` now rebuilds `.akasha/indexes/taste_index.json` from user-owned vault evidence and exposes target/source queries for external tools
 - `ArchiveIndexManager` now coordinates record, entity path, link, candidate, and taste rebuilds through one disposable derived-index entry point
 - `ArchiveCandidateStore.rebuildDerivedIndexes` restores sharded candidate name indexes, and duplicate checks fall back to source shards if the name index is missing
+- `ArchiveIndexManager.updateChangedRecord/removeRecord` now updates record and taste indexes for a single Markdown path without a full vault scan
+- incremental index updates reject Markdown paths outside the selected vault
 
 Validated:
 
 - `flutter test` focused vault/index/path suite: 34 pass
 - `flutter test` archive operation/candidate/executor/revision contract suites: 34 pass
-- `flutter test test/taste_index_service_test.dart`: 2 pass
-- `flutter test test/archive_candidate_store_test.dart test/archive_index_manager_test.dart`: 17 pass
-- `flutter test`: 723 pass
+- `flutter test test/taste_index_service_test.dart`: 3 pass
+- `flutter test test/archive_candidate_store_test.dart test/archive_index_manager_test.dart test/taste_index_service_test.dart`: 23 pass
+- `flutter test test/archive_index_manager_test.dart test/taste_index_service_test.dart test/record_summary_index_test.dart`: 10 pass
+- `flutter test`: 727 pass
 - `flutter analyze lib`: 0 issues
 
 Remaining before calling v3 complete:
 
-- add incremental index updates for common save/delete/operation flows
+- wire incremental index updates into common save/delete/operation flows
+- add link/entity-path incremental update coverage where full link rebuild is still too broad
 - add collection/revisit/music-specific taste signal expansion
 - decide whether to migrate existing local dev vault files or only use v3 for new records

@@ -297,6 +297,10 @@ stones. It rebuilds record, entity path, link, candidate, and taste indexes
 without writing archive records, then returns per-index stats/failures for
 tools and maintenance flows.
 
+The first incremental path is also centralized there:
+`updateChangedRecord` and `removeRecord` update record/taste derived indexes for
+one Markdown file. Full rebuild remains the recovery path.
+
 ---
 
 ## 9. Path Strategy

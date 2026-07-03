@@ -218,6 +218,165 @@ class ArchiveIndexManager {
     );
   }
 
+  Future<ArchiveIndexRebuildResult> updateChangedRecord({
+    required String vaultPath,
+    required String absolutePath,
+  }) async {
+    final startedAt = DateTime.now().toUtc();
+    final entries = <ArchiveIndexRebuildEntry>[];
+
+    final missingPath = vaultPath.trim().isEmpty || absolutePath.trim().isEmpty;
+    if (missingPath || !_isWithinVault(vaultPath, absolutePath)) {
+      final now = DateTime.now().toUtc();
+      return ArchiveIndexRebuildResult(
+        startedAt: startedAt,
+        finishedAt: now,
+        entries: [
+          ArchiveIndexRebuildEntry(
+            indexName: 'record',
+            status: ArchiveIndexRebuildStatus.failed,
+            durationMs: 0,
+            error: missingPath
+                ? 'record_path_required'
+                : 'record_path_outside_vault',
+          ),
+        ],
+      );
+    }
+
+    await _run(
+      entries,
+      indexName: recordIndexName,
+      outputPath: p.join(
+        vaultPath,
+        RecordSummaryIndexService.indexDirName,
+        RecordSummaryIndexService.indexFileName,
+      ),
+      action: () async {
+        final summary = await _recordIndex.upsertMarkdownFile(
+          vaultPath: vaultPath,
+          absolutePath: absolutePath,
+        );
+        return {
+          'mode': 'incremental',
+          if (summary != null) 'recordId': summary.id,
+          'changedPath': _relativePath(vaultPath, absolutePath),
+        };
+      },
+    );
+
+    await _run(
+      entries,
+      indexName: tasteIndexName,
+      outputPath: p.join(
+        vaultPath,
+        TasteIndexService.akashaDirName,
+        TasteIndexService.indexesDirName,
+        TasteIndexService.indexFileName,
+      ),
+      action: () async {
+        final signals = await _tasteIndex.upsertMarkdownFile(
+          vaultPath: vaultPath,
+          absolutePath: absolutePath,
+        );
+        return {
+          'mode': 'incremental',
+          'signals': signals.length,
+          'changedPath': _relativePath(vaultPath, absolutePath),
+        };
+      },
+    );
+
+    return ArchiveIndexRebuildResult(
+      startedAt: startedAt,
+      finishedAt: DateTime.now().toUtc(),
+      entries: entries,
+    );
+  }
+
+  Future<ArchiveIndexRebuildResult> removeRecord({
+    required String vaultPath,
+    required String absolutePath,
+    String? sourceRecordId,
+  }) async {
+    final startedAt = DateTime.now().toUtc();
+    final entries = <ArchiveIndexRebuildEntry>[];
+
+    final missingPath = vaultPath.trim().isEmpty || absolutePath.trim().isEmpty;
+    if (missingPath || !_isWithinVault(vaultPath, absolutePath)) {
+      final now = DateTime.now().toUtc();
+      return ArchiveIndexRebuildResult(
+        startedAt: startedAt,
+        finishedAt: now,
+        entries: [
+          ArchiveIndexRebuildEntry(
+            indexName: 'record',
+            status: ArchiveIndexRebuildStatus.failed,
+            durationMs: 0,
+            error: missingPath
+                ? 'record_path_required'
+                : 'record_path_outside_vault',
+          ),
+        ],
+      );
+    }
+
+    await _run(
+      entries,
+      indexName: recordIndexName,
+      outputPath: p.join(
+        vaultPath,
+        RecordSummaryIndexService.indexDirName,
+        RecordSummaryIndexService.indexFileName,
+      ),
+      action: () async {
+        await _recordIndex.removeByAbsolutePath(
+          vaultPath: vaultPath,
+          absolutePath: absolutePath,
+        );
+        return {
+          'mode': 'incrementalRemove',
+          'removedPath': _relativePath(vaultPath, absolutePath),
+        };
+      },
+    );
+
+    await _run(
+      entries,
+      indexName: tasteIndexName,
+      outputPath: p.join(
+        vaultPath,
+        TasteIndexService.akashaDirName,
+        TasteIndexService.indexesDirName,
+        TasteIndexService.indexFileName,
+      ),
+      action: () async {
+        await _tasteIndex.removeByEvidencePath(
+          vaultPath: vaultPath,
+          absolutePath: absolutePath,
+        );
+        final source = sourceRecordId?.trim();
+        if (source != null && source.isNotEmpty) {
+          await _tasteIndex.removeBySourceRecord(
+            vaultPath: vaultPath,
+            sourceRecordId: source,
+          );
+        }
+        return {
+          'mode': 'incrementalRemove',
+          'removedPath': _relativePath(vaultPath, absolutePath),
+          if (source != null && source.isNotEmpty) 'sourceRecordId': source,
+        };
+      },
+    );
+
+    return ArchiveIndexRebuildResult(
+      startedAt: startedAt,
+      finishedAt: DateTime.now().toUtc(),
+      entries: entries,
+    );
+  }
+
   RecordLinkIndexService _linkIndexFor(String vaultPath) {
     final injected = _linkIndex;
     if (injected != null) return injected;
@@ -259,6 +418,18 @@ class ArchiveIndexManager {
         ),
       );
     }
+  }
+
+  static String _relativePath(String vaultPath, String absolutePath) =>
+      p.relative(absolutePath, from: vaultPath).replaceAll('\\', '/');
+
+  static bool _isWithinVault(String vaultPath, String absolutePath) {
+    final vaultRoot = p.normalize(p.absolute(vaultPath));
+    final target = p.normalize(p.absolute(absolutePath));
+    final relative = p.relative(target, from: vaultRoot);
+    if (relative == '.') return true;
+    if (p.isAbsolute(relative)) return false;
+    return relative != '..' && !relative.startsWith('..${p.separator}');
   }
 }
 

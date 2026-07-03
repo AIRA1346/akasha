@@ -2,7 +2,9 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:akasha/core/archiving/taste_signal.dart';
+import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/models/enums.dart';
+import 'package:akasha/services/entity_journal_parser.dart';
 import 'package:akasha/services/markdown_parser.dart';
 import 'package:akasha/services/taste_index_service.dart';
 import 'package:akasha/utils/helpers.dart';
@@ -156,4 +158,59 @@ void main() {
     expect(raw['targetIndex'], contains('tag:cold'));
     expect(raw['sourceIndex'], contains('rec_wk_u_rebuild01'));
   });
+
+  test(
+    'incremental upsert removes old source signals when new file has none',
+    () async {
+      final oldFile = File(
+        p.join(vaultDir.path, 'entities', 'concept', 'co_u_move01.md'),
+      );
+      await oldFile.parent.create(recursive: true);
+      await oldFile.writeAsString(
+        EntityJournalParser.serialize(
+          entityType: EntityAnchorType.concept,
+          entityId: 'co_u_move01',
+          title: 'Moving Concept',
+          body: '',
+          tags: const ['Old Signal'],
+        ),
+        flush: true,
+      );
+      await service.rebuildFromVault(vaultDir.path);
+      expect(
+        await service.queryByTarget(vaultDir.path, 'tag:old-signal'),
+        hasLength(1),
+      );
+
+      final newFile = File(
+        p.join(vaultDir.path, 'entities', 'concept', 'shard', 'co_u_move01.md'),
+      );
+      await newFile.parent.create(recursive: true);
+      await newFile.writeAsString(
+        EntityJournalParser.serialize(
+          entityType: EntityAnchorType.concept,
+          entityId: 'co_u_move01',
+          title: 'Moving Concept',
+          body: '',
+        ),
+        flush: true,
+      );
+      await oldFile.delete();
+
+      final signals = await service.upsertMarkdownFile(
+        vaultPath: vaultDir.path,
+        absolutePath: newFile.path,
+      );
+
+      expect(signals, isEmpty);
+      expect(
+        await service.queryByTarget(vaultDir.path, 'tag:old-signal'),
+        isEmpty,
+      );
+      expect(
+        await service.queryBySourceRecord(vaultDir.path, 'rec_co_u_move01'),
+        isEmpty,
+      );
+    },
+  );
 }

@@ -29,6 +29,7 @@ These are done enough to treat as current architecture baseline.
 | UA-113 | Reverse lookup before new Work/Entity path writes | done | same `work_id`/`entity_id` legacy files are reused when `filePath` or path index is missing |
 | UA-114 | Entity journal alias frontmatter | done | `aliases: []` round-trips in entity journal Markdown and catalog sync |
 | UA-201 | Index manager wrapper | done | `ArchiveIndexManager` rebuilds record/entity/link/candidate/taste derived indexes with per-index results |
+| UA-202a | Incremental record/taste index update API | done | `ArchiveIndexManager.updateChangedRecord/removeRecord` updates record and taste indexes for one Markdown path |
 | UA-209 | Candidate store sharded scale path | done | candidates write to `.akasha/candidates/{type}/{shard}.json` with sharded name indexes |
 | UA-209a | Candidate name index rebuild/fallback | done | candidate duplicate guard falls back to source shards and `rebuildDerivedIndexes` restores name indexes |
 | UA-301 | Taste index schema and first extractor | done | `.akasha/indexes/taste_index.json` derives evidence-backed rating/status/favorite/tag/memo/quote/link signals |
@@ -55,7 +56,7 @@ These are what make "infinite archive" fast instead of merely correct.
 | ID | Work | Why It Matters | Suggested Direction |
 | --- | --- | --- | --- |
 | UA-201 | Index manager wrapper | Indexes were fragmented JSON services | Landed `ArchiveIndexManager`; continue expanding callers around it |
-| UA-202 | Incremental index updates | Full scans will degrade as vault grows | Update affected records only after saves/deletes/operations |
+| UA-202 | Incremental index updates | Full scans will degrade as vault grows | First record/taste path API landed; next wire it into save/delete/operation flows and extend link/entity incrementals |
 | UA-203 | Sharded or SQLite-derived index | Large JSON files will eventually become too slow | Move toward `.akasha/vault_index.db` or sharded `.akasha/indexes/*` |
 | UA-204 | Title/alias index | AI and natural language lookup need fast title resolution | Index `title`, `aliases`, `original_title`, localized titles |
 | UA-205 | Tag index expansion | Taste/theme/mood lookup should not parse all Markdown | Keep normalized tag -> record ids |
@@ -138,12 +139,12 @@ These matter, but they are not the current ultimate-archive core.
 
 The next architecture slice should be:
 
-> **UA-202 Incremental index updates:** use the manager as the rebuild fallback, then make common save/delete/operation flows update only the affected index entries.
+> **UA-202b Incremental index wiring:** connect the new changed/deleted-record index API to actual Work/Entity save/delete and operation executor flows.
 
 Minimum done condition:
 
-- define the first shared incremental update API or coordinator path
-- update record/taste indexes for one changed work without full vault scan
+- call `ArchiveIndexManager.updateChangedRecord` from at least one real save path
+- call `ArchiveIndexManager.removeRecord` from at least one real delete path
 - keep full rebuild as the recovery path
-- preserve delete handling for removed records
+- avoid double-updating existing direct record index writes, or document the transitional overlap
 - prove with focused save/update/delete tests
