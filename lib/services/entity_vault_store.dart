@@ -113,11 +113,6 @@ class EntityVaultStore {
     );
 
     await _writeAtomic(targetPath, content);
-    await _pathIndex.upsert(
-      vaultPath: vaultPath,
-      entityId: entity.entityId,
-      absolutePath: targetPath,
-    );
     final entry = EntityJournalEntry(
       entityType: entity.anchorType,
       entityId: entity.entityId,
@@ -210,15 +205,11 @@ class EntityVaultStore {
           vaultPath: vaultRoot,
           absolutePath: entry.storagePath,
           sourceRecordId: _entitySourceRecordId(entry.entityId),
+          entityId: entry.entityId,
         );
       }
     }
 
-    await _pathIndex.upsert(
-      vaultPath: vaultRoot,
-      entityId: entry.entityId,
-      absolutePath: targetPath,
-    );
     final updated = EntityJournalEntry(
       entityType: entry.entityType,
       entityId: entry.entityId,
@@ -268,13 +259,11 @@ class EntityVaultStore {
       vaultPath: vaultRoot,
       absolutePath: storagePath,
     );
-    if (entityId != null && entityId.isNotEmpty) {
-      await _pathIndex.remove(vaultPath: vaultRoot, entityId: entityId);
-    }
     await ArchiveIndexManager().removeRecord(
       vaultPath: vaultRoot,
       absolutePath: storagePath,
       sourceRecordId: _entitySourceRecordId(entityId),
+      entityId: entityId,
     );
 
     await AppVault.port.signalVaultChanged();

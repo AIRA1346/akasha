@@ -5,6 +5,7 @@ import 'package:path/path.dart' as p;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
+import 'package:akasha/services/entity_journal_parser.dart';
 import 'package:akasha/services/entity_path_index_service.dart';
 import 'package:akasha/services/entity_vault_loader.dart';
 import 'package:akasha/services/entity_vault_store.dart';
@@ -120,6 +121,50 @@ void main() {
         isNotNull,
       );
     });
+
+    test(
+      'upsertMarkdownFile and removeByAbsolutePath are incremental',
+      () async {
+        final entityPath = p.join(
+          tempDir.path,
+          'entities',
+          'concept',
+          'co_u_pathincrement.md',
+        );
+        final entityFile = File(entityPath);
+        await entityFile.parent.create(recursive: true);
+        await entityFile.writeAsString(
+          EntityJournalParser.serialize(
+            entityType: EntityAnchorType.concept,
+            entityId: 'co_u_pathincrement',
+            title: 'Path Increment',
+            body: 'body',
+          ),
+        );
+
+        final upserted = await index.upsertMarkdownFile(
+          vaultPath: tempDir.path,
+          absolutePath: entityPath,
+        );
+
+        expect(upserted, 'co_u_pathincrement');
+        expect(
+          await index.lookupRelativePath(tempDir.path, 'co_u_pathincrement'),
+          isNotNull,
+        );
+
+        final removed = await index.removeByAbsolutePath(
+          vaultPath: tempDir.path,
+          absolutePath: entityPath,
+        );
+
+        expect(removed, 'co_u_pathincrement');
+        expect(
+          await index.lookupRelativePath(tempDir.path, 'co_u_pathincrement'),
+          isNull,
+        );
+      },
+    );
   });
 
   group('EntityVaultStore title rename', () {

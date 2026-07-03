@@ -6,6 +6,7 @@ import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/services/archive_candidate_store.dart';
 import 'package:akasha/services/archive_index_manager.dart';
+import 'package:akasha/services/entity_path_index_service.dart';
 import 'package:akasha/services/entity_journal_parser.dart';
 import 'package:akasha/services/markdown_parser.dart';
 import 'package:akasha/services/record_summary_index_service.dart';
@@ -182,7 +183,7 @@ void main() {
             category: MediaCategory.movie,
             rating: 5,
             tags: ['Warm'],
-          ),
+          )..bodyRaw = 'Old link [[pe_u_incold01]]',
         ),
         flush: true,
       );
@@ -196,7 +197,7 @@ void main() {
             category: MediaCategory.movie,
             rating: 2,
             tags: ['Cold'],
-          ),
+          )..bodyRaw = 'New link [[pe_u_incnew01]]',
         ),
         flush: true,
       );
@@ -209,11 +210,17 @@ void main() {
       expect(result.succeeded, isTrue);
       expect(result.entries.map((entry) => entry.indexName), [
         ArchiveIndexManager.recordIndexName,
+        ArchiveIndexManager.entityPathIndexName,
+        ArchiveIndexManager.linkIndexName,
         ArchiveIndexManager.tasteIndexName,
       ]);
       expect(
         result.entry(ArchiveIndexManager.recordIndexName)?.stats['mode'],
         'incremental',
+      );
+      expect(
+        result.entry(ArchiveIndexManager.linkIndexName)?.stats['outgoingLinks'],
+        1,
       );
 
       final record = await RecordSummaryIndexService().lookupById(
@@ -245,7 +252,7 @@ void main() {
           category: MediaCategory.book,
           rating: 4,
           tags: ['Gone'],
-        ),
+        )..bodyRaw = 'Remove link [[pe_u_remtgt01]]',
       ),
       flush: true,
     );
@@ -258,6 +265,12 @@ void main() {
     );
 
     expect(result.succeeded, isTrue);
+    expect(result.entries.map((entry) => entry.indexName), [
+      ArchiveIndexManager.recordIndexName,
+      ArchiveIndexManager.entityPathIndexName,
+      ArchiveIndexManager.linkIndexName,
+      ArchiveIndexManager.tasteIndexName,
+    ]);
     expect(
       await RecordSummaryIndexService().lookupById(
         vaultDir.path,
@@ -270,6 +283,45 @@ void main() {
       isEmpty,
     );
   });
+
+  test(
+    'updateChangedRecord upserts entity path entries incrementally',
+    () async {
+      final entityFile = File(
+        p.join(vaultDir.path, 'entities', 'person', 'pe_u_incr0001.md'),
+      );
+      await entityFile.parent.create(recursive: true);
+      await entityFile.writeAsString(
+        EntityJournalParser.serialize(
+          entityType: EntityAnchorType.person,
+          entityId: 'pe_u_incr0001',
+          title: 'Incremental Person',
+          body: 'body',
+        ),
+        flush: true,
+      );
+
+      final result = await manager.updateChangedRecord(
+        vaultPath: vaultDir.path,
+        absolutePath: entityFile.path,
+      );
+
+      expect(result.succeeded, isTrue);
+      expect(
+        result
+            .entry(ArchiveIndexManager.entityPathIndexName)
+            ?.stats['entityId'],
+        'pe_u_incr0001',
+      );
+      expect(
+        await EntityPathIndexService().lookupRelativePath(
+          vaultDir.path,
+          'pe_u_incr0001',
+        ),
+        isNotNull,
+      );
+    },
+  );
 
   test('updateChangedRecord rejects paths outside the vault', () async {
     final outsideDir = await Directory.systemTemp.createTemp(

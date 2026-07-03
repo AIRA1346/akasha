@@ -298,9 +298,10 @@ without writing archive records, then returns per-index stats/failures for
 tools and maintenance flows.
 
 The first incremental path is also centralized there:
-`updateChangedRecord` and `removeRecord` update record/taste derived indexes for
-one Markdown file. Work, Entity, Journal, and Timeline save/delete flows now use
-that manager path, while full rebuild remains the recovery path.
+`updateChangedRecord` and `removeRecord` update record, taste, link, and
+entity-path derived indexes for one Markdown file. Work, Entity, Journal, and
+Timeline save/delete flows now use that manager path, while full rebuild remains
+the recovery path.
 
 ---
 

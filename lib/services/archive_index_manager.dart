@@ -221,6 +221,8 @@ class ArchiveIndexManager {
   Future<ArchiveIndexRebuildResult> updateChangedRecord({
     required String vaultPath,
     required String absolutePath,
+    UserCatalogPort? userCatalog,
+    List<AkashaItem> vaultItems = const [],
   }) async {
     final startedAt = DateTime.now().toUtc();
     final entries = <ArchiveIndexRebuildEntry>[];
@@ -267,6 +269,50 @@ class ArchiveIndexManager {
 
     await _run(
       entries,
+      indexName: entityPathIndexName,
+      outputPath: p.join(
+        vaultPath,
+        EntityPathIndexService.indexDirName,
+        EntityPathIndexService.indexFileName,
+      ),
+      action: () async {
+        final entityId = await _entityPathIndex.upsertMarkdownFile(
+          vaultPath: vaultPath,
+          absolutePath: absolutePath,
+        );
+        return {
+          'mode': 'incremental',
+          if (entityId != null && entityId.isNotEmpty) 'entityId': entityId,
+          'changedPath': _relativePath(vaultPath, absolutePath),
+        };
+      },
+    );
+
+    await _run(
+      entries,
+      indexName: linkIndexName,
+      outputPath: p.join(
+        vaultPath,
+        RecordLinkIndexService.indexDirName,
+        RecordLinkIndexService.indexFileName,
+      ),
+      action: () async {
+        final links = await _linkIndexFor(vaultPath).upsertMarkdownFile(
+          vaultPath: vaultPath,
+          absolutePath: absolutePath,
+          userCatalog: userCatalog,
+          vaultItems: vaultItems,
+        );
+        return {
+          'mode': 'incremental',
+          'outgoingLinks': links.length,
+          'changedPath': _relativePath(vaultPath, absolutePath),
+        };
+      },
+    );
+
+    await _run(
+      entries,
       indexName: tasteIndexName,
       outputPath: p.join(
         vaultPath,
@@ -298,6 +344,7 @@ class ArchiveIndexManager {
     required String vaultPath,
     required String absolutePath,
     String? sourceRecordId,
+    String? entityId,
   }) async {
     final startedAt = DateTime.now().toUtc();
     final entries = <ArchiveIndexRebuildEntry>[];
@@ -334,6 +381,57 @@ class ArchiveIndexManager {
           vaultPath: vaultPath,
           absolutePath: absolutePath,
         );
+        return {
+          'mode': 'incrementalRemove',
+          'removedPath': _relativePath(vaultPath, absolutePath),
+        };
+      },
+    );
+
+    await _run(
+      entries,
+      indexName: entityPathIndexName,
+      outputPath: p.join(
+        vaultPath,
+        EntityPathIndexService.indexDirName,
+        EntityPathIndexService.indexFileName,
+      ),
+      action: () async {
+        final targetEntityId = entityId?.trim();
+        String? removedEntityId;
+        if (targetEntityId != null && targetEntityId.isNotEmpty) {
+          await _entityPathIndex.remove(
+            vaultPath: vaultPath,
+            entityId: targetEntityId,
+          );
+          removedEntityId = targetEntityId;
+        } else {
+          removedEntityId = await _entityPathIndex.removeByAbsolutePath(
+            vaultPath: vaultPath,
+            absolutePath: absolutePath,
+          );
+        }
+        return {
+          'mode': 'incrementalRemove',
+          'removedPath': _relativePath(vaultPath, absolutePath),
+          if (removedEntityId != null && removedEntityId.isNotEmpty)
+            'entityId': removedEntityId,
+        };
+      },
+    );
+
+    await _run(
+      entries,
+      indexName: linkIndexName,
+      outputPath: p.join(
+        vaultPath,
+        RecordLinkIndexService.indexDirName,
+        RecordLinkIndexService.indexFileName,
+      ),
+      action: () async {
+        await _linkIndexFor(
+          vaultPath,
+        ).removeBySourcePath(vaultPath: vaultPath, absolutePath: absolutePath);
         return {
           'mode': 'incrementalRemove',
           'removedPath': _relativePath(vaultPath, absolutePath),

@@ -21,7 +21,8 @@ class EntityPathIndexService {
     if (!await file.exists()) return {};
 
     try {
-      final json = jsonDecode(await file.readAsString()) as Map<String, dynamic>;
+      final json =
+          jsonDecode(await file.readAsString()) as Map<String, dynamic>;
       final raw = json['paths'];
       if (raw is! Map) return {};
       return raw.map(
@@ -50,10 +51,55 @@ class EntityPathIndexService {
     required String absolutePath,
   }) async {
     if (entityId.isEmpty || absolutePath.isEmpty) return;
+    if (!_isWithinVault(vaultPath, absolutePath)) return;
 
     final paths = await loadPaths(vaultPath);
     paths[entityId] = p.relative(absolutePath, from: vaultPath);
     await _write(vaultPath, paths);
+  }
+
+  Future<String?> upsertMarkdownFile({
+    required String vaultPath,
+    required String absolutePath,
+  }) async {
+    if (vaultPath.trim().isEmpty || absolutePath.trim().isEmpty) return null;
+    if (!_isWithinVault(vaultPath, absolutePath)) return null;
+
+    final file = File(absolutePath);
+    if (!await file.exists()) {
+      await removeByAbsolutePath(
+        vaultPath: vaultPath,
+        absolutePath: absolutePath,
+      );
+      return null;
+    }
+
+    try {
+      final parsed = EntityJournalParser.parse(
+        await file.readAsString(),
+        file.path,
+      );
+      if (parsed == null) {
+        await removeByAbsolutePath(
+          vaultPath: vaultPath,
+          absolutePath: absolutePath,
+        );
+        return null;
+      }
+
+      await upsert(
+        vaultPath: vaultPath,
+        entityId: parsed.entityId,
+        absolutePath: file.path,
+      );
+      return parsed.entityId;
+    } catch (_) {
+      await removeByAbsolutePath(
+        vaultPath: vaultPath,
+        absolutePath: absolutePath,
+      );
+      return null;
+    }
   }
 
   Future<void> remove({
@@ -65,6 +111,26 @@ class EntityPathIndexService {
     final paths = await loadPaths(vaultPath);
     if (paths.remove(entityId) == null) return;
     await _write(vaultPath, paths);
+  }
+
+  Future<String?> removeByAbsolutePath({
+    required String vaultPath,
+    required String absolutePath,
+  }) async {
+    if (vaultPath.trim().isEmpty || absolutePath.trim().isEmpty) return null;
+    if (!_isWithinVault(vaultPath, absolutePath)) return null;
+
+    final relative = p.relative(absolutePath, from: vaultPath);
+    final paths = await loadPaths(vaultPath);
+    String? removedEntityId;
+    paths.removeWhere((entityId, indexedPath) {
+      final matches = p.normalize(indexedPath) == p.normalize(relative);
+      if (matches) removedEntityId = entityId;
+      return matches;
+    });
+    if (removedEntityId == null) return null;
+    await _write(vaultPath, paths);
+    return removedEntityId;
   }
 
   /// 인덱스 파일이 없으면 `entities/` 전체 스캔으로 생성.
@@ -80,7 +146,10 @@ class EntityPathIndexService {
       p.join(vaultPath, EntityJournalParser.entitiesDirName),
     );
     if (await root.exists()) {
-      await for (final entity in root.list(recursive: true, followLinks: false)) {
+      await for (final entity in root.list(
+        recursive: true,
+        followLinks: false,
+      )) {
         if (entity is! File || !entity.path.endsWith('.md')) continue;
         try {
           final parsed = EntityJournalParser.parse(
@@ -110,5 +179,14 @@ class EntityPathIndexService {
       const JsonEncoder.withIndent('  ').convert(payload),
       flush: true,
     );
+  }
+
+  static bool _isWithinVault(String vaultPath, String absolutePath) {
+    final vaultRoot = p.normalize(p.absolute(vaultPath));
+    final target = p.normalize(p.absolute(absolutePath));
+    final relative = p.relative(target, from: vaultRoot);
+    if (relative == '.') return true;
+    if (p.isAbsolute(relative)) return false;
+    return relative != '..' && !relative.startsWith('..${p.separator}');
   }
 }

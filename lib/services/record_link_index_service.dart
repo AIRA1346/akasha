@@ -16,12 +16,10 @@ import 'record_link_parser.dart';
 
 /// `vault/.akasha/link_index.json` — Wave 5.
 class RecordLinkIndexService implements RecordLinkPort {
-  RecordLinkIndexService({
-    VaultPort? vault,
-    EventLedgerService? eventLedger,
-  })  : _vault = vault ?? AppVault.port,
-        _eventLedger =
-            eventLedger ?? EventLedgerService(vault: vault ?? AppVault.port);
+  RecordLinkIndexService({VaultPort? vault, EventLedgerService? eventLedger})
+    : _vault = vault ?? AppVault.port,
+      _eventLedger =
+          eventLedger ?? EventLedgerService(vault: vault ?? AppVault.port);
 
   static const int schemaVersion = 1;
   static const String indexDirName = '.akasha';
@@ -133,6 +131,84 @@ class RecordLinkIndexService implements RecordLinkPort {
     }
   }
 
+  Future<List<RecordLink>> upsertMarkdownFile({
+    required String vaultPath,
+    required String absolutePath,
+    UserCatalogPort? userCatalog,
+    List<AkashaItem> vaultItems = const [],
+  }) async {
+    if (vaultPath.trim().isEmpty || absolutePath.trim().isEmpty) {
+      return const [];
+    }
+    if (!_isWithinVault(vaultPath, absolutePath)) return const [];
+
+    if (userCatalog != null) {
+      _resolveUserCatalog = userCatalog;
+      await userCatalog.load();
+    }
+    if (vaultItems.isNotEmpty) {
+      _resolveVaultItems = vaultItems;
+    }
+
+    final file = File(absolutePath);
+    if (!await file.exists() || _shouldSkipPath(file.path)) {
+      await removeBySourcePath(
+        vaultPath: vaultPath,
+        absolutePath: absolutePath,
+      );
+      return const [];
+    }
+
+    await _ensureLoadedForVault(vaultPath);
+
+    final sourcePath = p.normalize(file.path);
+    final parsed = RecordLinkParser.parseFromRecordContent(
+      await file.readAsString(),
+    );
+    final links = _dedupeLinks(
+      parsed
+          .map(
+            (link) =>
+                RecordLink.fromParsed(sourceRecordId: sourcePath, parsed: link),
+          )
+          .toList(),
+    );
+
+    _removeSourceFromIndexes(sourcePath);
+    if (links.isNotEmpty) {
+      _outgoing[sourcePath] = links;
+      for (final link in links) {
+        final targetId = _incomingTargetId(
+          link,
+          _resolveUserCatalog,
+          _resolveVaultItems,
+        );
+        if (targetId == null) continue;
+        _incoming.putIfAbsent(targetId, () => []).add(sourcePath);
+      }
+      for (final entry in _incoming.entries) {
+        entry.value.sort();
+      }
+    }
+
+    await _persist(vaultPath);
+    return links;
+  }
+
+  Future<void> removeBySourcePath({
+    required String vaultPath,
+    required String absolutePath,
+  }) async {
+    if (vaultPath.trim().isEmpty || absolutePath.trim().isEmpty) return;
+    if (!_isWithinVault(vaultPath, absolutePath)) return;
+
+    await _ensureLoadedForVault(vaultPath);
+    final changed = _removeSourceFromIndexes(p.normalize(absolutePath));
+    if (changed) {
+      await _persist(vaultPath);
+    }
+  }
+
   @override
   Future<List<RecordLink>> outgoingLinks(String sourcePath) async {
     await _ensureLoaded();
@@ -160,17 +236,27 @@ class RecordLinkIndexService implements RecordLinkPort {
       return;
     }
 
+    if (await _loadFromDisk(vaultPath)) return;
+    await rebuildIndex();
+  }
+
+  Future<void> _ensureLoadedForVault(String vaultPath) async {
+    if (_loaded) return;
+    if (await _loadFromDisk(vaultPath)) return;
+    await rebuildIndex();
+  }
+
+  Future<bool> _loadFromDisk(String vaultPath) async {
     final file = _indexFile(vaultPath);
     if (!await file.exists()) {
-      await rebuildIndex();
-      return;
+      return false;
     }
 
     try {
-      final json = jsonDecode(await file.readAsString()) as Map<String, dynamic>;
+      final json =
+          jsonDecode(await file.readAsString()) as Map<String, dynamic>;
       if ((json['version'] as num?)?.toInt() != schemaVersion) {
-        await rebuildIndex();
-        return;
+        return false;
       }
 
       final outgoingRaw = json['outgoing'] as Map<String, dynamic>? ?? {};
@@ -197,9 +283,25 @@ class RecordLinkIndexService implements RecordLinkPort {
         ),
       );
       _loaded = true;
+      return true;
     } catch (_) {
-      await rebuildIndex();
+      return false;
     }
+  }
+
+  bool _removeSourceFromIndexes(String sourcePath) {
+    var changed = _outgoing.remove(sourcePath) != null;
+    final emptyTargets = <String>[];
+    for (final entry in _incoming.entries) {
+      final before = entry.value.length;
+      entry.value.removeWhere((path) => p.normalize(path) == sourcePath);
+      if (entry.value.length != before) changed = true;
+      if (entry.value.isEmpty) emptyTargets.add(entry.key);
+    }
+    for (final target in emptyTargets) {
+      _incoming.remove(target);
+    }
+    return changed;
   }
 
   Future<void> _persist(String vaultPath) async {
@@ -211,10 +313,7 @@ class RecordLinkIndexService implements RecordLinkPort {
       'version': schemaVersion,
       'generatedAt': DateTime.now().toUtc().toIso8601String(),
       'outgoing': _outgoing.map(
-        (path, links) => MapEntry(
-          path,
-          links.map((l) => l.toJson()).toList(),
-        ),
+        (path, links) => MapEntry(path, links.map((l) => l.toJson()).toList()),
       ),
       'incoming': _incoming,
     });
@@ -277,5 +376,14 @@ class RecordLinkIndexService implements RecordLinkPort {
       if (seen.add(key)) result.add(link);
     }
     return result;
+  }
+
+  static bool _isWithinVault(String vaultPath, String absolutePath) {
+    final vaultRoot = p.normalize(p.absolute(vaultPath));
+    final target = p.normalize(p.absolute(absolutePath));
+    final relative = p.relative(target, from: vaultRoot);
+    if (relative == '.') return true;
+    if (p.isAbsolute(relative)) return false;
+    return relative != '..' && !relative.startsWith('..${p.separator}');
   }
 }

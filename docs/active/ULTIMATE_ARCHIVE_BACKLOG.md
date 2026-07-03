@@ -31,6 +31,7 @@ These are done enough to treat as current architecture baseline.
 | UA-201 | Index manager wrapper | done | `ArchiveIndexManager` rebuilds record/entity/link/candidate/taste derived indexes with per-index results |
 | UA-202a | Incremental record/taste index update API | done | `ArchiveIndexManager.updateChangedRecord/removeRecord` updates record and taste indexes for one Markdown path |
 | UA-202b | Incremental index wiring into archive writes | done | Work/Entity/Journal/Timeline save/delete flows now call the manager instead of directly mutating record-only indexes |
+| UA-206a | Link/entity-path incremental coverage | done | changed/deleted Markdown paths update link outgoing/incoming and entity path indexes through `ArchiveIndexManager` |
 | UA-209 | Candidate store sharded scale path | done | candidates write to `.akasha/candidates/{type}/{shard}.json` with sharded name indexes |
 | UA-209a | Candidate name index rebuild/fallback | done | candidate duplicate guard falls back to source shards and `rebuildDerivedIndexes` restores name indexes |
 | UA-301 | Taste index schema and first extractor | done | `.akasha/indexes/taste_index.json` derives evidence-backed rating/status/favorite/tag/memo/quote/link signals |
@@ -57,11 +58,11 @@ These are what make "infinite archive" fast instead of merely correct.
 | ID | Work | Why It Matters | Suggested Direction |
 | --- | --- | --- | --- |
 | UA-201 | Index manager wrapper | Indexes were fragmented JSON services | Landed `ArchiveIndexManager`; continue expanding callers around it |
-| UA-202 | Incremental index updates | Full scans will degrade as vault grows | Record/taste save-delete wiring landed; next extend link/entity incrementals |
+| UA-202 | Incremental index updates | Full scans will degrade as vault grows | Record/taste/link/entity-path incremental paths are landed; keep full rebuild as recovery |
 | UA-203 | Sharded or SQLite-derived index | Large JSON files will eventually become too slow | Move toward `.akasha/vault_index.db` or sharded `.akasha/indexes/*` |
 | UA-204 | Title/alias index | AI and natural language lookup need fast title resolution | Index `title`, `aliases`, `original_title`, localized titles |
 | UA-205 | Tag index expansion | Taste/theme/mood lookup should not parse all Markdown | Keep normalized tag -> record ids |
-| UA-206 | Link and incoming graph hardening | Backlinks and graph exploration need stable relationship lookup | Keep outgoing and incoming indexes aligned |
+| UA-206 | Link and incoming graph hardening | Backlinks and graph exploration need stable relationship lookup | Incremental outgoing/incoming updates landed; next add validation/reporting for unresolved title links |
 | UA-207 | Snippet/quote/scene index | Search should find meaningful passages without full-file reads | Store short derived excerpts with evidence paths |
 | UA-208 | Index rebuild validator | Derived indexes must be disposable and trustworthy | Add command/test that rebuilds and checks record counts/IDs/paths |
 | UA-210 | Candidate merge/review query UX | Shards prevent IO blowups, but users still need reviewable duplicate clusters | Add paged candidate queries and merge suggestions backed by the name index |
@@ -140,11 +141,12 @@ These matter, but they are not the current ultimate-archive core.
 
 The next architecture slice should be:
 
-> **UA-206a Link/entity incremental coverage:** keep the record/taste incremental path, then reduce remaining full graph/path rebuild pressure for link and entity-path indexes.
+> **UA-204 Title/alias index:** give agents and tools a fast, deterministic way to resolve natural-language names to Work/Entity IDs without scanning every Markdown file.
 
 Minimum done condition:
 
-- add an incremental link-index update/remove path or document why full link rebuild remains acceptable for the next release
-- keep entity-path index updates centralized with the same manager boundary where practical
+- derive normalized title and alias keys from Work and Entity Markdown
+- keep the index disposable and rebuildable under `.akasha/indexes/`
+- support lookup by exact normalized title/alias and return stable IDs plus evidence paths
 - keep full rebuild as the recovery path
-- prove with focused link/entity path update/delete tests
+- prove mixed Work/Entity/title/alias lookup with focused tests
