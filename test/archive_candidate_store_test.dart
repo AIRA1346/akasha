@@ -294,6 +294,37 @@ void main() {
       }
     });
 
+    test('duplicate guard survives missing candidate name index', () async {
+      final tempDir = await Directory.systemTemp.createTemp(
+        'akasha_candidates_',
+      );
+      final store = ArchiveCandidateStore();
+      try {
+        await store.upsert(vaultPath: tempDir.path, candidate: _candidate());
+        final nameIndex = Directory(
+          '${tempDir.path}/.akasha/candidates/name_index',
+        );
+        if (await nameIndex.exists()) {
+          await nameIndex.delete(recursive: true);
+        }
+
+        await expectLater(
+          store.upsert(
+            vaultPath: tempDir.path,
+            candidate: _candidate(
+              candidateId: 'cand_person_gamma003',
+              title: 'Hero',
+            ),
+          ),
+          throwsA(isA<ArgumentError>()),
+        );
+      } finally {
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
     test('migrates legacy candidate to shards before status update', () async {
       final tempDir = await Directory.systemTemp.createTemp(
         'akasha_candidates_',

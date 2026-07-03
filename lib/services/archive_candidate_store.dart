@@ -7,6 +7,24 @@ import '../core/archiving/archive_candidate.dart';
 import '../core/archiving/archive_candidate_validator.dart';
 import '../core/archiving/entity_anchor.dart';
 
+class ArchiveCandidateIndexStats {
+  const ArchiveCandidateIndexStats({
+    required this.totalCandidates,
+    required this.openCandidates,
+    required this.indexedNames,
+  });
+
+  final int totalCandidates;
+  final int openCandidates;
+  final int indexedNames;
+
+  Map<String, dynamic> toJson() => {
+    'totalCandidates': totalCandidates,
+    'openCandidates': openCandidates,
+    'indexedNames': indexedNames,
+  };
+}
+
 /// Durable candidate layer for agent/import extraction.
 ///
 /// New writes use `.akasha/candidates/{entityType}/{shard}.json` plus a
@@ -54,6 +72,51 @@ class ArchiveCandidateStore {
           (candidate) => candidate.status == ArchiveCandidateStatus.candidate,
         )
         .toList(growable: false);
+  }
+
+  Future<ArchiveCandidateIndexStats> rebuildDerivedIndexes(
+    String vaultPath,
+  ) async {
+    if (vaultPath.trim().isEmpty) {
+      return const ArchiveCandidateIndexStats(
+        totalCandidates: 0,
+        openCandidates: 0,
+        indexedNames: 0,
+      );
+    }
+
+    await _maybeMigrateLegacy(vaultPath);
+    final candidates = await load(vaultPath);
+    final open = candidates
+        .where((candidate) => candidate.isOpen)
+        .toList(growable: false);
+
+    final nameIndexRoot = Directory(
+      p.join(vaultPath, akashaDirName, candidateDirName, nameIndexDirName),
+    );
+    if (await nameIndexRoot.exists()) {
+      await nameIndexRoot.delete(recursive: true);
+    }
+
+    final indexedNames = <String>{};
+    for (final candidate in open) {
+      final names = ArchiveCandidateValidator.normalizedCandidateNames(
+        candidate,
+      );
+      indexedNames.addAll(names);
+      await _updateNameIndexForChange(
+        vaultPath: vaultPath,
+        previous: null,
+        next: candidate,
+      );
+    }
+
+    await _writeManifest(vaultPath);
+    return ArchiveCandidateIndexStats(
+      totalCandidates: candidates.length,
+      openCandidates: open.length,
+      indexedNames: indexedNames.length,
+    );
   }
 
   Future<ArchiveCandidate?> lookup(String vaultPath, String candidateId) async {
@@ -200,23 +263,25 @@ class ArchiveCandidateStore {
       if (existingNames.any(incomingNames.contains)) return existing;
     }
 
-    for (final existing in await _loadLegacy(vaultPath)) {
+    return _findDuplicateCandidateByScan(vaultPath, incoming, incomingNames);
+  }
+
+  Future<ArchiveCandidate?> _findDuplicateCandidateByScan(
+    String vaultPath,
+    ArchiveCandidate incoming,
+    Set<String> incomingNames,
+  ) async {
+    for (final existing in await load(vaultPath)) {
       if (existing.candidateId == incoming.candidateId ||
           existing.entityType != incoming.entityType ||
           !existing.isOpen) {
         continue;
       }
-      final effective =
-          await lookup(vaultPath, existing.candidateId) ?? existing;
-      if (!effective.isOpen || effective.entityType != incoming.entityType) {
-        continue;
-      }
       final existingNames = ArchiveCandidateValidator.normalizedCandidateNames(
-        effective,
+        existing,
       );
-      if (existingNames.any(incomingNames.contains)) return effective;
+      if (existingNames.any(incomingNames.contains)) return existing;
     }
-
     return null;
   }
 

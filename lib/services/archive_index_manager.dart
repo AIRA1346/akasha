@@ -1,0 +1,320 @@
+import 'dart:async';
+import 'dart:typed_data';
+
+import 'package:path/path.dart' as p;
+
+import '../core/ports/user_catalog_port.dart';
+import '../core/ports/vault_port.dart';
+import '../models/akasha_item.dart';
+import 'archive_candidate_store.dart';
+import 'entity_path_index_service.dart';
+import 'event_ledger_service.dart';
+import 'record_link_index_service.dart';
+import 'record_summary_index_service.dart';
+import 'taste_index_service.dart';
+
+enum ArchiveIndexRebuildStatus { rebuilt, failed }
+
+class ArchiveIndexRebuildEntry {
+  const ArchiveIndexRebuildEntry({
+    required this.indexName,
+    required this.status,
+    required this.durationMs,
+    this.outputPath,
+    this.stats = const {},
+    this.error,
+  });
+
+  final String indexName;
+  final ArchiveIndexRebuildStatus status;
+  final int durationMs;
+  final String? outputPath;
+  final Map<String, dynamic> stats;
+  final String? error;
+
+  bool get succeeded => status == ArchiveIndexRebuildStatus.rebuilt;
+
+  Map<String, dynamic> toJson() => {
+    'indexName': indexName,
+    'status': status.name,
+    'durationMs': durationMs,
+    if (outputPath != null && outputPath!.isNotEmpty) 'outputPath': outputPath,
+    if (stats.isNotEmpty) 'stats': stats,
+    if (error != null && error!.isNotEmpty) 'error': error,
+  };
+}
+
+class ArchiveIndexRebuildResult {
+  const ArchiveIndexRebuildResult({
+    required this.startedAt,
+    required this.finishedAt,
+    required this.entries,
+  });
+
+  final DateTime startedAt;
+  final DateTime finishedAt;
+  final List<ArchiveIndexRebuildEntry> entries;
+
+  bool get succeeded => entries.every((entry) => entry.succeeded);
+
+  ArchiveIndexRebuildEntry? entry(String indexName) {
+    for (final entry in entries) {
+      if (entry.indexName == indexName) return entry;
+    }
+    return null;
+  }
+
+  Map<String, dynamic> toJson() => {
+    'startedAt': startedAt.toUtc().toIso8601String(),
+    'finishedAt': finishedAt.toUtc().toIso8601String(),
+    'succeeded': succeeded,
+    'entries': entries.map((entry) => entry.toJson()).toList(),
+  };
+}
+
+/// Coordinates disposable derived index rebuilds for tools and maintenance.
+///
+/// This class intentionally does not write archive records. Markdown remains
+/// the source of truth; every index rebuilt here can be deleted and recreated.
+class ArchiveIndexManager {
+  ArchiveIndexManager({
+    RecordSummaryIndexService? recordIndex,
+    EntityPathIndexService? entityPathIndex,
+    RecordLinkIndexService? linkIndex,
+    ArchiveCandidateStore? candidateStore,
+    TasteIndexService? tasteIndex,
+  }) : _recordIndex = recordIndex ?? RecordSummaryIndexService(),
+       _entityPathIndex = entityPathIndex ?? EntityPathIndexService(),
+       _linkIndex = linkIndex,
+       _candidateStore = candidateStore ?? ArchiveCandidateStore(),
+       _tasteIndex = tasteIndex ?? TasteIndexService();
+
+  static const String recordIndexName = 'record';
+  static const String entityPathIndexName = 'entityPath';
+  static const String linkIndexName = 'link';
+  static const String candidateIndexName = 'candidate';
+  static const String tasteIndexName = 'taste';
+
+  final RecordSummaryIndexService _recordIndex;
+  final EntityPathIndexService _entityPathIndex;
+  final RecordLinkIndexService? _linkIndex;
+  final ArchiveCandidateStore _candidateStore;
+  final TasteIndexService _tasteIndex;
+
+  Future<ArchiveIndexRebuildResult> rebuildAll({
+    required String vaultPath,
+    UserCatalogPort? userCatalog,
+    List<AkashaItem> vaultItems = const [],
+  }) async {
+    final startedAt = DateTime.now().toUtc();
+    final entries = <ArchiveIndexRebuildEntry>[];
+
+    if (vaultPath.trim().isEmpty) {
+      final now = DateTime.now().toUtc();
+      return ArchiveIndexRebuildResult(
+        startedAt: startedAt,
+        finishedAt: now,
+        entries: [
+          const ArchiveIndexRebuildEntry(
+            indexName: 'vault',
+            status: ArchiveIndexRebuildStatus.failed,
+            durationMs: 0,
+            error: 'vault_path_required',
+          ),
+        ],
+      );
+    }
+
+    await _run(
+      entries,
+      indexName: recordIndexName,
+      outputPath: p.join(
+        vaultPath,
+        RecordSummaryIndexService.indexDirName,
+        RecordSummaryIndexService.indexFileName,
+      ),
+      action: () async {
+        await _recordIndex.rebuildFromVault(vaultPath);
+        final records = await _recordIndex.load(vaultPath);
+        return {'records': records.length};
+      },
+    );
+
+    await _run(
+      entries,
+      indexName: entityPathIndexName,
+      outputPath: p.join(
+        vaultPath,
+        EntityPathIndexService.indexDirName,
+        EntityPathIndexService.indexFileName,
+      ),
+      action: () async {
+        await _entityPathIndex.rebuildFromVault(vaultPath);
+        final paths = await _entityPathIndex.loadPaths(vaultPath);
+        return {'entities': paths.length};
+      },
+    );
+
+    await _run(
+      entries,
+      indexName: linkIndexName,
+      outputPath: p.join(
+        vaultPath,
+        RecordLinkIndexService.indexDirName,
+        RecordLinkIndexService.indexFileName,
+      ),
+      action: () async {
+        var stats = <String, dynamic>{};
+        await _linkIndexFor(vaultPath).rebuildIndex(
+          userCatalog: userCatalog,
+          vaultItems: vaultItems,
+          onRebuilt: (rebuiltStats) async {
+            stats = Map<String, dynamic>.from(rebuiltStats);
+          },
+        );
+        return stats;
+      },
+    );
+
+    await _run(
+      entries,
+      indexName: candidateIndexName,
+      outputPath: p.join(
+        vaultPath,
+        ArchiveCandidateStore.akashaDirName,
+        ArchiveCandidateStore.candidateDirName,
+      ),
+      action: () async {
+        final stats = await _candidateStore.rebuildDerivedIndexes(vaultPath);
+        return stats.toJson();
+      },
+    );
+
+    await _run(
+      entries,
+      indexName: tasteIndexName,
+      outputPath: p.join(
+        vaultPath,
+        TasteIndexService.akashaDirName,
+        TasteIndexService.indexesDirName,
+        TasteIndexService.indexFileName,
+      ),
+      action: () async {
+        final index = await _tasteIndex.rebuildFromVault(vaultPath);
+        return {
+          'signals': index.signals.length,
+          'targets': index.signals
+              .map((signal) => signal.targetId)
+              .toSet()
+              .length,
+        };
+      },
+    );
+
+    return ArchiveIndexRebuildResult(
+      startedAt: startedAt,
+      finishedAt: DateTime.now().toUtc(),
+      entries: entries,
+    );
+  }
+
+  RecordLinkIndexService _linkIndexFor(String vaultPath) {
+    final injected = _linkIndex;
+    if (injected != null) return injected;
+    final fixedVault = _FixedVaultPathPort(vaultPath);
+    return RecordLinkIndexService(
+      vault: fixedVault,
+      eventLedger: EventLedgerService(vault: fixedVault),
+    );
+  }
+
+  Future<void> _run(
+    List<ArchiveIndexRebuildEntry> entries, {
+    required String indexName,
+    required String outputPath,
+    required Future<Map<String, dynamic>> Function() action,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    try {
+      final stats = await action();
+      stopwatch.stop();
+      entries.add(
+        ArchiveIndexRebuildEntry(
+          indexName: indexName,
+          status: ArchiveIndexRebuildStatus.rebuilt,
+          durationMs: stopwatch.elapsedMilliseconds,
+          outputPath: outputPath,
+          stats: stats,
+        ),
+      );
+    } catch (error) {
+      stopwatch.stop();
+      entries.add(
+        ArchiveIndexRebuildEntry(
+          indexName: indexName,
+          status: ArchiveIndexRebuildStatus.failed,
+          durationMs: stopwatch.elapsedMilliseconds,
+          outputPath: outputPath,
+          error: error.toString(),
+        ),
+      );
+    }
+  }
+}
+
+class _FixedVaultPathPort implements VaultPort {
+  _FixedVaultPathPort(this._vaultPath);
+
+  final String _vaultPath;
+
+  @override
+  Future<void> init() async {}
+
+  @override
+  String? get vaultPath => _vaultPath;
+
+  @override
+  Future<void> setVaultPath(String path) async {}
+
+  @override
+  Future<bool> isVaultPathValid() async => _vaultPath.isNotEmpty;
+
+  @override
+  bool isArchivedInVault(AkashaItem item) => false;
+
+  @override
+  Future<List<AkashaItem>> loadAllItems() async => const [];
+
+  @override
+  Future<int> countMarkdownFiles() async => 0;
+
+  @override
+  Future<void> saveItem(AkashaItem item, {String? oldTitle}) async {}
+
+  @override
+  Future<bool> deleteItem(AkashaItem item) async => false;
+
+  @override
+  Future<String?> importPosterImage(String sourceFilePath) async => null;
+
+  @override
+  Future<String?> importPosterImageFromBytes(
+    Uint8List bytes, {
+    String extension = 'png',
+  }) async => null;
+
+  @override
+  Future<String?> importPosterImageBytesDeduped(
+    Uint8List bytes, {
+    required String extension,
+  }) async => null;
+
+  @override
+  Future<void> signalVaultChanged() async {}
+
+  @override
+  Stream<void> get onVaultUpdated => const Stream.empty();
+
+  @override
+  Map<String, AkashaItem> get inMemoryCache => const {};
+}

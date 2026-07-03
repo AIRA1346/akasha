@@ -292,6 +292,11 @@ signals derived from rating, my status, favorite flags, tags, memo snippets,
 quotes, and wiki links. It does not invent preferences and it does not replace
 the Markdown vault.
 
+`ArchiveIndexManager` is the current rebuild coordinator for these stepping
+stones. It rebuilds record, entity path, link, candidate, and taste indexes
+without writing archive records, then returns per-index stats/failures for
+tools and maintenance flows.
+
 ---
 
 ## 9. Path Strategy

@@ -28,7 +28,9 @@ These are done enough to treat as current architecture baseline.
 | UA-111 | Operation crash recovery marker for `promoteCandidate` | done | `source_operation_id` roll-forward accepts matching partial writes and rejects mismatches |
 | UA-113 | Reverse lookup before new Work/Entity path writes | done | same `work_id`/`entity_id` legacy files are reused when `filePath` or path index is missing |
 | UA-114 | Entity journal alias frontmatter | done | `aliases: []` round-trips in entity journal Markdown and catalog sync |
+| UA-201 | Index manager wrapper | done | `ArchiveIndexManager` rebuilds record/entity/link/candidate/taste derived indexes with per-index results |
 | UA-209 | Candidate store sharded scale path | done | candidates write to `.akasha/candidates/{type}/{shard}.json` with sharded name indexes |
+| UA-209a | Candidate name index rebuild/fallback | done | candidate duplicate guard falls back to source shards and `rebuildDerivedIndexes` restores name indexes |
 | UA-301 | Taste index schema and first extractor | done | `.akasha/indexes/taste_index.json` derives evidence-backed rating/status/favorite/tag/memo/quote/link signals |
 
 ## 2. P0 Pre-Release Architecture Work
@@ -52,7 +54,7 @@ These are what make "infinite archive" fast instead of merely correct.
 
 | ID | Work | Why It Matters | Suggested Direction |
 | --- | --- | --- | --- |
-| UA-201 | Index manager wrapper | Indexes are fragmented JSON services today | Create one coordinator for record/link/entity/candidate/taste rebuilds |
+| UA-201 | Index manager wrapper | Indexes were fragmented JSON services | Landed `ArchiveIndexManager`; continue expanding callers around it |
 | UA-202 | Incremental index updates | Full scans will degrade as vault grows | Update affected records only after saves/deletes/operations |
 | UA-203 | Sharded or SQLite-derived index | Large JSON files will eventually become too slow | Move toward `.akasha/vault_index.db` or sharded `.akasha/indexes/*` |
 | UA-204 | Title/alias index | AI and natural language lookup need fast title resolution | Index `title`, `aliases`, `original_title`, localized titles |
@@ -136,12 +138,12 @@ These matter, but they are not the current ultimate-archive core.
 
 The next architecture slice should be:
 
-> **UA-201 Index manager wrapper:** coordinate record/link/entity/candidate/taste rebuilds so derived indexes stay disposable, rebuildable, and easier for future tools to trust.
+> **UA-202 Incremental index updates:** use the manager as the rebuild fallback, then make common save/delete/operation flows update only the affected index entries.
 
 Minimum done condition:
 
-- create one coordinator service for derived index rebuilds
-- call existing record/link/entity/candidate/taste services without changing vault source-of-truth rules
-- return per-index rebuild stats and failures
-- keep each index individually disposable
-- prove with focused tests that a single rebuild refreshes all supported index files
+- define the first shared incremental update API or coordinator path
+- update record/taste indexes for one changed work without full vault scan
+- keep full rebuild as the recovery path
+- preserve delete handling for removed records
+- prove with focused save/update/delete tests
