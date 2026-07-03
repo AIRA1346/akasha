@@ -318,7 +318,7 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    PreviewRecordHero(model: record),
+                    PreviewRecordHero(model: record, compact: true),
                     const SizedBox(height: 14),
                     PreviewRecordTitleBlock(model: record),
                     const SizedBox(height: 12),

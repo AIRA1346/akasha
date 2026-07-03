@@ -10,12 +10,42 @@ import 'preview_record_view_model.dart';
 
 /// 우측 패널 히어로·제목·메타 (Work·Entity 공통). 실데이터 [PreviewRecordViewModel] 연동.
 class PreviewRecordHero extends StatelessWidget {
-  const PreviewRecordHero({super.key, required this.model});
+  const PreviewRecordHero({
+    super.key,
+    required this.model,
+    this.compact = false,
+    this.compactMaxHeight = 300,
+  });
 
   final PreviewRecordViewModel model;
+  final bool compact;
+  final double compactMaxHeight;
 
   @override
   Widget build(BuildContext context) {
+    if (compact) {
+      return LayoutBuilder(
+        builder: (context, constraints) {
+          final width = constraints.hasBoundedWidth
+              ? constraints.maxWidth
+              : 320.0;
+          final naturalHeight = width / model.heroAspectRatio;
+          final height = naturalHeight
+              .clamp(180.0, compactMaxHeight)
+              .toDouble();
+
+          return ClipRRect(
+            borderRadius: AkashaRadius.xlBorder,
+            child: SizedBox(
+              width: double.infinity,
+              height: height,
+              child: PosterImage(item: model.posterItem, fit: BoxFit.cover),
+            ),
+          );
+        },
+      );
+    }
+
     return ClipRRect(
       borderRadius: AkashaRadius.xlBorder,
       child: AspectRatio(

@@ -70,5 +70,33 @@ void main() {
       final poster = tester.widget<PosterImage>(find.byType(PosterImage));
       expect(poster.fit, BoxFit.contain);
     });
+
+    testWidgets(
+      'compact preview hero keeps rail width but caps poster height',
+      (tester) async {
+        final item = createItem(
+          workId: 'wk_u_compacthero',
+          title: 'Compact Hero',
+          category: MediaCategory.manga,
+        );
+        final model = PreviewRecordViewModel.fromWork(item);
+
+        await tester.pumpWidget(
+          MaterialApp(
+            home: Scaffold(
+              body: SizedBox(
+                width: 320,
+                child: PreviewRecordHero(model: model, compact: true),
+              ),
+            ),
+          ),
+        );
+
+        final posterFinder = find.byType(PosterImage);
+        final poster = tester.widget<PosterImage>(posterFinder);
+        expect(poster.fit, BoxFit.cover);
+        expect(tester.getSize(posterFinder), const Size(320, 300));
+      },
+    );
   });
 }
