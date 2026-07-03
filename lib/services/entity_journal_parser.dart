@@ -27,8 +27,10 @@ abstract final class EntityJournalParser {
     );
     final title = yaml['title']?.toString().trim() ?? entityId;
     final addedAt = _parseDateTime(yaml['added_at']) ?? DateTime.now();
+    final aliases = _stringList(yaml['aliases']);
     final tags = EntityTags.parseYaml(yaml['tags']);
     final posterPath = yaml['poster_path']?.toString().trim();
+    final sourceOperationId = yaml['source_operation_id']?.toString().trim();
 
     return EntityJournalEntry(
       entityType: entityType,
@@ -37,8 +39,13 @@ abstract final class EntityJournalParser {
       body: split.body.trim(),
       addedAt: addedAt,
       storagePath: filePath,
+      aliases: aliases,
       tags: tags,
       posterPath: posterPath,
+      sourceOperationId:
+          sourceOperationId != null && sourceOperationId.isNotEmpty
+          ? sourceOperationId
+          : null,
     );
   }
 
@@ -48,8 +55,10 @@ abstract final class EntityJournalParser {
     required String title,
     required String body,
     DateTime? addedAt,
+    List<String> aliases = const [],
     List<String> tags = const [],
     String? posterPath,
+    String? sourceOperationId,
   }) {
     final added = addedAt ?? DateTime.now();
     final buffer = StringBuffer()
@@ -61,9 +70,13 @@ abstract final class EntityJournalParser {
       ..writeln('record_kind: ${RecordKind.entityJournal.name}')
       ..writeln('title: "${_escape(title)}"')
       ..writeln('added_at: "${added.toIso8601String()}"')
+      ..writeln(_serializeYamlList('aliases', aliases))
       ..writeln(EntityTags.serializeYamlLine(tags));
     if (posterPath != null && posterPath.isNotEmpty) {
       buffer.writeln('poster_path: "${_escape(posterPath)}"');
+    }
+    if (sourceOperationId != null && sourceOperationId.isNotEmpty) {
+      buffer.writeln('source_operation_id: "${_escape(sourceOperationId)}"');
     }
     buffer
       ..writeln('---')
@@ -104,6 +117,26 @@ abstract final class EntityJournalParser {
   static DateTime? _parseDateTime(Object? raw) {
     if (raw == null) return null;
     return DateTime.tryParse(raw.toString());
+  }
+
+  static List<String> _stringList(Object? raw) {
+    if (raw is Iterable) {
+      return raw
+          .map((entry) => entry.toString().trim())
+          .where((entry) => entry.isNotEmpty)
+          .toList(growable: false);
+    }
+    if (raw is String) {
+      final value = raw.trim();
+      return value.isEmpty ? const [] : [value];
+    }
+    return const [];
+  }
+
+  static String _serializeYamlList(String key, List<String> values) {
+    if (values.isEmpty) return '$key: []';
+    final escaped = values.map((value) => '"${_escape(value)}"');
+    return '$key: [${escaped.join(', ')}]';
   }
 
   static String _escape(String value) => value.replaceAll('"', '\\"');

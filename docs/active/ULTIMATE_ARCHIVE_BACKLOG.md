@@ -24,6 +24,11 @@ These are done enough to treat as current architecture baseline.
 | UA-102 | Operation idempotency and applied log | ✅ done | [archive_operation_applied_log.dart](../../lib/services/archive_operation_applied_log.dart) · `.akasha/ops/applied.jsonl` |
 | UA-103 | Operation conflict checks for executable operations | ✅ done | [archive_record_revision_service.dart](../../lib/services/archive_record_revision_service.dart) · `operation_conflict` |
 
+| UA-105a | Candidate duplicate guard for normalized title/alias variants | done | strips bracket/punctuation noise and compares open candidate title/aliases |
+| UA-111 | Operation crash recovery marker for `promoteCandidate` | done | `source_operation_id` roll-forward accepts matching partial writes and rejects mismatches |
+| UA-113 | Reverse lookup before new Work/Entity path writes | done | same `work_id`/`entity_id` legacy files are reused when `filePath` or path index is missing |
+| UA-114 | Entity journal alias frontmatter | done | `aliases: []` round-trips in entity journal Markdown and catalog sync |
+
 ## 2. P0 Pre-Release Architecture Work
 
 These should stay visible because they protect the archive before external/AI writes become powerful.
@@ -31,13 +36,12 @@ These should stay visible because they protect the archive before external/AI wr
 | ID | Work | Why It Matters | Suggested Next Slice |
 | --- | --- | --- | --- |
 | UA-104 | Candidate review/promotion UI | Candidate Store exists but is not yet a user-facing queue | Add a simple candidate list with promote/dismiss/merge actions |
-| UA-105 | Candidate duplicate detection beyond exact title | Exact title/id checks are first pass only | Add alias/title normalization and fuzzy duplicate warnings |
-| UA-106 | Record contract schema freeze | Markdown has a good base, not a complete final contract | Add/standardize `aliases`, `created_at`, `updated_at`, `source`, `evidence`, `external_ids`, `links` |
+| UA-105 | Candidate duplicate detection beyond exact title | Basic normalized title/alias guard is landed; stronger fuzzy merge review is still useful | Add similarity scoring and candidate merge suggestions instead of only hard rejects |
+| UA-106 | Record contract schema freeze | Markdown has a good base, not a complete final contract; entity `aliases` and operation provenance are now started | Add/standardize `created_at`, `updated_at`, `source`, `evidence`, `external_ids`, `links` |
 | UA-107 | Entity subtype/role model | Top-level entity types are enough, but roles are not expressive enough | Add `entity_subtype`, `role`, or `relations` for character, actor, director, studio, franchise, OST |
 | UA-108 | Music/OST representation decision | Future prompt examples depend on music taste lookup | Decide whether music/OST is Work category, Entity subtype, or relation/taste signal |
 | UA-109 | v1/v2/v3 mixed-vault validation | Existing vaults must remain readable while new records use v3 | Add fixtures and rebuild tests for mixed legacy/title/ID paths |
 | UA-110 | Explicit v3 migration command | Existing files should never move accidentally | Build opt-in migration that updates paths, indexes, and backlinks atomically |
-| UA-111 | Operation crash recovery marker | A crash between vault write and applied-log append can leave partial success | Add `source_operation_id`/receipt repair so retries can roll forward safely |
 | UA-112 | Extend conflict guards to future mutating operations | Update/append/link operations are validated but not executable yet | Reuse revision guard when those operation executors land |
 
 ## 3. P1 Index And Scale Work
@@ -54,6 +58,7 @@ These are what make "infinite archive" fast instead of merely correct.
 | UA-206 | Link and incoming graph hardening | Backlinks and graph exploration need stable relationship lookup | Keep outgoing and incoming indexes aligned |
 | UA-207 | Snippet/quote/scene index | Search should find meaningful passages without full-file reads | Store short derived excerpts with evidence paths |
 | UA-208 | Index rebuild validator | Derived indexes must be disposable and trustworthy | Add command/test that rebuilds and checks record counts/IDs/paths |
+| UA-209 | Candidate store sharding or SQLite-derived queue | `catalog/candidates.json` is acceptable now but can become an IO bottleneck for huge agent extraction batches | Move high-volume candidates to `.akasha/candidates/*` shards or `.akasha/vault_index.db`; promote only durable records to Markdown |
 
 ## 4. P1 Taste And Preference Work
 
@@ -86,7 +91,7 @@ These fields were identified as useful but are not fully standardized everywhere
 
 | Field | Need | Status |
 | --- | --- | --- |
-| `aliases` | Natural lookup and duplicate detection | planned |
+| `aliases` | Natural lookup and duplicate detection | entity journals landed; Work/frontmatter-wide standard still pending |
 | `original_title` | Translated/localized title stability | planned |
 | `external_ids` | Wikidata/Steam/ISBN/etc. identity joins | planned |
 | `created_at` | Durable creation timestamp separate from `added_at` | planned |
@@ -95,7 +100,7 @@ These fields were identified as useful but are not fully standardized everywhere
 | `evidence` | Agent/candidate/taste claims need proof | planned |
 | `links` / `relations` | Structured relation layer beyond wiki body links | planned |
 | `entity_subtype` | character/creator/studio/franchise/track without exploding top-level types | planned |
-| `source_operation_id` | Trace write back to operation | planned |
+| `source_operation_id` | Trace write back to operation | landed for operation-created entity journals; extend to future operation record types |
 
 ## 7. Entity Taxonomy Follow-Ups
 
@@ -129,12 +134,12 @@ These matter, but they are not the current ultimate-archive core.
 
 The next architecture slice should be:
 
-> **UA-111 Operation crash recovery marker:** make partial operation success roll forward safely.
+> **UA-209 Candidate store scale path:** keep `catalog/candidates.json` for ordinary use, but design the sharded/SQLite candidate queue before allowing high-volume agent extraction.
 
 Minimum done condition:
 
-- write or derive `source_operation_id` for operation-created records
-- detect "record written but applied log missing" on retry
-- roll forward to candidate close + applied log when the record matches the operation
-- reject mismatched partial records as conflict
-- prove with focused tests
+- define the candidate shard or SQLite schema
+- keep candidate files derived/rebuildable until user promotion
+- preserve `ArchiveCandidateStore` compatibility for small vaults
+- add duplicate/merge review queries that do not scan one giant JSON file
+- prove with focused load/upsert/duplicate tests

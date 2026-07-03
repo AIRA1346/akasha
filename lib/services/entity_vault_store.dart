@@ -11,6 +11,7 @@ import 'entity_journal_parser.dart';
 import 'entity_path_index_service.dart';
 import 'entity_vault_path_conflict.dart';
 import 'event_ledger_service.dart';
+import 'entity_vault_loader.dart';
 import '../core/app_vault.dart';
 import 'record_summary_index_service.dart';
 import 'vault_record_path_resolver.dart';
@@ -45,6 +46,7 @@ class EntityVaultStore {
     required String vaultPath,
     required UserCatalogEntity entity,
     required String body,
+    String? sourceOperationId,
   }) async {
     if (vaultPath.isEmpty) {
       throw StateError('Vault path not set');
@@ -53,12 +55,29 @@ class EntityVaultStore {
       throw ArgumentError('work entities use VaultPort.saveItem');
     }
 
-    final targetPath = resolveStoragePath(
+    var targetPath = resolveStoragePath(
       vaultPath: vaultPath,
       entityType: entity.anchorType,
       title: entity.title,
       entityId: entity.entityId,
     );
+
+    if (!await File(targetPath).exists()) {
+      final existing = await EntityVaultLoader(
+        pathIndex: _pathIndex,
+      ).findByEntityId(vaultPath, entity.entityId);
+      if (existing != null) {
+        if (existing.entityType != entity.anchorType) {
+          throw EntityVaultPathConflict(
+            existingEntityId: existing.entityId,
+            incomingEntityId: entity.entityId,
+            title: entity.title,
+            path: existing.storagePath,
+          );
+        }
+        targetPath = existing.storagePath;
+      }
+    }
 
     await Directory(p.dirname(targetPath)).create(recursive: true);
 
@@ -87,8 +106,10 @@ class EntityVaultStore {
       title: entity.title,
       body: body,
       addedAt: addedAt,
+      aliases: entity.aliases,
       tags: entity.tags,
       posterPath: entity.posterPath,
+      sourceOperationId: sourceOperationId,
     );
 
     await _writeAtomic(targetPath, content);
@@ -104,8 +125,10 @@ class EntityVaultStore {
       body: body.trim(),
       addedAt: addedAt,
       storagePath: targetPath,
+      aliases: List<String>.from(entity.aliases),
       tags: List<String>.from(entity.tags),
       posterPath: entity.posterPath,
+      sourceOperationId: sourceOperationId,
     );
     await RecordSummaryIndexService().upsertEntity(
       vaultPath: vaultPath,
@@ -128,6 +151,7 @@ class EntityVaultStore {
     required EntityJournalEntry entry,
     required String body,
     String? title,
+    List<String>? aliases,
     List<String>? tags,
     String? posterPath,
     String? vaultPath,
@@ -142,6 +166,7 @@ class EntityVaultStore {
     }
 
     final resolvedTags = tags ?? entry.tags;
+    final resolvedAliases = aliases ?? entry.aliases;
     final vaultRoot = vaultPath ?? _vaultRootFromStoragePath(entry.storagePath);
 
     var targetPath = entry.storagePath;
@@ -169,8 +194,10 @@ class EntityVaultStore {
       title: resolvedTitle,
       body: body,
       addedAt: entry.addedAt,
+      aliases: resolvedAliases,
       tags: resolvedTags,
       posterPath: posterPath ?? entry.posterPath,
+      sourceOperationId: entry.sourceOperationId,
     );
 
     await _writeAtomic(targetPath, content);
@@ -198,8 +225,10 @@ class EntityVaultStore {
       body: body.trim(),
       addedAt: entry.addedAt,
       storagePath: targetPath,
+      aliases: List<String>.from(resolvedAliases),
       tags: List<String>.from(resolvedTags),
       posterPath: posterPath ?? entry.posterPath,
+      sourceOperationId: entry.sourceOperationId,
     );
     await RecordSummaryIndexService().upsertEntity(
       vaultPath: vaultRoot,

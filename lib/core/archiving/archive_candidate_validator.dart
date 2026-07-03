@@ -75,9 +75,8 @@ abstract final class ArchiveCandidateValidator {
       );
     }
 
-    final normalizedTitle = normalizeTitle(candidate.title);
-    if (normalizedTitle.isNotEmpty &&
-        context.existingTitles.contains(normalizedTitle)) {
+    final normalizedNames = normalizedCandidateNames(candidate);
+    if (normalizedNames.any(context.existingTitles.contains)) {
       _error(
         issues,
         'candidate_title_duplicate',
@@ -101,8 +100,23 @@ abstract final class ArchiveCandidateValidator {
     );
   }
 
-  static String normalizeTitle(String raw) =>
-      raw.trim().toLowerCase().replaceAll(RegExp(r'\s+'), ' ');
+  static String normalizeTitle(String raw) {
+    var value = raw.trim().toLowerCase();
+    value = value.replaceAll(RegExp(r'\([^)]*\)'), ' ');
+    value = value.replaceAll(RegExp(r'\[[^\]]*\]'), ' ');
+    value = value.replaceAll(RegExp(r'【[^】]*】'), ' ');
+    value = value.replaceAll(RegExp(r'[{}<>]'), ' ');
+    value = value.replaceAll(RegExp(r'[_\-:：/\\|.,;!?！？・·]+'), ' ');
+    value = value.replaceAll(RegExp(r'\s+'), ' ').trim();
+    return value;
+  }
+
+  static Set<String> normalizedCandidateNames(ArchiveCandidate candidate) {
+    return {
+      normalizeTitle(candidate.title),
+      for (final alias in candidate.aliases) normalizeTitle(alias),
+    }..remove('');
+  }
 
   static void _validateBase(
     ArchiveCandidate candidate,

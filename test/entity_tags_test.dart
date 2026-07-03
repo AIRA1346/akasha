@@ -16,10 +16,7 @@ void main() {
 
     test('serializeYamlLine matches Work markdown convention', () {
       expect(EntityTags.serializeYamlLine([]), 'tags: []');
-      expect(
-        EntityTags.serializeYamlLine(['영웅', '구원']),
-        'tags: ["영웅", "구원"]',
-      );
+      expect(EntityTags.serializeYamlLine(['영웅', '구원']), 'tags: ["영웅", "구원"]');
     });
   });
 
@@ -36,7 +33,10 @@ tags: ["영웅", "성장", "구원"]
 메모
 ''';
 
-      final parsed = EntityJournalParser.parse(content, '/vault/entities/person/natsuki.md');
+      final parsed = EntityJournalParser.parse(
+        content,
+        '/vault/entities/person/natsuki.md',
+      );
       expect(parsed, isNotNull);
       expect(parsed!.tags, ['영웅', '성장', '구원']);
 
@@ -50,7 +50,10 @@ tags: ["영웅", "성장", "구원"]
       );
       expect(reserialized, contains('tags: ["영웅", "성장", "구원"]'));
 
-      final reparsed = EntityJournalParser.parse(reserialized, parsed.storagePath);
+      final reparsed = EntityJournalParser.parse(
+        reserialized,
+        parsed.storagePath,
+      );
       expect(reparsed?.tags, parsed.tags);
     });
 
@@ -86,10 +89,35 @@ body
           body: '',
           addedAt: DateTime.utc(2026, 6, 20),
           storagePath: '/vault/entities/person/Journal.md',
+          aliases: const ['Journal Alias'],
           tags: const ['영웅', '성장'],
         ),
       );
       expect(mirrored.tags, ['영웅', '성장']);
+    });
+  });
+
+  group('EntityCatalogSync aliases mirror', () {
+    test('journal aliases overwrite draft on mirror', () {
+      final draft = UserCatalogEntity.userLocal(
+        entityId: 'pe_u_sync_alias',
+        type: EntityAnchorType.person,
+        title: 'Draft',
+        aliases: const ['Draft Alias'],
+      );
+      final mirrored = EntityCatalogSync.mirrorFromJournal(
+        draft: draft,
+        entry: EntityJournalEntry(
+          entityType: EntityAnchorType.person,
+          entityId: 'pe_u_sync_alias',
+          title: 'Journal',
+          body: '',
+          addedAt: DateTime.utc(2026, 6, 20),
+          storagePath: '/vault/entities/person/Journal.md',
+          aliases: const ['Journal Alias'],
+        ),
+      );
+      expect(mirrored.aliases, ['Journal Alias']);
     });
   });
 

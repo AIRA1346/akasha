@@ -75,6 +75,13 @@ class ArchiveCandidateStore {
     }
 
     final candidates = await load(vaultPath);
+    final duplicate = _findDuplicateCandidate(candidates, candidate);
+    if (duplicate != null) {
+      throw ArgumentError(
+        'Duplicate archive candidate: ${duplicate.candidateId}',
+      );
+    }
+
     final next = <ArchiveCandidate>[
       for (final existing in candidates)
         if (existing.candidateId != candidate.candidateId) existing,
@@ -197,6 +204,30 @@ class ArchiveCandidateStore {
     ).compareTo(_entityTypeOrder(b.entityType));
     if (type != 0) return type;
     return a.title.toLowerCase().compareTo(b.title.toLowerCase());
+  }
+
+  static ArchiveCandidate? _findDuplicateCandidate(
+    Iterable<ArchiveCandidate> candidates,
+    ArchiveCandidate incoming,
+  ) {
+    if (!incoming.isOpen) return null;
+    final incomingNames = ArchiveCandidateValidator.normalizedCandidateNames(
+      incoming,
+    );
+    if (incomingNames.isEmpty) return null;
+
+    for (final existing in candidates) {
+      if (existing.candidateId == incoming.candidateId ||
+          existing.entityType != incoming.entityType ||
+          !existing.isOpen) {
+        continue;
+      }
+      final existingNames = ArchiveCandidateValidator.normalizedCandidateNames(
+        existing,
+      );
+      if (existingNames.any(incomingNames.contains)) return existing;
+    }
+    return null;
   }
 
   static int _entityTypeOrder(EntityAnchorType type) {

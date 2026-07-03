@@ -57,6 +57,7 @@ void main() {
           );
           expect(parsed?.title, 'Hero');
           expect(parsed?.body, contains('User-approved promotion note.'));
+          expect(parsed?.sourceOperationId, 'op_promote_candidate_001');
 
           final candidateFile = File('${tempDir.path}/catalog/candidates.json');
           final candidatesJson =
@@ -78,6 +79,124 @@ void main() {
           expect(
             await File('${tempDir.path}/.akasha/ops/applied.jsonl').exists(),
             isTrue,
+          );
+        } finally {
+          if (await tempDir.exists()) {
+            await tempDir.delete(recursive: true);
+          }
+        }
+      },
+    );
+
+    test(
+      'rolls forward partial success with matching source operation id',
+      () async {
+        final tempDir = await Directory.systemTemp.createTemp(
+          'akasha_operation_executor_',
+        );
+        final candidateStore = ArchiveCandidateStore();
+        final executor = ArchiveOperationExecutor(
+          candidateStore: candidateStore,
+        );
+        final catalog = FakeUserCatalogPort();
+        final entityFile = File(
+          '${tempDir.path}/entities/person/pe_u_target01.md',
+        );
+        try {
+          await candidateStore.upsert(
+            vaultPath: tempDir.path,
+            candidate: _candidate(),
+          );
+          await entityFile.parent.create(recursive: true);
+          await entityFile.writeAsString(
+            EntityJournalParser.serialize(
+              entityType: EntityAnchorType.person,
+              entityId: 'pe_u_target01',
+              title: 'Hero',
+              body: 'Partial write survived.',
+              addedAt: DateTime.utc(2026, 7, 3),
+              sourceOperationId: 'op_promote_candidate_001',
+            ),
+            flush: true,
+          );
+
+          final result = await executor.execute(
+            vaultPath: tempDir.path,
+            userCatalog: catalog,
+            operation: _promoteOperation(),
+          );
+
+          expect(result.isSuccess, isTrue);
+          expect(result.applied, isTrue);
+          expect(result.entry?.body, 'Partial write survived.');
+          expect(result.appliedEntry?.operationId, 'op_promote_candidate_001');
+          expect(result.candidate?.status, ArchiveCandidateStatus.promoted);
+          expect(catalog.getById('pe_u_target01')?.title, 'Hero');
+          expect(
+            await File('${tempDir.path}/.akasha/ops/applied.jsonl').exists(),
+            isTrue,
+          );
+          expect(
+            await entityFile.readAsString(),
+            contains('Partial write survived.'),
+          );
+        } finally {
+          if (await tempDir.exists()) {
+            await tempDir.delete(recursive: true);
+          }
+        }
+      },
+    );
+
+    test(
+      'rejects partial target with mismatched source operation id',
+      () async {
+        final tempDir = await Directory.systemTemp.createTemp(
+          'akasha_operation_executor_',
+        );
+        final candidateStore = ArchiveCandidateStore();
+        final executor = ArchiveOperationExecutor(
+          candidateStore: candidateStore,
+        );
+        final entityFile = File(
+          '${tempDir.path}/entities/person/pe_u_target01.md',
+        );
+        try {
+          await candidateStore.upsert(
+            vaultPath: tempDir.path,
+            candidate: _candidate(),
+          );
+          await entityFile.parent.create(recursive: true);
+          await entityFile.writeAsString(
+            EntityJournalParser.serialize(
+              entityType: EntityAnchorType.person,
+              entityId: 'pe_u_target01',
+              title: 'Hero',
+              body: 'Different operation owns this file.',
+              addedAt: DateTime.utc(2026, 7, 3),
+              sourceOperationId: 'op_other_001',
+            ),
+            flush: true,
+          );
+
+          final result = await executor.execute(
+            vaultPath: tempDir.path,
+            userCatalog: FakeUserCatalogPort(),
+            operation: _promoteOperation(),
+          );
+
+          expect(result.isSuccess, isFalse);
+          expect(_codes(result), contains('operation_conflict'));
+          expect(
+            (await candidateStore.lookup(
+              tempDir.path,
+              'cand_person_alpha001',
+            ))?.status,
+            ArchiveCandidateStatus.candidate,
+          );
+          expect(
+            await File('${tempDir.path}/.akasha/ops/applied.jsonl').exists(),
+            isFalse,
           );
         } finally {
           if (await tempDir.exists()) {

@@ -91,6 +91,33 @@ void main() {
       expect(_codes(result), contains('candidate_title_duplicate'));
     });
 
+    test('rejects duplicate catalog title through candidate aliases', () {
+      final candidate = _candidate(
+        title: 'Different',
+        aliases: ['Rem (Re:Zero)'],
+      );
+      final context = ArchiveCandidateValidator.contextFromCatalog([
+        UserCatalogEntity.userLocal(
+          entityId: 'pe_u_rem0001',
+          type: EntityAnchorType.person,
+          title: 'Rem',
+          subtype: MediaCategory.manga,
+        ),
+      ]);
+
+      final result = ArchiveCandidateValidator.validatePromotion(
+        candidate: candidate,
+        targetEntity: const EntityAnchor(
+          entityId: 'pe_u_target01',
+          type: EntityAnchorType.person,
+        ),
+        context: context,
+      );
+
+      expect(result.isValid, isFalse);
+      expect(_codes(result), contains('candidate_title_duplicate'));
+    });
+
     test('rejects mismatched target entity type', () {
       final result = ArchiveCandidateValidator.validatePromotion(
         candidate: _candidate(),
@@ -193,6 +220,31 @@ void main() {
         }
       }
     });
+
+    test('rejects duplicate open candidate title variants on upsert', () async {
+      final tempDir = await Directory.systemTemp.createTemp(
+        'akasha_candidates_',
+      );
+      final store = ArchiveCandidateStore();
+      try {
+        await store.upsert(vaultPath: tempDir.path, candidate: _candidate());
+
+        await expectLater(
+          store.upsert(
+            vaultPath: tempDir.path,
+            candidate: _candidate(
+              candidateId: 'cand_person_beta002',
+              title: 'Hero (Pilot)',
+            ),
+          ),
+          throwsA(isA<ArgumentError>()),
+        );
+      } finally {
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
   });
 }
 
@@ -205,6 +257,7 @@ ArchiveCandidate _candidate({
   ArchiveCandidateStatus status = ArchiveCandidateStatus.candidate,
   double confidence = 0.8,
   String? proposedEntityId,
+  List<String> aliases = const ['The Hero'],
 }) {
   return ArchiveCandidate(
     candidateId: candidateId,
@@ -215,7 +268,7 @@ ArchiveCandidate _candidate({
     status: status,
     confidence: confidence,
     proposedEntityId: proposedEntityId,
-    aliases: const ['The Hero'],
+    aliases: aliases,
     tags: const ['pilot'],
     createdAt: DateTime.utc(2026, 7, 3),
     updatedAt: DateTime.utc(2026, 7, 3),

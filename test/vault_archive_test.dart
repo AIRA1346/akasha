@@ -237,6 +237,60 @@ void main() {
       },
     );
 
+    test(
+      'saveItem reuses legacy title path when filePath is missing',
+      () async {
+        SharedPreferences.setMockInitialValues({
+          UserPreferences.vaultWorksLayoutKey: true,
+        });
+
+        final service = AkashaFileService();
+        final tempDir = await Directory.systemTemp.createTemp(
+          'akasha_legacy_reverse_',
+        );
+        try {
+          await service.setVaultPath(tempDir.path);
+
+          final item = createItem(
+            workId: 'wk_u_legacy01',
+            title: 'Legacy Work',
+            category: MediaCategory.manga,
+            domain: AppDomain.subculture,
+            review: 'legacy body',
+          );
+          final legacyPath = p.join(
+            tempDir.path,
+            MediaCategory.manga.name,
+            'Legacy Work.md',
+          );
+          await Directory(p.dirname(legacyPath)).create(recursive: true);
+          await File(legacyPath).writeAsString(MarkdownParser.serialize(item));
+
+          item.filePath = null;
+          item.review = 'updated body';
+          await service.saveItem(item);
+
+          final canonicalPath = p.join(
+            tempDir.path,
+            'works',
+            MediaCategory.manga.name,
+            'wk_u_legacy01.md',
+          );
+          expect(item.filePath, legacyPath);
+          expect(File(legacyPath).existsSync(), isTrue);
+          expect(File(canonicalPath).existsSync(), isFalse);
+          expect(await service.countMarkdownFiles(), 1);
+          final content = await File(legacyPath).readAsString();
+          expect(content, contains('updated body'));
+        } finally {
+          await service.setVaultPath('');
+          if (await tempDir.exists()) {
+            await tempDir.delete(recursive: true);
+          }
+        }
+      },
+    );
+
     test('deleteAkashaItem removes works layout file via filePath', () async {
       SharedPreferences.setMockInitialValues({
         UserPreferences.vaultWorksLayoutKey: true,

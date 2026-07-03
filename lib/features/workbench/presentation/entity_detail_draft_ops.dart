@@ -64,6 +64,7 @@ class EntityDetailWorkspaceSnapshot {
   }) {
     final mirrored = entity.copyWith(
       title: entry.title,
+      aliases: entry.aliases.isNotEmpty ? entry.aliases : entity.aliases,
       tags: entry.tags,
       posterPath: entry.posterPath,
     );
@@ -150,6 +151,7 @@ abstract final class EntityDetailDraftOps {
         title: entity.title,
         body: body,
         addedAt: entity.addedAt,
+        aliases: entity.aliases,
         tags: tags,
         posterPath: posterPath,
       );
@@ -160,6 +162,7 @@ abstract final class EntityDetailDraftOps {
       title: journal.title,
       body: body,
       addedAt: journal.addedAt,
+      aliases: journal.aliases.isNotEmpty ? journal.aliases : entity.aliases,
       tags: tags,
       posterPath: posterPath,
     );

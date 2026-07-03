@@ -348,6 +348,11 @@ Implemented:
 - `ArchiveOperationExecutor` now executes validated `promoteCandidate` operations through Entity journal save, catalog mirror, candidate close, and existing index update paths
 - `ArchiveOperationAppliedLog` now records successful operations at `.akasha/ops/applied.jsonl` so repeated `operationId` calls return `alreadyApplied` instead of duplicating writes
 - `ArchiveRecordRevisionService` now defines `expectedRevision` as an opaque file revision based on mtime, length, and content hash; executable create/promote operations reject existing or stale target records with `operation_conflict`
+- operation-created Entity journals now write `source_operation_id` so a retry can roll forward if the file write succeeded but the applied log append did not
+- `promoteCandidate` retry recovery accepts only matching `source_operation_id`/`entity_id`/`entity_type`; mismatched partial files remain conflicts
+- Work and Entity saves now reverse-lookup existing vault Markdown by `work_id`/`entity_id` before creating a new canonical path, preventing legacy-title duplicate files when path caches are missing
+- Entity journals now serialize and parse `aliases: []`, preserving human-readable names for ID-based files and external Markdown tools
+- Candidate duplicate guards now compare normalized title/alias variants, including bracket and punctuation differences
 
 Validated:
 
@@ -358,6 +363,6 @@ Validated:
 
 Remaining before calling v3 complete:
 
-- add operation crash recovery marker for write-success/log-failure recovery
+- design the sharded or SQLite candidate queue before high-volume agent extraction
 - add taste index implementation
 - decide whether to migrate existing local dev vault files or only use v3 for new records

@@ -50,6 +50,12 @@ mixin _AkashaFileServiceSave
         item: item,
         useWorksLayout: useWorksLayout,
       );
+      targetPath =
+          await _findExistingWorkPathById(
+            item: item,
+            preferredPath: targetPath,
+          ) ??
+          targetPath;
       item.filePath = targetPath;
     }
 
@@ -101,6 +107,95 @@ mixin _AkashaFileServiceSave
   }
 
   /// AkashaItem을 볼트에서 제거(마크다운 파일 삭제)합니다.
+  Future<String?> _findExistingWorkPathById({
+    required AkashaItem item,
+    required String preferredPath,
+  }) async {
+    final vaultPath = _vaultPath;
+    final workId = item.workId.trim();
+    if (vaultPath == null || vaultPath.isEmpty || workId.isEmpty) return null;
+
+    if (await File(preferredPath).exists() &&
+        await _workMarkdownHasId(preferredPath, workId)) {
+      return preferredPath;
+    }
+
+    final indexed = await RecordSummaryIndexService().lookupById(
+      vaultPath,
+      workId,
+    );
+    if (indexed != null && indexed.entityType == 'work') {
+      final indexedPath = p.join(vaultPath, indexed.relativePath);
+      if (await File(indexedPath).exists() &&
+          await _workMarkdownHasId(indexedPath, workId)) {
+        return indexedPath;
+      }
+    }
+
+    for (final path in VaultWorkJournalPaths.resolveDeleteCandidates(
+      vaultRoot: vaultPath,
+      title: item.title,
+      category: item.category,
+      workId: workId,
+    )) {
+      if (path == preferredPath) continue;
+      if (await File(path).exists() && await _workMarkdownHasId(path, workId)) {
+        return path;
+      }
+    }
+
+    final root = Directory(vaultPath);
+    if (!await root.exists()) return null;
+    await for (final entity in root.list(recursive: true, followLinks: false)) {
+      if (entity is! File || !entity.path.endsWith('.md')) continue;
+      if (_shouldSkipPath(entity.path)) continue;
+      if (await _workMarkdownHasId(entity.path, workId)) return entity.path;
+    }
+    return null;
+  }
+
+  Future<bool> _workMarkdownHasId(String path, String workId) async {
+    try {
+      final content = await File(path).readAsString();
+      final split = _splitFrontmatter(content);
+      if (split == null) return false;
+      final parsed = loadYaml(split);
+      if (parsed is Map) {
+        return parsed['work_id']?.toString().trim() == workId;
+      }
+    } catch (_) {
+      // fall through to a conservative regex check
+    }
+
+    try {
+      final content = await File(path).readAsString();
+      for (final line in content.split('\n')) {
+        final trimmed = line.trim();
+        if (!trimmed.startsWith('work_id:')) continue;
+        var value = trimmed.substring('work_id:'.length).trim();
+        if ((value.startsWith('"') && value.endsWith('"')) ||
+            (value.startsWith("'") && value.endsWith("'"))) {
+          value = value.substring(1, value.length - 1);
+        }
+        return value.trim() == workId;
+      }
+      return false;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  String? _splitFrontmatter(String content) {
+    final lines = content.split('\n');
+    if (lines.isEmpty || lines.first.trim() != '---') return null;
+    for (var i = 1; i < lines.length; i++) {
+      if (lines[i].trim() == '---') {
+        return lines.sublist(1, i).join('\n');
+      }
+    }
+    return null;
+  }
+
   Future<bool> deleteAkashaItem(AkashaItem item) async {
     _inMemoryCache.remove(AkashaFileService.cacheKeyFor(item));
 

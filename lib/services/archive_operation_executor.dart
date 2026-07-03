@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import '../core/archiving/archive_candidate.dart';
 import '../core/archiving/archive_candidate_validator.dart';
 import '../core/archiving/archive_operation.dart';
@@ -11,6 +13,7 @@ import 'archive_operation_applied_log.dart';
 import 'archive_candidate_store.dart';
 import 'archive_record_revision_service.dart';
 import 'entity_catalog_sync.dart';
+import 'entity_journal_parser.dart';
 import 'entity_vault_store.dart';
 
 class ArchiveOperationExecutionResult {
@@ -134,18 +137,38 @@ class ArchiveOperationExecutor {
       );
     }
 
-    final conflict = await _validateCreateRevision(
-      vaultPath: vaultPath,
-      operation: operation,
-    );
-    if (conflict != null) return conflict;
-
     final candidate = await _candidateStore.lookup(vaultPath, candidateId);
     if (candidate == null) {
       return _failure('candidate_not_found', 'Candidate does not exist.');
     }
 
     final promotionCandidate = _candidateForPromotion(candidate, operation);
+
+    final revision = await _revisionService.currentForOperation(
+      vaultPath: vaultPath,
+      operation: operation,
+    );
+    if (revision.exists) {
+      final recovered = await _rollForwardPromoteCandidate(
+        vaultPath: vaultPath,
+        operation: operation,
+        candidate: candidate,
+        userCatalog: userCatalog,
+        storagePath: revision.absolutePath,
+      );
+      if (recovered != null) return recovered;
+      return _conflict(
+        expectedRevision:
+            operation.expectedRevision?.trim() ?? ArchiveRecordRevision.missing,
+        currentRevision: revision.value,
+      );
+    }
+
+    final conflict = _validateMissingCreateRevision(
+      operation: operation,
+      currentRevision: revision.value,
+    );
+    if (conflict != null) return conflict;
 
     await userCatalog.load();
     final promotionValidation = ArchiveCandidateValidator.validatePromotion(
@@ -170,6 +193,7 @@ class ArchiveOperationExecutor {
       vaultPath: vaultPath,
       entity: entity,
       body: _bodyForPromotion(candidate, operation),
+      sourceOperationId: operation.operationId,
     );
     final mirrored = EntityCatalogSync.mirrorFromJournal(
       draft: entity,
@@ -240,31 +264,77 @@ class ArchiveOperationExecutor {
     return '## Evidence\n\n${candidate.evidence.trim()}';
   }
 
-  Future<ArchiveOperationExecutionResult?> _validateCreateRevision({
+  ArchiveOperationExecutionResult? _validateMissingCreateRevision({
+    required ArchiveOperation operation,
+    required String currentRevision,
+  }) {
+    final expected = operation.expectedRevision?.trim();
+    if (expected == null || expected.isEmpty || expected == currentRevision) {
+      return null;
+    }
+    return _conflict(
+      expectedRevision: expected,
+      currentRevision: currentRevision,
+    );
+  }
+
+  Future<ArchiveOperationExecutionResult?> _rollForwardPromoteCandidate({
     required String vaultPath,
     required ArchiveOperation operation,
+    required ArchiveCandidate candidate,
+    required UserCatalogPort userCatalog,
+    required String? storagePath,
   }) async {
-    final current = await _revisionService.currentForOperation(
-      vaultPath: vaultPath,
+    if (storagePath == null || storagePath.trim().isEmpty) return null;
+    final file = File(storagePath);
+    if (!await file.exists()) return null;
+
+    final entry = EntityJournalParser.parse(
+      await file.readAsString(),
+      storagePath,
+    );
+    final targetEntity = operation.targetEntity;
+    if (entry == null ||
+        targetEntity == null ||
+        entry.sourceOperationId != operation.operationId ||
+        entry.entityId != targetEntity.entityId ||
+        entry.entityType != targetEntity.type) {
+      return null;
+    }
+
+    await userCatalog.load();
+    final draft = _entityFromCandidate(
+      candidate: _candidateForPromotion(candidate, operation),
+      targetEntity: targetEntity,
       operation: operation,
     );
-    final expected = operation.expectedRevision?.trim();
+    final mirrored = EntityCatalogSync.mirrorFromJournal(
+      draft: draft,
+      entry: entry,
+    );
+    await userCatalog.upsert(mirrored);
+    await _candidateStore.markPromoted(
+      vaultPath: vaultPath,
+      candidateId: candidate.candidateId,
+      entityId: targetEntity.entityId,
+    );
+    final appliedEntry = await _appliedLog.appendApplied(
+      vaultPath: vaultPath,
+      operation: operation,
+      recordPath: entry.storagePath,
+    );
+    final closed = await _candidateStore.lookup(
+      vaultPath,
+      candidate.candidateId,
+    );
 
-    if (expected != null && expected.isNotEmpty && expected != current.value) {
-      return _conflict(
-        expectedRevision: expected,
-        currentRevision: current.value,
-      );
-    }
-
-    if (current.exists) {
-      return _conflict(
-        expectedRevision: expected ?? ArchiveRecordRevision.missing,
-        currentRevision: current.value,
-      );
-    }
-
-    return null;
+    return ArchiveOperationExecutionResult(
+      applied: true,
+      entity: mirrored,
+      entry: entry,
+      candidate: closed,
+      appliedEntry: appliedEntry,
+    );
   }
 
   static ArchiveOperationExecutionResult _failure(String code, String message) {

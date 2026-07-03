@@ -16,7 +16,7 @@ abstract final class EntityCatalogSync {
       creator: draft.creator,
       releaseYear: draft.releaseYear,
       domain: draft.domain,
-      aliases: draft.aliases,
+      aliases: entry.aliases.isNotEmpty ? entry.aliases : draft.aliases,
       tags: entry.tags,
       addedAt: entry.addedAt,
       posterPath: entry.posterPath,

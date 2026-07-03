@@ -80,6 +80,7 @@ abstract final class EntityDetailArchiveOps {
         entry: existingJournal,
         body: body,
         title: entityDraft.title,
+        aliases: entityDraft.aliases,
         tags: tags,
         posterPath: posterPath,
         vaultPath: vaultPath,

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:path/path.dart' as p;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/models/entity_fact.dart';
@@ -29,6 +30,7 @@ entity_id: "co_u_abcd1234"
 record_kind: entityJournal
 title: "Tiger"
 added_at: "2026-06-19T10:00:00.000"
+aliases: ["Tiger King", "Tora"]
 ---
 호랑이에 대한 메모
 ''';
@@ -41,6 +43,7 @@ added_at: "2026-06-19T10:00:00.000"
       expect(parsed!.entityType, EntityAnchorType.concept);
       expect(parsed.entityId, 'co_u_abcd1234');
       expect(parsed.title, 'Tiger');
+      expect(parsed.aliases, ['Tiger King', 'Tora']);
       expect(parsed.body, '호랑이에 대한 메모');
 
       final reserialized = EntityJournalParser.serialize(
@@ -49,11 +52,13 @@ added_at: "2026-06-19T10:00:00.000"
         title: parsed.title,
         body: parsed.body,
         addedAt: parsed.addedAt,
+        aliases: parsed.aliases,
         tags: parsed.tags,
       );
       expect(reserialized, contains('schema_version: 3'));
       expect(reserialized, contains('record_id: "rec_co_u_abcd1234"'));
       expect(reserialized, contains('record_kind: entityJournal'));
+      expect(reserialized, contains('aliases: ["Tiger King", "Tora"]'));
     });
   });
 
@@ -70,6 +75,7 @@ added_at: "2026-06-19T10:00:00.000"
         final entity = UserCatalogEntity.userLocal(
           entityId: 'pe_u_test1234',
           type: EntityAnchorType.person,
+          aliases: const ['Hero Alias'],
           title: '나비',
         );
 
@@ -87,7 +93,65 @@ added_at: "2026-06-19T10:00:00.000"
         final content = await File(saved.storagePath).readAsString();
         final parsed = EntityJournalParser.parse(content, saved.storagePath);
         expect(parsed?.entityId, 'pe_u_test1234');
+        expect(parsed?.aliases, ['Hero Alias']);
         expect(parsed?.body, '우리 고양이');
+      } finally {
+        await service.setVaultPath('');
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test('reuses existing legacy path when entity id already exists', () async {
+      final service = AkashaFileService();
+      final tempDir = await Directory.systemTemp.createTemp(
+        'akasha_w4_entity_',
+      );
+      try {
+        await service.setVaultPath(tempDir.path);
+        final store = EntityVaultStore();
+        final legacyFile = File(
+          '${tempDir.path}/entities/person/Legacy Hero.md',
+        );
+        await legacyFile.parent.create(recursive: true);
+        await legacyFile.writeAsString(
+          EntityJournalParser.serialize(
+            entityType: EntityAnchorType.person,
+            entityId: 'pe_u_legacy01',
+            title: 'Legacy Hero',
+            body: 'legacy body',
+            addedAt: DateTime.utc(2026, 7, 3),
+          ),
+        );
+
+        final saved = await store.saveCatalogEntity(
+          vaultPath: tempDir.path,
+          entity: UserCatalogEntity.userLocal(
+            entityId: 'pe_u_legacy01',
+            type: EntityAnchorType.person,
+            title: 'Renamed Hero',
+            aliases: const ['Hero Alias'],
+          ),
+          body: 'updated body',
+        );
+
+        expect(p.normalize(saved.storagePath), p.normalize(legacyFile.path));
+        expect(await legacyFile.exists(), isTrue);
+        expect(
+          await File(
+            '${tempDir.path}/entities/person/pe_u_legacy01.md',
+          ).exists(),
+          isFalse,
+        );
+        final parsed = EntityJournalParser.parse(
+          await legacyFile.readAsString(),
+          legacyFile.path,
+        );
+        expect(parsed?.entityId, 'pe_u_legacy01');
+        expect(parsed?.title, 'Renamed Hero');
+        expect(parsed?.aliases, ['Hero Alias']);
+        expect(parsed?.body, 'updated body');
       } finally {
         await service.setVaultPath('');
         if (await tempDir.exists()) {

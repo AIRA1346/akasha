@@ -166,7 +166,9 @@ Rules:
 
 - `ArchiveOperation` records user/app/agent/import/script write intent.
 - `ArchiveOperationValidator` rejects unsafe IDs, direct path/runtime payloads, identity-field mutation, invalid rating/tag/link payloads, missing candidate promotion targets, and unsafe duplicate merges.
-- This is a validation gate, not yet the final operation execution service.
+- `ArchiveOperationExecutor` executes the first safe operation path: `promoteCandidate` -> Entity journal -> catalog mirror -> candidate close -> applied log.
+- `source_operation_id` marks operation-created Entity journals so retries can roll forward only when the surviving file belongs to the same operation.
+- Future mutating operations should reuse the same validator, revision guard, source-operation marker, and applied-log pattern.
 
 ### 4.5 ID Path Strategy
 
@@ -186,6 +188,7 @@ Rules:
 - New canonical records should prefer ID paths once Vault Layout v3 is accepted.
 - Existing vaults should migrate only through an explicit migration.
 - Preserve human-readable display names in UI and indexes.
+- Preserve human-readable aliases in frontmatter for ID-named files.
 - Path migration must update indexes and backlinks atomically.
 
 ## 5. Roadmap
