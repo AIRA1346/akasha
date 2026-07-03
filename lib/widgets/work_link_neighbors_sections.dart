@@ -78,14 +78,10 @@ class WorkLinkNeighborsSections extends StatelessWidget {
           addLabel: l10n?.addPerson ?? '인물 추가',
           child: neighbors.characters.isEmpty
               ? null
-              : workbenchLayout
-              ? WorkLinkCharacterWorkbenchList(
+              : WorkLinkCharacterPagedGrid(
                   characters: neighbors.characters,
                   onOpenEntity: onOpenEntity,
-                )
-              : WorkLinkCharacterRow(
-                  characters: neighbors.characters,
-                  onOpenEntity: onOpenEntity,
+                  imageSize: workbenchLayout ? 58 : 56,
                 ),
         ),
         _section(

@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:akasha/core/archiving/entity_anchor.dart';
+import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/utils/work_link_neighbors.dart';
 import 'package:akasha/widgets/work_link_neighbors_sections.dart';
 
 void main() {
-  testWidgets('WorkLinkNeighborsSections shows empty CTA for each section', (tester) async {
+  testWidgets('WorkLinkNeighborsSections shows empty CTA for each section', (
+    tester,
+  ) async {
     await tester.pumpWidget(
       const MaterialApp(
         home: Scaffold(
-          body: WorkLinkNeighborsSections(
-            neighbors: WorkLinkNeighbors(),
-          ),
+          body: WorkLinkNeighborsSections(neighbors: WorkLinkNeighbors()),
         ),
       ),
     );
@@ -21,5 +23,42 @@ void main() {
     expect(find.text('관련 사건'), findsOneWidget);
     expect(find.text('관련 개념'), findsOneWidget);
     expect(find.textContaining('아직'), findsNWidgets(6));
+  });
+
+  testWidgets('WorkLinkNeighborsSections pages characters six at a time', (
+    tester,
+  ) async {
+    final characters = List.generate(
+      7,
+      (index) => UserCatalogEntity.userLocal(
+        entityId: 'pe_u_character_$index',
+        type: EntityAnchorType.person,
+        title: '인물 ${index + 1}',
+      ),
+    );
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: SizedBox(
+            width: 360,
+            child: WorkLinkNeighborsSections(
+              neighbors: WorkLinkNeighbors(characters: characters),
+              showEmptySections: false,
+            ),
+          ),
+        ),
+      ),
+    );
+
+    expect(find.text('인물 1'), findsOneWidget);
+    expect(find.text('인물 6'), findsOneWidget);
+    expect(find.text('인물 7'), findsNothing);
+
+    await tester.tap(find.byIcon(Icons.chevron_right_rounded));
+    await tester.pumpAndSettle();
+
+    expect(find.text('인물 1'), findsNothing);
+    expect(find.text('인물 7'), findsOneWidget);
   });
 }

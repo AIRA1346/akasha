@@ -42,16 +42,13 @@ class WorkDetailConnectionsCoordinator {
     required String? filePath,
     required bool isSaving,
     required bool isDirty,
-  }) =>
-      vaultDiskSync.evaluateFileChange(
-        filePath: filePath,
-        isSaving: isSaving,
-        isDirty: isDirty,
-      );
+  }) => vaultDiskSync.evaluateFileChange(
+    filePath: filePath,
+    isSaving: isSaving,
+    isDirty: isDirty,
+  );
 
-  Future<AkashaItem?> reloadWorkFromDisk({
-    required AkashaItem current,
-  }) async {
+  Future<AkashaItem?> reloadWorkFromDisk({required AkashaItem current}) async {
     final path = current.filePath;
     if (path == null || path.isEmpty) return null;
     final reloaded = await WorkDetailVaultReloadOps.loadWorkJournal(
@@ -124,6 +121,7 @@ class WorkDetailConnectionsCoordinator {
         discovery: discovery,
         linkIndex: linkIndex,
         vaultItems: vaultItems,
+        characterLimit: workLinkNeighborsCharacterPanelLimit,
       );
       loadingLinkNeighbors = false;
       onStateChanged();

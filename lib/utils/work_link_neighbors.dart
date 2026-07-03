@@ -11,6 +11,9 @@ import 'catalog_entity_resolver.dart';
 import 'work_link_resolution.dart';
 import 'work_related_characters.dart';
 
+const workLinkNeighborsCharacterDefaultLimit = 4;
+const workLinkNeighborsCharacterPanelLimit = 24;
+
 /// 작품 기준 링크 인덱스 이웃 — 인물·연결 작품.
 class WorkLinkNeighbors {
   const WorkLinkNeighbors({
@@ -51,7 +54,7 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
   required EntityRelatedWorksDiscovery discovery,
   required RecordLinkPort linkIndex,
   required List<AkashaItem> vaultItems,
-  int characterLimit = 4,
+  int characterLimit = workLinkNeighborsCharacterDefaultLimit,
   int connectedWorkLimit = 4,
   int eventLimit = 3,
   int conceptLimit = 3,
@@ -64,8 +67,9 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
 
   await userCatalog.load();
   final effectiveWork = WorkLinkResolution.vaultWorkForLinks(work, vaultItems);
-  final linkedEntityIds =
-      await discovery.entityIdsForWork(effectiveWork.workId);
+  final linkedEntityIds = await discovery.entityIdsForWork(
+    effectiveWork.workId,
+  );
   final allLinkedIds = linkedEntityIds.toSet();
 
   final filePath = effectiveWork.filePath;
@@ -78,7 +82,10 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
         vaultItems: vaultItems,
       );
       if (targetId == null ||
-          WorkLinkResolution.workIdsReferToSame(targetId, effectiveWork.workId)) {
+          WorkLinkResolution.workIdsReferToSame(
+            targetId,
+            effectiveWork.workId,
+          )) {
         continue;
       }
       if (EntityIdCodec.typeFromId(targetId) == EntityAnchorType.work) continue;
@@ -180,20 +187,20 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
 
   final bridgeLabels =
       await RelationshipDiscoveryService.bridgeLabelsForConnectedWorks(
-    sourceWork: effectiveWork,
-    connectedWorks: connectedWorks,
-    discovery: discovery,
-    userCatalog: userCatalog,
-    linkIndex: linkIndex,
-  );
+        sourceWork: effectiveWork,
+        connectedWorks: connectedWorks,
+        discovery: discovery,
+        userCatalog: userCatalog,
+        linkIndex: linkIndex,
+      );
 
   final themeClusters =
       await RelationshipDiscoveryService.conceptThemeClustersForWork(
-    workId: effectiveWork.workId,
-    vaultItems: vaultItems,
-    userCatalog: userCatalog,
-    discovery: discovery,
-  );
+        workId: effectiveWork.workId,
+        vaultItems: vaultItems,
+        userCatalog: userCatalog,
+        discovery: discovery,
+      );
 
   return WorkLinkNeighbors(
     characters: characters,

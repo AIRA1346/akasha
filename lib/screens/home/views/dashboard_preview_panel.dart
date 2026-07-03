@@ -129,6 +129,7 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
       discovery: discovery,
       linkIndex: widget.linkIndex,
       vaultItems: widget.vaultItems,
+      characterLimit: workLinkNeighborsCharacterPanelLimit,
     );
   }
 
