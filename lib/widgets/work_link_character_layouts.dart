@@ -171,14 +171,16 @@ class _CharacterGridTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final palette = context.akashaPalette;
+    final imageWidth = imageSize * 1.08;
+    final imageHeight = imageSize * 1.22;
     final hasPoster = person.posterPath?.trim().isNotEmpty ?? false;
     final avatar = hasPoster
         ? FittedBox(
             fit: BoxFit.cover,
             clipBehavior: Clip.hardEdge,
             child: SizedBox(
-              width: 128,
-              height: 128,
+              width: 112,
+              height: 132,
               child: PosterImage(
                 item: EntityItem(
                   entityType: EntityAnchorType.person,
@@ -209,10 +211,11 @@ class _CharacterGridTile extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ClipOval(
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
                 child: SizedBox(
-                  width: imageSize,
-                  height: imageSize,
+                  width: imageWidth,
+                  height: imageHeight,
                   child: avatar,
                 ),
               ),
@@ -246,7 +249,7 @@ class _CharacterAvatarFallback extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: palette.accentSoft,
-        shape: BoxShape.circle,
+        borderRadius: BorderRadius.circular(8),
         border: Border.all(color: palette.borderSubtle(0.24)),
       ),
       alignment: Alignment.center,
