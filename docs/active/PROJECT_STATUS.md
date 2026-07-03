@@ -13,7 +13,7 @@
  
 | 항목 | 상태 |
 |------|------|
-| **flutter test** | **709 PASS** |
+| **flutter test** | **718 PASS** |
 | **flutter analyze lib** | **0 issue** |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
 | **앱 테마** | `AkashaPalette` ThemeExtension · sidebar/bottom/search/card/preview rail 반영 ✅ |
@@ -26,6 +26,7 @@
 | **Vault Layout v3 Slice** | 새 Work/Entity ID path canonical · `schema_version: 3` · full tests **709 PASS** · analyze **0** ✅ |
 | **ArchiveOperation Contract** | `createRecord/updateFrontmatter/appendSection/tag/rating/status/link/promote/merge` validator slice ✅ · focused tests **11 PASS** · analyze **0** |
 | **Candidate Store** | `catalog/candidates.json` · 후보/승격/중복 검증 · focused archive contract tests **21 PASS** ✅ |
+| **Candidate Store Scale** | `.akasha/candidates/*` sharded queue · name-index duplicate lookup · legacy candidate JSON read compatibility · full tests **718 PASS** |
 | **Operation Executor** | validated `promoteCandidate` → Entity journal · catalog mirror · candidate close ✅ · focused contract tests **34 PASS** · full tests **709 PASS** |
 | **Operation Applied Log** | `.akasha/ops/applied.jsonl` · `operationId` retry-safe · `alreadyApplied` result ✅ |
 | **Operation Conflict Guard** | `expectedRevision` · mtime/length/hash revision · existing target overwrite block ✅ |
@@ -194,6 +195,8 @@
 | **328** | Operation Conflict Guard slice — `expectedRevision`과 파일 revision으로 기존 target overwrite 차단 | ✅ code | [archive_record_revision_service.dart](../../lib/services/archive_record_revision_service.dart) |
 
 ---
+
+| **329** | Candidate Store Scale slice — `.akasha/candidates/*` sharded queue + name-index duplicate lookup + legacy `catalog/candidates.json` read compatibility | ✅ code | [archive_candidate_store.dart](../../lib/services/archive_candidate_store.dart) |
 
 ## 8. 문서 이력
 

@@ -143,7 +143,7 @@ void main() {
   });
 
   group('ArchiveCandidateStore', () {
-    test('round-trips candidates.json under catalog folder', () async {
+    test('round-trips sharded candidates under .akasha folder', () async {
       final tempDir = await Directory.systemTemp.createTemp(
         'akasha_candidates_',
       );
@@ -157,11 +157,55 @@ void main() {
         expect(loaded.first.candidateId, 'cand_person_alpha001');
         expect(loaded.first.status, ArchiveCandidateStatus.candidate);
 
-        final file = File('${tempDir.path}/catalog/candidates.json');
-        expect(await file.exists(), isTrue);
-        final decoded = jsonDecode(await file.readAsString()) as Map;
-        expect(decoded['version'], ArchiveCandidateStore.schemaVersion);
-        expect(decoded['candidates'], isA<List>());
+        expect(
+          await File(
+            '${tempDir.path}/.akasha/candidates/manifest.json',
+          ).exists(),
+          isTrue,
+        );
+        final shardDir = Directory('${tempDir.path}/.akasha/candidates/person');
+        expect(await shardDir.exists(), isTrue);
+        expect(
+          await shardDir.list().any(
+            (entry) => entry is File && entry.path.endsWith('.json'),
+          ),
+          isTrue,
+        );
+        final nameIndexDir = Directory(
+          '${tempDir.path}/.akasha/candidates/name_index/person',
+        );
+        expect(await nameIndexDir.exists(), isTrue);
+        expect(
+          await File('${tempDir.path}/catalog/candidates.json').exists(),
+          isFalse,
+        );
+      } finally {
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test('loads legacy catalog candidates json for compatibility', () async {
+      final tempDir = await Directory.systemTemp.createTemp(
+        'akasha_candidates_',
+      );
+      final store = ArchiveCandidateStore();
+      try {
+        final legacy = File('${tempDir.path}/catalog/candidates.json');
+        await legacy.parent.create(recursive: true);
+        await legacy.writeAsString(
+          const JsonEncoder.withIndent('  ').convert({
+            'version': ArchiveCandidateStore.schemaVersion,
+            'candidates': [_candidate().toJson()],
+          }),
+          flush: true,
+        );
+
+        final loaded = await store.load(tempDir.path);
+
+        expect(loaded, hasLength(1));
+        expect(loaded.single.candidateId, 'cand_person_alpha001');
       } finally {
         if (await tempDir.exists()) {
           await tempDir.delete(recursive: true);
@@ -238,6 +282,52 @@ void main() {
             ),
           ),
           throwsA(isA<ArgumentError>()),
+        );
+        expect(
+          await File('${tempDir.path}/catalog/candidates.json').exists(),
+          isFalse,
+        );
+      } finally {
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test('migrates legacy candidate to shards before status update', () async {
+      final tempDir = await Directory.systemTemp.createTemp(
+        'akasha_candidates_',
+      );
+      final store = ArchiveCandidateStore();
+      try {
+        final legacy = File('${tempDir.path}/catalog/candidates.json');
+        await legacy.parent.create(recursive: true);
+        await legacy.writeAsString(
+          const JsonEncoder.withIndent('  ').convert({
+            'version': ArchiveCandidateStore.schemaVersion,
+            'candidates': [_candidate().toJson()],
+          }),
+          flush: true,
+        );
+
+        await store.markPromoted(
+          vaultPath: tempDir.path,
+          candidateId: 'cand_person_alpha001',
+          entityId: 'pe_u_target01',
+          updatedAt: DateTime.utc(2026, 7, 4),
+        );
+
+        final promoted = await store.lookup(
+          tempDir.path,
+          'cand_person_alpha001',
+        );
+        expect(promoted?.status, ArchiveCandidateStatus.promoted);
+        expect(promoted?.proposedEntityId, 'pe_u_target01');
+        expect(
+          await File(
+            '${tempDir.path}/.akasha/candidates/manifest.json',
+          ).exists(),
+          isTrue,
         );
       } finally {
         if (await tempDir.exists()) {

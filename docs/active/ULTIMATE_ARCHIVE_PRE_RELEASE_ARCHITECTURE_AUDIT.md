@@ -78,9 +78,11 @@ The biggest pre-release change worth making is path identity.
 
   catalog/
     user_entities.json
-    candidates.json
 
   .akasha/
+    candidates/
+      {entity_type}/{shard}.json
+      name_index/{entity_type}/{shard}.json
     indexes/
       record_index.json
       link_index.json
@@ -221,7 +223,8 @@ Rules:
 2026-07-03 code slice:
 
 - `ArchiveCandidate` stores extracted possible entities with `candidate`, `promoted`, `dismissed`, and `merged` states.
-- `ArchiveCandidateStore` persists candidates at `catalog/candidates.json`.
+- `ArchiveCandidateStore` reads legacy `catalog/candidates.json`, then writes scalable candidate shards at `.akasha/candidates/{entityType}/{shard}.json`.
+- Candidate duplicate lookup uses `.akasha/candidates/name_index/{entityType}/{shard}.json` instead of scanning one giant JSON file.
 - `ArchiveCandidateValidator` blocks invalid candidate IDs, missing evidence/source records, confidence outside `0..1`, closed-candidate promotion, type mismatch, existing target IDs, and duplicate titles/aliases from catalog context.
 
 ## 7. Taste Index v3
@@ -363,6 +366,5 @@ Validated:
 
 Remaining before calling v3 complete:
 
-- design the sharded or SQLite candidate queue before high-volume agent extraction
 - add taste index implementation
 - decide whether to migrate existing local dev vault files or only use v3 for new records

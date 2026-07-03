@@ -18,7 +18,7 @@ These are done enough to treat as current architecture baseline.
 | UA-004 | `ArchiveOperation` write-intent model | ✅ done | [archive_operation.dart](../../lib/core/archiving/archive_operation.dart) |
 | UA-005 | `ArchiveOperationValidator` safety gate | ✅ done | [archive_operation_validator.dart](../../lib/core/archiving/archive_operation_validator.dart) |
 | UA-006 | `ArchiveCandidate` model and lifecycle | ✅ done | `candidate` · `promoted` · `dismissed` · `merged` |
-| UA-007 | `catalog/candidates.json` durable Candidate Store | ✅ done | [archive_candidate_store.dart](../../lib/services/archive_candidate_store.dart) |
+| UA-007 | Durable Candidate Store | ✅ done | legacy `catalog/candidates.json` read compatibility plus sharded `.akasha/candidates/*` writes |
 | UA-008 | Candidate promotion validator | ✅ done | duplicate title/id · type mismatch · missing evidence/source |
 | UA-009 | Operation execution service for `promoteCandidate` | ✅ done | [archive_operation_executor.dart](../../lib/services/archive_operation_executor.dart) |
 | UA-102 | Operation idempotency and applied log | ✅ done | [archive_operation_applied_log.dart](../../lib/services/archive_operation_applied_log.dart) · `.akasha/ops/applied.jsonl` |
@@ -28,6 +28,7 @@ These are done enough to treat as current architecture baseline.
 | UA-111 | Operation crash recovery marker for `promoteCandidate` | done | `source_operation_id` roll-forward accepts matching partial writes and rejects mismatches |
 | UA-113 | Reverse lookup before new Work/Entity path writes | done | same `work_id`/`entity_id` legacy files are reused when `filePath` or path index is missing |
 | UA-114 | Entity journal alias frontmatter | done | `aliases: []` round-trips in entity journal Markdown and catalog sync |
+| UA-209 | Candidate store sharded scale path | done | candidates write to `.akasha/candidates/{type}/{shard}.json` with sharded name indexes |
 
 ## 2. P0 Pre-Release Architecture Work
 
@@ -58,7 +59,7 @@ These are what make "infinite archive" fast instead of merely correct.
 | UA-206 | Link and incoming graph hardening | Backlinks and graph exploration need stable relationship lookup | Keep outgoing and incoming indexes aligned |
 | UA-207 | Snippet/quote/scene index | Search should find meaningful passages without full-file reads | Store short derived excerpts with evidence paths |
 | UA-208 | Index rebuild validator | Derived indexes must be disposable and trustworthy | Add command/test that rebuilds and checks record counts/IDs/paths |
-| UA-209 | Candidate store sharding or SQLite-derived queue | `catalog/candidates.json` is acceptable now but can become an IO bottleneck for huge agent extraction batches | Move high-volume candidates to `.akasha/candidates/*` shards or `.akasha/vault_index.db`; promote only durable records to Markdown |
+| UA-210 | Candidate merge/review query UX | Shards prevent IO blowups, but users still need reviewable duplicate clusters | Add paged candidate queries and merge suggestions backed by the name index |
 
 ## 4. P1 Taste And Preference Work
 
@@ -134,12 +135,12 @@ These matter, but they are not the current ultimate-archive core.
 
 The next architecture slice should be:
 
-> **UA-209 Candidate store scale path:** keep `catalog/candidates.json` for ordinary use, but design the sharded/SQLite candidate queue before allowing high-volume agent extraction.
+> **UA-301 Taste index schema:** reserve and implement the first evidence-backed preference index so future agents can understand taste without reading every Markdown file.
 
 Minimum done condition:
 
-- define the candidate shard or SQLite schema
-- keep candidate files derived/rebuildable until user promotion
-- preserve `ArchiveCandidateStore` compatibility for small vaults
-- add duplicate/merge review queries that do not scan one giant JSON file
-- prove with focused load/upsert/duplicate tests
+- define `.akasha/indexes/taste_index.json`
+- derive signals only from user-owned evidence such as rating, status, tags, links, quotes, and memo text
+- keep every taste signal tied to a record id and evidence path
+- make the index rebuildable and disposable
+- prove with focused extraction/rebuild tests

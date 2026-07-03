@@ -140,7 +140,7 @@ Promotion rules:
 - user-confirmed or high-value candidates can become archived records
 - archived records should receive stable IDs
 - candidates must not pollute the main entity list by default
-- high-volume candidate extraction should move to sharded or SQLite-derived storage before it becomes a giant single JSON file
+- high-volume candidate extraction writes to sharded `.akasha/candidates/*` storage with sharded name indexes, while legacy `catalog/candidates.json` remains read-compatible
 
 This keeps high-volume AI-assisted extraction from turning the vault into noise.
 

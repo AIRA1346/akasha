@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:akasha/core/archiving/archive_candidate.dart';
@@ -59,12 +58,18 @@ void main() {
           expect(parsed?.body, contains('User-approved promotion note.'));
           expect(parsed?.sourceOperationId, 'op_promote_candidate_001');
 
-          final candidateFile = File('${tempDir.path}/catalog/candidates.json');
-          final candidatesJson =
-              jsonDecode(await candidateFile.readAsString()) as Map;
-          final candidates = candidatesJson['candidates'] as List;
-          expect(candidates.single['status'], 'promoted');
-          expect(candidates.single['proposedEntityId'], 'pe_u_target01');
+          final closed = await candidateStore.lookup(
+            tempDir.path,
+            'cand_person_alpha001',
+          );
+          expect(closed?.status, ArchiveCandidateStatus.promoted);
+          expect(closed?.proposedEntityId, 'pe_u_target01');
+          expect(
+            await Directory(
+              '${tempDir.path}/.akasha/candidates/person',
+            ).exists(),
+            isTrue,
+          );
 
           expect(
             await File(
