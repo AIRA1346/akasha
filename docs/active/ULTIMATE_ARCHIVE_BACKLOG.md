@@ -29,6 +29,7 @@ These are done enough to treat as current architecture baseline.
 | UA-113 | Reverse lookup before new Work/Entity path writes | done | same `work_id`/`entity_id` legacy files are reused when `filePath` or path index is missing |
 | UA-114 | Entity journal alias frontmatter | done | `aliases: []` round-trips in entity journal Markdown and catalog sync |
 | UA-209 | Candidate store sharded scale path | done | candidates write to `.akasha/candidates/{type}/{shard}.json` with sharded name indexes |
+| UA-301 | Taste index schema and first extractor | done | `.akasha/indexes/taste_index.json` derives evidence-backed rating/status/favorite/tag/memo/quote/link signals |
 
 ## 2. P0 Pre-Release Architecture Work
 
@@ -67,9 +68,9 @@ These turn archive records into evidence-backed taste memory.
 
 | ID | Work | Why It Matters | Suggested Direction |
 | --- | --- | --- | --- |
-| UA-301 | Taste index schema | The user wants external agents to understand taste later | Reserve/implement `.akasha/indexes/taste_index.json` |
-| UA-302 | Evidence-backed taste signals | Avoid opaque "AI thinks user likes X" claims | Every signal must point to record/tag/rating/quote/link evidence |
-| UA-303 | Taste signal extractor | Ratings/tags/status/collections/quotes/revisits should become queryable signals | Derive `rating`, `tag`, `status`, `collection`, `memo`, `quote`, `revisit` signals |
+| UA-301 | Taste index schema | The user wants external agents to understand taste later | Landed first JSON slice via `TasteIndexService` and `TasteSignal` |
+| UA-302 | Evidence-backed taste signals | Avoid opaque "AI thinks user likes X" claims | Keep extending the invariant: every future signal must keep `sourceRecordId`, `evidencePath`, and `evidenceField` |
+| UA-303 | Taste signal extractor | Ratings/tags/status/collections/quotes/revisits should become queryable signals | First slice derives `rating`, `tag`, `status`, `favorite`, `memo`, `quote`, and `link`; add `collection` and `revisit` later |
 | UA-304 | Music/OST taste signals | Prompt example depends on action movie OST preferences | Model soundtrack/music preference from works, tags, notes, quotes, and links |
 | UA-305 | Taste privacy boundary | External tools should read only needed summaries | Future scoped query/read surfaces |
 
@@ -135,12 +136,12 @@ These matter, but they are not the current ultimate-archive core.
 
 The next architecture slice should be:
 
-> **UA-301 Taste index schema:** reserve and implement the first evidence-backed preference index so future agents can understand taste without reading every Markdown file.
+> **UA-201 Index manager wrapper:** coordinate record/link/entity/candidate/taste rebuilds so derived indexes stay disposable, rebuildable, and easier for future tools to trust.
 
 Minimum done condition:
 
-- define `.akasha/indexes/taste_index.json`
-- derive signals only from user-owned evidence such as rating, status, tags, links, quotes, and memo text
-- keep every taste signal tied to a record id and evidence path
-- make the index rebuildable and disposable
-- prove with focused extraction/rebuild tests
+- create one coordinator service for derived index rebuilds
+- call existing record/link/entity/candidate/taste services without changing vault source-of-truth rules
+- return per-index rebuild stats and failures
+- keep each index individually disposable
+- prove with focused tests that a single rebuild refreshes all supported index files

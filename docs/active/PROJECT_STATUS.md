@@ -13,7 +13,7 @@
  
 | 항목 | 상태 |
 |------|------|
-| **flutter test** | **718 PASS** |
+| **flutter test** | **720 PASS** |
 | **flutter analyze lib** | **0 issue** |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
 | **앱 테마** | `AkashaPalette` ThemeExtension · sidebar/bottom/search/card/preview rail 반영 ✅ |
@@ -27,6 +27,7 @@
 | **ArchiveOperation Contract** | `createRecord/updateFrontmatter/appendSection/tag/rating/status/link/promote/merge` validator slice ✅ · focused tests **11 PASS** · analyze **0** |
 | **Candidate Store** | `catalog/candidates.json` · 후보/승격/중복 검증 · focused archive contract tests **21 PASS** ✅ |
 | **Candidate Store Scale** | `.akasha/candidates/*` sharded queue · name-index duplicate lookup · legacy candidate JSON read compatibility · full tests **718 PASS** |
+| **Taste Index** | `.akasha/indexes/taste_index.json` evidence-backed rating/status/favorite/tag/memo/quote/link signals · focused tests **2 PASS** · full tests **720 PASS** · analyze **0** |
 | **Operation Executor** | validated `promoteCandidate` → Entity journal · catalog mirror · candidate close ✅ · focused contract tests **34 PASS** · full tests **709 PASS** |
 | **Operation Applied Log** | `.akasha/ops/applied.jsonl` · `operationId` retry-safe · `alreadyApplied` result ✅ |
 | **Operation Conflict Guard** | `expectedRevision` · mtime/length/hash revision · existing target overwrite block ✅ |
@@ -79,7 +80,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **709 PASS** | ✅ |
+| `flutter test` | **720 PASS** | ✅ |
 | `flutter analyze lib` | **0 issue** | ✅ |
 | `preflight_check` | PASS | ✅ |
 | `registry_builder` | PASS | — (post-v1 scale) |
@@ -197,6 +198,7 @@
 ---
 
 | **329** | Candidate Store Scale slice — `.akasha/candidates/*` sharded queue + name-index duplicate lookup + legacy `catalog/candidates.json` read compatibility | ✅ code | [archive_candidate_store.dart](../../lib/services/archive_candidate_store.dart) |
+| **330** | Taste Index slice — `.akasha/indexes/taste_index.json` evidence-backed signals for future external tools | ✅ code | [taste_index_service.dart](../../lib/services/taste_index_service.dart) |
 
 ## 8. 문서 이력
 
@@ -243,4 +245,5 @@
 | 2026-07-03 | **Operation Executor slice** — `promoteCandidate` operation end-to-end 실행: entity journal · catalog mirror · candidate promoted · indexes 생성 · focused contract tests **34 PASS** · full tests **709 PASS** · analyze **0** |
 | 2026-07-03 | **Operation Applied Log slice** — `.akasha/ops/applied.jsonl` · operationId 중복 적용 방지 · repeated `promoteCandidate`는 `alreadyApplied`로 반환 |
 | 2026-07-03 | **Operation Conflict Guard slice** — `expectedRevision`을 mtime/length/hash 파일 revision으로 정의 · 기존 target 파일/스테일 revision은 `operation_conflict`로 차단 |
+| 2026-07-03 | **Taste Index slice** — `.akasha/indexes/taste_index.json` · rating/status/favorite/tag/memo/quote/link signals · focused tests **2 PASS** · analyze **0** |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |

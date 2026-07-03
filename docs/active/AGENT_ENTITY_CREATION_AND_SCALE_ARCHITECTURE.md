@@ -283,8 +283,14 @@ The current JSON files remain useful stepping stones:
 - `.akasha/entity_path_index.json`
 - `.akasha/record_index.json`
 - `.akasha/link_index.json`
+- `.akasha/indexes/taste_index.json`
 
 But they should be treated as transitional indexes for a future sharded or SQLite-backed index.
+
+The current taste index is intentionally evidence-backed: it stores compact
+signals derived from rating, my status, favorite flags, tags, memo snippets,
+quotes, and wiki links. It does not invent preferences and it does not replace
+the Markdown vault.
 
 ---
 

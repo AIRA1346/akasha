@@ -265,6 +265,14 @@ Example signal:
 
 AKASHA should preserve this evidence. External agents can use it to choose tools, playlists, recommendations, or summaries.
 
+2026-07-03 code slice:
+
+- `TasteSignal` and `TasteIndexService` now define the first concrete taste index contract.
+- Rebuild writes `{vault}/.akasha/indexes/taste_index.json`.
+- The first extractor derives `rating`, `status`, `favorite`, `tag`, `memo`, `quote`, and `link` signals from vault Markdown.
+- Every signal keeps `sourceRecordId`, `sourceRecordKind`, `targetId`, `targetKind`, `evidencePath`, and `evidenceField`.
+- Memo and quote values are clipped to short snippets so the index stays a query surface, not a duplicate vault.
+
 ## 8. Migration Strategy
 
 Because release has not happened yet, v3 can be made the default for new vault writes.
@@ -311,7 +319,7 @@ If we choose the stronger pre-release architecture, these should happen before v
 3. Add schema_version/record_id to serialized frontmatter.
 4. Introduce operation model and validator, even if UI still calls old services.
 5. Add candidate store schema.
-6. Add taste index schema or at least reserve the index path.
+6. Keep taste index schema evidence-backed and derived.
 7. Update Agent docs from "post-v1 hardening" to "v3 canonical contract."
 
 ## 11. Final Recommendation
@@ -356,15 +364,18 @@ Implemented:
 - Work and Entity saves now reverse-lookup existing vault Markdown by `work_id`/`entity_id` before creating a new canonical path, preventing legacy-title duplicate files when path caches are missing
 - Entity journals now serialize and parse `aliases: []`, preserving human-readable names for ID-based files and external Markdown tools
 - Candidate duplicate guards now compare normalized title/alias variants, including bracket and punctuation differences
+- `TasteIndexService` now rebuilds `.akasha/indexes/taste_index.json` from user-owned vault evidence and exposes target/source queries for external tools
 
 Validated:
 
 - `flutter test` focused vault/index/path suite: 34 pass
 - `flutter test` archive operation/candidate/executor/revision contract suites: 34 pass
-- `flutter test`: 709 pass
+- `flutter test test/taste_index_service_test.dart`: 2 pass
+- `flutter test`: 720 pass
 - `flutter analyze lib`: 0 issues
 
 Remaining before calling v3 complete:
 
-- add taste index implementation
+- add index manager wrapper for coordinated rebuilds
+- add collection/revisit/music-specific taste signal expansion
 - decide whether to migrate existing local dev vault files or only use v3 for new records
