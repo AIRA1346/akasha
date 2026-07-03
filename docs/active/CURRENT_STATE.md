@@ -3,6 +3,7 @@
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
 > **갱신:** 2026-06-30 (test **614** · analyze 0 · **Steam v1 = Personal Archive**)
 > **Git:** code/test baseline **5526ce4** · current tip은 `git log -1` 기준
+> **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
 
 ---
 
@@ -16,6 +17,7 @@
 | **Personal Library · Collection** | 내가 아카이브한 것의 큐레이션 | **핵심** |
 | **Workbench · Sanctum UI** | 예쁜 기록·편집 | **핵심** |
 | **Agent Vault** | v1 프로토콜 문서화 완료 · 구현·dogfood 대기 | [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) |
+| **Infinite Archive Hardening** | index · taste signal · agent write · ID path 기준 정렬 | **pre-release decision / post-v1 guard** |
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
 
@@ -106,6 +108,7 @@
 ### Ⅳ-b. Vault Agent (2026-06-26)
 
 * [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) — Agent ↔ vault v1 계약
+* [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) — index · taste signal · structured operation · ID path 계획
 * [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md) — 볼트 경로·ID·예시
 * 볼트 `VAULT_README.md` 자동 생성 · `.akasha/entity_path_index.json`
 

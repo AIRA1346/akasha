@@ -3,7 +3,7 @@
 > **지위:** Steam v1 **Agent ↔ Sanctum vault** 상호작용 SSOT
 > **갱신:** 2026-06-30
 > **Git:** code/test baseline **5526ce4** · current tip은 `git log -1` 기준
-> **상위:** [VISION.md](VISION.md) · [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md) · [SPRINT_B1_DOGFOOD.md](SPRINT_B1_DOGFOOD.md)
+> **상위:** [VISION.md](VISION.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md) · [SPRINT_B1_DOGFOOD.md](SPRINT_B1_DOGFOOD.md)
 > **구현 참고:** `AkashaFileService` watch · `TimelineEntryParser` · `EntityVaultStore` (제품 코드 — 본 문서는 **파일 프로토콜 계약**)
 
 ---
@@ -20,6 +20,8 @@ AKASHA v1의 제품 핵심은 **글로벌 catalog가 아니라 Personal Sanctum 
 ```
 
 **Agent Vault Protocol v1**은 외부 에이전트(Cursor·CLI·자동화)가 위 루프에 **안전하게 참여**하기 위한 **파일 기반** 읽기·쓰기·금지·충돌 규칙이다. v1 검증은 **수동·Agent dogfood**(§8)로 수행한다.
+
+이 문서는 v1의 파일 프로토콜 계약이다. 대량 agent write, batch import, structured operation layer, taste/index 확장은 [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)의 post-v1 hardening 범위로 다룬다.
 
 | 구분 | v1 | post-v1 |
 |------|:--:|:-------:|
@@ -265,6 +267,7 @@ Agent 저장은 **앱 native save**와 동일 형식을 따른다.
 | 문서 | 역할 |
 |------|------|
 | [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md) | 경로·ID·예시 (현장 레시피) |
+| [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) | agent operation · index · taste signal · ID path hardening |
 | [sanctum-md-customization.md](../history/product/sanctum-md-customization.md) | 슬롯·bodyRaw |
 | [VISION.md](VISION.md) | v1 Personal Archive 북극성 |
 | [PROJECT_STATUS.md](PROJECT_STATUS.md) | v1 blocking · M3 보류 |
@@ -277,4 +280,5 @@ Agent 저장은 **앱 native save**와 동일 형식을 따른다.
 | 일자 | 변경 |
 |------|------|
 | 2026-06-30 | v1 초안 — 읽기/쓰기 범위 · operation · 충돌 · watcher · dogfood · post-v1 분리 |
+| 2026-07-03 | Infinite Archive Hardening 연결 — v1 파일 프로토콜과 post-v1 structured operation layer 경계 명시 |
 | 2026-06-30 | scope 정리 — v1 = 파일 프로토콜 + dogfood · post-v1 = SDK/API/operation layer · `timelineEntry` canonical |

@@ -21,16 +21,15 @@ abstract final class TimelineEntryParser {
     final split = _splitFrontmatter(content);
     if (split == null) return null;
 
-    final yaml = YamlMap.wrap(
-      loadYaml(split.frontmatter) as YamlMap,
-    );
+    final yaml = YamlMap.wrap(loadYaml(split.frontmatter) as YamlMap);
     if (!_isTimelineRecordKind(yaml['record_kind']?.toString())) return null;
 
     final recordId = yaml['record_id']?.toString().trim() ?? '';
     if (recordId.isEmpty) return null;
 
     final title = yaml['title']?.toString().trim() ?? '';
-    final occurredAt = _parseDateTime(yaml['occurred_at']) ??
+    final occurredAt =
+        _parseDateTime(yaml['occurred_at']) ??
         _parseDateTime(yaml['added_at']) ??
         DateTime.now();
     final addedAt = _parseDateTime(yaml['added_at']) ?? occurredAt;
@@ -58,6 +57,7 @@ abstract final class TimelineEntryParser {
     final added = addedAt ?? DateTime.now();
     final buffer = StringBuffer()
       ..writeln('---')
+      ..writeln('schema_version: 3')
       ..writeln('record_kind: $canonicalRecordKind')
       ..writeln('record_id: "$recordId"')
       ..writeln('title: "${_escape(title)}"')

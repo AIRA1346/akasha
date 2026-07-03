@@ -20,8 +20,9 @@ void main() {
 
   group('MarkdownParser v2', () {
     test('deserializes legacy fixture without entity_* fields', () async {
-      final content = await File('test/fixtures/vault_v1_legacy.md')
-          .readAsString();
+      final content = await File(
+        'test/fixtures/vault_v1_legacy.md',
+      ).readAsString();
       final item = MarkdownParser.deserialize(content, 'fallback');
 
       expect(item.workId, 'sub_manga_legacytest_2020');
@@ -30,8 +31,9 @@ void main() {
     });
 
     test('deserializes v2 fixture with entity_id mirror', () async {
-      final content =
-          await File('test/fixtures/vault_v2_work.md').readAsString();
+      final content = await File(
+        'test/fixtures/vault_v2_work.md',
+      ).readAsString();
       final item = MarkdownParser.deserialize(content, 'fallback');
 
       expect(item.workId, 'wk_u_fixt0001');
@@ -48,6 +50,8 @@ void main() {
 
       final md = MarkdownParser.serialize(item);
 
+      expect(md, contains('schema_version: 3'));
+      expect(md, contains('record_id: "rec_wk_u_ser00001"'));
       expect(md, contains('entity_type: work'));
       expect(md, contains('entity_id: "wk_u_ser00001"'));
       expect(md, contains('subtype: book'));
@@ -78,8 +82,9 @@ void main() {
 
   group('ArchiveRecordMapper.fromWorkMarkdown', () {
     test('maps v2 fixture to workJournal record', () async {
-      final content =
-          await File('test/fixtures/vault_v2_work.md').readAsString();
+      final content = await File(
+        'test/fixtures/vault_v2_work.md',
+      ).readAsString();
       final record = ArchiveRecordMapper.fromWorkMarkdown(
         content,
         r'C:\vault\works\animation\Wave 2 Fixture 작품.md',
@@ -92,22 +97,25 @@ void main() {
   });
 
   group('VaultWorkJournalPaths', () {
-    test('default legacy category path', () {
-      final item = createItem(
-        workId: 'wk_u_path01',
-        title: 'Path Test',
-        category: MediaCategory.manga,
-      );
-      final path = VaultWorkJournalPaths.resolveNewPath(
-        vaultRoot: r'C:\vault',
-        item: item,
-        useWorksLayout: false,
-      );
+    test(
+      'new records prefer v3 ID path even when legacy layout is disabled',
+      () {
+        final item = createItem(
+          workId: 'wk_u_path01',
+          title: 'Path Test',
+          category: MediaCategory.manga,
+        );
+        final path = VaultWorkJournalPaths.resolveNewPath(
+          vaultRoot: r'C:\vault',
+          item: item,
+          useWorksLayout: false,
+        );
 
-      expect(path, r'C:\vault\manga\Path Test.md');
-    });
+        expect(path, r'C:\vault\works\manga\wk_u_path01.md');
+      },
+    );
 
-    test('works layout path when enabled', () {
+    test('works layout path uses ID filename when enabled', () {
       final item = createItem(
         workId: 'wk_u_path02',
         title: 'Works Path',
@@ -119,7 +127,7 @@ void main() {
         useWorksLayout: true,
       );
 
-      expect(path, r'C:\vault\works\animation\Works Path.md');
+      expect(path, r'C:\vault\works\animation\wk_u_path02.md');
     });
   });
 
@@ -140,9 +148,12 @@ void main() {
 
         expect(item.filePath, contains('works'));
         expect(item.filePath, contains('manga'));
+        expect(item.filePath, endsWith('wk_u_newpath1.md'));
         expect(File(item.filePath!).existsSync(), isTrue);
 
         final content = await File(item.filePath!).readAsString();
+        expect(content, contains('schema_version: 3'));
+        expect(content, contains('record_id: "rec_wk_u_newpath1"'));
         expect(content, contains('entity_id: "wk_u_newpath1"'));
       } finally {
         await service.setVaultPath('');

@@ -33,7 +33,10 @@ added_at: "2026-06-19T10:00:00.000"
 호랑이에 대한 메모
 ''';
 
-      final parsed = EntityJournalParser.parse(content, r'C:\vault\entities\concept\Tiger.md');
+      final parsed = EntityJournalParser.parse(
+        content,
+        r'C:\vault\entities\concept\Tiger.md',
+      );
       expect(parsed, isNotNull);
       expect(parsed!.entityType, EntityAnchorType.concept);
       expect(parsed.entityId, 'co_u_abcd1234');
@@ -48,6 +51,8 @@ added_at: "2026-06-19T10:00:00.000"
         addedAt: parsed.addedAt,
         tags: parsed.tags,
       );
+      expect(reserialized, contains('schema_version: 3'));
+      expect(reserialized, contains('record_id: "rec_co_u_abcd1234"'));
       expect(reserialized, contains('record_kind: entityJournal'));
     });
   });
@@ -55,7 +60,9 @@ added_at: "2026-06-19T10:00:00.000"
   group('EntityVaultStore', () {
     test('saves person journal under entities/person/', () async {
       final service = AkashaFileService();
-      final tempDir = await Directory.systemTemp.createTemp('akasha_w4_entity_');
+      final tempDir = await Directory.systemTemp.createTemp(
+        'akasha_w4_entity_',
+      );
       try {
         await service.setVaultPath(tempDir.path);
         final store = EntityVaultStore();
@@ -74,6 +81,7 @@ added_at: "2026-06-19T10:00:00.000"
 
         expect(saved.storagePath, contains('entities'));
         expect(saved.storagePath, contains('person'));
+        expect(saved.storagePath, endsWith('pe_u_test1234.md'));
         expect(File(saved.storagePath).existsSync(), isTrue);
 
         final content = await File(saved.storagePath).readAsString();
@@ -90,7 +98,9 @@ added_at: "2026-06-19T10:00:00.000"
 
     test('update and delete entity journal round-trip', () async {
       final service = AkashaFileService();
-      final tempDir = await Directory.systemTemp.createTemp('akasha_w4_entity_');
+      final tempDir = await Directory.systemTemp.createTemp(
+        'akasha_w4_entity_',
+      );
       try {
         await service.setVaultPath(tempDir.path);
         final store = EntityVaultStore();
@@ -119,7 +129,10 @@ added_at: "2026-06-19T10:00:00.000"
         expect(found?.body, 'v2');
 
         await store.deleteEntry(saved.storagePath);
-        expect(await loader.findByEntityId(tempDir.path, 'co_u_round01'), isNull);
+        expect(
+          await loader.findByEntityId(tempDir.path, 'co_u_round01'),
+          isNull,
+        );
       } finally {
         await service.setVaultPath('');
         if (await tempDir.exists()) {
@@ -132,7 +145,9 @@ added_at: "2026-06-19T10:00:00.000"
   group('EntityVaultLoader', () {
     test('loads all entity journals sorted newest first', () async {
       final service = AkashaFileService();
-      final tempDir = await Directory.systemTemp.createTemp('akasha_w4_loader_');
+      final tempDir = await Directory.systemTemp.createTemp(
+        'akasha_w4_loader_',
+      );
       try {
         await service.setVaultPath(tempDir.path);
         final store = EntityVaultStore();

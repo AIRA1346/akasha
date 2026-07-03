@@ -111,6 +111,7 @@ mixin _AkashaFileServiceSave
       title: item.title,
       category: item.category,
       filePath: item.filePath,
+      workId: item.workId,
     );
     return _deleteAtCandidatePaths(candidates);
   }

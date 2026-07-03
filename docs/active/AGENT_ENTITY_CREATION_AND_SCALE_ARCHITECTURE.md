@@ -1,9 +1,9 @@
 # Agent Entity Creation & Infinite Taste Archive Architecture
 
-> **Status:** Draft SSOT
+> **Status:** Active ADR
 > **Date:** 2026-06-30
 > **Scope:** AKASHA as a personal taste archive that external tools and AI agents can read/write safely
-> **Related:** [VISION.md](VISION.md), [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md), [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md), [ARCHITECTURE.md](ARCHITECTURE.md)
+> **Related:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md), [VISION.md](VISION.md), [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md), [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md), [ARCHITECTURE.md](ARCHITECTURE.md)
 
 ---
 
@@ -30,6 +30,20 @@ The design question is therefore not "how does AKASHA make an AI create things?"
 The design question is:
 
 > If a user allows an external AI/tool to create or edit many records, how should AKASHA preserve the vault, avoid noise, and remain fast for both app UI and external readers?
+
+---
+
+### 1.1 2026-07-03 Hardening Priority
+
+[INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) is the current execution plan for turning this ADR into a long-term archive contract.
+
+The priority order is:
+
+1. keep the vault `.md` records as source of truth
+2. make derived indexes strict and rebuildable
+3. model taste as evidence-backed signals, not opaque AI memory
+4. require agent writes to use an explicit operation contract
+5. move toward stable ID paths through the pre-release Vault Layout v3 audit or an explicit later migration
 
 ---
 
@@ -304,7 +318,7 @@ The display title belongs in frontmatter:
 title: "..."
 ```
 
-This can be introduced after v1 as a migration path. Steam v1 should not churn existing vault paths without a clear need.
+This can be introduced as Vault Layout v3 before release if the migration is contained and tested; otherwise it remains an explicit later migration. Steam v1 should not churn existing vault paths accidentally.
 
 ---
 
@@ -398,3 +412,5 @@ human-readable vault records
 ```
 
 This keeps the app usable, keeps the vault portable, and lets any future AI/tool understand the user's taste without forcing AKASHA to own the AI layer.
+
+For the active hardening roadmap, see [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md).

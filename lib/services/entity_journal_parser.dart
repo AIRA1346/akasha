@@ -54,6 +54,8 @@ abstract final class EntityJournalParser {
     final added = addedAt ?? DateTime.now();
     final buffer = StringBuffer()
       ..writeln('---')
+      ..writeln('schema_version: 3')
+      ..writeln('record_id: "rec_${_escape(entityId)}"')
       ..writeln('entity_type: ${entityType.name}')
       ..writeln('entity_id: "${_escape(entityId)}"')
       ..writeln('record_kind: ${RecordKind.entityJournal.name}')

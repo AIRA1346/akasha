@@ -13,7 +13,7 @@ import 'entity_vault_path_conflict.dart';
 import 'event_ledger_service.dart';
 import '../core/app_vault.dart';
 import 'record_summary_index_service.dart';
-import 'vault_safe_filename.dart';
+import 'vault_record_path_resolver.dart';
 import 'vault_trash_service.dart';
 
 /// `vault/entities/{type}/` 쓰기 — Wave 4.
@@ -31,14 +31,13 @@ class EntityVaultStore {
     required String vaultPath,
     required EntityAnchorType entityType,
     required String title,
+    String entityId = '',
   }) {
-    final subdir = EntityJournalParser.entitySubdir(entityType);
-    final safeTitle = VaultSafeFilename.fromTitle(title);
-    return p.join(
-      vaultPath,
-      EntityJournalParser.entitiesDirName,
-      subdir,
-      '$safeTitle.md',
+    return VaultRecordPathResolver.resolveEntityPath(
+      vaultRoot: vaultPath,
+      entityType: entityType,
+      entityId: entityId,
+      title: title,
     );
   }
 
@@ -58,6 +57,7 @@ class EntityVaultStore {
       vaultPath: vaultPath,
       entityType: entity.anchorType,
       title: entity.title,
+      entityId: entity.entityId,
     );
 
     await Directory(p.dirname(targetPath)).create(recursive: true);
@@ -150,6 +150,7 @@ class EntityVaultStore {
         vaultPath: vaultRoot,
         entityType: entry.entityType,
         title: resolvedTitle,
+        entityId: entry.entityId,
       );
       if (nextPath != entry.storagePath) {
         await _assertPathAvailable(

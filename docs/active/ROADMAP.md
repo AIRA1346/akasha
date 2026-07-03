@@ -1,8 +1,8 @@
 # AKASHA Roadmap (로드맵)
 
 > **지위:** 프로젝트 개발 로드맵 SSOT (5대 정체성 카테고리 기준)
-> **갱신:** 2026-07-02 — **Steam v1 = Free Personal Sanctum Archive**
-> **최상위 지침:** [PROJECT_CONSTITUTION.md](PROJECT_CONSTITUTION.md) · [VISION.md](VISION.md)
+> **갱신:** 2026-07-03 — **Steam v1 = Free Personal Sanctum Archive** · Infinite Archive hardening plan 정렬
+> **최상위 지침:** [PROJECT_CONSTITUTION.md](PROJECT_CONSTITUTION.md) · [VISION.md](VISION.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md)
 
 ---
 
@@ -37,7 +37,18 @@
 * **[x] Sanctum C1~C4:** wiki 칩 · 출연 · 갤러리 · 완성도 · HTML보내기
 * **[x] 클립보드 가져오기:** YAML/Markdown 파싱 · 수동 가져오기
 * **[x] (v1) Agent Vault Protocol v1 범위 문서:** [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) · 현장 [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)
+* **[x] (architecture) Infinite Archive Hardening Plan:** index · taste signal · agent write · ID path 기준 정렬
+* **[x] (architecture) Ultimate Archive pre-release audit:** Vault Layout v3 canonical 후보 — 새 Work/Entity ID path · operation contract
+* **[x] (pre-release slice) Vault Layout v3 feasibility:** path resolver · 새 Work/Entity ID path · schema fixture 검증
+* **[x] (pre-release slice) ArchiveOperation model + validator:** agent/app/script write intent · identity/path/payload 검증
+* **[x] (pre-release slice) Candidate Store + promotion validator:** agent 추출 후보를 정식 archive와 분리
+* **[x] (architecture) Ultimate Archive backlog:** 발견된 후속 작업 전체 목록화
+* **[x] (pre-release slice) Operation execution service:** 검증된 `promoteCandidate`를 Entity journal · catalog mirror · candidate close까지 연결
+* **[x] (pre-release slice) Operation idempotency + applied log:** agent/script retry를 안전하게 만들기
+* **[x] (pre-release slice) Operation conflict checks:** expectedRevision/hash/mtime 기준으로 동시 편집 보호
+* **[ ] (pre-release next) Operation crash recovery marker:** write 성공 후 log 실패 상황을 roll-forward
 * **[ ] (post-launch) Agent Vault Protocol 구현·dogfood:** 대화 → vault operation · 충돌 · watch (§8 체크리스트)
+* **[ ] (post-launch) Structured archive operation contract:** create/update/append/tag/rating/status/link/promote/merge operation 검증
 * **[ ] (v1.1+) 오늘의 회상 카드:** 리마인드 카드 (보류)
 * **[ ] (v1.1+) 타임라인 / 완성 캘린더:** 날짜 기준 시각화 (보류)
 
@@ -86,6 +97,7 @@
 * **[x] registry_builder · CI gates:** 품질 자동화 — post-v1 scale 관측
 * **[x] 10,048 works milestone:** 성과 보존 — v1 메시지에서 과장하지 않음
 * **[x] Steam 릴리즈 빌드 패키징:** M2 (installer · 스토어 · 무료 출시)
+* **[ ] (post-v1) Derived vault indexes 확장:** tag · link · incoming · taste · snippet index
 * **[ ] (post-v1) AI 자동 수집 파이프라인 (E1~E2):** 보류
 * **[ ] (post-v1) 50k+ CDN 및 R2 확장:** 보류
 * **[ ] (장기) Riverpod 마이그레이션:** 상태 관리 프레임워크 고도화 (보류)

@@ -1,11 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:path/path.dart' as p;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
-import 'package:akasha/services/entity_vault_path_conflict.dart';
 import 'package:akasha/services/entity_vault_store.dart';
 import 'package:akasha/services/file_service.dart';
 
@@ -33,23 +31,24 @@ void main() {
       }
     });
 
-    test('A: same type+title different entityId throws EntityVaultPathConflict', () async {
-      const title = 'Tiger';
-      const idA = 'pe_u_tiger001';
-      const idB = 'pe_u_tiger002';
+    test(
+      'A: same type+title different entityId use distinct ID paths',
+      () async {
+        const title = 'Tiger';
+        const idA = 'pe_u_tiger001';
+        const idB = 'pe_u_tiger002';
 
-      await store.saveCatalogEntity(
-        vaultPath: tempDir.path,
-        entity: UserCatalogEntity.userLocal(
-          entityId: idA,
-          type: EntityAnchorType.person,
-          title: title,
-        ),
-        body: 'first',
-      );
+        final first = await store.saveCatalogEntity(
+          vaultPath: tempDir.path,
+          entity: UserCatalogEntity.userLocal(
+            entityId: idA,
+            type: EntityAnchorType.person,
+            title: title,
+          ),
+          body: 'first',
+        );
 
-      expect(
-        store.saveCatalogEntity(
+        final second = await store.saveCatalogEntity(
           vaultPath: tempDir.path,
           entity: UserCatalogEntity.userLocal(
             entityId: idB,
@@ -57,41 +56,32 @@ void main() {
             title: title,
           ),
           body: 'second',
-        ),
-        throwsA(isA<EntityVaultPathConflict>().having(
-          (e) => e.existingEntityId,
-          'existingEntityId',
-          idA,
-        ).having(
-          (e) => e.incomingEntityId,
-          'incomingEntityId',
-          idB,
-        )),
-      );
+        );
 
-      final content = await File(
-        p.join(tempDir.path, 'entities', 'person', 'Tiger.md'),
-      ).readAsString();
-      expect(content, contains(idA));
-      expect(content, isNot(contains(idB)));
-    });
+        expect(first.storagePath, endsWith('pe_u_tiger001.md'));
+        expect(second.storagePath, endsWith('pe_u_tiger002.md'));
+        expect(File(first.storagePath).existsSync(), isTrue);
+        expect(File(second.storagePath).existsSync(), isTrue);
+      },
+    );
 
-    test('B: safeTitle collision from different titles throws', () async {
-      const idA = 'pe_u_slash001';
-      const idB = 'pe_u_slash002';
+    test(
+      'B: ID paths avoid safeTitle collision from different titles',
+      () async {
+        const idA = 'pe_u_slash001';
+        const idB = 'pe_u_slash002';
 
-      await store.saveCatalogEntity(
-        vaultPath: tempDir.path,
-        entity: UserCatalogEntity.userLocal(
-          entityId: idA,
-          type: EntityAnchorType.person,
-          title: 'A/B',
-        ),
-        body: 'slash',
-      );
+        final first = await store.saveCatalogEntity(
+          vaultPath: tempDir.path,
+          entity: UserCatalogEntity.userLocal(
+            entityId: idA,
+            type: EntityAnchorType.person,
+            title: 'A/B',
+          ),
+          body: 'slash',
+        );
 
-      expect(
-        store.saveCatalogEntity(
+        final second = await store.saveCatalogEntity(
           vaultPath: tempDir.path,
           entity: UserCatalogEntity.userLocal(
             entityId: idB,
@@ -99,10 +89,12 @@ void main() {
             title: 'A_B',
           ),
           body: 'underscore',
-        ),
-        throwsA(isA<EntityVaultPathConflict>()),
-      );
-    });
+        );
+
+        expect(first.storagePath, endsWith('pe_u_slash001.md'));
+        expect(second.storagePath, endsWith('pe_u_slash002.md'));
+      },
+    );
 
     test('C: same entityId re-save preserves addedAt and succeeds', () async {
       const id = 'pe_u_resave01';
@@ -133,6 +125,7 @@ void main() {
       expect(second.addedAt, first.addedAt);
       expect(second.addedAt, addedAt);
       expect(second.body, 'v2');
+      expect(second.storagePath, endsWith('pe_u_resave01.md'));
     });
 
     test('D: cross-type same title both succeed', () async {
@@ -158,8 +151,14 @@ void main() {
         body: 'concept',
       );
 
-      expect(person.storagePath, contains('entities${Platform.pathSeparator}person'));
-      expect(concept.storagePath, contains('entities${Platform.pathSeparator}concept'));
+      expect(
+        person.storagePath,
+        contains('entities${Platform.pathSeparator}person'),
+      );
+      expect(
+        concept.storagePath,
+        contains('entities${Platform.pathSeparator}concept'),
+      );
       expect(File(person.storagePath).existsSync(), isTrue);
       expect(File(concept.storagePath).existsSync(), isTrue);
     });

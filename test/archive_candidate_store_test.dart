@@ -1,0 +1,226 @@
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:akasha/core/archiving/archive_candidate.dart';
+import 'package:akasha/core/archiving/archive_candidate_validator.dart';
+import 'package:akasha/core/archiving/archive_operation_validator.dart';
+import 'package:akasha/core/archiving/entity_anchor.dart';
+import 'package:akasha/models/enums.dart';
+import 'package:akasha/models/user_catalog_entity.dart';
+import 'package:akasha/services/archive_candidate_store.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+void main() {
+  group('ArchiveCandidate', () {
+    test('round-trips JSON and preserves candidate status', () {
+      final candidate = _candidate(
+        status: ArchiveCandidateStatus.promoted,
+        proposedEntityId: 'pe_u_target01',
+      );
+
+      final restored = ArchiveCandidate.fromJson(candidate.toJson());
+
+      expect(restored.candidateId, candidate.candidateId);
+      expect(restored.entityType, EntityAnchorType.person);
+      expect(restored.status, ArchiveCandidateStatus.promoted);
+      expect(restored.proposedEntityId, 'pe_u_target01');
+      expect(restored.tags, ['pilot']);
+    });
+
+    test('buildCandidateId uses candidate namespace', () {
+      expect(
+        ArchiveCandidate.buildCandidateId(
+          EntityAnchorType.concept,
+          suffix: 'abc12345',
+        ),
+        'cand_concept_abc12345',
+      );
+    });
+  });
+
+  group('ArchiveCandidateValidator', () {
+    test('accepts valid open candidate promotion', () {
+      final candidate = _candidate();
+      final result = ArchiveCandidateValidator.validatePromotion(
+        candidate: candidate,
+        targetEntity: const EntityAnchor(
+          entityId: 'pe_u_target01',
+          type: EntityAnchorType.person,
+        ),
+      );
+
+      expect(result.isValid, isTrue);
+    });
+
+    test('rejects promotion when candidate already closed', () {
+      final candidate = _candidate(status: ArchiveCandidateStatus.dismissed);
+      final result = ArchiveCandidateValidator.validatePromotion(
+        candidate: candidate,
+        targetEntity: const EntityAnchor(
+          entityId: 'pe_u_target01',
+          type: EntityAnchorType.person,
+        ),
+      );
+
+      expect(result.isValid, isFalse);
+      expect(_codes(result), contains('candidate_not_open'));
+    });
+
+    test('rejects existing entity id and duplicate title', () {
+      final candidate = _candidate(title: 'Hero');
+      final context = ArchiveCandidateValidator.contextFromCatalog([
+        UserCatalogEntity.userLocal(
+          entityId: 'pe_u_target01',
+          type: EntityAnchorType.person,
+          title: 'Hero',
+          subtype: MediaCategory.manga,
+        ),
+      ]);
+
+      final result = ArchiveCandidateValidator.validatePromotion(
+        candidate: candidate,
+        targetEntity: const EntityAnchor(
+          entityId: 'pe_u_target01',
+          type: EntityAnchorType.person,
+        ),
+        context: context,
+      );
+
+      expect(result.isValid, isFalse);
+      expect(_codes(result), contains('target_entity_exists'));
+      expect(_codes(result), contains('candidate_title_duplicate'));
+    });
+
+    test('rejects mismatched target entity type', () {
+      final result = ArchiveCandidateValidator.validatePromotion(
+        candidate: _candidate(),
+        targetEntity: const EntityAnchor(
+          entityId: 'co_u_target01',
+          type: EntityAnchorType.concept,
+        ),
+      );
+
+      expect(result.isValid, isFalse);
+      expect(_codes(result), contains('candidate_type_mismatch'));
+    });
+
+    test('rejects invalid base candidate confidence and source id', () {
+      final result = ArchiveCandidateValidator.validateCandidate(
+        _candidate(sourceRecordId: '../rec_bad', confidence: 1.5),
+      );
+
+      expect(result.isValid, isFalse);
+      expect(_codes(result), contains('candidate_source_record_unsafe'));
+      expect(_codes(result), contains('candidate_confidence_range'));
+    });
+  });
+
+  group('ArchiveCandidateStore', () {
+    test('round-trips candidates.json under catalog folder', () async {
+      final tempDir = await Directory.systemTemp.createTemp(
+        'akasha_candidates_',
+      );
+      final store = ArchiveCandidateStore();
+      try {
+        await store.upsert(vaultPath: tempDir.path, candidate: _candidate());
+
+        final loaded = await store.load(tempDir.path);
+
+        expect(loaded, hasLength(1));
+        expect(loaded.first.candidateId, 'cand_person_alpha001');
+        expect(loaded.first.status, ArchiveCandidateStatus.candidate);
+
+        final file = File('${tempDir.path}/catalog/candidates.json');
+        expect(await file.exists(), isTrue);
+        final decoded = jsonDecode(await file.readAsString()) as Map;
+        expect(decoded['version'], ArchiveCandidateStore.schemaVersion);
+        expect(decoded['candidates'], isA<List>());
+      } finally {
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test(
+      'markPromoted closes candidate and removes it from open list',
+      () async {
+        final tempDir = await Directory.systemTemp.createTemp(
+          'akasha_candidates_',
+        );
+        final store = ArchiveCandidateStore();
+        try {
+          await store.upsert(vaultPath: tempDir.path, candidate: _candidate());
+
+          await store.markPromoted(
+            vaultPath: tempDir.path,
+            candidateId: 'cand_person_alpha001',
+            entityId: 'pe_u_target01',
+            updatedAt: DateTime.utc(2026, 7, 4),
+          );
+
+          expect(await store.openCandidates(tempDir.path), isEmpty);
+          final promoted = await store.lookup(
+            tempDir.path,
+            'cand_person_alpha001',
+          );
+          expect(promoted?.status, ArchiveCandidateStatus.promoted);
+          expect(promoted?.proposedEntityId, 'pe_u_target01');
+        } finally {
+          if (await tempDir.exists()) {
+            await tempDir.delete(recursive: true);
+          }
+        }
+      },
+    );
+
+    test('rejects invalid candidate on upsert', () async {
+      final tempDir = await Directory.systemTemp.createTemp(
+        'akasha_candidates_',
+      );
+      final store = ArchiveCandidateStore();
+      try {
+        expect(
+          () => store.upsert(
+            vaultPath: tempDir.path,
+            candidate: _candidate(candidateId: '../bad'),
+          ),
+          throwsA(isA<ArgumentError>()),
+        );
+      } finally {
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+  });
+}
+
+ArchiveCandidate _candidate({
+  String candidateId = 'cand_person_alpha001',
+  EntityAnchorType entityType = EntityAnchorType.person,
+  String title = 'Hero',
+  String sourceRecordId = 'rec_wk_u_source1',
+  String evidence = 'Appears in the third scene.',
+  ArchiveCandidateStatus status = ArchiveCandidateStatus.candidate,
+  double confidence = 0.8,
+  String? proposedEntityId,
+}) {
+  return ArchiveCandidate(
+    candidateId: candidateId,
+    entityType: entityType,
+    title: title,
+    sourceRecordId: sourceRecordId,
+    evidence: evidence,
+    status: status,
+    confidence: confidence,
+    proposedEntityId: proposedEntityId,
+    aliases: const ['The Hero'],
+    tags: const ['pilot'],
+    createdAt: DateTime.utc(2026, 7, 3),
+    updatedAt: DateTime.utc(2026, 7, 3),
+  );
+}
+
+Set<String> _codes(ArchiveOperationValidationResult result) =>
+    result.issues.map((issue) => issue.code).toSet();

@@ -23,7 +23,9 @@ void main() {
       final tempDir = await Directory.systemTemp.createTemp('akasha_readme_');
       try {
         await AkashaFileService().setVaultPath(tempDir.path);
-        final readme = File(p.join(tempDir.path, VaultReadmeWriter.readmeFileName));
+        final readme = File(
+          p.join(tempDir.path, VaultReadmeWriter.readmeFileName),
+        );
         expect(await readme.exists(), isTrue);
         final text = await readme.readAsString();
         expect(text, contains('entity_path_index.json'));
@@ -121,7 +123,7 @@ void main() {
   });
 
   group('EntityVaultStore title rename', () {
-    test('renames file when title changes', () async {
+    test('keeps ID path stable when title changes', () async {
       final store = EntityVaultStore();
       final tempDir = await Directory.systemTemp.createTemp('akasha_rename_');
       try {
@@ -145,8 +147,8 @@ void main() {
           vaultPath: tempDir.path,
         );
 
-        expect(renamed.storagePath, contains('New Name.md'));
-        expect(File(saved.storagePath).existsSync(), isFalse);
+        expect(renamed.storagePath, saved.storagePath);
+        expect(renamed.storagePath, contains('pe_u_rename01.md'));
         expect(File(renamed.storagePath).existsSync(), isTrue);
         expect(renamed.title, 'New Name');
 

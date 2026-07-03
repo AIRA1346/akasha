@@ -1,6 +1,6 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-07-02 (@10048 · **App theme palette 확장**)
+> **갱신:** 2026-07-03 (@docs · **Infinite Archive hardening plan**)
 > **Git:** current tip은 `git log -1` 기준 · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
 > **현재 실행:** **Steam 무료 출시 준비** — [STEAM_RELEASE.md](STEAM_RELEASE.md) · IAP/Agent/player implementation layer **post-launch**
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
@@ -13,14 +13,23 @@
  
 | 항목 | 상태 |
 |------|------|
-| **flutter test** | **672 PASS** |
+| **flutter test** | **709 PASS** |
 | **flutter analyze lib** | **0 issue** |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
 | **앱 테마** | `AkashaPalette` ThemeExtension · sidebar/bottom/search/card/preview rail 반영 ✅ |
 | **사이드바 서재** | `나만의 서재` 목록·active·`+`·select·삭제·DnD ✅ |
 | **Poster Localizing** | URL 입력 → vault `posters/` 저장 → `poster: "posters/..."` ✅ |
 | **Agent Vault UI** | Work Journal 감상 카드 slice ✅ · dogfood 관찰은 [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
-| **Infinite Taste Archive** | 외부 도구/AI 친화적 개인 취향 아카이브 ADR ✅ · `.akasha/record_index.json` slice ✅ — [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) |
+| **Infinite Taste Archive** | 외부 도구/AI가 읽기 쉬운 개인 취향 아카이브 ADR ✅ · `.akasha/record_index.json` slice ✅ — [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) |
+| **Infinite Archive Hardening** | 무한 확장을 위한 index · taste signal · agent write contract · ID path 계획 ✅ — [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) |
+| **Pre-release Architecture Audit** | Vault Layout v3 canonical 후보 — ID path · unified operation · candidate/taste 계약 감사 ✅ — [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) |
+| **Vault Layout v3 Slice** | 새 Work/Entity ID path canonical · `schema_version: 3` · full tests **709 PASS** · analyze **0** ✅ |
+| **ArchiveOperation Contract** | `createRecord/updateFrontmatter/appendSection/tag/rating/status/link/promote/merge` validator slice ✅ · focused tests **11 PASS** · analyze **0** |
+| **Candidate Store** | `catalog/candidates.json` · 후보/승격/중복 검증 · focused archive contract tests **21 PASS** ✅ |
+| **Operation Executor** | validated `promoteCandidate` → Entity journal · catalog mirror · candidate close ✅ · focused contract tests **34 PASS** · full tests **709 PASS** |
+| **Operation Applied Log** | `.akasha/ops/applied.jsonl` · `operationId` retry-safe · `alreadyApplied` result ✅ |
+| **Operation Conflict Guard** | `expectedRevision` · mtime/length/hash revision · existing target overwrite block ✅ |
+| **Ultimate Archive Backlog** | 발견된 후속 작업 전체 목록화 ✅ — [ULTIMATE_ARCHIVE_BACKLOG.md](ULTIMATE_ARCHIVE_BACKLOG.md) |
 | **v1 핵심** | **Personal Sanctum vault 아카이브** — 말하기/쓰기 → `.md`/YAML → 예쁜 UI → 외부 도구가 읽기 쉬운 기록 |
 | **Phase 1** | Record Foundation ✅ |
 | **Sanctum** | C1~C4 ✅ · Vault agent 가이드 ✅ |
@@ -69,7 +78,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **672 PASS** | ✅ |
+| `flutter test` | **709 PASS** | ✅ |
 | `flutter analyze lib` | **0 issue** | ✅ |
 | `preflight_check` | PASS | ✅ |
 | `registry_builder` | PASS | — (post-v1 scale) |
@@ -85,7 +94,7 @@
 
 | 게이트 | 상태 | v1 blocking | 비고 |
 |--------|:----:|:-----------:|------|
-| **G-AUTO** | ✅ | ✅ | test **672** · analyze **0** · release build **PASS** |
+| **G-AUTO** | ✅ | ✅ | test **709** · analyze **0** · release build **PASS** |
 | **G-VAULT** | ✅ | **✅** | 볼트 연동·아카이브·Sanctum 저장·기록 UI — 사용자 수동 dogfood 완료 |
 | **G-QA** | ✅ | ✅ | P0 수동 **12/12** (2026-06-13) · 사용자 dogfood 확인 |
 | **G-STEAM** | 🔶 | ✅ | SteamPipe 스크립트/SDK 확인 · 실제 upload/review 대기 |
@@ -99,7 +108,7 @@
 
 | 트랙 | 다음 | v1 우선 |
 |------|------|:-------:|
-| **정리 스프린트** | Home UI·테마·사이드바·포스터 로컬라이징 ✅ · analyze 0 · test 672 | — |
+| **정리 스프린트** | Home UI·테마·사이드바·포스터 로컬라이징 ✅ · analyze 0 · test 709 | — |
 | **akasha-db 소유권** | 구조 감사 · 내부 148파일 dirty · backup branch **제안** | **P0** |
 | **Personal Archive (v1)** | vault 안정성 · Sanctum · Library/Collection · Agent Protocol | **P0** |
 | **Sprint B** | ✅ B1 · Vault agent 가이드 | — |
@@ -145,6 +154,7 @@
 | 3 | BuildID **24015480** default branch Set Live + Steamworks Build review 갱신 | P0 |
 | 4 | Store screenshots 촬영 (demo/owned/generated images only) | P0 |
 | 5 | Agent Vault Protocol v1 구현·dogfood | **post-launch** |
+| 6 | Operation crash recovery marker — write 성공 후 log 실패를 roll-forward | P0 architecture |
 
 ---
 
@@ -160,7 +170,7 @@
 | **304** | `AIRA1346/akasha-db` remote vs 앱 repo shard 커밋 **동기화** | 🔶 | audit §3.1 |
 | **305** | registry manifest 4파일 — rebuild 산출물 **커밋 제외** 관례 유지 | ✅ 관례 | 본 문서 헤더 |
 | **306** | Home UI 정리 — search-first · Slice 1 앱 테마 · Slice 2 사이드바 서재 · dead wiring cleanup | ✅ | `0db21d38` |
-| **307** | `flutter test` **672** · `flutter analyze lib` **0** 유지 | ✅ | §2 Gate |
+| **307** | `flutter test` **709** · `flutter analyze lib` **0** 유지 | ✅ | §2 Gate |
 | **308** | Agent Vault UI dogfood — P1-8 raw wiki link · P1-9 중앙 감상 밀도 · P1-10 앱 테마 범위 | 🔶 | [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
 | **309** | M3 · Agent/player implementation layer · 대규모 index/path migration | 🚫 **금지** (본 스프린트) | — |
 | **310** | `PreviewMemoBar` — post-v1 dormant UI cleanup 후보 (`showPreviewMemoBar` false · `내 감상` 카드와 역할 중복) | ⏸️ v1 비활성 유지 | [preview_memo_bar.dart](../../lib/screens/home/views/preview_memo_bar.dart) · dogfood §P2 |
@@ -173,6 +183,15 @@
 | **317** | Workbench recovery drafts — Work/Entity 편집 중 `.akasha/recovery/` 임시 스냅샷 · Snackbar 복구 제안 | ✅ | [workbench_recovery_draft_store.dart](../../lib/services/workbench_recovery_draft_store.dart) |
 | **318** | Vault trash UI — Vault 설정에서 휴지통 목록·복구·영구 삭제 | ✅ | [vault_trash_dialog.dart](../../lib/screens/home/dialogs/vault_trash_dialog.dart) |
 | **319** | Desktop preferences slice — `Esc` 앱 메뉴 · 한국어/English 전환 · 표시 배율 저장 · 종료 버튼 | ✅ | [app_preferences_dialog.dart](../../lib/screens/home/dialogs/app_preferences_dialog.dart) |
+| **320** | Infinite Archive Hardening Plan — index · taste signal · agent write contract · ID path 기준 정리 | ✅ docs | [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) |
+| **321** | Ultimate Archive pre-release audit — Vault Layout v3 canonical 전환 가능성 평가 | ✅ docs | [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) |
+| **322** | Vault Layout v3 feasibility slice — `VaultRecordPathResolver` · 새 Work/Entity ID path · schema_version 3 | ✅ code | [vault_record_path_resolver.dart](../../lib/services/vault_record_path_resolver.dart) |
+| **323** | ArchiveOperation contract slice — agent/app/script write intent model · validator · operation JSON round-trip | ✅ code | [archive_operation_validator.dart](../../lib/core/archiving/archive_operation_validator.dart) |
+| **324** | Candidate Store slice — `catalog/candidates.json` · promotion validator · duplicate/title/type checks | ✅ code | [archive_candidate_store.dart](../../lib/services/archive_candidate_store.dart) |
+| **325** | Ultimate Archive backlog — 놓치면 안 되는 operation/index/taste/taxonomy/agent 후속 작업 목록화 | ✅ docs | [ULTIMATE_ARCHIVE_BACKLOG.md](ULTIMATE_ARCHIVE_BACKLOG.md) |
+| **326** | Operation Executor slice — validated `promoteCandidate`를 Entity journal + catalog mirror + candidate close로 실행 | ✅ code | [archive_operation_executor.dart](../../lib/services/archive_operation_executor.dart) |
+| **327** | Operation Applied Log slice — `.akasha/ops/applied.jsonl`로 operation retry를 idempotent 처리 | ✅ code | [archive_operation_applied_log.dart](../../lib/services/archive_operation_applied_log.dart) |
+| **328** | Operation Conflict Guard slice — `expectedRevision`과 파일 revision으로 기존 target overwrite 차단 | ✅ code | [archive_record_revision_service.dart](../../lib/services/archive_record_revision_service.dart) |
 
 ---
 
@@ -212,4 +231,13 @@
 | 2026-07-01 | **Desktop preferences slice** — `Esc` 앱 메뉴 · 한국어/English 전환 · 표시 배율 · 종료 버튼 · analyze **0** · test **664** · release build **PASS** |
 | 2026-07-02 | **Steam 무료 출시 정리** — Early Access 미사용 · 앱 내 구매 post-launch · no-IAP 테마 UI 정리 · [STEAM_RELEASE.md](STEAM_RELEASE.md) |
 | 2026-07-02 | **App theme palette 확장** — `AkashaPalette` ThemeExtension · sidebar/bottom/search/card/preview rail 테마 반영 · analyze **0** · test **672** · release build **PASS** |
+| 2026-07-03 | **Infinite Archive Hardening Plan** — AKASHA를 AI 서비스가 아닌 궁극의 아카이브 기반층으로 유지하기 위한 index · taste signal · agent write · ID path 기준 정렬 |
+| 2026-07-03 | **Ultimate Archive Pre-release Audit** — 출시 전 Vault Layout v3 canonical 후보 확정: 새 Work/Entity는 ID path, agent write는 operation contract 중심 |
+| 2026-07-03 | **Vault Layout v3 feasibility slice** — central path resolver · 새 Work/Entity ID path · `schema_version: 3` · full tests **709 PASS** · analyze **0** |
+| 2026-07-03 | **ArchiveOperation contract slice** — agent/app/script 쓰기 intent 모델 · validator · JSON round-trip · focused tests **11 PASS** · full tests **709 PASS** · analyze **0** |
+| 2026-07-03 | **Candidate Store slice** — `catalog/candidates.json` · candidate/promoted/dismissed/merged 상태 · 승격 중복/타입 검증 · focused archive contract tests **21 PASS** · full tests **709 PASS** |
+| 2026-07-03 | **Ultimate Archive Backlog** — operation execution · index scale · taste signal · markdown contract · entity taxonomy · agent/tool 후속 작업 목록화 |
+| 2026-07-03 | **Operation Executor slice** — `promoteCandidate` operation end-to-end 실행: entity journal · catalog mirror · candidate promoted · indexes 생성 · focused contract tests **34 PASS** · full tests **709 PASS** · analyze **0** |
+| 2026-07-03 | **Operation Applied Log slice** — `.akasha/ops/applied.jsonl` · operationId 중복 적용 방지 · repeated `promoteCandidate`는 `alreadyApplied`로 반환 |
+| 2026-07-03 | **Operation Conflict Guard slice** — `expectedRevision`을 mtime/length/hash 파일 revision으로 정의 · 기존 target 파일/스테일 revision은 `operation_conflict`로 차단 |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |

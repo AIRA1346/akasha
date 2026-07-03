@@ -126,7 +126,7 @@ void main() {
       addTearDown(() async => vault.setVaultPath(''));
 
       final item = createItem(
-        workId: 'wk_u_trash0001',
+        workId: 'wk_u_trash001',
         title: 'Trash Demo',
         category: MediaCategory.manga,
         tags: const ['safety'],
@@ -146,7 +146,7 @@ void main() {
               .list(recursive: true)
               .where(
                 (entity) =>
-                    entity is File && entity.path.endsWith('Trash Demo.md'),
+                    entity is File && entity.path.endsWith('wk_u_trash001.md'),
               )
               .toList();
       expect(trashFiles, hasLength(1));

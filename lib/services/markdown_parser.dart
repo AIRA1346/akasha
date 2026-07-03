@@ -59,6 +59,10 @@ class MarkdownParser {
   static String serialize(AkashaItem item) {
     final buffer = StringBuffer();
     buffer.writeln('---');
+    buffer.writeln('schema_version: 3');
+    if (item.workId.isNotEmpty) {
+      buffer.writeln('record_id: "rec_${item.workId.replaceAll('"', '\\"')}"');
+    }
     buffer.writeln('work_id: "${item.workId}"');
     if (item.workId.isNotEmpty) {
       final entityFields = EntityFrontmatter.forWorkItem(

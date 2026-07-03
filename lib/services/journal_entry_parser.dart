@@ -38,6 +38,7 @@ abstract final class JournalEntryParser {
     final added = addedAt ?? DateTime.now();
     final buffer = StringBuffer()
       ..writeln('---')
+      ..writeln('schema_version: 3')
       ..writeln('record_kind: freeformJournal')
       ..writeln('record_id: "$recordId"')
       ..writeln('title: "${_escape(title)}"')

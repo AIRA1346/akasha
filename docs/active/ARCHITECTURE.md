@@ -4,17 +4,32 @@
 > **기준일:** 2026-07-02
 > **제품·포스터 SSOT:** [VISION.md](VISION.md) · **아카이빙 북극성:** [history/product/ultimate-archiving-vision.md](../history/product/ultimate-archiving-vision.md)
 
-관련: [history/policy/akasha-db-policy.md](../history/policy/akasha-db-policy.md) · [history/policy/catalog-ownership.md](../history/policy/catalog-ownership.md) · [ROADMAP.md](ROADMAP.md)
+관련: [history/policy/akasha-db-policy.md](../history/policy/akasha-db-policy.md) · [history/policy/catalog-ownership.md](../history/policy/catalog-ownership.md) · [ROADMAP.md](ROADMAP.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md)
 
 ---
 
 ## 0. 제품 정체성 (정정)
 
+### 0.0 무한 아카이브 Hardening (2026-07-03)
+
+> **실행 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
+> **출시 전 감사:** [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md)
+
+이 문서에서 "AI 친화적"은 AKASHA가 AI 서비스, 플레이어, 도구 오케스트레이터가 된다는 뜻이 아니다. AKASHA의 책임은 **원본 vault를 보존하고, 외부 도구/AI가 읽고 쓸 수 있는 안정적인 아카이브 계약을 제공하는 것**이다.
+
+무한 확장을 위해 지금부터 엄격하게 볼 축:
+
+1. 원본 vault `.md`는 source of truth
+2. `.akasha/` 인덱스는 파생물이며 재구축 가능해야 함
+3. 취향은 rating/tag/status/memo/link/collection 등 증거 기반 signal로 모델링
+4. Agent write는 파일 난사가 아니라 허용된 operation 계약으로 표현
+5. 제목/path가 아니라 안정 ID가 장기 identity의 기준
+
 ### 0.1 최종 비전
 
 > **제품 SSOT:** [ultimate-archiving-vision.md](../history/product/ultimate-archiving-vision.md) — 아래는 인프라 문서 관점 요약.
 
-**AKASHA = 지식 정보(Entity Anchor) + 나만의 일기(Subjective Journal) + 시각적 감상(Appreciation) + AI 친화적 지식 그래프**
+**AKASHA = 지식 정보(Entity Anchor) + 나만의 일기(Subjective Journal) + 시각적 감상(Appreciation) + 외부 도구/AI가 읽을 수 있는 지식 그래프**
 
 | 축 | 역할 |
 |----|------|

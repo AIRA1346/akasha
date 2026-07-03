@@ -1,0 +1,140 @@
+# Ultimate Archive Backlog
+
+> **Status:** Active backlog
+> **Date:** 2026-07-03
+> **Scope:** Do not forget the architecture work discovered while hardening AKASHA as an ultimate archive substrate.
+> **Boundary:** AKASHA is the durable archive layer. AI agents, media playback, recommendations, and external automation remain outside AKASHA unless they write/read through explicit archive contracts.
+> **Related:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) · [ROADMAP.md](ROADMAP.md) · [PROJECT_STATUS.md](PROJECT_STATUS.md)
+
+## 1. Already Landed
+
+These are done enough to treat as current architecture baseline.
+
+| ID | Work | Status | Anchor |
+| --- | --- | --- | --- |
+| UA-001 | Vault Layout v3 path identity for new Work/Entity records | ✅ done | `works/{category}/{work_id}.md`, `entities/{type}/{entity_id}.md` |
+| UA-002 | `schema_version: 3` and `record_id` emitted for new archive serializers | ✅ done | Work/Entity/Journal/Timeline serializers |
+| UA-003 | Central `VaultRecordPathResolver` | ✅ done | [vault_record_path_resolver.dart](../../lib/services/vault_record_path_resolver.dart) |
+| UA-004 | `ArchiveOperation` write-intent model | ✅ done | [archive_operation.dart](../../lib/core/archiving/archive_operation.dart) |
+| UA-005 | `ArchiveOperationValidator` safety gate | ✅ done | [archive_operation_validator.dart](../../lib/core/archiving/archive_operation_validator.dart) |
+| UA-006 | `ArchiveCandidate` model and lifecycle | ✅ done | `candidate` · `promoted` · `dismissed` · `merged` |
+| UA-007 | `catalog/candidates.json` durable Candidate Store | ✅ done | [archive_candidate_store.dart](../../lib/services/archive_candidate_store.dart) |
+| UA-008 | Candidate promotion validator | ✅ done | duplicate title/id · type mismatch · missing evidence/source |
+| UA-009 | Operation execution service for `promoteCandidate` | ✅ done | [archive_operation_executor.dart](../../lib/services/archive_operation_executor.dart) |
+| UA-102 | Operation idempotency and applied log | ✅ done | [archive_operation_applied_log.dart](../../lib/services/archive_operation_applied_log.dart) · `.akasha/ops/applied.jsonl` |
+| UA-103 | Operation conflict checks for executable operations | ✅ done | [archive_record_revision_service.dart](../../lib/services/archive_record_revision_service.dart) · `operation_conflict` |
+
+## 2. P0 Pre-Release Architecture Work
+
+These should stay visible because they protect the archive before external/AI writes become powerful.
+
+| ID | Work | Why It Matters | Suggested Next Slice |
+| --- | --- | --- | --- |
+| UA-104 | Candidate review/promotion UI | Candidate Store exists but is not yet a user-facing queue | Add a simple candidate list with promote/dismiss/merge actions |
+| UA-105 | Candidate duplicate detection beyond exact title | Exact title/id checks are first pass only | Add alias/title normalization and fuzzy duplicate warnings |
+| UA-106 | Record contract schema freeze | Markdown has a good base, not a complete final contract | Add/standardize `aliases`, `created_at`, `updated_at`, `source`, `evidence`, `external_ids`, `links` |
+| UA-107 | Entity subtype/role model | Top-level entity types are enough, but roles are not expressive enough | Add `entity_subtype`, `role`, or `relations` for character, actor, director, studio, franchise, OST |
+| UA-108 | Music/OST representation decision | Future prompt examples depend on music taste lookup | Decide whether music/OST is Work category, Entity subtype, or relation/taste signal |
+| UA-109 | v1/v2/v3 mixed-vault validation | Existing vaults must remain readable while new records use v3 | Add fixtures and rebuild tests for mixed legacy/title/ID paths |
+| UA-110 | Explicit v3 migration command | Existing files should never move accidentally | Build opt-in migration that updates paths, indexes, and backlinks atomically |
+| UA-111 | Operation crash recovery marker | A crash between vault write and applied-log append can leave partial success | Add `source_operation_id`/receipt repair so retries can roll forward safely |
+| UA-112 | Extend conflict guards to future mutating operations | Update/append/link operations are validated but not executable yet | Reuse revision guard when those operation executors land |
+
+## 3. P1 Index And Scale Work
+
+These are what make "infinite archive" fast instead of merely correct.
+
+| ID | Work | Why It Matters | Suggested Direction |
+| --- | --- | --- | --- |
+| UA-201 | Index manager wrapper | Indexes are fragmented JSON services today | Create one coordinator for record/link/entity/candidate/taste rebuilds |
+| UA-202 | Incremental index updates | Full scans will degrade as vault grows | Update affected records only after saves/deletes/operations |
+| UA-203 | Sharded or SQLite-derived index | Large JSON files will eventually become too slow | Move toward `.akasha/vault_index.db` or sharded `.akasha/indexes/*` |
+| UA-204 | Title/alias index | AI and natural language lookup need fast title resolution | Index `title`, `aliases`, `original_title`, localized titles |
+| UA-205 | Tag index expansion | Taste/theme/mood lookup should not parse all Markdown | Keep normalized tag -> record ids |
+| UA-206 | Link and incoming graph hardening | Backlinks and graph exploration need stable relationship lookup | Keep outgoing and incoming indexes aligned |
+| UA-207 | Snippet/quote/scene index | Search should find meaningful passages without full-file reads | Store short derived excerpts with evidence paths |
+| UA-208 | Index rebuild validator | Derived indexes must be disposable and trustworthy | Add command/test that rebuilds and checks record counts/IDs/paths |
+
+## 4. P1 Taste And Preference Work
+
+These turn archive records into evidence-backed taste memory.
+
+| ID | Work | Why It Matters | Suggested Direction |
+| --- | --- | --- | --- |
+| UA-301 | Taste index schema | The user wants external agents to understand taste later | Reserve/implement `.akasha/indexes/taste_index.json` |
+| UA-302 | Evidence-backed taste signals | Avoid opaque "AI thinks user likes X" claims | Every signal must point to record/tag/rating/quote/link evidence |
+| UA-303 | Taste signal extractor | Ratings/tags/status/collections/quotes/revisits should become queryable signals | Derive `rating`, `tag`, `status`, `collection`, `memo`, `quote`, `revisit` signals |
+| UA-304 | Music/OST taste signals | Prompt example depends on action movie OST preferences | Model soundtrack/music preference from works, tags, notes, quotes, and links |
+| UA-305 | Taste privacy boundary | External tools should read only needed summaries | Future scoped query/read surfaces |
+
+## 5. Agent And External Tool Work
+
+These are post-launch unless the operation executor is kept very small.
+
+| ID | Work | Why It Matters | Suggested Direction |
+| --- | --- | --- | --- |
+| UA-401 | Agent Vault Protocol implementation/dogfood | Docs exist, real loop needs operation-backed write path | Conversation/request -> operation -> validator -> write -> index update |
+| UA-402 | Structured batch import contract | Large agent/import writes need safety | Batch validate all operations before applying |
+| UA-403 | Scoped local query API | External agents should not scan random files | Provide summaries/index lookups before raw file reads |
+| UA-404 | Permission/scoping model | Privacy leakage risk grows with external tools | Define read/write scopes per vault surface |
+| UA-405 | Agent conflict UX | User needs clear recovery when agent and app edits collide | Show reload/merge/retry states tied to operation failure |
+| UA-406 | Operation examples and fixtures | Future agents need stable examples | Add JSON fixtures for create/update/append/link/promote/merge |
+
+## 6. Markdown Contract Gaps
+
+These fields were identified as useful but are not fully standardized everywhere yet.
+
+| Field | Need | Status |
+| --- | --- | --- |
+| `aliases` | Natural lookup and duplicate detection | planned |
+| `original_title` | Translated/localized title stability | planned |
+| `external_ids` | Wikidata/Steam/ISBN/etc. identity joins | planned |
+| `created_at` | Durable creation timestamp separate from `added_at` | planned |
+| `updated_at` | Conflict checks and index freshness | planned |
+| `source` | user/app/agent/import/script provenance | planned |
+| `evidence` | Agent/candidate/taste claims need proof | planned |
+| `links` / `relations` | Structured relation layer beyond wiki body links | planned |
+| `entity_subtype` | character/creator/studio/franchise/track without exploding top-level types | planned |
+| `source_operation_id` | Trace write back to operation | planned |
+
+## 7. Entity Taxonomy Follow-Ups
+
+Top-level entity types are currently sufficient:
+
+```text
+work, person, event, place, concept, organization, custom
+```
+
+Follow-ups:
+
+- Keep `phenomenon` deprecated; prefer `concept` or `custom`.
+- Do not rush to add many top-level entity types.
+- Prefer `entity_subtype` / `role` / `relations` for `character`, `actor`, `director`, `writer`, `studio`, `publisher`, `franchise`, `soundtrack`, `track`, `theme`.
+- Decide whether `music` becomes a Work category or remains a taste/relation layer.
+
+## 8. Explicitly Deferred Or Separate Work
+
+These matter, but they are not the current ultimate-archive core.
+
+| ID | Work | Note |
+| --- | --- | --- |
+| D-001 | Steam BuildID `24015480` Set Live / review update | Release/ops, not archive architecture |
+| D-002 | Paid themes / IAP | Post-launch |
+| D-003 | Agent/player implementation layer | AKASHA must not become the player/orchestrator |
+| D-004 | akasha-db ownership A/B/C decision | Repo/registry operations track |
+| D-005 | Registry manifest 4 generated files | Keep excluded from commit unless intentionally rebuilding registry |
+| D-006 | Large UI cleanup hotspots | Separate code-health track: workbench/entity/home/editor files |
+
+## 9. Current Next Step
+
+The next architecture slice should be:
+
+> **UA-111 Operation crash recovery marker:** make partial operation success roll forward safely.
+
+Minimum done condition:
+
+- write or derive `source_operation_id` for operation-created records
+- detect "record written but applied log missing" on retry
+- roll forward to candidate close + applied log when the record matches the operation
+- reject mismatched partial records as conflict
+- prove with focused tests

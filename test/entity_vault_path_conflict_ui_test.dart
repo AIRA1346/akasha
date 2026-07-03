@@ -49,59 +49,54 @@ void main() {
       );
     }
 
-    test('A: Add Entity conflict exposes userMessage without crash', () async {
+    test('A: Add Entity with same title uses distinct ID path', () async {
       await seedPersonTiger('pe_u_tiger001');
 
-      await expectLater(
-        EntityArchiveService.saveFromAddResult(
-          result: CatalogEntityAddResult(
-            entity: UserCatalogEntity.userLocal(
-              entityId: 'pe_u_tiger002',
-              type: EntityAnchorType.person,
-              title: 'Tiger',
-            ),
-            journalBody: 'new body',
+      final saved = await EntityArchiveService.saveFromAddResult(
+        result: CatalogEntityAddResult(
+          entity: UserCatalogEntity.userLocal(
+            entityId: 'pe_u_tiger002',
+            type: EntityAnchorType.person,
+            title: 'Tiger',
           ),
-          vaultPath: tempDir.path,
-          userCatalog: catalog,
+          journalBody: 'new body',
         ),
-        throwsA(isA<EntityVaultPathConflict>().having(
-          (e) => e.userMessage,
-          'userMessage',
-          allOf(
-            contains('Tiger'),
-            contains('이미 아카이브'),
-            contains('같은 종류'),
-          ),
-        )),
+        vaultPath: tempDir.path,
+        userCatalog: catalog,
       );
+
+      expect(saved.entry?.entityId, 'pe_u_tiger002');
+      expect(saved.entry?.storagePath, contains('pe_u_tiger002.md'));
     });
 
-    test('B: Promote catalog-only conflict exposes userMessage', () async {
-      await seedPersonTiger('pe_u_tiger001');
-      await catalog.upsert(
-        UserCatalogEntity.userLocal(
-          entityId: 'pe_u_tiger002',
-          type: EntityAnchorType.person,
-          title: 'Tiger',
-        ),
-      );
+    test(
+      'B: Promote catalog-only with same title uses distinct ID path',
+      () async {
+        await seedPersonTiger('pe_u_tiger001');
+        await catalog.upsert(
+          UserCatalogEntity.userLocal(
+            entityId: 'pe_u_tiger002',
+            type: EntityAnchorType.person,
+            title: 'Tiger',
+          ),
+        );
 
-      await expectLater(
-        EntityArchiveService.promoteCatalogOnly(
+        final promoted = await EntityArchiveService.promoteCatalogOnly(
           entity: catalog.getById('pe_u_tiger002')!,
           vaultPath: tempDir.path,
-        ),
-        throwsA(isA<EntityVaultPathConflict>()),
-      );
-    });
+        );
 
-    test('C: Entity Sheet save catches conflict and keeps dialog open', () async {
-      await seedPersonTiger('pe_u_tiger001');
-      var dialogClosed = false;
+        expect(promoted.entityId, 'pe_u_tiger002');
+        expect(promoted.storagePath, contains('pe_u_tiger002.md'));
+      },
+    );
 
-      try {
-        await EntityVaultStore().saveCatalogEntity(
+    test(
+      'C: Entity Sheet save succeeds for same title with distinct ID',
+      () async {
+        await seedPersonTiger('pe_u_tiger001');
+
+        final saved = await EntityVaultStore().saveCatalogEntity(
           vaultPath: tempDir.path,
           entity: UserCatalogEntity.userLocal(
             entityId: 'pe_u_tiger002',
@@ -110,20 +105,11 @@ void main() {
           ),
           body: 'journal body',
         );
-        dialogClosed = true;
-      } on EntityVaultPathConflict catch (e) {
-        expect(
-          e.userMessage,
-          allOf(
-            contains('Tiger'),
-            contains('이미 아카이브'),
-            contains('같은 종류'),
-          ),
-        );
-      }
 
-      expect(dialogClosed, isFalse);
-    });
+        expect(saved.entityId, 'pe_u_tiger002');
+        expect(saved.storagePath, contains('pe_u_tiger002.md'));
+      },
+    );
 
     testWidgets('C: Entity Sheet conflict userMessage shown in SnackBar', (
       tester,
@@ -141,9 +127,9 @@ void main() {
             body: Builder(
               builder: (ctx) {
                 WidgetsBinding.instance.addPostFrameCallback((_) {
-                  ScaffoldMessenger.of(ctx).showSnackBar(
-                    SnackBar(content: Text(conflict.userMessage)),
-                  );
+                  ScaffoldMessenger.of(
+                    ctx,
+                  ).showSnackBar(SnackBar(content: Text(conflict.userMessage)));
                 });
                 return const Dialog(
                   child: Padding(
