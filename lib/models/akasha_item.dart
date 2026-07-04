@@ -1,3 +1,4 @@
+import '../core/archiving/archive_record_contract.dart';
 import '../core/archiving/entity_anchor.dart';
 import 'category_descriptor.dart';
 import 'enums.dart';
@@ -32,6 +33,9 @@ abstract class AkashaItem {
   /// frontmatter 이후 마크다운 원문 (커스텀 섹션 round-trip)
   String bodyRaw;
 
+  /// Additive v3 frontmatter metadata that should survive app rewrites.
+  ArchiveRecordMetadata recordMetadata;
+
   AkashaItem({
     required this.workId,
     required this.title,
@@ -48,9 +52,11 @@ abstract class AkashaItem {
     List<String>? tags,
     DateTime? addedAt,
     this.bodyRaw = '',
+    ArchiveRecordMetadata? recordMetadata,
   }) : memorableQuotes = memorableQuotes ?? [],
        tags = tags ?? [],
-       addedAt = addedAt ?? DateTime.now();
+       addedAt = addedAt ?? DateTime.now(),
+       recordMetadata = recordMetadata ?? ArchiveRecordMetadata.empty;
 
   // ── 상태 접근 (서브클래스에서 구현) ──
 
@@ -104,6 +110,7 @@ class ContentItem extends AkashaItem {
     super.tags,
     super.addedAt,
     super.bodyRaw,
+    super.recordMetadata,
   }) : assert(
          CategoryRegistry.isContentType(category),
          'Cannot assign game category to a content item.',
@@ -157,6 +164,7 @@ class GameItem extends AkashaItem {
     super.tags,
     super.addedAt,
     super.bodyRaw,
+    super.recordMetadata,
   }) : super(category: MediaCategory.game);
 
   @override
@@ -207,6 +215,7 @@ class EntityItem extends AkashaItem {
     super.tags,
     super.addedAt,
     super.bodyRaw = '',
+    super.recordMetadata,
   }) : entityId = entityId,
        super(workId: entityId);
 

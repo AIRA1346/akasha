@@ -1,4 +1,5 @@
 import 'entity_anchor.dart';
+import 'archive_record_contract.dart';
 
 /// Non-work Entity journal — `vault/entities/{type}/*.md` (Wave 4).
 class EntityJournalEntry {
@@ -13,6 +14,7 @@ class EntityJournalEntry {
     this.tags = const [],
     this.posterPath,
     this.sourceOperationId,
+    this.recordMetadata = ArchiveRecordMetadata.empty,
   });
 
   final EntityAnchorType entityType;
@@ -25,4 +27,5 @@ class EntityJournalEntry {
   final List<String> tags;
   final String? posterPath;
   final String? sourceOperationId;
+  final ArchiveRecordMetadata recordMetadata;
 }

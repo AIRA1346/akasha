@@ -28,6 +28,7 @@ These are done enough to treat as current architecture baseline.
 | UA-111 | Operation crash recovery marker for `promoteCandidate` | done | `source_operation_id` roll-forward accepts matching partial writes and rejects mismatches |
 | UA-113 | Reverse lookup before new Work/Entity path writes | done | same `work_id`/`entity_id` legacy files are reused when `filePath` or path index is missing |
 | UA-114 | Entity journal alias frontmatter | done | `aliases: []` round-trips in entity journal Markdown and catalog sync |
+| UA-106 | Record contract schema freeze | done | `ArchiveRecordContract` standardizes v3 metadata across Work/Entity/Journal/Timeline while preserving v1/v2 reads |
 | UA-201 | Index manager wrapper | done | `ArchiveIndexManager` rebuilds record/entity/link/candidate/taste derived indexes with per-index results |
 | UA-202a | Incremental record/taste index update API | done | `ArchiveIndexManager.updateChangedRecord/removeRecord` updates record and taste indexes for one Markdown path |
 | UA-202b | Incremental index wiring into archive writes | done | Work/Entity/Journal/Timeline save/delete flows now call the manager instead of directly mutating record-only indexes |
@@ -46,7 +47,7 @@ These should stay visible because they protect the archive before external/AI wr
 | --- | --- | --- | --- |
 | UA-104 | Candidate review/promotion UI | Candidate Store exists but is not yet a user-facing queue | Add a simple candidate list with promote/dismiss/merge actions |
 | UA-105 | Candidate duplicate detection beyond exact title | Basic normalized title/alias guard is landed; stronger fuzzy merge review is still useful | Add similarity scoring and candidate merge suggestions instead of only hard rejects |
-| UA-106 | Record contract schema freeze | Markdown has a good base, not a complete final contract; entity `aliases` and operation provenance are now started | Add/standardize `created_at`, `updated_at`, `source`, `evidence`, `external_ids`, `links` |
+| UA-106 | Record contract schema freeze | Base contract landed; future slices may extend relation semantics | Keep validators and fixtures aligned as new operation executors land |
 | UA-107 | Entity subtype/role model | Top-level entity types are enough, but roles are not expressive enough | Add `entity_subtype`, `role`, or `relations` for character, actor, director, studio, franchise, OST |
 | UA-108 | Music/OST representation decision | Future prompt examples depend on music taste lookup | Decide whether music/OST is Work category, Entity subtype, or relation/taste signal |
 | UA-109 | v1/v2/v3 mixed-vault validation | Existing vaults must remain readable while new records use v3 | Add fixtures and rebuild tests for mixed legacy/title/ID paths |
@@ -101,14 +102,14 @@ These fields were identified as useful but are not fully standardized everywhere
 
 | Field | Need | Status |
 | --- | --- | --- |
-| `aliases` | Natural lookup and duplicate detection | entity journals and title/alias index landed; Work/frontmatter-wide write standard still pending |
-| `original_title` | Translated/localized title stability | lookup index supports it; serializer standard still pending |
-| `external_ids` | Wikidata/Steam/ISBN/etc. identity joins | planned |
-| `created_at` | Durable creation timestamp separate from `added_at` | planned |
-| `updated_at` | Conflict checks and index freshness | planned |
-| `source` | user/app/agent/import/script provenance | planned |
-| `evidence` | Agent/candidate/taste claims need proof | planned |
-| `links` / `relations` | Structured relation layer beyond wiki body links | planned |
+| `aliases` | Natural lookup and duplicate detection | landed across v3 Work/Entity/Journal/Timeline metadata; title/alias index consumes it |
+| `original_title` | Translated/localized title stability | landed in v3 metadata and title/alias lookup |
+| `external_ids` | Wikidata/Steam/ISBN/etc. identity joins | landed as preserved v3 metadata map |
+| `created_at` | Durable creation timestamp separate from `added_at` | landed; v1/v2 fall back to `added_at` |
+| `updated_at` | Conflict checks and index freshness | landed; serializers/stores update and index summaries read it |
+| `source` | user/app/agent/import/script provenance | landed as app/agent/script metadata; direct payload mutation blocked |
+| `evidence` | Agent/candidate/taste claims need proof | landed as preserved v3 metadata list; candidate promotion writes evidence |
+| `links` / `relations` | Structured relation layer beyond wiki body links | base field landed; relation semantics still need UA-107/UA-108 |
 | `entity_subtype` | character/creator/studio/franchise/track without exploding top-level types | planned |
 | `source_operation_id` | Trace write back to operation | landed for operation-created entity journals; extend to future operation record types |
 
@@ -144,12 +145,12 @@ These matter, but they are not the current ultimate-archive core.
 
 The next architecture slice should be:
 
-> **UA-106 Record contract schema freeze:** standardize the Markdown fields that future app, script, and agent writes must use.
+> **UA-107 Entity subtype/role model:** make characters, creators, studios, franchises, OSTs, tracks, and relationship roles expressible without exploding top-level entity types.
 
 Minimum done condition:
 
-- define final required/recommended fields for Work, Entity, Journal, and Timeline records
-- standardize `created_at`, `updated_at`, `source`, `evidence`, `external_ids`, `aliases`, `original_title`, and structured `links`
-- keep v1/v2 read compatibility while making v3 write output predictable
-- add fixtures/tests proving old and new Markdown parse into the same source model
-- document what agents may write and what remains app-owned
+- define `entity_subtype`, `role`, and/or structured `relations` rules for Work/Entity/Journal/Timeline references
+- keep top-level entity types stable: `work`, `person`, `event`, `place`, `concept`, `organization`, `custom`
+- cover common archive cases: character, actor, director, writer, studio, publisher, franchise, soundtrack, track, theme
+- add fixtures/tests proving characters and OST/music relationships can be archived and queried without new top-level types
+- document what agents may create directly versus what should stay in candidate/review flow

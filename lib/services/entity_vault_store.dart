@@ -5,6 +5,7 @@ import 'package:path/path.dart' as p;
 import '../core/archiving/entity_anchor.dart';
 import '../core/archiving/entity_journal_entry.dart';
 import '../core/archiving/record_kind.dart';
+import '../core/archiving/archive_record_contract.dart';
 import '../models/user_catalog_entity.dart';
 import '../core/archiving/vault_ledger_event.dart';
 import 'entity_journal_parser.dart';
@@ -47,6 +48,8 @@ class EntityVaultStore {
     required UserCatalogEntity entity,
     required String body,
     String? sourceOperationId,
+    String source = ArchiveRecordContract.defaultSource,
+    List<String> evidence = const [],
   }) async {
     if (vaultPath.isEmpty) {
       throw StateError('Vault path not set');
@@ -82,6 +85,7 @@ class EntityVaultStore {
     await Directory(p.dirname(targetPath)).create(recursive: true);
 
     var addedAt = entity.addedAt;
+    var existingMetadata = ArchiveRecordMetadata.empty;
     if (File(targetPath).existsSync()) {
       final existing = EntityJournalParser.parse(
         await File(targetPath).readAsString(),
@@ -97,8 +101,18 @@ class EntityVaultStore {
           );
         }
         addedAt = existing.addedAt;
+        existingMetadata = existing.recordMetadata;
       }
     }
+
+    final recordMetadata = existingMetadata.copyWith(
+      source: source,
+      aliases: entity.aliases,
+      evidence: evidence.isNotEmpty ? evidence : existingMetadata.evidence,
+      updatedAt: DateTime.now().toUtc(),
+      sourceOperationId:
+          sourceOperationId ?? existingMetadata.sourceOperationId,
+    );
 
     final content = EntityJournalParser.serialize(
       entityType: entity.anchorType,
@@ -109,7 +123,8 @@ class EntityVaultStore {
       aliases: entity.aliases,
       tags: entity.tags,
       posterPath: entity.posterPath,
-      sourceOperationId: sourceOperationId,
+      sourceOperationId: recordMetadata.sourceOperationId,
+      metadata: recordMetadata,
     );
 
     await _writeAtomic(targetPath, content);
@@ -123,7 +138,8 @@ class EntityVaultStore {
       aliases: List<String>.from(entity.aliases),
       tags: List<String>.from(entity.tags),
       posterPath: entity.posterPath,
-      sourceOperationId: sourceOperationId,
+      sourceOperationId: recordMetadata.sourceOperationId,
+      recordMetadata: recordMetadata,
     );
     await ArchiveIndexManager().updateChangedRecord(
       vaultPath: vaultPath,
@@ -183,6 +199,12 @@ class EntityVaultStore {
       }
     }
 
+    final recordMetadata = entry.recordMetadata.copyWith(
+      source: ArchiveRecordContract.defaultSource,
+      aliases: resolvedAliases,
+      updatedAt: DateTime.now().toUtc(),
+    );
+
     final content = EntityJournalParser.serialize(
       entityType: entry.entityType,
       entityId: entry.entityId,
@@ -193,6 +215,7 @@ class EntityVaultStore {
       tags: resolvedTags,
       posterPath: posterPath ?? entry.posterPath,
       sourceOperationId: entry.sourceOperationId,
+      metadata: recordMetadata,
     );
 
     await _writeAtomic(targetPath, content);
@@ -221,6 +244,7 @@ class EntityVaultStore {
       tags: List<String>.from(resolvedTags),
       posterPath: posterPath ?? entry.posterPath,
       sourceOperationId: entry.sourceOperationId,
+      recordMetadata: recordMetadata,
     );
     await ArchiveIndexManager().updateChangedRecord(
       vaultPath: vaultRoot,

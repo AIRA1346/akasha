@@ -1,5 +1,6 @@
 import 'package:yaml/yaml.dart';
 
+import '../core/archiving/archive_record_contract.dart';
 import '../core/archiving/timeline_entry.dart';
 
 /// `vault/timeline/*.md` 파서 — Phase 4.1.
@@ -28,11 +29,12 @@ abstract final class TimelineEntryParser {
     if (recordId.isEmpty) return null;
 
     final title = yaml['title']?.toString().trim() ?? '';
+    final recordMetadata = ArchiveRecordContract.metadataFromYaml(yaml);
     final occurredAt =
         _parseDateTime(yaml['occurred_at']) ??
-        _parseDateTime(yaml['added_at']) ??
+        ArchiveRecordContract.createdAtFromYaml(yaml) ??
         DateTime.now();
-    final addedAt = _parseDateTime(yaml['added_at']) ?? occurredAt;
+    final addedAt = ArchiveRecordContract.createdAtFromYaml(yaml) ?? occurredAt;
     final entityId = yaml['entity_id']?.toString().trim();
 
     return TimelineEntry(
@@ -43,6 +45,7 @@ abstract final class TimelineEntryParser {
       addedAt: addedAt,
       storagePath: filePath,
       entityId: entityId != null && entityId.isNotEmpty ? entityId : null,
+      recordMetadata: recordMetadata,
     );
   }
 
@@ -53,16 +56,27 @@ abstract final class TimelineEntryParser {
     required DateTime occurredAt,
     DateTime? addedAt,
     String? entityId,
+    ArchiveRecordMetadata metadata = ArchiveRecordMetadata.empty,
   }) {
     final added = addedAt ?? DateTime.now();
+    final resolvedMetadata = metadata.copyWith(
+      updatedAt: metadata.updatedAt ?? DateTime.now().toUtc(),
+    );
     final buffer = StringBuffer()
       ..writeln('---')
-      ..writeln('schema_version: 3')
+      ..writeln('schema_version: ${ArchiveRecordContract.schemaVersion}')
       ..writeln('record_kind: $canonicalRecordKind')
       ..writeln('record_id: "$recordId"')
       ..writeln('title: "${_escape(title)}"')
-      ..writeln('occurred_at: "${occurredAt.toIso8601String()}"')
-      ..writeln('added_at: "${added.toIso8601String()}"');
+      ..writeln(
+        'occurred_at: "${ArchiveRecordContract.formatDateTime(occurredAt)}"',
+      )
+      ..writeln('added_at: "${ArchiveRecordContract.formatDateTime(added)}"');
+    ArchiveRecordContract.writeContractFields(
+      buffer,
+      createdAt: added,
+      metadata: resolvedMetadata,
+    );
     if (entityId != null && entityId.isNotEmpty) {
       buffer.writeln('entity_id: "$entityId"');
     }
@@ -96,7 +110,7 @@ abstract final class TimelineEntryParser {
     return DateTime.tryParse(raw.toString());
   }
 
-  static String _escape(String value) => value.replaceAll('"', '\\"');
+  static String _escape(String value) => ArchiveRecordContract.escape(value);
 }
 
 class _Split {

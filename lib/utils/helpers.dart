@@ -2,6 +2,7 @@ import '../models/browse_card.dart';
 import '../models/category_descriptor.dart';
 import '../models/enums.dart';
 import '../models/akasha_item.dart';
+import '../core/archiving/archive_record_contract.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  팩토리 헬퍼 & 유틸리티 함수
@@ -25,6 +26,7 @@ AkashaItem createItem({
   bool isHallOfFame = false,
   List<String>? tags,
   String bodyRaw = '',
+  ArchiveRecordMetadata? recordMetadata,
 }) {
   final resolvedDomain = domain ?? AppDomain.subculture;
   if (CategoryRegistry.isContentType(category)) {
@@ -43,6 +45,7 @@ AkashaItem createItem({
       isHallOfFame: isHallOfFame,
       tags: tags,
       bodyRaw: bodyRaw,
+      recordMetadata: recordMetadata,
     );
     if (workStatus != null) item.setWorkStatus(workStatus);
     if (myStatus != null) item.setMyStatus(myStatus);
@@ -62,6 +65,7 @@ AkashaItem createItem({
       isHallOfFame: isHallOfFame,
       tags: tags,
       bodyRaw: bodyRaw,
+      recordMetadata: recordMetadata,
     );
     if (workStatus != null) item.setWorkStatus(workStatus);
     if (myStatus != null) item.setMyStatus(myStatus);

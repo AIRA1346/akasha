@@ -1,4 +1,6 @@
-/// Freeform journal Archive 항목 — Wave 3 ([ADR-008]).
+import 'archive_record_contract.dart';
+
+/// Freeform journal archive record.
 class JournalEntry {
   JournalEntry({
     required this.recordId,
@@ -6,6 +8,7 @@ class JournalEntry {
     required this.body,
     required this.addedAt,
     required this.storagePath,
+    this.recordMetadata = ArchiveRecordMetadata.empty,
   });
 
   final String recordId;
@@ -13,4 +16,5 @@ class JournalEntry {
   final String body;
   final DateTime addedAt;
   final String storagePath;
+  final ArchiveRecordMetadata recordMetadata;
 }

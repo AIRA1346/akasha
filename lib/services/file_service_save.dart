@@ -62,6 +62,9 @@ mixin _AkashaFileServiceSave
 
     await Directory(p.dirname(targetPath)).create(recursive: true);
 
+    item.recordMetadata = item.recordMetadata.copyWith(
+      updatedAt: DateTime.now().toUtc(),
+    );
     final content = MarkdownParser.serialize(item);
 
     _stopWatching();

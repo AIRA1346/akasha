@@ -311,7 +311,28 @@ and stale taste evidence without modifying archive records.
 
 ---
 
-## 9. Path Strategy
+## 9. Record Contract
+
+`ArchiveRecordContract` is the shared v3 frontmatter language for Work, Entity,
+Journal, and Timeline records. New writes emit and preserve:
+
+- `created_at`
+- `updated_at`
+- `source`
+- `aliases`
+- `original_title`
+- `external_ids`
+- `evidence`
+- structured `links`
+
+Legacy v1/v2 reads remain compatible through `added_at`. The app owns provenance
+fields, so future agents should not patch `created_at`, `updated_at`, `source`,
+or `source_operation_id` directly; they should write through archive operations
+and let the app stamp those fields.
+
+---
+
+## 10. Path Strategy
 
 Title-based paths are readable, but weak for high-volume external creation.
 
@@ -346,7 +367,7 @@ This can be introduced as Vault Layout v3 before release if the migration is con
 
 ---
 
-## 10. Duplicate Control
+## 11. Duplicate Control
 
 High-volume external creation needs duplicate control before archive pollution.
 
@@ -371,7 +392,7 @@ The app should prefer "merge or promote" flows over blindly creating new `.md` f
 
 ---
 
-## 11. Relationship Model
+## 12. Relationship Model
 
 Taste is not only a list of records.
 
@@ -398,7 +419,7 @@ Derived indexes should make these relationships queryable without parsing every 
 
 ---
 
-## 12. Product Stance
+## 13. Product Stance
 
 For v1:
 
@@ -420,7 +441,7 @@ For post-v1:
 
 ---
 
-## 13. Decision Summary
+## 14. Decision Summary
 
 AKASHA should support AI-assisted and tool-assisted mass creation indirectly by being a robust archive, not by becoming the AI.
 

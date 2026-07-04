@@ -1,4 +1,5 @@
 import 'package:yaml/yaml.dart';
+import '../core/archiving/archive_record_contract.dart';
 import '../core/archiving/entity_frontmatter.dart';
 import '../models/enums.dart';
 import '../models/akasha_item.dart';
@@ -59,11 +60,13 @@ class MarkdownParser {
   static String serialize(AkashaItem item) {
     final buffer = StringBuffer();
     buffer.writeln('---');
-    buffer.writeln('schema_version: 3');
+    buffer.writeln('schema_version: ${ArchiveRecordContract.schemaVersion}');
     if (item.workId.isNotEmpty) {
-      buffer.writeln('record_id: "rec_${item.workId.replaceAll('"', '\\"')}"');
+      buffer.writeln(
+        'record_id: "rec_${ArchiveRecordContract.escape(item.workId)}"',
+      );
     }
-    buffer.writeln('work_id: "${item.workId}"');
+    buffer.writeln('work_id: "${ArchiveRecordContract.escape(item.workId)}"');
     if (item.workId.isNotEmpty) {
       final entityFields = EntityFrontmatter.forWorkItem(
         workId: item.workId,
@@ -72,7 +75,7 @@ class MarkdownParser {
       for (final entry in entityFields.entries) {
         if (entry.key == 'entity_id') {
           buffer.writeln(
-            '${entry.key}: "${entry.value.replaceAll('"', '\\"')}"',
+            '${entry.key}: "${ArchiveRecordContract.escape(entry.value)}"',
           );
         } else {
           buffer.writeln('${entry.key}: ${entry.value}');
@@ -80,13 +83,20 @@ class MarkdownParser {
       }
     }
     buffer.writeln(
-      'title: "${item.title.replaceAll('"', '\\"')}"',
+      'title: "${ArchiveRecordContract.escape(item.title)}"',
     ); // YAML title (외부 편집기 호환)
+    ArchiveRecordContract.writeContractFields(
+      buffer,
+      createdAt: item.addedAt,
+      metadata: item.recordMetadata,
+    );
     buffer.writeln('category: ${item.category.name}');
     buffer.writeln('domain: ${item.domain.name}');
     buffer.writeln('# poster: "https://..." 또는 "posters/파일명.jpg"');
     if (shouldPersistPosterToYaml(item)) {
-      buffer.writeln('poster: "${item.posterPath!.replaceAll('"', '\\"')}"');
+      buffer.writeln(
+        'poster: "${ArchiveRecordContract.escape(item.posterPath!)}"',
+      );
     } else {
       buffer.writeln('poster: ""');
     }
@@ -101,7 +111,9 @@ class MarkdownParser {
     buffer.writeln('is_hall_of_fame: ${item.isHallOfFame}');
 
     if (item.creator.isNotEmpty) {
-      buffer.writeln('creator: "${item.creator.replaceAll('"', '\\"')}"');
+      buffer.writeln(
+        'creator: "${ArchiveRecordContract.escape(item.creator)}"',
+      );
     }
     if (item.releaseYear != null) {
       buffer.writeln('release_year: ${item.releaseYear}');
@@ -109,13 +121,15 @@ class MarkdownParser {
 
     if (item.tags.isNotEmpty) {
       buffer.writeln(
-        'tags: [${item.tags.map((t) => '"${t.replaceAll('"', '\\"')}"').join(', ')}]',
+        ArchiveRecordContract.serializeStringList('tags', item.tags),
       );
     } else {
       buffer.writeln('tags: []');
     }
 
-    buffer.writeln('added_at: "${item.addedAt.toIso8601String()}"');
+    buffer.writeln(
+      'added_at: "${ArchiveRecordContract.formatDateTime(item.addedAt)}"',
+    );
     buffer.writeln('---');
     buffer.writeln();
 
@@ -198,6 +212,9 @@ class MarkdownParser {
           'status': regExtract('status', yamlStr),
           'my_status': regExtract('my_status', yamlStr),
           'is_hall_of_fame': regExtract('is_hall_of_fame', yamlStr),
+          'created_at': regExtract('created_at', yamlStr),
+          'updated_at': regExtract('updated_at', yamlStr),
+          'source': regExtract('source', yamlStr),
           'added_at': regExtract('added_at', yamlStr),
         };
       }
@@ -255,11 +272,9 @@ class MarkdownParser {
           .toList();
     }
 
-    DateTime addedAt = DateTime.now();
-    if (yamlMap['added_at'] != null) {
-      addedAt =
-          DateTime.tryParse(yamlMap['added_at'].toString()) ?? DateTime.now();
-    }
+    final recordMetadata = ArchiveRecordContract.metadataFromYaml(yamlMap);
+    final addedAt =
+        ArchiveRecordContract.createdAtFromYaml(yamlMap) ?? DateTime.now();
 
     // 마크다운 바디 — 원문 보존 + 슬롯 필드 추출
     final bodyRaw = lines
@@ -332,6 +347,7 @@ class MarkdownParser {
       review: review,
       isHallOfFame: isHallOfFame,
       tags: tags,
+      recordMetadata: recordMetadata,
     );
     item.addedAt = addedAt;
     item.bodyRaw = bodyRaw;

@@ -194,6 +194,10 @@ class ArchiveOperationExecutor {
       entity: entity,
       body: _bodyForPromotion(candidate, operation),
       sourceOperationId: operation.operationId,
+      source: operation.source.name,
+      evidence: [
+        candidate.evidence.trim(),
+      ].where((entry) => entry.isNotEmpty).toList(growable: false),
     );
     final mirrored = EntityCatalogSync.mirrorFromJournal(
       draft: entity,

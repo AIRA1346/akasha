@@ -1,5 +1,6 @@
 import 'package:yaml/yaml.dart';
 
+import '../core/archiving/archive_record_contract.dart';
 import '../core/archiving/journal_entry.dart';
 
 /// `vault/journal/*.md` 파서 — Wave 3.
@@ -18,7 +19,9 @@ abstract final class JournalEntryParser {
     if (recordId.isEmpty) return null;
 
     final title = yaml['title']?.toString().trim() ?? '';
-    final addedAt = _parseDateTime(yaml['added_at']) ?? DateTime.now();
+    final recordMetadata = ArchiveRecordContract.metadataFromYaml(yaml);
+    final addedAt =
+        ArchiveRecordContract.createdAtFromYaml(yaml) ?? DateTime.now();
 
     return JournalEntry(
       recordId: recordId,
@@ -26,6 +29,7 @@ abstract final class JournalEntryParser {
       body: split.body.trim(),
       addedAt: addedAt,
       storagePath: filePath,
+      recordMetadata: recordMetadata,
     );
   }
 
@@ -34,15 +38,25 @@ abstract final class JournalEntryParser {
     required String title,
     required String body,
     DateTime? addedAt,
+    ArchiveRecordMetadata metadata = ArchiveRecordMetadata.empty,
   }) {
     final added = addedAt ?? DateTime.now();
+    final resolvedMetadata = metadata.copyWith(
+      updatedAt: metadata.updatedAt ?? DateTime.now().toUtc(),
+    );
     final buffer = StringBuffer()
       ..writeln('---')
-      ..writeln('schema_version: 3')
+      ..writeln('schema_version: ${ArchiveRecordContract.schemaVersion}')
       ..writeln('record_kind: freeformJournal')
       ..writeln('record_id: "$recordId"')
       ..writeln('title: "${_escape(title)}"')
-      ..writeln('added_at: "${added.toIso8601String()}"')
+      ..writeln('added_at: "${ArchiveRecordContract.formatDateTime(added)}"');
+    ArchiveRecordContract.writeContractFields(
+      buffer,
+      createdAt: added,
+      metadata: resolvedMetadata,
+    );
+    buffer
       ..writeln('---')
       ..writeln()
       ..write(body.trim());
@@ -67,12 +81,7 @@ abstract final class JournalEntryParser {
     );
   }
 
-  static DateTime? _parseDateTime(Object? raw) {
-    if (raw == null) return null;
-    return DateTime.tryParse(raw.toString());
-  }
-
-  static String _escape(String value) => value.replaceAll('"', '\\"');
+  static String _escape(String value) => ArchiveRecordContract.escape(value);
 }
 
 class _Split {

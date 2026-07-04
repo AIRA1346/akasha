@@ -143,7 +143,11 @@ aliases: []
 tags: []
 created_at: "2026-07-03T00:00:00Z"
 updated_at: "2026-07-03T00:00:00Z"
-source: user
+source: "app"
+original_title: ""
+external_ids: {}
+evidence: []
+links: []
 ---
 ```
 
@@ -156,6 +160,9 @@ Rules:
 - For freeform journal and timeline, `record_id` is independent.
 - `title` is display metadata, never identity.
 - `work_id` remains as a Work compatibility alias.
+- `created_at` is the durable creation timestamp; v1/v2 reads fall back to `added_at`.
+- `updated_at`, `source`, `evidence`, `external_ids`, `aliases`, `original_title`, and structured `links` are additive v3 metadata and must be preserved by app rewrites.
+- `created_at`, `updated_at`, `source`, and `source_operation_id` are app-owned provenance fields; agents should not mutate them through `update_frontmatter`.
 
 ## 5. Operation Contract v3
 
@@ -374,6 +381,10 @@ Implemented:
 - `ArchiveIndexManager.updateChangedRecord/removeRecord` now also refreshes entity-path and link outgoing/incoming indexes for the affected Markdown path
 - `ArchiveIndexManager.updateChangedRecord/removeRecord` now refreshes title/alias lookup shards for the affected Markdown path
 - `ArchiveIndexValidatorService` now rebuilds and audits derived indexes against Markdown source, reporting rebuild failures, duplicate source IDs, stale paths, missing title/alias entries, link target drift, and stale taste evidence
+- `ArchiveRecordContract` now freezes the shared v3 frontmatter metadata for Work, Entity, Journal, and Timeline records
+- Work/Entity/Journal/Timeline serializers now emit `created_at`, `updated_at`, `source`, `aliases`, `original_title`, `external_ids`, `evidence`, and structured `links`, while v1/v2 reads remain compatible through `added_at`
+- v3 metadata is preserved on app rewrites so manually added aliases, external IDs, evidence, and structured links are not lost
+- `ArchiveOperationValidator` blocks direct mutation of app-owned provenance fields (`created_at`, `updated_at`, `source`, `source_operation_id`)
 
 Validated:
 
@@ -387,7 +398,9 @@ Validated:
 - `flutter test test/taste_index_service_test.dart`: 3 pass
 - `flutter test test/archive_candidate_store_test.dart test/archive_index_manager_test.dart test/taste_index_service_test.dart`: 23 pass
 - `flutter test test/archive_index_manager_test.dart test/taste_index_service_test.dart test/record_summary_index_test.dart`: 10 pass
-- `flutter test`: 738 pass
+- `flutter test test/archive_record_contract_test.dart`: 5 pass
+- `flutter test test/archive_record_contract_test.dart test/markdown_parser_v2_test.dart test/entity_vault_w4_test.dart test/journal_vault_test.dart test/timeline_entry_parser_test.dart test/timeline_vault_store_test.dart test/archive_operation_validator_test.dart test/archive_operation_executor_test.dart test/record_summary_index_test.dart`: 60 pass
+- `flutter test`: 743 pass
 - `flutter analyze lib`: 0 issues
 
 Remaining before calling v3 complete:

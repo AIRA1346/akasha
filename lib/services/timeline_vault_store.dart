@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 
 import '../core/archiving/archive_record.dart';
+import '../core/archiving/archive_record_contract.dart';
 import '../core/archiving/timeline_entry.dart';
 import 'archive_index_manager.dart';
 import 'timeline_entry_parser.dart';
@@ -71,6 +72,7 @@ class TimelineVaultStore {
     final entityId = record.entity?.entityId;
 
     var addedAt = DateTime.now();
+    var existingMetadata = ArchiveRecordMetadata.empty;
     var targetPath = record.storagePath?.trim();
 
     if (targetPath != null &&
@@ -80,16 +82,24 @@ class TimelineVaultStore {
         await File(targetPath).readAsString(),
         targetPath,
       );
-      if (existing != null) addedAt = existing.addedAt;
+      if (existing != null) {
+        addedAt = existing.addedAt;
+        existingMetadata = existing.recordMetadata;
+      }
     } else {
       final existing = await _findByRecordId(vaultPath, recordId);
       if (existing != null) {
         targetPath = existing.storagePath;
         addedAt = existing.addedAt;
+        existingMetadata = existing.recordMetadata;
       } else {
         targetPath = p.join(timelineDir.path, fileNameFor(recordId));
       }
     }
+    final recordMetadata = existingMetadata.copyWith(
+      source: ArchiveRecordContract.defaultSource,
+      updatedAt: DateTime.now().toUtc(),
+    );
 
     final content = TimelineEntryParser.serialize(
       recordId: recordId,
@@ -98,6 +108,7 @@ class TimelineVaultStore {
       occurredAt: occurredAt,
       addedAt: addedAt,
       entityId: entityId,
+      metadata: recordMetadata,
     );
 
     await _writeAtomic(targetPath, content);
@@ -110,6 +121,7 @@ class TimelineVaultStore {
       addedAt: addedAt,
       storagePath: targetPath,
       entityId: entityId?.trim().isNotEmpty == true ? entityId!.trim() : null,
+      recordMetadata: recordMetadata,
     );
     await ArchiveIndexManager().updateChangedRecord(
       vaultPath: vaultPath,

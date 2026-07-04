@@ -61,6 +61,13 @@ abstract final class ArchiveOperationValidator {
     'entityType',
     'work_id',
     'workId',
+    'created_at',
+    'createdAt',
+    'updated_at',
+    'updatedAt',
+    'source',
+    'source_operation_id',
+    'sourceOperationId',
   };
 
   static ArchiveOperationValidationResult validate(ArchiveOperation operation) {

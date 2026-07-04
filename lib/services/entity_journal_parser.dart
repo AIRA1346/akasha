@@ -1,5 +1,6 @@
 import 'package:yaml/yaml.dart';
 
+import '../core/archiving/archive_record_contract.dart';
 import '../core/archiving/entity_anchor.dart';
 import '../core/archiving/entity_journal_entry.dart';
 import '../core/archiving/record_kind.dart';
@@ -26,11 +27,13 @@ abstract final class EntityJournalParser {
       entityId,
     );
     final title = yaml['title']?.toString().trim() ?? entityId;
-    final addedAt = _parseDateTime(yaml['added_at']) ?? DateTime.now();
-    final aliases = _stringList(yaml['aliases']);
+    final recordMetadata = ArchiveRecordContract.metadataFromYaml(yaml);
+    final addedAt =
+        ArchiveRecordContract.createdAtFromYaml(yaml) ?? DateTime.now();
+    final aliases = recordMetadata.aliases;
     final tags = EntityTags.parseYaml(yaml['tags']);
     final posterPath = yaml['poster_path']?.toString().trim();
-    final sourceOperationId = yaml['source_operation_id']?.toString().trim();
+    final sourceOperationId = recordMetadata.sourceOperationId;
 
     return EntityJournalEntry(
       entityType: entityType,
@@ -46,6 +49,7 @@ abstract final class EntityJournalParser {
           sourceOperationId != null && sourceOperationId.isNotEmpty
           ? sourceOperationId
           : null,
+      recordMetadata: recordMetadata,
     );
   }
 
@@ -59,24 +63,31 @@ abstract final class EntityJournalParser {
     List<String> tags = const [],
     String? posterPath,
     String? sourceOperationId,
+    ArchiveRecordMetadata metadata = ArchiveRecordMetadata.empty,
   }) {
     final added = addedAt ?? DateTime.now();
+    final resolvedMetadata = metadata.copyWith(
+      aliases: aliases,
+      updatedAt: metadata.updatedAt ?? DateTime.now().toUtc(),
+      sourceOperationId: sourceOperationId ?? metadata.sourceOperationId,
+    );
     final buffer = StringBuffer()
       ..writeln('---')
-      ..writeln('schema_version: 3')
+      ..writeln('schema_version: ${ArchiveRecordContract.schemaVersion}')
       ..writeln('record_id: "rec_${_escape(entityId)}"')
       ..writeln('entity_type: ${entityType.name}')
       ..writeln('entity_id: "${_escape(entityId)}"')
       ..writeln('record_kind: ${RecordKind.entityJournal.name}')
       ..writeln('title: "${_escape(title)}"')
-      ..writeln('added_at: "${added.toIso8601String()}"')
-      ..writeln(_serializeYamlList('aliases', aliases))
-      ..writeln(EntityTags.serializeYamlLine(tags));
+      ..writeln('added_at: "${ArchiveRecordContract.formatDateTime(added)}"');
+    ArchiveRecordContract.writeContractFields(
+      buffer,
+      createdAt: added,
+      metadata: resolvedMetadata,
+    );
+    buffer.writeln(EntityTags.serializeYamlLine(tags));
     if (posterPath != null && posterPath.isNotEmpty) {
       buffer.writeln('poster_path: "${_escape(posterPath)}"');
-    }
-    if (sourceOperationId != null && sourceOperationId.isNotEmpty) {
-      buffer.writeln('source_operation_id: "${_escape(sourceOperationId)}"');
     }
     buffer
       ..writeln('---')
@@ -114,32 +125,7 @@ abstract final class EntityJournalParser {
     );
   }
 
-  static DateTime? _parseDateTime(Object? raw) {
-    if (raw == null) return null;
-    return DateTime.tryParse(raw.toString());
-  }
-
-  static List<String> _stringList(Object? raw) {
-    if (raw is Iterable) {
-      return raw
-          .map((entry) => entry.toString().trim())
-          .where((entry) => entry.isNotEmpty)
-          .toList(growable: false);
-    }
-    if (raw is String) {
-      final value = raw.trim();
-      return value.isEmpty ? const [] : [value];
-    }
-    return const [];
-  }
-
-  static String _serializeYamlList(String key, List<String> values) {
-    if (values.isEmpty) return '$key: []';
-    final escaped = values.map((value) => '"${_escape(value)}"');
-    return '$key: [${escaped.join(', ')}]';
-  }
-
-  static String _escape(String value) => value.replaceAll('"', '\\"');
+  static String _escape(String value) => ArchiveRecordContract.escape(value);
 }
 
 class _Split {

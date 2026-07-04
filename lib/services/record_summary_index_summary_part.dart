@@ -64,7 +64,7 @@ class VaultRecordSummary {
       myStatus: item.myStatusLabel.isEmpty ? null : item.myStatusLabel,
       tags: List<String>.from(item.tags),
       addedAt: item.addedAt,
-      updatedAt: stat?.modified.toUtc(),
+      updatedAt: item.recordMetadata.updatedAt ?? stat?.modified.toUtc(),
       posterPath: item.posterPath,
     );
   }
@@ -85,7 +85,7 @@ class VaultRecordSummary {
       ),
       tags: List<String>.from(entry.tags),
       addedAt: entry.addedAt,
-      updatedAt: stat?.modified.toUtc(),
+      updatedAt: entry.recordMetadata.updatedAt ?? stat?.modified.toUtc(),
       posterPath: entry.posterPath,
     );
   }
@@ -105,7 +105,7 @@ class VaultRecordSummary {
         entry.storagePath,
       ),
       addedAt: entry.addedAt,
-      updatedAt: stat?.modified.toUtc(),
+      updatedAt: entry.recordMetadata.updatedAt ?? stat?.modified.toUtc(),
     );
   }
 
@@ -124,7 +124,7 @@ class VaultRecordSummary {
         entry.storagePath,
       ),
       addedAt: entry.addedAt,
-      updatedAt: stat?.modified.toUtc(),
+      updatedAt: entry.recordMetadata.updatedAt ?? stat?.modified.toUtc(),
     );
   }
 
@@ -163,8 +163,15 @@ class VaultRecordSummary {
         workStatus: _string(parsed['work_status']),
         myStatus: _string(parsed['my_status'] ?? parsed['status']),
         tags: _tags(parsed['tags']),
-        addedAt: _date(parsed['added_at'] ?? parsed['addedAt']),
-        updatedAt: stat?.modified.toUtc(),
+        addedAt: _date(
+          parsed['created_at'] ??
+              parsed['createdAt'] ??
+              parsed['added_at'] ??
+              parsed['addedAt'],
+        ),
+        updatedAt:
+            _date(parsed['updated_at'] ?? parsed['updatedAt']) ??
+            stat?.modified.toUtc(),
         posterPath: _string(parsed['poster'] ?? parsed['poster_path']),
       );
     } catch (_) {

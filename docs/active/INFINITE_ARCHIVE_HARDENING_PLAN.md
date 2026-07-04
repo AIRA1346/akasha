@@ -81,6 +81,14 @@ Rules:
 - Treat frontmatter as the machine-readable surface and Markdown body as the human memory surface.
 - Keep unknown frontmatter/body blocks round-trippable.
 
+2026-07-04 code slice:
+
+- `ArchiveRecordContract` defines the shared v3 metadata surface for Work, Entity, Journal, and Timeline records.
+- New v3 writes emit `created_at`, `updated_at`, `source`, `aliases`, `original_title`, `external_ids`, `evidence`, and structured `links`.
+- v1/v2 reads remain compatible by falling back from `created_at` to `added_at`.
+- Work/Entity/Journal/Timeline app rewrites preserve additive metadata so external IDs, evidence, aliases, and relation hints are not lost.
+- `ArchiveOperationValidator` treats provenance fields as app-owned and blocks direct payload mutation of `created_at`, `updated_at`, `source`, and `source_operation_id`.
+
 ### 4.2 Derived Index Layer
 
 The current `.akasha/record_index.json` is the right first slice. Long term, large vaults need a stronger local derived store such as `.akasha/vault_index.db` or sharded index files.

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 
 import '../core/archiving/archive_record.dart';
+import '../core/archiving/archive_record_contract.dart';
 import '../core/archiving/journal_entry.dart';
 import '../core/archiving/record_kind.dart';
 import 'archive_index_manager.dart';
@@ -69,6 +70,7 @@ class JournalVaultStore {
         : recordId;
 
     var addedAt = DateTime.now();
+    var existingMetadata = ArchiveRecordMetadata.empty;
     var targetPath = record.storagePath?.trim();
 
     if (targetPath != null &&
@@ -78,22 +80,31 @@ class JournalVaultStore {
         await File(targetPath).readAsString(),
         targetPath,
       );
-      if (existing != null) addedAt = existing.addedAt;
+      if (existing != null) {
+        addedAt = existing.addedAt;
+        existingMetadata = existing.recordMetadata;
+      }
     } else {
       final existing = await _findByRecordId(vaultPath, recordId);
       if (existing != null) {
         targetPath = existing.storagePath;
         addedAt = existing.addedAt;
+        existingMetadata = existing.recordMetadata;
       } else {
         targetPath = p.join(journalDir.path, fileNameFor(recordId));
       }
     }
+    final recordMetadata = existingMetadata.copyWith(
+      source: ArchiveRecordContract.defaultSource,
+      updatedAt: DateTime.now().toUtc(),
+    );
 
     final content = JournalEntryParser.serialize(
       recordId: recordId,
       title: title,
       body: body,
       addedAt: addedAt,
+      metadata: recordMetadata,
     );
 
     await _writeAtomic(targetPath, content);
@@ -104,6 +115,7 @@ class JournalVaultStore {
       body: body.trim(),
       addedAt: addedAt,
       storagePath: targetPath,
+      recordMetadata: recordMetadata,
     );
     await ArchiveIndexManager().updateChangedRecord(
       vaultPath: vaultPath,
