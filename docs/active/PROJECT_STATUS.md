@@ -13,7 +13,7 @@
  
 | 항목 | 상태 |
 |------|------|
-| **flutter test** | **733 PASS** |
+| **flutter test** | **738 PASS** |
 | **flutter analyze lib** | **0 issue** |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
 | **앱 테마** | `AkashaPalette` ThemeExtension · sidebar/bottom/search/card/preview rail 반영 ✅ |
@@ -31,6 +31,7 @@
 | **Index Manager** | `ArchiveIndexManager` record/entity/link/candidate/taste rebuild coordinator · candidate name-index recovery · focused tests **17 PASS** · full tests **723 PASS** · analyze **0** |
 | **Incremental Indexing** | changed/deleted Markdown path updates record/taste/link/entity-path/title-alias indexes without full vault scan · focused title/link/entity tests **25 PASS** · write-flow tests **19 PASS** · full tests **733 PASS** · analyze **0** |
 | **Title/Alias Index** | `.akasha/title_alias_index/names/{shard}.json` resolves normalized title/alias/original/localized names to stable IDs without Markdown scans · focused tests **9 PASS** · full tests **733 PASS** · analyze **0** |
+| **Index Validator** | `ArchiveIndexValidatorService` rebuilds and audits record/entity-path/title-alias/link/candidate/taste indexes against Markdown source · focused validator tests **5 PASS** · focused index suite **27 PASS** · full tests **738 PASS** · analyze **0** |
 | **Operation Executor** | validated `promoteCandidate` → Entity journal · catalog mirror · candidate close ✅ · focused contract tests **34 PASS** · full tests **709 PASS** |
 | **Operation Applied Log** | `.akasha/ops/applied.jsonl` · `operationId` retry-safe · `alreadyApplied` result ✅ |
 | **Operation Conflict Guard** | `expectedRevision` · mtime/length/hash revision · existing target overwrite block ✅ |
@@ -83,7 +84,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **733 PASS** | ✅ |
+| `flutter test` | **738 PASS** | ✅ |
 | `flutter analyze lib` | **0 issue** | ✅ |
 | `preflight_check` | PASS | ✅ |
 | `registry_builder` | PASS | — (post-v1 scale) |
@@ -207,6 +208,7 @@
 | **333** | Incremental Index Wiring slice — Work/Entity/Journal/Timeline save-delete flows use `ArchiveIndexManager` for record+taste updates | ✅ code | [file_service_save.dart](../../lib/services/file_service_save.dart) |
 | **334** | Link/Entity Incremental slice — `ArchiveIndexManager` also updates link outgoing/incoming and entity-path indexes for changed/deleted Markdown paths | ✅ code | [record_link_index_service.dart](../../lib/services/record_link_index_service.dart) |
 | **335** | Title/Alias Index slice — `.akasha/title_alias_index` sharded name lookup for Work/Entity natural-language resolution | ✅ code | [title_alias_index_service.dart](../../lib/services/title_alias_index_service.dart) |
+| **336** | Index Validator slice — rebuild and audit derived indexes against Markdown source for duplicate IDs, stale paths, missing names, link drift, and taste evidence drift | ✅ code | [archive_index_validator_service.dart](../../lib/services/archive_index_validator_service.dart) |
 
 ## 8. 문서 이력
 
@@ -259,4 +261,5 @@
 | 2026-07-04 | **Incremental Index Wiring slice** — Work/Entity/Journal/Timeline save-delete flows now update record+taste indexes through `ArchiveIndexManager` · focused write-flow tests **19 PASS** · analyze **0** |
 | 2026-07-04 | **Link/Entity Incremental slice** — changed/deleted Markdown path updates link outgoing/incoming and entity-path indexes without full rebuild · focused tests **16 PASS** · analyze **0** |
 | 2026-07-04 | **Title/Alias Index slice** — `.akasha/title_alias_index` sharded lookup resolves title/alias/original/localized names to stable IDs · focused tests **9 PASS** · full tests **733 PASS** · analyze **0** |
+| 2026-07-04 | **Index Validator slice** — `ArchiveIndexValidatorService` rebuilds and audits derived indexes against Markdown source · focused tests **5 PASS** · full tests **738 PASS** · analyze **0** |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |

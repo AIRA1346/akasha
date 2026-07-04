@@ -373,23 +373,26 @@ Implemented:
 - Work, Entity, Journal, and Timeline save/delete flows now route record/taste incremental updates through `ArchiveIndexManager`, removing direct record-only write coupling from common archive writes
 - `ArchiveIndexManager.updateChangedRecord/removeRecord` now also refreshes entity-path and link outgoing/incoming indexes for the affected Markdown path
 - `ArchiveIndexManager.updateChangedRecord/removeRecord` now refreshes title/alias lookup shards for the affected Markdown path
+- `ArchiveIndexValidatorService` now rebuilds and audits derived indexes against Markdown source, reporting rebuild failures, duplicate source IDs, stale paths, missing title/alias entries, link target drift, and stale taste evidence
 
 Validated:
 
 - `flutter test` focused vault/index/path suite: 34 pass
 - `flutter test` archive operation/candidate/executor/revision contract suites: 34 pass
+- `flutter test test/archive_index_validator_service_test.dart`: 5 pass
+- `flutter test test/archive_index_validator_service_test.dart test/archive_index_manager_test.dart test/title_alias_index_test.dart test/record_link_index_test.dart test/entity_path_index_test.dart test/taste_index_service_test.dart`: 27 pass
 - `flutter test test/title_alias_index_test.dart test/archive_index_manager_test.dart`: 9 pass
 - `flutter test test/archive_index_manager_test.dart test/record_link_index_test.dart test/entity_path_index_test.dart`: 16 pass
 - `flutter test test/record_summary_index_test.dart test/entity_vault_w4_test.dart test/journal_vault_test.dart test/timeline_vault_store_test.dart`: 19 pass
 - `flutter test test/taste_index_service_test.dart`: 3 pass
 - `flutter test test/archive_candidate_store_test.dart test/archive_index_manager_test.dart test/taste_index_service_test.dart`: 23 pass
 - `flutter test test/archive_index_manager_test.dart test/taste_index_service_test.dart test/record_summary_index_test.dart`: 10 pass
-- `flutter test`: 733 pass
+- `flutter test`: 738 pass
 - `flutter analyze lib`: 0 issues
 
 Remaining before calling v3 complete:
 
-- add index rebuild validation so record/entity-path/title-alias/link/candidate/taste indexes can be audited for ID/path drift after rebuild
+- freeze the v3 Markdown record contract for app/script/agent writes
 - expose title/alias lookup through scoped agent/query surfaces instead of direct Markdown scans
 - add collection/revisit/music-specific taste signal expansion
 - decide whether to migrate existing local dev vault files or only use v3 for new records

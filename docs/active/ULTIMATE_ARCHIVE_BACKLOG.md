@@ -33,6 +33,7 @@ These are done enough to treat as current architecture baseline.
 | UA-202b | Incremental index wiring into archive writes | done | Work/Entity/Journal/Timeline save/delete flows now call the manager instead of directly mutating record-only indexes |
 | UA-206a | Link/entity-path incremental coverage | done | changed/deleted Markdown paths update link outgoing/incoming and entity path indexes through `ArchiveIndexManager` |
 | UA-204 | Sharded title/alias lookup index | done | `.akasha/title_alias_index/names/{shard}.json` resolves normalized title/alias/original/localized names to stable IDs without Markdown scans |
+| UA-208 | Index rebuild validator | done | `ArchiveIndexValidatorService` rebuilds and audits record/entity-path/title-alias/link/candidate/taste indexes against Markdown source |
 | UA-209 | Candidate store sharded scale path | done | candidates write to `.akasha/candidates/{type}/{shard}.json` with sharded name indexes |
 | UA-209a | Candidate name index rebuild/fallback | done | candidate duplicate guard falls back to source shards and `rebuildDerivedIndexes` restores name indexes |
 | UA-301 | Taste index schema and first extractor | done | `.akasha/indexes/taste_index.json` derives evidence-backed rating/status/favorite/tag/memo/quote/link signals |
@@ -66,7 +67,7 @@ These are what make "infinite archive" fast instead of merely correct.
 | UA-205 | Tag index expansion | Taste/theme/mood lookup should not parse all Markdown | Keep normalized tag -> record ids |
 | UA-206 | Link and incoming graph hardening | Backlinks and graph exploration need stable relationship lookup | Incremental outgoing/incoming updates landed; next add validation/reporting for unresolved title links |
 | UA-207 | Snippet/quote/scene index | Search should find meaningful passages without full-file reads | Store short derived excerpts with evidence paths |
-| UA-208 | Index rebuild validator | Derived indexes must be disposable and trustworthy | Add command/test that rebuilds and checks record counts/IDs/paths |
+| UA-208 | Index rebuild validator | Derived indexes must be disposable and trustworthy | Landed service validation for rebuild failures, duplicate IDs, stale paths, missing title aliases, link drift, and taste evidence drift |
 | UA-210 | Candidate merge/review query UX | Shards prevent IO blowups, but users still need reviewable duplicate clusters | Add paged candidate queries and merge suggestions backed by the name index |
 
 ## 4. P1 Taste And Preference Work
@@ -143,12 +144,12 @@ These matter, but they are not the current ultimate-archive core.
 
 The next architecture slice should be:
 
-> **UA-208 Index rebuild validator:** prove every derived index can be deleted, rebuilt, and checked against the Markdown vault without silent ID/path drift.
+> **UA-106 Record contract schema freeze:** standardize the Markdown fields that future app, script, and agent writes must use.
 
 Minimum done condition:
 
-- run a maintenance validation that rebuilds record/entity-path/title-alias/link/candidate/taste indexes
-- compare core counts and required IDs/paths across indexes
-- report stale paths, duplicate IDs, and unresolved index references
-- keep it read-only unless the user explicitly runs a repair
-- prove mixed v1/v2/v3 vault fixtures stay index-consistent
+- define final required/recommended fields for Work, Entity, Journal, and Timeline records
+- standardize `created_at`, `updated_at`, `source`, `evidence`, `external_ids`, `aliases`, `original_title`, and structured `links`
+- keep v1/v2 read compatibility while making v3 write output predictable
+- add fixtures/tests proving old and new Markdown parse into the same source model
+- document what agents may write and what remains app-owned

@@ -304,6 +304,11 @@ entity-path, and title/alias derived indexes for one Markdown file. Work,
 Entity, Journal, and Timeline save/delete flows now use that manager path, while
 full rebuild remains the recovery path.
 
+`ArchiveIndexValidatorService` is the current maintenance audit layer for these
+indexes. It can rebuild them, scan Markdown source directly, and report duplicate
+record IDs, stale index paths, missing title/alias entries, link target drift,
+and stale taste evidence without modifying archive records.
+
 ---
 
 ## 9. Path Strategy
