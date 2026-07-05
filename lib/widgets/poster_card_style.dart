@@ -40,6 +40,7 @@ abstract final class PosterCardStyle {
       MediaCategory.book => const Color(0xFFFBBF24),
       MediaCategory.movie => const Color(0xFF60A5FA),
       MediaCategory.drama => const Color(0xFFA78BFA),
+      MediaCategory.music => const Color(0xFFE879F9),
     };
   }
 

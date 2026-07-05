@@ -61,6 +61,12 @@ class CategoryRegistry {
       chipSortOrder: 6,
       isContentType: true,
     ),
+    MediaCategory.music: CategoryDescriptor(
+      category: MediaCategory.music,
+      shortLabel: 'Music',
+      chipSortOrder: 7,
+      isContentType: true,
+    ),
   };
 
   static CategoryDescriptor descriptorFor(MediaCategory category) {

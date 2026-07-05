@@ -42,7 +42,8 @@ enum MediaCategory {
   game('Game', Icons.sports_esports),
   book('Book / Novel / Light Novel', Icons.auto_stories),
   movie('Movie', Icons.movie),
-  drama('Drama', Icons.live_tv);
+  drama('Drama', Icons.live_tv),
+  music('Music / OST', Icons.music_note);
 
   final String label;
   final IconData icon;
@@ -212,6 +213,16 @@ extension MediaCategoryL10n on MediaCategory {
         return l10n.mediaCategoryMovie;
       case MediaCategory.drama:
         return l10n.mediaCategoryDrama;
+      case MediaCategory.music:
+        try {
+          return l10n.mediaCategoryMusic;
+        } catch (_) {
+          final localeStr = l10n.localeName?.toString() ?? '';
+          if (localeStr.startsWith('ko')) {
+            return '음악 / OST';
+          }
+          return label;
+        }
     }
   }
 }
