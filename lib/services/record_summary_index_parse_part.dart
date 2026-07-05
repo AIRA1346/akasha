@@ -1,18 +1,18 @@
 part of 'record_summary_index_service.dart';
 
 RecordKind _recordKindFromYaml(YamlMap yaml) {
-  final raw = _string(yaml['record_kind']);
+  final raw = _safeYamlString(yaml, 'record_kind');
   if (raw == TimelineEntryParser.legacyRecordKind) {
     return RecordKind.timelineEntry;
   }
   for (final kind in RecordKind.values) {
     if (kind.name == raw) return kind;
   }
-  final entityType = _string(yaml['entity_type']);
-  if (_string(yaml['work_id']) != null || entityType == 'work') {
+  final entityType = _safeYamlString(yaml, 'entity_type');
+  if (_safeYamlString(yaml, 'work_id') != null || entityType == 'work') {
     return RecordKind.workJournal;
   }
-  if (_string(yaml['entity_id']) != null) {
+  if (_safeYamlString(yaml, 'entity_id') != null) {
     return RecordKind.entityJournal;
   }
   return RecordKind.freeformJournal;
@@ -20,16 +20,16 @@ RecordKind _recordKindFromYaml(YamlMap yaml) {
 
 String _recordIdFromYaml(YamlMap yaml, RecordKind kind, String relativePath) {
   final id = switch (kind) {
-    RecordKind.workJournal => _string(yaml['work_id'] ?? yaml['entity_id']),
-    RecordKind.entityJournal => _string(yaml['entity_id']),
+    RecordKind.workJournal => _safeYamlString(yaml, 'work_id') ?? _safeYamlString(yaml, 'entity_id'),
+    RecordKind.entityJournal => _safeYamlString(yaml, 'entity_id'),
     RecordKind.timelineEntry ||
-    RecordKind.freeformJournal => _string(yaml['record_id']),
+    RecordKind.freeformJournal => _safeYamlString(yaml, 'record_id'),
   };
   return id?.trim().isNotEmpty == true ? id!.trim() : 'path:$relativePath';
 }
 
 String _entityTypeFromYaml(YamlMap yaml, RecordKind kind) {
-  final raw = _string(yaml['entity_type']);
+  final raw = _safeYamlString(yaml, 'entity_type');
   if (raw != null && raw.isNotEmpty) return raw;
   return switch (kind) {
     RecordKind.workJournal => 'work',
@@ -37,6 +37,33 @@ String _entityTypeFromYaml(YamlMap yaml, RecordKind kind) {
     RecordKind.timelineEntry => 'timeline',
     RecordKind.freeformJournal => 'journal',
   };
+}
+
+String? _safeYamlString(YamlMap yaml, String key) {
+  YamlNode? node;
+  for (final k in yaml.nodes.keys) {
+    if (k.toString().trim() == key) {
+      node = yaml.nodes[k];
+      break;
+    }
+  }
+  if (node == null) return null;
+
+  if (node is YamlScalar) {
+    final val = node.value;
+    if (val is bool || val is num) {
+      final rawText = node.span.text.trim();
+      final cleaned = rawText.split('#').first.trim();
+      if ((cleaned.startsWith('"') && cleaned.endsWith('"')) ||
+          (cleaned.startsWith("'") && cleaned.endsWith("'"))) {
+        return UnicodeHelper.toNfc(cleaned.substring(1, cleaned.length - 1));
+      }
+      return UnicodeHelper.toNfc(cleaned);
+    }
+  }
+
+  final val = node.value?.toString().trim();
+  return val == null || val.isEmpty ? null : UnicodeHelper.toNfc(val);
 }
 
 _Split? _splitFrontmatter(String content) {
