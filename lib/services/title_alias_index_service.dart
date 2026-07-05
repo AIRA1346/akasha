@@ -6,6 +6,7 @@ import 'package:yaml/yaml.dart';
 
 import '../core/archiving/entity_anchor.dart';
 import '../core/archiving/record_kind.dart';
+import '../core/utils/unicode_helper.dart';
 import 'timeline_entry_parser.dart';
 
 class TitleAliasIndexStats {
@@ -612,20 +613,20 @@ class TitleAliasIndexService {
 
   static String? _string(Object? raw) {
     final value = raw?.toString().trim();
-    return value == null || value.isEmpty ? null : value;
+    return value == null || value.isEmpty ? null : UnicodeHelper.toNfc(value);
   }
 
   static List<String> _stringList(Object? raw) {
     if (raw is YamlList || raw is List) {
       return (raw as Iterable)
-          .map((entry) => entry.toString().trim())
+          .map((entry) => UnicodeHelper.toNfc(entry.toString().trim()))
           .where((entry) => entry.isNotEmpty)
           .toList(growable: false);
     }
     if (raw is String) {
       return raw
           .split(',')
-          .map((entry) => entry.trim())
+          .map((entry) => UnicodeHelper.toNfc(entry.trim()))
           .where((entry) => entry.isNotEmpty)
           .toList(growable: false);
     }
@@ -633,7 +634,7 @@ class TitleAliasIndexService {
   }
 
   static String normalizeName(String raw) {
-    var value = raw.trim().toLowerCase();
+    var value = UnicodeHelper.toNfc(raw.trim().toLowerCase());
     value = value.replaceAll(RegExp(r'\([^)]*\)'), ' ');
     value = value.replaceAll(RegExp(r'\[[^\]]*\]'), ' ');
     value = value.replaceAll(RegExp(r'[{}<>]'), ' ');

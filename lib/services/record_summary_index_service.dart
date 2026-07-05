@@ -9,6 +9,7 @@ import '../core/archiving/entity_journal_entry.dart';
 import '../core/archiving/journal_entry.dart';
 import '../core/archiving/record_kind.dart';
 import '../core/archiving/timeline_entry.dart';
+import '../core/utils/unicode_helper.dart';
 import '../models/akasha_item.dart';
 import 'timeline_entry_parser.dart';
 

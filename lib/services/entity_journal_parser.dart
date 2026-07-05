@@ -4,6 +4,7 @@ import '../core/archiving/archive_record_contract.dart';
 import '../core/archiving/entity_anchor.dart';
 import '../core/archiving/entity_journal_entry.dart';
 import '../core/archiving/record_kind.dart';
+import '../core/utils/unicode_helper.dart';
 import '../models/entity_id_codec.dart';
 import '../utils/entity_tags.dart';
 
@@ -19,14 +20,16 @@ abstract final class EntityJournalParser {
     final kind = yaml['record_kind']?.toString();
     if (kind != RecordKind.entityJournal.name) return null;
 
-    final entityId = yaml['entity_id']?.toString().trim() ?? '';
+    final rawEntityId = yaml['entity_id']?.toString().trim() ?? '';
+    final entityId = UnicodeHelper.toNfc(rawEntityId);
     if (entityId.isEmpty) return null;
 
     final entityType = _parseEntityType(
       yaml['entity_type']?.toString(),
       entityId,
     );
-    final title = yaml['title']?.toString().trim() ?? entityId;
+    final rawTitle = yaml['title']?.toString().trim() ?? entityId;
+    final title = UnicodeHelper.toNfc(rawTitle);
     final recordMetadata = ArchiveRecordContract.metadataFromYaml(yaml);
     final addedAt =
         ArchiveRecordContract.createdAtFromYaml(yaml) ?? DateTime.now();
@@ -67,6 +70,8 @@ abstract final class EntityJournalParser {
     ArchiveRecordMetadata metadata = ArchiveRecordMetadata.empty,
     String entitySubtype = '',
   }) {
+    final nfcEntityId = UnicodeHelper.toNfc(entityId);
+    final nfcTitle = UnicodeHelper.toNfc(title);
     final added = addedAt ?? DateTime.now();
     final resolvedMetadata = metadata.copyWith(
       aliases: aliases,
@@ -77,11 +82,11 @@ abstract final class EntityJournalParser {
     final buffer = StringBuffer()
       ..writeln('---')
       ..writeln('schema_version: ${ArchiveRecordContract.schemaVersion}')
-      ..writeln('record_id: "rec_${_escape(entityId)}"')
+      ..writeln('record_id: "rec_${_escape(nfcEntityId)}"')
       ..writeln('entity_type: ${entityType.name}')
-      ..writeln('entity_id: "${_escape(entityId)}"')
+      ..writeln('entity_id: "${_escape(nfcEntityId)}"')
       ..writeln('record_kind: ${RecordKind.entityJournal.name}')
-      ..writeln('title: "${_escape(title)}"')
+      ..writeln('title: "${_escape(nfcTitle)}"')
       ..writeln('added_at: "${ArchiveRecordContract.formatDateTime(added)}"');
     ArchiveRecordContract.writeContractFields(
       buffer,

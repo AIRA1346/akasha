@@ -63,7 +63,7 @@ Future<FileStat?> _tryStat(String path) async {
 
 String? _jsonString(Object? raw) {
   final value = raw?.toString();
-  return value == null || value.isEmpty ? null : value;
+  return value == null || value.isEmpty ? null : UnicodeHelper.toNfc(value);
 }
 
 String? _string(Object? raw) => _jsonString(raw);
