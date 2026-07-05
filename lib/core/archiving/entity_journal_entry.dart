@@ -15,6 +15,7 @@ class EntityJournalEntry {
     this.posterPath,
     this.sourceOperationId,
     this.recordMetadata = ArchiveRecordMetadata.empty,
+    this.entitySubtype = '',
   });
 
   final EntityAnchorType entityType;
@@ -28,4 +29,5 @@ class EntityJournalEntry {
   final String? posterPath;
   final String? sourceOperationId;
   final ArchiveRecordMetadata recordMetadata;
+  final String entitySubtype;
 }

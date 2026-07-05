@@ -32,6 +32,9 @@ abstract final class ArchiveRecordContract {
       sourceOperationId: _nonEmptyString(
         yaml['source_operation_id'] ?? yaml['sourceOperationId'],
       ),
+      entitySubtype: _nonEmptyString(
+        yaml['entity_subtype'] ?? yaml['entitySubtype'],
+      ) ?? '',
     );
   }
 
@@ -50,6 +53,10 @@ abstract final class ArchiveRecordContract {
       ..writeln(serializeStringMap('external_ids', metadata.externalIds))
       ..write(serializeStringListBlock('evidence', metadata.evidence))
       ..write(serializeStructuredLinks('links', metadata.links));
+    final entitySubtype = metadata.entitySubtype.trim();
+    if (entitySubtype.isNotEmpty) {
+      buffer.writeln('entity_subtype: "${escape(entitySubtype)}"');
+    }
     final sourceOperationId = metadata.sourceOperationId?.trim();
     if (sourceOperationId != null && sourceOperationId.isNotEmpty) {
       buffer.writeln('source_operation_id: "${escape(sourceOperationId)}"');
@@ -191,6 +198,7 @@ class ArchiveRecordMetadata {
     this.links = const [],
     this.updatedAt,
     this.sourceOperationId,
+    this.entitySubtype = '',
   });
 
   static const empty = ArchiveRecordMetadata();
@@ -203,6 +211,7 @@ class ArchiveRecordMetadata {
   final List<ArchiveStructuredLink> links;
   final DateTime? updatedAt;
   final String? sourceOperationId;
+  final String entitySubtype;
 
   ArchiveRecordMetadata copyWith({
     String? source,
@@ -213,6 +222,7 @@ class ArchiveRecordMetadata {
     List<ArchiveStructuredLink>? links,
     DateTime? updatedAt,
     String? sourceOperationId,
+    String? entitySubtype,
   }) {
     return ArchiveRecordMetadata(
       source: source ?? this.source,
@@ -223,6 +233,7 @@ class ArchiveRecordMetadata {
       links: links ?? this.links,
       updatedAt: updatedAt ?? this.updatedAt,
       sourceOperationId: sourceOperationId ?? this.sourceOperationId,
+      entitySubtype: entitySubtype ?? this.entitySubtype,
     );
   }
 }

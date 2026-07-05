@@ -17,6 +17,7 @@ class VaultRecordSummary {
     this.addedAt,
     this.updatedAt,
     this.posterPath,
+    this.entitySubtype,
   });
 
   final String id;
@@ -34,6 +35,7 @@ class VaultRecordSummary {
   final DateTime? addedAt;
   final DateTime? updatedAt;
   final String? posterPath;
+  final String? entitySubtype;
 
   List<String> get normalizedTags => tags
       .map(RecordSummaryIndexService._normalizeTag)
@@ -87,6 +89,7 @@ class VaultRecordSummary {
       addedAt: entry.addedAt,
       updatedAt: entry.recordMetadata.updatedAt ?? stat?.modified.toUtc(),
       posterPath: entry.posterPath,
+      entitySubtype: entry.entitySubtype,
     );
   }
 
@@ -173,6 +176,7 @@ class VaultRecordSummary {
             _date(parsed['updated_at'] ?? parsed['updatedAt']) ??
             stat?.modified.toUtc(),
         posterPath: _string(parsed['poster'] ?? parsed['poster_path']),
+        entitySubtype: _string(parsed['entity_subtype'] ?? parsed['entitySubtype']),
       );
     } catch (_) {
       return null;
@@ -203,6 +207,7 @@ class VaultRecordSummary {
       addedAt: _date(json['addedAt']),
       updatedAt: _date(json['updatedAt']),
       posterPath: _jsonString(json['posterPath']),
+      entitySubtype: _jsonString(json['entitySubtype']),
     );
   }
 
@@ -222,5 +227,7 @@ class VaultRecordSummary {
     if (addedAt != null) 'addedAt': addedAt!.toUtc().toIso8601String(),
     if (updatedAt != null) 'updatedAt': updatedAt!.toUtc().toIso8601String(),
     if (posterPath != null && posterPath!.isNotEmpty) 'posterPath': posterPath,
+    if (entitySubtype != null && entitySubtype!.isNotEmpty)
+      'entitySubtype': entitySubtype,
   };
 }

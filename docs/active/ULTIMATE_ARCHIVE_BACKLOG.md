@@ -38,6 +38,7 @@ These are done enough to treat as current architecture baseline.
 | UA-209 | Candidate store sharded scale path | done | candidates write to `.akasha/candidates/{type}/{shard}.json` with sharded name indexes |
 | UA-209a | Candidate name index rebuild/fallback | done | candidate duplicate guard falls back to source shards and `rebuildDerivedIndexes` restores name indexes |
 | UA-301 | Taste index schema and first extractor | done | `.akasha/indexes/taste_index.json` derives evidence-backed rating/status/favorite/tag/memo/quote/link signals |
+| UA-107 | Entity subtype/role model | ✅ done | `entity_subtype` metadata support and structured relations parser/serializer validated |
 
 ## 2. P0 Pre-Release Architecture Work
 
@@ -48,7 +49,6 @@ These should stay visible because they protect the archive before external/AI wr
 | UA-104 | Candidate review/promotion UI | Candidate Store exists but is not yet a user-facing queue | Add a simple candidate list with promote/dismiss/merge actions |
 | UA-105 | Candidate duplicate detection beyond exact title | Basic normalized title/alias guard is landed; stronger fuzzy merge review is still useful | Add similarity scoring and candidate merge suggestions instead of only hard rejects |
 | UA-106 | Record contract schema freeze | Base contract landed; future slices may extend relation semantics | Keep validators and fixtures aligned as new operation executors land |
-| UA-107 | Entity subtype/role model | Top-level entity types are enough, but roles are not expressive enough | Add `entity_subtype`, `role`, or `relations` for character, actor, director, studio, franchise, OST |
 | UA-108 | Music/OST representation decision | Future prompt examples depend on music taste lookup | Decide whether music/OST is Work category, Entity subtype, or relation/taste signal |
 | UA-109 | v1/v2/v3 mixed-vault validation | Existing vaults must remain readable while new records use v3 | Add fixtures and rebuild tests for mixed legacy/title/ID paths |
 | UA-110 | Explicit v3 migration command | Existing files should never move accidentally | Build opt-in migration that updates paths, indexes, and backlinks atomically |
@@ -145,12 +145,10 @@ These matter, but they are not the current ultimate-archive core.
 
 The next architecture slice should be:
 
-> **UA-107 Entity subtype/role model:** make characters, creators, studios, franchises, OSTs, tracks, and relationship roles expressible without exploding top-level entity types.
+> **UA-108 Music/OST representation decision:** Define the canonical metadata structure and relations for soundtrack albums and track records without top-level type pollution.
 
 Minimum done condition:
 
-- define `entity_subtype`, `role`, and/or structured `relations` rules for Work/Entity/Journal/Timeline references
-- keep top-level entity types stable: `work`, `person`, `event`, `place`, `concept`, `organization`, `custom`
-- cover common archive cases: character, actor, director, writer, studio, publisher, franchise, soundtrack, track, theme
-- add fixtures/tests proving characters and OST/music relationships can be archived and queried without new top-level types
-- document what agents may create directly versus what should stay in candidate/review flow
+- decide and document whether soundtrack/music albums are modeled as Work category, Entity subtype, or structured links
+- map soundtrack and track relationship roles to Work/Entity (e.g., `has_ost`, `composed_by`, `performed_by`)
+- add tests/fixtures verifying music relationships can be queried and analyzed by taste extraction rules

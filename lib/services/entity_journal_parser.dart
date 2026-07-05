@@ -50,6 +50,7 @@ abstract final class EntityJournalParser {
           ? sourceOperationId
           : null,
       recordMetadata: recordMetadata,
+      entitySubtype: recordMetadata.entitySubtype,
     );
   }
 
@@ -64,12 +65,14 @@ abstract final class EntityJournalParser {
     String? posterPath,
     String? sourceOperationId,
     ArchiveRecordMetadata metadata = ArchiveRecordMetadata.empty,
+    String entitySubtype = '',
   }) {
     final added = addedAt ?? DateTime.now();
     final resolvedMetadata = metadata.copyWith(
       aliases: aliases,
       updatedAt: metadata.updatedAt ?? DateTime.now().toUtc(),
       sourceOperationId: sourceOperationId ?? metadata.sourceOperationId,
+      entitySubtype: entitySubtype.isNotEmpty ? entitySubtype : metadata.entitySubtype,
     );
     final buffer = StringBuffer()
       ..writeln('---')
