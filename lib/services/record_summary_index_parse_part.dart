@@ -108,7 +108,42 @@ double? _double(Object? raw) {
   return double.tryParse(raw.toString());
 }
 
-DateTime? _date(Object? raw) {
+/// This parser is for AKASHA timestamp fields such as createdAt/updatedAt.
+/// It treats timezone-less date-time strings as UTC wall-clock values to avoid host-local timezone drift.
+/// It must not be used for date-only semantic fields such as releaseDate, watchedDate, birthDate, or historical dates.
+DateTime? _parseVaultInstantAsUtc(Object? raw) {
+  if (raw == null) return null;
+
+  // 1. Raw DateTime object preserves its instant and converts to UTC.
+  if (raw is DateTime) {
+    return raw.toUtc();
+  }
+
+  final clean = raw.toString().trim();
+  final parsed = DateTime.tryParse(clean);
+  if (parsed == null) return null;
+
+  // 2. Fallback to UTC wall-clock cloning when parsed.isUtc is false.
+  if (!parsed.isUtc) {
+    return DateTime.utc(
+      parsed.year,
+      parsed.month,
+      parsed.day,
+      parsed.hour,
+      parsed.minute,
+      parsed.second,
+      parsed.millisecond,
+      parsed.microsecond,
+    );
+  }
+
+  // 3. Keep original UTC parsed representation.
+  return parsed.toUtc();
+}
+
+/// TODO(UA-113): addedAt semantics are not finalized. Do not use this for createdAt/updatedAt or semantic local-date fields.
+/// Legacy date parser for backward compatibility of addedAt.
+DateTime? _legacyAddedAtDate(Object? raw) {
   if (raw == null) return null;
   return DateTime.tryParse(raw.toString())?.toUtc();
 }

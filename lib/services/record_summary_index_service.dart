@@ -10,6 +10,7 @@ import '../core/archiving/journal_entry.dart';
 import '../core/archiving/record_kind.dart';
 import '../core/archiving/timeline_entry.dart';
 import '../core/utils/unicode_helper.dart';
+import 'package:meta/meta.dart';
 import '../models/akasha_item.dart';
 import 'timeline_entry_parser.dart';
 
@@ -22,6 +23,15 @@ part 'record_summary_index_summary_part.dart';
 /// intentionally stores only frontmatter-level summary fields.
 class RecordSummaryIndexService {
   RecordSummaryIndexService();
+
+  /// Public entrypoint to parse system timestamps with timezone normalization.
+  ///
+  /// This parser is for AKASHA timestamp fields such as createdAt/updatedAt.
+  /// It treats timezone-less date-time strings as UTC wall-clock values to avoid host-local timezone drift.
+  /// It must not be used for date-only semantic fields such as releaseDate, watchedDate, birthDate, or historical dates.
+  @visibleForTesting
+  static DateTime? parseVaultInstantAsUtc(Object? raw) =>
+      _parseVaultInstantAsUtc(raw);
 
   static const int schemaVersion = 1;
   static const String indexDirName = '.akasha';

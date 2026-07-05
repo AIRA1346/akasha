@@ -166,14 +166,13 @@ class VaultRecordSummary {
         workStatus: _string(parsed['work_status']),
         myStatus: _string(parsed['my_status'] ?? parsed['status']),
         tags: _tags(parsed['tags']),
-        addedAt: _date(
-          parsed['created_at'] ??
-              parsed['createdAt'] ??
-              parsed['added_at'] ??
-              parsed['addedAt'],
-        ),
+        // createdAt-style source keys are system timestamps and must use the UTC instant parser.
+        // TODO(UA-113): addedAt semantics are not finalized. added_at/addedAt remain on the legacy parser until the field meaning is split or confirmed.
+        addedAt: (parsed['created_at'] ?? parsed['createdAt']) != null
+            ? _parseVaultInstantAsUtc(parsed['created_at'] ?? parsed['createdAt'])
+            : _legacyAddedAtDate(parsed['added_at'] ?? parsed['addedAt']),
         updatedAt:
-            _date(parsed['updated_at'] ?? parsed['updatedAt']) ??
+            _parseVaultInstantAsUtc(parsed['updated_at'] ?? parsed['updatedAt']) ??
             stat?.modified.toUtc(),
         posterPath: _string(parsed['poster'] ?? parsed['poster_path']),
         entitySubtype: _string(parsed['entity_subtype'] ?? parsed['entitySubtype']),
@@ -204,8 +203,8 @@ class VaultRecordSummary {
       tags:
           (json['tags'] as List?)?.map((e) => e.toString()).toList() ??
           const [],
-      addedAt: _date(json['addedAt']),
-      updatedAt: _date(json['updatedAt']),
+      addedAt: _legacyAddedAtDate(json['addedAt']),
+      updatedAt: _parseVaultInstantAsUtc(json['updatedAt']),
       posterPath: _jsonString(json['posterPath']),
       entitySubtype: _jsonString(json['entitySubtype']),
     );
