@@ -71,7 +71,7 @@ class TimelineVaultStore {
         : recordId;
     final entityId = record.entity?.entityId;
 
-    var addedAt = DateTime.now();
+    var addedAt = DateTime.now().toUtc();
     var existingMetadata = ArchiveRecordMetadata.empty;
     var targetPath = record.storagePath?.trim();
 

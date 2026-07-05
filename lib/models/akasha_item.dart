@@ -55,7 +55,7 @@ abstract class AkashaItem {
     ArchiveRecordMetadata? recordMetadata,
   }) : memorableQuotes = memorableQuotes ?? [],
        tags = tags ?? [],
-       addedAt = addedAt ?? DateTime.now(),
+       addedAt = addedAt ?? DateTime.now().toUtc(),
        recordMetadata = recordMetadata ?? ArchiveRecordMetadata.empty;
 
   // ── 상태 접근 (서브클래스에서 구현) ──

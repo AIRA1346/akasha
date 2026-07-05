@@ -72,7 +72,7 @@ abstract final class EntityJournalParser {
   }) {
     final nfcEntityId = UnicodeHelper.toNfc(entityId);
     final nfcTitle = UnicodeHelper.toNfc(title);
-    final added = addedAt ?? DateTime.now();
+    final added = addedAt ?? DateTime.now().toUtc();
     final resolvedMetadata = metadata.copyWith(
       aliases: aliases,
       updatedAt: metadata.updatedAt ?? DateTime.now().toUtc(),
@@ -87,7 +87,7 @@ abstract final class EntityJournalParser {
       ..writeln('entity_id: "${_escape(nfcEntityId)}"')
       ..writeln('record_kind: ${RecordKind.entityJournal.name}')
       ..writeln('title: "${_escape(nfcTitle)}"')
-      ..writeln('added_at: "${ArchiveRecordContract.formatDateTime(added)}"');
+      ..writeln('added_at: "${ArchiveRecordContract.formatSystemTimestamp(added)}"');
     ArchiveRecordContract.writeContractFields(
       buffer,
       createdAt: added,

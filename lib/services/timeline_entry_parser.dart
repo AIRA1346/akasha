@@ -58,7 +58,7 @@ abstract final class TimelineEntryParser {
     String? entityId,
     ArchiveRecordMetadata metadata = ArchiveRecordMetadata.empty,
   }) {
-    final added = addedAt ?? DateTime.now();
+    final added = addedAt ?? DateTime.now().toUtc();
     final resolvedMetadata = metadata.copyWith(
       updatedAt: metadata.updatedAt ?? DateTime.now().toUtc(),
     );
@@ -71,7 +71,7 @@ abstract final class TimelineEntryParser {
       ..writeln(
         'occurred_at: "${ArchiveRecordContract.formatDateTime(occurredAt)}"',
       )
-      ..writeln('added_at: "${ArchiveRecordContract.formatDateTime(added)}"');
+      ..writeln('added_at: "${ArchiveRecordContract.formatSystemTimestamp(added)}"');
     ArchiveRecordContract.writeContractFields(
       buffer,
       createdAt: added,

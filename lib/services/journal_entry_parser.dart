@@ -40,7 +40,7 @@ abstract final class JournalEntryParser {
     DateTime? addedAt,
     ArchiveRecordMetadata metadata = ArchiveRecordMetadata.empty,
   }) {
-    final added = addedAt ?? DateTime.now();
+    final added = addedAt ?? DateTime.now().toUtc();
     final resolvedMetadata = metadata.copyWith(
       updatedAt: metadata.updatedAt ?? DateTime.now().toUtc(),
     );
@@ -50,7 +50,7 @@ abstract final class JournalEntryParser {
       ..writeln('record_kind: freeformJournal')
       ..writeln('record_id: "$recordId"')
       ..writeln('title: "${_escape(title)}"')
-      ..writeln('added_at: "${ArchiveRecordContract.formatDateTime(added)}"');
+      ..writeln('added_at: "${ArchiveRecordContract.formatSystemTimestamp(added)}"');
     ArchiveRecordContract.writeContractFields(
       buffer,
       createdAt: added,

@@ -10,7 +10,7 @@ abstract final class ArchiveRecordContract {
   static const String defaultSource = 'app';
 
   static DateTime? createdAtFromYaml(Map<dynamic, dynamic> yaml) {
-    return parseDateTime(
+    return parseSystemTimestamp(
       yaml['created_at'] ??
           yaml['createdAt'] ??
           yaml['added_at'] ??
@@ -28,7 +28,7 @@ abstract final class ArchiveRecordContract {
       externalIds: stringMap(yaml['external_ids'] ?? yaml['externalIds']),
       evidence: stringList(yaml['evidence']),
       links: structuredLinks(yaml['links']),
-      updatedAt: parseDateTime(yaml['updated_at'] ?? yaml['updatedAt']),
+      updatedAt: parseSystemTimestamp(yaml['updated_at'] ?? yaml['updatedAt']),
       sourceOperationId: _nonEmptyString(
         yaml['source_operation_id'] ?? yaml['sourceOperationId'],
       ),
@@ -45,8 +45,8 @@ abstract final class ArchiveRecordContract {
   }) {
     final updatedAt = metadata.updatedAt ?? DateTime.now().toUtc();
     buffer
-      ..writeln('created_at: "${formatDateTime(createdAt)}"')
-      ..writeln('updated_at: "${formatDateTime(updatedAt)}"')
+      ..writeln('created_at: "${formatSystemTimestamp(createdAt)}"')
+      ..writeln('updated_at: "${formatSystemTimestamp(updatedAt)}"')
       ..writeln('source: "${escape(metadata.source)}"')
       ..writeln(serializeStringList('aliases', metadata.aliases))
       ..writeln('original_title: "${escape(metadata.originalTitle)}"')
@@ -63,6 +63,57 @@ abstract final class ArchiveRecordContract {
     }
   }
 
+  /// Parses a system timestamp (createdAt, updatedAt, addedAt, etc.) with
+  /// UTC wall-clock guard.
+  ///
+  /// * raw DateTime → `.toUtc()`
+  /// * timezone/offset string → Dart parser result (already UTC)
+  /// * timezone-less string → UTC wall-clock clone (legacy compatibility)
+  /// * null / invalid → null
+  ///
+  /// Do not use for semantic local-date fields (watchedDate, releaseDate, etc.)
+  /// or for fields whose semantics are not yet confirmed (occurredAt, timeAnchor).
+  static DateTime? parseSystemTimestamp(Object? raw) {
+    if (raw == null) return null;
+
+    if (raw is DateTime) return raw.toUtc();
+
+    final clean = raw.toString().trim();
+    final parsed = DateTime.tryParse(clean);
+    if (parsed == null) return null;
+
+    // Timezone-less string → treat digits as UTC wall-clock values.
+    if (!parsed.isUtc) {
+      return DateTime.utc(
+        parsed.year,
+        parsed.month,
+        parsed.day,
+        parsed.hour,
+        parsed.minute,
+        parsed.second,
+        parsed.millisecond,
+        parsed.microsecond,
+      );
+    }
+
+    return parsed;
+  }
+
+  /// Formats a system timestamp as a UTC ISO-8601 string (always ends with `Z`).
+  ///
+  /// Use this for system timestamp fields: created_at, updated_at, added_at.
+  /// Do NOT use for semantic fields whose UTC conversion is not confirmed
+  /// (e.g. occurred_at). Use [formatDateTime] for those.
+  static String formatSystemTimestamp(DateTime value) {
+    return value.toUtc().toIso8601String();
+  }
+
+  /// Raw DateTime parser without UTC guard. Returns the Dart-parsed result
+  /// as-is, which may be local or UTC depending on the input string.
+  ///
+  /// For system timestamp fields (createdAt, updatedAt, addedAt), use
+  /// [parseSystemTimestamp] instead.
+  @Deprecated('Use parseSystemTimestamp for system timestamp fields.')
   static DateTime? parseDateTime(Object? raw) {
     if (raw == null) return null;
     return DateTime.tryParse(raw.toString());
@@ -176,6 +227,11 @@ abstract final class ArchiveRecordContract {
     return buffer.toString();
   }
 
+  /// Formats a DateTime as-is without UTC conversion.
+  ///
+  /// For system timestamp fields (createdAt, updatedAt, addedAt), use
+  /// [formatSystemTimestamp] instead. This method is retained for fields
+  /// whose UTC conversion semantics are not yet confirmed (e.g. occurred_at).
   static String formatDateTime(DateTime value) {
     return value.toIso8601String();
   }

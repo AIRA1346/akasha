@@ -69,7 +69,7 @@ class JournalVaultStore {
         ? record.title!.trim()
         : recordId;
 
-    var addedAt = DateTime.now();
+    var addedAt = DateTime.now().toUtc();
     var existingMetadata = ArchiveRecordMetadata.empty;
     var targetPath = record.storagePath?.trim();
 

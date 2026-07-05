@@ -10,6 +10,7 @@ import '../core/archiving/journal_entry.dart';
 import '../core/archiving/record_kind.dart';
 import '../core/archiving/timeline_entry.dart';
 import '../core/utils/unicode_helper.dart';
+import '../core/archiving/archive_record_contract.dart';
 import 'package:meta/meta.dart';
 import '../models/akasha_item.dart';
 import 'timeline_entry_parser.dart';
@@ -31,7 +32,7 @@ class RecordSummaryIndexService {
   /// It must not be used for date-only semantic fields such as releaseDate, watchedDate, birthDate, or historical dates.
   @visibleForTesting
   static DateTime? parseVaultInstantAsUtc(Object? raw) =>
-      _parseVaultInstantAsUtc(raw);
+      ArchiveRecordContract.parseSystemTimestamp(raw);
 
   static const int schemaVersion = 1;
   static const String indexDirName = '.akasha';
