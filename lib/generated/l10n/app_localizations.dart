@@ -584,6 +584,12 @@ abstract class AppLocalizations {
   /// **'Custom'**
   String get entityTypeCustom;
 
+  /// No description provided for @entityTypeUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown'**
+  String get entityTypeUnknown;
+
   /// No description provided for @entityTypePhenomenon.
   ///
   /// In en, this message translates to:

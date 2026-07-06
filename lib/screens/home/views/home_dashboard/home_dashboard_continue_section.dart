@@ -477,6 +477,8 @@ class _ExploreCard extends StatelessWidget {
           return l10n.entityTypeOrganization;
         case 'object':
           return l10n.entityTypeObject;
+        case 'unknown':
+          return l10n.entityTypeUnknown;
         case 'custom':
           return l10n.entityTypeCustom;
         case 'phenomenon':

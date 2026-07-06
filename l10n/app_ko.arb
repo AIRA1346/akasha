@@ -81,6 +81,7 @@
   "entityTypeOrganization": "조직",
   "entityTypeObject": "물건",
   "entityTypeCustom": "사용자",
+  "entityTypeUnknown": "미지",
   "entityTypePhenomenon": "레거시",
   "actionRecord": "기록하기",
   "vaultSettingsTitle": "로컬 볼트(Vault) 설정",

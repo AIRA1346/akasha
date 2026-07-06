@@ -50,6 +50,19 @@ void main() {
       );
       expect(EntityIdCodec.isUserLocalAny('sub_manga_legacy_2020'), isFalse);
     });
+
+    test('unknown and custom legacy falls back', () {
+      // Legacy custom prefix maps to object
+      expect(EntityIdCodec.typeFromId('cu_u_abc12345'), EntityAnchorType.object);
+      expect(EntityIdCodec.typeFromId('cu_123456789'), EntityAnchorType.object);
+
+      // New object prefix maps to object
+      expect(EntityIdCodec.typeFromId('ob_u_abc12345'), EntityAnchorType.object);
+
+      // Unrecognized prefix maps to unknown
+      expect(EntityIdCodec.typeFromId('xx_u_abc12345'), EntityAnchorType.unknown);
+      expect(EntityIdCodec.typeFromId('invalid_id'), EntityAnchorType.unknown);
+    });
   });
 
   group('EntityAnchor.typeForEntityId', () {
@@ -66,6 +79,11 @@ void main() {
         ),
         EntityAnchorType.person,
       );
+    });
+
+    test('falls back to unknown for invalid prefix', () {
+      expect(EntityAnchor.typeForEntityId('xx_u_abc12345'), EntityAnchorType.unknown);
+      expect(EntityAnchor.typeForEntityId('invalid'), EntityAnchorType.unknown);
     });
   });
 }

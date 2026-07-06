@@ -271,6 +271,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get entityTypeCustom => 'Custom';
 
   @override
+  String get entityTypeUnknown => 'Unknown';
+
+  @override
   String get entityTypePhenomenon => 'Legacy';
 
   @override

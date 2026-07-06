@@ -31,15 +31,23 @@ abstract final class EntityIdCodec {
       return EntityAnchorType.work;
     }
 
+    if (id.startsWith('cu_')) {
+      // Legacy cu_ IDs are treated as object for backward compatibility.
+      return EntityAnchorType.object;
+    }
+
     for (final entry in _prefixes.entries) {
       if (entry.key == EntityAnchorType.work) continue;
+      // ignore: deprecated_member_use_from_same_package
+      if (entry.key == EntityAnchorType.custom) continue;
+
       if (isGlobalId(id, entry.key) || isUserLocalId(id, entry.key)) {
         return entry.key;
       }
     }
 
-    // Legacy cu_ IDs are treated as object for backward compatibility.
-    return EntityAnchorType.object;
+    // Unrecognized ID format defaults to unknown (Spec §3).
+    return EntityAnchorType.unknown;
   }
 
   static bool isUserLocalId(String entityId, EntityAnchorType type) {

@@ -266,6 +266,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get entityTypeCustom => '사용자';
 
   @override
+  String get entityTypeUnknown => '미지';
+
+  @override
   String get entityTypePhenomenon => '레거시';
 
   @override

@@ -231,6 +231,7 @@ String _localizedEntityType(EntityAnchorType type, AppLocalizations l10n) {
     EntityAnchorType.place => l10n.entityTypePlace,
     EntityAnchorType.organization => l10n.entityTypeOrganization,
     EntityAnchorType.object => l10n.entityTypeObject,
+    EntityAnchorType.unknown => l10n.entityTypeUnknown,
     // ignore: deprecated_member_use_from_same_package
     EntityAnchorType.custom => l10n.entityTypeCustom,
     EntityAnchorType.phenomenon => l10n.entityTypePhenomenon,
@@ -245,6 +246,7 @@ String _typeLabel(EntityAnchorType type) {
     EntityAnchorType.place => 'Place',
     EntityAnchorType.organization => 'Organization',
     EntityAnchorType.object => 'Object',
+    EntityAnchorType.unknown => 'Unknown',
     // ignore: deprecated_member_use_from_same_package
     EntityAnchorType.custom => 'Custom',
     EntityAnchorType.work => 'Work',
@@ -285,6 +287,7 @@ String entityTypeBadgeLabel(EntityAnchorType type) {
     EntityAnchorType.place => 'Place',
     EntityAnchorType.organization => 'Org',
     EntityAnchorType.object => 'Object',
+    EntityAnchorType.unknown => 'Unknown',
     // ignore: deprecated_member_use_from_same_package
     EntityAnchorType.custom => 'Custom',
     EntityAnchorType.phenomenon => 'Legacy',

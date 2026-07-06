@@ -238,6 +238,7 @@ String entityTypeDisplayLabel(EntityAnchorType type, [AppLocalizations? l10n]) {
       EntityAnchorType.place => l10n.entityTypePlace,
       EntityAnchorType.organization => l10n.entityTypeOrganization,
       EntityAnchorType.object => l10n.entityTypeObject,
+      EntityAnchorType.unknown => l10n.entityTypeUnknown,
       // ignore: deprecated_member_use_from_same_package
       EntityAnchorType.custom => l10n.entityTypeCustom,
       EntityAnchorType.phenomenon => l10n.entityTypePhenomenon,
@@ -251,6 +252,7 @@ String entityTypeDisplayLabel(EntityAnchorType type, [AppLocalizations? l10n]) {
     EntityAnchorType.place => '장소',
     EntityAnchorType.organization => '조직',
     EntityAnchorType.object => '물건',
+    EntityAnchorType.unknown => '미지',
     // ignore: deprecated_member_use_from_same_package
     EntityAnchorType.custom => '사용자',
     EntityAnchorType.phenomenon => '레거시',

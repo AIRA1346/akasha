@@ -133,6 +133,7 @@
   "entityTypeOrganization": "Organization",
   "entityTypeObject": "Object",
   "entityTypeCustom": "Custom",
+  "entityTypeUnknown": "Unknown",
   "entityTypePhenomenon": "Legacy",
   "actionRecord": "Record",
   "vaultSettingsTitle": "Local Vault Settings",

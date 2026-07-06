@@ -11,6 +11,8 @@ enum EntityAnchorType {
   organization,
   /// 물건 — 소장품·기기·도구 등 유형 사물.
   object,
+  /// 미지 유형 — 알 수 없는 프리픽스 조우 시 (명세 §3)
+  unknown,
   /// @Deprecated legacy — 신규 Fact ❌ ([entity-type-philosophy §3.2])
   phenomenon,
   /// @Deprecated — [object]로 대체됨. 기존 `cu_` ID 호환 전용.
@@ -42,7 +44,7 @@ class EntityAnchor {
 
   /// Timeline·Record import용 entityId → anchor type.
   static EntityAnchorType typeForEntityId(String entityId) {
-    return EntityIdCodec.typeFromId(entityId) ?? EntityAnchorType.object;
+    return EntityIdCodec.typeFromId(entityId) ?? EntityAnchorType.unknown;
   }
 
   @override

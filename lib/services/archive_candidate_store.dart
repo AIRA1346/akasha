@@ -639,9 +639,10 @@ class ArchiveCandidateStore {
       EntityAnchorType.event => 4,
       EntityAnchorType.concept => 5,
       EntityAnchorType.object => 6,
+      EntityAnchorType.unknown => 7,
       // ignore: deprecated_member_use_from_same_package
-      EntityAnchorType.custom => 7,
-      EntityAnchorType.phenomenon => 8,
+      EntityAnchorType.custom => 8,
+      EntityAnchorType.phenomenon => 9,
     };
   }
 }

@@ -42,7 +42,7 @@ A compliant AKASHA Vault folder MUST organize its files according to the followi
 
 - **`{category}`** in `works/` MUST be a recognized `MediaCategory` (e.g., `manga`, `anime`, `novel`, `game`, `drama`, `movie`, `book`).
 - **Hidden directories** (starting with `.`), except `.akasha` and `.trash`, MUST be ignored by conforming readers.
-- All files under `.akasha/` are derived and disposable; they can be deleted and rebuilt by scanning all Markdown files in the vault.
+- Most files under `.akasha/` are derived and disposable; they can be deleted and rebuilt by scanning all Markdown files in the vault. **Exception**: The `.akasha/ops/` transaction directory and `.akasha/event_ledger.jsonl` are append-only transaction histories and CANNOT be rebuilt from raw Markdown records.
 
 ---
 
@@ -79,8 +79,8 @@ Conforming v3 records MUST declare the following fields in their frontmatter:
 
 ### 2.2 System Timestamp Constraint (UTC ISO-8601)
 
-All timestamps (`created_at`, `updated_at`, `occurred_at`) MUST strictly use the UTC representation ending in **`Z`** (e.g., `2026-07-06T12:00:00.000Z`).
-This isolates the vault from local machine timezone drift and ensures consistent chronological parsing across different AI agents and systems.
+All system timestamps (`created_at`, `updated_at`) MUST strictly use the UTC representation ending in **`Z`** (e.g., `2026-07-06T12:00:00.000Z`).
+This isolates the vault from local machine timezone drift and ensures consistent chronological parsing across different AI agents and systems. (Note: `occurred_at` timezone semantics are deferred under `UA-116` and excluded from this strict UTC Z enforcement for local timeline offset preservation).
 
 ---
 
@@ -100,7 +100,7 @@ Conforming vaults enforce stable ID prefixes to maintain ontological clarity:
 
 - **`u_`** designates a **user-local entity** created within the vault. Non-prefixed IDs represent globally registry-synced entities.
 - Conforming parsers MUST treat legacy custom ID prefix `cu_` as `ob` (Object) for backward compatibility.
-- Unknown/unsupported prefixes MUST be parsed as `unknown` to prevent silent misclassification.
+- Unknown/unsupported prefixes MUST be parsed as `unknown` (returning the `unknown` EntityAnchorType) to prevent silent misclassification.
 
 ---
 
