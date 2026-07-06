@@ -1,7 +1,8 @@
 # Agent Vault Protocol v1
 
 > **지위:** Steam v1 **Agent ↔ Sanctum vault** 상호작용 SSOT
-> **갱신:** 2026-07-06
+> **갱신:** 2026-07-06 (형식 명세 v3 동기화)
+> **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md) — 필드·시간·관계 규칙은 명세가 최상위 기준 (볼트 내 `.akasha/spec/spec_v3.md` 동봉)
 > **Git:** code/test baseline **7be7b51b** · current tip은 `git log -1` 기준
 > **상위:** [VISION.md](VISION.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md) · [SPRINT_B1_DOGFOOD.md](SPRINT_B1_DOGFOOD.md)
 > **구현 참고:** `AkashaFileService` watch · `TimelineEntryParser` · `EntityVaultStore` (제품 코드 — 본 문서는 **파일 프로토콜 계약**)
@@ -46,7 +47,9 @@ AKASHA v1의 제품 핵심은 **글로벌 catalog가 아니라 Personal Sanctum 
 | `{vault}/**/*.md` | workJournal · entityJournal · timeline · journal Record |
 | `{vault}/posters/**` | Work 포스터 이미지 (바이너리 참조만; 내용 분석은 Agent 재량) |
 | `{vault}/catalog/user_entities.json` | Tier 1.5 ID·제목 인덱스 (**읽기 전용** — mirror) |
+| `{vault}/.akasha/spec/spec_v3.md` | **형식 명세 동봉 사본** — 필드·시간·관계 규칙 (읽기 전용) |
 | `{vault}/.akasha/entity_path_index.json` | entity_id → 상대 경로 (**읽기 전용**) |
+| `{vault}/.akasha/record_index.json` | record 요약 지도 (**읽기 전용**) |
 | `{vault}/.akasha/link_index.json` | `[[링크]]` 인덱스 (**읽기 전용**) |
 | `{vault}/VAULT_README.md` | 볼트 현장 요약 (앱 자동 생성) |
 
@@ -79,9 +82,25 @@ AKASHA v1의 제품 핵심은 **글로벌 catalog가 아니라 Personal Sanctum 
 |------|------|
 | `entity_id` | Record 닻 — [user-local-catalog-policy.md](../history/policy/user-local-catalog-policy.md) |
 | `work_id` | Work 조인 키 |
+| `record_id` | Record 식별자 (v3) |
 | `record_kind` | 파서·라우팅 |
 | `entity_type` (entityJournal) | 스키마 |
 | `category` (workJournal) | taxonomy — 변경 시 앱 혼란 |
+| `schema_version` | 형식 버전 선언 (v3) |
+| `created_at` · `source` · `source_operation_id` | **provenance** — 기록 주체·생성 시각의 증거. 기존 파일에서 절대 수정 금지 |
+
+### 3.1a 출처(source) 규약
+
+- 에이전트가 **create**하는 모든 파일: `source: "agent"` 기록 (enum: `user` · `app` · `agent` · `importTool` · `script`).
+- 기존 파일 **편집** 시: `source`는 최초 생성 주체를 나타내므로 그대로 두고, `updated_at`만 UTC `Z`로 갱신한다.
+- 이 규약이 "사용자가 직접 쓴 기억"과 "도구가 대신 쓴 기억"의 구분을 보존한다.
+
+### 3.1b 시간 규약 (명세 §2.2–2.3)
+
+| 필드 | 의미 | 형식 |
+|------|------|------|
+| `created_at` · `updated_at` · `added_at` | 기계가 파일을 쓴 물리 순간 | **UTC ISO-8601 `Z` 필수** |
+| `occurred_at` (timeline) | 사용자가 **경험한** 시각 | **타임존 없는 wall-clock** (`"2026-07-05T22:30:00.000"`) — `Z`·offset 금지. 사용자의 말("어제 밤 10시")을 그 숫자 그대로 기록, UTC 변환 금지 |
 
 ### 3.2 frontmatter — 편집 허용 (v1)
 
@@ -120,6 +139,7 @@ AKASHA v1의 제품 핵심은 **글로벌 catalog가 아니라 Personal Sanctum 
 | 슬롯 섹션 | update / append | `# 📝 메모` · `# 🎬 명대사` · `# 📋 시놉시스` — [sanctum-md-customization.md](../history/product/sanctum-md-customization.md) |
 | 커스텀 섹션 | append / update | `# 🎵 OST` 등 자유 — **삭제 금지** (비우기만 허용) |
 | Wiki 링크 | link | `[[entity_id\|표시]]` · `[[work_id]]` — [link-identity-policy.md](../history/policy/link-identity-policy.md) |
+| 구조화 링크 relation | link | **관계 어휘 준수** (명세 §4.1): 핵심 8종(`related`·`about`·`appears_in`·`created_by`·`part_of`·`member_of`·`located_in`·`inspired_by`) 또는 `u:` 네임스페이스만. 미지 문자열 신규 쓰기 금지, 기존 값 보존 |
 | 이미지 | append | `posters/` · `attachments/` 상대 경로 권장 |
 
 **원칙:** 앱은 `bodyRaw` round-trip — Agent는 슬롯 **추가·갱신** 우선, 기존 커스텀 블록 **보존**.
@@ -158,11 +178,14 @@ Agent·자동화는 아래 **단위 operation**으로만 쓰기를 표현한다.
 
 **순서 권장:** `create` → `tag` / `rating` / `status` → `append` → `link`.
 
-**create 시 필수:**
+**create 시 필수 (v3 계약):**
 
 - UTF-8 · `---` YAML frontmatter + Markdown 본문
-- 불변 ID 발급 규칙 준수 (`wk_u_*` · `pe_u_*` 등 — [ADR-011](../history/adr/ADR-011-entity-type-subtype.md))
-- 경로 규칙: [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md) §2–3
+- `schema_version: 3` · `record_id` (`rec_{entity_id}` — journal 계열) · `record_kind`
+- `created_at` / `updated_at` / `added_at` = UTC `Z` · `source: "agent"` (§3.1a–3.1b)
+- 불변 ID 발급 규칙 준수 (`wk_u_*` · `pe_u_*` · `ob_u_*` 등 7종 — [ADR-011](../history/adr/ADR-011-entity-type-subtype.md), 명세 §3. 신규 `cu_` 발급 금지)
+- 경로 규칙: **ID 경로 canonical** (`works/{category}/{wk_id}.md` · `entities/{type}/{entity_id}.md`) — [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md) §2–3
+- 완전한 v3 예시: [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md) §5
 
 ---
 
@@ -282,3 +305,4 @@ Agent 저장은 **앱 native save**와 동일 형식을 따른다.
 | 2026-06-30 | v1 초안 — 읽기/쓰기 범위 · operation · 충돌 · watcher · dogfood · post-v1 분리 |
 | 2026-07-03 | Infinite Archive Hardening 연결 — v1 파일 프로토콜과 post-v1 structured operation layer 경계 명시 |
 | 2026-06-30 | scope 정리 — v1 = 파일 프로토콜 + dogfood · post-v1 = SDK/API/operation layer · `timelineEntry` canonical |
+| 2026-07-06 | **형식 명세 v3 동기화** — 불변 필드에 provenance 추가 · source 규약 §3.1a · 시간 규약 §3.1b · 관계 어휘 · create v3 계약 · `.akasha/spec` 읽기 범위 |

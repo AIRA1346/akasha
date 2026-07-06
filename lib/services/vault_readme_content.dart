@@ -5,7 +5,8 @@ abstract final class VaultReadmeContent {
 # AKASHA Sanctum Vault
 
 > AKASHA가 볼트 연결 시 자동 생성·갱신합니다. 개인 메모는 `NOTES.md`를 사용하세요.  
-> 상세 SSOT: AKASHA 저장소 `docs/active/VAULT_AGENT_GUIDE.md`  
+> **형식 명세 (이 볼트에 동봉): `.akasha/spec/spec_v3.md`** — 필드·시간·관계 규칙의 기준  
+> 상세 가이드: AKASHA 저장소 `docs/active/VAULT_AGENT_GUIDE.md`  
 > 생성: $generatedAtIso
 
 ---
@@ -30,6 +31,7 @@ abstract final class VaultReadmeContent {
 ├── journal/                     # record_kind: freeformJournal
 ├── .trash/                      # 삭제 기록 격리 보관 (복구 안전핀)
 └── .akasha/                     # 앱 인덱스 (직접 편집 비권장)
+    ├── spec/spec_v3.md          # 형식 명세 동봉 사본 (Self-Describing Vault)
     ├── entity_path_index.json   # entity_id → 상대 경로
     ├── record_index.json        # record 요약 지도 (id/title/tags/path)
     ├── link_index.json
@@ -65,7 +67,10 @@ abstract final class VaultReadmeContent {
 ## 편집 규칙
 
 - UTF-8 Markdown + YAML frontmatter (`---` … `---`)
-- **`entity_id` / `work_id` 변경 금지** — 불변 닻(anchor)
+- **`entity_id` / `work_id` / `record_id` 변경 금지** — 불변 닻(anchor)
+- **`source` / `created_at` 변경 금지** — 기록 주체의 증거. 에이전트가 새 파일을 만들면 `source: "agent"`
+- 시스템 시각(`created_at`·`updated_at`·`added_at`)은 UTC `Z` · 경험 시각(`occurred_at`)은 타임존 없는 wall-clock (명세 §2.2–2.3)
+- `links[].relation`은 관계 어휘(명세 §4.1)만: 핵심 8종 또는 `u:` 네임스페이스
 - Work 포스터 필드: `poster:` · Entity: `poster_path:` (상대경로 `posters/…`)
 - 본문은 자유 Markdown. Work는 `# 📝 메모`, `# 🎬 명대사` 등 슬롯 헤딩 사용 가능
 
