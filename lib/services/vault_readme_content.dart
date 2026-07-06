@@ -16,7 +16,8 @@ abstract final class VaultReadmeContent {
 {vault}/
 ├── catalog/user_entities.json   # ID·제목 인덱스 (앱 배관 — .md와 entity_id 동기화 유지)
 ├── posters/                     # 이미지 (본문에서 posters/… 상대경로)
-├── works/{subtype}/             # 작품 journal (신규 경로, 설정 시)
+├── works/{category}/{wk_id}.md  # 작품 journal (v3 canonical 경로)
+├── works/{category}/            # 작품 journal (v3 폴더 레이아웃)
 ├── {manga|animation|…}/         # 작품 journal (legacy 기본)
 ├── entities/
 │   ├── person/
@@ -24,7 +25,7 @@ abstract final class VaultReadmeContent {
 │   ├── concept/
 │   ├── place/
 │   ├── organization/
-│   └── custom/
+│   └── object/                  # record_kind: entityJournal (custom 대체)
 ├── timeline/                    # record_kind: timelineEntry
 ├── journal/                     # record_kind: freeformJournal
 ├── .trash/                      # 삭제 기록 격리 보관 (복구 안전핀)
@@ -41,8 +42,8 @@ abstract final class VaultReadmeContent {
 
 | record_kind | 경로 | 비고 |
 |-------------|------|------|
-| `workJournal` | `{subtype}/` 또는 `works/{subtype}/` | `work_id` · `entity_id` 동일 권장 |
-| `entityJournal` | `entities/{entity_type}/` | person · concept · event … |
+| workJournal | works/{category}/ 또는 {category}/ | `works/{category}/{wk_id}.md` 형태로 생성 |
+| entityJournal | entities/{entity_type}/ | person · concept · event · object … |
 | `timelineEntry` | `timeline/` | |
 | `freeformJournal` | `journal/` | |
 
@@ -72,11 +73,16 @@ abstract final class VaultReadmeContent {
 
 ```yaml
 ---
+schema_version: 3
+record_id: "rec_pe_u_abc12345"
 entity_type: person
 entity_id: "pe_u_abc12345"
 record_kind: entityJournal
 title: "표시 제목"
 added_at: "2026-06-19T12:00:00.000Z"
+created_at: "2026-06-19T12:00:00.000Z"
+updated_at: "2026-06-19T12:00:00.000Z"
+source: "user"
 tags: []
 ---
 
@@ -87,13 +93,17 @@ tags: []
 
 ```yaml
 ---
-work_id: "wk_000012345"
+schema_version: 3
+record_id: "rec_wk_000012345"
 entity_type: work
 entity_id: "wk_000012345"
 record_kind: workJournal
 title: "작품명"
 category: manga
 added_at: "2026-06-19T12:00:00.000Z"
+created_at: "2026-06-19T12:00:00.000Z"
+updated_at: "2026-06-19T12:00:00.000Z"
+source: "user"
 ---
 
 # 📝 메모
