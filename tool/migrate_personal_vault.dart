@@ -76,9 +76,10 @@ void main(List<String> args) async {
       continue;
     }
 
+    final cleanedFrontmatter = _cleanDuplicateFrontmatterKeys(frontmatter);
     Map<dynamic, dynamic> yaml = {};
     try {
-      final loaded = loadYaml(frontmatter);
+      final loaded = loadYaml(cleanedFrontmatter);
       if (loaded is Map) {
         yaml = loaded;
       }
@@ -189,10 +190,14 @@ void main(List<String> args) async {
   // Cleanup empty legacy directories
   if (apply) {
     for (final cat in mediaCategories) {
-      final dir = Directory(p.join(vaultPath, cat));
-      if (dir.existsSync() && dir.listSync().isEmpty) {
-        dir.deleteSync();
-        print('[Cleanup] Deleted empty legacy directory: $cat');
+      try {
+        final dir = Directory(p.join(vaultPath, cat));
+        if (dir.existsSync() && dir.listSync().isEmpty) {
+          dir.deleteSync();
+          print('[Cleanup] Deleted empty legacy directory: $cat');
+        }
+      } catch (_) {
+        // Ignore OS access denied exceptions for locked subdirectories
       }
     }
   }
@@ -219,19 +224,29 @@ Directory _findProjectRoot() {
 
 List<File> _collectMdFiles(Directory vaultDir) {
   final files = <File>[];
-  for (final entity in vaultDir.listSync(recursive: true, followLinks: false)) {
-    if (entity is! File) continue;
-    final name = p.basename(entity.path);
-    if (!name.endsWith('.md')) continue;
-
-    // Ignore hidden files and .akasha / .trash directories
-    final rel = p.relative(entity.path, from: vaultDir.path).replaceAll('\\', '/');
-    if (rel.split('/').any((seg) => seg.startsWith('.'))) continue;
-    if (name == 'VAULT_README.md' || name == 'NOTES.md') continue;
-
-    files.add(entity);
-  }
+  _recurseCollect(vaultDir, files);
   return files;
+}
+
+void _recurseCollect(Directory dir, List<File> files) {
+  try {
+    for (final entity in dir.listSync(recursive: false, followLinks: false)) {
+      if (entity is File) {
+        final name = p.basename(entity.path);
+        if (!name.endsWith('.md')) continue;
+        if (name == 'VAULT_README.md' || name == 'NOTES.md') continue;
+        files.add(entity);
+      } else if (entity is Directory) {
+        final name = p.basename(entity.path);
+        if (name.startsWith('.') && name != '.akasha' && name != '.trash') {
+          continue;
+        }
+        _recurseCollect(entity, files);
+      }
+    }
+  } catch (_) {
+    // Ignore OS permission denied errors for locked or ghost directories
+  }
 }
 
 String? _extractFrontmatter(String content) {
@@ -358,7 +373,12 @@ String _normalizeNonWorkToV3(String content, Map<dynamic, dynamic> yaml, String 
   // Copy existing YAML map entries except schema_version/record_kind
   yaml.forEach((k, v) {
     final key = k.toString();
-    if (key == 'schema_version' || key == 'schemaVersion' || key == 'record_kind' || key == 'recordKind') {
+    if (key == 'schema_version' ||
+        key == 'schemaVersion' ||
+        key == 'record_kind' ||
+        key == 'recordKind' ||
+        key == 'entity_type' ||
+        key == 'entityType') {
       return;
     }
     // Convert added_at to created_at and updated_at
@@ -439,4 +459,22 @@ String _generateRandomId() {
   final chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
   final rand = Random();
   return List.generate(8, (_) => chars[rand.nextInt(chars.length)]).join();
+}
+
+String _cleanDuplicateFrontmatterKeys(String frontmatter) {
+  final lines = frontmatter.split('\n');
+  final seenKeys = <String>{};
+  final cleanedLines = <String>[];
+  for (final line in lines) {
+    final trimLine = line.trim();
+    if (trimLine.contains(':') && !trimLine.startsWith('#')) {
+      final key = trimLine.split(':').first.trim();
+      if (seenKeys.contains(key)) {
+        continue; // skip duplicate key
+      }
+      seenKeys.add(key);
+    }
+    cleanedLines.add(line);
+  }
+  return cleanedLines.join('\n');
 }

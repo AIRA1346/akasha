@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:yaml/yaml.dart';
+import 'package:path/path.dart' as p;
 
 /// AKASHA Vault Format Spec v3 — standalone conformance validator.
 ///
@@ -142,11 +143,10 @@ class VaultFormatValidator {
 
   Future<VaultFormatReport> validateVault(String vaultPath) async {
     final report = VaultFormatReport();
-    final root = Directory(vaultPath);
+    final files = await _listMdFiles(Directory(vaultPath));
 
-    await for (final entity in root.list(recursive: true, followLinks: false)) {
-      if (entity is! File) continue;
-      final rel = entity.path
+    for (final file in files) {
+      final rel = file.path
           .substring(vaultPath.length)
           .replaceAll('\\', '/')
           .replaceFirst(RegExp(r'^/'), '');
@@ -158,9 +158,29 @@ class VaultFormatValidator {
       if (!rel.endsWith('.md')) continue;
       if (_skipFileNames.contains(segments.last)) continue;
 
-      validateRecordContent(await entity.readAsString(), rel, report);
+      validateRecordContent(await file.readAsString(), rel, report);
     }
     return report;
+  }
+
+  Future<List<File>> _listMdFiles(Directory dir) async {
+    final files = <File>[];
+    try {
+      await for (final entity in dir.list(recursive: false, followLinks: false)) {
+        if (entity is File) {
+          files.add(entity);
+        } else if (entity is Directory) {
+          final name = p.basename(entity.path);
+          if (name.startsWith('.') && name != '.akasha' && name != '.trash') {
+            continue;
+          }
+          files.addAll(await _listMdFiles(entity));
+        }
+      }
+    } catch (_) {
+      // Ignore OS permission denied errors for locked or ghost directories
+    }
+    return files;
   }
 
   /// Validates one Markdown file's content against the v3 record contract.
