@@ -17,6 +17,7 @@ import 'markdown_parser.dart';
 import 'record_summary_index_service.dart';
 import 'user_preferences.dart';
 import 'vault_readme_writer.dart';
+import 'vault_spec_writer.dart';
 import 'vault_trash_service.dart';
 import 'vault_watch_poll_policy.dart';
 import 'vault_work_journal_paths.dart';

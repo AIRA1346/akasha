@@ -11,6 +11,7 @@ import 'package:akasha/services/entity_vault_loader.dart';
 import 'package:akasha/services/entity_vault_store.dart';
 import 'package:akasha/services/file_service.dart';
 import 'package:akasha/services/vault_readme_writer.dart';
+import 'package:akasha/services/vault_spec_writer.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +20,7 @@ void main() {
     SharedPreferences.setMockInitialValues({});
   });
 
-  group('VaultReadmeWriter', () {
+  group('VaultReadmeWriter & VaultSpecWriter', () {
     test('writes VAULT_README.md on vault connect', () async {
       final tempDir = await Directory.systemTemp.createTemp('akasha_readme_');
       try {
@@ -31,6 +32,25 @@ void main() {
         final text = await readme.readAsString();
         expect(text, contains('entity_path_index.json'));
         expect(text, contains('record_kind: entityJournal'));
+      } finally {
+        await AkashaFileService().setVaultPath('');
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test('writes spec_v3.md on vault connect', () async {
+      final tempDir = await Directory.systemTemp.createTemp('akasha_spec_');
+      try {
+        await AkashaFileService().setVaultPath(tempDir.path);
+        final specFile = File(
+          p.join(tempDir.path, '.akasha', 'spec', VaultSpecWriter.specFileName),
+        );
+        expect(await specFile.exists(), isTrue);
+        final text = await specFile.readAsString();
+        expect(text, contains('# AKASHA Vault Format Specification (v3)'));
+        expect(text, contains('schema_version'));
       } finally {
         await AkashaFileService().setVaultPath('');
         if (await tempDir.exists()) {

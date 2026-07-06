@@ -37,6 +37,7 @@ mixin _AkashaFileServiceBootstrap
       await prefs.setString(AkashaFileService._prefVaultKey, path);
       await _ensureFolderStructure();
       await VaultReadmeWriter().write(path);
+      await VaultSpecWriter().write(path);
       await EntityPathIndexService().ensureIndex(path);
       await RecordSummaryIndexService().ensureIndex(path);
       _startWatching();
