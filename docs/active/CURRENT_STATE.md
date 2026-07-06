@@ -1,8 +1,9 @@
 # AKASHA Current State (현재 상태)
 
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
-> **갱신:** 2026-07-06 (test **743** · analyze 0 · **Steam v1 = Personal Archive**)
-> **Git:** code/test baseline **7be7b51b** · current tip은 `git log -1` 기준
+> **갱신:** 2026-07-06 (test **807** · analyze 0 · **Steam v1 = Personal Archive** · **Vault Format Spec v3 확립**)
+> **Git:** code/test baseline **1729cef2** · current tip은 `git log -1` 기준
+> **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md) — 독립 검증기 `tool/vault_format_validator.dart`
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
 
 ---
@@ -16,7 +17,8 @@
 | **Tier 2 Sanctum vault** | `.md` / YAML 감상 기록 | **핵심** |
 | **Personal Library · Collection** | 내가 아카이브한 것의 큐레이션 | **핵심** |
 | **Workbench · Sanctum UI** | 예쁜 기록·편집 | **핵심** |
-| **Agent Vault** | v1 프로토콜 문서화 완료 및 UA-115 시스템 타임스탬프 UTC 정렬 완료 | [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) |
+| **Vault Format Spec v3** | 독립 명세 확립 — 7종 타입 · 관계 어휘 · 시간 이원화 · 자기 서술(`.akasha/spec/`) · 독립 검증기 · 명세-템플릿 동기화 가드 | [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md) |
+| **Agent Vault** | v1 프로토콜 문서화 완료 및 명세 v3 동기화 (source·시간·관계 규약) | [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) |
 | **Infinite Archive Hardening** | index · taste signal · agent write · ID path 기준 정렬 | **pre-release decision / post-v1 guard** |
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
@@ -53,8 +55,9 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **743 PASS** | ✅ |
+| `flutter test` | **807 PASS** | ✅ |
 | `flutter analyze lib` | 0 issue | ✅ |
+| `vault_format_validator` | 적합성 검증기 (spec v3 · 앱 무의존) | — |
 | `preflight_check` | PASS | ✅ |
 | `sw1_a_validation` recall@10 | 87/87 | — |
 | `ci_registry_check` | PASS | — |
