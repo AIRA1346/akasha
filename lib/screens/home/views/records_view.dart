@@ -4,6 +4,7 @@ import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/ports/record_link_port.dart';
+import 'candidate_review_view.dart';
 import 'entity_journal_view.dart';
 import 'journal_view.dart';
 import 'timeline_view.dart';
@@ -36,7 +37,7 @@ class RecordsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -45,6 +46,7 @@ class RecordsView extends StatelessWidget {
               Tab(text: '타임라인', icon: Icon(Icons.timeline, size: 18)),
               Tab(text: '메모', icon: Icon(Icons.note_alt_outlined, size: 18)),
               Tab(text: 'Entity', icon: Icon(Icons.category_outlined, size: 18)),
+              Tab(text: '후보', icon: Icon(Icons.inbox_outlined, size: 18)),
             ],
           ),
           Expanded(
@@ -68,6 +70,12 @@ class RecordsView extends StatelessWidget {
                   linkIndex: linkIndex,
                   vaultItems: vaultItems,
                   onOpenWork: onOpenWork,
+                  onOpenEntity: onOpenEntity,
+                  reloadToken: reloadToken,
+                ),
+                CandidateReviewView(
+                  vaultPath: vaultPath,
+                  userCatalog: userCatalog,
                   onOpenEntity: onOpenEntity,
                   reloadToken: reloadToken,
                 ),
