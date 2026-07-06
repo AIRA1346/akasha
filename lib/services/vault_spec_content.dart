@@ -62,8 +62,8 @@ Conforming v3 records MUST declare the following fields in their frontmatter:
 | `schema_version` | Integer | **Yes** | Schema version of the record contract. MUST be `3`. |
 | `record_id` | String | **Yes** | Globally unique identifier for this file, formatted as `rec_{prefix}_{8-char-base32}`. |
 | `record_kind` | String | **Yes** | Enum: `workJournal`, `entityJournal`, `timelineEntry`, `freeformJournal`. |
-| `entity_type` | String | **Yes** | Upper-level ontology type: `work`, `person`, `event`, `place`, `concept`, `organization`, `object`. |
-| `entity_id` | String | **Yes** | Durable identifier of the represented entity. (e.g. `pe_u_xxxxxxxx`, `wk_u_xxxxxxxx`). |
+| `entity_type` | String | **Yes*** | Upper-level ontology type: `work`, `person`, `event`, `place`, `concept`, `organization`, `object`. |
+| `entity_id` | String | **Yes*** | Durable identifier of the represented entity. (e.g. `pe_u_xxxxxxxx`, `wk_u_xxxxxxxx`). |
 | `title` | String | **Yes** | Display title. |
 | `created_at` | String | **Yes** | ISO-8601 UTC timestamp of creation. |
 | `updated_at` | String | **Yes** | ISO-8601 UTC timestamp of last update. |
@@ -77,6 +77,8 @@ Conforming v3 records MUST declare the following fields in their frontmatter:
 | `evidence` | List<String>| No | Source citation strings for agent-originated writes. |
 | `links` | List<Map> | No | Structured outgoing relationship definitions. |
 | `source_operation_id`| String| No | ID of the `ArchiveOperation` that generated this record. |
+
+**\\*** `entity_type` and `entity_id` are required for **entity-anchored kinds** (`workJournal`, `entityJournal`). For `timelineEntry` and `freeformJournal` they are optional: a freeform diary or a timeline moment may exist without pointing at any entity.
 
 ---
 
