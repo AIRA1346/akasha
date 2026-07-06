@@ -69,7 +69,7 @@ class UserPreferences {
   /// 기본값 false: 기존 볼트 호환. TODO(remove): L1 — docs/draft/LEGACY_REMOVAL_POLICY.md §2.2
   static Future<bool> isVaultWorksLayoutEnabled() async {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getBool(vaultWorksLayoutKey) ?? false;
+    return prefs.getBool(vaultWorksLayoutKey) ?? true;
   }
 
   static Future<void> setVaultWorksLayoutEnabled(bool enabled) async {
