@@ -122,3 +122,19 @@
 ## 10. Proposed Next Step
 
 *   구현 전 schema decision과 UX 의미 확인이 필요합니다. 당장 코드 변경은 하지 않고, UA-116 결과를 backlog로 보관합니다.
+
+---
+
+## 11. Decision (2026-07-06 — 구현 완료)
+
+**Option B (Semantic Local DateTime)를 v3 계약으로 확정**하고, 형식 명세 §2.3 (Semantic Local Time Constraint)으로 명문화했습니다. Option C (Split Model)는 장기 지향점으로 유지하되, `occurredDate`/`occurredTime` 분리는 추가 전용 진화 규칙에 따라 미래 스키마 확장으로 남깁니다.
+
+구현 내역:
+
+*   **명세**: `AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md` §2.3 신설 — semantic local timestamp는 타임존 없는 wall-clock ISO-8601로 기록, 읽기 시 변환 금지, legacy `Z`/offset 값은 읽기 허용 후 다음 저장에서 정규화, 물리 순서 비교에는 `created_at` 사용.
+*   **계약 코드**: `ArchiveRecordContract.parseSemanticLocalTimestamp` / `formatSemanticLocalTimestamp` 추가. 범용 `formatDateTime`은 deprecated.
+*   **쓰기 경로 (P1 해소)**: `TimelineEntryParser.serialize`가 `occurred_at`을 semantic local 계약으로 직렬화. UTC instant가 들어오면 물리 순간을 보존한 채 device-local wall-clock으로 정규화.
+*   **읽기 경로 (P1 해소)**: `TimelineEntryParser.parse`가 `parseSemanticLocalTimestamp`를 사용. 타임존 없는 문자열은 기록된 숫자 그대로(wall-clock) 노출되어, 기기 타임존이 바뀌어도 표시 일시가 밀리지 않음.
+*   **UI**: `_formatWhen`의 `toLocal()`은 wall-clock 값에는 no-op이므로 준수 상태. legacy `Z` 값만 물리 순간 보존 렌더링됨.
+
+잔여 (P2 · post-v1): `timeAnchor` 다형 사용에 대한 명시적 검증, Option C의 `occurredDate`/`occurredTime` 분리 검토.

@@ -128,7 +128,7 @@ class MarkdownParser {
     }
 
     buffer.writeln(
-      'added_at: "${ArchiveRecordContract.formatDateTime(item.addedAt)}"',
+      'added_at: "${ArchiveRecordContract.formatSystemTimestamp(item.addedAt)}"',
     );
     buffer.writeln('---');
     buffer.writeln();

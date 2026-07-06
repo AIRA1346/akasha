@@ -2,6 +2,7 @@ import '../../models/entity_id_codec.dart';
 import 'archive_operation.dart';
 import 'entity_anchor.dart';
 import 'record_kind.dart';
+import 'relation_vocabulary.dart';
 
 enum ArchiveOperationIssueSeverity { error, warning }
 
@@ -261,6 +262,16 @@ abstract final class ArchiveOperationValidator {
       return;
     }
     _validateEntityId(targetEntityId, null, issues);
+
+    final relation = operation.payload['relation']?.toString().trim() ?? '';
+    if (relation.isNotEmpty && !RelationVocabulary.isConforming(relation)) {
+      _error(
+        issues,
+        'link_relation_unknown',
+        'addLink relation "$relation" must be core vocabulary '
+            '(${RelationVocabulary.core.join(', ')}) or u:-namespaced.',
+      );
+    }
   }
 
   static void _validatePromoteCandidate(

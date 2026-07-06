@@ -31,7 +31,9 @@ abstract final class TimelineEntryParser {
     final title = yaml['title']?.toString().trim() ?? '';
     final recordMetadata = ArchiveRecordContract.metadataFromYaml(yaml);
     final occurredAt =
-        _parseDateTime(yaml['occurred_at']) ??
+        ArchiveRecordContract.parseSemanticLocalTimestamp(
+          yaml['occurred_at'],
+        ) ??
         ArchiveRecordContract.createdAtFromYaml(yaml) ??
         DateTime.now();
     final addedAt = ArchiveRecordContract.createdAtFromYaml(yaml) ?? occurredAt;
@@ -69,7 +71,9 @@ abstract final class TimelineEntryParser {
       ..writeln('record_id: "$recordId"')
       ..writeln('title: "${_escape(title)}"')
       ..writeln(
-        'occurred_at: "${ArchiveRecordContract.formatDateTime(occurredAt)}"',
+        // Semantic local timestamp (Spec §2.3) — the user's experienced
+        // wall-clock time, written without timezone designator.
+        'occurred_at: "${ArchiveRecordContract.formatSemanticLocalTimestamp(occurredAt)}"',
       )
       ..writeln('added_at: "${ArchiveRecordContract.formatSystemTimestamp(added)}"');
     ArchiveRecordContract.writeContractFields(
@@ -103,11 +107,6 @@ abstract final class TimelineEntryParser {
       frontmatter: lines.sublist(1, end).join('\n'),
       body: lines.sublist(end + 1).join('\n'),
     );
-  }
-
-  static DateTime? _parseDateTime(Object? raw) {
-    if (raw == null) return null;
-    return DateTime.tryParse(raw.toString());
   }
 
   static String _escape(String value) => ArchiveRecordContract.escape(value);

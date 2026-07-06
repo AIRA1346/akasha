@@ -102,10 +102,41 @@ abstract final class ArchiveRecordContract {
   /// Formats a system timestamp as a UTC ISO-8601 string (always ends with `Z`).
   ///
   /// Use this for system timestamp fields: created_at, updated_at, added_at.
-  /// Do NOT use for semantic fields whose UTC conversion is not confirmed
-  /// (e.g. occurred_at). Use [formatDateTime] for those.
+  /// Do NOT use for semantic fields (e.g. occurred_at). Use
+  /// [formatSemanticLocalTimestamp] for those.
   static String formatSystemTimestamp(DateTime value) {
     return value.toUtc().toIso8601String();
+  }
+
+  /// Parses a semantic local timestamp (Spec §2.3) — the date/time as the
+  /// user experienced it, independent of timezone.
+  ///
+  /// * timezone-less string → wall-clock DateTime with the exact digits the
+  ///   user wrote (no conversion). This is the canonical v3 form.
+  /// * `Z`/offset string (legacy or agent-written) → parsed instant as-is;
+  ///   display layers may render it in device-local time.
+  /// * raw DateTime → returned unchanged.
+  /// * null / invalid → null.
+  ///
+  /// Use for fields anchored to human experience: occurred_at.
+  /// Do NOT use for system timestamps; use [parseSystemTimestamp].
+  static DateTime? parseSemanticLocalTimestamp(Object? raw) {
+    if (raw == null) return null;
+    if (raw is DateTime) return raw;
+    return DateTime.tryParse(raw.toString().trim());
+  }
+
+  /// Formats a semantic local timestamp (Spec §2.3) as a timezone-less
+  /// ISO-8601 wall-clock string (never ends with `Z`, never carries an
+  /// offset).
+  ///
+  /// Local DateTimes are written with their own wall-clock digits, unchanged.
+  /// UTC DateTimes are first converted to the device-local experienced time —
+  /// stripping the `Z` without conversion would shift the experienced time by
+  /// the timezone offset.
+  static String formatSemanticLocalTimestamp(DateTime value) {
+    final local = value.isUtc ? value.toLocal() : value;
+    return local.toIso8601String();
   }
 
   /// Raw DateTime parser without UTC guard. Returns the Dart-parsed result
@@ -230,8 +261,11 @@ abstract final class ArchiveRecordContract {
   /// Formats a DateTime as-is without UTC conversion.
   ///
   /// For system timestamp fields (createdAt, updatedAt, addedAt), use
-  /// [formatSystemTimestamp] instead. This method is retained for fields
-  /// whose UTC conversion semantics are not yet confirmed (e.g. occurred_at).
+  /// [formatSystemTimestamp]. For semantic experienced-time fields
+  /// (occurred_at), use [formatSemanticLocalTimestamp].
+  @Deprecated(
+    'Use formatSystemTimestamp or formatSemanticLocalTimestamp instead.',
+  )
   static String formatDateTime(DateTime value) {
     return value.toIso8601String();
   }

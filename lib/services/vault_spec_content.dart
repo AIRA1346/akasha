@@ -69,6 +69,7 @@ Conforming v3 records MUST declare the following fields in their frontmatter:
 | `updated_at` | String | **Yes** | ISO-8601 UTC timestamp of last update. |
 | `source` | String | **Yes** | Provenance of the write. Enum: `user`, `app`, `agent`, `importTool`, `script`. |
 | `added_at` | String | No | Legacy timestamp for backward compatibility (replaces `created_at` in v1/v2). |
+| `occurred_at` | String | No | Semantic local (wall-clock) time the recorded event was experienced (`timelineEntry`). See §2.3. |
 | `entity_subtype` | String | No | Namespace-prefixed folksonomy classification (e.g., `u:pet`, `u:camera`). |
 | `aliases` | List<String>| No | Alternative names for link resolution. |
 | `original_title` | String | No | Original language/native title. |
@@ -82,7 +83,16 @@ Conforming v3 records MUST declare the following fields in their frontmatter:
 ### 2.2 System Timestamp Constraint (UTC ISO-8601)
 
 All system timestamps (`created_at`, `updated_at`) MUST strictly use the UTC representation ending in **`Z`** (e.g., `2026-07-06T12:00:00.000Z`).
-This isolates the vault from local machine timezone drift and ensures consistent chronological parsing across different AI agents and systems. (Note: `occurred_at` timezone semantics are deferred under `UA-116` and excluded from this strict UTC Z enforcement for local timeline offset preservation).
+This isolates the vault from local machine timezone drift and ensures consistent chronological parsing across different AI agents and systems. Fields anchored to human experience (`occurred_at`) follow §2.3 instead.
+
+### 2.3 Semantic Local Time Constraint (`occurred_at`)
+
+System timestamps record when a machine wrote a file; semantic local timestamps record when a **human experienced** something. The two follow different rules because a memory of "July 5th, 10 PM" must stay "July 5th, 10 PM" forever, even if the user later reads the archive in another timezone.
+
+1. Semantic local timestamps MUST be written as **timezone-less ISO-8601 wall-clock strings** — no `Z` suffix, no UTC offset (e.g., `2026-07-05T22:30:00.000`).
+2. Conforming readers MUST render the wall-clock digits **as written**, without timezone conversion.
+3. Conforming readers MUST still accept legacy or foreign values carrying `Z`/offsets; writers normalize them to the local experienced wall-clock form on the next save, preserving the physical instant.
+4. Semantic local timestamps order records within the user's experienced chronology. They are **not** exact physical instants; tools MUST NOT use them for cross-timezone physical ordering (use `created_at` for machine ordering).
 
 ---
 
@@ -115,6 +125,26 @@ Conforming readers MUST parse wiki-style links in the Markdown body to construct
   - `[[pe_u_abc12345|John Doe]]` creates an outgoing link pointing to `pe_u_abc12345` with label "John Doe".
   - `[[wk_u_xyz98765]]` creates an outgoing link pointing to `wk_u_xyz98765`.
 
+### 4.1 Relation Vocabulary
+
+Structured frontmatter links (`links[].relation`) carry the meaning layer of the knowledge graph. To keep relations machine-reasonable over decades, the relation string is a controlled vocabulary:
+
+| Relation | Direction (source → target) |
+|---|---|
+| `related` | Generic association (default). |
+| `about` | Source discusses/covers the target topic. |
+| `appears_in` | Person/place/object appears in the target work. |
+| `created_by` | Work/object was created by the target person/organization. |
+| `part_of` | Source is a component of the target. |
+| `member_of` | Person belongs to the target group/organization. |
+| `located_in` | Source is physically located in the target place. |
+| `inspired_by` | Source draws influence from the target. |
+
+- User-defined relations MUST use the **`u:` namespace** with token format `u:[a-z0-9_]{1,40}` (e.g., `u:voiced_by`). This prevents collisions with future core vocabulary.
+- Conforming writers MUST NOT emit new relations outside the core vocabulary or the `u:` namespace.
+- Conforming readers MUST preserve unrecognized legacy relation strings as-is (Additive-Only Evolution, §5).
+- The core vocabulary grows only through spec revisions.
+
 ---
 
 ## 5. Evolution Rules
@@ -123,5 +153,16 @@ To guarantee **Eternity**, the AKASHA Vault format evolves only under **Additive
 1. Conforming tools MUST NOT delete deprecated schema fields; they must read them as fallbacks.
 2. New fields added in newer versions of the specification MUST be optional.
 3. If an incompatible structural change is required, the `schema_version` number MUST be incremented, and conforming applications MUST provide automatic upgrade tools to convert older vaults.
+
+---
+
+## 6. Binary Assets
+
+Binary files (`posters/`, image attachments) live outside the plain-text eternity guarantee of Markdown records. To minimize long-term risk:
+
+1. Writers SHOULD store images in widely standardized, patent-unencumbered formats with decades of tooling support (**PNG**, **JPEG**). Proprietary or short-lived formats put the asset's future readability at risk.
+2. Records MUST reference assets by **vault-relative paths** (e.g., `posters/example.png`) so the vault remains relocatable as a single folder.
+3. A missing or renamed asset MUST NOT invalidate the referencing record; conforming readers degrade gracefully by rendering the record without the asset.
+4. Binary assets are user-owned content. Conforming tools MUST NOT rewrite, recompress, or deduplicate them without explicit user action.
 ''';
 }
