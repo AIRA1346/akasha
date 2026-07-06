@@ -113,7 +113,7 @@ abstract final class EntityJournalParser {
         if (type.name == raw) return type;
       }
     }
-    return EntityIdCodec.typeFromId(entityId) ?? EntityAnchorType.custom;
+    return EntityIdCodec.typeFromId(entityId) ?? EntityAnchorType.object;
   }
 
   static _Split? _splitFrontmatter(String content) {

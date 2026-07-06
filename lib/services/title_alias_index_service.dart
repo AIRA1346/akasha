@@ -593,7 +593,7 @@ class TitleAliasIndexService {
     if (raw != null && raw.isNotEmpty) return raw;
     return switch (kind) {
       RecordKind.workJournal => 'work',
-      RecordKind.entityJournal => EntityAnchorType.custom.name,
+      RecordKind.entityJournal => EntityAnchorType.object.name,
       RecordKind.timelineEntry => 'timeline',
       RecordKind.freeformJournal => 'journal',
     };

@@ -260,6 +260,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get entityTypeOrganization => '조직';
 
   @override
+  String get entityTypeObject => '물건';
+
+  @override
   String get entityTypeCustom => '사용자';
 
   @override

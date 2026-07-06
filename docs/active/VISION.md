@@ -1,8 +1,8 @@
 # AKASHA Product Vision
 
 > **지위:** 제품 **최상위 SSOT** (정책·ROADMAP·스토어 카피의 북극성)
-> **갱신:** 2026-06-30 — **Steam v1 = Personal Sanctum Archive**
-> **Git:** code/test baseline **5526ce4** · current tip은 `git log -1` 기준
+> **갱신:** 2026-07-06 — **Steam v1 = Personal Sanctum Archive**
+> **Git:** code/test baseline **7be7b51b** · current tip은 `git log -1` 기준
 > **법무:** [history/policy/data-policy.md](../history/policy/data-policy.md)
 
 ---

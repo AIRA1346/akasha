@@ -356,7 +356,7 @@ abstract final class ArchiveOperationValidator {
     );
     final inferred = EntityIdCodec.typeFromId(entityId);
     if (declaredType != null &&
-        inferred != EntityAnchorType.custom &&
+        inferred != EntityAnchorType.object &&
         inferred != declaredType) {
       _error(
         issues,

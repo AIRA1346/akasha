@@ -51,7 +51,7 @@ abstract final class ArchiveCandidateValidator {
     }
 
     final inferred = EntityIdCodec.typeFromId(targetId);
-    if (inferred != EntityAnchorType.custom && inferred != targetEntity.type) {
+    if (inferred != EntityAnchorType.object && inferred != targetEntity.type) {
       _error(
         issues,
         'target_entity_type_mismatch',
@@ -169,7 +169,7 @@ abstract final class ArchiveCandidateValidator {
           'candidate_proposed_entity_unsafe',
           'proposedEntityId is unsafe.',
         );
-      } else if (inferred != EntityAnchorType.custom &&
+      } else if (inferred != EntityAnchorType.object &&
           inferred != candidate.entityType) {
         _error(
           issues,

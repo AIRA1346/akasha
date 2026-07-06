@@ -54,7 +54,7 @@ class EntityWikiChip extends StatelessWidget {
     }
 
     return EntityItem(
-      entityType: EntityAnchorType.custom,
+      entityType: EntityAnchorType.object,
       entityId: entityId,
       title: title,
       category: MediaCategory.book,

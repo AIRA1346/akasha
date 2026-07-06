@@ -25,10 +25,17 @@ These are done enough to treat as current architecture baseline.
 | UA-103 | Operation conflict checks for executable operations | ✅ done | [archive_record_revision_service.dart](../../lib/services/archive_record_revision_service.dart) · `operation_conflict` |
 
 | UA-105a | Candidate duplicate guard for normalized title/alias variants | done | strips bracket/punctuation noise and compares open candidate title/aliases |
-| UA-111 | Operation crash recovery marker for `promoteCandidate` | done | `source_operation_id` roll-forward accepts matching partial writes and rejects mismatches |
-| UA-113 | Reverse lookup before new Work/Entity path writes | done | same `work_id`/`entity_id` legacy files are reused when `filePath` or path index is missing |
-| UA-114 | Entity journal alias frontmatter | done | `aliases: []` round-trips in entity journal Markdown and catalog sync |
+| UA-118 | Operation crash recovery marker for `promoteCandidate` | done | `source_operation_id` roll-forward accepts matching partial writes and rejects mismatches |
+| UA-119 | Reverse lookup before new Work/Entity path writes | done | same `work_id`/`entity_id` legacy files are reused when `filePath` or path index is missing |
+| UA-120 | Entity journal alias frontmatter | done | `aliases: []` round-trips in entity journal Markdown and catalog sync |
 | UA-106 | Record contract schema freeze | done | `ArchiveRecordContract` standardizes v3 metadata across Work/Entity/Journal/Timeline while preserving v1/v2 reads |
+| UA-111 | Unicode NFC normalization guard | ✅ done | `UnicodeHelper.toNfc` composition handles macOS/Windows Hangul compatibility in files/indexes |
+| UA-112 | YAML implicit casting bypass type guard | ✅ done | Prevents automatic conversion of unquoted values (e.g. `yes` to bool) to protect raw string data |
+| UA-113 | System timestamp parsing timezone guard | ✅ done | `_parseVaultInstantAsUtc` isolates record summary indexing from local machine timezone drift |
+| UA-114 | Date Semantics Audit | ✅ done | Whole-codebase audit report classifying date/time fields by instant, local date, and partial types |
+| UA-115 | Vault Timestamp Contract Alignment | ✅ done | Aligned all parsers/stores (`ArchiveRecordContract` helper) to enforce strict UTC Z-suffix writing and parsing |
+| UA-116 | Timeline Time Semantics Plan | ✅ done | Planning document detailing short-term local timezone guards and long-term split model for timeline occurredAt/timeAnchor |
+| UA-117 | Entity Custom-to-Object Migration | ✅ done | Transformed `custom` entity type to `object` (`ob_` prefix) and added backward-compatible fallback for `cu_` IDs |
 | UA-201 | Index manager wrapper | done | `ArchiveIndexManager` rebuilds record/entity/link/candidate/taste derived indexes with per-index results |
 | UA-202a | Incremental record/taste index update API | done | `ArchiveIndexManager.updateChangedRecord/removeRecord` updates record and taste indexes for one Markdown path |
 | UA-202b | Incremental index wiring into archive writes | done | Work/Entity/Journal/Timeline save/delete flows now call the manager instead of directly mutating record-only indexes |
@@ -52,7 +59,7 @@ These should stay visible because they protect the archive before external/AI wr
 | UA-106 | Record contract schema freeze | Base contract landed; future slices may extend relation semantics | Keep validators and fixtures aligned as new operation executors land |
 | UA-109 | v1/v2/v3 mixed-vault validation | Existing vaults must remain readable while new records use v3 | Add fixtures and rebuild tests for mixed legacy/title/ID paths |
 | UA-110 | Explicit v3 migration command | Existing files should never move accidentally | Build opt-in migration that updates paths, indexes, and backlinks atomically |
-| UA-112 | Extend conflict guards to future mutating operations | Update/append/link operations are validated but not executable yet | Reuse revision guard when those operation executors land |
+| UA-121 | Extend conflict guards to future mutating operations | Update/append/link operations are validated but not executable yet | Reuse revision guard when those operation executors land |
 
 ## 3. P1 Index And Scale Work
 
@@ -118,12 +125,12 @@ These fields were identified as useful but are not fully standardized everywhere
 Top-level entity types are currently sufficient:
 
 ```text
-work, person, event, place, concept, organization, custom
+work, person, event, place, concept, organization, object
 ```
 
 Follow-ups:
 
-- Keep `phenomenon` deprecated; prefer `concept` or `custom`.
+- Keep `phenomenon` deprecated; prefer `concept` or `object`.
 - Do not rush to add many top-level entity types.
 - Prefer `entity_subtype` / `role` / `relations` for `character`, `actor`, `director`, `writer`, `studio`, `publisher`, `franchise`, `soundtrack`, `track`, `theme`.
 - Decide whether `music` becomes a Work category or remains a taste/relation layer.

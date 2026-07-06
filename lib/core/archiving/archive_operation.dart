@@ -134,7 +134,7 @@ class ArchiveOperation {
     final type = _enumByName(
       EntityAnchorType.values,
       map['type']?.toString(),
-      EntityAnchorType.custom,
+      EntityAnchorType.object,
     );
     return EntityAnchor(entityId: entityId, type: type);
   }

@@ -79,6 +79,7 @@
   "entityTypeEvent": "사건",
   "entityTypePlace": "장소",
   "entityTypeOrganization": "조직",
+  "entityTypeObject": "물건",
   "entityTypeCustom": "사용자",
   "entityTypePhenomenon": "레거시",
   "actionRecord": "기록하기",

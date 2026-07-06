@@ -15,6 +15,8 @@ abstract final class EntityIdCodec {
     EntityAnchorType.concept: 'co',
     EntityAnchorType.place: 'pl',
     EntityAnchorType.organization: 'or',
+    EntityAnchorType.object: 'ob',
+    // ignore: deprecated_member_use_from_same_package
     EntityAnchorType.custom: 'cu',
   };
 
@@ -36,7 +38,8 @@ abstract final class EntityIdCodec {
       }
     }
 
-    return EntityAnchorType.custom;
+    // Legacy cu_ IDs are treated as object for backward compatibility.
+    return EntityAnchorType.object;
   }
 
   static bool isUserLocalId(String entityId, EntityAnchorType type) {

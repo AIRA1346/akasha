@@ -131,6 +131,7 @@
   "entityTypeEvent": "Event",
   "entityTypePlace": "Place",
   "entityTypeOrganization": "Organization",
+  "entityTypeObject": "Object",
   "entityTypeCustom": "Custom",
   "entityTypePhenomenon": "Legacy",
   "actionRecord": "Record",

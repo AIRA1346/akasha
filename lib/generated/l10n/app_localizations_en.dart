@@ -265,6 +265,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get entityTypeOrganization => 'Organization';
 
   @override
+  String get entityTypeObject => 'Object';
+
+  @override
   String get entityTypeCustom => 'Custom';
 
   @override

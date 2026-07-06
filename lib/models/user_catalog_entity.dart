@@ -15,6 +15,7 @@ class UserCatalogEntity {
   static const String entityTypeConcept = 'concept';
   static const String entityTypePlace = 'place';
   static const String entityTypeOrganization = 'organization';
+  static const String entityTypeObject = 'object';
   static const String entityTypeCustom = 'custom';
   static const String catalogSourceUser = 'user';
 
@@ -52,7 +53,7 @@ class UserCatalogEntity {
     for (final type in EntityAnchorType.values) {
       if (type.name == entityType) return type;
     }
-    return EntityAnchorType.custom;
+    return EntityAnchorType.object;
   }
 
   factory UserCatalogEntity.fromAkashaItem(AkashaItem item) {

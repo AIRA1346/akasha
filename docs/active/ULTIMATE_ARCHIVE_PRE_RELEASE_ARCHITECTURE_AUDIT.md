@@ -400,7 +400,7 @@ Validated:
 - `flutter test test/archive_index_manager_test.dart test/taste_index_service_test.dart test/record_summary_index_test.dart`: 10 pass
 - `flutter test test/archive_record_contract_test.dart`: 5 pass
 - `flutter test test/archive_record_contract_test.dart test/markdown_parser_v2_test.dart test/entity_vault_w4_test.dart test/journal_vault_test.dart test/timeline_entry_parser_test.dart test/timeline_vault_store_test.dart test/archive_operation_validator_test.dart test/archive_operation_executor_test.dart test/record_summary_index_test.dart`: 60 pass
-- `flutter test`: 743 pass
+- `flutter test`: 774 pass
 - `flutter analyze lib`: 0 issues
 
 Remaining before calling v3 complete:

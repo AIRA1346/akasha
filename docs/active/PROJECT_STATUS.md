@@ -1,6 +1,6 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-07-03 (@docs · **Infinite Archive hardening plan**)
+> **갱신:** 2026-07-06 (@docs · **Date Semantics & Timestamps Alignment**)
 > **Git:** current tip은 `git log -1` 기준 · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
 > **현재 실행:** **Steam 무료 출시 준비** — [STEAM_RELEASE.md](STEAM_RELEASE.md) · IAP/Agent/player implementation layer **post-launch**
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
@@ -13,7 +13,7 @@
  
 | 항목 | 상태 |
 |------|------|
-| **flutter test** | **743 PASS** |
+| **flutter test** | **774 PASS** |
 | **flutter analyze lib** | **0 issue** |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
 | **앱 테마** | `AkashaPalette` ThemeExtension · sidebar/bottom/search/card/preview rail 반영 ✅ |
@@ -32,7 +32,7 @@
 | **Incremental Indexing** | changed/deleted Markdown path updates record/taste/link/entity-path/title-alias indexes without full vault scan · focused title/link/entity tests **25 PASS** · write-flow tests **19 PASS** · full tests **733 PASS** · analyze **0** |
 | **Title/Alias Index** | `.akasha/title_alias_index/names/{shard}.json` resolves normalized title/alias/original/localized names to stable IDs without Markdown scans · focused tests **9 PASS** · full tests **733 PASS** · analyze **0** |
 | **Index Validator** | `ArchiveIndexValidatorService` rebuilds and audits record/entity-path/title-alias/link/candidate/taste indexes against Markdown source · focused validator tests **5 PASS** · focused index suite **27 PASS** · full tests **738 PASS** · analyze **0** |
-| **Record Contract** | `ArchiveRecordContract` freezes v3 Work/Entity/Journal/Timeline metadata (`created_at`, `updated_at`, `source`, `aliases`, `original_title`, `external_ids`, `evidence`, `links`) · focused contract suite **60 PASS** · full tests **743 PASS** · analyze **0** |
+| **Record Contract** | `ArchiveRecordContract` freezes v3 Work/Entity/Journal/Timeline metadata (`created_at`, `updated_at`, `source`, `aliases`, `original_title`, `external_ids`, `evidence`, `links`) · focused contract suite **60 PASS** · full tests **774 PASS** · analyze **0** |
 | **Operation Executor** | validated `promoteCandidate` → Entity journal · catalog mirror · candidate close ✅ · focused contract tests **34 PASS** · full tests **709 PASS** |
 | **Operation Applied Log** | `.akasha/ops/applied.jsonl` · `operationId` retry-safe · `alreadyApplied` result ✅ |
 | **Operation Conflict Guard** | `expectedRevision` · mtime/length/hash revision · existing target overwrite block ✅ |
@@ -85,7 +85,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **743 PASS** | ✅ |
+| `flutter test` | **774 PASS** | ✅ |
 | `flutter analyze lib` | **0 issue** | ✅ |
 | `preflight_check` | PASS | ✅ |
 | `registry_builder` | PASS | — (post-v1 scale) |
@@ -264,5 +264,7 @@
 | 2026-07-04 | **Link/Entity Incremental slice** — changed/deleted Markdown path updates link outgoing/incoming and entity-path indexes without full rebuild · focused tests **16 PASS** · analyze **0** |
 | 2026-07-04 | **Title/Alias Index slice** — `.akasha/title_alias_index` sharded lookup resolves title/alias/original/localized names to stable IDs · focused tests **9 PASS** · full tests **733 PASS** · analyze **0** |
 | 2026-07-04 | **Index Validator slice** — `ArchiveIndexValidatorService` rebuilds and audits derived indexes against Markdown source · focused tests **5 PASS** · full tests **738 PASS** · analyze **0** |
+| 2026-07-06 | **Date Semantics & Timestamps Alignment** — `UA-114`/`UA-115`/`UA-116` audits and alignments, Z-suffix UTC serialization, timeline occurredAt analysis, tests updated · full tests **774 PASS** · analyze **0** |
+| 2026-07-06 | **Entity Custom-to-Object Migration** — Transformed `custom` entity type to `object` (`ob_` prefix) across all layers, kept `cu_` backward compatibility fallback, updated arb l10n, test **774 PASS** · analyze **0** |
 | 2026-07-04 | **Record Contract slice** — `ArchiveRecordContract` standardizes v3 metadata and preserves additive fields across app rewrites · focused tests **60 PASS** · full tests **743 PASS** · analyze **0** |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |

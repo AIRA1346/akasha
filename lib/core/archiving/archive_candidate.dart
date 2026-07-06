@@ -149,7 +149,7 @@ class ArchiveCandidate {
       entityType: _enumByName(
         EntityAnchorType.values,
         json['entityType']?.toString(),
-        EntityAnchorType.custom,
+        EntityAnchorType.object,
       ),
       title: json['title']?.toString() ?? '',
       sourceRecordId: json['sourceRecordId']?.toString() ?? '',

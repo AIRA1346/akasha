@@ -572,6 +572,12 @@ abstract class AppLocalizations {
   /// **'Organization'**
   String get entityTypeOrganization;
 
+  /// No description provided for @entityTypeObject.
+  ///
+  /// In en, this message translates to:
+  /// **'Object'**
+  String get entityTypeObject;
+
   /// No description provided for @entityTypeCustom.
   ///
   /// In en, this message translates to:

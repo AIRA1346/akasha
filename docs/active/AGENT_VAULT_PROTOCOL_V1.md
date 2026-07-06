@@ -1,8 +1,8 @@
 # Agent Vault Protocol v1
 
 > **지위:** Steam v1 **Agent ↔ Sanctum vault** 상호작용 SSOT
-> **갱신:** 2026-06-30
-> **Git:** code/test baseline **5526ce4** · current tip은 `git log -1` 기준
+> **갱신:** 2026-07-06
+> **Git:** code/test baseline **7be7b51b** · current tip은 `git log -1` 기준
 > **상위:** [VISION.md](VISION.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md) · [SPRINT_B1_DOGFOOD.md](SPRINT_B1_DOGFOOD.md)
 > **구현 참고:** `AkashaFileService` watch · `TimelineEntryParser` · `EntityVaultStore` (제품 코드 — 본 문서는 **파일 프로토콜 계약**)
 

@@ -1,13 +1,13 @@
 # AKASHA Current State (현재 상태)
 
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
-> **갱신:** 2026-06-30 (test **614** · analyze 0 · **Steam v1 = Personal Archive**)
-> **Git:** code/test baseline **5526ce4** · current tip은 `git log -1` 기준
+> **갱신:** 2026-07-06 (test **743** · analyze 0 · **Steam v1 = Personal Archive**)
+> **Git:** code/test baseline **7be7b51b** · current tip은 `git log -1` 기준
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
 
 ---
 
-## 0. Steam v1 제품 초점 (2026-06-30)
+## 0. Steam v1 제품 초점 (2026-07-06)
 
 **구현된 것의 우선순위 재정렬:** 코드 삭제 없음.
 
@@ -16,12 +16,12 @@
 | **Tier 2 Sanctum vault** | `.md` / YAML 감상 기록 | **핵심** |
 | **Personal Library · Collection** | 내가 아카이브한 것의 큐레이션 | **핵심** |
 | **Workbench · Sanctum UI** | 예쁜 기록·편집 | **핵심** |
-| **Agent Vault** | v1 프로토콜 문서화 완료 · 구현·dogfood 대기 | [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) |
+| **Agent Vault** | v1 프로토콜 문서화 완료 및 UA-115 시스템 타임스탬프 UTC 정렬 완료 | [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) |
 | **Infinite Archive Hardening** | index · taste signal · agent write · ID path 기준 정렬 | **pre-release decision / post-v1 guard** |
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
 
-**v1 blocking에 가까운 검증:** `flutter test` **614** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
+**v1 blocking에 가까운 검증:** `flutter test` **743** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
 **v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.
 
 ---
@@ -53,7 +53,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **614 PASS** | ✅ |
+| `flutter test` | **743 PASS** | ✅ |
 | `flutter analyze lib` | 0 issue | ✅ |
 | `preflight_check` | PASS | ✅ |
 | `sw1_a_validation` recall@10 | 87/87 | — |

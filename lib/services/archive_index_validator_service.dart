@@ -883,7 +883,7 @@ class _SourceRecord {
     if (raw != null && raw.isNotEmpty) return raw;
     return switch (kind) {
       RecordKind.workJournal => 'work',
-      RecordKind.entityJournal => 'custom',
+      RecordKind.entityJournal => 'object',
       RecordKind.timelineEntry => 'timeline',
       RecordKind.freeformJournal => 'journal',
     };
