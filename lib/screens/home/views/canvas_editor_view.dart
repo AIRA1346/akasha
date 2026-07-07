@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../../../core/archiving/canvas_record.dart';
+import '../../../core/archiving/relation_vocabulary.dart';
 import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../models/akasha_item.dart';
 import '../../../services/canvas_store.dart';
@@ -214,59 +215,141 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   }
 
   Future<void> _showRelationDialog(String sourceId, String targetId) async {
-    final controller = TextEditingController();
     final palette = context.akashaPalette;
+    
+    // Combine core relations and recommended preset relations into a single list
+    final List<String> availableTokens = [
+      ...RelationVocabulary.core,
+      ...RelationVocabulary.recommendedCanvasRelations,
+    ];
+
+    String selectedToken = 'related'; // Default selection
+    bool isCustom = false;
+    final customController = TextEditingController();
 
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) {
-        return AlertDialog(
-          backgroundColor: palette.surfaceElevated,
-          title: Text('관계 선 연결', style: AkashaTypography.headline),
-          content: SizedBox(
-            width: 400,
-            child: TextField(
-              controller: controller,
-              autofocus: true,
-              style: AkashaTypography.body,
-              decoration: InputDecoration(
-                hintText: '관계명을 입력하세요 (예: 등장인물, 대립관계)...',
-                hintStyle: TextStyle(color: AkashaColors.textSecondary),
-                filled: true,
-                fillColor: palette.background,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(AkashaRadius.sm),
-                  borderSide: BorderSide(color: palette.borderSubtle(0.3)),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(AkashaRadius.sm),
-                  borderSide: BorderSide(color: palette.accent),
+        return StatefulBuilder(
+          builder: (context, setDialogState) {
+            return AlertDialog(
+              backgroundColor: palette.surfaceElevated,
+              title: Text('관계 선 연결', style: AkashaTypography.headline),
+              content: SizedBox(
+                width: 400,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text('노드 간의 관계 유형을 선택해 주세요:', style: TextStyle(color: AkashaColors.textSecondary, fontSize: 11)),
+                    const SizedBox(height: AkashaSpacing.xs),
+                    DropdownButtonFormField<String>(
+                      dropdownColor: palette.surfaceElevated,
+                      initialValue: isCustom ? 'custom' : selectedToken,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: palette.background,
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(AkashaRadius.sm),
+                          borderSide: BorderSide(color: palette.borderSubtle(0.3)),
+                        ),
+                      ),
+                      style: AkashaTypography.body,
+                      items: [
+                        ...availableTokens.map((token) => DropdownMenuItem<String>(
+                              value: token,
+                              child: Text(RelationVocabulary.displayLabelFor(token)),
+                            )),
+                        const DropdownMenuItem<String>(
+                          value: 'custom',
+                          child: Text('직접 입력...'),
+                        ),
+                      ],
+                      onChanged: (val) {
+                        if (val != null) {
+                          setDialogState(() {
+                            if (val == 'custom') {
+                              isCustom = true;
+                            } else {
+                              isCustom = false;
+                              selectedToken = val;
+                            }
+                          });
+                        }
+                      },
+                    ),
+                    if (isCustom) ...[
+                      const SizedBox(height: AkashaSpacing.md),
+                      Text(
+                        '사용자 정의 관계 토큰 입력 (예: u:likes, u:teacher_of)',
+                        style: TextStyle(color: AkashaColors.textSecondary, fontSize: 11),
+                      ),
+                      const SizedBox(height: AkashaSpacing.xs),
+                      TextField(
+                        controller: customController,
+                        autofocus: true,
+                        style: AkashaTypography.body,
+                        decoration: InputDecoration(
+                          hintText: 'u:relation_name',
+                          hintStyle: TextStyle(color: AkashaColors.textSecondary),
+                          filled: true,
+                          fillColor: palette.background,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(AkashaRadius.sm),
+                            borderSide: BorderSide(color: palette.borderSubtle(0.3)),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(AkashaRadius.sm),
+                            borderSide: BorderSide(color: palette.accent),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ],
                 ),
               ),
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context, false),
-              child: Text('취소', style: TextStyle(color: AkashaColors.textSecondary)),
-            ),
-            FilledButton(
-              onPressed: () => Navigator.pop(context, true),
-              style: FilledButton.styleFrom(backgroundColor: palette.accent),
-              child: const Text('연결'),
-            ),
-          ],
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context, false),
+                  child: Text('취소', style: TextStyle(color: AkashaColors.textSecondary)),
+                ),
+                FilledButton(
+                  onPressed: () {
+                    if (isCustom) {
+                      final input = customController.text.trim();
+                      final formatted = _sanitizeAndValidateUserRelation(input);
+                      if (formatted == null) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text(
+                              '올바르지 않은 사용자 관계 토큰 형식입니다. 소문자, 숫자, 언더바만 가능합니다 (예: u:rival_of).'
+                            ),
+                            duration: Duration(seconds: 2),
+                          ),
+                        );
+                        return;
+                      }
+                      selectedToken = formatted;
+                    }
+                    Navigator.pop(context, true);
+                  },
+                  style: FilledButton.styleFrom(backgroundColor: palette.accent),
+                  child: const Text('연결'),
+                ),
+              ],
+            );
+          },
         );
       },
     );
 
     if (confirmed == true && mounted) {
-      final relation = controller.text.trim();
       final newEdge = CanvasEdge(
         edgeId: _generateEdgeId(),
         from: sourceId,
         to: targetId,
-        relation: relation,
+        relation: selectedToken,
         edgeKind: 'canvas_only',
       );
 
@@ -284,6 +367,37 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
         _selectedSourceNodeId = null;
       });
     }
+  }
+
+  String? _sanitizeAndValidateUserRelation(String input) {
+    if (input.isEmpty) return null;
+    
+    // Check if input contains any Korean letters or illegal symbols (spaces, punctuation other than colon and underscore)
+    // We only allow ascii lowercase letters, numbers, colons, underscores, spaces, or hyphens (spaces/hyphens will be sanitized).
+    // If it contains Korean or symbols like ?, !, @, etc, we reject it.
+    if (RegExp(r'[ㄱ-ㅎㅏ-ㅣ가-힣]').hasMatch(input)) {
+      return null;
+    }
+    
+    var token = input.trim().toLowerCase();
+    
+    // Auto-prefix if missing
+    if (!token.startsWith('u:')) {
+      token = 'u:$token';
+    }
+    
+    // Sanitize spaces/hyphens to underscores
+    token = token.replaceAll(' ', '_').replaceAll('-', '_');
+    
+    // Strip other illegal characters
+    token = token.replaceAll(RegExp(r'[^a-z0-9_:]'), '');
+
+    // Validate using the strict RelationVocabulary namespace pattern
+    if (RelationVocabulary.isUserNamespaced(token)) {
+      return token;
+    }
+    
+    return null;
   }
 
   Widget _buildInteractionBanner(AkashaPalette palette) {
@@ -658,7 +772,12 @@ class CanvasEdgePainter extends CustomPainter {
       // Draw relation label in the middle
       final rel = edge.relation;
       if (rel != null && rel.isNotEmpty) {
-        _drawRelationLabel(canvas, rel, fromCenter, toCenter);
+        _drawRelationLabel(
+          canvas,
+          RelationVocabulary.displayLabelFor(rel),
+          fromCenter,
+          toCenter,
+        );
       }
     }
   }

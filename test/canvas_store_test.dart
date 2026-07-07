@@ -4,6 +4,7 @@ import 'package:path/path.dart' as p;
 import 'package:yaml/yaml.dart';
 
 import 'package:akasha/core/archiving/canvas_record.dart';
+import 'package:akasha/core/archiving/relation_vocabulary.dart';
 import 'package:akasha/services/canvas_store.dart';
 
 void main() {
@@ -294,6 +295,47 @@ This is a relations map for Re:Zero.
         }),
         throwsA(isA<FormatException>()),
       );
+    });
+
+    test('RelationVocabulary display mapping and fallback tests', () {
+      expect(RelationVocabulary.displayLabelFor('appears_in'), equals('등장인물 / 등장장소'));
+      expect(RelationVocabulary.displayLabelFor('related'), equals('단순 관련성'));
+      expect(RelationVocabulary.displayLabelFor('u:rival_of'), equals('대립 / 라이벌'));
+      expect(RelationVocabulary.displayLabelFor('u:custom_unknown'), equals('u:custom_unknown'));
+      expect(RelationVocabulary.displayLabelFor(null), equals(''));
+    });
+
+    test('RelationVocabulary custom user token validation', () {
+      expect(RelationVocabulary.isUserNamespaced('u:likes'), isTrue);
+      expect(RelationVocabulary.isUserNamespaced('u:teacher_of'), isTrue);
+      expect(RelationVocabulary.isUserNamespaced('likes'), isFalse);
+      expect(RelationVocabulary.isUserNamespaced('u:한글'), isFalse);
+    });
+
+    test('User relation token sanitization logic emulation test', () {
+      String? sanitize(String input) {
+        if (input.isEmpty) return null;
+        if (RegExp(r'[ㄱ-ㅎㅏ-ㅣ가-힣]').hasMatch(input)) return null;
+        var token = input.trim().toLowerCase();
+        if (!token.startsWith('u:')) {
+          token = 'u:$token';
+        }
+        token = token.replaceAll(' ', '_').replaceAll('-', '_');
+        token = token.replaceAll(RegExp(r'[^a-z0-9_:]'), '');
+        if (RelationVocabulary.isUserNamespaced(token)) {
+          return token;
+        }
+        return null;
+      }
+
+      expect(sanitize('likes'), equals('u:likes'));
+      expect(sanitize('teacher of'), equals('u:teacher_of'));
+      expect(sanitize('rival-relation'), equals('u:rival_relation'));
+      expect(sanitize('u:voiced_by'), equals('u:voiced_by'));
+      expect(sanitize('한글관계'), isNull);
+      expect(sanitize('u:한글관계'), isNull);
+      expect(sanitize(''), isNull);
+      expect(sanitize('u:very_long_relation_name_that_exceeds_forty_characters_limit'), isNull);
     });
   });
 }
