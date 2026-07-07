@@ -13,6 +13,7 @@ import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
 import '../dialogs/canvas_archive_search_dialog.dart';
+import 'canvas_edge_painter.dart';
 import 'canvas_node_card.dart';
 
 enum CanvasInteractionMode {
@@ -665,24 +666,294 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                 ? const Center(child: CircularProgressIndicator(strokeWidth: 2))
                 : _layout == null
                     ? const Center(child: Text('캔버스 데이터를 불러올 수 없습니다.'))
-                    : Stack(
-                        children: [
-                          if (_layout!.nodes.isNotEmpty)
-                            Positioned.fill(
-                              child: CustomPaint(
-                                painter: CanvasEdgePainter(
-                                  layout: _layout!,
-                                  nodes: _layout!.nodes,
-                                  palette: palette,
-                                ),
-                              ),
-                            ),
-                          ..._layout!.nodes.map((node) => _buildNodeWidget(node, palette)),
-                        ],
-                      ),
+                    : uiStack(palette),
           ),
         ],
       ),
+    );
+  }
+
+  Widget uiStack(AkashaPalette palette) {
+    return Stack(
+      children: [
+        if (_layout!.nodes.isNotEmpty)
+          Positioned.fill(
+            child: CustomPaint(
+              painter: CanvasEdgePainter(
+                layout: _layout!,
+                nodes: _layout!.nodes,
+                palette: palette,
+              ),
+            ),
+          ),
+        ..._layout!.edges.map((edge) => _buildEdgeLabelWidget(edge, palette)),
+        ..._layout!.nodes.map((node) => _buildNodeWidget(node, palette)),
+      ],
+    );
+  }
+
+  Widget _buildEdgeLabelWidget(CanvasEdge edge, AkashaPalette palette) {
+    final fromNode = _findNode(edge.from);
+    final toNode = _findNode(edge.to);
+    
+    // Condition 5: Safe skip if from/to node is missing
+    if (fromNode == null || toNode == null) return const SizedBox.shrink();
+
+    // Condition 4: Calculate midpoint using current node x/y/width/height (default or custom)
+    final fromW = fromNode.width ?? (fromNode.kind == 'text' ? 250.0 : 260.0);
+    final fromH = fromNode.height ?? (fromNode.kind == 'text' ? 100.0 : 90.0);
+    final toW = toNode.width ?? (toNode.kind == 'text' ? 250.0 : 260.0);
+    final toH = toNode.height ?? (toNode.kind == 'text' ? 100.0 : 90.0);
+
+    final fromCenter = Offset(fromNode.x + fromW / 2, fromNode.y + fromH / 2);
+    final toCenter = Offset(toNode.x + toW / 2, toNode.y + toH / 2);
+
+    final mid = Offset((fromCenter.dx + toCenter.dx) / 2, (fromCenter.dy + toCenter.dy) / 2);
+
+    final rel = edge.relation;
+    if (rel == null || rel.isEmpty) return const SizedBox.shrink();
+
+    final labelText = RelationVocabulary.displayLabelFor(rel);
+
+    return Positioned(
+      left: mid.dx,
+      top: mid.dy,
+      child: FractionalTranslation(
+        translation: const Offset(-0.5, -0.5),
+        child: GestureDetector(
+          onTap: edge.edgeKind == 'canvas_only' ? () => _showEdgeEditDialog(edge) : null,
+          child: MouseRegion(
+            cursor: edge.edgeKind == 'canvas_only' ? SystemMouseCursors.click : SystemMouseCursors.basic,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+              decoration: BoxDecoration(
+                color: const Color(0xFF1E1E2F),
+                borderRadius: BorderRadius.circular(AkashaRadius.sm),
+                border: Border.all(color: palette.borderSubtle(0.3), width: 1.0),
+              ),
+              child: Text(
+                labelText,
+                style: const TextStyle(
+                  fontSize: 9.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white70,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  CanvasNode? _findNode(String nodeId) {
+    if (_layout == null) return null;
+    final matching = _layout!.nodes.where((n) => n.nodeId == nodeId);
+    return matching.isNotEmpty ? matching.first : null;
+  }
+
+  Future<void> _showEdgeEditDialog(CanvasEdge edge) async {
+    // Only allow editing canvas_only edges (Condition 1)
+    if (edge.edgeKind != 'canvas_only') {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('공식 수립된 관계선은 캔버스에서 직접 수정할 수 없습니다.'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+      return;
+    }
+
+    final palette = context.akashaPalette;
+    
+    // Combine core relations and recommended preset relations into a single list
+    final List<String> availableTokens = [
+      ...RelationVocabulary.core,
+      ...RelationVocabulary.recommendedCanvasRelations,
+    ];
+
+    final currentRelation = edge.relation ?? 'related';
+    // If current relation is not in the list, it's a custom unknown token
+    final bool isCustomInitially = !availableTokens.contains(currentRelation);
+
+    String selectedToken = isCustomInitially ? 'custom' : currentRelation;
+    bool isCustom = isCustomInitially;
+    final customController = TextEditingController(text: isCustomInitially ? currentRelation : '');
+
+    await showDialog<bool>(
+      context: context,
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setDialogState) {
+            return AlertDialog(
+              backgroundColor: palette.surfaceElevated,
+              title: Text('관계 편집', style: AkashaTypography.headline),
+              content: SizedBox(
+                width: 400,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text('노드 간의 관계 유형을 선택해 주세요:', style: TextStyle(color: AkashaColors.textSecondary, fontSize: 11)),
+                    const SizedBox(height: AkashaSpacing.xs),
+                    DropdownButtonFormField<String>(
+                      dropdownColor: palette.surfaceElevated,
+                      initialValue: selectedToken,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: palette.background,
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(AkashaRadius.sm),
+                          borderSide: BorderSide(color: palette.borderSubtle(0.3)),
+                        ),
+                      ),
+                      style: AkashaTypography.body,
+                      items: [
+                        ...availableTokens.map((token) => DropdownMenuItem<String>(
+                              value: token,
+                              child: Text(RelationVocabulary.displayLabelFor(token)),
+                            )),
+                        const DropdownMenuItem<String>(
+                          value: 'custom',
+                          child: Text('직접 입력...'),
+                        ),
+                      ],
+                      onChanged: (val) {
+                        if (val != null) {
+                          setDialogState(() {
+                            if (val == 'custom') {
+                              isCustom = true;
+                              selectedToken = 'custom';
+                            } else {
+                              isCustom = false;
+                              selectedToken = val;
+                            }
+                          });
+                        }
+                      },
+                    ),
+                    if (isCustom) ...[
+                      const SizedBox(height: AkashaSpacing.md),
+                      Text(
+                        '사용자 정의 관계 토큰 입력 (예: u:likes, u:teacher_of)',
+                        style: TextStyle(color: AkashaColors.textSecondary, fontSize: 11),
+                      ),
+                      const SizedBox(height: AkashaSpacing.xs),
+                      TextField(
+                        controller: customController,
+                        autofocus: true,
+                        style: AkashaTypography.body,
+                        decoration: InputDecoration(
+                          hintText: 'u:relation_name',
+                          hintStyle: TextStyle(color: AkashaColors.textSecondary),
+                          filled: true,
+                          fillColor: palette.background,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(AkashaRadius.sm),
+                            borderSide: BorderSide(color: palette.borderSubtle(0.3)),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(AkashaRadius.sm),
+                            borderSide: BorderSide(color: palette.accent),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+              actions: [
+                // DELETE button on the left (Condition 9: with confirm prompt)
+                TextButton(
+                  onPressed: () async {
+                    final navigator = Navigator.of(context);
+                    final deleteConfirm = await showDialog<bool>(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          backgroundColor: palette.surfaceElevated,
+                          title: Text('관계선 삭제', style: AkashaTypography.headline),
+                          content: const Text('이 관계선을 삭제할까요?\n이 작업은 캔버스에서 제거할 뿐, 원본 파일은 변경되지 않습니다.'),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, false),
+                              child: Text('취소', style: TextStyle(color: AkashaColors.textSecondary)),
+                            ),
+                            FilledButton(
+                              onPressed: () => Navigator.pop(context, true),
+                              style: FilledButton.styleFrom(backgroundColor: Colors.redAccent),
+                              child: const Text('삭제'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                    if (deleteConfirm == true && mounted) {
+                      // Remove edge
+                      setState(() {
+                        _layout!.edges.removeWhere((e) => e.edgeId == edge.edgeId);
+                        _layout!.updatedAt = DateTime.now().toUtc();
+                      });
+                      CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
+                      // Close the parent edit dialog
+                      navigator.pop(false);
+                    }
+                  },
+                  child: const Text('삭제', style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold)),
+                ),
+                const Spacer(),
+                TextButton(
+                  onPressed: () => Navigator.pop(context, false),
+                  child: Text('취소', style: TextStyle(color: AkashaColors.textSecondary)),
+                ),
+                FilledButton(
+                  onPressed: () {
+                    String finalRelation = selectedToken;
+                    if (isCustom) {
+                      final input = customController.text.trim();
+                      final formatted = _sanitizeAndValidateUserRelation(input);
+                      if (formatted == null) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text(
+                              '올바르지 않은 사용자 관계 토큰 형식입니다. 소문자, 숫자, 언더바만 가능합니다 (예: u:rival_of).'
+                            ),
+                            duration: Duration(seconds: 2),
+                          ),
+                        );
+                        return;
+                      }
+                      finalRelation = formatted;
+                    }
+                    // Update and save
+                    setState(() {
+                      final targetEdgeIndex = _layout!.edges.indexWhere((e) => e.edgeId == edge.edgeId);
+                      if (targetEdgeIndex != -1) {
+                        _layout!.edges[targetEdgeIndex] = CanvasEdge(
+                          edgeId: edge.edgeId,
+                          from: edge.from,
+                          to: edge.to,
+                          relation: finalRelation,
+                          edgeKind: edge.edgeKind,
+                          visible: edge.visible,
+                          linkRef: edge.linkRef,
+                          createdAt: edge.createdAt,
+                        );
+                        _layout!.updatedAt = DateTime.now().toUtc();
+                      }
+                    });
+                    CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
+                    Navigator.pop(context, true);
+                  },
+                  style: FilledButton.styleFrom(backgroundColor: palette.accent),
+                  child: const Text('저장'),
+                ),
+              ],
+            );
+          },
+        );
+      },
     );
   }
 
@@ -735,100 +1006,4 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   }
 }
 
-class CanvasEdgePainter extends CustomPainter {
-  final CanvasLayout layout;
-  final List<CanvasNode> nodes;
-  final AkashaPalette palette;
 
-  CanvasEdgePainter({
-    required this.layout,
-    required this.nodes,
-    required this.palette,
-  });
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = palette.borderSubtle(0.4)
-      ..strokeWidth = 2.0
-      ..style = PaintingStyle.stroke;
-
-    for (final edge in layout.edges) {
-      final fromNode = _findNode(edge.from);
-      final toNode = _findNode(edge.to);
-      if (fromNode == null || toNode == null) continue;
-
-      final fromW = fromNode.width ?? (fromNode.kind == 'text' ? 250.0 : 260.0);
-      final fromH = fromNode.height ?? (fromNode.kind == 'text' ? 100.0 : 90.0);
-      final toW = toNode.width ?? (toNode.kind == 'text' ? 250.0 : 260.0);
-      final toH = toNode.height ?? (toNode.kind == 'text' ? 100.0 : 90.0);
-
-      final fromCenter = Offset(fromNode.x + fromW / 2, fromNode.y + fromH / 2);
-      final toCenter = Offset(toNode.x + toW / 2, toNode.y + toH / 2);
-
-      // Draw relation line
-      canvas.drawLine(fromCenter, toCenter, paint);
-
-      // Draw relation label in the middle
-      final rel = edge.relation;
-      if (rel != null && rel.isNotEmpty) {
-        _drawRelationLabel(
-          canvas,
-          RelationVocabulary.displayLabelFor(rel),
-          fromCenter,
-          toCenter,
-        );
-      }
-    }
-  }
-
-  CanvasNode? _findNode(String nodeId) {
-    final matching = nodes.where((n) => n.nodeId == nodeId);
-    return matching.isNotEmpty ? matching.first : null;
-  }
-
-  void _drawRelationLabel(Canvas canvas, String text, Offset from, Offset to) {
-    final mid = Offset((from.dx + to.dx) / 2, (from.dy + to.dy) / 2);
-
-    final textPainter = TextPainter(
-      text: TextSpan(
-        text: text,
-        style: const TextStyle(
-          fontSize: 9.0,
-          fontWeight: FontWeight.bold,
-          color: Colors.white70,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    )..layout();
-
-    final bgW = textPainter.width + 12.0;
-    final bgH = textPainter.height + 6.0;
-    final bgRect = RRect.fromRectAndRadius(
-      Rect.fromCenter(center: mid, width: bgW, height: bgH),
-      const Radius.circular(4.0),
-    );
-
-    // Draw background label box
-    final bgPaint = Paint()..color = const Color(0xFF1E1E2F);
-    canvas.drawRRect(bgRect, bgPaint);
-
-    // Draw border around label
-    final borderPaint = Paint()
-      ..color = palette.borderSubtle(0.3)
-      ..strokeWidth = 1.0
-      ..style = PaintingStyle.stroke;
-    canvas.drawRRect(bgRect, borderPaint);
-
-    // Draw text centered
-    textPainter.paint(
-      canvas,
-      Offset(mid.dx - textPainter.width / 2, mid.dy - textPainter.height / 2),
-    );
-  }
-
-  @override
-  bool shouldRepaint(covariant CanvasEdgePainter oldDelegate) {
-    return true; // Repaint whenever Stack updates
-  }
-}

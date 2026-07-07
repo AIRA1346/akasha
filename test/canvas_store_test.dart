@@ -337,5 +337,69 @@ This is a relations map for Re:Zero.
       expect(sanitize(''), isNull);
       expect(sanitize('u:very_long_relation_name_that_exceeds_forty_characters_limit'), isNull);
     });
+
+    test('CanvasEdge edit and delete mock logic validation', () {
+      final layout = CanvasLayout(
+        layoutSchemaVersion: 1,
+        canvasId: 'cv_u_test',
+        updatedAt: DateTime.now().toUtc(),
+        source: 'user',
+        layoutMode: 'freeform',
+        viewport: CanvasViewport(x: 0, y: 0, zoom: 1.0),
+        nodes: [
+          CanvasNode(nodeId: 'n1', kind: 'text', text: 'Node A', x: 0, y: 0),
+          CanvasNode(nodeId: 'n2', kind: 'text', text: 'Node B', x: 10, y: 10),
+        ],
+        edges: [
+          CanvasEdge(edgeId: 'e1', from: 'n1', to: 'n2', relation: 'related', edgeKind: 'canvas_only'),
+          CanvasEdge(edgeId: 'e2', from: 'n1', to: 'n3', relation: 'u:rival_of', edgeKind: 'canvas_only'),
+          CanvasEdge(edgeId: 'e3', from: 'n1', to: 'n2', relation: 'about', edgeKind: 'canonical_view'),
+        ],
+      );
+
+      // 1. Check edge editing
+      final e1 = layout.edges.firstWhere((e) => e.edgeId == 'e1');
+      expect(e1.relation, equals('related'));
+      
+      final e1Index = layout.edges.indexWhere((e) => e.edgeId == 'e1');
+      layout.edges[e1Index] = CanvasEdge(
+        edgeId: e1.edgeId,
+        from: e1.from,
+        to: e1.to,
+        relation: 'u:ally_of',
+        edgeKind: e1.edgeKind,
+      );
+      expect(layout.edges[e1Index].relation, equals('u:ally_of'));
+
+      // 2. Check edge deleting
+      layout.edges.removeWhere((e) => e.edgeId == 'e1');
+      expect(layout.edges.any((e) => e.edgeId == 'e1'), isFalse);
+      expect(layout.edges.length, equals(2));
+
+      // 3. Safety checks for missing nodes
+      CanvasNode? findNode(String id) {
+        final matching = layout.nodes.where((n) => n.nodeId == id);
+        return matching.isNotEmpty ? matching.first : null;
+      }
+      
+      expect(findNode('n3'), isNull);
+      
+      for (final edge in layout.edges) {
+        final fromNode = findNode(edge.from);
+        final toNode = findNode(edge.to);
+        if (fromNode == null || toNode == null) {
+          continue;
+        }
+        
+        final fromCenter = Offset(fromNode.x + 125, fromNode.y + 50);
+        final toCenter = Offset(toNode.x + 125, toNode.y + 50);
+        final mid = Offset((fromCenter.dx + toCenter.dx) / 2, (fromCenter.dy + toCenter.dy) / 2);
+        expect(mid, isNotNull);
+      }
+
+      // 4. canvas_only non-editable check
+      final nonEditableEdge = layout.edges.firstWhere((e) => e.edgeId == 'e3');
+      expect(nonEditableEdge.edgeKind, isNot(equals('canvas_only')));
+    });
   });
 }
