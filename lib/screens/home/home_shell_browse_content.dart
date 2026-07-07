@@ -130,6 +130,7 @@ class HomeShellBrowseContentBuilder {
         onOpenRecord: onGraphOpenRecord,
         onConnectEntity:
             onAddNewEntity == null ? null : () => onAddNewEntity!(null),
+        vaultPath: vaultPath ?? '',
       );
     }
 

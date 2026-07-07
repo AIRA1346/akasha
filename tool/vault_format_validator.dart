@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:convert';
 
 import 'package:yaml/yaml.dart';
 import 'package:path/path.dart' as p;
@@ -157,6 +158,11 @@ class VaultFormatValidator {
       if (segments.any((s) => s.startsWith('.'))) continue;
       if (!rel.endsWith('.md')) continue;
       if (_skipFileNames.contains(segments.last)) continue;
+
+      if (segments.first == 'canvases') {
+        validateCanvasRecord(file.path, rel, report, vaultPath);
+        continue;
+      }
 
       validateRecordContent(await file.readAsString(), rel, report);
     }
@@ -476,5 +482,155 @@ class VaultFormatValidator {
       }
     }
     return null;
+  }
+
+  void validateCanvasRecord(
+    String mdFilePath,
+    String relPath,
+    VaultFormatReport report,
+    String vaultPath,
+  ) {
+    report.recordCount++;
+    final mdFile = File(mdFilePath);
+    if (!mdFile.existsSync()) {
+      _error(report, 'canvas_file_not_found', relPath, 'Canvas Markdown file does not exist.');
+      return;
+    }
+
+    final mdContent = mdFile.readAsStringSync();
+    final frontmatter = _extractFrontmatter(mdContent);
+    if (frontmatter == null) {
+      _error(report, 'canvas_no_frontmatter', relPath, 'Canvas Markdown file has no frontmatter.');
+      return;
+    }
+
+    Map<dynamic, dynamic> yaml;
+    try {
+      final loaded = loadYaml(frontmatter);
+      if (loaded is! Map) {
+        _error(report, 'canvas_frontmatter_not_map', relPath, 'Canvas frontmatter is not a YAML mapping.');
+        return;
+      }
+      yaml = loaded;
+    } catch (e) {
+      _error(report, 'canvas_invalid_yaml', relPath, 'Canvas frontmatter is not parseable YAML: $e');
+      return;
+    }
+
+    final schemaVersion = yaml['schema_version'];
+    if (schemaVersion != 3) {
+      _error(report, 'canvas_schema_version_invalid', relPath, 'Canvas schema_version must be 3.');
+    }
+    report.v3Count++;
+
+    final docKind = yaml['document_kind']?.toString() ?? yaml['record_kind']?.toString() ?? '';
+    if (docKind != 'canvas') {
+      _error(report, 'canvas_document_kind_invalid', relPath, 'Canvas document_kind must be "canvas".');
+    }
+
+    final canvasId = yaml['canvas_id']?.toString() ?? '';
+    if (canvasId.isEmpty || !canvasId.startsWith('cv_u_')) {
+      _error(report, 'canvas_id_invalid', relPath, 'Canvas canvas_id must start with "cv_u_".');
+    }
+
+    _requireNonEmptyString(yaml, 'title', relPath, report);
+
+    final layoutRef = yaml['layout_ref']?.toString() ?? '';
+    if (layoutRef.isEmpty) {
+      _error(report, 'canvas_layout_ref_missing', relPath, 'Canvas layout_ref is required.');
+      return;
+    }
+
+    final parentDir = File(mdFilePath).parent.path;
+    final jsonFilePath = p.normalize(p.join(parentDir, layoutRef));
+    final jsonFile = File(jsonFilePath);
+    final jsonRelPath = p.relative(jsonFilePath, from: vaultPath).replaceAll('\\', '/');
+
+    if (!jsonFile.existsSync()) {
+      _error(report, 'canvas_layout_file_missing', relPath, 'Companion layout JSON file at $layoutRef does not exist.');
+      return;
+    }
+
+    Map<String, dynamic> json;
+    try {
+      final jsonContent = jsonFile.readAsStringSync();
+      final decoded = jsonDecode(jsonContent);
+      if (decoded is! Map<String, dynamic>) {
+        _error(report, 'canvas_layout_not_map', jsonRelPath, 'layout.json must be a JSON object.');
+        return;
+      }
+      json = decoded;
+    } catch (e) {
+      _error(report, 'canvas_layout_invalid_json', jsonRelPath, 'layout.json is not parseable JSON: $e');
+      return;
+    }
+
+    final layoutSchemaVersion = json['layout_schema_version'];
+    if (layoutSchemaVersion != 1) {
+      _error(report, 'canvas_layout_schema_version_invalid', jsonRelPath, 'layout_schema_version must be 1.');
+    }
+
+    final jsonCanvasId = json['canvas_id']?.toString() ?? '';
+    if (jsonCanvasId != canvasId) {
+      _error(report, 'canvas_id_mismatch', jsonRelPath, 'canvas_id in layout.json ($jsonCanvasId) does not match canvas.md ($canvasId).');
+    }
+
+    final layoutMode = json['layout_mode']?.toString() ?? '';
+    if (layoutMode != 'freeform' && layoutMode != 'mindmap' && layoutMode != 'graph') {
+      _error(report, 'canvas_layout_mode_invalid', jsonRelPath, 'layout_mode must be one of: freeform, mindmap, graph.');
+    }
+
+    final nodes = json['nodes'] as List?;
+    final nodeIds = <String>{};
+    if (nodes != null) {
+      for (final node in nodes) {
+        if (node is! Map) {
+          _error(report, 'canvas_node_not_map', jsonRelPath, 'Each node in nodes array must be a JSON object.');
+          continue;
+        }
+        final nodeId = node['node_id']?.toString() ?? '';
+        if (nodeId.isEmpty) {
+          _error(report, 'canvas_node_id_empty', jsonRelPath, 'Each node must have a non-empty node_id.');
+        } else {
+          nodeIds.add(nodeId);
+        }
+        final kind = node['kind']?.toString() ?? '';
+        if (kind != 'entity' && kind != 'record' && kind != 'text' && kind != 'group') {
+          _error(report, 'canvas_node_kind_invalid', jsonRelPath, 'Node kind must be one of: entity, record, text, group.');
+        }
+      }
+    }
+
+    final edges = json['edges'] as List?;
+    if (edges != null) {
+      for (final edge in edges) {
+        if (edge is! Map) {
+          _error(report, 'canvas_edge_not_map', jsonRelPath, 'Each edge in edges array must be a JSON object.');
+          continue;
+        }
+        final from = edge['from']?.toString() ?? '';
+        final to = edge['to']?.toString() ?? '';
+        if (from.isEmpty || to.isEmpty) {
+          _error(report, 'canvas_edge_endpoint_empty', jsonRelPath, 'Edge endpoints from/to cannot be empty.');
+        } else {
+          if (!nodeIds.contains(from)) {
+            _error(report, 'canvas_edge_from_invalid', jsonRelPath, 'Edge endpoint from "$from" does not refer to a valid node_id.');
+          }
+          if (!nodeIds.contains(to)) {
+            _error(report, 'canvas_edge_to_invalid', jsonRelPath, 'Edge endpoint to "$to" does not refer to a valid node_id.');
+          }
+        }
+        final edgeKind = edge['edge_kind']?.toString() ?? '';
+        if (edgeKind != 'canonical_view' && edgeKind != 'canvas_only' && edgeKind != 'candidate') {
+          _error(report, 'canvas_edge_kind_invalid', jsonRelPath, 'Edge edge_kind must be one of: canonical_view, canvas_only, candidate.');
+        }
+        if (edgeKind == 'canonical_view') {
+          final ref = edge['link_ref'] as Map?;
+          if (ref == null) {
+            _error(report, 'canvas_canonical_view_ref_missing', jsonRelPath, 'canonical_view edge must contain a link_ref object.');
+          }
+        }
+      }
+    }
   }
 }

@@ -1,4 +1,6 @@
+import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:path/path.dart' as p;
 
 import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/services/entity_journal_parser.dart';
@@ -248,6 +250,97 @@ source: "user"
           reason: 'app timeline serializer must emit spec-conforming records: '
               '${report.issues}');
       expect(codes(report), isNot(contains('occurred_at_legacy_zone')));
+    });
+  });
+
+  group('canvas validation tests', () {
+    late Directory tempVault;
+
+    setUp(() async {
+      tempVault = await Directory.systemTemp.createTemp('canvas_validator_test_vault');
+    });
+
+    tearDown(() async {
+      if (tempVault.existsSync()) {
+        await tempVault.delete(recursive: true);
+      }
+    });
+
+    test('valid canvases structure passes format validator', () async {
+      final canvasDir = Directory(p.join(tempVault.path, 'canvases', 'cv_u_re_zero'));
+      await canvasDir.create(recursive: true);
+
+      final mdFile = File(p.join(canvasDir.path, 'canvas.md'));
+      await mdFile.writeAsString('''---
+schema_version: 3
+document_kind: "canvas"
+canvas_id: "cv_u_re_zero"
+slug: "re-zero"
+title: "리제로 관계도"
+layout_ref: "./layout.json"
+created_at: "2026-07-07T08:52:00.000Z"
+updated_at: "2026-07-07T08:52:00.000Z"
+source: "user"
+tags:
+  - "re-zero"
+---
+# 리제로 관계도
+''');
+
+      final jsonFile = File(p.join(canvasDir.path, 'layout.json'));
+      await jsonFile.writeAsString('''{
+  "layout_schema_version": 1,
+  "canvas_id": "cv_u_re_zero",
+  "updated_at": "2026-07-07T08:55:00.000Z",
+  "source": "user",
+  "layout_mode": "freeform",
+  "viewport": { "x": 0.0, "y": 0.0, "zoom": 1.0 },
+  "nodes": [
+    { "node_id": "n1", "kind": "entity", "entity_id": "pe_u_subaru", "x": 150.0, "y": -230.0 }
+  ],
+  "edges": [
+    { "edge_id": "e1", "from": "n1", "to": "n1", "relation": "about", "edge_kind": "canvas_only" }
+  ]
+}''');
+
+      final report = await VaultFormatValidator().validateVault(tempVault.path);
+      expect(report.errors, isEmpty, reason: report.issues.map((i) => i.message).toString());
+      expect(report.recordCount, 1);
+    });
+
+    test('mismatched canvas_id fails validation', () async {
+      final canvasDir = Directory(p.join(tempVault.path, 'canvases', 'cv_u_re_zero'));
+      await canvasDir.create(recursive: true);
+
+      final mdFile = File(p.join(canvasDir.path, 'canvas.md'));
+      await mdFile.writeAsString('''---
+schema_version: 3
+document_kind: "canvas"
+canvas_id: "cv_u_re_zero"
+slug: "re-zero"
+title: "리제로 관계도"
+layout_ref: "./layout.json"
+created_at: "2026-07-07T08:52:00.000Z"
+updated_at: "2026-07-07T08:52:00.000Z"
+source: "user"
+---
+''');
+
+      final jsonFile = File(p.join(canvasDir.path, 'layout.json'));
+      await jsonFile.writeAsString('''{
+  "layout_schema_version": 1,
+  "canvas_id": "cv_u_mismatched",
+  "updated_at": "2026-07-07T08:55:00.000Z",
+  "source": "user",
+  "layout_mode": "freeform",
+  "viewport": { "x": 0.0, "y": 0.0, "zoom": 1.0 },
+  "nodes": [],
+  "edges": []
+}''');
+
+      final report = await VaultFormatValidator().validateVault(tempVault.path);
+      expect(report.errors, isNotEmpty);
+      expect(report.errors.any((i) => i.code == 'canvas_id_mismatch'), isTrue);
     });
   });
 }
