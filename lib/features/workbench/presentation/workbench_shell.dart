@@ -14,6 +14,7 @@ import 'dialogs/workbench_close_tab_dialog.dart';
 import 'entity_detail_workspace.dart';
 import 'collectible_tab.dart';
 import 'work_detail_workspace.dart';
+import '../../../screens/home/views/canvas_editor_view.dart';
 
 /// 워크벤치 메인 영역 — Collectible detail | browse 콘텐츠
 class WorkbenchShell extends StatefulWidget {
@@ -44,8 +45,10 @@ class WorkbenchShell extends StatefulWidget {
     this.onClearPendingEntityLink,
     this.onRecordOpenWork,
     this.onRecordOpenEntity,
+    required this.vaultPath,
   });
 
+  final String vaultPath;
   final WorkbenchController controller;
   final Widget browseContent;
   final void Function(AkashaItem saved, {required bool silent}) onWorkSaved;
@@ -231,6 +234,14 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
               pendingEntityLinkEntityId: widget.pendingEntityLinkEntityId,
               pendingEntityWorkLinkPick: widget.pendingEntityWorkLinkPick,
               onPendingEntityLinkHandled: widget.onClearPendingEntityLink,
+            ),
+          CanvasCollectibleTab(:final canvasId, :final title) =>
+            CanvasEditorWorkspace(
+              key: ValueKey(active.id),
+              vaultPath: widget.vaultPath,
+              canvasId: canvasId,
+              title: title,
+              onClose: () => _handleCloseTab(active.id),
             ),
         };
       },

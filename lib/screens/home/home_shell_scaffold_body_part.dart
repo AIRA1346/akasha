@@ -132,6 +132,7 @@ Widget _homeShellScaffoldBody(
     onOpenEntityDetail: controller.openEntity,
     onOpenRecentExplore: controller.openRecentExploreItem,
     onOpenEntity: controller.openEntity,
+    onOpenCanvas: (canvas) => controller.openCanvas(canvas.canvasId, canvas.title),
     workPreviewItem: controller.workPreviewItem,
     entityPreviewItem: controller.entityPreviewItem,
     onPreviewWork: controller.openWorkPreview,

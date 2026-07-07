@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../core/archiving/canvas_record.dart';
+
 import '../../config/feature_flags.dart';
 import '../../core/archiving/record_link.dart';
 import '../../core/archiving/entity_anchor.dart';
@@ -115,8 +117,8 @@ class HomeShellBody extends StatelessWidget {
   onWorkbenchEntitySaved;
   final Future<void> Function(String tabId) onWorkbenchEntityDeleted;
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
-  final Future<void> Function(UserCatalogEntity entity)?
-  onAddToLibraryForEntity;
+  final Future<void> Function(UserCatalogEntity entity)? onAddToLibraryForEntity;
+  final void Function(CanvasRecord canvas)? onOpenCanvas;
   final Future<void> Function(
     List<BrowseCard> cards,
     int oldIndex,
@@ -250,6 +252,7 @@ class HomeShellBody extends StatelessWidget {
     required this.onOpenEntityDetail,
     required this.onOpenRecentExplore,
     required this.onOpenEntity,
+    this.onOpenCanvas,
     required this.onWorkbenchWorkSaved,
     required this.onWorkbenchWorkDeleted,
     required this.onWorkbenchEntitySaved,
@@ -353,6 +356,7 @@ class HomeShellBody extends StatelessWidget {
       onPreviewEntity: onPreviewEntity,
       onCuratedReorder: onCuratedReorder,
       onAddNewEntity: onAddNewEntity,
+      onOpenCanvas: onOpenCanvas,
     );
 
     return Row(

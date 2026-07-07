@@ -95,6 +95,11 @@ class HomeWorkbenchCoordinator {
     rebuild();
   }
 
+  void openCanvas(String canvasId, String title) {
+    workbench.openCanvas(canvasId, title);
+    if (isMounted()) rebuild();
+  }
+
   Future<void> onWorkbenchWorkSaved(AkashaItem saved, {bool silent = false}) async {
     await reloadItems();
     if (!isMounted()) return;

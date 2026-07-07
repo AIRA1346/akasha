@@ -276,6 +276,22 @@ class _TabThumbnail extends StatelessWidget {
             ),
           ),
         ),
+      CanvasCollectibleTab() => SizedBox(
+          width: size,
+          height: height,
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              color: const Color(0xFF252535),
+              borderRadius: BorderRadius.circular(4),
+              border: Border.all(color: Colors.amber.withValues(alpha: 0.35)),
+            ),
+            child: Icon(
+              Icons.map_outlined,
+              size: size * 0.55,
+              color: Colors.amberAccent,
+            ),
+          ),
+        ),
     };
   }
 

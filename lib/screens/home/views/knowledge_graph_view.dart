@@ -16,7 +16,6 @@ import '../../../widgets/poster_image.dart';
 import '../../../widgets/work_link_neighbors_sections.dart';
 import '../../../core/archiving/canvas_record.dart';
 import '../../../services/canvas_store.dart';
-import 'canvas_editor_view.dart';
 
 /// 볼트 작품별 위키 링크 연결을 탐색하는 연결 목록 뷰 (v1.1 리스트형).
 class KnowledgeGraphView extends StatefulWidget {
@@ -30,6 +29,7 @@ class KnowledgeGraphView extends StatefulWidget {
     this.onOpenRecord,
     this.onConnectEntity,
     required this.vaultPath,
+    required this.onOpenCanvas,
   });
 
   final List<AkashaItem> vaultItems;
@@ -40,6 +40,7 @@ class KnowledgeGraphView extends StatefulWidget {
   final VoidCallback? onOpenRecord;
   final VoidCallback? onConnectEntity;
   final String vaultPath;
+  final void Function(CanvasRecord canvas) onOpenCanvas;
 
   @override
   State<KnowledgeGraphView> createState() => _KnowledgeGraphViewState();
@@ -512,15 +513,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
   }
 
   void _enterCanvas(CanvasRecord record) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => CanvasEditorView(
-          vaultPath: widget.vaultPath,
-          canvasId: record.canvasId,
-        ),
-      ),
-    ).then((_) => _loadCanvases());
+    widget.onOpenCanvas(record);
   }
 
   Widget _buildEmptyLinksBanner() {

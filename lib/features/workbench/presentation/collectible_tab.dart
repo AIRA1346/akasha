@@ -56,3 +56,25 @@ final class EntityCollectibleTab extends CollectibleTab {
 
   static String idFor(String entityId) => entityId;
 }
+
+final class CanvasCollectibleTab extends CollectibleTab {
+  CanvasCollectibleTab({
+    required this.id,
+    required this.canvasId,
+    required this.title,
+    this.isDirty = false,
+  });
+
+  @override
+  final String id;
+
+  final String canvasId;
+
+  @override
+  final String title;
+
+  @override
+  bool isDirty;
+
+  static String idFor(String canvasId) => 'canvas_$canvasId';
+}

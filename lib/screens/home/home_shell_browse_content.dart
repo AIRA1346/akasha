@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/archiving/entity_anchor.dart';
+import '../../core/archiving/canvas_record.dart';
 import '../../core/ports/record_link_port.dart';
 import '../../core/ports/user_catalog_port.dart';
 import '../../models/akasha_item.dart';
@@ -61,6 +62,7 @@ class HomeShellBrowseContentBuilder {
     required this.onPreviewEntity,
     required this.onCuratedReorder,
     this.onAddNewEntity,
+    this.onOpenCanvas,
   });
 
   final HomeBrowseFilterController filterCtrl;
@@ -108,6 +110,7 @@ class HomeShellBrowseContentBuilder {
     int newIndex,
   ) onCuratedReorder;
   final void Function(EntityAnchorType? type)? onAddNewEntity;
+  final void Function(CanvasRecord canvas)? onOpenCanvas;
 
   Widget buildDashboardBrowseContent({
     required bool isKnowledgeGraphMode,
@@ -131,6 +134,7 @@ class HomeShellBrowseContentBuilder {
         onConnectEntity:
             onAddNewEntity == null ? null : () => onAddNewEntity!(null),
         vaultPath: vaultPath ?? '',
+        onOpenCanvas: onOpenCanvas ?? (_) {},
       );
     }
 

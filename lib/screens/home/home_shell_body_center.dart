@@ -223,6 +223,7 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
                   onRecordOpenWork: onOpenBrowseItem,
                   onRecordOpenEntity: onOpenEntity,
                   browseContent: _buildBrowseContent(),
+                  vaultPath: vaultPath ?? '',
                 ),
               ),
             ],

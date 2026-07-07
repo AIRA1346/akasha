@@ -7,22 +7,25 @@ import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
 
-class CanvasEditorView extends StatefulWidget {
-  const CanvasEditorView({
+class CanvasEditorWorkspace extends StatefulWidget {
+  const CanvasEditorWorkspace({
     super.key,
     required this.vaultPath,
     required this.canvasId,
+    required this.title,
+    required this.onClose,
   });
 
   final String vaultPath;
   final String canvasId;
+  final String title;
+  final VoidCallback onClose;
 
   @override
-  State<CanvasEditorView> createState() => _CanvasEditorViewState();
+  State<CanvasEditorWorkspace> createState() => _CanvasEditorWorkspaceState();
 }
 
-class _CanvasEditorViewState extends State<CanvasEditorView> {
-  CanvasRecord? _record;
+class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   CanvasLayout? _layout;
   bool _loading = true;
 
@@ -48,7 +51,6 @@ class _CanvasEditorViewState extends State<CanvasEditorView> {
 
     if (data != null) {
       setState(() {
-        _record = data.record;
         _layout = data.layout;
         _loading = false;
       });
@@ -61,27 +63,51 @@ class _CanvasEditorViewState extends State<CanvasEditorView> {
   Widget build(BuildContext context) {
     final palette = context.akashaPalette;
 
-    return Scaffold(
-      backgroundColor: palette.background,
-      appBar: AppBar(
-        backgroundColor: palette.sidebar,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: Text(
-          _record?.title ?? '지식 지도 편집기',
-          style: AkashaTypography.headline,
-        ),
-      ),
-      body: _loading
-          ? const Center(child: CircularProgressIndicator(strokeWidth: 2))
-          : _layout == null
-              ? const Center(child: Text('캔버스 데이터를 불러올 수 없습니다.'))
-              : Stack(
-                  children: _layout!.nodes.map((node) => _buildNodeWidget(node, palette)).toList(),
+    return Container(
+      color: palette.background,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // Workspace header with close tab button
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: AkashaSpacing.md,
+              vertical: AkashaSpacing.xs,
+            ),
+            decoration: BoxDecoration(
+              color: palette.sidebar,
+              border: Border(
+                bottom: BorderSide(
+                  color: palette.borderSubtle(0.2),
                 ),
+              ),
+            ),
+            child: Row(
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.close, size: 20),
+                  onPressed: widget.onClose,
+                  tooltip: '탭 닫기',
+                ),
+                const SizedBox(width: AkashaSpacing.xs),
+                Text(
+                  widget.title,
+                  style: AkashaTypography.dashboardPanelTitle,
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: _loading
+                ? const Center(child: CircularProgressIndicator(strokeWidth: 2))
+                : _layout == null
+                    ? const Center(child: Text('캔버스 데이터를 불러올 수 없습니다.'))
+                    : Stack(
+                        children: _layout!.nodes.map((node) => _buildNodeWidget(node, palette)).toList(),
+                      ),
+          ),
+        ],
+      ),
     );
   }
 

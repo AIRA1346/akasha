@@ -40,6 +40,13 @@ mixin HomeShellControllerWorkbenchMixin on HomeShellControllerBase {
     rebuild();
   }
 
+  void openCanvas(String canvasId, String title) {
+    preview.clearReturnSnapshot();
+    preview.closeAllPreviews();
+    workbenchCoord.openCanvas(canvasId, title);
+    rebuild();
+  }
+
   void openRecentExploreItem(AkashaItem item) {
     if (workbench.hasOpenDetail) {
       openItemDetail(item);

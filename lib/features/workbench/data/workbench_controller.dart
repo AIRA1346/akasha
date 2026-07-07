@@ -77,6 +77,16 @@ class WorkbenchController extends ChangeNotifier {
     notifyListeners();
   }
 
+  void openCanvas(String canvasId, String title) {
+    final id = CanvasCollectibleTab.idFor(canvasId);
+    tabs
+      ..clear()
+      ..add(CanvasCollectibleTab(id: id, canvasId: canvasId, title: title));
+    activeTabId = id;
+    _detailViewVisible = true;
+    notifyListeners();
+  }
+
   /// browse(그리드·홈)로 돌아갈 때 상세 세션을 닫습니다.
   void showBrowse() {
     if (!_detailViewVisible && tabs.isEmpty) return;
