@@ -2,7 +2,6 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../../../core/archiving/canvas_record.dart';
-import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../models/akasha_item.dart';
 import '../../../services/canvas_store.dart';
@@ -13,6 +12,7 @@ import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
 import '../dialogs/canvas_archive_search_dialog.dart';
+import 'canvas_node_card.dart';
 
 class CanvasEditorWorkspace extends StatefulWidget {
   const CanvasEditorWorkspace({
@@ -362,41 +362,6 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   }
 
   Widget _buildNodeWidget(CanvasNode node, AkashaPalette palette) {
-    // 1. Resolve card styling based on kind
-    final String label;
-    final String title;
-    final String subtitle;
-    final IconData icon;
-    final Color accentColor;
-    final bool isEditable;
-
-    if (node.kind == 'work') {
-      label = '작품';
-      final matching = widget.localItems.where((w) => w.workId == node.workId);
-      final work = matching.isNotEmpty ? matching.first : null;
-      title = work != null ? work.title : '[Missing work: ${node.workId}]';
-      subtitle = work != null ? work.creator : 'Unknown';
-      icon = Icons.movie_filter_outlined;
-      accentColor = palette.accent;
-      isEditable = false;
-    } else if (node.kind == 'entity') {
-      final matching = _entities.where((e) => e.entityId == node.entityId);
-      final entity = matching.isNotEmpty ? matching.first : null;
-      label = entity != null ? _labelForEntityType(entity.entityType) : '엔티티';
-      title = entity != null ? entity.title : '[Missing entity: ${node.entityId}]';
-      subtitle = entity != null ? entity.tags.join(', ') : 'Unknown';
-      icon = entity != null ? _iconForEntityType(entity.entityType) : Icons.person_outline;
-      accentColor = Colors.tealAccent;
-      isEditable = false;
-    } else {
-      label = '메모';
-      title = node.text ?? '';
-      subtitle = '';
-      icon = Icons.note_alt_outlined;
-      accentColor = palette.accent;
-      isEditable = true;
-    }
-
     return Positioned(
       left: node.x,
       top: node.y,
@@ -411,110 +376,16 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
           // Call debounced save on every coordinate change
           CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
         },
-        child: Container(
-          width: node.width ?? 250,
-          height: node.height ?? (node.kind == 'text' ? 100 : 80),
-          padding: const EdgeInsets.all(AkashaSpacing.md),
-          decoration: BoxDecoration(
-            color: palette.surfaceElevated,
-            borderRadius: BorderRadius.circular(AkashaRadius.md),
-            border: Border.all(color: accentColor.withValues(alpha: 0.5)),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.1),
-                blurRadius: 4,
-                offset: const Offset(0, 2),
-              ),
-            ],
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(icon, size: 14, color: accentColor),
-                      const SizedBox(width: AkashaSpacing.xs),
-                      Text(
-                        label,
-                        style: TextStyle(
-                          fontSize: 10,
-                          fontWeight: FontWeight.bold,
-                          color: accentColor,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      if (isEditable) ...[
-                        GestureDetector(
-                          onTap: () => _editTextNode(node),
-                          child: Icon(Icons.edit_outlined, size: 14, color: AkashaColors.textSecondary),
-                        ),
-                        const SizedBox(width: AkashaSpacing.sm),
-                      ],
-                      GestureDetector(
-                        onTap: () => _deleteNode(node),
-                        child: const Icon(Icons.delete_outline, size: 14, color: Colors.redAccent),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(height: AkashaSpacing.xs),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: AkashaTypography.body.copyWith(
-                        fontSize: 11,
-                        fontWeight: node.kind == 'text' ? FontWeight.normal : FontWeight.bold,
-                      ),
-                      maxLines: node.kind == 'text' ? 3 : 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    if (subtitle.isNotEmpty) ...[
-                      const SizedBox(height: 2),
-                      Text(
-                        subtitle,
-                        style: TextStyle(
-                          fontSize: 9,
-                          color: AkashaColors.textSecondary,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                  ],
-                ),
-              ),
-            ],
-          ),
+        child: CanvasNodeCard(
+          node: node,
+          localItems: widget.localItems,
+          entities: _entities,
+          vaultPath: widget.vaultPath,
+          palette: palette,
+          onEdit: () => _editTextNode(node),
+          onDelete: () => _deleteNode(node),
         ),
       ),
     );
   }
-
-  String _labelForEntityType(EntityAnchorType type) => switch (type) {
-        EntityAnchorType.person => '인물',
-        EntityAnchorType.concept => '개념',
-        EntityAnchorType.event => '사건',
-        EntityAnchorType.place => '장소',
-        EntityAnchorType.organization => '조직',
-        _ => '엔티티',
-      };
-
-  IconData _iconForEntityType(EntityAnchorType type) => switch (type) {
-        EntityAnchorType.person => Icons.person_outline,
-        EntityAnchorType.concept => Icons.lightbulb_outline,
-        EntityAnchorType.event => Icons.event_outlined,
-        EntityAnchorType.place => Icons.place_outlined,
-        EntityAnchorType.organization => Icons.groups_outlined,
-        _ => Icons.category_outlined,
-      };
 }
