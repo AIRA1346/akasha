@@ -109,7 +109,7 @@ class CanvasLayout {
 
   final int layoutSchemaVersion;
   final String canvasId;
-  final DateTime updatedAt;
+  DateTime updatedAt;
   final String source;
   final String layoutMode;
   final CanvasViewport viewport;
@@ -189,7 +189,7 @@ class CanvasNode {
   final String kind; // 'entity', 'record', 'text', 'group'
   final String? entityId;
   final String? recordId;
-  final String? text;
+  String? text;
   double x;
   double y;
   final double? width;

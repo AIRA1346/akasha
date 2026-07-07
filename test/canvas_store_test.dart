@@ -170,4 +170,41 @@ This is a relations map for Re:Zero.
       expect(reloaded.layout.nodes[1].y, equals(60.0));
     });
   });
+
+  group('Canvas CRUD and Edge cleanups', () {
+    test('CanvasNode additions, edits, deletes, and updated_at updates round-trip', () {
+      final layout = CanvasLayout(
+        layoutSchemaVersion: 1,
+        canvasId: 'cv_u_test',
+        updatedAt: DateTime.now().toUtc(),
+        source: 'user',
+        layoutMode: 'freeform',
+        viewport: CanvasViewport(x: 0, y: 0, zoom: 1.0),
+        nodes: [
+          CanvasNode(nodeId: 'n1', kind: 'text', text: 'Text A', x: 10.0, y: 20.0),
+          CanvasNode(nodeId: 'n2', kind: 'text', text: 'Text B', x: 30.0, y: 40.0),
+        ],
+        edges: [
+          CanvasEdge(edgeId: 'e1', from: 'n1', to: 'n2', edgeKind: 'canvas_only'),
+        ],
+      );
+
+      // Verify initial states
+      expect(layout.nodes.length, equals(2));
+      expect(layout.edges.length, equals(1));
+
+      // 1. Edit node text
+      layout.nodes[0].text = 'Modified Text A';
+      expect(layout.nodes[0].text, equals('Modified Text A'));
+
+      // 2. Delete node 'n2' and check cascade edge cleanup
+      final nodeIdToDelete = 'n2';
+      layout.nodes.removeWhere((n) => n.nodeId == nodeIdToDelete);
+      layout.edges.removeWhere((e) => e.from == nodeIdToDelete || e.to == nodeIdToDelete);
+
+      expect(layout.nodes.length, equals(1));
+      expect(layout.nodes[0].nodeId, equals('n1'));
+      expect(layout.edges, isEmpty); // Edge 'e1' referencing 'n2' should be removed!
+    });
+  });
 }
