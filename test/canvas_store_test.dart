@@ -206,5 +206,94 @@ This is a relations map for Re:Zero.
       expect(layout.nodes[0].nodeId, equals('n1'));
       expect(layout.edges, isEmpty); // Edge 'e1' referencing 'n2' should be removed!
     });
+
+    test('CanvasNode work and entity kinds serialize and deserialize correctly', () {
+      final layout = CanvasLayout(
+        layoutSchemaVersion: 1,
+        canvasId: 'cv_u_test',
+        updatedAt: DateTime.now().toUtc(),
+        source: 'user',
+        layoutMode: 'freeform',
+        viewport: CanvasViewport(x: 0, y: 0, zoom: 1.0),
+        nodes: [
+          CanvasNode(nodeId: 'n_w1', kind: 'work', workId: 'wk_u_re_zero', x: 10, y: 10),
+          CanvasNode(nodeId: 'n_e1', kind: 'entity', entityId: 'pe_u_emilia', x: 20, y: 20),
+        ],
+        edges: const [],
+      );
+
+      final json = layout.toJson();
+      final parsed = CanvasLayout.fromJson(json);
+
+      expect(parsed.nodes.length, equals(2));
+      expect(parsed.nodes[0].kind, equals('work'));
+      expect(parsed.nodes[0].workId, equals('wk_u_re_zero'));
+      expect(parsed.nodes[0].entityId, isNull);
+
+      expect(parsed.nodes[1].kind, equals('entity'));
+      expect(parsed.nodes[1].entityId, equals('pe_u_emilia'));
+      expect(parsed.nodes[1].workId, isNull);
+    });
+
+    test('CanvasNode invariants throw FormatException on validation mismatch', () {
+      // 1. work kind missing workId
+      expect(
+        () => CanvasNode.fromJson({
+          'node_id': 'n1',
+          'kind': 'work',
+          'x': 0.0,
+          'y': 0.0,
+        }),
+        throwsA(isA<FormatException>()),
+      );
+
+      // 2. work kind having entityId
+      expect(
+        () => CanvasNode.fromJson({
+          'node_id': 'n1',
+          'kind': 'work',
+          'work_id': 'wk_u_1',
+          'entity_id': 'pe_u_1',
+          'x': 0.0,
+          'y': 0.0,
+        }),
+        throwsA(isA<FormatException>()),
+      );
+
+      // 3. entity kind missing entityId
+      expect(
+        () => CanvasNode.fromJson({
+          'node_id': 'n1',
+          'kind': 'entity',
+          'x': 0.0,
+          'y': 0.0,
+        }),
+        throwsA(isA<FormatException>()),
+      );
+
+      // 4. entity kind having workId
+      expect(
+        () => CanvasNode.fromJson({
+          'node_id': 'n1',
+          'kind': 'entity',
+          'entity_id': 'pe_u_1',
+          'work_id': 'wk_u_1',
+          'x': 0.0,
+          'y': 0.0,
+        }),
+        throwsA(isA<FormatException>()),
+      );
+
+      // 5. text kind missing text
+      expect(
+        () => CanvasNode.fromJson({
+          'node_id': 'n1',
+          'kind': 'text',
+          'x': 0.0,
+          'y': 0.0,
+        }),
+        throwsA(isA<FormatException>()),
+      );
+    });
   });
 }

@@ -342,5 +342,43 @@ source: "user"
       expect(report.errors, isNotEmpty);
       expect(report.errors.any((i) => i.code == 'canvas_id_mismatch'), isTrue);
     });
+
+    test('canvas node invariant violation fails validation', () async {
+      final canvasDir = Directory(p.join(tempVault.path, 'canvases', 'cv_u_re_zero'));
+      await canvasDir.create(recursive: true);
+
+      final mdFile = File(p.join(canvasDir.path, 'canvas.md'));
+      await mdFile.writeAsString('''---
+schema_version: 3
+document_kind: "canvas"
+canvas_id: "cv_u_re_zero"
+slug: "re-zero"
+title: "리제로 관계도"
+layout_ref: "./layout.json"
+created_at: "2026-07-07T08:52:00.000Z"
+updated_at: "2026-07-07T08:52:00.000Z"
+source: "user"
+---
+''');
+
+      // invalid node kinds/properties (work node having entity_id instead of work_id)
+      final jsonFile = File(p.join(canvasDir.path, 'layout.json'));
+      await jsonFile.writeAsString('''{
+  "layout_schema_version": 1,
+  "canvas_id": "cv_u_re_zero",
+  "updated_at": "2026-07-07T08:55:00.000Z",
+  "source": "user",
+  "layout_mode": "freeform",
+  "viewport": { "x": 0.0, "y": 0.0, "zoom": 1.0 },
+  "nodes": [
+    { "node_id": "n1", "kind": "work", "entity_id": "pe_u_subaru", "x": 150.0, "y": -230.0 }
+  ],
+  "edges": []
+}''');
+
+      final report = await VaultFormatValidator().validateVault(tempVault.path);
+      expect(report.errors, isNotEmpty);
+      expect(report.errors.any((i) => i.code == 'canvas_node_invariant_violation'), isTrue);
+    });
   });
 }

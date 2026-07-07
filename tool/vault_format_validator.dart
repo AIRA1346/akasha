@@ -595,8 +595,40 @@ class VaultFormatValidator {
           nodeIds.add(nodeId);
         }
         final kind = node['kind']?.toString() ?? '';
-        if (kind != 'entity' && kind != 'record' && kind != 'text' && kind != 'group') {
-          _error(report, 'canvas_node_kind_invalid', jsonRelPath, 'Node kind must be one of: entity, record, text, group.');
+        if (kind != 'work' && kind != 'entity' && kind != 'record' && kind != 'text' && kind != 'group') {
+          _error(report, 'canvas_node_kind_invalid', jsonRelPath, 'Node kind must be one of: work, entity, record, text, group.');
+        }
+
+        final entityId = node['entity_id']?.toString();
+        final workId = node['work_id']?.toString();
+        final recordId = node['record_id']?.toString();
+        final text = node['text']?.toString();
+
+        if (kind == 'work') {
+          if (workId == null || workId.isEmpty) {
+            _error(report, 'canvas_node_invariant_violation', jsonRelPath, 'Node of kind "work" must have "work_id".');
+          }
+          if (entityId != null || recordId != null) {
+            _error(report, 'canvas_node_invariant_violation', jsonRelPath, 'Node of kind "work" must not have "entity_id" or "record_id".');
+          }
+        } else if (kind == 'entity') {
+          if (entityId == null || entityId.isEmpty) {
+            _error(report, 'canvas_node_invariant_violation', jsonRelPath, 'Node of kind "entity" must have "entity_id".');
+          }
+          if (workId != null || recordId != null) {
+            _error(report, 'canvas_node_invariant_violation', jsonRelPath, 'Node of kind "entity" must not have "work_id" or "record_id".');
+          }
+        } else if (kind == 'record') {
+          if (recordId == null || recordId.isEmpty) {
+            _error(report, 'canvas_node_invariant_violation', jsonRelPath, 'Node of kind "record" must have "record_id".');
+          }
+          if (workId != null || entityId != null) {
+            _error(report, 'canvas_node_invariant_violation', jsonRelPath, 'Node of kind "record" must not have "work_id" or "entity_id".');
+          }
+        } else if (kind == 'text') {
+          if (text == null) {
+            _error(report, 'canvas_node_invariant_violation', jsonRelPath, 'Node of kind "text" must have "text".');
+          }
         }
       }
     }

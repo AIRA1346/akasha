@@ -241,6 +241,7 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
               vaultPath: widget.vaultPath,
               canvasId: canvasId,
               title: title,
+              localItems: widget.vaultItems,
               onClose: () => _handleCloseTab(active.id),
             ),
         };

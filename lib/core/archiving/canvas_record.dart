@@ -174,6 +174,7 @@ class CanvasNode {
     required this.nodeId,
     required this.kind,
     this.entityId,
+    this.workId,
     this.recordId,
     this.text,
     required this.x,
@@ -186,8 +187,9 @@ class CanvasNode {
   });
 
   final String nodeId;
-  final String kind; // 'entity', 'record', 'text', 'group'
+  final String kind; // 'work', 'entity', 'record', 'text', 'group'
   final String? entityId;
+  final String? workId;
   final String? recordId;
   String? text;
   double x;
@@ -199,12 +201,48 @@ class CanvasNode {
   final String? promotedRecordId;
 
   factory CanvasNode.fromJson(Map<String, dynamic> json) {
+    final nodeId = json['node_id']?.toString() ?? '';
+    final kind = json['kind']?.toString() ?? '';
+    final entityId = json['entity_id']?.toString();
+    final workId = json['work_id']?.toString();
+    final recordId = json['record_id']?.toString();
+    final text = json['text']?.toString();
+
+    // Invariant checks:
+    if (kind == 'work') {
+      if (workId == null || workId.isEmpty) {
+        throw const FormatException('CanvasNode kind "work" requires "work_id".');
+      }
+      if (entityId != null || recordId != null) {
+        throw const FormatException('CanvasNode kind "work" must not have "entity_id" or "record_id".');
+      }
+    } else if (kind == 'entity') {
+      if (entityId == null || entityId.isEmpty) {
+        throw const FormatException('CanvasNode kind "entity" requires "entity_id".');
+      }
+      if (workId != null || recordId != null) {
+        throw const FormatException('CanvasNode kind "entity" must not have "work_id" or "record_id".');
+      }
+    } else if (kind == 'record') {
+      if (recordId == null || recordId.isEmpty) {
+        throw const FormatException('CanvasNode kind "record" requires "record_id".');
+      }
+      if (workId != null || entityId != null) {
+        throw const FormatException('CanvasNode kind "record" must not have "work_id" or "entity_id".');
+      }
+    } else if (kind == 'text') {
+      if (text == null) {
+        throw const FormatException('CanvasNode kind "text" requires "text".');
+      }
+    }
+
     return CanvasNode(
-      nodeId: json['node_id']?.toString() ?? '',
-      kind: json['kind']?.toString() ?? '',
-      entityId: json['entity_id']?.toString(),
-      recordId: json['record_id']?.toString(),
-      text: json['text']?.toString(),
+      nodeId: nodeId,
+      kind: kind,
+      entityId: entityId,
+      workId: workId,
+      recordId: recordId,
+      text: text,
       x: (json['x'] as num?)?.toDouble() ?? 0.0,
       y: (json['y'] as num?)?.toDouble() ?? 0.0,
       width: (json['width'] as num?)?.toDouble(),
@@ -220,6 +258,7 @@ class CanvasNode {
       'node_id': nodeId,
       'kind': kind,
       if (entityId != null) 'entity_id': entityId,
+      if (workId != null) 'work_id': workId,
       if (recordId != null) 'record_id': recordId,
       if (text != null) 'text': text,
       'x': x,
