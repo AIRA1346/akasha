@@ -13,6 +13,7 @@ import '../home_section_preferences.dart';
 import '../../../models/browse_card.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../utils/app_l10n.dart';
 
 /// 개인 서재 그리드·curated reorder·섹션 prefs 연동
 class PersonalLibraryView extends StatefulWidget {
@@ -78,13 +79,7 @@ class PersonalLibraryView extends StatefulWidget {
 }
 
 class _PersonalLibraryViewState extends State<PersonalLibraryView> {
-  late final ScrollController _scrollController;
-
-  @override
-  void initState() {
-    super.initState();
-    _scrollController = ScrollController();
-  }
+  final _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -93,9 +88,11 @@ class _PersonalLibraryViewState extends State<PersonalLibraryView> {
   }
 
   Widget _buildEmptyContent() {
+    final l10n = lookupAppL10n(context);
     final vaultLinked = widget.vaultLinked;
     final library = widget.activeLibrary;
-    final libName = library?.name ?? '나만의 서재';
+    final fallbackLibName = l10n?.libraryFallbackName ?? '나만의 서재';
+    final libName = library?.name ?? fallbackLibName;
     final isCuratedEmpty =
         library != null && library.isCurated && library.memberOrder.isEmpty;
     final isFilterEmpty = library != null && !library.isCurated;
@@ -122,14 +119,14 @@ class _PersonalLibraryViewState extends State<PersonalLibraryView> {
             const SizedBox(height: 12),
             Text(
               !vaultLinked
-                  ? '볼트를 연동하면 나만의 서재가 열립니다'
+                  ? (l10n?.libraryEmptyVaultTitle ?? '볼트를 연동하면 나만의 서재가 열립니다')
                   : isCuratedEmpty
-                      ? '작품을 담아 서재를 채워 보세요'
+                      ? (l10n?.libraryEmptyCuratedTitle ?? '작품을 담아 서재를 채워 보세요')
                       : hasMembersButFiltered
-                          ? '필터 조건에 맞는 작품이 없습니다'
+                          ? (l10n?.libraryEmptyFilterTitle ?? '필터 조건에 맞는 작품이 없습니다')
                           : isFilterEmpty
-                              ? '$libName에 표시할 아카이브 작품이 없습니다'
-                              : '$libName에 표시할 작품이 없습니다',
+                              ? (l10n != null ? l10n.libraryEmptyArchiveDesc(libName) : '$libName에 표시할 아카이브 작품이 없습니다')
+                              : (l10n != null ? l10n.libraryEmptyNoWorksDesc(libName) : '$libName에 표시할 작품이 없습니다'),
               style: AkashaTypography.dashboardSectionTitle.copyWith(
                 fontWeight: FontWeight.w600,
               ),
@@ -138,12 +135,12 @@ class _PersonalLibraryViewState extends State<PersonalLibraryView> {
             const SizedBox(height: 8),
             Text(
               !vaultLinked
-                  ? '홈 상단에서 Sanctum 볼트 폴더를 연동해 주세요.'
+                  ? (l10n?.libraryEmptyVaultHelp ?? '홈 상단에서 Sanctum 볼트 폴더를 연동해 주세요.')
                   : isCuratedEmpty
-                      ? '검색으로 작품을 추가하거나, 카드 ⠿ 핸들을 서재로 끌어다 놓으세요.'
+                      ? (l10n?.libraryEmptyCuratedHelp ?? '검색으로 작품을 추가하거나, 카드 ⠿ 핸들을 서재로 끌어다 놓으세요.')
                       : hasMembersButFiltered
-                          ? '상단 필터를 조정해 보세요.'
-                          : '검색으로 작품을 추가해 보세요.',
+                          ? (l10n?.libraryEmptyFilterHelp ?? '상단 필터를 조정해 보세요.')
+                          : (l10n?.libraryEmptyGeneralHelp ?? '검색으로 작품을 추가해 보세요.'),
               style: TextStyle(color: AkashaColors.textMuted, height: 1.5),
               textAlign: TextAlign.center,
             ),
@@ -152,7 +149,7 @@ class _PersonalLibraryViewState extends State<PersonalLibraryView> {
               FilledButton.icon(
                 onPressed: widget.onSearch,
                 icon: const Icon(Icons.search, size: 18),
-                label: const Text('작품 검색'),
+                label: Text(l10n?.libraryBtnSearch ?? '작품 검색'),
               ),
             ],
           ],

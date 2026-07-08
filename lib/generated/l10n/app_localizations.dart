@@ -3895,6 +3895,168 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Memo'**
   String get canvasBannerFallbackMemo;
+
+  /// No description provided for @tabTimeline.
+  ///
+  /// In en, this message translates to:
+  /// **'Timeline'**
+  String get tabTimeline;
+
+  /// No description provided for @tabMemo.
+  ///
+  /// In en, this message translates to:
+  /// **'Memos'**
+  String get tabMemo;
+
+  /// No description provided for @tabEntity.
+  ///
+  /// In en, this message translates to:
+  /// **'Entity'**
+  String get tabEntity;
+
+  /// No description provided for @tabCandidates.
+  ///
+  /// In en, this message translates to:
+  /// **'Candidates'**
+  String get tabCandidates;
+
+  /// No description provided for @libraryFallbackName.
+  ///
+  /// In en, this message translates to:
+  /// **'My Library'**
+  String get libraryFallbackName;
+
+  /// No description provided for @libraryEmptyVaultTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect a vault to open your library'**
+  String get libraryEmptyVaultTitle;
+
+  /// No description provided for @libraryEmptyCuratedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add works to fill your library'**
+  String get libraryEmptyCuratedTitle;
+
+  /// No description provided for @libraryEmptyFilterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No works match the filter conditions'**
+  String get libraryEmptyFilterTitle;
+
+  /// No description provided for @libraryEmptyArchiveDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'No archived works to display in {libName}'**
+  String libraryEmptyArchiveDesc(String libName);
+
+  /// No description provided for @libraryEmptyNoWorksDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'No works to display in {libName}'**
+  String libraryEmptyNoWorksDesc(String libName);
+
+  /// No description provided for @libraryEmptyVaultHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Please connect a Sanctum vault folder from the top of Home.'**
+  String get libraryEmptyVaultHelp;
+
+  /// No description provided for @libraryEmptyCuratedHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Search for works to add, or drag and drop card handles into the library.'**
+  String get libraryEmptyCuratedHelp;
+
+  /// No description provided for @libraryEmptyFilterHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjust the filter at the top.'**
+  String get libraryEmptyFilterHelp;
+
+  /// No description provided for @libraryEmptyGeneralHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Search for works to add.'**
+  String get libraryEmptyGeneralHelp;
+
+  /// No description provided for @libraryBtnSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Search Works'**
+  String get libraryBtnSearch;
+
+  /// No description provided for @graphConnectionsCountDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} connection(s)'**
+  String graphConnectionsCountDesc(int count);
+
+  /// No description provided for @graphNoConnectionsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'No connections · Add links in records'**
+  String get graphNoConnectionsDesc;
+
+  /// No description provided for @graphTabMyKnowledgeMap.
+  ///
+  /// In en, this message translates to:
+  /// **'My Knowledge Map (Canvas)'**
+  String get graphTabMyKnowledgeMap;
+
+  /// No description provided for @graphTabAutoConnections.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto Connections by Work'**
+  String get graphTabAutoConnections;
+
+  /// No description provided for @graphCanvasesListHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Knowledge Map List ({count})'**
+  String graphCanvasesListHeader(int count);
+
+  /// No description provided for @graphEmptyCanvases.
+  ///
+  /// In en, this message translates to:
+  /// **'No knowledge maps created yet.\nCreate a new map and define your own connection networks!'**
+  String get graphEmptyCanvases;
+
+  /// No description provided for @graphBtnCreateFirstCanvas.
+  ///
+  /// In en, this message translates to:
+  /// **'Create First Knowledge Map'**
+  String get graphBtnCreateFirstCanvas;
+
+  /// No description provided for @graphLastModified.
+  ///
+  /// In en, this message translates to:
+  /// **'Modified: {date}'**
+  String graphLastModified(String date);
+
+  /// No description provided for @graphDialogCreateCanvasTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create New Knowledge Map'**
+  String get graphDialogCreateCanvasTitle;
+
+  /// No description provided for @graphDialogCreateCanvasLabelTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Map Title (e.g. Re:Zero Relations)'**
+  String get graphDialogCreateCanvasLabelTitle;
+
+  /// No description provided for @graphDialogCreateCanvasLabelSlug.
+  ///
+  /// In en, this message translates to:
+  /// **'URL Slug (e.g. re-zero)'**
+  String get graphDialogCreateCanvasLabelSlug;
+
+  /// No description provided for @graphDialogCreateCanvasBtnCreate.
+  ///
+  /// In en, this message translates to:
+  /// **'Create'**
+  String get graphDialogCreateCanvasBtnCreate;
 }
 
 class _AppLocalizationsDelegate

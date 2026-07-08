@@ -2126,4 +2126,99 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get canvasBannerFallbackMemo => 'Memo';
+
+  @override
+  String get tabTimeline => 'Timeline';
+
+  @override
+  String get tabMemo => 'Memos';
+
+  @override
+  String get tabEntity => 'Entity';
+
+  @override
+  String get tabCandidates => 'Candidates';
+
+  @override
+  String get libraryFallbackName => 'My Library';
+
+  @override
+  String get libraryEmptyVaultTitle => 'Connect a vault to open your library';
+
+  @override
+  String get libraryEmptyCuratedTitle => 'Add works to fill your library';
+
+  @override
+  String get libraryEmptyFilterTitle => 'No works match the filter conditions';
+
+  @override
+  String libraryEmptyArchiveDesc(String libName) {
+    return 'No archived works to display in $libName';
+  }
+
+  @override
+  String libraryEmptyNoWorksDesc(String libName) {
+    return 'No works to display in $libName';
+  }
+
+  @override
+  String get libraryEmptyVaultHelp =>
+      'Please connect a Sanctum vault folder from the top of Home.';
+
+  @override
+  String get libraryEmptyCuratedHelp =>
+      'Search for works to add, or drag and drop card handles into the library.';
+
+  @override
+  String get libraryEmptyFilterHelp => 'Adjust the filter at the top.';
+
+  @override
+  String get libraryEmptyGeneralHelp => 'Search for works to add.';
+
+  @override
+  String get libraryBtnSearch => 'Search Works';
+
+  @override
+  String graphConnectionsCountDesc(int count) {
+    return '$count connection(s)';
+  }
+
+  @override
+  String get graphNoConnectionsDesc => 'No connections · Add links in records';
+
+  @override
+  String get graphTabMyKnowledgeMap => 'My Knowledge Map (Canvas)';
+
+  @override
+  String get graphTabAutoConnections => 'Auto Connections by Work';
+
+  @override
+  String graphCanvasesListHeader(int count) {
+    return 'Knowledge Map List ($count)';
+  }
+
+  @override
+  String get graphEmptyCanvases =>
+      'No knowledge maps created yet.\nCreate a new map and define your own connection networks!';
+
+  @override
+  String get graphBtnCreateFirstCanvas => 'Create First Knowledge Map';
+
+  @override
+  String graphLastModified(String date) {
+    return 'Modified: $date';
+  }
+
+  @override
+  String get graphDialogCreateCanvasTitle => 'Create New Knowledge Map';
+
+  @override
+  String get graphDialogCreateCanvasLabelTitle =>
+      'Map Title (e.g. Re:Zero Relations)';
+
+  @override
+  String get graphDialogCreateCanvasLabelSlug => 'URL Slug (e.g. re-zero)';
+
+  @override
+  String get graphDialogCreateCanvasBtnCreate => 'Create';
 }

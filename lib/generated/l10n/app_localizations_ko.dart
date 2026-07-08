@@ -2079,4 +2079,97 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get canvasBannerFallbackMemo => '메모';
+
+  @override
+  String get tabTimeline => '타임라인';
+
+  @override
+  String get tabMemo => '메모';
+
+  @override
+  String get tabEntity => 'Entity';
+
+  @override
+  String get tabCandidates => '후보';
+
+  @override
+  String get libraryFallbackName => '나만의 서재';
+
+  @override
+  String get libraryEmptyVaultTitle => '볼트를 연동하면 나만의 서재가 열립니다';
+
+  @override
+  String get libraryEmptyCuratedTitle => '작품을 담아 서재를 채워 보세요';
+
+  @override
+  String get libraryEmptyFilterTitle => '필터 조건에 맞는 작품이 없습니다';
+
+  @override
+  String libraryEmptyArchiveDesc(String libName) {
+    return '$libName에 표시할 아카이브 작품이 없습니다';
+  }
+
+  @override
+  String libraryEmptyNoWorksDesc(String libName) {
+    return '$libName에 표시할 작품이 없습니다';
+  }
+
+  @override
+  String get libraryEmptyVaultHelp => '홈 상단에서 Sanctum 볼트 폴더를 연동해 주세요.';
+
+  @override
+  String get libraryEmptyCuratedHelp =>
+      '검색으로 작품을 추가하거나, 카드 ⠿ 핸들을 서재로 끌어다 놓으세요.';
+
+  @override
+  String get libraryEmptyFilterHelp => '상단 필터를 조정해 보세요.';
+
+  @override
+  String get libraryEmptyGeneralHelp => '검색으로 작품을 추가해 보세요.';
+
+  @override
+  String get libraryBtnSearch => '작품 검색';
+
+  @override
+  String graphConnectionsCountDesc(int count) {
+    return '연결 $count개';
+  }
+
+  @override
+  String get graphNoConnectionsDesc => '연결 없음 · 기록에서 링크 추가';
+
+  @override
+  String get graphTabMyKnowledgeMap => '나의 지식 지도 (Canvas)';
+
+  @override
+  String get graphTabAutoConnections => '작품별 자동 연결';
+
+  @override
+  String graphCanvasesListHeader(int count) {
+    return '지식 지도 목록 ($count)';
+  }
+
+  @override
+  String get graphEmptyCanvases =>
+      '생성된 지식 지도가 없습니다.\n새 지식 지도를 만들고 나만의 생각 관계망을 정의해 보세요!';
+
+  @override
+  String get graphBtnCreateFirstCanvas => '첫 지식 지도 만들기';
+
+  @override
+  String graphLastModified(String date) {
+    return '수정일: $date';
+  }
+
+  @override
+  String get graphDialogCreateCanvasTitle => '새 지식 지도 만들기';
+
+  @override
+  String get graphDialogCreateCanvasLabelTitle => '지도 제목 (예: 리제로 인물 관계도)';
+
+  @override
+  String get graphDialogCreateCanvasLabelSlug => 'URL 슬러그 (예: re-zero)';
+
+  @override
+  String get graphDialogCreateCanvasBtnCreate => '생성';
 }

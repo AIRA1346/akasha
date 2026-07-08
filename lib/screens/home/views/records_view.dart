@@ -4,6 +4,7 @@ import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/ports/record_link_port.dart';
+import '../../../utils/app_l10n.dart';
 import 'candidate_review_view.dart';
 import 'entity_journal_view.dart';
 import 'journal_view.dart';
@@ -36,17 +37,18 @@ class RecordsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     return DefaultTabController(
       length: 4,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const TabBar(
+          TabBar(
             tabs: [
-              Tab(text: '타임라인', icon: Icon(Icons.timeline, size: 18)),
-              Tab(text: '메모', icon: Icon(Icons.note_alt_outlined, size: 18)),
-              Tab(text: 'Entity', icon: Icon(Icons.category_outlined, size: 18)),
-              Tab(text: '후보', icon: Icon(Icons.inbox_outlined, size: 18)),
+              Tab(text: l10n?.tabTimeline ?? '타임라인', icon: const Icon(Icons.timeline, size: 18)),
+              Tab(text: l10n?.tabMemo ?? '메모', icon: const Icon(Icons.note_alt_outlined, size: 18)),
+              Tab(text: l10n?.tabEntity ?? 'Entity', icon: const Icon(Icons.category_outlined, size: 18)),
+              Tab(text: l10n?.tabCandidates ?? '후보', icon: const Icon(Icons.inbox_outlined, size: 18)),
             ],
           ),
           Expanded(

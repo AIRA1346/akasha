@@ -865,5 +865,67 @@
   },
   "canvasBannerFallbackWork": "작품",
   "canvasBannerFallbackEntity": "엔티티",
-  "canvasBannerFallbackMemo": "메모"
+  "canvasBannerFallbackMemo": "메모",
+  "tabTimeline": "타임라인",
+  "tabMemo": "메모",
+  "tabEntity": "Entity",
+  "tabCandidates": "후보",
+  "libraryFallbackName": "나만의 서재",
+  "libraryEmptyVaultTitle": "볼트를 연동하면 나만의 서재가 열립니다",
+  "libraryEmptyCuratedTitle": "작품을 담아 서재를 채워 보세요",
+  "libraryEmptyFilterTitle": "필터 조건에 맞는 작품이 없습니다",
+  "libraryEmptyArchiveDesc": "{libName}에 표시할 아카이브 작품이 없습니다",
+  "@libraryEmptyArchiveDesc": {
+    "placeholders": {
+      "libName": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryEmptyNoWorksDesc": "{libName}에 표시할 작품이 없습니다",
+  "@libraryEmptyNoWorksDesc": {
+    "placeholders": {
+      "libName": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryEmptyVaultHelp": "홈 상단에서 Sanctum 볼트 폴더를 연동해 주세요.",
+  "libraryEmptyCuratedHelp": "검색으로 작품을 추가하거나, 카드 ⠿ 핸들을 서재로 끌어다 놓으세요.",
+  "libraryEmptyFilterHelp": "상단 필터를 조정해 보세요.",
+  "libraryEmptyGeneralHelp": "검색으로 작품을 추가해 보세요.",
+  "libraryBtnSearch": "작품 검색",
+  "graphConnectionsCountDesc": "연결 {count}개",
+  "@graphConnectionsCountDesc": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "graphNoConnectionsDesc": "연결 없음 · 기록에서 링크 추가",
+  "graphTabMyKnowledgeMap": "나의 지식 지도 (Canvas)",
+  "graphTabAutoConnections": "작품별 자동 연결",
+  "graphCanvasesListHeader": "지식 지도 목록 ({count})",
+  "@graphCanvasesListHeader": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "graphEmptyCanvases": "생성된 지식 지도가 없습니다.\n새 지식 지도를 만들고 나만의 생각 관계망을 정의해 보세요!",
+  "graphBtnCreateFirstCanvas": "첫 지식 지도 만들기",
+  "graphLastModified": "수정일: {date}",
+  "@graphLastModified": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "graphDialogCreateCanvasTitle": "새 지식 지도 만들기",
+  "graphDialogCreateCanvasLabelTitle": "지도 제목 (예: 리제로 인물 관계도)",
+  "graphDialogCreateCanvasLabelSlug": "URL 슬러그 (예: re-zero)",
+  "graphDialogCreateCanvasBtnCreate": "생성"
 }

@@ -184,9 +184,9 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                 const SizedBox(height: AkashaSpacing.md),
                 Row(
                   children: [
-                    _buildTabButton(0, '나의 지식 지도 (Canvas)', palette),
+                    _buildTabButton(0, l10n?.graphTabMyKnowledgeMap ?? '나의 지식 지도 (Canvas)', palette),
                     const SizedBox(width: AkashaSpacing.sm),
-                    _buildTabButton(1, '작품별 자동 연결', palette),
+                    _buildTabButton(1, l10n?.graphTabAutoConnections ?? '작품별 자동 연결', palette),
                   ],
                 ),
               ],
@@ -276,7 +276,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                             style: AkashaTypography.listItemTitle,
                           ),
                           subtitle: Text(
-                            count > 0 ? '연결 $count개' : '연결 없음 · 기록에서 링크 추가',
+                            count > 0 ? (l10n != null ? l10n.graphConnectionsCountDesc(count) : '연결 $count개') : (l10n?.graphNoConnectionsDesc ?? '연결 없음 · 기록에서 링크 추가'),
                             style: AkashaTypography.bodySecondary.copyWith(
                               color: count > 0 ? palette.accent : null,
                             ),
@@ -350,6 +350,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
   }
 
   Widget _buildCanvasTab(AkashaPalette palette) {
+    final l10n = lookupAppL10n(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -358,32 +359,11 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
             horizontal: AkashaSpacing.lg,
             vertical: AkashaSpacing.xs,
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                '지식 지도 목록 (${_canvases.length})',
-                style: AkashaTypography.compactLabel.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              ElevatedButton.icon(
-                onPressed: _showCreateCanvasDialog,
-                icon: const Icon(Icons.add, size: 14),
-                label: const Text('새 지식 지도'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: palette.accent,
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AkashaSpacing.md,
-                    vertical: AkashaSpacing.xs,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(AkashaRadius.sm),
-                  ),
-                ),
-              ),
-            ],
+          child: Text(
+            l10n != null ? l10n.graphCanvasesListHeader(_canvases.length) : '지식 지도 목록 (${_canvases.length})',
+            style: AkashaTypography.compactLabel.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         if (_loadingCanvases)
@@ -397,7 +377,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    '생성된 지식 지도가 없습니다.\n새 지식 지도를 만들고 나만의 생각 관계망을 정의해 보세요!',
+                    l10n?.graphEmptyCanvases ?? '생성된 지식 지도가 없습니다.\n새 지식 지도를 만들고 나만의 생각 관계망을 정의해 보세요!',
                     textAlign: TextAlign.center,
                     style: AkashaTypography.body,
                   ),
@@ -405,7 +385,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                   OutlinedButton.icon(
                     onPressed: _showCreateCanvasDialog,
                     icon: const Icon(Icons.add, size: 14),
-                    label: const Text('첫 지식 지도 만들기'),
+                    label: Text(l10n?.graphBtnCreateFirstCanvas ?? '첫 지식 지도 만들기'),
                   ),
                 ],
               ),
@@ -421,7 +401,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                 AkashaSpacing.xl,
               ),
               itemCount: _canvases.length,
-              itemBuilder: (context, index) {
+              itemBuilder: (_, index) {
                 final canvas = _canvases[index];
                 return Container(
                   margin: const EdgeInsets.only(bottom: AkashaSpacing.sm),
@@ -440,7 +420,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                       style: AkashaTypography.listItemTitle,
                     ),
                     subtitle: Text(
-                      '수정일: ${canvas.updatedAt.toLocal().toString().split('.')[0]}',
+                      l10n != null ? l10n.graphLastModified(canvas.updatedAt.toLocal().toString().split('.')[0]) : '수정일: ${canvas.updatedAt.toLocal().toString().split('.')[0]}',
                       style: AkashaTypography.bodySecondary,
                     ),
                     trailing: const Icon(Icons.chevron_right, size: 20),
@@ -458,27 +438,28 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
     final titleController = TextEditingController();
     final slugController = TextEditingController();
     final palette = context.akashaPalette;
+    final l10n = lookupAppL10n(context);
 
     await showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
           backgroundColor: palette.surfaceElevated,
-          title: const Text('새 지식 지도 만들기'),
+          title: Text(l10n?.graphDialogCreateCanvasTitle ?? '새 지식 지도 만들기'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
                 controller: titleController,
-                decoration: const InputDecoration(
-                  labelText: '지도 제목 (예: 리제로 인물 관계도)',
+                decoration: InputDecoration(
+                  labelText: l10n?.graphDialogCreateCanvasLabelTitle ?? '지도 제목 (예: 리제로 인물 관계도)',
                 ),
               ),
               const SizedBox(height: AkashaSpacing.sm),
               TextField(
                 controller: slugController,
-                decoration: const InputDecoration(
-                  labelText: 'URL 슬러그 (예: re-zero)',
+                decoration: InputDecoration(
+                  labelText: l10n?.graphDialogCreateCanvasLabelSlug ?? 'URL 슬러그 (예: re-zero)',
                 ),
               ),
             ],
@@ -486,7 +467,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('취소'),
+              child: Text(l10n?.actionCancel ?? '취소'),
             ),
             ElevatedButton(
               onPressed: () async {
@@ -504,7 +485,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                   _enterCanvas(data.record);
                 }
               },
-              child: const Text('생성'),
+              child: Text(l10n?.graphDialogCreateCanvasBtnCreate ?? '생성'),
             ),
           ],
         );
