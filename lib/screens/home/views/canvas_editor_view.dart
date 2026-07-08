@@ -15,21 +15,9 @@ import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
 import '../dialogs/canvas_archive_search_dialog.dart';
 import 'canvas_edge_painter.dart';
+import 'canvas_editor_modes.dart';
 import 'canvas_node_card.dart';
-
-abstract final class _CanvasConfig {
-  static const double workspaceSize = 50000.0;
-  static const double workspaceOrigin = 25000.0;
-  static const double boundaryMargin = 5000.0;
-  static const double minScale = 0.1;
-  static const double maxScale = 2.5;
-}
-
-enum CanvasInteractionMode {
-  none,
-  selectSource,
-  selectTarget,
-}
+import 'canvas_viewport_controls.dart';
 
 class CanvasEditorWorkspace extends StatefulWidget {
   const CanvasEditorWorkspace({
@@ -83,12 +71,14 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   void initState() {
     super.initState();
     _loadCanvasData();
+    _transformationController.addListener(_handleViewportChange);
     HardwareKeyboard.instance.addHandler(_handleGlobalKeyEvent);
   }
 
   @override
   void dispose() {
     HardwareKeyboard.instance.removeHandler(_handleGlobalKeyEvent);
+    _transformationController.removeListener(_handleViewportChange);
     // Flush any pending saves immediately on exit
     if (_layout != null) {
       CanvasStore.instance.flushPendingSave(widget.vaultPath, widget.canvasId, _layout!);
@@ -725,13 +715,13 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                     : InteractiveViewer(
                         transformationController: _transformationController,
                         constrained: false,
-                        boundaryMargin: const EdgeInsets.all(_CanvasConfig.boundaryMargin),
-                        minScale: _CanvasConfig.minScale,
-                        maxScale: _CanvasConfig.maxScale,
+                        boundaryMargin: const EdgeInsets.all(CanvasEditorViewportConfig.boundaryMargin),
+                        minScale: CanvasEditorViewportConfig.minScale,
+                        maxScale: CanvasEditorViewportConfig.maxScale,
                         onInteractionEnd: (details) => _handleViewportChange(),
                         child: SizedBox(
-                          width: _CanvasConfig.workspaceSize,
-                          height: _CanvasConfig.workspaceSize,
+                          width: CanvasEditorViewportConfig.workspaceSize,
+                          height: CanvasEditorViewportConfig.workspaceSize,
                           child: uiStack(palette),
                         ),
                       ),
@@ -752,7 +742,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                 layout: _layout!,
                 nodes: _layout!.nodes,
                 palette: palette,
-                workspaceOrigin: _CanvasConfig.workspaceOrigin,
+                workspaceOrigin: CanvasEditorViewportConfig.workspaceOrigin,
               ),
             ),
           ),
@@ -764,114 +754,22 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
 
   void _handleViewportChange() {
     if (_layout == null) return;
-    final matrix = _transformationController.value;
-    final double zoom = matrix.getMaxScaleOnAxis();
-    final translation = matrix.getTranslation();
-    final double x = translation.x;
-    final double y = translation.y;
-
-    if (_layout!.viewport.x != x || _layout!.viewport.y != y || _layout!.viewport.zoom != zoom) {
-      setState(() {
-        _layout!.viewport = CanvasViewport(x: x, y: y, zoom: zoom);
-        _layout!.updatedAt = DateTime.now().toUtc();
-      });
-      CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
-    }
+    final delta = canvasViewportDeltaFromMatrix(
+      _transformationController.value,
+      _layout!.viewport,
+    );
+    if (delta == null) return;
+    _layout!.viewport = delta;
+    _layout!.updatedAt = DateTime.now().toUtc();
+    CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
   }
 
   void _fitToContent() {
     if (_layout == null || !mounted) return;
-
-    final nodes = _layout!.nodes;
-    final size = MediaQuery.of(context).size;
-    const double padding = 80.0;
-
-    if (nodes.isEmpty) {
-      // 노드가 없으면: workspaceOrigin 중앙으로 이동
-      final double targetX = -(_CanvasConfig.workspaceOrigin - size.width / 2);
-      final double targetY = -(_CanvasConfig.workspaceOrigin - size.height / 2);
-      final double targetZoom = 1.0;
-
-      setState(() {
-        _layout!.viewport = CanvasViewport(x: targetX, y: targetY, zoom: targetZoom);
-      });
-
-      final matrix = Matrix4.translationValues(targetX, targetY, 0.0)
-        ..multiply(Matrix4.diagonal3Values(targetZoom, targetZoom, 1.0));
-      _transformationController.value = matrix;
-
-      CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
-      return;
-    }
-
-    double minX = double.infinity;
-    double minY = double.infinity;
-    double maxX = -double.infinity;
-    double maxY = -double.infinity;
-
-    for (final node in nodes) {
-      final double w = node.width ?? (node.kind == 'text' ? 250.0 : 260.0);
-      final double h = node.height ?? (node.kind == 'text' ? 100.0 : 90.0);
-
-      if (node.x < minX) minX = node.x;
-      if (node.y < minY) minY = node.y;
-      if (node.x + w > maxX) maxX = node.x + w;
-      if (node.y + h > maxY) maxY = node.y + h;
-    }
-
-    final double absMinX = _CanvasConfig.workspaceOrigin + minX;
-    final double absMinY = _CanvasConfig.workspaceOrigin + minY;
-    final double absMaxX = _CanvasConfig.workspaceOrigin + maxX;
-    final double absMaxY = _CanvasConfig.workspaceOrigin + maxY;
-
-    if (nodes.length == 1) {
-      // 노드가 1개면: 해당 노드를 화면 중앙에 배치
-      final double nodeW = nodes.first.width ?? (nodes.first.kind == 'text' ? 250.0 : 260.0);
-      final double nodeH = nodes.first.height ?? (nodes.first.kind == 'text' ? 100.0 : 90.0);
-
-      final double targetCenterAbsX = absMinX + nodeW / 2;
-      final double targetCenterAbsY = absMinY + nodeH / 2;
-
-      final double targetX = -(targetCenterAbsX - size.width / 2);
-      final double targetY = -(targetCenterAbsY - size.height / 2);
-      final double targetZoom = 1.0;
-
-      setState(() {
-        _layout!.viewport = CanvasViewport(x: targetX, y: targetY, zoom: targetZoom);
-      });
-
-      final matrix = Matrix4.translationValues(targetX, targetY, 0.0)
-        ..multiply(Matrix4.diagonal3Values(targetZoom, targetZoom, 1.0));
-      _transformationController.value = matrix;
-
-      CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
-      return;
-    }
-
-    final double contentWidth = absMaxX - absMinX;
-    final double contentHeight = absMaxY - absMinY;
-
-    final double availWidth = math.max(100.0, size.width - padding * 2);
-    final double availHeight = math.max(100.0, size.height - padding * 2);
-
-    double targetZoom = math.min(availWidth / contentWidth, availHeight / contentHeight);
-    targetZoom = targetZoom.clamp(_CanvasConfig.minScale, _CanvasConfig.maxScale);
-
-    final double contentCenterAbsX = absMinX + contentWidth / 2;
-    final double contentCenterAbsY = absMinY + contentHeight / 2;
-
-    final double targetX = size.width / 2 - contentCenterAbsX * targetZoom;
-    final double targetY = size.height / 2 - contentCenterAbsY * targetZoom;
-
-    setState(() {
-      _layout!.viewport = CanvasViewport(x: targetX, y: targetY, zoom: targetZoom);
-    });
-
-    final matrix = Matrix4.translationValues(targetX, targetY, 0.0)
-      ..multiply(Matrix4.diagonal3Values(targetZoom, targetZoom, 1.0));
-    _transformationController.value = matrix;
-
-    CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
+    _transformationController.value = computeCanvasFitToContentMatrix(
+      nodes: _layout!.nodes,
+      viewportSize: MediaQuery.sizeOf(context),
+    );
   }
 
   Widget _buildEdgeLabelWidget(CanvasEdge edge, AkashaPalette palette) {
@@ -882,18 +780,18 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
     if (fromNode == null || toNode == null) return const SizedBox.shrink();
 
     // Condition 4: Calculate midpoint using current node x/y/width/height (default or custom)
-    final fromW = fromNode.width ?? (fromNode.kind == 'text' ? 250.0 : 260.0);
-    final fromH = fromNode.height ?? (fromNode.kind == 'text' ? 100.0 : 90.0);
-    final toW = toNode.width ?? (toNode.kind == 'text' ? 250.0 : 260.0);
-    final toH = toNode.height ?? (toNode.kind == 'text' ? 100.0 : 90.0);
+    final fromW = canvasDefaultNodeWidth(fromNode);
+    final fromH = canvasDefaultNodeHeight(fromNode);
+    final toW = canvasDefaultNodeWidth(toNode);
+    final toH = canvasDefaultNodeHeight(toNode);
 
     final fromCenter = Offset(
-      _CanvasConfig.workspaceOrigin + fromNode.x + fromW / 2,
-      _CanvasConfig.workspaceOrigin + fromNode.y + fromH / 2,
+      CanvasEditorViewportConfig.workspaceOrigin + fromNode.x + fromW / 2,
+      CanvasEditorViewportConfig.workspaceOrigin + fromNode.y + fromH / 2,
     );
     final toCenter = Offset(
-      _CanvasConfig.workspaceOrigin + toNode.x + toW / 2,
-      _CanvasConfig.workspaceOrigin + toNode.y + toH / 2,
+      CanvasEditorViewportConfig.workspaceOrigin + toNode.x + toW / 2,
+      CanvasEditorViewportConfig.workspaceOrigin + toNode.y + toH / 2,
     );
 
     final mid = Offset((fromCenter.dx + toCenter.dx) / 2, (fromCenter.dy + toCenter.dy) / 2);
@@ -1154,8 +1052,8 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
     final bool isConnectingMode = _interactionMode != CanvasInteractionMode.none;
 
     return Positioned(
-      left: _CanvasConfig.workspaceOrigin + node.x,
-      top: _CanvasConfig.workspaceOrigin + node.y,
+      left: CanvasEditorViewportConfig.workspaceOrigin + node.x,
+      top: CanvasEditorViewportConfig.workspaceOrigin + node.y,
       child: GestureDetector(
         onTap: isConnectingMode ? () => _handleNodeTap(node) : null,
         onPanStart: (details) {
