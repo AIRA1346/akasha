@@ -1263,5 +1263,7 @@
   "toolbarExportHtml": "Export HTML",
   "toolbarDialogTemplateTitle": "Record Templates",
   "actionReset": "Default",
-  "actionDeleteMd": "Delete md"
+  "actionDeleteMd": "Delete md",
+  "yearSuffix": "",
+  "ratingPending": "⏳ Pending Rating"
 }

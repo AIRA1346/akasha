@@ -130,7 +130,7 @@ class _MetaRow extends StatelessWidget {
           const SizedBox(width: 10),
           Flexible(
             child: Text(
-              watchlistStatusEmojiLabel(item),
+              watchlistStatusEmojiLabel(item, l10n),
               style: AkashaTypography.bodySecondary.copyWith(
                 fontWeight: FontWeight.w500,
               ),

@@ -7,6 +7,7 @@ import '../theme/akasha_colors.dart';
 import '../theme/akasha_typography.dart';
 import '../utils/catalog_display_title.dart';
 import '../utils/status_helpers.dart';
+import '../utils/app_l10n.dart';
 import 'format_chip_row.dart';
 import 'poster_card_style.dart';
 import 'star_rating.dart';
@@ -42,20 +43,21 @@ class PosterCardRatingStatusRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         if (item.rating > 0)
           StarRating(rating: item.rating, size: 14)
         else
-          const Text(
-            '⏳ 평가 대기',
+          Text(
+            l10n?.ratingPending ?? '⏳ 평가 대기',
             style: AkashaTypography.posterRatingPending,
           ),
         const SizedBox(width: 8),
         Expanded(
           child: Text(
-            watchlistStatusEmojiLabel(item),
+            watchlistStatusEmojiLabel(item, l10n),
             style: AkashaTypography.bodySecondary.copyWith(
               fontWeight: FontWeight.w500,
             ),
@@ -168,13 +170,19 @@ class PosterCardPosterMeta extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerLeft,
               child: item.releaseYear != null
-                  ? Text(
-                      '🗓️ ${item.releaseYear}년',
-                      style: AkashaTypography.caption.copyWith(
-                        color: AkashaColors.textSecondary,
-                      ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                  ? Builder(
+                      builder: (context) {
+                        final l10n = lookupAppL10n(context);
+                        final suffix = l10n?.yearSuffix ?? '년';
+                        return Text(
+                          '🗓️ ${item.releaseYear}$suffix',
+                          style: AkashaTypography.caption.copyWith(
+                            color: AkashaColors.textSecondary,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        );
+                      },
                     )
                   : const SizedBox.shrink(),
             ),

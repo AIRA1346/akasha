@@ -2294,4 +2294,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get actionDeleteMd => 'Delete md';
+
+  @override
+  String get yearSuffix => '';
+
+  @override
+  String get ratingPending => '⏳ Pending Rating';
 }

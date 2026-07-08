@@ -4195,6 +4195,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Delete md'**
   String get actionDeleteMd;
+
+  /// No description provided for @yearSuffix.
+  ///
+  /// In en, this message translates to:
+  /// **''**
+  String get yearSuffix;
+
+  /// No description provided for @ratingPending.
+  ///
+  /// In en, this message translates to:
+  /// **'⏳ Pending Rating'**
+  String get ratingPending;
 }
 
 class _AppLocalizationsDelegate

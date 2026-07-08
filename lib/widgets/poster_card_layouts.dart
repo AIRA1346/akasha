@@ -8,6 +8,7 @@ import '../theme/akasha_palette.dart';
 import '../theme/akasha_typography.dart';
 import '../utils/catalog_display_title.dart';
 import '../utils/status_helpers.dart';
+import '../utils/app_l10n.dart';
 import 'poster_card_layout_badges.dart';
 import 'poster_card_layout_meta.dart';
 import 'poster_card_style.dart';
@@ -109,6 +110,7 @@ class PosterCardFactCardLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final isEntity = item is EntityItem;
     final entity = isEntity ? item as EntityItem : null;
     final palette = context.akashaPalette;
@@ -236,7 +238,7 @@ class PosterCardFactCardLayout extends StatelessWidget {
                   Row(
                     children: [
                       PosterCardMetaPill(
-                        label: watchlistStatusEmojiLabel(item),
+                        label: watchlistStatusEmojiLabel(item, l10n),
                         background: accent.withValues(alpha: 0.2),
                         foreground: accent,
                       ),

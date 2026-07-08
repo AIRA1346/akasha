@@ -2244,4 +2244,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get actionDeleteMd => 'md 삭제';
+
+  @override
+  String get yearSuffix => '년';
+
+  @override
+  String get ratingPending => '⏳ 평가 대기';
 }

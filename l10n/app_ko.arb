@@ -957,5 +957,7 @@
   "toolbarExportHtml": "HTML 보내기",
   "toolbarDialogTemplateTitle": "기록 템플릿",
   "actionReset": "기본값",
-  "actionDeleteMd": "md 삭제"
+  "actionDeleteMd": "md 삭제",
+  "yearSuffix": "년",
+  "ratingPending": "⏳ 평가 대기"
 }
