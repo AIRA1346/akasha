@@ -1,8 +1,8 @@
 # AKASHA Current State (현재 상태)
 
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
-> **갱신:** 2026-07-08 (test **830** · analyze 0 · **Canvas Node Open v0.3-B.1** · **Steam v1 = Personal Archive** · **Vault Format Spec v3 확립**)
-> **Git:** code/test baseline **1729cef2** · current tip은 `git log -1` 기준
+> **갱신:** 2026-07-08 (test **838** · analyze 0 · **Canvas v0.3-B.1** · **viewport persist + inertia zoom guard** · **Steam v1 = Personal Archive** · **Vault Format Spec v3 확립**)
+> **Git:** code/test baseline **1729cef2** · current tip **`8df18978`**
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md) — 독립 검증기 `tool/vault_format_validator.dart`
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
 
@@ -55,7 +55,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **830 PASS** | ✅ |
+| `flutter test` | **838 PASS** | ✅ |
 | `flutter analyze lib` | 0 issue | ✅ |
 | `vault_format_validator` | 적합성 검증기 (spec v3 · 앱 무의존) | — |
 | `preflight_check` | PASS | ✅ |
@@ -90,7 +90,9 @@
 | v0.2 | 관계선 CustomPainter · `canvas_only` edge 생성/편집/삭제 · preset relation picker | ✅ |
 | v0.3-A | Zoom/Pan · 뷰포트 경계 · 중심 좌표 원점 · 노드 드래그 · Fit to Content · `Ctrl+Space` | ✅ |
 | v0.3-A.4 | viewport listener 통합 · partial file extraction · SSOT 문서 | ✅ |
+| v0.3-A.5 | viewport persist (layout session · Work/Entity 복귀 · `alignment: topLeft`) | ✅ |
 | v0.3-B.1 | Work/Entity 노드 더블클릭 → Workbench 상세 탭 · Canvas+Detail 2탭 push (canvas active만) | ✅ |
+| v0.3-B.2a | pan 관성 중 wheel zoom guard (`InteractiveViewer` + custom wheel · lock on fling) | ✅ |
 
 **Canvas v0.3-B.1 한계 (알려진):**
 - UI 노드 kind: `text` · `work` · `entity`만. `record` · `group` 미구현.
