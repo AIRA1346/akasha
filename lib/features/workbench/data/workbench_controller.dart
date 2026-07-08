@@ -22,6 +22,9 @@ class WorkbenchController extends ChangeNotifier {
   /// 활성 탭의 md 저장 (Ctrl+S·탭 닫기 시 사용).
   Future<void> Function()? saveActiveTab;
 
+  /// 활성 Canvas 탭의 viewport 즉시 저장 (browse 이탈·탭 닫기 직전).
+  Future<void> Function()? flushActiveCanvasViewport;
+
   bool get prefsLoaded => _prefsLoaded;
 
   /// Work · Entity 상세가 메인에 표시 중인지.
@@ -78,7 +81,8 @@ class WorkbenchController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void openCanvas(String canvasId, String title) {
+  Future<void> openCanvas(String canvasId, String title) async {
+    await _flushActiveCanvasViewportIfBound();
     final id = CanvasCollectibleTab.idFor(canvasId);
     tabs
       ..clear()
@@ -115,13 +119,21 @@ class WorkbenchController extends ChangeNotifier {
   }
 
   /// browse(그리드·홈)로 돌아갈 때 상세 세션을 닫습니다.
-  void showBrowse() {
+  Future<void> showBrowse() async {
+    await _flushActiveCanvasViewportIfBound();
     if (!_detailViewVisible && tabs.isEmpty) return;
     _detailViewVisible = false;
     tabs.clear();
     activeTabId = null;
     saveActiveTab = null;
+    flushActiveCanvasViewport = null;
     notifyListeners();
+  }
+
+  Future<void> _flushActiveCanvasViewportIfBound() async {
+    final flush = flushActiveCanvasViewport;
+    if (flush == null) return;
+    await flush();
   }
 
   void selectTab(String id) {
@@ -132,11 +144,19 @@ class WorkbenchController extends ChangeNotifier {
     }
   }
 
-  void closeTab(String id) {
+  Future<void> closeTab(String id) async {
+    final closingActiveCanvas =
+        activeTabId == id && tabs.any((t) => t.id == id && t is CanvasCollectibleTab);
+    if (closingActiveCanvas) {
+      await _flushActiveCanvasViewportIfBound();
+    }
     tabs.removeWhere((t) => t.id == id);
     if (activeTabId == id) {
       activeTabId = tabs.isEmpty ? null : tabs.last.id;
-      if (tabs.isEmpty) _detailViewVisible = false;
+      if (tabs.isEmpty) {
+        _detailViewVisible = false;
+        flushActiveCanvasViewport = null;
+      }
     }
     notifyListeners();
   }

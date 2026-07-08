@@ -101,7 +101,7 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
     }
     if (tab == null) return;
     if (!tab.isDirty) {
-      widget.controller.closeTab(id);
+      await widget.controller.closeTab(id);
       return;
     }
 
@@ -127,7 +127,7 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
       }
     }
 
-    widget.controller.closeTab(id);
+    await widget.controller.closeTab(id);
   }
 
   @override
@@ -249,6 +249,8 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
               onClose: () => _handleCloseTab(active.id),
               onOpenWork: widget.onCanvasOpenWork,
               onOpenEntity: widget.onCanvasOpenEntity,
+              onBindFlushViewport: (flush) =>
+                  widget.controller.flushActiveCanvasViewport = flush,
             ),
         };
       },

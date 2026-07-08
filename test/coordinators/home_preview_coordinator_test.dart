@@ -11,7 +11,7 @@ HomePreviewCoordinator _coordinator({
   required BuildContext context,
   void Function()? onRebuild,
   void Function(String workId)? onRecordWork,
-  void Function()? onShowBrowse,
+  Future<void> Function()? onShowBrowse,
 }) {
   return HomePreviewCoordinator(
     hostContext: () => context,
@@ -20,7 +20,7 @@ HomePreviewCoordinator _coordinator({
     resolveItemForOpen: (item) => item,
     openBrowseItemInWorkbench: (_) {},
     openEntityInWorkbench: (_) async {},
-    showBrowseInWorkbench: onShowBrowse ?? () {},
+    showBrowseInWorkbench: onShowBrowse ?? () async {},
     getVaultItems: () => const [],
     recordWorkExploration: onRecordWork ?? (_) {},
     recordEntityExploration: (_) {},
@@ -115,7 +115,9 @@ void main() {
       resolveItemForOpen: (item) => item,
       openBrowseItemInWorkbench: (_) {},
       openEntityInWorkbench: (_) async {},
-      showBrowseInWorkbench: () => browseShown = true,
+      showBrowseInWorkbench: () async {
+        browseShown = true;
+      },
       getVaultItems: () => [work, linked],
       recordWorkExploration: (_) {},
       recordEntityExploration: (_) {},
@@ -130,7 +132,7 @@ void main() {
 
     expect(coord.hasOpenPreview, isFalse);
 
-    coord.maybeReturnAfterSave(workId: 'wk_linked');
+    await coord.maybeReturnAfterSave(workId: 'wk_linked');
 
     expect(coord.workPreviewItem?.workId, 'wk_linked');
     expect(coord.canPopPreview, isTrue);

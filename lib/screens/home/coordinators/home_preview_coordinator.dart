@@ -38,7 +38,7 @@ class HomePreviewCoordinator {
   final AkashaItem Function(AkashaItem item) resolveItemForOpen;
   final void Function(AkashaItem item) openBrowseItemInWorkbench;
   final Future<void> Function(UserCatalogEntity entity) openEntityInWorkbench;
-  final void Function() showBrowseInWorkbench;
+  final Future<void> Function() showBrowseInWorkbench;
   final List<AkashaItem> Function() getVaultItems;
   final void Function(String workId) recordWorkExploration;
   final void Function(String entityId) recordEntityExploration;
@@ -330,7 +330,7 @@ class HomePreviewCoordinator {
     }
   }
 
-  void maybeReturnAfterSave({String? workId, String? entityId}) {
+  Future<void> maybeReturnAfterSave({String? workId, String? entityId}) async {
     final snapshot = _returnSnapshot;
     if (snapshot == null) return;
 
@@ -346,7 +346,7 @@ class HomePreviewCoordinator {
       ..clear()
       ..addAll(snapshot.backStack.map(_resolveFrame));
     _restoreFrame(_resolveFrame(snapshot.current));
-    showBrowseInWorkbench();
+    await showBrowseInWorkbench();
     rebuild();
   }
 

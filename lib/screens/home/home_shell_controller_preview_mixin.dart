@@ -71,9 +71,11 @@ mixin HomeShellControllerPreviewMixin on HomeShellControllerBase {
 
   Future<void> handleWikiLinkTap(ParsedRecordLink link) async {
     if (!host.mounted) return;
-    workbench.showBrowse();
+    final navContext = host.context;
+    await workbench.showBrowse();
+    if (!navContext.mounted) return;
     await RecordLinkNavigator.navigateLink(
-      host.context,
+      navContext,
       link: link,
       userCatalog: userCatalog,
       vaultItems: vault.items,

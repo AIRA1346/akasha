@@ -55,10 +55,10 @@ mixin HomeShellControllerWorkbenchMixin on HomeShellControllerBase {
     rebuild();
   }
 
-  void openCanvas(String canvasId, String title) {
+  Future<void> openCanvas(String canvasId, String title) async {
     preview.clearReturnSnapshot();
     preview.closeAllPreviews();
-    workbenchCoord.openCanvas(canvasId, title);
+    await workbenchCoord.openCanvas(canvasId, title);
     rebuild();
   }
 

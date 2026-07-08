@@ -29,6 +29,7 @@ class CanvasEditorWorkspace extends StatefulWidget {
     required this.onClose,
     this.onOpenWork,
     this.onOpenEntity,
+    this.onBindFlushViewport,
   });
 
   final String vaultPath;
@@ -38,6 +39,7 @@ class CanvasEditorWorkspace extends StatefulWidget {
   final VoidCallback onClose;
   final void Function(AkashaItem item)? onOpenWork;
   final Future<bool> Function(String entityId)? onOpenEntity;
+  final void Function(Future<void> Function()? flush)? onBindFlushViewport;
 
   @override
   State<CanvasEditorWorkspace> createState() => _CanvasEditorWorkspaceState();
@@ -59,6 +61,8 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   double? _dragStartNodeY;
 
   // Focus node for keyboard shortcuts listener (v0.3-A.3)
+  bool _suppressViewportListener = false;
+
   bool _handleGlobalKeyEvent(KeyEvent event) {
     if (event is KeyDownEvent) {
       final isCtrl = HardwareKeyboard.instance.isControlPressed;
@@ -81,11 +85,12 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
 
   @override
   void dispose() {
+    widget.onBindFlushViewport?.call(null);
     HardwareKeyboard.instance.removeHandler(_handleGlobalKeyEvent);
     _transformationController.removeListener(_handleViewportChange);
     if (_layout != null) {
       _applyViewportFromController();
-      // dispose cannot await; primary path is _persistViewportBeforeNavigation.
+      // dispose cannot await; primary path is flushActiveCanvasViewport / navigation.
       CanvasStore.instance.flushPendingSave(
         widget.vaultPath,
         widget.canvasId,
@@ -117,7 +122,11 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
       final vp = data.layout.viewport;
       final matrix = Matrix4.translationValues(vp.x, vp.y, 0.0)
         ..multiply(Matrix4.diagonal3Values(vp.zoom, vp.zoom, 1.0));
+      _suppressViewportListener = true;
       _transformationController.value = matrix;
+      _suppressViewportListener = false;
+
+      widget.onBindFlushViewport?.call(_persistViewportBeforeNavigation);
     } else {
       setState(() => _loading = false);
     }
@@ -777,7 +786,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   }
 
   void _handleViewportChange() {
-    if (_layout == null) return;
+    if (_layout == null || _suppressViewportListener) return;
     if (!_applyViewportFromController()) return;
     CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
   }

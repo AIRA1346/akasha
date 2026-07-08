@@ -72,7 +72,39 @@ void main() {
     expect(ctrl.tabs.length, 1);
   });
 
-  test('openDetailBesideCanvas keeps canvas tab and opens work detail', () {
+  test('showBrowse awaits active canvas viewport flush before clearing tabs', () async {
+    final ctrl = WorkbenchController();
+    var flushCalls = 0;
+
+    await ctrl.openCanvas('cv_u_test01', 'Test Map');
+    ctrl.flushActiveCanvasViewport = () async {
+      flushCalls++;
+    };
+
+    await ctrl.showBrowse();
+
+    expect(flushCalls, 1);
+    expect(ctrl.hasOpenDetail, isFalse);
+    expect(ctrl.tabs, isEmpty);
+    expect(ctrl.flushActiveCanvasViewport, isNull);
+  });
+
+  test('closeTab awaits canvas viewport flush when closing active canvas tab', () async {
+    final ctrl = WorkbenchController();
+    var flushCalls = 0;
+
+    await ctrl.openCanvas('cv_u_test01', 'Test Map');
+    ctrl.flushActiveCanvasViewport = () async {
+      flushCalls++;
+    };
+
+    await ctrl.closeTab(CanvasCollectibleTab.idFor('cv_u_test01'));
+
+    expect(flushCalls, 1);
+    expect(ctrl.tabs, isEmpty);
+  });
+
+  test('openDetailBesideCanvas keeps canvas tab and opens work detail', () async {
     final ctrl = WorkbenchController();
     final work = createItem(
       workId: 'wk_canvas_open',
@@ -80,7 +112,7 @@ void main() {
       category: MediaCategory.manga,
     );
 
-    ctrl.openCanvas('cv_u_test01', 'Test Map');
+    await ctrl.openCanvas('cv_u_test01', 'Test Map');
     ctrl.openDetailBesideCanvas(
       WorkCollectibleTab(id: WorkCollectibleTab.idFor(work), item: work),
     );
@@ -91,7 +123,7 @@ void main() {
     expect(ctrl.activeTab is WorkCollectibleTab, isTrue);
   });
 
-  test('openDetailBesideCanvas selects existing detail tab by id', () {
+  test('openDetailBesideCanvas selects existing detail tab by id', () async {
     final ctrl = WorkbenchController();
     final work = createItem(
       workId: 'wk_canvas_open',
@@ -100,7 +132,7 @@ void main() {
     );
     final tabId = WorkCollectibleTab.idFor(work);
 
-    ctrl.openCanvas('cv_u_test01', 'Test Map');
+    await ctrl.openCanvas('cv_u_test01', 'Test Map');
     ctrl.openDetailBesideCanvas(
       WorkCollectibleTab(id: tabId, item: work),
     );
@@ -113,7 +145,7 @@ void main() {
     expect(ctrl.activeTabId, tabId);
   });
 
-  test('openDetailBesideCanvas replaces prior detail tab but keeps canvas', () {
+  test('openDetailBesideCanvas replaces prior detail tab but keeps canvas', () async {
     final ctrl = WorkbenchController();
     final workA = createItem(
       workId: 'wk_a',
@@ -126,7 +158,7 @@ void main() {
       category: MediaCategory.animation,
     );
 
-    ctrl.openCanvas('cv_u_test01', 'Test Map');
+    await ctrl.openCanvas('cv_u_test01', 'Test Map');
     ctrl.openDetailBesideCanvas(
       WorkCollectibleTab(id: WorkCollectibleTab.idFor(workA), item: workA),
     );

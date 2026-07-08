@@ -146,8 +146,8 @@ class HomeWorkbenchCoordinator {
     rebuild();
   }
 
-  void openCanvas(String canvasId, String title) {
-    workbench.openCanvas(canvasId, title);
+  Future<void> openCanvas(String canvasId, String title) async {
+    await workbench.openCanvas(canvasId, title);
     if (isMounted()) rebuild();
   }
 
@@ -170,7 +170,7 @@ class HomeWorkbenchCoordinator {
   }
 
   Future<void> onWorkbenchWorkDeleted(String tabId, AkashaItem item) async {
-    workbench.closeTab(tabId);
+    await workbench.closeTab(tabId);
     if (isMounted()) {
       mutateItems((items) {
         items.removeWhere((e) =>
@@ -196,7 +196,7 @@ class HomeWorkbenchCoordinator {
   }
 
   Future<void> onWorkbenchEntityDeleted(String tabId) async {
-    workbench.closeTab(tabId);
+    await workbench.closeTab(tabId);
     if (isMounted()) rebuild();
   }
 }

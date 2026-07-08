@@ -97,87 +97,87 @@ class HomeNavigationCoordinator {
   }
 
   Future<void> selectDashboard(String id) async {
+    await workbench.showBrowse();
     scheduleRebuild(() {
       sidebarCoordinator.selectDashboard(id);
       isExploreBrowseMode = false;
       isKnowledgeGraphMode = false;
-      workbench.showBrowse();
     });
     await prefetchRegistry();
   }
 
   /// 프리미엄 홈 대시보드로 이동.
   Future<void> goHome() async {
+    await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
       isKnowledgeGraphMode = false;
       sidebarCoordinator.selectDashboard(homeDashboardId);
       filterCoordinator.resetForHomeDashboard();
-      workbench.showBrowse();
     });
     await prefetchRegistry();
   }
 
   /// 작품 browse 그리드 탐색 모드.
   Future<void> goExplore() async {
+    await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = true;
       isKnowledgeGraphMode = false;
       sidebarCoordinator.selectDashboard(homeDashboardId);
       filterCoordinator.setEntityScope(BrowseEntityScope.all);
-      workbench.showBrowse();
     });
     await prefetchRegistry();
   }
 
   /// 엔티티 갤러리 탐색 모드.
   Future<void> goExploreEntities(BrowseEntityScope scope) async {
+    await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = true;
       isKnowledgeGraphMode = false;
       sidebarCoordinator.selectDashboard(homeDashboardId);
       filterCoordinator.setEntityScope(scope);
-      workbench.showBrowse();
     });
     await prefetchRegistry();
   }
 
-  void selectPersonalLibrary(String id) {
+  Future<void> selectPersonalLibrary(String id) async {
+    await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
       isKnowledgeGraphMode = false;
       sidebarCoordinator.selectPersonalLibrary(id);
-      workbench.showBrowse();
     });
   }
 
-  void selectCollectibleCollection(String id) {
+  Future<void> selectCollectibleCollection(String id) async {
+    await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
       isKnowledgeGraphMode = false;
       sidebarCoordinator.selectCollectibleCollection(id);
-      workbench.showBrowse();
     });
   }
 
-  void selectTimeline() {
+  Future<void> selectTimeline() async {
+    await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
       isKnowledgeGraphMode = false;
       sidebarCoordinator.selectTimeline();
-      workbench.showBrowse();
     });
   }
 
   /// 나만의 서재 뷰 (활성 서재 또는 master archive).
   Future<void> goLibrary() async {
+    await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
       isKnowledgeGraphMode = false;
       final libId = sidebarCoordinator.personalLibCtrl.activeLibraryId ??
           PersonalLibraryConfig.masterArchiveId;
       sidebarCoordinator.selectPersonalLibrary(libId);
-      workbench.showBrowse();
     });
     await prefetchRegistry();
   }
@@ -186,25 +186,25 @@ class HomeNavigationCoordinator {
   Future<void> goCollection() async {
     final cols = sidebarCoordinator.collectionCtrl.collections;
     if (cols.isEmpty) return;
+    await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
       isKnowledgeGraphMode = false;
       final id = sidebarCoordinator.collectionCtrl.activeCollectionId ??
           cols.first.id;
       sidebarCoordinator.selectCollectibleCollection(id);
-      workbench.showBrowse();
     });
     await prefetchRegistry();
   }
 
   /// 지식 연결 맵 뷰.
   Future<void> goKnowledgeGraph() async {
+    await workbench.showBrowse();
     scheduleRebuild(() {
       isKnowledgeGraphMode = true;
       isExploreBrowseMode = false;
       sidebarCoordinator.selectDashboard(homeDashboardId);
       filterCoordinator.setEntityScope(BrowseEntityScope.all);
-      workbench.showBrowse();
     });
     await prefetchRegistry();
   }
@@ -216,16 +216,14 @@ class HomeNavigationCoordinator {
     }
   }
 
-  void onTimelineQuickCaptureSaved() {
+  Future<void> onTimelineQuickCaptureSaved() async {
+    await workbench.showBrowse();
     scheduleRebuild(() {
       timelineReloadToken++;
       sidebarCoordinator.selectTimeline();
       isExploreBrowseMode = false;
-      workbench.showBrowse();
     });
   }
 
-  void onJournalQuickCaptureSaved() {
-    onTimelineQuickCaptureSaved();
-  }
+  Future<void> onJournalQuickCaptureSaved() => onTimelineQuickCaptureSaved();
 }
