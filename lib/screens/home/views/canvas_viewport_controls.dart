@@ -99,7 +99,7 @@ double _matrixUniformScale(Matrix4 matrix) {
   return math.sqrt(matrix.storage[0] * matrix.storage[0] + matrix.storage[1] * matrix.storage[1]);
 }
 
-/// Builds the InteractiveViewer matrix for [viewport] (translate then scale).
+/// Builds the InteractiveViewer matrix for [viewport] (screen = zoom * scene + translation).
 Matrix4 canvasMatrixFromViewport(CanvasViewport viewport) {
   return _canvasTransformMatrix(
     x: viewport.x,
@@ -109,10 +109,14 @@ Matrix4 canvasMatrixFromViewport(CanvasViewport viewport) {
 }
 
 /// Returns an updated [CanvasViewport] when [matrix] differs from [current].
+///
+/// Axis-aligned pan/zoom only (no rotation). Matches [InteractiveViewer] with
+/// [Alignment.topLeft].
 CanvasViewport? canvasViewportDeltaFromMatrix(Matrix4 matrix, CanvasViewport current) {
   final zoom = _matrixUniformScale(matrix);
-  final x = matrix.storage[12];
-  final y = matrix.storage[13];
+  final translation = matrix.getTranslation();
+  final x = translation.x;
+  final y = translation.y;
 
   const epsilon = 1e-4;
   if ((current.x - x).abs() > epsilon ||

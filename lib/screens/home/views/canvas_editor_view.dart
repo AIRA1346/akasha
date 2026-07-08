@@ -726,8 +726,9 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                     ? const Center(child: Text('캔버스 데이터를 불러올 수 없습니다.'))
                     : InteractiveViewer(
                         transformationController: _transformationController,
+                        alignment: Alignment.topLeft,
                         constrained: false,
-                        boundaryMargin: const EdgeInsets.all(CanvasEditorViewportConfig.boundaryMargin),
+                        boundaryMargin: const EdgeInsets.all(double.infinity),
                         minScale: CanvasEditorViewportConfig.minScale,
                         maxScale: CanvasEditorViewportConfig.maxScale,
                         onInteractionEnd: (details) => _handleViewportChange(),
