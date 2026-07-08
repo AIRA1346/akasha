@@ -68,8 +68,11 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
 
   // Blocks wheel zoom while InteractiveViewer pan inertia updates the matrix.
   bool _canvasUserInteracting = false;
+  bool _canvasPointerGestureActive = false;
   bool _inertiaZoomLocked = false;
   Timer? _inertiaSettleTimer;
+
+  static const double _canvasPointerGestureEpsilon = 0.5;
 
   bool _handleGlobalKeyEvent(KeyEvent event) {
     if (event is KeyDownEvent) {
@@ -747,6 +750,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                           maxScale: CanvasEditorViewportConfig.maxScale,
                           scaleEnabled: false,
                           onInteractionStart: (_) => _onCanvasInteractionStart(),
+                          onInteractionUpdate: _onCanvasInteractionUpdate,
                           onInteractionEnd: _onCanvasInteractionEnd,
                           child: SizedBox(
                             width: CanvasEditorViewportConfig.workspaceSize,
@@ -816,14 +820,32 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   }
 
   void _onCanvasInteractionStart() {
+    // InteractiveViewer also calls this for wheel signals (scaleEnabled: false).
+    // Do not clear [_inertiaZoomLocked] here.
+    _canvasPointerGestureActive = false;
+  }
+
+  void _onCanvasInteractionUpdate(ScaleUpdateDetails details) {
+    if (details.focalPointDelta.distance <= _canvasPointerGestureEpsilon) return;
+
+    _canvasPointerGestureActive = true;
     _canvasUserInteracting = true;
-    _inertiaZoomLocked = false;
-    _inertiaSettleTimer?.cancel();
+    if (_inertiaZoomLocked) {
+      _inertiaZoomLocked = false;
+      _inertiaSettleTimer?.cancel();
+    }
   }
 
   void _onCanvasInteractionEnd(ScaleEndDetails details) {
-    _canvasUserInteracting = false;
     _handleViewportChange();
+
+    if (!_canvasPointerGestureActive) {
+      // Wheel-only interaction end: leave inertia zoom lock unchanged.
+      return;
+    }
+
+    _canvasPointerGestureActive = false;
+    _canvasUserInteracting = false;
 
     if (details.velocity.pixelsPerSecond.distance >= kMinFlingVelocity) {
       _inertiaZoomLocked = true;
