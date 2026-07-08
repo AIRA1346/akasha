@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'dart:math' as math;
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -64,6 +66,11 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   // Focus node for keyboard shortcuts listener (v0.3-A.3)
   bool _suppressViewportListener = false;
 
+  // Blocks wheel zoom while InteractiveViewer pan inertia updates the matrix.
+  bool _canvasUserInteracting = false;
+  bool _inertiaZoomLocked = false;
+  Timer? _inertiaSettleTimer;
+
   bool _handleGlobalKeyEvent(KeyEvent event) {
     if (event is KeyDownEvent) {
       final isCtrl = HardwareKeyboard.instance.isControlPressed;
@@ -86,6 +93,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
 
   @override
   void dispose() {
+    _inertiaSettleTimer?.cancel();
     widget.onBindFlushViewport?.call(null);
     HardwareKeyboard.instance.removeHandler(_handleGlobalKeyEvent);
     _transformationController.removeListener(_handleViewportChange);
@@ -725,20 +733,26 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                 ? const Center(child: CircularProgressIndicator(strokeWidth: 2))
                 : _layout == null
                     ? const Center(child: Text('캔버스 데이터를 불러올 수 없습니다.'))
-                    : InteractiveViewer(
-                        key: _canvasViewportKey,
-                        transformationController: _transformationController,
-                        alignment: Alignment.topLeft,
-                        clipBehavior: Clip.hardEdge,
-                        constrained: false,
-                        boundaryMargin: const EdgeInsets.all(double.infinity),
-                        minScale: CanvasEditorViewportConfig.minScale,
-                        maxScale: CanvasEditorViewportConfig.maxScale,
-                        onInteractionEnd: (details) => _handleViewportChange(),
-                        child: SizedBox(
-                          width: CanvasEditorViewportConfig.workspaceSize,
-                          height: CanvasEditorViewportConfig.workspaceSize,
-                          child: uiStack(palette),
+                    : Listener(
+                        behavior: HitTestBehavior.translucent,
+                        onPointerSignal: _handleCanvasWheelZoomSignal,
+                        child: InteractiveViewer(
+                          key: _canvasViewportKey,
+                          transformationController: _transformationController,
+                          alignment: Alignment.topLeft,
+                          clipBehavior: Clip.hardEdge,
+                          constrained: false,
+                          boundaryMargin: const EdgeInsets.all(double.infinity),
+                          minScale: CanvasEditorViewportConfig.minScale,
+                          maxScale: CanvasEditorViewportConfig.maxScale,
+                          scaleEnabled: false,
+                          onInteractionStart: (_) => _onCanvasInteractionStart(),
+                          onInteractionEnd: _onCanvasInteractionEnd,
+                          child: SizedBox(
+                            width: CanvasEditorViewportConfig.workspaceSize,
+                            height: CanvasEditorViewportConfig.workspaceSize,
+                            child: uiStack(palette),
+                          ),
                         ),
                       ),
           ),
@@ -793,9 +807,60 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   }
 
   void _handleViewportChange() {
+    if (!_suppressViewportListener) {
+      _trackInertiaMatrixMotion();
+    }
     if (_layout == null || _suppressViewportListener) return;
     if (!_applyViewportFromController()) return;
     CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
+  }
+
+  void _onCanvasInteractionStart() {
+    _canvasUserInteracting = true;
+    _inertiaZoomLocked = false;
+    _inertiaSettleTimer?.cancel();
+  }
+
+  void _onCanvasInteractionEnd(ScaleEndDetails details) {
+    _canvasUserInteracting = false;
+    _handleViewportChange();
+
+    if (details.velocity.pixelsPerSecond.distance >= kMinFlingVelocity) {
+      _inertiaZoomLocked = true;
+      _scheduleInertiaSettleCheck();
+    }
+  }
+
+  void _trackInertiaMatrixMotion() {
+    if (!_inertiaZoomLocked || _canvasUserInteracting) return;
+    _scheduleInertiaSettleCheck();
+  }
+
+  void _scheduleInertiaSettleCheck() {
+    _inertiaSettleTimer?.cancel();
+    _inertiaSettleTimer = Timer(canvasInertiaZoomSettleDelay, () {
+      if (!mounted) return;
+      _inertiaZoomLocked = false;
+    });
+  }
+
+  void _handleCanvasWheelZoomSignal(PointerSignalEvent event) {
+    if (event is! PointerScrollEvent || event.scrollDelta.dy == 0) return;
+    // Trackpad scroll pans through InteractiveViewer.
+    if (event.kind == PointerDeviceKind.trackpad) return;
+
+    GestureBinding.instance.pointerSignalResolver.register(event, (PointerSignalEvent resolved) {
+      if (resolved is! PointerScrollEvent || resolved.scrollDelta.dy == 0) return;
+      if (_inertiaZoomLocked) return;
+
+      if (applyCanvasWheelZoom(
+        controller: _transformationController,
+        localViewportPoint: resolved.localPosition,
+        scrollDeltaY: resolved.scrollDelta.dy,
+      )) {
+        _handleViewportChange();
+      }
+    });
   }
 
   RenderBox? _canvasViewportRenderBox() {
