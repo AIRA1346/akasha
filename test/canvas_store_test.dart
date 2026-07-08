@@ -170,6 +170,50 @@ This is a relations map for Re:Zero.
       expect(reloaded.layout.nodes[1].x, equals(50.0));
       expect(reloaded.layout.nodes[1].y, equals(60.0));
     });
+
+    test('flushPendingSave force writes viewport even without pending debounce', () async {
+      final store = CanvasStore.instance;
+      final canvasData = await store.createCanvas(
+        vaultPath: tempVault.path,
+        title: 'Viewport Persist Test',
+        slug: 'viewport-persist',
+        tags: const [],
+      );
+      final canvasId = canvasData.record.canvasId;
+      final loaded = await store.loadCanvas(tempVault.path, canvasId);
+      expect(loaded, isNotNull);
+
+      loaded!.layout.viewport = CanvasViewport(x: 120.0, y: -45.0, zoom: 1.75);
+
+      await store.flushPendingSave(tempVault.path, canvasId, loaded.layout, force: true);
+
+      final reloaded = await store.loadCanvas(tempVault.path, canvasId);
+      expect(reloaded!.layout.viewport.x, equals(120.0));
+      expect(reloaded.layout.viewport.y, equals(-45.0));
+      expect(reloaded.layout.viewport.zoom, equals(1.75));
+    });
+
+    test('flushPendingSave without force skips when no debounce timer is active', () async {
+      final store = CanvasStore.instance;
+      final canvasData = await store.createCanvas(
+        vaultPath: tempVault.path,
+        title: 'Viewport Skip Test',
+        slug: 'viewport-skip',
+        tags: const [],
+      );
+      final canvasId = canvasData.record.canvasId;
+      final loaded = await store.loadCanvas(tempVault.path, canvasId);
+      expect(loaded, isNotNull);
+
+      loaded!.layout.viewport = CanvasViewport(x: 999.0, y: 888.0, zoom: 2.0);
+
+      await store.flushPendingSave(tempVault.path, canvasId, loaded.layout);
+
+      final reloaded = await store.loadCanvas(tempVault.path, canvasId);
+      expect(reloaded!.layout.viewport.x, equals(0.0));
+      expect(reloaded.layout.viewport.y, equals(0.0));
+      expect(reloaded.layout.viewport.zoom, equals(1.0));
+    });
   });
 
   group('Canvas CRUD and Edge cleanups', () {

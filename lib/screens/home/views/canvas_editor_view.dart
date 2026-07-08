@@ -83,9 +83,15 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   void dispose() {
     HardwareKeyboard.instance.removeHandler(_handleGlobalKeyEvent);
     _transformationController.removeListener(_handleViewportChange);
-    // Flush any pending saves immediately on exit
     if (_layout != null) {
-      CanvasStore.instance.flushPendingSave(widget.vaultPath, widget.canvasId, _layout!);
+      _applyViewportFromController();
+      // dispose cannot await; primary path is _persistViewportBeforeNavigation.
+      CanvasStore.instance.flushPendingSave(
+        widget.vaultPath,
+        widget.canvasId,
+        _layout!,
+        force: true,
+      );
     }
     _transformationController.dispose();
     super.dispose();
@@ -756,16 +762,36 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
     );
   }
 
-  void _handleViewportChange() {
-    if (_layout == null) return;
+  /// Syncs [_layout.viewport] from the current transformation matrix.
+  /// Returns true when the viewport value changed.
+  bool _applyViewportFromController() {
+    if (_layout == null) return false;
     final delta = canvasViewportDeltaFromMatrix(
       _transformationController.value,
       _layout!.viewport,
     );
-    if (delta == null) return;
+    if (delta == null) return false;
     _layout!.viewport = delta;
     _layout!.updatedAt = DateTime.now().toUtc();
+    return true;
+  }
+
+  void _handleViewportChange() {
+    if (_layout == null) return;
+    if (!_applyViewportFromController()) return;
     CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
+  }
+
+  /// Persists the current viewport to disk before leaving Canvas (e.g. opening Work/Entity).
+  Future<void> _persistViewportBeforeNavigation() async {
+    if (_layout == null) return;
+    _applyViewportFromController();
+    await CanvasStore.instance.flushPendingSave(
+      widget.vaultPath,
+      widget.canvasId,
+      _layout!,
+      force: true,
+    );
   }
 
   void _fitToContent() {
@@ -1081,6 +1107,8 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
         _showArchiveNodeMissingSnackBar();
         return;
       }
+      await _persistViewportBeforeNavigation();
+      if (!mounted) return;
       widget.onOpenWork?.call(work);
       return;
     }
@@ -1091,6 +1119,8 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
         _showArchiveNodeMissingSnackBar();
         return;
       }
+      await _persistViewportBeforeNavigation();
+      if (!mounted) return;
       final opened = await widget.onOpenEntity?.call(entityId) ?? false;
       if (!opened && mounted) {
         _showArchiveNodeMissingSnackBar();

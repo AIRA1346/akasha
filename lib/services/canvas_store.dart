@@ -190,11 +190,20 @@ class CanvasStore {
     _saveTimers.remove(canvasId);
   }
 
-  /// Flushes any pending debounce timers immediately.
-  Future<void> flushPendingSave(String vaultPath, String canvasId, CanvasLayout layout) async {
-    if (_saveTimers.containsKey(canvasId)) {
-      _saveTimers[canvasId]?.cancel();
-      _saveTimers.remove(canvasId);
+  /// Flushes pending debounce timers and optionally persists [layout] immediately.
+  ///
+  /// When [force] is true, always writes [layout] to disk after cancelling any
+  /// pending debounce — used before Canvas tab teardown so viewport is durable.
+  Future<void> flushPendingSave(
+    String vaultPath,
+    String canvasId,
+    CanvasLayout layout, {
+    bool force = false,
+  }) async {
+    final hadPending = _saveTimers.containsKey(canvasId);
+    _saveTimers[canvasId]?.cancel();
+    _saveTimers.remove(canvasId);
+    if (force || hadPending) {
       await saveLayoutImmediately(vaultPath, canvasId, layout);
     }
   }
