@@ -77,7 +77,7 @@
 - node/edge CRUD
 - interaction mode machine
 
-**보류 이유:** Workbench 탭 lifecycle·debounced save와 강결합. v0.3-B 기능(더블클릭 열기) 전까지 미룸.
+**보류 이유:** Workbench 탭 lifecycle·debounced save와 강결합. v0.3-B.1 더블클릭 열기는 view callback으로 완료 — controller 추출은 후속.
 
 ---
 
@@ -115,9 +115,9 @@
 
 ## v0.3-B 기능과 분해 순서
 
-**권장:** B1(relation helpers) → **v0.3-B.1 더블클릭 Workbench 열기** → B2(dialogs) → 선택/Delete 단축키
+**권장:** ~~v0.3-B.1 더블클릭 Workbench 열기~~ ✅ → B1(relation helpers) → B2(dialogs) → 선택/Delete 단축키
 
-더블클릭은 node layer(B5)와 겹치므로, B5 전에 최소한의 `onNodeDoubleTap` callback만 view에 추가하고 로직은 coordinator mixin으로 미룰 수 있음.
+v0.3-B.1은 view `onDoubleTap` + coordinator `open*FromCanvas`로 완료. B5 node layer 분리는 선택/단축키 슬라이스와 병행 가능.
 
 ---
 
