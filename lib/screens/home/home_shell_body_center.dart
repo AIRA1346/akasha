@@ -65,6 +65,8 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
     required this.onPreviewEntity,
     required this.onOpenBrowseItem,
     required this.onOpenEntity,
+    this.onOpenWorkFromCanvas,
+    this.onOpenEntityFromCanvas,
     required this.onWorkbenchWorkSaved,
     required this.onWorkbenchWorkDeleted,
     required this.onWorkbenchEntitySaved,
@@ -122,6 +124,8 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
   final void Function(UserCatalogEntity entity) onPreviewEntity;
   final void Function(AkashaItem item) onOpenBrowseItem;
   final Future<void> Function(UserCatalogEntity entity) onOpenEntity;
+  final void Function(AkashaItem item)? onOpenWorkFromCanvas;
+  final Future<bool> Function(String entityId)? onOpenEntityFromCanvas;
   final Future<void> Function(AkashaItem saved, {bool silent}) onWorkbenchWorkSaved;
   final Future<void> Function(String tabId, AkashaItem item) onWorkbenchWorkDeleted;
   final Future<void> Function(
@@ -222,6 +226,8 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
                   onClearPendingEntityLink: onClearPendingEntityLink,
                   onRecordOpenWork: onOpenBrowseItem,
                   onRecordOpenEntity: onOpenEntity,
+                  onCanvasOpenWork: onOpenWorkFromCanvas,
+                  onCanvasOpenEntity: onOpenEntityFromCanvas,
                   browseContent: _buildBrowseContent(),
                   vaultPath: vaultPath ?? '',
                 ),

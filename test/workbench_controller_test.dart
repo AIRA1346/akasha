@@ -71,4 +71,89 @@ void main() {
     expect(ctrl.activeEntityTab!.entity.title, 'Test Person');
     expect(ctrl.tabs.length, 1);
   });
+
+  test('openDetailBesideCanvas keeps canvas tab and opens work detail', () {
+    final ctrl = WorkbenchController();
+    final work = createItem(
+      workId: 'wk_canvas_open',
+      title: 'Canvas Work',
+      category: MediaCategory.manga,
+    );
+
+    ctrl.openCanvas('cv_u_test01', 'Test Map');
+    ctrl.openDetailBesideCanvas(
+      WorkCollectibleTab(id: WorkCollectibleTab.idFor(work), item: work),
+    );
+
+    expect(ctrl.tabs.length, 2);
+    expect(ctrl.tabs.any((t) => t is CanvasCollectibleTab), isTrue);
+    expect(ctrl.activeWorkTab!.item.title, 'Canvas Work');
+    expect(ctrl.activeTab is WorkCollectibleTab, isTrue);
+  });
+
+  test('openDetailBesideCanvas selects existing detail tab by id', () {
+    final ctrl = WorkbenchController();
+    final work = createItem(
+      workId: 'wk_canvas_open',
+      title: 'Canvas Work',
+      category: MediaCategory.manga,
+    );
+    final tabId = WorkCollectibleTab.idFor(work);
+
+    ctrl.openCanvas('cv_u_test01', 'Test Map');
+    ctrl.openDetailBesideCanvas(
+      WorkCollectibleTab(id: tabId, item: work),
+    );
+    ctrl.selectTab(CanvasCollectibleTab.idFor('cv_u_test01'));
+    ctrl.openDetailBesideCanvas(
+      WorkCollectibleTab(id: tabId, item: work),
+    );
+
+    expect(ctrl.tabs.length, 2);
+    expect(ctrl.activeTabId, tabId);
+  });
+
+  test('openDetailBesideCanvas replaces prior detail tab but keeps canvas', () {
+    final ctrl = WorkbenchController();
+    final workA = createItem(
+      workId: 'wk_a',
+      title: 'Work A',
+      category: MediaCategory.manga,
+    );
+    final workB = createItem(
+      workId: 'wk_b',
+      title: 'Work B',
+      category: MediaCategory.animation,
+    );
+
+    ctrl.openCanvas('cv_u_test01', 'Test Map');
+    ctrl.openDetailBesideCanvas(
+      WorkCollectibleTab(id: WorkCollectibleTab.idFor(workA), item: workA),
+    );
+    ctrl.selectTab(CanvasCollectibleTab.idFor('cv_u_test01'));
+    ctrl.openDetailBesideCanvas(
+      WorkCollectibleTab(id: WorkCollectibleTab.idFor(workB), item: workB),
+    );
+
+    expect(ctrl.tabs.length, 2);
+    expect(ctrl.tabs.whereType<WorkCollectibleTab>().length, 1);
+    expect(ctrl.activeWorkTab!.item.title, 'Work B');
+  });
+
+  test('openDetailBesideCanvas falls back to openWork when canvas is not active', () {
+    final ctrl = WorkbenchController();
+    final work = createItem(
+      workId: 'wk_fallback',
+      title: 'Fallback Work',
+      category: MediaCategory.manga,
+    );
+
+    ctrl.openDetailBesideCanvas(
+      WorkCollectibleTab(id: WorkCollectibleTab.idFor(work), item: work),
+    );
+
+    expect(ctrl.tabs.length, 1);
+    expect(ctrl.activeWorkTab!.item.title, 'Fallback Work');
+    expect(ctrl.tabs.any((t) => t is CanvasCollectibleTab), isFalse);
+  });
 }

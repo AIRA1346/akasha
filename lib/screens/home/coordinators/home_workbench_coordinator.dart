@@ -1,16 +1,19 @@
 import '../../../core/archiving/entity_journal_entry.dart';
+import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/ports/vault_port.dart';
 import '../../../features/workbench/data/workbench_controller.dart';
 import '../../../features/workbench/presentation/collectible_tab.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_vault_loader.dart';
+import '../../../utils/catalog_entity_resolver.dart';
 
 /// 워크벤치 탭·Collectible 열기/저장 (E2-3 · Phase 6).
 class HomeWorkbenchCoordinator {
   HomeWorkbenchCoordinator({
     required this.workbench,
     required this.vault,
+    required this.userCatalog,
     required this.isMounted,
     required this.rebuild,
     required this.getItems,
@@ -20,6 +23,7 @@ class HomeWorkbenchCoordinator {
 
   final WorkbenchController workbench;
   final VaultPort vault;
+  final UserCatalogPort userCatalog;
   final bool Function() isMounted;
   final void Function() rebuild;
   final List<AkashaItem> Function() getItems;
@@ -68,6 +72,53 @@ class HomeWorkbenchCoordinator {
   void openBrowseItem(AkashaItem item) {
     workbench.openWork(resolveItemForOpen(item));
     if (isMounted()) rebuild();
+  }
+
+  void openWorkFromCanvas(AkashaItem item) {
+    final resolved = resolveItemForOpen(item);
+    workbench.openDetailBesideCanvas(
+      WorkCollectibleTab(
+        id: WorkCollectibleTab.idFor(resolved),
+        item: resolved,
+      ),
+    );
+    if (isMounted()) rebuild();
+  }
+
+  Future<bool> openEntityFromCanvas(String entityId) async {
+    final resolved = await CatalogEntityResolver.resolveMany(
+      entityIds: [entityId],
+      userCatalog: userCatalog,
+      vaultPath: vault.vaultPath,
+    );
+    final entity = resolved[entityId];
+    if (entity == null) return false;
+
+    if (entity.isWorkEntity) {
+      for (final item in getItems()) {
+        if (item.workId == entity.entityId) {
+          openWorkFromCanvas(item);
+          return true;
+        }
+      }
+      return false;
+    }
+
+    EntityJournalEntry? entry;
+    final vaultPath = vault.vaultPath;
+    if (vaultPath != null && vaultPath.isNotEmpty) {
+      entry = await const EntityVaultLoader().findByEntityId(
+        vaultPath,
+        entity.entityId,
+      );
+    }
+
+    if (!isMounted()) return false;
+    workbench.openDetailBesideCanvas(
+      EntityCollectibleTab(entity: entity, journal: entry),
+    );
+    rebuild();
+    return true;
   }
 
   Future<void> openEntity(UserCatalogEntity entity) async {

@@ -10,7 +10,8 @@ import 'workbench_layout_prefs.dart';
 
 /// 열린 Collectible 세션·레이아웃 prefs (Phase 6: Work + Entity).
 class WorkbenchController extends ChangeNotifier {
-  static const int maxTabs = 1;
+  /// Browse/Work open uses 1 tab. Canvas + detail beside canvas may use 2.
+  static const int maxTabs = 2;
 
   final List<CollectibleTab> tabs = [];
   String? activeTabId;
@@ -83,6 +84,32 @@ class WorkbenchController extends ChangeNotifier {
       ..clear()
       ..add(CanvasCollectibleTab(id: id, canvasId: canvasId, title: title));
     activeTabId = id;
+    _detailViewVisible = true;
+    notifyListeners();
+  }
+
+  /// Opens a Work/Entity tab beside an active Canvas tab without clearing canvas.
+  /// Only applies when [activeTab] is [CanvasCollectibleTab]. Otherwise falls back
+  /// to [openWork] / [openEntity].
+  void openDetailBesideCanvas(CollectibleTab detailTab) {
+    if (activeTab is! CanvasCollectibleTab ||
+        !tabs.any((t) => t is CanvasCollectibleTab)) {
+      if (detailTab is WorkCollectibleTab) {
+        openWork(detailTab.item);
+      } else if (detailTab is EntityCollectibleTab) {
+        openEntity(detailTab.entity, journal: detailTab.journal);
+      }
+      return;
+    }
+
+    if (tabs.any((t) => t.id == detailTab.id)) {
+      selectTab(detailTab.id);
+      return;
+    }
+
+    tabs.removeWhere((t) => t is! CanvasCollectibleTab);
+    tabs.add(detailTab);
+    activeTabId = detailTab.id;
     _detailViewVisible = true;
     notifyListeners();
   }

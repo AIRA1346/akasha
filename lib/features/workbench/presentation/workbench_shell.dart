@@ -45,6 +45,8 @@ class WorkbenchShell extends StatefulWidget {
     this.onClearPendingEntityLink,
     this.onRecordOpenWork,
     this.onRecordOpenEntity,
+    this.onCanvasOpenWork,
+    this.onCanvasOpenEntity,
     required this.vaultPath,
   });
 
@@ -81,6 +83,8 @@ class WorkbenchShell extends StatefulWidget {
   final VoidCallback? onClearPendingEntityLink;
   final void Function(AkashaItem item)? onRecordOpenWork;
   final Future<void> Function(UserCatalogEntity entity)? onRecordOpenEntity;
+  final void Function(AkashaItem item)? onCanvasOpenWork;
+  final Future<bool> Function(String entityId)? onCanvasOpenEntity;
 
   @override
   State<WorkbenchShell> createState() => _WorkbenchShellState();
@@ -243,6 +247,8 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
               title: title,
               localItems: widget.vaultItems,
               onClose: () => _handleCloseTab(active.id),
+              onOpenWork: widget.onCanvasOpenWork,
+              onOpenEntity: widget.onCanvasOpenEntity,
             ),
         };
       },

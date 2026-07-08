@@ -16,6 +16,21 @@ mixin HomeShellControllerWorkbenchMixin on HomeShellControllerBase {
     rebuild();
   }
 
+  void openWorkFromCanvas(AkashaItem item) {
+    workbenchCoord.openWorkFromCanvas(item);
+    recentExplore.store.recordWork(item.workId);
+    rebuild();
+  }
+
+  Future<bool> openEntityFromCanvas(String entityId) async {
+    final opened = await workbenchCoord.openEntityFromCanvas(entityId);
+    if (opened) {
+      await recentExplore.store.recordEntity(entityId);
+    }
+    rebuild();
+    return opened;
+  }
+
   Future<void> openItemDetail(AkashaItem item) async {
     if (item is EntityItem) {
       final entity = userCatalog.getById(item.entityId) ??

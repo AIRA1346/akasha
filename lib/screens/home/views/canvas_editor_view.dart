@@ -27,6 +27,8 @@ class CanvasEditorWorkspace extends StatefulWidget {
     required this.title,
     required this.localItems,
     required this.onClose,
+    this.onOpenWork,
+    this.onOpenEntity,
   });
 
   final String vaultPath;
@@ -34,6 +36,8 @@ class CanvasEditorWorkspace extends StatefulWidget {
   final String title;
   final List<AkashaItem> localItems;
   final VoidCallback onClose;
+  final void Function(AkashaItem item)? onOpenWork;
+  final Future<bool> Function(String entityId)? onOpenEntity;
 
   @override
   State<CanvasEditorWorkspace> createState() => _CanvasEditorWorkspaceState();
@@ -1047,6 +1051,53 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
     );
   }
 
+  void _showArchiveNodeMissingSnackBar() {
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('아카이브에서 해당 항목을 찾을 수 없습니다.'),
+        duration: Duration(seconds: 2),
+      ),
+    );
+  }
+
+  Future<void> _handleNodeDoubleTap(CanvasNode node) async {
+    if (_interactionMode != CanvasInteractionMode.none) return;
+
+    if (node.kind == 'work') {
+      final workId = node.workId;
+      if (workId == null || workId.isEmpty) {
+        _showArchiveNodeMissingSnackBar();
+        return;
+      }
+      AkashaItem? work;
+      for (final item in widget.localItems) {
+        if (item.workId == workId) {
+          work = item;
+          break;
+        }
+      }
+      if (work == null) {
+        _showArchiveNodeMissingSnackBar();
+        return;
+      }
+      widget.onOpenWork?.call(work);
+      return;
+    }
+
+    if (node.kind == 'entity') {
+      final entityId = node.entityId;
+      if (entityId == null || entityId.isEmpty) {
+        _showArchiveNodeMissingSnackBar();
+        return;
+      }
+      final opened = await widget.onOpenEntity?.call(entityId) ?? false;
+      if (!opened && mounted) {
+        _showArchiveNodeMissingSnackBar();
+      }
+    }
+  }
+
   Widget _buildNodeWidget(CanvasNode node, AkashaPalette palette) {
     final bool isSelected = _selectedSourceNodeId == node.nodeId;
     final bool isConnectingMode = _interactionMode != CanvasInteractionMode.none;
@@ -1056,6 +1107,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
       top: CanvasEditorViewportConfig.workspaceOrigin + node.y,
       child: GestureDetector(
         onTap: isConnectingMode ? () => _handleNodeTap(node) : null,
+        onDoubleTap: isConnectingMode ? null : () => _handleNodeDoubleTap(node),
         onPanStart: (details) {
           if (isConnectingMode) return;
           final RenderBox renderBox = context.findRenderObject() as RenderBox;

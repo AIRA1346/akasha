@@ -128,6 +128,8 @@ Widget _homeShellScaffoldBody(
     onToggleWorkStatus: controller.toggleWorkStatus,
     onToggleMyStatus: controller.toggleMyStatus,
     onOpenBrowseItem: controller.openBrowseItem,
+    onOpenWorkFromCanvas: controller.openWorkFromCanvas,
+    onOpenEntityFromCanvas: controller.openEntityFromCanvas,
     onOpenItemDetail: controller.openItemDetail,
     onOpenEntityDetail: controller.openEntity,
     onOpenRecentExplore: controller.openRecentExploreItem,

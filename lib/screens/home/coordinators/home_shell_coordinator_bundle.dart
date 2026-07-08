@@ -86,6 +86,7 @@ class HomeShellCoordinatorBundle {
     final workbenchCoord = HomeWorkbenchCoordinator(
       workbench: workbench,
       vault: vault.vault,
+      userCatalog: userCatalog,
       isMounted: () => host.mounted,
       rebuild: rebuild,
       getItems: () => vault.items,

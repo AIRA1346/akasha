@@ -105,6 +105,8 @@ class HomeShellBody extends StatelessWidget {
   final void Function(UserCatalogEntity entity) onOpenEntityDetail;
   final void Function(AkashaItem item) onOpenRecentExplore;
   final Future<void> Function(UserCatalogEntity entity) onOpenEntity;
+  final void Function(AkashaItem item)? onOpenWorkFromCanvas;
+  final Future<bool> Function(String entityId)? onOpenEntityFromCanvas;
   final Future<void> Function(AkashaItem saved, {bool silent})
   onWorkbenchWorkSaved;
   final Future<void> Function(String tabId, AkashaItem item)
@@ -252,6 +254,8 @@ class HomeShellBody extends StatelessWidget {
     required this.onOpenEntityDetail,
     required this.onOpenRecentExplore,
     required this.onOpenEntity,
+    this.onOpenWorkFromCanvas,
+    this.onOpenEntityFromCanvas,
     this.onOpenCanvas,
     required this.onWorkbenchWorkSaved,
     required this.onWorkbenchWorkDeleted,
@@ -436,6 +440,8 @@ class HomeShellBody extends StatelessWidget {
                   onPreviewEntity: onPreviewEntity,
                   onOpenBrowseItem: onOpenBrowseItem,
                   onOpenEntity: onOpenEntity,
+                  onOpenWorkFromCanvas: onOpenWorkFromCanvas,
+                  onOpenEntityFromCanvas: onOpenEntityFromCanvas,
                   onWorkbenchWorkSaved: onWorkbenchWorkSaved,
                   onWorkbenchWorkDeleted: onWorkbenchWorkDeleted,
                   onWorkbenchEntitySaved: onWorkbenchEntitySaved,
