@@ -2245,4 +2245,53 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get filterLabelMyStatus => 'My Status';
+
+  @override
+  String get workInfoEditTitle => 'Edit Work Info';
+
+  @override
+  String get archiveCompletionTitle => 'Record Completeness';
+
+  @override
+  String get labelMetadata => 'Metadata';
+
+  @override
+  String get previewNoTags => 'No tags set';
+
+  @override
+  String get helpMemoEditInBody => 'Memos · Edit in body';
+
+  @override
+  String get helpMemoWriteInBody =>
+      'Write detailed records in the body section on the right';
+
+  @override
+  String get slotCast => 'Cast';
+
+  @override
+  String get slotGallery => 'Gallery';
+
+  @override
+  String get slotSynopsis => 'Synopsis';
+
+  @override
+  String get slotQuotes => 'Moments';
+
+  @override
+  String get slotMemo => 'Memos';
+
+  @override
+  String get toolbarTemplates => 'Templates';
+
+  @override
+  String get toolbarExportHtml => 'Export HTML';
+
+  @override
+  String get toolbarDialogTemplateTitle => 'Record Templates';
+
+  @override
+  String get actionReset => 'Default';
+
+  @override
+  String get actionDeleteMd => 'Delete md';
 }

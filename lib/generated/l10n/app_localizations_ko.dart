@@ -2196,4 +2196,52 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get filterLabelMyStatus => '나의 상태';
+
+  @override
+  String get workInfoEditTitle => '작품 정보 편집';
+
+  @override
+  String get archiveCompletionTitle => '기록 완성도';
+
+  @override
+  String get labelMetadata => '메타데이터';
+
+  @override
+  String get previewNoTags => '설정된 태그가 없습니다';
+
+  @override
+  String get helpMemoEditInBody => '메모 · 본문에서 편집';
+
+  @override
+  String get helpMemoWriteInBody => '상세 기록은 우측 기록 본문에서 작성하세요';
+
+  @override
+  String get slotCast => '출연';
+
+  @override
+  String get slotGallery => '갤러리';
+
+  @override
+  String get slotSynopsis => '시놉시스';
+
+  @override
+  String get slotQuotes => '명장면';
+
+  @override
+  String get slotMemo => '감상';
+
+  @override
+  String get toolbarTemplates => '템플릿';
+
+  @override
+  String get toolbarExportHtml => 'HTML 보내기';
+
+  @override
+  String get toolbarDialogTemplateTitle => '기록 템플릿';
+
+  @override
+  String get actionReset => '기본값';
+
+  @override
+  String get actionDeleteMd => 'md 삭제';
 }

@@ -4,6 +4,27 @@ import '../../services/sanctum_archive_completion.dart';
 import '../../theme/akasha_colors.dart';
 import '../../theme/akasha_palette.dart';
 import '../../theme/akasha_typography.dart';
+import '../../utils/app_l10n.dart';
+import '../../generated/l10n/app_localizations.dart';
+
+String _localizedSlotLabel(SanctumCompletionSlot slot, AppLocalizations? l10n) {
+  if (l10n == null) {
+    return switch (slot) {
+      SanctumCompletionSlot.cast => '출연',
+      SanctumCompletionSlot.gallery => '갤러리',
+      SanctumCompletionSlot.synopsis => '시놉시스',
+      SanctumCompletionSlot.quotes => '명장면',
+      SanctumCompletionSlot.memo => '감상',
+    };
+  }
+  return switch (slot) {
+    SanctumCompletionSlot.cast => l10n.slotCast,
+    SanctumCompletionSlot.gallery => l10n.slotGallery,
+    SanctumCompletionSlot.synopsis => l10n.slotSynopsis,
+    SanctumCompletionSlot.quotes => l10n.slotQuotes,
+    SanctumCompletionSlot.memo => l10n.slotMemo,
+  };
+}
 
 /// Sanctum 기록 완성도 — 진행 바 + 슬롯 칩.
 class SanctumArchiveCompletionBar extends StatelessWidget {
@@ -13,6 +34,7 @@ class SanctumArchiveCompletionBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final palette = context.akashaPalette;
     final color = switch (report.percent) {
       >= 80 => AkashaColors.statusSaved,
@@ -28,7 +50,7 @@ class SanctumArchiveCompletionBar extends StatelessWidget {
           Row(
             children: [
               Text(
-                '기록 완성도',
+                l10n?.archiveCompletionTitle ?? '기록 완성도',
                 style: AkashaTypography.caption.copyWith(
                   fontWeight: FontWeight.w600,
                   color: AkashaColors.textSecondary,
@@ -75,6 +97,7 @@ class _SlotChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final filled = criterion.filled;
     final palette = context.akashaPalette;
     return Container(
@@ -98,7 +121,7 @@ class _SlotChip extends StatelessWidget {
           ),
           const SizedBox(width: 4),
           Text(
-            criterion.label,
+            _localizedSlotLabel(criterion.slot, l10n),
             style: TextStyle(
               fontSize: 10,
               color: filled

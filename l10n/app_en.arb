@@ -1247,5 +1247,21 @@
     }
   },
   "filterLabelWorkStatus": "Work Status",
-  "filterLabelMyStatus": "My Status"
+  "filterLabelMyStatus": "My Status",
+  "workInfoEditTitle": "Edit Work Info",
+  "archiveCompletionTitle": "Record Completeness",
+  "labelMetadata": "Metadata",
+  "previewNoTags": "No tags set",
+  "helpMemoEditInBody": "Memos · Edit in body",
+  "helpMemoWriteInBody": "Write detailed records in the body section on the right",
+  "slotCast": "Cast",
+  "slotGallery": "Gallery",
+  "slotSynopsis": "Synopsis",
+  "slotQuotes": "Moments",
+  "slotMemo": "Memos",
+  "toolbarTemplates": "Templates",
+  "toolbarExportHtml": "Export HTML",
+  "toolbarDialogTemplateTitle": "Record Templates",
+  "actionReset": "Default",
+  "actionDeleteMd": "Delete md"
 }

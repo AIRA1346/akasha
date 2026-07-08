@@ -5,6 +5,7 @@ import '../../../../theme/akasha_palette.dart';
 import '../../../../theme/akasha_radius.dart';
 import '../../../../theme/akasha_spacing.dart';
 import '../../../../theme/akasha_typography.dart';
+import '../../../../utils/app_l10n.dart';
 import '../workbench_save_status_hint.dart';
 
 /// Workbench 패널 공통 스타일·위젯 (R14-A).
@@ -162,6 +163,7 @@ class WorkbenchSaveActions extends StatelessWidget {
   }
 
   Widget _buildDense(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final palette = context.akashaPalette;
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -196,13 +198,13 @@ class WorkbenchSaveActions extends StatelessWidget {
                 style: WorkbenchPanelStyles.denseToolbarTextStyle(
                   foregroundColor: palette.accent,
                 ),
-                child: const Text('기본값'),
+                child: Text(l10n?.actionReset ?? '기본값'),
               ),
             if (canDeleteMd && onDeleteArchive != null)
               TextButton.icon(
                 onPressed: isSaving ? null : onDeleteArchive,
                 icon: const Icon(Icons.delete_outline, size: 14),
-                label: const Text('md 삭제'),
+                label: Text(l10n?.actionDeleteMd ?? 'md 삭제'),
                 style: WorkbenchPanelStyles.denseToolbarTextStyle(
                   foregroundColor: Colors.redAccent,
                 ),
@@ -228,6 +230,7 @@ class WorkbenchSaveActions extends StatelessWidget {
   }
 
   Widget _buildStacked(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final palette = context.akashaPalette;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -261,7 +264,7 @@ class WorkbenchSaveActions extends StatelessWidget {
                   style: WorkbenchPanelStyles.compactOutlinedStyle(
                     borderColor: palette.borderSubtle(0.38),
                   ),
-                  child: const Text('기본값'),
+                  child: Text(l10n?.actionReset ?? '기본값'),
                 ),
               ),
               const SizedBox(width: AkashaSpacing.sm),
@@ -277,7 +280,7 @@ class WorkbenchSaveActions extends StatelessWidget {
             child: OutlinedButton.icon(
               onPressed: isSaving ? null : onDeleteArchive,
               icon: const Icon(Icons.delete_outline, size: 14),
-              label: const Text('md 삭제'),
+              label: Text(l10n?.actionDeleteMd ?? 'md 삭제'),
               style: WorkbenchPanelStyles.compactDeleteStyle(),
             ),
           ),

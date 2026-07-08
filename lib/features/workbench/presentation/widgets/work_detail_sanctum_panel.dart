@@ -9,6 +9,7 @@ import '../../../../models/user_catalog_entity.dart';
 import '../../../../theme/akasha_palette.dart';
 import '../../../../widgets/sanctum/sanctum_archive_toolbar.dart';
 import '../../../../widgets/sanctum_page_panel.dart';
+import '../../../../utils/app_l10n.dart';
 import '../widgets/workbench_panel_styles.dart';
 import 'work_sanctum_section_editor.dart';
 
@@ -95,12 +96,13 @@ class WorkDetailSanctumPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     return ColoredBox(
       color: context.akashaPalette.workbenchEditor,
       child: SanctumPagePanel(
         view: pageView,
         onViewChanged: onViewChanged,
-        headerTitle: '작품 정보 편집',
+        headerTitle: l10n?.workInfoEditTitle ?? '작품 정보 편집',
         titleController: titleController,
         onTitleChanged: onTitleChanged,
         sectionLayout: true,

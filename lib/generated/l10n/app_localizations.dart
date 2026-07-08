@@ -4099,6 +4099,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'My Status'**
   String get filterLabelMyStatus;
+
+  /// No description provided for @workInfoEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Work Info'**
+  String get workInfoEditTitle;
+
+  /// No description provided for @archiveCompletionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Record Completeness'**
+  String get archiveCompletionTitle;
+
+  /// No description provided for @labelMetadata.
+  ///
+  /// In en, this message translates to:
+  /// **'Metadata'**
+  String get labelMetadata;
+
+  /// No description provided for @previewNoTags.
+  ///
+  /// In en, this message translates to:
+  /// **'No tags set'**
+  String get previewNoTags;
+
+  /// No description provided for @helpMemoEditInBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Memos · Edit in body'**
+  String get helpMemoEditInBody;
+
+  /// No description provided for @helpMemoWriteInBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Write detailed records in the body section on the right'**
+  String get helpMemoWriteInBody;
+
+  /// No description provided for @slotCast.
+  ///
+  /// In en, this message translates to:
+  /// **'Cast'**
+  String get slotCast;
+
+  /// No description provided for @slotGallery.
+  ///
+  /// In en, this message translates to:
+  /// **'Gallery'**
+  String get slotGallery;
+
+  /// No description provided for @slotSynopsis.
+  ///
+  /// In en, this message translates to:
+  /// **'Synopsis'**
+  String get slotSynopsis;
+
+  /// No description provided for @slotQuotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Moments'**
+  String get slotQuotes;
+
+  /// No description provided for @slotMemo.
+  ///
+  /// In en, this message translates to:
+  /// **'Memos'**
+  String get slotMemo;
+
+  /// No description provided for @toolbarTemplates.
+  ///
+  /// In en, this message translates to:
+  /// **'Templates'**
+  String get toolbarTemplates;
+
+  /// No description provided for @toolbarExportHtml.
+  ///
+  /// In en, this message translates to:
+  /// **'Export HTML'**
+  String get toolbarExportHtml;
+
+  /// No description provided for @toolbarDialogTemplateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Record Templates'**
+  String get toolbarDialogTemplateTitle;
+
+  /// No description provided for @actionReset.
+  ///
+  /// In en, this message translates to:
+  /// **'Default'**
+  String get actionReset;
+
+  /// No description provided for @actionDeleteMd.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete md'**
+  String get actionDeleteMd;
 }
 
 class _AppLocalizationsDelegate

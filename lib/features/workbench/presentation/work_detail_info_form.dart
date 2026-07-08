@@ -178,9 +178,9 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
         ],
 
         WorkbenchPanelStyles.panelDivider(vertical: AkashaSpacing.sm),
-        WorkbenchPanelStyles.sectionLabel('메모'),
+        WorkbenchPanelStyles.sectionLabel(l10n?.tabMemo ?? '메모'),
         const SizedBox(height: AkashaSpacing.sm),
-        _buildQuickMemoField(),
+        _buildQuickMemoField(l10n),
         if (widget.notesSection != null && !widget.summaryLayout) ...[
           const SizedBox(height: AkashaSpacing.md),
           widget.notesSection!,
@@ -192,10 +192,10 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
             isSaving: widget.isSaving,
             isDirty: widget.isDirty,
             lastSavedAt: widget.lastSavedAt,
-            saveLabel: widget.isArchived ? 'md 저장' : 'md 생성',
+            saveLabel: widget.isArchived ? (l10n?.actionSaveMd ?? 'md 저장') : (l10n?.actionCreateMd ?? 'md 생성'),
             onSave: widget.onSaveArchive,
             showAddToLibrary: widget.showAddToLibrary,
-            libraryLabel: widget.isArchived ? '서재에 담기' : '저장하고 서재에 담기',
+            libraryLabel: widget.isArchived ? (l10n?.actionAddToLibrary ?? '서재에 담기') : (l10n?.actionSaveAndAddToLibrary ?? '저장하고 서재에 담기'),
             onAddToLibrary: widget.onAddToLibrary,
             showReset: true,
             onReset: widget.onResetToDefaults,
@@ -215,7 +215,7 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
               tilePadding: EdgeInsets.zero,
               childrenPadding: const EdgeInsets.only(bottom: AkashaSpacing.sm),
               title: Text(
-                '메타데이터',
+                l10n?.labelMetadata ?? '메타데이터',
                 style: AkashaTypography.bodySecondary.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
@@ -238,8 +238,8 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
     final genre = widget.item.category.localizedLabel(l10n);
     final creator = widget.item.creator.isNotEmpty
         ? widget.item.creator
-        : '정보 없음';
-    const studio = '정보 없음';
+        : (l10n?.previewInfoNone ?? '정보 없음');
+    final studio = l10n?.previewInfoNone ?? '정보 없음';
 
     return Table(
       columnWidths: const {0: FixedColumnWidth(64), 1: FlexColumnWidth()},
@@ -271,7 +271,7 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
           ),
         ),
         _buildTableRow(
-          '제작사',
+          l10n?.previewStudio ?? '제작사',
           Text(
             studio,
             style: AkashaTypography.caption.copyWith(
@@ -345,9 +345,10 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
     required String Function(String value) labelFor,
     required ValueChanged<String> onChanged,
   }) {
+    final l10n = lookupAppL10n(context);
     final palette = context.akashaPalette;
     if (options.isEmpty || value.isEmpty) {
-      return Text('정보 없음', style: AkashaTypography.caption);
+      return Text(l10n?.previewInfoNone ?? '정보 없음', style: AkashaTypography.caption);
     }
 
     return DropdownButtonHideUnderline(
@@ -442,8 +443,9 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
   Widget _buildRelatedConceptsEditor() {
     final palette = context.akashaPalette;
     final concepts = widget.draftTags;
+    final l10n = lookupAppL10n(context);
     if (concepts.isEmpty) {
-      return Text('설정된 태그가 없습니다', style: AkashaTypography.caption);
+      return Text(l10n?.previewNoTags ?? '설정된 태그가 없습니다', style: AkashaTypography.caption);
     }
     return Column(
       children: concepts.map((tag) {
@@ -469,7 +471,7 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
     );
   }
 
-  Widget _buildQuickMemoField() {
+  Widget _buildQuickMemoField(dynamic l10n) {
     final palette = context.akashaPalette;
     return InkWell(
       onTap: widget.onFocusSanctum,
@@ -495,8 +497,8 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
             Expanded(
               child: Text(
                 widget.summaryLayout
-                    ? '메모 · 본문에서 편집'
-                    : '상세 기록은 우측 기록 본문에서 작성하세요',
+                    ? (l10n?.helpMemoEditInBody ?? '메모 · 본문에서 편집')
+                    : (l10n?.helpMemoWriteInBody ?? '상세 기록은 우측 기록 본문에서 작성하세요'),
                 style: AkashaTypography.caption,
               ),
             ),

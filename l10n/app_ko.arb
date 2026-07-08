@@ -941,5 +941,21 @@
     }
   },
   "filterLabelWorkStatus": "작품 상태",
-  "filterLabelMyStatus": "나의 상태"
+  "filterLabelMyStatus": "나의 상태",
+  "workInfoEditTitle": "작품 정보 편집",
+  "archiveCompletionTitle": "기록 완성도",
+  "labelMetadata": "메타데이터",
+  "previewNoTags": "설정된 태그가 없습니다",
+  "helpMemoEditInBody": "메모 · 본문에서 편집",
+  "helpMemoWriteInBody": "상세 기록은 우측 기록 본문에서 작성하세요",
+  "slotCast": "출연",
+  "slotGallery": "갤러리",
+  "slotSynopsis": "시놉시스",
+  "slotQuotes": "명장면",
+  "slotMemo": "감상",
+  "toolbarTemplates": "템플릿",
+  "toolbarExportHtml": "HTML 보내기",
+  "toolbarDialogTemplateTitle": "기록 템플릿",
+  "actionReset": "기본값",
+  "actionDeleteMd": "md 삭제"
 }
