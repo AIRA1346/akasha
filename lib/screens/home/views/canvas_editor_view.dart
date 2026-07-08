@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../core/archiving/canvas_record.dart';
 import '../../../core/archiving/relation_vocabulary.dart';
@@ -65,6 +66,9 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   double? _dragStartNodeX;
   double? _dragStartNodeY;
 
+  // Focus node for keyboard shortcuts listener (v0.3-A.3)
+  final FocusNode _focusNode = FocusNode();
+
   @override
   void initState() {
     super.initState();
@@ -78,6 +82,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
       CanvasStore.instance.flushPendingSave(widget.vaultPath, widget.canvasId, _layout!);
     }
     _transformationController.dispose();
+    _focusNode.dispose();
     super.dispose();
   }
 
@@ -590,118 +595,154 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   Widget build(BuildContext context) {
     final palette = context.akashaPalette;
 
-    return Container(
-      color: palette.background,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // Workspace header with close tab and add nodes buttons
-          Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: AkashaSpacing.md,
-              vertical: AkashaSpacing.xs,
-            ),
-            decoration: BoxDecoration(
-              color: palette.sidebar,
-              border: Border(
-                bottom: BorderSide(
-                  color: palette.borderSubtle(0.2),
+    return Focus(
+      autofocus: true,
+      focusNode: _focusNode,
+      onKeyEvent: (node, event) {
+        if (event is KeyDownEvent) {
+          final isCtrl = event.logicalKey == LogicalKeyboardKey.controlLeft ||
+                         event.logicalKey == LogicalKeyboardKey.controlRight ||
+                         HardwareKeyboard.instance.isControlPressed;
+          final isSpace = event.logicalKey == LogicalKeyboardKey.space;
+          if (isCtrl && isSpace) {
+            _fitToContent();
+            return KeyEventResult.handled;
+          }
+        }
+        return KeyEventResult.ignored;
+      },
+      child: Container(
+        color: palette.background,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // Workspace header with close tab and add nodes buttons
+            Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: AkashaSpacing.md,
+                vertical: AkashaSpacing.xs,
+              ),
+              decoration: BoxDecoration(
+                color: palette.sidebar,
+                border: Border(
+                  bottom: BorderSide(
+                    color: palette.borderSubtle(0.2),
+                  ),
                 ),
               ),
-            ),
-            child: Row(
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.close, size: 20),
-                  onPressed: widget.onClose,
-                  tooltip: '탭 닫기',
-                ),
-                const SizedBox(width: AkashaSpacing.xs),
-                Text(
-                  widget.title,
-                  style: AkashaTypography.dashboardPanelTitle,
-                ),
-                const Spacer(),
-                TextButton.icon(
-                  onPressed: _interactionMode == CanvasInteractionMode.none ? _startConnecting : null,
-                  icon: Icon(Icons.hub_outlined, size: 16, color: palette.accent),
-                  label: Text(
-                    '관계 연결',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                      color: palette.accent,
-                    ),
+              child: Row(
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.close, size: 20),
+                    onPressed: widget.onClose,
+                    tooltip: '탭 닫기',
                   ),
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: AkashaSpacing.sm,
-                      vertical: AkashaSpacing.xs,
-                    ),
+                  const SizedBox(width: AkashaSpacing.xs),
+                  Text(
+                    widget.title,
+                    style: AkashaTypography.dashboardPanelTitle,
                   ),
-                ),
-                const SizedBox(width: AkashaSpacing.xs),
-                TextButton.icon(
-                  onPressed: _interactionMode == CanvasInteractionMode.none ? _addArchiveNode : null,
-                  icon: const Icon(Icons.archive_outlined, size: 16, color: Colors.tealAccent),
-                  label: const Text(
-                    '아카이브 추가',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.tealAccent,
-                    ),
-                  ),
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: AkashaSpacing.sm,
-                      vertical: AkashaSpacing.xs,
-                    ),
-                  ),
-                ),
-                const SizedBox(width: AkashaSpacing.xs),
-                TextButton.icon(
-                  onPressed: _interactionMode == CanvasInteractionMode.none ? _addTextNode : null,
-                  icon: Icon(Icons.add_comment_outlined, size: 16, color: palette.accent),
-                  label: Text(
-                    '메모 추가',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                      color: palette.accent,
-                    ),
-                  ),
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: AkashaSpacing.sm,
-                      vertical: AkashaSpacing.xs,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          _buildInteractionBanner(palette),
-          Expanded(
-            child: _loading
-                ? const Center(child: CircularProgressIndicator(strokeWidth: 2))
-                : _layout == null
-                    ? const Center(child: Text('캔버스 데이터를 불러올 수 없습니다.'))
-                    : InteractiveViewer(
-                        transformationController: _transformationController,
-                        constrained: false,
-                        boundaryMargin: const EdgeInsets.all(_CanvasConfig.boundaryMargin),
-                        minScale: _CanvasConfig.minScale,
-                        maxScale: _CanvasConfig.maxScale,
-                        onInteractionEnd: (details) => _handleViewportChange(),
-                        child: SizedBox(
-                          width: _CanvasConfig.workspaceSize,
-                          height: _CanvasConfig.workspaceSize,
-                          child: uiStack(palette),
-                        ),
+                  const Spacer(),
+                  TextButton.icon(
+                    onPressed: _fitToContent,
+                    icon: const Icon(Icons.fullscreen, size: 16, color: Colors.amberAccent),
+                    label: const Text(
+                      '전체 노드 보기',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.amberAccent,
                       ),
-          ),
-        ],
+                    ),
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AkashaSpacing.sm,
+                        vertical: AkashaSpacing.xs,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: AkashaSpacing.xs),
+                  TextButton.icon(
+                    onPressed: _interactionMode == CanvasInteractionMode.none ? _startConnecting : null,
+                    icon: Icon(Icons.hub_outlined, size: 16, color: palette.accent),
+                    label: Text(
+                      '관계 연결',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: palette.accent,
+                      ),
+                    ),
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AkashaSpacing.sm,
+                        vertical: AkashaSpacing.xs,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: AkashaSpacing.xs),
+                  TextButton.icon(
+                    onPressed: _interactionMode == CanvasInteractionMode.none ? _addArchiveNode : null,
+                    icon: const Icon(Icons.archive_outlined, size: 16, color: Colors.tealAccent),
+                    label: const Text(
+                      '아카이브 추가',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.tealAccent,
+                      ),
+                    ),
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AkashaSpacing.sm,
+                        vertical: AkashaSpacing.xs,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: AkashaSpacing.xs),
+                  TextButton.icon(
+                    onPressed: _interactionMode == CanvasInteractionMode.none ? _addTextNode : null,
+                    icon: Icon(Icons.add_comment_outlined, size: 16, color: palette.accent),
+                    label: Text(
+                      '메모 추가',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: palette.accent,
+                      ),
+                    ),
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AkashaSpacing.sm,
+                        vertical: AkashaSpacing.xs,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            _buildInteractionBanner(palette),
+            Expanded(
+              child: _loading
+                  ? const Center(child: CircularProgressIndicator(strokeWidth: 2))
+                  : _layout == null
+                      ? const Center(child: Text('캔버스 데이터를 불러올 수 없습니다.'))
+                      : InteractiveViewer(
+                          transformationController: _transformationController,
+                          constrained: false,
+                          boundaryMargin: const EdgeInsets.all(_CanvasConfig.boundaryMargin),
+                          minScale: _CanvasConfig.minScale,
+                          maxScale: _CanvasConfig.maxScale,
+                          onInteractionEnd: (details) => _handleViewportChange(),
+                          child: SizedBox(
+                            width: _CanvasConfig.workspaceSize,
+                            height: _CanvasConfig.workspaceSize,
+                            child: uiStack(palette),
+                          ),
+                        ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -742,6 +783,101 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
       });
       CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
     }
+  }
+
+  void _fitToContent() {
+    if (_layout == null || !mounted) return;
+
+    final nodes = _layout!.nodes;
+    final size = MediaQuery.of(context).size;
+    const double padding = 80.0;
+
+    if (nodes.isEmpty) {
+      // 노드가 없으면: workspaceOrigin 중앙으로 이동
+      final double targetX = -(_CanvasConfig.workspaceOrigin - size.width / 2);
+      final double targetY = -(_CanvasConfig.workspaceOrigin - size.height / 2);
+      final double targetZoom = 1.0;
+
+      setState(() {
+        _layout!.viewport = CanvasViewport(x: targetX, y: targetY, zoom: targetZoom);
+      });
+
+      final matrix = Matrix4.translationValues(targetX, targetY, 0.0)
+        ..multiply(Matrix4.diagonal3Values(targetZoom, targetZoom, 1.0));
+      _transformationController.value = matrix;
+
+      CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
+      return;
+    }
+
+    double minX = double.infinity;
+    double minY = double.infinity;
+    double maxX = -double.infinity;
+    double maxY = -double.infinity;
+
+    for (final node in nodes) {
+      final double w = node.width ?? (node.kind == 'text' ? 250.0 : 260.0);
+      final double h = node.height ?? (node.kind == 'text' ? 100.0 : 90.0);
+
+      if (node.x < minX) minX = node.x;
+      if (node.y < minY) minY = node.y;
+      if (node.x + w > maxX) maxX = node.x + w;
+      if (node.y + h > maxY) maxY = node.y + h;
+    }
+
+    final double absMinX = _CanvasConfig.workspaceOrigin + minX;
+    final double absMinY = _CanvasConfig.workspaceOrigin + minY;
+    final double absMaxX = _CanvasConfig.workspaceOrigin + maxX;
+    final double absMaxY = _CanvasConfig.workspaceOrigin + maxY;
+
+    if (nodes.length == 1) {
+      // 노드가 1개면: 해당 노드를 화면 중앙에 배치
+      final double nodeW = nodes.first.width ?? (nodes.first.kind == 'text' ? 250.0 : 260.0);
+      final double nodeH = nodes.first.height ?? (nodes.first.kind == 'text' ? 100.0 : 90.0);
+
+      final double targetCenterAbsX = absMinX + nodeW / 2;
+      final double targetCenterAbsY = absMinY + nodeH / 2;
+
+      final double targetX = -(targetCenterAbsX - size.width / 2);
+      final double targetY = -(targetCenterAbsY - size.height / 2);
+      final double targetZoom = 1.0;
+
+      setState(() {
+        _layout!.viewport = CanvasViewport(x: targetX, y: targetY, zoom: targetZoom);
+      });
+
+      final matrix = Matrix4.translationValues(targetX, targetY, 0.0)
+        ..multiply(Matrix4.diagonal3Values(targetZoom, targetZoom, 1.0));
+      _transformationController.value = matrix;
+
+      CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
+      return;
+    }
+
+    final double contentWidth = absMaxX - absMinX;
+    final double contentHeight = absMaxY - absMinY;
+
+    final double availWidth = math.max(100.0, size.width - padding * 2);
+    final double availHeight = math.max(100.0, size.height - padding * 2);
+
+    double targetZoom = math.min(availWidth / contentWidth, availHeight / contentHeight);
+    targetZoom = targetZoom.clamp(_CanvasConfig.minScale, _CanvasConfig.maxScale);
+
+    final double contentCenterAbsX = absMinX + contentWidth / 2;
+    final double contentCenterAbsY = absMinY + contentHeight / 2;
+
+    final double targetX = size.width / 2 - contentCenterAbsX * targetZoom;
+    final double targetY = size.height / 2 - contentCenterAbsY * targetZoom;
+
+    setState(() {
+      _layout!.viewport = CanvasViewport(x: targetX, y: targetY, zoom: targetZoom);
+    });
+
+    final matrix = Matrix4.translationValues(targetX, targetY, 0.0)
+      ..multiply(Matrix4.diagonal3Values(targetZoom, targetZoom, 1.0));
+    _transformationController.value = matrix;
+
+    CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
   }
 
   Widget _buildEdgeLabelWidget(CanvasEdge edge, AkashaPalette palette) {
