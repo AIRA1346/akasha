@@ -90,13 +90,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
     _transformationController.removeListener(_handleViewportChange);
     if (_layout != null) {
       _applyViewportFromController();
-      // dispose cannot await; primary path is flushActiveCanvasViewport / navigation.
-      CanvasStore.instance.flushPendingSave(
-        widget.vaultPath,
-        widget.canvasId,
-        _layout!,
-        force: true,
-      );
+      _syncLayoutToStore();
     }
     _transformationController.dispose();
     super.dispose();
@@ -120,12 +114,11 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
 
       // Restore viewport (Condition 6: translate then scale)
       final vp = data.layout.viewport;
-      final matrix = Matrix4.translationValues(vp.x, vp.y, 0.0)
-        ..multiply(Matrix4.diagonal3Values(vp.zoom, vp.zoom, 1.0));
       _suppressViewportListener = true;
-      _transformationController.value = matrix;
+      _transformationController.value = canvasMatrixFromViewport(vp);
       _suppressViewportListener = false;
 
+      _syncLayoutToStore();
       widget.onBindFlushViewport?.call(_persistViewportBeforeNavigation);
     } else {
       setState(() => _loading = false);
@@ -771,6 +764,15 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
     );
   }
 
+  void _syncLayoutToStore() {
+    if (_layout == null) return;
+    CanvasStore.instance.registerLayoutSession(
+      widget.vaultPath,
+      widget.canvasId,
+      _layout!,
+    );
+  }
+
   /// Syncs [_layout.viewport] from the current transformation matrix.
   /// Returns true when the viewport value changed.
   bool _applyViewportFromController() {
@@ -782,6 +784,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
     if (delta == null) return false;
     _layout!.viewport = delta;
     _layout!.updatedAt = DateTime.now().toUtc();
+    _syncLayoutToStore();
     return true;
   }
 
@@ -805,10 +808,14 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
 
   void _fitToContent() {
     if (_layout == null || !mounted) return;
+    _suppressViewportListener = true;
     _transformationController.value = computeCanvasFitToContentMatrix(
       nodes: _layout!.nodes,
       viewportSize: MediaQuery.sizeOf(context),
     );
+    _suppressViewportListener = false;
+    _applyViewportFromController();
+    CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
   }
 
   Widget _buildEdgeLabelWidget(CanvasEdge edge, AkashaPalette palette) {

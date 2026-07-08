@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/ports/vault_port.dart';
@@ -76,7 +78,11 @@ class HomeWorkbenchCoordinator {
 
   void openWorkFromCanvas(AkashaItem item) {
     final resolved = resolveItemForOpen(item);
-    workbench.openDetailBesideCanvas(
+    unawaited(_openWorkFromCanvas(resolved));
+  }
+
+  Future<void> _openWorkFromCanvas(AkashaItem resolved) async {
+    await workbench.openDetailBesideCanvas(
       WorkCollectibleTab(
         id: WorkCollectibleTab.idFor(resolved),
         item: resolved,
@@ -114,7 +120,7 @@ class HomeWorkbenchCoordinator {
     }
 
     if (!isMounted()) return false;
-    workbench.openDetailBesideCanvas(
+    await workbench.openDetailBesideCanvas(
       EntityCollectibleTab(entity: entity, journal: entry),
     );
     rebuild();

@@ -18,6 +18,9 @@ class CanvasStore {
 
   final Map<String, Timer> _saveTimers = {};
 
+  /// In-memory layout sessions keyed by canvasId — survives widget dispose.
+  final Map<String, _CanvasLayoutSession> _layoutSessions = {};
+
   /// Generates a canvas stable ID matching "cv_u_{8-char}" format.
   static String generateCanvasId() {
     final rand = Random();
@@ -141,6 +144,47 @@ class CanvasStore {
     }
   }
 
+  /// Registers the latest in-memory layout for [canvasId] (editor or dispose path).
+  void registerLayoutSession(
+    String vaultPath,
+    String canvasId,
+    CanvasLayout layout,
+  ) {
+    if (vaultPath.isEmpty || canvasId.isEmpty) return;
+    _layoutSessions[canvasId] = _CanvasLayoutSession(
+      vaultPath: vaultPath,
+      layout: layout,
+    );
+  }
+
+  void unregisterLayoutSession(String canvasId) {
+    _layoutSessions.remove(canvasId);
+  }
+
+  void unregisterLayoutSessions(Iterable<String> canvasIds) {
+    for (final id in canvasIds) {
+      unregisterLayoutSession(id);
+    }
+  }
+
+  /// Persists a registered layout to disk (works even when the editor widget is disposed).
+  Future<void> persistRegisteredLayout(String canvasId) async {
+    final session = _layoutSessions[canvasId];
+    if (session == null) return;
+    await flushPendingSave(
+      session.vaultPath,
+      canvasId,
+      session.layout,
+      force: true,
+    );
+  }
+
+  Future<void> persistRegisteredLayouts(Iterable<String> canvasIds) async {
+    for (final id in canvasIds) {
+      await persistRegisteredLayout(id);
+    }
+  }
+
   /// Debounces the saving of layout to layout.json.
   void saveLayoutDebounced(
     String vaultPath,
@@ -235,4 +279,14 @@ class CanvasStore {
       rethrow;
     }
   }
+}
+
+class _CanvasLayoutSession {
+  const _CanvasLayoutSession({
+    required this.vaultPath,
+    required this.layout,
+  });
+
+  final String vaultPath;
+  final CanvasLayout layout;
 }

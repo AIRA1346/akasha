@@ -1,11 +1,11 @@
 import 'dart:io';
+import 'package:akasha/core/archiving/canvas_record.dart';
+import 'package:akasha/core/archiving/relation_vocabulary.dart';
+import 'package:akasha/screens/home/views/canvas_viewport_controls.dart';
+import 'package:akasha/services/canvas_store.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:yaml/yaml.dart';
-
-import 'package:akasha/core/archiving/canvas_record.dart';
-import 'package:akasha/core/archiving/relation_vocabulary.dart';
-import 'package:akasha/services/canvas_store.dart';
 
 void main() {
   group('CanvasRecord & CanvasLayout Serialization tests', () {
@@ -169,6 +169,29 @@ This is a relations map for Re:Zero.
       expect(reloaded.layout.nodes[1].nodeId, equals('n_test'));
       expect(reloaded.layout.nodes[1].x, equals(50.0));
       expect(reloaded.layout.nodes[1].y, equals(60.0));
+    });
+
+    test('persistRegisteredLayout writes viewport after editor session unregistered', () async {
+      final store = CanvasStore.instance;
+      final canvasData = await store.createCanvas(
+        vaultPath: tempVault.path,
+        title: 'Session Persist Test',
+        slug: 'session-persist',
+        tags: const [],
+      );
+      final canvasId = canvasData.record.canvasId;
+      final loaded = await store.loadCanvas(tempVault.path, canvasId);
+      expect(loaded, isNotNull);
+
+      loaded!.layout.viewport = CanvasViewport(x: 300.0, y: -120.0, zoom: 0.75);
+      store.registerLayoutSession(tempVault.path, canvasId, loaded.layout);
+
+      await store.persistRegisteredLayout(canvasId);
+
+      final reloaded = await store.loadCanvas(tempVault.path, canvasId);
+      expect(reloaded!.layout.viewport.x, equals(300.0));
+      expect(reloaded.layout.viewport.y, equals(-120.0));
+      expect(reloaded.layout.viewport.zoom, equals(0.75));
     });
 
     test('flushPendingSave force writes viewport even without pending debounce', () async {
@@ -444,6 +467,26 @@ This is a relations map for Re:Zero.
       // 4. canvas_only non-editable check
       final nonEditableEdge = layout.edges.firstWhere((e) => e.edgeId == 'e3');
       expect(nonEditableEdge.edgeKind, isNot(equals('canvas_only')));
+    });
+
+    test('CanvasViewport matrix round-trip through decompose and restore', () {
+      final samples = [
+        CanvasViewport(x: -100.5, y: 250.0, zoom: 1.5),
+        CanvasViewport(x: 1200.0, y: -800.0, zoom: 0.5),
+        CanvasViewport(x: 0.0, y: 0.0, zoom: 2.5),
+      ];
+
+      for (final vp in samples) {
+        final matrix = canvasMatrixFromViewport(vp);
+        final restored = canvasViewportDeltaFromMatrix(
+          matrix,
+          CanvasViewport(x: 0, y: 0, zoom: 0),
+        );
+        expect(restored, isNotNull);
+        expect(restored!.x, closeTo(vp.x, 1e-3));
+        expect(restored.y, closeTo(vp.y, 1e-3));
+        expect(restored.zoom, closeTo(vp.zoom, 1e-3));
+      }
     });
 
     test('CanvasViewport serialization and matrix restoration values', () {

@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
+import '../../../services/canvas_store.dart';
 import '../../../services/entity_journal_parser.dart';
 import '../presentation/collectible_tab.dart';
 import 'workbench_layout_prefs.dart';
@@ -82,7 +83,9 @@ class WorkbenchController extends ChangeNotifier {
   }
 
   Future<void> openCanvas(String canvasId, String title) async {
-    await _flushActiveCanvasViewportIfBound();
+    final previousCanvasIds = _openCanvasIds.toList();
+    await _persistOpenCanvasTabs();
+    CanvasStore.instance.unregisterLayoutSessions(previousCanvasIds);
     final id = CanvasCollectibleTab.idFor(canvasId);
     tabs
       ..clear()
@@ -92,10 +95,19 @@ class WorkbenchController extends ChangeNotifier {
     notifyListeners();
   }
 
+  Iterable<String> get _openCanvasIds =>
+      tabs.whereType<CanvasCollectibleTab>().map((t) => t.canvasId);
+
+  /// Syncs live editor matrix (if mounted) then persists every open canvas tab.
+  Future<void> _persistOpenCanvasTabs() async {
+    await _flushActiveCanvasViewportIfBound();
+    await CanvasStore.instance.persistRegisteredLayouts(_openCanvasIds);
+  }
+
   /// Opens a Work/Entity tab beside an active Canvas tab without clearing canvas.
   /// Only applies when [activeTab] is [CanvasCollectibleTab]. Otherwise falls back
   /// to [openWork] / [openEntity].
-  void openDetailBesideCanvas(CollectibleTab detailTab) {
+  Future<void> openDetailBesideCanvas(CollectibleTab detailTab) async {
     if (activeTab is! CanvasCollectibleTab ||
         !tabs.any((t) => t is CanvasCollectibleTab)) {
       if (detailTab is WorkCollectibleTab) {
@@ -107,10 +119,12 @@ class WorkbenchController extends ChangeNotifier {
     }
 
     if (tabs.any((t) => t.id == detailTab.id)) {
-      selectTab(detailTab.id);
+      await _persistOpenCanvasTabs();
+      await selectTab(detailTab.id);
       return;
     }
 
+    await _persistOpenCanvasTabs();
     tabs.removeWhere((t) => t is! CanvasCollectibleTab);
     tabs.add(detailTab);
     activeTabId = detailTab.id;
@@ -120,13 +134,15 @@ class WorkbenchController extends ChangeNotifier {
 
   /// browse(그리드·홈)로 돌아갈 때 상세 세션을 닫습니다.
   Future<void> showBrowse() async {
-    await _flushActiveCanvasViewportIfBound();
+    await _persistOpenCanvasTabs();
     if (!_detailViewVisible && tabs.isEmpty) return;
+    final canvasIds = _openCanvasIds.toList();
     _detailViewVisible = false;
     tabs.clear();
     activeTabId = null;
     saveActiveTab = null;
     flushActiveCanvasViewport = null;
+    CanvasStore.instance.unregisterLayoutSessions(canvasIds);
     notifyListeners();
   }
 
@@ -136,21 +152,29 @@ class WorkbenchController extends ChangeNotifier {
     await flush();
   }
 
-  void selectTab(String id) {
-    if (tabs.any((t) => t.id == id)) {
-      activeTabId = id;
-      _detailViewVisible = true;
-      notifyListeners();
+  Future<void> selectTab(String id) async {
+    if (!tabs.any((t) => t.id == id)) return;
+    if (activeTab is CanvasCollectibleTab && activeTabId != id) {
+      await _persistOpenCanvasTabs();
     }
+    activeTabId = id;
+    _detailViewVisible = true;
+    notifyListeners();
   }
 
   Future<void> closeTab(String id) async {
-    final closingActiveCanvas =
-        activeTabId == id && tabs.any((t) => t.id == id && t is CanvasCollectibleTab);
-    if (closingActiveCanvas) {
-      await _flushActiveCanvasViewportIfBound();
+    String? closingCanvasId;
+    for (final tab in tabs) {
+      if (tab.id == id && tab is CanvasCollectibleTab) {
+        closingCanvasId = tab.canvasId;
+        break;
+      }
     }
+    await _persistOpenCanvasTabs();
     tabs.removeWhere((t) => t.id == id);
+    if (closingCanvasId != null) {
+      CanvasStore.instance.unregisterLayoutSession(closingCanvasId);
+    }
     if (activeTabId == id) {
       activeTabId = tabs.isEmpty ? null : tabs.last.id;
       if (tabs.isEmpty) {

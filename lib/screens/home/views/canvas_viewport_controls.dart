@@ -19,6 +19,15 @@ double canvasDefaultNodeWidth(CanvasNode node) =>
 double canvasDefaultNodeHeight(CanvasNode node) =>
     node.height ?? (node.kind == 'text' ? 100.0 : 90.0);
 
+Matrix4 _canvasTransformMatrix({required double x, required double y, required double zoom}) {
+  final matrix = Matrix4.identity();
+  matrix.setEntry(0, 0, zoom);
+  matrix.setEntry(1, 1, zoom);
+  matrix.setEntry(0, 3, x);
+  matrix.setEntry(1, 3, y);
+  return matrix;
+}
+
 /// Computes a fit-to-content [Matrix4] for [nodes] within [viewportSize].
 /// Does not mutate layout state.
 Matrix4 computeCanvasFitToContentMatrix({
@@ -29,9 +38,7 @@ Matrix4 computeCanvasFitToContentMatrix({
   if (nodes.isEmpty) {
     final targetX = -(CanvasEditorViewportConfig.workspaceOrigin - viewportSize.width / 2);
     final targetY = -(CanvasEditorViewportConfig.workspaceOrigin - viewportSize.height / 2);
-    const targetZoom = 1.0;
-    return Matrix4.translationValues(targetX, targetY, 0.0)
-      ..multiply(Matrix4.diagonal3Values(targetZoom, targetZoom, 1.0));
+    return _canvasTransformMatrix(x: targetX, y: targetY, zoom: 1.0);
   }
 
   double minX = double.infinity;
@@ -64,10 +71,7 @@ Matrix4 computeCanvasFitToContentMatrix({
 
     final targetX = -(targetCenterAbsX - viewportSize.width / 2);
     final targetY = -(targetCenterAbsY - viewportSize.height / 2);
-    const targetZoom = 1.0;
-
-    return Matrix4.translationValues(targetX, targetY, 0.0)
-      ..multiply(Matrix4.diagonal3Values(targetZoom, targetZoom, 1.0));
+    return _canvasTransformMatrix(x: targetX, y: targetY, zoom: 1.0);
   }
 
   final contentWidth = absMaxX - absMinX;
@@ -88,18 +92,32 @@ Matrix4 computeCanvasFitToContentMatrix({
   final targetX = viewportSize.width / 2 - contentCenterAbsX * targetZoom;
   final targetY = viewportSize.height / 2 - contentCenterAbsY * targetZoom;
 
-  return Matrix4.translationValues(targetX, targetY, 0.0)
-    ..multiply(Matrix4.diagonal3Values(targetZoom, targetZoom, 1.0));
+  return _canvasTransformMatrix(x: targetX, y: targetY, zoom: targetZoom);
+}
+
+double _matrixUniformScale(Matrix4 matrix) {
+  return math.sqrt(matrix.storage[0] * matrix.storage[0] + matrix.storage[1] * matrix.storage[1]);
+}
+
+/// Builds the InteractiveViewer matrix for [viewport] (translate then scale).
+Matrix4 canvasMatrixFromViewport(CanvasViewport viewport) {
+  return _canvasTransformMatrix(
+    x: viewport.x,
+    y: viewport.y,
+    zoom: viewport.zoom,
+  );
 }
 
 /// Returns an updated [CanvasViewport] when [matrix] differs from [current].
 CanvasViewport? canvasViewportDeltaFromMatrix(Matrix4 matrix, CanvasViewport current) {
-  final zoom = matrix.getMaxScaleOnAxis();
-  final translation = matrix.getTranslation();
-  final x = translation.x;
-  final y = translation.y;
+  final zoom = _matrixUniformScale(matrix);
+  final x = matrix.storage[12];
+  final y = matrix.storage[13];
 
-  if (current.x != x || current.y != y || current.zoom != zoom) {
+  const epsilon = 1e-4;
+  if ((current.x - x).abs() > epsilon ||
+      (current.y - y).abs() > epsilon ||
+      (current.zoom - zoom).abs() > epsilon) {
     return CanvasViewport(x: x, y: y, zoom: zoom);
   }
   return null;

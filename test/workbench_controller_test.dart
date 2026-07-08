@@ -1,8 +1,10 @@
+import 'package:akasha/core/archiving/canvas_record.dart';
 import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/features/workbench/data/workbench_controller.dart';
 import 'package:akasha/features/workbench/presentation/collectible_tab.dart';
 import 'package:akasha/models/enums.dart';
+import 'package:akasha/services/canvas_store.dart';
 import 'package:akasha/utils/helpers.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -72,6 +74,31 @@ void main() {
     expect(ctrl.tabs.length, 1);
   });
 
+  test('showBrowse persists registered canvas session when editor is disposed', () async {
+    final ctrl = WorkbenchController();
+    await ctrl.openCanvas('cv_u_test01', 'Test Map');
+
+    final layout = CanvasLayout(
+      layoutSchemaVersion: 1,
+      canvasId: 'cv_u_test01',
+      updatedAt: DateTime.now().toUtc(),
+      source: 'user',
+      layoutMode: 'freeform',
+      viewport: CanvasViewport(x: 42.0, y: -17.0, zoom: 1.25),
+      nodes: [],
+      edges: [],
+    );
+    CanvasStore.instance.registerLayoutSession(
+      r'C:\vault\canvases\cv_u_test01',
+      'cv_u_test01',
+      layout,
+    );
+
+    await ctrl.showBrowse();
+
+    expect(ctrl.tabs, isEmpty);
+  });
+
   test('showBrowse awaits active canvas viewport flush before clearing tabs', () async {
     final ctrl = WorkbenchController();
     var flushCalls = 0;
@@ -113,7 +140,7 @@ void main() {
     );
 
     await ctrl.openCanvas('cv_u_test01', 'Test Map');
-    ctrl.openDetailBesideCanvas(
+    await ctrl.openDetailBesideCanvas(
       WorkCollectibleTab(id: WorkCollectibleTab.idFor(work), item: work),
     );
 
@@ -133,11 +160,11 @@ void main() {
     final tabId = WorkCollectibleTab.idFor(work);
 
     await ctrl.openCanvas('cv_u_test01', 'Test Map');
-    ctrl.openDetailBesideCanvas(
+    await ctrl.openDetailBesideCanvas(
       WorkCollectibleTab(id: tabId, item: work),
     );
-    ctrl.selectTab(CanvasCollectibleTab.idFor('cv_u_test01'));
-    ctrl.openDetailBesideCanvas(
+    await ctrl.selectTab(CanvasCollectibleTab.idFor('cv_u_test01'));
+    await ctrl.openDetailBesideCanvas(
       WorkCollectibleTab(id: tabId, item: work),
     );
 
@@ -159,11 +186,11 @@ void main() {
     );
 
     await ctrl.openCanvas('cv_u_test01', 'Test Map');
-    ctrl.openDetailBesideCanvas(
+    await ctrl.openDetailBesideCanvas(
       WorkCollectibleTab(id: WorkCollectibleTab.idFor(workA), item: workA),
     );
-    ctrl.selectTab(CanvasCollectibleTab.idFor('cv_u_test01'));
-    ctrl.openDetailBesideCanvas(
+    await ctrl.selectTab(CanvasCollectibleTab.idFor('cv_u_test01'));
+    await ctrl.openDetailBesideCanvas(
       WorkCollectibleTab(id: WorkCollectibleTab.idFor(workB), item: workB),
     );
 
@@ -172,7 +199,7 @@ void main() {
     expect(ctrl.activeWorkTab!.item.title, 'Work B');
   });
 
-  test('openDetailBesideCanvas falls back to openWork when canvas is not active', () {
+  test('openDetailBesideCanvas falls back to openWork when canvas is not active', () async {
     final ctrl = WorkbenchController();
     final work = createItem(
       workId: 'wk_fallback',
@@ -180,7 +207,7 @@ void main() {
       category: MediaCategory.manga,
     );
 
-    ctrl.openDetailBesideCanvas(
+    await ctrl.openDetailBesideCanvas(
       WorkCollectibleTab(id: WorkCollectibleTab.idFor(work), item: work),
     );
 
