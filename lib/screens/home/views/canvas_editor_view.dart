@@ -16,6 +16,13 @@ import '../dialogs/canvas_archive_search_dialog.dart';
 import 'canvas_edge_painter.dart';
 import 'canvas_node_card.dart';
 
+abstract final class _CanvasConfig {
+  static const double workspaceSize = 50000.0;
+  static const double boundaryMargin = 5000.0;
+  static const double minScale = 0.1;
+  static const double maxScale = 2.5;
+}
+
 enum CanvasInteractionMode {
   none,
   selectSource,
@@ -677,13 +684,13 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                     : InteractiveViewer(
                         transformationController: _transformationController,
                         constrained: false,
-                        boundaryMargin: const EdgeInsets.all(5000.0),
-                        minScale: 0.1,
-                        maxScale: 2.5,
+                        boundaryMargin: const EdgeInsets.all(_CanvasConfig.boundaryMargin),
+                        minScale: _CanvasConfig.minScale,
+                        maxScale: _CanvasConfig.maxScale,
                         onInteractionEnd: (details) => _handleViewportChange(),
                         child: SizedBox(
-                          width: 8000.0,
-                          height: 8000.0,
+                          width: _CanvasConfig.workspaceSize,
+                          height: _CanvasConfig.workspaceSize,
                           child: uiStack(palette),
                         ),
                       ),
@@ -695,6 +702,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
 
   Widget uiStack(AkashaPalette palette) {
     return Stack(
+      clipBehavior: Clip.none,
       children: [
         if (_layout!.nodes.isNotEmpty)
           Positioned.fill(
