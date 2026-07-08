@@ -88,12 +88,12 @@ abstract final class WorkDetailSanctumOps {
     required WorkSanctumSectionEditorState? sectionEditor,
     required VoidCallback markDirty,
   }) async {
+    final l10n = lookupAppL10n(context);
     if (bodyCtrl.text.trim().isNotEmpty) {
       final confirmed = await confirmTemplateOverwrite(context);
       if (!confirmed) return null;
     }
 
-    final l10n = lookupAppL10n(context);
     bodyCtrl.text = bodyMarkdownForTemplate(template);
     WorkDetailDraftOps.syncBodyFromEditor(item, bodyCtrl);
     sectionEditor?.reloadFromBody();

@@ -5,7 +5,6 @@ import '../../services/sanctum_body_templates.dart';
 import '../../theme/akasha_spacing.dart';
 import '../../features/workbench/presentation/widgets/workbench_panel_styles.dart';
 import '../../utils/app_l10n.dart';
-import '../../generated/l10n/app_localizations.dart';
 
 /// Sanctum 기록 — 템플릿 적용 · HTML보내기.
 class SanctumArchiveToolbar extends StatelessWidget {
