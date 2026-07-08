@@ -860,96 +860,100 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                         ),
                       ),
                     ],
+                    const SizedBox(height: AkashaSpacing.lg),
+                    Row(
+                      children: [
+                        // DELETE button on the left (Condition 9: with confirm prompt)
+                        TextButton(
+                          onPressed: () async {
+                            final navigator = Navigator.of(context);
+                            final deleteConfirm = await showDialog<bool>(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  backgroundColor: palette.surfaceElevated,
+                                  title: Text('관계선 삭제', style: AkashaTypography.headline),
+                                  content: const Text('이 관계선을 삭제할까요?\n이 작업은 캔버스에서 제거할 뿐, 원본 파일은 변경되지 않습니다.'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () => Navigator.pop(context, false),
+                                      child: Text('취소', style: TextStyle(color: AkashaColors.textSecondary)),
+                                    ),
+                                    FilledButton(
+                                      onPressed: () => Navigator.pop(context, true),
+                                      style: FilledButton.styleFrom(backgroundColor: Colors.redAccent),
+                                      child: const Text('삭제'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            if (deleteConfirm == true && mounted) {
+                              // Remove edge
+                              setState(() {
+                                _layout!.edges.removeWhere((e) => e.edgeId == edge.edgeId);
+                                _layout!.updatedAt = DateTime.now().toUtc();
+                              });
+                              CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
+                              // Close the parent edit dialog
+                              navigator.pop(false);
+                            }
+                          },
+                          child: const Text('삭제', style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold)),
+                        ),
+                        const Spacer(),
+                        TextButton(
+                          onPressed: () => Navigator.pop(context, false),
+                          child: Text('취소', style: TextStyle(color: AkashaColors.textSecondary)),
+                        ),
+                        const SizedBox(width: AkashaSpacing.xs),
+                        FilledButton(
+                          onPressed: () {
+                            String finalRelation = selectedToken;
+                            if (isCustom) {
+                              final input = customController.text.trim();
+                              final formatted = _sanitizeAndValidateUserRelation(input);
+                              if (formatted == null) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text(
+                                      '올바르지 않은 사용자 관계 토큰 형식입니다. 소문자, 숫자, 언더바만 가능합니다 (예: u:rival_of).'
+                                    ),
+                                    duration: Duration(seconds: 2),
+                                  ),
+                                );
+                                return;
+                              }
+                              finalRelation = formatted;
+                            }
+                            // Update and save
+                            setState(() {
+                              final targetEdgeIndex = _layout!.edges.indexWhere((e) => e.edgeId == edge.edgeId);
+                              if (targetEdgeIndex != -1) {
+                                _layout!.edges[targetEdgeIndex] = CanvasEdge(
+                                  edgeId: edge.edgeId,
+                                  from: edge.from,
+                                  to: edge.to,
+                                  relation: finalRelation,
+                                  edgeKind: edge.edgeKind,
+                                  visible: edge.visible,
+                                  linkRef: edge.linkRef,
+                                  createdAt: edge.createdAt,
+                                );
+                                _layout!.updatedAt = DateTime.now().toUtc();
+                              }
+                            });
+                            CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
+                            Navigator.pop(context, true);
+                          },
+                          style: FilledButton.styleFrom(backgroundColor: palette.accent),
+                          child: const Text('저장'),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
-              actions: [
-                // DELETE button on the left (Condition 9: with confirm prompt)
-                TextButton(
-                  onPressed: () async {
-                    final navigator = Navigator.of(context);
-                    final deleteConfirm = await showDialog<bool>(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          backgroundColor: palette.surfaceElevated,
-                          title: Text('관계선 삭제', style: AkashaTypography.headline),
-                          content: const Text('이 관계선을 삭제할까요?\n이 작업은 캔버스에서 제거할 뿐, 원본 파일은 변경되지 않습니다.'),
-                          actions: [
-                            TextButton(
-                              onPressed: () => Navigator.pop(context, false),
-                              child: Text('취소', style: TextStyle(color: AkashaColors.textSecondary)),
-                            ),
-                            FilledButton(
-                              onPressed: () => Navigator.pop(context, true),
-                              style: FilledButton.styleFrom(backgroundColor: Colors.redAccent),
-                              child: const Text('삭제'),
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                    if (deleteConfirm == true && mounted) {
-                      // Remove edge
-                      setState(() {
-                        _layout!.edges.removeWhere((e) => e.edgeId == edge.edgeId);
-                        _layout!.updatedAt = DateTime.now().toUtc();
-                      });
-                      CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
-                      // Close the parent edit dialog
-                      navigator.pop(false);
-                    }
-                  },
-                  child: const Text('삭제', style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold)),
-                ),
-                const Spacer(),
-                TextButton(
-                  onPressed: () => Navigator.pop(context, false),
-                  child: Text('취소', style: TextStyle(color: AkashaColors.textSecondary)),
-                ),
-                FilledButton(
-                  onPressed: () {
-                    String finalRelation = selectedToken;
-                    if (isCustom) {
-                      final input = customController.text.trim();
-                      final formatted = _sanitizeAndValidateUserRelation(input);
-                      if (formatted == null) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text(
-                              '올바르지 않은 사용자 관계 토큰 형식입니다. 소문자, 숫자, 언더바만 가능합니다 (예: u:rival_of).'
-                            ),
-                            duration: Duration(seconds: 2),
-                          ),
-                        );
-                        return;
-                      }
-                      finalRelation = formatted;
-                    }
-                    // Update and save
-                    setState(() {
-                      final targetEdgeIndex = _layout!.edges.indexWhere((e) => e.edgeId == edge.edgeId);
-                      if (targetEdgeIndex != -1) {
-                        _layout!.edges[targetEdgeIndex] = CanvasEdge(
-                          edgeId: edge.edgeId,
-                          from: edge.from,
-                          to: edge.to,
-                          relation: finalRelation,
-                          edgeKind: edge.edgeKind,
-                          visible: edge.visible,
-                          linkRef: edge.linkRef,
-                          createdAt: edge.createdAt,
-                        );
-                        _layout!.updatedAt = DateTime.now().toUtc();
-                      }
-                    });
-                    CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
-                    Navigator.pop(context, true);
-                  },
-                  style: FilledButton.styleFrom(backgroundColor: palette.accent),
-                  child: const Text('저장'),
-                ),
-              ],
             );
           },
         );
