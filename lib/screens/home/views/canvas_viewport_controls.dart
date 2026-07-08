@@ -99,6 +99,41 @@ double _matrixUniformScale(Matrix4 matrix) {
   return math.sqrt(matrix.storage[0] * matrix.storage[0] + matrix.storage[1] * matrix.storage[1]);
 }
 
+const double canvasWheelScaleFactor = 200.0;
+
+/// Applies mouse-wheel zoom at [localViewportPoint] (viewport coordinates).
+///
+/// Returns true when the controller matrix changed.
+bool applyCanvasWheelZoom({
+  required TransformationController controller,
+  required Offset localViewportPoint,
+  required double scrollDeltaY,
+  double scaleFactor = canvasWheelScaleFactor,
+  double minScale = CanvasEditorViewportConfig.minScale,
+  double maxScale = CanvasEditorViewportConfig.maxScale,
+}) {
+  if (scrollDeltaY == 0) return false;
+
+  final scaleChange = math.exp(-scrollDeltaY / scaleFactor);
+  final currentScale = _matrixUniformScale(controller.value);
+  final totalScale = (currentScale * scaleChange).clamp(minScale, maxScale);
+  final clampedScale = totalScale / currentScale;
+  if ((clampedScale - 1.0).abs() < 1e-10) return false;
+
+  final focalPointScene = controller.toScene(localViewportPoint);
+
+  final scaled = Matrix4.copy(controller.value)
+    ..scaleByDouble(clampedScale, clampedScale, clampedScale, 1);
+  controller.value = scaled;
+
+  final focalPointSceneScaled = controller.toScene(localViewportPoint);
+  final translation = focalPointSceneScaled - focalPointScene;
+
+  controller.value = Matrix4.copy(scaled)
+    ..translateByDouble(translation.dx, translation.dy, 0, 1);
+  return true;
+}
+
 /// Builds the InteractiveViewer matrix for [viewport] (screen = zoom * scene + translation).
 Matrix4 canvasMatrixFromViewport(CanvasViewport viewport) {
   return _canvasTransformMatrix(

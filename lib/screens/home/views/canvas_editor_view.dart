@@ -1,6 +1,5 @@
-import 'dart:async';
 import 'dart:math' as math;
-import 'package:flutter/gestures.dart' show kMinFlingVelocity;
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -65,11 +64,9 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   // Focus node for keyboard shortcuts listener (v0.3-A.3)
   bool _suppressViewportListener = false;
 
-  // InteractiveViewer keeps pan inertia running when wheel zoom starts; remount
-  // the viewer so its internal animation controller is disposed before scaling.
+  // InteractiveViewer does not stop pan inertia before wheel zoom; remount it
+  // synchronously and apply wheel zoom ourselves (scaleEnabled: false).
   int _interactiveViewerGeneration = 0;
-  bool _panInertiaMayBeActive = false;
-  Timer? _panInertiaClearTimer;
 
   bool _handleGlobalKeyEvent(KeyEvent event) {
     if (event is KeyDownEvent) {
@@ -93,7 +90,6 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
 
   @override
   void dispose() {
-    _panInertiaClearTimer?.cancel();
     widget.onBindFlushViewport?.call(null);
     HardwareKeyboard.instance.removeHandler(_handleGlobalKeyEvent);
     _transformationController.removeListener(_handleViewportChange);
@@ -733,22 +729,26 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                 ? const Center(child: CircularProgressIndicator(strokeWidth: 2))
                 : _layout == null
                     ? const Center(child: Text('캔버스 데이터를 불러올 수 없습니다.'))
-                    : InteractiveViewer(
-                        key: ValueKey(
-                          'canvas_iv_${widget.canvasId}_$_interactiveViewerGeneration',
-                        ),
-                        transformationController: _transformationController,
-                        alignment: Alignment.topLeft,
-                        constrained: false,
-                        boundaryMargin: const EdgeInsets.all(double.infinity),
-                        minScale: CanvasEditorViewportConfig.minScale,
-                        maxScale: CanvasEditorViewportConfig.maxScale,
-                        onInteractionStart: _onCanvasInteractionStart,
-                        onInteractionEnd: _onCanvasInteractionEnd,
-                        child: SizedBox(
-                          width: CanvasEditorViewportConfig.workspaceSize,
-                          height: CanvasEditorViewportConfig.workspaceSize,
-                          child: uiStack(palette),
+                    : Listener(
+                        behavior: HitTestBehavior.translucent,
+                        onPointerSignal: _handleCanvasPointerSignal,
+                        child: InteractiveViewer(
+                          key: ValueKey(
+                            'canvas_iv_${widget.canvasId}_$_interactiveViewerGeneration',
+                          ),
+                          transformationController: _transformationController,
+                          alignment: Alignment.topLeft,
+                          constrained: false,
+                          boundaryMargin: const EdgeInsets.all(double.infinity),
+                          minScale: CanvasEditorViewportConfig.minScale,
+                          maxScale: CanvasEditorViewportConfig.maxScale,
+                          scaleEnabled: false,
+                          onInteractionEnd: (details) => _handleViewportChange(),
+                          child: SizedBox(
+                            width: CanvasEditorViewportConfig.workspaceSize,
+                            height: CanvasEditorViewportConfig.workspaceSize,
+                            child: uiStack(palette),
+                          ),
                         ),
                       ),
           ),
@@ -806,34 +806,32 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
     if (_layout == null || _suppressViewportListener) return;
     if (!_applyViewportFromController()) return;
     CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
-    if (_panInertiaMayBeActive) {
-      _schedulePanInertiaSettledCheck();
-    }
   }
 
-  void _schedulePanInertiaSettledCheck() {
-    _panInertiaClearTimer?.cancel();
-    _panInertiaClearTimer = Timer(const Duration(milliseconds: 80), () {
-      if (!mounted) return;
-      _panInertiaMayBeActive = false;
+  void _handleCanvasPointerSignal(PointerSignalEvent event) {
+    if (event is! PointerScrollEvent || event.scrollDelta.dy == 0) return;
+    // Trackpad scroll pans through InteractiveViewer; mouse wheel zooms here.
+    if (event.kind == PointerDeviceKind.trackpad) return;
+
+    GestureBinding.instance.pointerSignalResolver.register(event, (PointerSignalEvent resolved) {
+      if (resolved is! PointerScrollEvent || resolved.scrollDelta.dy == 0) return;
+      _stopInteractiveViewerInertiaSync();
+      if (applyCanvasWheelZoom(
+        controller: _transformationController,
+        localViewportPoint: resolved.localPosition,
+        scrollDeltaY: resolved.scrollDelta.dy,
+      )) {
+        _handleViewportChange();
+      }
     });
   }
 
-  void _onCanvasInteractionStart(ScaleStartDetails details) {
-    if (!_panInertiaMayBeActive) return;
-    _panInertiaClearTimer?.cancel();
+  /// Disposes InteractiveViewer's internal pan inertia before wheel zoom runs.
+  void _stopInteractiveViewerInertiaSync() {
     setState(() {
       _interactiveViewerGeneration++;
-      _panInertiaMayBeActive = false;
     });
-  }
-
-  void _onCanvasInteractionEnd(ScaleEndDetails details) {
-    _handleViewportChange();
-    if (details.velocity.pixelsPerSecond.distance >= kMinFlingVelocity) {
-      _panInertiaMayBeActive = true;
-      _schedulePanInertiaSettledCheck();
-    }
+    WidgetsBinding.instance.buildOwner!.buildScope(context as Element);
   }
 
   /// Persists the current viewport to disk before leaving Canvas (e.g. opening Work/Entity).
