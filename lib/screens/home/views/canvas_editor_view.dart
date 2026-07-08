@@ -18,7 +18,6 @@ import 'canvas_edge_painter.dart';
 import 'canvas_editor_modes.dart';
 import 'canvas_node_card.dart';
 import 'canvas_viewport_controls.dart';
-import 'canvas_viewport_surface.dart';
 
 class CanvasEditorWorkspace extends StatefulWidget {
   const CanvasEditorWorkspace({
@@ -726,10 +725,16 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                 ? const Center(child: CircularProgressIndicator(strokeWidth: 2))
                 : _layout == null
                     ? const Center(child: Text('캔버스 데이터를 불러올 수 없습니다.'))
-                    : CanvasViewportSurface(
+                    : InteractiveViewer(
+                        key: _canvasViewportKey,
                         transformationController: _transformationController,
-                        viewportKey: _canvasViewportKey,
-                        onInteractionEnd: _handleViewportChange,
+                        alignment: Alignment.topLeft,
+                        clipBehavior: Clip.hardEdge,
+                        constrained: false,
+                        boundaryMargin: const EdgeInsets.all(double.infinity),
+                        minScale: CanvasEditorViewportConfig.minScale,
+                        maxScale: CanvasEditorViewportConfig.maxScale,
+                        onInteractionEnd: (details) => _handleViewportChange(),
                         child: SizedBox(
                           width: CanvasEditorViewportConfig.workspaceSize,
                           height: CanvasEditorViewportConfig.workspaceSize,
