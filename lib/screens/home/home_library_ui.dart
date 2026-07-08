@@ -70,9 +70,10 @@ class HomeLibraryUi {
     MembershipApplyResult? result,
   ) {
     if (result == null) return;
+    final l10n = lookupAppL10n(context);
     ScaffoldMessenger.of(
       context,
-    ).showSnackBar(SnackBar(content: Text(result.toSnackBarMessage())));
+    ).showSnackBar(SnackBar(content: Text(result.toSnackBarMessage(l10n))));
   }
 
   Future<void> addWorkToLibrary(

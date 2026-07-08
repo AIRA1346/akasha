@@ -7,6 +7,7 @@ import 'work_detail_draft_ops.dart';
 import 'work_detail_sanctum_ops.dart';
 import 'widgets/work_sanctum_section_editor.dart';
 import '../../../services/sanctum_body_templates.dart';
+import '../../../generated/l10n/app_localizations.dart';
 
 /// WorkDetailWorkspace — Sanctum UI 액션 (포스터·템플릿·기본값·HTML).
 abstract final class WorkDetailSanctumWorkspaceOps {
@@ -27,6 +28,7 @@ abstract final class WorkDetailSanctumWorkspaceOps {
     ) onDraftFields,
     required VoidCallback markDirty,
     required void Function(String message) showSnack,
+    AppLocalizations? l10n,
   }) {
     WorkInfoDefaults.applyRegistryDefaults(item);
     titleCtrl.text = item.title;
@@ -44,7 +46,7 @@ abstract final class WorkDetailSanctumWorkspaceOps {
       fields.hallOfFame,
     );
     markDirty();
-    showSnack(resetSnackMessage);
+    showSnack(l10n?.resetToDefaultsSuccess ?? resetSnackMessage);
   }
 
   static Future<void> openPosterCorrection({
@@ -99,9 +101,10 @@ abstract final class WorkDetailSanctumWorkspaceOps {
     required TextEditingController titleCtrl,
     required TextEditingController bodyCtrl,
     required void Function(String message) showSnack,
+    AppLocalizations? l10n,
   }) async {
     if (!isArchivedInVault) {
-      showSnack('HTML보내기 전에 md를 저장해 주세요.');
+      showSnack(l10n?.htmlExportSaveFirst ?? 'HTML보내기 전에 md를 저장해 주세요.');
       return;
     }
 
@@ -111,7 +114,8 @@ abstract final class WorkDetailSanctumWorkspaceOps {
       item: item,
       bodyMarkdown: bodyCtrl.text,
       titleOverride: title.isNotEmpty ? title : null,
+      l10n: l10n,
     );
-    showSnack(WorkDetailSanctumOps.htmlExportSnackMessage(result));
+    showSnack(WorkDetailSanctumOps.htmlExportSnackMessage(result, l10n));
   }
 }

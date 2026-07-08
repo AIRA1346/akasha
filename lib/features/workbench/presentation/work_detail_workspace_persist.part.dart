@@ -187,6 +187,7 @@ mixin _WorkDetailWorkspacePersist on _WorkDetailWorkspaceStateBase {
   }
 
   void _resetToDefaults() {
+    final l10n = lookupAppL10n(context);
     WorkDetailSanctumWorkspaceOps.resetToDefaults(
       item: _item,
       titleCtrl: _titleCtrl,
@@ -204,10 +205,12 @@ mixin _WorkDetailWorkspacePersist on _WorkDetailWorkspaceStateBase {
       },
       markDirty: _markDirty,
       showSnack: _showSnack,
+      l10n: l10n,
     );
   }
 
   Future<void> _handleAddToLibrary() async {
+    final l10n = lookupAppL10n(context);
     await WorkDetailLibraryOps.addToLibrary(
       item: _item,
       onAddToLibrary: widget.onAddToLibrary,
@@ -215,6 +218,7 @@ mixin _WorkDetailWorkspacePersist on _WorkDetailWorkspaceStateBase {
       isArchived: () => _isArchived,
       saveArchive: () => _saveArchive(),
       showSnack: _showSnack,
+      l10n: l10n,
     );
   }
 
@@ -294,12 +298,14 @@ mixin _WorkDetailWorkspacePersist on _WorkDetailWorkspaceStateBase {
 
   Future<void> _exportHtml() async {
     if (!mounted) return;
+    final l10n = lookupAppL10n(context);
     await WorkDetailSanctumWorkspaceOps.exportHtml(
       isArchivedInVault: _isArchivedInVault,
       item: _item,
       titleCtrl: _titleCtrl,
       bodyCtrl: _bodyCtrl,
       showSnack: _showSnack,
+      l10n: l10n,
     );
   }
 

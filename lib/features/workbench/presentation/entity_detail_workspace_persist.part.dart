@@ -276,8 +276,8 @@ mixin _EntityDetailWorkspacePersist on _EntityDetailWorkspaceStateBase {
 
   Future<void> _exportHtml() async {
     final storagePath = _journal?.storagePath;
+    final l10n = lookupAppL10n(context);
     if (storagePath == null || storagePath.isEmpty) {
-      final l10n = lookupAppL10n(context);
       _showSnack(l10n?.journalSaveBeforeHtml ?? 'HTML보내기 전에 journal을 저장해 주세요.');
       return;
     }
@@ -293,9 +293,10 @@ mixin _EntityDetailWorkspacePersist on _EntityDetailWorkspaceStateBase {
       item: item,
       bodyMarkdown: _bodyCtrl.text,
       titleOverride: _entity.title,
+      l10n: l10n,
     );
     if (!mounted) return;
-    _showSnack(EntityDetailSanctumOps.htmlExportSnackMessage(result));
+    _showSnack(EntityDetailSanctumOps.htmlExportSnackMessage(result, l10n));
   }
 
   Future<void> _openPosterCorrection() async {

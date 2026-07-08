@@ -2300,4 +2300,54 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get ratingPending => '⏳ Pending Rating';
+
+  @override
+  String get libApplyNoChanges => 'No changes made.';
+
+  @override
+  String libApplyAdded(String names) {
+    return 'Added to \"$names\"';
+  }
+
+  @override
+  String libApplyRemoved(String names) {
+    return 'Removed from \"$names\" (vault files kept)';
+  }
+
+  @override
+  String get templateApplyWarnTitle => 'Apply Template';
+
+  @override
+  String get templateApplyWarnContent =>
+      'This will overwrite your current draft with the template. Continue?';
+
+  @override
+  String get templateApplyConfirm => 'Apply';
+
+  @override
+  String templateAppliedSnack(String name) {
+    return 'Applied template \"$name\".';
+  }
+
+  @override
+  String get htmlExportCannotCreate => 'Could not create HTML file.';
+
+  @override
+  String get htmlExportFailed => 'HTML export failed';
+
+  @override
+  String get htmlExportSuccessOpened => 'HTML exported and opened.';
+
+  @override
+  String htmlExportSuccessSaved(String path) {
+    return 'HTML exported to: $path';
+  }
+
+  @override
+  String get resetToDefaultsSuccess =>
+      'Reset to registry defaults. (work_id preserved)';
+
+  @override
+  String get htmlExportSaveFirst =>
+      'Please save the md file before exporting HTML.';
 }

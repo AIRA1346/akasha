@@ -1,4 +1,5 @@
 import '../../../models/akasha_item.dart';
+import '../../../generated/l10n/app_localizations.dart';
 
 /// Work workspace — 서재 담기 전제 조건.
 abstract final class WorkDetailLibraryOps {
@@ -9,10 +10,11 @@ abstract final class WorkDetailLibraryOps {
     required bool Function() isArchived,
     required Future<void> Function() saveArchive,
     required void Function(String message) showSnack,
+    AppLocalizations? l10n,
   }) async {
     if (onAddToLibrary == null) return;
     if (!vaultConnected) {
-      showSnack('볼트 연결 후 서재에 담을 수 있습니다.');
+      showSnack(l10n?.errorVaultRequiredToAddToLibrary ?? '볼트 연결 후 서재에 담을 수 있습니다.');
       return;
     }
     if (!isArchived()) {

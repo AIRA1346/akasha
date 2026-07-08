@@ -1265,5 +1265,46 @@
   "actionReset": "Default",
   "actionDeleteMd": "Delete md",
   "yearSuffix": "",
-  "ratingPending": "⏳ Pending Rating"
+  "ratingPending": "⏳ Pending Rating",
+  "libApplyNoChanges": "No changes made.",
+  "libApplyAdded": "Added to \"{names}\"",
+  "@libApplyAdded": {
+    "placeholders": {
+      "names": {
+        "type": "String"
+      }
+    }
+  },
+  "libApplyRemoved": "Removed from \"{names}\" (vault files kept)",
+  "@libApplyRemoved": {
+    "placeholders": {
+      "names": {
+        "type": "String"
+      }
+    }
+  },
+  "templateApplyWarnTitle": "Apply Template",
+  "templateApplyWarnContent": "This will overwrite your current draft with the template. Continue?",
+  "templateApplyConfirm": "Apply",
+  "templateAppliedSnack": "Applied template \"{name}\".",
+  "@templateAppliedSnack": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "htmlExportCannotCreate": "Could not create HTML file.",
+  "htmlExportFailed": "HTML export failed",
+  "htmlExportSuccessOpened": "HTML exported and opened.",
+  "htmlExportSuccessSaved": "HTML exported to: {path}",
+  "@htmlExportSuccessSaved": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "resetToDefaultsSuccess": "Reset to registry defaults. (work_id preserved)",
+  "htmlExportSaveFirst": "Please save the md file before exporting HTML."
 }

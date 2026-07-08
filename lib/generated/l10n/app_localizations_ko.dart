@@ -2250,4 +2250,51 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get ratingPending => '⏳ 평가 대기';
+
+  @override
+  String get libApplyNoChanges => '변경 사항이 없습니다.';
+
+  @override
+  String libApplyAdded(String names) {
+    return '「$names」에 담았습니다';
+  }
+
+  @override
+  String libApplyRemoved(String names) {
+    return '「$names」에서 제거했습니다 (볼트 기록 유지)';
+  }
+
+  @override
+  String get templateApplyWarnTitle => '템플릿 적용';
+
+  @override
+  String get templateApplyWarnContent => '현재 기록 본문을 템플릿으로 바꿉니다. 계속할까요?';
+
+  @override
+  String get templateApplyConfirm => '적용';
+
+  @override
+  String templateAppliedSnack(String name) {
+    return '「$name」 템플릿을 적용했습니다.';
+  }
+
+  @override
+  String get htmlExportCannotCreate => 'HTML 파일을 만들 수 없습니다.';
+
+  @override
+  String get htmlExportFailed => 'HTML 내보내기 실패';
+
+  @override
+  String get htmlExportSuccessOpened => 'HTML을 저장하고 열었습니다.';
+
+  @override
+  String htmlExportSuccessSaved(String path) {
+    return 'HTML을 저장했습니다: $path';
+  }
+
+  @override
+  String get resetToDefaultsSuccess => '사전 기본값으로 되돌렸습니다. (work_id는 유지)';
+
+  @override
+  String get htmlExportSaveFirst => 'HTML보내기 전에 md를 저장해 주세요.';
 }

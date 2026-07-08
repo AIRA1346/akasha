@@ -8,25 +8,28 @@ import '../../../widgets/web_image_search_dialog.dart';
 import 'work_detail_draft_ops.dart';
 import 'widgets/work_sanctum_section_editor.dart';
 import '../../../services/sanctum_html_exporter.dart';
+import '../../../utils/app_l10n.dart';
+import '../../../generated/l10n/app_localizations.dart';
 
 /// Work Sanctum — 템플릿·HTML보내기 (workspace UI에서 위임).
 abstract final class WorkDetailSanctumOps {
   static Future<bool> confirmTemplateOverwrite(BuildContext context) async {
+    final l10n = lookupAppL10n(context);
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('템플릿 적용'),
-        content: const Text(
-          '현재 기록 본문을 템플릿으로 바꿉니다. 계속할까요?',
+        title: Text(l10n?.templateApplyWarnTitle ?? '템플릿 적용'),
+        content: Text(
+          l10n?.templateApplyWarnContent ?? '현재 기록 본문을 템플릿으로 바꿉니다. 계속할까요?',
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(ctx).pop(false),
-            child: const Text('취소'),
+            child: Text(l10n?.actionCancel ?? '취소'),
           ),
           FilledButton(
             onPressed: () => Navigator.of(ctx).pop(true),
-            child: const Text('적용'),
+            child: Text(l10n?.templateApplyConfirm ?? '적용'),
           ),
         ],
       ),
@@ -41,6 +44,7 @@ abstract final class WorkDetailSanctumOps {
     required AkashaItem item,
     required String bodyMarkdown,
     String? titleOverride,
+    AppLocalizations? l10n,
   }) async {
     try {
       final path = await SanctumHtmlExporter.exportAdjacentToRecord(
@@ -49,8 +53,8 @@ abstract final class WorkDetailSanctumOps {
         titleOverride: titleOverride,
       );
       if (path == null) {
-        return const WorkDetailHtmlExportFailure(
-          'HTML 파일을 만들 수 없습니다.',
+        return WorkDetailHtmlExportFailure(
+          l10n?.htmlExportCannotCreate ?? 'HTML 파일을 만들 수 없습니다.',
         );
       }
       final opened = await launchUrl(Uri.file(path));
@@ -59,15 +63,18 @@ abstract final class WorkDetailSanctumOps {
         openedInBrowser: opened,
       );
     } catch (e) {
-      return WorkDetailHtmlExportFailure('HTML보내기 실패: $e');
+      return WorkDetailHtmlExportFailure(
+        l10n != null ? '${l10n.htmlExportFailed}: $e' : 'HTML보내기 실패: $e',
+      );
     }
   }
 
-  static String htmlExportSnackMessage(WorkDetailHtmlExportResult result) {
+  static String htmlExportSnackMessage(WorkDetailHtmlExportResult result, [AppLocalizations? l10n]) {
     return switch (result) {
       WorkDetailHtmlExportSuccess(openedInBrowser: true) =>
-        'HTML을 저장하고 열었습니다.',
-      WorkDetailHtmlExportSuccess(:final path) => 'HTML을 저장했습니다: $path',
+        l10n?.htmlExportSuccessOpened ?? 'HTML을 저장하고 열었습니다.',
+      WorkDetailHtmlExportSuccess(:final path) =>
+        l10n != null ? l10n.htmlExportSuccessSaved(path) : 'HTML을 저장했습니다: $path',
       WorkDetailHtmlExportFailure(:final message) => message,
     };
   }
@@ -86,11 +93,14 @@ abstract final class WorkDetailSanctumOps {
       if (!confirmed) return null;
     }
 
+    final l10n = lookupAppL10n(context);
     bodyCtrl.text = bodyMarkdownForTemplate(template);
     WorkDetailDraftOps.syncBodyFromEditor(item, bodyCtrl);
     sectionEditor?.reloadFromBody();
     markDirty();
-    return '「${template.label}」 템플릿을 적용했습니다.';
+    return l10n != null
+        ? l10n.templateAppliedSnack(template.label)
+        : '「${template.label}」 템플릿을 적용했습니다.';
   }
 
   static Future<String?> pickPosterUrl({

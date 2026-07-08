@@ -4207,6 +4207,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'⏳ Pending Rating'**
   String get ratingPending;
+
+  /// No description provided for @libApplyNoChanges.
+  ///
+  /// In en, this message translates to:
+  /// **'No changes made.'**
+  String get libApplyNoChanges;
+
+  /// No description provided for @libApplyAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Added to \"{names}\"'**
+  String libApplyAdded(String names);
+
+  /// No description provided for @libApplyRemoved.
+  ///
+  /// In en, this message translates to:
+  /// **'Removed from \"{names}\" (vault files kept)'**
+  String libApplyRemoved(String names);
+
+  /// No description provided for @templateApplyWarnTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply Template'**
+  String get templateApplyWarnTitle;
+
+  /// No description provided for @templateApplyWarnContent.
+  ///
+  /// In en, this message translates to:
+  /// **'This will overwrite your current draft with the template. Continue?'**
+  String get templateApplyWarnContent;
+
+  /// No description provided for @templateApplyConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get templateApplyConfirm;
+
+  /// No description provided for @templateAppliedSnack.
+  ///
+  /// In en, this message translates to:
+  /// **'Applied template \"{name}\".'**
+  String templateAppliedSnack(String name);
+
+  /// No description provided for @htmlExportCannotCreate.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not create HTML file.'**
+  String get htmlExportCannotCreate;
+
+  /// No description provided for @htmlExportFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'HTML export failed'**
+  String get htmlExportFailed;
+
+  /// No description provided for @htmlExportSuccessOpened.
+  ///
+  /// In en, this message translates to:
+  /// **'HTML exported and opened.'**
+  String get htmlExportSuccessOpened;
+
+  /// No description provided for @htmlExportSuccessSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'HTML exported to: {path}'**
+  String htmlExportSuccessSaved(String path);
+
+  /// No description provided for @resetToDefaultsSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset to registry defaults. (work_id preserved)'**
+  String get resetToDefaultsSuccess;
+
+  /// No description provided for @htmlExportSaveFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Please save the md file before exporting HTML.'**
+  String get htmlExportSaveFirst;
 }
 
 class _AppLocalizationsDelegate
