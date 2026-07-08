@@ -1,5 +1,4 @@
 import 'dart:math' as math;
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -19,6 +18,7 @@ import 'canvas_edge_painter.dart';
 import 'canvas_editor_modes.dart';
 import 'canvas_node_card.dart';
 import 'canvas_viewport_controls.dart';
+import 'canvas_viewport_surface.dart';
 
 class CanvasEditorWorkspace extends StatefulWidget {
   const CanvasEditorWorkspace({
@@ -55,6 +55,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   CanvasInteractionMode _interactionMode = CanvasInteractionMode.none;
   String? _selectedSourceNodeId;
   final TransformationController _transformationController = TransformationController();
+  final GlobalKey _canvasViewportKey = GlobalKey(debugLabel: 'canvas_viewport');
 
   // State variables for tracking node dragging in Scene coordinates (v0.3-A.2)
   Offset? _dragStartSceneOffset;
@@ -63,10 +64,6 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
 
   // Focus node for keyboard shortcuts listener (v0.3-A.3)
   bool _suppressViewportListener = false;
-
-  // InteractiveViewer does not stop pan inertia before wheel zoom; remount it
-  // synchronously and apply wheel zoom ourselves (scaleEnabled: false).
-  int _interactiveViewerGeneration = 0;
 
   bool _handleGlobalKeyEvent(KeyEvent event) {
     if (event is KeyDownEvent) {
@@ -729,26 +726,14 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                 ? const Center(child: CircularProgressIndicator(strokeWidth: 2))
                 : _layout == null
                     ? const Center(child: Text('캔버스 데이터를 불러올 수 없습니다.'))
-                    : Listener(
-                        behavior: HitTestBehavior.translucent,
-                        onPointerSignal: _handleCanvasPointerSignal,
-                        child: InteractiveViewer(
-                          key: ValueKey(
-                            'canvas_iv_${widget.canvasId}_$_interactiveViewerGeneration',
-                          ),
-                          transformationController: _transformationController,
-                          alignment: Alignment.topLeft,
-                          constrained: false,
-                          boundaryMargin: const EdgeInsets.all(double.infinity),
-                          minScale: CanvasEditorViewportConfig.minScale,
-                          maxScale: CanvasEditorViewportConfig.maxScale,
-                          scaleEnabled: false,
-                          onInteractionEnd: (details) => _handleViewportChange(),
-                          child: SizedBox(
-                            width: CanvasEditorViewportConfig.workspaceSize,
-                            height: CanvasEditorViewportConfig.workspaceSize,
-                            child: uiStack(palette),
-                          ),
+                    : CanvasViewportSurface(
+                        transformationController: _transformationController,
+                        viewportKey: _canvasViewportKey,
+                        onInteractionEnd: _handleViewportChange,
+                        child: SizedBox(
+                          width: CanvasEditorViewportConfig.workspaceSize,
+                          height: CanvasEditorViewportConfig.workspaceSize,
+                          child: uiStack(palette),
                         ),
                       ),
           ),
@@ -808,30 +793,8 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
     CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
   }
 
-  void _handleCanvasPointerSignal(PointerSignalEvent event) {
-    if (event is! PointerScrollEvent || event.scrollDelta.dy == 0) return;
-    // Trackpad scroll pans through InteractiveViewer; mouse wheel zooms here.
-    if (event.kind == PointerDeviceKind.trackpad) return;
-
-    GestureBinding.instance.pointerSignalResolver.register(event, (PointerSignalEvent resolved) {
-      if (resolved is! PointerScrollEvent || resolved.scrollDelta.dy == 0) return;
-      _stopInteractiveViewerInertiaSync();
-      if (applyCanvasWheelZoom(
-        controller: _transformationController,
-        localViewportPoint: resolved.localPosition,
-        scrollDeltaY: resolved.scrollDelta.dy,
-      )) {
-        _handleViewportChange();
-      }
-    });
-  }
-
-  /// Disposes InteractiveViewer's internal pan inertia before wheel zoom runs.
-  void _stopInteractiveViewerInertiaSync() {
-    setState(() {
-      _interactiveViewerGeneration++;
-    });
-    WidgetsBinding.instance.buildOwner!.buildScope(context as Element);
+  RenderBox? _canvasViewportRenderBox() {
+    return _canvasViewportKey.currentContext?.findRenderObject() as RenderBox?;
   }
 
   /// Persists the current viewport to disk before leaving Canvas (e.g. opening Work/Entity).
@@ -1196,8 +1159,9 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
         onDoubleTap: isConnectingMode ? null : () => _handleNodeDoubleTap(node),
         onPanStart: (details) {
           if (isConnectingMode) return;
-          final RenderBox renderBox = context.findRenderObject() as RenderBox;
-          final localOffset = renderBox.globalToLocal(details.globalPosition);
+          final viewportBox = _canvasViewportRenderBox();
+          if (viewportBox == null) return;
+          final localOffset = viewportBox.globalToLocal(details.globalPosition);
           _dragStartSceneOffset = _transformationController.toScene(localOffset);
           _dragStartNodeX = node.x;
           _dragStartNodeY = node.y;
@@ -1206,8 +1170,9 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
           if (isConnectingMode) return;
           if (_dragStartSceneOffset == null || _dragStartNodeX == null || _dragStartNodeY == null) return;
 
-          final RenderBox renderBox = context.findRenderObject() as RenderBox;
-          final localOffset = renderBox.globalToLocal(details.globalPosition);
+          final viewportBox = _canvasViewportRenderBox();
+          if (viewportBox == null) return;
+          final localOffset = viewportBox.globalToLocal(details.globalPosition);
           final currentSceneOffset = _transformationController.toScene(localOffset);
 
           final dx = currentSceneOffset.dx - _dragStartSceneOffset!.dx;

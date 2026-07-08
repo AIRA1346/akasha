@@ -55,5 +55,39 @@ void main() {
       )!.zoom;
       expect(zoom, CanvasEditorViewportConfig.maxScale);
     });
+
+    test('preserves scene focal point when zoom != 1', () {
+      final controller = TransformationController(
+        canvasMatrixFromViewport(CanvasViewport(x: -400, y: -200, zoom: 1.75)),
+      );
+      const focal = Offset(320, 240);
+      final sceneBefore = controller.toScene(focal);
+
+      applyCanvasWheelZoom(
+        controller: controller,
+        localViewportPoint: focal,
+        scrollDeltaY: 80,
+      );
+
+      final sceneAfter = controller.toScene(focal);
+      expect(sceneAfter.dx, closeTo(sceneBefore.dx, 1e-3));
+      expect(sceneAfter.dy, closeTo(sceneBefore.dy, 1e-3));
+    });
+  });
+
+  group('canvasMatrixFromViewport', () {
+    test('round-trips through decompose after scene translation', () {
+      final controller = TransformationController(
+        canvasMatrixFromViewport(CanvasViewport(x: 100, y: 50, zoom: 1.25)),
+      );
+      canvasApplySceneTranslation(controller, const Offset(12, -8));
+
+      final restored = canvasViewportDeltaFromMatrix(
+        controller.value,
+        CanvasViewport(x: 0, y: 0, zoom: 0),
+      );
+      expect(restored, isNotNull);
+      expect(restored!.zoom, closeTo(1.25, 1e-4));
+    });
   });
 }

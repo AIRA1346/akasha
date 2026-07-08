@@ -101,6 +101,22 @@ double _matrixUniformScale(Matrix4 matrix) {
 
 const double canvasWheelScaleFactor = 200.0;
 
+/// Matches Flutter [InteractiveViewer] default pan inertia friction.
+const double canvasPanInertiaFriction = 0.0000135;
+
+/// Uniform scale from a canvas viewport matrix (no rotation).
+double canvasMatrixUniformScale(Matrix4 matrix) {
+  return _matrixUniformScale(matrix);
+}
+
+/// Applies a scene-space translation to [controller]'s matrix.
+void canvasApplySceneTranslation(TransformationController controller, Offset sceneDelta) {
+  if (sceneDelta == Offset.zero) return;
+  final matrix = Matrix4.copy(controller.value)
+    ..translateByDouble(sceneDelta.dx, sceneDelta.dy, 0, 1);
+  controller.value = matrix;
+}
+
 /// Applies mouse-wheel zoom at [localViewportPoint] (viewport coordinates).
 ///
 /// Returns true when the controller matrix changed.
