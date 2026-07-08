@@ -927,5 +927,19 @@
   "graphDialogCreateCanvasTitle": "새 지식 지도 만들기",
   "graphDialogCreateCanvasLabelTitle": "지도 제목 (예: 리제로 인물 관계도)",
   "graphDialogCreateCanvasLabelSlug": "URL 슬러그 (예: re-zero)",
-  "graphDialogCreateCanvasBtnCreate": "생성"
+  "graphDialogCreateCanvasBtnCreate": "생성",
+  "filterScopeAll": "전체",
+  "filterAddArchive": "아카이브",
+  "filterAllMedia": "매체 전체",
+  "filterStatusHelp": "💡  매체(만화, 게임 등)를 선택하시면 세부 상태(완결여부, 플레이/감상 상태) 필터가 활성화됩니다.",
+  "filterEntityGalleryTitle": "📂  {scopeLabel} 아카이브 갤러리",
+  "@filterEntityGalleryTitle": {
+    "placeholders": {
+      "scopeLabel": {
+        "type": "String"
+      }
+    }
+  },
+  "filterLabelWorkStatus": "작품 상태",
+  "filterLabelMyStatus": "나의 상태"
 }

@@ -4057,6 +4057,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Create'**
   String get graphDialogCreateCanvasBtnCreate;
+
+  /// No description provided for @filterScopeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get filterScopeAll;
+
+  /// No description provided for @filterAddArchive.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get filterAddArchive;
+
+  /// No description provided for @filterAllMedia.
+  ///
+  /// In en, this message translates to:
+  /// **'All Media'**
+  String get filterAllMedia;
+
+  /// No description provided for @filterStatusHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'💡  Select a media type (Manga, Game, etc.) to activate detailed status filters (Completion status, Play/Watch status).'**
+  String get filterStatusHelp;
+
+  /// No description provided for @filterEntityGalleryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'📂  {scopeLabel} Archive Gallery'**
+  String filterEntityGalleryTitle(String scopeLabel);
+
+  /// No description provided for @filterLabelWorkStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Work Status'**
+  String get filterLabelWorkStatus;
+
+  /// No description provided for @filterLabelMyStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'My Status'**
+  String get filterLabelMyStatus;
 }
 
 class _AppLocalizationsDelegate

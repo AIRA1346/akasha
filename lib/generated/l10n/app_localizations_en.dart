@@ -2221,4 +2221,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get graphDialogCreateCanvasBtnCreate => 'Create';
+
+  @override
+  String get filterScopeAll => 'All';
+
+  @override
+  String get filterAddArchive => 'Archive';
+
+  @override
+  String get filterAllMedia => 'All Media';
+
+  @override
+  String get filterStatusHelp =>
+      '💡  Select a media type (Manga, Game, etc.) to activate detailed status filters (Completion status, Play/Watch status).';
+
+  @override
+  String filterEntityGalleryTitle(String scopeLabel) {
+    return '📂  $scopeLabel Archive Gallery';
+  }
+
+  @override
+  String get filterLabelWorkStatus => 'Work Status';
+
+  @override
+  String get filterLabelMyStatus => 'My Status';
 }

@@ -5,10 +5,56 @@ import '../models/browse_entity_scope.dart';
 import '../theme/akasha_colors.dart';
 import '../models/enums.dart';
 import '../utils/helpers.dart';
+import '../utils/app_l10n.dart';
+import '../generated/l10n/app_localizations.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  필터 섹션 위젯 (지능형 중첩 필터링 - 다중 카테고리 지원)
 // ════════════════════════════════════════════════════════════════
+
+extension BrowseEntityScopeLocalization on BrowseEntityScope {
+  String toLocalizedLabel(AppLocalizations? l10n) {
+    switch (this) {
+      case BrowseEntityScope.all:
+        return l10n?.filterScopeAll ?? '전체';
+      case BrowseEntityScope.work:
+        return 'Work';
+      case BrowseEntityScope.person:
+        return 'Person';
+      case BrowseEntityScope.concept:
+        return 'Concept';
+      case BrowseEntityScope.event:
+        return 'Event';
+      case BrowseEntityScope.place:
+        return 'Place';
+      case BrowseEntityScope.organization:
+        return 'Org';
+    }
+  }
+}
+
+String localizeStatusLabel(String label, AppLocalizations? l10n) {
+  if (l10n == null) return label;
+  
+  // Find in ContentWorkStatus
+  for (final status in ContentWorkStatus.values) {
+    if (status.label == label) return status.localizedLabel(l10n);
+  }
+  // Find in ContentMyStatus
+  for (final status in ContentMyStatus.values) {
+    if (status.label == label) return status.localizedLabel(l10n);
+  }
+  // Find in GameWorkStatus
+  for (final status in GameWorkStatus.values) {
+    if (status.label == label) return status.localizedLabel(l10n);
+  }
+  // Find in GameMyStatus
+  for (final status in GameMyStatus.values) {
+    if (status.label == label) return status.localizedLabel(l10n);
+  }
+  
+  return label;
+}
 
 class FilterSection extends StatelessWidget {
   final Set<MediaCategory> selectedCategories; // 변경: 다중 카테고리 지원
@@ -40,6 +86,7 @@ class FilterSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final visibleCategories = MediaCategory.values;
+    final l10n = lookupAppL10n(context);
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
@@ -56,7 +103,7 @@ class FilterSection extends StatelessWidget {
                       return Padding(
                         padding: const EdgeInsets.only(right: 6),
                         child: _chip(
-                          label: scope.label,
+                          label: scope.toLocalizedLabel(l10n),
                           selected: selectedEntityScope == scope,
                           onTap: () => onEntityScopeChanged(scope),
                           small: true,
@@ -86,7 +133,7 @@ class FilterSection extends StatelessWidget {
                   child: Row(
                     children: [
                       _chip(
-                        label: '매체 전체',
+                        label: l10n?.filterAllMedia ?? '매체 전체',
                         selected: selectedCategories.isEmpty,
                         onTap: onClearCategories,
                         small: true,
@@ -96,7 +143,7 @@ class FilterSection extends StatelessWidget {
                         (cat) => Padding(
                           padding: const EdgeInsets.only(right: 6),
                           child: _chip(
-                            label: cat.label,
+                            label: cat.localizedLabel(l10n),
                             icon: cat.icon,
                             selected: selectedCategories.contains(cat),
                             onTap: () => onToggleCategory(cat),
@@ -122,7 +169,7 @@ class FilterSection extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 8),
               child: Text(
-                '💡  매체(만화, 게임 등)를 선택하시면 세부 상태(완결여부, 플레이/감상 상태) 필터가 활성화됩니다.',
+                l10n?.filterStatusHelp ?? '💡  매체(만화, 게임 등)를 선택하시면 세부 상태(완결여부, 플레이/감상 상태) 필터가 활성화됩니다.',
                 style: TextStyle(
                   fontSize: 11,
                   color: AkashaColors.textCaption,
@@ -135,7 +182,7 @@ class FilterSection extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 4),
               child: Text(
-                '📂  ${selectedEntityScope.label} 아카이브 갤러리',
+                l10n != null ? l10n.filterEntityGalleryTitle(selectedEntityScope.toLocalizedLabel(l10n)) : '📂  ${selectedEntityScope.label} 아카이브 갤러리',
                 style: TextStyle(
                   fontSize: 12,
                   color: AkashaColors.textMuted,
@@ -150,6 +197,7 @@ class FilterSection extends StatelessWidget {
   }
 
   Widget _buildStatusFilters(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     // 선택된 모든 카테고리의 옵션들을 모아서 보여줌
     final Set<String> workOpts = {};
     final Set<String> myOpts = {};
@@ -164,7 +212,7 @@ class FilterSection extends StatelessWidget {
         // 작품 상태
         Row(
           children: [
-            Text('작품 상태',
+            Text(l10n?.filterLabelWorkStatus ?? '작품 상태',
                 style: TextStyle(
                     fontSize: 11,
                     color: AkashaColors.textMuted,
@@ -173,7 +221,7 @@ class FilterSection extends StatelessWidget {
             ...workOpts.map((label) => Padding(
                   padding: const EdgeInsets.only(right: 6),
                   child: _chip(
-                    label: label,
+                    label: localizeStatusLabel(label, l10n),
                     selected: selectedWorkStatuses.contains(label),
                     onTap: () => onToggleWorkStatus(label),
                     small: true,
@@ -185,7 +233,7 @@ class FilterSection extends StatelessWidget {
         // 나의 상태
         Row(
           children: [
-            Text('나의 상태',
+            Text(l10n?.filterLabelMyStatus ?? '나의 상태',
                 style: TextStyle(
                     fontSize: 11,
                     color: AkashaColors.textMuted,
@@ -199,7 +247,7 @@ class FilterSection extends StatelessWidget {
                       .map((label) => Padding(
                             padding: const EdgeInsets.only(right: 6),
                             child: _chip(
-                              label: label,
+                              label: localizeStatusLabel(label, l10n),
                               selected: selectedMyStatuses.contains(label),
                               onTap: () => onToggleMyStatus(label),
                               small: true,
@@ -244,6 +292,7 @@ class _AddArchiveButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     return Material(
       color: AkashaColors.accent.withValues(alpha: 0.12),
       borderRadius: BorderRadius.circular(8),
@@ -264,7 +313,7 @@ class _AddArchiveButton extends StatelessWidget {
               Icon(Icons.add, size: 14, color: AkashaColors.accent),
               const SizedBox(width: 4),
               Text(
-                '아카이브',
+                l10n?.filterAddArchive ?? '아카이브',
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w600,

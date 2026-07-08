@@ -1233,5 +1233,19 @@
   "graphDialogCreateCanvasTitle": "Create New Knowledge Map",
   "graphDialogCreateCanvasLabelTitle": "Map Title (e.g. Re:Zero Relations)",
   "graphDialogCreateCanvasLabelSlug": "URL Slug (e.g. re-zero)",
-  "graphDialogCreateCanvasBtnCreate": "Create"
+  "graphDialogCreateCanvasBtnCreate": "Create",
+  "filterScopeAll": "All",
+  "filterAddArchive": "Archive",
+  "filterAllMedia": "All Media",
+  "filterStatusHelp": "💡  Select a media type (Manga, Game, etc.) to activate detailed status filters (Completion status, Play/Watch status).",
+  "filterEntityGalleryTitle": "📂  {scopeLabel} Archive Gallery",
+  "@filterEntityGalleryTitle": {
+    "placeholders": {
+      "scopeLabel": {
+        "type": "String"
+      }
+    }
+  },
+  "filterLabelWorkStatus": "Work Status",
+  "filterLabelMyStatus": "My Status"
 }

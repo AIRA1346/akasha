@@ -2172,4 +2172,28 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get graphDialogCreateCanvasBtnCreate => '생성';
+
+  @override
+  String get filterScopeAll => '전체';
+
+  @override
+  String get filterAddArchive => '아카이브';
+
+  @override
+  String get filterAllMedia => '매체 전체';
+
+  @override
+  String get filterStatusHelp =>
+      '💡  매체(만화, 게임 등)를 선택하시면 세부 상태(완결여부, 플레이/감상 상태) 필터가 활성화됩니다.';
+
+  @override
+  String filterEntityGalleryTitle(String scopeLabel) {
+    return '📂  $scopeLabel 아카이브 갤러리';
+  }
+
+  @override
+  String get filterLabelWorkStatus => '작품 상태';
+
+  @override
+  String get filterLabelMyStatus => '나의 상태';
 }
