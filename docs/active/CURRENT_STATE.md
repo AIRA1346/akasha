@@ -1,7 +1,7 @@
 # AKASHA Current State (현재 상태)
 
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
-> **갱신:** 2026-07-08 (test **826** · analyze 0 · **Canvas Editor v0.3-A** · **Steam v1 = Personal Archive** · **Vault Format Spec v3 확립**)
+> **갱신:** 2026-07-08 (test **830** · analyze 0 · **Canvas Node Open v0.3-B.1** · **Steam v1 = Personal Archive** · **Vault Format Spec v3 확립**)
 > **Git:** code/test baseline **1729cef2** · current tip은 `git log -1` 기준
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md) — 독립 검증기 `tool/vault_format_validator.dart`
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
@@ -23,7 +23,7 @@
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
 
-**v1 blocking에 가까운 검증:** `flutter test` **826** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
+**v1 blocking에 가까운 검증:** `flutter test` **830** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
 **v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.
 
 ---
@@ -55,7 +55,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **826 PASS** | ✅ |
+| `flutter test` | **830 PASS** | ✅ |
 | `flutter analyze lib` | 0 issue | ✅ |
 | `vault_format_validator` | 적합성 검증기 (spec v3 · 앱 무의존) | — |
 | `preflight_check` | PASS | ✅ |
@@ -81,7 +81,7 @@
 * **상세 편집:** Markdown 본문 편집과 YAML frontmatter 폼 편집 기능이 완결되어 상호 탭 싱크 처리.
 * **연결 패널:** Work·Entity 각각 `*ConnectionsCoordinator`로 incoming / sameDay / link neighbors·vault 외부 편집 감지 분리.
 * **공유 ops:** `workbench_linked_record_ops`, `workbench_vault_disk_ops`, `*draft_ops`, `*delete_ops`, `*save_ops`, `workbench_save_shortcuts`.
-* **Canvas Editor (지식 지도):** Knowledge Graph → Workbench 탭 — **v0.3-A** (post-v1 P1, v1 blocking 아님). 분해 계획: [CANVAS_EDITOR_DECOMPOSITION_PLAN.md](../draft/CANVAS_EDITOR_DECOMPOSITION_PLAN.md)
+* **Canvas Editor (지식 지도):** Knowledge Graph → Workbench 탭 — **v0.3-B.1** (post-v1 P1, v1 blocking 아님). 분해 계획: [CANVAS_EDITOR_DECOMPOSITION_PLAN.md](../draft/CANVAS_EDITOR_DECOMPOSITION_PLAN.md) · 구현 계획: [CANVAS_NODE_OPEN_v0.3-B.1_IMPLEMENTATION_PLAN.md](../draft/CANVAS_NODE_OPEN_v0.3-B.1_IMPLEMENTATION_PLAN.md)
 
 | 슬라이스 | 기능 | 상태 |
 |:---:|------|:---:|
@@ -90,16 +90,19 @@
 | v0.2 | 관계선 CustomPainter · `canvas_only` edge 생성/편집/삭제 · preset relation picker | ✅ |
 | v0.3-A | Zoom/Pan · 뷰포트 경계 · 중심 좌표 원점 · 노드 드래그 · Fit to Content · `Ctrl+Space` | ✅ |
 | v0.3-A.4 | viewport listener 통합 · partial file extraction · SSOT 문서 | ✅ |
+| v0.3-B.1 | Work/Entity 노드 더블클릭 → Workbench 상세 탭 · Canvas+Detail 2탭 push (canvas active만) | ✅ |
 
-**Canvas v0.3-A 한계 (알려진):**
+**Canvas v0.3-B.1 한계 (알려진):**
 - UI 노드 kind: `text` · `work` · `entity`만. `record` · `group` 미구현.
 - Edge 편집: `canvas_only`만. `canonical_view` · `candidate`는 read-only snackbar.
-- 노드 → Workbench 더블클릭 열기 · 선택/Delete 단축키 · 리사이즈 · 미니맵 · 베지에 곡선: **미구현**.
-- Fit to Content 단축키 `Ctrl+Space` — Windows/IME 환경 충돌 가능. v0.3-B에서 `Home`/`Ctrl+0`/`F` 후보.
-- Canvas UI widget 테스트 없음 (`canvas_store_test` · `vault_format_validator` canvas group만).
+- text 노드 더블클릭은 no-op (기존 편집 버튼 유지).
+- 선택/Delete 단축키 · 리사이즈 · 미니맵 · 베지에 곡선: **미구현**.
+- Fit to Content 단축키 `Ctrl+Space` — Windows/IME 환경 충돌 가능. 후보: `Home`/`Ctrl+0`/`F`.
+- Canvas UI widget 테스트 없음 (`canvas_store_test` · `vault_format_validator` canvas group · `openDetailBesideCanvas` unit만).
 - `canvas.md` 본문/메타 UI 편집 없음.
+- Browse `openWork`/`openEntity`는 기존 `tabs.clear()` 유지. 2탭 push는 Canvas active 경로만.
 
-핵심 모듈: `CanvasStore`, `CanvasEditorWorkspace`, `CanvasNodeCard`, `CanvasEdgePainter`.
+핵심 모듈: `CanvasStore`, `CanvasEditorWorkspace`, `CanvasNodeCard`, `CanvasEdgePainter`, `WorkbenchController.openDetailBesideCanvas`.
 
 ### Ⅱ-b. Sanctum 아카이빙 (Work 기록, 2026-06)
 

@@ -1,6 +1,6 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-07-08 (@docs · **Canvas Editor Stabilization v0.3-A.4**)
+> **갱신:** 2026-07-08 (@docs · **Canvas Node Open v0.3-B.1**)
 > **Git:** current tip은 `git log -1` 기준 · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
 > **현재 실행:** **Steam 무료 출시 준비** — [STEAM_RELEASE.md](STEAM_RELEASE.md) · IAP/Agent/player implementation layer **post-launch**
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
@@ -13,13 +13,13 @@
  
 | 항목 | 상태 |
 |------|------|
-| **flutter test** | **826 PASS** |
+| **flutter test** | **830 PASS** |
 | **flutter analyze lib** | **0 issue** |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
 | **앱 테마** | `AkashaPalette` ThemeExtension · sidebar/bottom/search/card/preview rail 반영 ✅ |
 | **사이드바 서재** | `나만의 서재` 목록·active·`+`·select·삭제·DnD ✅ |
 | **Poster Localizing** | URL 입력 → vault `posters/` 저장 → `poster: "posters/..."` ✅ |
-| **Canvas Editor (지식 지도)** | v0.3-A ✅ · viewport/listener · Fit to Content · v0.3-A.4 stabilization · decomposition plan — [CANVAS_EDITOR_DECOMPOSITION_PLAN.md](../draft/CANVAS_EDITOR_DECOMPOSITION_PLAN.md) |
+| **Canvas Editor (지식 지도)** | v0.3-B.1 ✅ · Work/Entity 더블클릭 → Workbench · Canvas+Detail 2탭 · v0.3-A.4 stabilization — [CANVAS_NODE_OPEN_v0.3-B.1_IMPLEMENTATION_PLAN.md](../draft/CANVAS_NODE_OPEN_v0.3-B.1_IMPLEMENTATION_PLAN.md) |
 | **Agent Vault UI** | Work Journal 감상 카드 slice ✅ · dogfood 관찰은 [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
 | **Infinite Taste Archive** | 외부 도구/AI가 읽기 쉬운 개인 취향 아카이브 ADR ✅ · `.akasha/record_index.json` slice ✅ — [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) |
 | **Infinite Archive Hardening** | 무한 확장을 위한 index · taste signal · agent write contract · ID path 계획 ✅ — [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) |
@@ -86,7 +86,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **826 PASS** | ✅ |
+| `flutter test` | **830 PASS** | ✅ |
 | `flutter analyze lib` | **0 issue** | ✅ |
 | `preflight_check` | PASS | ✅ |
 | `registry_builder` | PASS | — (post-v1 scale) |
@@ -269,4 +269,5 @@
 | 2026-07-06 | **Entity Custom-to-Object Migration** — Transformed `custom` entity type to `object` (`ob_` prefix) across all layers, kept `cu_` backward compatibility fallback, updated arb l10n, test **774 PASS** · analyze **0** |
 | 2026-07-04 | **Record Contract slice** — `ArchiveRecordContract` standardizes v3 metadata and preserves additive fields across app rewrites · focused tests **60 PASS** · full tests **743 PASS** · analyze **0** |
 | 2026-07-08 | **Canvas Editor Stabilization v0.3-A.4** — viewport listener 통합 · `canvas_viewport_controls`/`canvas_editor_modes` partial extraction · SSOT 문서 · decomposition plan · full tests **826 PASS** · analyze **0** |
+| 2026-07-08 | **Canvas Node Open v0.3-B.1** — Work/Entity 더블클릭 → Workbench · `openDetailBesideCanvas` (canvas active만 2탭) · browse open 경로 유지 · release build PASS · full tests **830 PASS** · analyze **0** · tip **f65e2a03** |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |

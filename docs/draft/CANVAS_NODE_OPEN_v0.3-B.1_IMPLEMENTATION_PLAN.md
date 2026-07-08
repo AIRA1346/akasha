@@ -1,7 +1,7 @@
 # Canvas Node Open v0.3-B.1 — Implementation Plan
 
 > **작성:** 2026-07-08  
-> **상태:** 계획 (코드 미착수)  
+> **상태:** ✅ 구현 완료 (`f65e2a03`) · tests **830 PASS** · analyze **0** · Windows release build PASS  
 > **선행:** Canvas Editor Stabilization v0.3-A.4 ✅ · `origin/main` push 완료  
 > **분해 계획:** [CANVAS_EDITOR_DECOMPOSITION_PLAN.md](CANVAS_EDITOR_DECOMPOSITION_PLAN.md)
 
