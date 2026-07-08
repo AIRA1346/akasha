@@ -96,6 +96,12 @@ class _HomeBrowseSearchChromeState extends State<HomeBrowseSearchChrome> {
                   onPressed: () =>
                       setState(() => _filtersExpanded = !_filtersExpanded),
                 ),
+                if (widget.onAddNewEntity != null) ...[
+                  const SizedBox(width: AkashaSpacing.sm),
+                  _AddArchiveButton(
+                    onTap: () => widget.onAddNewEntity!(widget.selectedEntityScope.catalogEntityType),
+                  ),
+                ],
               ],
             ),
           ),
@@ -111,7 +117,6 @@ class _HomeBrowseSearchChromeState extends State<HomeBrowseSearchChrome> {
               onToggleMyStatus: widget.onToggleMyStatus,
               selectedEntityScope: widget.selectedEntityScope,
               onEntityScopeChanged: widget.onEntityScopeChanged,
-              onAddNewEntity: widget.onAddNewEntity,
             ),
             Divider(height: 1, color: palette.borderSubtle(0.18)),
           ] else
@@ -223,6 +228,50 @@ class _FilterToggleButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
           side: BorderSide(color: palette.borderSubtle(0.28)),
+        ),
+      ),
+    );
+  }
+}
+
+class _AddArchiveButton extends StatelessWidget {
+  const _AddArchiveButton({required this.onTap});
+
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+    return Material(
+      color: AkashaColors.accent.withValues(alpha: 0.12),
+      borderRadius: BorderRadius.circular(8),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(8),
+        onTap: onTap,
+        child: Container(
+          height: 40,
+          padding: const EdgeInsets.symmetric(horizontal: 12),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(
+              color: AkashaColors.accent.withValues(alpha: 0.3),
+            ),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.add, size: 16, color: AkashaColors.accent),
+              const SizedBox(width: 6),
+              Text(
+                l10n?.filterAddArchive ?? '아카이브',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: AkashaColors.accent,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

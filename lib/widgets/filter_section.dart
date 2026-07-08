@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../core/archiving/entity_anchor.dart';
 import '../models/browse_entity_scope.dart';
 import '../theme/akasha_colors.dart';
 import '../models/enums.dart';
@@ -67,7 +65,6 @@ class FilterSection extends StatelessWidget {
   final ValueChanged<String> onToggleMyStatus;
   final BrowseEntityScope selectedEntityScope;
   final ValueChanged<BrowseEntityScope> onEntityScopeChanged;
-  final void Function(EntityAnchorType? type)? onAddNewEntity;
 
   const FilterSection({
     super.key,
@@ -80,7 +77,6 @@ class FilterSection extends StatelessWidget {
     required this.onToggleMyStatus,
     required this.selectedEntityScope,
     required this.onEntityScopeChanged,
-    this.onAddNewEntity,
   });
 
   @override
@@ -93,34 +89,21 @@ class FilterSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Expanded(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: BrowseEntityScope.values.map((scope) {
-                      return Padding(
-                        padding: const EdgeInsets.only(right: 6),
-                        child: _chip(
-                          label: scope.toLocalizedLabel(l10n),
-                          selected: selectedEntityScope == scope,
-                          onTap: () => onEntityScopeChanged(scope),
-                          small: true,
-                        ),
-                      );
-                    }).toList(),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: BrowseEntityScope.values.map((scope) {
+                return Padding(
+                  padding: const EdgeInsets.only(right: 6),
+                  child: _chip(
+                    label: scope.toLocalizedLabel(l10n),
+                    selected: selectedEntityScope == scope,
+                    onTap: () => onEntityScopeChanged(scope),
+                    small: true,
                   ),
-                ),
-              ),
-              if (onAddNewEntity != null)
-                Padding(
-                  padding: const EdgeInsets.only(left: 8),
-                  child: _AddArchiveButton(
-                    onTap: () => onAddNewEntity!(selectedEntityScope.catalogEntityType),
-                  ),
-                ),
-            ],
+                );
+              }).toList(),
+            ),
           ),
           const SizedBox(height: 8),
           if (selectedEntityScope.showsWorkGrid) ...[
@@ -285,45 +268,4 @@ class FilterSection extends StatelessWidget {
   }
 }
 
-class _AddArchiveButton extends StatelessWidget {
-  const _AddArchiveButton({required this.onTap});
 
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = lookupAppL10n(context);
-    return Material(
-      color: AkashaColors.accent.withValues(alpha: 0.12),
-      borderRadius: BorderRadius.circular(8),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(8),
-        onTap: onTap,
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(
-              color: AkashaColors.accent.withValues(alpha: 0.3),
-            ),
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.add, size: 14, color: AkashaColors.accent),
-              const SizedBox(width: 4),
-              Text(
-                l10n?.filterAddArchive ?? '아카이브',
-                style: TextStyle(
-                  fontSize: 11,
-                  fontWeight: FontWeight.w600,
-                  color: AkashaColors.accent,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
