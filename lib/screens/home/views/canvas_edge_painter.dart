@@ -7,11 +7,13 @@ class CanvasEdgePainter extends CustomPainter {
   final CanvasLayout layout;
   final List<CanvasNode> nodes;
   final AkashaPalette palette;
+  final double workspaceOrigin;
 
   CanvasEdgePainter({
     required this.layout,
     required this.nodes,
     required this.palette,
+    required this.workspaceOrigin,
   });
 
   @override
@@ -31,8 +33,8 @@ class CanvasEdgePainter extends CustomPainter {
       final toW = toNode.width ?? (toNode.kind == 'text' ? 250.0 : 260.0);
       final toH = toNode.height ?? (toNode.kind == 'text' ? 100.0 : 90.0);
 
-      final fromCenter = Offset(fromNode.x + fromW / 2, fromNode.y + fromH / 2);
-      final toCenter = Offset(toNode.x + toW / 2, toNode.y + toH / 2);
+      final fromCenter = Offset(workspaceOrigin + fromNode.x + fromW / 2, workspaceOrigin + fromNode.y + fromH / 2);
+      final toCenter = Offset(workspaceOrigin + toNode.x + toW / 2, workspaceOrigin + toNode.y + toH / 2);
 
       // Draw relation line
       canvas.drawLine(fromCenter, toCenter, paint);

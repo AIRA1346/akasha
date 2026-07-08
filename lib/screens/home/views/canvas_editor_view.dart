@@ -18,6 +18,7 @@ import 'canvas_node_card.dart';
 
 abstract final class _CanvasConfig {
   static const double workspaceSize = 50000.0;
+  static const double workspaceOrigin = 25000.0;
   static const double boundaryMargin = 5000.0;
   static const double minScale = 0.1;
   static const double maxScale = 2.5;
@@ -58,6 +59,11 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   CanvasInteractionMode _interactionMode = CanvasInteractionMode.none;
   String? _selectedSourceNodeId;
   final TransformationController _transformationController = TransformationController();
+
+  // State variables for tracking node dragging in Scene coordinates (v0.3-A.2)
+  Offset? _dragStartSceneOffset;
+  double? _dragStartNodeX;
+  double? _dragStartNodeY;
 
   @override
   void initState() {
@@ -711,6 +717,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                 layout: _layout!,
                 nodes: _layout!.nodes,
                 palette: palette,
+                workspaceOrigin: _CanvasConfig.workspaceOrigin,
               ),
             ),
           ),
@@ -750,8 +757,14 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
     final toW = toNode.width ?? (toNode.kind == 'text' ? 250.0 : 260.0);
     final toH = toNode.height ?? (toNode.kind == 'text' ? 100.0 : 90.0);
 
-    final fromCenter = Offset(fromNode.x + fromW / 2, fromNode.y + fromH / 2);
-    final toCenter = Offset(toNode.x + toW / 2, toNode.y + toH / 2);
+    final fromCenter = Offset(
+      _CanvasConfig.workspaceOrigin + fromNode.x + fromW / 2,
+      _CanvasConfig.workspaceOrigin + fromNode.y + fromH / 2,
+    );
+    final toCenter = Offset(
+      _CanvasConfig.workspaceOrigin + toNode.x + toW / 2,
+      _CanvasConfig.workspaceOrigin + toNode.y + toH / 2,
+    );
 
     final mid = Offset((fromCenter.dx + toCenter.dx) / 2, (fromCenter.dy + toCenter.dy) / 2);
 
@@ -1011,16 +1024,32 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
     final bool isConnectingMode = _interactionMode != CanvasInteractionMode.none;
 
     return Positioned(
-      left: node.x,
-      top: node.y,
+      left: _CanvasConfig.workspaceOrigin + node.x,
+      top: _CanvasConfig.workspaceOrigin + node.y,
       child: GestureDetector(
         onTap: isConnectingMode ? () => _handleNodeTap(node) : null,
+        onPanStart: (details) {
+          if (isConnectingMode) return;
+          final RenderBox renderBox = context.findRenderObject() as RenderBox;
+          final localOffset = renderBox.globalToLocal(details.globalPosition);
+          _dragStartSceneOffset = _transformationController.toScene(localOffset);
+          _dragStartNodeX = node.x;
+          _dragStartNodeY = node.y;
+        },
         onPanUpdate: (details) {
-          if (isConnectingMode) return; // disable dragging during connection mode
-          final double currentZoom = _transformationController.value.getMaxScaleOnAxis();
+          if (isConnectingMode) return;
+          if (_dragStartSceneOffset == null || _dragStartNodeX == null || _dragStartNodeY == null) return;
+
+          final RenderBox renderBox = context.findRenderObject() as RenderBox;
+          final localOffset = renderBox.globalToLocal(details.globalPosition);
+          final currentSceneOffset = _transformationController.toScene(localOffset);
+
+          final dx = currentSceneOffset.dx - _dragStartSceneOffset!.dx;
+          final dy = currentSceneOffset.dy - _dragStartSceneOffset!.dy;
+
           setState(() {
-            node.x += details.delta.dx / currentZoom;
-            node.y += details.delta.dy / currentZoom;
+            node.x = _dragStartNodeX! + dx;
+            node.y = _dragStartNodeY! + dy;
           });
           // Update layout.updatedAt on drag
           _layout!.updatedAt = DateTime.now().toUtc();
