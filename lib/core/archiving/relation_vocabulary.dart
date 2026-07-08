@@ -85,6 +85,7 @@ abstract final class RelationVocabulary {
 
   /// Translates a relation token to its localized Korean display label,
   /// falling back to the raw token if mapping is not found.
+  @Deprecated('Use RelationLocalizer in the UI layer instead')
   static String displayLabelFor(String? relation) {
     if (relation == null) return '';
     return displayLabels[relation] ?? relation;

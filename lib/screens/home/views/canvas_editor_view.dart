@@ -15,6 +15,8 @@ import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../utils/app_l10n.dart';
+import '../../../utils/relation_localizer.dart';
 import '../dialogs/canvas_archive_search_dialog.dart';
 import 'canvas_edge_painter.dart';
 import 'canvas_editor_modes.dart';
@@ -262,12 +264,14 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
         );
         return;
       }
-      _showRelationDialog(_selectedSourceNodeId!, node.nodeId);
+      final sourceNode = _layout!.nodes.firstWhere((n) => n.nodeId == _selectedSourceNodeId);
+      _showRelationConnectionDialog(sourceNode, node);
     }
   }
 
-  Future<void> _showRelationDialog(String sourceId, String targetId) async {
+  Future<void> _showRelationConnectionDialog(CanvasNode source, CanvasNode target) async {
     final palette = context.akashaPalette;
+    final l10n = lookupAppL10n(context);
     
     // Combine core relations and recommended preset relations into a single list
     final List<String> availableTokens = [
@@ -286,14 +290,14 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
           builder: (context, setDialogState) {
             return AlertDialog(
               backgroundColor: palette.surfaceElevated,
-              title: Text('관계 선 연결', style: AkashaTypography.headline),
+              title: Text(l10n?.canvasRelationConnectTitle ?? '관계 선 연결', style: AkashaTypography.headline),
               content: SizedBox(
                 width: 400,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Text('노드 간의 관계 유형을 선택해 주세요:', style: TextStyle(color: AkashaColors.textSecondary, fontSize: 11)),
+                    Text(l10n?.canvasRelationSelectPrompt ?? '노드 간의 관계 유형을 선택해 주세요:', style: TextStyle(color: AkashaColors.textSecondary, fontSize: 11)),
                     const SizedBox(height: AkashaSpacing.xs),
                     DropdownButtonFormField<String>(
                       dropdownColor: palette.surfaceElevated,
@@ -311,11 +315,11 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                       items: [
                         ...availableTokens.map((token) => DropdownMenuItem<String>(
                               value: token,
-                              child: Text(RelationVocabulary.displayLabelFor(token)),
+                              child: Text(l10n != null ? token.toLocalizedRelationLabel(l10n) : token),
                             )),
-                        const DropdownMenuItem<String>(
+                        DropdownMenuItem<String>(
                           value: 'custom',
-                          child: Text('직접 입력...'),
+                          child: Text(l10n?.actionCustomInput ?? '직접 입력...'),
                         ),
                       ],
                       onChanged: (val) {
@@ -334,7 +338,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                     if (isCustom) ...[
                       const SizedBox(height: AkashaSpacing.md),
                       Text(
-                        '사용자 정의 관계 토큰 입력 (예: u:likes, u:teacher_of)',
+                        l10n?.canvasRelationCustomInputHelp ?? '사용자 정의 관계 토큰 입력 (예: u:likes, u:teacher_of)',
                         style: TextStyle(color: AkashaColors.textSecondary, fontSize: 11),
                       ),
                       const SizedBox(height: AkashaSpacing.xs),
@@ -364,7 +368,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(context, false),
-                  child: Text('취소', style: TextStyle(color: AkashaColors.textSecondary)),
+                  child: Text(l10n?.actionCancel ?? '취소', style: TextStyle(color: AkashaColors.textSecondary)),
                 ),
                 FilledButton(
                   onPressed: () {
@@ -373,11 +377,11 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                       final formatted = _sanitizeAndValidateUserRelation(input);
                       if (formatted == null) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
+                          SnackBar(
                             content: Text(
-                              '올바르지 않은 사용자 관계 토큰 형식입니다. 소문자, 숫자, 언더바만 가능합니다 (예: u:rival_of).'
+                              l10n?.canvasRelationCustomError ?? '올바르지 않은 사용자 관계 토큰 형식입니다. 소문자, 숫자, 언더바만 가능합니다 (예: u:rival_of).'
                             ),
-                            duration: Duration(seconds: 2),
+                            duration: const Duration(seconds: 2),
                           ),
                         );
                         return;
@@ -387,7 +391,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                     Navigator.pop(context, true);
                   },
                   style: FilledButton.styleFrom(backgroundColor: palette.accent),
-                  child: const Text('연결'),
+                  child: Text(l10n?.canvasRelationConnectButton ?? '연결'),
                 ),
               ],
             );
@@ -399,8 +403,8 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
     if (confirmed == true && mounted) {
       final newEdge = CanvasEdge(
         edgeId: _generateEdgeId(),
-        from: sourceId,
-        to: targetId,
+        from: source.nodeId,
+        to: target.nodeId,
         relation: selectedToken,
         edgeKind: 'canvas_only',
       );
@@ -457,22 +461,23 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
       return const SizedBox.shrink();
     }
 
+    final l10n = lookupAppL10n(context);
     final String message;
     if (_interactionMode == CanvasInteractionMode.selectSource) {
-      message = '관계의 출발지가 될 노드를 마우스로 클릭해 주세요.';
+      message = l10n?.canvasBannerSelectSource ?? '관계의 출발지가 될 노드를 마우스로 클릭해 주세요.';
     } else {
       final srcNode = _layout!.nodes.firstWhere((n) => n.nodeId == _selectedSourceNodeId);
       final String name;
       if (srcNode.kind == 'work') {
         final matching = widget.localItems.where((w) => w.workId == srcNode.workId);
-        name = matching.isNotEmpty ? matching.first.title : '작품';
+        name = matching.isNotEmpty ? matching.first.title : (l10n?.canvasBannerFallbackWork ?? '작품');
       } else if (srcNode.kind == 'entity') {
         final matching = _entities.where((e) => e.entityId == srcNode.entityId);
-        name = matching.isNotEmpty ? matching.first.title : '엔티티';
+        name = matching.isNotEmpty ? matching.first.title : (l10n?.canvasBannerFallbackEntity ?? '엔티티');
       } else {
-        name = srcNode.text ?? '메모';
+        name = srcNode.text ?? (l10n?.canvasBannerFallbackMemo ?? '메모');
       }
-      message = '[$name]에서 연결할 도착 노드를 선택해 주세요.';
+      message = l10n != null ? l10n.canvasBannerSelectTarget(name) : '[$name]에서 연결할 도착 노드를 선택해 주세요.';
     }
 
     return Container(
@@ -502,7 +507,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
               });
             },
             child: Text(
-              '취소',
+              l10n?.actionCancel ?? '취소',
               style: TextStyle(
                 fontSize: 11,
                 color: palette.accent,
@@ -515,17 +520,17 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
     );
   }
 
-  Future<void> _editTextNode(CanvasNode node) async {
-    if (node.kind != 'text') return; // only text nodes are editable
+  Future<void> _showTextNodeEditDialog(CanvasNode node) async {
     final controller = TextEditingController(text: node.text ?? '');
     final palette = context.akashaPalette;
+    final l10n = lookupAppL10n(context);
 
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) {
         return AlertDialog(
           backgroundColor: palette.surfaceElevated,
-          title: Text('메모 수정', style: AkashaTypography.headline),
+          title: Text(l10n?.canvasMemoEditTitle ?? '메모 수정', style: AkashaTypography.headline),
           content: SizedBox(
             width: 400,
             child: TextField(
@@ -535,7 +540,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
               autofocus: true,
               style: AkashaTypography.body,
               decoration: InputDecoration(
-                hintText: '메모 내용을 입력하세요...',
+                hintText: l10n?.canvasMemoEditPlaceholder ?? '메모 내용을 입력하세요...',
                 hintStyle: TextStyle(color: AkashaColors.textSecondary),
                 filled: true,
                 fillColor: palette.background,
@@ -553,12 +558,12 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context, false),
-              child: Text('취소', style: TextStyle(color: AkashaColors.textSecondary)),
+              child: Text(l10n?.actionCancel ?? '취소', style: TextStyle(color: AkashaColors.textSecondary)),
             ),
             FilledButton(
               onPressed: () => Navigator.pop(context, true),
               style: FilledButton.styleFrom(backgroundColor: palette.accent),
-              child: const Text('저장'),
+              child: Text(l10n?.actionSave ?? '저장'),
             ),
           ],
         );
@@ -576,6 +581,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
 
   Future<void> _deleteNode(CanvasNode node) async {
     final palette = context.akashaPalette;
+    final l10n = lookupAppL10n(context);
     final isText = node.kind == 'text';
 
     final confirmed = await showDialog<bool>(
@@ -583,11 +589,16 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
       builder: (context) {
         return AlertDialog(
           backgroundColor: palette.surfaceElevated,
-          title: Text(isText ? '메모 삭제' : '아카이브 노드 삭제', style: AkashaTypography.headline),
+          title: Text(
+            isText
+                ? (l10n?.canvasMemoDeleteTitle ?? '메모 삭제')
+                : (l10n?.canvasArchiveNodeDeleteTitle ?? '아카이브 노드 삭제'),
+            style: AkashaTypography.headline,
+          ),
           content: Text(
             isText
-                ? '이 메모를 삭제하시겠습니까?\n이 작업은 캔버스에서 제거할 뿐, 원본 파일은 삭제되지 않습니다.'
-                : '이 노드를 삭제하시겠습니까?\n이 작업은 캔버스에서 제거할 뿐, 실제 작품/엔티티 원본 파일은 절대 삭제되지 않습니다.',
+                ? (l10n?.canvasMemoDeleteConfirm ?? '이 메모를 삭제하시겠습니까?\n이 작업은 캔버스에서 제거할 뿐, 원본 파일은 삭제되지 않습니다.')
+                : (l10n?.canvasArchiveNodeDeleteConfirm ?? '이 노드를 삭제하시겠습니까?\n이 작업은 캔버스에서 제거할 뿐, 실제 작품/엔티티 원본 파일은 절대 삭제되지 않습니다.'),
             style: AkashaTypography.body,
           ),
           actions: [
@@ -619,6 +630,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   @override
   Widget build(BuildContext context) {
     final palette = context.akashaPalette;
+    final l10n = lookupAppL10n(context);
 
     return Container(
       color: palette.background,
@@ -644,7 +656,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                 IconButton(
                   icon: const Icon(Icons.close, size: 20),
                   onPressed: widget.onClose,
-                  tooltip: '탭 닫기',
+                  tooltip: l10n?.canvasTooltipCloseTab ?? '탭 닫기',
                 ),
                 const SizedBox(width: AkashaSpacing.xs),
                 Text(
@@ -655,9 +667,9 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                 TextButton.icon(
                   onPressed: _fitToContent,
                   icon: const Icon(Icons.fullscreen, size: 16, color: Colors.amberAccent),
-                  label: const Text(
-                    '전체 노드 보기',
-                    style: TextStyle(
+                  label: Text(
+                    l10n?.canvasBtnFitToContent ?? '전체 노드 보기',
+                    style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: Colors.amberAccent,
@@ -675,7 +687,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                   onPressed: _interactionMode == CanvasInteractionMode.none ? _startConnecting : null,
                   icon: Icon(Icons.hub_outlined, size: 16, color: palette.accent),
                   label: Text(
-                    '관계 연결',
+                    l10n?.canvasBtnConnectRelations ?? '관계 연결',
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
@@ -693,9 +705,9 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                 TextButton.icon(
                   onPressed: _interactionMode == CanvasInteractionMode.none ? _addArchiveNode : null,
                   icon: const Icon(Icons.archive_outlined, size: 16, color: Colors.tealAccent),
-                  label: const Text(
-                    '아카이브 추가',
-                    style: TextStyle(
+                  label: Text(
+                    l10n?.canvasBtnAddArchive ?? '아카이브 추가',
+                    style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: Colors.tealAccent,
@@ -713,7 +725,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                   onPressed: _interactionMode == CanvasInteractionMode.none ? _addTextNode : null,
                   icon: Icon(Icons.add_comment_outlined, size: 16, color: palette.accent),
                   label: Text(
-                    '메모 추가',
+                    l10n?.canvasBtnAddMemo ?? '메모 추가',
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
@@ -735,7 +747,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
             child: _loading
                 ? const Center(child: CircularProgressIndicator(strokeWidth: 2))
                 : _layout == null
-                    ? const Center(child: Text('캔버스 데이터를 불러올 수 없습니다.'))
+                    ? Center(child: Text(l10n?.canvasErrorLoadFailed ?? '캔버스 데이터를 불러올 수 없습니다.'))
                     : Listener(
                         behavior: HitTestBehavior.translucent,
                         onPointerSignal: _handleCanvasWheelZoomSignal,
@@ -940,7 +952,8 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
     final rel = edge.relation;
     if (rel == null || rel.isEmpty) return const SizedBox.shrink();
 
-    final labelText = RelationVocabulary.displayLabelFor(rel);
+    final l10n = lookupAppL10n(context);
+    final labelText = l10n != null ? rel.toLocalizedRelationLabel(l10n) : rel;
 
     return Positioned(
       left: mid.dx,
@@ -980,12 +993,13 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   }
 
   Future<void> _showEdgeEditDialog(CanvasEdge edge) async {
+    final l10n = lookupAppL10n(context);
     // Only allow editing canvas_only edges (Condition 1)
     if (edge.edgeKind != 'canvas_only') {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('공식 수립된 관계선은 캔버스에서 직접 수정할 수 없습니다.'),
-          duration: Duration(seconds: 2),
+        SnackBar(
+          content: Text(l10n?.canvasEdgeOfficialEditError ?? '공식 수립된 관계선은 캔버스에서 직접 수정할 수 없습니다.'),
+          duration: const Duration(seconds: 2),
         ),
       );
       return;
@@ -1014,14 +1028,14 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
           builder: (context, setDialogState) {
             return AlertDialog(
               backgroundColor: palette.surfaceElevated,
-              title: Text('관계 편집', style: AkashaTypography.headline),
+              title: Text(l10n?.canvasEdgeEditTitle ?? '관계 편집', style: AkashaTypography.headline),
               content: SizedBox(
                 width: 400,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Text('노드 간의 관계 유형을 선택해 주세요:', style: TextStyle(color: AkashaColors.textSecondary, fontSize: 11)),
+                    Text(l10n?.canvasRelationSelectPrompt ?? '노드 간의 관계 유형을 선택해 주세요:', style: TextStyle(color: AkashaColors.textSecondary, fontSize: 11)),
                     const SizedBox(height: AkashaSpacing.xs),
                     DropdownButtonFormField<String>(
                       dropdownColor: palette.surfaceElevated,
@@ -1039,11 +1053,11 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                       items: [
                         ...availableTokens.map((token) => DropdownMenuItem<String>(
                               value: token,
-                              child: Text(RelationVocabulary.displayLabelFor(token)),
+                              child: Text(l10n != null ? token.toLocalizedRelationLabel(l10n) : token),
                             )),
-                        const DropdownMenuItem<String>(
+                        DropdownMenuItem<String>(
                           value: 'custom',
-                          child: Text('직접 입력...'),
+                          child: Text(l10n?.actionCustomInput ?? '직접 입력...'),
                         ),
                       ],
                       onChanged: (val) {
@@ -1063,7 +1077,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                     if (isCustom) ...[
                       const SizedBox(height: AkashaSpacing.md),
                       Text(
-                        '사용자 정의 관계 토큰 입력 (예: u:likes, u:teacher_of)',
+                        l10n?.canvasRelationCustomInputHelp ?? '사용자 정의 관계 토큰 입력 (예: u:likes, u:teacher_of)',
                         style: TextStyle(color: AkashaColors.textSecondary, fontSize: 11),
                       ),
                       const SizedBox(height: AkashaSpacing.xs),
@@ -1099,17 +1113,17 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                               builder: (context) {
                                 return AlertDialog(
                                   backgroundColor: palette.surfaceElevated,
-                                  title: Text('관계선 삭제', style: AkashaTypography.headline),
-                                  content: const Text('이 관계선을 삭제할까요?\n이 작업은 캔버스에서 제거할 뿐, 원본 파일은 변경되지 않습니다.'),
+                                  title: Text(l10n?.canvasEdgeDeleteTitle ?? '관계선 삭제', style: AkashaTypography.headline),
+                                  content: Text(l10n?.canvasEdgeDeleteConfirm ?? '이 관계선을 삭제할까요?\n이 작업은 캔버스에서 제거할 뿐, 원본 파일은 변경되지 않습니다.'),
                                   actions: [
                                     TextButton(
                                       onPressed: () => Navigator.pop(context, false),
-                                      child: Text('취소', style: TextStyle(color: AkashaColors.textSecondary)),
+                                      child: Text(l10n?.actionCancel ?? '취소', style: TextStyle(color: AkashaColors.textSecondary)),
                                     ),
                                     FilledButton(
                                       onPressed: () => Navigator.pop(context, true),
                                       style: FilledButton.styleFrom(backgroundColor: Colors.redAccent),
-                                      child: const Text('삭제'),
+                                      child: Text(l10n?.actionDelete ?? '삭제'),
                                     ),
                                   ],
                                 );
@@ -1126,12 +1140,15 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                               navigator.pop(false);
                             }
                           },
-                          child: const Text('삭제', style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold)),
+                          child: Text(
+                            l10n?.actionDelete ?? '삭제',
+                            style: const TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold),
+                          ),
                         ),
                         const Spacer(),
                         TextButton(
                           onPressed: () => Navigator.pop(context, false),
-                          child: Text('취소', style: TextStyle(color: AkashaColors.textSecondary)),
+                          child: Text(l10n?.actionCancel ?? '취소', style: TextStyle(color: AkashaColors.textSecondary)),
                         ),
                         const SizedBox(width: AkashaSpacing.xs),
                         FilledButton(
@@ -1142,11 +1159,11 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                               final formatted = _sanitizeAndValidateUserRelation(input);
                               if (formatted == null) {
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
+                                  SnackBar(
                                     content: Text(
-                                      '올바르지 않은 사용자 관계 토큰 형식입니다. 소문자, 숫자, 언더바만 가능합니다 (예: u:rival_of).'
+                                      l10n?.canvasRelationCustomError ?? '올바르지 않은 사용자 관계 토큰 형식입니다. 소문자, 숫자, 언더바만 가능합니다 (예: u:rival_of).'
                                     ),
-                                    duration: Duration(seconds: 2),
+                                    duration: const Duration(seconds: 2),
                                   ),
                                 );
                                 return;
@@ -1174,7 +1191,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                             Navigator.pop(context, true);
                           },
                           style: FilledButton.styleFrom(backgroundColor: palette.accent),
-                          child: const Text('저장'),
+                          child: Text(l10n?.actionSave ?? '저장'),
                         ),
                       ],
                     ),
@@ -1190,10 +1207,11 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
 
   void _showArchiveNodeMissingSnackBar() {
     if (!mounted) return;
+    final l10n = lookupAppL10n(context);
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('아카이브에서 해당 항목을 찾을 수 없습니다.'),
-        duration: Duration(seconds: 2),
+      SnackBar(
+        content: Text(l10n?.canvasArchiveNodeMissingError ?? '아카이브에서 해당 항목을 찾을 수 없습니다.'),
+        duration: const Duration(seconds: 2),
       ),
     );
   }
@@ -1299,7 +1317,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
             entities: _entities,
             vaultPath: widget.vaultPath,
             palette: palette,
-            onEdit: () => _editTextNode(node),
+            onEdit: () => _showTextNodeEditDialog(node),
             onDelete: () => _deleteNode(node),
           ),
         ),

@@ -61,29 +61,35 @@ Future<void> showAppPreferencesDialog(
                       style: AkashaTypography.settingsLabel,
                     ),
                     const SizedBox(height: AkashaSpacing.sm),
-                    DropdownButtonFormField<CatalogLocale>(
-                      initialValue: localLocale,
+                    InputDecorator(
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         isDense: true,
                       ),
-                      items: [
-                        DropdownMenuItem(
-                          value: CatalogLocale.ko,
-                          child: Text(l10n.localeKo),
+                      child: DropdownButtonHideUnderline(
+                        child: DropdownButton<CatalogLocale>(
+                          value: localLocale,
+                          isDense: true,
+                          isExpanded: true,
+                          items: [
+                            DropdownMenuItem(
+                              value: CatalogLocale.ko,
+                              child: Text(l10n.localeKo),
+                            ),
+                            DropdownMenuItem(
+                              value: CatalogLocale.en,
+                              child: Text(l10n.localeEn),
+                            ),
+                          ],
+                          onChanged: (value) async {
+                            if (value == null) return;
+                            await CatalogLocalePreferences.save(value);
+                            CatalogLocaleScope.setCurrent(value);
+                            if (!context.mounted) return;
+                            setDialogState(() => localLocale = value);
+                          },
                         ),
-                        DropdownMenuItem(
-                          value: CatalogLocale.en,
-                          child: Text(l10n.localeEn),
-                        ),
-                      ],
-                      onChanged: (value) async {
-                        if (value == null) return;
-                        await CatalogLocalePreferences.save(value);
-                        CatalogLocaleScope.setCurrent(value);
-                        if (!context.mounted) return;
-                        setDialogState(() => localLocale = value);
-                      },
+                      ),
                     ),
                     const Divider(height: 28),
                     Row(

@@ -1928,4 +1928,155 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get yearlyNoYear => '연도 미상';
+
+  @override
+  String get canvasBtnFitToContent => '전체 노드 보기';
+
+  @override
+  String get canvasBtnConnectRelations => '관계 연결';
+
+  @override
+  String get canvasBtnAddArchive => '아카이브 추가';
+
+  @override
+  String get canvasBtnAddMemo => '메모 추가';
+
+  @override
+  String get canvasErrorLoadFailed => '캔버스 데이터를 불러올 수 없습니다.';
+
+  @override
+  String get canvasTooltipCloseTab => '탭 닫기';
+
+  @override
+  String get vocabRelated => '단순 관련성';
+
+  @override
+  String get vocabAbout => '주제 / 논함';
+
+  @override
+  String get vocabAppearsIn => '등장인물 / 등장장소';
+
+  @override
+  String get vocabCreatedBy => '창작자 / 제작자';
+
+  @override
+  String get vocabPartOf => '하위 부분 / 소속';
+
+  @override
+  String get vocabMemberOf => '구성원 / 멤버';
+
+  @override
+  String get vocabLocatedIn => '위치함';
+
+  @override
+  String get vocabInspiredBy => '영감을 받음';
+
+  @override
+  String get vocabRivalOf => '대립 / 라이벌';
+
+  @override
+  String get vocabAllyOf => '동맹 / 협력';
+
+  @override
+  String get vocabFriendOf => '친구 / 동료';
+
+  @override
+  String get vocabFamilyOf => '가족 / 친족';
+
+  @override
+  String get vocabMentorOf => '스승 / 멘토';
+
+  @override
+  String get vocabSubordinateOf => '부하 / 종속';
+
+  @override
+  String get vocabSuccessorOf => '계승 / 후계';
+
+  @override
+  String get vocabProtects => '보호함';
+
+  @override
+  String get vocabLoves => '애정 / 호감';
+
+  @override
+  String get vocabEnemyOf => '적대';
+
+  @override
+  String get vocabAdaptedFrom => '각색 / 원작 기반';
+
+  @override
+  String get vocabSymbolizes => '상징함';
+
+  @override
+  String get canvasRelationConnectTitle => '관계 선 연결';
+
+  @override
+  String get canvasRelationSelectPrompt => '노드 간의 관계 유형을 선택해 주세요:';
+
+  @override
+  String get canvasRelationCustomInputHelp =>
+      '사용자 정의 관계 토큰 입력 (예: u:likes, u:teacher_of)';
+
+  @override
+  String get canvasRelationCustomError =>
+      '올바르지 않은 사용자 관계 토큰 형식입니다. 소문자, 숫자, 언더바만 가능합니다 (예: u:rival_of).';
+
+  @override
+  String get canvasRelationConnectButton => '연결';
+
+  @override
+  String get actionCustomInput => '직접 입력...';
+
+  @override
+  String get canvasMemoEditTitle => '메모 수정';
+
+  @override
+  String get canvasMemoEditPlaceholder => '메모 내용을 입력하세요...';
+
+  @override
+  String get canvasMemoDeleteTitle => '메모 삭제';
+
+  @override
+  String get canvasMemoDeleteConfirm =>
+      '이 메모를 삭제하시겠습니까?\n이 작업은 캔버스에서 제거할 뿐, 원본 파일은 삭제되지 않습니다.';
+
+  @override
+  String get canvasArchiveNodeDeleteTitle => '아카이브 노드 삭제';
+
+  @override
+  String get canvasArchiveNodeDeleteConfirm =>
+      '이 노드를 삭제하시겠습니까?\n이 작업은 캔버스에서 제거할 뿐, 실제 작품/엔티티 원본 파일은 절대 삭제되지 않습니다.';
+
+  @override
+  String get canvasEdgeEditTitle => '관계 편집';
+
+  @override
+  String get canvasEdgeDeleteTitle => '관계선 삭제';
+
+  @override
+  String get canvasEdgeDeleteConfirm =>
+      '이 관계선을 삭제할까요?\n이 작업은 캔버스에서 제거할 뿐, 원본 파일은 변경되지 않습니다.';
+
+  @override
+  String get canvasEdgeOfficialEditError => '공식 수립된 관계선은 캔버스에서 직접 수정할 수 없습니다.';
+
+  @override
+  String get canvasArchiveNodeMissingError => '아카이브에서 해당 항목을 찾을 수 없습니다.';
+
+  @override
+  String get canvasBannerSelectSource => '관계의 출발지가 될 노드를 마우스로 클릭해 주세요.';
+
+  @override
+  String canvasBannerSelectTarget(String name) {
+    return '[$name]에서 연결할 도착 노드를 선택해 주세요.';
+  }
+
+  @override
+  String get canvasBannerFallbackWork => '작품';
+
+  @override
+  String get canvasBannerFallbackEntity => '엔티티';
+
+  @override
+  String get canvasBannerFallbackMemo => '메모';
 }

@@ -1971,4 +1971,159 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get yearlyNoYear => 'Year unknown';
+
+  @override
+  String get canvasBtnFitToContent => 'Fit to Content';
+
+  @override
+  String get canvasBtnConnectRelations => 'Connect Relations';
+
+  @override
+  String get canvasBtnAddArchive => 'Add Archive';
+
+  @override
+  String get canvasBtnAddMemo => 'Add Memo';
+
+  @override
+  String get canvasErrorLoadFailed => 'Failed to load canvas data.';
+
+  @override
+  String get canvasTooltipCloseTab => 'Close Tab';
+
+  @override
+  String get vocabRelated => 'Related';
+
+  @override
+  String get vocabAbout => 'About';
+
+  @override
+  String get vocabAppearsIn => 'Appears In';
+
+  @override
+  String get vocabCreatedBy => 'Created By';
+
+  @override
+  String get vocabPartOf => 'Part Of';
+
+  @override
+  String get vocabMemberOf => 'Member Of';
+
+  @override
+  String get vocabLocatedIn => 'Located In';
+
+  @override
+  String get vocabInspiredBy => 'Inspired By';
+
+  @override
+  String get vocabRivalOf => 'Rival Of';
+
+  @override
+  String get vocabAllyOf => 'Ally Of';
+
+  @override
+  String get vocabFriendOf => 'Friend Of';
+
+  @override
+  String get vocabFamilyOf => 'Family Of';
+
+  @override
+  String get vocabMentorOf => 'Mentor Of';
+
+  @override
+  String get vocabSubordinateOf => 'Subordinate Of';
+
+  @override
+  String get vocabSuccessorOf => 'Successor Of';
+
+  @override
+  String get vocabProtects => 'Protects';
+
+  @override
+  String get vocabLoves => 'Loves';
+
+  @override
+  String get vocabEnemyOf => 'Enemy Of';
+
+  @override
+  String get vocabAdaptedFrom => 'Adapted From';
+
+  @override
+  String get vocabSymbolizes => 'Symbolizes';
+
+  @override
+  String get canvasRelationConnectTitle => 'Connect Relation Edge';
+
+  @override
+  String get canvasRelationSelectPrompt =>
+      'Please select a relationship type between nodes:';
+
+  @override
+  String get canvasRelationCustomInputHelp =>
+      'Enter custom relationship token (e.g. u:likes, u:teacher_of)';
+
+  @override
+  String get canvasRelationCustomError =>
+      'Invalid custom relation token format. Only lowercase, numbers, and underscores are allowed (e.g. u:rival_of).';
+
+  @override
+  String get canvasRelationConnectButton => 'Connect';
+
+  @override
+  String get actionCustomInput => 'Custom...';
+
+  @override
+  String get canvasMemoEditTitle => 'Edit Memo';
+
+  @override
+  String get canvasMemoEditPlaceholder => 'Enter memo content...';
+
+  @override
+  String get canvasMemoDeleteTitle => 'Delete Memo';
+
+  @override
+  String get canvasMemoDeleteConfirm =>
+      'Do you want to delete this memo?\nThis action only removes it from the canvas and does not delete the original file.';
+
+  @override
+  String get canvasArchiveNodeDeleteTitle => 'Delete Archive Node';
+
+  @override
+  String get canvasArchiveNodeDeleteConfirm =>
+      'Do you want to delete this node?\nThis action only removes it from the canvas and will never delete the actual original work or entity.';
+
+  @override
+  String get canvasEdgeEditTitle => 'Edit Relationship';
+
+  @override
+  String get canvasEdgeDeleteTitle => 'Delete Relationship Line';
+
+  @override
+  String get canvasEdgeDeleteConfirm =>
+      'Do you want to delete this relationship line?\nThis action only removes it from the canvas and does not modify the original file.';
+
+  @override
+  String get canvasEdgeOfficialEditError =>
+      'Official relationship lines cannot be modified directly on the canvas.';
+
+  @override
+  String get canvasArchiveNodeMissingError =>
+      'Could not find the corresponding item in the archive.';
+
+  @override
+  String get canvasBannerSelectSource =>
+      'Please click a node to start the relationship.';
+
+  @override
+  String canvasBannerSelectTarget(String name) {
+    return 'Please select a target node to connect from [$name].';
+  }
+
+  @override
+  String get canvasBannerFallbackWork => 'Work';
+
+  @override
+  String get canvasBannerFallbackEntity => 'Entity';
+
+  @override
+  String get canvasBannerFallbackMemo => 'Memo';
 }

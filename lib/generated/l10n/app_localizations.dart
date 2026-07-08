@@ -3607,6 +3607,294 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Year unknown'**
   String get yearlyNoYear;
+
+  /// No description provided for @canvasBtnFitToContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Fit to Content'**
+  String get canvasBtnFitToContent;
+
+  /// No description provided for @canvasBtnConnectRelations.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect Relations'**
+  String get canvasBtnConnectRelations;
+
+  /// No description provided for @canvasBtnAddArchive.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Archive'**
+  String get canvasBtnAddArchive;
+
+  /// No description provided for @canvasBtnAddMemo.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Memo'**
+  String get canvasBtnAddMemo;
+
+  /// No description provided for @canvasErrorLoadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load canvas data.'**
+  String get canvasErrorLoadFailed;
+
+  /// No description provided for @canvasTooltipCloseTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Close Tab'**
+  String get canvasTooltipCloseTab;
+
+  /// No description provided for @vocabRelated.
+  ///
+  /// In en, this message translates to:
+  /// **'Related'**
+  String get vocabRelated;
+
+  /// No description provided for @vocabAbout.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get vocabAbout;
+
+  /// No description provided for @vocabAppearsIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Appears In'**
+  String get vocabAppearsIn;
+
+  /// No description provided for @vocabCreatedBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Created By'**
+  String get vocabCreatedBy;
+
+  /// No description provided for @vocabPartOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Part Of'**
+  String get vocabPartOf;
+
+  /// No description provided for @vocabMemberOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Member Of'**
+  String get vocabMemberOf;
+
+  /// No description provided for @vocabLocatedIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Located In'**
+  String get vocabLocatedIn;
+
+  /// No description provided for @vocabInspiredBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Inspired By'**
+  String get vocabInspiredBy;
+
+  /// No description provided for @vocabRivalOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Rival Of'**
+  String get vocabRivalOf;
+
+  /// No description provided for @vocabAllyOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Ally Of'**
+  String get vocabAllyOf;
+
+  /// No description provided for @vocabFriendOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Friend Of'**
+  String get vocabFriendOf;
+
+  /// No description provided for @vocabFamilyOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Family Of'**
+  String get vocabFamilyOf;
+
+  /// No description provided for @vocabMentorOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Mentor Of'**
+  String get vocabMentorOf;
+
+  /// No description provided for @vocabSubordinateOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Subordinate Of'**
+  String get vocabSubordinateOf;
+
+  /// No description provided for @vocabSuccessorOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Successor Of'**
+  String get vocabSuccessorOf;
+
+  /// No description provided for @vocabProtects.
+  ///
+  /// In en, this message translates to:
+  /// **'Protects'**
+  String get vocabProtects;
+
+  /// No description provided for @vocabLoves.
+  ///
+  /// In en, this message translates to:
+  /// **'Loves'**
+  String get vocabLoves;
+
+  /// No description provided for @vocabEnemyOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Enemy Of'**
+  String get vocabEnemyOf;
+
+  /// No description provided for @vocabAdaptedFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'Adapted From'**
+  String get vocabAdaptedFrom;
+
+  /// No description provided for @vocabSymbolizes.
+  ///
+  /// In en, this message translates to:
+  /// **'Symbolizes'**
+  String get vocabSymbolizes;
+
+  /// No description provided for @canvasRelationConnectTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect Relation Edge'**
+  String get canvasRelationConnectTitle;
+
+  /// No description provided for @canvasRelationSelectPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a relationship type between nodes:'**
+  String get canvasRelationSelectPrompt;
+
+  /// No description provided for @canvasRelationCustomInputHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter custom relationship token (e.g. u:likes, u:teacher_of)'**
+  String get canvasRelationCustomInputHelp;
+
+  /// No description provided for @canvasRelationCustomError.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid custom relation token format. Only lowercase, numbers, and underscores are allowed (e.g. u:rival_of).'**
+  String get canvasRelationCustomError;
+
+  /// No description provided for @canvasRelationConnectButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect'**
+  String get canvasRelationConnectButton;
+
+  /// No description provided for @actionCustomInput.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom...'**
+  String get actionCustomInput;
+
+  /// No description provided for @canvasMemoEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Memo'**
+  String get canvasMemoEditTitle;
+
+  /// No description provided for @canvasMemoEditPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter memo content...'**
+  String get canvasMemoEditPlaceholder;
+
+  /// No description provided for @canvasMemoDeleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Memo'**
+  String get canvasMemoDeleteTitle;
+
+  /// No description provided for @canvasMemoDeleteConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you want to delete this memo?\nThis action only removes it from the canvas and does not delete the original file.'**
+  String get canvasMemoDeleteConfirm;
+
+  /// No description provided for @canvasArchiveNodeDeleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Archive Node'**
+  String get canvasArchiveNodeDeleteTitle;
+
+  /// No description provided for @canvasArchiveNodeDeleteConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you want to delete this node?\nThis action only removes it from the canvas and will never delete the actual original work or entity.'**
+  String get canvasArchiveNodeDeleteConfirm;
+
+  /// No description provided for @canvasEdgeEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Relationship'**
+  String get canvasEdgeEditTitle;
+
+  /// No description provided for @canvasEdgeDeleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Relationship Line'**
+  String get canvasEdgeDeleteTitle;
+
+  /// No description provided for @canvasEdgeDeleteConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you want to delete this relationship line?\nThis action only removes it from the canvas and does not modify the original file.'**
+  String get canvasEdgeDeleteConfirm;
+
+  /// No description provided for @canvasEdgeOfficialEditError.
+  ///
+  /// In en, this message translates to:
+  /// **'Official relationship lines cannot be modified directly on the canvas.'**
+  String get canvasEdgeOfficialEditError;
+
+  /// No description provided for @canvasArchiveNodeMissingError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not find the corresponding item in the archive.'**
+  String get canvasArchiveNodeMissingError;
+
+  /// No description provided for @canvasBannerSelectSource.
+  ///
+  /// In en, this message translates to:
+  /// **'Please click a node to start the relationship.'**
+  String get canvasBannerSelectSource;
+
+  /// No description provided for @canvasBannerSelectTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a target node to connect from [{name}].'**
+  String canvasBannerSelectTarget(String name);
+
+  /// No description provided for @canvasBannerFallbackWork.
+  ///
+  /// In en, this message translates to:
+  /// **'Work'**
+  String get canvasBannerFallbackWork;
+
+  /// No description provided for @canvasBannerFallbackEntity.
+  ///
+  /// In en, this message translates to:
+  /// **'Entity'**
+  String get canvasBannerFallbackEntity;
+
+  /// No description provided for @canvasBannerFallbackMemo.
+  ///
+  /// In en, this message translates to:
+  /// **'Memo'**
+  String get canvasBannerFallbackMemo;
 }
 
 class _AppLocalizationsDelegate
