@@ -67,22 +67,33 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   double? _dragStartNodeY;
 
   // Focus node for keyboard shortcuts listener (v0.3-A.3)
-  final FocusNode _focusNode = FocusNode();
+  bool _handleGlobalKeyEvent(KeyEvent event) {
+    if (event is KeyDownEvent) {
+      final isCtrl = HardwareKeyboard.instance.isControlPressed;
+      final isSpace = event.logicalKey == LogicalKeyboardKey.space;
+      if (isCtrl && isSpace) {
+        _fitToContent();
+        return true; // handled
+      }
+    }
+    return false; // not handled
+  }
 
   @override
   void initState() {
     super.initState();
     _loadCanvasData();
+    HardwareKeyboard.instance.addHandler(_handleGlobalKeyEvent);
   }
 
   @override
   void dispose() {
+    HardwareKeyboard.instance.removeHandler(_handleGlobalKeyEvent);
     // Flush any pending saves immediately on exit
     if (_layout != null) {
       CanvasStore.instance.flushPendingSave(widget.vaultPath, widget.canvasId, _layout!);
     }
     _transformationController.dispose();
-    _focusNode.dispose();
     super.dispose();
   }
 
@@ -595,154 +606,137 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   Widget build(BuildContext context) {
     final palette = context.akashaPalette;
 
-    return Focus(
-      autofocus: true,
-      focusNode: _focusNode,
-      onKeyEvent: (node, event) {
-        if (event is KeyDownEvent) {
-          final isCtrl = event.logicalKey == LogicalKeyboardKey.controlLeft ||
-                         event.logicalKey == LogicalKeyboardKey.controlRight ||
-                         HardwareKeyboard.instance.isControlPressed;
-          final isSpace = event.logicalKey == LogicalKeyboardKey.space;
-          if (isCtrl && isSpace) {
-            _fitToContent();
-            return KeyEventResult.handled;
-          }
-        }
-        return KeyEventResult.ignored;
-      },
-      child: Container(
-        color: palette.background,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            // Workspace header with close tab and add nodes buttons
-            Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: AkashaSpacing.md,
-                vertical: AkashaSpacing.xs,
-              ),
-              decoration: BoxDecoration(
-                color: palette.sidebar,
-                border: Border(
-                  bottom: BorderSide(
-                    color: palette.borderSubtle(0.2),
-                  ),
+    return Container(
+      color: palette.background,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // Workspace header with close tab and add nodes buttons
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: AkashaSpacing.md,
+              vertical: AkashaSpacing.xs,
+            ),
+            decoration: BoxDecoration(
+              color: palette.sidebar,
+              border: Border(
+                bottom: BorderSide(
+                  color: palette.borderSubtle(0.2),
                 ),
               ),
-              child: Row(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.close, size: 20),
-                    onPressed: widget.onClose,
-                    tooltip: '탭 닫기',
-                  ),
-                  const SizedBox(width: AkashaSpacing.xs),
-                  Text(
-                    widget.title,
-                    style: AkashaTypography.dashboardPanelTitle,
-                  ),
-                  const Spacer(),
-                  TextButton.icon(
-                    onPressed: _fitToContent,
-                    icon: const Icon(Icons.fullscreen, size: 16, color: Colors.amberAccent),
-                    label: const Text(
-                      '전체 노드 보기',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.amberAccent,
-                      ),
-                    ),
-                    style: TextButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: AkashaSpacing.sm,
-                        vertical: AkashaSpacing.xs,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: AkashaSpacing.xs),
-                  TextButton.icon(
-                    onPressed: _interactionMode == CanvasInteractionMode.none ? _startConnecting : null,
-                    icon: Icon(Icons.hub_outlined, size: 16, color: palette.accent),
-                    label: Text(
-                      '관계 연결',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: palette.accent,
-                      ),
-                    ),
-                    style: TextButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: AkashaSpacing.sm,
-                        vertical: AkashaSpacing.xs,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: AkashaSpacing.xs),
-                  TextButton.icon(
-                    onPressed: _interactionMode == CanvasInteractionMode.none ? _addArchiveNode : null,
-                    icon: const Icon(Icons.archive_outlined, size: 16, color: Colors.tealAccent),
-                    label: const Text(
-                      '아카이브 추가',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.tealAccent,
-                      ),
-                    ),
-                    style: TextButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: AkashaSpacing.sm,
-                        vertical: AkashaSpacing.xs,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: AkashaSpacing.xs),
-                  TextButton.icon(
-                    onPressed: _interactionMode == CanvasInteractionMode.none ? _addTextNode : null,
-                    icon: Icon(Icons.add_comment_outlined, size: 16, color: palette.accent),
-                    label: Text(
-                      '메모 추가',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: palette.accent,
-                      ),
-                    ),
-                    style: TextButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: AkashaSpacing.sm,
-                        vertical: AkashaSpacing.xs,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
             ),
-            _buildInteractionBanner(palette),
-            Expanded(
-              child: _loading
-                  ? const Center(child: CircularProgressIndicator(strokeWidth: 2))
-                  : _layout == null
-                      ? const Center(child: Text('캔버스 데이터를 불러올 수 없습니다.'))
-                      : InteractiveViewer(
-                          transformationController: _transformationController,
-                          constrained: false,
-                          boundaryMargin: const EdgeInsets.all(_CanvasConfig.boundaryMargin),
-                          minScale: _CanvasConfig.minScale,
-                          maxScale: _CanvasConfig.maxScale,
-                          onInteractionEnd: (details) => _handleViewportChange(),
-                          child: SizedBox(
-                            width: _CanvasConfig.workspaceSize,
-                            height: _CanvasConfig.workspaceSize,
-                            child: uiStack(palette),
-                          ),
+            child: Row(
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.close, size: 20),
+                  onPressed: widget.onClose,
+                  tooltip: '탭 닫기',
+                ),
+                const SizedBox(width: AkashaSpacing.xs),
+                Text(
+                  widget.title,
+                  style: AkashaTypography.dashboardPanelTitle,
+                ),
+                const Spacer(),
+                TextButton.icon(
+                  onPressed: _fitToContent,
+                  icon: const Icon(Icons.fullscreen, size: 16, color: Colors.amberAccent),
+                  label: const Text(
+                    '전체 노드 보기',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.amberAccent,
+                    ),
+                  ),
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AkashaSpacing.sm,
+                      vertical: AkashaSpacing.xs,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: AkashaSpacing.xs),
+                TextButton.icon(
+                  onPressed: _interactionMode == CanvasInteractionMode.none ? _startConnecting : null,
+                  icon: Icon(Icons.hub_outlined, size: 16, color: palette.accent),
+                  label: Text(
+                    '관계 연결',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: palette.accent,
+                    ),
+                  ),
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AkashaSpacing.sm,
+                      vertical: AkashaSpacing.xs,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: AkashaSpacing.xs),
+                TextButton.icon(
+                  onPressed: _interactionMode == CanvasInteractionMode.none ? _addArchiveNode : null,
+                  icon: const Icon(Icons.archive_outlined, size: 16, color: Colors.tealAccent),
+                  label: const Text(
+                    '아카이브 추가',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.tealAccent,
+                    ),
+                  ),
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AkashaSpacing.sm,
+                      vertical: AkashaSpacing.xs,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: AkashaSpacing.xs),
+                TextButton.icon(
+                  onPressed: _interactionMode == CanvasInteractionMode.none ? _addTextNode : null,
+                  icon: Icon(Icons.add_comment_outlined, size: 16, color: palette.accent),
+                  label: Text(
+                    '메모 추가',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: palette.accent,
+                    ),
+                  ),
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AkashaSpacing.sm,
+                      vertical: AkashaSpacing.xs,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          _buildInteractionBanner(palette),
+          Expanded(
+            child: _loading
+                ? const Center(child: CircularProgressIndicator(strokeWidth: 2))
+                : _layout == null
+                    ? const Center(child: Text('캔버스 데이터를 불러올 수 없습니다.'))
+                    : InteractiveViewer(
+                        transformationController: _transformationController,
+                        constrained: false,
+                        boundaryMargin: const EdgeInsets.all(_CanvasConfig.boundaryMargin),
+                        minScale: _CanvasConfig.minScale,
+                        maxScale: _CanvasConfig.maxScale,
+                        onInteractionEnd: (details) => _handleViewportChange(),
+                        child: SizedBox(
+                          width: _CanvasConfig.workspaceSize,
+                          height: _CanvasConfig.workspaceSize,
+                          child: uiStack(palette),
                         ),
-            ),
-          ],
-        ),
+                      ),
+          ),
+        ],
       ),
     );
   }
