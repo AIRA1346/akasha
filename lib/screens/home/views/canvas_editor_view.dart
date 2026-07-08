@@ -50,6 +50,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   // Interaction states for connecting nodes
   CanvasInteractionMode _interactionMode = CanvasInteractionMode.none;
   String? _selectedSourceNodeId;
+  final TransformationController _transformationController = TransformationController();
 
   @override
   void initState() {
@@ -63,6 +64,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
     if (_layout != null) {
       CanvasStore.instance.flushPendingSave(widget.vaultPath, widget.canvasId, _layout!);
     }
+    _transformationController.dispose();
     super.dispose();
   }
 
@@ -81,6 +83,12 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
         _entities = entities;
         _loading = false;
       });
+
+      // Restore viewport (Condition 6: translate then scale)
+      final vp = data.layout.viewport;
+      final matrix = Matrix4.translationValues(vp.x, vp.y, 0.0)
+        ..multiply(Matrix4.diagonal3Values(vp.zoom, vp.zoom, 1.0));
+      _transformationController.value = matrix;
     } else {
       setState(() => _loading = false);
     }
@@ -666,7 +674,19 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
                 ? const Center(child: CircularProgressIndicator(strokeWidth: 2))
                 : _layout == null
                     ? const Center(child: Text('캔버스 데이터를 불러올 수 없습니다.'))
-                    : uiStack(palette),
+                    : InteractiveViewer(
+                        transformationController: _transformationController,
+                        constrained: false,
+                        boundaryMargin: const EdgeInsets.all(5000.0),
+                        minScale: 0.1,
+                        maxScale: 2.5,
+                        onInteractionEnd: (details) => _handleViewportChange(),
+                        child: SizedBox(
+                          width: 8000.0,
+                          height: 8000.0,
+                          child: uiStack(palette),
+                        ),
+                      ),
           ),
         ],
       ),
@@ -690,6 +710,23 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
         ..._layout!.nodes.map((node) => _buildNodeWidget(node, palette)),
       ],
     );
+  }
+
+  void _handleViewportChange() {
+    if (_layout == null) return;
+    final matrix = _transformationController.value;
+    final double zoom = matrix.getMaxScaleOnAxis();
+    final translation = matrix.getTranslation();
+    final double x = translation.x;
+    final double y = translation.y;
+
+    if (_layout!.viewport.x != x || _layout!.viewport.y != y || _layout!.viewport.zoom != zoom) {
+      setState(() {
+        _layout!.viewport = CanvasViewport(x: x, y: y, zoom: zoom);
+        _layout!.updatedAt = DateTime.now().toUtc();
+      });
+      CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
+    }
   }
 
   Widget _buildEdgeLabelWidget(CanvasEdge edge, AkashaPalette palette) {
@@ -972,9 +1009,10 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
         onTap: isConnectingMode ? () => _handleNodeTap(node) : null,
         onPanUpdate: (details) {
           if (isConnectingMode) return; // disable dragging during connection mode
+          final double currentZoom = _transformationController.value.getMaxScaleOnAxis();
           setState(() {
-            node.x += details.delta.dx;
-            node.y += details.delta.dy;
+            node.x += details.delta.dx / currentZoom;
+            node.y += details.delta.dy / currentZoom;
           });
           // Update layout.updatedAt on drag
           _layout!.updatedAt = DateTime.now().toUtc();

@@ -112,7 +112,7 @@ class CanvasLayout {
   DateTime updatedAt;
   final String source;
   final String layoutMode;
-  final CanvasViewport viewport;
+  CanvasViewport viewport;
   final List<CanvasNode> nodes;
   final List<CanvasEdge> edges;
 

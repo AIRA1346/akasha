@@ -401,5 +401,37 @@ This is a relations map for Re:Zero.
       final nonEditableEdge = layout.edges.firstWhere((e) => e.edgeId == 'e3');
       expect(nonEditableEdge.edgeKind, isNot(equals('canvas_only')));
     });
+
+    test('CanvasViewport serialization and matrix restoration values', () {
+      final layoutJson = {
+        'layout_schema_version': 1,
+        'canvas_id': 'cv_u_test',
+        'updated_at': '2026-07-08T00:00:00.000Z',
+        'source': 'user',
+        'layout_mode': 'freeform',
+        'viewport': {
+          'x': -100.5,
+          'y': 250.0,
+          'zoom': 1.5,
+        },
+        'nodes': [],
+        'edges': [],
+      };
+
+      final layout = CanvasLayout.fromJson(layoutJson);
+      expect(layout.viewport.x, equals(-100.5));
+      expect(layout.viewport.y, equals(250.0));
+      expect(layout.viewport.zoom, equals(1.5));
+
+      layout.viewport = CanvasViewport(x: 10.0, y: -20.0, zoom: 0.8);
+      expect(layout.viewport.x, equals(10.0));
+      expect(layout.viewport.y, equals(-20.0));
+      expect(layout.viewport.zoom, equals(0.8));
+
+      final serialized = layout.toJson();
+      expect(serialized['viewport']['x'], equals(10.0));
+      expect(serialized['viewport']['y'], equals(-20.0));
+      expect(serialized['viewport']['zoom'], equals(0.8));
+    });
   });
 }
