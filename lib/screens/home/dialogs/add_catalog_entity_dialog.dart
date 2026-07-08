@@ -208,6 +208,18 @@ Future<EntityAnchorType?> showCustomEntityTypePicker(
                 subtitle: l10n?.archiveDescEntity('event') ?? 'entities/event/*.md 아카이브',
                 onTap: () => Navigator.pop(ctx, EntityAnchorType.event),
               ),
+              _TypeTile(
+                icon: Icons.location_on_outlined,
+                label: l10n?.entityTypePlace ?? 'Place',
+                subtitle: l10n?.archiveDescEntity('place') ?? 'entities/place/*.md 아카이브',
+                onTap: () => Navigator.pop(ctx, EntityAnchorType.place),
+              ),
+              _TypeTile(
+                icon: Icons.corporate_fare,
+                label: l10n?.entityTypeOrganization ?? 'Organization',
+                subtitle: l10n?.archiveDescEntity('organization') ?? 'entities/organization/*.md 아카이브',
+                onTap: () => Navigator.pop(ctx, EntityAnchorType.organization),
+              ),
             ],
           ),
         ),
