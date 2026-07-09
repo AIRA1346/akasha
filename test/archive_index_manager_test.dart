@@ -90,7 +90,7 @@ void main() {
       File(p.join(vaultDir.path, '.akasha', 'indexes', 'taste_index.json')),
     );
     await _deleteDirIfExists(
-      Directory(p.join(vaultDir.path, '.akasha', 'candidates', 'name_index')),
+      Directory(p.join(vaultDir.path, 'system', 'candidates', 'name_index')),
     );
 
     final result = await manager.rebuildAll(
@@ -167,7 +167,7 @@ void main() {
     );
     expect(
       await Directory(
-        p.join(vaultDir.path, '.akasha', 'candidates', 'name_index', 'person'),
+        p.join(vaultDir.path, 'system', 'candidates', 'name_index', 'person'),
       ).exists(),
       isTrue,
     );

@@ -10,6 +10,8 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:path/path.dart' as p;
+
 import 'poster_url_policy.dart';
 import 'quality_score_utils.dart';
 import 'registry_hash_utils.dart';
@@ -63,10 +65,9 @@ void main(List<String> args) {
 
   for (final categoryDir in shardsRoot.listSync().whereType<Directory>()) {
     final categoryName = p.basename(categoryDir.path);
-    for (final shardFile in categoryDir
-        .listSync()
-        .whereType<File>()
-        .where((f) => f.path.endsWith('.json'))) {
+    for (final shardFile in categoryDir.listSync().whereType<File>().where(
+      (f) => f.path.endsWith('.json'),
+    )) {
       final hexKey = p.basenameWithoutExtension(shardFile.path).toLowerCase();
       if (!isV4ShardFileName(hexKey)) {
         errors.add(
@@ -140,53 +141,58 @@ void main(List<String> args) {
     'shards': shardMetas,
   };
 
-  final searchIndex = allWorks.entries.map((entry) {
-    final workId = entry.key;
-    final work = entry.value;
-    final title = work['title']?.toString() ?? '';
-    var titles = parseTitlesJson(work['titles']);
-    if (titles.isEmpty && title.isNotEmpty) {
-      titles = inferTitlesFromLegacyTitle(title);
-    }
-    final aliases = (work['aliases'] as List?)
-            ?.map((e) => e.toString().trim())
-            .where((e) => e.isNotEmpty)
-            .toList() ??
-    final searchTokens = buildWorkSearchTokens(
-      legacyTitle: title,
-      titles: titles,
-      aliases: aliases,
-      creator: work['creator']?.toString() ?? '',
-      tags: (work['tags'] as List?)?.map((e) => e.toString()).toList() ??
-          const <String>[],
-    );
+  final searchIndex =
+      allWorks.entries.map((entry) {
+        final workId = entry.key;
+        final work = entry.value;
+        final title = work['title']?.toString() ?? '';
+        var titles = parseTitlesJson(work['titles']);
+        if (titles.isEmpty && title.isNotEmpty) {
+          titles = inferTitlesFromLegacyTitle(title);
+        }
+        final aliases =
+            (work['aliases'] as List?)
+                ?.map((e) => e.toString().trim())
+                .where((e) => e.isNotEmpty)
+                .toList() ??
+            const <String>[];
+        final searchTokens = buildWorkSearchTokens(
+          legacyTitle: title,
+          titles: titles,
+          aliases: aliases,
+          creator: work['creator']?.toString() ?? '',
+          tags:
+              (work['tags'] as List?)?.map((e) => e.toString()).toList() ??
+              const <String>[],
+        );
 
-    final map = <String, dynamic>{
-      'workId': workId,
-      'title': title,
-      'shardId': workShardIds[workId] ?? 'unknown',
-      'category': work['category'],
-      'domain': work['domain'],
-      'creator': work['creator'] ?? '',
-      'tags': work['tags'] ?? [],
-      'searchTokens': searchTokens,
-    };
-    if (titles.isNotEmpty) {
-      map['titles'] = titles;
-    }
-    // v1: Tier 1 posterPath — search_index에 복제하지 않음 (유저 볼트만)
+        final map = <String, dynamic>{
+          'workId': workId,
+          'title': title,
+          'shardId': workShardIds[workId] ?? 'unknown',
+          'category': work['category'],
+          'domain': work['domain'],
+          'creator': work['creator'] ?? '',
+          'tags': work['tags'] ?? [],
+          'searchTokens': searchTokens,
+        };
+        if (titles.isNotEmpty) {
+          map['titles'] = titles;
+        }
+        // v1: Tier 1 posterPath — search_index에 복제하지 않음 (유저 볼트만)
 
-    final qualitySignals = resolveQualitySignals(
-      work,
-      franchiseMember: franchiseMemberIds.contains(workId),
-    );
-    final qualityScore = computeQualityScore(work, qualitySignals);
-    map['qualityScore'] = qualityScore;
-    map['qualityTier'] = qualityTierFromScore(qualityScore);
+        final qualitySignals = resolveQualitySignals(
+          work,
+          franchiseMember: franchiseMemberIds.contains(workId),
+        );
+        final qualityScore = computeQualityScore(work, qualitySignals);
+        map['qualityScore'] = qualityScore;
+        map['qualityTier'] = qualityTierFromScore(qualityScore);
 
-    return map;
-  }).toList()
-    ..sort((a, b) => (a['title'] as String).compareTo(b['title'] as String));
+        return map;
+      }).toList()..sort(
+        (a, b) => (a['title'] as String).compareTo(b['title'] as String),
+      );
 
   final generatedAt = manifest['generatedAt'] as String;
 
@@ -239,7 +245,10 @@ void _syncAssetsRegistry({
 
   final searchIndexDir = Directory('${dbRoot.path}/search_index');
   if (searchIndexDir.existsSync()) {
-    _copyDirectory(searchIndexDir, Directory('${assetsRoot.path}/search_index'));
+    _copyDirectory(
+      searchIndexDir,
+      Directory('${assetsRoot.path}/search_index'),
+    );
   }
 
   final allPaths = <String>{
@@ -300,7 +309,8 @@ Set<String> _loadFranchiseMemberWorkIds(Directory dbRoot) {
 
   raw.forEach((key, value) {
     if (key.startsWith('_') || value is! Map) return;
-    final members = (value['members'] as List?)?.map((e) => e.toString()) ??
+    final members =
+        (value['members'] as List?)?.map((e) => e.toString()) ??
         const <String>[];
     ids.addAll(members.where((id) => id.isNotEmpty));
   });
@@ -432,8 +442,9 @@ void _writeShardedSearchIndex({
   for (final cat in byCategory.keys.toList()..sort()) {
     final entries = byCategory[cat]!
       ..sort(
-        (a, b) => (a['title'] as String? ?? '')
-            .compareTo(b['title'] as String? ?? ''),
+        (a, b) => (a['title'] as String? ?? '').compareTo(
+          b['title'] as String? ?? '',
+        ),
       );
     final relativePath = 'search_index/$cat.json';
     _writeJson('${dbRoot.path}/$relativePath', entries);

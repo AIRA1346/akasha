@@ -66,7 +66,7 @@ void main() {
           expect(closed?.proposedEntityId, 'pe_u_target01');
           expect(
             await Directory(
-              '${tempDir.path}/.akasha/candidates/person',
+              '${tempDir.path}/system/candidates/person',
             ).exists(),
             isTrue,
           );
@@ -82,7 +82,7 @@ void main() {
             isTrue,
           );
           expect(
-            await File('${tempDir.path}/.akasha/ops/applied.jsonl').exists(),
+            await File('${tempDir.path}/system/ops/applied.jsonl').exists(),
             isTrue,
           );
         } finally {
@@ -138,7 +138,7 @@ void main() {
           expect(result.candidate?.status, ArchiveCandidateStatus.promoted);
           expect(catalog.getById('pe_u_target01')?.title, 'Hero');
           expect(
-            await File('${tempDir.path}/.akasha/ops/applied.jsonl').exists(),
+            await File('${tempDir.path}/system/ops/applied.jsonl').exists(),
             isTrue,
           );
           expect(
@@ -200,7 +200,7 @@ void main() {
             ArchiveCandidateStatus.candidate,
           );
           expect(
-            await File('${tempDir.path}/.akasha/ops/applied.jsonl').exists(),
+            await File('${tempDir.path}/system/ops/applied.jsonl').exists(),
             isFalse,
           );
         } finally {
@@ -238,7 +238,7 @@ void main() {
             '${tempDir.path}/entities/person/pe_u_target01.md',
           );
           final firstContents = await entityFile.readAsString();
-          final logFile = File('${tempDir.path}/.akasha/ops/applied.jsonl');
+          final logFile = File('${tempDir.path}/system/ops/applied.jsonl');
           expect(await logFile.readAsLines(), hasLength(1));
 
           final second = await executor.execute(
@@ -393,7 +393,7 @@ void main() {
           ArchiveCandidateStatus.candidate,
         );
         expect(
-          await File('${tempDir.path}/.akasha/ops/applied.jsonl').exists(),
+          await File('${tempDir.path}/system/ops/applied.jsonl').exists(),
           isFalse,
         );
       } finally {

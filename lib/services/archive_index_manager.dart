@@ -200,7 +200,7 @@ class ArchiveIndexManager {
       indexName: candidateIndexName,
       outputPath: p.join(
         vaultPath,
-        ArchiveCandidateStore.akashaDirName,
+        ArchiveCandidateStore.systemDirName,
         ArchiveCandidateStore.candidateDirName,
       ),
       action: () async {

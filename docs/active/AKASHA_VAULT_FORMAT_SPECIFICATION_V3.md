@@ -30,19 +30,29 @@ A compliant AKASHA Vault folder MUST organize its files according to the followi
 │   └── object/                     # Tangible things/physical possessions
 ├── timeline/                       # Timeline entries (timelineEntry)
 ├── journal/                        # Freeform daily logs (freeformJournal)
+├── system/                         # Permanent management data (never delete)
+│   ├── logs/
+│   │   └── event_ledger.jsonl      # Immutable vault event append log
+│   ├── ops/
+│   │   └── applied.jsonl           # Idempotency log for archive operations
+│   ├── candidates/                 # Agent-extracted entity candidates with lifecycle state
+│   ├── collectible_collections.json # User-created collection shelf definitions
+│   └── personal_libraries.json    # User-created personal library shelf definitions
 ├── .trash/                         # Isolated safety bin for deleted files
-└── .akasha/                        # Application index directory (fully regeneratable)
+└── .akasha/                        # Application index cache (fully rebuildable — safe to delete)
     ├── spec/
     │   └── spec_v3.md              # Copy of this specification (Self-Describing Vault)
     ├── entity_path_index.json      # Maps entity_id to relative file paths
     ├── record_index.json           # Registry of all files, kinds, and titles
     ├── link_index.json             # Outgoing and incoming relation graph
-    └── event_ledger.jsonl          # Immutable record operation append log
+    └── indexes/
+        └── taste_index.json        # User preference/taste signal index
 ```
 
 - **`{category}`** in `works/` MUST be a recognized `MediaCategory` (e.g., `manga`, `anime`, `novel`, `game`, `drama`, `movie`, `book`).
 - **Hidden directories** (starting with `.`), except `.akasha` and `.trash`, MUST be ignored by conforming readers.
-- Most files under `.akasha/` are derived and disposable; they can be deleted and rebuilt by scanning all Markdown files in the vault. **Exception**: The `.akasha/ops/` transaction directory and `.akasha/event_ledger.jsonl` are append-only transaction histories and CANNOT be rebuilt from raw Markdown records.
+- All files under `.akasha/` are **derived and fully disposable**; the entire directory can be deleted and rebuilt by scanning all Markdown files and rerunning index services. No permanent data resides under `.akasha/`.
+- The `system/` directory contains **permanent management data** that cannot be reconstructed from Markdown content. It MUST NOT be deleted.
 
 ---
 

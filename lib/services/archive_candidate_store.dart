@@ -27,9 +27,13 @@ class ArchiveCandidateIndexStats {
 
 /// Durable candidate layer for agent/import extraction.
 ///
-/// New writes use `.akasha/candidates/{entityType}/{shard}.json` plus a
+/// New writes use `system/candidates/{entityType}/{shard}.json` plus a
 /// sharded name index so high-volume extraction does not rewrite one large
 /// `catalog/candidates.json` file. The old catalog file remains read-compatible.
+///
+/// Data boundary: canonical operational state (not rebuildable from Markdown).
+/// Previously stored at `.akasha/candidates/` — migrated to `system/candidates/`
+/// to keep `.akasha/` 100% disposable.
 class ArchiveCandidateStore {
   ArchiveCandidateStore();
 
@@ -37,13 +41,16 @@ class ArchiveCandidateStore {
   static const String catalogDirName = 'catalog';
   static const String fileName = 'candidates.json';
 
-  static const String akashaDirName = '.akasha';
+  static const String systemDirName = 'system';
   static const String candidateDirName = 'candidates';
   static const String nameIndexDirName = 'name_index';
   static const String manifestFileName = 'manifest.json';
+  // Legacy path kept for migration only.
+  static const String _legacyDirName = '.akasha';
 
   Future<List<ArchiveCandidate>> load(String vaultPath) async {
     if (vaultPath.trim().isEmpty) return const [];
+    await _migrateIfNeeded(vaultPath);
 
     final byId = <String, ArchiveCandidate>{};
     for (final candidate in await _loadLegacy(vaultPath)) {
@@ -92,7 +99,7 @@ class ArchiveCandidateStore {
         .toList(growable: false);
 
     final nameIndexRoot = Directory(
-      p.join(vaultPath, akashaDirName, candidateDirName, nameIndexDirName),
+      p.join(vaultPath, systemDirName, candidateDirName, nameIndexDirName),
     );
     if (await nameIndexRoot.exists()) {
       await nameIndexRoot.delete(recursive: true);
@@ -563,11 +570,11 @@ class ArchiveCandidateStore {
       File(p.join(vaultPath, catalogDirName, fileName));
 
   File _manifestFile(String vaultPath) => File(
-    p.join(vaultPath, akashaDirName, candidateDirName, manifestFileName),
+    p.join(vaultPath, systemDirName, candidateDirName, manifestFileName),
   );
 
   String _candidateTypeDir(String vaultPath, EntityAnchorType type) =>
-      p.join(vaultPath, akashaDirName, candidateDirName, type.name);
+      p.join(vaultPath, systemDirName, candidateDirName, type.name);
 
   File _candidateShardFile(
     String vaultPath,
@@ -579,13 +586,44 @@ class ArchiveCandidateStore {
       File(
         p.join(
           vaultPath,
-          akashaDirName,
+          systemDirName,
           candidateDirName,
           nameIndexDirName,
           type.name,
           '$shard.json',
         ),
       );
+
+  /// Copies the old `.akasha/candidates/` directory tree into `system/candidates/`
+  /// without deleting the original. Files already present in `system/candidates/`
+  /// are never overwritten.
+  Future<void> _migrateIfNeeded(String vaultPath) async {
+    final oldDir = Directory(
+      p.join(vaultPath, _legacyDirName, candidateDirName),
+    );
+    final newDir = Directory(
+      p.join(vaultPath, systemDirName, candidateDirName),
+    );
+
+    if (!await oldDir.exists()) return; // nothing to migrate
+
+    await newDir.create(recursive: true);
+
+    // Walk every file in oldDir and copy only if target does not exist yet.
+    await for (final entity in oldDir.list(recursive: true)) {
+      if (entity is! File) continue;
+      final relative = p.relative(entity.path, from: oldDir.path);
+      final target = File(p.join(newDir.path, relative));
+      if (await target.exists()) continue; // conflict: system/ wins, skip
+      await target.parent.create(recursive: true);
+      await entity.copy(target.path);
+      // Verify copy succeeded
+      if (!await target.exists()) {
+        await target.delete().catchError((_) => target as FileSystemEntity);
+      }
+    }
+    // Old directory intentionally left at .akasha/candidates/ (not deleted).
+  }
 
   static ArchiveCandidate _validateUpdated(ArchiveCandidate candidate) {
     final validation = ArchiveCandidateValidator.validateCandidate(candidate);

@@ -82,17 +82,23 @@ class ArchiveOperationAppliedEntry {
   }
 }
 
-/// Append-only operation ledger at `{vault}/.akasha/ops/applied.jsonl`.
+/// Append-only operation ledger at `{vault}/system/ops/applied.jsonl`.
+///
+/// Data boundary: idempotency guard — not rebuildable from Markdown.
+/// Previously stored at `.akasha/ops/applied.jsonl` — migrated to
+/// `system/ops/` to keep `.akasha/` 100% disposable.
 ///
 /// Only successful operations are recorded here. Failed validation or rejected
 /// writes stay out of the applied log so retries can still repair the archive.
 class ArchiveOperationAppliedLog {
   const ArchiveOperationAppliedLog();
 
-  static const String akashaDirName = '.akasha';
+  static const String systemDirName = 'system';
   static const String opsDirName = 'ops';
   static const String appliedFileName = 'applied.jsonl';
   static const String appliedResult = 'applied';
+  // Legacy path kept for migration only.
+  static const String _legacyDirName = '.akasha';
 
   Future<ArchiveOperationAppliedEntry?> lookup(
     String vaultPath,
@@ -124,8 +130,30 @@ class ArchiveOperationAppliedLog {
     }
   }
 
+  File _legacyFile(String vaultPath) => File(
+        p.join(vaultPath, _legacyDirName, opsDirName, appliedFileName),
+      );
+
+  /// Copies old `.akasha/ops/applied.jsonl` to `system/ops/` without deleting original.
+  Future<void> _migrateIfNeeded(String vaultPath) async {
+    final newFile = _file(vaultPath);
+    final oldFile = _legacyFile(vaultPath);
+
+    if (await newFile.exists()) return; // already migrated
+    if (!await oldFile.exists()) return; // no legacy file
+
+    // copy → verify → leave old in place
+    await newFile.parent.create(recursive: true);
+    await oldFile.copy(newFile.path);
+    if (!await newFile.exists()) {
+      await newFile.delete().catchError((_) => newFile as FileSystemEntity);
+    }
+    // Old file intentionally left at .akasha/ (not deleted).
+  }
+
   Future<List<ArchiveOperationAppliedEntry>> load(String vaultPath) async {
     if (vaultPath.trim().isEmpty) return const [];
+    await _migrateIfNeeded(vaultPath);
     final file = _file(vaultPath);
     if (!await file.exists()) return const [];
 
@@ -153,6 +181,7 @@ class ArchiveOperationAppliedLog {
     String? recordPath,
     DateTime? appliedAt,
   }) async {
+    await _migrateIfNeeded(vaultPath);
     final existing = await lookup(vaultPath, operation.operationId);
     if (existing != null) return existing;
 
@@ -181,7 +210,7 @@ class ArchiveOperationAppliedLog {
   }
 
   File _file(String vaultPath) =>
-      File(p.join(vaultPath, akashaDirName, opsDirName, appliedFileName));
+      File(p.join(vaultPath, systemDirName, opsDirName, appliedFileName));
 
   static String? _relativePathOrNull(String vaultPath, String? recordPath) {
     final path = recordPath?.trim();

@@ -143,7 +143,7 @@ void main() {
   });
 
   group('ArchiveCandidateStore', () {
-    test('round-trips sharded candidates under .akasha folder', () async {
+    test('round-trips sharded candidates under system/ folder', () async {
       final tempDir = await Directory.systemTemp.createTemp(
         'akasha_candidates_',
       );
@@ -159,11 +159,11 @@ void main() {
 
         expect(
           await File(
-            '${tempDir.path}/.akasha/candidates/manifest.json',
+            '${tempDir.path}/system/candidates/manifest.json',
           ).exists(),
           isTrue,
         );
-        final shardDir = Directory('${tempDir.path}/.akasha/candidates/person');
+        final shardDir = Directory('${tempDir.path}/system/candidates/person');
         expect(await shardDir.exists(), isTrue);
         expect(
           await shardDir.list().any(
@@ -172,7 +172,7 @@ void main() {
           isTrue,
         );
         final nameIndexDir = Directory(
-          '${tempDir.path}/.akasha/candidates/name_index/person',
+          '${tempDir.path}/system/candidates/name_index/person',
         );
         expect(await nameIndexDir.exists(), isTrue);
         expect(
@@ -302,7 +302,7 @@ void main() {
       try {
         await store.upsert(vaultPath: tempDir.path, candidate: _candidate());
         final nameIndex = Directory(
-          '${tempDir.path}/.akasha/candidates/name_index',
+          '${tempDir.path}/system/candidates/name_index',
         );
         if (await nameIndex.exists()) {
           await nameIndex.delete(recursive: true);
@@ -356,7 +356,7 @@ void main() {
         expect(promoted?.proposedEntityId, 'pe_u_target01');
         expect(
           await File(
-            '${tempDir.path}/.akasha/candidates/manifest.json',
+            '${tempDir.path}/system/candidates/manifest.json',
           ).exists(),
           isTrue,
         );

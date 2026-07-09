@@ -9,7 +9,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('ArchiveOperationAppliedLog', () {
-    test('appendApplied writes JSONL under .akasha ops folder', () async {
+    test('appendApplied writes JSONL under system/ops folder', () async {
       final tempDir = await Directory.systemTemp.createTemp(
         'akasha_applied_log_',
       );
@@ -26,7 +26,7 @@ void main() {
         expect(entry.result, ArchiveOperationAppliedLog.appliedResult);
         expect(entry.recordPath, 'entities/person/pe_u_target01.md');
 
-        final file = File('${tempDir.path}/.akasha/ops/applied.jsonl');
+        final file = File('${tempDir.path}/system/ops/applied.jsonl');
         expect(await file.exists(), isTrue);
         final lines = await file.readAsLines();
         expect(lines, hasLength(1));
@@ -72,7 +72,7 @@ void main() {
         expect(second.appliedAt, first.appliedAt);
         expect(await log.load(tempDir.path), hasLength(1));
         expect(
-          await File('${tempDir.path}/.akasha/ops/applied.jsonl').readAsLines(),
+          await File('${tempDir.path}/system/ops/applied.jsonl').readAsLines(),
           hasLength(1),
         );
       } finally {

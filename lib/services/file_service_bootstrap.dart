@@ -58,6 +58,15 @@ mixin _AkashaFileServiceBootstrap
     await Directory(p.join(_vaultPath!, 'entities')).create(recursive: true);
     await Directory(p.join(_vaultPath!, 'system')).create(recursive: true);
     await Directory(
+      p.join(_vaultPath!, 'system', 'logs'),
+    ).create(recursive: true);
+    await Directory(
+      p.join(_vaultPath!, 'system', 'ops'),
+    ).create(recursive: true);
+    await Directory(
+      p.join(_vaultPath!, 'system', 'candidates'),
+    ).create(recursive: true);
+    await Directory(
       p.join(_vaultPath!, VaultTrashService.trashDirName),
     ).create(recursive: true);
     for (final type in EntityAnchorType.values) {

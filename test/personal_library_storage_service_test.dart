@@ -28,7 +28,7 @@ void main() {
   });
 
   group('PersonalLibraryStorageService', () {
-    test('saves to vault .akasha and removes prefs on load', () async {
+    test('saves to vault system/ and removes prefs on load', () async {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString(
         PersonalLibraryStorageService.librariesPrefsKey,
@@ -47,7 +47,7 @@ void main() {
       final vaultFile = File(
         p.join(
           tempVault.path,
-          PersonalLibraryStorageService.akashaDirName,
+          PersonalLibraryStorageService.systemDirName,
           PersonalLibraryStorageService.vaultFileName,
         ),
       );
