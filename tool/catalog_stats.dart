@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print
-/// 카탈로그 규모·카테고리·포스터 호스트 통계
-/// Usage: dart run tool/catalog_stats.dart
+// 카탈로그 규모·카테고리·포스터 호스트 통계
+// Usage: dart run tool/catalog_stats.dart
 
 import 'dart:convert';
 import 'dart:io';

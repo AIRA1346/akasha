@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
-/// Registry shard `domain` 정규화 — generalCulture → subculture
-///
-/// Usage: dart run tool/migrate_domain_normalize.dart [--dry-run]
+// Registry shard `domain` 정규화 — generalCulture → subculture
+//
+// Usage: dart run tool/migrate_domain_normalize.dart [--dry-run]
 library;
 
 import 'dart:convert';

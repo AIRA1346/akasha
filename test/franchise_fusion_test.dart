@@ -2,7 +2,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/services/franchise_fusion_service.dart';
-import 'package:akasha/services/franchise_registry.dart';
 import 'package:akasha/services/user_registry_preferences.dart';
 import 'package:akasha/services/works_registry.dart';
 import 'package:akasha/utils/helpers.dart';

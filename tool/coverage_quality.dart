@@ -1,4 +1,4 @@
-/// Coverage Quality — titles.en 검증 규칙 (Quality Gate MVP).
+// Coverage Quality — titles.en 검증 규칙 (Quality Gate MVP).
 library;
 
 import 'dart:convert';

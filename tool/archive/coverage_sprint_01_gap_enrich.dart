@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
-/// Coverage Sprint 01 ??GAP Panel minimal enrich.
-///
-/// Usage:
-///   dart run tool/archive/coverage_sprint_01_gap_enrich.dart          # dry-run
-///   dart run tool/archive/coverage_sprint_01_gap_enrich.dart --apply
+// Coverage Sprint 01 ??GAP Panel minimal enrich.
+//
+// Usage:
+//   dart run tool/archive/coverage_sprint_01_gap_enrich.dart          # dry-run
+//   dart run tool/archive/coverage_sprint_01_gap_enrich.dart --apply
 
 import 'dart:convert';
 import 'dart:io';
@@ -84,7 +84,8 @@ Map<String, Map<String, dynamic>> _gapEnrichPatches() => {
         'titles': {
           'ko': 'ê·€ë©¸ì˜ ì¹¼ë‚ ',
           'en': 'Demon Slayer: Kimetsu no Yaiba',
-          'ja': 'é¬¼æ»…??ˆƒ',
+          'ja': 'é¬¼æ»
+??ˆƒ',
           'zh': 'é¬¼ç­ä¹‹åˆƒ',
           'romaji': 'Kimetsu no Yaiba',
         },
@@ -94,7 +95,8 @@ Map<String, Map<String, dynamic>> _gapEnrichPatches() => {
         'titles': {
           'ko': 'ê·€ë©¸ì˜ ì¹¼ë‚ ',
           'en': 'Demon Slayer: Kimetsu no Yaiba',
-          'ja': 'é¬¼æ»…??ˆƒ',
+          'ja': 'é¬¼æ»
+??ˆƒ',
           'zh': 'é¬¼ç­ä¹‹åˆƒ',
           'romaji': 'Kimetsu no Yaiba',
         },
@@ -174,7 +176,8 @@ Map<String, Map<String, dynamic>> _gapEnrichPatches() => {
       },
       'wk_000000291': {
         'titles': {
-          'ko': '20?¸ê¸° ?Œë…„',
+          'ko': '20?¸ê¸° ?Œë
+„',
           'en': '20th Century Boys',
           'ja': '20ä¸–ç?å°‘å¹´',
           'romaji': '20th Century Boys',

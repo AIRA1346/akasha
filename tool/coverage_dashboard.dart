@@ -1,10 +1,10 @@
 // ignore_for_file: avoid_print
-/// Canonical Identity Coverage Dashboard — 402 baseline KPI 측정.
-///
-/// Usage: dart run tool/coverage_dashboard.dart
-///
-/// 산출물:
-///   akasha-db/pipeline/artifacts/coverage_dashboard/coverage_snapshot.json
+// Canonical Identity Coverage Dashboard — 402 baseline KPI 측정.
+//
+// Usage: dart run tool/coverage_dashboard.dart
+//
+// 산출물:
+//   akasha-db/pipeline/artifacts/coverage_dashboard/coverage_snapshot.json
 
 import 'dart:convert';
 import 'dart:io';

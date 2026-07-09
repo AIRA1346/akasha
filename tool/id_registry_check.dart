@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
-/// `id_registry.json` ↔ 샤드 · legacy_aliases 일관성 검증
-///
-/// Usage: dart run tool/id_registry_check.dart
+// `id_registry.json` ↔ 샤드 · legacy_aliases 일관성 검증
+//
+// Usage: dart run tool/id_registry_check.dart
 
 import 'dart:convert';
 import 'dart:io';

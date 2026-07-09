@@ -1,4 +1,4 @@
-/// Registry in-memory snapshot (read-only) — Shadow Write dedupe·시뮬레이션용.
+// Registry in-memory snapshot (read-only) — Shadow Write dedupe·시뮬레이션용.
 library;
 
 import 'dart:convert';

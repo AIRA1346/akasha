@@ -1,5 +1,5 @@
-/// batch5 이전 카탈로그 + batch5 ID 수정 오버라이드
-/// TMDB TV ID — 애니 메타 DB 기준 (만화 카드에도 동일 애니 키비주얼 사용)
+// batch5 이전 카탈로그 + batch5 ID 수정 오버라이드
+// TMDB TV ID — 애니 메타 DB 기준 (만화 카드에도 동일 애니 키비주얼 사용)
 library;
 
 /// batch5 시드의 잘못된 ID를 덮어씁니다 (나중 키가 우선).

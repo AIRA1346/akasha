@@ -1,9 +1,9 @@
-/// Contribution → Quality Loop — fixWork 필드를 작품에 반영하고
-/// 검증 신호(qualitySignals)를 갱신하는 순수 로직.
-///
-/// 원칙 (docs/data-policy.md):
-/// - 카운터(userFixCount) 저장 금지 — "몇 명이 고쳤나"가 아니라 "무엇이 검증됐나"
-/// - qualitySignals = 원본, qualityScore/Tier = 파생 (registry_builder가 계산)
+// Contribution → Quality Loop — fixWork 필드를 작품에 반영하고
+// 검증 신호(qualitySignals)를 갱신하는 순수 로직.
+//
+// 원칙 (docs/data-policy.md):
+// - 카운터(userFixCount) 저장 금지 — "몇 명이 고쳤나"가 아니라 "무엇이 검증됐나"
+// - qualitySignals = 원본, qualityScore/Tier = 파생 (registry_builder가 계산)
 library;
 
 /// fixWork 필드가 승인됐을 때 켜지는 검증 신호.

@@ -1,4 +1,4 @@
-/// AniList 출처·참조 제거 — Independence Test용.
+// AniList 출처·참조 제거 — Independence Test용.
 library;
 
 /// `externalIds.anilist` 및 AniList ingest 메타 제거.

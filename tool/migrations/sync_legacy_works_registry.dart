@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
-/// ?ˆê±°??works_registry.json??poster/extensionsë¥??¤ë“œ ë§ˆìŠ¤???°ì´?°ë¡œ ?™ê¸°?”í•©?ˆë‹¤.
-///
-/// Usage: dart run tool/migrations/sync_legacy_works_registry.dart [--dry-run]
+// ?ˆê±°??works_registry.json??poster/extensionsë¥??¤ë“œ ë§ˆìŠ¤???°ì´?°ë¡œ ?™ê¸°?”í•©?ˆë‹¤.
+//
+// Usage: dart run tool/migrations/sync_legacy_works_registry.dart [--dry-run]
 
 import 'dart:convert';
 import 'dart:io';

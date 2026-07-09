@@ -1,5 +1,5 @@
 // ignore_for_file: avoid_print
-/// Maintainer — 카탈로그 제안 JSON 검증 (자동 shard merge 없음)
+// Maintainer — 카탈로그 제안 JSON 검증 (자동 shard merge 없음)
 library;
 
 import 'poster_url_policy.dart';

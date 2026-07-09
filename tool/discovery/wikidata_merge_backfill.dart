@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
-/// Wikidata Q-id backfill — 기존 Registry 작품에만 fuzzy 매칭 (shadow wk_ 배정 없음).
-///
-/// Usage:
-///   dart run tool/discovery/wikidata_merge_backfill.dart --live --channel wikidata_manga
-///   dart run tool/discovery/wikidata_merge_backfill.dart --live --apply --from-offset 0 --to-offset 500
+// Wikidata Q-id backfill — 기존 Registry 작품에만 fuzzy 매칭 (shadow wk_ 배정 없음).
+//
+// Usage:
+//   dart run tool/discovery/wikidata_merge_backfill.dart --live --channel wikidata_manga
+//   dart run tool/discovery/wikidata_merge_backfill.dart --live --apply --from-offset 0 --to-offset 500
 
 import 'dart:convert';
 import 'dart:io';

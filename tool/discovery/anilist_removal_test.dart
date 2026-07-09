@@ -1,4 +1,4 @@
-/// AniList Removal Test — AKASHA 독립 Registry 증명.
+// AniList Removal Test — AKASHA 독립 Registry 증명.
 library;
 
 import 'dart:convert';

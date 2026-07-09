@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:akasha/core/archiving/record_link.dart';
 import 'package:akasha/services/record_link_markdown.dart';
-import 'package:akasha/services/record_link_parser.dart';
 
 void main() {
   group('RecordLinkMarkdown', () {

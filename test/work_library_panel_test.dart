@@ -53,7 +53,7 @@ void main() {
     membership = PersonalLibraryMembershipService(controller, FakeRegistryPort());
   });
 
-  Widget _wrap(Widget child) {
+  Widget wrap(Widget child) {
     return MaterialApp(home: Scaffold(body: child));
   }
 
@@ -63,7 +63,7 @@ void main() {
       MembershipApplyResult? applied;
 
       await tester.pumpWidget(
-        _wrap(
+        wrap(
           WorkLibraryPanel(
             displayTitle: '테스트 작품',
             singleWorkIds: const ['wk_remove'],
@@ -95,7 +95,7 @@ void main() {
       MembershipApplyResult? applied;
 
       await tester.pumpWidget(
-        _wrap(
+        wrap(
           WorkLibraryPanel(
             displayTitle: '멀티 담기',
             singleWorkIds: const ['wk_multi'],
@@ -126,7 +126,7 @@ void main() {
       MembershipApplyResult? applied;
 
       await tester.pumpWidget(
-        _wrap(
+        wrap(
           WorkLibraryPanel(
             displayTitle: 'IP 묶음',
             singleWorkIds: const ['wk_a'],
@@ -164,7 +164,7 @@ void main() {
       await membership.addWork('active', 'wk_only_a');
 
       await tester.pumpWidget(
-        _wrap(
+        wrap(
           WorkLibraryPanel(
             displayTitle: 'IP 부분',
             singleWorkIds: const ['wk_only_a'],
@@ -187,7 +187,7 @@ void main() {
   group('T27 title editor', () {
     testWidgets('showTitleEditor shows inline title field', (tester) async {
       await tester.pumpWidget(
-        _wrap(
+        wrap(
           WorkLibraryPanel(
             displayTitle: '사전 작품',
             showTitleEditor: true,

@@ -1,4 +1,4 @@
-/// Pre-insert dedupe gate — wk_ · legacyIds · fuzzyTitle (dedupe_linter 정합).
+// Pre-insert dedupe gate — wk_ · legacyIds · fuzzyTitle (dedupe_linter 정합).
 library;
 
 import 'dart:io';

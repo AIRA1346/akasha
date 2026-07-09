@@ -1,14 +1,14 @@
 // ignore_for_file: avoid_print
-/// 레지스트리 중복 후보 탐지 — 자동 merge 없음, CI 게이트용
-///
-/// Usage: dart run tool/dedupe_linter.dart [--report-only]
-///
-/// 신호 (우선순위):
-/// 1. externalIds exact match (hard)
-/// 2. legacy slug stem + 동일 category (hard)
-/// 3. normalized title + 동일 category + releaseYear ±1 (fuzzy)
-///
-/// franchise_groups 형제·dedupe_exceptions.json 허용 쌍은 제외.
+// 레지스트리 중복 후보 탐지 — 자동 merge 없음, CI 게이트용
+//
+// Usage: dart run tool/dedupe_linter.dart [--report-only]
+//
+// 신호 (우선순위):
+// 1. externalIds exact match (hard)
+// 2. legacy slug stem + 동일 category (hard)
+// 3. normalized title + 동일 category + releaseYear ±1 (fuzzy)
+//
+// franchise_groups 형제·dedupe_exceptions.json 허용 쌍은 제외.
 
 import 'dart:convert';
 import 'dart:io';

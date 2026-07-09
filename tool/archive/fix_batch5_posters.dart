@@ -1,5 +1,5 @@
 // ignore_for_file: avoid_print
-/// batch5 ?�락·깨진 ?�스??보강 + TMDB path ?�중 ?�래???�리
+// batch5 ?�락·깨진 ?�스??보강 + TMDB path ?�중 ?�래???�리
 import 'dart:convert';
 import 'dart:io';
 

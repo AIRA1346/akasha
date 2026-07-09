@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
-/// A5 Scale/Pilot maintainer probe 엔트리를 registry shard에서 제거.
-///
-/// Usage:
-///   dart run tool/remove_maintainer_probes.dart
-///   dart run tool/remove_maintainer_probes.dart --apply --build
+// A5 Scale/Pilot maintainer probe 엔트리를 registry shard에서 제거.
+//
+// Usage:
+//   dart run tool/remove_maintainer_probes.dart
+//   dart run tool/remove_maintainer_probes.dart --apply --build
 
 import 'dart:convert';
 import 'dart:io';

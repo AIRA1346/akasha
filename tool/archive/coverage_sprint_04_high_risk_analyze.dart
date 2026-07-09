@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
-/// Sprint 04 Phase B-2 ??HIGH risk disposition analysis (read-only).
-///
-/// Usage: dart run tool/archive/coverage_sprint_04_high_risk_analyze.dart [--write-json]
+// Sprint 04 Phase B-2 ??HIGH risk disposition analysis (read-only).
+//
+// Usage: dart run tool/archive/coverage_sprint_04_high_risk_analyze.dart [--write-json]
 
 import 'dart:convert';
 import 'dart:io';

@@ -86,7 +86,7 @@ void main() {
                 child: Text(card.item.title),
               ),
               onStateChanged: () {},
-              onCuratedReorder: (_, __, ___) async {},
+              onCuratedReorder: (_, _, _) async {},
               onSearch: () {},
             ),
           ),

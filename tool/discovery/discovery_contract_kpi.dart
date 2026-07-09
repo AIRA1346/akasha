@@ -1,4 +1,4 @@
-/// Discovery Contract Test KPI — 수집량이 아닌 계약 준수 지표.
+// Discovery Contract Test KPI — 수집량이 아닌 계약 준수 지표.
 library;
 
 class DiscoveryContractKpi {

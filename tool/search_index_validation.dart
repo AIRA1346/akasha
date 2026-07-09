@@ -1,15 +1,15 @@
 // ignore_for_file: avoid_print
-/// Search Index Validation — synthetic scale 실측 (리팩터링 아님).
-///
-/// Usage:
-///   dart run tool/search_index_validation.dart
-///   dart run tool/search_index_validation.dart --scales 10000,100000
-///   dart run tool/search_index_validation.dart --scales all --skip-1m
-///
-/// 산출물 (gitignored):
-///   akasha-db/pipeline/artifacts/search_index_validation/
-///     search_index_{scale}.json
-///     search_index_validation_report.md
+// Search Index Validation — synthetic scale 실측 (리팩터링 아님).
+//
+// Usage:
+//   dart run tool/search_index_validation.dart
+//   dart run tool/search_index_validation.dart --scales 10000,100000
+//   dart run tool/search_index_validation.dart --scales all --skip-1m
+//
+// 산출물 (gitignored):
+//   akasha-db/pipeline/artifacts/search_index_validation/
+//     search_index_{scale}.json
+//     search_index_validation_report.md
 
 import 'dart:convert';
 import 'dart:io';

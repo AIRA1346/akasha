@@ -1,4 +1,4 @@
-/// Phase B — Registry Impact Test 후보 선정 (5~10건).
+// Phase B — Registry Impact Test 후보 선정 (5~10건).
 library;
 
 import 'dart:convert';

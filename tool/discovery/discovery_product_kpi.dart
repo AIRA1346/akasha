@@ -1,7 +1,7 @@
-/// Discovery Product KPI — 기술 통과 이후 제품·정책 게이트.
-///
-/// AKASHA = "많이 모은 DB" ≠ 목표
-/// AKASHA = "사용자에게 가치 있는 작품 사전"
+// Discovery Product KPI — 기술 통과 이후 제품·정책 게이트.
+//
+// AKASHA = "많이 모은 DB" ≠ 목표
+// AKASHA = "사용자에게 가치 있는 작품 사전"
 library;
 
 class DiscoveryProductKpi {

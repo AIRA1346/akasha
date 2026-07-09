@@ -1,4 +1,4 @@
-/// Product Value Review — 5b 전 제품·정책 게이트.
+// Product Value Review — 5b 전 제품·정책 게이트.
 library;
 
 import 'dart:convert';

@@ -1,4 +1,4 @@
-/// akasha-db v4 — 중복 탐지 유틸 (dedupe_linter·테스트 공용)
+// akasha-db v4 — 중복 탐지 유틸 (dedupe_linter·테스트 공용)
 library;
 
 final _legacySlugPattern = RegExp(

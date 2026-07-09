@@ -1,5 +1,5 @@
 // ignore_for_file: avoid_print
-/// 구 8자리 wk_ → 9자리 legacy_aliases 보강 (pad9 이후 1회)
+// 구 8자리 wk_ → 9자리 legacy_aliases 보강 (pad9 이후 1회)
 
 import 'dart:convert';
 import 'dart:io';

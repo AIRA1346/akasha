@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
-/// pipeline/discovery/manifest.json 스키마 검증
-///
-/// Usage: dart run tool/discovery_manifest_check.dart
+// pipeline/discovery/manifest.json 스키마 검증
+//
+// Usage: dart run tool/discovery_manifest_check.dart
 
 import 'dart:convert';
 import 'dart:io';

@@ -1,10 +1,10 @@
 // ignore_for_file: avoid_print
-/// Wikidata Q-id 작품 — `titles.ko` 백필 (label·alias·kowiki) + `title` 동기화.
-///
-/// Usage:
-///   dart run tool/wikidata_titles_ko_enrich.dart              # dry-run
-///   dart run tool/wikidata_titles_ko_enrich.dart --apply      # shard 갱신
-///   dart run tool/wikidata_titles_ko_enrich.dart --apply --all
+// Wikidata Q-id 작품 — `titles.ko` 백필 (label·alias·kowiki) + `title` 동기화.
+//
+// Usage:
+//   dart run tool/wikidata_titles_ko_enrich.dart              # dry-run
+//   dart run tool/wikidata_titles_ko_enrich.dart --apply      # shard 갱신
+//   dart run tool/wikidata_titles_ko_enrich.dart --apply --all
 
 import 'dart:convert';
 import 'dart:io';
@@ -189,14 +189,6 @@ void main(List<String> args) async {
   if (!apply) {
     print('\nDry-run. Pass --apply to write shards.');
   }
-}
-
-bool _titlesEqual(Map<String, String> a, Map<String, String> b) {
-  if (a.length != b.length) return false;
-  for (final entry in a.entries) {
-    if (b[entry.key] != entry.value) return false;
-  }
-  return true;
 }
 
 String? _wikidataQid(Map<String, dynamic> work) {

@@ -1,8 +1,8 @@
 // ignore_for_file: avoid_print
-/// A5 Scale ??Maintainer Net-new ?Œê·œëª?ê³µê¸‰ (pre-insert gate + v4 shard).
-///
-/// Usage:
-///   dart run tool/archive/a5_scale_supply_batch.dart --batch 1|2|3|4|5|6 [--apply]
+// A5 Scale ??Maintainer Net-new ?Œê·œëª?ê³µê¸‰ (pre-insert gate + v4 shard).
+//
+// Usage:
+//   dart run tool/archive/a5_scale_supply_batch.dart --batch 1|2|3|4|5|6 [--apply]
 
 import 'dart:convert';
 import 'dart:io';

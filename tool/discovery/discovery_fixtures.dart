@@ -1,4 +1,4 @@
-/// 오프라인 Contract / Shadow fixture — 채널 source별.
+// 오프라인 Contract / Shadow fixture — 채널 source별.
 library;
 
 import 'discovery_types.dart';

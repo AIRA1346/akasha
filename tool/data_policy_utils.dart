@@ -1,4 +1,4 @@
-/// [docs/data-policy.md](../docs/data-policy.md) — Registry CI 강제 규칙
+// [docs/data-policy.md](../docs/data-policy.md) — Registry CI 강제 규칙
 library;
 
 import 'poster_url_policy.dart';

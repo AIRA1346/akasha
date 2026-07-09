@@ -1,4 +1,4 @@
-/// Shadow Write KPI — Registry 영향 측정 (실제 쓰기 없음).
+// Shadow Write KPI — Registry 영향 측정 (실제 쓰기 없음).
 library;
 
 class ShadowWriteKpi {

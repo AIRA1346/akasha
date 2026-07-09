@@ -1,4 +1,4 @@
-/// pipeline/discovery/manifest.json 로더
+// pipeline/discovery/manifest.json 로더
 library;
 
 import 'dart:convert';

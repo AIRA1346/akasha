@@ -1,7 +1,7 @@
-/// Discovery Layer 타입 — Signal은 일회성, Registry는 영구.
-///
-/// AniList는 Discovery Source이지 Canonical Source가 아님.
-/// AKASHA identity = wk_.
+// Discovery Layer 타입 — Signal은 일회성, Registry는 영구.
+//
+// AniList는 Discovery Source이지 Canonical Source가 아님.
+// AKASHA identity = wk_.
 library;
 
 /// official_sync가 허용하는 Fact 필드 (data-policy + discovery-policy)

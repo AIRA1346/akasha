@@ -1,10 +1,10 @@
 // ignore_for_file: avoid_print
-/// 중복 wk_ 병합 — loser 레거시를 survivor에 흡수 후 샤드·레지스트리에서 제거
-///
-/// Usage:
-///   dart run tool/retire_work_ids.dart --survivor=wk_00000039 --retire=wk_00000040 --apply
-///
-/// wk_ 번호는 재사용하지 않습니다. loser 키는 샤드에서만 삭제됩니다.
+// 중복 wk_ 병합 — loser 레거시를 survivor에 흡수 후 샤드·레지스트리에서 제거
+//
+// Usage:
+//   dart run tool/retire_work_ids.dart --survivor=wk_00000039 --retire=wk_00000040 --apply
+//
+// wk_ 번호는 재사용하지 않습니다. loser 키는 샤드에서만 삭제됩니다.
 
 import 'dart:convert';
 import 'dart:io';

@@ -1,14 +1,14 @@
 // ignore_for_file: avoid_print
-/// Phase B — Registry Impact Test (실제 쓰기 전 영향·선정 리포트).
-///
-/// Usage:
-///   dart run tool/discovery/registry_impact_test.dart --live
-///   dart run tool/discovery/registry_impact_test.dart --offline
-///   dart run tool/discovery/registry_impact_test.dart --live \
-///     --output akasha-db/pipeline/artifacts/impact_report.md
-///
-/// 산출물: 왜 5~10건을 선택했는가 + Coverage·검색 품질 KPI
-/// 실제 shard patch는 수동 승인 후 별도 단계
+// Phase B — Registry Impact Test (실제 쓰기 전 영향·선정 리포트).
+//
+// Usage:
+//   dart run tool/discovery/registry_impact_test.dart --live
+//   dart run tool/discovery/registry_impact_test.dart --offline
+//   dart run tool/discovery/registry_impact_test.dart --live \
+//     --output akasha-db/pipeline/artifacts/impact_report.md
+//
+// 산출물: 왜 5~10건을 선택했는가 + Coverage·검색 품질 KPI
+// 실제 shard patch는 수동 승인 후 별도 단계
 
 import 'dart:convert';
 import 'dart:io';

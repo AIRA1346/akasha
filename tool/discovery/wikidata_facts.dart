@@ -1,4 +1,4 @@
-/// Wikidata SPARQL binding → Discovery Facts (CC0 structured data only).
+// Wikidata SPARQL binding → Discovery Facts (CC0 structured data only).
 library;
 
 import '../registry_v3_utils.dart';

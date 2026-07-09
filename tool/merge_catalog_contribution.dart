@@ -1,16 +1,16 @@
 // ignore_for_file: avoid_print
-/// Contribution → Quality Loop — 승인된 제안을 샤드에 반영
-///
-/// Usage:
-///   dart run tool/merge_catalog_contribution.dart --id <contributionId> [--apply]
-///   dart run tool/merge_catalog_contribution.dart --file <contribution.json> [--apply]
-///
-/// 동작:
-///   fixWork → 대상 wk_ 샤드에 필드 반영 + qualitySignals 검증 신호 갱신
-///   addWork → (수동 권장) 지원 안내만 출력
-///   --apply 시 샤드 기록 + status → merged + registry_builder 재실행
-///
-/// score/tier는 저장하지 않는다 (registry_builder가 파생 계산).
+// Contribution → Quality Loop — 승인된 제안을 샤드에 반영
+//
+// Usage:
+//   dart run tool/merge_catalog_contribution.dart --id <contributionId> [--apply]
+//   dart run tool/merge_catalog_contribution.dart --file <contribution.json> [--apply]
+//
+// 동작:
+//   fixWork → 대상 wk_ 샤드에 필드 반영 + qualitySignals 검증 신호 갱신
+//   addWork → (수동 권장) 지원 안내만 출력
+//   --apply 시 샤드 기록 + status → merged + registry_builder 재실행
+//
+// score/tier는 저장하지 않는다 (registry_builder가 파생 계산).
 
 import 'dart:convert';
 import 'dart:io';

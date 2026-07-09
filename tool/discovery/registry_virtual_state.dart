@@ -1,4 +1,4 @@
-/// 가상 Registry 상태 — 선정 draft를 메모리에만 적용.
+// 가상 Registry 상태 — 선정 draft를 메모리에만 적용.
 library;
 
 import '../quality_score_utils.dart';

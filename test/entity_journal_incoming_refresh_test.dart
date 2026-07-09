@@ -68,7 +68,7 @@ class _IncomingRefreshHarnessState extends State<_IncomingRefreshHarness> {
                 children: [
                   Text('연결된 Record ${_paths.length}개'),
                   if (_staleRecordCount > 0)
-                    Text('제목 갱신 필요 ${_staleRecordCount}개'),
+                    Text('제목 갱신 필요 $_staleRecordCount개'),
                 ],
               ),
             ),

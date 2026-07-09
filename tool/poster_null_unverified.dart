@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print
-/// 검증되지 않은 posterPath를 null 처리합니다.
-/// Usage: dart run tool/poster_null_unverified.dart [--apply]
+// 검증되지 않은 posterPath를 null 처리합니다.
+// Usage: dart run tool/poster_null_unverified.dart [--apply]
 
 import 'dart:convert';
 import 'dart:io';

@@ -1,9 +1,7 @@
 import 'dart:io';
 
 import 'package:akasha/core/archiving/entity_anchor.dart';
-import 'package:akasha/core/archiving/entity_journal_entry.dart';
 import 'package:akasha/features/workbench/presentation/entity_detail_vault_sync.dart';
-import 'package:akasha/services/entity_journal_parser.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

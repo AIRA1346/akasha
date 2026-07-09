@@ -1,11 +1,11 @@
 // ignore_for_file: avoid_print
-/// Batch 7: Scale A-type Net-new Expansion cohort (gate + v4 hex).
-/// Policy: [docs/programs/a5-scale-expansion-cohort-plan.md](../docs/programs/a5-scale-expansion-cohort-plan.md)
-///
-/// Usage:
-///   dart run tool/archive/seed_expansion_batch7.dart              # dry-run
-///   dart run tool/archive/seed_expansion_batch7.dart --apply      # default --max-add 2
-///   dart run tool/archive/seed_expansion_batch7.dart --apply --max-add 4
+// Batch 7: Scale A-type Net-new Expansion cohort (gate + v4 hex).
+// Policy: [docs/programs/a5-scale-expansion-cohort-plan.md](../docs/programs/a5-scale-expansion-cohort-plan.md)
+//
+// Usage:
+//   dart run tool/archive/seed_expansion_batch7.dart              # dry-run
+//   dart run tool/archive/seed_expansion_batch7.dart --apply      # default --max-add 2
+//   dart run tool/archive/seed_expansion_batch7.dart --apply --max-add 4
 
 import 'dart:convert';
 import 'dart:io';

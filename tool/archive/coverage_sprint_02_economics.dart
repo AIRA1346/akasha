@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
-/// Coverage Sprint 02 ??Registry-wide Coverage Economics (?�영 규모 추정).
-///
-/// Usage: dart run tool/archive/coverage_sprint_02_economics.dart
-///
-/// ?�출�? akasha-db/pipeline/artifacts/coverage_dashboard/sprint_02_economics.json
+// Coverage Sprint 02 ??Registry-wide Coverage Economics (?�영 규모 추정).
+//
+// Usage: dart run tool/archive/coverage_sprint_02_economics.dart
+//
+// ?�출�? akasha-db/pipeline/artifacts/coverage_dashboard/sprint_02_economics.json
 
 import 'dart:convert';
 import 'dart:io';
@@ -237,7 +237,8 @@ Map<String, dynamic> _compositeEstimate(Map<String, dynamic> registryWide) {
       'external_id': (registryWide['external_id'] as Map)['remainingToTarget'],
     },
     'note':
-        '축별 ?�업 중복 가????composite??titles.en 90% ?�일 �?보수 추정',
+        '축별 ?��
+ 중복 가????composite??titles.en 90% ?�일 �?보수 추정',
   };
 }
 
@@ -332,7 +333,8 @@ List<Map<String, dynamic>> _gapPanelCases() => [
       {'id': 'GAP-romaji-05', 'variant': 'Mushoku Tensei', 'workIds': ['wk_000000354', 'wk_000000257']},
       {'id': 'GAP-romaji-06', 'variant': 'Re:Zero', 'workIds': ['wk_000000230', 'wk_000000375']},
       {'id': 'GAP-romaji-07', 'variant': '20th Century Boys', 'workIds': ['wk_000000291']},
-      {'id': 'GAP-cjk-01', 'variant': '鬼滅??��', 'workIds': ['wk_000000343', 'wk_000000188']},
+      {'id': 'GAP-cjk-01', 'variant': '鬼�
+??��', 'workIds': ['wk_000000343', 'wk_000000188']},
       {'id': 'GAP-cjk-02', 'variant': '鬼灭之刃', 'workIds': ['wk_000000343', 'wk_000000188']},
       {'id': 'GAP-cjk-03', 'variant': '死亡笔�?', 'workIds': ['wk_000000187']},
       {'id': 'GAP-cjk-04', 'variant': '?�影忍�?, 'workIds': ['wk_000000218']},

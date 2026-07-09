@@ -1,6 +1,6 @@
-/// Discovery User Value — Prioritization (필터가 아님).
-///
-/// 질문: "이 작품을 지금 Registry에 넣는 것이 AKASHA 사용자에게 실제로 가치가 있는가?"
+// Discovery User Value — Prioritization (필터가 아님).
+//
+// 질문: "이 작품을 지금 Registry에 넣는 것이 AKASHA 사용자에게 실제로 가치가 있는가?"
 library;
 
 import '../registry_v3_utils.dart';

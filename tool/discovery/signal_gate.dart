@@ -1,4 +1,4 @@
-/// Discovery Signal → Registry 게이트 (Facts만, 금지 필드 차단).
+// Discovery Signal → Registry 게이트 (Facts만, 금지 필드 차단).
 library;
 
 import 'anilist_facts.dart';

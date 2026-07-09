@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print
-/// ë§Œí™” ?¤ë“œ?ì„œ ?¹íˆ° ?‘í’ˆ??ë¶„ë¦¬?©ë‹ˆ??
-/// Usage: dart run tool/migrations/migrate_manga_to_webtoon.dart [--apply]
+// ë§Œí™” ?¤ë“œ?ì„œ ?¹íˆ° ?‘í’ˆ??ë¶„ë¦¬?©ë‹ˆ??
+// Usage: dart run tool/migrations/migrate_manga_to_webtoon.dart [--apply]
 
 import 'dart:convert';
 import 'dart:io';

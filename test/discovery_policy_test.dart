@@ -6,8 +6,6 @@ import '../tool/discovery/anilist_facts.dart';
 import '../tool/discovery/discovery_types.dart';
 // ignore: avoid_relative_lib_imports
 import '../tool/discovery/signal_gate.dart';
-// ignore: avoid_relative_lib_imports
-import '../tool/discovery/wikidata_facts.dart';
 
 void main() {
   final sampleMedia = {

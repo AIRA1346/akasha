@@ -1,11 +1,11 @@
 // ignore_for_file: avoid_print
-/// A5 Scale ??O3 G2 throughput checkpoint ?∞Ï∂ú (SD1).
-///
-/// Usage:
-///   dart run tool/archive/a5_scale_o3_checkpoint.dart [--apply]
-///   dart run tool/archive/a5_scale_o3_checkpoint.dart --as-of 2026-07-09 --apply
-///
-/// ?∞Ï∂ú: akasha-db/pipeline/artifacts/coverage_dashboard/scale_o3_checkpoint.json
+// A5 Scale ??O3 G2 throughput checkpoint ?∞Ï∂ú (SD1).
+//
+// Usage:
+//   dart run tool/archive/a5_scale_o3_checkpoint.dart [--apply]
+//   dart run tool/archive/a5_scale_o3_checkpoint.dart --as-of 2026-07-09 --apply
+//
+// ?∞Ï∂ú: akasha-db/pipeline/artifacts/coverage_dashboard/scale_o3_checkpoint.json
 
 import 'dart:convert';
 import 'dart:io';
@@ -73,7 +73,8 @@ void main(List<String> args) {
     'sd26Hold': true,
     'formula': 'maintainer_net / elapsed_days * 30',
     'note': elapsedDays == 0
-        ? 'day-0 ?∏ÏÖò ??rate??elapsed>0 ?êÎäî checkpoint?êÏÑú ?∞Ï∂ú'
+        ? 'day-0 ?∏Ï
+ò ??rate??elapsed>0 ?êÎäî checkpoint?êÏÑú ?∞Ï∂ú'
         : null,
   };
 

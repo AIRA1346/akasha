@@ -1,10 +1,10 @@
 // ignore_for_file: avoid_print
-/// 프랜차이즈 그룹 누락 후보를 탐지합니다.
-///
-/// Usage: dart run tool/franchise_linter.dart [--min-members=2]
-///
-/// search_index.json의 workId 슬러그를 정규화해 같은 IP 후보를 묶고,
-/// franchise_groups.json에 아직 없는 클러스터를 출력합니다.
+// 프랜차이즈 그룹 누락 후보를 탐지합니다.
+//
+// Usage: dart run tool/franchise_linter.dart [--min-members=2]
+//
+// search_index.json의 workId 슬러그를 정규화해 같은 IP 후보를 묶고,
+// franchise_groups.json에 아직 없는 클러스터를 출력합니다.
 
 import 'dart:convert';
 import 'dart:io';

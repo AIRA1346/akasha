@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:akasha/core/archiving/archive_candidate.dart';
 import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/models/enums.dart';
-import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/services/archive_candidate_store.dart';
 import 'package:akasha/services/archive_index_manager.dart';
 import 'package:akasha/services/entity_path_index_service.dart';

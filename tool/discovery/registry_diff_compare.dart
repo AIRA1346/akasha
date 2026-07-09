@@ -1,4 +1,4 @@
-/// Registry Snapshot Compare — 402 vs 412 가상 적용 diff.
+// Registry Snapshot Compare — 402 vs 412 가상 적용 diff.
 library;
 
 import 'dart:convert';

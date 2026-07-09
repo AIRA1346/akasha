@@ -1,12 +1,12 @@
 // ignore_for_file: avoid_print
-/// anilistcdn posterPath → TMDB / Open Library / Steam 등으로 교체
-///
-/// Usage:
-///   dart run tool/migrate_anilistcdn_posters.dart           # dry-run
-///   dart run tool/migrate_anilistcdn_posters.dart --apply
-///   dart run tool/migrate_anilistcdn_posters.dart --fetch --apply  # TMDB API (TMDB_API_KEY)
-///
-/// Policy: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)
+// anilistcdn posterPath → TMDB / Open Library / Steam 등으로 교체
+//
+// Usage:
+//   dart run tool/migrate_anilistcdn_posters.dart           # dry-run
+//   dart run tool/migrate_anilistcdn_posters.dart --apply
+//   dart run tool/migrate_anilistcdn_posters.dart --fetch --apply  # TMDB API (TMDB_API_KEY)
+//
+// Policy: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)
 
 import 'dart:convert';
 import 'dart:io';

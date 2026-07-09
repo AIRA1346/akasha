@@ -1,12 +1,12 @@
 // ignore_for_file: avoid_print
-/// Coverage Sprint 03 ??titles.en 50% milestone (+101 works) + Economics ?¤ì¸¡.
-///
-/// Usage:
-///   dart run tool/archive/coverage_sprint_03_titles_en.dart                    # dry-run cohort
-///   dart run tool/archive/coverage_sprint_03_titles_en.dart --apply            # enrich + report
-///   dart run tool/archive/coverage_sprint_03_titles_en.dart --remediate --apply # fix invalid en
-///
-/// ?°ì¶œë¬? akasha-db/pipeline/artifacts/coverage_dashboard/sprint_03_report.json
+// Coverage Sprint 03 ??titles.en 50% milestone (+101 works) + Economics ?¤ì¸¡.
+//
+// Usage:
+//   dart run tool/archive/coverage_sprint_03_titles_en.dart                    # dry-run cohort
+//   dart run tool/archive/coverage_sprint_03_titles_en.dart --apply            # enrich + report
+//   dart run tool/archive/coverage_sprint_03_titles_en.dart --remediate --apply # fix invalid en
+//
+// ?°ì¶œë¬? akasha-db/pipeline/artifacts/coverage_dashboard/sprint_03_report.json
 
 import 'dart:convert';
 import 'dart:io';

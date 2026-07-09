@@ -1,13 +1,13 @@
 // ignore_for_file: avoid_print
-/// 수동 Wikidata Q-id 연결 — live 검증(P31·label·중복) 후 shard 반영.
-///
-/// Usage:
-///   dart run tool/wikidata_link_work.dart --list-missing
-///   dart run tool/wikidata_link_work.dart --work wk_000000344 --qid Q1058984
-///   dart run tool/wikidata_link_work.dart --work wk_000000344 --qid Q1058984 --apply
-///   dart run tool/wikidata_link_work.dart --search "Kingdom" --category manga
-///   dart run tool/wikidata_link_work.dart --auto --limit 15
-///   dart run tool/wikidata_link_work.dart --auto --limit 15 --apply --build
+// 수동 Wikidata Q-id 연결 — live 검증(P31·label·중복) 후 shard 반영.
+//
+// Usage:
+//   dart run tool/wikidata_link_work.dart --list-missing
+//   dart run tool/wikidata_link_work.dart --work wk_000000344 --qid Q1058984
+//   dart run tool/wikidata_link_work.dart --work wk_000000344 --qid Q1058984 --apply
+//   dart run tool/wikidata_link_work.dart --search "Kingdom" --category manga
+//   dart run tool/wikidata_link_work.dart --auto --limit 15
+//   dart run tool/wikidata_link_work.dart --auto --limit 15 --apply --build
 
 import 'dart:convert';
 import 'dart:io';
@@ -458,11 +458,6 @@ List<_MissingWork> _collectMissing(
   }
   out.sort((a, b) => a.title.compareTo(b.title));
   return out;
-}
-
-String? _pickSearchQuery(_MissingWork w) {
-  final queries = _searchQueriesFor(w);
-  return queries.isEmpty ? null : queries.first;
 }
 
 List<String> _searchQueriesFor(_MissingWork w) {

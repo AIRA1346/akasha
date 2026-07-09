@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:akasha/models/enums.dart';
-import 'package:akasha/models/registry_work.dart';
 import 'package:akasha/services/works_registry.dart';
 import 'package:akasha/utils/registry_extension_labels.dart';
 

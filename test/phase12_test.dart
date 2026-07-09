@@ -1,9 +1,7 @@
-import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/models/dashboard_config.dart';
 import 'package:akasha/models/enums.dart';
-import 'package:akasha/models/akasha_item.dart';
 import 'package:akasha/utils/helpers.dart';
 
 void main() {

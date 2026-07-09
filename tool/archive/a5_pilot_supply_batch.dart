@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
-/// A5 Pilot ??Maintainer ?�규�?공급 배치 (pre-insert gate + v4 shard).
-///
-/// Usage:
-///   dart run tool/archive/a5_pilot_supply_batch.dart --batch 1 [--apply]
-///   dart run tool/archive/a5_pilot_supply_batch.dart --batch all [--apply]
+// A5 Pilot ??Maintainer ?�규�?공급 배치 (pre-insert gate + v4 shard).
+//
+// Usage:
+//   dart run tool/archive/a5_pilot_supply_batch.dart --batch 1 [--apply]
+//   dart run tool/archive/a5_pilot_supply_batch.dart --batch all [--apply]
 
 import 'dart:convert';
 import 'dart:io';

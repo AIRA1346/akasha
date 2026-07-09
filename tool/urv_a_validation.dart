@@ -1,11 +1,11 @@
 // ignore_for_file: avoid_print
-/// URV-A — 402 Canonical Identity Coverage / Identity Resolution baseline.
-///
-/// 핵심 질문: 동일 작품의 여러 표면형이 하나의 wk_로 안정적으로 수렴 가능한가?
-///
-/// Usage: dart run tool/urv_a_validation.dart
-///
-/// 산출물: akasha-db/pipeline/artifacts/universal_registry_validation/urv_a_report.json
+// URV-A — 402 Canonical Identity Coverage / Identity Resolution baseline.
+//
+// 핵심 질문: 동일 작품의 여러 표면형이 하나의 wk_로 안정적으로 수렴 가능한가?
+//
+// Usage: dart run tool/urv_a_validation.dart
+//
+// 산출물: akasha-db/pipeline/artifacts/universal_registry_validation/urv_a_report.json
 
 import 'dart:convert';
 import 'dart:io';

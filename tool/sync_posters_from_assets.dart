@@ -1,8 +1,8 @@
 // ignore_for_file: avoid_print
-/// Copy posterPath from assets/registry shards into akasha-db when assets has a
-/// non-JustWatch URL and akasha-db differs.
-///
-/// Usage: dart run tool/sync_posters_from_assets.dart [--dry-run]
+// Copy posterPath from assets/registry shards into akasha-db when assets has a
+// non-JustWatch URL and akasha-db differs.
+//
+// Usage: dart run tool/sync_posters_from_assets.dart [--dry-run]
 
 import 'dart:convert';
 import 'dart:io';

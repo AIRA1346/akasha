@@ -16,13 +16,11 @@ class _DialogHarness extends StatefulWidget {
   const _DialogHarness({
     required this.catalogEntities,
     required this.vaultItems,
-    this.config,
     required this.onClosed,
   });
 
   final List<UserCatalogEntity> catalogEntities;
   final List<AkashaItem> vaultItems;
-  final CollectibleCollection? config;
   final ValueChanged<CollectibleCollection?> onClosed;
 
   @override
@@ -38,7 +36,6 @@ class _DialogHarnessState extends State<_DialogHarness> {
           onPressed: () async {
             final result = await showCollectibleCollectionEditDialog(
               context,
-              config: widget.config,
               catalogEntities: widget.catalogEntities,
               vaultItems: widget.vaultItems,
             );
@@ -152,14 +149,14 @@ void main() {
 
   setUp(() {
     final binding = TestWidgetsFlutterBinding.ensureInitialized();
-    binding.window.physicalSizeTestValue = const Size(1280, 1200);
-    binding.window.devicePixelRatioTestValue = 1.0;
+    binding.platformDispatcher.views.first.physicalSize = const Size(1280, 1200);
+    binding.platformDispatcher.views.first.devicePixelRatio = 1.0;
   });
 
   tearDown(() {
     final binding = TestWidgetsFlutterBinding.ensureInitialized();
-    binding.window.clearPhysicalSizeTestValue();
-    binding.window.clearDevicePixelRatioTestValue();
+    binding.platformDispatcher.views.first.resetPhysicalSize();
+    binding.platformDispatcher.views.first.resetDevicePixelRatio();
   });
   group('CollectibleCollectionFilter', () {
     test('relatedWorkId json round-trip', () {

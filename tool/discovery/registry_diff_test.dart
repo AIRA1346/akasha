@@ -1,10 +1,10 @@
 // ignore_for_file: avoid_print
-/// Registry Snapshot Compare — 5b 전 마지막 검증.
-///
-/// Usage:
-///   dart run tool/discovery/registry_diff_test.dart --live
-///   dart run tool/discovery/registry_diff_test.dart --live \
-///     --output akasha-db/pipeline/artifacts/registry_diff_report.md
+// Registry Snapshot Compare — 5b 전 마지막 검증.
+//
+// Usage:
+//   dart run tool/discovery/registry_diff_test.dart --live
+//   dart run tool/discovery/registry_diff_test.dart --live \
+//     --output akasha-db/pipeline/artifacts/registry_diff_report.md
 
 import 'dart:io';
 

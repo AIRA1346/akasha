@@ -1,11 +1,11 @@
 // ignore_for_file: avoid_print
-/// A5 Scale ??瓯半矂?岇姢路O8/O9/O12 ?曣赴 ?る儏??(insert ?勳棎???ろ枆).
-///
-/// O8 路 O9 路 O12 路 O7(ja backlog) 路 coverage ?る儏??
-///
-/// Usage: dart run tool/archive/a5_scale_hold_observation.dart [--apply]
-///
-/// ?办稖: akasha-db/pipeline/artifacts/coverage_dashboard/scale_hold_observation.json
+// A5 Scale ??瓯半矂?岇姢路O8/O9/O12 ?曣赴 ?る儏??(insert ?勳棎???ろ枆).
+//
+// O8 路 O9 路 O12 路 O7(ja backlog) 路 coverage ?る儏??
+//
+// Usage: dart run tool/archive/a5_scale_hold_observation.dart [--apply]
+//
+// ?办稖: akasha-db/pipeline/artifacts/coverage_dashboard/scale_hold_observation.json
 
 import 'dart:convert';
 import 'dart:io';

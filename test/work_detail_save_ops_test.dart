@@ -1,7 +1,6 @@
 import 'package:akasha/features/workbench/presentation/work_detail_save_ops.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/utils/helpers.dart';
-import 'package:akasha/widgets/sanctum_page_panel.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

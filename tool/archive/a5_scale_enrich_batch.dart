@@ -1,10 +1,10 @@
 // ignore_for_file: avoid_print
-/// A5 Scale ???岅窚氇?enrich 氚办箻 (O6路O7 甏�旄?.
-///
-/// Usage:
-///   dart run tool/archive/a5_scale_enrich_batch.dart --batch 1 [--apply]
-///
-/// ?办稖: akasha-db/pipeline/artifacts/coverage_dashboard/scale_enrich_bN.json
+// A5 Scale ???岅窚氇?enrich 氚办箻 (O6路O7 甏�旄?.
+//
+// Usage:
+//   dart run tool/archive/a5_scale_enrich_batch.dart --batch 1 [--apply]
+//
+// ?办稖: akasha-db/pipeline/artifacts/coverage_dashboard/scale_enrich_bN.json
 
 import 'dart:convert';
 import 'dart:io';

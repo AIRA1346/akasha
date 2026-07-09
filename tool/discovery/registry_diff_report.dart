@@ -1,4 +1,4 @@
-/// registry_diff_report.md — Registry Improvement 증명.
+// registry_diff_report.md — Registry Improvement 증명.
 library;
 
 import 'dart:convert';

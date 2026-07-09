@@ -1,12 +1,12 @@
 // ignore_for_file: avoid_print
-/// 한국어(ko) 라벨 Wikidata 작품 — Discovery trial (dry-run / apply).
-///
-/// Usage:
-///   dart run tool/discovery/wikidata_ko_trial.dart --category manga --limit 10
-///   dart run tool/discovery/wikidata_ko_trial.dart --category manga --limit 15 --offset 500 --apply --build
-///   dart run tool/discovery/wikidata_ko_trial.dart --category all --limit 3
-///
-/// Categories: manga, webtoon, animation, game, book, movie, drama, all
+// 한국어(ko) 라벨 Wikidata 작품 — Discovery trial (dry-run / apply).
+//
+// Usage:
+//   dart run tool/discovery/wikidata_ko_trial.dart --category manga --limit 10
+//   dart run tool/discovery/wikidata_ko_trial.dart --category manga --limit 15 --offset 500 --apply --build
+//   dart run tool/discovery/wikidata_ko_trial.dart --category all --limit 3
+//
+// Categories: manga, webtoon, animation, game, book, movie, drama, all
 
 import 'dart:io';
 

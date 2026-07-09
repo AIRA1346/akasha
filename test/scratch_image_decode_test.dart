@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -12,12 +13,12 @@ void main() {
       if (file.existsSync()) {
         final bytes = await file.readAsBytes();
         final prefix = bytes.take(15).toList();
-        print('$path: Hex prefix = $prefix');
+        debugPrint('$path: Hex prefix = $prefix');
         // Check if it looks like HTML
         final text = String.fromCharCodes(bytes.take(100));
-        print('Text snippet: $text');
+        debugPrint('Text snippet: $text');
       } else {
-        print('$path does not exist!');
+        debugPrint('$path does not exist!');
       }
     }
   });

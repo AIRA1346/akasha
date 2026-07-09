@@ -1,8 +1,8 @@
 // ignore_for_file: avoid_print
-/// Product Value Review CLI — 5b 전 제품·정책 게이트.
-///
-/// Usage:
-///   dart run tool/discovery/product_value_review_cli.dart --live
+// Product Value Review CLI — 5b 전 제품·정책 게이트.
+//
+// Usage:
+//   dart run tool/discovery/product_value_review_cli.dart --live
 
 import 'dart:io';
 

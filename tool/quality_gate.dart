@@ -1,13 +1,13 @@
 // ignore_for_file: avoid_print
-/// Quality Gate MVP — titles.en `_isValidEnTitle` 기반 CI / release check.
-///
-/// Usage:
-///   dart run tool/quality_gate.dart              # report, exit 0
-///   dart run tool/quality_gate.dart --warn       # warnings, exit 0
-///   dart run tool/quality_gate.dart --strict     # invalid > 0 → exit 1
-///   dart run tool/quality_gate.dart --release    # release block rules
-///   dart run tool/quality_gate.dart --locale-minimum  # E3 ko+en coverage floor
-///   dart run tool/quality_gate.dart --override   # bypass block (logged)
+// Quality Gate MVP — titles.en `_isValidEnTitle` 기반 CI / release check.
+//
+// Usage:
+//   dart run tool/quality_gate.dart              # report, exit 0
+//   dart run tool/quality_gate.dart --warn       # warnings, exit 0
+//   dart run tool/quality_gate.dart --strict     # invalid > 0 → exit 1
+//   dart run tool/quality_gate.dart --release    # release block rules
+//   dart run tool/quality_gate.dart --locale-minimum  # E3 ko+en coverage floor
+//   dart run tool/quality_gate.dart --override   # bypass block (logged)
 
 import 'dart:convert';
 import 'dart:io';
@@ -35,8 +35,6 @@ void main(List<String> args) {
   if (block && overrideActive) {
     print('\nOVERRIDE: quality block bypassed (maintainer)');
   }
-
-  final localeBlock = localeMinimum && !localeScan.passesMinimum;
 
   if (strict || release) {
     if (block && !overrideActive) {

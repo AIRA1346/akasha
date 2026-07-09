@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
-/// 검증된 TMDB TV ID로 posterPath를 재등록합니다.
-/// Usage:
-///   dart run tool/poster_fixup_tmdb.dart --fetch-posters --apply
+// 검증된 TMDB TV ID로 posterPath를 재등록합니다.
+// Usage:
+//   dart run tool/poster_fixup_tmdb.dart --fetch-posters --apply
 
 import 'dart:convert';
 import 'dart:io';
@@ -26,7 +26,6 @@ void main(List<String> args) async {
   }
 
   var applied = 0;
-  var skipped = 0;
   var failed = 0;
   final client = createTmdbHttpClient();
 

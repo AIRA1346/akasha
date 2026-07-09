@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
-/// A5 Scale ??O12 franchise ?˜ë™ ???¤ëƒ…??
-///
-/// Usage: dart run tool/archive/a5_scale_franchise_queue.dart [--apply]
-///
-/// ?°ì¶œ: akasha-db/pipeline/artifacts/coverage_dashboard/scale_franchise_o12.json
+// A5 Scale ??O12 franchise ?˜ë™ ???¤ëƒ…??
+//
+// Usage: dart run tool/archive/a5_scale_franchise_queue.dart [--apply]
+//
+// ?°ì¶œ: akasha-db/pipeline/artifacts/coverage_dashboard/scale_franchise_o12.json
 
 import 'dart:convert';
 import 'dart:io';

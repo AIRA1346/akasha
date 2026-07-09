@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
-/// Registry 변경 후 4종 핵심 gate 일괄 실행.
-///
-/// Usage: dart run tool/preflight_check.dart
+// Registry 변경 후 4종 핵심 gate 일괄 실행.
+//
+// Usage: dart run tool/preflight_check.dart
 
 import 'dart:io';
 

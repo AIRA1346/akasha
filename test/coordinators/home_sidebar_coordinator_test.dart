@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/personal_library_config.dart';
 import 'package:akasha/screens/home/coordinators/home_filter_coordinator.dart';
 import 'package:akasha/screens/home/coordinators/home_sidebar_coordinator.dart';

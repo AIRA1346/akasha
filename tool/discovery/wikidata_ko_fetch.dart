@@ -1,4 +1,4 @@
-/// Wikidata SPARQL — 한국어 라벨(ko) 필수 작품 fetch.
+// Wikidata SPARQL — 한국어 라벨(ko) 필수 작품 fetch.
 library;
 
 import 'dart:convert';

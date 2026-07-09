@@ -1,11 +1,11 @@
 // ignore_for_file: avoid_print
-/// Trial Apply — Shadow Write wouldCreate·mergeCandidate → shard·id_registry·cursor.
-///
-/// Usage:
-///   dart run tool/discovery/trial_apply.dart --live --channel wikidata_manga
-///   dart run tool/discovery/trial_apply.dart --live --channel wikidata_manga --apply
-///   dart run tool/discovery/trial_apply.dart --live --channel wikidata_manga --apply --skip-merge
-///   dart run tool/discovery/trial_apply.dart --live --channel wikidata_manga --apply --max-create 20
+// Trial Apply — Shadow Write wouldCreate·mergeCandidate → shard·id_registry·cursor.
+//
+// Usage:
+//   dart run tool/discovery/trial_apply.dart --live --channel wikidata_manga
+//   dart run tool/discovery/trial_apply.dart --live --channel wikidata_manga --apply
+//   dart run tool/discovery/trial_apply.dart --live --channel wikidata_manga --apply --skip-merge
+//   dart run tool/discovery/trial_apply.dart --live --channel wikidata_manga --apply --max-create 20
 
 import 'dart:convert';
 import 'dart:io';

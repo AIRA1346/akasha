@@ -1,14 +1,14 @@
 // ignore_for_file: avoid_print
-/// AniList bulk 시드 작품을 akasha-db에서 제거 (법무 정책)
-///
-/// 삭제 조건:
-///   - extensions.seedSource == anilist_popularity
-///   - workId slug이 `-a{digits}` 패턴 (예: naruto-a30011)
-///
-/// Usage:
-///   dart run tool/purge_anilist_bulk.dart           # dry-run
-///   dart run tool/purge_anilist_bulk.dart --apply
-///   dart run tool/registry_builder.dart --sync-assets
+// AniList bulk 시드 작품을 akasha-db에서 제거 (법무 정책)
+//
+// 삭제 조건:
+//   - extensions.seedSource == anilist_popularity
+//   - workId slug이 `-a{digits}` 패턴 (예: naruto-a30011)
+//
+// Usage:
+//   dart run tool/purge_anilist_bulk.dart           # dry-run
+//   dart run tool/purge_anilist_bulk.dart --apply
+//   dart run tool/registry_builder.dart --sync-assets
 
 import 'dart:convert';
 import 'dart:io';

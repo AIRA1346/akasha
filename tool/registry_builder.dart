@@ -1,11 +1,11 @@
 // ignore_for_file: avoid_print
-/// AKASHA Registry Builder (akasha-db v4)
-/// Usage: dart run tool/registry_builder.dart [--sync-assets] [--bundle-eager-only]
-///
-/// G1+ (entryCount > 2500): use --sync-assets --bundle-eager-only (ADR-010).
-/// - Validates hash shards under akasha-db/shards/{category}/{00..ff}.json
-/// - Regenerates manifest.json (v4) and search_index.json (searchTokens)
-/// - Optionally copies akasha-db → assets/registry for app bundle
+// AKASHA Registry Builder (akasha-db v4)
+// Usage: dart run tool/registry_builder.dart [--sync-assets] [--bundle-eager-only]
+//
+// G1+ (entryCount > 2500): use --sync-assets --bundle-eager-only (ADR-010).
+// - Validates hash shards under akasha-db/shards/{category}/{00..ff}.json
+// - Regenerates manifest.json (v4) and search_index.json (searchTokens)
+// - Optionally copies akasha-db → assets/registry for app bundle
 
 import 'dart:convert';
 import 'dart:io';
@@ -152,10 +152,6 @@ void main(List<String> args) {
             ?.map((e) => e.toString().trim())
             .where((e) => e.isNotEmpty)
             .toList() ??
-        const <String>[];
-    final extensions = work['extensions'] is Map
-        ? Map<String, dynamic>.from(work['extensions'] as Map)
-        : <String, dynamic>{};
     final searchTokens = buildWorkSearchTokens(
       legacyTitle: title,
       titles: titles,
@@ -483,25 +479,11 @@ Directory _findProjectRoot() {
   }
 }
 
-void _copyTree(Directory source, Directory dest, Set<String> names) {
-  for (final name in names) {
-    final src = FileSystemEntity.typeSync('${source.path}/$name');
-    if (src == FileSystemEntityType.notFound) continue;
-
-    final target = '${dest.path}/$name';
-    if (src == FileSystemEntityType.directory) {
-      _copyDirectory(Directory('${source.path}/$name'), Directory(target));
-    } else {
-      File('${source.path}/$name').copySync(target);
-    }
-  }
-}
-
 void _copyDirectory(Directory source, Directory destination) {
   if (!destination.existsSync()) destination.createSync(recursive: true);
   for (final entity in source.listSync(recursive: false)) {
-    final name = p.basename(entity.path);
-    final targetPath = p.join(destination.path, name);
+    final name = PathHelper.basename(entity.path);
+    final targetPath = PathHelper.join(destination.path, name);
     if (entity is Directory) {
       _copyDirectory(entity, Directory(targetPath));
     } else if (entity is File) {
@@ -511,7 +493,7 @@ void _copyDirectory(Directory source, Directory destination) {
 }
 
 // Minimal path basename helper without package:path in tool
-class p {
+class PathHelper {
   static String basename(String path) {
     final normalized = path.replaceAll('\\', '/');
     return normalized.split('/').last;

@@ -1,17 +1,17 @@
 // ignore_for_file: avoid_print
-/// Registry Data Policy CI — [docs/data-policy.md](../docs/data-policy.md)
-///
-/// Usage: dart run tool/data_policy_linter.dart [--contributions] [--strict]
-///   --strict : warnOnly 위반도 CI 실패로 승격 (레거시 정리 완료 후)
-///
-/// 검사:
-/// - 금지 필드 (synopsis, overview, review, tagline, …)
-/// - raw API blob 시그니처
-/// - poster URL (denylist, self-hosted, http only)
-/// - 텍스트 길이 상한 (description, title, tags, …)
-/// - provenance (posterSource, registeredVia, qualitySignals)
-///
-/// Exit 0 = OK, 1 = violations
+// Registry Data Policy CI — [docs/data-policy.md](../docs/data-policy.md)
+//
+// Usage: dart run tool/data_policy_linter.dart [--contributions] [--strict]
+//   --strict : warnOnly 위반도 CI 실패로 승격 (레거시 정리 완료 후)
+//
+// 검사:
+// - 금지 필드 (synopsis, overview, review, tagline, …)
+// - raw API blob 시그니처
+// - poster URL (denylist, self-hosted, http only)
+// - 텍스트 길이 상한 (description, title, tags, …)
+// - provenance (posterSource, registeredVia, qualitySignals)
+//
+// Exit 0 = OK, 1 = violations
 
 import 'dart:convert';
 import 'dart:io';

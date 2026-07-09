@@ -1,8 +1,8 @@
 // ignore_for_file: avoid_print
-/// AniList Removal Test — AKASHA 독립 Registry 증명.
-///
-/// Usage:
-///   dart run tool/discovery/anilist_removal_cli.dart --live
+// AniList Removal Test — AKASHA 독립 Registry 증명.
+//
+// Usage:
+//   dart run tool/discovery/anilist_removal_cli.dart --live
 
 import 'dart:io';
 

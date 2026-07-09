@@ -1,9 +1,7 @@
 import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
-import 'package:yaml/yaml.dart';
 import 'package:akasha/services/record_summary_index_service.dart';
-import 'package:akasha/services/title_alias_index_service.dart';
 
 void main() {
   group('YAML Implicit Typing Type Guard Test', () {

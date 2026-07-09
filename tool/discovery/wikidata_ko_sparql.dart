@@ -1,4 +1,4 @@
-/// Wikidata SPARQL — 관련 항목(시리즈·상위)의 kowiki 제목.
+// Wikidata SPARQL — 관련 항목(시리즈·상위)의 kowiki 제목.
 library;
 
 import 'dart:convert';

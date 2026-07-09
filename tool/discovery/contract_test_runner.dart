@@ -1,6 +1,6 @@
-/// Discovery Contract Test Runner — Source → Facts → Signal Gate → Minimal Core.
-///
-/// Raw JSON·candidate·Registry 쓰기 금지. KPI만 반환.
+// Discovery Contract Test Runner — Source → Facts → Signal Gate → Minimal Core.
+//
+// Raw JSON·candidate·Registry 쓰기 금지. KPI만 반환.
 library;
 
 import 'dart:io';

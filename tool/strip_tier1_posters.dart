@@ -1,10 +1,10 @@
 // ignore_for_file: avoid_print
-/// Tier 1 shard에서 posterPath·포스터 provenance 제거 (v1 유저 볼트 전용 정책).
-///
-/// Usage:
-///   dart run tool/strip_tier1_posters.dart [--apply] [--sync-assets]
-///
-/// --apply 없으면 dry-run. --sync-assets 시 registry_builder + assets 동기화.
+// Tier 1 shard에서 posterPath·포스터 provenance 제거 (v1 유저 볼트 전용 정책).
+//
+// Usage:
+//   dart run tool/strip_tier1_posters.dart [--apply] [--sync-assets]
+//
+// --apply 없으면 dry-run. --sync-assets 시 registry_builder + assets 동기화.
 
 import 'dart:convert';
 import 'dart:io';

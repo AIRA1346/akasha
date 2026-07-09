@@ -1,12 +1,12 @@
 // ignore_for_file: avoid_print
-/// Shadow Write — Registry 영향 측정 (실제 shard 쓰기 없음).
-///
-/// Usage:
-///   dart run tool/discovery/shadow_write.dart --offline
-///   dart run tool/discovery/shadow_write.dart --live
-///
-/// Contract Test → Shadow Write 파이프라인:
-///   Minimal Core Draft → wk_ 할당 → shard·dedupe → registry_builder 시뮬레이션
+// Shadow Write — Registry 영향 측정 (실제 shard 쓰기 없음).
+//
+// Usage:
+//   dart run tool/discovery/shadow_write.dart --offline
+//   dart run tool/discovery/shadow_write.dart --live
+//
+// Contract Test → Shadow Write 파이프라인:
+//   Minimal Core Draft → wk_ 할당 → shard·dedupe → registry_builder 시뮬레이션
 
 import 'dart:convert';
 import 'dart:io';

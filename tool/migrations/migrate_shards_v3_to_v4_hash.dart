@@ -1,11 +1,11 @@
 // ignore_for_file: avoid_print
-/// v3 ?¬ëŸ¬ê·??¤ë“œ ??v4 ?´ì‹œ ?¤ë“œ (`hash(wk_) % 256`)
-///
-/// Usage:
-///   dart run tool/migrations/migrate_shards_v3_to_v4_hash.dart
-///   dart run tool/migrations/migrate_shards_v3_to_v4_hash.dart --apply --sync-assets
-///
-/// ?°ì¶œë¬? `shards/{category}/{00..ff}.json` (sparse ???‘í’ˆ ?ˆëŠ” ë²„í‚·ë§?
+// v3 ?¬ëŸ¬ê·??¤ë“œ ??v4 ?´ì‹œ ?¤ë“œ (`hash(wk_) % 256`)
+//
+// Usage:
+//   dart run tool/migrations/migrate_shards_v3_to_v4_hash.dart
+//   dart run tool/migrations/migrate_shards_v3_to_v4_hash.dart --apply --sync-assets
+//
+// ?°ì¶œë¬? `shards/{category}/{00..ff}.json` (sparse ???‘í’ˆ ?ˆëŠ” ë²„í‚·ë§?
 
 import 'dart:convert';
 import 'dart:io';

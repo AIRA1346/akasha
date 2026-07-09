@@ -1,8 +1,8 @@
-/// 작품 품질 신호(원본) → qualityScore / qualityTier (빌드 시 파생)
-///
-/// v1 Tier 1: Fact only — poster·description 점수 없음.
-/// - shard에는 [qualitySignals]만 저장 (tier·score 저장 금지)
-/// - registry_builder가 search_index에 score·tier 복사
+// 작품 품질 신호(원본) → qualityScore / qualityTier (빌드 시 파생)
+//
+// v1 Tier 1: Fact only — poster·description 점수 없음.
+// - shard에는 [qualitySignals]만 저장 (tier·score 저장 금지)
+// - registry_builder가 search_index에 score·tier 복사
 library;
 
 /// 점수 가중치 (총 100) — [akasha-db/SCHEMA.md]

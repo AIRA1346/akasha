@@ -1,4 +1,4 @@
-/// Registry Coverage·검색 토큰 집합 (Impact Test용).
+// Registry Coverage·검색 토큰 집합 (Impact Test용).
 library;
 
 import 'dart:convert';

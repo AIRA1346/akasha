@@ -1,12 +1,12 @@
 // ignore_for_file: avoid_print
-/// Maintainer — 유저 카탈로그 제안 번들 import·검증
-///
-/// Usage:
-///   dart run tool/apply_catalog_contributions.dart --validate path/to/bundle.json
-///   dart run tool/apply_catalog_contributions.dart --import path/to/bundle.json
-///
-/// import 시 contributions/{add|fix}/pending/{id}.json + status.json 갱신
-/// 자동 shard merge는 하지 않습니다.
+// Maintainer — 유저 카탈로그 제안 번들 import·검증
+//
+// Usage:
+//   dart run tool/apply_catalog_contributions.dart --validate path/to/bundle.json
+//   dart run tool/apply_catalog_contributions.dart --import path/to/bundle.json
+//
+// import 시 contributions/{add|fix}/pending/{id}.json + status.json 갱신
+// 자동 shard merge는 하지 않습니다.
 
 import 'dart:convert';
 import 'dart:io';

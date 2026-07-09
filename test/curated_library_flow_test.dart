@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/personal_library_config.dart';
 import 'package:akasha/screens/home/home_personal_library_controller.dart';
 import 'package:akasha/services/personal_library_membership_service.dart';

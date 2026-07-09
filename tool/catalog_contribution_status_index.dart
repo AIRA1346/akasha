@@ -1,5 +1,5 @@
 // ignore_for_file: avoid_print
-/// akasha-db/contributions/status.json 갱신 (서버비 0원 — GitHub가 SoT)
+// akasha-db/contributions/status.json 갱신 (서버비 0원 — GitHub가 SoT)
 library;
 
 import 'dart:convert';

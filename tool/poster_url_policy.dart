@@ -1,8 +1,8 @@
 // ignore_for_file: avoid_print
-/// akasha-db posterPath URL policy — [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)
-///
-/// - absoluteDenylist: any occurrence fails CI (e.g. justwatch)
-/// - incrementDenylist: count must not exceed baseline (e.g. legacy anilistcdn)
+// akasha-db posterPath URL policy — [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)
+//
+// - absoluteDenylist: any occurrence fails CI (e.g. justwatch)
+// - incrementDenylist: count must not exceed baseline (e.g. legacy anilistcdn)
 library;
 
 import 'dart:convert';

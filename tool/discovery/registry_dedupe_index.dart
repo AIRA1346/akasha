@@ -1,4 +1,4 @@
-/// Registry in-memory dedupe index (read-only, externalIds by source).
+// Registry in-memory dedupe index (read-only, externalIds by source).
 library;
 
 import 'dart:convert';

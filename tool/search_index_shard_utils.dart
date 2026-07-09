@@ -1,4 +1,4 @@
-/// search_index v2 — 카테고리별 shard + manifest (Phase 2.1)
+// search_index v2 — 카테고리별 shard + manifest (Phase 2.1)
 library;
 
 import 'dart:convert';

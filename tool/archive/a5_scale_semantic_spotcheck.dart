@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
-/// A5 Scale ??O9 semantic enrich spot-check (syntactic gate ë°?.
-///
-/// Usage: dart run tool/archive/a5_scale_semantic_spotcheck.dart [--apply]
-///
-/// ?°ì¶œ: akasha-db/pipeline/artifacts/coverage_dashboard/scale_semantic_o9.json
+// A5 Scale ??O9 semantic enrich spot-check (syntactic gate ë°?.
+//
+// Usage: dart run tool/archive/a5_scale_semantic_spotcheck.dart [--apply]
+//
+// ?°ì¶œ: akasha-db/pipeline/artifacts/coverage_dashboard/scale_semantic_o9.json
 
 import 'dart:convert';
 import 'dart:io';

@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
-/// A5 Scale ??O8 governance bundle wall-time ê´€ì¸?
-///
-/// Usage: dart run tool/archive/a5_scale_governance_observation.dart [--apply]
-///
-/// ?°ì¶œ: akasha-db/pipeline/artifacts/coverage_dashboard/scale_governance_o8.json
+// A5 Scale ??O8 governance bundle wall-time ê´€ì¸?
+//
+// Usage: dart run tool/archive/a5_scale_governance_observation.dart [--apply]
+//
+// ?°ì¶œ: akasha-db/pipeline/artifacts/coverage_dashboard/scale_governance_o8.json
 
 import 'dart:convert';
 import 'dart:io';

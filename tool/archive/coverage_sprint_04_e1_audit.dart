@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
-/// Sprint 04 Phase B ??E1 Steam cohort quality audit (read-only).
-///
-/// Usage: dart run tool/archive/coverage_sprint_04_e1_audit.dart [--write-json]
-///
-/// ?°ì¶œ: akasha-db/pipeline/artifacts/coverage_dashboard/sprint_04_e1_audit.json
+// Sprint 04 Phase B ??E1 Steam cohort quality audit (read-only).
+//
+// Usage: dart run tool/archive/coverage_sprint_04_e1_audit.dart [--write-json]
+//
+// ?°ì¶œ: akasha-db/pipeline/artifacts/coverage_dashboard/sprint_04_e1_audit.json
 
 import 'dart:convert';
 import 'dart:io';

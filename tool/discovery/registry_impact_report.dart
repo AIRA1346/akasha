@@ -1,4 +1,4 @@
-/// Registry Impact Report — Phase B 산출물 (쓰기보다 "왜 선택했는가").
+// Registry Impact Report — Phase B 산출물 (쓰기보다 "왜 선택했는가").
 library;
 
 import 'dart:convert';

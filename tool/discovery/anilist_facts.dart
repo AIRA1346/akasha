@@ -1,4 +1,4 @@
-/// AniList API 노드 → Discovery Facts만 추출 (금지 필드 폐기).
+// AniList API 노드 → Discovery Facts만 추출 (금지 필드 폐기).
 library;
 
 import 'discovery_types.dart';

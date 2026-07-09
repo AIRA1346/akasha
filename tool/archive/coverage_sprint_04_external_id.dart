@@ -1,15 +1,15 @@
 // ignore_for_file: avoid_print
-/// Sprint 04 externalId G2 enrich runner.
-///
-/// Usage:
-///   dart run tool/archive/coverage_sprint_04_external_id.dart --dry-run
-///   dart run tool/archive/coverage_sprint_04_external_id.dart --apply --phase tmdb
-///   dart run tool/archive/coverage_sprint_04_external_id.dart --apply --phase steam --batch-size 50
-///
-/// Scope:
-/// - E2 TMDB poster cohort: posterPath resolved through tmdb_poster_cache.json.
-/// - E1 Steam cohort: posterPath or legacyIds appid.
-/// - No network fetch, no new provider, no schema change.
+// Sprint 04 externalId G2 enrich runner.
+//
+// Usage:
+//   dart run tool/archive/coverage_sprint_04_external_id.dart --dry-run
+//   dart run tool/archive/coverage_sprint_04_external_id.dart --apply --phase tmdb
+//   dart run tool/archive/coverage_sprint_04_external_id.dart --apply --phase steam --batch-size 50
+//
+// Scope:
+// - E2 TMDB poster cohort: posterPath resolved through tmdb_poster_cache.json.
+// - E1 Steam cohort: posterPath or legacyIds appid.
+// - No network fetch, no new provider, no schema change.
 
 import 'dart:convert';
 import 'dart:io';

@@ -1,4 +1,4 @@
-/// Discovery 파이프라인 공용 — Contract → Shadow → Impact → Diff.
+// Discovery 파이프라인 공용 — Contract → Shadow → Impact → Diff.
 library;
 
 import 'dart:io';

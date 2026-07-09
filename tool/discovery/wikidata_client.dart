@@ -1,7 +1,7 @@
-/// Wikidata Query Service — manga series Facts (CC0).
-///
-/// Policy: scoped SPARQL, User-Agent, rate limit respect (429 backoff).
-/// No description/image fields requested.
+// Wikidata Query Service — manga series Facts (CC0).
+//
+// Policy: scoped SPARQL, User-Agent, rate limit respect (429 backoff).
+// No description/image fields requested.
 library;
 
 import 'dart:convert';

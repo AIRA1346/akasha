@@ -1,10 +1,10 @@
 // ignore_for_file: avoid_print
-/// Discovery 수동 검증 리포트 — wouldCreate 샘플 10건.
-///
-/// Usage:
-///   dart run tool/discovery/review_report.dart --offline
-///   dart run tool/discovery/review_report.dart --live
-///   dart run tool/discovery/review_report.dart --live --output akasha-db/pipeline/artifacts/review.md
+// Discovery 수동 검증 리포트 — wouldCreate 샘플 10건.
+//
+// Usage:
+//   dart run tool/discovery/review_report.dart --offline
+//   dart run tool/discovery/review_report.dart --live
+//   dart run tool/discovery/review_report.dart --live --output akasha-db/pipeline/artifacts/review.md
 
 import 'dart:convert';
 import 'dart:io';

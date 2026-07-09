@@ -1,4 +1,4 @@
-/// Discovery KPI 계층 — Technical · Product · Independence · Patch Gate.
+// Discovery KPI 계층 — Technical · Product · Independence · Patch Gate.
 library;
 
 /// Contract → Diff (기술)

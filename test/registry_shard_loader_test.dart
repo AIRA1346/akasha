@@ -33,7 +33,7 @@ void main() {
     loader.manifestForTesting = const RegistryManifest(
       version: 3,
       generatedAt: '2026-06-07T10:00:00.000Z',
-      shards: const [],
+      shards: [],
     );
     loader.resetLoadedShardsForTesting();
   });

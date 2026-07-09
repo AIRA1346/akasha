@@ -1,4 +1,4 @@
-/// akasha-db v4 — 해시 샤드 키·무결성 (도구·CI 공용)
+// akasha-db v4 — 해시 샤드 키·무결성 (도구·CI 공용)
 library;
 
 import 'dart:convert';

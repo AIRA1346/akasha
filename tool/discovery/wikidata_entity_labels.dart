@@ -1,4 +1,4 @@
-/// Wikidata wbgetentities — labels·aliases·kowiki sitelink (CC0, backfill용).
+// Wikidata wbgetentities — labels·aliases·kowiki sitelink (CC0, backfill용).
 library;
 
 import 'dart:convert';

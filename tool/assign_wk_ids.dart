@@ -1,16 +1,16 @@
 // ignore_for_file: avoid_print
-/// Phase A — 기존 샤드 작품에 `wk_` 영구 ID 일괄 할당
-///
-/// Usage:
-///   dart run tool/assign_wk_ids.dart              # dry-run
-///   dart run tool/assign_wk_ids.dart --apply      # 샤드·alias·id_registry 갱신
-///   dart run tool/assign_wk_ids.dart --apply --sync-assets
-///
-/// 산출물:
-///   akasha-db/id_registry.json
-///   akasha-db/legacy_aliases.json (전 legacy → wk_ 매핑)
-///   샤드 workId/key → wk_ + legacyIds[]
-///   assets/registry/franchise_groups.json members 갱신
+// Phase A — 기존 샤드 작품에 `wk_` 영구 ID 일괄 할당
+//
+// Usage:
+//   dart run tool/assign_wk_ids.dart              # dry-run
+//   dart run tool/assign_wk_ids.dart --apply      # 샤드·alias·id_registry 갱신
+//   dart run tool/assign_wk_ids.dart --apply --sync-assets
+//
+// 산출물:
+//   akasha-db/id_registry.json
+//   akasha-db/legacy_aliases.json (전 legacy → wk_ 매핑)
+//   샤드 workId/key → wk_ + legacyIds[]
+//   assets/registry/franchise_groups.json members 갱신
 
 import 'dart:convert';
 import 'dart:io';

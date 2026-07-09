@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
-/// Sprint 04 Phase B-4 ??E1 cohort post Quality Gate (E1?揈5) reclassification.
-///
-/// Usage: dart run tool/archive/coverage_sprint_04_e1_post_gate.dart [--write-json]
-///
-/// Read-only 路 no apply 路 no registry mutation.
+// Sprint 04 Phase B-4 ??E1 cohort post Quality Gate (E1?揈5) reclassification.
+//
+// Usage: dart run tool/archive/coverage_sprint_04_e1_post_gate.dart [--write-json]
+//
+// Read-only 路 no apply 路 no registry mutation.
 
 import 'dart:convert';
 import 'dart:io';

@@ -1,6 +1,6 @@
-/// Shadow Write — Minimal Core Draft → wk_·shard·dedupe·registry_builder 시뮬레이션.
-///
-/// 실제 shard 저장 없음.
+// Shadow Write — Minimal Core Draft → wk_·shard·dedupe·registry_builder 시뮬레이션.
+//
+// 실제 shard 저장 없음.
 library;
 
 import 'dart:io';

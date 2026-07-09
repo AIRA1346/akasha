@@ -29,7 +29,7 @@ void main() {
       expect(isValidImageUrl('C:\\Users\\image.jpg'), isFalse);
 
       // Too long string
-      final longStr = 'https://example.com/' + 'a' * 2050 + '.jpg';
+      final longStr = 'https://example.com/${'a' * 2050}.jpg';
       expect(isValidImageUrl(longStr), isFalse);
     });
   });

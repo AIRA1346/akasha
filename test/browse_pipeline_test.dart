@@ -3,9 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/data/adapters/works_registry_adapter.dart';
 import 'package:akasha/services/browse_pipeline.dart';
-import 'package:akasha/services/franchise_registry.dart';
 import 'package:akasha/services/user_registry_preferences.dart';
-import 'package:akasha/services/works_registry.dart';
 import 'package:akasha/utils/helpers.dart';
 
 import 'support/registry_test_harness.dart';

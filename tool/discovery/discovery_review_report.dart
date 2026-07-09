@@ -1,4 +1,4 @@
-/// Discovery 수동 검증 리포트 — wouldCreate 샘플 10건 AKASHA Identity 검토.
+// Discovery 수동 검증 리포트 — wouldCreate 샘플 10건 AKASHA Identity 검토.
 library;
 
 import 'dart:convert';

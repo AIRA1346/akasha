@@ -1,12 +1,12 @@
 // ignore_for_file: avoid_print
-/// Catalog scale baseline — Phase 2.0 측정 (수정 전 스냅샷).
-///
-/// Usage: dart run tool/catalog_scale_baseline.dart [--strict]
-///
-/// Phase 2 (search/browse/bundle) 착수 **전**·**후** 비교용.
-/// 490작에서 수치를 남겨 두면 G1 insert 시 병목 **증명**에 쓴다.
-///
-/// `--strict`: G1+ 번들이 eager-only가 아니거나 assets/registry > 15MB면 exit 1.
+// Catalog scale baseline — Phase 2.0 측정 (수정 전 스냅샷).
+//
+// Usage: dart run tool/catalog_scale_baseline.dart [--strict]
+//
+// Phase 2 (search/browse/bundle) 착수 **전**·**후** 비교용.
+// 490작에서 수치를 남겨 두면 G1 insert 시 병목 **증명**에 쓴다.
+//
+// `--strict`: G1+ 번들이 eager-only가 아니거나 assets/registry > 15MB면 exit 1.
 
 import 'dart:convert';
 import 'dart:io';

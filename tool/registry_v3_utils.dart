@@ -1,5 +1,5 @@
 // ignore_for_file: avoid_print
-/// akasha-db v3 — tool 전용 순수 Dart (Flutter 의존 없음)
+// akasha-db v3 — tool 전용 순수 Dart (Flutter 의존 없음)
 
 Map<String, String> parseTitlesJson(dynamic json) {
   if (json is! Map) return {};

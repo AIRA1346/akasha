@@ -1,13 +1,13 @@
 // ignore_for_file: avoid_print
-/// 레거시 정리 — posterPath 없는데 extensions.posterSource/posterVerified만
-/// 남은 작품에서 해당 provenance 키를 제거 (docs/data-policy.md provenance_warn).
-///
-/// Usage:
-///   dart run tool/cleanup_poster_source.dart            # dry-run
-///   dart run tool/cleanup_poster_source.dart --apply    # 샤드 수정
-///   dart run tool/cleanup_poster_source.dart --apply --sync-assets
-///
-/// posterPath가 있는 작품은 건드리지 않는다. seasons/latestSeason 등은 보존.
+// 레거시 정리 — posterPath 없는데 extensions.posterSource/posterVerified만
+// 남은 작품에서 해당 provenance 키를 제거 (docs/data-policy.md provenance_warn).
+//
+// Usage:
+//   dart run tool/cleanup_poster_source.dart            # dry-run
+//   dart run tool/cleanup_poster_source.dart --apply    # 샤드 수정
+//   dart run tool/cleanup_poster_source.dart --apply --sync-assets
+//
+// posterPath가 있는 작품은 건드리지 않는다. seasons/latestSeason 등은 보존.
 
 import 'dart:convert';
 import 'dart:io';

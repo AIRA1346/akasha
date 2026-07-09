@@ -1,15 +1,15 @@
 // ignore_for_file: avoid_print
-/// official_sync — Discovery Contract Test Runner + sample dry-run.
-///
-/// Usage:
-///   dart run tool/discovery/official_sync.dart --sample
-///   dart run tool/discovery/official_sync.dart --contract-test
-///   dart run tool/discovery/official_sync.dart --contract-test --offline
-///
-/// 원칙 (docs/discovery-policy.md):
-/// - Fact만 생성, raw API·Signal Git 저장 금지
-/// - Registry 쓰기 없음 (Contract Test 단계)
-/// - enabled=false여도 --contract-test는 수동 실행 허용
+// official_sync — Discovery Contract Test Runner + sample dry-run.
+//
+// Usage:
+//   dart run tool/discovery/official_sync.dart --sample
+//   dart run tool/discovery/official_sync.dart --contract-test
+//   dart run tool/discovery/official_sync.dart --contract-test --offline
+//
+// 원칙 (docs/discovery-policy.md):
+// - Fact만 생성, raw API·Signal Git 저장 금지
+// - Registry 쓰기 없음 (Contract Test 단계)
+// - enabled=false여도 --contract-test는 수동 실행 허용
 
 import 'dart:convert';
 import 'dart:io';

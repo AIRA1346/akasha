@@ -5,7 +5,6 @@ import 'package:akasha/screens/home/views/canvas_viewport_controls.dart';
 import 'package:akasha/services/canvas_store.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
-import 'package:yaml/yaml.dart';
 
 void main() {
   group('CanvasRecord & CanvasLayout Serialization tests', () {

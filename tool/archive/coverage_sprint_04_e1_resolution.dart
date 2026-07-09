@@ -1,16 +1,16 @@
 // ignore_for_file: avoid_print
-/// Sprint 04-R2 Phase C ??E1 cohort 15Í±?resolution runner.
-///
-/// Í∑ºÍ±∞ Î¨∏ÏÑú:
-/// - docs/sprint-04-e1-post-gate-audit.md (REVIEW 7 / BLOCK 8)
-/// - docs/sprint-04-high-risk-disposition.md (HIGH 4 disposition)
-/// - 2026-06-10 ?∏Î? Í≤ÄÏ¶? appId 2358720=Black Myth: Wukong (NIKKE Steam ÎØ∏Ï∂ú??,
-///   appId 3511790=Songs of Conquest DLC (Blue Archive ?§Ï†ú appId=3557620),
-///   wk_144=?êÌåê(2011, appId 72850) ??SE(489830)?Ä Î≥ÑÍ∞ú listing.
-///
-/// Usage:
-///   dart run tool/archive/coverage_sprint_04_e1_resolution.dart            # dry-run
-///   dart run tool/archive/coverage_sprint_04_e1_resolution.dart --apply
+// Sprint 04-R2 Phase C ??E1 cohort 15Í±?resolution runner.
+//
+// Í∑ºÍ±∞ Î¨∏ÏÑú:
+// - docs/sprint-04-e1-post-gate-audit.md (REVIEW 7 / BLOCK 8)
+// - docs/sprint-04-high-risk-disposition.md (HIGH 4 disposition)
+// - 2026-06-10 ?∏Î? Í≤ÄÏ¶? appId 2358720=Black Myth: Wukong (NIKKE Steam ÎØ∏Ï∂ú??,
+//   appId 3511790=Songs of Conquest DLC (Blue Archive ?§Ï†ú appId=3557620),
+//   wk_144=?êÌåê(2011, appId 72850) ??SE(489830)?Ä Î≥ÑÍ∞ú listing.
+//
+// Usage:
+//   dart run tool/archive/coverage_sprint_04_e1_resolution.dart            # dry-run
+//   dart run tool/archive/coverage_sprint_04_e1_resolution.dart --apply
 library;
 
 import 'dart:convert';

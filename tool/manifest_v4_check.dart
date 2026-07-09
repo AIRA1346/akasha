@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
-/// manifest v4 + 샤드 sha256 일관성 검증
-///
-/// Usage: dart run tool/manifest_v4_check.dart
+// manifest v4 + 샤드 sha256 일관성 검증
+//
+// Usage: dart run tool/manifest_v4_check.dart
 
 import 'dart:convert';
 import 'dart:io';

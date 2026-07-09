@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
-/// Sprint 04 Phase A ??externalId baseline measurement (read-only).
-///
-/// Usage: dart run tool/archive/coverage_sprint_04_baseline.dart [--write-json]
-///
-/// ?°ì¶œ: akasha-db/pipeline/artifacts/coverage_dashboard/sprint_04_baseline.json
+// Sprint 04 Phase A ??externalId baseline measurement (read-only).
+//
+// Usage: dart run tool/archive/coverage_sprint_04_baseline.dart [--write-json]
+//
+// ?°ì¶œ: akasha-db/pipeline/artifacts/coverage_dashboard/sprint_04_baseline.json
 
 import 'dart:convert';
 import 'dart:io';

@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
-/// CI/로컬 레지스트리 검증 — 샤드 유효성 + 프랜차이즈 누락 탐지
-///
-/// Usage: dart run tool/ci_registry_check.dart
-///
-/// Exit 0 = OK, 1 = validation or franchise linter issues
+// CI/로컬 레지스트리 검증 — 샤드 유효성 + 프랜차이즈 누락 탐지
+//
+// Usage: dart run tool/ci_registry_check.dart
+//
+// Exit 0 = OK, 1 = validation or franchise linter issues
 
 import 'dart:convert';
 import 'dart:io';

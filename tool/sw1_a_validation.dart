@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
-/// SW1-A — 402 baseline recall@10 (Phase A 수동 계약 자동 실행).
-///
-/// Usage: dart run tool/sw1_a_validation.dart
-///
-/// 산출물: akasha-db/pipeline/artifacts/global_search_validation/sw1_a_report.json
+// SW1-A — 402 baseline recall@10 (Phase A 수동 계약 자동 실행).
+//
+// Usage: dart run tool/sw1_a_validation.dart
+//
+// 산출물: akasha-db/pipeline/artifacts/global_search_validation/sw1_a_report.json
 
 import 'dart:convert';
 import 'dart:io';

@@ -1,4 +1,4 @@
-/// Wikidata Q-id ingest 검증 — [wikidata-spine-plan.md](../../docs/strategy/wikidata-spine-plan.md) §7
+// Wikidata Q-id ingest 검증 — [wikidata-spine-plan.md](../../docs/strategy/wikidata-spine-plan.md) §7
 library;
 
 /// Q-id / P-id 형식 (Wikidata와 동일: 접두 + 무제한 10진수)

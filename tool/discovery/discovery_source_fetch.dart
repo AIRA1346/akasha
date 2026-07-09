@@ -1,4 +1,4 @@
-/// Discovery live fetch — source별 분기 (AniList 제거).
+// Discovery live fetch — source별 분기 (AniList 제거).
 library;
 
 import 'dart:io';

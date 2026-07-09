@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:yaml/yaml.dart';
 import 'package:akasha/core/archiving/archive_record_contract.dart';
-import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/services/record_summary_index_service.dart';
 
