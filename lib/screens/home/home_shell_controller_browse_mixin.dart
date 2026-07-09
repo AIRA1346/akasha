@@ -54,6 +54,8 @@ mixin HomeShellControllerBrowseMixin on HomeShellControllerBase {
 
   Future<void> selectVaultFolder() => dialogs.selectVaultFolder();
 
+  Future<void> createDefaultVault() => dialogs.createDefaultVault();
+
   Future<void> openAddEntityDialog(EntityAnchorType? forceType) =>
       dialogs.openAddEntityDialog(forceType);
 

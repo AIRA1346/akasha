@@ -123,6 +123,7 @@ Widget _homeShellScaffoldBody(
     onLibraryDragStarted:
         controller.canAddToLibrary ? controller.onLibraryDragStarted : null,
     onConnectVault: controller.selectVaultFolder,
+    onCreateDefaultVault: controller.createDefaultVault,
     onToggleCategory: controller.toggleCategory,
     onClearCategories: controller.clearCategories,
     onToggleWorkStatus: controller.toggleWorkStatus,

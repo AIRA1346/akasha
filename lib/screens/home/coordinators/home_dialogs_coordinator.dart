@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:path/path.dart' as p;
 
 import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/ports/user_catalog_port.dart';
@@ -20,6 +22,7 @@ import '../../../services/open_collectible.dart';
 import '../dialogs/home_dialogs_facade.dart';
 import '../dialogs/add_catalog_entity_dialog.dart';
 import '../../../utils/entity_tag_validation.dart';
+import '../../../services/default_vault_path_resolver.dart';
 import '../home_auto_archive.dart';
 import 'home_catalog_coordinator.dart';
 import 'home_navigation_coordinator.dart';
@@ -119,6 +122,9 @@ class HomeDialogsCoordinator {
 
   Future<void> selectVaultFolder() =>
       _homeDialogsCoordinatorSelectVaultFolder(this);
+
+  Future<void> createDefaultVault({DefaultVaultPathResolver resolver = const DefaultVaultPathResolver()}) =>
+      _homeDialogsCoordinatorCreateDefaultVault(this, resolver: resolver);
 
   Future<void> openAddEntityDialog(EntityAnchorType? forceType) =>
       _homeDialogsCoordinatorOpenAddEntityDialog(this, forceType);

@@ -80,3 +80,71 @@ Future<void> _homeDialogsCoordinatorSelectVaultFolder(
     }
   }
 }
+
+Future<void> _homeDialogsCoordinatorCreateDefaultVault(
+  HomeDialogsCoordinator coord, {
+  required DefaultVaultPathResolver resolver,
+}) async {
+  String? targetPath;
+
+  try {
+    final preferredDir = await resolver.resolvePreferredPath();
+    targetPath = p.join(preferredDir, 'AKASHA Vault');
+    Directory(targetPath).createSync(recursive: true);
+  } catch (_) {
+    try {
+      final fallbackDir = await resolver.resolveFallbackPath();
+      targetPath = p.join(fallbackDir, 'AKASHA Vault');
+      Directory(targetPath).createSync(recursive: true);
+    } catch (e) {
+      if (coord.isMounted()) {
+        coord.showMessage('기본 아카이브 생성을 완료하지 못했습니다: $e');
+      }
+      return;
+    }
+  }
+
+  try {
+    await coord.vault.setVaultPath(targetPath);
+    await coord.loadPersonalLibraries();
+    await coord.loadItems();
+    await coord.autoArchiveWorks();
+
+    if (coord.isMounted()) {
+      final context = coord.hostContext();
+      if (context.mounted) {
+        showDialog(
+          context: context,
+          builder: (dialogCtx) => AlertDialog(
+            title: const Text('아카이브 생성 완료'),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  '이 폴더가 AKASHA의 본체입니다. 앱이 아니라, 이 파일들이 당신의 아카이브입니다.',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  '생성된 경로:\n$targetPath',
+                  style: TextStyle(color: Theme.of(dialogCtx).disabledColor, fontSize: 13),
+                ),
+              ],
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(dialogCtx).pop(),
+                child: const Text('확인'),
+              ),
+            ],
+          ),
+        );
+      }
+    }
+  } catch (e) {
+    if (coord.isMounted()) {
+      coord.showMessage('볼트 로드 실패: $e');
+    }
+  }
+}

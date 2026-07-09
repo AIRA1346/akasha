@@ -53,6 +53,7 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
     required this.posterCardBuilder,
     required this.browse,
     required this.onConnectVault,
+    required this.onCreateDefaultVault,
     required this.onSearch,
     required this.onToggleCategory,
     required this.onClearCategories,
@@ -112,6 +113,7 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
   final Widget Function(BrowseCard card) posterCardBuilder;
   final HomeShellBrowseContentBuilder browse;
   final VoidCallback onConnectVault;
+  final VoidCallback onCreateDefaultVault;
   final VoidCallback onSearch;
   final void Function(MediaCategory category) onToggleCategory;
   final VoidCallback onClearCategories;
@@ -169,7 +171,10 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
     return Column(
       children: [
         if (!vaultLinked)
-          HomeVaultBanner(onConnectVault: onConnectVault),
+          HomeVaultBanner(
+            onConnectVault: onConnectVault,
+            onCreateDefaultVault: onCreateDefaultVault,
+          ),
         if (!workbench.hasOpenDetail &&
             !isTimelineMode &&
             !isCollectibleCollectionMode)

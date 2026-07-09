@@ -96,6 +96,7 @@ class HomeShellBody extends StatelessWidget {
   onDropWorkToLibrary;
   final VoidCallback? onLibraryDragStarted;
   final VoidCallback onConnectVault;
+  final VoidCallback onCreateDefaultVault;
   final void Function(MediaCategory category) onToggleCategory;
   final VoidCallback onClearCategories;
   final void Function(String label) onToggleWorkStatus;
@@ -245,6 +246,7 @@ class HomeShellBody extends StatelessWidget {
     this.onDropWorkToLibrary,
     this.onLibraryDragStarted,
     required this.onConnectVault,
+    required this.onCreateDefaultVault,
     required this.onToggleCategory,
     required this.onClearCategories,
     required this.onToggleWorkStatus,
@@ -428,6 +430,7 @@ class HomeShellBody extends StatelessWidget {
                   posterCardBuilder: posterCardBuilder,
                   browse: browse,
                   onConnectVault: onConnectVault,
+                  onCreateDefaultVault: onCreateDefaultVault,
                   onSearch: onSearch,
                   onToggleCategory: onToggleCategory,
                   onClearCategories: onClearCategories,
