@@ -1,8 +1,8 @@
 # AKASHA Current State (현재 상태)
 
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
-> **갱신:** 2026-07-08 (test **838** · analyze 0 · **Canvas v0.3-B.1** · **viewport persist + inertia zoom guard** · **Steam v1 = Personal Archive** · **Vault Format Spec v3 확립**)
-> **Git:** code/test baseline **1729cef2** · current tip **`8df18978`**
+> **갱신:** 2026-07-09 (품질 게이트 클린 베이스라인 수립 · test **838** · analyze 0 · **Canvas v0.3-B.1** · **viewport persist + inertia zoom guard** · **Steam v1 = Personal Archive** · **Vault Format Spec v3 확립**)
+> **Git:** code/test baseline **1729cef2** · current tip **`6281e250`**
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md) — 독립 검증기 `tool/vault_format_validator.dart`
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
 

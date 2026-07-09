@@ -1,7 +1,7 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-07-08 (@docs · **Canvas v0.3-B.2a** viewport persist + inertia zoom guard)
-> **Git:** current tip **`8df18978`** · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
+> **갱신:** 2026-07-09 (품질 게이트 클린 베이스라인 수립 · flutter analyze 0 · test 838 · **Canvas v0.3-B.2a** viewport persist + inertia zoom guard)
+> **Git:** current tip **`6281e250`** · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
 > **현재 실행:** **Steam 무료 출시 준비** — [STEAM_RELEASE.md](STEAM_RELEASE.md) · IAP/Agent/player implementation layer **post-launch**
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [STEAM_RELEASE.md](STEAM_RELEASE.md)
@@ -14,7 +14,7 @@
 | 항목 | 상태 |
 |------|------|
 | **flutter test** | **838 PASS** |
-| **flutter analyze lib** | **0 issue** |
+| **flutter analyze** | **0 issue** (gates clean) |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
 | **앱 테마** | `AkashaPalette` ThemeExtension · sidebar/bottom/search/card/preview rail 반영 ✅ |
 | **사이드바 서재** | `나만의 서재` 목록·active·`+`·select·삭제·DnD ✅ |
@@ -87,7 +87,7 @@
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
 | `flutter test` | **838 PASS** | ✅ |
-| `flutter analyze lib` | **0 issue** | ✅ |
+| `flutter analyze` | **0 issue** | ✅ |
 | `preflight_check` | PASS | ✅ |
 | `registry_builder` | PASS | — (post-v1 scale) |
 | `dedupe_linter` | PASS (10048) | — |
