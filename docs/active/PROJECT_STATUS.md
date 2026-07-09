@@ -1,7 +1,7 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-07-09 (품질 게이트 클린 베이스라인 수립 · flutter analyze 0 · test 838 · **Canvas v0.3-B.2a** viewport persist + inertia zoom guard)
-> **Git:** current tip **`6281e250`** · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
+> **갱신:** 2026-07-09 (Vault Quick Start 구현 완료 · flutter analyze 0 · test 840 · **Canvas v0.3-B.2a** viewport persist + inertia zoom guard)
+> **Git:** current tip **`32b5871d`** · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
 > **현재 실행:** **Steam 무료 출시 준비** — [STEAM_RELEASE.md](STEAM_RELEASE.md) · IAP/Agent/player implementation layer **post-launch**
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [STEAM_RELEASE.md](STEAM_RELEASE.md)
@@ -13,7 +13,7 @@
  
 | 항목 | 상태 |
 |------|------|
-| **flutter test** | **838 PASS** |
+| **flutter test** | **840 PASS** |
 | **flutter analyze** | **0 issue** (gates clean) |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
 | **앱 테마** | `AkashaPalette` ThemeExtension · sidebar/bottom/search/card/preview rail 반영 ✅ |

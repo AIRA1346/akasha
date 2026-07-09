@@ -1,8 +1,8 @@
 # AKASHA Current State (현재 상태)
 
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
-> **갱신:** 2026-07-09 (품질 게이트 클린 베이스라인 수립 · test **838** · analyze 0 · **Canvas v0.3-B.1** · **viewport persist + inertia zoom guard** · **Steam v1 = Personal Archive** · **Vault Format Spec v3 확립**)
-> **Git:** code/test baseline **1729cef2** · current tip **`6281e250`**
+> **갱신:** 2026-07-09 (Vault Quick Start 구현 완료 · test **840** · analyze 0 · **Canvas v0.3-B.1** · **viewport persist + inertia zoom guard** · **Steam v1 = Personal Archive** · **Vault Format Spec v3 확립**)
+> **Git:** code/test baseline **1729cef2** · current tip **`32b5871d`**
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md) — 독립 검증기 `tool/vault_format_validator.dart`
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
 
@@ -23,7 +23,7 @@
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
 
-**v1 blocking에 가까운 검증:** `flutter test` **838** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
+**v1 blocking에 가까운 검증:** `flutter test` **840** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
 **v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.
 
 ---
