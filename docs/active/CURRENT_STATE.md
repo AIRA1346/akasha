@@ -8,7 +8,7 @@
 
 ---
 
-> **Current verification (2026-07-11):** SA-03 batch rebuild/source-sync prototype · test **872** · analyze 0
+> **Current verification (2026-07-11):** SA-03 batch rebuild/source-sync/trust-state prototype · test **874** · analyze 0
 
 > **2026-07-10 architecture correction:** `system/` holds non-rebuildable
 > candidates, operation logs, recovery evidence, and drafts. `.akasha/` is

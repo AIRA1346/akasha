@@ -46,6 +46,10 @@ void main() {
         vaultPath: vault.path,
       );
       try {
+        expect(
+          (await store.readWorkSummaryCacheStatus(database: database)).state,
+          WorkSummaryCacheState.ready,
+        );
         final first = await store.queryWorkSummaries(database: database);
         expect(first.summaries.single.title, 'Alpha');
       } finally {
@@ -160,6 +164,61 @@ void main() {
       await root.delete(recursive: true);
     }
   });
+
+  test(
+    'interrupted rebuild quarantines partially committed cache batches',
+    () async {
+      final root = await Directory.systemTemp.createTemp(
+        'akasha_derived_interrupted_',
+      );
+      final vault = Directory(p.join(root.path, 'vault'));
+      final cache = Directory(p.join(root.path, 'app_cache'));
+      final workDirectory = Directory(p.join(vault.path, 'works', 'movie'));
+      await workDirectory.create(recursive: true);
+      for (var index = 0; index < 300; index++) {
+        final id = 'wk_u_interrupt${index.toString().padLeft(3, '0')}';
+        await File(
+          p.join(workDirectory.path, '$id.md'),
+        ).writeAsString(_workMarkdown(title: 'Interrupt $index', workId: id));
+      }
+
+      final store = LocalDerivedIndexStore();
+      final synchronizer = LocalDerivedIndexSynchronizer(store: store);
+      await expectLater(
+        synchronizer.rebuildWorkSummaries(
+          cacheRoot: cache.path,
+          vaultPath: vault.path,
+          onProgress: (progress) {
+            if (progress.scanned >= 300) {
+              throw StateError('injected rebuild interruption');
+            }
+          },
+        ),
+        throwsStateError,
+      );
+
+      final database = await store.open(
+        cacheRoot: cache.path,
+        vaultPath: vault.path,
+      );
+      try {
+        final status = await store.readWorkSummaryCacheStatus(
+          database: database,
+        );
+        expect(status.state, WorkSummaryCacheState.repairRequired);
+        expect(status.failureReason, 'rebuild_interrupted');
+        final partialRows = await database.query('work_summaries');
+        expect(partialRows, hasLength(250));
+        await expectLater(
+          store.queryWorkSummaries(database: database),
+          throwsA(isA<WorkSummaryCacheUnavailable>()),
+        );
+      } finally {
+        await database.close();
+        await root.delete(recursive: true);
+      }
+    },
+  );
 }
 
 String _workMarkdown({required String title, String workId = 'wk_u_alpha'}) =>

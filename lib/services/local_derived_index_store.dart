@@ -20,6 +20,9 @@ class LocalDerivedIndexStore {
   static const int schemaVersion = 4;
   static const String cacheDirectoryName = 'derived_indexes';
   static const String databaseFileName = 'index.sqlite';
+  static const String _workSummaryStateKey = 'work_summary_state';
+  static const String _workSummaryGenerationKey = 'work_summary_generation';
+  static const String _workSummaryFailureKey = 'work_summary_failure';
 
   final DatabaseFactory? _databaseFactoryOverride;
 
@@ -79,6 +82,125 @@ class LocalDerivedIndexStore {
     if (await directory.exists()) {
       await directory.delete(recursive: true);
     }
+  }
+
+  /// Returns whether the Work summary projection is safe to serve.
+  ///
+  /// A cache is deliberately unavailable until a complete rebuild is marked
+  /// ready. This prevents a partially committed, interrupted rebuild from
+  /// appearing as a complete archive browse result.
+  Future<WorkSummaryCacheStatus> readWorkSummaryCacheStatus({
+    required Database database,
+  }) async {
+    final rows = await database.query(
+      'cache_meta',
+      columns: const ['key', 'value'],
+      where: 'key IN (?, ?, ?)',
+      whereArgs: const [
+        _workSummaryStateKey,
+        _workSummaryGenerationKey,
+        _workSummaryFailureKey,
+      ],
+    );
+    final metadata = <String, String>{
+      for (final row in rows) row['key']!.toString(): row['value']!.toString(),
+    };
+    final state = switch (metadata[_workSummaryStateKey]) {
+      'rebuilding' => WorkSummaryCacheState.rebuilding,
+      'ready' => WorkSummaryCacheState.ready,
+      'repair_required' => WorkSummaryCacheState.repairRequired,
+      _ => WorkSummaryCacheState.rebuildRequired,
+    };
+    return WorkSummaryCacheStatus(
+      state: state,
+      generation: metadata[_workSummaryGenerationKey],
+      failureReason: metadata[_workSummaryFailureKey],
+    );
+  }
+
+  /// Marks a full Work-summary rebuild as in progress before its first batch.
+  Future<void> beginWorkSummaryRebuild({
+    required Database database,
+    required String generation,
+  }) async {
+    final normalizedGeneration = _nonEmptyGeneration(generation);
+    await database.transaction((transaction) async {
+      await _putCacheMeta(
+        transaction,
+        key: _workSummaryStateKey,
+        value: 'rebuilding',
+      );
+      await _putCacheMeta(
+        transaction,
+        key: _workSummaryGenerationKey,
+        value: normalizedGeneration,
+      );
+      await transaction.delete(
+        'cache_meta',
+        where: 'key = ?',
+        whereArgs: const [_workSummaryFailureKey],
+      );
+    });
+  }
+
+  /// Publishes a completed generation as the only queryable Work projection.
+  Future<void> completeWorkSummaryRebuild({
+    required Database database,
+    required String generation,
+  }) async {
+    final normalizedGeneration = _nonEmptyGeneration(generation);
+    await database.transaction((transaction) async {
+      final activeGeneration = await _cacheMetaValue(
+        transaction,
+        _workSummaryGenerationKey,
+      );
+      if (activeGeneration != normalizedGeneration) {
+        throw StateError(
+          'Cannot complete non-active Work summary rebuild generation.',
+        );
+      }
+      await _putCacheMeta(
+        transaction,
+        key: _workSummaryStateKey,
+        value: 'ready',
+      );
+      await transaction.delete(
+        'cache_meta',
+        where: 'key = ?',
+        whereArgs: const [_workSummaryFailureKey],
+      );
+    });
+  }
+
+  /// Quarantines a cache after a failed or interrupted mutation.
+  ///
+  /// The cache is disposable, but canonical Vault files are never modified or
+  /// deleted. A later runtime repair can discard and rebuild this cache.
+  Future<void> markWorkSummaryRepairRequired({
+    required Database database,
+    required String failureReason,
+    String? generation,
+  }) async {
+    final normalizedReason = _nonEmptyGeneration(failureReason);
+    await database.transaction((transaction) async {
+      if (generation != null) {
+        await _putCacheMeta(
+          transaction,
+          key: _workSummaryGenerationKey,
+          value: _nonEmptyGeneration(generation),
+        );
+      }
+      await _putCacheMeta(
+        transaction,
+        key: _workSummaryStateKey,
+        value: 'repair_required',
+      );
+      await _putCacheMeta(
+        transaction,
+        key: _workSummaryFailureKey,
+        value: normalizedReason,
+      );
+    });
   }
 
   /// Updates the derived Work projection without reading or rewriting the
@@ -277,6 +399,10 @@ class LocalDerivedIndexStore {
     required Database database,
     WorkSummaryQuery query = const WorkSummaryQuery(),
   }) async {
+    final cacheStatus = await readWorkSummaryCacheStatus(database: database);
+    if (!cacheStatus.canServeQueries) {
+      throw WorkSummaryCacheUnavailable(cacheStatus);
+    }
     final where = <String>[];
     final arguments = <Object?>[];
     _appendInFilter(
@@ -525,6 +651,39 @@ class LocalDerivedIndexStore {
     return normalized;
   }
 
+  static String _nonEmptyGeneration(String value) {
+    final normalized = value.trim();
+    if (normalized.isEmpty) {
+      throw ArgumentError.value(value, 'value', 'must not be empty');
+    }
+    return normalized;
+  }
+
+  static Future<void> _putCacheMeta(
+    DatabaseExecutor executor, {
+    required String key,
+    required String value,
+  }) {
+    return executor.insert('cache_meta', {
+      'key': key,
+      'value': value,
+    }, conflictAlgorithm: ConflictAlgorithm.replace);
+  }
+
+  static Future<String?> _cacheMetaValue(
+    DatabaseExecutor executor,
+    String key,
+  ) async {
+    final rows = await executor.query(
+      'cache_meta',
+      columns: const ['value'],
+      where: 'key = ?',
+      whereArgs: [key],
+      limit: 1,
+    );
+    return rows.isEmpty ? null : rows.single['value']?.toString();
+  }
+
   static String? _nullIfEmpty(String? value) => _normalizeValue(value);
 
   static String? _normalizeValue(String? value) {
@@ -608,6 +767,38 @@ class WorkSummaryPage {
 
   final List<VaultRecordSummary> summaries;
   final String? nextCursor;
+}
+
+/// Trust state for the rebuildable Work browse projection.
+enum WorkSummaryCacheState {
+  rebuildRequired,
+  rebuilding,
+  ready,
+  repairRequired,
+}
+
+class WorkSummaryCacheStatus {
+  const WorkSummaryCacheStatus({
+    required this.state,
+    this.generation,
+    this.failureReason,
+  });
+
+  final WorkSummaryCacheState state;
+  final String? generation;
+  final String? failureReason;
+
+  bool get canServeQueries => state == WorkSummaryCacheState.ready;
+}
+
+/// Raised instead of serving a partial or unverified derived-cache page.
+class WorkSummaryCacheUnavailable implements Exception {
+  const WorkSummaryCacheUnavailable(this.status);
+
+  final WorkSummaryCacheStatus status;
+
+  @override
+  String toString() => 'WorkSummaryCacheUnavailable(${status.state.name})';
 }
 
 class _WorkSummaryCursor {

@@ -1,6 +1,6 @@
 # SA-03 — Derived Index Persistence Decision
 
-> **Status:** Windows cache rebuild/source-sync prototype passed; benchmark and app lifecycle wiring pending
+> **Status:** Windows cache batch-rebuild/source-sync and trust-state prototype passed; benchmark and app lifecycle wiring pending
 > **Date:** 2026-07-10
 > **Related:** [SA_02_HOME_WORK_SUMMARY_BOUNDARY.md](SA_02_HOME_WORK_SUMMARY_BOUNDARY.md) · [SCALE_ACCESS_PATH_INVENTORY.md](SCALE_ACCESS_PATH_INVENTORY.md#sa-03--bounded-index-persistence-next) · [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)
 
@@ -86,8 +86,12 @@ cache failure or reconciliationRequired
 ```
 
 A normal page query never falls back to a full Vault scan. A newly opened cache
-or a user-triggered repair may scan the Vault with progress and cancellation;
-unreadable sources must be reported rather than skipped.
+is `rebuild required`; a full rebuild first marks it `rebuilding`, and it is
+queryable only after every batch and stale-source prune complete as `ready`.
+An interruption or unexpected incremental-sync failure marks it `repair
+required`, so even partial committed rows are not presented as an archive
+result. A user-triggered repair may scan the Vault with progress and
+cancellation; unreadable sources must be reported rather than skipped.
 
 ## 7. Prototype and Measurement Gate
 
@@ -96,9 +100,9 @@ runtime. It verifies a Vault-path-hashed cache location outside the Vault,
 schema creation/migration, transaction rollback, cache deletion, clean
 recreation, one-Work upsert/delete, cursor continuation, and category/status/
 tag filtering. It now streams an explicit `works/` rebuild in bounded cache
-write batches and handles one precise source path as indexed, deleted,
-unreadable, or ignored. It does not yet run from app startup/watch lifecycle
-or serve Home.
+write batches, quarantines partial results until the generation completes, and
+handles one precise source path as indexed, deleted, unreadable, or ignored.
+It does not yet run from app startup/watch lifecycle or serve Home.
 
 Before connecting the runtime to the shipped query path, run it against the
 SA-02 fixture profiles on the Steam target platform.

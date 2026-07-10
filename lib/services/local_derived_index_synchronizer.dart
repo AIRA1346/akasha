@@ -65,6 +65,10 @@ class LocalDerivedIndexSynchronizer {
     }
 
     try {
+      await _store.beginWorkSummaryRebuild(
+        database: database,
+        generation: generation,
+      );
       final worksRoot = Directory(p.join(normalizedVault, 'works'));
       if (await worksRoot.exists()) {
         await for (final entity in worksRoot.list(
@@ -108,6 +112,10 @@ class LocalDerivedIndexSynchronizer {
         database: database,
         generation: generation,
       );
+      await _store.completeWorkSummaryRebuild(
+        database: database,
+        generation: generation,
+      );
       reportProgress();
       return WorkSummaryRebuildResult(
         scanned: scanned,
@@ -116,6 +124,18 @@ class LocalDerivedIndexSynchronizer {
         pruned: pruned,
         issueSamples: List.unmodifiable(issues),
       );
+    } catch (_) {
+      try {
+        await _store.markWorkSummaryRepairRequired(
+          database: database,
+          generation: generation,
+          failureReason: 'rebuild_interrupted',
+        );
+      } catch (_) {
+        // Preserve the original rebuild failure; the derived cache remains
+        // disposable even if its repair marker could not be written.
+      }
+      rethrow;
     } finally {
       await database.close();
     }
@@ -169,6 +189,16 @@ class LocalDerivedIndexSynchronizer {
         relativePath: relativePath,
         errorCode: reason,
       );
+    } catch (_) {
+      try {
+        await _store.markWorkSummaryRepairRequired(
+          database: database,
+          failureReason: 'one_path_sync_failed',
+        );
+      } catch (_) {
+        // Preserve the original path-sync failure for the caller.
+      }
+      rethrow;
     } finally {
       await database.close();
     }

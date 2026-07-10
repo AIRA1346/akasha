@@ -95,6 +95,18 @@ void main() {
         vaultPath: vault.path,
       );
       try {
+        expect(
+          (await store.readWorkSummaryCacheStatus(database: database)).state,
+          WorkSummaryCacheState.rebuildRequired,
+        );
+        await expectLater(
+          store.queryWorkSummaries(database: database),
+          throwsA(isA<WorkSummaryCacheUnavailable>()),
+        );
+        await store.beginWorkSummaryRebuild(
+          database: database,
+          generation: 'test-query-generation',
+        );
         final newest = _workSummary(
           id: 'wk_u_newest',
           path: 'works/movie/wk_u_newest.md',
@@ -125,6 +137,22 @@ void main() {
         await store.upsertWorkSummary(database: database, summary: newest);
         await store.upsertWorkSummary(database: database, summary: middle);
         await store.upsertWorkSummary(database: database, summary: oldest);
+        expect(
+          (await store.readWorkSummaryCacheStatus(database: database)).state,
+          WorkSummaryCacheState.rebuilding,
+        );
+        await expectLater(
+          store.queryWorkSummaries(database: database),
+          throwsA(isA<WorkSummaryCacheUnavailable>()),
+        );
+        await store.completeWorkSummaryRebuild(
+          database: database,
+          generation: 'test-query-generation',
+        );
+        expect(
+          (await store.readWorkSummaryCacheStatus(database: database)).state,
+          WorkSummaryCacheState.ready,
+        );
 
         final firstPage = await store.queryWorkSummaries(
           database: database,
@@ -184,6 +212,48 @@ void main() {
           'wk_u_newest',
           'wk_u_middle',
         ]);
+      } finally {
+        await database.close();
+        await root.delete(recursive: true);
+      }
+    },
+  );
+
+  test(
+    'repair state quarantines an interrupted Work summary rebuild',
+    () async {
+      final root = await Directory.systemTemp.createTemp(
+        'akasha_derived_repair_',
+      );
+      final vault = Directory(p.join(root.path, 'vault'));
+      final cache = Directory(p.join(root.path, 'app_cache'));
+      await vault.create(recursive: true);
+      final store = LocalDerivedIndexStore();
+      final database = await store.open(
+        cacheRoot: cache.path,
+        vaultPath: vault.path,
+      );
+      try {
+        await store.beginWorkSummaryRebuild(
+          database: database,
+          generation: 'interrupted-generation',
+        );
+        await store.markWorkSummaryRepairRequired(
+          database: database,
+          generation: 'interrupted-generation',
+          failureReason: 'test_interruption',
+        );
+
+        final status = await store.readWorkSummaryCacheStatus(
+          database: database,
+        );
+        expect(status.state, WorkSummaryCacheState.repairRequired);
+        expect(status.generation, 'interrupted-generation');
+        expect(status.failureReason, 'test_interruption');
+        await expectLater(
+          store.queryWorkSummaries(database: database),
+          throwsA(isA<WorkSummaryCacheUnavailable>()),
+        );
       } finally {
         await database.close();
         await root.delete(recursive: true);
