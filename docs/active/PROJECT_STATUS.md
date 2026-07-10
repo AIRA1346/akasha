@@ -1,7 +1,7 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-07-10 (P0 recoverable Vault write gate 통과 · SA-01 Vault Change Detail Contract 완료 · SA-03 local derived index prototype · flutter analyze 0 · test **870**)
-> **Git:** current committed tip **`0f4fe51a`** · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
+> **갱신:** 2026-07-11 (P0 recoverable Vault write gate 통과 · SA-01 Vault Change Detail Contract 완료 · SA-03 local derived index rebuild/source-sync prototype · flutter analyze 0 · test **871**)
+> **Git:** current committed tip **`74078b95`** · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
 > **현재 실행:** **Steam 무료 출시 준비** — [STEAM_RELEASE.md](STEAM_RELEASE.md) · IAP/Agent/player implementation layer **post-launch**
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [STEAM_RELEASE.md](STEAM_RELEASE.md)

@@ -17,7 +17,7 @@ class LocalDerivedIndexStore {
   LocalDerivedIndexStore({DatabaseFactory? databaseFactory})
     : _databaseFactoryOverride = databaseFactory;
 
-  static const int schemaVersion = 2;
+  static const int schemaVersion = 4;
   static const String cacheDirectoryName = 'derived_indexes';
   static const String databaseFileName = 'index.sqlite';
 
@@ -86,6 +86,7 @@ class LocalDerivedIndexStore {
   Future<void> upsertWorkSummary({
     required Database database,
     required VaultRecordSummary summary,
+    String? indexedGeneration,
   }) async {
     if (summary.recordKind != RecordKind.workJournal) {
       throw ArgumentError.value(
@@ -128,7 +129,9 @@ class LocalDerivedIndexStore {
         'entity_id': workId,
         'record_kind': RecordKind.workJournal.name,
         'indexed_at_utc': DateTime.now().toUtc().toIso8601String(),
+        'indexed_generation': indexedGeneration,
         'readability_state': 'readable',
+        'read_error': null,
       }, conflictAlgorithm: ConflictAlgorithm.replace);
       await transaction.insert('work_summaries', {
         'work_id': workId,
@@ -167,6 +170,45 @@ class LocalDerivedIndexStore {
       'source_files',
       where: 'relative_path = ?',
       whereArgs: [_normalizedRelativePath(relativePath)],
+    );
+  }
+
+  /// Keeps a broken source visible to repair flows while removing any stale
+  /// readable Work projection for the same path.
+  Future<void> markSourceUnreadable({
+    required Database database,
+    required String relativePath,
+    required String errorCode,
+    String? indexedGeneration,
+  }) async {
+    final sourcePath = _normalizedRelativePath(relativePath);
+    await database.transaction((transaction) async {
+      await transaction.delete(
+        'source_files',
+        where: 'relative_path = ?',
+        whereArgs: [sourcePath],
+      );
+      await transaction.insert('source_files', {
+        'relative_path': sourcePath,
+        'record_kind': RecordKind.workJournal.name,
+        'indexed_at_utc': DateTime.now().toUtc().toIso8601String(),
+        'indexed_generation': indexedGeneration,
+        'readability_state': 'unreadable',
+        'read_error': errorCode,
+      });
+    });
+  }
+
+  /// Removes Work sources that a completed rebuild did not observe.
+  Future<int> pruneWorkSourcesOutsideGeneration({
+    required Database database,
+    required String generation,
+  }) {
+    return database.delete(
+      'source_files',
+      where:
+          "relative_path LIKE ? AND (indexed_generation IS NULL OR indexed_generation != ?)",
+      whereArgs: ['works/%', generation],
     );
   }
 
@@ -276,7 +318,9 @@ class LocalDerivedIndexStore {
         size_bytes INTEGER,
         modified_at_utc TEXT,
         indexed_at_utc TEXT,
-        readability_state TEXT NOT NULL
+        indexed_generation TEXT,
+        readability_state TEXT NOT NULL,
+        read_error TEXT
       )
     ''');
     await database.execute('''
@@ -328,6 +372,16 @@ class LocalDerivedIndexStore {
     if (oldVersion < 2 && newVersion >= 2) {
       await database.execute(
         'ALTER TABLE source_files ADD COLUMN entity_id TEXT',
+      );
+    }
+    if (oldVersion < 3 && newVersion >= 3) {
+      await database.execute(
+        'ALTER TABLE source_files ADD COLUMN indexed_generation TEXT',
+      );
+    }
+    if (oldVersion < 4 && newVersion >= 4) {
+      await database.execute(
+        'ALTER TABLE source_files ADD COLUMN read_error TEXT',
       );
     }
   }

@@ -1,6 +1,6 @@
 # SA-03 — Derived Index Persistence Decision
 
-> **Status:** Windows cache lifecycle and bounded Work-query prototype passed; source synchronization and benchmark pending
+> **Status:** Windows cache rebuild/source-sync prototype passed; benchmark and app lifecycle wiring pending
 > **Date:** 2026-07-10
 > **Related:** [SA_02_HOME_WORK_SUMMARY_BOUNDARY.md](SA_02_HOME_WORK_SUMMARY_BOUNDARY.md) · [SCALE_ACCESS_PATH_INVENTORY.md](SCALE_ACCESS_PATH_INVENTORY.md#sa-03--bounded-index-persistence-next) · [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)
 
@@ -95,7 +95,9 @@ The first Windows prototype uses `sqflite_common_ffi` as the local SQLite
 runtime. It verifies a Vault-path-hashed cache location outside the Vault,
 schema creation/migration, transaction rollback, cache deletion, clean
 recreation, one-Work upsert/delete, cursor continuation, and category/status/
-tag filtering. It does not yet scan Markdown or serve Home.
+tag filtering. It now streams an explicit `works/` rebuild and handles one
+precise source path as indexed, deleted, unreadable, or ignored. It does not
+yet run from app startup/watch lifecycle or serve Home.
 
 Before connecting the runtime to the shipped query path, run it against the
 SA-02 fixture profiles on the Steam target platform.

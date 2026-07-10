@@ -134,51 +134,86 @@ class VaultRecordSummary {
   static Future<VaultRecordSummary?> fromMarkdownFile({
     required String vaultPath,
     required File file,
+  }) async =>
+      (await parseMarkdownFile(vaultPath: vaultPath, file: file)).summary;
+
+  /// Parses one source file without making an unreadable source disappear.
+  ///
+  /// Callers that need an index-repair UI should use this result instead of
+  /// [fromMarkdownFile], whose nullable return remains for legacy callers.
+  static Future<VaultRecordSummaryParseResult> parseMarkdownFile({
+    required String vaultPath,
+    required File file,
   }) async {
+    final relativePath = RecordSummaryIndexService._relativePath(
+      vaultPath,
+      file.path,
+    );
     try {
       final content = await file.readAsString();
       final split = _splitFrontmatter(content);
-      if (split == null) return null;
+      if (split == null) {
+        return VaultRecordSummaryParseResult.unreadable(
+          relativePath: relativePath,
+          errorCode: 'frontmatter_missing',
+        );
+      }
 
       final parsed = loadYaml(split.frontmatter);
-      if (parsed is! YamlMap) return null;
-
-      final relativePath = RecordSummaryIndexService._relativePath(
-        vaultPath,
-        file.path,
-      );
+      if (parsed is! YamlMap) {
+        return VaultRecordSummaryParseResult.unreadable(
+          relativePath: relativePath,
+          errorCode: 'frontmatter_not_map',
+        );
+      }
       final stat = await _tryStat(file.path);
       final recordKind = _recordKindFromYaml(parsed);
       final id = _recordIdFromYaml(parsed, recordKind, relativePath);
-      if (id.isEmpty) return null;
+      if (id.isEmpty) {
+        return VaultRecordSummaryParseResult.unreadable(
+          relativePath: relativePath,
+          errorCode: 'record_id_missing',
+        );
+      }
 
-      return VaultRecordSummary(
-        id: id,
-        recordKind: recordKind,
-        entityType: _entityTypeFromYaml(parsed, recordKind),
-        title:
-            _string(parsed['title']) ?? p.basenameWithoutExtension(file.path),
-        relativePath: relativePath,
-        category: _string(parsed['category'] ?? parsed['subtype']),
-        creator: _string(parsed['creator']),
-        releaseYear: _int(parsed['release_year'] ?? parsed['releaseYear']),
-        rating: _double(parsed['rating']),
-        workStatus: _string(parsed['work_status']),
-        myStatus: _string(parsed['my_status'] ?? parsed['status']),
-        tags: _tags(parsed['tags']),
-        // createdAt-style source keys are system timestamps and must use the UTC instant parser.
-        // TODO(UA-113): addedAt semantics are not finalized. added_at/addedAt remain on the legacy parser until the field meaning is split or confirmed.
-        addedAt: (parsed['created_at'] ?? parsed['createdAt']) != null
-            ? _parseVaultInstantAsUtc(parsed['created_at'] ?? parsed['createdAt'])
-            : _legacyAddedAtDate(parsed['added_at'] ?? parsed['addedAt']),
-        updatedAt:
-            _parseVaultInstantAsUtc(parsed['updated_at'] ?? parsed['updatedAt']) ??
-            stat?.modified.toUtc(),
-        posterPath: _string(parsed['poster'] ?? parsed['poster_path']),
-        entitySubtype: _string(parsed['entity_subtype'] ?? parsed['entitySubtype']),
+      return VaultRecordSummaryParseResult.readable(
+        VaultRecordSummary(
+          id: id,
+          recordKind: recordKind,
+          entityType: _entityTypeFromYaml(parsed, recordKind),
+          title:
+              _string(parsed['title']) ?? p.basenameWithoutExtension(file.path),
+          relativePath: relativePath,
+          category: _string(parsed['category'] ?? parsed['subtype']),
+          creator: _string(parsed['creator']),
+          releaseYear: _int(parsed['release_year'] ?? parsed['releaseYear']),
+          rating: _double(parsed['rating']),
+          workStatus: _string(parsed['work_status']),
+          myStatus: _string(parsed['my_status'] ?? parsed['status']),
+          tags: _tags(parsed['tags']),
+          // createdAt-style source keys are system timestamps and must use the UTC instant parser.
+          // TODO(UA-113): addedAt semantics are not finalized. added_at/addedAt remain on the legacy parser until the field meaning is split or confirmed.
+          addedAt: (parsed['created_at'] ?? parsed['createdAt']) != null
+              ? _parseVaultInstantAsUtc(
+                  parsed['created_at'] ?? parsed['createdAt'],
+                )
+              : _legacyAddedAtDate(parsed['added_at'] ?? parsed['addedAt']),
+          updatedAt:
+              _parseVaultInstantAsUtc(
+                parsed['updated_at'] ?? parsed['updatedAt'],
+              ) ??
+              stat?.modified.toUtc(),
+          posterPath: _string(parsed['poster'] ?? parsed['poster_path']),
+          entitySubtype: _string(
+            parsed['entity_subtype'] ?? parsed['entitySubtype'],
+          ),
+        ),
       );
     } catch (_) {
-      return null;
+      return VaultRecordSummaryParseResult.unreadable(
+        relativePath: relativePath,
+        errorCode: 'frontmatter_parse_failed',
+      );
     }
   }
 
@@ -229,4 +264,22 @@ class VaultRecordSummary {
     if (entitySubtype != null && entitySubtype!.isNotEmpty)
       'entitySubtype': entitySubtype,
   };
+}
+
+class VaultRecordSummaryParseResult {
+  VaultRecordSummaryParseResult.readable(VaultRecordSummary value)
+    : summary = value,
+      relativePath = value.relativePath,
+      errorCode = null;
+
+  const VaultRecordSummaryParseResult.unreadable({
+    required this.relativePath,
+    required this.errorCode,
+  }) : summary = null;
+
+  final VaultRecordSummary? summary;
+  final String relativePath;
+  final String? errorCode;
+
+  bool get isReadable => summary != null;
 }
