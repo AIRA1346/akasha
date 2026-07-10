@@ -17,7 +17,8 @@ class LocalDerivedIndexSynchronizer {
 
   static const int _issueSampleLimit = 100;
   static const int _progressInterval = 100;
-  static const int _rebuildWriteBatchSize = 250;
+  static const int _rebuildWriteBatchSize =
+      LocalDerivedIndexStore.rebuildWriteBatchSize;
 
   final LocalDerivedIndexStore _store;
 

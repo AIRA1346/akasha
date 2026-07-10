@@ -9,7 +9,7 @@
  
 ---
 
-> **Current verification (2026-07-11):** SA-03 batch rebuild/source-sync/trust-state prototype · flutter analyze 0 · test **874**
+> **Current verification (2026-07-11):** SA-03 derived-cache measurement/query gate · flutter analyze 0 · test **875**
 > **Current Git:** use `git rev-parse HEAD` for the committed tip.
 
 > **2026-07-10 architecture correction:** Durable candidates, applied-operation

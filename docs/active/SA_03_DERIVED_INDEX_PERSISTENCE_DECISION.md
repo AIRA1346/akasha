@@ -1,6 +1,6 @@
 # SA-03 — Derived Index Persistence Decision
 
-> **Status:** Windows cache batch-rebuild/source-sync and trust-state prototype passed; benchmark and app lifecycle wiring pending
+> **Status:** Windows synthetic cache measurement passed; source-scan and app lifecycle wiring pending
 > **Date:** 2026-07-10
 > **Related:** [SA_02_HOME_WORK_SUMMARY_BOUNDARY.md](SA_02_HOME_WORK_SUMMARY_BOUNDARY.md) · [SCALE_ACCESS_PATH_INVENTORY.md](SCALE_ACCESS_PATH_INVENTORY.md#sa-03--bounded-index-persistence-next) · [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)
 
@@ -104,20 +104,23 @@ write batches, quarantines partial results until the generation completes, and
 handles one precise source path as indexed, deleted, unreadable, or ignored.
 It does not yet run from app startup/watch lifecycle or serve Home.
 
-Before connecting the runtime to the shipped query path, run it against the
-SA-02 fixture profiles on the Steam target platform.
+The synthetic cache storage/query profile has passed on the Windows development
+test runtime; measured results and scope are recorded in
+[SA_03_DERIVED_INDEX_MEASUREMENT.md](SA_03_DERIVED_INDEX_MEASUREMENT.md).
+Before connecting the runtime to the shipped query path, repeat the applicable
+profile on the Steam target platform.
 
-1. Open an empty cache and rebuild from 100, 10,000, and 1,000,000 synthetic
-   summaries without changing canonical files.
-2. Measure cold/open page, cursor continuation, stable-ID hydration lookup,
-   category/status/tag filtering, and one-path upsert/delete.
-3. Interrupt cache mutation/rebuild and verify the cache can be discarded while
-   the Vault remains readable and P0 recovery is unaffected.
-4. Verify an externally modified Markdown file produces a one-path cache update
-   through SA-01; verify ambiguous watch state shows repair rather than a
-   silent full read.
-5. Verify package licensing, Windows packaging, no required network service,
-   and cache clear/rebuild UX before committing to a concrete runtime.
+1. **Done (synthetic cache):** rebuild 100, 10,000, and 1,000,000 summaries
+   without changing canonical files; measure cold/open page, cursor, stable-ID
+   locator lookup, category/status/tag filtering, and one-path upsert/delete.
+2. **Done:** interrupt a rebuild after a committed batch and verify the cache
+   becomes `repair required` rather than serving partial rows.
+3. **Pending:** verify an externally modified Markdown file reaches the active
+   cache through SA-01; ambiguous watch state must expose repair rather than
+   silently read the complete Vault.
+4. **Pending:** measure Markdown scanning and canonical selected-Work hydration
+   on the packaged Windows Steam target; verify packaging, license, cache
+   clear/rebuild UX, and no required network service.
 
 ## 8. Non-Decisions
 

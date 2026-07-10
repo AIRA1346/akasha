@@ -153,6 +153,53 @@ void main() {
           (await store.readWorkSummaryCacheStatus(database: database)).state,
           WorkSummaryCacheState.ready,
         );
+        final selected = await store.findWorkSummaryById(
+          database: database,
+          workId: newest.id,
+        );
+        expect(selected?.title, 'Newest');
+        expect(selected?.relativePath, newest.relativePath);
+        expect(
+          await store.findWorkSummaryById(
+            database: database,
+            workId: 'wk_u_missing',
+          ),
+          isNull,
+        );
+        final queryPlan = await database.rawQuery('''
+            EXPLAIN QUERY PLAN
+            SELECT work_id FROM work_summaries
+            ORDER BY sort_at_utc DESC, work_id ASC
+            LIMIT 51
+          ''');
+        expect(
+          queryPlan.any(
+            (row) =>
+                row['detail'].toString().contains('work_summaries_sort_id'),
+          ),
+          isTrue,
+        );
+        final tagQueryPlan = await database.rawQuery(
+          '''
+            EXPLAIN QUERY PLAN
+            SELECT work_summaries.work_id
+            FROM work_summary_tags AS filter_tag
+            INNER JOIN work_summaries
+              ON work_summaries.work_id = filter_tag.work_id
+            WHERE filter_tag.normalized_tag = ?
+            ORDER BY filter_tag.sort_at_utc DESC, work_summaries.work_id ASC
+            LIMIT 51
+          ''',
+          ['night'],
+        );
+        expect(
+          tagQueryPlan.any(
+            (row) => row['detail'].toString().contains(
+              'work_summary_tags_tag_sort_id',
+            ),
+          ),
+          isTrue,
+        );
 
         final firstPage = await store.queryWorkSummaries(
           database: database,
@@ -315,6 +362,96 @@ void main() {
           'PRAGMA table_info(source_files)',
         );
         expect(columns.map((column) => column['name']), contains('entity_id'));
+        expect(await vault.exists(), isTrue);
+      } finally {
+        await upgraded.close();
+        await root.delete(recursive: true);
+      }
+    },
+  );
+
+  test(
+    'v5 cache upgrades the tag sort index without touching the Vault',
+    () async {
+      final root = await Directory.systemTemp.createTemp(
+        'akasha_derived_tag_upgrade_',
+      );
+      final vault = Directory(p.join(root.path, 'vault'));
+      final cache = Directory(p.join(root.path, 'app_cache'));
+      await vault.create(recursive: true);
+      final store = LocalDerivedIndexStore();
+      final databaseFile = store.databaseFileFor(
+        cacheRoot: cache.path,
+        vaultPath: vault.path,
+      );
+      await databaseFile.parent.create(recursive: true);
+
+      sqfliteFfiInit();
+      final v5 = await databaseFactoryFfi.openDatabase(
+        databaseFile.path,
+        options: OpenDatabaseOptions(
+          version: 5,
+          onCreate: (database, version) async {
+            await database.execute('''
+            CREATE TABLE cache_meta (
+              key TEXT PRIMARY KEY,
+              value TEXT NOT NULL
+            )
+          ''');
+            await database.execute('''
+            CREATE TABLE source_files (
+              relative_path TEXT PRIMARY KEY,
+              readability_state TEXT NOT NULL
+            )
+          ''');
+            await database.execute('''
+            CREATE TABLE work_summaries (
+              work_id TEXT PRIMARY KEY,
+              source_path TEXT NOT NULL UNIQUE,
+              title TEXT NOT NULL,
+              sort_at_utc TEXT NOT NULL
+            )
+          ''');
+            await database.execute('''
+            CREATE TABLE work_summary_tags (
+              work_id TEXT NOT NULL,
+              normalized_tag TEXT NOT NULL,
+              PRIMARY KEY (work_id, normalized_tag)
+            )
+          ''');
+            await database.insert('work_summaries', {
+              'work_id': 'wk_u_upgrade',
+              'source_path': 'works/movie/wk_u_upgrade.md',
+              'title': 'Upgrade',
+              'sort_at_utc': '2026-07-11T00:00:00.000Z',
+            });
+            await database.insert('work_summary_tags', {
+              'work_id': 'wk_u_upgrade',
+              'normalized_tag': 'archive',
+            });
+          },
+        ),
+      );
+      await v5.close();
+
+      final upgraded = await store.open(
+        cacheRoot: cache.path,
+        vaultPath: vault.path,
+      );
+      try {
+        final columns = await upgraded.rawQuery(
+          'PRAGMA table_info(work_summary_tags)',
+        );
+        expect(
+          columns.map((column) => column['name']),
+          contains('sort_at_utc'),
+        );
+        final tag = await upgraded.query(
+          'work_summary_tags',
+          where: 'work_id = ?',
+          whereArgs: ['wk_u_upgrade'],
+        );
+        expect(tag.single['sort_at_utc'], '2026-07-11T00:00:00.000Z');
         expect(await vault.exists(), isTrue);
       } finally {
         await upgraded.close();

@@ -17,9 +17,10 @@ class LocalDerivedIndexStore {
   LocalDerivedIndexStore({DatabaseFactory? databaseFactory})
     : _databaseFactoryOverride = databaseFactory;
 
-  static const int schemaVersion = 4;
+  static const int schemaVersion = 6;
   static const String cacheDirectoryName = 'derived_indexes';
   static const String databaseFileName = 'index.sqlite';
+  static const int rebuildWriteBatchSize = 250;
   static const String _workSummaryStateKey = 'work_summary_state';
   static const String _workSummaryGenerationKey = 'work_summary_generation';
   static const String _workSummaryFailureKey = 'work_summary_failure';
@@ -264,6 +265,7 @@ class LocalDerivedIndexStore {
     }
     final workId = summary.id.trim();
     final sourcePath = _normalizedRelativePath(summary.relativePath);
+    final sortAt = _summarySortAt(summary);
     if (workId.isEmpty) {
       throw ArgumentError.value(summary.id, 'summary.id', 'must not be empty');
     }
@@ -312,6 +314,7 @@ class LocalDerivedIndexStore {
       'poster_path': _nullIfEmpty(summary.posterPath),
       'added_at_utc': _asUtcIso(summary.addedAt),
       'updated_at_utc': _asUtcIso(summary.updatedAt),
+      'sort_at_utc': sortAt,
     }, conflictAlgorithm: ConflictAlgorithm.replace);
     await transaction.delete(
       'work_summary_tags',
@@ -322,6 +325,7 @@ class LocalDerivedIndexStore {
       await transaction.insert('work_summary_tags', {
         'work_id': workId,
         'normalized_tag': tag,
+        'sort_at_utc': sortAt,
       });
     }
   }
@@ -408,48 +412,63 @@ class LocalDerivedIndexStore {
     _appendInFilter(
       where: where,
       arguments: arguments,
-      column: 'category',
+      column: 'work_summaries.category',
       values: query.categories,
     );
     _appendInFilter(
       where: where,
       arguments: arguments,
-      column: 'work_status',
+      column: 'work_summaries.work_status',
       values: query.workStatuses,
     );
     _appendInFilter(
       where: where,
       arguments: arguments,
-      column: 'my_status',
+      column: 'work_summaries.my_status',
       values: query.myStatuses,
     );
     final tag = _normalizeValue(query.tag)?.toLowerCase();
+    final from = tag == null
+        ? 'work_summaries'
+        : '''
+          work_summary_tags AS filter_tag
+          INNER JOIN work_summaries
+            ON work_summaries.work_id = filter_tag.work_id
+        ''';
+    final sortKey = tag == null
+        ? 'work_summaries.sort_at_utc'
+        : 'filter_tag.sort_at_utc';
     if (tag != null) {
-      where.add('''
-        EXISTS (
-          SELECT 1 FROM work_summary_tags
-          WHERE work_summary_tags.work_id = work_summaries.work_id
-            AND work_summary_tags.normalized_tag = ?
-        )
-      ''');
+      where.add('filter_tag.normalized_tag = ?');
       arguments.add(tag);
     }
 
     final cursor = _decodeCursor(query.cursor);
-    const sortKey = "COALESCE(updated_at_utc, added_at_utc, '')";
     if (cursor != null) {
-      where.add('($sortKey < ? OR ($sortKey = ? AND work_id > ?))');
+      where.add(
+        '($sortKey < ? OR ($sortKey = ? AND work_summaries.work_id > ?))',
+      );
       arguments.addAll([cursor.sortKey, cursor.sortKey, cursor.workId]);
     }
 
     final rows = await database.rawQuery(
       '''
-        SELECT work_id, source_path, title, category, creator, release_year,
-               rating, work_status, my_status, poster_path, added_at_utc,
-               updated_at_utc, $sortKey AS cursor_sort_key
-        FROM work_summaries
+        SELECT work_summaries.work_id AS work_id,
+               work_summaries.source_path AS source_path,
+               work_summaries.title AS title,
+               work_summaries.category AS category,
+               work_summaries.creator AS creator,
+               work_summaries.release_year AS release_year,
+               work_summaries.rating AS rating,
+               work_summaries.work_status AS work_status,
+               work_summaries.my_status AS my_status,
+               work_summaries.poster_path AS poster_path,
+               work_summaries.added_at_utc AS added_at_utc,
+               work_summaries.updated_at_utc AS updated_at_utc,
+               $sortKey AS cursor_sort_key
+        FROM $from
         ${where.isEmpty ? '' : 'WHERE ${where.join(' AND ')}'}
-        ORDER BY $sortKey DESC, work_id ASC
+        ORDER BY $sortKey DESC, work_summaries.work_id ASC
         LIMIT ?
       ''',
       [...arguments, query.limit + 1],
@@ -467,6 +486,44 @@ class LocalDerivedIndexStore {
           )
         : null;
     return WorkSummaryPage(summaries: summaries, nextCursor: nextCursor);
+  }
+
+  /// Finds one bounded Work summary by its stable Work ID.
+  ///
+  /// This resolves a disposable source locator only. Callers must still hydrate
+  /// the selected canonical Markdown record before previewing or editing it.
+  Future<VaultRecordSummary?> findWorkSummaryById({
+    required Database database,
+    required String workId,
+  }) async {
+    final cacheStatus = await readWorkSummaryCacheStatus(database: database);
+    if (!cacheStatus.canServeQueries) {
+      throw WorkSummaryCacheUnavailable(cacheStatus);
+    }
+    final normalizedWorkId = _nonEmptyGeneration(workId);
+    final rows = await database.query(
+      'work_summaries',
+      columns: const [
+        'work_id',
+        'source_path',
+        'title',
+        'category',
+        'creator',
+        'release_year',
+        'rating',
+        'work_status',
+        'my_status',
+        'poster_path',
+        'added_at_utc',
+        'updated_at_utc',
+      ],
+      where: 'work_id = ?',
+      whereArgs: [normalizedWorkId],
+      limit: 1,
+    );
+    if (rows.isEmpty) return null;
+    final tagsByWorkId = await _loadTags(database, rows);
+    return _summaryFromRow(rows.single, tagsByWorkId);
   }
 
   static String normalizedVaultRoot(String vaultPath) {
@@ -517,10 +574,11 @@ class LocalDerivedIndexStore {
         rating REAL,
         work_status TEXT,
         my_status TEXT,
-        poster_path TEXT,
-        added_at_utc TEXT,
-        updated_at_utc TEXT,
-        FOREIGN KEY (source_path) REFERENCES source_files(relative_path)
+      poster_path TEXT,
+      added_at_utc TEXT,
+      updated_at_utc TEXT,
+      sort_at_utc TEXT NOT NULL,
+      FOREIGN KEY (source_path) REFERENCES source_files(relative_path)
           ON DELETE CASCADE
       )
     ''');
@@ -528,22 +586,23 @@ class LocalDerivedIndexStore {
       CREATE TABLE work_summary_tags (
         work_id TEXT NOT NULL,
         normalized_tag TEXT NOT NULL,
+        sort_at_utc TEXT NOT NULL,
         PRIMARY KEY (work_id, normalized_tag),
         FOREIGN KEY (work_id) REFERENCES work_summaries(work_id)
           ON DELETE CASCADE
       )
     ''');
     await database.execute(
-      'CREATE INDEX work_summaries_updated_id '
-      'ON work_summaries(updated_at_utc DESC, work_id ASC)',
+      'CREATE INDEX work_summaries_sort_id '
+      'ON work_summaries(sort_at_utc DESC, work_id ASC)',
     );
     await database.execute(
       'CREATE INDEX work_summaries_filters '
       'ON work_summaries(category, my_status, work_status)',
     );
     await database.execute(
-      'CREATE INDEX work_summary_tags_tag_work '
-      'ON work_summary_tags(normalized_tag, work_id)',
+      'CREATE INDEX work_summary_tags_tag_sort_id '
+      'ON work_summary_tags(normalized_tag, sort_at_utc DESC, work_id ASC)',
     );
   }
 
@@ -566,6 +625,56 @@ class LocalDerivedIndexStore {
       await database.execute(
         'ALTER TABLE source_files ADD COLUMN read_error TEXT',
       );
+    }
+    if (oldVersion < 5 && newVersion >= 5) {
+      final tables = await database.query(
+        'sqlite_master',
+        columns: const ['name'],
+        where: "type = 'table' AND name = ?",
+        whereArgs: const ['work_summaries'],
+        limit: 1,
+      );
+      if (tables.isNotEmpty) {
+        await database.execute(
+          "ALTER TABLE work_summaries ADD COLUMN sort_at_utc TEXT NOT NULL DEFAULT ''",
+        );
+        await database.execute(
+          "UPDATE work_summaries SET sort_at_utc = COALESCE(updated_at_utc, added_at_utc, '')",
+        );
+        await database.execute(
+          'DROP INDEX IF EXISTS work_summaries_updated_id',
+        );
+        await database.execute(
+          'CREATE INDEX IF NOT EXISTS work_summaries_sort_id '
+          'ON work_summaries(sort_at_utc DESC, work_id ASC)',
+        );
+      }
+    }
+    if (oldVersion < 6 && newVersion >= 6) {
+      final tables = await database.query(
+        'sqlite_master',
+        columns: const ['name'],
+        where: "type = 'table' AND name = ?",
+        whereArgs: const ['work_summary_tags'],
+        limit: 1,
+      );
+      if (tables.isNotEmpty) {
+        await database.execute(
+          "ALTER TABLE work_summary_tags ADD COLUMN sort_at_utc TEXT NOT NULL DEFAULT ''",
+        );
+        await database.execute('''
+          UPDATE work_summary_tags
+          SET sort_at_utc = COALESCE(
+            (SELECT sort_at_utc FROM work_summaries
+             WHERE work_summaries.work_id = work_summary_tags.work_id),
+            ''
+          )
+        ''');
+        await database.execute(
+          'CREATE INDEX IF NOT EXISTS work_summary_tags_tag_sort_id '
+          'ON work_summary_tags(normalized_tag, sort_at_utc DESC, work_id ASC)',
+        );
+      }
     }
   }
 
@@ -703,6 +812,9 @@ class LocalDerivedIndexStore {
       ).map((value) => value.toLowerCase()).toSet().toList(growable: false);
 
   static String? _asUtcIso(DateTime? value) => value?.toUtc().toIso8601String();
+
+  static String _summarySortAt(VaultRecordSummary summary) =>
+      _asUtcIso(summary.updatedAt) ?? _asUtcIso(summary.addedAt) ?? '';
 
   static String? _nullableString(Object? value) {
     final string = value?.toString();
