@@ -1,9 +1,11 @@
 import 'dart:io';
 
 import 'package:akasha/core/archiving/archive_record.dart';
+import 'package:akasha/core/archiving/archive_record_contract.dart';
 import 'package:akasha/core/archiving/record_kind.dart';
 import 'package:akasha/data/adapters/vault_archive_record_adapter.dart';
 import 'package:akasha/services/file_service.dart';
+import 'package:akasha/services/timeline_entry_parser.dart';
 import 'package:akasha/services/timeline_vault_store.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -87,6 +89,37 @@ void main() {
       expect(updated.occurredAt, DateTime.parse('2026-06-15T09:00:00.000'));
     });
 
+    test('update preserves the original creation source', () async {
+      const recordId = 'tl_source_preserve';
+      final file = File('${vaultDir.path}/timeline/$recordId.md');
+      await file.parent.create(recursive: true);
+      await file.writeAsString(
+        TimelineEntryParser.serialize(
+          recordId: recordId,
+          title: 'Agent timeline',
+          body: 'original body',
+          occurredAt: DateTime(2026, 7, 10, 9),
+          addedAt: DateTime.utc(2026, 7, 10),
+          metadata: const ArchiveRecordMetadata(source: 'agent'),
+        ),
+      );
+
+      final updated = await store.save(
+        vaultPath: vaultDir.path,
+        record: ArchiveRecord(
+          recordId: recordId,
+          kind: RecordKind.timelineEntry,
+          title: 'Edited timeline',
+          timeAnchor: DateTime(2026, 7, 10, 10),
+          storagePath: file.path,
+        ),
+        body: 'edited body',
+      );
+
+      expect(updated.recordMetadata.source, 'agent');
+      expect(await file.readAsString(), contains('source: "agent"'));
+    });
+
     test('delete removes timeline file', () async {
       const recordId = 'tl_20260614_del001';
       await store.save(
@@ -102,10 +135,9 @@ void main() {
       await store.delete(vaultPath: vaultDir.path, recordId: recordId);
 
       final timelineDir = Directory('${vaultDir.path}/timeline');
-      final mdFiles = timelineDir
-          .listSync()
-          .whereType<File>()
-          .where((f) => f.path.endsWith('.md'));
+      final mdFiles = timelineDir.listSync().whereType<File>().where(
+        (f) => f.path.endsWith('.md'),
+      );
       expect(mdFiles, isEmpty);
     });
   });

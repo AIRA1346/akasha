@@ -18,10 +18,10 @@ These are done enough to treat as current architecture baseline.
 | UA-004 | `ArchiveOperation` write-intent model | ✅ done | [archive_operation.dart](../../lib/core/archiving/archive_operation.dart) |
 | UA-005 | `ArchiveOperationValidator` safety gate | ✅ done | [archive_operation_validator.dart](../../lib/core/archiving/archive_operation_validator.dart) |
 | UA-006 | `ArchiveCandidate` model and lifecycle | ✅ done | `candidate` · `promoted` · `dismissed` · `merged` |
-| UA-007 | Durable Candidate Store | ✅ done | legacy `catalog/candidates.json` read compatibility plus sharded `.akasha/candidates/*` writes |
+| UA-007 | Durable Candidate Store | ✅ done | legacy `catalog/candidates.json` read compatibility plus sharded `system/candidates/*` writes |
 | UA-008 | Candidate promotion validator | ✅ done | duplicate title/id · type mismatch · missing evidence/source |
 | UA-009 | Operation execution service for `promoteCandidate` | ✅ done | [archive_operation_executor.dart](../../lib/services/archive_operation_executor.dart) |
-| UA-102 | Operation idempotency and applied log | ✅ done | [archive_operation_applied_log.dart](../../lib/services/archive_operation_applied_log.dart) · `.akasha/ops/applied.jsonl` |
+| UA-102 | Operation idempotency and applied log | ✅ done | [archive_operation_applied_log.dart](../../lib/services/archive_operation_applied_log.dart) · `system/ops/applied.jsonl` |
 | UA-103 | Operation conflict checks for executable operations | ✅ done | [archive_record_revision_service.dart](../../lib/services/archive_record_revision_service.dart) · `operation_conflict` |
 
 | UA-105a | Candidate duplicate guard for normalized title/alias variants | done | strips bracket/punctuation noise and compares open candidate title/aliases |
@@ -42,7 +42,7 @@ These are done enough to treat as current architecture baseline.
 | UA-206a | Link/entity-path incremental coverage | done | changed/deleted Markdown paths update link outgoing/incoming and entity path indexes through `ArchiveIndexManager` |
 | UA-204 | Sharded title/alias lookup index | done | `.akasha/title_alias_index/names/{shard}.json` resolves normalized title/alias/original/localized names to stable IDs without Markdown scans |
 | UA-208 | Index rebuild validator | done | `ArchiveIndexValidatorService` rebuilds and audits record/entity-path/title-alias/link/candidate/taste indexes against Markdown source |
-| UA-209 | Candidate store sharded scale path | done | candidates write to `.akasha/candidates/{type}/{shard}.json` with sharded name indexes |
+| UA-209 | Candidate store sharded scale path | done | candidates write to `system/candidates/{type}/{shard}.json` with sharded name indexes |
 | UA-209a | Candidate name index rebuild/fallback | done | candidate duplicate guard falls back to source shards and `rebuildDerivedIndexes` restores name indexes |
 | UA-301 | Taste index schema and first extractor | done | `.akasha/indexes/taste_index.json` derives evidence-backed rating/status/favorite/tag/memo/quote/link signals |
 | UA-107 | Entity subtype/role model | ✅ done | `entity_subtype` metadata support and structured relations parser/serializer validated |
@@ -114,9 +114,9 @@ These fields were identified as useful but are not fully standardized everywhere
 | `external_ids` | Wikidata/Steam/ISBN/etc. identity joins | landed as preserved v3 metadata map |
 | `created_at` | Durable creation timestamp separate from `added_at` | landed; v1/v2 fall back to `added_at` |
 | `updated_at` | Conflict checks and index freshness | landed; serializers/stores update and index summaries read it |
-| `source` | user/app/agent/import/script provenance | landed as app/agent/script metadata; direct payload mutation blocked |
+| `source` | user/app/agent/import/script provenance | creation source is standardized, but existing-record edits must preserve it; full provenance remains P1 work |
 | `evidence` | Agent/candidate/taste claims need proof | landed as preserved v3 metadata list; candidate promotion writes evidence |
-| `links` / `relations` | Structured relation layer beyond wiki body links | base field landed; relation semantics still need UA-107/UA-108 |
+| `links` / `relations` | Structured relation layer beyond wiki body links | structured links are landed; independent Relationship Assertion semantics remain P1 work |
 | `entity_subtype` | character/creator/studio/franchise/track without exploding top-level types | planned |
 | `source_operation_id` | Trace write back to operation | landed for operation-created entity journals; extend to future operation record types |
 

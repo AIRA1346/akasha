@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/core/archiving/entity_anchor.dart';
+import 'package:akasha/core/archiving/archive_record_contract.dart';
 import 'package:akasha/models/entity_fact.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/services/entity_journal_parser.dart';
@@ -212,6 +213,48 @@ aliases: ["Tiger King", "Tora"]
             'tag:round-tag',
           ),
           isEmpty,
+        );
+      } finally {
+        await service.setVaultPath('');
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test('resave and edit preserve the original creation source', () async {
+      final service = AkashaFileService();
+      final tempDir = await Directory.systemTemp.createTemp(
+        'akasha_entity_source_',
+      );
+      try {
+        await service.setVaultPath(tempDir.path);
+        final store = EntityVaultStore();
+        final entity = UserCatalogEntity.userLocal(
+          entityId: 'co_u_source01',
+          type: EntityAnchorType.concept,
+          title: 'Imported concept',
+        );
+        final created = await store.saveCatalogEntity(
+          vaultPath: tempDir.path,
+          entity: entity,
+          body: 'imported body',
+          source: 'importTool',
+        );
+
+        final edited = await store.updateEntry(entry: created, body: 'edited');
+        expect(edited.recordMetadata.source, 'importTool');
+
+        final resaved = await store.saveCatalogEntity(
+          vaultPath: tempDir.path,
+          entity: entity,
+          body: 'resaved body',
+          source: ArchiveRecordContract.defaultSource,
+        );
+        expect(resaved.recordMetadata.source, 'importTool');
+        expect(
+          await File(resaved.storagePath).readAsString(),
+          contains('source: "importTool"'),
         );
       } finally {
         await service.setVaultPath('');

@@ -99,7 +99,6 @@ class TimelineVaultStore {
       }
     }
     final recordMetadata = existingMetadata.copyWith(
-      source: ArchiveRecordContract.defaultSource,
       updatedAt: DateTime.now().toUtc(),
     );
 
@@ -113,7 +112,8 @@ class TimelineVaultStore {
       metadata: recordMetadata,
     );
 
-    final expectedRevision = record.openedRevision ??
+    final expectedRevision =
+        record.openedRevision ??
         (existingContent == null
             ? const VaultFileRevision.missing()
             : VaultFileRevision.fromText(existingContent));

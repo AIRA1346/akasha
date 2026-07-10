@@ -107,7 +107,10 @@ class EntityVaultStore {
     }
 
     final recordMetadata = existingMetadata.copyWith(
-      source: source,
+      // `source` identifies who or what created the record. Re-saving an
+      // imported or agent-created record through the app must not rewrite its
+      // origin as the current editor.
+      source: existingContent == null ? source : existingMetadata.source,
       aliases: entity.aliases,
       evidence: evidence.isNotEmpty ? evidence : existingMetadata.evidence,
       updatedAt: DateTime.now().toUtc(),
@@ -213,7 +216,6 @@ class EntityVaultStore {
     }
 
     final recordMetadata = entry.recordMetadata.copyWith(
-      source: ArchiveRecordContract.defaultSource,
       aliases: resolvedAliases,
       updatedAt: DateTime.now().toUtc(),
     );
@@ -237,7 +239,8 @@ class EntityVaultStore {
     final existingContent = await File(sourcePath).exists()
         ? await File(sourcePath).readAsString()
         : null;
-    final expectedRevision = entry.openedRevision ??
+    final expectedRevision =
+        entry.openedRevision ??
         (existingContent == null
             ? const VaultFileRevision.missing()
             : VaultFileRevision.fromText(existingContent));

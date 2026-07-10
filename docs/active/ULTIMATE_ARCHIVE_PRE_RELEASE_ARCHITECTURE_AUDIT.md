@@ -5,6 +5,13 @@
 > **Scope:** Decide whether AKASHA should keep the current vault architecture, harden it, or migrate to a stronger canonical layout before Steam v1.
 > **Related:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ARCHITECTURE.md](ARCHITECTURE.md) · [VISION.md](VISION.md) · [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md)
 
+> **2026-07-10 architecture correction:** This audit predates the durable-data
+> migration and P0. Its `.akasha/` paths for candidates and operations are
+> superseded by `system/`; `.akasha/` is now derived and fully disposable. P0
+> recoverable writes passed at `d7827f21` with 859 tests. Retain this audit's
+> decisions only where they do not conflict with the current Vault Format v3
+> specification or the P0 gate.
+
 ## 1. Decision
 
 Current AKASHA is qualified to become the ultimate archive, but the current architecture should not be treated as final.

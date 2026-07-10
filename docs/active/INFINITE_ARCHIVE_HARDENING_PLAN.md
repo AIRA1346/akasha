@@ -2,6 +2,7 @@
 
 > **Status:** Active architecture plan
 > **Date:** 2026-07-03
+> **Last architecture review:** 2026-07-10
 > **Scope:** Make AKASHA safe for unbounded personal archiving and external AI/tool use without making AKASHA an AI service, media player, or orchestrator.
 > **Related:** [P0_RECOVERABLE_VAULT_WRITE_GATE.md](P0_RECOVERABLE_VAULT_WRITE_GATE.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) · [VISION.md](VISION.md) · [ARCHITECTURE.md](ARCHITECTURE.md) · [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) · [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md)
 
@@ -104,6 +105,9 @@ Rules:
 - v1/v2 reads remain compatible by falling back from `created_at` to `added_at`.
 - Work/Entity/Journal/Timeline app rewrites preserve additive metadata so external IDs, evidence, aliases, and relation hints are not lost.
 - `ArchiveOperationValidator` treats provenance fields as app-owned and blocks direct payload mutation of `created_at`, `updated_at`, `source`, and `source_operation_id`.
+- Existing Work, Entity, Journal, and Timeline edits preserve the original
+  creation `source`; editing a record must not relabel an import or agent record
+  as an app-created record.
 
 ### 4.2 Derived Index Layer
 
@@ -127,6 +131,39 @@ Rules:
 - External tools should prefer indexes/summaries for discovery.
 - Indexes must never become the only copy of user memory.
 - Index format can evolve, but its rebuild command and schema version must be explicit.
+
+#### 4.2.1 Current Scale Gap And Readiness Gate
+
+The current derived indexes are a correct small-vault slice, but they are not
+yet an unbounded-vault implementation. Some interactive paths still enumerate
+and parse every Markdown file, and some incremental updates load and rewrite a
+whole JSON index. This is an architectural limitation, not a Markdown failure.
+
+Until this gate passes, the application must not represent the current index
+layer as capable of millions of active records.
+
+The scale readiness gate requires:
+
+1. Interactive startup, record lookup, list pagination, search, and backlinks
+   use a bounded derived query path. They must not recursively scan the Vault or
+   deserialize all Records as a fallback.
+2. Saving or deleting one Record performs bounded work in the affected index
+   shard/table. It must not read and serialize every summary, link, or taste
+   signal in the Vault.
+3. A full Markdown scan remains available only as an explicit rebuild,
+   validation, import, or repair operation with visible progress and result.
+4. A malformed or unsupported source file remains preserved and is reported as
+   an unreadable source item; it must not silently disappear from discovery.
+5. Journal and Timeline storage may be partitioned by date or another stable
+   layout only through an additive, opt-in migration. Existing flat paths remain
+   readable until then.
+6. The derived-store choice (shards, SQLite, or another local rebuildable
+   format) is decided by measured fixtures and query/write profiles, not by
+   preference for a storage technology.
+
+This gate does not authorize a Universal Record model, Vault migration, or a
+Markdown replacement. It constrains future read/write paths while preserving
+the Vault as the user-owned source.
 
 ### 4.3 Taste Signal Model
 
@@ -246,8 +283,10 @@ Phase 0 is documentation and decision alignment. It should not force risky vault
 The architecture is ready for unbounded archive growth when:
 
 - every durable record has stable identity
-- app list/search paths use derived indexes instead of full-vault parsing
+- app list/search paths use bounded derived queries instead of full-vault parsing
+- single-record saves update bounded index data instead of rewriting a whole Vault index
 - tags, links, aliases, and taste evidence are queryable without opening every file
+- unreadable source files are visible as preserved diagnostics, not silently omitted
 - external writers have a documented operation vocabulary
 - AI/tool workflows can help the archive without owning the archive
 - a user can still open the vault folder and understand their memories without AKASHA or AI

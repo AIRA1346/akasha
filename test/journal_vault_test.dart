@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/core/archiving/archive_record.dart';
+import 'package:akasha/core/archiving/archive_record_contract.dart';
 import 'package:akasha/core/archiving/archive_record_mapper.dart';
 import 'package:akasha/core/archiving/record_kind.dart';
 import 'package:akasha/data/adapters/vault_archive_record_adapter.dart';
@@ -30,7 +31,10 @@ added_at: "2026-06-19T10:00:00.000"
 본문 내용입니다.
 ''';
 
-      final parsed = JournalEntryParser.parse(content, r'C:\vault\journal\jr.md');
+      final parsed = JournalEntryParser.parse(
+        content,
+        r'C:\vault\journal\jr.md',
+      );
       expect(parsed, isNotNull);
       expect(parsed!.recordId, 'jr_20260619_abc123');
       expect(parsed.title, '테스트 메모');
@@ -42,7 +46,10 @@ added_at: "2026-06-19T10:00:00.000"
         body: parsed.body,
         addedAt: parsed.addedAt,
       );
-      final reparsed = JournalEntryParser.parse(reserialized, parsed.storagePath);
+      final reparsed = JournalEntryParser.parse(
+        reserialized,
+        parsed.storagePath,
+      );
       expect(reparsed?.recordId, parsed.recordId);
       expect(reparsed?.title, parsed.title);
       expect(reparsed?.body, parsed.body);
@@ -63,7 +70,9 @@ body
   group('JournalVaultStore', () {
     test('save and load from vault', () async {
       final service = AkashaFileService();
-      final tempDir = await Directory.systemTemp.createTemp('akasha_w3_journal_');
+      final tempDir = await Directory.systemTemp.createTemp(
+        'akasha_w3_journal_',
+      );
       try {
         await service.setVaultPath(tempDir.path);
         const store = JournalVaultStore();
@@ -135,7 +144,52 @@ body
           throwsA(isA<VaultWriteConflictException>()),
         );
 
-        expect(await File(created.storagePath).readAsString(), 'external content');
+        expect(
+          await File(created.storagePath).readAsString(),
+          'external content',
+        );
+      } finally {
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test('update preserves the original creation source', () async {
+      final tempDir = await Directory.systemTemp.createTemp(
+        'akasha_journal_source_',
+      );
+      try {
+        const store = JournalVaultStore();
+        const loader = JournalVaultLoader();
+        const recordId = 'jr_source_preserve';
+        final file = File('${tempDir.path}/journal/$recordId.md');
+        await file.parent.create(recursive: true);
+        await file.writeAsString(
+          JournalEntryParser.serialize(
+            recordId: recordId,
+            title: 'Imported journal',
+            body: 'original body',
+            addedAt: DateTime.utc(2026, 7, 10),
+            metadata: const ArchiveRecordMetadata(source: 'importTool'),
+          ),
+        );
+
+        final opened = (await loader.loadFromVault(tempDir.path)).single;
+        final updated = await store.save(
+          vaultPath: tempDir.path,
+          record: ArchiveRecord(
+            recordId: recordId,
+            kind: RecordKind.freeformJournal,
+            title: 'Edited journal',
+            storagePath: opened.storagePath,
+            openedRevision: opened.openedRevision,
+          ),
+          body: 'edited body',
+        );
+
+        expect(updated.recordMetadata.source, 'importTool');
+        expect(await file.readAsString(), contains('source: "importTool"'));
       } finally {
         if (await tempDir.exists()) {
           await tempDir.delete(recursive: true);
@@ -147,7 +201,9 @@ body
   group('VaultArchiveRecordAdapter freeformJournal', () {
     test('listRecords includes journal entries', () async {
       final service = AkashaFileService();
-      final tempDir = await Directory.systemTemp.createTemp('akasha_w3_adapter_');
+      final tempDir = await Directory.systemTemp.createTemp(
+        'akasha_w3_adapter_',
+      );
       try {
         await service.setVaultPath(tempDir.path);
         final adapter = VaultArchiveRecordAdapter();

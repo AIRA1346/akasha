@@ -1,13 +1,19 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-07-09 (Vault Quick Start 구현 완료 · flutter analyze 0 · test 840 · **Canvas v0.3-B.2a** viewport persist + inertia zoom guard)
-> **Git:** current tip **`32b5871d`** · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
+> **갱신:** 2026-07-10 (P0 recoverable Vault write gate 통과 · flutter analyze 0 · test **862**)
+> **Git:** current tip **`d7827f21`** · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
 > **현재 실행:** **Steam 무료 출시 준비** — [STEAM_RELEASE.md](STEAM_RELEASE.md) · IAP/Agent/player implementation layer **post-launch**
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [STEAM_RELEASE.md](STEAM_RELEASE.md)
 > **비전:** [VISION.md](VISION.md) · **구현:** [CURRENT_STATE.md](CURRENT_STATE.md)
  
 ---
+
+> **2026-07-10 architecture correction:** Durable candidates, applied-operation
+> logs, recovery evidence, and drafts live under `system/`; `.akasha/` is
+> derived and disposable only. Earlier rows that name `.akasha/ops`,
+> `.akasha/candidates`, or `.akasha/recovery` describe the pre-migration layout
+> and must not guide new work.
  
 ## Executive Summary
  
@@ -188,7 +194,7 @@
 | **314** | Derived record index — `.akasha/record_index.json`로 record 요약·tagIndex 작성 | ✅ | [record_summary_index_service.dart](../../lib/services/record_summary_index_service.dart) |
 | **315** | Vault trash safety slice — Work/Entity/Journal/Timeline 삭제를 `.trash/` 격리로 전환 | ✅ | [vault_trash_service.dart](../../lib/services/vault_trash_service.dart) |
 | **316** | Vault ZIP backup export — 볼트 전체를 표준 `.zip`으로 내보내기 | ✅ | [vault_backup_exporter.dart](../../lib/services/vault_backup_exporter.dart) |
-| **317** | Workbench recovery drafts — Work/Entity 편집 중 `.akasha/recovery/` 임시 스냅샷 · Snackbar 복구 제안 | ✅ | [workbench_recovery_draft_store.dart](../../lib/services/workbench_recovery_draft_store.dart) |
+| **317** | Workbench recovery drafts — Work/Entity 편집 중 `system/drafts/` 임시 스냅샷 · Snackbar 복구 제안 | ✅ | [workbench_recovery_draft_store.dart](../../lib/services/workbench_recovery_draft_store.dart) |
 | **318** | Vault trash UI — Vault 설정에서 휴지통 목록·복구·영구 삭제 | ✅ | [vault_trash_dialog.dart](../../lib/screens/home/dialogs/vault_trash_dialog.dart) |
 | **319** | Desktop preferences slice — `Esc` 앱 메뉴 · 한국어/English 전환 · 표시 배율 저장 · 종료 버튼 | ✅ | [app_preferences_dialog.dart](../../lib/screens/home/dialogs/app_preferences_dialog.dart) |
 | **320** | Infinite Archive Hardening Plan — index · taste signal · agent write contract · ID path 기준 정리 | ✅ docs | [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) |
@@ -198,12 +204,12 @@
 | **324** | Candidate Store slice — `catalog/candidates.json` · promotion validator · duplicate/title/type checks | ✅ code | [archive_candidate_store.dart](../../lib/services/archive_candidate_store.dart) |
 | **325** | Ultimate Archive backlog — 놓치면 안 되는 operation/index/taste/taxonomy/agent 후속 작업 목록화 | ✅ docs | [ULTIMATE_ARCHIVE_BACKLOG.md](ULTIMATE_ARCHIVE_BACKLOG.md) |
 | **326** | Operation Executor slice — validated `promoteCandidate`를 Entity journal + catalog mirror + candidate close로 실행 | ✅ code | [archive_operation_executor.dart](../../lib/services/archive_operation_executor.dart) |
-| **327** | Operation Applied Log slice — `.akasha/ops/applied.jsonl`로 operation retry를 idempotent 처리 | ✅ code | [archive_operation_applied_log.dart](../../lib/services/archive_operation_applied_log.dart) |
+| **327** | Operation Applied Log slice — `system/ops/applied.jsonl`로 operation retry를 idempotent 처리 | ✅ code | [archive_operation_applied_log.dart](../../lib/services/archive_operation_applied_log.dart) |
 | **328** | Operation Conflict Guard slice — `expectedRevision`과 파일 revision으로 기존 target overwrite 차단 | ✅ code | [archive_record_revision_service.dart](../../lib/services/archive_record_revision_service.dart) |
 
 ---
 
-| **329** | Candidate Store Scale slice — `.akasha/candidates/*` sharded queue + name-index duplicate lookup + legacy `catalog/candidates.json` read compatibility | ✅ code | [archive_candidate_store.dart](../../lib/services/archive_candidate_store.dart) |
+| **329** | Candidate Store Scale slice — `system/candidates/*` sharded queue + name-index duplicate lookup + legacy `catalog/candidates.json` read compatibility | ✅ code | [archive_candidate_store.dart](../../lib/services/archive_candidate_store.dart) |
 | **330** | Taste Index slice — `.akasha/indexes/taste_index.json` evidence-backed signals for future external tools | ✅ code | [taste_index_service.dart](../../lib/services/taste_index_service.dart) |
 | **331** | Index Manager slice — one rebuild coordinator for record/entity/link/candidate/taste indexes plus candidate name-index recovery | ✅ code | [archive_index_manager.dart](../../lib/services/archive_index_manager.dart) |
 | **332** | Incremental Indexing slice — changed/deleted Markdown path updates record/taste indexes without full rebuild | ✅ code | [archive_index_manager.dart](../../lib/services/archive_index_manager.dart) |
