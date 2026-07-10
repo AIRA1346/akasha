@@ -17,6 +17,7 @@ class LocalDerivedIndexSynchronizer {
 
   static const int _issueSampleLimit = 100;
   static const int _progressInterval = 100;
+  static const int _rebuildWriteBatchSize = 250;
 
   final LocalDerivedIndexStore _store;
 
@@ -38,6 +39,8 @@ class LocalDerivedIndexSynchronizer {
     var unreadable = 0;
     var pruned = 0;
     final issues = <WorkSourceIssue>[];
+    final pendingReadable = <VaultRecordSummary>[];
+    final pendingUnreadable = <String, String>{};
 
     void reportProgress() {
       onProgress?.call(
@@ -47,6 +50,18 @@ class LocalDerivedIndexSynchronizer {
           unreadable: unreadable,
         ),
       );
+    }
+
+    Future<void> flushRebuildBatch() async {
+      if (pendingReadable.isEmpty && pendingUnreadable.isEmpty) return;
+      await _store.applyWorkSourceBatch(
+        database: database,
+        readable: pendingReadable,
+        unreadable: pendingUnreadable,
+        indexedGeneration: generation,
+      );
+      pendingReadable.clear();
+      pendingUnreadable.clear();
     }
 
     try {
@@ -67,20 +82,11 @@ class LocalDerivedIndexSynchronizer {
           );
           final summary = parsed.summary;
           if (summary != null && summary.recordKind == RecordKind.workJournal) {
-            await _store.upsertWorkSummary(
-              database: database,
-              summary: summary,
-              indexedGeneration: generation,
-            );
+            pendingReadable.add(summary);
             indexed++;
           } else {
             final reason = parsed.errorCode ?? 'expected_work_journal';
-            await _store.markSourceUnreadable(
-              database: database,
-              relativePath: relativePath,
-              errorCode: reason,
-              indexedGeneration: generation,
-            );
+            pendingUnreadable[relativePath] = reason;
             unreadable++;
             if (issues.length < _issueSampleLimit) {
               issues.add(
@@ -89,10 +95,15 @@ class LocalDerivedIndexSynchronizer {
             }
           }
 
+          if (pendingReadable.length + pendingUnreadable.length >=
+              _rebuildWriteBatchSize) {
+            await flushRebuildBatch();
+          }
           if (scanned % _progressInterval == 0) reportProgress();
         }
       }
 
+      await flushRebuildBatch();
       pruned = await _store.pruneWorkSourcesOutsideGeneration(
         database: database,
         generation: generation,

@@ -115,17 +115,62 @@ void main() {
       await root.delete(recursive: true);
     },
   );
+
+  test('rebuild flushes Work summaries in bounded transactions', () async {
+    final root = await Directory.systemTemp.createTemp('akasha_derived_batch_');
+    final vault = Directory(p.join(root.path, 'vault'));
+    final cache = Directory(p.join(root.path, 'app_cache'));
+    final workDirectory = Directory(p.join(vault.path, 'works', 'movie'));
+    await workDirectory.create(recursive: true);
+    for (var index = 0; index < 251; index++) {
+      final id = 'wk_u_batch${index.toString().padLeft(3, '0')}';
+      await File(
+        p.join(workDirectory.path, '$id.md'),
+      ).writeAsString(_workMarkdown(title: 'Batch $index', workId: id));
+    }
+
+    final store = LocalDerivedIndexStore();
+    final synchronizer = LocalDerivedIndexSynchronizer(store: store);
+    final rebuild = await synchronizer.rebuildWorkSummaries(
+      cacheRoot: cache.path,
+      vaultPath: vault.path,
+    );
+    expect(rebuild.scanned, 251);
+    expect(rebuild.indexed, 251);
+    expect(rebuild.unreadable, 0);
+
+    final database = await store.open(
+      cacheRoot: cache.path,
+      vaultPath: vault.path,
+    );
+    try {
+      final firstPage = await store.queryWorkSummaries(
+        database: database,
+        query: const WorkSummaryQuery(limit: 250),
+      );
+      expect(firstPage.summaries, hasLength(250));
+      expect(firstPage.nextCursor, isNotNull);
+      final secondPage = await store.queryWorkSummaries(
+        database: database,
+        query: WorkSummaryQuery(limit: 250, cursor: firstPage.nextCursor),
+      );
+      expect(secondPage.summaries, hasLength(1));
+    } finally {
+      await database.close();
+      await root.delete(recursive: true);
+    }
+  });
 }
 
-String _workMarkdown({required String title}) =>
+String _workMarkdown({required String title, String workId = 'wk_u_alpha'}) =>
     '''
 ---
 schema_version: 3
-record_id: rec_wk_u_alpha
+record_id: rec_$workId
 record_kind: workJournal
 entity_type: work
-entity_id: wk_u_alpha
-work_id: wk_u_alpha
+entity_id: $workId
+work_id: $workId
 title: $title
 category: movie
 created_at: 2026-07-11T00:00:00.000Z

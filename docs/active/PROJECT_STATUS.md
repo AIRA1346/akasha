@@ -9,6 +9,9 @@
  
 ---
 
+> **Current verification (2026-07-11):** SA-03 batch rebuild/source-sync prototype · flutter analyze 0 · test **872**
+> **Current Git:** use `git rev-parse HEAD` for the committed tip.
+
 > **2026-07-10 architecture correction:** Durable candidates, applied-operation
 > logs, recovery evidence, and drafts live under `system/`; `.akasha/` is
 > derived and disposable only. Earlier rows that name `.akasha/ops`,

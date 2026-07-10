@@ -1,7 +1,7 @@
 # Scale Access-Path Inventory
 
-> **Status:** SA-01 implemented · SA-02 contract fixed · SA-03 derived-cache rebuild/source-sync prototype passed
-> **Date:** 2026-07-10
+> **Status:** SA-01 implemented · SA-02 contract fixed · SA-03 derived-cache batch-rebuild/source-sync prototype passed
+> **Date:** 2026-07-11
 > **Scope:** Current Vault read, change-notification, and derived-index paths.
 > This is an architecture-cleanup inventory. It introduces no schema, storage
 > engine, migration, or Universal Record model.

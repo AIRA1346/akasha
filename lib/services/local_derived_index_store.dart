@@ -88,6 +88,51 @@ class LocalDerivedIndexStore {
     required VaultRecordSummary summary,
     String? indexedGeneration,
   }) async {
+    await database.transaction(
+      (transaction) => _upsertWorkSummaryInTransaction(
+        transaction,
+        summary: summary,
+        indexedGeneration: indexedGeneration,
+      ),
+    );
+  }
+
+  /// Applies a bounded rebuild batch in one cache transaction.
+  ///
+  /// Rebuild callers should use this instead of opening a transaction for each
+  /// source file. Regular one-path changes continue to use [upsertWorkSummary]
+  /// or [markSourceUnreadable].
+  Future<void> applyWorkSourceBatch({
+    required Database database,
+    required Iterable<VaultRecordSummary> readable,
+    required Map<String, String> unreadable,
+    required String indexedGeneration,
+  }) async {
+    if (readable.isEmpty && unreadable.isEmpty) return;
+    await database.transaction((transaction) async {
+      for (final summary in readable) {
+        await _upsertWorkSummaryInTransaction(
+          transaction,
+          summary: summary,
+          indexedGeneration: indexedGeneration,
+        );
+      }
+      for (final entry in unreadable.entries) {
+        await _markSourceUnreadableInTransaction(
+          transaction,
+          relativePath: entry.key,
+          errorCode: entry.value,
+          indexedGeneration: indexedGeneration,
+        );
+      }
+    });
+  }
+
+  Future<void> _upsertWorkSummaryInTransaction(
+    DatabaseExecutor transaction, {
+    required VaultRecordSummary summary,
+    required String? indexedGeneration,
+  }) async {
     if (summary.recordKind != RecordKind.workJournal) {
       throw ArgumentError.value(
         summary.recordKind,
@@ -101,64 +146,62 @@ class LocalDerivedIndexStore {
       throw ArgumentError.value(summary.id, 'summary.id', 'must not be empty');
     }
 
-    await database.transaction((transaction) async {
-      final previous = await transaction.query(
-        'work_summaries',
-        columns: const ['source_path'],
-        where: 'work_id = ?',
-        whereArgs: [workId],
-        limit: 1,
-      );
-      final previousPath = previous.isEmpty
-          ? null
-          : previous.single['source_path']?.toString();
-      if (previousPath != null && previousPath != sourcePath) {
-        await transaction.delete(
-          'source_files',
-          where: 'relative_path = ?',
-          whereArgs: [previousPath],
-        );
-      }
+    final previous = await transaction.query(
+      'work_summaries',
+      columns: const ['source_path'],
+      where: 'work_id = ?',
+      whereArgs: [workId],
+      limit: 1,
+    );
+    final previousPath = previous.isEmpty
+        ? null
+        : previous.single['source_path']?.toString();
+    if (previousPath != null && previousPath != sourcePath) {
       await transaction.delete(
         'source_files',
-        where: 'relative_path = ? AND entity_id != ?',
-        whereArgs: [sourcePath, workId],
+        where: 'relative_path = ?',
+        whereArgs: [previousPath],
       );
-      await transaction.insert('source_files', {
-        'relative_path': sourcePath,
-        'entity_id': workId,
-        'record_kind': RecordKind.workJournal.name,
-        'indexed_at_utc': DateTime.now().toUtc().toIso8601String(),
-        'indexed_generation': indexedGeneration,
-        'readability_state': 'readable',
-        'read_error': null,
-      }, conflictAlgorithm: ConflictAlgorithm.replace);
-      await transaction.insert('work_summaries', {
+    }
+    await transaction.delete(
+      'source_files',
+      where: 'relative_path = ? AND entity_id != ?',
+      whereArgs: [sourcePath, workId],
+    );
+    await transaction.insert('source_files', {
+      'relative_path': sourcePath,
+      'entity_id': workId,
+      'record_kind': RecordKind.workJournal.name,
+      'indexed_at_utc': DateTime.now().toUtc().toIso8601String(),
+      'indexed_generation': indexedGeneration,
+      'readability_state': 'readable',
+      'read_error': null,
+    }, conflictAlgorithm: ConflictAlgorithm.replace);
+    await transaction.insert('work_summaries', {
+      'work_id': workId,
+      'source_path': sourcePath,
+      'title': summary.title,
+      'category': _nullIfEmpty(summary.category),
+      'creator': _nullIfEmpty(summary.creator),
+      'release_year': summary.releaseYear,
+      'rating': summary.rating,
+      'work_status': _nullIfEmpty(summary.workStatus),
+      'my_status': _nullIfEmpty(summary.myStatus),
+      'poster_path': _nullIfEmpty(summary.posterPath),
+      'added_at_utc': _asUtcIso(summary.addedAt),
+      'updated_at_utc': _asUtcIso(summary.updatedAt),
+    }, conflictAlgorithm: ConflictAlgorithm.replace);
+    await transaction.delete(
+      'work_summary_tags',
+      where: 'work_id = ?',
+      whereArgs: [workId],
+    );
+    for (final tag in _normalizedTags(summary.tags)) {
+      await transaction.insert('work_summary_tags', {
         'work_id': workId,
-        'source_path': sourcePath,
-        'title': summary.title,
-        'category': _nullIfEmpty(summary.category),
-        'creator': _nullIfEmpty(summary.creator),
-        'release_year': summary.releaseYear,
-        'rating': summary.rating,
-        'work_status': _nullIfEmpty(summary.workStatus),
-        'my_status': _nullIfEmpty(summary.myStatus),
-        'poster_path': _nullIfEmpty(summary.posterPath),
-        'added_at_utc': _asUtcIso(summary.addedAt),
-        'updated_at_utc': _asUtcIso(summary.updatedAt),
-      }, conflictAlgorithm: ConflictAlgorithm.replace);
-      await transaction.delete(
-        'work_summary_tags',
-        where: 'work_id = ?',
-        whereArgs: [workId],
-      );
-      for (final tag in _normalizedTags(summary.tags)) {
-        await transaction.insert('work_summary_tags', {
-          'work_id': workId,
-          'normalized_tag': tag,
-        });
-      }
-    });
+        'normalized_tag': tag,
+      });
+    }
   }
 
   /// Removes one source path and all of its derived Work data.
@@ -181,21 +224,35 @@ class LocalDerivedIndexStore {
     required String errorCode,
     String? indexedGeneration,
   }) async {
-    final sourcePath = _normalizedRelativePath(relativePath);
     await database.transaction((transaction) async {
-      await transaction.delete(
-        'source_files',
-        where: 'relative_path = ?',
-        whereArgs: [sourcePath],
+      await _markSourceUnreadableInTransaction(
+        transaction,
+        relativePath: relativePath,
+        errorCode: errorCode,
+        indexedGeneration: indexedGeneration,
       );
-      await transaction.insert('source_files', {
-        'relative_path': sourcePath,
-        'record_kind': RecordKind.workJournal.name,
-        'indexed_at_utc': DateTime.now().toUtc().toIso8601String(),
-        'indexed_generation': indexedGeneration,
-        'readability_state': 'unreadable',
-        'read_error': errorCode,
-      });
+    });
+  }
+
+  Future<void> _markSourceUnreadableInTransaction(
+    DatabaseExecutor transaction, {
+    required String relativePath,
+    required String errorCode,
+    required String? indexedGeneration,
+  }) async {
+    final sourcePath = _normalizedRelativePath(relativePath);
+    await transaction.delete(
+      'source_files',
+      where: 'relative_path = ?',
+      whereArgs: [sourcePath],
+    );
+    await transaction.insert('source_files', {
+      'relative_path': sourcePath,
+      'record_kind': RecordKind.workJournal.name,
+      'indexed_at_utc': DateTime.now().toUtc().toIso8601String(),
+      'indexed_generation': indexedGeneration,
+      'readability_state': 'unreadable',
+      'read_error': errorCode,
     });
   }
 
