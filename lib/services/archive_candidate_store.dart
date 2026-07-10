@@ -6,6 +6,7 @@ import 'package:path/path.dart' as p;
 import '../core/archiving/archive_candidate.dart';
 import '../core/archiving/archive_candidate_validator.dart';
 import '../core/archiving/entity_anchor.dart';
+import 'vault_recovery_write_service.dart';
 
 class ArchiveCandidateIndexStats {
   const ArchiveCandidateIndexStats({
@@ -347,7 +348,13 @@ class ArchiveCandidateStore {
     final file = _nameIndexFile(vaultPath, type, _shardFor(normalizedName));
     final index = await _readNameIndex(file);
     index.putIfAbsent(normalizedName, () => <String>{}).add(candidateId);
-    await _writeNameIndex(file, type, _shardFor(normalizedName), index);
+    await _writeNameIndex(
+      vaultPath,
+      file,
+      type,
+      _shardFor(normalizedName),
+      index,
+    );
   }
 
   Future<void> _removeFromNameIndex(
@@ -365,7 +372,7 @@ class ArchiveCandidateStore {
 
     ids.remove(candidateId);
     if (ids.isEmpty) index.remove(normalizedName);
-    await _writeNameIndex(file, type, shard, index);
+    await _writeNameIndex(vaultPath, file, type, shard, index);
   }
 
   Future<void> _writeCandidate(
@@ -381,7 +388,13 @@ class ArchiveCandidateStore {
         if (existing.candidateId != candidate.candidateId) existing,
       candidate,
     ]..sort(_compare);
-    await _writeCandidateShard(file, candidate.entityType, shard, next);
+    await _writeCandidateShard(
+      vaultPath,
+      file,
+      candidate.entityType,
+      shard,
+      next,
+    );
   }
 
   Future<ArchiveCandidate?> _lookupSharded(
@@ -433,6 +446,7 @@ class ArchiveCandidateStore {
   }
 
   Future<void> _writeCandidateShard(
+    String vaultPath,
     File file,
     EntityAnchorType type,
     String shard,
@@ -447,7 +461,7 @@ class ArchiveCandidateStore {
       'updatedAt': DateTime.now().toUtc().toIso8601String(),
       'candidates': candidates.map((candidate) => candidate.toJson()).toList(),
     };
-    await _writeJsonAtomic(file, payload);
+    await _writeJson(vaultPath, file, payload, 'save_candidate_shard');
   }
 
   Future<Map<String, Set<String>>> _readNameIndex(File file) async {
@@ -472,6 +486,7 @@ class ArchiveCandidateStore {
   }
 
   Future<void> _writeNameIndex(
+    String vaultPath,
     File file,
     EntityAnchorType type,
     String shard,
@@ -489,7 +504,7 @@ class ArchiveCandidateStore {
         for (final name in sortedNames) name: (index[name]!.toList()..sort()),
       },
     };
-    await _writeJsonAtomic(file, payload);
+    await _writeJson(vaultPath, file, payload, 'save_candidate_name_index');
   }
 
   Future<void> _maybeMigrateLegacy(String vaultPath) async {
@@ -524,7 +539,7 @@ class ArchiveCandidateStore {
       if (migratedLegacy)
         'migratedLegacyAt': DateTime.now().toUtc().toIso8601String(),
     };
-    await _writeJsonAtomic(file, payload);
+    await _writeJson(vaultPath, file, payload, 'save_candidate_manifest');
   }
 
   Future<List<ArchiveCandidate>> _loadLegacy(String vaultPath) async {
@@ -553,17 +568,18 @@ class ArchiveCandidateStore {
     }
   }
 
-  Future<void> _writeJsonAtomic(File file, Map<String, dynamic> payload) async {
-    await file.parent.create(recursive: true);
-    final temp = File('${file.path}.tmp');
-    await temp.writeAsString(
-      const JsonEncoder.withIndent('  ').convert(payload),
-      flush: true,
+  Future<void> _writeJson(
+    String vaultPath,
+    File file,
+    Map<String, dynamic> payload,
+    String reason,
+  ) {
+    return VaultRecoveryWriteService().writeText(
+      vaultPath: vaultPath,
+      targetPath: file.path,
+      content: const JsonEncoder.withIndent('  ').convert(payload),
+      reason: reason,
     );
-    if (await file.exists()) {
-      await file.delete();
-    }
-    await temp.rename(file.path);
   }
 
   File _legacyFile(String vaultPath) =>
@@ -615,12 +631,12 @@ class ArchiveCandidateStore {
       final relative = p.relative(entity.path, from: oldDir.path);
       final target = File(p.join(newDir.path, relative));
       if (await target.exists()) continue; // conflict: system/ wins, skip
-      await target.parent.create(recursive: true);
-      await entity.copy(target.path);
-      // Verify copy succeeded
-      if (!await target.exists()) {
-        await target.delete().catchError((_) => target as FileSystemEntity);
-      }
+      await VaultRecoveryWriteService().writeText(
+        vaultPath: vaultPath,
+        targetPath: target.path,
+        content: await entity.readAsString(),
+        reason: 'migrate_candidate_data_to_system',
+      );
     }
     // Old directory intentionally left at .akasha/candidates/ (not deleted).
   }

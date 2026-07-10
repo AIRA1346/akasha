@@ -1,5 +1,6 @@
 import '../core/archiving/archive_record_contract.dart';
 import '../core/archiving/entity_anchor.dart';
+import '../core/archiving/vault_file_revision.dart';
 import 'category_descriptor.dart';
 import 'enums.dart';
 
@@ -36,6 +37,12 @@ abstract class AkashaItem {
   /// Additive v3 frontmatter metadata that should survive app rewrites.
   ArchiveRecordMetadata recordMetadata;
 
+  /// Revision observed when this in-memory item was read for editing.
+  ///
+  /// This is session-only state, never Markdown frontmatter. A save must use
+  /// it to reject an external edit rather than overwrite it.
+  VaultFileRevision? openedRevision;
+
   AkashaItem({
     required this.workId,
     required this.title,
@@ -53,6 +60,7 @@ abstract class AkashaItem {
     DateTime? addedAt,
     this.bodyRaw = '',
     ArchiveRecordMetadata? recordMetadata,
+    this.openedRevision,
   }) : memorableQuotes = memorableQuotes ?? [],
        tags = tags ?? [],
        addedAt = addedAt ?? DateTime.now().toUtc(),
@@ -111,6 +119,7 @@ class ContentItem extends AkashaItem {
     super.addedAt,
     super.bodyRaw,
     super.recordMetadata,
+    super.openedRevision,
   }) : assert(
          CategoryRegistry.isContentType(category),
          'Cannot assign game category to a content item.',
@@ -165,6 +174,7 @@ class GameItem extends AkashaItem {
     super.addedAt,
     super.bodyRaw,
     super.recordMetadata,
+    super.openedRevision,
   }) : super(category: MediaCategory.game);
 
   @override
@@ -216,6 +226,7 @@ class EntityItem extends AkashaItem {
     super.addedAt,
     super.bodyRaw = '',
     super.recordMetadata,
+    super.openedRevision,
   }) : entityId = entityId,
        super(workId: entityId);
 

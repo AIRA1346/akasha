@@ -3,7 +3,7 @@
 > **Status:** Active architecture plan
 > **Date:** 2026-07-03
 > **Scope:** Make AKASHA safe for unbounded personal archiving and external AI/tool use without making AKASHA an AI service, media player, or orchestrator.
-> **Related:** [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) · [VISION.md](VISION.md) · [ARCHITECTURE.md](ARCHITECTURE.md) · [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) · [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md)
+> **Related:** [P0_RECOVERABLE_VAULT_WRITE_GATE.md](P0_RECOVERABLE_VAULT_WRITE_GATE.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) · [VISION.md](VISION.md) · [ARCHITECTURE.md](ARCHITECTURE.md) · [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) · [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md)
 
 ## 1. Decision
 
@@ -53,6 +53,22 @@ This boundary must remain true even when future AI workflows become powerful.
 | Tool separation | Playback, recommendation execution, and external automation happen outside AKASHA. |
 
 ## 4. Hardening Tracks
+
+### 4.0 P0 — Recoverable Vault Write Gate
+
+Before any new archive feature, Universal Record work, or behavior evidence,
+AKASHA must pass the release-blocking
+[P0 Recoverable Vault Write Gate](P0_RECOVERABLE_VAULT_WRITE_GATE.md).
+
+The gate is intentionally stronger than an "atomic save" claim: it requires a
+verified old or new copy after interruption, non-destructive conflict handling,
+and lossless preservation of unknown user data on every durable write path.
+
+**2026-07-10: P0 passed.** The shared manifest-first recovery protocol,
+revision conflict checks, lossless frontmatter patching, Canvas two-file
+recovery, direct-call audit, full analyzer, and full test suite are recorded
+in the gate document. Subsequent feature work may resume only while preserving
+that contract.
 
 ### 4.1 Vault Schema Freeze
 

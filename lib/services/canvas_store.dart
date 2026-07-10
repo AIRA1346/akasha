@@ -5,6 +5,7 @@ import 'dart:math';
 import 'package:path/path.dart' as p;
 
 import '../core/archiving/canvas_record.dart';
+import 'vault_recovery_write_service.dart';
 
 class CanvasData {
   CanvasData({required this.record, required this.layout});
@@ -20,6 +21,7 @@ class CanvasStore {
 
   /// In-memory layout sessions keyed by canvasId — survives widget dispose.
   final Map<String, _CanvasLayoutSession> _layoutSessions = {};
+  final Map<String, _CanvasRevisionSnapshot> _openedRevisions = {};
 
   /// Generates a canvas stable ID matching "cv_u_{8-char}" format.
   static String generateCanvasId() {
@@ -84,7 +86,8 @@ class CanvasStore {
       updatedAt: now,
       source: 'user',
       tags: tags ?? [],
-      body: '# ${title.trim().isEmpty ? "무제 지식 지도" : title.trim()}\n\n여기에 캔버스에 대한 설명글을 작성하세요.',
+      body:
+          '# ${title.trim().isEmpty ? "무제 지식 지도" : title.trim()}\n\n여기에 캔버스에 대한 설명글을 작성하세요.',
     );
 
     final layout = CanvasLayout(
@@ -108,13 +111,33 @@ class CanvasStore {
       edges: [],
     );
 
-    // Save synchronously for creation
+    // Canvas discovery is only possible after this recoverable two-file
+    // transaction has a complete, verified set.
     final mdFile = File(p.join(canvasDir.path, 'canvas.md'));
-    await mdFile.writeAsString(record.toMarkdown(), flush: true);
-
     final jsonFile = File(p.join(canvasDir.path, 'layout.json'));
     const encoder = JsonEncoder.withIndent('  ');
-    await jsonFile.writeAsString(encoder.convert(layout.toJson()), flush: true);
+    final writer = VaultRecoveryWriteService();
+    final batch = await writer.writeTextBatch(
+      vaultPath: vaultPath,
+      reason: 'canvas_create',
+      writes: [
+        VaultTextWriteRequest(
+          targetPath: mdFile.path,
+          content: record.toMarkdown(),
+          expectedRevision: const VaultFileRevision.missing(),
+        ),
+        VaultTextWriteRequest(
+          targetPath: jsonFile.path,
+          content: encoder.convert(layout.toJson()),
+          expectedRevision: const VaultFileRevision.missing(),
+        ),
+      ],
+    );
+    _openedRevisions[_revisionKey(vaultPath, canvasId)] =
+        _CanvasRevisionSnapshot(
+          record: batch.writes[0].newRevision,
+          layout: batch.writes[1].newRevision,
+        );
 
     return CanvasData(record: record, layout: layout);
   }
@@ -137,6 +160,17 @@ class CanvasStore {
       final jsonContent = await jsonFile.readAsString();
       final layoutJson = jsonDecode(jsonContent) as Map<String, dynamic>;
       final layout = CanvasLayout.fromJson(layoutJson);
+      _openedRevisions[_revisionKey(vaultPath, canvasId)] =
+          _CanvasRevisionSnapshot(
+            record: VaultFileRevision.fromText(
+              mdContent,
+              modifiedAtUtc: (await mdFile.lastModified()).toUtc(),
+            ),
+            layout: VaultFileRevision.fromText(
+              jsonContent,
+              modifiedAtUtc: (await jsonFile.lastModified()).toUtc(),
+            ),
+          );
 
       return CanvasData(record: record, layout: layout);
     } catch (_) {
@@ -185,7 +219,7 @@ class CanvasStore {
     }
   }
 
-  /// Debounces the saving of layout to layout.json.
+  /// Debounces a recoverable Canvas record + layout save.
   void saveLayoutDebounced(
     String vaultPath,
     String canvasId,
@@ -201,7 +235,7 @@ class CanvasStore {
     });
   }
 
-  /// Saves the layout layout.json immediately to the disk.
+  /// Saves Canvas metadata and layout as one recoverable two-file revision.
   Future<void> saveLayoutImmediately(
     String vaultPath,
     String canvasId,
@@ -211,7 +245,22 @@ class CanvasStore {
     final canvasDir = Directory(p.join(vaultPath, 'canvases', canvasId));
     if (!canvasDir.existsSync()) return;
 
-    final targetPath = p.join(canvasDir.path, 'layout.json');
+    final mdFile = File(p.join(canvasDir.path, 'canvas.md'));
+    final layoutFile = File(p.join(canvasDir.path, 'layout.json'));
+    if (!await mdFile.exists() || !await layoutFile.exists()) return;
+    final mdContent = await mdFile.readAsString();
+    final existingLayoutContent = await layoutFile.readAsString();
+    final key = _revisionKey(vaultPath, canvasId);
+    final expected = _openedRevisions[key] ?? _CanvasRevisionSnapshot(
+      record: VaultFileRevision.fromText(
+        mdContent,
+        modifiedAtUtc: (await mdFile.lastModified()).toUtc(),
+      ),
+      layout: VaultFileRevision.fromText(
+        existingLayoutContent,
+        modifiedAtUtc: (await layoutFile.lastModified()).toUtc(),
+      ),
+    );
     final updatedLayout = CanvasLayout(
       layoutSchemaVersion: layout.layoutSchemaVersion,
       canvasId: layout.canvasId,
@@ -224,8 +273,29 @@ class CanvasStore {
     );
 
     const encoder = JsonEncoder.withIndent('  ');
-    final content = encoder.convert(updatedLayout.toJson());
-    await _writeAtomic(targetPath, content);
+    final layoutContent = encoder.convert(updatedLayout.toJson());
+    final batch = await VaultRecoveryWriteService().writeTextBatch(
+      vaultPath: vaultPath,
+      reason: 'canvas_layout_save',
+      writes: [
+        // Carry the source form exactly as opened. This makes unknown Canvas
+        // frontmatter byte-preserving while layout changes are committed.
+        VaultTextWriteRequest(
+          targetPath: mdFile.path,
+          content: mdContent,
+          expectedRevision: expected.record,
+        ),
+        VaultTextWriteRequest(
+          targetPath: layoutFile.path,
+          content: layoutContent,
+          expectedRevision: expected.layout,
+        ),
+      ],
+    );
+    _openedRevisions[key] = _CanvasRevisionSnapshot(
+      record: batch.writes[0].newRevision,
+      layout: batch.writes[1].newRevision,
+    );
   }
 
   /// Discards any pending debounce timers for a canvas.
@@ -252,41 +322,20 @@ class CanvasStore {
     }
   }
 
-  Future<void> _writeAtomic(String targetPath, String content) async {
-    final file = File(targetPath);
-    final parent = file.parent;
-    if (!await parent.exists()) {
-      await parent.create(recursive: true);
-    }
-
-    final tempPath = p.join(
-      parent.path,
-      '.akasha_canvas_${DateTime.now().microsecondsSinceEpoch}_${p.basename(targetPath)}.tmp',
-    );
-    final temp = File(tempPath);
-    try {
-      await temp.writeAsString(content, flush: true);
-      if (await file.exists()) {
-        await file.delete();
-      }
-      await temp.rename(targetPath);
-    } catch (e) {
-      if (await temp.exists()) {
-        try {
-          await temp.delete();
-        } catch (_) {}
-      }
-      rethrow;
-    }
-  }
+  static String _revisionKey(String vaultPath, String canvasId) =>
+      '${p.normalize(p.absolute(vaultPath))}::$canvasId';
 }
 
 class _CanvasLayoutSession {
-  const _CanvasLayoutSession({
-    required this.vaultPath,
-    required this.layout,
-  });
+  const _CanvasLayoutSession({required this.vaultPath, required this.layout});
 
   final String vaultPath;
   final CanvasLayout layout;
+}
+
+class _CanvasRevisionSnapshot {
+  const _CanvasRevisionSnapshot({required this.record, required this.layout});
+
+  final VaultFileRevision record;
+  final VaultFileRevision layout;
 }

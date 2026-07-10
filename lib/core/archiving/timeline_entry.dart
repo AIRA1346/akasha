@@ -1,4 +1,5 @@
 import 'archive_record_contract.dart';
+import 'vault_file_revision.dart';
 
 /// Timeline archive record.
 class TimelineEntry {
@@ -11,6 +12,7 @@ class TimelineEntry {
     required this.storagePath,
     this.entityId,
     this.recordMetadata = ArchiveRecordMetadata.empty,
+    this.openedRevision,
   });
 
   final String recordId;
@@ -21,4 +23,5 @@ class TimelineEntry {
   final String storagePath;
   final String? entityId;
   final ArchiveRecordMetadata recordMetadata;
+  final VaultFileRevision? openedRevision;
 }

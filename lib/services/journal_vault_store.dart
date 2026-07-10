@@ -6,9 +6,11 @@ import '../core/archiving/archive_record.dart';
 import '../core/archiving/archive_record_contract.dart';
 import '../core/archiving/journal_entry.dart';
 import '../core/archiving/record_kind.dart';
+import '../core/archiving/vault_file_revision.dart';
 import 'archive_index_manager.dart';
 import 'journal_entry_parser.dart';
 import 'journal_vault_loader.dart';
+import 'vault_lossless_record_writer.dart';
 import 'vault_trash_service.dart';
 
 /// `vault/journal/` 쓰기·삭제 — Wave 3.
@@ -72,14 +74,13 @@ class JournalVaultStore {
     var addedAt = DateTime.now().toUtc();
     var existingMetadata = ArchiveRecordMetadata.empty;
     var targetPath = record.storagePath?.trim();
+    String? existingContent;
 
     if (targetPath != null &&
         targetPath.isNotEmpty &&
         File(targetPath).existsSync()) {
-      final existing = JournalEntryParser.parse(
-        await File(targetPath).readAsString(),
-        targetPath,
-      );
+      existingContent = await File(targetPath).readAsString();
+      final existing = JournalEntryParser.parse(existingContent, targetPath);
       if (existing != null) {
         addedAt = existing.addedAt;
         existingMetadata = existing.recordMetadata;
@@ -90,6 +91,7 @@ class JournalVaultStore {
         targetPath = existing.storagePath;
         addedAt = existing.addedAt;
         existingMetadata = existing.recordMetadata;
+        existingContent = await File(targetPath).readAsString();
       } else {
         targetPath = p.join(journalDir.path, fileNameFor(recordId));
       }
@@ -107,7 +109,19 @@ class JournalVaultStore {
       metadata: recordMetadata,
     );
 
-    await _writeAtomic(targetPath, content);
+    final expectedRevision = record.openedRevision ??
+        (existingContent == null
+            ? const VaultFileRevision.missing()
+            : VaultFileRevision.fromText(existingContent));
+    final writeResult = await VaultLosslessRecordWriter().write(
+      vaultPath: vaultPath,
+      targetPath: targetPath,
+      proposedContent: content,
+      reason: 'journal_record_save',
+      ownedFrontmatterKeys: VaultFrontmatterOwnership.journal,
+      existingContent: existingContent,
+      expectedRevision: expectedRevision,
+    );
 
     final entry = JournalEntry(
       recordId: recordId,
@@ -116,6 +130,7 @@ class JournalVaultStore {
       addedAt: addedAt,
       storagePath: targetPath,
       recordMetadata: recordMetadata,
+      openedRevision: writeResult.newRevision,
     );
     await ArchiveIndexManager().updateChangedRecord(
       vaultPath: vaultPath,
@@ -161,33 +176,5 @@ class JournalVaultStore {
       if (entry.recordId == recordId) return entry;
     }
     return null;
-  }
-
-  Future<void> _writeAtomic(String targetPath, String content) async {
-    final file = File(targetPath);
-    final parent = file.parent;
-    if (!await parent.exists()) {
-      await parent.create(recursive: true);
-    }
-
-    final tempPath = p.join(
-      parent.path,
-      '.akasha_${DateTime.now().microsecondsSinceEpoch}_${p.basename(targetPath)}.tmp',
-    );
-    final temp = File(tempPath);
-    try {
-      await temp.writeAsString(content, flush: true);
-      if (await file.exists()) {
-        await file.delete();
-      }
-      await temp.rename(targetPath);
-    } catch (e) {
-      if (await temp.exists()) {
-        try {
-          await temp.delete();
-        } catch (_) {}
-      }
-      rethrow;
-    }
   }
 }

@@ -5,6 +5,7 @@ import '../../../core/archiving/journal_entry.dart';
 import '../../../core/archiving/record_kind.dart';
 import '../../../data/adapters/vault_archive_record_adapter.dart';
 import '../../../services/journal_vault_loader.dart';
+import '../../../services/vault_recovery_write_service.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_typography.dart';
 import '../../../utils/app_l10n.dart';
@@ -128,17 +129,30 @@ class _JournalViewState extends State<JournalView> {
                           ? body
                           : '${body.substring(0, 40)}…';
                     }
-                    await _adapter.save(
+                    try {
+                      await _adapter.save(
                       ArchiveRecord(
                         recordId: entry.recordId,
                         kind: RecordKind.freeformJournal,
                         title: title,
                         timeAnchor: entry.addedAt,
                         storagePath: entry.storagePath,
+                        openedRevision: entry.openedRevision,
                       ),
                       bodyMarkdown: body,
                     );
-                    if (ctx.mounted) Navigator.pop(ctx);
+                      if (ctx.mounted) Navigator.pop(ctx);
+                    } on VaultWriteConflictException {
+                      if (ctx.mounted) {
+                        ScaffoldMessenger.of(ctx).showSnackBar(
+                          const SnackBar(
+                            content: Text(
+                              '외부 변경을 감지해 저장하지 않았습니다. 편집본은 복구 충돌 보관함에 남겼습니다.',
+                            ),
+                          ),
+                        );
+                      }
+                    }
                   },
                   child: Text(l10n?.actionSave ?? '저장'),
                 ),

@@ -10,6 +10,7 @@ import 'package:akasha/services/file_service.dart';
 import 'package:akasha/services/journal_entry_parser.dart';
 import 'package:akasha/services/journal_vault_loader.dart';
 import 'package:akasha/services/journal_vault_store.dart';
+import 'package:akasha/services/vault_recovery_write_service.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -92,6 +93,50 @@ body
         expect(mapped.entity, isNull);
       } finally {
         await service.setVaultPath('');
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test('rejects an external change from the opened revision', () async {
+      final tempDir = await Directory.systemTemp.createTemp(
+        'akasha_journal_revision_',
+      );
+      try {
+        const store = JournalVaultStore();
+        const loader = JournalVaultLoader();
+        const recordId = 'jr_revision_conflict';
+        final created = await store.save(
+          vaultPath: tempDir.path,
+          record: ArchiveRecord(
+            recordId: recordId,
+            kind: RecordKind.freeformJournal,
+            title: 'before',
+          ),
+          body: 'before body',
+        );
+        final opened = (await loader.loadFromVault(tempDir.path)).single;
+        expect(opened.openedRevision, isNotNull);
+        await File(created.storagePath).writeAsString('external content');
+
+        await expectLater(
+          store.save(
+            vaultPath: tempDir.path,
+            record: ArchiveRecord(
+              recordId: recordId,
+              kind: RecordKind.freeformJournal,
+              title: 'Akasha edit',
+              storagePath: opened.storagePath,
+              openedRevision: opened.openedRevision,
+            ),
+            body: 'Akasha body',
+          ),
+          throwsA(isA<VaultWriteConflictException>()),
+        );
+
+        expect(await File(created.storagePath).readAsString(), 'external content');
+      } finally {
         if (await tempDir.exists()) {
           await tempDir.delete(recursive: true);
         }

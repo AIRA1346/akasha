@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 
 import '../core/archiving/entity_journal_entry.dart';
+import '../core/archiving/vault_file_revision.dart';
 import 'entity_journal_parser.dart';
 import 'entity_path_index_service.dart';
 
@@ -27,11 +28,30 @@ class EntityVaultLoader {
     await for (final entity in root.list(recursive: true, followLinks: false)) {
       if (entity is! File || !entity.path.endsWith('.md')) continue;
       try {
-        final parsed = EntityJournalParser.parse(
-          await entity.readAsString(),
-          entity.path,
-        );
-        if (parsed != null) entries.add(parsed);
+        final content = await entity.readAsString();
+        final parsed = EntityJournalParser.parse(content, entity.path);
+        if (parsed != null) {
+          entries.add(
+            EntityJournalEntry(
+              entityType: parsed.entityType,
+              entityId: parsed.entityId,
+              title: parsed.title,
+              body: parsed.body,
+              addedAt: parsed.addedAt,
+              storagePath: parsed.storagePath,
+              aliases: parsed.aliases,
+              tags: parsed.tags,
+              posterPath: parsed.posterPath,
+              sourceOperationId: parsed.sourceOperationId,
+              recordMetadata: parsed.recordMetadata,
+              entitySubtype: parsed.entitySubtype,
+              openedRevision: VaultFileRevision.fromText(
+                content,
+                modifiedAtUtc: (await entity.lastModified()).toUtc(),
+              ),
+            ),
+          );
+        }
       } catch (_) {
         // skip malformed entity journal files
       }
@@ -54,12 +74,27 @@ class EntityVaultLoader {
       final file = File(indexedPath);
       if (await file.exists()) {
         try {
-          final parsed = EntityJournalParser.parse(
-            await file.readAsString(),
-            indexedPath,
-          );
+          final content = await file.readAsString();
+          final parsed = EntityJournalParser.parse(content, indexedPath);
           if (parsed != null && parsed.entityId == entityId) {
-            return parsed;
+            return EntityJournalEntry(
+              entityType: parsed.entityType,
+              entityId: parsed.entityId,
+              title: parsed.title,
+              body: parsed.body,
+              addedAt: parsed.addedAt,
+              storagePath: parsed.storagePath,
+              aliases: parsed.aliases,
+              tags: parsed.tags,
+              posterPath: parsed.posterPath,
+              sourceOperationId: parsed.sourceOperationId,
+              recordMetadata: parsed.recordMetadata,
+              entitySubtype: parsed.entitySubtype,
+              openedRevision: VaultFileRevision.fromText(
+                content,
+                modifiedAtUtc: (await file.lastModified()).toUtc(),
+              ),
+            );
           }
         } catch (_) {
           // fall through to scan + rebuild

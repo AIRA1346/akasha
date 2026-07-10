@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 
 import '../core/archiving/journal_entry.dart';
+import '../core/archiving/vault_file_revision.dart';
 import 'journal_entry_parser.dart';
 
 /// `vault/journal/` 에서 freeform journal 로드.
@@ -19,11 +20,24 @@ class JournalVaultLoader {
     await for (final entity in dir.list(followLinks: false)) {
       if (entity is! File || !entity.path.endsWith('.md')) continue;
       try {
-        final parsed = JournalEntryParser.parse(
-          await entity.readAsString(),
-          entity.path,
-        );
-        if (parsed != null) entries.add(parsed);
+        final content = await entity.readAsString();
+        final parsed = JournalEntryParser.parse(content, entity.path);
+        if (parsed != null) {
+          entries.add(
+            JournalEntry(
+              recordId: parsed.recordId,
+              title: parsed.title,
+              body: parsed.body,
+              addedAt: parsed.addedAt,
+              storagePath: parsed.storagePath,
+              recordMetadata: parsed.recordMetadata,
+              openedRevision: VaultFileRevision.fromText(
+                content,
+                modifiedAtUtc: (await entity.lastModified()).toUtc(),
+              ),
+            ),
+          );
+        }
       } catch (_) {
         // skip malformed journal files
       }

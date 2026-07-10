@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../core/app_vault.dart';
 import '../core/ports/vault_port.dart';
 import '../models/personal_library_config.dart';
+import 'vault_recovery_write_service.dart';
 
 /// 나만의 서재 목록 영속화 — 볼트 `system/` 우선, 데모는 prefs (D8)
 ///
@@ -23,7 +24,7 @@ class PersonalLibraryStorageService {
   final VaultPort _vault;
 
   PersonalLibraryStorageService([VaultPort? vault])
-      : _vault = vault ?? AppVault.port;
+    : _vault = vault ?? AppVault.port;
 
   String? get _vaultSystemDir {
     final vault = _vault.vaultPath;
@@ -56,15 +57,12 @@ class PersonalLibraryStorageService {
     if (await newFile.exists()) return; // already migrated, nothing to do
     if (!await oldFile.exists()) return; // no legacy file, new install
 
-    // copy → verify → leave old in place (safe: no data deleted)
-    final dir = Directory(p.dirname(newPath));
-    if (!await dir.exists()) await dir.create(recursive: true);
-
-    await oldFile.copy(newPath);
-    final verify = File(newPath);
-    if (!await verify.exists()) {
-      await verify.delete().catchError((_) => verify as FileSystemEntity);
-    }
+    await VaultRecoveryWriteService().writeText(
+      vaultPath: _vault.vaultPath!,
+      targetPath: newPath,
+      content: await oldFile.readAsString(),
+      reason: 'migrate_personal_libraries_to_system',
+    );
     // Old file is intentionally left at .akasha/ (not deleted).
   }
 
@@ -109,11 +107,12 @@ class PersonalLibraryStorageService {
     final vaultPath = _vaultFilePath;
 
     if (vaultPath != null) {
-      final dir = Directory(_vaultSystemDir!);
-      if (!await dir.exists()) {
-        await dir.create(recursive: true);
-      }
-      await File(vaultPath).writeAsString(encoded);
+      await VaultRecoveryWriteService().writeText(
+        vaultPath: _vault.vaultPath!,
+        targetPath: vaultPath,
+        content: encoded,
+        reason: 'save_personal_libraries',
+      );
       final prefs = await SharedPreferences.getInstance();
       await prefs.remove(librariesPrefsKey);
       return;
@@ -131,10 +130,7 @@ class PersonalLibraryStorageService {
   List<PersonalLibraryConfig> _decodeJsonList(String jsonStr) {
     final decoded = jsonDecode(jsonStr) as List;
     return decoded
-        .map(
-          (e) => PersonalLibraryConfig.fromJson(e as Map<String, dynamic>),
-        )
+        .map((e) => PersonalLibraryConfig.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 }
-

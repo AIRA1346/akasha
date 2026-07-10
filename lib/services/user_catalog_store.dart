@@ -11,6 +11,7 @@ import '../core/archiving/entity_anchor.dart';
 import '../models/entity_id_codec.dart';
 import '../models/enums.dart';
 import '../models/user_catalog_entity.dart';
+import 'vault_recovery_write_service.dart';
 
 /// Tier 1.5 user catalog — `{vault}/catalog/user_entities.json`.
 class UserCatalogStore implements UserCatalogPort {
@@ -131,20 +132,18 @@ class UserCatalogStore implements UserCatalogPort {
     final vault = AppVault.port.vaultPath;
     if (vault == null || vault.isEmpty) return;
 
-    final catalogDir = Directory(p.join(vault, 'catalog'));
-    await catalogDir.create(recursive: true);
     final file = _catalogFile(vault);
     final payload = json.encode({
       'version': schemaVersion,
       'entities': _entities.map((e) => e.toJson()).toList(),
     });
 
-    final temp = File('${file.path}.tmp');
-    await temp.writeAsString(payload);
-    if (await file.exists()) {
-      await file.delete();
-    }
-    await temp.rename(file.path);
+    await VaultRecoveryWriteService().writeText(
+      vaultPath: vault,
+      targetPath: file.path,
+      content: payload,
+      reason: 'save_user_catalog',
+    );
     await AppVault.port.signalVaultChanged();
   }
 

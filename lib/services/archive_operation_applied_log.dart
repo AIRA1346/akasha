@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 
 import '../core/archiving/archive_operation.dart';
+import 'vault_recovery_write_service.dart';
 
 class ArchiveOperationAppliedEntry {
   const ArchiveOperationAppliedEntry({
@@ -109,10 +110,9 @@ class ArchiveOperationAppliedLog {
     final file = _file(vaultPath);
     if (!await file.exists()) return null;
 
-    try {
-      ArchiveOperationAppliedEntry? match;
-      final lines = await file.readAsLines();
-      for (final line in lines) {
+    ArchiveOperationAppliedEntry? match;
+    for (final line in await file.readAsLines()) {
+      try {
         final trimmed = line.trim();
         if (trimmed.isEmpty) continue;
         final decoded = jsonDecode(trimmed);
@@ -123,16 +123,15 @@ class ArchiveOperationAppliedLog {
         if (entry.operationId == id) {
           match = entry;
         }
+      } catch (_) {
+        // A torn final JSONL append must not hide earlier applied operations.
       }
-      return match;
-    } catch (_) {
-      return null;
     }
+    return match;
   }
 
-  File _legacyFile(String vaultPath) => File(
-        p.join(vaultPath, _legacyDirName, opsDirName, appliedFileName),
-      );
+  File _legacyFile(String vaultPath) =>
+      File(p.join(vaultPath, _legacyDirName, opsDirName, appliedFileName));
 
   /// Copies old `.akasha/ops/applied.jsonl` to `system/ops/` without deleting original.
   Future<void> _migrateIfNeeded(String vaultPath) async {
@@ -143,11 +142,13 @@ class ArchiveOperationAppliedLog {
     if (!await oldFile.exists()) return; // no legacy file
 
     // copy → verify → leave old in place
-    await newFile.parent.create(recursive: true);
-    await oldFile.copy(newFile.path);
-    if (!await newFile.exists()) {
-      await newFile.delete().catchError((_) => newFile as FileSystemEntity);
-    }
+    await VaultRecoveryWriteService().writeText(
+      vaultPath: vaultPath,
+      targetPath: newFile.path,
+      content: await oldFile.readAsString(),
+      reason: 'migrate_legacy_applied_operations_log',
+      expectedRevision: const VaultFileRevision.missing(),
+    );
     // Old file intentionally left at .akasha/ (not deleted).
   }
 
@@ -158,8 +159,8 @@ class ArchiveOperationAppliedLog {
     if (!await file.exists()) return const [];
 
     final entries = <ArchiveOperationAppliedEntry>[];
-    try {
-      for (final line in await file.readAsLines()) {
+    for (final line in await file.readAsLines()) {
+      try {
         final trimmed = line.trim();
         if (trimmed.isEmpty) continue;
         final decoded = jsonDecode(trimmed);
@@ -168,9 +169,9 @@ class ArchiveOperationAppliedLog {
           Map<String, dynamic>.from(decoded),
         );
         if (entry.operationId.isNotEmpty) entries.add(entry);
+      } catch (_) {
+        // Keep valid earlier entries when an append was interrupted.
       }
-    } catch (_) {
-      return const [];
     }
     return entries;
   }
@@ -197,15 +198,11 @@ class ArchiveOperationAppliedLog {
       recordPath: _relativePathOrNull(vaultPath, recordPath),
     );
 
-    final file = _file(vaultPath);
-    await file.parent.create(recursive: true);
-    final sink = file.openWrite(mode: FileMode.append);
-    try {
-      sink.writeln(jsonEncode(entry.toJson()));
-    } finally {
-      await sink.flush();
-      await sink.close();
-    }
+    await VaultRecoveryWriteService().appendJsonLine(
+      vaultPath: vaultPath,
+      targetPath: _file(vaultPath).path,
+      entry: entry.toJson(),
+    );
     return entry;
   }
 

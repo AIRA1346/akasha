@@ -20,6 +20,7 @@ abstract final class ArchiveRecordMapper {
       timeAnchor: item.addedAt,
       storagePath: item.filePath,
       title: item.title,
+      openedRevision: item.openedRevision,
     );
   }
 
@@ -58,6 +59,7 @@ abstract final class ArchiveRecordMapper {
       timeAnchor: item.addedAt,
       storagePath: storagePath,
       title: item.title,
+      openedRevision: item.openedRevision,
     );
   }
 
@@ -69,6 +71,7 @@ abstract final class ArchiveRecordMapper {
       timeAnchor: entry.addedAt,
       storagePath: entry.storagePath,
       title: entry.title,
+      openedRevision: entry.openedRevision,
     );
   }
 
@@ -89,6 +92,7 @@ abstract final class ArchiveRecordMapper {
       timeAnchor: entry.occurredAt,
       storagePath: entry.storagePath,
       title: entry.title,
+      openedRevision: entry.openedRevision,
     );
   }
 }

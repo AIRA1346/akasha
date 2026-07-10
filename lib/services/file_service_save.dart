@@ -13,32 +13,19 @@ mixin _AkashaFileServiceSave
     if (_vaultPath == null) return;
 
     final useWorksLayout = await UserPreferences.isVaultWorksLayoutEnabled();
+    String? oldPathToRetire;
 
     if (oldTitle != null && oldTitle != item.title) {
       if (item.filePath != null && item.filePath!.isNotEmpty) {
         final oldFile = File(item.filePath!);
         if (oldFile.existsSync()) {
-          _stopWatching();
-          try {
-            await oldFile.delete();
-            await ArchiveIndexManager().removeRecord(
-              vaultPath: _vaultPath!,
-              absolutePath: oldFile.path,
-              sourceRecordId: _workSourceRecordId(item.workId),
-            );
-          } catch (e) {
-            appLog('Error deleting old file: $e');
-          } finally {
-            _startWatching();
-          }
+          oldPathToRetire = oldFile.path;
         }
         item.filePath = VaultWorkJournalPaths.resolvePathAfterTitleChange(
           vaultRoot: _vaultPath!,
           item: item,
           useWorksLayout: useWorksLayout,
         );
-      } else {
-        await deleteItem(oldTitle, item.category);
       }
     }
 
@@ -61,6 +48,21 @@ mixin _AkashaFileServiceSave
     }
 
     await Directory(p.dirname(targetPath)).create(recursive: true);
+    final targetFile = File(targetPath);
+    final existingSource = await targetFile.exists()
+        ? targetFile
+        : oldPathToRetire == null
+        ? null
+        : File(oldPathToRetire);
+    final existingContent =
+        existingSource != null && await existingSource.exists()
+        ? await existingSource.readAsString()
+        : null;
+    final revisionSourcePath = oldPathToRetire ?? targetPath;
+    final expectedRevision = item.openedRevision ??
+        (existingContent == null
+            ? const VaultFileRevision.missing()
+            : VaultFileRevision.fromText(existingContent));
 
     item.recordMetadata = item.recordMetadata.copyWith(
       updatedAt: DateTime.now().toUtc(),
@@ -69,7 +71,36 @@ mixin _AkashaFileServiceSave
 
     _stopWatching();
     try {
-      await _writeAtomic(targetPath, content);
+      final writeResult = await VaultLosslessRecordWriter().write(
+        vaultPath: _vaultPath!,
+        targetPath: targetPath,
+        proposedContent: content,
+        reason: 'work_markdown_save',
+        ownedFrontmatterKeys: VaultFrontmatterOwnership.work,
+        existingContent: existingContent,
+        expectedRevision: expectedRevision,
+        expectedRevisionPath: revisionSourcePath,
+      );
+      item.openedRevision = writeResult.newRevision;
+      if (oldPathToRetire != null &&
+          p.normalize(oldPathToRetire) != p.normalize(targetPath)) {
+        await VaultRecoveryWriteService().verifyExpectedRevision(
+          vaultPath: _vaultPath!,
+          targetPath: oldPathToRetire,
+          expectedRevision: expectedRevision,
+          proposedContent: content,
+          reason: 'work_markdown_rename_before_retire',
+        );
+        await const VaultTrashService().moveFileToTrash(
+          vaultPath: _vaultPath!,
+          absolutePath: oldPathToRetire,
+        );
+        await ArchiveIndexManager().removeRecord(
+          vaultPath: _vaultPath!,
+          absolutePath: oldPathToRetire,
+          sourceRecordId: _workSourceRecordId(item.workId),
+        );
+      }
       await ArchiveIndexManager().updateChangedRecord(
         vaultPath: _vaultPath!,
         absolutePath: targetPath,
@@ -78,34 +109,6 @@ mixin _AkashaFileServiceSave
       _notifyVaultUpdated();
     } finally {
       _startWatching();
-    }
-  }
-
-  Future<void> _writeAtomic(String targetPath, String content) async {
-    final file = File(targetPath);
-    final parent = file.parent;
-    if (!await parent.exists()) {
-      await parent.create(recursive: true);
-    }
-
-    final tempPath = p.join(
-      parent.path,
-      '.akasha_${DateTime.now().microsecondsSinceEpoch}_${p.basename(targetPath)}.tmp',
-    );
-    final temp = File(tempPath);
-    try {
-      await temp.writeAsString(content, flush: true);
-      if (await file.exists()) {
-        await file.delete();
-      }
-      await temp.rename(targetPath);
-    } catch (e) {
-      if (await temp.exists()) {
-        try {
-          await temp.delete();
-        } catch (_) {}
-      }
-      rethrow;
     }
   }
 
@@ -282,8 +285,12 @@ mixin _AkashaFileServiceSave
     final uniqueFilename = '${DateTime.now().millisecondsSinceEpoch}_$filename';
     final destinationPath = p.join(_vaultPath!, 'posters', uniqueFilename);
 
-    await Directory(p.dirname(destinationPath)).create(recursive: true);
-    await file.copy(destinationPath);
+    await VaultRecoveryWriteService().writeNewBytes(
+      vaultPath: _vaultPath!,
+      targetPath: destinationPath,
+      bytes: await file.readAsBytes(),
+      reason: 'import_poster_image',
+    );
     return p.join('posters', uniqueFilename);
   }
 
@@ -298,8 +305,12 @@ mixin _AkashaFileServiceSave
     final uniqueFilename =
         '${DateTime.now().millisecondsSinceEpoch}_paste.$ext';
     final destinationPath = p.join(_vaultPath!, 'posters', uniqueFilename);
-    await Directory(p.dirname(destinationPath)).create(recursive: true);
-    await File(destinationPath).writeAsBytes(bytes, flush: true);
+    await VaultRecoveryWriteService().writeNewBytes(
+      vaultPath: _vaultPath!,
+      targetPath: destinationPath,
+      bytes: bytes,
+      reason: 'import_poster_bytes',
+    );
     return p.join('posters', uniqueFilename);
   }
 
@@ -314,15 +325,18 @@ mixin _AkashaFileServiceSave
     final digest = _hashPosterBytes(bytes);
     final filename = '${digest.substring(0, 16)}.$ext';
     final postersDir = Directory(p.join(_vaultPath!, 'posters'));
-    await postersDir.create(recursive: true);
-
     final destinationPath = p.join(postersDir.path, filename);
     final relative = p.join('posters', filename);
     if (await File(destinationPath).exists()) {
       return relative.replaceAll('\\', '/');
     }
 
-    await File(destinationPath).writeAsBytes(bytes, flush: true);
+    await VaultRecoveryWriteService().writeNewBytes(
+      vaultPath: _vaultPath!,
+      targetPath: destinationPath,
+      bytes: bytes,
+      reason: 'import_deduplicated_poster_bytes',
+    );
     return relative.replaceAll('\\', '/');
   }
 

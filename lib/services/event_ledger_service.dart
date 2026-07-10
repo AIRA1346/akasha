@@ -6,6 +6,7 @@ import 'package:path/path.dart' as p;
 import '../core/app_vault.dart';
 import '../core/archiving/vault_ledger_event.dart';
 import '../core/ports/vault_port.dart';
+import 'vault_recovery_write_service.dart';
 
 /// W6-1 — `{vault}/system/logs/event_ledger.jsonl` append-only operational ledger.
 ///
@@ -13,11 +14,9 @@ import '../core/ports/vault_port.dart';
 /// Previously stored at `.akasha/event_ledger.jsonl` — migrated to
 /// `system/logs/` to keep `.akasha/` 100% disposable.
 class EventLedgerService {
-  EventLedgerService({
-    VaultPort? vault,
-    String? vaultPathOverride,
-  })  : _vault = vault ?? AppVault.port,
-        _vaultPathOverride = vaultPathOverride;
+  EventLedgerService({VaultPort? vault, String? vaultPathOverride})
+    : _vault = vault ?? AppVault.port,
+      _vaultPathOverride = vaultPathOverride;
 
   static const String systemDirName = 'system';
   static const String logsDirName = 'logs';
@@ -30,9 +29,8 @@ class EventLedgerService {
 
   String? get _vaultPath => _vaultPathOverride ?? _vault.vaultPath;
 
-  File _ledgerFile(String vaultPath) => File(
-        p.join(vaultPath, systemDirName, logsDirName, ledgerFileName),
-      );
+  File _ledgerFile(String vaultPath) =>
+      File(p.join(vaultPath, systemDirName, logsDirName, ledgerFileName));
 
   File _legacyFile(String vaultPath) =>
       File(p.join(vaultPath, _legacyDirName, ledgerFileName));
@@ -46,11 +44,13 @@ class EventLedgerService {
     if (!await oldFile.exists()) return; // no legacy file
 
     // copy → verify → leave old in place
-    await newFile.parent.create(recursive: true);
-    await oldFile.copy(newFile.path);
-    if (!await newFile.exists()) {
-      await newFile.delete().catchError((_) => newFile as FileSystemEntity);
-    }
+    await VaultRecoveryWriteService().writeText(
+      vaultPath: vaultPath,
+      targetPath: newFile.path,
+      content: await oldFile.readAsString(),
+      reason: 'migrate_legacy_event_ledger',
+      expectedRevision: const VaultFileRevision.missing(),
+    );
     // Old file intentionally left at .akasha/ (not deleted).
   }
 
@@ -59,12 +59,10 @@ class EventLedgerService {
     if (vaultPath == null || vaultPath.isEmpty) return;
 
     await _migrateIfNeeded(vaultPath);
-    final file = _ledgerFile(vaultPath);
-    await file.parent.create(recursive: true);
-    await file.writeAsString(
-      '${jsonEncode(event.toJson())}\n',
-      mode: FileMode.append,
-      flush: true,
+    await VaultRecoveryWriteService().appendJsonLine(
+      vaultPath: vaultPath,
+      targetPath: _ledgerFile(vaultPath).path,
+      entry: event.toJson(),
     );
   }
 
@@ -94,4 +92,3 @@ class EventLedgerService {
     return events;
   }
 }
-

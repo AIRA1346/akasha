@@ -1,4 +1,5 @@
 import 'archive_record_contract.dart';
+import 'vault_file_revision.dart';
 
 /// Freeform journal archive record.
 class JournalEntry {
@@ -9,6 +10,7 @@ class JournalEntry {
     required this.addedAt,
     required this.storagePath,
     this.recordMetadata = ArchiveRecordMetadata.empty,
+    this.openedRevision,
   });
 
   final String recordId;
@@ -17,4 +19,5 @@ class JournalEntry {
   final DateTime addedAt;
   final String storagePath;
   final ArchiveRecordMetadata recordMetadata;
+  final VaultFileRevision? openedRevision;
 }

@@ -14,6 +14,7 @@ import '../../../services/link_candidate_service.dart';
 import '../../../services/sanctum_body_templates.dart';
 import '../../../utils/app_l10n.dart';
 import '../../../services/workbench_recovery_draft_store.dart';
+import '../../../services/vault_recovery_write_service.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import 'work_detail_archive_ops.dart';
 import 'work_detail_connections_coordinator.dart';

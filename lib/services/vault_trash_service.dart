@@ -3,6 +3,8 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
+import 'vault_recovery_write_service.dart';
+
 class VaultTrashEntry {
   const VaultTrashEntry({
     required this.vaultPath,
@@ -75,15 +77,20 @@ class VaultTrashService {
     final targetPath = p.join(trashRoot.path, relativeSource);
     await Directory(p.dirname(targetPath)).create(recursive: true);
 
-    final moved = await source.rename(targetPath);
     final entry = VaultTrashEntry(
       vaultPath: normalizedVault,
       originalPath: normalizedSource,
-      trashPath: moved.path,
+      trashPath: targetPath,
       trashedAt: trashedAt,
     );
     await _writeManifest(trashRoot, entry);
-    return entry;
+    final moved = await source.rename(targetPath);
+    return VaultTrashEntry(
+      vaultPath: entry.vaultPath,
+      originalPath: entry.originalPath,
+      trashPath: moved.path,
+      trashedAt: entry.trashedAt,
+    );
   }
 
   Future<bool> restoreFile(
@@ -107,7 +114,10 @@ class VaultTrashService {
     final originalFile = File(normalizedOriginal);
     if (await originalFile.exists()) {
       if (!overwrite) return false;
-      await originalFile.delete();
+      await moveFileToTrash(
+        vaultPath: normalizedVault,
+        absolutePath: originalFile.path,
+      );
     }
 
     await originalFile.parent.create(recursive: true);
@@ -185,9 +195,11 @@ class VaultTrashService {
     VaultTrashEntry entry,
   ) async {
     final manifest = File(p.join(trashRoot.path, manifestFileName));
-    await manifest.writeAsString(
-      const JsonEncoder.withIndent('  ').convert(entry.toJson()),
-      flush: true,
+    await VaultRecoveryWriteService().writeText(
+      vaultPath: entry.vaultPath,
+      targetPath: manifest.path,
+      content: const JsonEncoder.withIndent('  ').convert(entry.toJson()),
+      reason: 'write_trash_manifest',
     );
   }
 

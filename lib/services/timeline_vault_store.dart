@@ -5,9 +5,11 @@ import 'package:path/path.dart' as p;
 import '../core/archiving/archive_record.dart';
 import '../core/archiving/archive_record_contract.dart';
 import '../core/archiving/timeline_entry.dart';
+import '../core/archiving/vault_file_revision.dart';
 import 'archive_index_manager.dart';
 import 'timeline_entry_parser.dart';
 import 'timeline_vault_loader.dart';
+import 'vault_lossless_record_writer.dart';
 import 'vault_trash_service.dart';
 
 /// `vault/timeline/` 쓰기·삭제 — Phase 4.2.
@@ -74,14 +76,13 @@ class TimelineVaultStore {
     var addedAt = DateTime.now().toUtc();
     var existingMetadata = ArchiveRecordMetadata.empty;
     var targetPath = record.storagePath?.trim();
+    String? existingContent;
 
     if (targetPath != null &&
         targetPath.isNotEmpty &&
         File(targetPath).existsSync()) {
-      final existing = TimelineEntryParser.parse(
-        await File(targetPath).readAsString(),
-        targetPath,
-      );
+      existingContent = await File(targetPath).readAsString();
+      final existing = TimelineEntryParser.parse(existingContent, targetPath);
       if (existing != null) {
         addedAt = existing.addedAt;
         existingMetadata = existing.recordMetadata;
@@ -92,6 +93,7 @@ class TimelineVaultStore {
         targetPath = existing.storagePath;
         addedAt = existing.addedAt;
         existingMetadata = existing.recordMetadata;
+        existingContent = await File(targetPath).readAsString();
       } else {
         targetPath = p.join(timelineDir.path, fileNameFor(recordId));
       }
@@ -111,7 +113,19 @@ class TimelineVaultStore {
       metadata: recordMetadata,
     );
 
-    await _writeAtomic(targetPath, content);
+    final expectedRevision = record.openedRevision ??
+        (existingContent == null
+            ? const VaultFileRevision.missing()
+            : VaultFileRevision.fromText(existingContent));
+    final writeResult = await VaultLosslessRecordWriter().write(
+      vaultPath: vaultPath,
+      targetPath: targetPath,
+      proposedContent: content,
+      reason: 'timeline_record_save',
+      ownedFrontmatterKeys: VaultFrontmatterOwnership.timeline,
+      existingContent: existingContent,
+      expectedRevision: expectedRevision,
+    );
 
     final entry = TimelineEntry(
       recordId: recordId,
@@ -122,6 +136,7 @@ class TimelineVaultStore {
       storagePath: targetPath,
       entityId: entityId?.trim().isNotEmpty == true ? entityId!.trim() : null,
       recordMetadata: recordMetadata,
+      openedRevision: writeResult.newRevision,
     );
     await ArchiveIndexManager().updateChangedRecord(
       vaultPath: vaultPath,
@@ -167,33 +182,5 @@ class TimelineVaultStore {
       if (entry.recordId == recordId) return entry;
     }
     return null;
-  }
-
-  Future<void> _writeAtomic(String targetPath, String content) async {
-    final file = File(targetPath);
-    final parent = file.parent;
-    if (!await parent.exists()) {
-      await parent.create(recursive: true);
-    }
-
-    final tempPath = p.join(
-      parent.path,
-      '.akasha_${DateTime.now().microsecondsSinceEpoch}_${p.basename(targetPath)}.tmp',
-    );
-    final temp = File(tempPath);
-    try {
-      await temp.writeAsString(content, flush: true);
-      if (await file.exists()) {
-        await file.delete();
-      }
-      await temp.rename(targetPath);
-    } catch (e) {
-      if (await temp.exists()) {
-        try {
-          await temp.delete();
-        } catch (_) {}
-      }
-      rethrow;
-    }
   }
 }

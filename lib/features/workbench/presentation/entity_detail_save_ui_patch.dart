@@ -2,6 +2,7 @@ import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_vault_path_conflict.dart';
+import '../../../services/vault_recovery_write_service.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import 'entity_detail_archive_ops.dart';
 import 'entity_detail_draft_ops.dart';
@@ -134,6 +135,9 @@ abstract final class EntityDetailSavePrepareOps {
   }) {
     if (silent) return null;
     if (error is EntityVaultPathConflict) return error.userMessage;
+    if (error is VaultWriteConflictException) {
+      return '외부 변경을 감지해 저장하지 않았습니다. 편집본은 복구 충돌 보관함에 남겼습니다.';
+    }
     final l10n = lookupAppL10n(context);
     return l10n != null
         ? l10n.errorSaveFailed(error.toString())

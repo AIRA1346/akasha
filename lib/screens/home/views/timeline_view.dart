@@ -7,6 +7,7 @@ import '../../../core/archiving/timeline_entry.dart';
 import '../../../data/adapters/vault_archive_record_adapter.dart';
 import '../../../models/akasha_item.dart';
 import '../../../services/timeline_vault_loader.dart';
+import '../../../services/vault_recovery_write_service.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_typography.dart';
 import '../../../utils/app_l10n.dart';
@@ -168,7 +169,8 @@ class _TimelineViewState extends State<TimelineView> {
                         type: EntityAnchor.typeForEntityId(entityId),
                       );
                     }
-                    await _adapter.save(
+                    try {
+                      await _adapter.save(
                       ArchiveRecord(
                         recordId: entry.recordId,
                         kind: RecordKind.timelineEntry,
@@ -176,10 +178,22 @@ class _TimelineViewState extends State<TimelineView> {
                         timeAnchor: entry.occurredAt,
                         storagePath: entry.storagePath,
                         entity: entity,
+                        openedRevision: entry.openedRevision,
                       ),
                       bodyMarkdown: body,
                     );
-                    if (ctx.mounted) Navigator.pop(ctx);
+                      if (ctx.mounted) Navigator.pop(ctx);
+                    } on VaultWriteConflictException {
+                      if (ctx.mounted) {
+                        ScaffoldMessenger.of(ctx).showSnackBar(
+                          const SnackBar(
+                            content: Text(
+                              '외부 변경을 감지해 저장하지 않았습니다. 편집본은 복구 충돌 보관함에 남겼습니다.',
+                            ),
+                          ),
+                        );
+                      }
+                    }
                   },
                   child: Text(l10n?.actionSave ?? '저장'),
                 ),

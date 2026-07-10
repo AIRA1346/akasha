@@ -26,6 +26,10 @@ mixin _AkashaFileServiceScan on _AkashaFileServiceBase, _AkashaFileServicePaths 
             final filename = p.basenameWithoutExtension(entity.path);
             final item = MarkdownParser.deserialize(content, filename);
             item.filePath = entity.path;
+            item.openedRevision = VaultFileRevision.fromText(
+              content,
+              modifiedAtUtc: (await entity.lastModified()).toUtc(),
+            );
             parsed.add(item);
           } catch (e) {
             appLog('Error reading file ${entity.path}: $e');

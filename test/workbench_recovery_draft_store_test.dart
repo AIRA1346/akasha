@@ -88,7 +88,7 @@ void main() {
   });
 
   test(
-    'record ids with path separators stay inside recovery directory',
+    'record ids with path separators stay inside durable drafts directory',
     () async {
       const store = WorkbenchRecoveryDraftStore();
       await store.save(
@@ -102,20 +102,20 @@ void main() {
         ),
       );
 
-      final recoveryDir = Directory(
+      final draftsDir = Directory(
         p.join(
           vaultDir.path,
-          '.akasha',
-          WorkbenchRecoveryDraftStore.recoveryDirName,
+          WorkbenchRecoveryDraftStore.systemDirName,
+          WorkbenchRecoveryDraftStore.draftsDirName,
         ),
       );
-      final files = await recoveryDir
+      final files = await draftsDir
           .list()
           .where((entity) => entity is File)
           .toList();
 
       expect(files, hasLength(1));
-      expect(p.isWithin(recoveryDir.path, files.single.path), isTrue);
+      expect(p.isWithin(draftsDir.path, files.single.path), isTrue);
       expect(p.basename(files.single.path), isNot(contains('..')));
       expect(p.basename(files.single.path), isNot(contains('/')));
     },

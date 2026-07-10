@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 
 import '../core/archiving/timeline_entry.dart';
+import '../core/archiving/vault_file_revision.dart';
 import 'timeline_entry_parser.dart';
 
 /// `vault/timeline/` 에서 Timeline entry 로드.
@@ -19,11 +20,26 @@ class TimelineVaultLoader {
     await for (final entity in dir.list(followLinks: false)) {
       if (entity is! File || !entity.path.endsWith('.md')) continue;
       try {
-        final parsed = TimelineEntryParser.parse(
-          await entity.readAsString(),
-          entity.path,
-        );
-        if (parsed != null) entries.add(parsed);
+        final content = await entity.readAsString();
+        final parsed = TimelineEntryParser.parse(content, entity.path);
+        if (parsed != null) {
+          entries.add(
+            TimelineEntry(
+              recordId: parsed.recordId,
+              title: parsed.title,
+              body: parsed.body,
+              occurredAt: parsed.occurredAt,
+              addedAt: parsed.addedAt,
+              storagePath: parsed.storagePath,
+              entityId: parsed.entityId,
+              recordMetadata: parsed.recordMetadata,
+              openedRevision: VaultFileRevision.fromText(
+                content,
+                modifiedAtUtc: (await entity.lastModified()).toUtc(),
+              ),
+            ),
+          );
+        }
       } catch (_) {
         // skip malformed timeline files
       }

@@ -254,6 +254,12 @@ mixin _WorkDetailWorkspacePersist on _WorkDetailWorkspaceStateBase {
         case WorkDetailSaveOrchestrationSkipped():
           return;
         case WorkDetailSaveOrchestrationFailed(:final error):
+          if (error is VaultWriteConflictException) {
+            _showSnack(
+              '외부 변경을 감지해 저장하지 않았습니다. 편집본은 복구 충돌 보관함에 남겼습니다.',
+            );
+            break;
+          }
           if (!silent) _showSnack('저장 실패: $error');
         case WorkDetailSaveOrchestrationSucceeded result:
           setState(() => _applySaveUiPatch(result.patch));

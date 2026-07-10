@@ -1,5 +1,6 @@
 import 'entity_anchor.dart';
 import 'archive_record_contract.dart';
+import 'vault_file_revision.dart';
 
 /// Non-work Entity journal — `vault/entities/{type}/*.md` (Wave 4).
 class EntityJournalEntry {
@@ -16,6 +17,7 @@ class EntityJournalEntry {
     this.sourceOperationId,
     this.recordMetadata = ArchiveRecordMetadata.empty,
     this.entitySubtype = '',
+    this.openedRevision,
   });
 
   final EntityAnchorType entityType;
@@ -30,4 +32,5 @@ class EntityJournalEntry {
   final String? sourceOperationId;
   final ArchiveRecordMetadata recordMetadata;
   final String entitySubtype;
+  final VaultFileRevision? openedRevision;
 }

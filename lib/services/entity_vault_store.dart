@@ -16,6 +16,8 @@ import 'entity_vault_loader.dart';
 import '../core/app_vault.dart';
 import 'archive_index_manager.dart';
 import 'vault_record_path_resolver.dart';
+import 'vault_lossless_record_writer.dart';
+import 'vault_recovery_write_service.dart';
 import 'vault_trash_service.dart';
 
 /// `vault/entities/{type}/` 쓰기 — Wave 4.
@@ -86,11 +88,10 @@ class EntityVaultStore {
 
     var addedAt = entity.addedAt;
     var existingMetadata = ArchiveRecordMetadata.empty;
+    String? existingContent;
     if (File(targetPath).existsSync()) {
-      final existing = EntityJournalParser.parse(
-        await File(targetPath).readAsString(),
-        targetPath,
-      );
+      existingContent = await File(targetPath).readAsString();
+      final existing = EntityJournalParser.parse(existingContent, targetPath);
       if (existing != null) {
         if (existing.entityId != entity.entityId) {
           throw EntityVaultPathConflict(
@@ -127,7 +128,18 @@ class EntityVaultStore {
       metadata: recordMetadata,
     );
 
-    await _writeAtomic(targetPath, content);
+    final expectedRevision = existingContent == null
+        ? const VaultFileRevision.missing()
+        : VaultFileRevision.fromText(existingContent);
+    final writeResult = await VaultLosslessRecordWriter().write(
+      vaultPath: vaultPath,
+      targetPath: targetPath,
+      proposedContent: content,
+      reason: 'entity_record_save',
+      ownedFrontmatterKeys: VaultFrontmatterOwnership.entity,
+      existingContent: existingContent,
+      expectedRevision: expectedRevision,
+    );
     final entry = EntityJournalEntry(
       entityType: entity.anchorType,
       entityId: entity.entityId,
@@ -140,6 +152,7 @@ class EntityVaultStore {
       posterPath: entity.posterPath,
       sourceOperationId: recordMetadata.sourceOperationId,
       recordMetadata: recordMetadata,
+      openedRevision: writeResult.newRevision,
     );
     await ArchiveIndexManager().updateChangedRecord(
       vaultPath: vaultPath,
@@ -218,12 +231,41 @@ class EntityVaultStore {
       metadata: recordMetadata,
     );
 
-    await _writeAtomic(targetPath, content);
+    final sourcePath = File(targetPath).existsSync()
+        ? targetPath
+        : entry.storagePath;
+    final existingContent = await File(sourcePath).exists()
+        ? await File(sourcePath).readAsString()
+        : null;
+    final expectedRevision = entry.openedRevision ??
+        (existingContent == null
+            ? const VaultFileRevision.missing()
+            : VaultFileRevision.fromText(existingContent));
+    final writeResult = await VaultLosslessRecordWriter().write(
+      vaultPath: vaultRoot,
+      targetPath: targetPath,
+      proposedContent: content,
+      reason: 'entity_record_update',
+      ownedFrontmatterKeys: VaultFrontmatterOwnership.entity,
+      existingContent: existingContent,
+      expectedRevision: expectedRevision,
+      expectedRevisionPath: sourcePath,
+    );
 
     if (targetPath != entry.storagePath) {
       final oldFile = File(entry.storagePath);
       if (await oldFile.exists()) {
-        await oldFile.delete();
+        await VaultRecoveryWriteService().verifyExpectedRevision(
+          vaultPath: vaultRoot,
+          targetPath: entry.storagePath,
+          expectedRevision: expectedRevision,
+          proposedContent: content,
+          reason: 'entity_record_rename_before_retire',
+        );
+        await const VaultTrashService().moveFileToTrash(
+          vaultPath: vaultRoot,
+          absolutePath: entry.storagePath,
+        );
         await ArchiveIndexManager().removeRecord(
           vaultPath: vaultRoot,
           absolutePath: entry.storagePath,
@@ -245,6 +287,7 @@ class EntityVaultStore {
       posterPath: posterPath ?? entry.posterPath,
       sourceOperationId: entry.sourceOperationId,
       recordMetadata: recordMetadata,
+      openedRevision: writeResult.newRevision,
     );
     await ArchiveIndexManager().updateChangedRecord(
       vaultPath: vaultRoot,
@@ -338,34 +381,6 @@ class EntityVaultStore {
         title: title,
         path: targetPath,
       );
-    }
-  }
-
-  Future<void> _writeAtomic(String targetPath, String content) async {
-    final file = File(targetPath);
-    final parent = file.parent;
-    if (!await parent.exists()) {
-      await parent.create(recursive: true);
-    }
-
-    final tempPath = p.join(
-      parent.path,
-      '.akasha_${DateTime.now().microsecondsSinceEpoch}_${p.basename(targetPath)}.tmp',
-    );
-    final temp = File(tempPath);
-    try {
-      await temp.writeAsString(content, flush: true);
-      if (await file.exists()) {
-        await file.delete();
-      }
-      await temp.rename(targetPath);
-    } catch (e) {
-      if (await temp.exists()) {
-        try {
-          await temp.delete();
-        } catch (_) {}
-      }
-      rethrow;
     }
   }
 }

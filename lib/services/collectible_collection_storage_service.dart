@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../core/app_vault.dart';
 import '../core/ports/vault_port.dart';
 import '../models/collectible_collection.dart';
+import 'vault_recovery_write_service.dart';
 
 /// Entity collection list — vault `system/collectible_collections.json`.
 ///
@@ -23,7 +24,7 @@ class CollectibleCollectionStorageService {
   final VaultPort _vault;
 
   CollectibleCollectionStorageService([VaultPort? vault])
-      : _vault = vault ?? AppVault.port;
+    : _vault = vault ?? AppVault.port;
 
   String? get _vaultSystemDir {
     final vault = _vault.vaultPath;
@@ -56,17 +57,12 @@ class CollectibleCollectionStorageService {
     if (await newFile.exists()) return; // already migrated, nothing to do
     if (!await oldFile.exists()) return; // no legacy file, new install
 
-    // copy → verify → leave old in place (safe: no data deleted)
-    final dir = Directory(p.dirname(newPath));
-    if (!await dir.exists()) await dir.create(recursive: true);
-
-    await oldFile.copy(newPath);
-    // Verify the copy is readable before we consider migration done.
-    final verify = File(newPath);
-    if (!await verify.exists()) {
-      // copy failed — remove partial and keep old path authoritative
-      await verify.delete().catchError((_) => verify as FileSystemEntity);
-    }
+    await VaultRecoveryWriteService().writeText(
+      vaultPath: _vault.vaultPath!,
+      targetPath: newPath,
+      content: await oldFile.readAsString(),
+      reason: 'migrate_collectible_collections_to_system',
+    );
     // Old file is intentionally left at .akasha/ (not deleted).
   }
 
@@ -103,16 +99,16 @@ class CollectibleCollectionStorageService {
   }
 
   Future<void> save(List<CollectibleCollection> collections) async {
-    final encoded =
-        jsonEncode(collections.map((e) => e.toJson()).toList());
+    final encoded = jsonEncode(collections.map((e) => e.toJson()).toList());
     final vaultPath = _vaultFilePath;
 
     if (vaultPath != null) {
-      final dir = Directory(_vaultSystemDir!);
-      if (!await dir.exists()) {
-        await dir.create(recursive: true);
-      }
-      await File(vaultPath).writeAsString(encoded);
+      await VaultRecoveryWriteService().writeText(
+        vaultPath: _vault.vaultPath!,
+        targetPath: vaultPath,
+        content: encoded,
+        reason: 'save_collectible_collections',
+      );
       final prefs = await SharedPreferences.getInstance();
       await prefs.remove(collectionsPrefsKey);
       return;
@@ -130,10 +126,7 @@ class CollectibleCollectionStorageService {
   List<CollectibleCollection> _decodeJsonList(String jsonStr) {
     final decoded = jsonDecode(jsonStr) as List;
     return decoded
-        .map(
-          (e) => CollectibleCollection.fromJson(e as Map<String, dynamic>),
-        )
+        .map((e) => CollectibleCollection.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 }
-

@@ -1,6 +1,7 @@
 import 'entity_anchor.dart';
 import 'record_kind.dart';
 import 'record_link.dart';
+import 'vault_file_revision.dart';
 
 /// 사용자 소유 축적 단위 — ultimate archiving §6 ([ADR-008]).
 ///
@@ -14,6 +15,7 @@ class ArchiveRecord {
     this.storagePath,
     this.title,
     this.links = const [],
+    this.openedRevision,
   });
 
   final String recordId;
@@ -23,6 +25,7 @@ class ArchiveRecord {
   final String? storagePath;
   final String? title;
   final List<RecordLink> links;
+  final VaultFileRevision? openedRevision;
 
   bool get hasEntityAnchor => entity != null && entity!.entityId.isNotEmpty;
 

@@ -16,6 +16,8 @@ import 'entity_path_index_service.dart';
 import 'markdown_parser.dart';
 import 'record_summary_index_service.dart';
 import 'user_preferences.dart';
+import 'vault_lossless_record_writer.dart';
+import 'vault_recovery_write_service.dart';
 import 'vault_readme_writer.dart';
 import 'vault_spec_writer.dart';
 import 'vault_trash_service.dart';

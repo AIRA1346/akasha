@@ -3,6 +3,8 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
+import 'vault_recovery_write_service.dart';
+
 enum WorkbenchRecoveryRecordKind { work, entity }
 
 class WorkbenchRecoveryDraft {
@@ -92,13 +94,20 @@ class WorkbenchRecoveryDraft {
 class WorkbenchRecoveryDraftStore {
   const WorkbenchRecoveryDraftStore();
 
+  static const systemDirName = 'system';
   static const recoveryDirName = 'recovery';
+  static const draftsDirName = 'drafts';
 
   Future<WorkbenchRecoveryDraft?> load({
     required String vaultPath,
     required WorkbenchRecoveryRecordKind kind,
     required String recordId,
   }) async {
+    await _migrateIfNeeded(
+      vaultPath: vaultPath,
+      kind: kind,
+      recordId: recordId,
+    );
     final file = _draftFile(
       vaultPath: vaultPath,
       kind: kind,
@@ -116,21 +125,23 @@ class WorkbenchRecoveryDraftStore {
     required String vaultPath,
     required WorkbenchRecoveryDraft draft,
   }) async {
+    await _migrateIfNeeded(
+      vaultPath: vaultPath,
+      kind: draft.kind,
+      recordId: draft.recordId,
+    );
     final file = _draftFile(
       vaultPath: vaultPath,
       kind: draft.kind,
       recordId: draft.recordId,
     );
-    await file.parent.create(recursive: true);
-    final temp = File('${file.path}.tmp');
-    await temp.writeAsString(
-      const JsonEncoder.withIndent('  ').convert(draft.toJson()),
-      flush: true,
+    await VaultRecoveryWriteService().writeText(
+      vaultPath: vaultPath,
+      targetPath: file.path,
+      content: const JsonEncoder.withIndent('  ').convert(draft.toJson()),
+      reason: 'save_workbench_recovery_draft',
     );
-    if (await file.exists()) {
-      await file.delete();
-    }
-    return temp.rename(file.path);
+    return file;
   }
 
   Future<void> delete({
@@ -156,10 +167,50 @@ class WorkbenchRecoveryDraftStore {
     return File(
       p.join(
         vaultPath,
+        systemDirName,
+        draftsDirName,
+        '${kind.name}_${_safeRecordId(recordId)}.json',
+      ),
+    );
+  }
+
+  File _legacyDraftFile({
+    required String vaultPath,
+    required WorkbenchRecoveryRecordKind kind,
+    required String recordId,
+  }) {
+    return File(
+      p.join(
+        vaultPath,
         '.akasha',
         recoveryDirName,
         '${kind.name}_${_safeRecordId(recordId)}.json',
       ),
+    );
+  }
+
+  Future<void> _migrateIfNeeded({
+    required String vaultPath,
+    required WorkbenchRecoveryRecordKind kind,
+    required String recordId,
+  }) async {
+    final target = _draftFile(
+      vaultPath: vaultPath,
+      kind: kind,
+      recordId: recordId,
+    );
+    if (await target.exists()) return;
+    final legacy = _legacyDraftFile(
+      vaultPath: vaultPath,
+      kind: kind,
+      recordId: recordId,
+    );
+    if (!await legacy.exists()) return;
+    await VaultRecoveryWriteService().writeText(
+      vaultPath: vaultPath,
+      targetPath: target.path,
+      content: await legacy.readAsString(),
+      reason: 'migrate_workbench_recovery_draft_to_system',
     );
   }
 
