@@ -1,6 +1,6 @@
 # Scale Access-Path Inventory
 
-> **Status:** SA-01 implemented — SA-02 through SA-04 pending
+> **Status:** SA-01 implemented · SA-02 contract fixed · SA-03 derived-cache prototype passed
 > **Date:** 2026-07-10
 > **Scope:** Current Vault read, change-notification, and derived-index paths.
 > This is an architecture-cleanup inventory. It introduces no schema, storage
@@ -100,19 +100,35 @@ failure emits explicit reconciliation rather than an invented path batch.
 This does not choose SQLite, shards, a new record schema, or a Home query
 implementation.
 
-### SA-02 — Home Work Summary Read Path (next)
+### SA-02 — Home Work Summary Query Contract
 
-Move the Home Work list off `loadAllItems`. It should read a bounded Work
-summary page, then hydrate a Markdown Work only when a user opens or edits it.
-Before implementation, verify whether `VaultRecordSummary` contains every
-field needed by the current Home cards; add only a derived projection field if
-necessary.
+**Contract fixed.** [SA_02_HOME_WORK_SUMMARY_BOUNDARY.md](SA_02_HOME_WORK_SUMMARY_BOUNDARY.md)
+defines the read-only projection, stable-ID hydration, precise-change, and
+reconciliation rules. It also establishes that a partial summary must never be
+constructed as an `AkashaItem` for editing or saving.
 
-### SA-03 — Bounded Index Persistence
+The contract audit found that `VaultRecordSummary` supplies the Work browse
+projection but the current `record_index.json` still reads and rewrites a whole
+payload. Home integration must therefore wait for bounded derived persistence;
+otherwise it merely exchanges a full Markdown scan for a full JSON read.
 
-Use measured fixtures and the SA-01/SA-02 query profile to choose a sharded or
-local database implementation for Record, Link, and Taste indexes. Do not make
-this choice before the actual read/write profile is defined.
+### SA-03 — Bounded Index Persistence (in progress)
+
+Use the SA-02 fixture profile and query contract to choose a sharded or local
+database implementation for Record, Link, and Taste indexes. The selected
+store must support a bounded Work page and one-path upsert/delete without a
+whole index rewrite. Do not change canonical Markdown or make a derived store
+authoritative.
+
+The current proposal and prototype gate are in
+[SA_03_DERIVED_INDEX_PERSISTENCE_DECISION.md](SA_03_DERIVED_INDEX_PERSISTENCE_DECISION.md).
+
+### SA-02B — Home Work Summary Read Path
+
+After SA-03 provides a bounded page, migrate the Work browse-list entry path
+off `loadAllItems`. Hydrate a Markdown Work only when a user opens or edits it;
+keep Dashboard, Canvas, graph, records, and picker migrations explicit rather
+than feeding them incomplete Work objects.
 
 ### SA-04 — Domain Pages and Record Port
 
