@@ -4,6 +4,7 @@ import 'dart:typed_data';
 import 'package:path/path.dart' as p;
 
 import '../core/ports/user_catalog_port.dart';
+import '../core/ports/vault_change.dart';
 import '../core/ports/vault_port.dart';
 import '../models/akasha_item.dart';
 import 'archive_candidate_store.dart';
@@ -643,7 +644,13 @@ class _FixedVaultPathPort implements VaultPort {
   Future<void> signalVaultChanged() async {}
 
   @override
+  Future<void> signalVaultChange(VaultChangeBatch change) async {}
+
+  @override
   Stream<void> get onVaultUpdated => const Stream.empty();
+
+  @override
+  Stream<VaultChangeBatch> get onVaultChanges => const Stream.empty();
 
   @override
   Map<String, AkashaItem> get inMemoryCache => const {};

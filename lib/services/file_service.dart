@@ -8,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:yaml/yaml.dart';
 
 import '../core/archiving/entity_anchor.dart';
+import '../core/ports/vault_change.dart';
 import '../models/akasha_item.dart';
 import '../models/enums.dart';
 import '../utils/app_log.dart';
@@ -33,11 +34,14 @@ part 'file_service_bootstrap.dart';
 abstract class _AkashaFileServiceBase {
   String? _vaultPath;
   StreamController<void>? _vaultUpdateController;
+  StreamController<VaultChangeBatch>? _vaultChangeController;
   StreamSubscription<FileSystemEvent>? _watcherSubscription;
   Timer? _watchDebounce;
   Timer? _pollTimer;
   String? _lastVaultFingerprint;
   bool _directoryWatchActive = false;
+  final Map<String, VaultPathChangeKind> _pendingWatchChanges = {};
+  bool _pendingWatchReconciliation = false;
   final Map<String, AkashaItem> _inMemoryCache = {};
 }
 
@@ -88,6 +92,12 @@ class AkashaFileService extends _AkashaFileServiceBase
   Stream<void> get onVaultUpdated {
     _vaultUpdateController ??= StreamController<void>.broadcast();
     return _vaultUpdateController!.stream;
+  }
+
+  /// Detailed companion to [onVaultUpdated].
+  Stream<VaultChangeBatch> get onVaultChanges {
+    _vaultChangeController ??= StreamController<VaultChangeBatch>.broadcast();
+    return _vaultChangeController!.stream;
   }
 
   static String cacheKeyFor(AkashaItem item) {

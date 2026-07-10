@@ -1,11 +1,13 @@
 import 'dart:typed_data';
 
+import '../../core/ports/vault_change.dart';
 import '../../core/ports/vault_port.dart';
 import '../../models/akasha_item.dart';
 import '../../services/file_service.dart';
 
 class MarkdownVaultAdapter implements VaultPort {
-  static final MarkdownVaultAdapter _instance = MarkdownVaultAdapter._internal();
+  static final MarkdownVaultAdapter _instance =
+      MarkdownVaultAdapter._internal();
   factory MarkdownVaultAdapter() => _instance;
   MarkdownVaultAdapter._internal();
 
@@ -24,7 +26,8 @@ class MarkdownVaultAdapter implements VaultPort {
   Future<bool> isVaultPathValid() => _fileService.isVaultPathValid();
 
   @override
-  bool isArchivedInVault(AkashaItem item) => _fileService.isArchivedInVault(item);
+  bool isArchivedInVault(AkashaItem item) =>
+      _fileService.isArchivedInVault(item);
 
   @override
   Future<List<AkashaItem>> loadAllItems() => _fileService.loadAllItems();
@@ -48,24 +51,26 @@ class MarkdownVaultAdapter implements VaultPort {
   Future<String?> importPosterImageFromBytes(
     Uint8List bytes, {
     String extension = 'png',
-  }) =>
-      _fileService.importPosterImageFromBytes(bytes, extension: extension);
+  }) => _fileService.importPosterImageFromBytes(bytes, extension: extension);
 
   @override
   Future<String?> importPosterImageBytesDeduped(
     Uint8List bytes, {
     required String extension,
-  }) =>
-      _fileService.importPosterImageBytesDeduped(
-        bytes,
-        extension: extension,
-      );
+  }) => _fileService.importPosterImageBytesDeduped(bytes, extension: extension);
 
   @override
   Future<void> signalVaultChanged() => _fileService.signalVaultChanged();
 
   @override
+  Future<void> signalVaultChange(VaultChangeBatch change) =>
+      _fileService.signalVaultChange(change);
+
+  @override
   Stream<void> get onVaultUpdated => _fileService.onVaultUpdated;
+
+  @override
+  Stream<VaultChangeBatch> get onVaultChanges => _fileService.onVaultChanges;
 
   @override
   Map<String, AkashaItem> get inMemoryCache => _fileService.inMemoryCache;

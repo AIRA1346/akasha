@@ -3,6 +3,7 @@ import '../../core/archiving/archive_record.dart';
 import '../../core/archiving/archive_record_mapper.dart';
 import '../../core/archiving/record_kind.dart';
 import '../../core/ports/archive_record_port.dart';
+import '../../core/ports/vault_change.dart';
 import '../../core/ports/vault_port.dart';
 import '../../services/journal_vault_loader.dart';
 import '../../services/journal_vault_store.dart';
@@ -17,11 +18,11 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
     TimelineVaultStore? timelineStore,
     JournalVaultLoader? journalLoader,
     JournalVaultStore? journalStore,
-  })  : _vault = vault ?? AppVault.port,
-        _timelineLoader = timelineLoader ?? const TimelineVaultLoader(),
-        _timelineStore = timelineStore ?? const TimelineVaultStore(),
-        _journalLoader = journalLoader ?? const JournalVaultLoader(),
-        _journalStore = journalStore ?? const JournalVaultStore();
+  }) : _vault = vault ?? AppVault.port,
+       _timelineLoader = timelineLoader ?? const TimelineVaultLoader(),
+       _timelineStore = timelineStore ?? const TimelineVaultStore(),
+       _journalLoader = journalLoader ?? const JournalVaultLoader(),
+       _journalStore = journalStore ?? const JournalVaultStore();
 
   final VaultPort _vault;
   final TimelineVaultLoader _timelineLoader;
@@ -33,7 +34,8 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
   Future<List<ArchiveRecord>> listRecords({Set<RecordKind>? kinds}) async {
     final records = <ArchiveRecord>[];
 
-    final includeVault = kinds == null ||
+    final includeVault =
+        kinds == null ||
         kinds.contains(RecordKind.workJournal) ||
         kinds.contains(RecordKind.freeformJournal);
     if (includeVault) {
@@ -49,12 +51,12 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
     final includeJournal =
         kinds == null || kinds.contains(RecordKind.freeformJournal);
     if (includeJournal) {
-      final journals =
-          await _journalLoader.loadFromVault(_vault.vaultPath);
+      final journals = await _journalLoader.loadFromVault(_vault.vaultPath);
       records.addAll(journals.map(ArchiveRecordMapper.fromJournalEntry));
     }
 
-    final includeTimeline = kinds == null || kinds.contains(RecordKind.timelineEntry);
+    final includeTimeline =
+        kinds == null || kinds.contains(RecordKind.timelineEntry);
     if (includeTimeline) {
       final timeline = await _timelineLoader.loadFromVault(_vault.vaultPath);
       records.addAll(timeline.map(ArchiveRecordMapper.fromTimelineEntry));
@@ -104,22 +106,32 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
     }
 
     if (record.kind == RecordKind.timelineEntry) {
-      await _timelineStore.save(
+      final saved = await _timelineStore.save(
         vaultPath: vaultPath,
         record: record,
         body: bodyMarkdown ?? '',
       );
-      await _vault.signalVaultChanged();
+      await _vault.signalVaultChange(
+        VaultChangeBatch.fromAbsolutePaths(
+          vaultPath: vaultPath,
+          upsertedPaths: [saved.storagePath],
+        ),
+      );
       return;
     }
 
     if (record.kind == RecordKind.freeformJournal) {
-      await _journalStore.save(
+      final saved = await _journalStore.save(
         vaultPath: vaultPath,
         record: record,
         body: bodyMarkdown ?? '',
       );
-      await _vault.signalVaultChanged();
+      await _vault.signalVaultChange(
+        VaultChangeBatch.fromAbsolutePaths(
+          vaultPath: vaultPath,
+          upsertedPaths: [saved.storagePath],
+        ),
+      );
       return;
     }
 
@@ -142,18 +154,28 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
 
     if (existing.kind == RecordKind.timelineEntry) {
       await _timelineStore.delete(vaultPath: vaultPath, recordId: recordId);
-      await _vault.signalVaultChanged();
+      await _signalDeletedRecordPath(vaultPath, existing.storagePath);
       return;
     }
 
     if (existing.kind == RecordKind.freeformJournal) {
       await _journalStore.delete(vaultPath: vaultPath, recordId: recordId);
-      await _vault.signalVaultChanged();
+      await _signalDeletedRecordPath(vaultPath, existing.storagePath);
       return;
     }
 
-    throw UnsupportedError(
-      'timeline/journal only; workJournal via VaultPort',
+    throw UnsupportedError('timeline/journal only; workJournal via VaultPort');
+  }
+
+  Future<void> _signalDeletedRecordPath(String vaultPath, String? storagePath) {
+    if (storagePath == null || storagePath.isEmpty) {
+      return _vault.signalVaultChanged();
+    }
+    return _vault.signalVaultChange(
+      VaultChangeBatch.fromAbsolutePaths(
+        vaultPath: vaultPath,
+        deletedPaths: [storagePath],
+      ),
     );
   }
 }

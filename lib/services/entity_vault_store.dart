@@ -6,6 +6,7 @@ import '../core/archiving/entity_anchor.dart';
 import '../core/archiving/entity_journal_entry.dart';
 import '../core/archiving/record_kind.dart';
 import '../core/archiving/archive_record_contract.dart';
+import '../core/ports/vault_change.dart';
 import '../models/user_catalog_entity.dart';
 import '../core/archiving/vault_ledger_event.dart';
 import 'entity_journal_parser.dart';
@@ -161,7 +162,12 @@ class EntityVaultStore {
       vaultPath: vaultPath,
       absolutePath: targetPath,
     );
-    await AppVault.port.signalVaultChanged();
+    await AppVault.port.signalVaultChange(
+      VaultChangeBatch.fromAbsolutePaths(
+        vaultPath: vaultPath,
+        upsertedPaths: [targetPath],
+      ),
+    );
     await _eventLedger.append(
       VaultLedgerEvent(
         type: VaultLedgerEventType.recordSaved,
@@ -296,7 +302,15 @@ class EntityVaultStore {
       vaultPath: vaultRoot,
       absolutePath: targetPath,
     );
-    await AppVault.port.signalVaultChanged();
+    await AppVault.port.signalVaultChange(
+      VaultChangeBatch.fromAbsolutePaths(
+        vaultPath: vaultRoot,
+        upsertedPaths: [targetPath],
+        deletedPaths: targetPath == entry.storagePath
+            ? const []
+            : [entry.storagePath],
+      ),
+    );
     await _eventLedger.append(
       VaultLedgerEvent(
         type: VaultLedgerEventType.recordSaved,
@@ -336,7 +350,12 @@ class EntityVaultStore {
       entityId: entityId,
     );
 
-    await AppVault.port.signalVaultChanged();
+    await AppVault.port.signalVaultChange(
+      VaultChangeBatch.fromAbsolutePaths(
+        vaultPath: vaultRoot,
+        deletedPaths: [storagePath],
+      ),
+    );
     await _eventLedger.append(
       VaultLedgerEvent(
         type: VaultLedgerEventType.recordDeleted,

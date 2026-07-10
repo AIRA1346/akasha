@@ -1,21 +1,30 @@
 part of 'file_service.dart';
 
-mixin _AkashaFileServiceWatch on _AkashaFileServiceBase, _AkashaFileServicePaths {
-  void _notifyVaultUpdated() {
+mixin _AkashaFileServiceWatch
+    on _AkashaFileServiceBase, _AkashaFileServicePaths {
+  void _notifyVaultUpdated([VaultChangeBatch? change]) {
+    final resolvedChange = change ?? VaultChangeBatch.reconciliation;
     _vaultUpdateController?.add(null);
+    _vaultChangeController?.add(resolvedChange);
   }
 
   /// timeline 등 VaultPort 외 경로로 vault 파일이 바뀐 뒤 UI 갱신용.
   Future<void> signalVaultChanged() async {
-    await _refreshVaultFingerprint();
+    _lastVaultFingerprint = null;
     _notifyVaultUpdated();
+  }
+
+  /// Publishes a source-path-aware app-originated change without scanning the
+  /// complete Vault to rebuild a fingerprint.
+  Future<void> signalVaultChange(VaultChangeBatch change) async {
+    _lastVaultFingerprint = null;
+    _notifyVaultUpdated(change);
   }
 
   void _scheduleVaultUpdateNotification() {
     _watchDebounce?.cancel();
-    _watchDebounce = Timer(const Duration(milliseconds: 400), () async {
-      await _refreshVaultFingerprint();
-      _notifyVaultUpdated();
+    _watchDebounce = Timer(const Duration(milliseconds: 400), () {
+      _notifyVaultUpdated(_drainWatchChangeBatch());
     });
   }
 
@@ -31,7 +40,10 @@ mixin _AkashaFileServiceWatch on _AkashaFileServiceBase, _AkashaFileServicePaths
       final dir = Directory(_vaultPath!);
       if (!await dir.exists()) return '';
 
-      await for (final entity in dir.list(recursive: true, followLinks: false)) {
+      await for (final entity in dir.list(
+        recursive: true,
+        followLinks: false,
+      )) {
         if (entity is! File || !entity.path.endsWith('.md')) continue;
         if (_shouldSkipPath(entity.path)) continue;
         final stat = await entity.stat();
@@ -68,28 +80,35 @@ mixin _AkashaFileServiceWatch on _AkashaFileServiceBase, _AkashaFileServicePaths
     if (!dir.existsSync()) return;
 
     _directoryWatchActive = false;
+    var watchUnavailable = false;
     try {
-      _watcherSubscription = dir.watch(recursive: true).listen(
-        (event) {
-          if (_shouldNotifyForWatchEvent(event.path)) {
-            _scheduleVaultUpdateNotification();
-          }
-        },
-        onError: (error) {
-          appLog('[AkashaFileService] Directory watch error: $error');
-          _fallbackToPolling();
-        },
-        onDone: () {
-          appLog('[AkashaFileService] Directory watch ended');
-          _fallbackToPolling();
-        },
-      );
+      _watcherSubscription = dir
+          .watch(recursive: true)
+          .listen(
+            (event) {
+              if (_recordWatchEvent(event)) {
+                _scheduleVaultUpdateNotification();
+              }
+            },
+            onError: (error) {
+              appLog('[AkashaFileService] Directory watch error: $error');
+              _fallbackToPolling();
+            },
+            onDone: () {
+              appLog('[AkashaFileService] Directory watch ended');
+              _fallbackToPolling();
+            },
+          );
       _directoryWatchActive = true;
     } catch (e) {
       appLog('[AkashaFileService] Failed to start directory watch: $e');
       _directoryWatchActive = false;
+      watchUnavailable = true;
     }
 
+    if (watchUnavailable) {
+      _notifyVaultUpdated();
+    }
     _startPolling();
   }
 
@@ -98,6 +117,9 @@ mixin _AkashaFileServiceWatch on _AkashaFileServiceBase, _AkashaFileServicePaths
     _directoryWatchActive = false;
     _watcherSubscription?.cancel();
     _watcherSubscription = null;
+    _pendingWatchChanges.clear();
+    _pendingWatchReconciliation = false;
+    _notifyVaultUpdated();
     _startPolling();
   }
 
@@ -105,13 +127,73 @@ mixin _AkashaFileServiceWatch on _AkashaFileServiceBase, _AkashaFileServicePaths
   @visibleForTesting
   void forceVaultPollFallback() => _fallbackToPolling();
 
-  bool _shouldNotifyForWatchEvent(String path) {
+  bool _recordWatchEvent(FileSystemEvent event) {
+    var recorded = false;
+    if (event is FileSystemMoveEvent) {
+      recorded = _recordWatchPath(event.path, VaultPathChangeKind.delete);
+      final destination = event.destination;
+      if (destination != null) {
+        recorded =
+            _recordWatchPath(destination, VaultPathChangeKind.upsert) ||
+            recorded;
+      } else {
+        _pendingWatchReconciliation = true;
+      }
+      return recorded || _pendingWatchReconciliation;
+    }
+
+    final kind = event.type & FileSystemEvent.delete != 0
+        ? VaultPathChangeKind.delete
+        : VaultPathChangeKind.upsert;
+    return _recordWatchPath(event.path, kind);
+  }
+
+  bool _recordWatchPath(String path, VaultPathChangeKind kind) {
+    if (!_isTrackedVaultSourcePath(path)) return false;
+    final relative = _relativeVaultPath(path);
+    if (relative == null) {
+      _pendingWatchReconciliation = true;
+      return true;
+    }
+    _pendingWatchChanges[relative] = kind;
+    return true;
+  }
+
+  VaultChangeBatch _drainWatchChangeBatch() {
+    final changes = _pendingWatchChanges.entries
+        .map(
+          (entry) =>
+              VaultPathChange(relativePath: entry.key, kind: entry.value),
+        )
+        .toList(growable: false);
+    final reconciliationRequired = _pendingWatchReconciliation;
+    _pendingWatchChanges.clear();
+    _pendingWatchReconciliation = false;
+    if (changes.isEmpty && !reconciliationRequired) {
+      return VaultChangeBatch.reconciliation;
+    }
+    return VaultChangeBatch(
+      changes: changes,
+      reconciliationRequired: reconciliationRequired,
+    );
+  }
+
+  bool _isTrackedVaultSourcePath(String path) {
     if (_shouldSkipPath(path)) return false;
     final lower = path.toLowerCase();
     if (lower.endsWith('.md')) return true;
-    // 에디터 atomic save 임시 파일
-    if (lower.contains('.akasha_') || lower.endsWith('.tmp')) return true;
-    return false;
+    final parts = p.split(p.normalize(path));
+    return p.basename(lower) == 'layout.json' && parts.contains('canvases');
+  }
+
+  String? _relativeVaultPath(String path) {
+    final vaultPath = _vaultPath;
+    if (vaultPath == null || vaultPath.isEmpty) return null;
+    final root = p.normalize(p.absolute(vaultPath));
+    final target = p.normalize(p.absolute(path));
+    if (!p.isWithin(root, target)) return null;
+    final relative = p.relative(target, from: root).replaceAll('\\', '/');
+    return relative.isEmpty || relative == '.' ? null : relative;
   }
 
   void _startPolling() {
@@ -122,9 +204,6 @@ mixin _AkashaFileServiceWatch on _AkashaFileServiceBase, _AkashaFileServicePaths
     if (!VaultWatchPollPolicy.shouldRunPeriodicPoll(
       directoryWatchActive: _directoryWatchActive,
     )) {
-      if (_lastVaultFingerprint == null) {
-        unawaited(_refreshVaultFingerprint());
-      }
       return;
     }
 
@@ -147,6 +226,8 @@ mixin _AkashaFileServiceWatch on _AkashaFileServiceBase, _AkashaFileServicePaths
     _watcherSubscription?.cancel();
     _watcherSubscription = null;
     _directoryWatchActive = false;
+    _pendingWatchChanges.clear();
+    _pendingWatchReconciliation = false;
     _stopPolling();
   }
 
@@ -154,5 +235,7 @@ mixin _AkashaFileServiceWatch on _AkashaFileServiceBase, _AkashaFileServicePaths
     _stopWatching();
     _vaultUpdateController?.close();
     _vaultUpdateController = null;
+    _vaultChangeController?.close();
+    _vaultChangeController = null;
   }
 }

@@ -2,12 +2,21 @@ import 'dart:async';
 import 'dart:typed_data';
 
 import 'package:akasha/core/ports/vault_port.dart';
+import 'package:akasha/core/ports/vault_change.dart';
 import 'package:akasha/models/akasha_item.dart';
 
 class FakeVaultPort implements VaultPort {
   String? _vaultPath = '/fake/vault';
   final Map<String, AkashaItem> _cache = {};
-  final StreamController<void> _updateController = StreamController<void>.broadcast();
+  final StreamController<void> _updateController =
+      StreamController<void>.broadcast();
+  final StreamController<VaultChangeBatch> _changeController =
+      StreamController<VaultChangeBatch>.broadcast();
+
+  void _notify([VaultChangeBatch? change]) {
+    _updateController.add(null);
+    _changeController.add(change ?? VaultChangeBatch.reconciliation);
+  }
 
   @override
   Future<void> init() async {}
@@ -19,7 +28,7 @@ class FakeVaultPort implements VaultPort {
   Future<void> setVaultPath(String path) async {
     _cache.clear();
     _vaultPath = path.isEmpty ? null : path;
-    _updateController.add(null);
+    _notify();
   }
 
   @override
@@ -30,7 +39,9 @@ class FakeVaultPort implements VaultPort {
   @override
   bool isArchivedInVault(AkashaItem item) {
     if (_vaultPath == null) return false;
-    final key = item.workId.isNotEmpty ? item.workId : '${item.category.name}::${item.title}';
+    final key = item.workId.isNotEmpty
+        ? item.workId
+        : '${item.category.name}::${item.title}';
     return _cache.containsKey(key);
   }
 
@@ -48,23 +59,29 @@ class FakeVaultPort implements VaultPort {
 
   @override
   Future<void> saveItem(AkashaItem item, {String? oldTitle}) async {
-    final key = item.workId.isNotEmpty ? item.workId : '${item.category.name}::${item.title}';
+    final key = item.workId.isNotEmpty
+        ? item.workId
+        : '${item.category.name}::${item.title}';
 
     // 제목이 변경된 경우 이전 항목 삭제 모사
     if (oldTitle != null && oldTitle != item.title) {
-      final oldKey = item.workId.isNotEmpty ? item.workId : '${item.category.name}::$oldTitle';
+      final oldKey = item.workId.isNotEmpty
+          ? item.workId
+          : '${item.category.name}::$oldTitle';
       _cache.remove(oldKey);
     }
 
     _cache[key] = item;
-    _updateController.add(null);
+    _notify();
   }
 
   @override
   Future<bool> deleteItem(AkashaItem item) async {
-    final key = item.workId.isNotEmpty ? item.workId : '${item.category.name}::${item.title}';
+    final key = item.workId.isNotEmpty
+        ? item.workId
+        : '${item.category.name}::${item.title}';
     final removed = _cache.remove(key) != null;
-    _updateController.add(null);
+    _notify();
     return removed;
   }
 
@@ -75,23 +92,29 @@ class FakeVaultPort implements VaultPort {
   Future<String?> importPosterImageFromBytes(
     Uint8List bytes, {
     String extension = 'png',
-  }) async =>
-      null;
+  }) async => null;
 
   @override
   Future<String?> importPosterImageBytesDeduped(
     Uint8List bytes, {
     required String extension,
-  }) async =>
-      null;
+  }) async => null;
 
   @override
   Future<void> signalVaultChanged() async {
-    _updateController.add(null);
+    _notify();
+  }
+
+  @override
+  Future<void> signalVaultChange(VaultChangeBatch change) async {
+    _notify(change);
   }
 
   @override
   Stream<void> get onVaultUpdated => _updateController.stream;
+
+  @override
+  Stream<VaultChangeBatch> get onVaultChanges => _changeController.stream;
 
   @override
   Map<String, AkashaItem> get inMemoryCache => _cache;

@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 
 import '../../models/akasha_item.dart';
+import 'vault_change.dart';
 
 abstract class VaultPort {
   Future<void> init();
@@ -34,6 +35,14 @@ abstract class VaultPort {
   /// Notifies listeners that vault contents changed outside [saveItem]/[deleteItem].
   Future<void> signalVaultChanged();
 
+  /// Publishes a precise source-path change when the writer knows it.
+  ///
+  /// The existing [onVaultUpdated] stream remains available for UI consumers
+  /// that only need a broad refresh. New index/query consumers should prefer
+  /// [onVaultChanges] so they can avoid a whole-Vault reload.
+  Future<void> signalVaultChange(VaultChangeBatch change);
+
   Stream<void> get onVaultUpdated;
+  Stream<VaultChangeBatch> get onVaultChanges;
   Map<String, AkashaItem> get inMemoryCache;
 }

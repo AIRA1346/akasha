@@ -59,7 +59,8 @@ mixin _AkashaFileServiceSave
         ? await existingSource.readAsString()
         : null;
     final revisionSourcePath = oldPathToRetire ?? targetPath;
-    final expectedRevision = item.openedRevision ??
+    final expectedRevision =
+        item.openedRevision ??
         (existingContent == null
             ? const VaultFileRevision.missing()
             : VaultFileRevision.fromText(existingContent));
@@ -105,8 +106,13 @@ mixin _AkashaFileServiceSave
         vaultPath: _vaultPath!,
         absolutePath: targetPath,
       );
-      await _refreshVaultFingerprint();
-      _notifyVaultUpdated();
+      _notifyVaultUpdated(
+        VaultChangeBatch.fromAbsolutePaths(
+          vaultPath: _vaultPath!,
+          upsertedPaths: [targetPath],
+          deletedPaths: oldPathToRetire == null ? const [] : [oldPathToRetire],
+        ),
+      );
     } finally {
       _startWatching();
     }
@@ -262,7 +268,12 @@ mixin _AkashaFileServiceSave
           sourceRecordId: sourceRecordId,
         );
       }
-      _notifyVaultUpdated();
+      _notifyVaultUpdated(
+        VaultChangeBatch.fromAbsolutePaths(
+          vaultPath: _vaultPath!,
+          deletedPaths: existing.map((file) => file.path),
+        ),
+      );
       return true;
     } finally {
       _startWatching();
