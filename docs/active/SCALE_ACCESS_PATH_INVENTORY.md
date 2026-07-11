@@ -130,6 +130,13 @@ off `loadAllItems`. Hydrate a Markdown Work only when a user opens or edits it;
 keep Dashboard, Canvas, graph, records, and picker migrations explicit rather
 than feeding them incomplete Work objects.
 
+[SA_02B_WORK_VISUAL_RELATION_AUDIT.md](SA_02B_WORK_VISUAL_RELATION_AUDIT.md)
+fixes the visual and semantic boundary: posters and core card metadata can come
+from summaries, while reflection/provenance require selected-source hydration
+and connection panels require their own bounded relation query. The next
+implementation must remove the unconditional Home startup full load; migrating
+only a grid while leaving that load in place does not meet the scale gate.
+
 ### SA-04 — Domain Pages and Record Port
 
 Replace whole-domain Journal/Timeline/Entity page loads and the scanning

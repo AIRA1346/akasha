@@ -1,10 +1,16 @@
 # SA-02 — Home Work Summary Boundary
 
-> **Status:** Contract and fixture profile fixed; Home UI implementation not started
+> **Status:** Contract and fixture profile fixed; visual/relation surface audit complete; Home UI implementation not started
 > **Date:** 2026-07-10
 > **Related:** [SCALE_ACCESS_PATH_INVENTORY.md](SCALE_ACCESS_PATH_INVENTORY.md#sa-02--home-work-summary-read-path) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
 
 ## 1. Decision
+
+The concrete Home visual and relationship audit is recorded in
+[SA_02B_WORK_VISUAL_RELATION_AUDIT.md](SA_02B_WORK_VISUAL_RELATION_AUDIT.md).
+It confirms that the summary projection already preserves card images and core
+metadata, while review/body/provenance and connection sections remain selected
+source or separate-relation reads.
 
 SA-02 does **not** replace every Home use of `AkashaItem` with a partial
 object. It introduces a separate, read-only Work summary projection for bounded
