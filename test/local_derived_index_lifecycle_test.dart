@@ -50,6 +50,8 @@ void main() {
         final rebuilt = await lifecycle.rebuildWorkSummaries();
         expect(rebuilt.indexed, 1);
         expect(lifecycle.status.state, LocalDerivedIndexLifecycleState.ready);
+        final page = await lifecycle.queryWorkSummaries();
+        expect(page.summaries.map((summary) => summary.id), ['wk_u_alph0001']);
         vault.selectedItem = MarkdownParser.deserialize(
           _workMarkdown(title: 'Alpha'),
           'alpha.md',
@@ -57,6 +59,11 @@ void main() {
         final hydrated = await lifecycle.hydrateSelectedWork('wk_u_alph0001');
         expect(hydrated.state, SelectedWorkHydrationState.hydrated);
         expect(hydrated.item?.title, 'Alpha');
+        final targeted = await lifecycle.findWorkSummariesByIds([
+          'wk_u_missing',
+          'wk_u_alph0001',
+        ]);
+        expect(targeted.map((summary) => summary.id), ['wk_u_alph0001']);
 
         await work.writeAsString(_workMarkdown(title: 'Alpha revised'));
         await lifecycle.handleVaultChange(

@@ -21,6 +21,7 @@ class LocalDerivedIndexStore {
   static const String cacheDirectoryName = 'derived_indexes';
   static const String databaseFileName = 'index.sqlite';
   static const int rebuildWriteBatchSize = 250;
+  static const int maxWorkSummaryLookupIds = 250;
   static const String _workSummaryStateKey = 'work_summary_state';
   static const String _workSummaryGenerationKey = 'work_summary_generation';
   static const String _workSummaryFailureKey = 'work_summary_failure';
@@ -526,6 +527,51 @@ class LocalDerivedIndexStore {
     return _summaryFromRow(rows.single, tagsByWorkId);
   }
 
+  /// Resolves a small, caller-selected set of Work IDs without paging through
+  /// or loading the rest of the archive.
+  ///
+  /// The requested order is preserved and unknown IDs are omitted. This is for
+  /// bounded card enrichments such as one franchise or one curated library; it
+  /// is not a replacement for [queryWorkSummaries]. Returned summaries are
+  /// still read-only locators and must be hydrated before preview or editing.
+  Future<List<VaultRecordSummary>> findWorkSummariesByIds({
+    required Database database,
+    required Iterable<String> workIds,
+  }) async {
+    final ids = _normalizedWorkIdsForLookup(workIds);
+    if (ids.isEmpty) return const [];
+    final cacheStatus = await readWorkSummaryCacheStatus(database: database);
+    if (!cacheStatus.canServeQueries) {
+      throw WorkSummaryCacheUnavailable(cacheStatus);
+    }
+    final placeholders = List.filled(ids.length, '?').join(', ');
+    final rows = await database.query(
+      'work_summaries',
+      columns: const [
+        'work_id',
+        'source_path',
+        'title',
+        'category',
+        'creator',
+        'release_year',
+        'rating',
+        'work_status',
+        'my_status',
+        'poster_path',
+        'added_at_utc',
+        'updated_at_utc',
+      ],
+      where: 'work_id IN ($placeholders)',
+      whereArgs: ids,
+    );
+    final tagsByWorkId = await _loadTags(database, rows);
+    final summariesById = <String, VaultRecordSummary>{
+      for (final row in rows)
+        row['work_id']!.toString(): _summaryFromRow(row, tagsByWorkId),
+    };
+    return List.unmodifiable([for (final id in ids) ?summariesById[id]]);
+  }
+
   static String normalizedVaultRoot(String vaultPath) {
     final trimmed = vaultPath.trim();
     if (trimmed.isEmpty) {
@@ -805,6 +851,23 @@ class LocalDerivedIndexStore {
       .whereType<String>()
       .toSet()
       .toList(growable: false);
+
+  static List<String> _normalizedWorkIdsForLookup(Iterable<String> values) {
+    final result = <String>[];
+    final seen = <String>{};
+    for (final value in values) {
+      final normalized = _nonEmptyGeneration(value);
+      if (seen.add(normalized)) result.add(normalized);
+      if (result.length > maxWorkSummaryLookupIds) {
+        throw ArgumentError.value(
+          values,
+          'workIds',
+          'must contain at most $maxWorkSummaryLookupIds unique IDs',
+        );
+      }
+    }
+    return result;
+  }
 
   static List<String> _normalizedTags(Iterable<String> values) =>
       _nonEmptyValues(

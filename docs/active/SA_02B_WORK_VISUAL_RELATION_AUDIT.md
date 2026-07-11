@@ -133,6 +133,12 @@ personal libraries to partial objects.
 | 5. Relationship hand-off | Preview/detail requests its bounded connection sections after the canonical Work is available. It never treats an unloaded relation list as "no connections". |
 | 6. Other surfaces | Dashboard, graph, Canvas, entity discovery, record pages, and personal libraries each receive an explicit query design before the global full-item state is removed. |
 
+The derived index now provides the first targeted enrichment primitive:
+`findWorkSummariesByIds` accepts at most 250 distinct IDs, preserves requested
+order, omits unknown IDs, and reads only those derived rows and their tags. It
+is suitable for a small franchise group or curated-library membership set; it
+does not yet migrate a Home surface or authorize a full-list fallback.
+
 During initial preparation or repair, the user-facing state should describe the
 archive being prepared or repaired. It must not expose cache vocabulary or ask
 the user to manually reload an implementation detail.

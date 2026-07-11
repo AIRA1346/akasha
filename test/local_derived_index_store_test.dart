@@ -166,6 +166,26 @@ void main() {
           ),
           isNull,
         );
+        final targeted = await store.findWorkSummariesByIds(
+          database: database,
+          workIds: [oldest.id, newest.id, 'wk_u_missing', middle.id, newest.id],
+        );
+        expect(targeted.map((summary) => summary.id), [
+          oldest.id,
+          newest.id,
+          middle.id,
+        ]);
+        expect(targeted.first.tags, ['archive']);
+        await expectLater(
+          store.findWorkSummariesByIds(
+            database: database,
+            workIds: List.generate(
+              LocalDerivedIndexStore.maxWorkSummaryLookupIds + 1,
+              (index) => 'wk_u_too_many_$index',
+            ),
+          ),
+          throwsArgumentError,
+        );
         final queryPlan = await database.rawQuery('''
             EXPLAIN QUERY PLAN
             SELECT work_id FROM work_summaries

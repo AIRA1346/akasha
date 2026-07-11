@@ -144,7 +144,10 @@ class LocalDerivedIndexLifecycle {
         vaultPath: vaultPath,
       );
       try {
-        return _store.queryWorkSummaries(database: database, query: query);
+        return await _store.queryWorkSummaries(
+          database: database,
+          query: query,
+        );
       } finally {
         await database.close();
       }
@@ -196,6 +199,36 @@ class LocalDerivedIndexLifecycle {
         item: item,
         relativePath: summary.relativePath,
       );
+    });
+  }
+
+  /// Resolves a bounded set of visual Work summaries for card-level
+  /// enrichment. It never opens Markdown sources or returns editable Works.
+  Future<List<VaultRecordSummary>> findWorkSummariesByIds(
+    Iterable<String> workIds,
+  ) {
+    _ensureNotDisposed();
+    return _enqueue(() async {
+      await _refreshBinding();
+      final vaultPath = _boundVaultPath;
+      final cacheRoot = _cacheRoot;
+      if (_status.state != LocalDerivedIndexLifecycleState.ready ||
+          vaultPath == null ||
+          cacheRoot == null) {
+        throw StateError('Work summary cache is not ready for queries.');
+      }
+      final database = await _store.open(
+        cacheRoot: cacheRoot,
+        vaultPath: vaultPath,
+      );
+      try {
+        return await _store.findWorkSummariesByIds(
+          database: database,
+          workIds: workIds,
+        );
+      } finally {
+        await database.close();
+      }
     });
   }
 
