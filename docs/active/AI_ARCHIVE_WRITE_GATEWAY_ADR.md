@@ -92,8 +92,10 @@ The derived Record must retain, at minimum:
   interpretation;
 - creation time and source category.
 
-`derived_from` and the exact provenance extension namespace are intentionally
-not introduced here. P1's ontology decision remains valid: this must be an
+The semantic requirements are now fixed by
+[PROVENANCE_AND_DERIVED_INPUT_ADR.md](PROVENANCE_AND_DERIVED_INPUT_ADR.md).
+`derived_from` and its exact provenance extension namespace are still not
+introduced here. P1's ontology decision remains valid: this must be an
 additive contract, not an overloaded wiki link or a destructive rewrite of the
 existing v3 schema.
 
@@ -152,9 +154,9 @@ The completed Gateway needs a durable receipt policy with these properties:
   it, without being confused with a canonical Record;
 - receipts live under user-owned `system/`, never under rebuildable `.akasha/`.
 
-The exact receipt schema is deferred until the provenance ADR and extension
-namespace ADR. It must be additive and must not make an operation log the only
-copy of a user's memory.
+The exact receipt schema remains deferred until the extension-namespace and
+Gateway permission/receipt ADRs. It must be additive and must not make an
+operation log the only copy of a user's memory.
 
 ## 7. Candidate boundary
 
@@ -240,7 +242,7 @@ This ADR intentionally does **not** decide:
 
 The follow-up ADR order is fixed:
 
-1. provenance and derived-input contract;
+1. [provenance and derived-input contract](PROVENANCE_AND_DERIVED_INPUT_ADR.md);
 2. relation tiers and Relationship Assertion contract;
 3. lifecycle/tombstone/supersede contract;
 4. extension namespace;

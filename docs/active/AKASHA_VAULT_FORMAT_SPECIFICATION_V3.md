@@ -75,16 +75,16 @@ Conforming v3 records MUST declare the following fields in their frontmatter:
 | `title` | String | **Yes** | Display title. |
 | `created_at` | String | **Yes** | ISO-8601 UTC timestamp of creation. |
 | `updated_at` | String | **Yes** | ISO-8601 UTC timestamp of last update. |
-| `source` | String | **Yes** | Provenance of the write. Enum: `user`, `app`, `agent`, `importTool`, `script`. |
+| `source` | String | **Yes** | Creation channel of this Record. Enum: `user`, `app`, `agent`, `importTool`, `script`; it is not original authorship or full derivation provenance. |
 | `added_at` | String | No | Legacy timestamp for backward compatibility (replaces `created_at` in v1/v2). |
 | `occurred_at` | String | No | Semantic local (wall-clock) time the recorded event was experienced (`timelineEntry`). See §2.3. |
 | `entity_subtype` | String | No | Namespace-prefixed folksonomy classification (e.g., `u:pet`, `u:camera`). |
 | `aliases` | List<String>| No | Alternative names for link resolution. |
 | `original_title` | String | No | Original language/native title. |
 | `external_ids` | Map | No | Mapping of external database keys (e.g., `anilist: "123"`). |
-| `evidence` | List<String>| No | Source citation strings for agent-originated writes. |
+| `evidence` | List<String>| No | Human-readable source citation strings. It does not declare exact input revision or derivation. |
 | `links` | List<Map> | No | Structured outgoing relationship definitions. |
-| `source_operation_id`| String| No | ID of the `ArchiveOperation` that generated this record. |
+| `source_operation_id`| String| No | ID of the initial `ArchiveOperation` that generated this record; not a complete operation or transformation history. |
 
 **\*** `entity_type` and `entity_id` are required for **entity-anchored kinds** (`workJournal`, `entityJournal`). For `timelineEntry` and `freeformJournal` they are optional: a freeform diary or a timeline moment may exist without pointing at any entity.
 

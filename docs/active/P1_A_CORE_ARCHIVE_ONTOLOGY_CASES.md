@@ -46,7 +46,7 @@
 | --- | --- |
 | 사용자 Journal 원본 | 기존 Record와 본문을 그대로 보존 |
 | AI 해석 | 별도의 파생 Record로 보존 |
-| 두 Record의 연결 | 후속 provenance 계약에서 `derived_from`과 입력 revision을 보존 |
+| 두 Record의 연결 | [Provenance ADR](PROVENANCE_AND_DERIVED_INPUT_ADR.md)의 입력 revision·변환·actor 계약으로 보존 |
 
 현재 v3에는 이 연결의 완전한 스키마가 없으므로, 이 사례는 구현 지시가 아니다. 단, 파생 결과를 원본 frontmatter나 본문에 자동 병합하는 것은 이 ADR의 의미론에 맞지 않는다.
 
