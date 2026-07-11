@@ -218,8 +218,11 @@ Allowed operation vocabulary:
 
 Rules:
 
-- v1 can use the file protocol and dogfood workflow.
-- Post-v1 should introduce a structured import/edit contract before large-scale agent writes.
+- [AI Archive Write Gateway ADR](AI_ARCHIVE_WRITE_GATEWAY_ADR.md) supersedes
+  direct file mutation as AKASHA's recommended AI write path. Raw external
+  editor writes remain a user-owned compatibility boundary, not an agent API.
+- A structured Gateway contract is required before any general agent write,
+  including pre-release work; it is not deferred merely because an AI is external.
 - Every operation should validate schema, duplicate risk, path safety, and conflict risk.
 - Agents must not directly edit `.akasha/` indexes, app state, registry manifests, or hidden runtime files.
 

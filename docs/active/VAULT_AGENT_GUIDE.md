@@ -1,5 +1,11 @@
 # Vault Agent Guide — Sanctum `.md` SSOT
 
+> **2026-07-11 status correction:** Direct Markdown editing remains an
+> external-editor compatibility guide. It is not the recommended interface for
+> an AI integration; use the
+> [AI Archive Write Gateway ADR](AI_ARCHIVE_WRITE_GATEWAY_ADR.md) for new AI
+> candidate or authorized-application design.
+
 > **지위:** 볼트 내 파일·에이전트·외부 편집기용 **운영 SSOT**  
 > **갱신:** 2026-07-06
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md) — 필드·타입·시간·관계 규칙의 **최상위 기준** (볼트 내 `.akasha/spec/spec_v3.md` 동봉)

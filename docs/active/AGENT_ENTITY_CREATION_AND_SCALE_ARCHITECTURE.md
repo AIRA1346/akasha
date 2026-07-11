@@ -56,8 +56,9 @@ Derived files under `.akasha/` are cache/index artifacts and may be rebuilt.
 ```text
 {vault}/**/*.md                durable user records
 {vault}/posters/**             user-owned local images
-{vault}/catalog/**             lightweight mirrors / candidates
-{vault}/.akasha/**             derived indexes, caches, ledgers
+{vault}/system/**              durable candidates, receipts, recovery, drafts
+{vault}/catalog/**             legacy-compatible lightweight mirrors
+{vault}/.akasha/**             derived indexes and caches
 ```
 
 Rules:
@@ -76,11 +77,14 @@ An external writer can be a human, script, importer, AI agent, or future tool.
 
 AKASHA should not depend on which one it is.
 
-There are two write paths:
+There are two external-write boundaries:
 
-### 3.1 File Protocol
+### 3.1 Raw File Compatibility Path
 
-The writer creates or edits vault Markdown directly according to [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md).
+An external user-selected editor may create or edit Vault Markdown directly
+according to [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md). This preserves
+portable ownership, but it is not the recommended AI integration path; see
+[AI Archive Write Gateway ADR](AI_ARCHIVE_WRITE_GATEWAY_ADR.md).
 
 This is open and portable, but has higher risk:
 
@@ -89,11 +93,12 @@ This is open and portable, but has higher risk:
 - path conflicts
 - stale derived indexes
 
-### 3.2 Structured Import / Edit Contract
+### 3.2 AKASHA-managed Gateway Contract
 
-The writer submits a structured request and AKASHA validates and persists it.
+The external tool submits a structured intent and AKASHA validates authority,
+revision, and archive semantics before it persists anything.
 
-This is safer and should be the recommended path for high-volume creation.
+This is safer and is the required path for any general AI write capability.
 
 Example shape:
 
@@ -118,7 +123,9 @@ AKASHA responsibilities in this path:
 - write the `.md`
 - update or schedule index rebuilds
 
-This contract is not an AI feature. It is a stable archive input surface that any external tool may use.
+This is not an AI service. It is a stable archive input surface that any
+external tool may use, while AKASHA retains authorization, durable-write, and
+provenance responsibilities.
 
 ---
 
@@ -140,7 +147,9 @@ Promotion rules:
 - user-confirmed or high-value candidates can become archived records
 - archived records should receive stable IDs
 - candidates must not pollute the main entity list by default
-- high-volume candidate extraction writes to sharded `.akasha/candidates/*` storage with sharded name indexes, while legacy `catalog/candidates.json` remains read-compatible
+- high-volume candidate extraction writes to sharded `system/candidates/*`
+  storage with sharded name indexes, while legacy `catalog/candidates.json`
+  remains read-compatible
 
 This keeps high-volume AI-assisted extraction from turning the vault into noise.
 

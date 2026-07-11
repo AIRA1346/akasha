@@ -1,5 +1,11 @@
 # Agent Vault Protocol v1
 
+> **2026-07-11 status correction:** This document's direct-file agent write
+> workflow is retained only for external-editor compatibility and historical
+> dogfood. It is no longer AKASHA's recommended AI integration path. New AI
+> candidate/application work follows
+> [AI_ARCHIVE_WRITE_GATEWAY_ADR.md](AI_ARCHIVE_WRITE_GATEWAY_ADR.md).
+
 > **지위:** Steam v1 **Agent ↔ Sanctum vault** 상호작용 SSOT
 > **갱신:** 2026-07-06 (형식 명세 v3 동기화)
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md) — 필드·시간·관계 규칙은 명세가 최상위 기준 (볼트 내 `.akasha/spec/spec_v3.md` 동봉)
