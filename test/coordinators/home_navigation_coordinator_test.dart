@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:akasha/features/workbench/data/workbench_controller.dart';
+import 'package:akasha/models/browse_entity_scope.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/screens/home/coordinators/home_filter_coordinator.dart';
 import 'package:akasha/screens/home/coordinators/home_navigation_coordinator.dart';
@@ -22,10 +23,12 @@ void main() {
     late HomeSidebarCoordinator sidebarCoordinator;
     late WorkbenchController workbench;
     late HomeNavigationCoordinator navigation;
-  var rebuildCount = 0;
+    var rebuildCount = 0;
+    var legacyLoadCount = 0;
 
     setUp(() {
       rebuildCount = 0;
+      legacyLoadCount = 0;
       dashboardCtrl = HomeDashboardController();
       dashboardCtrl.dashboards = HomeDashboardController.defaultDashboards();
       dashboardCtrl.activeDashboardId = 'master_index';
@@ -53,20 +56,24 @@ void main() {
         workbench: workbench,
         prefetchRegistry: () async {},
         rebuild: () => rebuildCount++,
+        ensureLegacyItemsLoaded: () async => legacyLoadCount++,
       );
     });
 
-    test('goHome clears explore mode and filters for premium dashboard', () async {
-      navigation.isExploreBrowseMode = true;
-      filterCtrl.categories.add(MediaCategory.animation);
+    test(
+      'goHome clears explore mode and filters for premium dashboard',
+      () async {
+        navigation.isExploreBrowseMode = true;
+        filterCtrl.categories.add(MediaCategory.animation);
 
-      await navigation.goHome();
+        await navigation.goHome();
 
-      expect(navigation.isExploreBrowseMode, isFalse);
-      expect(navigation.isHomeDashboardMode, isTrue);
-      expect(filterCtrl.hasAnyFilters, isFalse);
-      expect(dashboardCtrl.activeDashboardId, 'master_index');
-    });
+        expect(navigation.isExploreBrowseMode, isFalse);
+        expect(navigation.isHomeDashboardMode, isTrue);
+        expect(filterCtrl.hasAnyFilters, isFalse);
+        expect(dashboardCtrl.activeDashboardId, 'master_index');
+      },
+    );
 
     test('goExplore enables browse grid on master dashboard', () async {
       await navigation.goExplore();
@@ -75,6 +82,23 @@ void main() {
       expect(navigation.isExploreModeActive, isTrue);
       expect(navigation.isHomeDashboardMode, isFalse);
     });
+
+    test('enterWorkArchiveBrowse selects the bounded Work scope', () async {
+      await navigation.enterWorkArchiveBrowse();
+
+      expect(navigation.isExploreBrowseMode, isTrue);
+      expect(filterCoordinator.filterCtrl.entityScope, BrowseEntityScope.work);
+      expect(legacyLoadCount, 0);
+    });
+
+    test(
+      'legacy Home navigation requests the complete item list on demand',
+      () async {
+        await navigation.goHome();
+
+        expect(legacyLoadCount, 1);
+      },
+    );
 
     test('selectDashboard clears explore mode', () async {
       navigation.isExploreBrowseMode = true;

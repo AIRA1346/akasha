@@ -140,6 +140,7 @@ class HomeShellCoordinatorBundle {
       workbench: workbench,
       prefetchRegistry: () => catalog.prefetchRegistryForCurrentFilters(),
       rebuild: rebuild,
+      ensureLegacyItemsLoaded: vault.ensureItemsLoaded,
     );
 
     catalog = HomeCatalogCoordinator(

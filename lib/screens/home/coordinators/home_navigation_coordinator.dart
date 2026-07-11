@@ -15,6 +15,7 @@ class HomeNavigationCoordinator {
     required this.workbench,
     required this.prefetchRegistry,
     required this.rebuild,
+    this.ensureLegacyItemsLoaded,
   });
 
   static const String homeDashboardId = 'master_index';
@@ -26,6 +27,7 @@ class HomeNavigationCoordinator {
   final WorkbenchController workbench;
   final Future<void> Function() prefetchRegistry;
   final void Function() rebuild;
+  final Future<void> Function()? ensureLegacyItemsLoaded;
 
   bool isSidebarOpen = false;
   int timelineReloadToken = 0;
@@ -59,8 +61,7 @@ class HomeNavigationCoordinator {
       !filterCoordinator.filterCtrl.hasAnyFilters;
 
   /// browse 그리드 탐색 모드.
-  bool get isExploreModeActive =>
-      isOnMasterDashboard && isExploreBrowseMode;
+  bool get isExploreModeActive => isOnMasterDashboard && isExploreBrowseMode;
 
   bool get isKnowledgeGraphViewActive =>
       isOnMasterDashboard && isKnowledgeGraphMode;
@@ -97,6 +98,7 @@ class HomeNavigationCoordinator {
   }
 
   Future<void> selectDashboard(String id) async {
+    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       sidebarCoordinator.selectDashboard(id);
@@ -108,6 +110,7 @@ class HomeNavigationCoordinator {
 
   /// 프리미엄 홈 대시보드로 이동.
   Future<void> goHome() async {
+    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
@@ -120,6 +123,7 @@ class HomeNavigationCoordinator {
 
   /// 작품 browse 그리드 탐색 모드.
   Future<void> goExplore() async {
+    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = true;
@@ -132,6 +136,7 @@ class HomeNavigationCoordinator {
 
   /// 엔티티 갤러리 탐색 모드.
   Future<void> goExploreEntities(BrowseEntityScope scope) async {
+    if (scope != BrowseEntityScope.work) await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = true;
@@ -143,6 +148,7 @@ class HomeNavigationCoordinator {
   }
 
   Future<void> selectPersonalLibrary(String id) async {
+    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
@@ -152,6 +158,7 @@ class HomeNavigationCoordinator {
   }
 
   Future<void> selectCollectibleCollection(String id) async {
+    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
@@ -161,6 +168,7 @@ class HomeNavigationCoordinator {
   }
 
   Future<void> selectTimeline() async {
+    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
@@ -171,11 +179,13 @@ class HomeNavigationCoordinator {
 
   /// 나만의 서재 뷰 (활성 서재 또는 master archive).
   Future<void> goLibrary() async {
+    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
       isKnowledgeGraphMode = false;
-      final libId = sidebarCoordinator.personalLibCtrl.activeLibraryId ??
+      final libId =
+          sidebarCoordinator.personalLibCtrl.activeLibraryId ??
           PersonalLibraryConfig.masterArchiveId;
       sidebarCoordinator.selectPersonalLibrary(libId);
     });
@@ -186,12 +196,13 @@ class HomeNavigationCoordinator {
   Future<void> goCollection() async {
     final cols = sidebarCoordinator.collectionCtrl.collections;
     if (cols.isEmpty) return;
+    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
       isKnowledgeGraphMode = false;
-      final id = sidebarCoordinator.collectionCtrl.activeCollectionId ??
-          cols.first.id;
+      final id =
+          sidebarCoordinator.collectionCtrl.activeCollectionId ?? cols.first.id;
       sidebarCoordinator.selectCollectibleCollection(id);
     });
     await prefetchRegistry();
@@ -199,6 +210,7 @@ class HomeNavigationCoordinator {
 
   /// 지식 연결 맵 뷰.
   Future<void> goKnowledgeGraph() async {
+    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isKnowledgeGraphMode = true;
@@ -217,6 +229,10 @@ class HomeNavigationCoordinator {
   }
 
   Future<void> onTimelineQuickCaptureSaved() async {
+    // Timeline still consumes the legacy complete item list. A quick capture
+    // can originate from the bounded Work surface, so acquire that list only
+    // at this explicit transition rather than at application startup.
+    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       timelineReloadToken++;
@@ -226,4 +242,20 @@ class HomeNavigationCoordinator {
   }
 
   Future<void> onJournalQuickCaptureSaved() => onTimelineQuickCaptureSaved();
+
+  /// Starts the bounded Work archive without requesting the legacy item list.
+  Future<void> enterWorkArchiveBrowse() async {
+    await workbench.showBrowse();
+    scheduleRebuild(() {
+      isExploreBrowseMode = true;
+      isKnowledgeGraphMode = false;
+      sidebarCoordinator.selectDashboard(homeDashboardId);
+      filterCoordinator.setEntityScope(BrowseEntityScope.work);
+    });
+    await prefetchRegistry();
+  }
+
+  Future<void> _ensureLegacyItemsLoaded() async {
+    await ensureLegacyItemsLoaded?.call();
+  }
 }

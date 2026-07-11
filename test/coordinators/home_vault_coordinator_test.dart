@@ -36,6 +36,12 @@ void main() {
     expect(coordinator.items, hasLength(1));
     expect(coordinator.items.first.workId, 'wk_test');
     expect(synced, hasLength(1));
+    await coordinator.ensureItemsLoaded();
+    expect(coordinator.items, hasLength(1));
+
+    await coordinator.setVaultPath('/fake/other-vault');
+    expect(coordinator.hasLoadedItems, isFalse);
+    expect(coordinator.items, isEmpty);
   });
 
   test('bindVaultWatch debounces vault update stream', () async {

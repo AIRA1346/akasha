@@ -134,8 +134,10 @@ than feeding them incomplete Work objects.
 fixes the visual and semantic boundary: posters and core card metadata can come
 from summaries, while reflection/provenance require selected-source hydration
 and connection panels require their own bounded relation query. The next
-implementation must remove the unconditional Home startup full load; migrating
-only a grid while leaving that load in place does not meet the scale gate.
+implementation removed the unconditional Home startup full load for a linked
+Vault: default entry is now Work-only Explore, and unported legacy surfaces
+request their complete item list on demand. Ordinary save/delete and broad
+legacy-watch reloads remain separate migration work before the scale gate passes.
 
 ### SA-04 — Domain Pages and Record Port
 

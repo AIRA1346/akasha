@@ -15,20 +15,28 @@ mixin HomeShellControllerVaultMixin on HomeShellControllerBase {
     await navigation.loadCollectibleCollections();
     sectionPrefs = await HomeSectionPreferences.load();
     await vault.loadPreferences();
-    await loadItems();
+    final usesLegacyStartup = !vault.isVaultLinked || vault.autoArchiveRegistry;
+    if (usesLegacyStartup) {
+      await loadItems();
+    } else {
+      await navigation.enterWorkArchiveBrowse();
+    }
     await loadRecentExploration();
-    await vault.runStartupAutoArchiveIfNeeded();
+    if (usesLegacyStartup) await vault.runStartupAutoArchiveIfNeeded();
     await prefetchRegistryForCurrentFilters();
     await refreshLastSyncTime();
-    vault.bindVaultWatch(onVaultChanged: () async {
-      await loadItems();
-      await refreshRecentExploration();
-      final vaultPath = this.vaultPath;
-      if (vaultPath != null && vaultPath.isNotEmpty) {
-        await workbench.syncEntityTabs(vaultPath);
-      }
-      host.scheduleRebuild(() => navigation.timelineReloadToken++);
-    });
+    vault.bindVaultWatch(
+      onVaultChanged: () async {
+        if (!vault.hasLoadedItems) return;
+        await loadItems();
+        await refreshRecentExploration();
+        final vaultPath = this.vaultPath;
+        if (vaultPath != null && vaultPath.isNotEmpty) {
+          await workbench.syncEntityTabs(vaultPath);
+        }
+        host.scheduleRebuild(() => navigation.timelineReloadToken++);
+      },
+    );
     catalog.registrySync.checkAutoSync();
   }
 

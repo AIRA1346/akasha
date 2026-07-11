@@ -143,8 +143,11 @@ The first Home consumer is now the Work-only Explore scope. It renders a
 cursor-paged visual summary card with poster, title, creator, status, rating,
 and tags; selecting it hydrates the one canonical source before opening preview
 or detail. This is intentionally not yet a SA-02B gate pass: the existing Home
-startup path still loads all items, and franchise/library card affordances still
-need their targeted queries.
+startup path is now avoided for a linked Vault unless the user has enabled the
+legacy automatic registry archive. Dashboard, graph, personal-library, Canvas,
+and other unported surfaces request the complete legacy item list only when the
+user enters them. Franchise/library card affordances and ordinary save/delete
+full-reload removal still need their targeted migrations.
 
 During initial preparation or repair, the user-facing state should describe the
 archive being prepared or repaired. It must not expose cache vocabulary or ask

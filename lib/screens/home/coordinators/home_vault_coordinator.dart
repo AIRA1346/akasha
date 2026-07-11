@@ -41,6 +41,7 @@ class HomeVaultCoordinator {
   final Future<void> Function() prefetchRegistry;
 
   List<AkashaItem> items = [];
+  bool _hasLoadedItems = false;
   String displayName = UserPreferences.defaultDisplayName;
   bool autoArchiveRegistry = false;
   LibraryTheme libraryTheme = LibraryTheme.classic;
@@ -73,7 +74,10 @@ class HomeVaultCoordinator {
     if (!isMounted()) return;
     await rebuildLinkIndex(vaultItems: loadedItems);
     if (!isMounted()) return;
-    scheduleRebuild(() => items = loadedItems);
+    scheduleRebuild(() {
+      items = loadedItems;
+      _hasLoadedItems = true;
+    });
     onVaultItemsSynced(loadedItems);
     await eventLedger.append(
       VaultLedgerEvent(
@@ -83,6 +87,13 @@ class HomeVaultCoordinator {
       ),
     );
   }
+
+  /// Loads the legacy complete-item surface only when a caller explicitly
+  /// enters a Home area that has not yet moved to bounded queries.
+  Future<void> ensureItemsLoaded() =>
+      _hasLoadedItems ? Future.value() : loadItems();
+
+  bool get hasLoadedItems => _hasLoadedItems;
 
   Future<void> rebuildLinkIndex({List<AkashaItem>? vaultItems}) async {
     await linkIndex.rebuildIndex(
@@ -131,7 +142,18 @@ class HomeVaultCoordinator {
   Future<void> saveVaultItem(AkashaItem item, {String? oldTitle}) =>
       vault.saveItem(item, oldTitle: oldTitle);
 
-  Future<void> setVaultPath(String path) => vault.setVaultPath(path);
+  Future<void> setVaultPath(String path) async {
+    await vault.setVaultPath(path);
+
+    // A list belongs to one Vault only. Never let an on-demand legacy view
+    // render records from the previously selected archive while the new Vault
+    // has not been read yet.
+    scheduleRebuild(() {
+      items = [];
+      _hasLoadedItems = false;
+    });
+    onVaultItemsSynced(const []);
+  }
 
   void bindVaultWatch({required VoidCallback onVaultChanged}) {
     vaultUpdateSubscription?.cancel();
