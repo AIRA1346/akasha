@@ -244,16 +244,20 @@ This ADR does not decide:
   retention, or third-party sync cleanup;
 - detailed merge algorithms for Entities, Records, Candidates, or Assertions;
 - sharing/collaboration conflict policy;
-- Gateway permission scopes, approval UI, or receipt schema.
+- physical Gateway grant storage, approval UI, or receipt serializer (semantic
+  authority contract:
+  [GATEWAY_PERMISSION_AND_RECEIPT_ADR.md](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md)).
 
 No lifecycle writer, Assertion writer, or AI lifecycle operation may be
 implemented until a P0-safe writer maps these distinctions into the approved
-extension namespace and the Gateway permission/receipt ADR fixes authority and
-audit rules.
+extension namespace and the
+[Gateway authority contract](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md) is
+implemented with its authority and audit rules.
 Each implementation must have P0 fault/conflict tests and fixtures for trash,
 restore, purge-without-tombstone, retraction, supersession, merge, redaction,
 and legacy unknown lifecycle state.
 
-The next ADR is **Gateway permission and receipt**. It must let users grant,
-limit, revoke, and audit external archive actions without turning raw folder
-access into a fabricated authorized operation.
+The next work is the first minimal **candidate.create Gateway** implementation.
+It must prove local actor binding, candidate-intake authorization, idempotent
+receipts, P0-safe writes, and review separation before any direct Record,
+relationship, or lifecycle mutation is attempted.

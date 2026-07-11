@@ -197,11 +197,11 @@ Before any code starts writing a child, all of the following are required:
 
 ## 10. Next gate
 
-The remaining architecture decision before any external AI can apply archive
-writes is the **Gateway permission and receipt contract**. It must define user
-grants, actor binding, approval/revocation, idempotency receipt fields, and
-conflict outcomes while respecting this namespace and P0.
+The Gateway authority decision is fixed by
+[GATEWAY_PERMISSION_AND_RECEIPT_ADR.md](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md).
+It defines user grants, actor binding, approval/revocation, idempotency receipt
+fields, and conflict outcomes while respecting this namespace and P0.
 
-Only after that contract is complete should implementation begin, starting with
-one small candidate-intake or derived-record slice. It must not begin with a
-universal Record migration, a global relation graph, or an AI chat service.
+Implementation may now begin with one small `candidate.create` intake slice.
+It must not begin with a derived-record writer, universal Record migration,
+global relation graph, or AI chat service.

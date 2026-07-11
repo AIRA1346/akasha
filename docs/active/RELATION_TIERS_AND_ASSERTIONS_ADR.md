@@ -217,7 +217,9 @@ This ADR does not decide:
 - the final predicate and inverse vocabulary for assertions;
 - confidence, ranking, truth adjudication, or consensus algorithms;
 - sharing, collaboration, public graph visibility, or remote synchronization;
-- Gateway permission, approval UI, batch behavior, and receipt schema.
+- physical Gateway grant storage, approval UI, batch behavior, and receipt
+  serializer (semantic authority contract:
+  [GATEWAY_PERMISSION_AND_RECEIPT_ADR.md](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md)).
 
 No canonical assertion writer or relation graph UI may be implemented until:
 
@@ -227,10 +229,13 @@ No canonical assertion writer or relation graph UI may be implemented until:
    under [EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md](EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md);
 3. a physical storage/index design demonstrates bounded queries at archive
    scale;
-4. P0 fault/conflict/unknown-data tests cover assertion writes; and
-5. fixtures cover disputed, temporal, Canvas-promoted, stale-evidence, and
+4. the [Gateway authority contract](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md) is
+   implemented for assertion creation;
+5. P0 fault/conflict/unknown-data tests cover assertion writes; and
+6. fixtures cover disputed, temporal, Canvas-promoted, stale-evidence, and
    legacy-link cases.
 
-The next ADR is **Gateway permission and receipt**. It must bind an external
-actor to user-granted authority and durable operation evidence without making
-AKASHA an AI provider or making `system/ops/` the only provenance copy.
+The semantic ADR sequence is complete. The next implementation is the minimal
+`candidate.create` Gateway slice; it does not create canonical Relationship
+Assertions. Assertion storage remains blocked by the physical storage/index,
+extension-writer, Gateway, and P0 gates above.

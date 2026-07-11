@@ -249,7 +249,9 @@ This ADR does not decide:
   (semantic relation tiers:
   [RELATION_TIERS_AND_ASSERTIONS_ADR.md](RELATION_TIERS_AND_ASSERTIONS_ADR.md),
   lifecycle: [LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md));
-- Gateway permission grants, UI approval, batching, or transport.
+- physical Gateway grant storage, approval UI, batching, or transport (semantic
+  authority and receipt contract:
+  [GATEWAY_PERMISSION_AND_RECEIPT_ADR.md](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md)).
 
 ## 10. Implementation gate and next ADR
 
@@ -258,18 +260,20 @@ surface may be implemented until all of the following are decided and tested:
 
 1. a writer maps this semantic contract into the approved
    `x_akasha.provenance` namespace with P0-safe source patching;
-2. the Gateway permission/receipt contract defines authorization and durable
-   receipts without making `system/` the sole provenance copy;
+2. the Gateway implements the authorization and durable receipt contract from
+   [GATEWAY_PERMISSION_AND_RECEIPT_ADR.md](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md)
+   without making `system/` the sole provenance copy;
 3. stable Record and Artifact revision reads are bounded and available to the
    writer;
 4. P0 conflict/fault tests cover every declared input and the output write;
 5. fixtures cover missing/legacy provenance, multi-input derivation, stale
    inputs, external citations, and unknown provenance extensions.
 
-The required ADR sequence remains:
+The required semantic ADR sequence is complete:
 
 1. [relation tiers and Relationship Assertion contract](RELATION_TIERS_AND_ASSERTIONS_ADR.md);
 2. [lifecycle/tombstone/supersede contract](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md);
 3. [extension namespace and reserved-field contract](EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md);
-4. Gateway permission and receipt contract;
-5. first candidate or derived-record implementation slice.
+4. [Gateway permission and receipt contract](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md);
+5. **next implementation:** first `candidate.create` Gateway slice; a
+   derived-record writer remains blocked by its own P0/namespace fixtures.

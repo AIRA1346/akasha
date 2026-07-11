@@ -74,6 +74,10 @@ These are permission semantics, not a decision to implement a particular
 settings model, account system, MCP server, SDK, or HTTP API. Those choices are
 deferred.
 
+The default-deny grant, actor-binding, revocation, and receipt semantics are
+now fixed by
+[GATEWAY_PERMISSION_AND_RECEIPT_ADR.md](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md).
+
 ## 4. Record semantics
 
 ### 4.1 AI interpretation is a separate Record
@@ -155,9 +159,10 @@ The completed Gateway needs a durable receipt policy with these properties:
   it, without being confused with a canonical Record;
 - receipts live under user-owned `system/`, never under rebuildable `.akasha/`.
 
-The exact receipt schema remains deferred until the Gateway permission/receipt
-ADR. It must be additive and must not make an operation log the only copy of a
-user's memory.
+The receipt's semantic requirements are fixed by
+[GATEWAY_PERMISSION_AND_RECEIPT_ADR.md](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md).
+Its storage schema and implementation remain additive and must not make an
+operation log the only copy of a user's memory.
 
 ## 7. Candidate boundary
 
@@ -204,16 +209,17 @@ Markdown import may remain as a separate compatibility/import feature.
 | Candidate store | Implemented | Add intake/review authority and provenance. |
 | Operation validation | Implemented | Extend only after contract decisions. |
 | Operation execution | `promoteCandidate` only | Add operations one at a time with fault/conflict tests. |
-| AI authorization | Not implemented | Required before any direct application. |
+| AI authorization | Not implemented; semantic contract fixed | Required before any direct application. |
 | Derived provenance (`derived_from`) | Not implemented | Required before AI interpretation is persisted. |
 | Generic AI transport | Not implemented | Deliberately deferred; external AI choice remains outside AKASHA. |
 
 No generic `create_record`, `append_section`, or `update_frontmatter` executor
 may be enabled until the following gate passes:
 
-1. authority scope and explicit user approval semantics are fixed;
+1. authority scope and explicit user approval semantics are implemented from
+   [Gateway Permission and Receipt ADR](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md);
 2. record-target revision reads are exposed without whole-Vault scanning;
-3. receipt/provenance requirements are fixed additively;
+3. receipt/provenance requirements are implemented additively;
 4. each operation uses the shared P0 writer and preserves conflict evidence;
 5. candidate, direct-create, derived-record, stale-revision, duplicate, and
    restart/fault cases have fixtures and tests;
@@ -235,7 +241,8 @@ This ADR intentionally does **not** decide:
 
 - the inner physical fields/serializer for `derived_from` and provenance
   extensions (their root namespace is fixed);
-- permission storage, revocation, grant duration, or approval UI;
+- physical permission storage, actor-binding mechanism, grant UI, and approval
+  interaction;
 - MCP, CLI, local socket, file drop, SDK, or HTTP as the external transport;
 - batch application limits and transaction grouping;
 - the canonical Record kind/storage layout for derived analyses;
@@ -244,11 +251,11 @@ This ADR intentionally does **not** decide:
   lifecycle: [LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md));
 - sharing, collaboration, or any cloud service.
 
-The follow-up ADR order is fixed:
+The semantic ADR sequence is complete:
 
 1. [provenance and derived-input contract](PROVENANCE_AND_DERIVED_INPUT_ADR.md);
 2. [relation tiers and Relationship Assertion contract](RELATION_TIERS_AND_ASSERTIONS_ADR.md);
 3. [lifecycle/tombstone/supersede contract](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md);
 4. [extension namespace](EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md);
-5. Gateway permission and receipt contract;
-6. first candidate/application implementation slice.
+5. [Gateway permission and receipt contract](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md);
+6. **next implementation:** first `candidate.create` Gateway slice.
