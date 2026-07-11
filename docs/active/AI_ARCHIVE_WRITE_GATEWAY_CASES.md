@@ -1,6 +1,6 @@
 # AI Archive Write Gateway Cases
 
-> **Status:** Semantic fixtures for [AI_ARCHIVE_WRITE_GATEWAY_ADR.md](AI_ARCHIVE_WRITE_GATEWAY_ADR.md). These are not API payloads, models, serializers, or migrations.
+> **Status:** Semantic fixtures for [AI_ARCHIVE_WRITE_GATEWAY_ADR.md](AI_ARCHIVE_WRITE_GATEWAY_ADR.md). Case 1 is covered by the narrow local Gateway service; the remaining cases are still contracts, not API payloads, models, serializers, or migrations.
 
 ## Case 1 — AI finds a possible Entity
 
@@ -9,12 +9,18 @@ mentioned person.
 
 | Input | Required result |
 | --- | --- |
-| Actor identity, source Record IDs/revisions, evidence snippets, proposed person title/aliases | One candidate under `system/candidates/`; no Entity journal and no canonical Record is created. |
+| Actor binding, active local `candidate.create` grant, source Record ID/revision, evidence snippet, proposed person title/aliases | One candidate under `system/candidates/`; no Entity journal and no canonical Record is created. A receipt is appended under `system/ops/`. |
 | Same candidate submitted again | Idempotent/deduplicated candidate result, never a second canonical Entity. |
 | User promotes it | A separately authorized promotion operation creates the Entity journal and closes the candidate. |
 
 The AI did useful archival work, but it did not decide that every mention
 deserves permanent archival status.
+
+If the source revision is stale, the grant is missing/revoked, or the same
+operation ID names a different intent, no candidate and no successful receipt
+are written. If an interruption happens after the candidate but before its
+receipt, an exact retry can finish that pair without re-reading or changing the
+source Record.
 
 ## Case 2 — AI writes an interpretation of a user Journal
 
@@ -93,4 +99,3 @@ Expected result:
 - its provenance is `importTool` only when the importer can truthfully provide
   that fact;
 - product UI must not present this as the AI collaboration contract.
-

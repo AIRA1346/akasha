@@ -1,6 +1,6 @@
 # AI Archive Write Gateway ADR
 
-> **Status:** Accepted architecture decision — contract and cases only; no product model, serializer, migration, transport, or AI service is introduced by this ADR.  
+> **Status:** Accepted; the deliberately narrow local `candidate.create` boundary is implemented. No transport, AI service, canonical Record write, serializer migration, or general operation model is introduced by this ADR.
 > **Date:** 2026-07-11  
 > **Scope:** External AI, scripts, and tools writing to a user-owned AKASHA Vault.  
 > **Related:** [VISION.md](VISION.md), [P1_A_CORE_ARCHIVE_ONTOLOGY_CASES.md](P1_A_CORE_ARCHIVE_ONTOLOGY_CASES.md), [P0_RECOVERABLE_VAULT_WRITE_GATE.md](P0_RECOVERABLE_VAULT_WRITE_GATE.md), [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md), [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md)
@@ -145,9 +145,10 @@ bounded derived-index updates. Callers must not set runtime paths, indexes,
 
 ## 6. Durable receipts and idempotency
 
-`system/ops/applied.jsonl` already records successful operation IDs and gives
-the first idempotency guard. It is valuable but incomplete for the Gateway:
-the current applied entry does not retain actor identity or input revisions.
+`system/ops/applied.jsonl` already records successful app-operation IDs and
+gives the first idempotency guard. It is valuable but incomplete for the
+Gateway: the current applied entry does not retain actor identity or input
+revisions.
 
 The completed Gateway needs a durable receipt policy with these properties:
 
@@ -161,8 +162,12 @@ The completed Gateway needs a durable receipt policy with these properties:
 
 The receipt's semantic requirements are fixed by
 [GATEWAY_PERMISSION_AND_RECEIPT_ADR.md](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md).
-Its storage schema and implementation remain additive and must not make an
-operation log the only copy of a user's memory.
+The first candidate slice writes only successful receipts to
+`system/ops/gateway_receipts.jsonl`; it uses the same operation-ID namespace as
+`applied.jsonl`. Its local grants are canonical operational state at
+`system/gateway/grants.json`. Both locations are inside the user-owned Vault
+and use P0's recoverable-write/append rules. Neither log is the only copy of a
+user's memory: the candidate itself remains under `system/candidates/`.
 
 ## 7. Candidate boundary
 
@@ -178,12 +183,25 @@ Current foundation:
   structured operation;
 - candidate evidence is carried into the promoted Entity journal.
 
+Implemented first Gateway slice:
+
+- `ArchiveGatewayCandidateService` accepts exactly one
+  `candidate.create` request; it has no model/provider/transport dependency;
+- the request names one indexed source Record and the revision it observed;
+- an active local Vault grant must bind the actor and `candidate.create` scope;
+- the persisted candidate retains the actor binding, grant reference,
+  source-operation ID, and source revision without changing the source Record;
+- a successful receipt carries the intent fingerprint and result candidate
+  revision; same-ID/same-intent retries return the prior outcome;
+- a candidate written before an interruption but lacking its receipt can only
+  be rolled forward when it exactly matches the original request.
+
 Missing before this becomes a real external-AI workflow:
 
-- a user-facing candidate review/promote surface;
-- a Gateway intake contract for candidate creation;
-- actor and input-revision provenance on candidates;
-- batch limits, duplicate-review policy, and scoped authorization.
+- a user-facing grant/one-shot approval interaction and external transport;
+- candidate review policy for high-volume batches and duplicate resolution;
+- any canonical Record creation, derivation, patch, relationship, or lifecycle
+  authority.
 
 ## 8. AI Markdown is not an AI integration
 
@@ -206,10 +224,10 @@ Markdown import may remain as a separate compatibility/import feature.
 | --- | --- | --- |
 | Recoverable single/multi-file writes | Implemented by P0 | Reuse; no alternate AI writer. |
 | Unknown YAML preservation | Implemented for app writes | Reuse for all Gateway writes. |
-| Candidate store | Implemented | Add intake/review authority and provenance. |
+| Candidate store | Implemented | Additive actor/source-revision provenance is now used by `candidate.create`. |
 | Operation validation | Implemented | Extend only after contract decisions. |
 | Operation execution | `promoteCandidate` only | Add operations one at a time with fault/conflict tests. |
-| AI authorization | Not implemented; semantic contract fixed | Required before any direct application. |
+| AI authorization | Local grant + actor binding for `candidate.create` only | Required before each later scope or direct application. |
 | Derived provenance (`derived_from`) | Not implemented | Required before AI interpretation is persisted. |
 | Generic AI transport | Not implemented | Deliberately deferred; external AI choice remains outside AKASHA. |
 
@@ -241,8 +259,8 @@ This ADR intentionally does **not** decide:
 
 - the inner physical fields/serializer for `derived_from` and provenance
   extensions (their root namespace is fixed);
-- physical permission storage, actor-binding mechanism, grant UI, and approval
-  interaction;
+- grant UI, one-shot approval interaction, actor attestation, and physical
+  permission storage for scopes beyond `candidate.create`;
 - MCP, CLI, local socket, file drop, SDK, or HTTP as the external transport;
 - batch application limits and transaction grouping;
 - the canonical Record kind/storage layout for derived analyses;
@@ -258,4 +276,5 @@ The semantic ADR sequence is complete:
 3. [lifecycle/tombstone/supersede contract](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md);
 4. [extension namespace](EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md);
 5. [Gateway permission and receipt contract](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md);
-6. **next implementation:** first `candidate.create` Gateway slice.
+6. **implemented:** first `candidate.create` Gateway slice; later scopes stay
+   deferred until their own authority, provenance, and fault tests exist.

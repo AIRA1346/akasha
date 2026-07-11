@@ -40,7 +40,7 @@ A compliant AKASHA Vault folder MUST organize its files according to the followi
 │   ├── candidates/                 # Agent-extracted entity candidates with lifecycle state
 │   ├── collectible_collections.json # User-created collection shelf definitions
 │   └── personal_libraries.json    # User-created personal library shelf definitions
-├── .trash/                         # Isolated safety bin for deleted files
+├── .trash/                         # Isolated safety bin for deleted files; not a semantic tombstone
 └── .akasha/                        # Application index cache (fully rebuildable — safe to delete)
     ├── spec/
     │   └── spec_v3.md              # Copy of this specification (Self-Describing Vault)
@@ -77,16 +77,16 @@ Conforming v3 records MUST declare the following fields in their frontmatter:
 | `title` | String | **Yes** | Display title. |
 | `created_at` | String | **Yes** | ISO-8601 UTC timestamp of creation. |
 | `updated_at` | String | **Yes** | ISO-8601 UTC timestamp of last update. |
-| `source` | String | **Yes** | Provenance of the write. Enum: `user`, `app`, `agent`, `importTool`, `script`. |
+| `source` | String | **Yes** | Creation channel of this Record. Enum: `user`, `app`, `agent`, `importTool`, `script`; it is not original authorship or full derivation provenance. |
 | `added_at` | String | No | Legacy timestamp for backward compatibility (replaces `created_at` in v1/v2). |
 | `occurred_at` | String | No | Semantic local (wall-clock) time the recorded event was experienced (`timelineEntry`). See §2.3. |
 | `entity_subtype` | String | No | Namespace-prefixed folksonomy classification (e.g., `u:pet`, `u:camera`). |
 | `aliases` | List<String>| No | Alternative names for link resolution. |
 | `original_title` | String | No | Original language/native title. |
 | `external_ids` | Map | No | Mapping of external database keys (e.g., `anilist: "123"`). |
-| `evidence` | List<String>| No | Source citation strings for agent-originated writes. |
+| `evidence` | List<String>| No | Human-readable source citation strings. It does not declare exact input revision or derivation. |
 | `links` | List<Map> | No | Structured outgoing relationship definitions. |
-| `source_operation_id`| String| No | ID of the `ArchiveOperation` that generated this record. |
+| `source_operation_id`| String| No | ID of the initial `ArchiveOperation` that generated this record; not a complete operation or transformation history. |
 
 **\\*** `entity_type` and `entity_id` are required for **entity-anchored kinds** (`workJournal`, `entityJournal`). For `timelineEntry` and `freeformJournal` they are optional: a freeform diary or a timeline moment may exist without pointing at any entity.
 
@@ -139,7 +139,11 @@ Conforming readers MUST parse wiki-style links in the Markdown body to construct
 
 ### 4.1 Relation Vocabulary
 
-Structured frontmatter links (`links[].relation`) carry the meaning layer of the knowledge graph. To keep relations machine-reasonable over decades, the relation string is a controlled vocabulary:
+Structured frontmatter links (`links[].relation`) carry directed, Record-scoped
+relation context. They are not independent Relationship Assertions: they do
+not by themselves preserve a claimant, evidence revision, validity time,
+conflict, or lifecycle. To keep the link vocabulary machine-reasonable over
+decades, the relation string is controlled:
 
 | Relation | Direction (source → target) |
 |---|---|
@@ -152,6 +156,9 @@ Structured frontmatter links (`links[].relation`) carry the meaning layer of the
 | `located_in` | Source is physically located in the target place. |
 | `inspired_by` | Source draws influence from the target. |
 
+- In this table, **source** means the owning Record's context, not a global
+  relationship fact. The explicit subject of a future Relationship Assertion
+  may be different and must be stored independently.
 - User-defined relations MUST use the **`u:` namespace** with token format `u:[a-z0-9_]{1,40}` (e.g., `u:voiced_by`). This prevents collisions with future core vocabulary.
 - Conforming writers MUST NOT emit new relations outside the core vocabulary or the `u:` namespace.
 - Conforming readers MUST preserve unrecognized legacy relation strings as-is (Additive-Only Evolution, §5).

@@ -45,7 +45,27 @@ void main() {
         expect(first.exists, isTrue);
         expect(second.exists, isTrue);
         expect(first.value, isNot(second.value));
-        expect(first.value, startsWith('v1:'));
+        expect(first.value, startsWith('v2:sha256:'));
+      } finally {
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test('revision ignores a modification-time-only change', () async {
+      final tempDir = await Directory.systemTemp.createTemp('akasha_revision_');
+      const service = ArchiveRecordRevisionService();
+      final file = File('${tempDir.path}/journals/source.md');
+      try {
+        await file.parent.create(recursive: true);
+        await file.writeAsString('same content', flush: true);
+        final first = await service.currentForPath(file.path);
+
+        await file.setLastModified(DateTime.utc(2030, 1, 1));
+        final second = await service.currentForPath(file.path);
+
+        expect(first.value, second.value);
       } finally {
         if (await tempDir.exists()) {
           await tempDir.delete(recursive: true);

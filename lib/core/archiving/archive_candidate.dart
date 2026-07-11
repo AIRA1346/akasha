@@ -27,6 +27,9 @@ class ArchiveCandidate {
     this.aliases = const [],
     this.tags = const [],
     this.sourceOperationId,
+    this.actorBindingId,
+    this.gatewayGrantId,
+    this.sourceRecordRevision,
     this.duplicateOfEntityId,
   });
 
@@ -46,6 +49,19 @@ class ArchiveCandidate {
   final List<String> aliases;
   final List<String> tags;
   final String? sourceOperationId;
+
+  /// Stable local actor binding that created this candidate through the
+  /// Archive Gateway. Absent for pre-Gateway candidates and external imports.
+  final String? actorBindingId;
+
+  /// Local authority reference used for a Gateway-created candidate. The
+  /// grant's full constraints live in the Vault-owned authority store.
+  final String? gatewayGrantId;
+
+  /// Opaque revision of [sourceRecordId] read when this candidate was made.
+  /// It makes the candidate's source boundary inspectable without changing the
+  /// canonical source record.
+  final String? sourceRecordRevision;
   final String? duplicateOfEntityId;
 
   bool get isOpen => status == ArchiveCandidateStatus.candidate;
@@ -71,6 +87,9 @@ class ArchiveCandidate {
     List<String>? aliases,
     List<String>? tags,
     String? sourceOperationId,
+    String? actorBindingId,
+    String? gatewayGrantId,
+    String? sourceRecordRevision,
     String? duplicateOfEntityId,
   }) {
     return ArchiveCandidate(
@@ -88,6 +107,9 @@ class ArchiveCandidate {
       aliases: aliases ?? this.aliases,
       tags: tags ?? this.tags,
       sourceOperationId: sourceOperationId ?? this.sourceOperationId,
+      actorBindingId: actorBindingId ?? this.actorBindingId,
+      gatewayGrantId: gatewayGrantId ?? this.gatewayGrantId,
+      sourceRecordRevision: sourceRecordRevision ?? this.sourceRecordRevision,
       duplicateOfEntityId: duplicateOfEntityId ?? this.duplicateOfEntityId,
     );
   }
@@ -139,6 +161,12 @@ class ArchiveCandidate {
     if (tags.isNotEmpty) 'tags': tags,
     if (sourceOperationId != null && sourceOperationId!.isNotEmpty)
       'sourceOperationId': sourceOperationId,
+    if (actorBindingId != null && actorBindingId!.isNotEmpty)
+      'actorBindingId': actorBindingId,
+    if (gatewayGrantId != null && gatewayGrantId!.isNotEmpty)
+      'gatewayGrantId': gatewayGrantId,
+    if (sourceRecordRevision != null && sourceRecordRevision!.isNotEmpty)
+      'sourceRecordRevision': sourceRecordRevision,
     if (duplicateOfEntityId != null && duplicateOfEntityId!.isNotEmpty)
       'duplicateOfEntityId': duplicateOfEntityId,
   };
@@ -171,6 +199,9 @@ class ArchiveCandidate {
       aliases: _stringList(json['aliases']),
       tags: _stringList(json['tags']),
       sourceOperationId: json['sourceOperationId']?.toString(),
+      actorBindingId: json['actorBindingId']?.toString(),
+      gatewayGrantId: json['gatewayGrantId']?.toString(),
+      sourceRecordRevision: json['sourceRecordRevision']?.toString(),
       duplicateOfEntityId: json['duplicateOfEntityId']?.toString(),
     );
   }

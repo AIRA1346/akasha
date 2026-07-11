@@ -137,7 +137,8 @@ does not automatically fail P0; it must have one of the classifications below.
 | --- | --- | --- |
 | Shared protocol internals | `VaultRecoveryWriteService` stage, backup, manifest, conflict, and JSONL operations | Allowed only inside the service; manifest-first recovery and fault tests cover it. |
 | Explicit lifecycle move | `VaultTrashService`, recovery-draft removal | A move never overwrites a normal record; a trash manifest is written first. Permanent deletion is an explicit user lifecycle action, not a save fallback. |
-| Append-only durable system log | `ArchiveOperationAppliedLog`, `EventLedgerService` | `appendJsonLine`; torn final lines are ignored without hiding earlier entries. Legacy migrations use the shared writer and retain the legacy source. |
+| Append-only durable system log | `ArchiveOperationAppliedLog`, `ArchiveGatewayReceiptStore`, `EventLedgerService` | `appendJsonLine`; torn final lines are ignored without hiding earlier entries. Legacy migrations use the shared writer and retain the legacy source. |
+| Recoverable durable system state | `ArchiveGatewayGrantStore` | `VaultRecoveryWriteService.writeText`; malformed grant state is rejected rather than replaced with an empty authority list. |
 | Rebuildable derived index | `.akasha/` entity-path, record-link, record-summary, taste, title-alias indexes; `VaultSpecWriter`; candidate name index | Out of canonical evidence scope. These may be regenerated from Vault records or canonical candidate shards. |
 | Generated/export output | Sanctum HTML and backup ZIP exports | Regenerable output; never the sole record source. |
 | Application cache outside the Vault | catalog contribution queue/export and registry cache/sync services | Outside the user Vault boundary; separately reviewable, but not evidence for this gate. |

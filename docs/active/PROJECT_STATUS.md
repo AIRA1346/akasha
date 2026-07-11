@@ -11,6 +11,7 @@
 
 > **Current verification (2026-07-11):** SA-03 derived-cache lifecycle · SA-02 selected-source hydration foundation · flutter analyze 0 · test **879**
 > **Current Git:** use `git rev-parse HEAD` for the committed tip.
+> **2026-07-12 verification:** P1 local `candidate.create` Gateway slice and self-describing Vault-spec sync; `flutter analyze lib --no-pub` **0 issues**, full `flutter test --no-pub` **898 passed**.
 
 > **2026-07-10 architecture correction:** Durable candidates, applied-operation
 > logs, recovery evidence, and drafts live under `system/`; `.akasha/` is

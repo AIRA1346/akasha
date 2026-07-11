@@ -10,7 +10,9 @@ import '../core/ports/user_catalog_port.dart';
 import '../models/enums.dart';
 import '../models/user_catalog_entity.dart';
 import 'archive_operation_applied_log.dart';
+import 'archive_operation_idempotency_coordinator.dart';
 import 'archive_candidate_store.dart';
+import 'archive_gateway_receipt_store.dart';
 import 'archive_record_revision_service.dart';
 import 'entity_catalog_sync.dart';
 import 'entity_journal_parser.dart';
@@ -47,19 +49,37 @@ class ArchiveOperationExecutor {
     ArchiveCandidateStore? candidateStore,
     EntityVaultStore? entityVaultStore,
     ArchiveOperationAppliedLog? appliedLog,
+    ArchiveGatewayReceiptStore? gatewayReceiptStore,
     ArchiveRecordRevisionService? revisionService,
   }) : _candidateStore = candidateStore ?? ArchiveCandidateStore(),
        _entityVaultStore = entityVaultStore ?? EntityVaultStore(),
        _appliedLog = appliedLog ?? const ArchiveOperationAppliedLog(),
+       _gatewayReceiptStore =
+           gatewayReceiptStore ?? const ArchiveGatewayReceiptStore(),
        _revisionService =
            revisionService ?? const ArchiveRecordRevisionService();
 
   final ArchiveCandidateStore _candidateStore;
   final EntityVaultStore _entityVaultStore;
   final ArchiveOperationAppliedLog _appliedLog;
+  final ArchiveGatewayReceiptStore _gatewayReceiptStore;
   final ArchiveRecordRevisionService _revisionService;
 
   Future<ArchiveOperationExecutionResult> execute({
+    required String vaultPath,
+    required ArchiveOperation operation,
+    required UserCatalogPort userCatalog,
+  }) => ArchiveOperationIdempotencyCoordinator.run(
+    vaultPath: vaultPath,
+    operationId: operation.operationId,
+    action: () => _execute(
+      vaultPath: vaultPath,
+      operation: operation,
+      userCatalog: userCatalog,
+    ),
+  );
+
+  Future<ArchiveOperationExecutionResult> _execute({
     required String vaultPath,
     required ArchiveOperation operation,
     required UserCatalogPort userCatalog,
@@ -91,6 +111,14 @@ class ArchiveOperationExecutor {
         applied: false,
         alreadyApplied: true,
         appliedEntry: alreadyApplied,
+      );
+    }
+
+    if (await _gatewayReceiptStore.lookup(vaultPath, operation.operationId) !=
+        null) {
+      return _failure(
+        'operation_id_conflict',
+        'operationId was already used by an Archive Gateway request.',
       );
     }
 

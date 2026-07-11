@@ -5,6 +5,7 @@ import 'package:path/path.dart' as p;
 import '../core/archiving/archive_operation.dart';
 import '../core/archiving/entity_anchor.dart';
 import '../core/archiving/record_kind.dart';
+import '../core/archiving/vault_file_revision.dart';
 import '../models/enums.dart';
 import 'record_summary_index_service.dart';
 import 'vault_record_path_resolver.dart';
@@ -66,13 +67,41 @@ class ArchiveRecordRevisionService {
       );
     }
 
-    final modified = (await file.lastModified()).toUtc();
-    final bytes = await file.readAsBytes();
-    final digest = _fnv1a64(bytes);
+    final revision = await VaultFileRevision.fromFile(file);
     return ArchiveRecordRevision(
-      value: 'v1:${modified.microsecondsSinceEpoch}:${bytes.length}:$digest',
+      // The user-visible expected revision intentionally excludes mtime. A
+      // cloud-sync touch or metadata-only timestamp change must not create a
+      // semantic write conflict when SHA-256 and byte length are unchanged.
+      value: 'v2:sha256:${revision.sha256};bytes:${revision.byteLength}',
       exists: true,
       absolutePath: path,
+    );
+  }
+
+  /// Resolves one already-indexed record and reads its current on-disk
+  /// revision. This deliberately does not fall back to a Vault-wide scan:
+  /// Gateway requests must name an explicit, bounded source record.
+  Future<ArchiveRecordRevision> currentForRecordId({
+    required String vaultPath,
+    required String recordId,
+  }) async {
+    final id = recordId.trim();
+    if (vaultPath.trim().isEmpty || id.isEmpty) {
+      return const ArchiveRecordRevision(
+        value: ArchiveRecordRevision.missing,
+        exists: false,
+      );
+    }
+
+    final summary = await RecordSummaryIndexService().lookupById(vaultPath, id);
+    if (summary == null || summary.relativePath.trim().isEmpty) {
+      return const ArchiveRecordRevision(
+        value: ArchiveRecordRevision.missing,
+        exists: false,
+      );
+    }
+    return currentForPath(
+      p.joinAll([vaultPath, ...summary.relativePath.split('/')]),
     );
   }
 
@@ -131,14 +160,5 @@ class ArchiveRecordRevisionService {
       if (category.name == raw) return category;
     }
     return MediaCategory.manga;
-  }
-
-  static String _fnv1a64(List<int> bytes) {
-    var hash = 0xcbf29ce484222325;
-    for (final byte in bytes) {
-      hash ^= byte;
-      hash = (hash * 0x100000001b3) & 0xFFFFFFFFFFFFFFFF;
-    }
-    return hash.toRadixString(16).padLeft(16, '0');
   }
 }
