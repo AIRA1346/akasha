@@ -139,6 +139,13 @@ order, omits unknown IDs, and reads only those derived rows and their tags. It
 is suitable for a small franchise group or curated-library membership set; it
 does not yet migrate a Home surface or authorize a full-list fallback.
 
+The first Home consumer is now the Work-only Explore scope. It renders a
+cursor-paged visual summary card with poster, title, creator, status, rating,
+and tags; selecting it hydrates the one canonical source before opening preview
+or detail. This is intentionally not yet a SA-02B gate pass: the existing Home
+startup path still loads all items, and franchise/library card affordances still
+need their targeted queries.
+
 During initial preparation or repair, the user-facing state should describe the
 archive being prepared or repaired. It must not expose cache vocabulary or ask
 the user to manually reload an implementation detail.

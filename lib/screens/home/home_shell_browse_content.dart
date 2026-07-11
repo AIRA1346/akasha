@@ -18,6 +18,7 @@ import 'views/catalog_entity_browse_view.dart';
 import 'views/home_dashboard_view.dart';
 import 'views/knowledge_graph_view.dart';
 import 'views/personal_library_view.dart';
+import 'views/work_summary_browse_view.dart';
 
 /// HomeShellBody — 대시보드·라이브러리·엔티티 browse 라우팅.
 class HomeShellBrowseContentBuilder {
@@ -166,6 +167,17 @@ class HomeShellBrowseContentBuilder {
 
     if (!scope.showsWorkGrid) {
       return buildCatalogEntityBrowse(scope);
+    }
+
+    if (isExploreBrowseMode && scope == BrowseEntityScope.work && vaultLinked) {
+      return WorkSummaryBrowseView(
+        categories: filterCtrl.categories,
+        workStatuses: filterCtrl.workStatuses,
+        myStatuses: filterCtrl.myStatuses,
+        vaultPath: vaultPath,
+        onPreviewWork: onNavigateWorkPreview,
+        onOpenWorkDetail: onOpenItemDetail,
+      );
     }
 
     final workGrid = BrowseView(
