@@ -38,7 +38,7 @@ A compliant AKASHA Vault folder MUST organize its files according to the followi
 │   ├── candidates/                 # Agent-extracted entity candidates with lifecycle state
 │   ├── collectible_collections.json # User-created collection shelf definitions
 │   └── personal_libraries.json    # User-created personal library shelf definitions
-├── .trash/                         # Isolated safety bin for deleted files
+├── .trash/                         # Isolated safety bin for deleted files; not a semantic tombstone
 └── .akasha/                        # Application index cache (fully rebuildable — safe to delete)
     ├── spec/
     │   └── spec_v3.md              # Copy of this specification (Self-Describing Vault)

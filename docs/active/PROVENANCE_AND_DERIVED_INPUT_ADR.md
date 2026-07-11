@@ -99,8 +99,9 @@ result is objectively true. It is distinct from:
 - a normal later edit to the same Record;
 - the complete lifecycle or version history of a Document.
 
-The future lifecycle ADR may preserve supersession or merge history. It must
-not use `derived_from` as a substitute for those meanings.
+The [lifecycle contract](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md) may preserve
+supersession or merge history. It must not use `derived_from` as a substitute
+for those meanings.
 
 ## 3. Minimum derivation invariants
 
@@ -244,9 +245,10 @@ This ADR does not decide:
 - the actor descriptor's storage, redaction, revocation, or sharing policy;
 - a global author/entity identity model;
 - the full transformation vocabulary, confidence model, or truth/claim model;
-- physical Relationship Assertion serialization, lifecycle, tombstones,
-  supersession, merges, and version-history retention (semantic relation tiers:
-  [RELATION_TIERS_AND_ASSERTIONS_ADR.md](RELATION_TIERS_AND_ASSERTIONS_ADR.md));
+- physical Relationship Assertion serialization and version-history retention
+  (semantic relation tiers:
+  [RELATION_TIERS_AND_ASSERTIONS_ADR.md](RELATION_TIERS_AND_ASSERTIONS_ADR.md),
+  lifecycle: [LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md));
 - Gateway permission grants, UI approval, batching, or transport.
 
 ## 10. Implementation gate and next ADR
@@ -266,7 +268,7 @@ surface may be implemented until all of the following are decided and tested:
 The required ADR sequence remains:
 
 1. [relation tiers and Relationship Assertion contract](RELATION_TIERS_AND_ASSERTIONS_ADR.md);
-2. lifecycle/tombstone/supersede contract;
+2. [lifecycle/tombstone/supersede contract](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md);
 3. extension namespace and reserved-field contract;
 4. Gateway permission and receipt contract;
 5. first candidate or derived-record implementation slice.

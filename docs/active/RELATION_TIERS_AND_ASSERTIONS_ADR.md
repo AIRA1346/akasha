@@ -210,8 +210,9 @@ This ADR does not decide:
 
 - assertion YAML/Markdown/JSON field names, serializers, IDs, directory, or
   database representation;
-- lifecycle states and semantics for retract, supersede, merge, archive, and
-  tombstone;
+- physical lifecycle fields and storage for retract, supersede, merge, and
+  tombstone (semantic lifecycle:
+  [LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md));
 - the final predicate and inverse vocabulary for assertions;
 - confidence, ranking, truth adjudication, or consensus algorithms;
 - sharing, collaboration, public graph visibility, or remote synchronization;
@@ -219,7 +220,8 @@ This ADR does not decide:
 
 No canonical assertion writer or relation graph UI may be implemented until:
 
-1. the lifecycle ADR fixes non-destructive status/supersession semantics;
+1. the [lifecycle ADR](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md) fixes
+   non-destructive status/supersession semantics;
 2. the extension-namespace ADR maps the semantic contract to additive fields;
 3. a physical storage/index design demonstrates bounded queries at archive
    scale;

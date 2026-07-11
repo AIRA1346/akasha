@@ -119,6 +119,7 @@ These fields were identified as useful but are not fully standardized everywhere
 | `links` / `relations` | Structured relation layer beyond wiki body links | structured links are landed; [Relation Tier semantics](RELATION_TIERS_AND_ASSERTIONS_ADR.md) are fixed, while physical Assertion storage remains P1 work |
 | `entity_subtype` | character/creator/studio/franchise/track without exploding top-level types | planned |
 | `source_operation_id` | Trace write back to operation | landed for operation-created entity journals; extend to future operation record types |
+| lifecycle / tombstone / supersede | Preserve retirement and replacement without confusing them with deletion | [Semantic lifecycle contract](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md) is fixed; physical representation remains deferred |
 
 ## 7. Entity Taxonomy Follow-Ups
 

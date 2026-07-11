@@ -85,7 +85,7 @@ P0의 recoverable write와 Vault trash는 파일을 보존·복구하는 저장 
 
 - 파일 경로 변경은 Document의 위치 변화이며, Entity/Record ID의 변화가 아니다.
 - `.trash` 이동은 현재 물리 삭제 상태이지, "이 Record는 철회되었다"라는 lifecycle Assertion이 아니다.
-- 앞으로 tombstone·supersede·merge를 도입하더라도 P0 백업·충돌 보존·unknown YAML 보존을 대체하지 않는다.
+- [Lifecycle ADR](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md)의 tombstone·supersede·merge도 P0 백업·충돌 보존·unknown YAML 보존을 대체하지 않는다.
 
 ## 사례 판정 규칙
 
