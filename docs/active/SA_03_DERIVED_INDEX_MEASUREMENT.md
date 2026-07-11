@@ -63,8 +63,9 @@ boundary**:
 
 1. Run the same profile on the packaged Windows Steam target and record release
    measurements, local-cache clear/rebuild UX, and package licensing evidence.
-2. Wire explicit initial rebuild/repair state and precise `VaultChangeBatch`
-   events into an app-owned lifecycle coordinator.
+2. Surface the already-wired lifecycle's rebuild progress, cancellation, repair
+   reason, and cache clear/rebuild controls in the user interface; verify
+   native external-watch delivery on the packaged Steam target.
 3. Measure Markdown source scanning and selected canonical Work hydration
    separately; the synthetic cache measurement must not be misrepresented as
    source-read throughput.

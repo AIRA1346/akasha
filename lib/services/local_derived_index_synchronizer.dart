@@ -26,6 +26,7 @@ class LocalDerivedIndexSynchronizer {
     required String cacheRoot,
     required String vaultPath,
     void Function(WorkSummaryRebuildProgress progress)? onProgress,
+    bool Function()? isCancelled,
   }) async {
     final normalizedVault = LocalDerivedIndexStore.normalizedVaultRoot(
       vaultPath,
@@ -53,6 +54,12 @@ class LocalDerivedIndexSynchronizer {
       );
     }
 
+    void checkCancelled() {
+      if (isCancelled?.call() ?? false) {
+        throw const WorkSummaryRebuildCancelled();
+      }
+    }
+
     Future<void> flushRebuildBatch() async {
       if (pendingReadable.isEmpty && pendingUnreadable.isEmpty) return;
       await _store.applyWorkSourceBatch(
@@ -66,6 +73,7 @@ class LocalDerivedIndexSynchronizer {
     }
 
     try {
+      checkCancelled();
       await _store.beginWorkSummaryRebuild(
         database: database,
         generation: generation,
@@ -76,6 +84,7 @@ class LocalDerivedIndexSynchronizer {
           recursive: true,
           followLinks: false,
         )) {
+          checkCancelled();
           if (entity is! File) continue;
           final relativePath = _relativeVaultPath(normalizedVault, entity.path);
           if (relativePath == null || !_isWorkMarkdown(relativePath)) continue;
@@ -102,13 +111,16 @@ class LocalDerivedIndexSynchronizer {
 
           if (pendingReadable.length + pendingUnreadable.length >=
               _rebuildWriteBatchSize) {
+            checkCancelled();
             await flushRebuildBatch();
           }
           if (scanned % _progressInterval == 0) reportProgress();
         }
       }
 
+      checkCancelled();
       await flushRebuildBatch();
+      checkCancelled();
       pruned = await _store.pruneWorkSourcesOutsideGeneration(
         database: database,
         generation: generation,
@@ -253,6 +265,14 @@ class WorkSummaryRebuildResult {
   final List<WorkSourceIssue> issueSamples;
 
   bool get hasMoreIssues => unreadable > issueSamples.length;
+}
+
+/// Signals a user-requested stop of explicit cache rebuild work.
+class WorkSummaryRebuildCancelled implements Exception {
+  const WorkSummaryRebuildCancelled();
+
+  @override
+  String toString() => 'WorkSummaryRebuildCancelled';
 }
 
 class WorkSourceIssue {

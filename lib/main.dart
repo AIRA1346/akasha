@@ -7,6 +7,7 @@ import 'data/adapters/works_registry_adapter.dart';
 import 'screens/home/home_shell.dart';
 import 'services/catalog_locale_preferences.dart';
 import 'services/franchise_registry.dart';
+import 'services/local_derived_index_lifecycle.dart';
 import 'services/user_preferences.dart';
 import 'theme/akasha_theme.dart';
 
@@ -24,6 +25,7 @@ void main() async {
   // 어댑터를 통한 글로벌 사전 및 볼트 초기화
   await WorksRegistryAdapter().init();
   await MarkdownVaultAdapter().init();
+  await LocalDerivedIndexLifecycle.app.start();
   await FranchiseRegistry.init();
   // cold start: manifest + eager 샤드만 (browse는 search_index 윈도우 lazy load)
 

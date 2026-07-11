@@ -1,6 +1,6 @@
 # SA-03 — Derived Index Persistence Decision
 
-> **Status:** Windows synthetic cache measurement passed; source-scan and app lifecycle wiring pending
+> **Status:** Windows synthetic cache measurement and lifecycle wiring passed; source-scan and user repair UX pending
 > **Date:** 2026-07-10
 > **Related:** [SA_02_HOME_WORK_SUMMARY_BOUNDARY.md](SA_02_HOME_WORK_SUMMARY_BOUNDARY.md) · [SCALE_ACCESS_PATH_INVENTORY.md](SCALE_ACCESS_PATH_INVENTORY.md#sa-03--bounded-index-persistence-next) · [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)
 
@@ -102,7 +102,9 @@ recreation, one-Work upsert/delete, cursor continuation, and category/status/
 tag filtering. It now streams an explicit `works/` rebuild in bounded cache
 write batches, quarantines partial results until the generation completes, and
 handles one precise source path as indexed, deleted, unreadable, or ignored.
-It does not yet run from app startup/watch lifecycle or serve Home.
+`LocalDerivedIndexLifecycle` now starts after Vault initialization, listens to
+SA-01 detailed change batches, and serializes explicit rebuild/repair work. It
+does not yet serve Home or expose rebuild/repair controls in the UI.
 
 The synthetic cache storage/query profile has passed on the Windows development
 test runtime; measured results and scope are recorded in
@@ -115,12 +117,14 @@ profile on the Steam target platform.
    locator lookup, category/status/tag filtering, and one-path upsert/delete.
 2. **Done:** interrupt a rebuild after a committed batch and verify the cache
    becomes `repair required` rather than serving partial rows.
-3. **Pending:** verify an externally modified Markdown file reaches the active
-   cache through SA-01; ambiguous watch state must expose repair rather than
-   silently read the complete Vault.
-4. **Pending:** measure Markdown scanning and canonical selected-Work hydration
-   on the packaged Windows Steam target; verify packaging, license, cache
-   clear/rebuild UX, and no required network service.
+3. **Done (lifecycle API):** app startup binds the active Vault cache; precise
+   change batches take a one-path sync route; reconciliation and cancelled
+   rebuilds mark the cache repair-required without a hidden full read.
+4. **Pending:** expose rebuild progress, cancellation, repair reason, and cache
+   clear/rebuild controls to the user; verify native external-watch delivery.
+5. **Pending:** measure Markdown scanning and canonical selected-Work hydration
+   on the packaged Windows Steam target; verify packaging, license, and no
+   required network service.
 
 ## 8. Non-Decisions
 

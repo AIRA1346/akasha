@@ -8,7 +8,7 @@
 
 ---
 
-> **Current verification (2026-07-11):** SA-03 derived-cache measurement/query gate · test **875** · analyze 0
+> **Current verification (2026-07-11):** SA-03 derived-cache measurement/query/lifecycle gate · test **877** · analyze 0
 
 > **2026-07-10 architecture correction:** `system/` holds non-rebuildable
 > candidates, operation logs, recovery evidence, and drafts. `.akasha/` is
