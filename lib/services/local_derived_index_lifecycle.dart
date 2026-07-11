@@ -37,6 +37,8 @@ class LocalDerivedIndexLifecycle {
   final Future<String> Function() _cacheRootResolver;
   final StreamController<LocalDerivedIndexLifecycleStatus> _statusController =
       StreamController<LocalDerivedIndexLifecycleStatus>.broadcast();
+  final StreamController<VaultChangeBatch> _workSummaryUpdateController =
+      StreamController<VaultChangeBatch>.broadcast();
 
   StreamSubscription<VaultChangeBatch>? _vaultChanges;
   Future<void> _serial = Future.value();
@@ -52,6 +54,12 @@ class LocalDerivedIndexLifecycle {
   LocalDerivedIndexLifecycleStatus get status => _status;
   Stream<LocalDerivedIndexLifecycleStatus> get statuses =>
       _statusController.stream;
+
+  /// Emits only after a ready Work-summary projection has incorporated one or
+  /// more precise source changes. Browsers can refresh their bounded page from
+  /// this signal; it is not a request to reload the full Vault.
+  Stream<VaultChangeBatch> get workSummaryUpdates =>
+      _workSummaryUpdateController.stream;
 
   /// Opens/binds the derived cache for the current Vault and begins listening
   /// for SA-01 detailed change batches. It never starts a rebuild by itself.
@@ -275,18 +283,29 @@ class LocalDerivedIndexLifecycle {
     }
 
     try {
+      final appliedWorkChanges = <VaultPathChange>[];
       for (final pathChange in change.changes) {
         final absolutePath = p.joinAll([
           vaultPath,
           ...p.split(pathChange.relativePath),
         ]);
-        await _synchronizer.syncSourcePath(
+        final result = await _synchronizer.syncSourcePath(
           cacheRoot: cacheRoot,
           vaultPath: vaultPath,
           absolutePath: absolutePath,
         );
+        if (result.status != WorkSourceSyncStatus.ignored) {
+          appliedWorkChanges.add(pathChange);
+        }
       }
       await _refreshBinding();
+      if (appliedWorkChanges.isNotEmpty &&
+          _status.state == LocalDerivedIndexLifecycleState.ready &&
+          !_disposed) {
+        _workSummaryUpdateController.add(
+          VaultChangeBatch(changes: List.unmodifiable(appliedWorkChanges)),
+        );
+      }
     } catch (_) {
       await _refreshBinding();
       rethrow;
@@ -414,6 +433,7 @@ class LocalDerivedIndexLifecycle {
     _activeCancellation?.cancel();
     await _vaultChanges?.cancel();
     await _statusController.close();
+    await _workSummaryUpdateController.close();
   }
 
   void _ensureNotDisposed() {

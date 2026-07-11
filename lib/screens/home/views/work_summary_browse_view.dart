@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
 
+import '../../../core/ports/vault_change.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/enums.dart';
 import '../../../services/local_derived_index_lifecycle.dart';
@@ -45,6 +46,8 @@ class WorkSummaryBrowseView extends StatefulWidget {
 class _WorkSummaryBrowseViewState extends State<WorkSummaryBrowseView> {
   late final ScrollController _scrollController;
   StreamSubscription<LocalDerivedIndexLifecycleStatus>? _statusSubscription;
+  StreamSubscription<VaultChangeBatch>? _summaryUpdateSubscription;
+  Timer? _summaryRefreshDebounce;
   LocalDerivedIndexLifecycleStatus _status =
       const LocalDerivedIndexLifecycleStatus.inactive();
   WorkSummaryRebuildProgress? _progress;
@@ -64,6 +67,9 @@ class _WorkSummaryBrowseViewState extends State<WorkSummaryBrowseView> {
     _scrollController = ScrollController()..addListener(_loadMoreWhenNeeded);
     _status = _lifecycle.status;
     _statusSubscription = _lifecycle.statuses.listen(_onStatusChanged);
+    _summaryUpdateSubscription = _lifecycle.workSummaryUpdates.listen(
+      _onWorkSummaryUpdated,
+    );
     unawaited(_prepareAndLoad());
   }
 
@@ -78,6 +84,8 @@ class _WorkSummaryBrowseViewState extends State<WorkSummaryBrowseView> {
   @override
   void dispose() {
     _statusSubscription?.cancel();
+    _summaryUpdateSubscription?.cancel();
+    _summaryRefreshDebounce?.cancel();
     _scrollController
       ..removeListener(_loadMoreWhenNeeded)
       ..dispose();
@@ -107,6 +115,16 @@ class _WorkSummaryBrowseViewState extends State<WorkSummaryBrowseView> {
         !_loadingPage) {
       unawaited(_loadPage(reset: true));
     }
+  }
+
+  void _onWorkSummaryUpdated(VaultChangeBatch _) {
+    if (!mounted || _status.state != LocalDerivedIndexLifecycleState.ready) {
+      return;
+    }
+    _summaryRefreshDebounce?.cancel();
+    _summaryRefreshDebounce = Timer(const Duration(milliseconds: 80), () {
+      if (mounted) unawaited(_loadPage(reset: true));
+    });
   }
 
   void _loadMoreWhenNeeded() {

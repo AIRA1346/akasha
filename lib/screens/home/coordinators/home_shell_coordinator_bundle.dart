@@ -91,7 +91,7 @@ class HomeShellCoordinatorBundle {
       rebuild: rebuild,
       getItems: () => vault.items,
       mutateItems: (m) => host.scheduleRebuild(() => m(vault.items)),
-      reloadItems: () => vault.loadItems(),
+      hasLegacyItemsLoaded: () => vault.hasLoadedItems,
     );
 
     final recentExplore = HomeRecentExplorationCoordinator(

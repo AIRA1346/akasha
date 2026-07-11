@@ -20,7 +20,7 @@ class HomeWorkbenchCoordinator {
     required this.rebuild,
     required this.getItems,
     required this.mutateItems,
-    required this.reloadItems,
+    this.hasLegacyItemsLoaded,
   });
 
   final WorkbenchController workbench;
@@ -30,7 +30,7 @@ class HomeWorkbenchCoordinator {
   final void Function() rebuild;
   final List<AkashaItem> Function() getItems;
   final void Function(void Function(List<AkashaItem> items) mutate) mutateItems;
-  final Future<void> Function() reloadItems;
+  final bool Function()? hasLegacyItemsLoaded;
 
   bool _lastWorkbenchShowsDetail = false;
   bool _lastWorkbenchHadTabs = false;
@@ -63,8 +63,7 @@ class HomeWorkbenchCoordinator {
       if (item.workId.isNotEmpty && existing.workId == item.workId) {
         return existing;
       }
-      if (existing.title == item.title &&
-          existing.category == item.category) {
+      if (existing.title == item.title && existing.category == item.category) {
         return existing;
       }
     }
@@ -157,35 +156,47 @@ class HomeWorkbenchCoordinator {
     if (isMounted()) rebuild();
   }
 
-  Future<void> onWorkbenchWorkSaved(AkashaItem saved, {bool silent = false}) async {
-    await reloadItems();
+  Future<void> onWorkbenchWorkSaved(
+    AkashaItem saved, {
+    bool silent = false,
+  }) async {
     if (!isMounted()) return;
+    if (_hasLegacyItemsLoaded()) {
+      mutateItems((items) {
+        final existingIndex = items.indexWhere(
+          (item) =>
+              (saved.workId.isNotEmpty && item.workId == saved.workId) ||
+              (item.title == saved.title && item.category == saved.category),
+        );
+        if (existingIndex >= 0) {
+          items[existingIndex] = saved;
+        } else {
+          items.add(saved);
+        }
+      });
+    }
     if (silent) {
       // WorkbenchShell.onSaved already synced the open tab from the editor.
       return;
     }
     final tabId = WorkCollectibleTab.idFor(saved);
-    AkashaItem resolved = saved;
-    for (final item in getItems()) {
-      if (saved.workId.isNotEmpty && item.workId == saved.workId) {
-        resolved = item;
-        break;
-      }
-    }
-    workbench.updateTabItem(tabId, resolved, dirty: false);
+    workbench.updateTabItem(tabId, saved, dirty: false);
   }
 
   Future<void> onWorkbenchWorkDeleted(String tabId, AkashaItem item) async {
     await workbench.closeTab(tabId);
-    if (isMounted()) {
+    if (isMounted() && _hasLegacyItemsLoaded()) {
       mutateItems((items) {
-        items.removeWhere((e) =>
-            (item.workId.isNotEmpty && e.workId == item.workId) ||
-            (e.title == item.title && e.category == item.category));
+        items.removeWhere(
+          (e) =>
+              (item.workId.isNotEmpty && e.workId == item.workId) ||
+              (e.title == item.title && e.category == item.category),
+        );
       });
     }
-    await reloadItems();
   }
+
+  bool _hasLegacyItemsLoaded() => hasLegacyItemsLoaded?.call() ?? true;
 
   Future<void> onWorkbenchEntitySaved(
     UserCatalogEntity entity,

@@ -136,8 +136,10 @@ from summaries, while reflection/provenance require selected-source hydration
 and connection panels require their own bounded relation query. The next
 implementation removed the unconditional Home startup full load for a linked
 Vault: default entry is now Work-only Explore, and unported legacy surfaces
-request their complete item list on demand. Ordinary save/delete and broad
-legacy-watch reloads remain separate migration work before the scale gate passes.
+request their complete item list on demand. Workbench Work save/delete now
+refreshes the bounded projection without a direct whole-Vault reread; other
+action surfaces and broad legacy-watch reloads remain separate migration work
+before the scale gate passes.
 
 ### SA-04 — Domain Pages and Record Port
 

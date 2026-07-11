@@ -72,12 +72,17 @@ void main() {
         expect(targeted.map((summary) => summary.id), ['wk_u_alph0001']);
 
         await work.writeAsString(_workMarkdown(title: 'Alpha revised'));
+        final update = lifecycle.workSummaryUpdates.first;
         await lifecycle.handleVaultChange(
           VaultChangeBatch.fromAbsolutePaths(
             vaultPath: vaultDirectory.path,
             upsertedPaths: [work.path],
           ),
         );
+        final updateBatch = await update;
+        expect(updateBatch.changes.map((change) => change.relativePath), [
+          'works/movie/alpha.md',
+        ]);
         final database = await store.open(
           cacheRoot: cacheDirectory.path,
           vaultPath: vaultDirectory.path,

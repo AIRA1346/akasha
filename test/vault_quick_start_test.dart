@@ -152,7 +152,6 @@ void main() {
               rebuild: () {},
               getItems: () => [],
               mutateItems: (_) {},
-              reloadItems: () async {},
             );
 
             final wiring = HomeShellWiring.create(
@@ -300,7 +299,6 @@ void main() {
               rebuild: () {},
               getItems: () => [],
               mutateItems: (_) {},
-              reloadItems: () async {},
             );
 
             final wiring = HomeShellWiring.create(
