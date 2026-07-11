@@ -143,6 +143,12 @@ During initial preparation or repair, the user-facing state should describe the
 archive being prepared or repaired. It must not expose cache vocabulary or ask
 the user to manually reload an implementation detail.
 
+`LocalDerivedIndexLifecycle.ensureWorkSummariesReady` is the app-owned entry
+point for that preparation: concurrent callers share one rebuild, a ready
+projection is a no-op, and a currently rebuilding projection is not scanned a
+second time. Home status presentation and the removal of its legacy full load
+remain the next migration step.
+
 ## 7. SA-02B Gate
 
 The Work-grid path is ready only when all of the following are true:

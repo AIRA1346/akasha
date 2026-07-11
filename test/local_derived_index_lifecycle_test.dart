@@ -21,7 +21,7 @@ class _HydrationVaultPort extends FakeVaultPort {
 
 void main() {
   test(
-    'lifecycle requires an explicit rebuild then applies one source path',
+    'lifecycle prepares one shared rebuild then applies one source path',
     () async {
       final root = await Directory.systemTemp.createTemp('akasha_lifecycle_');
       final vaultDirectory = Directory(p.join(root.path, 'vault'));
@@ -47,9 +47,15 @@ void main() {
           LocalDerivedIndexLifecycleState.rebuildRequired,
         );
 
-        final rebuilt = await lifecycle.rebuildWorkSummaries();
-        expect(rebuilt.indexed, 1);
+        final preparation = lifecycle.ensureWorkSummariesReady();
+        expect(
+          identical(preparation, lifecycle.ensureWorkSummariesReady()),
+          isTrue,
+        );
+        final rebuilt = await preparation;
+        expect(rebuilt?.indexed, 1);
         expect(lifecycle.status.state, LocalDerivedIndexLifecycleState.ready);
+        expect(await lifecycle.ensureWorkSummariesReady(), isNull);
         final page = await lifecycle.queryWorkSummaries();
         expect(page.summaries.map((summary) => summary.id), ['wk_u_alph0001']);
         vault.selectedItem = MarkdownParser.deserialize(

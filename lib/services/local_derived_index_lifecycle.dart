@@ -47,6 +47,7 @@ class LocalDerivedIndexLifecycle {
   String? _cacheRoot;
   bool _started = false;
   bool _disposed = false;
+  Future<WorkSummaryRebuildResult?>? _ensureReadyOperation;
 
   LocalDerivedIndexLifecycleStatus get status => _status;
   Stream<LocalDerivedIndexLifecycleStatus> get statuses =>
@@ -72,6 +73,30 @@ class LocalDerivedIndexLifecycle {
   Future<void> refresh() {
     _ensureNotDisposed();
     return _enqueue(_refreshBinding);
+  }
+
+  /// Ensures the Work browse projection is ready for normal application use.
+  ///
+  /// A missing or repair-required projection starts one shared rebuild; callers
+  /// never need to understand or coordinate the derived store themselves.
+  /// While another rebuild is already active, this returns `null` rather than
+  /// starting a second Vault scan. Canonical Markdown is never rewritten.
+  Future<WorkSummaryRebuildResult?> ensureWorkSummariesReady({
+    void Function(WorkSummaryRebuildProgress progress)? onProgress,
+  }) {
+    _ensureNotDisposed();
+    final existing = _ensureReadyOperation;
+    if (existing != null) return existing;
+
+    final operation = _ensureWorkSummariesReady(onProgress: onProgress);
+    _ensureReadyOperation = operation;
+    unawaited(
+      operation.then<void>(
+        (_) => _clearEnsureReadyOperation(operation),
+        onError: (_, _) => _clearEnsureReadyOperation(operation),
+      ),
+    );
+    return operation;
   }
 
   /// Applies one detailed Vault change through the same serialized path used
@@ -265,6 +290,28 @@ class LocalDerivedIndexLifecycle {
     } catch (_) {
       await _refreshBinding();
       rethrow;
+    }
+  }
+
+  Future<WorkSummaryRebuildResult?> _ensureWorkSummariesReady({
+    void Function(WorkSummaryRebuildProgress progress)? onProgress,
+  }) async {
+    await refresh();
+    switch (_status.state) {
+      case LocalDerivedIndexLifecycleState.ready:
+      case LocalDerivedIndexLifecycleState.rebuilding:
+        return null;
+      case LocalDerivedIndexLifecycleState.inactive:
+        throw StateError('A linked Vault is required to prepare summaries.');
+      case LocalDerivedIndexLifecycleState.rebuildRequired:
+      case LocalDerivedIndexLifecycleState.repairRequired:
+        return rebuildWorkSummaries(onProgress: onProgress);
+    }
+  }
+
+  void _clearEnsureReadyOperation(Future<WorkSummaryRebuildResult?> operation) {
+    if (identical(_ensureReadyOperation, operation)) {
+      _ensureReadyOperation = null;
     }
   }
 

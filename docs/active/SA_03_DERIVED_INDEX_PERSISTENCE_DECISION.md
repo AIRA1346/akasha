@@ -103,8 +103,11 @@ tag filtering. It now streams an explicit `works/` rebuild in bounded cache
 write batches, quarantines partial results until the generation completes, and
 handles one precise source path as indexed, deleted, unreadable, or ignored.
 `LocalDerivedIndexLifecycle` now starts after Vault initialization, listens to
-SA-01 detailed change batches, and serializes explicit rebuild/repair work. It
-does not yet serve Home or expose rebuild/repair controls in the UI.
+SA-01 detailed change batches, and serializes rebuild/repair work. Its
+`ensureWorkSummariesReady` entry point shares one app-owned preparation rebuild
+when the projection is missing or needs repair; it does not expose derived-store
+coordination to the user. It does not yet serve Home or expose preparation
+status in the UI.
 
 The synthetic cache storage/query profile has passed on the Windows development
 test runtime; measured results and scope are recorded in
