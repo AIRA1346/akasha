@@ -9,7 +9,7 @@
  
 ---
 
-> **Current verification (2026-07-11):** SA-03 derived-cache measurement/query/lifecycle gate · flutter analyze 0 · test **877**
+> **Current verification (2026-07-11):** SA-03 derived-cache lifecycle · SA-02 selected-source hydration foundation · flutter analyze 0 · test **879**
 > **Current Git:** use `git rev-parse HEAD` for the committed tip.
 
 > **2026-07-10 architecture correction:** Durable candidates, applied-operation

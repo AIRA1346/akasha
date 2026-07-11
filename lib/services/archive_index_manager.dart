@@ -617,6 +617,9 @@ class _FixedVaultPathPort implements VaultPort {
   Future<List<AkashaItem>> loadAllItems() async => const [];
 
   @override
+  Future<AkashaItem?> loadItemByRelativePath(String relativePath) async => null;
+
+  @override
   Future<int> countMarkdownFiles() async => 0;
 
   @override

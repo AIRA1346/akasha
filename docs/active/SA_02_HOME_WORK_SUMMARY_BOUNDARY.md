@@ -48,6 +48,13 @@ of its JSON-shard or local-database implementation.
 and edit-session revision deliberately remain outside the list projection until a
 selected Work is hydrated.
 
+The current hydration foundation is `VaultPort.loadItemByRelativePath`: it
+accepts only a Vault-relative Markdown path, rejects traversal and excluded
+paths, reads exactly that canonical file, and returns its current opened
+revision. It does not scan siblings or construct a partial `AkashaItem`; SA-02B
+must resolve the summary locator first, then use this port for the selected
+Work only.
+
 ## 4. Change and Reconciliation Contract
 
 SA-01 already provides `VaultChangeBatch`. SA-02 consumers must apply it with

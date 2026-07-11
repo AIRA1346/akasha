@@ -33,6 +33,10 @@ class MarkdownVaultAdapter implements VaultPort {
   Future<List<AkashaItem>> loadAllItems() => _fileService.loadAllItems();
 
   @override
+  Future<AkashaItem?> loadItemByRelativePath(String relativePath) =>
+      _fileService.loadItemByRelativePath(relativePath);
+
+  @override
   Future<int> countMarkdownFiles() => _fileService.countMarkdownFiles();
 
   @override

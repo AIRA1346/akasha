@@ -12,6 +12,11 @@ abstract class VaultPort {
 
   bool isArchivedInVault(AkashaItem item);
   Future<List<AkashaItem>> loadAllItems();
+
+  /// Hydrates one canonical Markdown item at a Vault-relative source path.
+  ///
+  /// This must not scan sibling paths or synthesize partial data for saving.
+  Future<AkashaItem?> loadItemByRelativePath(String relativePath);
   Future<int> countMarkdownFiles();
 
   Future<void> saveItem(AkashaItem item, {String? oldTitle});

@@ -52,6 +52,14 @@ class FakeVaultPort implements VaultPort {
   }
 
   @override
+  Future<AkashaItem?> loadItemByRelativePath(String relativePath) async {
+    for (final item in _cache.values) {
+      if (item.filePath == relativePath) return item;
+    }
+    return null;
+  }
+
+  @override
   Future<int> countMarkdownFiles() async {
     if (_vaultPath == null) return 0;
     return _cache.length;

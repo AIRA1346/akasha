@@ -66,9 +66,9 @@ boundary**:
 2. Surface the already-wired lifecycle's rebuild progress, cancellation, repair
    reason, and cache clear/rebuild controls in the user interface; verify
    native external-watch delivery on the packaged Steam target.
-3. Measure Markdown source scanning and selected canonical Work hydration
-   separately; the synthetic cache measurement must not be misrepresented as
-   source-read throughput.
+3. Measure Markdown source scanning on the packaged target. A selected-source
+   direct-read port now exists, but synthetic cache measurements must not be
+   misrepresented as source-read throughput.
 4. Only then migrate the Work browse entry path. Dashboard, Canvas, graph,
    records, pickers, and other global `List<AkashaItem>` consumers remain on
    their separately audited paths.
