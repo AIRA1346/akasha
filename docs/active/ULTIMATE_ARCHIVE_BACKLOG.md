@@ -120,6 +120,7 @@ These fields were identified as useful but are not fully standardized everywhere
 | `entity_subtype` | character/creator/studio/franchise/track without exploding top-level types | planned |
 | `source_operation_id` | Trace write back to operation | landed for operation-created entity journals; extend to future operation record types |
 | lifecycle / tombstone / supersede | Preserve retirement and replacement without confusing them with deletion | [Semantic lifecycle contract](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md) is fixed; physical representation remains deferred |
+| extension namespace | Add future AKASHA metadata without claiming user/tool YAML | [`x_akasha` contract](EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md) is fixed; writer/spec update remains deferred |
 
 ## 7. Entity Taxonomy Follow-Ups
 

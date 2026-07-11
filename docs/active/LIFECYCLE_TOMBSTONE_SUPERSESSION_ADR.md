@@ -186,8 +186,9 @@ Document on every edit. Future storage must support bounded lookup of an object
 by stable ID and its direct predecessor/successor/canonical target without a
 whole-Vault scan.
 
-The canonical physical form is deferred to the extension-namespace and
-implementation design. It must provide:
+The canonical physical form is deferred to implementation design under the
+approved [extension namespace](EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md).
+It must provide:
 
 - a portable, user-owned representation for each semantic transition;
 - bounded derived indexes for current/retired and predecessor/successor views;
@@ -246,12 +247,13 @@ This ADR does not decide:
 - Gateway permission scopes, approval UI, or receipt schema.
 
 No lifecycle writer, Assertion writer, or AI lifecycle operation may be
-implemented until the extension namespace maps these distinctions to additive
-fields and the Gateway permission/receipt ADR fixes authority and audit rules.
+implemented until a P0-safe writer maps these distinctions into the approved
+extension namespace and the Gateway permission/receipt ADR fixes authority and
+audit rules.
 Each implementation must have P0 fault/conflict tests and fixtures for trash,
 restore, purge-without-tombstone, retraction, supersession, merge, redaction,
 and legacy unknown lifecycle state.
 
-The next ADR is **extension namespace and reserved-field contract**. It must
-let future provenance, relation, and lifecycle fields evolve without taking
-ownership of user-defined YAML or silently deleting unknown data.
+The next ADR is **Gateway permission and receipt**. It must let users grant,
+limit, revoke, and audit external archive actions without turning raw folder
+access into a fabricated authorized operation.

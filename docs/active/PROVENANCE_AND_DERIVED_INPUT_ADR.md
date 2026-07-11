@@ -164,8 +164,10 @@ file path.
 
 ## 5. Durable placement rules
 
-The eventual physical form is deferred to the extension-namespace ADR, but its
-placement has non-negotiable constraints:
+The Record-level extension root is now fixed by
+[EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md](EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md),
+but inner provenance fields and a writer remain deferred. Its placement has
+non-negotiable constraints:
 
 - the derivation core belongs with the derived Record's durable Document, so a
   copied/exported Markdown file still explains its own lineage;
@@ -180,10 +182,9 @@ placement has non-negotiable constraints:
 - callers never write storage paths, runtime index details, app-owned times,
   or receipt fields directly into a Gateway operation.
 
-The future extension design must reserve an additive namespace for AKASHA-owned
-provenance while preserving unrelated unknown YAML verbatim where P0 can. It
-must not overload the existing `links`, `evidence`, or `source_operation_id`
-fields to avoid adding a real provenance structure.
+The future writer uses `x_akasha.provenance` while preserving unrelated unknown
+YAML verbatim where P0 can. It must not overload existing `links`, `evidence`,
+or `source_operation_id` fields to avoid adding a real provenance structure.
 
 ## 6. Operation and receipt implications
 
@@ -240,8 +241,7 @@ The detailed regression fixtures are in
 
 This ADR does not decide:
 
-- YAML field names, nesting, serializer/model types, or v3/v4 migration;
-- the extension namespace and reserved-field collision rules;
+- inner YAML field names/nesting, serializer/model types, or v3/v4 migration;
 - the actor descriptor's storage, redaction, revocation, or sharing policy;
 - a global author/entity identity model;
 - the full transformation vocabulary, confidence model, or truth/claim model;
@@ -256,7 +256,8 @@ This ADR does not decide:
 No `record.derive` executor, derived-record serializer, or AI-specific import
 surface may be implemented until all of the following are decided and tested:
 
-1. the extension namespace maps this semantic contract to additive fields;
+1. a writer maps this semantic contract into the approved
+   `x_akasha.provenance` namespace with P0-safe source patching;
 2. the Gateway permission/receipt contract defines authorization and durable
    receipts without making `system/` the sole provenance copy;
 3. stable Record and Artifact revision reads are bounded and available to the
@@ -269,6 +270,6 @@ The required ADR sequence remains:
 
 1. [relation tiers and Relationship Assertion contract](RELATION_TIERS_AND_ASSERTIONS_ADR.md);
 2. [lifecycle/tombstone/supersede contract](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md);
-3. extension namespace and reserved-field contract;
+3. [extension namespace and reserved-field contract](EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md);
 4. Gateway permission and receipt contract;
 5. first candidate or derived-record implementation slice.

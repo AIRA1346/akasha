@@ -172,8 +172,9 @@ Existing v3 Vaults need no migration for this ADR:
   it unchanged;
 - unknown YAML relation extensions survive saves through P0; a reserved-field
   collision is quarantined rather than normalized away;
-- an assertion's own future schema must be additive and must not repurpose
-  `links[]` or Canvas `layout.json` as its canonical storage.
+- an assertion's own future schema must be additive under the approved
+  `x_akasha.relationship_assertion` namespace and must not repurpose `links[]`
+  or Canvas `layout.json` as its canonical storage.
 
 ## 8. Gateway implications
 
@@ -222,13 +223,14 @@ No canonical assertion writer or relation graph UI may be implemented until:
 
 1. the [lifecycle ADR](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md) fixes
    non-destructive status/supersession semantics;
-2. the extension-namespace ADR maps the semantic contract to additive fields;
+2. a writer maps the semantic contract into the approved extension namespace
+   under [EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md](EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md);
 3. a physical storage/index design demonstrates bounded queries at archive
    scale;
 4. P0 fault/conflict/unknown-data tests cover assertion writes; and
 5. fixtures cover disputed, temporal, Canvas-promoted, stale-evidence, and
    legacy-link cases.
 
-The next ADR is **lifecycle/tombstone/supersede**. It must apply to Records,
-Documents, candidates, and future assertions without confusing a physical file
-move or `.trash` safety state with an archival semantic retraction.
+The next ADR is **Gateway permission and receipt**. It must bind an external
+actor to user-granted authority and durable operation evidence without making
+AKASHA an AI provider or making `system/ops/` the only provenance copy.

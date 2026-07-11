@@ -92,12 +92,13 @@ The derived Record must retain, at minimum:
   interpretation;
 - creation time and source category.
 
-The semantic requirements are now fixed by
-[PROVENANCE_AND_DERIVED_INPUT_ADR.md](PROVENANCE_AND_DERIVED_INPUT_ADR.md).
-`derived_from` and its exact provenance extension namespace are still not
-introduced here. P1's ontology decision remains valid: this must be an
-additive contract, not an overloaded wiki link or a destructive rewrite of the
-existing v3 schema.
+The semantic requirements are fixed by
+[PROVENANCE_AND_DERIVED_INPUT_ADR.md](PROVENANCE_AND_DERIVED_INPUT_ADR.md), and
+their future Record-level home is fixed by
+[EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md](EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md).
+`derived_from` inner fields and a writer are still not introduced here. P1's
+ontology decision remains valid: this must be additive, not an overloaded wiki
+link or a destructive rewrite of the existing v3 schema.
 
 ### 4.2 Existing-record changes are explicit
 
@@ -154,9 +155,9 @@ The completed Gateway needs a durable receipt policy with these properties:
   it, without being confused with a canonical Record;
 - receipts live under user-owned `system/`, never under rebuildable `.akasha/`.
 
-The exact receipt schema remains deferred until the extension-namespace and
-Gateway permission/receipt ADRs. It must be additive and must not make an
-operation log the only copy of a user's memory.
+The exact receipt schema remains deferred until the Gateway permission/receipt
+ADR. It must be additive and must not make an operation log the only copy of a
+user's memory.
 
 ## 7. Candidate boundary
 
@@ -232,7 +233,8 @@ may be enabled until the following gate passes:
 
 This ADR intentionally does **not** decide:
 
-- the physical schema/name for `derived_from` and full provenance extensions;
+- the inner physical fields/serializer for `derived_from` and provenance
+  extensions (their root namespace is fixed);
 - permission storage, revocation, grant duration, or approval UI;
 - MCP, CLI, local socket, file drop, SDK, or HTTP as the external transport;
 - batch application limits and transaction grouping;
@@ -247,6 +249,6 @@ The follow-up ADR order is fixed:
 1. [provenance and derived-input contract](PROVENANCE_AND_DERIVED_INPUT_ADR.md);
 2. [relation tiers and Relationship Assertion contract](RELATION_TIERS_AND_ASSERTIONS_ADR.md);
 3. [lifecycle/tombstone/supersede contract](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md);
-4. extension namespace;
+4. [extension namespace](EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md);
 5. Gateway permission and receipt contract;
 6. first candidate/application implementation slice.
