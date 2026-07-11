@@ -237,13 +237,14 @@ This ADR intentionally does **not** decide:
 - MCP, CLI, local socket, file drop, SDK, or HTTP as the external transport;
 - batch application limits and transaction grouping;
 - the canonical Record kind/storage layout for derived analyses;
-- Relationship Assertion serialization and lifecycle;
+- physical Relationship Assertion serialization and lifecycle (semantic tiers:
+  [RELATION_TIERS_AND_ASSERTIONS_ADR.md](RELATION_TIERS_AND_ASSERTIONS_ADR.md));
 - sharing, collaboration, or any cloud service.
 
 The follow-up ADR order is fixed:
 
 1. [provenance and derived-input contract](PROVENANCE_AND_DERIVED_INPUT_ADR.md);
-2. relation tiers and Relationship Assertion contract;
+2. [relation tiers and Relationship Assertion contract](RELATION_TIERS_AND_ASSERTIONS_ADR.md);
 3. lifecycle/tombstone/supersede contract;
 4. extension namespace;
 5. Gateway permission and receipt contract;

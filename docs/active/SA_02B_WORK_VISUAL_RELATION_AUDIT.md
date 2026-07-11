@@ -83,7 +83,8 @@ Consequences:
   to make cards look connected;
 - a selected Work may request bounded relationship sections after hydration;
 - graph/Canvas edges remain presentation or navigation data unless an explicit
-  assertion is later created under the ontology ADR; and
+  assertion is later created under the
+  [Relation Tiers ADR](RELATION_TIERS_AND_ASSERTIONS_ADR.md); and
 - a future relation index must support bounded lookup by source and target,
   not rebuild or load every Work to answer one selected-Work request.
 

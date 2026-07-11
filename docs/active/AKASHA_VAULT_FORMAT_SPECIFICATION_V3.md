@@ -137,7 +137,11 @@ Conforming readers MUST parse wiki-style links in the Markdown body to construct
 
 ### 4.1 Relation Vocabulary
 
-Structured frontmatter links (`links[].relation`) carry the meaning layer of the knowledge graph. To keep relations machine-reasonable over decades, the relation string is a controlled vocabulary:
+Structured frontmatter links (`links[].relation`) carry directed, Record-scoped
+relation context. They are not independent Relationship Assertions: they do
+not by themselves preserve a claimant, evidence revision, validity time,
+conflict, or lifecycle. To keep the link vocabulary machine-reasonable over
+decades, the relation string is controlled:
 
 | Relation | Direction (source → target) |
 |---|---|
@@ -150,6 +154,9 @@ Structured frontmatter links (`links[].relation`) carry the meaning layer of the
 | `located_in` | Source is physically located in the target place. |
 | `inspired_by` | Source draws influence from the target. |
 
+- In this table, **source** means the owning Record's context, not a global
+  relationship fact. The explicit subject of a future Relationship Assertion
+  may be different and must be stored independently.
 - User-defined relations MUST use the **`u:` namespace** with token format `u:[a-z0-9_]{1,40}` (e.g., `u:voiced_by`). This prevents collisions with future core vocabulary.
 - Conforming writers MUST NOT emit new relations outside the core vocabulary or the `u:` namespace.
 - Conforming readers MUST preserve unrecognized legacy relation strings as-is (Additive-Only Evolution, §5).

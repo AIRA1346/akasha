@@ -244,8 +244,9 @@ This ADR does not decide:
 - the actor descriptor's storage, redaction, revocation, or sharing policy;
 - a global author/entity identity model;
 - the full transformation vocabulary, confidence model, or truth/claim model;
-- relation tiers, Relationship Assertion serialization, lifecycle, tombstones,
-  supersession, merges, and version-history retention;
+- physical Relationship Assertion serialization, lifecycle, tombstones,
+  supersession, merges, and version-history retention (semantic relation tiers:
+  [RELATION_TIERS_AND_ASSERTIONS_ADR.md](RELATION_TIERS_AND_ASSERTIONS_ADR.md));
 - Gateway permission grants, UI approval, batching, or transport.
 
 ## 10. Implementation gate and next ADR
@@ -264,7 +265,7 @@ surface may be implemented until all of the following are decided and tested:
 
 The required ADR sequence remains:
 
-1. relation tiers and Relationship Assertion contract;
+1. [relation tiers and Relationship Assertion contract](RELATION_TIERS_AND_ASSERTIONS_ADR.md);
 2. lifecycle/tombstone/supersede contract;
 3. extension namespace and reserved-field contract;
 4. Gateway permission and receipt contract;

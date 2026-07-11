@@ -24,7 +24,7 @@
 
 - Journal Markdown은 Document이고, 그 서술은 특정 시점의 Record다.
 - 본문 wiki link는 독자가 A/B를 탐색하도록 돕는 연결이다.
-- "A가 B에 영향을 주었다"를 장기 관계로 남기려면 Journal Record를 출처로 하여 별도 Relationship Assertion으로 명시 승격해야 한다.
+- "A가 B에 영향을 주었다"를 장기 관계로 남기려면 Journal Record를 출처로 하여 [Relation Tiers ADR](RELATION_TIERS_AND_ASSERTIONS_ADR.md)의 별도 Relationship Assertion으로 명시 승격해야 한다.
 
 ## 사례 3 — Timeline은 경험 시간과 저장 시간을 분리한다
 
@@ -77,7 +77,7 @@ v3 `links`의 `target`, `relation`, `label`은 Record 내부의 구조화된 연
 
 - 현재 링크는 Record의 맥락에서 읽는 탐색·분류 힌트다.
 - 링크만으로 누가 그 관계를 주장했는지, 언제 유효한지, 어떤 증거가 있는지, 철회되었는지를 표현할 수 없다.
-- 따라서 기존 structured link를 일괄 변환하지 않는다. 미래에 독립 관계가 필요하다고 명시한 경우에만 새로운 Assertion을 추가한다.
+- 따라서 기존 structured link를 일괄 변환하지 않는다. [Relation Tiers ADR](RELATION_TIERS_AND_ASSERTIONS_ADR.md) 기준으로 독립 관계가 필요하다고 명시한 경우에만 새로운 Assertion을 추가한다.
 
 ## 사례 8 — 파일 이동·휴지통·복구는 의미 객체의 삭제가 아니다
 

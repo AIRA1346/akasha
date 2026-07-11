@@ -116,7 +116,7 @@ These fields were identified as useful but are not fully standardized everywhere
 | `updated_at` | Conflict checks and index freshness | landed; serializers/stores update and index summaries read it |
 | `source` | user/app/agent/import/script provenance | creation source is standardized, but existing-record edits must preserve it; full provenance remains P1 work |
 | `evidence` | Agent/candidate/taste claims need proof | landed as preserved v3 metadata list; candidate promotion writes evidence |
-| `links` / `relations` | Structured relation layer beyond wiki body links | structured links are landed; independent Relationship Assertion semantics remain P1 work |
+| `links` / `relations` | Structured relation layer beyond wiki body links | structured links are landed; [Relation Tier semantics](RELATION_TIERS_AND_ASSERTIONS_ADR.md) are fixed, while physical Assertion storage remains P1 work |
 | `entity_subtype` | character/creator/studio/franchise/track without exploding top-level types | planned |
 | `source_operation_id` | Trace write back to operation | landed for operation-created entity journals; extend to future operation record types |
 
