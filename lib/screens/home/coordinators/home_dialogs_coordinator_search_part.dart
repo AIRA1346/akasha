@@ -42,15 +42,7 @@ Future<void> _homeDialogsCoordinatorOpenSearchDialog(
         showMessage: coord.showMessage,
         userCatalog: coord.userCatalog,
         vaultItems: coord.getItems(),
-        onWorkSavedToVault: (item) async {
-          await coord.vault.saveVaultItem(item);
-          if (WorkIdCodec.isUserLocalWorkId(item.workId)) {
-            await coord.userCatalog.upsert(
-              UserCatalogEntity.fromAkashaItem(item),
-            );
-          }
-          await coord.loadItems();
-        },
+        onWorkSavedToVault: coord.persistWorkToVault,
         onEntitySaved: (result) async {
           final vaultPath = coord.vault.vaultPath;
           if (vaultPath == null || vaultPath.isEmpty) {

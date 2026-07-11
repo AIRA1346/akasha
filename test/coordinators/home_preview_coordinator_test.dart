@@ -25,7 +25,7 @@ HomePreviewCoordinator _coordinator({
     recordWorkExploration: onRecordWork ?? (_) {},
     recordEntityExploration: (_) {},
     showSnack: (_) {},
-    loadItems: () async {},
+    onWorkPersisted: (_) async {},
     resolveEntity: (_) => null,
   );
 }
@@ -122,7 +122,7 @@ void main() {
       recordWorkExploration: (_) {},
       recordEntityExploration: (_) {},
       showSnack: (_) {},
-      loadItems: () async {},
+      onWorkPersisted: (_) async {},
       resolveEntity: (_) => null,
     );
     coord.openWorkPreview(work);

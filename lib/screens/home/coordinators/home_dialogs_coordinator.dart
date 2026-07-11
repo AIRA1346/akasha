@@ -93,6 +93,17 @@ class HomeDialogsCoordinator {
   bool get autoArchiveRegistry => vault.autoArchiveRegistry;
   LibraryTheme get libraryTheme => vault.libraryTheme;
 
+  /// Persists a Work and updates only the active Home representation. The
+  /// bounded Work browse projection receives its own precise Vault change, so
+  /// this must not fall back to loading every archived Work.
+  Future<void> persistWorkToVault(AkashaItem item) async {
+    await vault.saveVaultItem(item);
+    if (WorkIdCodec.isUserLocalWorkId(item.workId)) {
+      await userCatalog.upsert(UserCatalogEntity.fromAkashaItem(item));
+    }
+    await workbenchCoord.onWorkbenchWorkSaved(item, silent: true);
+  }
+
   Future<void> openSearchDialog() =>
       _homeDialogsCoordinatorOpenSearchDialog(this);
 

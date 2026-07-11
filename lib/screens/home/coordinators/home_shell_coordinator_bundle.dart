@@ -113,7 +113,8 @@ class HomeShellCoordinatorBundle {
       recordWorkExploration: recentExplore.store.recordWork,
       recordEntityExploration: recentExplore.store.recordEntity,
       showSnack: showSnack,
-      loadItems: () => vault.loadItems(),
+      onWorkPersisted: (item) =>
+          workbenchCoord.onWorkbenchWorkSaved(item, silent: true),
       resolveEntity: userCatalog.getById,
     );
 

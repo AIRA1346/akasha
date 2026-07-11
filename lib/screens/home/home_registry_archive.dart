@@ -8,13 +8,11 @@ class HomeRegistryArchive {
   static Future<AkashaItem> persistRegistryWork(
     RegistryWork work, {
     required VaultPort vault,
-    required Future<void> Function() reloadItems,
     required void Function(AkashaItem item) onDemoAdd,
   }) async {
     final item = HomeAutoArchive.itemFromRegistryWork(work);
     if (vault.vaultPath != null) {
       await vault.saveItem(item);
-      await reloadItems();
     } else {
       onDemoAdd(item);
     }

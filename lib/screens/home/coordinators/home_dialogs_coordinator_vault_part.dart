@@ -53,7 +53,7 @@ Future<void> _homeDialogsCoordinatorOpenClipboardImportDialog(
     context: coord.hostContext(),
     existingItems: coord.getItems(),
     isVaultLinked: coord.vault.isVaultLinked,
-    onItemImportedToVault: (_) async => coord.loadItems(),
+    onItemImportedToVault: coord.persistWorkToVault,
     onItemImportedInMemory: coord.addItemInMemory,
   );
 }

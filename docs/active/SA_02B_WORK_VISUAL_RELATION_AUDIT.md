@@ -148,9 +148,10 @@ legacy automatic registry archive. Dashboard, graph, personal-library, Canvas,
 and other unported surfaces request the complete legacy item list only when the
 user enters them. Franchise/library card affordances and ordinary save/delete
 paths outside the Workbench still need their targeted migrations. Workbench
-Work save/delete now updates the bounded summary projection rather than
-directly rereading the whole Vault. Legacy surfaces still retain their broad
-watch-reload path.
+Work save/delete, add-dialog saves, registry archive, and AI Markdown clipboard
+import now update the bounded summary projection rather than directly rereading
+the whole Vault. The clipboard route now persists its parsed Work before it
+reports success. Legacy surfaces still retain their broad watch-reload path.
 
 During initial preparation or repair, the user-facing state should describe the
 archive being prepared or repaired. It must not expose cache vocabulary or ask

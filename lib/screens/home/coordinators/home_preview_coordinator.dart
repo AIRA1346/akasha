@@ -28,7 +28,7 @@ class HomePreviewCoordinator {
     required this.recordWorkExploration,
     required this.recordEntityExploration,
     required this.showSnack,
-    required this.loadItems,
+    required this.onWorkPersisted,
     required this.resolveEntity,
   });
 
@@ -43,7 +43,7 @@ class HomePreviewCoordinator {
   final void Function(String workId) recordWorkExploration;
   final void Function(String entityId) recordEntityExploration;
   final void Function(String message) showSnack;
-  final Future<void> Function() loadItems;
+  final Future<void> Function(AkashaItem item) onWorkPersisted;
   final UserCatalogEntity? Function(String entityId) resolveEntity;
 
   AkashaItem? workPreviewItem;
@@ -294,13 +294,13 @@ class HomePreviewCoordinator {
       saved = await HomeRegistryArchive.persistRegistryWork(
         registryWork,
         vault: vault,
-        reloadItems: loadItems,
         onDemoAdd: (_) {},
       );
     } else {
       saved = await DetailArchiveSave.save(item);
-      await loadItems();
     }
+
+    await onWorkPersisted(saved);
 
     openWorkPreview(resolveItemForOpen(saved));
     showSnack(

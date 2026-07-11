@@ -22,15 +22,7 @@ Future<void> _homeDialogsCoordinatorOpenAddEntityDialog(
       showMessage: coord.showMessage,
       userCatalog: coord.userCatalog,
       vaultItems: coord.getItems(),
-      onWorkSavedToVault: (item) async {
-        await coord.vault.saveVaultItem(item);
-        if (WorkIdCodec.isUserLocalWorkId(item.workId)) {
-          await coord.userCatalog.upsert(
-            UserCatalogEntity.fromAkashaItem(item),
-          );
-        }
-        await coord.loadItems();
-      },
+      onWorkSavedToVault: coord.persistWorkToVault,
       onEntitySaved: (result) =>
           _homeDialogsCoordinatorSaveEntityResult(coord, result),
     );
@@ -44,15 +36,7 @@ Future<void> _homeDialogsCoordinatorOpenAddEntityDialog(
       isVaultLinked: coord.vault.isVaultLinked,
       vault: coord.vault.vault,
       showMessage: coord.showMessage,
-      onSavedToVault: (item) async {
-        await coord.vault.saveVaultItem(item);
-        if (WorkIdCodec.isUserLocalWorkId(item.workId)) {
-          await coord.userCatalog.upsert(
-            UserCatalogEntity.fromAkashaItem(item),
-          );
-        }
-        await coord.loadItems();
-      },
+      onSavedToVault: coord.persistWorkToVault,
     );
     return;
   }
