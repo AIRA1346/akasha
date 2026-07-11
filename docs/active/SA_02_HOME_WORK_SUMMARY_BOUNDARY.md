@@ -55,6 +55,13 @@ revision. It does not scan siblings or construct a partial `AkashaItem`; SA-02B
 must resolve the summary locator first, then use this port for the selected
 Work only.
 
+`LocalDerivedIndexLifecycle` now exposes the same separation as a read API:
+`queryWorkSummaries` returns only bounded summaries from a ready cache, while
+`hydrateSelectedWork(workId)` resolves the cached locator and returns either a
+complete canonical item or an explicit cache-unavailable, missing-source, or
+identity-mismatch state. This remains a foundation; no Home screen consumes it
+yet.
+
 ## 4. Change and Reconciliation Contract
 
 SA-01 already provides `VaultChangeBatch`. SA-02 consumers must apply it with

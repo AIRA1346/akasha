@@ -1,13 +1,23 @@
 import 'dart:io';
 
 import 'package:akasha/core/ports/vault_change.dart';
+import 'package:akasha/models/akasha_item.dart';
 import 'package:akasha/services/local_derived_index_lifecycle.dart';
 import 'package:akasha/services/local_derived_index_store.dart';
 import 'package:akasha/services/local_derived_index_synchronizer.dart';
+import 'package:akasha/services/markdown_parser.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 
 import 'fakes/fake_vault_port.dart';
+
+class _HydrationVaultPort extends FakeVaultPort {
+  AkashaItem? selectedItem;
+
+  @override
+  Future<AkashaItem?> loadItemByRelativePath(String relativePath) async =>
+      relativePath == 'works/movie/alpha.md' ? selectedItem : null;
+}
 
 void main() {
   test(
@@ -22,7 +32,7 @@ void main() {
       await work.parent.create(recursive: true);
       await work.writeAsString(_workMarkdown(title: 'Alpha'));
 
-      final vault = FakeVaultPort();
+      final vault = _HydrationVaultPort();
       await vault.setVaultPath(vaultDirectory.path);
       final store = LocalDerivedIndexStore();
       final lifecycle = LocalDerivedIndexLifecycle(
@@ -40,6 +50,13 @@ void main() {
         final rebuilt = await lifecycle.rebuildWorkSummaries();
         expect(rebuilt.indexed, 1);
         expect(lifecycle.status.state, LocalDerivedIndexLifecycleState.ready);
+        vault.selectedItem = MarkdownParser.deserialize(
+          _workMarkdown(title: 'Alpha'),
+          'alpha.md',
+        );
+        final hydrated = await lifecycle.hydrateSelectedWork('wk_u_alph0001');
+        expect(hydrated.state, SelectedWorkHydrationState.hydrated);
+        expect(hydrated.item?.title, 'Alpha');
 
         await work.writeAsString(_workMarkdown(title: 'Alpha revised'));
         await lifecycle.handleVaultChange(
@@ -55,7 +72,7 @@ void main() {
         try {
           final summary = await store.findWorkSummaryById(
             database: database,
-            workId: 'wk_u_alpha',
+            workId: 'wk_u_alph0001',
           );
           expect(summary?.title, 'Alpha revised');
         } finally {
@@ -118,7 +135,10 @@ void main() {
   });
 }
 
-String _workMarkdown({required String title, String workId = 'wk_u_alpha'}) =>
+String _workMarkdown({
+  required String title,
+  String workId = 'wk_u_alph0001',
+}) =>
     '''
 ---
 schema_version: 3
