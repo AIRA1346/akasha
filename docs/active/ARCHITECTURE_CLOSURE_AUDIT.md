@@ -130,9 +130,8 @@ Regression: `test/bounded_home_read_closure_test.dart`.
 
 | Gate | Result |
 |---|---|
-| `flutter analyze --no-pub` | **No issues found** (2026-07-12, ~120s) |
-| `flutter test --no-pub` | **924 passed** (2026-07-12, ~107s) |
-| In-audit code fixes | **None** (no data-preservation critical defect requiring a slice) |
-| Working tree | Audit doc + index/backlog pointer — commit with this audit |
-
-Prior CURRENT_STATE tip remains consistent with this run (analyze 0 · test 924).
+| `flutter analyze --no-pub` | **No issues found** (post Bounded Home Read Closure) |
+| `flutter test --no-pub` | **930 passed** (post Bounded Home Read Closure) |
+| Interactive watch `loadAllItems` | **Absent** — precise `applyVaultChange` only |
+| Interactive full link rebuild | **Absent** — `rebuildLinkIndexForRepair` / validator only |
+| S0 code | Landed in Bounded Home Read Closure |
