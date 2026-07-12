@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../../config/catalog_locale.dart';
+import '../../../dev/steam_inventory_poc/steam_inventory_poc_dialog.dart';
 import '../../../generated/l10n/app_localizations.dart';
 import '../../../services/app_lifecycle.dart';
 import '../../../services/catalog_locale_preferences.dart';
@@ -11,14 +13,22 @@ import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
 
+/// Internal Steam Inventory POC entry — not a store UI.
+const bool _kSteamInventoryPocBuild = bool.fromEnvironment(
+  'AKASHA_STEAM_INVENTORY_POC',
+  defaultValue: false,
+);
+
+bool get _showSteamInventoryPoc => kDebugMode || _kSteamInventoryPocBuild;
+
 Future<void> showAppPreferencesDialog(
-  BuildContext context, {
+  BuildContext hostContext, {
   VoidCallback? onOpenAppTheme,
   VoidCallback? onOpenVaultSettings,
   VoidCallback? onQuit,
 }) {
   return showDialog<void>(
-    context: context,
+    context: hostContext,
     builder: (dialogContext) {
       var localScale = UserPreferences.uiScaleListenable.value;
       var localLocale = CatalogLocaleScope.current;
@@ -150,6 +160,23 @@ Future<void> showAppPreferencesDialog(
                           ? null
                           : () => closeThen(onOpenVaultSettings),
                     ),
+                    if (_showSteamInventoryPoc) ...[
+                      const Divider(height: 28),
+                      ListTile(
+                        contentPadding: EdgeInsets.zero,
+                        leading: const Icon(Icons.science_outlined),
+                        title: const Text('Steam Inventory POC'),
+                        subtitle: const Text(
+                          'Internal harness only — IAP flag stays false',
+                        ),
+                        onTap: () => closeThen(
+                          () {
+                            if (!hostContext.mounted) return;
+                            showSteamInventoryPocDialog(hostContext);
+                          },
+                        ),
+                      ),
+                    ],
                   ],
                 ),
               ),

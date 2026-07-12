@@ -116,4 +116,4 @@ Deferred until payment system is stable:
 | Flutter `CommerceApiClient` (unwired) | Done — not connected to store UI / production |
 | Production Steam / FeatureFlag | **Not connected** — `steamInAppPurchasesEnabled = false` |
 
-Next: choose deployable host for `backend/`, run sandbox E2E, then production small-txn + GetReport evidence. Flag stays false until verified.
+Next: **Steam Inventory Minimal POC** — [steam_inventory_poc/README.md](steam_inventory_poc/README.md). Feasibility is provisional Go only; final Go requires live Steamworks checklist. Cloud Run / Postgres / production MicroTxn remain paused; `backend/akasha_commerce_server/` stays deferred. Flag stays false.

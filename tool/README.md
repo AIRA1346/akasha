@@ -7,6 +7,7 @@
 
 | 스크립트 | 용도 |
 |----------|------|
+| `steam_get_report.dart` | **Admin-only** Steam GetReport evidence (env key; not in client build) |
 | `vault_format_validator.dart` | **Vault Format Spec v3 적합성 검증** — `dart run tool/vault_format_validator.dart <vault> [--strict]` (앱 코드 무의존; 명세가 기준) |
 | `preflight_check.dart` | registry 변경 후 4종 gate 일괄 |
 | `ci_registry_check.dart` | CI — 레지스트리·프랜차이즈·포스터 denylist |

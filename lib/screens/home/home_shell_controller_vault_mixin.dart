@@ -1,5 +1,6 @@
 import 'home_section_preferences.dart';
 import 'home_shell_controller_base.dart';
+import '../../services/local_derived_index_lifecycle.dart';
 
 /// Vault·catalog bootstrap and sync.
 mixin HomeShellControllerVaultMixin on HomeShellControllerBase {
@@ -9,6 +10,9 @@ mixin HomeShellControllerVaultMixin on HomeShellControllerBase {
 
   Future<void> initVault() async {
     await vault.initService();
+    // Cold-start path restore must rebind the derived Work-summary cache to
+    // the same vault that FileService just activated (indexes + notify).
+    await LocalDerivedIndexLifecycle.app.refresh();
     await navigation.loadSidebarState();
     await navigation.loadDashboards();
     await navigation.loadPersonalLibraries();

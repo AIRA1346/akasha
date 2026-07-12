@@ -1,0 +1,30 @@
+{
+  "response": {
+    "result": "OK",
+    "params": {
+      "count": 1,
+      "orders": [
+        {
+          "orderid": "900001",
+          "transid": "1001",
+          "steamid": "76561198000000001",
+          "status": "Succeeded",
+          "currency": "USD",
+          "time": "2026-07-12T00:00:00Z",
+          "country": "US",
+          "usstate": "",
+          "timecreated": "2026-07-12T00:00:00Z",
+          "items": [
+            {
+              "itemid": 10010,
+              "qty": 1,
+              "amount": 99,
+              "vat": 0,
+              "itemstatus": "Succeeded"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

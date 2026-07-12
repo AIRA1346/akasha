@@ -3,9 +3,9 @@ class FeatureFlags {
   /// Steam Wallet / microtxn 인앱 구매.
   ///
   /// **false = 미구현.** Store Page에 IAP를 표시하거나 재심사에서 구매가
-  /// 있다고 주장하지 않는다. 결제·Astra 지급·GetReport 흐름이 검증되기 전에
+  /// 있다고 주장하지 않는다. Inventory POC / GetReport 증거가 검증되기 전에
   /// true로 올리지 말 것. 트랙: docs/active/STEAM_RELEASE_BLOCKER_CLOSURE.md
-  /// 계약: docs/active/COMMERCE_CURRENCY_CONTRACT.md
+  /// POC: docs/active/steam_inventory_poc/README.md
   static const bool steamInAppPurchasesEnabled = false;
 
   /// 오늘의 회상 카드 — v1.1에서 활성화 예정

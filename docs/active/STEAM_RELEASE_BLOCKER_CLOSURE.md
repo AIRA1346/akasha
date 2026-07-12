@@ -23,9 +23,11 @@ Close Steam review / payment / localization blockers so AKASHA can ship and dogf
 | **P3** | Unimplemented IAP stated clearly in docs + `FeatureFlags` | **Done in this slice** — `steamInAppPurchasesEnabled = false` |
 | **P4** | Astra/Echo (`premium`/`earned`) currency contract + support · unlock domain | **Domain done** — [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md) · `packages/akasha_commerce_domain/` |
 | **P4-B** | Secure Commerce Backend Foundation (prototype) | **Accepted as domain prototype** — relocated in P4-C |
-| **P4-C** | Secure backend physical boundary + Steam Sandbox adapter | **Done** — `backend/akasha_commerce_server/` (ticket auth, sandbox adapter, reconciliation) |
-| **P5** | Production Steam adapter + deploy host selection | **Not started** — after sandbox E2E |
-| **P6** | Non-sandbox test purchase + GetReport sample + test account pack | **Not started** — after P5 |
+| **P4-C** | Secure backend physical boundary + Steam Sandbox adapter | **Done / deferred asset** — `backend/akasha_commerce_server/`; Cloud Run·Postgres·prod MicroTxn **paused** |
+| **Inv-Gate** | Steam Inventory Commerce Feasibility | **Provisional Go** — [STEAM_INVENTORY_COMMERCE_FEASIBILITY_GATE.md](STEAM_INVENTORY_COMMERCE_FEASIBILITY_GATE.md) |
+| **Inv-POC** | Steam Inventory Minimal POC + Native Bridge | **Native linked** — [NATIVE_BRIDGE.md](steam_inventory_poc/NATIVE_BRIDGE.md); live purchase/exchange **USER pending** |
+| **P5** | Live Inventory proof *or* custom backend if No-Go | **Blocked on Inv-POC live checklist** |
+| **P6** | Purchase + GetReport sample + test account pack | **Not started** — after live Inv-POC |
 
 **Hard rule:** Do **not** mark Store Page or in-app UI as having IAP while the Steam payment flow is incomplete. Prefer temporarily clearing Store “In-App Purchases” until P5+P6 are green.
 

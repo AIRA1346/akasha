@@ -3,6 +3,7 @@
 #include <windows.h>
 
 #include "flutter_window.h"
+#include "steam_inventory_poc_channel.h"
 #include "utils.h"
 
 int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
@@ -42,6 +43,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
 
   ::MSG msg;
   while (::GetMessage(&msg, nullptr, 0, 0)) {
+    // Keep Steam inventory / purchase callbacks progressing.
+    SteamInventoryPocChannel::PumpCallbacks();
     ::TranslateMessage(&msg);
     ::DispatchMessage(&msg);
   }
