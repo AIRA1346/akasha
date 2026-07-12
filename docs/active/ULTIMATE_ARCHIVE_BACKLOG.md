@@ -60,6 +60,7 @@ These should stay visible because they protect the archive before external/AI wr
 | UA-109 | v1/v2/v3 mixed-vault validation | done | Mixed legacy/title/ID fixture rebuild and validation coverage is landed |
 | UA-110 | Explicit v3 migration command | Existing files should never move accidentally | Build opt-in migration that updates paths, indexes, and backlinks atomically |
 | UA-121 | Extend conflict guards to future mutating operations | Update/append/link operations are validated but not executable yet | Reuse revision guard when those operation executors land |
+| UA-122 | §7 implementation contract ADR | Constitution §7 principles are fixed; storage/revision/aggregate schema and promotion UX are not | **Deferred until implementation begins** — do not write the ADR before semantic history or behavioral aggregates work starts |
 
 ## 3. P1 Index And Scale Work
 
@@ -153,7 +154,9 @@ These matter, but they are not the current ultimate-archive core.
 
 ## 9. Current Next Step
 
-The next architecture slice should be:
+**Product priority (after docs cleanup):** Steam M3 dogfood — fix issues found in real use first ([STEAM_RELEASE.md](STEAM_RELEASE.md)).
+
+**Separate architecture slice (not interleaved with dogfood):**
 
 > **[SA-05 Timeline projection gate](SA_05_TIMELINE_PROJECTION_DECISION.md):**
 > measure the current Timeline loader and fix the exact cursor, preview, and
@@ -161,7 +164,9 @@ The next architecture slice should be:
 > must remain a derived local projection; Journal, Entity, Link/graph, Taste,
 > and snippet queries must not be folded into it merely for convenience.
 
-Minimum done condition:
+**Deferred prerequisite (no ADR until then):** UA-122 — §7 implementation contract ADR when semantic history or behavioral aggregates implementation begins.
+
+Minimum done condition for SA-05 when that slice starts:
 
 - choose one domain/query family rather than a Universal Record migration;
 - write its bounded result and canonical-hydration contract before storage code;
