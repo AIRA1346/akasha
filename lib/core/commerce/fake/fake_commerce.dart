@@ -72,24 +72,24 @@ class FakePaymentProvider implements PaymentProvider {
   FakePaymentProvider({this.succeed = true});
 
   bool succeed;
-  final Set<String> settledKeys = {};
-  int settleCalls = 0;
+  final Set<String> finalizedKeys = {};
+  int finalizeCalls = 0;
 
   @override
-  Future<PaymentSettlement> settle({
+  Future<PaymentFinalization> finalizeTxn({
     required String orderId,
     required String idempotencyKey,
   }) async {
-    settleCalls++;
-    if (settledKeys.contains(idempotencyKey)) {
-      return PaymentSettlement(
+    finalizeCalls++;
+    if (finalizedKeys.contains(idempotencyKey)) {
+      return PaymentFinalization(
         externalPaymentId: 'pay_$idempotencyKey',
         orderId: orderId,
         succeeded: true,
       );
     }
-    settledKeys.add(idempotencyKey);
-    return PaymentSettlement(
+    finalizedKeys.add(idempotencyKey);
+    return PaymentFinalization(
       externalPaymentId: 'pay_$idempotencyKey',
       orderId: orderId,
       succeeded: succeed,

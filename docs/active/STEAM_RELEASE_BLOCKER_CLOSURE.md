@@ -21,9 +21,10 @@ Close Steam review / payment / localization blockers so AKASHA can ship and dogf
 | **P1** | English localization applies to all major UI in a real build | **Visual pass (chrome)** — see [evidence/p1-english-ui-2026-07-12](evidence/p1-english-ui-2026-07-12/README.md); deep Work/Entity vault flows deferred when vault path unavailable |
 | **P2** | Exact English switch path + resubmission Notes for Steam reviewers | **Draft ready** (§Reviewer English path) |
 | **P3** | Unimplemented IAP stated clearly in docs + `FeatureFlags` | **Done in this slice** — `steamInAppPurchasesEnabled = false` |
-| **P4** | Astra/Echo (`premium`/`earned`) currency contract + product · unlock · donation domain | **Domain slice done** — [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md); Steam/UI not wired |
-| **P5** | Steam Wallet → confirm → grant → consume ledger → no double-grant → refund/cancel → GetReport reconciliation | **Not started** — next after secure backend adapter |
-| **P6** | Non-sandbox test purchase + GetReport sample + test account pack for resubmission | **Not started** — after P5 |
+| **P4** | Astra/Echo (`premium`/`earned`) currency contract + support · unlock domain | **Domain done** — finalized grant rules + refund policy; [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md) |
+| **P4-B** | Secure Commerce Backend Foundation (SteamID account, 64-bit orders, state machine, ledger, fake Steam) | **Next** |
+| **P5** | Real Steam Wallet adapter → FinalizeTxn / GetReport reconciliation | **Not started** — after P4-B |
+| **P6** | Non-sandbox test purchase + GetReport sample + test account pack | **Not started** — after P5 |
 
 **Hard rule:** Do **not** mark Store Page or in-app UI as having IAP while the Steam payment flow is incomplete. Prefer temporarily clearing Store “In-App Purchases” until P5+P6 are green.
 

@@ -1,14 +1,15 @@
 import 'currency_kind.dart';
 
 enum ProductKind {
-  /// Steam-settled pack that grants [CurrencyKind.premium].
+  /// Steam-finalized pack that grants [CurrencyKind.premium].
   premiumPack,
 
   /// Spend currency → permanent theme entitlement.
   themeUnlock,
 
   /// Spend [CurrencyKind.premium] only; no entitlement / no gameplay advantage.
-  donation,
+  /// Display: EN "Support AKASHA" · KO "AKASHA 후원" (not "Donation").
+  support,
 }
 
 /// How a product may be paid.
@@ -52,22 +53,30 @@ class CommerceProduct {
     required this.payment,
     this.grantPremiumAmount,
     this.entitlementKey,
+    this.displayNameEn,
+    this.displayNameKo,
   });
 
   final String id;
   final ProductKind kind;
   final PaymentOption payment;
 
-  /// For [ProductKind.premiumPack] — amount of Astra granted after settlement.
+  /// For [ProductKind.premiumPack] — amount of Astra granted after finalization.
   final int? grantPremiumAmount;
 
   /// For [ProductKind.themeUnlock] — stable entitlement id (not a display name).
   final String? entitlementKey;
+
+  /// Optional catalog display (UI). Never used as a storage key.
+  final String? displayNameEn;
+  final String? displayNameKo;
 }
 
+/// Domain order lifecycle for the pure commerce slice.
+/// Steam adapter maps external txn states separately (see P4-B).
 enum OrderStatus {
   pendingPayment,
-  settled,
+  completed,
   refunded,
   failed,
 }
@@ -79,7 +88,7 @@ class CommerceOrder {
     required this.productId,
     required this.status,
     required this.idempotencyKey,
-    this.settledPremiumGrant,
+    this.premiumGrantAmount,
     this.externalPaymentId,
   });
 
@@ -88,12 +97,12 @@ class CommerceOrder {
   final String productId;
   final OrderStatus status;
   final String idempotencyKey;
-  final int? settledPremiumGrant;
+  final int? premiumGrantAmount;
   final String? externalPaymentId;
 
   CommerceOrder copyWith({
     OrderStatus? status,
-    int? settledPremiumGrant,
+    int? premiumGrantAmount,
     String? externalPaymentId,
   }) => CommerceOrder(
     id: id,
@@ -101,16 +110,16 @@ class CommerceOrder {
     productId: productId,
     status: status ?? this.status,
     idempotencyKey: idempotencyKey,
-    settledPremiumGrant: settledPremiumGrant ?? this.settledPremiumGrant,
+    premiumGrantAmount: premiumGrantAmount ?? this.premiumGrantAmount,
     externalPaymentId: externalPaymentId ?? this.externalPaymentId,
   );
 }
 
 enum LedgerEntryType {
-  /// Credit after settled payment or earned grant.
+  /// Credit after finalized payment or earned grant.
   credit,
 
-  /// Debit for theme unlock / donation.
+  /// Debit for theme unlock / support.
   debit,
 
   /// Refund / chargeback / cancel offset — never mutates prior rows.
@@ -163,6 +172,8 @@ class WalletProjection {
   });
 
   final String userId;
+
+  /// May be negative after refund reversal when Astra was already spent.
   final int premium;
   final int earned;
 
@@ -170,6 +181,10 @@ class WalletProjection {
     CurrencyKind.premium => premium,
     CurrencyKind.earned => earned,
   };
+
+  /// Further Astra spend is blocked while premium cannot cover [price]
+  /// (includes negative balance).
+  bool canSpendPremium(int price) => premium >= price;
 }
 
 /// Permanent unlock (theme, etc.). Separate from currency spend rows.
@@ -189,8 +204,10 @@ class CommerceEntitlement {
   final String idempotencyKey;
 }
 
-class PaymentSettlement {
-  const PaymentSettlement({
+/// Result of FinalizeTxn (or equivalent completed confirmation) — not a
+/// GetReport SETTLEMENT row.
+class PaymentFinalization {
+  const PaymentFinalization({
     required this.externalPaymentId,
     required this.orderId,
     required this.succeeded,

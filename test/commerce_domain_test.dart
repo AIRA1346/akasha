@@ -42,8 +42,8 @@ void main() {
     });
   });
 
-  group('premium pack settlement', () {
-    test('grants Astra once after payment settles', () async {
+  group('premium pack finalization', () {
+    test('grants Astra once after FinalizeTxn succeeds', () async {
       final order = await commerce.createPremiumPackOrder(
         userId: 'u1',
         productId: CommerceCatalog.premiumPack100.id,
@@ -51,14 +51,18 @@ void main() {
       );
       final wallet = await commerce.finalizePremiumPackPurchase(
         orderId: order.id,
-        settleIdempotencyKey: 'settle-1',
+        finalizeIdempotencyKey: 'finalize-1',
       );
       expect(wallet.premium, 100);
       expect(wallet.earned, 0);
-      expect(payments.settleCalls, 1);
+      expect(payments.finalizeCalls, 1);
+      expect(
+        (await repo.getOrder(order.id))!.status,
+        OrderStatus.completed,
+      );
     });
 
-    test('blocks duplicate grant for the same settle idempotency key', () async {
+    test('blocks duplicate grant for the same finalize idempotency key', () async {
       final order = await commerce.createPremiumPackOrder(
         userId: 'u1',
         productId: CommerceCatalog.premiumPack100.id,
@@ -66,11 +70,11 @@ void main() {
       );
       await commerce.finalizePremiumPackPurchase(
         orderId: order.id,
-        settleIdempotencyKey: 'settle-1',
+        finalizeIdempotencyKey: 'finalize-1',
       );
       final again = await commerce.finalizePremiumPackPurchase(
         orderId: order.id,
-        settleIdempotencyKey: 'settle-1',
+        finalizeIdempotencyKey: 'finalize-1',
       );
       expect(again.premium, 100);
       expect(repo.ledger.where((e) => e.userId == 'u1').length, 1);
@@ -101,7 +105,7 @@ void main() {
       );
       await commerce.finalizePremiumPackPurchase(
         orderId: order.id,
-        settleIdempotencyKey: 'settle-fund',
+        finalizeIdempotencyKey: 'finalize-fund',
       );
     }
 
@@ -201,8 +205,8 @@ void main() {
     });
   });
 
-  group('donation and refund', () {
-    test('donation spends Astra without entitlement', () async {
+  group('support and refund', () {
+    test('support spends Astra without entitlement', () async {
       final order = await commerce.createPremiumPackOrder(
         userId: 'u1',
         productId: CommerceCatalog.premiumPack100.id,
@@ -210,15 +214,18 @@ void main() {
       );
       await commerce.finalizePremiumPackPurchase(
         orderId: order.id,
-        settleIdempotencyKey: 'settle-1',
+        finalizeIdempotencyKey: 'finalize-1',
       );
-      final wallet = await commerce.donate(
+      final wallet = await commerce.purchaseSupport(
         userId: 'u1',
-        productId: CommerceCatalog.donationTip.id,
-        idempotencyKey: 'donate-1',
+        productId: CommerceCatalog.supportAkasha.id,
+        idempotencyKey: 'support-1',
       );
       expect(wallet.premium, 90);
       expect(repo.entitlementsByUserKey, isEmpty);
+      expect(CommerceCatalog.supportAkasha.displayNameEn, 'Support AKASHA');
+      expect(CommerceCatalog.supportAkasha.displayNameKo, 'AKASHA 후원');
+      expect(CommerceCatalog.supportAkasha.kind, ProductKind.support);
     });
 
     test('refund adds reversal and does not delete prior credit', () async {
@@ -229,9 +236,9 @@ void main() {
       );
       await commerce.finalizePremiumPackPurchase(
         orderId: order.id,
-        settleIdempotencyKey: 'settle-1',
+        finalizeIdempotencyKey: 'finalize-1',
       );
-      final afterRefund = await commerce.refundSettledPremiumPack(
+      final afterRefund = await commerce.refundCompletedPremiumPack(
         orderId: order.id,
         idempotencyKey: 'refund-1',
       );
@@ -245,6 +252,67 @@ void main() {
       );
     });
 
+    test('refund after spend allows negative premium, keeps entitlement, blocks Astra spend, leaves Echo', () async {
+      final order = await commerce.createPremiumPackOrder(
+        userId: 'u1',
+        productId: CommerceCatalog.premiumPack100.id,
+        idempotencyKey: 'order-1',
+      );
+      await commerce.finalizePremiumPackPurchase(
+        orderId: order.id,
+        finalizeIdempotencyKey: 'finalize-1',
+      );
+      await commerce.unlockTheme(
+        userId: 'u1',
+        productId: CommerceCatalog.themeFlex.id,
+        payWith: CurrencyKind.premium,
+        idempotencyKey: 'unlock-1',
+      );
+      await commerce.grantEarned(
+        userId: 'u1',
+        amount: 80,
+        idempotencyKey: 'echo-keep',
+      );
+
+      final afterRefund = await commerce.refundCompletedPremiumPack(
+        orderId: order.id,
+        idempotencyKey: 'refund-1',
+      );
+      expect(afterRefund.premium, -50);
+      expect(afterRefund.earned, 80);
+      expect(
+        await repo.findEntitlement(userId: 'u1', key: 'theme:flex_demo'),
+        isNotNull,
+      );
+
+      expect(
+        () => commerce.purchaseSupport(
+          userId: 'u1',
+          productId: CommerceCatalog.supportAkasha.id,
+          idempotencyKey: 'support-blocked',
+        ),
+        throwsA(
+          isA<CommerceRejected>().having(
+            (e) => e.code,
+            'code',
+            'insufficient_balance',
+          ),
+        ),
+      );
+
+      // Echo spend still works while premium is negative.
+      final echoTheme = await commerce.unlockTheme(
+        userId: 'u1',
+        productId: CommerceCatalog.themeFlexB.id,
+        payWith: CurrencyKind.earned,
+        idempotencyKey: 'echo-theme',
+      );
+      expect(echoTheme.key, 'theme:flex_b_demo');
+      final w = await commerce.wallet('u1');
+      expect(w.premium, -50);
+      expect(w.earned, 40);
+    });
+
     test('refund idempotency does not double-reverse', () async {
       final order = await commerce.createPremiumPackOrder(
         userId: 'u1',
@@ -253,13 +321,13 @@ void main() {
       );
       await commerce.finalizePremiumPackPurchase(
         orderId: order.id,
-        settleIdempotencyKey: 'settle-1',
+        finalizeIdempotencyKey: 'finalize-1',
       );
-      await commerce.refundSettledPremiumPack(
+      await commerce.refundCompletedPremiumPack(
         orderId: order.id,
         idempotencyKey: 'refund-1',
       );
-      final again = await commerce.refundSettledPremiumPack(
+      final again = await commerce.refundCompletedPremiumPack(
         orderId: order.id,
         idempotencyKey: 'refund-1',
       );

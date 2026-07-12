@@ -32,21 +32,36 @@ abstract final class CommerceCatalog {
     entitlementKey: 'theme:astra_only_demo',
   );
 
-  /// Donation — Astra spend, no entitlement.
-  static const donationTip = CommerceProduct(
-    id: 'donation_tip_10',
-    kind: ProductKind.donation,
+  /// Second choose-one theme (for multi-unlock tests).
+  static const themeFlexB = CommerceProduct(
+    id: 'theme_unlock_flex_b',
+    kind: ProductKind.themeUnlock,
+    payment: PaymentOption(
+      policy: PaymentPolicy.chooseOne,
+      premiumPrice: 50,
+      earnedPrice: 40,
+    ),
+    entitlementKey: 'theme:flex_b_demo',
+  );
+
+  /// Developer support — Astra spend, no entitlement (not a charity donation).
+  static const supportAkasha = CommerceProduct(
+    id: 'support_akasha_10',
+    kind: ProductKind.support,
     payment: PaymentOption(
       policy: PaymentPolicy.premiumOnly,
       premiumPrice: 10,
     ),
+    displayNameEn: 'Support AKASHA',
+    displayNameKo: 'AKASHA 후원',
   );
 
   static const List<CommerceProduct> all = [
     premiumPack100,
     themeFlex,
+    themeFlexB,
     themePremiumOnly,
-    donationTip,
+    supportAkasha,
   ];
 
   static CommerceProduct? byId(String id) {

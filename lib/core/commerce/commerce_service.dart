@@ -60,16 +60,16 @@ class CommerceService {
       productId: productId,
       status: OrderStatus.pendingPayment,
       idempotencyKey: idempotencyKey,
-      settledPremiumGrant: grant,
+      premiumGrantAmount: grant,
     );
     await _repo.saveOrder(order);
     return order;
   }
 
-  /// After payment provider confirms settlement — grant Astra exactly once.
+  /// After FinalizeTxn (or completed confirmation) — grant Astra exactly once.
   Future<WalletProjection> finalizePremiumPackPurchase({
     required String orderId,
-    required String settleIdempotencyKey,
+    required String finalizeIdempotencyKey,
   }) async {
     final order = await _repo.getOrder(orderId);
     if (order == null) {
@@ -77,7 +77,7 @@ class CommerceService {
     }
 
     final existingLedger = await _repo.findLedgerByIdempotencyKey(
-      settleIdempotencyKey,
+      finalizeIdempotencyKey,
     );
     if (existingLedger != null) {
       return wallet(order.userId);
@@ -86,28 +86,27 @@ class CommerceService {
     if (order.status == OrderStatus.refunded) {
       throw const CommerceRejected(
         'order_refunded',
-        'Cannot settle a refunded order.',
+        'Cannot finalize a refunded order.',
       );
     }
 
-    if (order.status == OrderStatus.settled) {
-      // Settled without this settle key — still block double grant via ledger key.
+    if (order.status == OrderStatus.completed) {
       return wallet(order.userId);
     }
 
-    final settlement = await _payments.settle(
+    final finalization = await _payments.finalizeTxn(
       orderId: orderId,
-      idempotencyKey: settleIdempotencyKey,
+      idempotencyKey: finalizeIdempotencyKey,
     );
-    if (!settlement.succeeded) {
+    if (!finalization.succeeded) {
       await _repo.saveOrder(order.copyWith(status: OrderStatus.failed));
       throw const CommerceRejected(
         'payment_failed',
-        'Payment settlement failed.',
+        'Payment finalization failed.',
       );
     }
 
-    final grant = order.settledPremiumGrant ?? 0;
+    final grant = order.premiumGrantAmount ?? 0;
     if (grant <= 0) {
       throw const CommerceRejected(
         'invalid_grant',
@@ -115,8 +114,7 @@ class CommerceService {
       );
     }
 
-    // Re-check after await (race): another finalize may have written ledger.
-    final raced = await _repo.findLedgerByIdempotencyKey(settleIdempotencyKey);
+    final raced = await _repo.findLedgerByIdempotencyKey(finalizeIdempotencyKey);
     if (raced != null) {
       return wallet(order.userId);
     }
@@ -128,17 +126,17 @@ class CommerceService {
         currency: CurrencyKind.premium,
         type: LedgerEntryType.credit,
         amount: grant,
-        idempotencyKey: settleIdempotencyKey,
+        idempotencyKey: finalizeIdempotencyKey,
         createdAt: _clock().toUtc(),
         orderId: order.id,
         productId: order.productId,
-        note: 'premium_pack_settlement',
+        note: 'premium_pack_finalization',
       ),
     );
     await _repo.saveOrder(
       order.copyWith(
-        status: OrderStatus.settled,
-        externalPaymentId: settlement.externalPaymentId,
+        status: OrderStatus.completed,
+        externalPaymentId: finalization.externalPaymentId,
       ),
     );
     return wallet(order.userId);
@@ -228,12 +226,7 @@ class CommerceService {
     }
 
     final balance = await wallet(userId);
-    if (balance.of(payWith) < price) {
-      throw const CommerceRejected(
-        'insufficient_balance',
-        'Not enough currency for theme unlock.',
-      );
-    }
+    _requireSpendable(balance, payWith, price);
 
     final spendKey = 'spend:$idempotencyKey';
     final existingSpend = await _repo.findLedgerByIdempotencyKey(spendKey);
@@ -264,8 +257,8 @@ class CommerceService {
     return entitlement;
   }
 
-  /// Astra-only donation spend; no entitlement.
-  Future<WalletProjection> donate({
+  /// Astra-only Support spend; no entitlement (EN: Support AKASHA).
+  Future<WalletProjection> purchaseSupport({
     required String userId,
     required String productId,
     required String idempotencyKey,
@@ -276,33 +269,28 @@ class CommerceService {
     }
 
     final product = await _requireProduct(productId);
-    if (product.kind != ProductKind.donation) {
+    if (product.kind != ProductKind.support) {
       throw const CommerceRejected(
-        'not_donation',
-        'Product is not a donation.',
+        'not_support',
+        'Product is not a support SKU.',
       );
     }
     if (!product.payment.allows(CurrencyKind.premium)) {
       throw const CommerceRejected(
-        'donation_premium_only',
-        'Donations must be paid with premium currency.',
+        'support_premium_only',
+        'Support must be paid with premium currency.',
       );
     }
     final price = product.payment.premiumPrice;
     if (price == null || price <= 0) {
       throw const CommerceRejected(
         'invalid_price',
-        'Donation product needs a positive premium price.',
+        'Support product needs a positive premium price.',
       );
     }
 
     final balance = await wallet(userId);
-    if (balance.premium < price) {
-      throw const CommerceRejected(
-        'insufficient_balance',
-        'Not enough Astra for donation.',
-      );
-    }
+    _requireSpendable(balance, CurrencyKind.premium, price);
 
     await _repo.appendLedger(
       LedgerEntry(
@@ -314,14 +302,16 @@ class CommerceService {
         idempotencyKey: idempotencyKey,
         createdAt: _clock().toUtc(),
         productId: productId,
-        note: 'donation_spend',
+        note: 'support_spend',
       ),
     );
     return wallet(userId);
   }
 
-  /// Refund a settled premium-pack order: reversal credit offset + mark refunded.
-  Future<WalletProjection> refundSettledPremiumPack({
+  /// Refund a completed premium-pack order: reversal against the grant.
+  /// May leave premium negative if Astra was already spent; does not revoke
+  /// entitlements; does not touch Echo.
+  Future<WalletProjection> refundCompletedPremiumPack({
     required String orderId,
     required String idempotencyKey,
   }) async {
@@ -335,14 +325,14 @@ class CommerceService {
     if (order == null) {
       throw const CommerceNotFound('order_missing', 'Order not found.');
     }
-    if (order.status != OrderStatus.settled) {
+    if (order.status != OrderStatus.completed) {
       throw const CommerceRejected(
-        'not_settled',
-        'Only settled orders can be refunded.',
+        'not_completed',
+        'Only completed orders can be refunded.',
       );
     }
 
-    final grant = order.settledPremiumGrant ?? 0;
+    final grant = order.premiumGrantAmount ?? 0;
     final entries = await _repo.listLedger(order.userId);
     LedgerEntry? credit;
     for (final e in entries) {
@@ -360,8 +350,6 @@ class CommerceService {
       );
     }
 
-    // Reversal offsets the prior credit without mutating/deleting it.
-    // amount is a signed adjustment (negative when reversing a credit).
     await _repo.appendLedger(
       LedgerEntry(
         id: _id(),
@@ -379,6 +367,25 @@ class CommerceService {
     );
     await _repo.saveOrder(order.copyWith(status: OrderStatus.refunded));
     return wallet(order.userId);
+  }
+
+  void _requireSpendable(
+    WalletProjection balance,
+    CurrencyKind payWith,
+    int price,
+  ) {
+    if (payWith == CurrencyKind.premium && !balance.canSpendPremium(price)) {
+      throw const CommerceRejected(
+        'insufficient_balance',
+        'Not enough Astra (negative or below price blocks premium spend).',
+      );
+    }
+    if (payWith == CurrencyKind.earned && balance.earned < price) {
+      throw const CommerceRejected(
+        'insufficient_balance',
+        'Not enough Echo for this purchase.',
+      );
+    }
   }
 
   Future<CommerceProduct> _requireProduct(String productId) async {

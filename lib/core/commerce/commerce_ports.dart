@@ -51,10 +51,11 @@ WalletProjection projectWalletFromLedger({
   );
 }
 
-/// External payment confirmation port (fake now; Steam microtxn later).
+/// External payment finalization port (fake now; Steam FinalizeTxn later).
+///
+/// Confirms completed payment — not GetReport SETTLEMENT arrival.
 abstract class PaymentProvider {
-  /// Confirms an external payment for [orderId]. Idempotent on [idempotencyKey].
-  Future<PaymentSettlement> settle({
+  Future<PaymentFinalization> finalizeTxn({
     required String orderId,
     required String idempotencyKey,
   });
