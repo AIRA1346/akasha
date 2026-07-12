@@ -28,6 +28,7 @@ class ArchiveCandidate {
     this.tags = const [],
     this.sourceOperationId,
     this.actorBindingId,
+    this.actorLabel,
     this.gatewayGrantId,
     this.sourceRecordRevision,
     this.duplicateOfEntityId,
@@ -53,6 +54,11 @@ class ArchiveCandidate {
   /// Stable local actor binding that created this candidate through the
   /// Archive Gateway. Absent for pre-Gateway candidates and external imports.
   final String? actorBindingId;
+
+  /// Human-readable label for the local actor that proposed this candidate.
+  /// It is retained on the candidate so review remains understandable if the
+  /// original grant is later revoked or removed.
+  final String? actorLabel;
 
   /// Local authority reference used for a Gateway-created candidate. The
   /// grant's full constraints live in the Vault-owned authority store.
@@ -88,6 +94,7 @@ class ArchiveCandidate {
     List<String>? tags,
     String? sourceOperationId,
     String? actorBindingId,
+    String? actorLabel,
     String? gatewayGrantId,
     String? sourceRecordRevision,
     String? duplicateOfEntityId,
@@ -108,6 +115,7 @@ class ArchiveCandidate {
       tags: tags ?? this.tags,
       sourceOperationId: sourceOperationId ?? this.sourceOperationId,
       actorBindingId: actorBindingId ?? this.actorBindingId,
+      actorLabel: actorLabel ?? this.actorLabel,
       gatewayGrantId: gatewayGrantId ?? this.gatewayGrantId,
       sourceRecordRevision: sourceRecordRevision ?? this.sourceRecordRevision,
       duplicateOfEntityId: duplicateOfEntityId ?? this.duplicateOfEntityId,
@@ -163,6 +171,7 @@ class ArchiveCandidate {
       'sourceOperationId': sourceOperationId,
     if (actorBindingId != null && actorBindingId!.isNotEmpty)
       'actorBindingId': actorBindingId,
+    if (actorLabel != null && actorLabel!.isNotEmpty) 'actorLabel': actorLabel,
     if (gatewayGrantId != null && gatewayGrantId!.isNotEmpty)
       'gatewayGrantId': gatewayGrantId,
     if (sourceRecordRevision != null && sourceRecordRevision!.isNotEmpty)
@@ -200,6 +209,7 @@ class ArchiveCandidate {
       tags: _stringList(json['tags']),
       sourceOperationId: json['sourceOperationId']?.toString(),
       actorBindingId: json['actorBindingId']?.toString(),
+      actorLabel: json['actorLabel']?.toString(),
       gatewayGrantId: json['gatewayGrantId']?.toString(),
       sourceRecordRevision: json['sourceRecordRevision']?.toString(),
       duplicateOfEntityId: json['duplicateOfEntityId']?.toString(),

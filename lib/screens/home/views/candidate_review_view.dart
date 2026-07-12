@@ -8,6 +8,8 @@ import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/archive_candidate_store.dart';
 import '../../../services/archive_operation_executor.dart';
+import '../../../services/archive_record_revision_service.dart';
+import '../../../services/record_summary_index_service.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_typography.dart';
 import '../dialogs/add_catalog_entity_dialog.dart' show entityTypeBadgeLabel;
@@ -26,6 +28,8 @@ class CandidateReviewView extends StatefulWidget {
     this.reloadToken = 0,
     this.candidateStore,
     this.operationExecutor,
+    this.recordSummaryIndexService,
+    this.revisionService,
   });
 
   final String? vaultPath;
@@ -36,6 +40,8 @@ class CandidateReviewView extends StatefulWidget {
   /// 테스트 주입용. null이면 기본 구현을 사용한다.
   final ArchiveCandidateStore? candidateStore;
   final ArchiveOperationExecutor? operationExecutor;
+  final RecordSummaryIndexService? recordSummaryIndexService;
+  final ArchiveRecordRevisionService? revisionService;
 
   @override
   State<CandidateReviewView> createState() => _CandidateReviewViewState();
@@ -47,6 +53,10 @@ class _CandidateReviewViewState extends State<CandidateReviewView> {
   late final ArchiveOperationExecutor _executor =
       widget.operationExecutor ??
       ArchiveOperationExecutor(candidateStore: _store);
+  late final RecordSummaryIndexService _recordSummaryIndex =
+      widget.recordSummaryIndexService ?? RecordSummaryIndexService();
+  late final ArchiveRecordRevisionService _revisionService =
+      widget.revisionService ?? const ArchiveRecordRevisionService();
 
   List<ArchiveCandidate> _candidates = const [];
   bool _loading = true;
@@ -167,6 +177,156 @@ class _CandidateReviewViewState extends State<CandidateReviewView> {
     }
   }
 
+  Future<void> _showDetails(ArchiveCandidate candidate) async {
+    await showDialog<void>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text('${candidate.title} 후보 정보'),
+        content: SizedBox(
+          width: 520,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _detailSection(ctx, '제안', [
+                  _detailRow('종류', entityTypeBadgeLabel(candidate.entityType)),
+                  _detailRow('출처', _sourceLabel(candidate.source)),
+                  _detailRow('생성', _formatWhen(candidate.createdAt)),
+                  if (_proposalActor(candidate) != null)
+                    _detailRow('제안 주체', _proposalActor(candidate)!),
+                  if (candidate.sourceOperationId?.trim().isNotEmpty == true)
+                    _detailRow('작업 ID', candidate.sourceOperationId!.trim()),
+                ]),
+                const SizedBox(height: 16),
+                FutureBuilder<_CandidateSourceState>(
+                  future: _loadSourceState(candidate),
+                  builder: (context, snapshot) {
+                    final state = snapshot.data;
+                    return _detailSection(ctx, '원본 기록', [
+                      if (state?.title?.trim().isNotEmpty == true)
+                        _detailRow('기록', state!.title!.trim()),
+                      _detailRow('기록 ID', candidate.sourceRecordId),
+                      if (state != null) _detailRow('현재 상태', state.statusLabel),
+                      if (candidate.sourceRecordRevision?.trim().isNotEmpty ==
+                          true)
+                        _detailRow(
+                          '제안 당시 revision',
+                          candidate.sourceRecordRevision!.trim(),
+                          selectable: true,
+                        )
+                      else
+                        _detailRow('제안 당시 revision', '기존 후보 — 정보 없음'),
+                    ]);
+                  },
+                ),
+                if (candidate.evidence.trim().isNotEmpty) ...[
+                  const SizedBox(height: 16),
+                  _detailSection(ctx, '근거', [
+                    SelectableText(
+                      candidate.evidence.trim(),
+                      style: Theme.of(ctx).textTheme.bodyMedium,
+                    ),
+                  ]),
+                ],
+                if (candidate.aliases.isNotEmpty ||
+                    candidate.tags.isNotEmpty) ...[
+                  const SizedBox(height: 16),
+                  _detailSection(ctx, '보조 정보', [
+                    if (candidate.aliases.isNotEmpty)
+                      _detailRow('별칭', candidate.aliases.join(', ')),
+                    if (candidate.tags.isNotEmpty)
+                      _detailRow('태그', candidate.tags.join(', ')),
+                  ]),
+                ],
+              ],
+            ),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('닫기'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<_CandidateSourceState> _loadSourceState(
+    ArchiveCandidate candidate,
+  ) async {
+    final path = widget.vaultPath;
+    if (path == null || path.trim().isEmpty) {
+      return const _CandidateSourceState.unavailable();
+    }
+
+    final summary = await _recordSummaryIndex.lookupById(
+      path,
+      candidate.sourceRecordId,
+    );
+    final revision = await _revisionService.currentForRecordId(
+      vaultPath: path,
+      recordId: candidate.sourceRecordId,
+    );
+    final captured = candidate.sourceRecordRevision?.trim();
+    return _CandidateSourceState(
+      title: summary?.title,
+      exists: revision.exists,
+      isChanged: captured == null || captured.isEmpty
+          ? null
+          : !revision.exists || revision.value != captured,
+    );
+  }
+
+  Widget _detailSection(
+    BuildContext context,
+    String title,
+    List<Widget> children,
+  ) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: Theme.of(context).textTheme.titleSmall?.copyWith(
+            color: AkashaColors.textMuted,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        const SizedBox(height: 6),
+        ...children,
+      ],
+    );
+  }
+
+  Widget _detailRow(String label, String value, {bool selectable = false}) {
+    final text = Text(
+      value,
+      style: AkashaTypography.bodySecondary.copyWith(
+        color: AkashaColors.textSecondary,
+      ),
+    );
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 5),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: 108,
+            child: Text(
+              label,
+              style: AkashaTypography.bodySecondary.copyWith(
+                color: AkashaColors.textMuted,
+              ),
+            ),
+          ),
+          Expanded(child: selectable ? SelectableText(value) : text),
+        ],
+      ),
+    );
+  }
+
   /// 수락 확정 다이얼로그. 확정 시 (수정 가능한) 최종 제목을 돌려준다.
   Future<String?> _confirmApprove(ArchiveCandidate candidate) async {
     final titleCtrl = TextEditingController(text: candidate.title);
@@ -182,9 +342,9 @@ class _CandidateReviewViewState extends State<CandidateReviewView> {
             children: [
               Text(
                 '${entityTypeBadgeLabel(candidate.entityType)} 엔티티로 승격합니다.',
-                style: Theme.of(ctx).textTheme.bodySmall?.copyWith(
-                  color: AkashaColors.textMuted,
-                ),
+                style: Theme.of(
+                  ctx,
+                ).textTheme.bodySmall?.copyWith(color: AkashaColors.textMuted),
               ),
               const SizedBox(height: 12),
               TextField(
@@ -396,6 +556,22 @@ class _CandidateReviewViewState extends State<CandidateReviewView> {
               ),
             ],
             const SizedBox(height: 8),
+            Wrap(
+              spacing: 8,
+              runSpacing: 4,
+              children: [
+                _metadataLabel(
+                  Icons.article_outlined,
+                  '원본 ${_shortId(candidate.sourceRecordId)}',
+                ),
+                if (_proposalActor(candidate) != null)
+                  _metadataLabel(
+                    Icons.smart_toy_outlined,
+                    _proposalActor(candidate)!,
+                  ),
+              ],
+            ),
+            const SizedBox(height: 8),
             Row(
               children: [
                 Text(
@@ -412,6 +588,11 @@ class _CandidateReviewViewState extends State<CandidateReviewView> {
                     child: CircularProgressIndicator(strokeWidth: 2),
                   )
                 else ...[
+                  TextButton.icon(
+                    onPressed: () => _showDetails(candidate),
+                    icon: const Icon(Icons.info_outline, size: 17),
+                    label: const Text('상세'),
+                  ),
                   TextButton(
                     onPressed: () => _reject(candidate),
                     child: const Text(
@@ -451,5 +632,60 @@ class _CandidateReviewViewState extends State<CandidateReviewView> {
         ),
       ),
     );
+  }
+
+  Widget _metadataLabel(IconData icon, String label) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(icon, size: 14, color: AkashaColors.textMuted),
+        const SizedBox(width: 4),
+        Text(
+          label,
+          style: AkashaTypography.bodySecondary.copyWith(
+            color: AkashaColors.textMuted,
+          ),
+        ),
+      ],
+    );
+  }
+
+  static String? _proposalActor(ArchiveCandidate candidate) {
+    final label = candidate.actorLabel?.trim();
+    if (label != null && label.isNotEmpty) return label;
+    final binding = candidate.actorBindingId?.trim();
+    return binding == null || binding.isEmpty ? null : binding;
+  }
+
+  static String _shortId(String id) {
+    final trimmed = id.trim();
+    if (trimmed.length <= 26) return trimmed;
+    return '${trimmed.substring(0, 23)}…';
+  }
+}
+
+class _CandidateSourceState {
+  const _CandidateSourceState({
+    this.title,
+    required this.exists,
+    required this.isChanged,
+  });
+
+  const _CandidateSourceState.unavailable()
+    : title = null,
+      exists = false,
+      isChanged = null;
+
+  final String? title;
+  final bool exists;
+  final bool? isChanged;
+
+  String get statusLabel {
+    if (!exists) return '원본을 찾지 못했습니다';
+    return switch (isChanged) {
+      true => '후보 제안 이후 원본이 변경되었습니다',
+      false => '후보 제안 당시와 같은 원본입니다',
+      null => '기존 후보 — 비교할 revision이 없습니다',
+    };
   }
 }

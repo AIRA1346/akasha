@@ -85,6 +85,7 @@ void main() {
         expect(applied.applied, isTrue);
         expect(applied.candidate?.sourceOperationId, request.operationId);
         expect(applied.candidate?.actorBindingId, request.actorBindingId);
+        expect(applied.candidate?.actorLabel, 'Local tool binding');
         expect(applied.candidate?.gatewayGrantId, request.grantId);
         expect(applied.candidate?.sourceRecordRevision, revision.value);
         expect(applied.candidate?.createdAt, DateTime.utc(2026, 7, 12, 8));

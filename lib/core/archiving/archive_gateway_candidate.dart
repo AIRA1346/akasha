@@ -160,10 +160,14 @@ class ArchiveGatewayCandidateRequest {
   int get encodedCandidateBytes =>
       utf8.encode(jsonEncode(candidate.toJson())).length;
 
-  ArchiveCandidate materialize({required DateTime appliedAt}) {
+  ArchiveCandidate materialize({
+    required DateTime appliedAt,
+    String? actorLabel,
+  }) {
     return candidate.copyWith(
       sourceOperationId: operationId,
       actorBindingId: actorBindingId,
+      actorLabel: actorLabel,
       gatewayGrantId: grantId,
       sourceRecordRevision: expectedSourceRevision,
       createdAt: appliedAt.toUtc(),

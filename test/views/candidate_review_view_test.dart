@@ -7,6 +7,8 @@ import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/screens/home/views/candidate_review_view.dart';
 import 'package:akasha/services/archive_candidate_store.dart';
 import 'package:akasha/services/archive_operation_executor.dart';
+import 'package:akasha/services/archive_record_revision_service.dart';
+import 'package:akasha/services/record_summary_index_service.dart';
 import 'package:akasha/theme/akasha_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -14,8 +16,7 @@ import 'package:flutter_test/flutter_test.dart';
 import '../fakes/fake_user_catalog_port.dart';
 
 class _FakeCandidateStore extends ArchiveCandidateStore {
-  _FakeCandidateStore(List<ArchiveCandidate> seed)
-    : candidates = List.of(seed);
+  _FakeCandidateStore(List<ArchiveCandidate> seed) : candidates = List.of(seed);
 
   final List<ArchiveCandidate> candidates;
   final List<String> dismissed = [];
@@ -42,9 +43,7 @@ class _FakeCandidateStore extends ArchiveCandidateStore {
     dismissed.add(candidateId);
     final index = candidates.indexWhere((c) => c.candidateId == candidateId);
     if (index >= 0) {
-      candidates[index] = candidates[index].markDismissed(
-        updatedAt: updatedAt,
-      );
+      candidates[index] = candidates[index].markDismissed(updatedAt: updatedAt);
     }
   }
 }
@@ -84,11 +83,34 @@ class _FakeExecutor extends ArchiveOperationExecutor {
   }
 }
 
+class _FakeRecordSummaryIndex extends RecordSummaryIndexService {
+  @override
+  Future<VaultRecordSummary?> lookupById(
+    String vaultPath,
+    String recordId,
+  ) async => null;
+}
+
+class _FakeRevisionService extends ArchiveRecordRevisionService {
+  _FakeRevisionService(this.revision);
+
+  final ArchiveRecordRevision revision;
+
+  @override
+  Future<ArchiveRecordRevision> currentForRecordId({
+    required String vaultPath,
+    required String recordId,
+  }) async => revision;
+}
+
 ArchiveCandidate _candidate({
   String id = 'cand_person_test0001',
   EntityAnchorType type = EntityAnchorType.person,
   String title = 'Ars Almadel',
   double confidence = 0.9,
+  String? actorLabel,
+  String? sourceOperationId,
+  String? sourceRecordRevision,
 }) {
   return ArchiveCandidate(
     candidateId: id,
@@ -99,6 +121,9 @@ ArchiveCandidate _candidate({
     createdAt: DateTime.utc(2026, 7, 1),
     updatedAt: DateTime.utc(2026, 7, 1),
     confidence: confidence,
+    actorLabel: actorLabel,
+    sourceOperationId: sourceOperationId,
+    sourceRecordRevision: sourceRecordRevision,
   );
 }
 
@@ -106,6 +131,8 @@ Widget _wrap({
   required _FakeCandidateStore store,
   required _FakeExecutor executor,
   Future<void> Function(UserCatalogEntity entity)? onOpenEntity,
+  RecordSummaryIndexService? recordSummaryIndexService,
+  ArchiveRecordRevisionService? revisionService,
 }) {
   return MaterialApp(
     theme: AkashaTheme.dark(),
@@ -116,6 +143,8 @@ Widget _wrap({
         onOpenEntity: onOpenEntity,
         candidateStore: store,
         operationExecutor: executor,
+        recordSummaryIndexService: recordSummaryIndexService,
+        revisionService: revisionService,
       ),
     ),
   );
@@ -157,6 +186,43 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('검토할 후보가 없습니다.'), findsOneWidget);
+  });
+
+  testWidgets('shows candidate provenance in details', (tester) async {
+    final store = _FakeCandidateStore([
+      _candidate(
+        actorLabel: 'Local analysis tool',
+        sourceOperationId: 'op_candidate_001',
+        sourceRecordRevision: 'v2:sha256:source;bytes:128',
+      ),
+    ]);
+    await tester.pumpWidget(
+      _wrap(
+        store: store,
+        executor: _FakeExecutor(store),
+        recordSummaryIndexService: _FakeRecordSummaryIndex(),
+        revisionService: _FakeRevisionService(
+          const ArchiveRecordRevision(
+            value: 'v2:sha256:source;bytes:128',
+            exists: true,
+          ),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Local analysis tool'), findsOneWidget);
+    expect(find.text('원본 rec_wk_u_source01'), findsOneWidget);
+
+    await tester.tap(find.text('상세'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Ars Almadel 후보 정보'), findsOneWidget);
+    expect(find.text('제안 주체'), findsOneWidget);
+    expect(find.text('op_candidate_001'), findsOneWidget);
+    expect(find.text('rec_wk_u_source01'), findsOneWidget);
+    expect(find.text('v2:sha256:source;bytes:128'), findsOneWidget);
+    expect(find.text('후보 제안 당시와 같은 원본입니다'), findsOneWidget);
   });
 
   testWidgets('approve executes promoteCandidate and removes candidate', (

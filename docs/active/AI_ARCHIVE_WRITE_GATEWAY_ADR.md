@@ -189,7 +189,7 @@ Implemented first Gateway slice:
   `candidate.create` request; it has no model/provider/transport dependency;
 - the request names one indexed source Record and the revision it observed;
 - an active local Vault grant must bind the actor and `candidate.create` scope;
-- the persisted candidate retains the actor binding, grant reference,
+- the persisted candidate retains the actor label/binding, grant reference,
   source-operation ID, and source revision without changing the source Record;
 - a successful receipt carries the intent fingerprint and result candidate
   revision; same-ID/same-intent retries return the prior outcome;

@@ -158,7 +158,10 @@ class ArchiveGatewayCandidateService {
       );
     }
 
-    final candidate = request.materialize(appliedAt: now);
+    final candidate = request.materialize(
+      appliedAt: now,
+      actorLabel: grant!.actorLabel,
+    );
     try {
       await _candidateStore.upsert(vaultPath: vaultPath, candidate: candidate);
     } on ArgumentError catch (error) {
@@ -195,7 +198,10 @@ class ArchiveGatewayCandidateService {
     required ArchiveGatewayCandidateRequest request,
     required ArchiveCandidate existing,
   }) async {
-    final expected = request.materialize(appliedAt: existing.updatedAt);
+    final expected = request.materialize(
+      appliedAt: existing.updatedAt,
+      actorLabel: existing.actorLabel,
+    );
     if (ArchiveGatewayIntentFingerprint.candidateRevision(existing) !=
         ArchiveGatewayIntentFingerprint.candidateRevision(expected)) {
       return _failure(
