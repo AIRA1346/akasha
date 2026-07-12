@@ -130,7 +130,8 @@ It already has an operation ID, source, actor, target entity/record,
 Before general AI application is enabled, an operation envelope must also carry
 or resolve:
 
-- the authority grant or one-shot user approval that authorized it;
+- the authority reference: user-started session, durable grant, or future
+  one-shot user approval;
 - stable target Record ID(s), not storage paths;
 - declared input Record IDs and revisions for derived work;
 - evidence references;
@@ -188,8 +189,9 @@ Implemented first Gateway slice:
 - `ArchiveGatewayCandidateService` accepts exactly one
   `candidate.create` request; it has no model/provider/transport dependency;
 - the request names one indexed source Record and the revision it observed;
-- an active local Vault grant must bind the actor and `candidate.create` scope;
-- the persisted candidate retains the actor label/binding, grant reference,
+- either an active local Vault grant or a user-started, source-bounded intake
+  session must bind the actor and `candidate.create` scope;
+- the persisted candidate retains the actor label/binding, authorization route,
   source-operation ID, and source revision without changing the source Record;
 - a successful receipt carries the intent fingerprint and result candidate
   revision; same-ID/same-intent retries return the prior outcome;
@@ -198,7 +200,8 @@ Implemented first Gateway slice:
 
 Missing before this becomes a real external-AI workflow:
 
-- a user-facing grant/one-shot approval interaction and external transport;
+- the app-to-external-tool session handoff and external transport;
+- a user-facing durable-grant configuration interaction;
 - candidate review policy for high-volume batches and duplicate resolution;
 - any canonical Record creation, derivation, patch, relationship, or lifecycle
   authority.
@@ -227,7 +230,7 @@ Markdown import may remain as a separate compatibility/import feature.
 | Candidate store | Implemented | Additive actor/source-revision provenance is now used by `candidate.create`. |
 | Operation validation | Implemented | Extend only after contract decisions. |
 | Operation execution | `promoteCandidate` only | Add operations one at a time with fault/conflict tests. |
-| AI authorization | Local grant + actor binding for `candidate.create` only | Required before each later scope or direct application. |
+| AI authorization | User-started intake session or local grant + actor binding for `candidate.create` only | Required before each later scope or direct application. |
 | Derived provenance (`derived_from`) | Not implemented | Required before AI interpretation is persisted. |
 | Generic AI transport | Not implemented | Deliberately deferred; external AI choice remains outside AKASHA. |
 

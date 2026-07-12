@@ -29,12 +29,14 @@ class ArchiveCandidate {
     this.sourceOperationId,
     this.actorBindingId,
     this.actorLabel,
+    this.gatewayAuthorizationKind,
+    this.gatewayAuthorizationId,
     this.gatewayGrantId,
     this.sourceRecordRevision,
     this.duplicateOfEntityId,
   });
 
-  static const int schemaVersion = 1;
+  static const int schemaVersion = 2;
 
   final String candidateId;
   final EntityAnchorType entityType;
@@ -60,8 +62,14 @@ class ArchiveCandidate {
   /// original grant is later revoked or removed.
   final String? actorLabel;
 
-  /// Local authority reference used for a Gateway-created candidate. The
-  /// grant's full constraints live in the Vault-owned authority store.
+  /// The Gateway authority route used for this candidate. It is additive so
+  /// older grant-only candidates remain readable without a migration.
+  final String? gatewayAuthorizationKind;
+  final String? gatewayAuthorizationId;
+
+  /// Legacy durable-grant reference retained for compatibility. New
+  /// Gateway-created candidates use [gatewayAuthorizationKind] and
+  /// [gatewayAuthorizationId] for both durable grants and user task sessions.
   final String? gatewayGrantId;
 
   /// Opaque revision of [sourceRecordId] read when this candidate was made.
@@ -95,6 +103,8 @@ class ArchiveCandidate {
     String? sourceOperationId,
     String? actorBindingId,
     String? actorLabel,
+    String? gatewayAuthorizationKind,
+    String? gatewayAuthorizationId,
     String? gatewayGrantId,
     String? sourceRecordRevision,
     String? duplicateOfEntityId,
@@ -116,6 +126,10 @@ class ArchiveCandidate {
       sourceOperationId: sourceOperationId ?? this.sourceOperationId,
       actorBindingId: actorBindingId ?? this.actorBindingId,
       actorLabel: actorLabel ?? this.actorLabel,
+      gatewayAuthorizationKind:
+          gatewayAuthorizationKind ?? this.gatewayAuthorizationKind,
+      gatewayAuthorizationId:
+          gatewayAuthorizationId ?? this.gatewayAuthorizationId,
       gatewayGrantId: gatewayGrantId ?? this.gatewayGrantId,
       sourceRecordRevision: sourceRecordRevision ?? this.sourceRecordRevision,
       duplicateOfEntityId: duplicateOfEntityId ?? this.duplicateOfEntityId,
@@ -172,6 +186,11 @@ class ArchiveCandidate {
     if (actorBindingId != null && actorBindingId!.isNotEmpty)
       'actorBindingId': actorBindingId,
     if (actorLabel != null && actorLabel!.isNotEmpty) 'actorLabel': actorLabel,
+    if (gatewayAuthorizationKind != null &&
+        gatewayAuthorizationKind!.isNotEmpty)
+      'gatewayAuthorizationKind': gatewayAuthorizationKind,
+    if (gatewayAuthorizationId != null && gatewayAuthorizationId!.isNotEmpty)
+      'gatewayAuthorizationId': gatewayAuthorizationId,
     if (gatewayGrantId != null && gatewayGrantId!.isNotEmpty)
       'gatewayGrantId': gatewayGrantId,
     if (sourceRecordRevision != null && sourceRecordRevision!.isNotEmpty)
@@ -210,6 +229,8 @@ class ArchiveCandidate {
       sourceOperationId: json['sourceOperationId']?.toString(),
       actorBindingId: json['actorBindingId']?.toString(),
       actorLabel: json['actorLabel']?.toString(),
+      gatewayAuthorizationKind: json['gatewayAuthorizationKind']?.toString(),
+      gatewayAuthorizationId: json['gatewayAuthorizationId']?.toString(),
       gatewayGrantId: json['gatewayGrantId']?.toString(),
       sourceRecordRevision: json['sourceRecordRevision']?.toString(),
       duplicateOfEntityId: json['duplicateOfEntityId']?.toString(),

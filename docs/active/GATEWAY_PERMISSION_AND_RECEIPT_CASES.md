@@ -5,7 +5,7 @@
 > They are not API payloads, credential formats, permission UI mocks, or
 > implementation tests.
 
-## Case 1 — No grant means no candidate write
+## Case 1 — No authority context means no candidate write
 
 An external AI submits a valid-looking Person candidate with an actor label and
 evidence from a user Journal.
@@ -17,21 +17,25 @@ Required result:
   created;
 - AKASHA returns an explicit authorization failure without retaining the full
   proposed content as a success record;
-- the user may later enable candidate intake or approve a specific request.
+- the user may later start a bounded AI archive task or configure a durable
+  candidate-intake grant.
 
-## Case 2 — One-shot candidate approval applies exactly once
+## Case 2 — A user-started task admits candidates without a second prompt
 
-The user reviews one candidate request and approves it once. The approval is
-bound to the actor, source Journal ID/revision, proposed candidate fields, and
-operation ID.
+The user starts an AI-assisted archive task from one or more declared source
+Records. The local task session is bound to its actor, allowed source IDs,
+expiry, and byte limit. The AI submits one candidate request from an allowed
+source.
 
 Required result:
 
 - AKASHA creates exactly one candidate through the durable candidate/P0 path;
-- the applied receipt records the actor binding, one-shot reference, input
+- no second per-candidate approval prompt is required;
+- the applied receipt records the actor binding, user-started session reference, input
   revision, candidate ID, resulting candidate revision, and intent fingerprint;
 - retrying the identical operation returns the prior receipt-derived result;
-- changing any bound meaning requires a new approval.
+- a source outside the task boundary, a mismatched actor, or an expired session
+  is denied without writing a candidate or receipt.
 
 ## Case 3 — Operation-ID reuse with changed content is rejected
 
@@ -42,7 +46,8 @@ Required result:
 - the normalized intent fingerprint differs from the existing receipt;
 - AKASHA rejects the request as operation-ID reuse conflict;
 - it neither mutates the prior candidate nor appends a second success receipt;
-- the caller must issue a new operation ID and receive fresh authority.
+- the caller must issue a new operation ID within a still-valid authority
+  context; a future high-impact operation may require a fresh one-shot approval.
 
 ## Case 4 — Revocation stops future writes, not history
 

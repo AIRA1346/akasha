@@ -24,6 +24,87 @@ extension ArchiveGatewayScopeWireName on ArchiveGatewayScope {
   }
 }
 
+/// The user-local route that authorized a Gateway request.
+///
+/// An authorization reference is archival evidence, not a credential. A later
+/// transport must prove that it is invoking the trusted local context that
+/// issued the reference; callers must never treat an arbitrary string as
+/// authority by itself.
+enum ArchiveGatewayAuthorityKind { durableGrant, userInitiatedSession }
+
+extension ArchiveGatewayAuthorityKindWireName on ArchiveGatewayAuthorityKind {
+  String get wireName => switch (this) {
+    ArchiveGatewayAuthorityKind.durableGrant => 'durable_grant',
+    ArchiveGatewayAuthorityKind.userInitiatedSession =>
+      'user_initiated_session',
+  };
+
+  static ArchiveGatewayAuthorityKind? parse(String? raw) {
+    for (final value in ArchiveGatewayAuthorityKind.values) {
+      if (value.wireName == raw) return value;
+    }
+    return null;
+  }
+}
+
+/// Stable reference to the authority route that admitted one Gateway request.
+class ArchiveGatewayAuthorityReference {
+  const ArchiveGatewayAuthorityReference({
+    required this.kind,
+    required this.authorityId,
+  });
+
+  const ArchiveGatewayAuthorityReference.durableGrant(String grantId)
+    : this(
+        kind: ArchiveGatewayAuthorityKind.durableGrant,
+        authorityId: grantId,
+      );
+
+  const ArchiveGatewayAuthorityReference.userInitiatedSession(String sessionId)
+    : this(
+        kind: ArchiveGatewayAuthorityKind.userInitiatedSession,
+        authorityId: sessionId,
+      );
+
+  final ArchiveGatewayAuthorityKind kind;
+  final String authorityId;
+
+  String? get grantId =>
+      kind == ArchiveGatewayAuthorityKind.durableGrant ? authorityId : null;
+}
+
+/// Ephemeral authority created when a user starts an AI-assisted archive task.
+///
+/// It deliberately is not written to the Vault and is not a portable
+/// credential. The trusted AKASHA host creates it for the current task, binds
+/// it to a local actor and source records, and drops it when the task ends.
+/// A future CLI/MCP/socket ingress must prove this context separately; merely
+/// sending a session ID over an external transport is never sufficient.
+class ArchiveGatewayUserInitiatedCandidateSession {
+  const ArchiveGatewayUserInitiatedCandidateSession({
+    required this.sessionId,
+    required this.actorBindingId,
+    required this.allowedSourceRecordIds,
+    required this.issuedAt,
+    required this.expiresAt,
+    this.actorLabel,
+    this.maxCandidateBytes = 16384,
+  });
+
+  final String sessionId;
+  final String actorBindingId;
+  final Set<String> allowedSourceRecordIds;
+  final DateTime issuedAt;
+  final DateTime expiresAt;
+  final String? actorLabel;
+  final int maxCandidateBytes;
+
+  bool isActiveAt(DateTime instant) {
+    final now = instant.toUtc();
+    return !issuedAt.toUtc().isAfter(now) && expiresAt.toUtc().isAfter(now);
+  }
+}
+
 /// Durable, local authority for a narrowly-scoped Gateway action.
 ///
 /// A grant is stored inside the Vault and is meaningful only for that Vault.
@@ -137,14 +218,14 @@ class ArchiveGatewayCandidateRequest {
   const ArchiveGatewayCandidateRequest({
     required this.operationId,
     required this.actorBindingId,
-    required this.grantId,
+    required this.authority,
     required this.expectedSourceRevision,
     required this.candidate,
   });
 
   final String operationId;
   final String actorBindingId;
-  final String grantId;
+  final ArchiveGatewayAuthorityReference authority;
   final String expectedSourceRevision;
   final ArchiveCandidate candidate;
 
@@ -168,7 +249,9 @@ class ArchiveGatewayCandidateRequest {
       sourceOperationId: operationId,
       actorBindingId: actorBindingId,
       actorLabel: actorLabel,
-      gatewayGrantId: grantId,
+      gatewayAuthorizationKind: authority.kind.wireName,
+      gatewayAuthorizationId: authority.authorityId,
+      gatewayGrantId: authority.grantId,
       sourceRecordRevision: expectedSourceRevision,
       createdAt: appliedAt.toUtc(),
       updatedAt: appliedAt.toUtc(),
@@ -183,7 +266,8 @@ abstract final class ArchiveGatewayIntentFingerprint {
       'operation_id': request.operationId.trim(),
       'scope': ArchiveGatewayCandidateRequest.scope.wireName,
       'actor_binding_id': request.actorBindingId.trim(),
-      'grant_id': request.grantId.trim(),
+      'authorization_kind': request.authority.kind.wireName,
+      'authorization_id': request.authority.authorityId.trim(),
       'source_record_revision': request.expectedSourceRevision.trim(),
       'candidate': <String, Object?>{
         'candidate_id': candidate.candidateId.trim(),
@@ -204,6 +288,37 @@ abstract final class ArchiveGatewayIntentFingerprint {
 
   static String candidateRevision(ArchiveCandidate candidate) =>
       'sha256:${crypto.sha256.convert(utf8.encode(jsonEncode(_canonical(candidate.toJson()))))}';
+
+  /// Compares an interrupted candidate with the request that would have
+  /// created it. Gateway authority fields were added after the first
+  /// grant-only slice, so an older unreceipted durable-grant candidate may
+  /// legitimately lack the generic authority fields. That historical shape is
+  /// normalized only for recovery matching; the candidate file is never
+  /// rewritten merely to append a receipt.
+  static bool candidatesMatchForRecovery({
+    required ArchiveCandidate existing,
+    required ArchiveCandidate expected,
+  }) {
+    if (candidateRevision(existing) == candidateRevision(expected)) return true;
+
+    final existingJson = Map<String, Object?>.from(existing.toJson())
+      ..remove('schemaVersion');
+    final expectedJson = Map<String, Object?>.from(expected.toJson())
+      ..remove('schemaVersion');
+    final expectedKind = expected.gatewayAuthorizationKind;
+    final expectedId = expected.gatewayAuthorizationId;
+    if (expectedKind == ArchiveGatewayAuthorityKind.durableGrant.wireName &&
+        expectedId != null &&
+        expectedId.isNotEmpty &&
+        existing.gatewayAuthorizationKind == null &&
+        existing.gatewayAuthorizationId == null &&
+        existing.gatewayGrantId == expectedId) {
+      existingJson['gatewayAuthorizationKind'] = expectedKind;
+      existingJson['gatewayAuthorizationId'] = expectedId;
+    }
+    return jsonEncode(_canonical(existingJson)) ==
+        jsonEncode(_canonical(expectedJson));
+  }
 
   static List<String> _sortedStrings(Iterable<String> values) =>
       values

@@ -12,7 +12,7 @@ class ArchiveGatewayAppliedReceipt {
     required this.intentFingerprint,
     required this.scope,
     required this.actorBindingId,
-    required this.grantId,
+    required this.authority,
     required this.sourceRecordId,
     required this.sourceRecordRevision,
     required this.candidateId,
@@ -20,13 +20,16 @@ class ArchiveGatewayAppliedReceipt {
     required this.appliedAt,
   });
 
-  static const int schemaVersion = 1;
+  static const int schemaVersion = 2;
 
   final String operationId;
   final String intentFingerprint;
   final ArchiveGatewayScope scope;
   final String actorBindingId;
-  final String grantId;
+  final ArchiveGatewayAuthorityReference authority;
+
+  /// Compatibility accessor for old grant-only receipt consumers.
+  String? get grantId => authority.grantId;
   final String sourceRecordId;
   final String sourceRecordRevision;
   final String candidateId;
@@ -39,7 +42,9 @@ class ArchiveGatewayAppliedReceipt {
     'intentFingerprint': intentFingerprint,
     'scope': scope.wireName,
     'actorBindingId': actorBindingId,
-    'grantId': grantId,
+    'authorityKind': authority.kind.wireName,
+    'authorityId': authority.authorityId,
+    if (grantId != null && grantId!.isNotEmpty) 'grantId': grantId,
     'sourceRecordId': sourceRecordId,
     'sourceRecordRevision': sourceRecordRevision,
     'candidateId': candidateId,
@@ -48,6 +53,12 @@ class ArchiveGatewayAppliedReceipt {
   };
 
   factory ArchiveGatewayAppliedReceipt.fromJson(Map<String, dynamic> json) {
+    final legacyGrantId = json['grantId']?.toString() ?? '';
+    final authorityKind =
+        ArchiveGatewayAuthorityKindWireName.parse(
+          json['authorityKind']?.toString(),
+        ) ??
+        ArchiveGatewayAuthorityKind.durableGrant;
     return ArchiveGatewayAppliedReceipt(
       operationId: json['operationId']?.toString() ?? '',
       intentFingerprint: json['intentFingerprint']?.toString() ?? '',
@@ -55,7 +66,10 @@ class ArchiveGatewayAppliedReceipt {
           ArchiveGatewayScopeWireName.parse(json['scope']?.toString()) ??
           ArchiveGatewayScope.candidateCreate,
       actorBindingId: json['actorBindingId']?.toString() ?? '',
-      grantId: json['grantId']?.toString() ?? '',
+      authority: ArchiveGatewayAuthorityReference(
+        kind: authorityKind,
+        authorityId: json['authorityId']?.toString() ?? legacyGrantId,
+      ),
       sourceRecordId: json['sourceRecordId']?.toString() ?? '',
       sourceRecordRevision: json['sourceRecordRevision']?.toString() ?? '',
       candidateId: json['candidateId']?.toString() ?? '',

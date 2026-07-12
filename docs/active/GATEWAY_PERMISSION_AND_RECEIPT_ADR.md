@@ -1,8 +1,9 @@
 # Gateway Permission and Receipt ADR
 
-> **Status:** Accepted semantic ADR — no account system, credential store,
-> transport, permission UI, receipt serializer, operation executor, or AI
-> service is introduced by this document.  
+> **Status:** Accepted semantic ADR. The first local `candidate.create`
+> implementation supports a user-initiated intake session and a durable local
+> grant; no account system, credential store, external transport, permission
+> UI, or AI service is introduced.
 > **Date:** 2026-07-12  
 > **Scope:** User-controlled authorization and durable applied-operation
 > evidence for external tools using the AKASHA Write Gateway.  
@@ -12,16 +13,24 @@
 ## 1. Decision
 
 An external AI, script, or tool receives no AKASHA write authority by default.
-The user may authorize a bounded archive intent through either:
+For the first candidate-intake boundary, the user may authorize a bounded
+archive intent through either:
 
-1. a **one-shot approval** bound to one exact requested operation; or
+1. a short-lived **user-initiated candidate-intake session**, created because
+   the user started an AI-assisted archive task; or
 2. a **revocable local grant** bound to one declared external actor and a
    narrow scope.
+
+Starting an AI task is sufficient authorization for candidate intake within
+that task's source, actor, byte, and expiry boundary. AKASHA must not interrupt
+the user with a second per-candidate approval merely because the AI is
+archiving its proposal. A one-shot, exact-intent approval remains the preferred
+future rule for high-impact canonical changes, not the normal candidate flow.
 
 The Gateway applies an operation only when all independent checks pass:
 
 ```text
-user grant / one-shot approval
+user-started session / durable grant / future one-shot approval
   + actor binding
   + operation scope and target constraints
   + input / target revision checks
@@ -63,7 +72,7 @@ scope, broader target, longer lifetime, or permission to read more data.
 
 | Semantic scope | Permits | Required constraint | Default |
 | --- | --- | --- | --- |
-| `candidate.create` | Create one or more non-canonical proposals in `system/candidates/`. | Declared source Record IDs/revisions/evidence and candidate limits. | Denied until user enables intake. |
+| `candidate.create` | Create one non-canonical proposal per request in `system/candidates/`. | Declared source Record IDs/revisions/evidence and a user-started task session or durable grant. | Denied outside a bounded authority context. |
 | `record.create` | Create one new canonical Record. | Record kind, target/entity scope, size/count limit, and explicit authorization. | Denied. |
 | `record.derive` | Create a separate Record from declared inputs. | Provenance inputs/revisions, transformation class, and explicit authorization. | Denied. |
 | `record.append` | Add a bounded labelled section to one Record. | Exact stable Record ID, expected revision, allowed section/size. | Denied. |
@@ -78,9 +87,10 @@ now. Existing `ArchiveOperationType` is an incomplete implementation starting
 point and must not claim support for a scope simply because a similarly named
 validator exists.
 
-## 4. A grant is a bounded capability
+## 4. An authority context is bounded
 
-Every future grant or one-shot approval must carry, at minimum:
+Every durable grant, user-initiated session, or future one-shot approval must
+carry, at minimum:
 
 - a stable local grant/approval ID;
 - a locally bound actor reference and optional human-readable label;
@@ -88,12 +98,18 @@ Every future grant or one-shot approval must carry, at minimum:
 - the Vault boundary and stable target selector(s), never arbitrary paths;
 - operation constraints: record kinds, allowed fields/sections, entity types,
   source/input selectors, and maximum count/byte limits where applicable;
-- issue time, optional expiry, and revocation state;
+- issue time and expiry/revocation semantics appropriate to its lifetime;
 - the user decision that created it, without a secret credential or raw prompt.
 
-A one-shot approval also binds an **intent fingerprint** for the exact request.
-It is consumed only after a successful application and cannot be reused for a
-changed body, target, input revision, or operation type.
+A user-initiated candidate session is in-memory operational context, not Vault
+data and not a transferable credential. It binds the current actor and allowed
+source Record IDs, has a short expiry and byte limit, and is discarded when the
+user task ends. A future ingress must prove the caller is attached to that
+trusted local context; a caller-supplied session ID is never enough.
+
+A future one-shot approval binds an **intent fingerprint** for one exact
+high-impact request. It is consumed only after a successful application and
+cannot be reused for a changed body, target, input revision, or operation type.
 
 A durable grant is still bounded and revocable. Revocation blocks future
 applications; it does not rewrite a past Record, erase a truthful receipt, or
@@ -113,7 +129,8 @@ same intent. A future Gateway receipt therefore binds it to a deterministic
 **intent fingerprint** over the normalized, permitted operation meaning:
 
 - operation ID, semantic scope/type, source channel, and actor binding;
-- authorization reference (grant or one-shot approval);
+- authorization reference (durable grant, user-started session, or future
+  one-shot approval);
 - stable target IDs and declared input IDs/revisions;
 - bounded requested payload and transformation/predicate/lifecycle action;
 - no runtime path, index, secret, or irrelevant transport fields.
@@ -147,7 +164,7 @@ Every future applied receipt needs, at minimum:
 | Category | Required fact |
 | --- | --- |
 | Identity | Receipt schema version, operation ID, intent fingerprint, operation vocabulary, and source channel. |
-| Authority | Actor binding/reference, grant or one-shot approval reference, and the local authorization outcome. |
+| Authority | Actor binding/reference, durable grant, user-started session, or future one-shot reference, and the local authorization outcome. |
 | Request boundary | Stable requested target IDs, declared input Record/Artifact IDs and revisions, and bounded payload digest/summary. |
 | Result | Candidate/Record/Assertion IDs created or changed; prior and resulting content revisions; applied timestamp; `applied` outcome. |
 | Provenance linkage | Operation ID/reference that the affected Record-level extension may point to, without making the receipt the only provenance. |
@@ -175,7 +192,7 @@ user's archive.
 ```text
 external intent
   -> bind local actor context
-  -> locate active grant / one-shot approval
+  -> locate active user-started session / durable grant / future one-shot approval
   -> validate scope, target selectors, constraints, and intent fingerprint
   -> read declared input and target revisions
   -> validate semantic operation
@@ -199,8 +216,8 @@ contract:
 
 1. support only `candidate.create`;
 2. one candidate per operation, with a small explicit count/size limit;
-3. require an active local actor binding and a user-enabled candidate-intake
-   grant or one-shot approval;
+3. require an active local actor binding and either a user-started candidate
+   task session or a durable candidate-intake grant;
 4. require source Record IDs/revisions and evidence for candidate provenance;
 5. write through the existing candidate store/P0 path and append a complete
    receipt;
@@ -219,7 +236,7 @@ belongs in this first slice.
 | `ArchiveOperationValidator` | Path/identity/provenance-field mutation guards. | Authorization and scope/constraint validation. |
 | `ArchiveOperationExecutor` | Safe `promoteCandidate` execution. | Candidate intake and all general Gateway operations. |
 | `ArchiveOperationAppliedLog` | Successful operation ID lookup and append-only durable location. | Complete receipt fields and ID-reuse fingerprint defense. |
-| Candidate store | Durable non-canonical candidate lifecycle. | Actor/input-revision provenance and Gateway intake review boundary. |
+| Candidate store | Durable non-canonical candidate lifecycle. | Gateway-created candidates now retain actor, source revision, and authorization route; high-volume review policy remains open. |
 | P0 writer | Recoverable writes, conflict evidence, unknown YAML preservation. | Gateway-specific operation wiring and fault fixtures. |
 | `x_akasha` contract | Future portable Record-level provenance location. | Parser/writer/spec implementation. |
 

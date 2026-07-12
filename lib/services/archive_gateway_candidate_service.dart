@@ -61,15 +61,21 @@ class ArchiveGatewayCandidateService {
   Future<ArchiveGatewayCandidateResult> submit({
     required String vaultPath,
     required ArchiveGatewayCandidateRequest request,
+    ArchiveGatewayUserInitiatedCandidateSession? userInitiatedSession,
   }) => ArchiveOperationIdempotencyCoordinator.run(
     vaultPath: vaultPath,
     operationId: request.operationId,
-    action: () => _submit(vaultPath: vaultPath, request: request),
+    action: () => _submit(
+      vaultPath: vaultPath,
+      request: request,
+      userInitiatedSession: userInitiatedSession,
+    ),
   );
 
   Future<ArchiveGatewayCandidateResult> _submit({
     required String vaultPath,
     required ArchiveGatewayCandidateRequest request,
+    required ArchiveGatewayUserInitiatedCandidateSession? userInitiatedSession,
   }) async {
     if (vaultPath.trim().isEmpty) {
       return _failure('vault_path_required', 'Vault path is required.');
@@ -127,19 +133,14 @@ class ArchiveGatewayCandidateService {
       );
     }
 
-    ArchiveGatewayGrant? grant;
-    try {
-      grant = await _grantStore.lookup(vaultPath, request.grantId);
-    } on FormatException catch (error) {
-      return _failure('grant_state_invalid', error.message.toString());
-    }
     final now = _clock().toUtc();
-    final grantFailure = _validateGrant(
+    final authorization = await _authorize(
       request: request,
-      grant: grant,
       now: now,
+      vaultPath: vaultPath,
+      userInitiatedSession: userInitiatedSession,
     );
-    if (grantFailure != null) return grantFailure;
+    if (authorization.failure != null) return authorization.failure!;
 
     final currentSource = await _revisionService.currentForRecordId(
       vaultPath: vaultPath,
@@ -160,7 +161,7 @@ class ArchiveGatewayCandidateService {
 
     final candidate = request.materialize(
       appliedAt: now,
-      actorLabel: grant!.actorLabel,
+      actorLabel: authorization.actorLabel,
     );
     try {
       await _candidateStore.upsert(vaultPath: vaultPath, candidate: candidate);
@@ -202,8 +203,10 @@ class ArchiveGatewayCandidateService {
       appliedAt: existing.updatedAt,
       actorLabel: existing.actorLabel,
     );
-    if (ArchiveGatewayIntentFingerprint.candidateRevision(existing) !=
-        ArchiveGatewayIntentFingerprint.candidateRevision(expected)) {
+    if (!ArchiveGatewayIntentFingerprint.candidatesMatchForRecovery(
+      existing: existing,
+      expected: expected,
+    )) {
       return _failure(
         'candidate_id_conflict',
         'candidateId already belongs to a different candidate.',
@@ -244,8 +247,11 @@ class ArchiveGatewayCandidateService {
         'actorBindingId must be a safe id.',
       );
     }
-    if (!_safeId(request.grantId)) {
-      return _failure('grant_id_invalid', 'grantId must be a safe id.');
+    if (!_safeId(request.authority.authorityId)) {
+      return _failure(
+        'authorization_id_invalid',
+        'The Gateway authorization id must be a safe id.',
+      );
     }
     if (request.expectedSourceRevision.trim().isEmpty ||
         request.expectedSourceRevision == ArchiveRecordRevision.missing) {
@@ -262,6 +268,8 @@ class ArchiveGatewayCandidateService {
     }
     if (_hasValue(request.candidate.sourceOperationId) ||
         _hasValue(request.candidate.actorBindingId) ||
+        _hasValue(request.candidate.gatewayAuthorizationKind) ||
+        _hasValue(request.candidate.gatewayAuthorizationId) ||
         _hasValue(request.candidate.gatewayGrantId) ||
         _hasValue(request.candidate.sourceRecordRevision)) {
       return _failure(
@@ -282,6 +290,49 @@ class ArchiveGatewayCandidateService {
       );
     }
     return null;
+  }
+
+  Future<_GatewayCandidateAuthorization> _authorize({
+    required ArchiveGatewayCandidateRequest request,
+    required DateTime now,
+    required String vaultPath,
+    required ArchiveGatewayUserInitiatedCandidateSession? userInitiatedSession,
+  }) async {
+    switch (request.authority.kind) {
+      case ArchiveGatewayAuthorityKind.durableGrant:
+        ArchiveGatewayGrant? grant;
+        try {
+          grant = await _grantStore.lookup(
+            vaultPath,
+            request.authority.authorityId,
+          );
+        } on FormatException catch (error) {
+          return _GatewayCandidateAuthorization.failure(
+            _failure('grant_state_invalid', error.message.toString()),
+          );
+        }
+        final failure = _validateGrant(
+          request: request,
+          grant: grant,
+          now: now,
+        );
+        if (failure != null) {
+          return _GatewayCandidateAuthorization.failure(failure);
+        }
+        return _GatewayCandidateAuthorization.approved(grant!.actorLabel);
+      case ArchiveGatewayAuthorityKind.userInitiatedSession:
+        final failure = _validateUserInitiatedSession(
+          request: request,
+          session: userInitiatedSession,
+          now: now,
+        );
+        if (failure != null) {
+          return _GatewayCandidateAuthorization.failure(failure);
+        }
+        return _GatewayCandidateAuthorization.approved(
+          userInitiatedSession!.actorLabel,
+        );
+    }
   }
 
   ArchiveGatewayCandidateResult? _validateGrant({
@@ -322,6 +373,52 @@ class ArchiveGatewayCandidateService {
     return null;
   }
 
+  ArchiveGatewayCandidateResult? _validateUserInitiatedSession({
+    required ArchiveGatewayCandidateRequest request,
+    required ArchiveGatewayUserInitiatedCandidateSession? session,
+    required DateTime now,
+  }) {
+    if (session == null) {
+      return _failure(
+        'user_initiated_session_required',
+        'This candidate request requires its active user-initiated session.',
+      );
+    }
+    if (session.sessionId != request.authority.authorityId) {
+      return _failure(
+        'user_initiated_session_mismatch',
+        'The supplied user-initiated session does not match the request.',
+      );
+    }
+    if (session.actorBindingId != request.actorBindingId) {
+      return _failure(
+        'session_actor_mismatch',
+        'The user-initiated session does not belong to this actor binding.',
+      );
+    }
+    if (!session.isActiveAt(now)) {
+      return _failure(
+        'user_initiated_session_not_active',
+        'The user-initiated candidate intake session has expired.',
+      );
+    }
+    if (!session.allowedSourceRecordIds.contains(
+      request.candidate.sourceRecordId,
+    )) {
+      return _failure(
+        'session_source_not_allowed',
+        'The candidate source is outside this user-initiated task.',
+      );
+    }
+    if (request.encodedCandidateBytes > session.maxCandidateBytes) {
+      return _failure(
+        'candidate_too_large',
+        'Candidate payload exceeds the user-initiated session byte limit.',
+      );
+    }
+    return null;
+  }
+
   static ArchiveGatewayAppliedReceipt _receiptFor({
     required ArchiveGatewayCandidateRequest request,
     required ArchiveCandidate candidate,
@@ -332,7 +429,7 @@ class ArchiveGatewayCandidateService {
       intentFingerprint: request.intentFingerprint,
       scope: ArchiveGatewayCandidateRequest.scope,
       actorBindingId: request.actorBindingId,
-      grantId: request.grantId,
+      authority: request.authority,
       sourceRecordId: candidate.sourceRecordId,
       sourceRecordRevision: request.expectedSourceRevision,
       candidateId: candidate.candidateId,
@@ -355,4 +452,18 @@ class ArchiveGatewayCandidateService {
       !value.contains('..');
 
   static bool _hasValue(String? value) => value?.trim().isNotEmpty ?? false;
+}
+
+class _GatewayCandidateAuthorization {
+  const _GatewayCandidateAuthorization._({this.actorLabel, this.failure});
+
+  const _GatewayCandidateAuthorization.approved(String? actorLabel)
+    : this._(actorLabel: actorLabel);
+
+  const _GatewayCandidateAuthorization.failure(
+    ArchiveGatewayCandidateResult failure,
+  ) : this._(failure: failure);
+
+  final String? actorLabel;
+  final ArchiveGatewayCandidateResult? failure;
 }
