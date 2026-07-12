@@ -92,14 +92,19 @@ void main() {
     });
 
     test(
-      'Home navigation does not auto-request the legacy complete item list',
+      'Explore / Graph stay bounded; Home surfaces request legacy items',
       () async {
-        await navigation.goHome();
         await navigation.goExplore();
-        await navigation.selectDashboard('master_index');
         await navigation.goKnowledgeGraph();
-
         expect(legacyLoadCount, 0);
+
+        await navigation.goHome();
+        expect(legacyLoadCount, 1);
+        expect(navigation.isHomeDashboardMode, isTrue);
+
+        await navigation.selectDashboard('master_index');
+        expect(legacyLoadCount, 2);
+
         expect(navigation.isKnowledgeGraphMode, isFalse);
       },
     );

@@ -99,6 +99,7 @@ class HomeNavigationCoordinator {
   }
 
   Future<void> selectDashboard(String id) async {
+    await _ensureLegacyItemsForHomeSurfaces();
     await workbench.showBrowse();
     scheduleRebuild(() {
       sidebarCoordinator.selectDashboard(id);
@@ -110,6 +111,8 @@ class HomeNavigationCoordinator {
 
   /// 프리미엄 홈 대시보드로 이동.
   Future<void> goHome() async {
+    // Premium Home still reads vault.items for continue-explore / discovery.
+    await _ensureLegacyItemsForHomeSurfaces();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
@@ -145,6 +148,7 @@ class HomeNavigationCoordinator {
   }
 
   Future<void> selectPersonalLibrary(String id) async {
+    await _ensureLegacyItemsForHomeSurfaces();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
@@ -154,6 +158,7 @@ class HomeNavigationCoordinator {
   }
 
   Future<void> selectCollectibleCollection(String id) async {
+    await _ensureLegacyItemsForHomeSurfaces();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
@@ -174,6 +179,7 @@ class HomeNavigationCoordinator {
 
   /// 나만의 서재 뷰 (활성 서재 또는 master archive).
   Future<void> goLibrary() async {
+    await _ensureLegacyItemsForHomeSurfaces();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
@@ -190,6 +196,7 @@ class HomeNavigationCoordinator {
   Future<void> goCollection() async {
     final cols = sidebarCoordinator.collectionCtrl.collections;
     if (cols.isEmpty) return;
+    await _ensureLegacyItemsForHomeSurfaces();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
@@ -199,6 +206,10 @@ class HomeNavigationCoordinator {
       sidebarCoordinator.selectCollectibleCollection(id);
     });
     await prefetchRegistry();
+  }
+
+  Future<void> _ensureLegacyItemsForHomeSurfaces() async {
+    await ensureLegacyItemsLoaded?.call();
   }
 
   /// 지식 연결 맵 뷰 — Steam v1 비활성 (C-04).

@@ -19,14 +19,16 @@ mixin HomeShellControllerVaultMixin on HomeShellControllerBase {
     await navigation.loadCollectibleCollections();
     sectionPrefs = await HomeSectionPreferences.load();
     await vault.loadPreferences();
-    final usesLegacyStartup = !vault.isVaultLinked || vault.autoArchiveRegistry;
-    if (usesLegacyStartup) {
-      await loadItems();
-    } else {
-      await navigation.enterWorkArchiveBrowse();
+    // Home dashboard (계속 탐험하기 / 사전에서 발견) still resolves against the
+    // legacy vault item list. Skipping loadItems on linked cold-start left
+    // Home empty until the user re-selected the folder (which calls loadItems).
+    // Cold start lands on Home; Work-archive browse is Library / explicit Explore.
+    await loadItems();
+    if (vault.isVaultLinked) {
+      await navigation.goHome();
     }
     await loadRecentExploration();
-    if (usesLegacyStartup) await vault.runStartupAutoArchiveIfNeeded();
+    await vault.runStartupAutoArchiveIfNeeded();
     await prefetchRegistryForCurrentFilters();
     await refreshLastSyncTime();
     vault.bindVaultWatch(

@@ -141,7 +141,10 @@ class HomeShellCoordinatorBundle {
       workbench: workbench,
       prefetchRegistry: () => catalog.prefetchRegistryForCurrentFilters(),
       rebuild: rebuild,
-      ensureLegacyItemsLoaded: vault.ensureItemsLoaded,
+      ensureLegacyItemsLoaded: () async {
+        await vault.ensureItemsLoaded();
+        await recentExplore.refresh();
+      },
     );
 
     catalog = HomeCatalogCoordinator(
