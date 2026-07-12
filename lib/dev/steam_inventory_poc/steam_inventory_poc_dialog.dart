@@ -1,11 +1,11 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'steam_inventory_poc.dart';
 
-/// Hidden debug harness — never a store UI. Only in [kDebugMode].
+/// Hidden harness — never a store UI. Debug, or Release with
+/// `AKASHA_STEAM_INVENTORY_POC=true`.
 Future<void> showSteamInventoryPocDialog(BuildContext context) async {
-  if (!kDebugMode) return;
+  if (!isSteamInventoryPocEnabled) return;
 
   final controller = await createSteamInventoryPocController();
   if (!context.mounted) return;

@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 import 'channel_steam_inventory_client.dart';
 import 'fake_steam_inventory_client.dart';
 import 'steam_inventory_client.dart';
@@ -10,7 +12,17 @@ export 'steam_inventory_models.dart';
 export 'steam_inventory_poc_controller.dart';
 export 'steam_inventory_poc_ids.dart';
 
-/// Debug-only factory: prefer native channel when available, else fake.
+/// Internal harness gate — debug builds, or Release with
+/// `--dart-define=AKASHA_STEAM_INVENTORY_POC=true`. Never enables Store IAP.
+const bool kSteamInventoryPocBuild = bool.fromEnvironment(
+  'AKASHA_STEAM_INVENTORY_POC',
+  defaultValue: false,
+);
+
+bool get isSteamInventoryPocEnabled =>
+    kDebugMode || kSteamInventoryPocBuild;
+
+/// Factory: prefer native channel when available, else fake.
 Future<SteamInventoryPocController> createSteamInventoryPocController({
   bool forceFake = false,
   SteamInventoryClient? override,
