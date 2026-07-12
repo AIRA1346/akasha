@@ -1,6 +1,7 @@
 # AKASHA Current State (현재 상태)
 
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
+> **원칙:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) — 구현이 원칙과 충돌하면 구현·본 문서를 교정한다.
 > **갱신:** 2026-07-11 (P0 recoverable Vault write gate 통과 · SA-01 Vault Change Detail Contract 완료 · SA-03 local derived index rebuild/source-sync prototype · test **871** · analyze 0)
 > **Git:** current committed tip: use `git rev-parse HEAD`
 > **2026-07-12 verification:** P1 local commands provide bounded `record

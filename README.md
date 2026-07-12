@@ -1,11 +1,14 @@
 # 🏛️ AKASHA (아카샤)
 
-> **세상 모든 작품을 기억하고, 추억하며, 다음 여정을 찾아가는 개인 미디어 아카이브 공간**
+> **사용자가 소유한 개인 아카이브 프로토콜** — 앱은 그 첫 번째 인터페이스다.
 
-AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 사랑하고 영접한 **세상의 모든 작품들**(만화, 게임, 애니메이션, 책, 영화, 드라마 등)을 Sanctum vault 호환 로컬 마크다운으로 축적하고, 글로벌 작품 사전과 조인해 전시하는 **통합 미디어 아카이빙 플랫폼**입니다.
+AKASHA는 한 사람의 기록·취향·관계·생각의 변화를 장기간 보존하고, 미래의 사람·도구·AI가 소유권을 빼앗지 않은 채 읽고 활용할 수 있게 만드는 기반이다. Markdown은 현재 원본 형식이고, 인덱스는 파생 탐색 계층이며, AI는 교체 가능한 독자·보조자다.
+
+Steam v1은 그 비전을 **작품 감상 아카이브**로 검증한다. Sanctum vault 호환 로컬 마크다운에 감상을 남기고, 글로벌 작품 사전(`akasha-db`)과 조인해 전시한다.
 
 **1차 출시 목표:** Steam (Windows) · **v1 목표 시점:** 2026년 3분기
 
+> **원칙 SSOT:** [docs/active/AKASHA_ARCHIVE_CONSTITUTION.md](docs/active/AKASHA_ARCHIVE_CONSTITUTION.md)  
 > **구현 현황 SSOT:** 코드·레지스트리의 **현재 상태**는 [docs/active/CURRENT_STATE.md](docs/active/CURRENT_STATE.md)만 기준으로 삼습니다. README·ROADMAP·PROJECT_STATUS의 수치·게이트는 보조 참고입니다.
 
 상세 마일스톤·백로그는 [ROADMAP.md](ROADMAP.md)를 참고하세요.

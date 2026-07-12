@@ -1,7 +1,13 @@
 # AKASHA Product Vision
 
-> **지위:** 제품 **최상위 SSOT** (정책·ROADMAP·스토어 카피의 북극성)
-> **갱신:** 2026-07-06 — **Steam v1 = Personal Sanctum Archive**
+> **Long-horizon architecture authority:**
+> [AKASHA Archive Constitution](AKASHA_ARCHIVE_CONSTITUTION.md). This document
+> retains the v1 product scope; when it conflicts with the Constitution on
+> ownership, durable preservation, AI boundaries, or scale architecture, the
+> Constitution governs.
+
+> **지위:** **v1 제품 범위 SSOT** (정책·ROADMAP·스토어 카피의 제품 북극성; 원칙은 Constitution)
+> **갱신:** 2026-07-12 — 권위 계층 정렬 · Steam v1 = Personal Sanctum Archive
 > **Git:** code/test baseline **7be7b51b** · current tip은 `git log -1` 기준
 > **법무:** [history/policy/data-policy.md](../history/policy/data-policy.md)
 
