@@ -2,26 +2,21 @@
 
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
 > **원칙:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) — 구현이 원칙과 충돌하면 구현·본 문서를 교정한다.
-> **갱신:** 2026-07-11 (P0 recoverable Vault write gate 통과 · SA-01 Vault Change Detail Contract 완료 · SA-03 local derived index rebuild/source-sync prototype · test **871** · analyze 0)
-> **Git:** current committed tip: use `git rev-parse HEAD`
-> **2026-07-12 verification:** P1 local commands provide bounded `record
-> lookup`/`record read` plus user-started `candidate.create` intake through the
-> `akasha` JSON-file CLI. Candidate provenance review UX and Vault-spec
-> self-description remain in place. `flutter analyze --no-pub` **0 issues**,
-> full `flutter test --no-pub` **924 passed**, and `flutter build windows
-> --debug --no-pub` succeeded.
-> **Desktop validation:** `flutter build windows --debug --no-pub` succeeded.
-> **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md) — 독립 검증기 `tool/vault_format_validator.dart`
+> **제품 범위:** [VISION.md](VISION.md)
+> **갱신:** 2026-07-12
+> **Git:** `git rev-parse HEAD` (문서 커밋 tip과 어긋나면 tip을 따름)
+>
+> **Verification snapshot (2026-07-12):**
+> - P0 recoverable Vault write · SA-01/02/03 derived-index foundation
+> - P1 local CLI: bounded `record lookup`/`record read` · user-started `candidate.create`
+> - Candidate provenance review UX · Vault-spec self-description
+> - `system/` = durable non-rebuildable (candidates, ops, recovery, drafts); `.akasha/` = derived/disposable
+> - `flutter analyze --no-pub` **0** · `flutter test --no-pub` **924** · `flutter build windows --debug --no-pub` OK
+>
+> **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)  
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
 
 ---
-
-> **Current verification (2026-07-11):** SA-03 derived-cache lifecycle · SA-02 selected-source hydration foundation · test **879** · analyze 0
-
-> **2026-07-10 architecture correction:** `system/` holds non-rebuildable
-> candidates, operation logs, recovery evidence, and drafts. `.akasha/` is
-> derived and disposable only. Any older path, test-count, or Git-tip reference
-> below is historical context, not current architecture.
 
 ## 0. Steam v1 제품 초점 (2026-07-06)
 
@@ -38,7 +33,7 @@
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
 
-**v1 blocking에 가까운 검증:** `flutter test` **840** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
+**v1 blocking에 가까운 검증:** `flutter test` **924** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).  
 **v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.
 
 ---
@@ -70,7 +65,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **838 PASS** | ✅ |
+| `flutter test` | **924 PASS** | ✅ |
 | `flutter analyze lib` | 0 issue | ✅ |
 | `vault_format_validator` | 적합성 검증기 (spec v3 · 앱 무의존) | — |
 | `preflight_check` | PASS | ✅ |

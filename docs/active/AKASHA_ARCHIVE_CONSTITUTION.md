@@ -3,7 +3,8 @@
 > **지위:** **Supreme SSOT** — 장기 원칙·아키텍처 거부 기준 (모든 제품·로드맵·구현 결정의 최상위)
 > **한 문장:** AKASHA는 사용자가 소유한 개인 아카이브 프로토콜이다. 앱·Markdown·SQLite·AI는 인터페이스·현재 원본·탐색 계층·미래 활용자일 뿐, 본질이 아니다.
 > **Status:** Supreme product and architecture constitution
-> **Authority:** User-authored vision, consolidated on 2026-07-12
+> **Authority:** User-authored vision, consolidated on 2026-07-12 · §7 product
+> decisions recorded 2026-07-12
 > **Scope:** This document defines why AKASHA exists and the principles that
 > decide future architecture. It does not introduce a schema, serializer,
 > migration, AI service, or storage implementation.
@@ -81,9 +82,10 @@ the intervening context—not just the newest rating or summary.
 
 This is a semantic-history requirement. P0 recovery backups protect against
 loss or interrupted writes; they are **not by themselves** the user-facing,
-long-term representation of changing thought. A later contract must decide
-which changes are meaningful archival events and how they coexist with minor
-edits to the same Document.
+long-term representation of changing thought. The product boundary for which
+edits enter recoverable semantic history versus in-place Document edits is
+decided in §7.1. Promotion of a preserved revision into an independent
+historical Record or Timeline event is never automatic (§7.1).
 
 ### 3.4 Durable source and disposable query layers stay separate
 
@@ -206,7 +208,7 @@ they are architecturally interesting:
 - durable provenance and AI-derived Records;
 - independent Relationship Assertions;
 - lifecycle, retraction, supersession, merge, tombstone, and redaction;
-- selected behavioral evidence;
+- selected behavioral evidence (subject to §7.2);
 - additional AI/tool transports and permissions; and
 - sharing and comparison between users.
 
@@ -215,22 +217,58 @@ and compatible with unknown-data preservation. No Universal Record migration
 is justified until a concrete domain need proves that it is safer than separate
 bounded contracts.
 
-## 7. Decisions still required from the product vision
+## 7. Product decisions (resolved 2026-07-12)
 
-These are product decisions with architectural consequences; they must be
-answered before their corresponding feature is implemented.
+These decisions constrain future schema, UI, and tool contracts. Physical
+storage formats remain separate ADRs; the principles below must not be
+weakened by convenience.
 
-1. **Semantic-history boundary:** Which user-visible changes become separately
-   preserved historical Records or events? For example, does a changed rating
-   or a substantially changed reflection always retain the earlier state, while
-   a spelling correction remains an edit to the same Document?
-2. **Behavioral-trace policy:** Are re-opening, reading, editing frequency,
-   and similar traces ever automatically retained locally, or are they stored
-   only after explicit user/archive-tool action? If automatic, what is the
-   default, visibility, retention, deletion, and disablement behavior?
+### 7.1 Semantic-history boundary
 
-Until these questions are answered, AKASHA must not silently create permanent
-semantic history or behavioral surveillance data.
+**Meaning-preserving edits stay on the same Document.** Typo fixes, spelling,
+punctuation, and wording cleanups that do not change the user's judgment are
+in-place edits of the current Document.
+
+**Meaning-changing updates must not silently erase the prior meaning.** When
+rating, status, or a core judgment/reflection substantially changes, the earlier
+meaningful state is preserved automatically in a **recoverable semantic
+history** so it cannot disappear merely because the current view moved on.
+
+**Recoverable history is not automatic first-class Record promotion.** Every
+preserved revision does **not** become an independent archival Record or
+Timeline event by default. Elevation to a standalone historical Record or
+Timeline entry happens only by:
+
+- explicit user choice;
+- a user-defined archive policy; or
+- a tool proposal that the user has approved.
+
+Until a bounded history contract ships, writers must not invent silent
+surveillance-style revision graphs that users cannot inspect, export, or
+disable. P0 recovery remains the floor against write loss; §7.1 is the floor
+against silent loss of prior *meaning*.
+
+### 7.2 Behavioral-trace policy
+
+**Minimal local aggregates may be collected by default.** Counts and
+summaries that aid later interpretation—such as reopen count, last-viewed
+time, and edit count—may be retained locally without leaving the user's
+machine.
+
+**User control is mandatory.** The user must be able to inspect, delete,
+export, and disable these aggregates. They must not be transmitted externally
+by default.
+
+**Raw behavioral logs are not permanent by default.** Click streams, full
+view-time sequences, and similar raw activity detail are not kept as durable
+archive data unless the user explicitly consents or an approved user policy
+allows it.
+
+**Promotion of behavior into Records is gated.** Detailed behavioral history,
+or turning behavioral evidence into a first-class Record, requires explicit
+consent or an approved user policy—never silent elevation.
+
+Capture remains archival choice, not surveillance (§4.4).
 
 ## 8. Decision test for every future feature
 

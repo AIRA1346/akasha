@@ -1,35 +1,21 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-07-11 (P0 recoverable Vault write gate 통과 · SA-01 Vault Change Detail Contract 완료 · SA-03 local derived index rebuild/source-sync prototype · flutter analyze 0 · test **871**)
-> **Git:** current committed tip **`74078b95`** · 로컬 rebuild 시 registry manifest 4종은 **커밋 제외** (관례)
-> **현재 실행:** **Steam 무료 출시 준비** — [STEAM_RELEASE.md](STEAM_RELEASE.md) · IAP/Agent/player implementation layer **post-launch**
-> **목적:** Gate·Registry·프로그램 **운영 SSOT**  
-> **출시:** [STEAM_RELEASE.md](STEAM_RELEASE.md)
-> **비전:** [VISION.md](VISION.md) · **구현:** [CURRENT_STATE.md](CURRENT_STATE.md)
- 
+> **지위:** Gate·Registry·프로그램 **운영 SSOT**  
+> **원칙:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) · **비전:** [VISION.md](VISION.md) · **구현:** [CURRENT_STATE.md](CURRENT_STATE.md)  
+> **출시:** [STEAM_RELEASE.md](STEAM_RELEASE.md)  
+> **갱신:** 2026-07-12  
+> **Git:** `git rev-parse HEAD`  
+>
+> **Verification snapshot (2026-07-12):** analyze **0** · test **924** · Windows debug build OK · P1 local record/candidate CLI · SA-01/02/03 foundation · `system/` durable vs `.akasha/` derived  
+> **현재 실행:** Steam 무료 출시 준비 — IAP/Agent player layer는 post-launch
+
 ---
 
-> **Current verification (2026-07-11):** SA-03 derived-cache lifecycle · SA-02 selected-source hydration foundation · flutter analyze 0 · test **879**
-> **Current Git:** use `git rev-parse HEAD` for the committed tip.
-> **2026-07-12 verification:** P1 local commands provide bounded `record
-> lookup`/`record read` plus user-started `candidate.create` intake through the
-> `akasha` JSON-file CLI. Candidate provenance review UX and self-describing
-> Vault-spec sync remain in place. `flutter analyze --no-pub` **0 issues**,
-> full `flutter test --no-pub` **924 passed**, and `flutter build windows
-> --debug --no-pub` succeeded.
-> **Desktop validation:** `flutter build windows --debug --no-pub` succeeded.
-
-> **2026-07-10 architecture correction:** Durable candidates, applied-operation
-> logs, recovery evidence, and drafts live under `system/`; `.akasha/` is
-> derived and disposable only. Earlier rows that name `.akasha/ops`,
-> `.akasha/candidates`, or `.akasha/recovery` describe the pre-migration layout
-> and must not guide new work.
- 
 ## Executive Summary
  
 | 항목 | 상태 |
 |------|------|
-| **flutter test** | **840 PASS** |
+| **flutter test** | **924 PASS** |
 | **flutter analyze** | **0 issue** (gates clean) |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
 | **앱 테마** | `AkashaPalette` ThemeExtension · sidebar/bottom/search/card/preview rail 반영 ✅ |
@@ -102,7 +88,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **838 PASS** | ✅ |
+| `flutter test` | **924 PASS** | ✅ |
 | `flutter analyze` | **0 issue** | ✅ |
 | `preflight_check` | PASS | ✅ |
 | `registry_builder` | PASS | — (post-v1 scale) |
