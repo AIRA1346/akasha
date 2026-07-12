@@ -1,6 +1,8 @@
 # SA-02 — Home Work Summary Boundary
 
-> **Status:** Contract and fixture profile fixed; visual/relation surface audit complete; Home UI implementation not started
+> **Status:** Work-only Explore uses the bounded summary path; dashboard,
+> graph, Canvas, personal-library, Entity, Journal, Timeline, and relation
+> surfaces remain separate migrations.
 > **Date:** 2026-07-10
 > **Related:** [SCALE_ACCESS_PATH_INVENTORY.md](SCALE_ACCESS_PATH_INVENTORY.md#sa-02--home-work-summary-read-path) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
 
@@ -30,6 +32,7 @@ look like intentional empty values and could overwrite original archive data.
 | --- | --- | --- |
 | Home load | `HomeVaultCoordinator.loadItems` calls `VaultPort.loadAllItems`, then rebuilds links. | It is not a valid interactive path for an unbounded Vault. |
 | Home state | Many Dashboard, Canvas, graph, record, and picker paths receive a shared `List<AkashaItem>`. | A global type swap would flatten unrelated domain behavior and is out of scope. |
+| Work Explore | The linked-Vault Work-only Explore scope uses `WorkSummaryBrowseView`, cursor-paged SQLite summaries, and selected-source hydration. | This is the first bounded consumer, not permission to feed summaries into other Home surfaces. |
 | Existing summary | `VaultRecordSummary` includes ID, relative path, title, category, creator, year, rating, display statuses, tags, timestamps, and poster. | It is close to a Work browse-card projection. |
 | Missing detail | The summary does not hold Work body, review, quotes, description, full v3 metadata, or editor session revision. | Open, preview-detail, edit, graph, and evidence-bearing operations must hydrate the selected source Work. |
 | Existing index I/O | `.akasha/record_index.json` loads and rewrites one whole payload. | It cannot be treated as the final bounded query implementation. SA-03 owns its replacement choice. |
@@ -61,12 +64,13 @@ revision. It does not scan siblings or construct a partial `AkashaItem`; SA-02B
 must resolve the summary locator first, then use this port for the selected
 Work only.
 
-`LocalDerivedIndexLifecycle` now exposes the same separation as a read API:
+`LocalDerivedIndexLifecycle` exposes the same separation as a read API:
 `queryWorkSummaries` returns only bounded summaries from a ready cache, while
 `hydrateSelectedWork(workId)` resolves the cached locator and returns either a
 complete canonical item or an explicit cache-unavailable, missing-source, or
-identity-mismatch state. This remains a foundation; no Home screen consumes it
-yet.
+identity-mismatch state. `WorkSummaryBrowseView` consumes this only for the
+linked-Vault Work Explore scope; no dashboard, graph, Canvas, personal-library,
+or editor path receives a partial summary.
 
 ## 4. Change and Reconciliation Contract
 

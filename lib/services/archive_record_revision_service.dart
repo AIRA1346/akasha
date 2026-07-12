@@ -8,6 +8,7 @@ import '../core/archiving/record_kind.dart';
 import '../core/archiving/vault_file_revision.dart';
 import '../models/enums.dart';
 import 'record_summary_index_service.dart';
+import 'record_path_index_service.dart';
 import 'vault_record_path_resolver.dart';
 
 class ArchiveRecordRevision {
@@ -93,6 +94,24 @@ class ArchiveRecordRevisionService {
       );
     }
 
+    final physical = await currentForPhysicalRecordId(
+      vaultPath: vaultPath,
+      recordId: id,
+    );
+    if (physical.exists) return physical;
+
+    final pathIndex = const RecordPathIndexService();
+    // A current locator index is authoritative for Gateway-bound source reads.
+    // Do not let an ambiguous id silently select a Markdown file. The legacy
+    // summary index remains a compatibility fallback only while this derived
+    // index has not yet been built for an older Vault.
+    if (await pathIndex.isAvailable(vaultPath)) {
+      return const ArchiveRecordRevision(
+        value: ArchiveRecordRevision.missing,
+        exists: false,
+      );
+    }
+
     final summary = await RecordSummaryIndexService().lookupById(vaultPath, id);
     if (summary == null || summary.relativePath.trim().isEmpty) {
       return const ArchiveRecordRevision(
@@ -102,6 +121,43 @@ class ArchiveRecordRevisionService {
     }
     return currentForPath(
       p.joinAll([vaultPath, ...summary.relativePath.split('/')]),
+    );
+  }
+
+  /// Resolves only a physical v3 `record_id` through the portable locator.
+  ///
+  /// Gateway provenance uses this stricter path. Unlike [currentForRecordId],
+  /// it never accepts a legacy Work/Entity summary id when the locator is
+  /// absent, because that would make an Entity look like one source Record.
+  Future<ArchiveRecordRevision> currentForPhysicalRecordId({
+    required String vaultPath,
+    required String recordId,
+  }) async {
+    final id = recordId.trim();
+    if (vaultPath.trim().isEmpty ||
+        !RecordPathIndexService.isStableRecordId(id)) {
+      return const ArchiveRecordRevision(
+        value: ArchiveRecordRevision.missing,
+        exists: false,
+      );
+    }
+
+    const pathIndex = RecordPathIndexService();
+    if (!await pathIndex.isAvailable(vaultPath)) {
+      return const ArchiveRecordRevision(
+        value: ArchiveRecordRevision.missing,
+        exists: false,
+      );
+    }
+    final located = await pathIndex.lookup(vaultPath, id);
+    if (!located.isFound) {
+      return const ArchiveRecordRevision(
+        value: ArchiveRecordRevision.missing,
+        exists: false,
+      );
+    }
+    return currentForPath(
+      p.joinAll([vaultPath, ...located.relativePath!.split('/')]),
     );
   }
 
@@ -117,6 +173,12 @@ class ArchiveRecordRevisionService {
 
     final recordId = operation.effectiveRecordId;
     if (recordId == null || recordId.trim().isEmpty) return null;
+    final pathIndex = const RecordPathIndexService();
+    final located = await pathIndex.lookup(vaultPath, recordId);
+    if (located.isFound) {
+      return p.joinAll([vaultPath, ...located.relativePath!.split('/')]);
+    }
+    if (await pathIndex.isAvailable(vaultPath)) return null;
     final summary = await RecordSummaryIndexService().lookupById(
       vaultPath,
       recordId,

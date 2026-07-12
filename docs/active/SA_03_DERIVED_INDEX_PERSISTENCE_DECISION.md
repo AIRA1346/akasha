@@ -1,16 +1,18 @@
 # SA-03 — Derived Index Persistence Decision
 
-> **Status:** Windows synthetic cache measurement and lifecycle wiring passed; source-scan and user repair UX pending
+> **Status:** Work-only local SQLite query path is implemented and consumed by
+> Explore. Universal Record/Link/Taste query projections, packaged-target
+> measurement, and full repair controls remain pending.
 > **Date:** 2026-07-10
 > **Related:** [SA_02_HOME_WORK_SUMMARY_BOUNDARY.md](SA_02_HOME_WORK_SUMMARY_BOUNDARY.md) · [SCALE_ACCESS_PATH_INVENTORY.md](SCALE_ACCESS_PATH_INVENTORY.md#sa-03--bounded-index-persistence-next) · [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)
 
 ## 1. Decision Proposal
 
-For unbounded interactive queries, AKASHA should use a **local, rebuildable
-derived index store outside the user Vault**. The recommended storage class is
-a transactional local database with indexed, cursor-based queries; the exact
-Flutter package/runtime is not selected until a Windows Steam prototype and
-fixture benchmark succeed.
+For unbounded interactive queries, AKASHA uses a **local, rebuildable derived
+index store outside the user Vault**. The first Work-only implementation uses
+`sqflite_common_ffi` / SQLite with indexed, cursor-based queries. This decides
+the storage class for high-fan-out interactive projections, not a Universal
+Record schema or a single database for every archive meaning.
 
 This store is not a second archive, sync target, evidence source, or authority.
 Markdown, assets, and durable `system/` files remain the only canonical user
@@ -40,7 +42,7 @@ change the canonical Vault contract and needs its own decision.
 | Bounded read | Work summary page, stable-ID lookup, and filter query read only relevant indexed rows/pages, not all Markdown or all index rows. |
 | Bounded mutation | One source-path upsert/delete changes only affected rows and secondary index entries in one transaction. |
 | Cursor safety | Cursor ordering is deterministic and uses a stable-ID tie-breaker. No host-local time ordering. |
-| Revision awareness | Indexed source revision is stored only to decide freshness; it never authorizes a canonical write. |
+| Revision awareness | A projection may retain an observed source revision only to decide freshness; it never authorizes a canonical write. The current Work projection verifies stable Work identity during selected-source hydration and does not yet persist a source hash/revision. |
 | Failure visibility | Cache open/migration/rebuild failure creates an explicit repair state. It must not silently call `loadAllItems` or treat source records as deleted. |
 | Privacy | The cache stays on the user's local machine and carries no network or analytics behavior. Clear/rebuild must be available. |
 | Non-authority | User export, backup, sharing, external-tool access, and P0 recovery rely on the Vault, not this store. |
@@ -93,7 +95,7 @@ required`, so even partial committed rows are not presented as an archive
 result. A user-triggered repair may scan the Vault with progress and
 cancellation; unreadable sources must be reported rather than skipped.
 
-## 7. Prototype and Measurement Gate
+## 7. Current Work Projection and Measurement Gate
 
 The first Windows prototype uses `sqflite_common_ffi` as the local SQLite
 runtime. It verifies a Vault-path-hashed cache location outside the Vault,
@@ -105,9 +107,11 @@ handles one precise source path as indexed, deleted, unreadable, or ignored.
 `LocalDerivedIndexLifecycle` now starts after Vault initialization, listens to
 SA-01 detailed change batches, and serializes rebuild/repair work. Its
 `ensureWorkSummariesReady` entry point shares one app-owned preparation rebuild
-when the projection is missing or needs repair; it does not expose derived-store
-coordination to the user. It does not yet serve Home or expose preparation
-status in the UI.
+when the projection is missing or needs repair. The Work-only Explore surface
+uses the resulting cursor pages, shows preparation/error states, and hydrates
+one canonical Work before preview or editing. Dashboard, Canvas, graph,
+personal-library, Entity, Journal, Timeline, and relationship surfaces do not
+inherit this partial Work projection.
 
 The synthetic cache storage/query profile has passed on the Windows development
 test runtime; measured results and scope are recorded in
@@ -123,13 +127,48 @@ profile on the Steam target platform.
 3. **Done (lifecycle API):** app startup binds the active Vault cache; precise
    change batches take a one-path sync route; reconciliation and cancelled
    rebuilds mark the cache repair-required without a hidden full read.
-4. **Pending:** expose rebuild progress, cancellation, repair reason, and cache
-   clear/rebuild controls to the user; verify native external-watch delivery.
+4. **Partial:** Explore shows preparation progress and retryable errors. User
+   cancellation, detailed repair reason, cache clear/rebuild controls, and
+   packaged native external-watch verification remain pending.
 5. **Pending:** measure Markdown scanning and canonical selected-Work hydration
    on the packaged Windows Steam target; verify packaging, license, and no
    required network service.
 
-## 8. Non-Decisions
+## 8. Query Topology and External-Tool Boundary
+
+AKASHA deliberately uses more than one derived access layer. They solve
+different problems and must not be collapsed into a second canonical archive.
+
+| Query need | Current / intended layer | Boundary |
+| --- | --- | --- |
+| Exact title/alias and stable Record locator | Portable, rebuildable shards under `.akasha/` | Used by local `record lookup` / `record read`; returns logical IDs, not arbitrary file paths. |
+| Work Explore page, filters, and small ID-set enrichment | App-local SQLite Work projection outside the Vault | Cursor-paged, transactional, and disposable; never exported or used as archive evidence. |
+| Selected Work detail or edit | Canonical Markdown hydration | Re-read the one source and verify its stable identity before an editor receives it. |
+| Entity, Journal, Timeline, Link/graph, Taste, snippet, and semantic queries | Separate future projections | Each needs its own result shape, evidence rule, and bounded query contract; none may reuse an incomplete Work row as a generic Record. |
+
+The local command currently uses only the portable exact-lookup layer. It must
+not open the app-local SQLite cache for a generic external query until a
+multi-process cache ownership, schema-compatibility, ready-state, and repair
+contract is explicitly defined. If a bounded command query is unavailable, it
+returns an explicit error rather than scanning the Vault or treating a missing
+cache row as absence of a user record.
+
+This split is intentional:
+
+- portable shards keep a minimal, user-visible exact lookup surface available
+  to local tools without turning `.akasha/` into a transactional database;
+- the app-local cache supports high-volume interactive queries without placing
+  SQLite/WAL files in a syncable Vault; and
+- canonical Markdown remains the source for provenance, unknown YAML, body
+  content, evidence, and conflict-safe writes.
+
+Before a new projection is added, its ADR must name its identity, source
+paths/revisions, bounded result shape, cursor or lookup rule, unreadable-source
+representation, update/reconciliation behavior, and whether its result may be
+shown to an external tool. A generic `records` table is not a substitute for
+those decisions.
+
+## 9. Non-Decisions
 
 - No canonical Markdown/YAML, v3 schema, serializer, or migration changes.
 - No durable Vault ID field yet.

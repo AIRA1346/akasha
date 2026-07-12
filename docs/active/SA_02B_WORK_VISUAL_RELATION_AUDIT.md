@@ -1,6 +1,7 @@
 # SA-02B - Work Visual and Relationship Surface Audit
 
-> **Status:** Boundary audited; no Home UI migration yet
+> **Status:** Work-only Explore implementation is present; the remaining Home,
+> relationship, graph, Canvas, and personal-library migrations are separate.
 > **Date:** 2026-07-11
 > **Related:** [SA-02 Work Summary Boundary](SA_02_HOME_WORK_SUMMARY_BOUNDARY.md), [SA-03 Derived Index Decision](SA_03_DERIVED_INDEX_PERSISTENCE_DECISION.md), [Scale Access-Path Inventory](SCALE_ACCESS_PATH_INVENTORY.md)
 
@@ -88,11 +89,12 @@ Consequences:
 - a future relation index must support bounded lookup by source and target,
   not rebuild or load every Work to answer one selected-Work request.
 
-## 5. Scale Blockers Found
+## 5. Remaining Scale Blockers
 
-The derived Work-summary cache is now capable of bounded pages and selected
-source hydration, but Home does not consume it. The normal startup and change
-path remains:
+The derived Work-summary cache now serves the linked-Vault Work-only Explore
+scope through bounded pages and selected-source hydration. The remaining
+dashboard, graph, Canvas, entity discovery, personal-library, and legacy
+compatibility paths can still request complete item lists or broad link reloads:
 
 ```text
 Home init or Vault update

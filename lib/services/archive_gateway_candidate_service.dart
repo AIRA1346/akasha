@@ -142,7 +142,7 @@ class ArchiveGatewayCandidateService {
     );
     if (authorization.failure != null) return authorization.failure!;
 
-    final currentSource = await _revisionService.currentForRecordId(
+    final currentSource = await _revisionService.currentForPhysicalRecordId(
       vaultPath: vaultPath,
       recordId: request.candidate.sourceRecordId,
     );

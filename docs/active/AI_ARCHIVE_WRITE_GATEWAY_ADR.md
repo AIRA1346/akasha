@@ -1,7 +1,8 @@
 # AI Archive Write Gateway ADR
 
-> **Status:** Accepted; the deliberately narrow local `candidate.create`
-> boundary and JSON-file CLI transport are implemented. No AI service,
+> **Status:** Accepted; bounded local Record lookup/read plus the deliberately
+> narrow local `candidate.create` boundary and JSON-file CLI transport are
+> implemented. No AI service,
 > canonical Record write, serializer migration, or general operation model is
 > introduced by this ADR.
 > **Date:** 2026-07-11  
@@ -212,10 +213,11 @@ Missing before this becomes a real external-AI workflow:
 
 The first concrete command transport is
 [Local Agent Command Protocol v1](LOCAL_AGENT_COMMAND_PROTOCOL.md): a
-command-capable agent submits exactly one structured candidate from an explicit
-JSON request file. It is an explicit local task invocation, not a background capability or
-proof of agent identity. MCP, local sockets, SDKs, and hosted integrations stay
-deferred.
+command-capable agent can perform one bounded title/alias lookup, read one
+stable-id Record with its exact revision, then submit exactly one structured
+candidate from explicit JSON request files. It is an explicit local task
+invocation, not a background capability or proof of agent identity. MCP, local
+sockets, SDKs, and hosted integrations stay deferred.
 
 ## 8. AI Markdown is not an AI integration
 
@@ -242,15 +244,16 @@ Markdown import may remain as a separate compatibility/import feature.
 | Operation validation | Implemented | Extend only after contract decisions. |
 | Operation execution | `promoteCandidate` only | Add operations one at a time with fault/conflict tests. |
 | AI authorization | User-started intake session or local grant + actor binding for `candidate.create` only | Required before each later scope or direct application. |
+| Scoped Record read | Local `record lookup`/`record read` use rebuildable title and record-path indexes; a physical Document `record_id` names the source while an Entity/Work ID is context only. Full Markdown is returned only for one stable ID and never silently truncated. | Read is a bounded integration surface, not a credential or a broad search API. |
 | Derived provenance (`derived_from`) | Not implemented | Required before AI interpretation is persisted. |
-| Generic AI transport | Local JSON-file CLI for `candidate propose` only | MCP, SDK, local socket, hosted API, and all non-candidate operations remain deferred. |
+| Generic AI transport | Local JSON-file CLI for `record lookup`, `record read`, and `candidate propose` only | MCP, SDK, local socket, hosted API, and all canonical mutation operations remain deferred. |
 
 No generic `create_record`, `append_section`, or `update_frontmatter` executor
 may be enabled until the following gate passes:
 
 1. authority scope and explicit user approval semantics are implemented from
    [Gateway Permission and Receipt ADR](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md);
-2. record-target revision reads are exposed without whole-Vault scanning;
+2. record-target revision reads are exposed without whole-Vault scanning; **implemented for one indexed Record**. Broad semantic search remains separate scale work;
 3. receipt/provenance requirements are implemented additively;
 4. each operation uses the shared P0 writer and preserves conflict evidence;
 5. candidate, direct-create, derived-record, stale-revision, duplicate, and

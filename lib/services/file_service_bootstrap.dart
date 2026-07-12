@@ -40,6 +40,8 @@ mixin _AkashaFileServiceBootstrap
       await VaultSpecWriter().write(path);
       await EntityPathIndexService().ensureIndex(path);
       await RecordSummaryIndexService().ensureIndex(path);
+      await TitleAliasIndexService().ensureIndex(path);
+      await const RecordPathIndexService().ensureIndex(path);
       _startWatching();
     }
     await _refreshVaultFingerprint();

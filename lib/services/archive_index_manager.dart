@@ -11,6 +11,7 @@ import 'archive_candidate_store.dart';
 import 'entity_path_index_service.dart';
 import 'event_ledger_service.dart';
 import 'record_link_index_service.dart';
+import 'record_path_index_service.dart';
 import 'record_summary_index_service.dart';
 import 'taste_index_service.dart';
 import 'title_alias_index_service.dart';
@@ -81,12 +82,14 @@ class ArchiveIndexRebuildResult {
 class ArchiveIndexManager {
   ArchiveIndexManager({
     RecordSummaryIndexService? recordIndex,
+    RecordPathIndexService? recordPathIndex,
     EntityPathIndexService? entityPathIndex,
     TitleAliasIndexService? titleAliasIndex,
     RecordLinkIndexService? linkIndex,
     ArchiveCandidateStore? candidateStore,
     TasteIndexService? tasteIndex,
   }) : _recordIndex = recordIndex ?? RecordSummaryIndexService(),
+       _recordPathIndex = recordPathIndex ?? const RecordPathIndexService(),
        _entityPathIndex = entityPathIndex ?? EntityPathIndexService(),
        _titleAliasIndex = titleAliasIndex ?? TitleAliasIndexService(),
        _linkIndex = linkIndex,
@@ -94,6 +97,7 @@ class ArchiveIndexManager {
        _tasteIndex = tasteIndex ?? TasteIndexService();
 
   static const String recordIndexName = 'record';
+  static const String recordPathIndexName = 'recordPath';
   static const String entityPathIndexName = 'entityPath';
   static const String titleAliasIndexName = 'titleAlias';
   static const String linkIndexName = 'link';
@@ -101,6 +105,7 @@ class ArchiveIndexManager {
   static const String tasteIndexName = 'taste';
 
   final RecordSummaryIndexService _recordIndex;
+  final RecordPathIndexService _recordPathIndex;
   final EntityPathIndexService _entityPathIndex;
   final TitleAliasIndexService _titleAliasIndex;
   final RecordLinkIndexService? _linkIndex;
@@ -144,6 +149,18 @@ class ArchiveIndexManager {
         final records = await _recordIndex.load(vaultPath);
         return {'records': records.length};
       },
+    );
+
+    await _run(
+      entries,
+      indexName: recordPathIndexName,
+      outputPath: p.join(
+        vaultPath,
+        RecordPathIndexService.akashaDirName,
+        RecordPathIndexService.indexDirName,
+      ),
+      action: () async =>
+          (await _recordPathIndex.rebuildFromVault(vaultPath)).toJson(),
     );
 
     await _run(
@@ -289,6 +306,27 @@ class ArchiveIndexManager {
 
     await _run(
       entries,
+      indexName: recordPathIndexName,
+      outputPath: p.join(
+        vaultPath,
+        RecordPathIndexService.akashaDirName,
+        RecordPathIndexService.indexDirName,
+      ),
+      action: () async {
+        final recordId = await _recordPathIndex.upsertMarkdownFile(
+          vaultPath: vaultPath,
+          absolutePath: absolutePath,
+        );
+        return {
+          'mode': 'incremental',
+          if (recordId != null && recordId.isNotEmpty) 'recordId': recordId,
+          'changedPath': _relativePath(vaultPath, absolutePath),
+        };
+      },
+    );
+
+    await _run(
+      entries,
       indexName: entityPathIndexName,
       outputPath: p.join(
         vaultPath,
@@ -425,6 +463,27 @@ class ArchiveIndexManager {
         return {
           'mode': 'incrementalRemove',
           'removedPath': _relativePath(vaultPath, absolutePath),
+        };
+      },
+    );
+
+    await _run(
+      entries,
+      indexName: recordPathIndexName,
+      outputPath: p.join(
+        vaultPath,
+        RecordPathIndexService.akashaDirName,
+        RecordPathIndexService.indexDirName,
+      ),
+      action: () async {
+        final removed = await _recordPathIndex.removeByAbsolutePath(
+          vaultPath: vaultPath,
+          absolutePath: absolutePath,
+        );
+        return {
+          'mode': 'incrementalRemove',
+          'removedPath': _relativePath(vaultPath, absolutePath),
+          if (removed != null && removed.isNotEmpty) 'recordId': removed,
         };
       },
     );

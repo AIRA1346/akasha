@@ -111,7 +111,10 @@ Rules:
 
 ### 4.2 Derived Index Layer
 
-The current `.akasha/record_index.json` is the right first slice. Long term, large vaults need a stronger local derived store such as `.akasha/vault_index.db` or sharded index files.
+The current `.akasha/record_index.json` is the right first slice. Long term,
+large vaults need stronger derived query stores: minimal portable shards may
+remain under `.akasha/`, while transactional SQLite/WAL query caches belong
+outside the syncable Vault root.
 
 Required logical indexes:
 

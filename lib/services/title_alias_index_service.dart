@@ -34,6 +34,7 @@ class TitleAliasIndexEntry {
     required this.entityType,
     required this.title,
     required this.relativePath,
+    this.documentRecordId,
     this.values = const [],
     this.fields = const [],
   });
@@ -43,6 +44,7 @@ class TitleAliasIndexEntry {
   final String entityType;
   final String title;
   final String relativePath;
+  final String? documentRecordId;
   final List<String> values;
   final List<String> fields;
 
@@ -56,6 +58,9 @@ class TitleAliasIndexEntry {
       entityType: entityType.isNotEmpty ? entityType : other.entityType,
       title: title.isNotEmpty ? title : other.title,
       relativePath: relativePath,
+      documentRecordId: documentRecordId?.isNotEmpty == true
+          ? documentRecordId
+          : other.documentRecordId,
       values: _sortedUnique([...values, ...other.values]),
       fields: _sortedUnique([...fields, ...other.fields]),
     );
@@ -73,6 +78,7 @@ class TitleAliasIndexEntry {
       entityType: json['entityType']?.toString() ?? '',
       title: json['title']?.toString() ?? '',
       relativePath: json['path']?.toString() ?? '',
+      documentRecordId: _nonEmptyJsonString(json['documentRecordId']),
       values:
           (json['values'] as List?)
               ?.map((entry) => entry.toString())
@@ -92,6 +98,8 @@ class TitleAliasIndexEntry {
     'entityType': entityType,
     'title': title,
     'path': relativePath,
+    if (documentRecordId != null && documentRecordId!.isNotEmpty)
+      'documentRecordId': documentRecordId,
     if (values.isNotEmpty) 'values': values,
     if (fields.isNotEmpty) 'fields': fields,
   };
@@ -106,12 +114,19 @@ class TitleAliasIndexEntry {
           ..sort();
     return next;
   }
+
+  static String? _nonEmptyJsonString(Object? raw) {
+    final value = raw?.toString().trim() ?? '';
+    return value.isEmpty ? null : value;
+  }
 }
 
 class TitleAliasIndexService {
   TitleAliasIndexService();
 
-  static const int schemaVersion = 1;
+  // v2 adds the physical Document record_id alongside the pre-existing
+  // Entity/Work navigation target. They are deliberately different IDs.
+  static const int schemaVersion = 2;
   static const String akashaDirName = '.akasha';
   static const String indexDirName = 'title_alias_index';
   static const String namesDirName = 'names';
@@ -130,9 +145,21 @@ class TitleAliasIndexService {
 
   Future<void> ensureIndex(String vaultPath) async {
     if (vaultPath.trim().isEmpty) return;
-    final manifest = _manifestFile(vaultPath);
-    if (await manifest.exists()) return;
+    if (await isAvailable(vaultPath)) return;
     await rebuildFromVault(vaultPath);
+  }
+
+  /// Lets bounded external reads distinguish an unavailable derived index from
+  /// a valid lookup that simply has no matching title.
+  Future<bool> isAvailable(String vaultPath) async {
+    final manifest = _manifestFile(vaultPath);
+    if (!await manifest.exists()) return false;
+    try {
+      final decoded = jsonDecode(await manifest.readAsString());
+      return decoded is Map && decoded['version'] == schemaVersion;
+    } on Object {
+      return false;
+    }
   }
 
   Future<TitleAliasIndexStats> rebuildFromVault(String vaultPath) async {
@@ -329,6 +356,7 @@ class TitleAliasIndexService {
       final recordKind = _recordKindFromYaml(parsed);
       final relativePath = _relativePath(vaultPath, file.path);
       final targetId = _recordIdFromYaml(parsed, recordKind, relativePath);
+      final documentRecordId = _safeYamlString(parsed, 'record_id');
       if (targetId.trim().isEmpty) return const {};
 
       final title =
@@ -350,6 +378,7 @@ class TitleAliasIndexService {
             entityType: entityType,
             title: title,
             relativePath: relativePath,
+            documentRecordId: documentRecordId,
             values: [value.value],
             fields: [value.field],
           ),
@@ -582,8 +611,7 @@ class TitleAliasIndexService {
         _safeYamlString(yaml, 'work_id') ?? _safeYamlString(yaml, 'entity_id'),
       RecordKind.entityJournal => _safeYamlString(yaml, 'entity_id'),
       RecordKind.timelineEntry ||
-      RecordKind.freeformJournal =>
-        _safeYamlString(yaml, 'record_id'),
+      RecordKind.freeformJournal => _safeYamlString(yaml, 'record_id'),
     };
     return id?.trim().isNotEmpty == true ? id!.trim() : 'path:$relativePath';
   }

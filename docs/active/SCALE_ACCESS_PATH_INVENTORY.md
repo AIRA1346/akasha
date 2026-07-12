@@ -1,6 +1,8 @@
 # Scale Access-Path Inventory
 
-> **Status:** SA-01 implemented · SA-02 contract fixed · SA-03 derived-cache query measurement and lifecycle wiring passed
+> **Status:** SA-01 implemented · SA-02 Work-only Explore path implemented ·
+> SA-03 SQLite Work projection measured and wired; non-Work projections remain
+> separate work
 > **Date:** 2026-07-11
 > **Scope:** Current Vault read, change-notification, and derived-index paths.
 > This is an architecture-cleanup inventory. It introduces no schema, storage
@@ -112,13 +114,13 @@ projection but the current `record_index.json` still reads and rewrites a whole
 payload. Home integration must therefore wait for bounded derived persistence;
 otherwise it merely exchanges a full Markdown scan for a full JSON read.
 
-### SA-03 — Bounded Index Persistence (in progress)
+### SA-03 — Bounded Index Persistence (Work scope implemented)
 
-Use the SA-02 fixture profile and query contract to choose a sharded or local
-database implementation for Record, Link, and Taste indexes. The selected
-store must support a bounded Work page and one-path upsert/delete without a
-whole index rewrite. Do not change canonical Markdown or make a derived store
-authoritative.
+The Work projection uses an app-local SQLite cache outside the Vault and now
+supports a bounded page and one-path upsert/delete without a whole index
+rewrite. Do not generalize that table into a Universal Record store: Record,
+Link, Taste, snippet, and graph projections each still need their own query
+contract, evidence boundary, and migration.
 
 The current proposal and prototype gate are in
 [SA_03_DERIVED_INDEX_PERSISTENCE_DECISION.md](SA_03_DERIVED_INDEX_PERSISTENCE_DECISION.md).

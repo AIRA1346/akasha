@@ -58,6 +58,7 @@ Related [[pe_u_valid001|Valid Person]]
     expect(result.errors, isEmpty);
     expect(result.stats['sourceRecords'], 2);
     expect(result.stats['recordIndexRecords'], 2);
+    expect(result.stats['recordPathIndexRecords'], 1);
     expect(result.stats['entityPathIndexEntries'], 1);
     expect(result.stats['titleAliasExpectedNames'], greaterThan(2));
   });
@@ -100,6 +101,7 @@ B
     final workFile = File(p.join(vaultDir.path, 'Stale.md'));
     await workFile.writeAsString('''
 ---
+record_id: "rec_wk_u_stale001"
 work_id: "wk_u_stale001"
 entity_type: work
 title: "Stale Work"
@@ -124,6 +126,10 @@ Related [[pe_u_miss0001]]
     expect(
       stale.errors.map((issue) => issue.code),
       contains('record_index_stale_id'),
+    );
+    expect(
+      stale.errors.map((issue) => issue.code),
+      contains('record_path_stale_id'),
     );
     expect(
       stale.errors.map((issue) => issue.code),

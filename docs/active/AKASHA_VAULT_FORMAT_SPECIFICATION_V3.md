@@ -44,6 +44,9 @@ A compliant AKASHA Vault folder MUST organize its files according to the followi
     │   └── spec_v3.md              # Copy of this specification (Self-Describing Vault)
     ├── entity_path_index.json      # Maps entity_id to relative file paths
     ├── record_index.json           # Registry of all files, kinds, and titles
+    ├── record_path_index/          # Sharded physical record_id -> relative path locator
+    │   ├── id/{shard}.json         # Preserves duplicate ids for explicit conflict handling
+    │   └── path/{shard}.json       # Reverse map for incremental path changes
     ├── link_index.json             # Outgoing and incoming relation graph
     └── indexes/
         └── taste_index.json        # User preference/taste signal index

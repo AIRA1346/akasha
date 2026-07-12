@@ -1,13 +1,12 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:akasha/core/archiving/archive_gateway_candidate.dart';
 import 'package:akasha/services/akasha_command_runner.dart';
 import 'package:akasha/services/archive_candidate_store.dart';
 import 'package:akasha/services/archive_gateway_candidate_command.dart';
 import 'package:akasha/services/archive_gateway_candidate_service.dart';
 import 'package:akasha/services/archive_record_revision_service.dart';
-import 'package:akasha/services/record_summary_index_service.dart';
+import 'package:akasha/services/record_path_index_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -20,7 +19,7 @@ void main() {
       vault = await Directory.systemTemp.createTemp('akasha_gateway_command_');
       await _writeAndIndexSource(vault);
       candidates = ArchiveCandidateStore();
-      final clock = () => DateTime.utc(2026, 7, 12, 9);
+      DateTime clock() => DateTime.utc(2026, 7, 12, 9);
       command = ArchiveGatewayCandidateCommand(
         gateway: ArchiveGatewayCandidateService(
           candidateStore: candidates,
@@ -196,11 +195,11 @@ created_at: 2026-07-12T00:00:00Z
 ---
 Original source body.
 ''', flush: true);
-  await RecordSummaryIndexService().rebuildFromVault(vault.path);
+  await const RecordPathIndexService().rebuildFromVault(vault.path);
 }
 
 Future<ArchiveRecordRevision> _sourceRevision(Directory vault) =>
-    const ArchiveRecordRevisionService().currentForRecordId(
+    const ArchiveRecordRevisionService().currentForPhysicalRecordId(
       vaultPath: vault.path,
       recordId: 'rec_source_001',
     );

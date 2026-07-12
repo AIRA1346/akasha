@@ -11,6 +11,7 @@ import '../models/akasha_item.dart';
 import 'archive_index_manager.dart';
 import 'entity_path_index_service.dart';
 import 'record_link_index_service.dart';
+import 'record_path_index_service.dart';
 import 'record_summary_index_service.dart';
 import 'taste_index_service.dart';
 import 'timeline_entry_parser.dart';
@@ -93,11 +94,13 @@ class ArchiveIndexValidatorService {
   ArchiveIndexValidatorService({
     ArchiveIndexManager? indexManager,
     RecordSummaryIndexService? recordIndex,
+    RecordPathIndexService? recordPathIndex,
     EntityPathIndexService? entityPathIndex,
     TitleAliasIndexService? titleAliasIndex,
     TasteIndexService? tasteIndex,
   }) : _indexManager = indexManager ?? ArchiveIndexManager(),
        _recordIndex = recordIndex ?? RecordSummaryIndexService(),
+       _recordPathIndex = recordPathIndex ?? const RecordPathIndexService(),
        _entityPathIndex = entityPathIndex ?? EntityPathIndexService(),
        _titleAliasIndex = titleAliasIndex ?? TitleAliasIndexService(),
        _tasteIndex = tasteIndex ?? TasteIndexService();
@@ -115,6 +118,7 @@ class ArchiveIndexValidatorService {
 
   final ArchiveIndexManager _indexManager;
   final RecordSummaryIndexService _recordIndex;
+  final RecordPathIndexService _recordPathIndex;
   final EntityPathIndexService _entityPathIndex;
   final TitleAliasIndexService _titleAliasIndex;
   final TasteIndexService _tasteIndex;
@@ -174,6 +178,7 @@ class ArchiveIndexValidatorService {
     stats['sourceRecordIds'] = sourceRecords.map((r) => r.id).toSet().length;
 
     await _validateRecordIndex(vaultPath, sourceRecords, issues, stats);
+    await _validateRecordPathIndex(vaultPath, sourceRecords, issues, stats);
     await _validateEntityPathIndex(vaultPath, sourceRecords, issues, stats);
     await _validateTitleAliasIndex(vaultPath, sourceRecords, issues, stats);
     await _validateLinkIndex(
@@ -277,6 +282,92 @@ class ArchiveIndexValidatorService {
           message: 'Record index points to a path not present in Markdown.',
           recordId: indexed.id,
           path: indexed.relativePath,
+        );
+      }
+    }
+  }
+
+  Future<void> _validateRecordPathIndex(
+    String vaultPath,
+    List<_SourceRecord> sourceRecords,
+    List<ArchiveIndexValidationIssue> issues,
+    Map<String, dynamic> stats,
+  ) async {
+    final source = sourceRecords
+        .where(
+          (record) =>
+              record.documentRecordId != null &&
+              RecordPathIndexService.isStableRecordId(record.documentRecordId!),
+        )
+        .toList(growable: false);
+    final entries = await _recordPathIndex.loadAllIdEntries(vaultPath);
+    stats['recordPathIndexRecords'] = entries.length;
+
+    final sourceById = _groupBy(
+      source,
+      (record) => record.documentRecordId!,
+    );
+    final indexedById = _groupBy(entries, (entry) => entry.recordId);
+    for (final entry in sourceById.entries) {
+      final expectedPaths = entry.value
+          .map((record) => p.normalize(record.relativePath))
+          .toSet();
+      final indexedPaths = (indexedById[entry.key] ?? const [])
+          .map((record) => p.normalize(record.relativePath))
+          .toSet();
+      if (indexedPaths.isEmpty) {
+        _addIssue(
+          issues,
+          severity: ArchiveIndexValidationSeverity.error,
+          indexName: ArchiveIndexManager.recordPathIndexName,
+          code: 'record_path_missing_id',
+          message: 'Record path index is missing a stable Markdown record id.',
+          recordId: entry.key,
+          path: entry.value.first.relativePath,
+        );
+      } else if (!_sameStrings(expectedPaths, indexedPaths)) {
+        _addIssue(
+          issues,
+          severity: ArchiveIndexValidationSeverity.error,
+          indexName: ArchiveIndexManager.recordPathIndexName,
+          code: 'record_path_mismatch',
+          message: 'Record path index does not match Markdown source paths.',
+          recordId: entry.key,
+          details: {
+            'expectedPaths': expectedPaths.toList()..sort(),
+            'indexedPaths': indexedPaths.toList()..sort(),
+          },
+        );
+      }
+    }
+
+    for (final entry in entries) {
+      final sourceRecordsForId = sourceById[entry.recordId];
+      if (sourceRecordsForId == null) {
+        _addIssue(
+          issues,
+          severity: ArchiveIndexValidationSeverity.error,
+          indexName: ArchiveIndexManager.recordPathIndexName,
+          code: 'record_path_stale_id',
+          message: 'Record path index contains an id not present in Markdown.',
+          recordId: entry.recordId,
+          path: entry.relativePath,
+        );
+        continue;
+      }
+      final expectedPaths = sourceRecordsForId
+          .map((record) => p.normalize(record.relativePath))
+          .toSet();
+      if (!expectedPaths.contains(p.normalize(entry.relativePath))) {
+        _addIssue(
+          issues,
+          severity: ArchiveIndexValidationSeverity.error,
+          indexName: ArchiveIndexManager.recordPathIndexName,
+          code: 'record_path_stale_path',
+          message:
+              'Record path index points to a path not present in Markdown.',
+          recordId: entry.recordId,
+          path: entry.relativePath,
         );
       }
     }
@@ -747,6 +838,9 @@ class ArchiveIndexValidatorService {
     return grouped;
   }
 
+  static bool _sameStrings(Set<String> left, Set<String> right) =>
+      left.length == right.length && left.containsAll(right);
+
   static bool _shouldSkipPath(String filePath) {
     final parts = p.split(p.normalize(filePath));
     return parts.any(
@@ -786,6 +880,7 @@ class ArchiveIndexValidatorService {
 class _SourceRecord {
   const _SourceRecord({
     required this.id,
+    required this.documentRecordId,
     required this.sourceRecordId,
     required this.recordKind,
     required this.entityType,
@@ -796,6 +891,7 @@ class _SourceRecord {
   });
 
   final String id;
+  final String? documentRecordId;
   final String sourceRecordId;
   final RecordKind recordKind;
   final String entityType;
@@ -820,13 +916,16 @@ class _SourceRecord {
         .replaceAll('\\', '/');
     final kind = _recordKindFromYaml(parsed);
     final id = _recordIdFromYaml(parsed, kind, relativePath);
+    final documentRecordId = _string(parsed['record_id']);
     if (id.isEmpty) return null;
 
     final title =
         _string(parsed['title']) ?? p.basenameWithoutExtension(file.path);
     return _SourceRecord(
       id: id,
-      sourceRecordId: _sourceRecordIdFromYaml(parsed, relativePath),
+      documentRecordId: documentRecordId,
+      sourceRecordId:
+          documentRecordId ?? _sourceRecordIdFromYaml(parsed, relativePath),
       recordKind: kind,
       entityType: _entityTypeFromYaml(parsed, kind),
       title: title,

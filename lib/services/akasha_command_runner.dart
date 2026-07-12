@@ -2,21 +2,27 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'archive_gateway_candidate_command.dart';
+import 'archive_gateway_record_read_command.dart';
 
 /// Command-mode entry owned by the AKASHA desktop executable.
 ///
 /// Keeping this inside the desktop binary avoids a second independently
 /// packaged runtime and lets a command-capable local agent invoke the same
 /// Gateway implementation as the app. The command vocabulary is intentionally
-/// tiny; only `candidate propose` is currently recognized.
+/// tiny; candidate proposal plus bounded Record lookup/read are recognized.
 class AkashaCommandRunner {
-  AkashaCommandRunner({ArchiveGatewayCandidateCommand? candidateCommand})
-    : _candidateCommand = candidateCommand ?? ArchiveGatewayCandidateCommand();
+  AkashaCommandRunner({
+    ArchiveGatewayCandidateCommand? candidateCommand,
+    ArchiveGatewayRecordReadCommand? recordReadCommand,
+  }) : _candidateCommand = candidateCommand ?? ArchiveGatewayCandidateCommand(),
+       _recordReadCommand =
+           recordReadCommand ?? ArchiveGatewayRecordReadCommand();
 
   final ArchiveGatewayCandidateCommand _candidateCommand;
+  final ArchiveGatewayRecordReadCommand _recordReadCommand;
 
   static bool handles(List<String> args) =>
-      args.isNotEmpty && args.first == 'candidate';
+      args.isNotEmpty && (args.first == 'candidate' || args.first == 'record');
 
   Future<void> runFromProcess(List<String> args) async {
     String resultPath;
@@ -86,9 +92,9 @@ class AkashaCommandRunner {
     required List<String> args,
     required String stdinText,
   }) async {
-    if (args.length < 2 || args[0] != 'candidate' || args[1] != 'propose') {
+    if (args.length < 2 || (args[0] != 'candidate' && args[0] != 'record')) {
       return AkashaCommandOutcome.usage(
-        'Usage: akasha candidate propose --vault <vault-path>.',
+        'Usage: akasha candidate propose | record lookup|read --vault <vault-path>.',
       );
     }
 
@@ -107,8 +113,24 @@ class AkashaCommandRunner {
       final payload = decoded.map(
         (key, value) => MapEntry(key.toString(), value),
       );
-      final result = await _candidateCommand.propose(
+      if (args[0] == 'candidate') {
+        if (args[1] != 'propose') {
+          return AkashaCommandOutcome.usage(
+            'Usage: akasha candidate propose --vault <vault-path>.',
+          );
+        }
+        final result = await _candidateCommand.propose(
+          vaultPath: vaultPath,
+          payload: payload,
+        );
+        return AkashaCommandOutcome(
+          exitCode: result.ok ? 0 : 2,
+          response: result.toJson(),
+        );
+      }
+      final result = await _recordReadCommand.execute(
         vaultPath: vaultPath,
+        verb: args[1],
         payload: payload,
       );
       return AkashaCommandOutcome(

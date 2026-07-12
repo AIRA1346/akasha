@@ -16,6 +16,8 @@ import 'archive_index_manager.dart';
 import 'entity_path_index_service.dart';
 import 'markdown_parser.dart';
 import 'record_summary_index_service.dart';
+import 'record_path_index_service.dart';
+import 'title_alias_index_service.dart';
 import 'user_preferences.dart';
 import 'vault_lossless_record_writer.dart';
 import 'vault_recovery_write_service.dart';

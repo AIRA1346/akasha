@@ -11,6 +11,7 @@ import 'package:akasha/services/archive_gateway_grant_store.dart';
 import 'package:akasha/services/archive_gateway_receipt_store.dart';
 import 'package:akasha/services/archive_operation_applied_log.dart';
 import 'package:akasha/services/archive_record_revision_service.dart';
+import 'package:akasha/services/record_path_index_service.dart';
 import 'package:akasha/services/record_summary_index_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -125,6 +126,35 @@ void main() {
       expect(result.errorCode, 'grant_not_found');
       expect(await candidates.load(vault.path), isEmpty);
       expect(await receipts.lookup(vault.path, 'gwc_candidate_001'), isNull);
+    });
+
+    test('rejects a Work anchor when a physical Record is required', () async {
+      final work = File('${vault.path}/works/movie/work-source.md');
+      await work.parent.create(recursive: true);
+      await work.writeAsString('''---
+record_id: rec_wk_gateway001
+work_id: wk_u_gateway001
+entity_type: work
+title: Gateway Work
+category: movie
+---
+Work source body.
+''', flush: true);
+      await RecordSummaryIndexService().rebuildFromVault(vault.path);
+      await const RecordPathIndexService().rebuildFromVault(vault.path);
+      await _allow(grants, vault);
+
+      final result = await service.submit(
+        vaultPath: vault.path,
+        request: _request(
+          revision: 'v2:sha256:any;bytes:1',
+          sourceRecordId: 'wk_u_gateway001',
+        ),
+      );
+
+      expect(result.isSuccess, isFalse);
+      expect(result.errorCode, 'source_record_not_found');
+      expect(await candidates.load(vault.path), isEmpty);
     });
 
     test(
@@ -465,12 +495,12 @@ created_at: 2026-07-12T00:00:00Z
 ---
 Original source body.
 ''', flush: true);
-  await RecordSummaryIndexService().rebuildFromVault(vault.path);
+  await const RecordPathIndexService().rebuildFromVault(vault.path);
   return file;
 }
 
 Future<ArchiveRecordRevision> _sourceRevision(Directory vault) =>
-    const ArchiveRecordRevisionService().currentForRecordId(
+    const ArchiveRecordRevisionService().currentForPhysicalRecordId(
       vaultPath: vault.path,
       recordId: 'rec_source_001',
     );
@@ -507,6 +537,7 @@ ArchiveGatewayCandidateRequest _request({
   String operationId = 'gwc_candidate_001',
   String candidateId = 'cand_person_gateway001',
   String title = 'Gateway candidate',
+  String sourceRecordId = 'rec_source_001',
   ArchiveGatewayAuthorityReference authority =
       const ArchiveGatewayAuthorityReference.durableGrant('grant_local_001'),
 }) {
@@ -519,7 +550,7 @@ ArchiveGatewayCandidateRequest _request({
       candidateId: candidateId,
       entityType: EntityAnchorType.person,
       title: title,
-      sourceRecordId: 'rec_source_001',
+      sourceRecordId: sourceRecordId,
       evidence: 'The source explicitly names this person.',
       createdAt: DateTime.utc(2026, 7, 12, 7, 55),
       updatedAt: DateTime.utc(2026, 7, 12, 7, 55),

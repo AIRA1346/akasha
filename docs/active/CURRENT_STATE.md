@@ -3,12 +3,12 @@
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
 > **갱신:** 2026-07-11 (P0 recoverable Vault write gate 통과 · SA-01 Vault Change Detail Contract 완료 · SA-03 local derived index rebuild/source-sync prototype · test **871** · analyze 0)
 > **Git:** current committed tip: use `git rev-parse HEAD`
-> **2026-07-12 verification:** P1 local `candidate.create` Gateway supports
-> user-started, source-bounded intake sessions, durable grants, and the
-> `akasha candidate propose` JSON-file CLI. Candidate provenance review UX and
-> Vault-spec self-description remain in place. `flutter analyze lib --no-pub`
-> **0 issues**, full `flutter test --no-pub` **916 passed**, and `flutter build
-> windows --debug --no-pub` succeeded.
+> **2026-07-12 verification:** P1 local commands provide bounded `record
+> lookup`/`record read` plus user-started `candidate.create` intake through the
+> `akasha` JSON-file CLI. Candidate provenance review UX and Vault-spec
+> self-description remain in place. `flutter analyze --no-pub` **0 issues**,
+> full `flutter test --no-pub` **924 passed**, and `flutter build windows
+> --debug --no-pub` succeeded.
 > **Desktop validation:** `flutter build windows --debug --no-pub` succeeded.
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md) — 독립 검증기 `tool/vault_format_validator.dart`
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)

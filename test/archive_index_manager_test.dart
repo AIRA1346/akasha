@@ -9,6 +9,7 @@ import 'package:akasha/services/entity_path_index_service.dart';
 import 'package:akasha/services/entity_journal_parser.dart';
 import 'package:akasha/services/markdown_parser.dart';
 import 'package:akasha/services/record_summary_index_service.dart';
+import 'package:akasha/services/record_path_index_service.dart';
 import 'package:akasha/services/taste_index_service.dart';
 import 'package:akasha/services/title_alias_index_service.dart';
 import 'package:akasha/utils/helpers.dart';
@@ -77,6 +78,9 @@ void main() {
     await _deleteIfExists(
       File(p.join(vaultDir.path, '.akasha', 'record_index.json')),
     );
+    await _deleteDirIfExists(
+      Directory(p.join(vaultDir.path, '.akasha', 'record_path_index')),
+    );
     await _deleteIfExists(
       File(p.join(vaultDir.path, '.akasha', 'entity_path_index.json')),
     );
@@ -103,6 +107,7 @@ void main() {
       result.entries.map((entry) => entry.indexName),
       containsAll([
         ArchiveIndexManager.recordIndexName,
+        ArchiveIndexManager.recordPathIndexName,
         ArchiveIndexManager.entityPathIndexName,
         ArchiveIndexManager.titleAliasIndexName,
         ArchiveIndexManager.linkIndexName,
@@ -112,6 +117,10 @@ void main() {
     );
     expect(
       result.entry(ArchiveIndexManager.recordIndexName)?.stats['records'],
+      2,
+    );
+    expect(
+      result.entry(ArchiveIndexManager.recordPathIndexName)?.stats['records'],
       2,
     );
     expect(
@@ -142,6 +151,13 @@ void main() {
         p.join(vaultDir.path, '.akasha', 'record_index.json'),
       ).exists(),
       isTrue,
+    );
+    expect(
+      (await RecordPathIndexService().lookup(
+        vaultDir.path,
+        'rec_wk_u_manager01',
+      )).relativePath,
+      isNotNull,
     );
     expect(
       await File(
@@ -224,6 +240,7 @@ void main() {
       expect(result.succeeded, isTrue);
       expect(result.entries.map((entry) => entry.indexName), [
         ArchiveIndexManager.recordIndexName,
+        ArchiveIndexManager.recordPathIndexName,
         ArchiveIndexManager.entityPathIndexName,
         ArchiveIndexManager.titleAliasIndexName,
         ArchiveIndexManager.linkIndexName,
@@ -288,6 +305,7 @@ void main() {
     expect(result.succeeded, isTrue);
     expect(result.entries.map((entry) => entry.indexName), [
       ArchiveIndexManager.recordIndexName,
+      ArchiveIndexManager.recordPathIndexName,
       ArchiveIndexManager.entityPathIndexName,
       ArchiveIndexManager.titleAliasIndexName,
       ArchiveIndexManager.linkIndexName,

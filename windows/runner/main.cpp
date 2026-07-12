@@ -24,7 +24,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
 
   const bool is_command_mode =
       !command_line_arguments.empty() &&
-      command_line_arguments.front() == "candidate";
+      (command_line_arguments.front() == "candidate" ||
+       command_line_arguments.front() == "record");
   if (is_command_mode) {
     project.set_dart_entrypoint("commandMain");
   }

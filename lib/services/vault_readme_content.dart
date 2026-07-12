@@ -34,6 +34,7 @@ abstract final class VaultReadmeContent {
     ├── spec/spec_v3.md          # 형식 명세 동봉 사본 (Self-Describing Vault)
     ├── entity_path_index.json   # entity_id → 상대 경로
     ├── record_index.json        # record 요약 지도 (id/title/tags/path)
+    ├── record_path_index/       # 물리 record_id → 상대 경로 분할 지도
     ├── link_index.json
     └── event_ledger.jsonl
 ```
