@@ -10,3 +10,4 @@ export 'commerce_ports.dart';
 export 'commerce_service.dart';
 export 'currency_kind.dart';
 export 'fake/fake_commerce.dart';
+export 'server/secure_commerce.dart';

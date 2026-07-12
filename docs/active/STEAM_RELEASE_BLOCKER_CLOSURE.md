@@ -22,7 +22,7 @@ Close Steam review / payment / localization blockers so AKASHA can ship and dogf
 | **P2** | Exact English switch path + resubmission Notes for Steam reviewers | **Draft ready** (§Reviewer English path) |
 | **P3** | Unimplemented IAP stated clearly in docs + `FeatureFlags` | **Done in this slice** — `steamInAppPurchasesEnabled = false` |
 | **P4** | Astra/Echo (`premium`/`earned`) currency contract + support · unlock domain | **Domain done** — finalized grant rules + refund policy; [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md) |
-| **P4-B** | Secure Commerce Backend Foundation (SteamID account, 64-bit orders, state machine, ledger, fake Steam) | **Next** |
+| **P4-B** | Secure Commerce Backend Foundation (SteamID account, 64-bit orders, state machine, ledger, fake Steam) | **Done** — `lib/core/commerce/server/` |
 | **P5** | Real Steam Wallet adapter → FinalizeTxn / GetReport reconciliation | **Not started** — after P4-B |
 | **P6** | Non-sandbox test purchase + GetReport sample + test account pack | **Not started** — after P5 |
 

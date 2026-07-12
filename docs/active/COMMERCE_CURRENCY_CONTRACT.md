@@ -77,8 +77,8 @@ Deferred until payment system is stable:
 | Thin contract (this doc) | Done (+ finalized / refund / Support corrections) |
 | `CurrencyKind` + Product / Order / Ledger / Wallet / Entitlement models | Done |
 | Fake repository + fake payment provider | Done |
-| Unit tests for grant, idempotency, theme unlock, refund, insufficient funds | Done |
-| Steam API / Flutter store UI | **Not connected** |
+| **P4-B** Secure backend foundation (SteamID account, 64-bit orders, state machine, fake Steam, reconciliation) | Done — `lib/core/commerce/server/` |
+| Real Steam Publisher Web API / Flutter store UI | **Not connected** |
 | `steamInAppPurchasesEnabled` | **false** |
 
-Next: **P4-B Secure Commerce Backend Foundation** → then Steam adapter (still behind the FeatureFlag).
+Next: **Real Steam adapter** (Publisher Web API Key on server only) → then Flutter store UI. `steamInAppPurchasesEnabled` stays false until verified.
