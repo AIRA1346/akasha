@@ -146,7 +146,7 @@ These matter, but they are not the current ultimate-archive core.
 | ID | Work | Note |
 | --- | --- | --- |
 | D-001 | Steam BuildID `24015480` Set Live / review update | Release/ops, not archive architecture |
-| D-002 | Paid themes / IAP | Post-launch |
+| D-002 | Paid themes / IAP / Pearl | [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) P3–P6; flag off until verified |
 | D-003 | Agent/player implementation layer | AKASHA must not become the player/orchestrator |
 | D-004 | akasha-db ownership A/B/C decision | Repo/registry operations track |
 | D-005 | Registry manifest 4 generated files | Keep excluded from commit unless intentionally rebuilding registry |
@@ -154,21 +154,10 @@ These matter, but they are not the current ultimate-archive core.
 
 ## 9. Current Next Step
 
-**Architecture/cleanup gate:** [ARCHITECTURE_CLOSURE_AUDIT.md](ARCHITECTURE_CLOSURE_AUDIT.md) — **S0 closed** (Bounded Home Read Closure). Next: S1 Steam ship items, then declare Architecture Closure, then Steam M3 dogfood.
+**Architecture Closure:** [ARCHITECTURE_CLOSURE_AUDIT.md](ARCHITECTURE_CLOSURE_AUDIT.md) — **declared** (S0 closed · analyze 0 · test 930). No further generic architecture audits.
 
-**Product priority:** Steam M3 dogfood — fix issues found in real use ([STEAM_RELEASE.md](STEAM_RELEASE.md)), after or interleaved with minimal S0 fixes (especially C-04 Graph flag).
+**Product track:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) — localization · reviewer Notes · IAP honesty · Pearl contract · Steam Wallet flow · GetReport pack.
 
-**Separate architecture slice (not interleaved with dogfood):**
+Former audit S1 rows are a **Steam stability checklist** only (fix when dogfood/ship blocks).
 
-> **[SA-05 Timeline projection gate](SA_05_TIMELINE_PROJECTION_DECISION.md):**
-> measure the current Timeline loader and fix the exact cursor, preview, and
-> unreadable-source contract before implementation.
-
-**Deferred prerequisite (no ADR until then):** UA-122 — §7 implementation contract ADR when semantic history or behavioral aggregates implementation begins.
-
-Minimum done condition for SA-05 when that slice starts:
-
-- choose one domain/query family rather than a Universal Record migration;
-- write its bounded result and canonical-hydration contract before storage code;
-- prove its index stays derived/rebuildable, preserves unreadable-source
-  visibility, and never becomes a second user-data source of truth.
+**Deferred (do not start):** SA-05 · UA-122 §7 ADR · Universal Record · Relationship Assertion storage.

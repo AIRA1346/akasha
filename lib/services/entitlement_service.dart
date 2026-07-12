@@ -1,8 +1,10 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../config/feature_flags.dart';
 import '../models/library_theme.dart';
 
-/// Post-launch 권한 종류. Steam v1 무료 출시에서는 앱 내 구매를 노출하지 않는다.
+/// Post-launch 권한 종류.
+/// Steam IAP는 [FeatureFlags.steamInAppPurchasesEnabled]가 true일 때만 실연동한다.
 enum EntitlementKind {
   /// 향후 Steam microtxn 후보 — 테마·서포터 등 코스메틱만.
   cosmetic,
@@ -74,8 +76,11 @@ class EntitlementService {
     return owns(libraryThemePackId);
   }
 
-  /// Post-launch cosmetic purchase placeholder.
+  /// Cosmetic purchase entry. Returns false while IAP is unimplemented.
   Future<bool> purchaseCosmetic(String productId) async {
+    if (!FeatureFlags.steamInAppPurchasesEnabled) {
+      return false;
+    }
     await load();
     CommerceProduct? product;
     for (final entry in catalog) {
@@ -87,7 +92,7 @@ class EntitlementService {
     if (product == null || product.kind != EntitlementKind.cosmetic) {
       return false;
     }
-    // TODO(steam): 결제 기능을 실제 출시할 때 Steamworks 콜백에서 grant 호출.
+    // TODO(steam): Steam Wallet confirm → grant → ledger (Blocker P5).
     return false;
   }
 

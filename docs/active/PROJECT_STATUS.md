@@ -7,8 +7,8 @@
 > **Git:** `git rev-parse HEAD`  
 >
 > **Verification snapshot (2026-07-12):** analyze **0** · test **924** · Windows debug build OK · P1 local record/candidate CLI · SA-01/02/03 foundation · `system/` durable vs `.akasha/` derived  
-> **현재 실행:** Steam 무료 출시 준비 — IAP/Agent player layer는 post-launch
-
+> **현재 실행:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) — Architecture Closure 선언 후 Steam 출시 블로커 트랙
+> **IAP:** 미구현 (`steamInAppPurchasesEnabled = false`). 결제 완성 전 Store IAP 표시·재심사 주장 금지.
 ---
 
 ## Executive Summary

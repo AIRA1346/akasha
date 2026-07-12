@@ -1,8 +1,9 @@
 # Steam Release - AKASHA
 
-> **Updated:** 2026-07-02
-> **Status:** 무료 일반 출시 준비 중. Store Presence 공개 완료, SteamPipe 업로드/빌드 리뷰 진행 중.
-> **Release stance:** Early Access가 아니라 **무료 일반 출시**. 앱 내 구매/유료 테마는 post-launch로 보류.
+> **Updated:** 2026-07-12
+> **Status:** Architecture Closure declared. Active track = [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md).
+> **Release stance:** Early Access가 아니라 **무료 일반 출시**.  
+> **IAP:** **미구현** (`FeatureFlags.steamInAppPurchasesEnabled = false`). Store Page 인앱 구매 표시는 결제 흐름 완성 전까지 **제거 가능**. 부분 구현으로 구매가 있다고 표시·재제출하지 않는다.
 
 ---
 
@@ -26,7 +27,15 @@ AKASHA가 예쁘게 정리해서 보여준다.
 - AI agent/player/tool 구현 약속
 - 음악 재생, 추천 엔진, 자동화된 외부 도구 연동 약속
 
-테마는 v1에서 모두 무료로 제공한다. Steam IAP, supporter pack, paid theme pack은 실제 Steam 결제 연동이 준비된 뒤 별도 업데이트로 검토한다.
+테마는 v1에서 모두 무료로 제공한다. Steam IAP / Pearl / Black Pearl은 [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) P3–P6이 검증되기 전에 스토어·앱에 구매로 표시하지 않는다.
+
+---
+
+## 1b. Reviewer English switch (summary)
+
+Exact path and resubmission Notes: [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) §Reviewer English path.
+
+Short: Esc → Preferences → Display language → English.
 
 ---
 

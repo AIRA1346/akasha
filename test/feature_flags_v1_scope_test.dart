@@ -15,4 +15,8 @@ void main() {
     expect(FeatureFlags.catalogContributions, isTrue);
     expect(FeatureFlags.showKnowledgeGraph, isFalse);
   });
+
+  test('Steam IAP remains disabled until payment flow is verified', () {
+    expect(FeatureFlags.steamInAppPurchasesEnabled, isFalse);
+  });
 }

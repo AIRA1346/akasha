@@ -11,12 +11,13 @@
 > - P1 local CLI: bounded `record lookup`/`record read` · user-started `candidate.create`
 > - Candidate provenance review UX · Vault-spec self-description
 > - `system/` = durable non-rebuildable (candidates, ops, recovery, drafts); `.akasha/` = derived/disposable
-> - `flutter analyze --no-pub` **0** · `flutter test --no-pub` **924** · `flutter build windows --debug --no-pub` OK
+> - Bounded Home Read Closure (S0) · Architecture Closure **declared**
+> - `flutter analyze --no-pub` **0** · `flutter test --no-pub` **930** · `flutter build windows --debug --no-pub` OK
 >
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)  
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
-> **Architecture closure:** [ARCHITECTURE_CLOSURE_AUDIT.md](ARCHITECTURE_CLOSURE_AUDIT.md) — S0 **CLOSED** (Bounded Home Read Closure) · S1 remaining · analyze 0 · test tip below
-
+> **Architecture Closure:** [ARCHITECTURE_CLOSURE_AUDIT.md](ARCHITECTURE_CLOSURE_AUDIT.md) — **declared** (analyze 0 · test 930)
+> **Current track:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md)
 ---
 
 ## 0. Steam v1 제품 초점 (2026-07-06)
@@ -34,9 +35,9 @@
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
 
-**v1 blocking에 가까운 검증:** `flutter test` **924** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).  
-**v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.
-
+**v1 blocking에 가까운 검증:** `flutter test` **930** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).  
+**v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.  
+**IAP:** `FeatureFlags.steamInAppPurchasesEnabled = false` — 미구현. Store IAP 표시·재심사 주장 금지 until Steam payment flow complete.
 ---
 
 ## 1. 데이터 계층
@@ -66,7 +67,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **924 PASS** | ✅ |
+| `flutter test` | **930 PASS** | ✅ |
 | `flutter analyze lib` | 0 issue | ✅ |
 | `vault_format_validator` | 적합성 검증기 (spec v3 · 앱 무의존) | — |
 | `preflight_check` | PASS | ✅ |
@@ -161,7 +162,7 @@
 | **Phase 2** | 카탈로그 CI·10k scale | **완료** — post-v1 scale track |
 | **Phase 6.2** | 워크벤치 상세 통합 (Workbench Parity) | **완료 (100%)** |
 | **Phase 6.3** | incoming/sameDay·connections coordinator | **완료 (100%)** |
-| **M3** | Steam 무료 출시 | **진행 중** — no-IAP BuildID **24015480** 업로드 완료, Set Live/review 대기 |
+| **M3** | Steam 무료 출시 | **진행 중** — Architecture Closure 선언 · [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) · no-IAP BuildID **24015480** |
 | **Phase 3** | Entity 타입 다각화 (Work 이외) | **미착수** |
 | **Phase 4** | 타임라인 아카이브 | **미착수** |
 | **Phase 5** | 엔티티 연결성 (Connection) | **미착수** |

@@ -23,13 +23,14 @@ AKASHA 프로젝트의 문서 관리 시스템입니다.
 | 파일 | 역할 | 설명 |
 |---|---|---|
 | [AKASHA_ARCHIVE_CONSTITUTION.md](active/AKASHA_ARCHIVE_CONSTITUTION.md) | **Supreme SSOT** | 사용자 소유 개인 아카이브 프로토콜. 장기 원칙·아키텍처 거부 기준. |
-| [ARCHITECTURE_CLOSURE_AUDIT.md](active/ARCHITECTURE_CLOSURE_AUDIT.md) | **Closure Audit** | 2026-07-12 아키텍처·정리 단계 감사. S0/S1/S2 분리 · 수정 순서. |
+| [ARCHITECTURE_CLOSURE_AUDIT.md](active/ARCHITECTURE_CLOSURE_AUDIT.md) | **Architecture Closure** | 2026-07-12 선언. S0 closed · 추가 범용 감사 중단. |
+| [STEAM_RELEASE_BLOCKER_CLOSURE.md](active/STEAM_RELEASE_BLOCKER_CLOSURE.md) | **Current track** | Steam 출시 블로커: l10n · IAP 정직성 · Pearl · Wallet · GetReport. |
 | [VISION.md](active/VISION.md) | **v1 Product SSOT** | Steam v1 제품 범위·유저 여정·티어 정책 (원칙은 Constitution). |
 | [CURRENT_STATE.md](active/CURRENT_STATE.md) | **Reality SSOT** | 실제 코드 및 레지스트리 상태 기준 구현 현황. |
 | [PROJECT_CONSTITUTION.md](active/PROJECT_CONSTITUTION.md) | **Stub (superseded)** | 구헌법 리다이렉트 → [history](history/PROJECT_CONSTITUTION.md). |
 | [ARCHITECTURE.md](active/ARCHITECTURE.md) | **Architecture SSOT** | v4 런타임 및 해시 샤딩 인프라 아키텍처. |
 | [PROJECT_STATUS.md](active/PROJECT_STATUS.md) | **Operational SSOT** | 품질 게이트 통과 스냅샷 및 릴리즈 준비 현황. |
-| [STEAM_RELEASE.md](active/STEAM_RELEASE.md) | **Steam Release** | 무료 출시 스토어 카피, dogfood 상태, 업로드 체크리스트. |
+| [STEAM_RELEASE.md](active/STEAM_RELEASE.md) | **Steam Release** | 무료 출시 스토어 카피, dogfood 상태, 업로드 체크리스트. 블로커 트랙은 Blocker Closure. |
 | [ROADMAP.md](active/ROADMAP.md) | **Roadmap SSOT** | 5대 정체성 카테고리(Archive/Discovery/Graph/Library/Scale) 중심의 로드맵. |
 | [privacy.md](active/privacy.md) | **Legal Policy** | 개인정보 처리방침. |
 | [VAULT_AGENT_GUIDE.md](active/VAULT_AGENT_GUIDE.md) | **Vault Agent Guide** | 볼트 내 파일·에이전트·외부 편집기용 운영 가이드 및 ID 체계. |

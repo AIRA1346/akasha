@@ -19,7 +19,7 @@
 | — | B. Discovery | **optional** — starter catalog 검색 유지 |
 | — | E. Scale | **post-v1** — vault 파생 인덱스 · akasha-db/CDN |
 
-**Steam v1 무료 출시:** 사용자 지시에 따라 진행. dogfood는 **사용자 직접 완료**. 유료 테마/IAP는 post-launch 보류.
+**Steam v1 무료 출시:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) 트랙. Architecture Closure 선언됨. IAP는 `steamInAppPurchasesEnabled=false` — 결제 검증 전 Store/앱에 구매로 표시하지 않음.
 
 ---
 
