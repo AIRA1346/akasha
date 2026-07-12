@@ -154,7 +154,7 @@ These matter, but they are not the current ultimate-archive core.
 
 ## 9. Current Next Step
 
-**Architecture/cleanup gate:** [ARCHITECTURE_CLOSURE_AUDIT.md](ARCHITECTURE_CLOSURE_AUDIT.md) (2026-07-12) — S0 structural items before claiming Home scale closed; then Steam M3.
+**Architecture/cleanup gate:** [ARCHITECTURE_CLOSURE_AUDIT.md](ARCHITECTURE_CLOSURE_AUDIT.md) — **S0 closed** (Bounded Home Read Closure). Next: S1 Steam ship items, then declare Architecture Closure, then Steam M3 dogfood.
 
 **Product priority:** Steam M3 dogfood — fix issues found in real use ([STEAM_RELEASE.md](STEAM_RELEASE.md)), after or interleaved with minimal S0 fixes (especially C-04 Graph flag).
 

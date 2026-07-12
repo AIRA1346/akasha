@@ -3,6 +3,7 @@ import 'dart:typed_data';
 
 import 'package:path/path.dart' as p;
 
+import '../core/app_vault.dart';
 import '../core/ports/user_catalog_port.dart';
 import '../core/ports/vault_change.dart';
 import '../core/ports/vault_port.dart';
@@ -599,6 +600,12 @@ class ArchiveIndexManager {
   RecordLinkIndexService _linkIndexFor(String vaultPath) {
     final injected = _linkIndex;
     if (injected != null) return injected;
+    final appPath = AppVault.port.vaultPath;
+    if (appPath != null &&
+        appPath.isNotEmpty &&
+        p.equals(p.normalize(appPath), p.normalize(vaultPath))) {
+      return RecordLinkIndexService.shared;
+    }
     final fixedVault = _FixedVaultPathPort(vaultPath);
     return RecordLinkIndexService(
       vault: fixedVault,

@@ -48,4 +48,51 @@ class TimelineVaultLoader {
     entries.sort((a, b) => b.occurredAt.compareTo(a.occurredAt));
     return entries;
   }
+
+  /// Loads one timeline entry by stable id without listing the directory.
+  Future<TimelineEntry?> loadByRecordId(
+    String? vaultPath,
+    String recordId,
+  ) async {
+    final id = recordId.trim();
+    if (vaultPath == null || vaultPath.isEmpty || id.isEmpty) return null;
+
+    final direct = File(
+      p.join(vaultPath, TimelineEntryParser.timelineDirName, '$id.md'),
+    );
+    if (await direct.exists()) {
+      return _parseFile(direct);
+    }
+    return null;
+  }
+
+  Future<TimelineEntry?> loadByAbsolutePath(String absolutePath) async {
+    final file = File(absolutePath);
+    if (!await file.exists()) return null;
+    return _parseFile(file);
+  }
+
+  Future<TimelineEntry?> _parseFile(File entity) async {
+    try {
+      final content = await entity.readAsString();
+      final parsed = TimelineEntryParser.parse(content, entity.path);
+      if (parsed == null) return null;
+      return TimelineEntry(
+        recordId: parsed.recordId,
+        title: parsed.title,
+        body: parsed.body,
+        occurredAt: parsed.occurredAt,
+        addedAt: parsed.addedAt,
+        storagePath: parsed.storagePath,
+        entityId: parsed.entityId,
+        recordMetadata: parsed.recordMetadata,
+        openedRevision: VaultFileRevision.fromText(
+          content,
+          modifiedAtUtc: (await entity.lastModified()).toUtc(),
+        ),
+      );
+    } catch (_) {
+      return null;
+    }
+  }
 }

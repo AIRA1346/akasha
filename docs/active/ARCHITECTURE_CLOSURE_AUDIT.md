@@ -10,12 +10,13 @@
 | Closure question | Result |
 |---|---|
 | Known major Constitution contradictions? | **None on durable ownership / P0 write / system vs `.akasha` write boundary** |
-| Unclassified P0/SA bypass paths? | **None for P0 writers.** SA-02/03 gaps are **classified residual** (legacy Home), not silent unknowns |
-| Active docs vs code? | **Mostly aligned**; stale path comments and FeatureFlag comment mismatch remain |
+| Unclassified P0/SA bypass paths? | **None for P0 writers.** SA-02/03 interactive full-load residuals addressed by **Bounded Home Read Closure** (2026-07-12) |
+| Active docs vs code? | **Mostly aligned**; S1 stale comments remain |
 | Structural vs Steam vs backlog separated? | **Yes** — §Findings below |
-| Single next priority? | **Steam M3 dogfood** after applying the ordered fix list for Steam-blocking items |
+| S0 structural (C-01–C-05)? | **Closed** — Graph off; precise watch; shared link index; single-path hydrate |
+| Single next priority? | **S1 Steam ship items → Architecture Closure declaration → Steam M3 dogfood** |
 
-**Data-preservation critical defects requiring an in-audit fix slice:** **None found.** Canonical `.md` / `system/` writers use recoverable protocols; unknown YAML and conflict paths preserve evidence.
+**Data-preservation critical defects requiring an in-audit fix slice:** **None found** (P0 writers). **S0 scale/interactive defects:** fixed in Bounded Home Read Closure.
 
 ---
 
@@ -46,15 +47,17 @@ Severity:
 - **S1 — Before Steam ship:** Product stability / dogfood / upgrade friction; not silent user-data loss.
 - **S2 — Long backlog:** Explicit maintenance tools, dual caches, legacy migration leftovers, post-v1 surfaces.
 
-### S0 — Structural (fix before treating architecture as closed for scale)
+### S0 — Structural — **CLOSED 2026-07-12 (Bounded Home Read Closure)**
 
-| ID | Finding | Evidence | Impact | Minimal fix | Verify |
-|---|---|---|---|---|---|
-| C-01 | Legacy Home still full-vault MD load on interactive paths | `home_vault_loader.dart` → `file_service_scan.dart` `loadAllItems`; `home_vault_coordinator.loadItems`; vault watch reload | Unbounded vault becomes unusable; contradicts Constitution §4.3 / SA-02 | Keep Work Explore bounded; stop calling `loadItems` from watch/Dashboard/Graph unless migrated; prefer path/index updates | Dogfood with large vault; assert watch does not re-read all `.md` |
-| C-02 | Every `loadItems` rebuilds **entire** link index | `home_vault_coordinator.dart` + `record_link_index_service.rebuildIndex` full scan | Double full scan per reload; SA-03 incremental path unused on Home | Call incremental upsert for changed paths only; full rebuild only as explicit repair | Save one file → link index updates without vault-wide scan |
-| C-03 | `VaultArchiveRecordAdapter` / detail save reload use `loadAllItems` | `vault_archive_record_adapter.dart`; `detail_archive_save.dart` | SA-04 legacy scan expanded into product paths | Resolve by `record_id` / relative path / path index | Open/save one record without loading whole vault |
-| C-04 | `showKnowledgeGraph=true` while comment says v1.1; entry forces legacy load | `feature_flags.dart:9-10`; `home_navigation_coordinator.goKnowledgeGraph` → `_ensureLegacyItemsLoaded` | Steam v1 ships Graph that depends on full vault load | Set `showKnowledgeGraph=false` for v1 **or** feed Graph from bounded projection (no new universal model) | Flag off → no Graph entry; flag on → no `loadAllItems` |
-| C-05 | Dual `RecordLinkIndexService` instances (Home vs `ArchiveIndexManager`) | `home_vault_coordinator` field vs `archive_index_manager._linkIndexFor()` | Divergent in-memory/index writers on same `link_index.json` | Single shared service/lifecycle for link index | Save via Workbench and Home watch → one coherent index |
+| ID | Finding | Resolution |
+|---|---|---|
+| C-01 | Legacy Home full-vault MD load on watch | Watch uses `onVaultChanges` + precise `applyVaultChange`; no `loadAllItems` |
+| C-02 | Link index full rebuild every `loadItems` | `loadItems` no longer rebuilds links; full rebuild = `rebuildLinkIndexForRepair` only |
+| C-03 | Adapter/detail-save `loadAllItems` | Path/id hydrate in `VaultArchiveRecordAdapter.getById` + `DetailArchiveSave` |
+| C-04 | Knowledge Graph ON vs v1.1 | `FeatureFlags.showKnowledgeGraph = false` |
+| C-05 | Dual `RecordLinkIndexService` | `RecordLinkIndexService.shared` used by Home + `ArchiveIndexManager` |
+
+Regression: `test/bounded_home_read_closure_test.dart`.
 
 ### S1 — Before Steam ship
 
@@ -103,14 +106,15 @@ Severity:
 
 ## Recommended fix order (no new abstractions)
 
-1. **C-04** — Align Knowledge Graph flag with Steam v1 (prefer `false` unless dogfood requires Graph).
-2. **C-02 + C-05** — Stop full link rebuild on every `loadItems`; one link-index owner; incremental only.
-3. **C-01 / C-03** — Remove `loadAllItems` from watch, adapter, detail-save; leave Dashboard migration as explicit SA-02 follow-ups (bounded, per surface).
-4. **S-01 / S-02 / S-05** — Search and entity open without full scans.
-5. **S-06 / S-07** — Comment hygiene + contribution dogfood.
-6. **Steam M3 dogfood** (product priority).
-7. **SA-05** as separate architecture slice.
-8. **S2 / UA-122** only when implementing those features.
+1. ~~**C-04** Graph flag~~ **done**
+2. ~~**C-02 + C-05** link index~~ **done**
+3. ~~**C-01 / C-03** watch / hydrate~~ **done**
+4. **S-01 / S-02 / S-05** — Search and entity open without full scans; auto-archive `loadAllItems`
+5. **S-06 / S-07** — Comment hygiene + contribution dogfood
+6. **Declare Architecture Closure** (after S1 Steam-blocking items)
+7. **Steam M3 dogfood** (product)
+8. **SA-05** as separate architecture slice
+9. **S2 / UA-122** only when implementing those features
 
 ---
 

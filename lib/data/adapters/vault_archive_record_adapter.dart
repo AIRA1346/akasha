@@ -1,3 +1,5 @@
+import 'package:path/path.dart' as p;
+
 import '../../core/app_vault.dart';
 import '../../core/archiving/archive_record.dart';
 import '../../core/archiving/archive_record_mapper.dart';
@@ -7,6 +9,8 @@ import '../../core/ports/vault_change.dart';
 import '../../core/ports/vault_port.dart';
 import '../../services/journal_vault_loader.dart';
 import '../../services/journal_vault_store.dart';
+import '../../services/record_path_index_service.dart';
+import '../../services/record_summary_index_service.dart';
 import '../../services/timeline_vault_loader.dart';
 import '../../services/timeline_vault_store.dart';
 
@@ -18,35 +22,30 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
     TimelineVaultStore? timelineStore,
     JournalVaultLoader? journalLoader,
     JournalVaultStore? journalStore,
+    RecordPathIndexService? recordPathIndex,
+    RecordSummaryIndexService? recordSummaryIndex,
   }) : _vault = vault ?? AppVault.port,
        _timelineLoader = timelineLoader ?? const TimelineVaultLoader(),
        _timelineStore = timelineStore ?? const TimelineVaultStore(),
        _journalLoader = journalLoader ?? const JournalVaultLoader(),
-       _journalStore = journalStore ?? const JournalVaultStore();
+       _journalStore = journalStore ?? const JournalVaultStore(),
+       _recordPathIndex = recordPathIndex ?? const RecordPathIndexService(),
+       _recordSummaryIndex = recordSummaryIndex ?? RecordSummaryIndexService();
 
   final VaultPort _vault;
   final TimelineVaultLoader _timelineLoader;
   final TimelineVaultStore _timelineStore;
   final JournalVaultLoader _journalLoader;
   final JournalVaultStore _journalStore;
+  final RecordPathIndexService _recordPathIndex;
+  final RecordSummaryIndexService _recordSummaryIndex;
 
   @override
   Future<List<ArchiveRecord>> listRecords({Set<RecordKind>? kinds}) async {
     final records = <ArchiveRecord>[];
 
-    final includeVault =
-        kinds == null ||
-        kinds.contains(RecordKind.workJournal) ||
-        kinds.contains(RecordKind.freeformJournal);
-    if (includeVault) {
-      final items = await _vault.loadAllItems();
-      for (final item in items) {
-        final record = ArchiveRecordMapper.fromAkashaItem(item);
-        if (kinds == null || kinds.contains(record.kind)) {
-          records.add(record);
-        }
-      }
-    }
+    // Work journals are not listed via VaultPort.loadAllItems (Bounded Home
+    // Read Closure). Use bounded Work browse / summary queries instead.
 
     final includeJournal =
         kinds == null || kinds.contains(RecordKind.freeformJournal);
@@ -74,27 +73,56 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
   @override
   Future<ArchiveRecord?> getById(String recordId) async {
     if (recordId.isEmpty) return null;
+    final vaultPath = _vault.vaultPath;
+    if (vaultPath == null || vaultPath.isEmpty) return null;
 
-    final items = await _vault.loadAllItems();
-    for (final item in items) {
-      final record = ArchiveRecordMapper.fromAkashaItem(item);
-      if (record.recordId == recordId) return record;
+    final pathLookup = await _recordPathIndex.lookup(vaultPath, recordId);
+    if (pathLookup.entries.isNotEmpty) {
+      final relative = pathLookup.entries.first.relativePath;
+      final hydrated = await _hydrateRelativePath(vaultPath, relative);
+      if (hydrated != null) return hydrated;
     }
 
-    final journals = await _journalLoader.loadFromVault(_vault.vaultPath);
-    for (final entry in journals) {
-      if (entry.recordId == recordId) {
-        return ArchiveRecordMapper.fromJournalEntry(entry);
-      }
+    final summary = await _recordSummaryIndex.lookupById(vaultPath, recordId);
+    if (summary != null && summary.relativePath.isNotEmpty) {
+      final item = await _vault.loadItemByRelativePath(summary.relativePath);
+      if (item != null) return ArchiveRecordMapper.fromAkashaItem(item);
     }
 
-    final timeline = await _timelineLoader.loadFromVault(_vault.vaultPath);
-    for (final entry in timeline) {
-      if (entry.recordId == recordId) {
-        return ArchiveRecordMapper.fromTimelineEntry(entry);
-      }
+    final journal = await _journalLoader.loadByRecordId(vaultPath, recordId);
+    if (journal != null) {
+      return ArchiveRecordMapper.fromJournalEntry(journal);
     }
 
+    final timeline = await _timelineLoader.loadByRecordId(vaultPath, recordId);
+    if (timeline != null) {
+      return ArchiveRecordMapper.fromTimelineEntry(timeline);
+    }
+
+    return null;
+  }
+
+  Future<ArchiveRecord?> _hydrateRelativePath(
+    String vaultPath,
+    String relativePath,
+  ) async {
+    final normalized = relativePath.replaceAll('\\', '/');
+    final absolute = p.normalize(p.join(vaultPath, normalized));
+    final lower = normalized.toLowerCase();
+
+    if (lower.startsWith('journal/')) {
+      final entry = await _journalLoader.loadByAbsolutePath(absolute);
+      if (entry != null) return ArchiveRecordMapper.fromJournalEntry(entry);
+    }
+    if (lower.startsWith('timeline/')) {
+      final entry = await _timelineLoader.loadByAbsolutePath(absolute);
+      if (entry != null) return ArchiveRecordMapper.fromTimelineEntry(entry);
+    }
+
+    if (lower.endsWith('.md')) {
+      final item = await _vault.loadItemByRelativePath(normalized);
+      if (item != null) return ArchiveRecordMapper.fromAkashaItem(item);
+    }
     return null;
   }
 

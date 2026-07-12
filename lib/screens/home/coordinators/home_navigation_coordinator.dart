@@ -1,3 +1,4 @@
+import '../../../config/feature_flags.dart';
 import '../../../models/browse_entity_scope.dart';
 import '../../../models/personal_library_config.dart';
 import '../../../features/workbench/data/workbench_controller.dart';
@@ -98,7 +99,6 @@ class HomeNavigationCoordinator {
   }
 
   Future<void> selectDashboard(String id) async {
-    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       sidebarCoordinator.selectDashboard(id);
@@ -110,7 +110,6 @@ class HomeNavigationCoordinator {
 
   /// 프리미엄 홈 대시보드로 이동.
   Future<void> goHome() async {
-    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
@@ -123,7 +122,6 @@ class HomeNavigationCoordinator {
 
   /// 작품 browse 그리드 탐색 모드.
   Future<void> goExplore() async {
-    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = true;
@@ -136,7 +134,6 @@ class HomeNavigationCoordinator {
 
   /// 엔티티 갤러리 탐색 모드.
   Future<void> goExploreEntities(BrowseEntityScope scope) async {
-    if (scope != BrowseEntityScope.work) await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = true;
@@ -148,7 +145,6 @@ class HomeNavigationCoordinator {
   }
 
   Future<void> selectPersonalLibrary(String id) async {
-    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
@@ -158,7 +154,6 @@ class HomeNavigationCoordinator {
   }
 
   Future<void> selectCollectibleCollection(String id) async {
-    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
@@ -168,7 +163,6 @@ class HomeNavigationCoordinator {
   }
 
   Future<void> selectTimeline() async {
-    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
@@ -179,7 +173,6 @@ class HomeNavigationCoordinator {
 
   /// 나만의 서재 뷰 (활성 서재 또는 master archive).
   Future<void> goLibrary() async {
-    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
@@ -196,7 +189,6 @@ class HomeNavigationCoordinator {
   Future<void> goCollection() async {
     final cols = sidebarCoordinator.collectionCtrl.collections;
     if (cols.isEmpty) return;
-    await _ensureLegacyItemsLoaded();
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;
@@ -208,9 +200,9 @@ class HomeNavigationCoordinator {
     await prefetchRegistry();
   }
 
-  /// 지식 연결 맵 뷰.
+  /// 지식 연결 맵 뷰 — Steam v1 비활성 (C-04).
   Future<void> goKnowledgeGraph() async {
-    await _ensureLegacyItemsLoaded();
+    if (!FeatureFlags.showKnowledgeGraph) return;
     await workbench.showBrowse();
     scheduleRebuild(() {
       isKnowledgeGraphMode = true;
@@ -229,10 +221,7 @@ class HomeNavigationCoordinator {
   }
 
   Future<void> onTimelineQuickCaptureSaved() async {
-    // Timeline still consumes the legacy complete item list. A quick capture
-    // can originate from the bounded Work surface, so acquire that list only
-    // at this explicit transition rather than at application startup.
-    await _ensureLegacyItemsLoaded();
+    // Explicit Timeline transition — does not acquire the legacy Work list.
     await workbench.showBrowse();
     scheduleRebuild(() {
       timelineReloadToken++;
@@ -253,9 +242,5 @@ class HomeNavigationCoordinator {
       filterCoordinator.setEntityScope(BrowseEntityScope.work);
     });
     await prefetchRegistry();
-  }
-
-  Future<void> _ensureLegacyItemsLoaded() async {
-    await ensureLegacyItemsLoaded?.call();
   }
 }

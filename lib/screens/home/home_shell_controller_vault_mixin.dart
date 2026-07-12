@@ -26,9 +26,8 @@ mixin HomeShellControllerVaultMixin on HomeShellControllerBase {
     await prefetchRegistryForCurrentFilters();
     await refreshLastSyncTime();
     vault.bindVaultWatch(
-      onVaultChanged: () async {
-        if (!vault.hasLoadedItems) return;
-        await loadItems();
+      onVaultChanged: (change) async {
+        await vault.applyVaultChange(change);
         await refreshRecentExploration();
         final vaultPath = this.vaultPath;
         if (vaultPath != null && vaultPath.isNotEmpty) {

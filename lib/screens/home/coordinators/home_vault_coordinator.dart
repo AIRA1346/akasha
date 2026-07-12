@@ -1,12 +1,14 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
+import 'package:path/path.dart' as p;
 
 import '../../../core/ports/registry_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
+import '../../../core/ports/vault_change.dart';
 import '../../../core/ports/vault_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/library_theme.dart';
+import '../../../services/archive_index_manager.dart';
 import '../../../services/entitlement_service.dart';
 import '../../../services/library_theme_preferences.dart';
 import '../../../services/record_link_index_service.dart';
@@ -18,6 +20,10 @@ import '../home_auto_archive.dart';
 import '../home_vault_loader.dart';
 
 /// 볼트·사용자 설정·auto-archive (E2-2).
+///
+/// Bounded Home Read Closure: interactive Vault watch applies precise path
+/// updates only. [loadItems] remains an explicit legacy acquisition; it must
+/// not rebuild the full link index (repair uses [rebuildLinkIndexForRepair]).
 class HomeVaultCoordinator {
   HomeVaultCoordinator({
     required this.vault,
@@ -29,7 +35,7 @@ class HomeVaultCoordinator {
     required this.prefetchRegistry,
   }) {
     eventLedger = EventLedgerService(vault: vault);
-    linkIndex = RecordLinkIndexService(vault: vault, eventLedger: eventLedger);
+    linkIndex = RecordLinkIndexService.shared;
   }
 
   final VaultPort vault;
@@ -46,10 +52,13 @@ class HomeVaultCoordinator {
   bool autoArchiveRegistry = false;
   LibraryTheme libraryTheme = LibraryTheme.classic;
 
-  /// [RecordLinkIndexService] 재빌드마다 증가 — 프리뷰 패널 연결 섹션 갱신용.
+  /// Bumped when link index memory changes — preview connection sections.
   int linkIndexRevision = 0;
 
-  StreamSubscription<void>? vaultUpdateSubscription;
+  /// Bumped when precise watch cannot describe the change set (repair UX).
+  int vaultReconciliationRevision = 0;
+
+  StreamSubscription<VaultChangeBatch>? vaultChangeSubscription;
   Timer? vaultReloadDebounce;
 
   late final EventLedgerService eventLedger;
@@ -68,11 +77,11 @@ class HomeVaultCoordinator {
     if (isMounted()) scheduleRebuild(() {});
   }
 
+  /// Explicit legacy complete-item load (vault settings / rare surfaces).
+  /// Does **not** full-rebuild the link index.
   Future<void> loadItems() async {
     final loadedItems = await HomeVaultLoader.loadItems(vault);
     await userCatalog.load();
-    if (!isMounted()) return;
-    await rebuildLinkIndex(vaultItems: loadedItems);
     if (!isMounted()) return;
     scheduleRebuild(() {
       items = loadedItems;
@@ -95,7 +104,8 @@ class HomeVaultCoordinator {
 
   bool get hasLoadedItems => _hasLoadedItems;
 
-  Future<void> rebuildLinkIndex({List<AkashaItem>? vaultItems}) async {
+  /// Explicit repair / maintenance only (C-02).
+  Future<void> rebuildLinkIndexForRepair({List<AkashaItem>? vaultItems}) async {
     await linkIndex.rebuildIndex(
       userCatalog: userCatalog,
       vaultItems: vaultItems ?? items,
@@ -112,6 +122,49 @@ class HomeVaultCoordinator {
     }
   }
 
+  /// @deprecated Use [rebuildLinkIndexForRepair] — kept for call-site migration.
+  Future<void> rebuildLinkIndex({List<AkashaItem>? vaultItems}) =>
+      rebuildLinkIndexForRepair(vaultItems: vaultItems);
+
+  Future<void> applyVaultChange(VaultChangeBatch change) async {
+    final vaultPath = this.vaultPath;
+    if (vaultPath == null || vaultPath.isEmpty) return;
+
+    if (!change.hasPrecisePaths) {
+      if (isMounted()) {
+        scheduleRebuild(() => vaultReconciliationRevision++);
+      }
+      return;
+    }
+
+    final manager = ArchiveIndexManager(linkIndex: linkIndex);
+    for (final entry in change.changes) {
+      if (!_isMarkdownRelativePath(entry.relativePath)) continue;
+      final absolutePath = p.normalize(p.join(vaultPath, entry.relativePath));
+      if (entry.kind == VaultPathChangeKind.delete) {
+        await manager.removeRecord(
+          vaultPath: vaultPath,
+          absolutePath: absolutePath,
+        );
+        _removeLoadedItemByAbsolutePath(absolutePath);
+      } else {
+        await manager.updateChangedRecord(
+          vaultPath: vaultPath,
+          absolutePath: absolutePath,
+          userCatalog: userCatalog,
+          vaultItems: items,
+        );
+        if (_hasLoadedItems) {
+          await _upsertLoadedItemFromRelativePath(entry.relativePath);
+        }
+      }
+    }
+
+    if (isMounted()) {
+      scheduleRebuild(() => linkIndexRevision++);
+    }
+  }
+
   Future<void> autoArchiveRegistryWorks({
     bool showFeedback = false,
     void Function(String message)? showMessage,
@@ -123,7 +176,10 @@ class HomeVaultCoordinator {
       showFeedback: showFeedback,
       showMessage: showMessage,
     );
-    if (count > 0) await loadItems();
+    // Saves already emit precise VaultChangeBatch; do not loadAllItems here.
+    if (count > 0 && isMounted()) {
+      scheduleRebuild(() => linkIndexRevision++);
+    }
   }
 
   Future<void> runStartupAutoArchiveIfNeeded() async {
@@ -144,6 +200,7 @@ class HomeVaultCoordinator {
 
   Future<void> setVaultPath(String path) async {
     await vault.setVaultPath(path);
+    linkIndex.resetSession();
 
     // A list belongs to one Vault only. Never let an on-demand legacy view
     // render records from the previously selected archive while the new Vault
@@ -155,18 +212,75 @@ class HomeVaultCoordinator {
     onVaultItemsSynced(const []);
   }
 
-  void bindVaultWatch({required VoidCallback onVaultChanged}) {
-    vaultUpdateSubscription?.cancel();
-    vaultUpdateSubscription = vault.onVaultUpdated.listen((_) {
+  void bindVaultWatch({
+    required Future<void> Function(VaultChangeBatch change) onVaultChanged,
+  }) {
+    vaultChangeSubscription?.cancel();
+    vaultChangeSubscription = vault.onVaultChanges.listen((change) {
       vaultReloadDebounce?.cancel();
       vaultReloadDebounce = Timer(const Duration(milliseconds: 400), () {
-        if (isMounted()) onVaultChanged();
+        if (isMounted()) {
+          unawaited(onVaultChanged(change));
+        }
       });
     });
   }
 
   void dispose() {
     vaultReloadDebounce?.cancel();
-    vaultUpdateSubscription?.cancel();
+    vaultChangeSubscription?.cancel();
+  }
+
+  static bool _isMarkdownRelativePath(String relativePath) {
+    final lower = relativePath.toLowerCase();
+    return lower.endsWith('.md') && !lower.contains('..');
+  }
+
+  void _removeLoadedItemByAbsolutePath(String absolutePath) {
+    if (!_hasLoadedItems) return;
+    final normalized = p.normalize(absolutePath);
+    final next = items
+        .where(
+          (item) =>
+              item.filePath == null ||
+              p.normalize(item.filePath!) != normalized,
+        )
+        .toList(growable: false);
+    if (next.length == items.length) return;
+    scheduleRebuild(() => items = next);
+    onVaultItemsSynced(next);
+  }
+
+  Future<void> _upsertLoadedItemFromRelativePath(String relativePath) async {
+    final loaded = await vault.loadItemByRelativePath(relativePath);
+    if (loaded == null) {
+      final vaultPath = this.vaultPath;
+      if (vaultPath != null) {
+        _removeLoadedItemByAbsolutePath(p.join(vaultPath, relativePath));
+      }
+      return;
+    }
+    final key = loaded.workId.isNotEmpty
+        ? loaded.workId
+        : (loaded.filePath ?? relativePath);
+    final next = <AkashaItem>[];
+    var replaced = false;
+    for (final item in items) {
+      final itemKey = item.workId.isNotEmpty
+          ? item.workId
+          : (item.filePath ?? '');
+      if (itemKey == key ||
+          (item.filePath != null &&
+              loaded.filePath != null &&
+              p.equals(item.filePath!, loaded.filePath!))) {
+        next.add(loaded);
+        replaced = true;
+      } else {
+        next.add(item);
+      }
+    }
+    if (!replaced) next.add(loaded);
+    scheduleRebuild(() => items = next);
+    onVaultItemsSynced(next);
   }
 }

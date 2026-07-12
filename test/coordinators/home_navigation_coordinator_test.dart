@@ -92,11 +92,15 @@ void main() {
     });
 
     test(
-      'legacy Home navigation requests the complete item list on demand',
+      'Home navigation does not auto-request the legacy complete item list',
       () async {
         await navigation.goHome();
+        await navigation.goExplore();
+        await navigation.selectDashboard('master_index');
+        await navigation.goKnowledgeGraph();
 
-        expect(legacyLoadCount, 1);
+        expect(legacyLoadCount, 0);
+        expect(navigation.isKnowledgeGraphMode, isFalse);
       },
     );
 

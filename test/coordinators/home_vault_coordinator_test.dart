@@ -58,7 +58,11 @@ void main() {
       onVaultItemsSynced: (_) {},
       prefetchRegistry: () async {},
     );
-    coordinator.bindVaultWatch(onVaultChanged: () => changeCount++);
+    coordinator.bindVaultWatch(
+      onVaultChanged: (_) async {
+        changeCount++;
+      },
+    );
 
     await vault.saveItem(
       createItem(

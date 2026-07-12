@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:meta/meta.dart';
 import 'package:path/path.dart' as p;
 
 import '../core/app_vault.dart';
@@ -15,11 +16,35 @@ import 'record_link_navigator.dart';
 import 'record_link_parser.dart';
 
 /// `vault/.akasha/link_index.json` — Wave 5.
+///
+/// Home and Workbench must share one in-memory lifecycle for a vault session.
+/// Full [rebuildIndex] is repair/maintenance only — interactive paths use
+/// [upsertMarkdownFile] / [removeBySourcePath] or disk load.
 class RecordLinkIndexService implements RecordLinkPort {
   RecordLinkIndexService({VaultPort? vault, EventLedgerService? eventLedger})
     : _vault = vault ?? AppVault.port,
       _eventLedger =
           eventLedger ?? EventLedgerService(vault: vault ?? AppVault.port);
+
+  static RecordLinkIndexService? _shared;
+
+  /// Process-wide link index for [AppVault.port] (Home + ArchiveIndexManager).
+  static RecordLinkIndexService get shared =>
+      _shared ??= RecordLinkIndexService();
+
+  @visibleForTesting
+  static void resetSharedForTest() {
+    _shared = null;
+  }
+
+  /// Clears in-memory state after the Vault root changes.
+  void resetSession() {
+    _outgoing = {};
+    _incoming = {};
+    _loaded = false;
+    _resolveUserCatalog = null;
+    _resolveVaultItems = const [];
+  }
 
   static const int schemaVersion = 1;
   static const String indexDirName = '.akasha';
@@ -236,14 +261,21 @@ class RecordLinkIndexService implements RecordLinkPort {
       return;
     }
 
-    if (await _loadFromDisk(vaultPath)) return;
-    await rebuildIndex();
+    if (!await _loadFromDisk(vaultPath)) {
+      // Interactive paths must not full-scan. Repair calls [rebuildIndex].
+      _outgoing = {};
+      _incoming = {};
+      _loaded = true;
+    }
   }
 
   Future<void> _ensureLoadedForVault(String vaultPath) async {
     if (_loaded) return;
-    if (await _loadFromDisk(vaultPath)) return;
-    await rebuildIndex();
+    if (!await _loadFromDisk(vaultPath)) {
+      _outgoing = {};
+      _incoming = {};
+      _loaded = true;
+    }
   }
 
   Future<bool> _loadFromDisk(String vaultPath) async {

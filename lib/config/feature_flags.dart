@@ -6,8 +6,8 @@ class FeatureFlags {
   /// 글로벌 사전 추가·수정 제안 (로컬 큐 → export / GitHub Issue)
   static const bool catalogContributions = true;
 
-  /// 지식 그래프 탐색 — v1.1에서 활성화 예정
-  static const bool showKnowledgeGraph = true;
+  /// 지식 그래프 탐색 — v1.1에서 활성화 예정 (Steam v1 비활성 · C-04)
+  static const bool showKnowledgeGraph = false;
 
   // ── R15 / post-v1 홈 실험 UI ─────────────────────────────────────────
 
