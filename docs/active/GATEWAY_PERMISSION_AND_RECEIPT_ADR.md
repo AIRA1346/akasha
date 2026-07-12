@@ -2,8 +2,8 @@
 
 > **Status:** Accepted semantic ADR. The first local `candidate.create`
 > implementation supports a user-initiated intake session and a durable local
-> grant; no account system, credential store, external transport, permission
-> UI, or AI service is introduced.
+> grant plus a one-candidate local JSON-file command transport; no account
+> system, credential store, permission UI, or AI service is introduced.
 > **Date:** 2026-07-12  
 > **Scope:** User-controlled authorization and durable applied-operation
 > evidence for external tools using the AKASHA Write Gateway.  
@@ -104,8 +104,11 @@ carry, at minimum:
 A user-initiated candidate session is in-memory operational context, not Vault
 data and not a transferable credential. It binds the current actor and allowed
 source Record IDs, has a short expiry and byte limit, and is discarded when the
-user task ends. A future ingress must prove the caller is attached to that
-trusted local context; a caller-supplied session ID is never enough.
+user task ends. The first JSON-file CLI creates this narrow context for one
+explicit local command invocation and records only its local actor descriptor;
+it does not attest a human or provider identity. A future background ingress
+must prove a stronger trusted local context; a caller-supplied session ID is
+never enough for that broader authority.
 
 A future one-shot approval binds an **intent fingerprint** for one exact
 high-impact request. It is consumed only after a successful application and
@@ -258,7 +261,8 @@ This ADR does not decide:
 
 - local grant storage schema/path, UI wording, approval interaction, or actor
   binding mechanism;
-- MCP, CLI, local socket, SDK, HTTP, filesystem drop, or any transport;
+- MCP, local socket, SDK, HTTP, filesystem drop, or any transport beyond the
+  implemented one-candidate JSON-file CLI;
 - cryptographic identity proof, signatures, shared accounts, or cloud sync;
 - secure credential storage and external-tool authentication protocol;
 - batch transaction grouping, rate limits beyond first-slice bounds, or a

@@ -1,6 +1,9 @@
 # AI Archive Write Gateway ADR
 
-> **Status:** Accepted; the deliberately narrow local `candidate.create` boundary is implemented. No transport, AI service, canonical Record write, serializer migration, or general operation model is introduced by this ADR.
+> **Status:** Accepted; the deliberately narrow local `candidate.create`
+> boundary and JSON-file CLI transport are implemented. No AI service,
+> canonical Record write, serializer migration, or general operation model is
+> introduced by this ADR.
 > **Date:** 2026-07-11  
 > **Scope:** External AI, scripts, and tools writing to a user-owned AKASHA Vault.  
 > **Related:** [VISION.md](VISION.md), [P1_A_CORE_ARCHIVE_ONTOLOGY_CASES.md](P1_A_CORE_ARCHIVE_ONTOLOGY_CASES.md), [P0_RECOVERABLE_VAULT_WRITE_GATE.md](P0_RECOVERABLE_VAULT_WRITE_GATE.md), [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md), [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md)
@@ -197,14 +200,22 @@ Implemented first Gateway slice:
   revision; same-ID/same-intent retries return the prior outcome;
 - a candidate written before an interruption but lacking its receipt can only
   be rolled forward when it exactly matches the original request.
+- the open candidate review surface observes `system/candidates` changes, so a
+  command-created proposal appears without a user cache-reload step.
 
 Missing before this becomes a real external-AI workflow:
 
-- the app-to-external-tool session handoff and external transport;
 - a user-facing durable-grant configuration interaction;
 - candidate review policy for high-volume batches and duplicate resolution;
 - any canonical Record creation, derivation, patch, relationship, or lifecycle
   authority.
+
+The first concrete command transport is
+[Local Agent Command Protocol v1](LOCAL_AGENT_COMMAND_PROTOCOL.md): a
+command-capable agent submits exactly one structured candidate from an explicit
+JSON request file. It is an explicit local task invocation, not a background capability or
+proof of agent identity. MCP, local sockets, SDKs, and hosted integrations stay
+deferred.
 
 ## 8. AI Markdown is not an AI integration
 
@@ -232,7 +243,7 @@ Markdown import may remain as a separate compatibility/import feature.
 | Operation execution | `promoteCandidate` only | Add operations one at a time with fault/conflict tests. |
 | AI authorization | User-started intake session or local grant + actor binding for `candidate.create` only | Required before each later scope or direct application. |
 | Derived provenance (`derived_from`) | Not implemented | Required before AI interpretation is persisted. |
-| Generic AI transport | Not implemented | Deliberately deferred; external AI choice remains outside AKASHA. |
+| Generic AI transport | Local JSON-file CLI for `candidate propose` only | MCP, SDK, local socket, hosted API, and all non-candidate operations remain deferred. |
 
 No generic `create_record`, `append_section`, or `update_frontmatter` executor
 may be enabled until the following gate passes:
@@ -264,7 +275,7 @@ This ADR intentionally does **not** decide:
   extensions (their root namespace is fixed);
 - grant UI, one-shot approval interaction, actor attestation, and physical
   permission storage for scopes beyond `candidate.create`;
-- MCP, CLI, local socket, file drop, SDK, or HTTP as the external transport;
+- MCP, local socket, file drop, SDK, or HTTP beyond the implemented local CLI;
 - batch application limits and transaction grouping;
 - the canonical Record kind/storage layout for derived analyses;
 - physical Relationship Assertion serialization (semantic tiers:

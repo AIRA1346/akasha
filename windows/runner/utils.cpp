@@ -1,23 +1,69 @@
 #include "utils.h"
 
 #include <flutter_windows.h>
+#include <fcntl.h>
 #include <io.h>
-#include <stdio.h>
 #include <windows.h>
 
+#include <cstdint>
 #include <iostream>
+
+namespace {
+
+bool IsValidStandardHandle(HANDLE handle) {
+  return handle != nullptr && handle != INVALID_HANDLE_VALUE;
+}
+
+void RestoreStandardHandle(DWORD which, HANDLE handle) {
+  if (IsValidStandardHandle(handle)) {
+    ::SetStdHandle(which, handle);
+  }
+}
+
+void RedirectStandardStream(DWORD which, int descriptor, int flags) {
+  HANDLE handle = ::GetStdHandle(which);
+  if (!IsValidStandardHandle(handle)) {
+    return;
+  }
+  int stream_descriptor = _open_osfhandle(
+      reinterpret_cast<intptr_t>(handle), flags);
+  if (stream_descriptor == -1) {
+    return;
+  }
+  _dup2(stream_descriptor, descriptor);
+  _close(stream_descriptor);
+}
+
+void RedirectStandardStreamsToConsole() {
+  RedirectStandardStream(STD_INPUT_HANDLE, 0, _O_RDONLY);
+  RedirectStandardStream(STD_OUTPUT_HANDLE, 1, _O_WRONLY);
+  RedirectStandardStream(STD_ERROR_HANDLE, 2, _O_WRONLY);
+  std::ios::sync_with_stdio();
+  FlutterDesktopResyncOutputStreams();
+}
+
+}  // namespace
+
+bool AttachToParentConsole() {
+  HANDLE stdin_handle = ::GetStdHandle(STD_INPUT_HANDLE);
+  HANDLE stdout_handle = ::GetStdHandle(STD_OUTPUT_HANDLE);
+  HANDLE stderr_handle = ::GetStdHandle(STD_ERROR_HANDLE);
+  if (!::AttachConsole(ATTACH_PARENT_PROCESS)) {
+    return false;
+  }
+  // A command-mode caller may pipe JSON through the GUI-subsystem executable.
+  // AttachConsole initializes missing handles to CONIN/CONOUT, so restore any
+  // inherited pipe handles before binding the C runtime streams.
+  RestoreStandardHandle(STD_INPUT_HANDLE, stdin_handle);
+  RestoreStandardHandle(STD_OUTPUT_HANDLE, stdout_handle);
+  RestoreStandardHandle(STD_ERROR_HANDLE, stderr_handle);
+  RedirectStandardStreamsToConsole();
+  return true;
+}
 
 void CreateAndAttachConsole() {
   if (::AllocConsole()) {
-    FILE *unused;
-    if (freopen_s(&unused, "CONOUT$", "w", stdout)) {
-      _dup2(_fileno(stdout), 1);
-    }
-    if (freopen_s(&unused, "CONOUT$", "w", stderr)) {
-      _dup2(_fileno(stdout), 2);
-    }
-    std::ios::sync_with_stdio();
-    FlutterDesktopResyncOutputStreams();
+    RedirectStandardStreamsToConsole();
   }
 }
 

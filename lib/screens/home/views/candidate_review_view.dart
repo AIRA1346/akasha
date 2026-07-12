@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import '../../../core/archiving/archive_candidate.dart';
@@ -61,11 +64,14 @@ class _CandidateReviewViewState extends State<CandidateReviewView> {
   List<ArchiveCandidate> _candidates = const [];
   bool _loading = true;
   final Set<String> _busyCandidateIds = {};
+  StreamSubscription<FileSystemEvent>? _candidateWatch;
+  Timer? _candidateWatchDebounce;
 
   @override
   void initState() {
     super.initState();
     _reload();
+    _startCandidateWatch();
   }
 
   @override
@@ -75,6 +81,47 @@ class _CandidateReviewViewState extends State<CandidateReviewView> {
         oldWidget.vaultPath != widget.vaultPath) {
       _reload();
     }
+    if (oldWidget.vaultPath != widget.vaultPath) {
+      _startCandidateWatch();
+    }
+  }
+
+  @override
+  void dispose() {
+    _candidateWatchDebounce?.cancel();
+    _candidateWatch?.cancel();
+    super.dispose();
+  }
+
+  void _startCandidateWatch() {
+    _candidateWatchDebounce?.cancel();
+    _candidateWatchDebounce = null;
+    _candidateWatch?.cancel();
+    _candidateWatch = null;
+
+    final vaultPath = widget.vaultPath?.trim();
+    if (vaultPath == null || vaultPath.isEmpty) return;
+    final root = Directory(vaultPath);
+    if (!root.existsSync()) return;
+
+    try {
+      _candidateWatch = root.watch(recursive: true).listen((event) {
+        if (!_isCandidateStorageEvent(event.path)) return;
+        _candidateWatchDebounce?.cancel();
+        _candidateWatchDebounce = Timer(
+          const Duration(milliseconds: 180),
+          _reload,
+        );
+      }, onError: (_) {});
+    } on FileSystemException {
+      // The visible manual refresh remains a fallback for filesystems that do
+      // not support directory watching (for example, some removable drives).
+    }
+  }
+
+  bool _isCandidateStorageEvent(String eventPath) {
+    final normalized = eventPath.replaceAll('\\', '/').toLowerCase();
+    return normalized.contains('/system/candidates');
   }
 
   Future<void> _reload() async {

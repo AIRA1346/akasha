@@ -6,6 +6,7 @@ import 'data/adapters/markdown_vault_adapter.dart';
 import 'data/adapters/works_registry_adapter.dart';
 import 'screens/home/home_shell.dart';
 import 'services/catalog_locale_preferences.dart';
+import 'services/akasha_command_runner.dart';
 import 'services/franchise_registry.dart';
 import 'services/local_derived_index_lifecycle.dart';
 import 'services/user_preferences.dart';
@@ -31,6 +32,13 @@ void main() async {
 
   runApp(const AkashaApp());
 }
+
+/// Invoked only by the Windows runner for the command vocabulary it recognizes.
+/// It must remain free of UI initialization so a local agent command cannot
+/// accidentally launch normal AKASHA application behavior.
+@pragma('vm:entry-point')
+Future<void> commandMain(List<String> args) =>
+    AkashaCommandRunner().runFromProcess(args);
 
 class AkashaApp extends StatefulWidget {
   const AkashaApp({super.key});
