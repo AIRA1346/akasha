@@ -9,6 +9,7 @@ add_executable(${BINARY_NAME} WIN32
   "main.cpp"
   "utils.cpp"
   "win32_window.cpp"
+  "steam_runtime.cpp"
   "steam_inventory_poc_channel.cpp"
   "${FLUTTER_MANAGED_DIR}/generated_plugin_registrant.cc"
   "Runner.rc"
@@ -45,6 +46,8 @@ add_custom_command(TARGET ${BINARY_NAME} POST_BUILD
   COMMENT "Copy Steam API redistributable and steam_appid.txt"
 )
 
-set_source_files_properties("steam_inventory_poc_channel.cpp" PROPERTIES
-  COMPILE_OPTIONS "/W3;/wd4100;/wd4996;/wd4819"
+set_source_files_properties(
+  "steam_inventory_poc_channel.cpp"
+  "steam_runtime.cpp"
+  PROPERTIES COMPILE_OPTIONS "/W3;/wd4100;/wd4996;/wd4819"
 )

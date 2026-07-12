@@ -16,7 +16,7 @@
       "marketable": false,
       "auto_stack": true,
       "store_hidden": true,
-      "price": "1;VLV1"
+      "price": "1;USD1"
     },
     {
       "appid": "4677560",
@@ -33,7 +33,8 @@
       "tradable": false,
       "marketable": false,
       "price_category": "1;VLV100",
-      "store_tags": "currency;astra;poc"
+      "store_tags": "currency;astra;poc",
+      "use_bundle_price": true
     },
     {
       "appid": "4677560",
@@ -95,7 +96,21 @@
       "tradable": false,
       "marketable": false,
       "purchase_limit": 1,
-      "exchange": "10001x10;10002x100",
+      "store_hidden": true
+    },
+    {
+      "appid": "4677560",
+      "itemdefid": "20010",
+      "type": "bundle",
+      "name": "Theme: Nocturne Exchange",
+      "description": "Consumes 100 Astra and grants Theme: Nocturne.",
+      "display_type": "Exchange",
+      "background_color": "0D0D12",
+      "name_color": "C9B8FF",
+      "bundle": "20001x1",
+      "exchange": "10001x100",
+      "tradable": false,
+      "marketable": false,
       "store_hidden": true
     },
     {

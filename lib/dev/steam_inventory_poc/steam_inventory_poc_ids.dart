@@ -8,12 +8,16 @@ abstract final class SteamInventoryPocIds {
   static const int echoUnit = 10002;
   static const int echoPlaytimeGenerator = 10020;
   static const int echoStarterPromo = 10021;
+
+  /// Final theme unlock item — ownership = inventory qty >= 1.
   static const int themeNocturne = 20001;
+
+  /// Exchange bundle: consumes Astra×100, grants [themeNocturne].
+  /// ExchangeItems generate target must be this def, not [themeNocturne].
+  static const int themeNocturneExchange = 20010;
+
   static const int supportAkasha = 30001;
 
-  /// POC theme cost — Astra recipe.
-  static const int themeAstraCost = 10;
-
-  /// POC theme cost — Echo recipe.
-  static const int themeEchoCost = 100;
+  /// Astra units consumed by [themeNocturneExchange] (`exchange: 10001x100`).
+  static const int themeAstraCost = 100;
 }

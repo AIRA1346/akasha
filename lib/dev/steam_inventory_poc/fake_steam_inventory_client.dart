@@ -144,12 +144,50 @@ class FakeSteamInventoryClient implements SteamInventoryClient {
           }
           _setStack(entry.key, entry.value.quantity - need);
         }
-        _setStack(
-          generateItemDefId,
-          stackQty(generateItemDefId) + generateQuantity,
-        );
+        // Bundle 20010 expands to Theme 20001 (matches Steam ItemDef).
+        final grantDef =
+            generateItemDefId == SteamInventoryPocIds.themeNocturneExchange
+            ? SteamInventoryPocIds.themeNocturne
+            : generateItemDefId;
+        final grantQty =
+            generateItemDefId == SteamInventoryPocIds.themeNocturneExchange
+            ? 1
+            : generateQuantity;
+        _setStack(grantDef, stackQty(grantDef) + grantQty);
       },
       autoComplete: !delayExchange,
+    );
+    return handle;
+  }
+
+  @override
+  Future<String> consumeItem({
+    required String instanceId,
+    required int quantity,
+  }) async {
+    if (!online) throw StateError('offline');
+    if (quantity != 1) throw StateError('invalid_consume_quantity');
+    final handle = 'consume_${++_seq}';
+    _pending[handle] = _Pending(
+      kind: SteamInventoryOpKind.consume,
+      apply: () {
+        MapEntry<int, _Stack>? entry;
+        for (final e in _stacks.entries) {
+          if (e.value.instanceId == instanceId) {
+            entry = e;
+            break;
+          }
+        }
+        if (entry == null || entry.value.quantity < quantity) {
+          throw StateError('consume_missing_instance');
+        }
+        // POC reset must only hit Theme; refuse other defs in fake too.
+        if (entry.key != SteamInventoryPocIds.themeNocturne) {
+          throw StateError('refuse_non_theme_consume');
+        }
+        _setStack(entry.key, entry.value.quantity - quantity);
+      },
+      autoComplete: true,
     );
     return handle;
   }

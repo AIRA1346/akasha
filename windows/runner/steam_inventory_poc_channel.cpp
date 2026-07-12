@@ -1,5 +1,7 @@
 #include "steam_inventory_poc_channel.h"
 
+#include "steam_runtime.h"
+
 #include <atomic>
 #include <map>
 #include <mutex>
@@ -21,7 +23,6 @@ namespace {
 
 constexpr char kMethodChannel[] = "akasha/steam_inventory_poc";
 constexpr char kEventChannel[] = "akasha/steam_inventory_poc/events";
-constexpr uint32_t kAppId = 4677560;
 constexpr DWORD kWaitTimeoutMs = 20000;
 
 flutter::EncodableMap M(
@@ -33,19 +34,314 @@ flutter::EncodableMap M(
   return m;
 }
 
+std::string EResultName(EResult r) {
+  switch (r) {
+    case k_EResultOK:
+      return "k_EResultOK";
+    case k_EResultFail:
+      return "k_EResultFail";
+    case k_EResultNoConnection:
+      return "k_EResultNoConnection";
+    case k_EResultInvalidPassword:
+      return "k_EResultInvalidPassword";
+    case k_EResultLoggedInElsewhere:
+      return "k_EResultLoggedInElsewhere";
+    case k_EResultInvalidProtocolVer:
+      return "k_EResultInvalidProtocolVer";
+    case k_EResultInvalidParam:
+      return "k_EResultInvalidParam";
+    case k_EResultFileNotFound:
+      return "k_EResultFileNotFound";
+    case k_EResultBusy:
+      return "k_EResultBusy";
+    case k_EResultInvalidState:
+      return "k_EResultInvalidState";
+    case k_EResultInvalidName:
+      return "k_EResultInvalidName";
+    case k_EResultInvalidEmail:
+      return "k_EResultInvalidEmail";
+    case k_EResultDuplicateName:
+      return "k_EResultDuplicateName";
+    case k_EResultAccessDenied:
+      return "k_EResultAccessDenied";
+    case k_EResultTimeout:
+      return "k_EResultTimeout";
+    case k_EResultBanned:
+      return "k_EResultBanned";
+    case k_EResultAccountNotFound:
+      return "k_EResultAccountNotFound";
+    case k_EResultInvalidSteamID:
+      return "k_EResultInvalidSteamID";
+    case k_EResultServiceUnavailable:
+      return "k_EResultServiceUnavailable";
+    case k_EResultNotLoggedOn:
+      return "k_EResultNotLoggedOn";
+    case k_EResultPending:
+      return "k_EResultPending";
+    case k_EResultEncryptionFailure:
+      return "k_EResultEncryptionFailure";
+    case k_EResultInsufficientPrivilege:
+      return "k_EResultInsufficientPrivilege";
+    case k_EResultLimitExceeded:
+      return "k_EResultLimitExceeded";
+    case k_EResultRevoked:
+      return "k_EResultRevoked";
+    case k_EResultExpired:
+      return "k_EResultExpired";
+    case k_EResultAlreadyRedeemed:
+      return "k_EResultAlreadyRedeemed";
+    case k_EResultDuplicateRequest:
+      return "k_EResultDuplicateRequest";
+    case k_EResultAlreadyOwned:
+      return "k_EResultAlreadyOwned";
+    case k_EResultIPNotFound:
+      return "k_EResultIPNotFound";
+    case k_EResultPersistFailed:
+      return "k_EResultPersistFailed";
+    case k_EResultLockingFailed:
+      return "k_EResultLockingFailed";
+    case k_EResultLogonSessionReplaced:
+      return "k_EResultLogonSessionReplaced";
+    case k_EResultConnectFailed:
+      return "k_EResultConnectFailed";
+    case k_EResultHandshakeFailed:
+      return "k_EResultHandshakeFailed";
+    case k_EResultIOFailure:
+      return "k_EResultIOFailure";
+    case k_EResultRemoteDisconnect:
+      return "k_EResultRemoteDisconnect";
+    case k_EResultShoppingCartNotFound:
+      return "k_EResultShoppingCartNotFound";
+    case k_EResultBlocked:
+      return "k_EResultBlocked";
+    case k_EResultIgnored:
+      return "k_EResultIgnored";
+    case k_EResultNoMatch:
+      return "k_EResultNoMatch";
+    case k_EResultAccountDisabled:
+      return "k_EResultAccountDisabled";
+    case k_EResultServiceReadOnly:
+      return "k_EResultServiceReadOnly";
+    case k_EResultAccountNotFeatured:
+      return "k_EResultAccountNotFeatured";
+    case k_EResultAdministratorOK:
+      return "k_EResultAdministratorOK";
+    case k_EResultContentVersion:
+      return "k_EResultContentVersion";
+    case k_EResultTryAnotherCM:
+      return "k_EResultTryAnotherCM";
+    case k_EResultPasswordRequiredToKickSession:
+      return "k_EResultPasswordRequiredToKickSession";
+    case k_EResultAlreadyLoggedInElsewhere:
+      return "k_EResultAlreadyLoggedInElsewhere";
+    case k_EResultSuspended:
+      return "k_EResultSuspended";
+    case k_EResultCancelled:
+      return "k_EResultCancelled";
+    case k_EResultDataCorruption:
+      return "k_EResultDataCorruption";
+    case k_EResultDiskFull:
+      return "k_EResultDiskFull";
+    case k_EResultRemoteCallFailed:
+      return "k_EResultRemoteCallFailed";
+    case k_EResultPasswordUnset:
+      return "k_EResultPasswordUnset";
+    case k_EResultExternalAccountUnlinked:
+      return "k_EResultExternalAccountUnlinked";
+    case k_EResultPSNTicketInvalid:
+      return "k_EResultPSNTicketInvalid";
+    case k_EResultExternalAccountAlreadyLinked:
+      return "k_EResultExternalAccountAlreadyLinked";
+    case k_EResultRemoteFileConflict:
+      return "k_EResultRemoteFileConflict";
+    case k_EResultIllegalPassword:
+      return "k_EResultIllegalPassword";
+    case k_EResultSameAsPreviousValue:
+      return "k_EResultSameAsPreviousValue";
+    case k_EResultAccountLogonDenied:
+      return "k_EResultAccountLogonDenied";
+    case k_EResultCannotUseOldPassword:
+      return "k_EResultCannotUseOldPassword";
+    case k_EResultInvalidLoginAuthCode:
+      return "k_EResultInvalidLoginAuthCode";
+    case k_EResultAccountLogonDeniedNoMail:
+      return "k_EResultAccountLogonDeniedNoMail";
+    case k_EResultHardwareNotCapableOfIPT:
+      return "k_EResultHardwareNotCapableOfIPT";
+    case k_EResultIPTInitError:
+      return "k_EResultIPTInitError";
+    case k_EResultParentalControlRestricted:
+      return "k_EResultParentalControlRestricted";
+    case k_EResultFacebookQueryError:
+      return "k_EResultFacebookQueryError";
+    case k_EResultExpiredLoginAuthCode:
+      return "k_EResultExpiredLoginAuthCode";
+    case k_EResultIPLoginRestrictionFailed:
+      return "k_EResultIPLoginRestrictionFailed";
+    case k_EResultAccountLockedDown:
+      return "k_EResultAccountLockedDown";
+    case k_EResultAccountLogonDeniedVerifiedEmailRequired:
+      return "k_EResultAccountLogonDeniedVerifiedEmailRequired";
+    case k_EResultNoMatchingURL:
+      return "k_EResultNoMatchingURL";
+    case k_EResultBadResponse:
+      return "k_EResultBadResponse";
+    case k_EResultRequirePasswordReEntry:
+      return "k_EResultRequirePasswordReEntry";
+    case k_EResultValueOutOfRange:
+      return "k_EResultValueOutOfRange";
+    case k_EResultUnexpectedError:
+      return "k_EResultUnexpectedError";
+    case k_EResultDisabled:
+      return "k_EResultDisabled";
+    case k_EResultInvalidCEGSubmission:
+      return "k_EResultInvalidCEGSubmission";
+    case k_EResultRestrictedDevice:
+      return "k_EResultRestrictedDevice";
+    case k_EResultRegionLocked:
+      return "k_EResultRegionLocked";
+    case k_EResultRateLimitExceeded:
+      return "k_EResultRateLimitExceeded";
+    case k_EResultAccountLoginDeniedNeedTwoFactor:
+      return "k_EResultAccountLoginDeniedNeedTwoFactor";
+    case k_EResultItemDeleted:
+      return "k_EResultItemDeleted";
+    case k_EResultAccountLoginDeniedThrottle:
+      return "k_EResultAccountLoginDeniedThrottle";
+    case k_EResultTwoFactorCodeMismatch:
+      return "k_EResultTwoFactorCodeMismatch";
+    case k_EResultTwoFactorActivationCodeMismatch:
+      return "k_EResultTwoFactorActivationCodeMismatch";
+    case k_EResultAccountAssociatedToMultiplePartners:
+      return "k_EResultAccountAssociatedToMultiplePartners";
+    case k_EResultNotModified:
+      return "k_EResultNotModified";
+    case k_EResultNoMobileDevice:
+      return "k_EResultNoMobileDevice";
+    case k_EResultTimeNotSynced:
+      return "k_EResultTimeNotSynced";
+    case k_EResultSmsCodeFailed:
+      return "k_EResultSmsCodeFailed";
+    case k_EResultAccountLimitExceeded:
+      return "k_EResultAccountLimitExceeded";
+    case k_EResultAccountActivityLimitExceeded:
+      return "k_EResultAccountActivityLimitExceeded";
+    case k_EResultPhoneActivityLimitExceeded:
+      return "k_EResultPhoneActivityLimitExceeded";
+    case k_EResultRefundToWallet:
+      return "k_EResultRefundToWallet";
+    case k_EResultEmailSendFailure:
+      return "k_EResultEmailSendFailure";
+    case k_EResultNotSettled:
+      return "k_EResultNotSettled";
+    case k_EResultNeedCaptcha:
+      return "k_EResultNeedCaptcha";
+    case k_EResultGSLTDenied:
+      return "k_EResultGSLTDenied";
+    case k_EResultGSOwnerDenied:
+      return "k_EResultGSOwnerDenied";
+    case k_EResultInvalidItemType:
+      return "k_EResultInvalidItemType";
+    case k_EResultIPBanned:
+      return "k_EResultIPBanned";
+    case k_EResultGSLTExpired:
+      return "k_EResultGSLTExpired";
+    case k_EResultInsufficientFunds:
+      return "k_EResultInsufficientFunds";
+    case k_EResultTooManyPending:
+      return "k_EResultTooManyPending";
+    default:
+      return "unknown_" + std::to_string(static_cast<int>(r));
+  }
+}
+
 std::string StatusOf(EResult r) {
   switch (r) {
     case k_EResultOK:
       return "success";
     case k_EResultPending:
       return "pending";
-    case k_EResultFail:
-      return "canceled";
     case k_EResultExpired:
       return "indeterminate";
+    case k_EResultCancelled:
+      return "canceled";
+    case k_EResultInvalidParam:
+      return "invalid_param";
+    case k_EResultServiceUnavailable:
+      return "service_unavailable";
+    case k_EResultLimitExceeded:
+      return "limit_exceeded";
+    case k_EResultFail:
+      return "failed";
     default:
       return "failed";
   }
+}
+
+uint32_t ItemDefCount() {
+  uint32 n = 0;
+  if (!SteamInventory() || !SteamInventory()->GetItemDefinitionIDs(nullptr, &n)) {
+    return 0;
+  }
+  return n;
+}
+
+flutter::EncodableMap BuildDiagnostics() {
+  const bool init = SteamRuntime::Initialized();
+  const bool logged_on = init && SteamUser() && SteamUser()->BLoggedOn();
+  const bool subscribed =
+      init && SteamApps() && SteamApps()->BIsSubscribedApp(SteamRuntime::kAppId);
+  const bool overlay =
+      init && SteamUtils() && SteamUtils()->IsOverlayEnabled();
+  std::string steam_id;
+  std::string persona;
+  if (init && SteamUser()) {
+    steam_id = std::to_string(SteamUser()->GetSteamID().ConvertToUint64());
+  }
+  if (init && SteamFriends()) {
+    const char* name = SteamFriends()->GetPersonaName();
+    if (name) persona = name;
+  }
+  return M({
+      {"ok", flutter::EncodableValue(init)},
+      {"initialized", flutter::EncodableValue(init)},
+      {"initializationAttempted",
+       flutter::EncodableValue(SteamRuntime::InitializationAttempted())},
+      {"restartRequested",
+       flutter::EncodableValue(SteamRuntime::RestartRequested())},
+      {"shutdownPerformed",
+       flutter::EncodableValue(SteamRuntime::ShutdownPerformed())},
+      {"appId",
+       flutter::EncodableValue(static_cast<int32_t>(SteamRuntime::kAppId))},
+      {"steamId", flutter::EncodableValue(steam_id)},
+      {"personaName", flutter::EncodableValue(persona)},
+      {"loggedOn", flutter::EncodableValue(logged_on)},
+      {"online", flutter::EncodableValue(logged_on)},
+      {"subscribedApp", flutter::EncodableValue(subscribed)},
+      {"subscribed", flutter::EncodableValue(subscribed)},
+      {"overlayEnabled", flutter::EncodableValue(overlay)},
+      {"overlayActive",
+       flutter::EncodableValue(SteamRuntime::IsOverlayActive())},
+      {"overlayNeedsPresent",
+       flutter::EncodableValue(SteamRuntime::LastOverlayNeedsPresent())},
+      {"steamTimerTickCount",
+       flutter::EncodableValue(
+           static_cast<int64_t>(SteamRuntime::SteamTimerTickCount()))},
+      {"overlayNeedsPresentTrueCount",
+       flutter::EncodableValue(static_cast<int64_t>(
+           SteamRuntime::OverlayNeedsPresentTrueCount()))},
+      {"overlayForceRedrawCount",
+       flutter::EncodableValue(
+           static_cast<int64_t>(SteamRuntime::OverlayForceRedrawCount()))},
+      {"steamApiCallSource", flutter::EncodableValue("process_startup")},
+      {"buildMode", flutter::EncodableValue(SteamRuntime::BuildMode())},
+      {"executablePath",
+       flutter::EncodableValue(SteamRuntime::ExecutablePath())},
+      {"currentWorkingDirectory",
+       flutter::EncodableValue(SteamRuntime::CurrentWorkingDirectory())},
+      {"defCount",
+       flutter::EncodableValue(static_cast<int32_t>(ItemDefCount()))},
+  });
 }
 
 int32_t AsI32(const flutter::EncodableValue& v) {
@@ -85,6 +381,14 @@ std::vector<std::string> StrList(const flutter::EncodableMap& map,
   return out;
 }
 
+flutter::EncodableList IntListValue(const std::vector<int32_t>& xs) {
+  flutter::EncodableList out;
+  for (auto x : xs) {
+    out.push_back(flutter::EncodableValue(x));
+  }
+  return out;
+}
+
 }  // namespace
 
 struct SteamInventoryPocChannel::Impl {
@@ -93,7 +397,7 @@ struct SteamInventoryPocChannel::Impl {
   std::unique_ptr<flutter::EventSink<flutter::EncodableValue>> sink;
   std::mutex mu;
 
-  bool inited = false;
+  bool bound = false;
   bool online = false;
   CSteamID user{};
   int seq = 0;
@@ -102,6 +406,9 @@ struct SteamInventoryPocChannel::Impl {
     std::string kind;
     SteamInventoryResult_t handle = k_SteamInventoryResultInvalid;
     bool expect_orphan_result = false;  // StartPurchase
+    std::vector<int32_t> item_def_ids;
+    std::vector<int32_t> quantities;
+    uint64_t api_call = 0;
   };
   std::map<std::string, Pending> pending;
   std::map<SteamInventoryResult_t, std::string> by_handle;
@@ -113,10 +420,15 @@ struct SteamInventoryPocChannel::Impl {
 
   CCallback<Impl, SteamInventoryResultReady_t> cb_result_ready;
   CCallback<Impl, SteamInventoryFullUpdate_t> cb_full_update;
+  CCallback<Impl, SteamInventoryDefinitionUpdate_t> cb_defs_update;
+  CCallback<Impl, GameOverlayActivated_t> cb_overlay;
+  bool defs_seen = false;
 
   Impl()
       : cb_result_ready(this, &Impl::OnResultReady),
-        cb_full_update(this, &Impl::OnFullUpdate) {}
+        cb_full_update(this, &Impl::OnFullUpdate),
+        cb_defs_update(this, &Impl::OnDefinitionUpdate),
+        cb_overlay(this, &Impl::OnOverlayActivated) {}
 
   std::string Next(const char* p) { return std::string(p) + "_" + std::to_string(++seq); }
 
@@ -177,28 +489,69 @@ struct SteamInventoryPocChannel::Impl {
     }
 
     const bool id_ok = SteamInventory()->CheckResultSteamID(cb->m_handle, user);
+    const int32_t code = static_cast<int32_t>(cb->m_result);
+    const std::string name = EResultName(cb->m_result);
     std::string status = StatusOf(cb->m_result);
     if (cb->m_result == k_EResultOK && !id_ok) {
       status = "failed";
     }
 
     flutter::EncodableList items;
+    flutter::EncodableList removed;
+    flutter::EncodableList granted;
     if (cb->m_result == k_EResultOK && id_ok) {
-      items = ReadItems(cb->m_handle);
+      uint32 n = 0;
+      SteamInventory()->GetResultItems(cb->m_handle, nullptr, &n);
+      std::vector<SteamItemDetails_t> d(n);
+      if (n > 0 && SteamInventory()->GetResultItems(cb->m_handle, d.data(), &n)) {
+        for (uint32 i = 0; i < n; ++i) {
+          const bool is_removed =
+              (d[i].m_unFlags & k_ESteamItemRemoved) != 0 ||
+              (d[i].m_unFlags & k_ESteamItemConsumed) != 0;
+          flutter::EncodableMap row = M({
+              {"instanceId",
+               flutter::EncodableValue(std::to_string(d[i].m_itemId))},
+              {"itemDefId",
+               flutter::EncodableValue(static_cast<int32_t>(d[i].m_iDefinition))},
+              {"quantity",
+               flutter::EncodableValue(static_cast<int32_t>(d[i].m_unQuantity))},
+              {"flags",
+               flutter::EncodableValue(static_cast<int32_t>(d[i].m_unFlags))},
+              {"removed", flutter::EncodableValue(is_removed)},
+          });
+          items.push_back(flutter::EncodableValue(row));
+          if (is_removed) {
+            removed.push_back(flutter::EncodableValue(row));
+          } else {
+            granted.push_back(flutter::EncodableValue(row));
+          }
+        }
+      }
     }
 
     Emit(M({
         {"kind", flutter::EncodableValue(kind)},
         {"status", flutter::EncodableValue(status)},
         {"handle", flutter::EncodableValue(corr)},
-        {"steamResult",
-         flutter::EncodableValue(std::to_string(static_cast<int>(cb->m_result)))},
+        {"steamResult", flutter::EncodableValue(std::to_string(code))},
+        {"steamResultCode", flutter::EncodableValue(code)},
+        {"steamResultName", flutter::EncodableValue(name)},
         {"steamIdOk", flutter::EncodableValue(id_ok)},
         {"items", flutter::EncodableValue(items)},
+        {"removedItems", flutter::EncodableValue(removed)},
+        {"grantedItems", flutter::EncodableValue(granted)},
         {"detail",
          flutter::EncodableValue(
-             id_ok ? "result_ready ? re-query inventory for authority"
-                   : "steamid_mismatch")},
+             !id_ok ? "steamid_mismatch"
+             : (kind == "exchange"
+                    ? std::string("exchange ResultReady ") + name +
+                          " removed=" + std::to_string(removed.size()) +
+                          " granted=" + std::to_string(granted.size())
+             : (kind == "consume"
+                    ? std::string("consume ResultReady ") + name +
+                          " removed=" + std::to_string(removed.size()) +
+                          " granted=" + std::to_string(granted.size())
+                    : "result_ready — re-query inventory for authority")))},
     }));
 
     SteamInventory()->DestroyResult(cb->m_handle);
@@ -220,44 +573,127 @@ struct SteamInventoryPocChannel::Impl {
     }));
   }
 
+  void OnDefinitionUpdate(SteamInventoryDefinitionUpdate_t* /*cb*/) {
+    defs_seen = true;
+    Emit(M({
+        {"kind", flutter::EncodableValue("definitions")},
+        {"status", flutter::EncodableValue("success")},
+        {"handle", flutter::EncodableValue(Next("defs"))},
+        {"defCount",
+         flutter::EncodableValue(static_cast<int32_t>(ItemDefCount()))},
+        {"detail", flutter::EncodableValue("SteamInventoryDefinitionUpdate_t")},
+    }));
+  }
+
+  void OnOverlayActivated(GameOverlayActivated_t* cb) {
+    if (!cb) return;
+    const bool active = cb->m_bActive != 0;
+    SteamRuntime::SetOverlayActive(active);
+    Emit(M({
+        {"kind", flutter::EncodableValue("overlay")},
+        {"status", flutter::EncodableValue("success")},
+        {"handle", flutter::EncodableValue(Next("overlay"))},
+        {"overlayActive", flutter::EncodableValue(active)},
+        {"overlayEnabled",
+         flutter::EncodableValue(SteamUtils() &&
+                                 SteamUtils()->IsOverlayEnabled())},
+        {"detail",
+         flutter::EncodableValue(active ? "GameOverlayActivated_t active"
+                                        : "GameOverlayActivated_t inactive")},
+    }));
+  }
+
+  /// ItemDefs must be present before GetAllItems is reliable for a new app.
+  bool WaitForItemDefinitions(DWORD timeout_ms) {
+    if (ItemDefCount() > 0) {
+      defs_seen = true;
+      return true;
+    }
+    SteamInventory()->LoadItemDefinitions();
+    const DWORD start = GetTickCount();
+    while (GetTickCount() - start < timeout_ms) {
+      SteamRuntime::Pump();
+      if (ItemDefCount() > 0) {
+        defs_seen = true;
+        return true;
+      }
+      Sleep(25);
+    }
+    return ItemDefCount() > 0;
+  }
+
   void OnPurchaseInit(SteamInventoryStartPurchaseResult_t* r, bool io_fail) {
     std::string corr;
+    Pending snap;
     {
       std::lock_guard<std::mutex> lock(mu);
       for (auto& e : pending) {
         if (e.second.kind == "purchase" && e.second.expect_orphan_result) {
           corr = e.first;
+          snap = e.second;
         }
       }
     }
+
+    flutter::EncodableMap ev = M({
+        {"kind", flutter::EncodableValue("purchase")},
+        {"handle", flutter::EncodableValue(corr)},
+        {"ioFailure", flutter::EncodableValue(io_fail)},
+        {"itemDefIds", flutter::EncodableValue(IntListValue(snap.item_def_ids))},
+        {"quantities", flutter::EncodableValue(IntListValue(snap.quantities))},
+        {"apiCallHandle",
+         flutter::EncodableValue(std::to_string(snap.api_call))},
+    });
+
     if (io_fail || !r) {
-      Emit(M({{"kind", flutter::EncodableValue("purchase")},
-              {"status", flutter::EncodableValue("failed")},
-              {"handle", flutter::EncodableValue(corr)},
-              {"detail", flutter::EncodableValue("start_purchase_io_failure")}}));
-      return;
-    }
-    if (r->m_result != k_EResultOK) {
-      Emit(M({{"kind", flutter::EncodableValue("purchase")},
-              {"status", flutter::EncodableValue(StatusOf(r->m_result))},
-              {"handle", flutter::EncodableValue(corr)},
-              {"orderId",
-               flutter::EncodableValue(std::to_string(r->m_ulOrderID))},
-              {"detail", flutter::EncodableValue("purchase_not_authorized")}}));
+      ev[flutter::EncodableValue("status")] = flutter::EncodableValue("failed");
+      ev[flutter::EncodableValue("phase")] =
+          flutter::EncodableValue("start_purchase_callback");
+      ev[flutter::EncodableValue("steamResultCode")] =
+          flutter::EncodableValue(static_cast<int32_t>(-1));
+      ev[flutter::EncodableValue("steamResultName")] =
+          flutter::EncodableValue("io_failure");
+      ev[flutter::EncodableValue("detail")] =
+          flutter::EncodableValue("SteamInventoryStartPurchaseResult_t io failure");
+      Emit(ev);
       std::lock_guard<std::mutex> lock(mu);
       pending.erase(corr);
       return;
     }
-    Emit(M({{"kind", flutter::EncodableValue("purchase")},
-            {"status", flutter::EncodableValue("pending")},
-            {"handle", flutter::EncodableValue(corr)},
-            {"orderId",
-             flutter::EncodableValue(std::to_string(r->m_ulOrderID))},
-            {"transId",
-             flutter::EncodableValue(std::to_string(r->m_ulTransID))},
-            {"detail",
-             flutter::EncodableValue(
-                 "overlay/init ok ? wait ResultReady; do not grant yet")}}));
+
+    const int32_t code = static_cast<int32_t>(r->m_result);
+    const std::string name = EResultName(r->m_result);
+    ev[flutter::EncodableValue("steamResultCode")] =
+        flutter::EncodableValue(code);
+    ev[flutter::EncodableValue("steamResultName")] =
+        flutter::EncodableValue(name);
+    ev[flutter::EncodableValue("orderId")] =
+        flutter::EncodableValue(std::to_string(r->m_ulOrderID));
+    ev[flutter::EncodableValue("transactionId")] =
+        flutter::EncodableValue(std::to_string(r->m_ulTransID));
+    ev[flutter::EncodableValue("transId")] =
+        flutter::EncodableValue(std::to_string(r->m_ulTransID));
+    ev[flutter::EncodableValue("phase")] =
+        flutter::EncodableValue("start_purchase_callback");
+
+    if (r->m_result != k_EResultOK) {
+      ev[flutter::EncodableValue("status")] =
+          flutter::EncodableValue(StatusOf(r->m_result));
+      ev[flutter::EncodableValue("detail")] = flutter::EncodableValue(
+          std::string("SteamInventoryStartPurchaseResult_t rejected: ") + name +
+          " (" + std::to_string(code) + ")");
+      Emit(ev);
+      std::lock_guard<std::mutex> lock(mu);
+      pending.erase(corr);
+      return;
+    }
+
+    ev[flutter::EncodableValue("status")] =
+        flutter::EncodableValue("pending");
+    ev[flutter::EncodableValue("detail")] = flutter::EncodableValue(
+        "k_EResultOK — Overlay/user confirm pending; wait ResultReady; do not "
+        "grant yet");
+    Emit(ev);
   }
 
   void OnPrices(SteamInventoryRequestPricesResult_t* r, bool io_fail) {
@@ -292,7 +728,7 @@ struct SteamInventoryPocChannel::Impl {
                    DWORD timeout_ms) {
     const DWORD start = GetTickCount();
     while (GetTickCount() - start < timeout_ms) {
-      SteamAPI_RunCallbacks();
+      SteamRuntime::Pump();
       {
         std::lock_guard<std::mutex> lock(mu);
         for (auto it = completed.rbegin(); it != completed.rend(); ++it) {
@@ -312,25 +748,21 @@ struct SteamInventoryPocChannel::Impl {
 };
 
 namespace {
-std::atomic<bool> g_ready{false};
+
 }  // namespace
 
 SteamInventoryPocChannel::SteamInventoryPocChannel()
     : impl_(std::make_unique<Impl>()) {}
 
 SteamInventoryPocChannel::~SteamInventoryPocChannel() {
-  if (impl_->inited) {
-    SteamAPI_Shutdown();
-    impl_->inited = false;
-    g_ready = false;
-  }
+  // SteamAPI_Shutdown is owned exclusively by SteamRuntime (main.cpp).
 }
 
-bool SteamInventoryPocChannel::IsSteamReady() { return g_ready.load(); }
-
-void SteamInventoryPocChannel::PumpCallbacks() {
-  if (g_ready.load()) SteamAPI_RunCallbacks();
+bool SteamInventoryPocChannel::IsSteamReady() {
+  return SteamRuntime::Initialized();
 }
+
+void SteamInventoryPocChannel::PumpCallbacks() { SteamRuntime::Pump(); }
 
 void SteamInventoryPocChannel::Register(flutter::FlutterEngine* engine) {
   if (!engine || impl_->methods) return;
@@ -379,54 +811,49 @@ void SteamInventoryPocChannel::Register(flutter::FlutterEngine* engine) {
                  {"online", flutter::EncodableValue(false)}})));
         };
 
-        if (method == "initialize" || method == "init") {
-          if (impl_->inited) {
-            result->Success(flutter::EncodableValue(M({
-                {"ok", flutter::EncodableValue(true)},
-                {"online", flutter::EncodableValue(impl_->online)},
-                {"appId", flutter::EncodableValue(static_cast<int32_t>(kAppId))},
-            })));
+        if (method == "initialize" || method == "init" ||
+            method == "diagnostic" || method == "diagnostics") {
+          // SteamAPI_Init already ran in SteamRuntime::Bootstrap (main).
+          if (!SteamRuntime::Initialized()) {
+            auto diag = BuildDiagnostics();
+            diag[flutter::EncodableValue("ok")] = flutter::EncodableValue(false);
+            diag[flutter::EncodableValue("code")] = flutter::EncodableValue(
+                SteamRuntime::RestartRequested() ? "restart_via_steam"
+                                                 : "steam_not_initialized");
+            diag[flutter::EncodableValue("status")] =
+                flutter::EncodableValue("failed");
+            result->Success(flutter::EncodableValue(diag));
             return;
           }
-          if (SteamAPI_RestartAppIfNecessary(kAppId)) {
-            fail("restart_via_steam");
-            return;
-          }
-          if (!SteamAPI_Init()) {
-            fail("steam_not_running");
-            return;
-          }
-          impl_->inited = true;
-          g_ready = true;
+          impl_->bound = true;
           impl_->user = SteamUser()->GetSteamID();
           impl_->online = SteamUser()->BLoggedOn();
-          SteamInventory()->LoadItemDefinitions();
-          result->Success(flutter::EncodableValue(M({
-              {"ok", flutter::EncodableValue(true)},
-              {"online", flutter::EncodableValue(impl_->online)},
-              {"appId", flutter::EncodableValue(static_cast<int32_t>(kAppId))},
-              {"steamId",
-               flutter::EncodableValue(
-                   std::to_string(impl_->user.ConvertToUint64()))},
-          })));
+          if (SteamInventory()) {
+            SteamInventory()->LoadItemDefinitions();
+          }
+          auto diag = BuildDiagnostics();
+          diag[flutter::EncodableValue("ok")] = flutter::EncodableValue(true);
+          result->Success(flutter::EncodableValue(diag));
           return;
         }
 
         if (method == "shutdown") {
-          if (impl_->inited) {
-            SteamAPI_Shutdown();
-            impl_->inited = false;
-            impl_->online = false;
-            g_ready = false;
-          }
+          // No-op: SteamAPI_Shutdown is process-owned (SteamRuntime).
           result->Success(flutter::EncodableValue(
-              M({{"ok", flutter::EncodableValue(true)}})));
+              M({{"ok", flutter::EncodableValue(true)},
+                 {"noop", flutter::EncodableValue(true)}})));
           return;
         }
 
-        if (!impl_->inited) {
-          fail("not_initialized");
-          return;
+        if (!SteamRuntime::Initialized() || !impl_->bound) {
+          if (SteamRuntime::Initialized()) {
+            impl_->bound = true;
+            impl_->user = SteamUser()->GetSteamID();
+            impl_->online = SteamUser()->BLoggedOn();
+          } else {
+            fail("not_initialized");
+            return;
+          }
         }
 
         if (method == "getInventory" || method == "getAllItems") {
@@ -434,9 +861,31 @@ void SteamInventoryPocChannel::Register(flutter::FlutterEngine* engine) {
             fail("offline");
             return;
           }
+          if (!impl_->WaitForItemDefinitions(kWaitTimeoutMs)) {
+            result->Success(flutter::EncodableValue(M({
+                {"ok", flutter::EncodableValue(false)},
+                {"code", flutter::EncodableValue("itemdefs_not_ready")},
+                {"status", flutter::EncodableValue("failed")},
+                {"defCount", flutter::EncodableValue(0)},
+                {"detail",
+                 flutter::EncodableValue(
+                     "LoadItemDefinitions timed out — publish ItemDefs in "
+                     "Steamworks Inventory Service")},
+                {"online", flutter::EncodableValue(true)},
+            })));
+            return;
+          }
           SteamInventoryResult_t handle = k_SteamInventoryResultInvalid;
           if (!SteamInventory()->GetAllItems(&handle)) {
-            fail("getAllItems_failed");
+            result->Success(flutter::EncodableValue(M({
+                {"ok", flutter::EncodableValue(false)},
+                {"code", flutter::EncodableValue("getAllItems_failed")},
+                {"status", flutter::EncodableValue("failed")},
+                {"defCount",
+                 flutter::EncodableValue(
+                     static_cast<int32_t>(ItemDefCount()))},
+                {"online", flutter::EncodableValue(true)},
+            })));
             return;
           }
           const std::string corr = impl_->Next("load");
@@ -450,23 +899,49 @@ void SteamInventoryPocChannel::Register(flutter::FlutterEngine* engine) {
           }
           flutter::EncodableMap done;
           if (!impl_->WaitForCorr(corr, &done, kWaitTimeoutMs)) {
-            fail("inventory_timeout");
+            result->Success(flutter::EncodableValue(M({
+                {"ok", flutter::EncodableValue(false)},
+                {"code", flutter::EncodableValue("inventory_timeout")},
+                {"status", flutter::EncodableValue("failed")},
+                {"defCount",
+                 flutter::EncodableValue(
+                     static_cast<int32_t>(ItemDefCount()))},
+                {"online", flutter::EncodableValue(true)},
+            })));
             return;
           }
           auto sit = done.find(flutter::EncodableValue("status"));
           auto iit = done.find(flutter::EncodableValue("items"));
+          auto srit = done.find(flutter::EncodableValue("steamResult"));
+          auto det = done.find(flutter::EncodableValue("detail"));
           const std::string status =
               sit != done.end() ? std::get<std::string>(sit->second) : "failed";
           flutter::EncodableList items;
           if (iit != done.end()) {
             items = std::get<flutter::EncodableList>(iit->second);
           }
-          result->Success(flutter::EncodableValue(M({
+          flutter::EncodableMap out = M({
               {"ok", flutter::EncodableValue(status == "success")},
               {"status", flutter::EncodableValue(status)},
+              {"code",
+               flutter::EncodableValue(status == "success" ? "ok" : status)},
               {"handle", flutter::EncodableValue(corr)},
               {"items", flutter::EncodableValue(items)},
-          })));
+              {"defCount",
+               flutter::EncodableValue(static_cast<int32_t>(ItemDefCount()))},
+              {"subscribed",
+               flutter::EncodableValue(
+                   SteamApps() &&
+                   SteamApps()->BIsSubscribedApp(SteamRuntime::kAppId))},
+              {"online", flutter::EncodableValue(true)},
+          });
+          if (srit != done.end()) {
+            out[flutter::EncodableValue("steamResult")] = srit->second;
+          }
+          if (det != done.end()) {
+            out[flutter::EncodableValue("detail")] = det->second;
+          }
+          result->Success(flutter::EncodableValue(out));
           return;
         }
 
@@ -524,28 +999,127 @@ void SteamInventoryPocChannel::Register(flutter::FlutterEngine* engine) {
           std::vector<uint32> q;
           for (auto x : qtys) q.push_back(static_cast<uint32>(x));
           const std::string corr = impl_->Next("purchase");
+          SteamAPICall_t call = SteamInventory()->StartPurchase(
+              d.data(), q.data(), static_cast<uint32>(d.size()));
+          // Phase A: immediate API call failure.
+          if (call == k_uAPICallInvalid) {
+            result->Success(flutter::EncodableValue(M({
+                {"ok", flutter::EncodableValue(false)},
+                {"status", flutter::EncodableValue("failed")},
+                {"phase", flutter::EncodableValue("start_purchase_api")},
+                {"code", flutter::EncodableValue("k_uAPICallInvalid")},
+                {"steamResultCode", flutter::EncodableValue(0)},
+                {"steamResultName",
+                 flutter::EncodableValue("k_uAPICallInvalid")},
+                {"apiCallHandle", flutter::EncodableValue("0")},
+                {"itemDefIds", flutter::EncodableValue(IntListValue(defs))},
+                {"quantities", flutter::EncodableValue(IntListValue(qtys))},
+                {"handle", flutter::EncodableValue(corr)},
+                {"detail",
+                 flutter::EncodableValue(
+                     "StartPurchase returned k_uAPICallInvalid")},
+            })));
+            return;
+          }
           {
             std::lock_guard<std::mutex> lock(impl_->mu);
             Impl::Pending p;
             p.kind = "purchase";
             p.expect_orphan_result = true;
+            p.item_def_ids = defs;
+            p.quantities = qtys;
+            p.api_call = static_cast<uint64_t>(call);
             impl_->pending[corr] = p;
           }
-          SteamAPICall_t call = SteamInventory()->StartPurchase(
-              d.data(), q.data(), static_cast<uint32>(d.size()));
-          if (call == k_uAPICallInvalid) {
-            fail("startPurchase_invalid");
-            return;
-          }
           impl_->cr_purchase.Set(call, impl_.get(), &Impl::OnPurchaseInit);
+          // Phase C pending: callback will report B (reject) or C (OK+ids).
           result->Success(flutter::EncodableValue(M({
               {"ok", flutter::EncodableValue(true)},
               {"status", flutter::EncodableValue("pending")},
+              {"phase", flutter::EncodableValue("start_purchase_accepted")},
               {"handle", flutter::EncodableValue(corr)},
+              {"apiCallHandle",
+               flutter::EncodableValue(std::to_string(static_cast<uint64_t>(call)))},
+              {"itemDefIds", flutter::EncodableValue(IntListValue(defs))},
+              {"quantities", flutter::EncodableValue(IntListValue(qtys))},
               {"detail",
                flutter::EncodableValue(
-                   "StartPurchase accepted ? not granted until ResultReady + "
-                   "re-query")},
+                   "StartPurchase API accepted — await "
+                   "SteamInventoryStartPurchaseResult_t; grant only after "
+                   "ResultReady + re-query")},
+          })));
+          return;
+        }
+
+        if (method == "consumeItem") {
+          if (!SteamUser()->BLoggedOn()) {
+            fail("offline");
+            return;
+          }
+          if (!args || !std::holds_alternative<flutter::EncodableMap>(*args)) {
+            fail("invalid_args");
+            return;
+          }
+          const auto& map = std::get<flutter::EncodableMap>(*args);
+          auto iid = map.find(flutter::EncodableValue("instanceId"));
+          auto qit = map.find(flutter::EncodableValue("quantity"));
+          if (iid == map.end() ||
+              !std::holds_alternative<std::string>(iid->second)) {
+            fail("invalid_args");
+            return;
+          }
+          const std::string instance_s = std::get<std::string>(iid->second);
+          const int32_t qty = qit == map.end() ? 1 : AsI32(qit->second);
+          if (qty != 1) {
+            fail("invalid_consume_quantity");
+            return;
+          }
+          SteamItemInstanceID_t item_id = 0;
+          try {
+            item_id = static_cast<SteamItemInstanceID_t>(std::stoull(instance_s));
+          } catch (...) {
+            fail("invalid_instance_id");
+            return;
+          }
+          SteamInventoryResult_t handle = k_SteamInventoryResultInvalid;
+          const bool accepted =
+              SteamInventory()->ConsumeItem(&handle, item_id, 1);
+          if (!accepted || handle == k_SteamInventoryResultInvalid) {
+            result->Success(flutter::EncodableValue(M({
+                {"ok", flutter::EncodableValue(false)},
+                {"status", flutter::EncodableValue("failed")},
+                {"phase", flutter::EncodableValue("consume_api")},
+                {"code", flutter::EncodableValue("consume_failed")},
+                {"consumeApiAccepted", flutter::EncodableValue(false)},
+                {"instanceId", flutter::EncodableValue(instance_s)},
+                {"quantity", flutter::EncodableValue(1)},
+                {"detail",
+                 flutter::EncodableValue(
+                     "ConsumeItem returned false / invalid handle")},
+            })));
+            return;
+          }
+          const std::string corr = impl_->Next("consume");
+          {
+            std::lock_guard<std::mutex> lock(impl_->mu);
+            Impl::Pending p;
+            p.kind = "consume";
+            p.handle = handle;
+            impl_->pending[corr] = p;
+            impl_->by_handle[handle] = corr;
+          }
+          result->Success(flutter::EncodableValue(M({
+              {"ok", flutter::EncodableValue(true)},
+              {"status", flutter::EncodableValue("pending")},
+              {"phase", flutter::EncodableValue("consume_accepted")},
+              {"consumeApiAccepted", flutter::EncodableValue(true)},
+              {"handle", flutter::EncodableValue(corr)},
+              {"instanceId", flutter::EncodableValue(instance_s)},
+              {"quantity", flutter::EncodableValue(1)},
+              {"detail",
+               flutter::EncodableValue(
+                   "ConsumeItem accepted — await ResultReady; re-query "
+                   "GetAllItems for Theme/Astra authority")},
           })));
           return;
         }
@@ -568,6 +1142,11 @@ void SteamInventoryPocChannel::Register(flutter::FlutterEngine* engine) {
           }
           const int32_t gen = AsI32(git->second);
           const int32_t genq = gqit == map.end() ? 1 : AsI32(gqit->second);
+          // POC contract: generate ItemDef 20010 ×1, array length 1.
+          if (genq != 1) {
+            fail("invalid_generate_quantity");
+            return;
+          }
           auto ids = StrList(map, "destroyInstanceIds");
           auto qs = IntList(map, "destroyQuantities");
           if (ids.empty() || ids.size() != qs.size()) {
@@ -575,7 +1154,7 @@ void SteamInventoryPocChannel::Register(flutter::FlutterEngine* engine) {
             return;
           }
           SteamItemDef_t gen_def = gen;
-          uint32 gen_qty = static_cast<uint32>(genq);
+          uint32 gen_qty = 1;
           std::vector<SteamItemInstanceID_t> destroy;
           std::vector<uint32> destroy_q;
           for (size_t i = 0; i < ids.size(); ++i) {
@@ -584,10 +1163,25 @@ void SteamInventoryPocChannel::Register(flutter::FlutterEngine* engine) {
             destroy_q.push_back(static_cast<uint32>(qs[i]));
           }
           SteamInventoryResult_t handle = k_SteamInventoryResultInvalid;
-          if (!SteamInventory()->ExchangeItems(
-                  &handle, &gen_def, &gen_qty, 1, destroy.data(),
-                  destroy_q.data(), static_cast<uint32>(destroy.size()))) {
-            fail("exchange_failed");
+          const bool accepted = SteamInventory()->ExchangeItems(
+              &handle, &gen_def, &gen_qty, 1, destroy.data(),
+              destroy_q.data(), static_cast<uint32>(destroy.size()));
+          if (!accepted || handle == k_SteamInventoryResultInvalid) {
+            result->Success(flutter::EncodableValue(M({
+                {"ok", flutter::EncodableValue(false)},
+                {"status", flutter::EncodableValue("failed")},
+                {"phase", flutter::EncodableValue("exchange_api")},
+                {"code", flutter::EncodableValue("exchange_failed")},
+                {"exchangeApiAccepted", flutter::EncodableValue(false)},
+                {"generateItemDefId", flutter::EncodableValue(gen)},
+                {"generateQuantity", flutter::EncodableValue(genq)},
+                {"generateArrayLength", flutter::EncodableValue(1)},
+                {"destroyCount",
+                 flutter::EncodableValue(static_cast<int32_t>(destroy.size()))},
+                {"detail",
+                 flutter::EncodableValue(
+                     "ExchangeItems returned false / invalid handle")},
+            })));
             return;
           }
           const std::string corr = impl_->Next("exchange");
@@ -602,11 +1196,18 @@ void SteamInventoryPocChannel::Register(flutter::FlutterEngine* engine) {
           result->Success(flutter::EncodableValue(M({
               {"ok", flutter::EncodableValue(true)},
               {"status", flutter::EncodableValue("pending")},
+              {"phase", flutter::EncodableValue("exchange_accepted")},
+              {"exchangeApiAccepted", flutter::EncodableValue(true)},
               {"handle", flutter::EncodableValue(corr)},
+              {"generateItemDefId", flutter::EncodableValue(gen)},
+              {"generateQuantity", flutter::EncodableValue(genq)},
+              {"generateArrayLength", flutter::EncodableValue(1)},
+              {"destroyCount",
+               flutter::EncodableValue(static_cast<int32_t>(destroy.size()))},
               {"detail",
                flutter::EncodableValue(
-                   "ExchangeItems accepted ? unlock only after ResultReady + "
-                   "re-query")},
+                   "ExchangeItems accepted — await ResultReady; theme grant "
+                   "authority is GetAllItems (20001), not this acceptance")},
           })));
           return;
         }

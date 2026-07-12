@@ -108,12 +108,13 @@ install(FILES "${AOT_LIBRARY}" DESTINATION "${INSTALL_BUNDLE_DATA_DIR}"
   COMPONENT Runtime)
 
 # Steam Inventory POC redistributable (Windows).
+# steam_api64.dll ships with the install bundle; steam_appid.txt is LOCAL DEV
+# only (POST_BUILD next to exe) and must NOT be included in Steam depots.
 set(STEAMWORKS_SDK_ROOT "C:/dev/steamworks/steamworks_sdk_164/sdk" CACHE PATH
   "Steamworks SDK root")
 if(EXISTS "${STEAMWORKS_SDK_ROOT}/redistributable_bin/win64/steam_api64.dll")
   install(FILES
     "${STEAMWORKS_SDK_ROOT}/redistributable_bin/win64/steam_api64.dll"
-    "${CMAKE_CURRENT_SOURCE_DIR}/runner/steam_appid.txt"
     DESTINATION "${INSTALL_BUNDLE_LIB_DIR}"
     COMPONENT Runtime)
 endif()

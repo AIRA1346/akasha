@@ -11,6 +11,9 @@ Set-Location $Root
 Write-Host '==> flutter build windows --release (Steam Inventory native bridge)'
 & "$PSScriptRoot\flutter.ps1" build windows --release `
   --dart-define=AKASHA_STEAM_INVENTORY_POC=true
+if ($LASTEXITCODE -ne 0) {
+  throw "flutter build failed (exit $LASTEXITCODE). Close akasha.exe if the linker cannot overwrite it."
+}
 
 $out = Join-Path $Root 'build\windows\x64\runner\Release'
 $exe = Join-Path $out 'akasha.exe'

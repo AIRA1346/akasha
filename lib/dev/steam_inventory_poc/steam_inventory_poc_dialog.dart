@@ -22,15 +22,54 @@ class _SteamInventoryPocDialog extends StatefulWidget {
   final SteamInventoryPocController controller;
 
   @override
-  State<_SteamInventoryPocDialog> createState() => _SteamInventoryPocDialogState();
+  State<_SteamInventoryPocDialog> createState() =>
+      _SteamInventoryPocDialogState();
 }
 
 class _SteamInventoryPocDialogState extends State<_SteamInventoryPocDialog> {
   String _log = '';
+  Map<String, Object?> _diag = const {};
+  bool _uiBusy = false;
 
   SteamInventoryPocController get c => widget.controller;
 
-  void _append(String line) => setState(() => _log = '$_log\n$line');
+  bool get _actionsLocked => _uiBusy || c.isMutationPending;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _refreshDiag());
+  }
+
+  void _append(String line) {
+    if (!isSteamInventoryPocVerboseLog) return;
+    setState(() => _log = '$_log\n$line');
+  }
+
+  Future<void> _runBusy(Future<void> Function() body) async {
+    if (_actionsLocked) return;
+    setState(() => _uiBusy = true);
+    try {
+      await body();
+    } finally {
+      if (mounted) setState(() => _uiBusy = false);
+    }
+  }
+
+  Future<void> _refreshDiag() async {
+    final client = c.client;
+    if (client is! ChannelSteamInventoryClient) {
+      setState(() => _diag = const {'client': 'fake'});
+      return;
+    }
+    final d = await client.diagnostic();
+    setState(() => _diag = d);
+    _append(
+      'diag overlay=${d['overlayEnabled']} loggedOn=${d['loggedOn']} '
+      'subscribed=${d['subscribedApp'] ?? d['subscribed']} '
+      'build=${d['buildMode']}',
+    );
+  }
 
   Future<void> _pump() async {
     final ops = await c.pump();
@@ -43,18 +82,33 @@ class _SteamInventoryPocDialogState extends State<_SteamInventoryPocDialog> {
   @override
   Widget build(BuildContext context) {
     final live = c.client is ChannelSteamInventoryClient;
+    final showReset = isSteamInventoryPocDevResetEnabled;
     return AlertDialog(
       title: const Text('Steam Inventory POC (debug)'),
       content: SizedBox(
-        width: 480,
+        width: 520,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 live
-                    ? 'Client: native MethodChannel (requires SteamAPI_Init)'
+                    ? 'Client: native MethodChannel (process_startup Init)'
                     : 'Client: FakeSteamInventoryClient (not live Steamworks)',
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                'overlayEnabled=${_diag['overlayEnabled']}  '
+                'needsPresent=${_diag['overlayNeedsPresent']}  '
+                'forceRedraw=${_diag['overlayForceRedrawCount']}\n'
+                'timerTicks=${_diag['steamTimerTickCount']}  '
+                'needsPresentTrue=${_diag['overlayNeedsPresentTrueCount']}\n'
+                'loggedOn=${_diag['loggedOn']}  '
+                'subscribed=${_diag['subscribedApp'] ?? _diag['subscribed']}\n'
+                'steamId=${_diag['steamId']}  appId=${_diag['appId']}\n'
+                'exe=${_diag['executablePath']}\n'
+                'cwd=${_diag['currentWorkingDirectory']}',
                 style: Theme.of(context).textTheme.bodySmall,
               ),
               const SizedBox(height: 8),
@@ -62,76 +116,147 @@ class _SteamInventoryPocDialogState extends State<_SteamInventoryPocDialog> {
                 c.hasConfirmedInventory
                     ? 'Astra=${c.astra}  Echo=${c.echo}  '
                         'Theme Nocturne=${c.ownsNocturne}'
-                    : 'Inventory NOT confirmed — no local balance invention '
-                        '(${c.lastSnapshot?.loadError ?? 'n/a'})',
+                    : 'Inventory NOT confirmed — balances pending re-query\n'
+                        '(${c.activeOp.detail ?? c.lastSnapshot?.loadError ?? 'n/a'})',
               ),
-              Text('Op: ${c.activeOp.kind.name} / ${c.activeOp.status.name}'),
+              Text(
+                'Op: ${c.activeOp.kind.name} / ${c.activeOp.status.name}'
+                '${_actionsLocked ? ' (busy)' : ''}',
+              ),
               const SizedBox(height: 12),
               Wrap(
                 spacing: 8,
                 runSpacing: 8,
                 children: [
                   FilledButton(
-                    onPressed: () async {
-                      await c.refreshInventory();
-                      setState(() {});
-                      _append('refresh done failed=${c.lastSnapshot?.loadFailed}');
-                    },
+                    onPressed: _actionsLocked
+                        ? null
+                        : () => _runBusy(_refreshDiag),
+                    child: const Text('Diagnostic'),
+                  ),
+                  FilledButton(
+                    onPressed: _actionsLocked
+                        ? null
+                        : () => _runBusy(() async {
+                              await c.refreshInventory();
+                              setState(() {});
+                              _append(
+                                'GetAllItems failed=${c.lastSnapshot?.loadFailed} '
+                                '${c.formatInventoryAudit()}',
+                              );
+                            }),
                     child: const Text('GetAllItems'),
                   ),
                   FilledButton(
-                    onPressed: () async {
-                      await c.refreshPrices();
-                      setState(() {});
-                      _append('prices=${c.prices.length}');
-                    },
+                    onPressed: _actionsLocked
+                        ? null
+                        : () => _runBusy(() async {
+                              await c.refreshPrices();
+                              setState(() {});
+                              _append('prices=${c.prices.length}');
+                            }),
                     child: const Text('RequestPrices'),
                   ),
                   FilledButton(
-                    onPressed: () async {
-                      final h = await c.buyAstraPack100();
-                      _append('purchase handle=$h');
-                      await _pump();
-                    },
+                    onPressed: _actionsLocked
+                        ? null
+                        : () => _runBusy(() async {
+                              final h = await c.buyAstraPack100();
+                              _append('purchase handle=$h');
+                              await Future<void>.delayed(
+                                const Duration(milliseconds: 800),
+                              );
+                              await _pump();
+                            }),
                     child: const Text('StartPurchase Astra100'),
                   ),
                   FilledButton(
-                    onPressed: c.ownsNocturne
+                    onPressed: (_actionsLocked ||
+                            !c.hasConfirmedInventory ||
+                            c.ownsNocturne)
                         ? null
-                        : () async {
-                            final h =
-                                await c.unlockNocturneTheme(preferAstra: true);
-                            _append('exchange handle=$h');
-                            await _pump();
-                          },
+                        : () => _runBusy(() async {
+                              _append(
+                                'pre-exchange ${c.formatInventoryAudit()}',
+                              );
+                              final h = await c.unlockNocturneTheme(
+                                preferAstra: true,
+                              );
+                              _append(
+                                'exchange handle=$h detail=${c.activeOp.detail}',
+                              );
+                              await _pump();
+                              _append(
+                                'post-exchange ${c.formatInventoryAudit()}',
+                              );
+                            }),
                     child: Text(
-                      c.ownsNocturne ? 'Theme owned' : 'Exchange → Theme',
+                      !c.hasConfirmedInventory
+                          ? 'Theme (pending)'
+                          : (c.ownsNocturne
+                              ? 'Theme owned'
+                              : 'Exchange → Theme'),
                     ),
                   ),
+                  if (showReset)
+                    FilledButton(
+                      onPressed: (_actionsLocked ||
+                              !c.hasConfirmedInventory ||
+                              !c.ownsNocturne)
+                          ? null
+                          : () => _runBusy(() async {
+                                final astraBefore = c.astra;
+                                _append(
+                                  'pre-reset Astra=$astraBefore '
+                                  '${c.formatInventoryAudit()}',
+                                );
+                                final h = await c.consumeThemeReset();
+                                _append(
+                                  'consumeThemeReset handle=$h '
+                                  'detail=${c.activeOp.detail}',
+                                );
+                                await _pump();
+                                _append(
+                                  'post-reset Astra=${c.astra} '
+                                  '(expect $astraBefore) '
+                                  'Theme=${c.ownsNocturne} '
+                                  '${c.formatInventoryAudit()}',
+                                );
+                              }),
+                      child: const Text('Consume Theme Reset'),
+                    ),
                   FilledButton(
-                    onPressed: () async {
-                      final h = await c.claimEchoPromo();
-                      _append('promo=$h');
-                      await _pump();
-                    },
+                    onPressed: _actionsLocked
+                        ? null
+                        : () => _runBusy(() async {
+                              final h = await c.claimEchoPromo();
+                              _append('promo=$h');
+                              await _pump();
+                            }),
                     child: const Text('AddPromoItem Echo'),
                   ),
                   FilledButton(
-                    onPressed: () async {
-                      final h = await c.claimEchoPlaytimeDrop();
-                      _append('drop=$h');
-                      await _pump();
-                    },
+                    onPressed: _actionsLocked
+                        ? null
+                        : () => _runBusy(() async {
+                              final h = await c.claimEchoPlaytimeDrop();
+                              _append('drop=$h');
+                              await _pump();
+                            }),
                     child: const Text('TriggerItemDrop'),
                   ),
                   OutlinedButton(
-                    onPressed: _pump,
+                    onPressed: _actionsLocked
+                        ? null
+                        : () => _runBusy(_pump),
                     child: const Text('Poll callbacks'),
                   ),
                 ],
               ),
-              const SizedBox(height: 12),
-              Text(_log, style: Theme.of(context).textTheme.bodySmall),
+              if (isSteamInventoryPocVerboseLog) ...[
+                const SizedBox(height: 12),
+                Text(_log, style: Theme.of(context).textTheme.bodySmall),
+              ],
             ],
           ),
         ),

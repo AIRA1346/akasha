@@ -13,7 +13,15 @@ class SteamInventoryItem {
   final int flags;
 }
 
-enum SteamInventoryOpKind { load, prices, purchase, exchange, promo, playtimeDrop }
+enum SteamInventoryOpKind {
+  load,
+  prices,
+  purchase,
+  exchange,
+  consume,
+  promo,
+  playtimeDrop,
+}
 
 enum SteamInventoryOpStatus { idle, pending, ok, failed }
 

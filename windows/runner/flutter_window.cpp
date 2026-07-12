@@ -4,6 +4,7 @@
 
 #include "flutter/generated_plugin_registrant.h"
 #include "steam_inventory_poc_channel.h"
+#include "steam_runtime.h"
 
 FlutterWindow::FlutterWindow(const flutter::DartProject& project)
     : project_(project) {}
@@ -29,6 +30,14 @@ bool FlutterWindow::OnCreate() {
   steam_inventory_poc_channel_.Register(flutter_controller_->engine());
   SetChildContent(flutter_controller_->view()->GetNativeWindow());
 
+  // Pump Steam callbacks on the UI thread without replacing GetMessage.
+  // Only while SteamRuntime is initialized; no-op otherwise.
+  if (SteamRuntime::Initialized() && GetHandle() != nullptr) {
+    steam_pump_timer_active_ =
+        ::SetTimer(GetHandle(), kSteamPumpTimerId, kSteamPumpIntervalMs,
+                   nullptr) != 0;
+  }
+
   flutter_controller_->engine()->SetNextFrameCallback([&]() {
     this->Show();
   });
@@ -42,6 +51,11 @@ bool FlutterWindow::OnCreate() {
 }
 
 void FlutterWindow::OnDestroy() {
+  if (steam_pump_timer_active_ && GetHandle() != nullptr) {
+    ::KillTimer(GetHandle(), kSteamPumpTimerId);
+    steam_pump_timer_active_ = false;
+  }
+
   if (flutter_controller_) {
     flutter_controller_ = nullptr;
   }
@@ -53,6 +67,17 @@ LRESULT
 FlutterWindow::MessageHandler(HWND hwnd, UINT const message,
                               WPARAM const wparam,
                               LPARAM const lparam) noexcept {
+  if (message == WM_TIMER && wparam == kSteamPumpTimerId) {
+    // Steam callbacks + Overlay Present when event-driven Flutter is idle.
+    SteamRuntime::NoteSteamTimerTick();
+    SteamInventoryPocChannel::PumpCallbacks();
+    if (SteamRuntime::OverlayNeedsPresent() && flutter_controller_) {
+      flutter_controller_->ForceRedraw();
+      SteamRuntime::NoteOverlayForceRedraw();
+    }
+    return 0;
+  }
+
   // Give Flutter, including plugins, an opportunity to handle window messages.
   if (flutter_controller_) {
     std::optional<LRESULT> result =

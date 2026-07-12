@@ -22,6 +22,12 @@ const bool kSteamInventoryPocBuild = bool.fromEnvironment(
 bool get isSteamInventoryPocEnabled =>
     kDebugMode || kSteamInventoryPocBuild;
 
+/// Consume Theme Reset — Debug only. Hidden in Release (incl. dart-define POC).
+bool get isSteamInventoryPocDevResetEnabled => kDebugMode;
+
+/// Verbose POC audit / ResultReady detail lines — Debug only.
+bool get isSteamInventoryPocVerboseLog => kDebugMode;
+
 /// Factory: prefer native channel when available, else fake.
 Future<SteamInventoryPocController> createSteamInventoryPocController({
   bool forceFake = false,

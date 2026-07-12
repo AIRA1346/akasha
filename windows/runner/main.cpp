@@ -3,7 +3,7 @@
 #include <windows.h>
 
 #include "flutter_window.h"
-#include "steam_inventory_poc_channel.h"
+#include "steam_runtime.h"
 #include "utils.h"
 
 int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
@@ -14,41 +14,51 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
     CreateAndAttachConsole();
   }
 
-  // Initialize COM, so that it is available for use in the library and/or
-  // plugins.
+  // Steam must initialize before Flutter/D3D so Overlay can hook the renderer.
+  // RestartAppIfNecessary=true -> exit so Steam can relaunch.
+  // Init failure -> continue without Steam (POC channel reports not ready).
+  if (!SteamRuntime::Bootstrap()) {
+    return EXIT_SUCCESS;
+  }
+
   ::CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED);
 
-  flutter::DartProject project(L"data");
+  int exit_code = EXIT_SUCCESS;
+  {
+    flutter::DartProject project(L"data");
 
-  std::vector<std::string> command_line_arguments =
-      GetCommandLineArguments();
+    std::vector<std::string> command_line_arguments =
+        GetCommandLineArguments();
 
-  const bool is_command_mode =
-      !command_line_arguments.empty() &&
-      (command_line_arguments.front() == "candidate" ||
-       command_line_arguments.front() == "record");
-  if (is_command_mode) {
-    project.set_dart_entrypoint("commandMain");
-  }
+    const bool is_command_mode =
+        !command_line_arguments.empty() &&
+        (command_line_arguments.front() == "candidate" ||
+         command_line_arguments.front() == "record");
+    if (is_command_mode) {
+      project.set_dart_entrypoint("commandMain");
+    }
 
-  project.set_dart_entrypoint_arguments(std::move(command_line_arguments));
+    project.set_dart_entrypoint_arguments(std::move(command_line_arguments));
 
-  FlutterWindow window(project);
-  Win32Window::Point origin(10, 10);
-  Win32Window::Size size(1280, 720);
-  if (!window.Create(L"akasha", origin, size)) {
-    return EXIT_FAILURE;
-  }
-  window.SetQuitOnClose(true);
+    FlutterWindow window(project);
+    Win32Window::Point origin(10, 10);
+    Win32Window::Size size(1280, 720);
+    if (!window.Create(L"akasha", origin, size)) {
+      exit_code = EXIT_FAILURE;
+    } else {
+      window.SetQuitOnClose(true);
 
-  ::MSG msg;
-  while (::GetMessage(&msg, nullptr, 0, 0)) {
-    // Keep Steam inventory / purchase callbacks progressing.
-    SteamInventoryPocChannel::PumpCallbacks();
-    ::TranslateMessage(&msg);
-    ::DispatchMessage(&msg);
-  }
+      // Standard Flutter Win32 message loop. Steam callbacks are pumped from
+      // a WM_TIMER on the FlutterWindow (see flutter_window.cpp), not here.
+      ::MSG msg;
+      while (::GetMessage(&msg, nullptr, 0, 0)) {
+        ::TranslateMessage(&msg);
+        ::DispatchMessage(&msg);
+      }
+    }
+  }  // FlutterWindow + channel destroyed here
 
+  SteamRuntime::Shutdown();
   ::CoUninitialize();
-  return EXIT_SUCCESS;
+  return exit_code;
 }

@@ -1,7 +1,7 @@
 # Steam Inventory Commerce Feasibility Gate
 
-> **Date:** 2026-07-12  
-> **Verdict:** **Provisional Go** (feasibility) — **final Go pending live Inventory POC**  
+> **Date:** 2026-07-13  
+> **Verdict:** **Steam Inventory Sandbox E2E POC passed** — not production IAP Go  
 > **POC runbook:** [steam_inventory_poc/README.md](steam_inventory_poc/README.md)  
 > **Scope:** Feasibility audit + minimal in-repo POC harness — no store UI / flag still false  
 > **Flag:** `steamInAppPurchasesEnabled = false` (unchanged)  
@@ -11,7 +11,18 @@
 
 ## Verdict (one sentence)
 
-AKASHA v1 paid themes + Astra packs + Support can be owned and settled by **Steam Inventory Service**; keep Astra/Echo **domain rules**, **defer** the custom MicroTxn backend, and use only a **tiny GetReport evidence tool** for review — not Cloud Run + Postgres ledger.
+AKASHA v1 paid themes + Astra packs + Support **can** be owned and settled by **Steam Inventory Service** in a developer Sandbox E2E; keep Astra/Echo **domain rules**, **defer** the custom MicroTxn backend, and use only a **tiny GetReport evidence tool** for review — not Cloud Run + Postgres ledger.
+
+### Sandbox E2E limitations (must stay explicit)
+
+| Constraint | Status |
+|---|---|
+| Developer sandbox Steam account verified | Yes |
+| Local Release exe (`AKASHA_STEAM_INVENTORY_POC`) verified | Yes |
+| Steam depot / library launch build re-verified | **Not yet** |
+| Production price policy (VLV / Astra pack / theme cost) | **Not finalized** — current numbers are POC tech settings |
+| `steamInAppPurchasesEnabled` | **`false`** (must remain until product IAP work) |
+| Real-money end-user purchase outside Sandbox | **Not claimed** |
 
 ---
 
@@ -23,7 +34,7 @@ AKASHA v1 paid themes + Astra packs + Support can be owned and settled by **Stea
 | Astra pack (e.g. 100) | Priced sellable grant | `type: bundle` → `10001x100` **or** priced item that expands to units | `price` / `price_category` (VLV…); not tradable/marketable |
 | Echo unit | Free-earned stackable | `type: item`, id e.g. `10002` | Same stack/trade flags as Astra; **no** store price |
 | Echo grant sources | Promo / playtime | `promo` rules; `type: playtimegenerator` → Echo | Client may call `AddPromoItem` / `TriggerItemDrop`; Steam enforces rules |
-| Theme (e.g. Midnight) | Permanent unlock | `type: item`, id e.g. `20001` | `tradable: false`, `marketable: false`, `purchase_limit: 1` (Item Store only); `exchange` recipes |
+| Theme (e.g. Nocturne) | Permanent unlock | ItemDef `20001`; exchange via bundle `20010` | Ownership qty ≥ 1; **do not** put legacy `exchange` on `20001` |
 | Support AKASHA | Cosmetic / token | Priced `item` (badge or spend-token) | No gameplay entitlement; optional `purchase_limit`; not tradable/marketable |
 
 Display names (Astra/Echo) stay in UI/l10n; ItemDef `name` can match EN for Steam Store surfaces.

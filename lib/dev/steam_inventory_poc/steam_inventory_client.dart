@@ -28,6 +28,12 @@ abstract class SteamInventoryClient {
     required List<int> destroyQuantities,
   });
 
+  /// POC-only: consume one stack quantity from a real item instance ID.
+  Future<String> consumeItem({
+    required String instanceId,
+    required int quantity,
+  });
+
   Future<String> addPromoItem(int itemDefId);
 
   Future<String> triggerItemDrop(int playtimeGeneratorDefId);

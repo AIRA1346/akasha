@@ -63,20 +63,28 @@ void main() {
 
   test('ExchangeItems spends Astra and grants theme atomically (fake)', () async {
     fake = FakeSteamInventoryClient(
-      initialStacks: {SteamInventoryPocIds.astraUnit: 10},
+      initialStacks: {SteamInventoryPocIds.astraUnit: 300},
     );
     poc = SteamInventoryPocController(fake);
     await poc.refreshInventory();
     final h = await poc.unlockNocturneTheme(preferAstra: true);
-    await poc.pump();
     expect(h, isNotNull);
-    expect(poc.astra, 0);
+    expect(
+      poc.activeOp.detail,
+      contains('exchangeApiAccepted=true'),
+    );
+    expect(
+      poc.activeOp.detail,
+      contains('generate=${SteamInventoryPocIds.themeNocturneExchange}x1'),
+    );
+    await poc.pump();
+    expect(poc.astra, 200);
     expect(poc.ownsNocturne, isTrue);
   });
 
   test('duplicate exchange after own is blocked; inventory re-query converges', () async {
     fake = FakeSteamInventoryClient(
-      initialStacks: {SteamInventoryPocIds.astraUnit: 20},
+      initialStacks: {SteamInventoryPocIds.astraUnit: 200},
     );
     poc = SteamInventoryPocController(fake);
     await poc.refreshInventory();
@@ -88,7 +96,7 @@ void main() {
     expect(again, isNull);
     await poc.refreshInventory();
     expect(poc.ownsNocturne, isTrue);
-    expect(poc.astra, 10); // only one exchange spent 10
+    expect(poc.astra, 100); // only one exchange spent 100
   });
 
   test('offline blocks purchase and exchange; confirmed theme still applicable', () async {
@@ -110,5 +118,101 @@ void main() {
     await poc.pump();
     expect(h, isNotNull);
     expect(poc.echo, 5);
+  });
+
+  test('Consume Theme Reset removes theme and leaves Astra untouched', () async {
+    fake = FakeSteamInventoryClient(
+      initialStacks: {
+        SteamInventoryPocIds.astraUnit: 370,
+        SteamInventoryPocIds.themeNocturne: 1,
+      },
+    );
+    poc = SteamInventoryPocController(fake);
+    await poc.refreshInventory();
+    expect(poc.astra, 370);
+    expect(poc.ownsNocturne, isTrue);
+    expect(poc.formatInventoryAudit(), contains('Astra total=370'));
+    expect(poc.formatInventoryAudit(), contains('Theme20001 total=1'));
+
+    final h = await poc.consumeThemeReset();
+    expect(h, isNotNull);
+    expect(poc.activeOp.detail, contains('quantity=1'));
+    expect(poc.activeOp.detail, contains('Astra untouched'));
+    await poc.pump();
+    expect(poc.astra, 370);
+    expect(poc.ownsNocturne, isFalse);
+
+    final exchange = await poc.unlockNocturneTheme(preferAstra: true);
+    expect(exchange, isNotNull);
+    await poc.pump();
+    expect(poc.astra, 270);
+    expect(poc.ownsNocturne, isTrue);
+  });
+
+  test('blocks duplicate purchase/exchange while mutation pending', () async {
+    fake = FakeSteamInventoryClient(
+      initialStacks: {SteamInventoryPocIds.astraUnit: 200},
+    )..delayPurchase = true;
+    poc = SteamInventoryPocController(fake);
+    await poc.refreshInventory();
+
+    final first = await poc.buyAstraPack100();
+    expect(first, isNotNull);
+    expect(poc.isMutationPending, isTrue);
+    expect(await poc.buyAstraPack100(), isNull);
+    expect(poc.isMutationPending, isTrue);
+    expect(await poc.unlockNocturneTheme(preferAstra: true), isNull);
+    expect(poc.isMutationPending, isTrue);
+    expect(poc.activeOp.kind, SteamInventoryOpKind.purchase);
+
+    fake.complete(first!);
+    await poc.pump();
+    expect(poc.hasConfirmedInventory, isTrue);
+    expect(poc.astra, 300);
+  });
+
+  test('Theme ownership is qty>=1; multi-instance audit shows total', () async {
+    poc.lastSnapshot = SteamInventorySnapshot(
+      items: const [
+        SteamInventoryItem(
+          instanceId: 't1',
+          itemDefId: SteamInventoryPocIds.themeNocturne,
+          quantity: 1,
+        ),
+        SteamInventoryItem(
+          instanceId: 't2',
+          itemDefId: SteamInventoryPocIds.themeNocturne,
+          quantity: 1,
+        ),
+      ],
+      fetchedAt: DateTime.now().toUtc(),
+    );
+    expect(poc.ownsNocturne, isTrue);
+    expect(
+      poc.lastSnapshot!.quantityOf(SteamInventoryPocIds.themeNocturne),
+      2,
+    );
+    final audit = poc.formatInventoryAudit();
+    expect(audit, contains('Theme20001 total=2'));
+    expect(audit, contains('DUPLICATE_OR_MULTI'));
+    expect(audit, contains('instanceCount=2'));
+  });
+
+  test('Steam inventory authority survives controller recreate (same client)', () async {
+    fake = FakeSteamInventoryClient(
+      initialStacks: {SteamInventoryPocIds.astraUnit: 200},
+    );
+    poc = SteamInventoryPocController(fake);
+    await poc.refreshInventory();
+    await poc.unlockNocturneTheme(preferAstra: true);
+    await poc.pump();
+    expect(poc.astra, 100);
+    expect(poc.ownsNocturne, isTrue);
+
+    final again = SteamInventoryPocController(fake);
+    await again.refreshInventory();
+    expect(again.hasConfirmedInventory, isTrue);
+    expect(again.astra, 100);
+    expect(again.ownsNocturne, isTrue);
   });
 }

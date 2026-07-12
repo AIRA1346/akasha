@@ -24,6 +24,9 @@ class FlutterWindow : public Win32Window {
                          LPARAM const lparam) noexcept override;
 
  private:
+  static constexpr UINT_PTR kSteamPumpTimerId = 0x53544D50;  // 'STMP'
+  static constexpr UINT kSteamPumpIntervalMs = 30;           // ~33 Hz
+
   // The project to run.
   flutter::DartProject project_;
 
@@ -31,6 +34,7 @@ class FlutterWindow : public Win32Window {
   std::unique_ptr<flutter::FlutterViewController> flutter_controller_;
 
   SteamInventoryPocChannel steam_inventory_poc_channel_;
+  bool steam_pump_timer_active_ = false;
 };
 
 #endif  // RUNNER_FLUTTER_WINDOW_H_
