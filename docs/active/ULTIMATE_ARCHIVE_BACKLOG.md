@@ -154,15 +154,15 @@ These matter, but they are not the current ultimate-archive core.
 
 ## 9. Current Next Step
 
-**Product priority (after docs cleanup):** Steam M3 dogfood — fix issues found in real use first ([STEAM_RELEASE.md](STEAM_RELEASE.md)).
+**Architecture/cleanup gate:** [ARCHITECTURE_CLOSURE_AUDIT.md](ARCHITECTURE_CLOSURE_AUDIT.md) (2026-07-12) — S0 structural items before claiming Home scale closed; then Steam M3.
+
+**Product priority:** Steam M3 dogfood — fix issues found in real use ([STEAM_RELEASE.md](STEAM_RELEASE.md)), after or interleaved with minimal S0 fixes (especially C-04 Graph flag).
 
 **Separate architecture slice (not interleaved with dogfood):**
 
 > **[SA-05 Timeline projection gate](SA_05_TIMELINE_PROJECTION_DECISION.md):**
 > measure the current Timeline loader and fix the exact cursor, preview, and
-> unreadable-source contract before implementation. The first Timeline table
-> must remain a derived local projection; Journal, Entity, Link/graph, Taste,
-> and snippet queries must not be folded into it merely for convenience.
+> unreadable-source contract before implementation.
 
 **Deferred prerequisite (no ADR until then):** UA-122 — §7 implementation contract ADR when semantic history or behavioral aggregates implementation begins.
 

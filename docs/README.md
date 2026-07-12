@@ -23,6 +23,7 @@ AKASHA 프로젝트의 문서 관리 시스템입니다.
 | 파일 | 역할 | 설명 |
 |---|---|---|
 | [AKASHA_ARCHIVE_CONSTITUTION.md](active/AKASHA_ARCHIVE_CONSTITUTION.md) | **Supreme SSOT** | 사용자 소유 개인 아카이브 프로토콜. 장기 원칙·아키텍처 거부 기준. |
+| [ARCHITECTURE_CLOSURE_AUDIT.md](active/ARCHITECTURE_CLOSURE_AUDIT.md) | **Closure Audit** | 2026-07-12 아키텍처·정리 단계 감사. S0/S1/S2 분리 · 수정 순서. |
 | [VISION.md](active/VISION.md) | **v1 Product SSOT** | Steam v1 제품 범위·유저 여정·티어 정책 (원칙은 Constitution). |
 | [CURRENT_STATE.md](active/CURRENT_STATE.md) | **Reality SSOT** | 실제 코드 및 레지스트리 상태 기준 구현 현황. |
 | [PROJECT_CONSTITUTION.md](active/PROJECT_CONSTITUTION.md) | **Stub (superseded)** | 구헌법 리다이렉트 → [history](history/PROJECT_CONSTITUTION.md). |
