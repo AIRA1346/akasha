@@ -57,6 +57,6 @@ Evidence PNGs live in this folder.
 After P1 English verification closes major chrome:
 
 - **A.** Fast resubmit: clear Store IAP, keep purchase UI hidden  
-- **B.** Full Pearl + Steam Wallet + GetReport before claiming IAP  
+- **B.** Full Astra/Echo + Steam Wallet + GetReport before claiming IAP  
 
 IAP stays disabled until that decision.

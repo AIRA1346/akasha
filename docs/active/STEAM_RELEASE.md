@@ -27,7 +27,7 @@ AKASHA가 예쁘게 정리해서 보여준다.
 - AI agent/player/tool 구현 약속
 - 음악 재생, 추천 엔진, 자동화된 외부 도구 연동 약속
 
-테마는 v1에서 모두 무료로 제공한다. Steam IAP / Pearl / Black Pearl은 [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) P3–P6이 검증되기 전에 스토어·앱에 구매로 표시하지 않는다.
+테마는 v1에서 모두 무료로 제공한다. Steam IAP / Astra·Echo는 [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md)와 [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) P5–P6이 검증되기 전에 스토어·앱에 구매로 표시하지 않는다.
 
 ---
 

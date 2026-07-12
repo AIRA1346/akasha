@@ -21,8 +21,8 @@ Close Steam review / payment / localization blockers so AKASHA can ship and dogf
 | **P1** | English localization applies to all major UI in a real build | **Visual pass (chrome)** — see [evidence/p1-english-ui-2026-07-12](evidence/p1-english-ui-2026-07-12/README.md); deep Work/Entity vault flows deferred when vault path unavailable |
 | **P2** | Exact English switch path + resubmission Notes for Steam reviewers | **Draft ready** (§Reviewer English path) |
 | **P3** | Unimplemented IAP stated clearly in docs + `FeatureFlags` | **Done in this slice** — `steamInAppPurchasesEnabled = false` |
-| **P4** | Pearl / Black Pearl currency contract + product · unlock · donation flows | **Design pending** — do not ship UI as live purchase |
-| **P5** | Steam Wallet → confirm → grant → consume ledger → no double-grant → refund/cancel → GetReport reconciliation (one verifiable flow) | **Not started** — blocked until P3/P4 contracts exist |
+| **P4** | Astra/Echo (`premium`/`earned`) currency contract + product · unlock · donation domain | **Domain slice done** — [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md); Steam/UI not wired |
+| **P5** | Steam Wallet → confirm → grant → consume ledger → no double-grant → refund/cancel → GetReport reconciliation | **Not started** — next after secure backend adapter |
 | **P6** | Non-sandbox test purchase + GetReport sample + test account pack for resubmission | **Not started** — after P5 |
 
 **Hard rule:** Do **not** mark Store Page or in-app UI as having IAP while the Steam payment flow is incomplete. Prefer temporarily clearing Store “In-App Purchases” until P5+P6 are green.
@@ -67,7 +67,7 @@ Fix **only** when dogfood / review / large-vault ship friction is confirmed.
 | `EntitlementService.purchaseCosmetic` | Stub; returns `false`; no Steamworks microtxn |
 | Themes | Free / unlocked for v1; no locked IAP picker in ship UI |
 | Store Page “In-App Purchases” | **May be cleared** until P5+P6 complete |
-| Pearl / Black Pearl | **Not implemented** — design under P4 before any grant path |
+| Astra / Echo (`premium` / `earned`) | Domain contract + fake tests landed; **no live purchase** |
 
 Do not resubmit claiming purchases exist until P5 is verifiable end-to-end.
 
@@ -99,7 +99,7 @@ To switch to English during review:
 
 In-App Purchases: Not implemented in this build.
 FeatureFlags.steamInAppPurchasesEnabled is false. There is no Steam Wallet /
-microtransaction purchase flow, no Pearl currency grant, and no paid unlock UI.
+microtransaction purchase flow, no Astra currency grant, and no paid unlock UI.
 All current themes are free. Please treat the app as free with no IAP for this
 submission. Store "In-App Purchases" may be unset until a complete Steam payment
 + GetReport reconciliation build is ready.
@@ -112,7 +112,7 @@ Korean mirror (internal):
 영어 전환: Esc → Preferences → Display language → English
 (또는 볼트 설정 내 동일 드롭다운).
 인앱 구매: 본 빌드 미구현. steamInAppPurchasesEnabled=false.
-펄/Steam Wallet 결제 없음. 테마는 전부 무료. IAP 완성 전 Store IAP 표시 제거 가능.
+Astra/Steam Wallet 결제 없음. 테마는 전부 무료. IAP 완성 전 Store IAP 표시 제거 가능.
 ```
 
 ---
@@ -134,26 +134,21 @@ Korean mirror (internal):
 | FeatureFlag-hidden surfaces | Timeline, Graph, Discovery, Universe, Recall | **PASS** after Timeline gate fix |
 
 **Fixes in P1 slice:** vault banner + default-vault dialog l10n; Timeline FeatureFlag gate.
+
 ---
 
-## P4 — Pearl / Black Pearl (design placeholder)
+## P4 — Astra / Echo commerce domain
 
-Do not implement spend/grant UI until this contract is written and reviewed.
+**SSOT:** [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md)
 
-Draft skeleton (fill in P4 slice):
+| Kind | Display | Qualifier |
+|---|---|---|
+| `premium` | Astra / 아스트라 | Paid / 유료 |
+| `earned` | Echo / 에코 | Earned / 무료 획득 |
 
-| Currency | Role | Grant source | Spend |
-|---|---|---|---|
-| Pearl | Soft / purchasable via Steam Wallet packs | Steam microtxn confirm + ledger | Unlock cosmetic / tips (TBD) |
-| Black Pearl | Premium / scarce (TBD) | TBD — never silent grant | Donation / special unlock (TBD) |
-
-Required before code:
-
-- SKU ↔ pearl amount table  
-- Local durable ledger location (`system/` vs app prefs — decide in P4)  
-- Idempotency key = Steam order / txn id  
-- Refund path zeroes balance or claws back unlock  
-- GetReport reconciliation job definition  
+**This slice:** server-neutral models + `CommerceService` + fake repo/provider tests.  
+**Not in this slice:** Steam API, Flutter store UI, attendance / invites / auto Echo rewards.  
+**Authority:** append-only ledger + entitlements — never in user Vault.
 
 ---
 
@@ -172,5 +167,7 @@ Required before code:
 |---|---|
 | Architecture Closure | Declared |
 | analyze / test at Closure | 0 / 930 |
+| P1 English UI | Evidence folder + 933 tests |
+| P4 commerce domain | `lib/core/commerce/` + contract doc; Steam/UI not wired |
 | IAP flag | `steamInAppPurchasesEnabled == false` |
 | Reviewer English path | Documented above |
