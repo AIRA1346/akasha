@@ -292,6 +292,33 @@ class AppLocalizationsEn extends AppLocalizations {
       'No folder linked. Link a Sanctum Vault folder to save records as markdown permanently.';
 
   @override
+  String get homeVaultBannerExploringCatalog =>
+      'Exploring the catalog. Link a local folder to save records.';
+
+  @override
+  String get homeVaultBannerConnectExisting => 'Link existing folder';
+
+  @override
+  String get homeVaultBannerCreateDefault => 'Create default archive';
+
+  @override
+  String homeVaultCreateFailed(String error) {
+    return 'Could not finish creating the default archive: $error';
+  }
+
+  @override
+  String get homeVaultCreateDoneTitle => 'Archive created';
+
+  @override
+  String get homeVaultCreateDoneBody =>
+      'This folder is AKASHA\'s body. These files—not the app—are your archive.';
+
+  @override
+  String homeVaultCreateDonePath(String path) {
+    return 'Created path:\n$path';
+  }
+
+  @override
   String vaultStatusLinked(int count) {
     return 'Status: Linked · $count archive .md files';
   }

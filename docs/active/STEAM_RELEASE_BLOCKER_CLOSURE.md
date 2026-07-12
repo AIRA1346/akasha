@@ -18,7 +18,7 @@ Close Steam review / payment / localization blockers so AKASHA can ship and dogf
 
 | # | Work | State |
 |---|---|---|
-| **P1** | English localization applies to all major UI in a real build | **In progress** — switch path verified in code; full UI sweep checklist below |
+| **P1** | English localization applies to all major UI in a real build | **Visual pass (chrome)** — see [evidence/p1-english-ui-2026-07-12](evidence/p1-english-ui-2026-07-12/README.md); deep Work/Entity vault flows deferred when vault path unavailable |
 | **P2** | Exact English switch path + resubmission Notes for Steam reviewers | **Draft ready** (§Reviewer English path) |
 | **P3** | Unimplemented IAP stated clearly in docs + `FeatureFlags` | **Done in this slice** — `steamInAppPurchasesEnabled = false` |
 | **P4** | Pearl / Black Pearl currency contract + product · unlock · donation flows | **Design pending** — do not ship UI as live purchase |
@@ -119,24 +119,21 @@ Korean mirror (internal):
 
 ## P1 — English major-UI verification checklist
 
-Run against a **Release** build with locale **English**. Mark each row after visual check.
+**Evidence:** [evidence/p1-english-ui-2026-07-12/README.md](evidence/p1-english-ui-2026-07-12/README.md) (Release screenshots + results).
 
 | Area | Expected English chrome | Status |
 |---|---|---|
-| Preferences (Esc) | Title, language, scale, theme, vault, quit/close | Code + widget test cover dialog strings |
-| Vault settings | Language, path, backup, trash, close | l10n wired; fallbacks Korean if l10n null |
-| Home dashboard / app bar | Tooltips, sync, vault settings | Mostly l10n + KO fallbacks |
-| Browse / search chrome | Labels, empty states | Sweep needed |
-| Work detail / Workbench | Info panel, save, tabs | Sweep needed |
-| Personal library / collection dialogs | Create/edit/delete | Sweep needed |
-| Sidebar | Library names, prompts | l10n wired |
-| Theme picker | Free themes only; no purchase lock copy | Confirm no IAP lock UI |
-| Error / SnackBar paths | Prefer l10n; KO fallback only if `l10n == null` | Sweep needed |
+| Preferences (Esc) | Title, language, scale, theme, vault, quit/close | **PASS** (screenshot) |
+| Locale persistence | English after restart | **PASS** |
+| Vault unlinked banner | English message + actions | **PASS** after l10n fix |
+| Home / sidebar nav | Home, Explore, Library, Collections | **PASS**; Timeline/Graph hidden by flag |
+| Browse / search chrome | Labels, empty states | **PASS** on captured surfaces |
+| Work detail / Workbench | Info panel, save, tabs | **Deferred** — vault path unavailable this run |
+| Personal library / collection | Create/edit/delete | **Partial** — Library English labels OK |
+| Theme picker | Free themes only; no purchase lock copy | **PASS** (no IAP chrome) |
+| FeatureFlag-hidden surfaces | Timeline, Graph, Discovery, Universe, Recall | **PASS** after Timeline gate fix |
 
-**Method:** Set English → walk P0 dogfood surfaces → note any remaining Korean chrome → fix per surface (small PR), do not invent a localization framework.
-
-**Known risk:** Many widgets use `l10n?.key ?? '한국어 fallback'`. When `AppLocalizations` is present (normal MaterialApp), English arb should win. Gaps = hardcoded Korean **without** l10n, or missing arb keys.
-
+**Fixes in P1 slice:** vault banner + default-vault dialog l10n; Timeline FeatureFlag gate.
 ---
 
 ## P4 — Pearl / Black Pearl (design placeholder)

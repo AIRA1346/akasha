@@ -287,6 +287,33 @@ class AppLocalizationsKo extends AppLocalizations {
       '연동된 폴더가 없습니다. 마크다운 파일로 영속적으로 기록하려면 Sanctum Vault 폴더를 연동해 주세요.';
 
   @override
+  String get homeVaultBannerExploringCatalog =>
+      '카탈로그로 탐험 중입니다. 기록을 저장하려면 로컬 폴더를 연결하세요.';
+
+  @override
+  String get homeVaultBannerConnectExisting => '기존 폴더 연결';
+
+  @override
+  String get homeVaultBannerCreateDefault => '기본 아카이브 만들기';
+
+  @override
+  String homeVaultCreateFailed(String error) {
+    return '기본 아카이브 생성을 완료하지 못했습니다: $error';
+  }
+
+  @override
+  String get homeVaultCreateDoneTitle => '아카이브 생성 완료';
+
+  @override
+  String get homeVaultCreateDoneBody =>
+      '이 폴더가 AKASHA의 본체입니다. 앱이 아니라, 이 파일들이 당신의 아카이브입니다.';
+
+  @override
+  String homeVaultCreateDonePath(String path) {
+    return '생성된 경로:\n$path';
+  }
+
+  @override
   String vaultStatusLinked(int count) {
     return '상태: 연동됨 · 아카이브 .md $count개';
   }

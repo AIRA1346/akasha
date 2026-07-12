@@ -86,6 +86,7 @@ Future<void> _homeDialogsCoordinatorCreateDefaultVault(
   required DefaultVaultPathResolver resolver,
 }) async {
   String? targetPath;
+  final l10n = lookupAppL10n(coord.hostContext());
 
   try {
     final preferredDir = await resolver.resolvePreferredPath();
@@ -98,7 +99,11 @@ Future<void> _homeDialogsCoordinatorCreateDefaultVault(
       Directory(targetPath).createSync(recursive: true);
     } catch (e) {
       if (coord.isMounted()) {
-        coord.showMessage('기본 아카이브 생성을 완료하지 못했습니다: $e');
+        coord.showMessage(
+          l10n != null
+              ? l10n.homeVaultCreateFailed(e.toString())
+              : '기본 아카이브 생성을 완료하지 못했습니다: $e',
+        );
       }
       return;
     }
@@ -113,29 +118,38 @@ Future<void> _homeDialogsCoordinatorCreateDefaultVault(
     if (coord.isMounted()) {
       final context = coord.hostContext();
       if (context.mounted) {
+        final dialogL10n = lookupAppL10n(context);
         showDialog(
           context: context,
           builder: (dialogCtx) => AlertDialog(
-            title: const Text('아카이브 생성 완료'),
+            title: Text(
+              dialogL10n?.homeVaultCreateDoneTitle ?? '아카이브 생성 완료',
+            ),
             content: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  '이 폴더가 AKASHA의 본체입니다. 앱이 아니라, 이 파일들이 당신의 아카이브입니다.',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                Text(
+                  dialogL10n?.homeVaultCreateDoneBody ??
+                      '이 폴더가 AKASHA의 본체입니다. 앱이 아니라, 이 파일들이 당신의 아카이브입니다.',
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 12),
                 Text(
-                  '생성된 경로:\n$targetPath',
-                  style: TextStyle(color: Theme.of(dialogCtx).disabledColor, fontSize: 13),
+                  dialogL10n != null
+                      ? dialogL10n.homeVaultCreateDonePath(targetPath!)
+                      : '생성된 경로:\n$targetPath',
+                  style: TextStyle(
+                    color: Theme.of(dialogCtx).disabledColor,
+                    fontSize: 13,
+                  ),
                 ),
               ],
             ),
             actions: [
               TextButton(
                 onPressed: () => Navigator.of(dialogCtx).pop(),
-                child: const Text('확인'),
+                child: Text(dialogL10n?.actionClose ?? '확인'),
               ),
             ],
           ),
@@ -144,7 +158,11 @@ Future<void> _homeDialogsCoordinatorCreateDefaultVault(
     }
   } catch (e) {
     if (coord.isMounted()) {
-      coord.showMessage('볼트 로드 실패: $e');
+      coord.showMessage(
+        l10n != null
+            ? l10n.errorVaultConnectionFailed(e.toString())
+            : '볼트 로드 실패: $e',
+      );
     }
   }
 }

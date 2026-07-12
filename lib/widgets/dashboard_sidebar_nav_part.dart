@@ -68,12 +68,13 @@ class _DashboardSidebarPrimaryNav extends StatelessWidget {
               isSelected: isKnowledgeGraphMode,
               onTap: () => onGoKnowledgeGraph(),
             ),
-          _SidebarNavTile(
-            icon: Icons.access_time_outlined,
-            label: l10n?.sidebarTimeline ?? '타임라인',
-            isSelected: isTimelineMode,
-            onTap: onSelectTimeline,
-          ),
+          if (FeatureFlags.showTimeline)
+            _SidebarNavTile(
+              icon: Icons.access_time_outlined,
+              label: l10n?.sidebarTimeline ?? '타임라인',
+              isSelected: isTimelineMode,
+              onTap: onSelectTimeline,
+            ),
         ],
       ),
     );

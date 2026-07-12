@@ -620,6 +620,48 @@ abstract class AppLocalizations {
   /// **'No folder linked. Link a Sanctum Vault folder to save records as markdown permanently.'**
   String get vaultPathNotLinked;
 
+  /// No description provided for @homeVaultBannerExploringCatalog.
+  ///
+  /// In en, this message translates to:
+  /// **'Exploring the catalog. Link a local folder to save records.'**
+  String get homeVaultBannerExploringCatalog;
+
+  /// No description provided for @homeVaultBannerConnectExisting.
+  ///
+  /// In en, this message translates to:
+  /// **'Link existing folder'**
+  String get homeVaultBannerConnectExisting;
+
+  /// No description provided for @homeVaultBannerCreateDefault.
+  ///
+  /// In en, this message translates to:
+  /// **'Create default archive'**
+  String get homeVaultBannerCreateDefault;
+
+  /// No description provided for @homeVaultCreateFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not finish creating the default archive: {error}'**
+  String homeVaultCreateFailed(String error);
+
+  /// No description provided for @homeVaultCreateDoneTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive created'**
+  String get homeVaultCreateDoneTitle;
+
+  /// No description provided for @homeVaultCreateDoneBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This folder is AKASHA\'s body. These files—not the app—are your archive.'**
+  String get homeVaultCreateDoneBody;
+
+  /// No description provided for @homeVaultCreateDonePath.
+  ///
+  /// In en, this message translates to:
+  /// **'Created path:\n{path}'**
+  String homeVaultCreateDonePath(String path);
+
   /// No description provided for @vaultStatusLinked.
   ///
   /// In en, this message translates to:

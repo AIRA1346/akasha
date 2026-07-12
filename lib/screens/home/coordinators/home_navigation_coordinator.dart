@@ -163,6 +163,7 @@ class HomeNavigationCoordinator {
   }
 
   Future<void> selectTimeline() async {
+    if (!FeatureFlags.showTimeline) return;
     await workbench.showBrowse();
     scheduleRebuild(() {
       isExploreBrowseMode = false;

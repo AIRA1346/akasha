@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../theme/akasha_colors.dart';
 import '../../theme/akasha_spacing.dart';
 import '../../theme/akasha_typography.dart';
+import '../../utils/app_l10n.dart';
 
 /// 볼트 미연동 시 안내 배너 (R4-A3).
 ///
@@ -42,6 +43,7 @@ class _HomeVaultBannerState extends State<HomeVaultBanner> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final tint = AkashaColors.statusWarning;
     return Material(
       color: tint.withValues(alpha: 0.06),
@@ -63,7 +65,8 @@ class _HomeVaultBannerState extends State<HomeVaultBanner> {
                   SizedBox(width: AkashaSpacing.sm),
                   Expanded(
                     child: Text(
-                      '카탈로그로 탐험 중입니다. 기록을 저장하려면 로컬 폴더를 연결하세요.',
+                      l10n?.homeVaultBannerExploringCatalog ??
+                          '카탈로그로 탐험 중입니다. 기록을 저장하려면 로컬 폴더를 연결하세요.',
                       style: AkashaTypography.caption.copyWith(
                         color: tint.withValues(alpha: 0.85),
                         height: 1.3,
@@ -80,7 +83,9 @@ class _HomeVaultBannerState extends State<HomeVaultBanner> {
                     onTap: () {}, // Intercept tap bubbling
                     child: TextButton(
                       onPressed: _isCreating ? null : widget.onConnectVault,
-                      child: const Text('기존 폴더 연결'),
+                      child: Text(
+                        l10n?.homeVaultBannerConnectExisting ?? '기존 폴더 연결',
+                      ),
                     ),
                   ),
                   const SizedBox(width: 8),
@@ -96,7 +101,10 @@ class _HomeVaultBannerState extends State<HomeVaultBanner> {
                                 strokeWidth: 2,
                               ),
                             )
-                          : const Text('기본 아카이브 만들기'),
+                          : Text(
+                              l10n?.homeVaultBannerCreateDefault ??
+                                  '기본 아카이브 만들기',
+                            ),
                     ),
                   ),
                 ],

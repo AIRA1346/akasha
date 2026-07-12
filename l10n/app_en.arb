@@ -146,6 +146,27 @@
     }
   },
   "vaultPathNotLinked": "No folder linked. Link a Sanctum Vault folder to save records as markdown permanently.",
+  "homeVaultBannerExploringCatalog": "Exploring the catalog. Link a local folder to save records.",
+  "homeVaultBannerConnectExisting": "Link existing folder",
+  "homeVaultBannerCreateDefault": "Create default archive",
+  "homeVaultCreateFailed": "Could not finish creating the default archive: {error}",
+  "@homeVaultCreateFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "homeVaultCreateDoneTitle": "Archive created",
+  "homeVaultCreateDoneBody": "This folder is AKASHA's body. These files—not the app—are your archive.",
+  "homeVaultCreateDonePath": "Created path:\n{path}",
+  "@homeVaultCreateDonePath": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
   "vaultStatusLinked": "Status: Linked · {count} archive .md files",
   "@vaultStatusLinked": {
     "placeholders": {
