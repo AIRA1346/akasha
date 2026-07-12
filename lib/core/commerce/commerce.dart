@@ -1,13 +1,9 @@
-/// Server-neutral commerce domain (Astra/Echo · premium/earned).
+/// Shared commerce domain + thin client contract (Astra/Echo).
 ///
-/// See docs/active/COMMERCE_CURRENCY_CONTRACT.md.
+/// Payment authority is **not** in this tree. See
+/// `backend/akasha_commerce_server/` and docs/active/COMMERCE_CURRENCY_CONTRACT.md.
 library;
 
-export 'commerce_catalog.dart';
-export 'commerce_exceptions.dart';
-export 'commerce_models.dart';
-export 'commerce_ports.dart';
-export 'commerce_service.dart';
-export 'currency_kind.dart';
-export 'fake/fake_commerce.dart';
-export 'server/secure_commerce.dart';
+export 'package:akasha_commerce_domain/akasha_commerce_domain.dart';
+
+export 'client/commerce_api_client.dart';

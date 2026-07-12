@@ -21,9 +21,10 @@ Close Steam review / payment / localization blockers so AKASHA can ship and dogf
 | **P1** | English localization applies to all major UI in a real build | **Visual pass (chrome)** — see [evidence/p1-english-ui-2026-07-12](evidence/p1-english-ui-2026-07-12/README.md); deep Work/Entity vault flows deferred when vault path unavailable |
 | **P2** | Exact English switch path + resubmission Notes for Steam reviewers | **Draft ready** (§Reviewer English path) |
 | **P3** | Unimplemented IAP stated clearly in docs + `FeatureFlags` | **Done in this slice** — `steamInAppPurchasesEnabled = false` |
-| **P4** | Astra/Echo (`premium`/`earned`) currency contract + support · unlock domain | **Domain done** — finalized grant rules + refund policy; [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md) |
-| **P4-B** | Secure Commerce Backend Foundation (SteamID account, 64-bit orders, state machine, ledger, fake Steam) | **Done** — `lib/core/commerce/server/` |
-| **P5** | Real Steam Wallet adapter → FinalizeTxn / GetReport reconciliation | **Not started** — after P4-B |
+| **P4** | Astra/Echo (`premium`/`earned`) currency contract + support · unlock domain | **Domain done** — [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md) · `packages/akasha_commerce_domain/` |
+| **P4-B** | Secure Commerce Backend Foundation (prototype) | **Accepted as domain prototype** — relocated in P4-C |
+| **P4-C** | Secure backend physical boundary + Steam Sandbox adapter | **Done** — `backend/akasha_commerce_server/` (ticket auth, sandbox adapter, reconciliation) |
+| **P5** | Production Steam adapter + deploy host selection | **Not started** — after sandbox E2E |
 | **P6** | Non-sandbox test purchase + GetReport sample + test account pack | **Not started** — after P5 |
 
 **Hard rule:** Do **not** mark Store Page or in-app UI as having IAP while the Steam payment flow is incomplete. Prefer temporarily clearing Store “In-App Purchases” until P5+P6 are green.
@@ -169,6 +170,7 @@ Astra/Steam Wallet 결제 없음. 테마는 전부 무료. IAP 완성 전 Store 
 | Architecture Closure | Declared |
 | analyze / test at Closure | 0 / 930 |
 | P1 English UI | Evidence folder + 933 tests |
-| P4 commerce domain | `lib/core/commerce/` + contract doc; Steam/UI not wired |
+| P4 commerce domain | `packages/akasha_commerce_domain/` + Flutter re-export |
+| P4-C backend boundary | `backend/akasha_commerce_server/` — not under Flutter `lib/` |
 | IAP flag | `steamInAppPurchasesEnabled == false` |
 | Reviewer English path | Documented above |

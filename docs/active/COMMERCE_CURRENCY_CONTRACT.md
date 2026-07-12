@@ -1,9 +1,33 @@
 # AKASHA Commerce Currency Contract (P4 slice)
 
-> **Status:** Active — domain + contract corrections (2026-07-12)  
+> **Status:** Active — P4-C physical backend boundary (2026-07-12)  
 > **Track:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md)  
-> **Code:** `lib/core/commerce/`  
-> **Flag:** `FeatureFlags.steamInAppPurchasesEnabled = false` (unchanged; no Steam/UI wiring yet)
+> **Shared domain:** `packages/akasha_commerce_domain/` (re-exported from `lib/core/commerce/`)  
+> **Deployable authority:** `backend/akasha_commerce_server/`  
+> **Flutter client:** `lib/core/commerce/client/` (`CommerceApiClient` only)  
+> **Flag:** `FeatureFlags.steamInAppPurchasesEnabled = false` (unchanged; store UI / production API not wired)
+
+## Physical boundary
+
+```text
+Flutter app
+├─ Steam GetAuthTicketForWebApi
+├─ CommerceApiClient (HTTP)
+├─ MicroTxnAuthorizationResponse → backend
+└─ UI
+       │
+       ▼
+backend/akasha_commerce_server (or separate deployable)
+├─ Publisher Web API Key (env / secret manager only)
+├─ AuthenticateUserTicket → verified 64-bit SteamID
+├─ Orders · ledger · entitlement authority
+├─ InitTxn / FinalizeTxn / QueryTxn / RefundTxn
+└─ GetReport reconciliation
+```
+
+Do **not** place Steam HTTP adapters, secrets, or authoritative repositories under
+`lib/core/commerce/server/`. P4-B code there was a domain prototype only; P4-C
+relocates authority to `backend/`.
 
 ## Display names vs stable ids
 
@@ -14,16 +38,25 @@
 
 Do **not** use `Pearl`, `BlackPearl`, or display strings as storage keys.
 
+## Identity
+
+- Client sends auth ticket; backend calls `AuthenticateUserTicket`.
+- Only the verified 64-bit SteamID is the commerce account authority.
+- Never trust a client-supplied SteamID string.
+
 ## Astra grant timing (finalized ≠ settlement report)
 
-Astra (`premium`) is granted only after **FinalizeTxn succeeds** or **QueryTxn / GetReport independently confirms the transaction as completed**. Grant exactly once (idempotent).
+Astra (`premium`) is granted only after **FinalizeTxn succeeds** or **QueryTxn / GetReport independently confirms the transaction as completed**. Grant exactly once (idempotent). **InitTxn success alone never grants.**
 
 GetReport **SETTLEMENT** / **CHARGEBACK** rows are **post-hoc reconciliation** evidence — not a gate that must arrive before the first grant.
 
 ```text
-Purchase path:   InitTxn → user auth → FinalizeTxn (or QueryTxn/GetReport completed) → grant Astra once
+Purchase path:   ticket → InitTxn → user auth callback → FinalizeTxn (or QueryTxn/GetReport completed) → grant Astra once
 Reconciliation:  GetReport settlement / chargeback → reversal / audit (after the fact)
 ```
+
+Steam API response models and internal `ServerOrderState` stay separate; map via
+`SteamToServerStateMapper`. Unknown Steam statuses → indeterminate / manual review.
 
 ## Invariants
 
@@ -37,6 +70,8 @@ Reconciliation:  GetReport settlement / chargeback → reversal / audit (after t
 8. Premium currency, orders, transaction state, and entitlements are **server-authoritative**.
 9. User Vault must **not** store payment authority data.
 10. Refund / chargeback / cancel adds a **reversal** ledger entry referencing the original premium grant; never mutate or delete prior entries.
+11. Authorization callbacks must correlate AppID · OrderID · verified SteamID.
+12. Original Steam responses are retained as **secret-redacted** audit material.
 
 ## Refund / chargeback balance policy (v1)
 
@@ -59,7 +94,7 @@ In scope:
 - Astra-only theme SKUs
 - Astra **Support** (spend-only)
 - Server transaction ledger + idempotency / no double-grant
-- Steam InitTxn / FinalizeTxn / refund / GetReport (later slices)
+- Steam InitTxn / FinalizeTxn / refund / GetReport (sandbox first)
 
 Deferred until payment system is stable:
 
@@ -74,11 +109,11 @@ Deferred until payment system is stable:
 
 | Deliverable | State |
 |---|---|
-| Thin contract (this doc) | Done (+ finalized / refund / Support corrections) |
-| `CurrencyKind` + Product / Order / Ledger / Wallet / Entitlement models | Done |
-| Fake repository + fake payment provider | Done |
-| **P4-B** Secure backend foundation (SteamID account, 64-bit orders, state machine, fake Steam, reconciliation) | Done — `lib/core/commerce/server/` |
-| Real Steam Publisher Web API / Flutter store UI | **Not connected** |
-| `steamInAppPurchasesEnabled` | **false** |
+| Thin contract (this doc) | Done |
+| Shared domain package | Done — `packages/akasha_commerce_domain/` |
+| **P4-B** Secure backend foundation (prototype) | Accepted as domain prototype; authority moved in P4-C |
+| **P4-C** Physical backend + Sandbox Steam adapter + ticket auth | Done — `backend/akasha_commerce_server/` |
+| Flutter `CommerceApiClient` (unwired) | Done — not connected to store UI / production |
+| Production Steam / FeatureFlag | **Not connected** — `steamInAppPurchasesEnabled = false` |
 
-Next: **Real Steam adapter** (Publisher Web API Key on server only) → then Flutter store UI. `steamInAppPurchasesEnabled` stays false until verified.
+Next: choose deployable host for `backend/`, run sandbox E2E, then production small-txn + GetReport evidence. Flag stays false until verified.

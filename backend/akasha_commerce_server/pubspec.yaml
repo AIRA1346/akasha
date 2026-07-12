@@ -1,0 +1,15 @@
+name: akasha_commerce_server
+description: Deployable commerce backend — Steam sandbox adapter, auth, ledger authority.
+publish_to: none
+version: 0.1.0
+
+environment:
+  sdk: ^3.12.1
+
+dependencies:
+  akasha_commerce_domain:
+    path: ../../packages/akasha_commerce_domain
+  http: ^1.2.2
+
+dev_dependencies:
+  test: ^1.25.0

@@ -1,5 +1,5 @@
-import '../../commerce_catalog.dart';
-import '../../commerce_models.dart';
+import 'package:akasha_commerce_domain/akasha_commerce_domain.dart';
+
 import '../audit_record.dart';
 import '../commerce_account.dart';
 import '../idempotency_record.dart';
@@ -9,6 +9,7 @@ import '../secure_commerce_models.dart';
 import '../secure_commerce_repository.dart';
 import '../steam_adapter.dart';
 import '../steam_txn_phase.dart';
+
 
 class FakeSecureCommerceRepository implements SecureCommerceRepository {
   FakeSecureCommerceRepository({List<CommerceProduct>? catalog})

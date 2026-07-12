@@ -1,10 +1,8 @@
-import '../commerce_catalog.dart';
-import '../commerce_exceptions.dart';
-import '../commerce_models.dart';
-import '../commerce_ports.dart';
-import '../currency_kind.dart';
+import 'package:akasha_commerce_domain/akasha_commerce_domain.dart';
+
 import 'audit_record.dart';
 import 'idempotency_record.dart';
+import 'mapping/steam_to_server_state_mapper.dart';
 import 'order_id64.dart';
 import 'reconciliation_cursor.dart';
 import 'secure_commerce_models.dart';
@@ -12,6 +10,7 @@ import 'secure_commerce_repository.dart';
 import 'server_order_state.dart';
 import 'steam_adapter.dart';
 import 'steam_txn_phase.dart';
+
 
 /// Server-side orchestration over accounts, 64-bit orders, Steam adapter, ledger.
 class SecureCommerceService {
@@ -41,6 +40,9 @@ class SecureCommerceService {
         userId: steamId,
         entries: await _repo.listLedger(steamId),
       );
+
+  Future<SecureCommerceOrder?> getOrder(OrderId64 orderId) =>
+      _repo.getOrder(orderId);
 
   /// Create order + InitTxn. Returns existing order when idempotency hits.
   Future<SecureCommerceOrder> beginPremiumPackPurchase({
@@ -408,19 +410,8 @@ class SecureCommerceService {
     SteamTxnPhase phase,
     DateTime now,
   ) {
-    final state = switch (phase) {
-      SteamTxnPhase.initAccepted => ServerOrderState.authorizationPending,
-      SteamTxnPhase.userAuthorized => ServerOrderState.authorized,
-      SteamTxnPhase.finalizeSucceeded ||
-      SteamTxnPhase.reportCompleted => ServerOrderState.completed,
-      SteamTxnPhase.denied => ServerOrderState.denied,
-      SteamTxnPhase.canceled => ServerOrderState.canceled,
-      SteamTxnPhase.indeterminate => ServerOrderState.indeterminate,
-      SteamTxnPhase.reportSettlement => order.state,
-      SteamTxnPhase.reportChargeback => ServerOrderState.chargedBack,
-    };
     return order.copyWith(
-      state: state,
+      state: SteamToServerStateMapper.mapPhase(phase, current: order.state),
       lastSteamPhase: phase,
       updatedAt: now,
     );

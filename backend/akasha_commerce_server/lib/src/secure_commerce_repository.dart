@@ -1,4 +1,5 @@
-import '../commerce_models.dart';
+import 'package:akasha_commerce_domain/akasha_commerce_domain.dart';
+
 import 'audit_record.dart';
 import 'commerce_account.dart';
 import 'idempotency_record.dart';
@@ -6,6 +7,7 @@ import 'order_id64.dart';
 import 'reconciliation_cursor.dart';
 import 'secure_commerce_models.dart';
 import 'unit_of_work.dart';
+
 
 /// Server persistence + transaction boundary.
 abstract class SecureCommerceRepository implements CommerceUnitOfWork {
