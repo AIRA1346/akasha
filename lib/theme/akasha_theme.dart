@@ -51,8 +51,11 @@ abstract final class AkashaTheme {
       hoverColor: palette.hoverSurface,
       splashColor: palette.accentSoft,
       extensions: [
-        ...base.extensions.values.where((ext) => ext is! AkashaPalette),
+        ...base.extensions.values.where(
+          (ext) => ext is! AkashaPalette && ext is! AkashaThemeVisuals,
+        ),
         palette,
+        AkashaThemeVisuals.fromPreset(preset),
       ],
       appBarTheme: AppBarTheme(
         backgroundColor: palette.surface,

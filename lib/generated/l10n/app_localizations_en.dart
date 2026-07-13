@@ -1406,6 +1406,21 @@ class AppLocalizationsEn extends AppLocalizations {
       'Record works, people, events, and concepts to form connections and find new discoveries.';
 
   @override
+  String get dashboardHeroArchiveRecords => 'Archive records';
+
+  @override
+  String get dashboardHeroEntities => 'Entities';
+
+  @override
+  String get dashboardHeroCollections => 'Collections';
+
+  @override
+  String get dashboardHeroTags => 'Tags';
+
+  @override
+  String get dashboardHeroStartAction => 'Start your first record';
+
+  @override
   String get dashboardDiscoveryTitle => 'Discovery Journey';
 
   @override

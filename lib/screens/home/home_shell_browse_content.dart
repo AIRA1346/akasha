@@ -31,6 +31,7 @@ class HomeShellBrowseContentBuilder {
     required this.userCatalog,
     required this.linkIndex,
     required this.linkIndexRevision,
+    required this.collectionCount,
     required this.filteredCards,
     required this.displayName,
     required this.posterCardBuilder,
@@ -73,6 +74,7 @@ class HomeShellBrowseContentBuilder {
   final UserCatalogPort userCatalog;
   final RecordLinkPort linkIndex;
   final int linkIndexRevision;
+  final int collectionCount;
   final List<BrowseCard> filteredCards;
   final String displayName;
   final Widget Function(BrowseCard) posterCardBuilder;
@@ -156,6 +158,7 @@ class HomeShellBrowseContentBuilder {
       return HomeDashboardView(
         vaultItems: items,
         recentExploreItems: recentExploreItems,
+        collectionCount: collectionCount,
         userCatalog: userCatalog,
         linkIndex: linkIndex,
         previewItem: workPreviewItem,

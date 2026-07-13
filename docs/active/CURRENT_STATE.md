@@ -90,6 +90,7 @@
 
 * Wave 1 + Foundation P2 분해 완료 — coordinator·preview·scaffold parts.
 * **UX-2 Responsive Shell 완료** — 단일 `AppDestination`·`PreviewTarget`, `ShellLayoutSpec` 3단계, Sidebar/Dock selection SSOT, 기존 Graph/Records 접근, compact drawer·Preview sheet, utility slot 계약. provider 없는 currency/avatar는 숨김.
+* **UX-3A Home Hero 완료** — 실제 record/entity/collection/unique-tag summary, empty start action, theme-owned Hero artwork/effect slot과 공통 fallback. Continue/Quick Actions/Insight/Today는 UX-3B 이후 범위.
 * **v1 관점:** browse/catalog UI는 **기록으로 이어지는 진입**이지 제품 정체성 자체가 아님.
 
 ---

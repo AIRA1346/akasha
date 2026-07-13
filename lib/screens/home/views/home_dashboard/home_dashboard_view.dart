@@ -14,6 +14,7 @@ import 'home_dashboard_continue_section.dart';
 import 'home_dashboard_discovery_section.dart';
 import 'home_dashboard_quick_actions_section.dart';
 import 'home_dashboard_registry_bridge_section.dart';
+import 'home_dashboard_summary.dart';
 import 'home_dashboard_universe_section.dart';
 
 /// 탐험 중심 홈 — Continue·Discover·Universe 블록 (Discover/Universe는 [FeatureFlags]).
@@ -22,6 +23,7 @@ class HomeDashboardView extends StatelessWidget {
     super.key,
     required this.vaultItems,
     required this.recentExploreItems,
+    required this.collectionCount,
     required this.userCatalog,
     required this.linkIndex,
     required this.onPreviewWork,
@@ -42,6 +44,7 @@ class HomeDashboardView extends StatelessWidget {
 
   final List<AkashaItem> vaultItems;
   final List<AkashaItem> recentExploreItems;
+  final int collectionCount;
   final UserCatalogPort userCatalog;
   final RecordLinkPort linkIndex;
   final void Function(AkashaItem) onPreviewWork;
@@ -124,7 +127,14 @@ class HomeDashboardView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const HomeDashboardHero(),
+            HomeDashboardHero(
+              summary: HomeDashboardSummary.fromArchive(
+                vaultItems: vaultItems,
+                catalogEntities: userCatalog.all,
+                collectionCount: collectionCount,
+              ),
+              onStartRecording: onSearch,
+            ),
             const SizedBox(height: 28),
             HomeDashboardContinueSection(
               recentExploreItems: recentExploreItems,

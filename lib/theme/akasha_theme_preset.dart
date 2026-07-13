@@ -12,6 +12,8 @@ class AkashaThemeAssets {
   final String? ambientAssetPath;
   final BoxFit backdropFit;
   final AlignmentGeometry backdropAlignment;
+  final BoxFit heroFit;
+  final AlignmentGeometry heroAlignment;
 
   const AkashaThemeAssets({
     this.backdropAssetPath,
@@ -20,6 +22,8 @@ class AkashaThemeAssets {
     this.ambientAssetPath,
     this.backdropFit = BoxFit.cover,
     this.backdropAlignment = Alignment.center,
+    this.heroFit = BoxFit.cover,
+    this.heroAlignment = Alignment.center,
   });
 
   static const none = AkashaThemeAssets();
@@ -52,6 +56,79 @@ class AkashaThemeEffects {
     overlayOpacity: 0.62,
     particleIntensity: 0,
   );
+}
+
+/// Theme-owned visual resources exposed through the root [ThemeData].
+///
+/// Feature widgets consume this extension instead of branching on a preset ID.
+/// Assets and effect strength may change between theme packages; layout and
+/// interaction geometry remain owned by the shared component.
+@immutable
+class AkashaThemeVisuals extends ThemeExtension<AkashaThemeVisuals> {
+  final AkashaThemeAssets assets;
+  final AkashaThemeEffects effects;
+
+  const AkashaThemeVisuals({required this.assets, required this.effects});
+
+  factory AkashaThemeVisuals.fromPreset(AkashaThemePreset preset) {
+    return AkashaThemeVisuals(assets: preset.assets, effects: preset.effects);
+  }
+
+  static final fallback = AkashaThemeVisuals.fromPreset(
+    AkashaThemePreset.classicDark,
+  );
+
+  @override
+  AkashaThemeVisuals copyWith({
+    AkashaThemeAssets? assets,
+    AkashaThemeEffects? effects,
+  }) {
+    return AkashaThemeVisuals(
+      assets: assets ?? this.assets,
+      effects: effects ?? this.effects,
+    );
+  }
+
+  @override
+  AkashaThemeVisuals lerp(
+    covariant ThemeExtension<AkashaThemeVisuals>? other,
+    double t,
+  ) {
+    if (other is! AkashaThemeVisuals) return this;
+    return AkashaThemeVisuals(
+      assets: t < 0.5 ? assets : other.assets,
+      effects: AkashaThemeEffects(
+        glowIntensity: _lerpDouble(
+          effects.glowIntensity,
+          other.effects.glowIntensity,
+          t,
+        ),
+        shadowIntensity: _lerpDouble(
+          effects.shadowIntensity,
+          other.effects.shadowIntensity,
+          t,
+        ),
+        overlayOpacity: _lerpDouble(
+          effects.overlayOpacity,
+          other.effects.overlayOpacity,
+          t,
+        ),
+        particleIntensity: _lerpDouble(
+          effects.particleIntensity,
+          other.effects.particleIntensity,
+          t,
+        ),
+      ),
+    );
+  }
+
+  static double _lerpDouble(double a, double b, double t) => a + (b - a) * t;
+}
+
+extension AkashaThemeVisualsContext on BuildContext {
+  AkashaThemeVisuals get akashaThemeVisuals =>
+      Theme.of(this).extension<AkashaThemeVisuals>() ??
+      AkashaThemeVisuals.fallback;
 }
 
 /// A visual-only AKASHA theme preset.

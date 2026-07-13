@@ -10,7 +10,11 @@ void main() {
     for (final preset in AkashaThemePreset.all) {
       final theme = AkashaTheme.forPreset(preset);
       final palette = theme.extension<AkashaPalette>();
+      final visuals = theme.extension<AkashaThemeVisuals>();
       expect(palette, isNotNull, reason: preset.id);
+      expect(visuals, isNotNull, reason: preset.id);
+      expect(visuals!.assets, same(preset.assets), reason: preset.id);
+      expect(visuals.effects, same(preset.effects), reason: preset.id);
       expect(
         AkashaPalette.contrastRatio(palette!.onAccent, palette.accent),
         greaterThanOrEqualTo(4.5),

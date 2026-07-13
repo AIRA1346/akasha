@@ -444,10 +444,21 @@ UX-1에서는 Home 재설계, Responsive Shell 변경, Graph/Timeline 복원, cu
 
 ### Phase UX-3 — Home 고도화
 
-- 실제 archive summary 기반 Hero
-- Continue Exploring와 Quick Actions 정돈
-- Connection Insight와 Today in Archive
-- 모든 section의 loading/empty/error
+**진행 중 (2026-07-14, UX-3A Hero 완료).** 레퍼런스의 숫자와 장식을 복제하지 않고 실제 로컬 데이터와 공통 geometry를 먼저 고정했다.
+
+- [x] 실제 vault record, non-work entity, collection, unique tag 기반 Hero summary
+- [x] 전체 데이터가 비어 있으면 가짜 `0` 통계 대신 `첫 기록 시작` action 노출
+- [x] `AkashaThemeVisuals`를 root `ThemeData`에 투영해 theme package의 Hero asset/effect를 ID 분기 없이 소비
+- [x] Hero asset 누락 시 동일 geometry의 공통 brand/orbit fallback
+- [x] `1600×900`, `1366×768`, `1024×720`, Windows text scale 125% overflow 회귀 테스트
+- [x] Classic Dark와 Midnight Blue Hero geometry 동일성 테스트
+- [ ] Continue Exploring와 Quick Actions 정돈
+- [ ] Connection Insight의 실제 link summary source·loading/empty/error 계약
+- [ ] Today in Archive의 실제 activity source·loading/empty/error 계약
+
+연결 수는 현재 `RecordLinkPort`가 비동기 개별 조회만 제공하므로 Hero에 추정값을 넣지 않는다. UX-3B에서 집계 source와 갱신 기준을 먼저 정의한 후 노출한다.
+
+UX-3A 검증: root analyze **0**, root test **1085**, Windows Debug/Release build PASS.
 
 ### Phase UX-4 — Preview와 핵심 화면
 

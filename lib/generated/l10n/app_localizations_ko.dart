@@ -1375,6 +1375,21 @@ class AppLocalizationsKo extends AppLocalizations {
       '작품, 사람, 사건, 개념을 기록하면 연결이 생기고 새로운 발견으로 이어집니다.';
 
   @override
+  String get dashboardHeroArchiveRecords => '아카이브 기록';
+
+  @override
+  String get dashboardHeroEntities => '엔티티';
+
+  @override
+  String get dashboardHeroCollections => '컬렉션';
+
+  @override
+  String get dashboardHeroTags => '태그';
+
+  @override
+  String get dashboardHeroStartAction => '첫 기록 시작';
+
+  @override
   String get dashboardDiscoveryTitle => '발견의 여정';
 
   @override

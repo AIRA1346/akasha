@@ -2570,6 +2570,36 @@ abstract class AppLocalizations {
   /// **'Record works, people, events, and concepts to form connections and find new discoveries.'**
   String get dashboardHeroSubtitle;
 
+  /// No description provided for @dashboardHeroArchiveRecords.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive records'**
+  String get dashboardHeroArchiveRecords;
+
+  /// No description provided for @dashboardHeroEntities.
+  ///
+  /// In en, this message translates to:
+  /// **'Entities'**
+  String get dashboardHeroEntities;
+
+  /// No description provided for @dashboardHeroCollections.
+  ///
+  /// In en, this message translates to:
+  /// **'Collections'**
+  String get dashboardHeroCollections;
+
+  /// No description provided for @dashboardHeroTags.
+  ///
+  /// In en, this message translates to:
+  /// **'Tags'**
+  String get dashboardHeroTags;
+
+  /// No description provided for @dashboardHeroStartAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Start your first record'**
+  String get dashboardHeroStartAction;
+
   /// No description provided for @dashboardDiscoveryTitle.
   ///
   /// In en, this message translates to:

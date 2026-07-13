@@ -330,6 +330,7 @@ class HomeShellBody extends StatelessWidget {
       userCatalog: userCatalog,
       linkIndex: linkIndex,
       linkIndexRevision: linkIndexRevision,
+      collectionCount: collectionCtrl.collections.length,
       filteredCards: filteredCards,
       displayName: displayName,
       posterCardBuilder: posterCardBuilder,
