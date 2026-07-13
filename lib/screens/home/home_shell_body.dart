@@ -26,6 +26,7 @@ import '../../models/work_drag_payload.dart';
 import '../../services/personal_library_membership_service.dart';
 import '../../utils/recall_picker.dart';
 import '../../widgets/dashboard_sidebar.dart';
+import 'app_destination.dart';
 import 'home_browse_filter_controller.dart';
 import 'home_dashboard_controller.dart';
 import 'home_collectible_collection_controller.dart';
@@ -34,17 +35,30 @@ import 'home_section_preferences.dart';
 import 'home_shell_body_center.dart';
 import 'home_shell_body_preview_rail.dart';
 import 'home_shell_browse_content.dart';
+import 'preview_frame.dart';
+import 'shell_layout_frame.dart';
+import 'shell_layout_spec.dart';
+
+/// Runs a sidebar row action and dismisses only an open modal drawer.
+@visibleForTesting
+void runHomeShellSidebarNavigation({
+  required ShellLayoutSpec layoutSpec,
+  required bool sidebarOpen,
+  required VoidCallback navigate,
+  VoidCallback? onDismissSidebar,
+}) {
+  navigate();
+  if (sidebarOpen &&
+      layoutSpec.sidebarPresentation == ShellSidebarPresentation.drawer) {
+    onDismissSidebar?.call();
+  }
+}
 
 /// HomeShell Scaffold body — sidebar · 필터 · workbench browse 영역.
 class HomeShellBody extends StatelessWidget {
+  final ShellLayoutSpec layoutSpec;
   final bool isSidebarOpen;
-  final bool isPersonalLibraryMode;
-  final bool isCollectibleCollectionMode;
-  final bool isTimelineMode;
-  final bool isExploreBrowseMode;
-  final bool isKnowledgeGraphMode;
-  final bool isExploreModeActive;
-  final bool isHomeDashboardMode;
+  final AppDestination destination;
   final bool isCuratedLibraryActive;
   final bool isCatalogLoading;
   final bool isCatalogLoadingMore;
@@ -72,11 +86,9 @@ class HomeShellBody extends StatelessWidget {
   final VoidCallback onStateChanged;
   final VoidCallback onAddDashboard;
   final Future<void> Function(String id) onSelectDashboard;
-  final Future<void> Function() onGoHome;
   final Future<void> Function() onGoExplore;
-  final Future<void> Function() onGoLibrary;
-  final Future<void> Function() onGoCollection;
   final Future<void> Function() onGoKnowledgeGraph;
+  final Future<void> Function(AppDestination destination) onSelectDestination;
   final Future<void> Function(BrowseEntityScope scope) onGoExploreEntities;
   final VoidCallback onVaultSettings;
   final void Function(DashboardConfig dash) onEditDashboard;
@@ -153,8 +165,7 @@ class HomeShellBody extends StatelessWidget {
   onRequestEntityLink;
   final void Function(EntityAnchorType? type)? onAddNewEntity;
   final VoidCallback? onToggleSidebar;
-  final AkashaItem? workPreviewItem;
-  final UserCatalogEntity? entityPreviewItem;
+  final PreviewTarget previewTarget;
   final void Function(AkashaItem item) onPreviewWork;
   final void Function(UserCatalogEntity entity) onPreviewEntity;
   final void Function(AkashaItem item) onNavigateWorkPreview;
@@ -188,14 +199,9 @@ class HomeShellBody extends StatelessWidget {
 
   const HomeShellBody({
     super.key,
+    required this.layoutSpec,
     required this.isSidebarOpen,
-    required this.isPersonalLibraryMode,
-    required this.isCollectibleCollectionMode,
-    required this.isTimelineMode,
-    required this.isExploreBrowseMode,
-    required this.isKnowledgeGraphMode,
-    required this.isExploreModeActive,
-    required this.isHomeDashboardMode,
+    required this.destination,
     required this.isCuratedLibraryActive,
     required this.isCatalogLoading,
     this.isCatalogLoadingMore = false,
@@ -223,11 +229,9 @@ class HomeShellBody extends StatelessWidget {
     required this.onStateChanged,
     required this.onAddDashboard,
     required this.onSelectDashboard,
-    required this.onGoHome,
     required this.onGoExplore,
-    required this.onGoLibrary,
-    required this.onGoCollection,
     required this.onGoKnowledgeGraph,
+    required this.onSelectDestination,
     required this.onGoExploreEntities,
     required this.onVaultSettings,
     required this.onEditDashboard,
@@ -276,8 +280,7 @@ class HomeShellBody extends StatelessWidget {
     required this.onRequestEntityLink,
     this.onAddNewEntity,
     this.onToggleSidebar,
-    this.workPreviewItem,
-    this.entityPreviewItem,
+    required this.previewTarget,
     required this.onPreviewWork,
     required this.onPreviewEntity,
     required this.onNavigateWorkPreview,
@@ -311,11 +314,11 @@ class HomeShellBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dailyRecall =
-        FeatureFlags.showRecallCard &&
-            !isPersonalLibraryMode &&
-            !isCollectibleCollectionMode &&
-            !isTimelineMode
+    final isHomeSurface =
+        destination == AppDestination.home ||
+        destination == AppDestination.explore ||
+        destination == AppDestination.graph;
+    final dailyRecall = FeatureFlags.showRecallCard && isHomeSurface
         ? RecallPicker.pickDailyRecall(items)
         : null;
 
@@ -341,8 +344,7 @@ class HomeShellBody extends StatelessWidget {
       personalLibCtrl: personalLibCtrl,
       vaultPath: vaultPath,
       vaultLinked: vaultLinked,
-      workPreviewItem: workPreviewItem,
-      entityPreviewItem: entityPreviewItem,
+      previewTarget: previewTarget,
       onNavigateWorkPreview: onNavigateWorkPreview,
       onNavigateEntityPreview: onNavigateEntityPreview,
       onSearch: onSearch,
@@ -363,143 +365,157 @@ class HomeShellBody extends StatelessWidget {
       onOpenCanvas: onOpenCanvas,
     );
 
-    return Row(
-      children: [
-        DashboardSidebar(
-          isOpen: isSidebarOpen,
-          isHomeMode: isHomeDashboardMode,
-          isExploreMode: isExploreModeActive,
-          isPersonalLibraryMode: isPersonalLibraryMode,
-          isCollectibleCollectionMode: isCollectibleCollectionMode,
-          isKnowledgeGraphMode: isKnowledgeGraphMode,
-          isTimelineMode: isTimelineMode,
-          selectionMode: personalLibCtrl.sidebarMode,
-          recentExploreItems: recentExploreItems,
-          vaultItems: items,
-          collectibleCollections: collectionCtrl.collections,
-          activeCollectibleCollectionId: collectionCtrl.activeCollectionId,
-          personalLibraries: personalLibCtrl.libraries,
-          activePersonalLibraryId: personalLibCtrl.activeLibraryId,
-          onGoHome: onGoHome,
-          onGoExplore: onGoExplore,
-          onGoLibrary: onGoLibrary,
-          onGoCollection: onGoCollection,
-          onGoKnowledgeGraph: onGoKnowledgeGraph,
-          onOpenRecentExplore: onOpenRecentExplore,
-          activeDetailWorkId: workbench.hasOpenDetail
-              ? workbench.activeWorkTab?.item.workId
-              : null,
-          activeDetailEntityId: workbench.hasOpenDetail
-              ? workbench.activeEntityTab?.entity.entityId
-              : null,
-          onSelectTimeline: onSelectTimeline,
-          onSelectCollectibleCollection: onSelectCollectibleCollection,
-          onAddPersonalLibrary: onAddPersonalLibrary,
-          onSelectPersonalLibrary: onSelectPersonalLibrary,
-          onEditPersonalLibrary: onEditPersonalLibrary,
-          onDeletePersonalLibrary: onDeletePersonalLibrary,
-          onDropWorkToLibrary: onDropWorkToLibrary,
-          onToggleSidebar: null,
-        ),
-        Expanded(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(
-                child: HomeShellBodyCenterColumn(
-                  vaultLinked: vaultLinked,
-                  vaultPath: vaultPath,
-                  dailyRecall: dailyRecall,
-                  isPersonalLibraryMode: isPersonalLibraryMode,
-                  isCollectibleCollectionMode: isCollectibleCollectionMode,
-                  isTimelineMode: isTimelineMode,
-                  isExploreBrowseMode: isExploreBrowseMode,
-                  isKnowledgeGraphMode: isKnowledgeGraphMode,
-                  isHomeDashboardMode: isHomeDashboardMode,
-                  isCatalogLoading: isCatalogLoading,
-                  filterCtrl: filterCtrl,
-                  sectionPrefs: sectionPrefs,
-                  workbench: workbench,
-                  userCatalog: userCatalog,
-                  linkIndex: linkIndex,
-                  items: items,
-                  timelineReloadToken: timelineReloadToken,
-                  collectionCtrl: collectionCtrl,
-                  posterCardBuilder: posterCardBuilder,
-                  browse: browse,
-                  onConnectVault: onConnectVault,
-                  onCreateDefaultVault: onCreateDefaultVault,
-                  onSearch: onSearch,
-                  onToggleCategory: onToggleCategory,
-                  onClearCategories: onClearCategories,
-                  onToggleWorkStatus: onToggleWorkStatus,
-                  onToggleMyStatus: onToggleMyStatus,
-                  onEntityScopeChanged: onEntityScopeChanged,
-                  onAddNewEntity: onAddNewEntity,
-                  onStateChanged: onStateChanged,
-                  onPreviewWork: onPreviewWork,
-                  onPreviewEntity: onPreviewEntity,
-                  onOpenBrowseItem: onOpenBrowseItem,
-                  onOpenEntity: onOpenEntity,
-                  onOpenWorkFromCanvas: onOpenWorkFromCanvas,
-                  onOpenEntityFromCanvas: onOpenEntityFromCanvas,
-                  onWorkbenchWorkSaved: onWorkbenchWorkSaved,
-                  onWorkbenchWorkDeleted: onWorkbenchWorkDeleted,
-                  onWorkbenchEntitySaved: onWorkbenchEntitySaved,
-                  onWorkbenchEntityDeleted: onWorkbenchEntityDeleted,
-                  onAddToLibrary: onAddToLibrary,
-                  onAddToLibraryForEntity: onAddToLibraryForEntity,
-                  onWikiLinkTap: onWikiLinkTap,
-                  onRequestEntityLink: onRequestEntityLink,
-                  onGoKnowledgeGraph: onGoKnowledgeGraph,
-                  pendingWorkEntityLinkType: pendingWorkEntityLinkType,
-                  pendingWorkEntityLinkWorkId: pendingWorkEntityLinkWorkId,
-                  pendingWorkEntityLinkCandidate:
-                      pendingWorkEntityLinkCandidate,
-                  pendingWorkLinkPick: pendingWorkLinkPick,
-                  onClearPendingWorkEntityLink: onClearPendingWorkEntityLink,
-                  pendingEntityEntityLinkType: pendingEntityEntityLinkType,
-                  pendingEntityLinkEntityId: pendingEntityLinkEntityId,
-                  pendingEntityWorkLinkPick: pendingEntityWorkLinkPick,
-                  onClearPendingEntityLink: onClearPendingEntityLink,
-                  onNewTimelineEntry: onNewTimelineEntry,
-                  onNewJournalEntry: onNewJournalEntry,
-                  onEntityCollectionCuratedReorder:
-                      onEntityCollectionCuratedReorder,
-                  onCollectibleCollectionCuratedReorder:
-                      onCollectibleCollectionCuratedReorder,
-                ),
-              ),
-              ...buildHomeShellBodyPreviewPanels(
-                workbenchHasOpenDetail: workbench.hasOpenDetail,
-                workPreviewItem: workPreviewItem,
-                entityPreviewItem: entityPreviewItem,
-                userCatalog: userCatalog,
-                linkIndex: linkIndex,
-                linkIndexRevision: linkIndexRevision,
-                vaultItems: items,
-                canPopPreview: canPopPreview,
-                onPopPreview: onPopPreview,
-                onCloseAllPreviews: onCloseAllPreviews,
-                onOpenWorkFromPreview: onOpenWorkFromPreview,
-                onOpenEntityFromPreview: onOpenEntityFromPreview,
-                onPreviewLinkedEntity: onPreviewLinkedEntity,
-                onPreviewLinkedWork: onPreviewLinkedWork,
-                onGoKnowledgeGraph: onGoKnowledgeGraph,
-                onConnectEntityFromPreview: onConnectEntityFromPreview,
-                onConnectWorkFromPreview: onConnectWorkFromPreview,
-                onConnectEntityFromEntityPreview:
-                    onConnectEntityFromEntityPreview,
-                onConnectWorkFromEntityPreview: onConnectWorkFromEntityPreview,
-                onConnectSuggestedFromPreview: onConnectSuggestedFromPreview,
-                onPreviewRegistryWork: onPreviewRegistryWork,
-                onArchiveRegistryWorkFromPreview:
-                    onArchiveRegistryWorkFromPreview,
-              ),
-            ],
+    void navigateFromDrawer(VoidCallback navigate) {
+      runHomeShellSidebarNavigation(
+        layoutSpec: layoutSpec,
+        sidebarOpen: isSidebarOpen,
+        navigate: navigate,
+        onDismissSidebar: onToggleSidebar,
+      );
+    }
+
+    Widget buildSidebar({required bool open}) {
+      return DashboardSidebar(
+        key: const ValueKey('home-shell-sidebar'),
+        isOpen: open,
+        width: layoutSpec.sidebarWidth,
+        selectedDestination: destination,
+        onSelectDestination: (value) {
+          navigateFromDrawer(() {
+            onSelectDestination(value);
+          });
+        },
+        selectionMode: personalLibCtrl.sidebarMode,
+        recentExploreItems: recentExploreItems,
+        vaultItems: items,
+        collectibleCollections: collectionCtrl.collections,
+        activeCollectibleCollectionId: collectionCtrl.activeCollectionId,
+        personalLibraries: personalLibCtrl.libraries,
+        activePersonalLibraryId: personalLibCtrl.activeLibraryId,
+        onOpenRecentExplore: (item) =>
+            navigateFromDrawer(() => onOpenRecentExplore(item)),
+        activeDetailWorkId: workbench.hasOpenDetail
+            ? workbench.activeWorkTab?.item.workId
+            : null,
+        activeDetailEntityId: workbench.hasOpenDetail
+            ? workbench.activeEntityTab?.entity.entityId
+            : null,
+        onSelectCollectibleCollection: (id) =>
+            navigateFromDrawer(() => onSelectCollectibleCollection(id)),
+        onAddPersonalLibrary: onAddPersonalLibrary,
+        onSelectPersonalLibrary: (id) =>
+            navigateFromDrawer(() => onSelectPersonalLibrary(id)),
+        onEditPersonalLibrary: onEditPersonalLibrary,
+        onDeletePersonalLibrary: onDeletePersonalLibrary,
+        onDropWorkToLibrary: onDropWorkToLibrary,
+        onToggleSidebar: onToggleSidebar,
+      );
+    }
+
+    final previewWidth =
+        layoutSpec.previewPresentation == ShellPreviewPresentation.sheet
+        ? double.infinity
+        : layoutSpec.previewWidth;
+    final previewPanels = buildHomeShellBodyPreviewPanels(
+      workbenchHasOpenDetail: workbench.hasOpenDetail,
+      previewTarget: previewTarget,
+      previewWidth: previewWidth,
+      userCatalog: userCatalog,
+      linkIndex: linkIndex,
+      linkIndexRevision: linkIndexRevision,
+      vaultItems: items,
+      canPopPreview: canPopPreview,
+      onPopPreview: onPopPreview,
+      onCloseAllPreviews: onCloseAllPreviews,
+      onOpenWorkFromPreview: onOpenWorkFromPreview,
+      onOpenEntityFromPreview: onOpenEntityFromPreview,
+      onPreviewLinkedEntity: onPreviewLinkedEntity,
+      onPreviewLinkedWork: onPreviewLinkedWork,
+      onGoKnowledgeGraph: onGoKnowledgeGraph,
+      onConnectEntityFromPreview: onConnectEntityFromPreview,
+      onConnectWorkFromPreview: onConnectWorkFromPreview,
+      onConnectEntityFromEntityPreview: onConnectEntityFromEntityPreview,
+      onConnectWorkFromEntityPreview: onConnectWorkFromEntityPreview,
+      onConnectSuggestedFromPreview: onConnectSuggestedFromPreview,
+      onPreviewRegistryWork: onPreviewRegistryWork,
+      onArchiveRegistryWorkFromPreview: onArchiveRegistryWorkFromPreview,
+    );
+    final keyedPreview = previewPanels.isEmpty
+        ? null
+        : KeyedSubtree(
+            key: const ValueKey('home-shell-preview-content'),
+            child: previewPanels.single,
+          );
+
+    return ShellLayoutFrame(
+      layoutSpec: layoutSpec,
+      sidebarOpen: isSidebarOpen,
+      onDismissSidebar: onToggleSidebar ?? () {},
+      sidebar: buildSidebar(open: true),
+      center: ConstrainedBox(
+        constraints: BoxConstraints(minWidth: layoutSpec.mainContentMinWidth),
+        child: KeyedSubtree(
+          key: PageStorageKey<String>('shell-destination-${destination.name}'),
+          child: HomeShellBodyCenterColumn(
+            vaultLinked: vaultLinked,
+            vaultPath: vaultPath,
+            dailyRecall: dailyRecall,
+            destination: destination,
+            isCatalogLoading: isCatalogLoading,
+            filterCtrl: filterCtrl,
+            sectionPrefs: sectionPrefs,
+            workbench: workbench,
+            userCatalog: userCatalog,
+            linkIndex: linkIndex,
+            items: items,
+            timelineReloadToken: timelineReloadToken,
+            collectionCtrl: collectionCtrl,
+            posterCardBuilder: posterCardBuilder,
+            browse: browse,
+            onConnectVault: onConnectVault,
+            onCreateDefaultVault: onCreateDefaultVault,
+            onSearch: onSearch,
+            onToggleCategory: onToggleCategory,
+            onClearCategories: onClearCategories,
+            onToggleWorkStatus: onToggleWorkStatus,
+            onToggleMyStatus: onToggleMyStatus,
+            onEntityScopeChanged: onEntityScopeChanged,
+            onAddNewEntity: onAddNewEntity,
+            onStateChanged: onStateChanged,
+            onPreviewWork: onPreviewWork,
+            onPreviewEntity: onPreviewEntity,
+            onOpenBrowseItem: onOpenBrowseItem,
+            onOpenEntity: onOpenEntity,
+            onOpenWorkFromCanvas: onOpenWorkFromCanvas,
+            onOpenEntityFromCanvas: onOpenEntityFromCanvas,
+            onWorkbenchWorkSaved: onWorkbenchWorkSaved,
+            onWorkbenchWorkDeleted: onWorkbenchWorkDeleted,
+            onWorkbenchEntitySaved: onWorkbenchEntitySaved,
+            onWorkbenchEntityDeleted: onWorkbenchEntityDeleted,
+            onAddToLibrary: onAddToLibrary,
+            onAddToLibraryForEntity: onAddToLibraryForEntity,
+            onWikiLinkTap: onWikiLinkTap,
+            onRequestEntityLink: onRequestEntityLink,
+            onGoKnowledgeGraph: onGoKnowledgeGraph,
+            pendingWorkEntityLinkType: pendingWorkEntityLinkType,
+            pendingWorkEntityLinkWorkId: pendingWorkEntityLinkWorkId,
+            pendingWorkEntityLinkCandidate: pendingWorkEntityLinkCandidate,
+            pendingWorkLinkPick: pendingWorkLinkPick,
+            onClearPendingWorkEntityLink: onClearPendingWorkEntityLink,
+            pendingEntityEntityLinkType: pendingEntityEntityLinkType,
+            pendingEntityLinkEntityId: pendingEntityLinkEntityId,
+            pendingEntityWorkLinkPick: pendingEntityWorkLinkPick,
+            onClearPendingEntityLink: onClearPendingEntityLink,
+            onNewTimelineEntry: onNewTimelineEntry,
+            onNewJournalEntry: onNewJournalEntry,
+            onAddCollectibleCollection: onAddCollectibleCollection,
+            onEntityCollectionCuratedReorder: onEntityCollectionCuratedReorder,
+            onCollectibleCollectionCuratedReorder:
+                onCollectibleCollectionCuratedReorder,
           ),
         ),
-      ],
+      ),
+      preview: keyedPreview,
     );
   }
 }

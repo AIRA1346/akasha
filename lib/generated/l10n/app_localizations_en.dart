@@ -66,7 +66,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appPreferencesClose => 'Close';
 
   @override
-  String get appBarToggleSidebar => 'Toggle sidebar (Tab)';
+  String get appBarToggleSidebar => 'Toggle sidebar (Ctrl+B)';
 
   @override
   String get appBarLibraryTheme => 'App theme';

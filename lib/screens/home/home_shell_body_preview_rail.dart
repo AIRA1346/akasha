@@ -9,12 +9,13 @@ import '../../models/user_catalog_entity.dart';
 import '../../services/link_candidate_service.dart';
 import 'views/dashboard_preview_panel.dart';
 import 'views/entity_dashboard_preview_panel.dart';
+import 'preview_frame.dart';
 
 /// Work·entity preview 패널 (Workbench detail 열림 시 숨김).
 List<Widget> buildHomeShellBodyPreviewPanels({
   required bool workbenchHasOpenDetail,
-  required AkashaItem? workPreviewItem,
-  required UserCatalogEntity? entityPreviewItem,
+  required PreviewTarget previewTarget,
+  required double previewWidth,
   required UserCatalogPort userCatalog,
   required RecordLinkPort linkIndex,
   required int linkIndexRevision,
@@ -29,7 +30,8 @@ List<Widget> buildHomeShellBodyPreviewPanels({
   required Future<void> Function() onGoKnowledgeGraph,
   required void Function(EntityAnchorType type) onConnectEntityFromPreview,
   required VoidCallback onConnectWorkFromPreview,
-  required void Function(EntityAnchorType type) onConnectEntityFromEntityPreview,
+  required void Function(EntityAnchorType type)
+  onConnectEntityFromEntityPreview,
   required VoidCallback onConnectWorkFromEntityPreview,
   required void Function(LinkCandidate candidate) onConnectSuggestedFromPreview,
   required void Function(RegistryWork work) onPreviewRegistryWork,
@@ -40,49 +42,58 @@ List<Widget> buildHomeShellBodyPreviewPanels({
   }
 
   final panels = <Widget>[];
-  if (workPreviewItem != null) {
-    panels.add(
-      DashboardPreviewPanel(
-        item: workPreviewItem,
-        userCatalog: userCatalog,
-        linkIndex: linkIndex,
-        linkIndexRevision: linkIndexRevision,
-        vaultItems: vaultItems,
-        canGoBack: canPopPreview,
-        onBack: onPopPreview,
-        onClose: onCloseAllPreviews,
-        onOpenDetail: onOpenWorkFromPreview,
-        onOpenEntity: onPreviewLinkedEntity,
-        onOpenWork: onPreviewLinkedWork,
-        onGoKnowledgeGraph: () => onGoKnowledgeGraph(),
-        onConnectEntityType: onConnectEntityFromPreview,
-        onConnectWorkFromPreview: onConnectWorkFromPreview,
-        onConnectSuggested: onConnectSuggestedFromPreview,
-        onPreviewRegistryWork: onPreviewRegistryWork,
-        onArchiveRegistryWork: onArchiveRegistryWorkFromPreview,
-      ),
-    );
-  }
-  if (entityPreviewItem != null) {
-    panels.add(
-      EntityDashboardPreviewPanel(
-        entity: entityPreviewItem,
-        userCatalog: userCatalog,
-        linkIndex: linkIndex,
-        linkIndexRevision: linkIndexRevision,
-        vaultItems: vaultItems,
-        canGoBack: canPopPreview,
-        onBack: onPopPreview,
-        onClose: onCloseAllPreviews,
-        onOpenDetail: onOpenEntityFromPreview,
-        onOpenEntity: onPreviewLinkedEntity,
-        onOpenWork: onPreviewLinkedWork,
-        onGoKnowledgeGraph: () => onGoKnowledgeGraph(),
-        onPreviewRegistryWork: onPreviewRegistryWork,
-        onConnectEntityType: onConnectEntityFromEntityPreview,
-        onConnectWork: onConnectWorkFromEntityPreview,
-      ),
-    );
+  switch (previewTarget) {
+    case WorkPreviewTarget(:final item):
+      panels.add(
+        DashboardPreviewPanel(
+          width: previewWidth,
+          item: item,
+          userCatalog: userCatalog,
+          linkIndex: linkIndex,
+          linkIndexRevision: linkIndexRevision,
+          vaultItems: vaultItems,
+          canGoBack: canPopPreview,
+          onBack: onPopPreview,
+          onClose: onCloseAllPreviews,
+          onOpenDetail: onOpenWorkFromPreview,
+          onOpenEntity: onPreviewLinkedEntity,
+          onOpenWork: onPreviewLinkedWork,
+          onGoKnowledgeGraph: () => onGoKnowledgeGraph(),
+          onConnectEntityType: onConnectEntityFromPreview,
+          onConnectWorkFromPreview: onConnectWorkFromPreview,
+          onConnectSuggested: onConnectSuggestedFromPreview,
+          onPreviewRegistryWork: onPreviewRegistryWork,
+          onArchiveRegistryWork: onArchiveRegistryWorkFromPreview,
+        ),
+      );
+      break;
+    case EntityPreviewTarget(:final entity):
+      panels.add(
+        EntityDashboardPreviewPanel(
+          width: previewWidth,
+          entity: entity,
+          userCatalog: userCatalog,
+          linkIndex: linkIndex,
+          linkIndexRevision: linkIndexRevision,
+          vaultItems: vaultItems,
+          canGoBack: canPopPreview,
+          onBack: onPopPreview,
+          onClose: onCloseAllPreviews,
+          onOpenDetail: onOpenEntityFromPreview,
+          onOpenEntity: onPreviewLinkedEntity,
+          onOpenWork: onPreviewLinkedWork,
+          onGoKnowledgeGraph: () => onGoKnowledgeGraph(),
+          onPreviewRegistryWork: onPreviewRegistryWork,
+          onConnectEntityType: onConnectEntityFromEntityPreview,
+          onConnectWork: onConnectWorkFromEntityPreview,
+        ),
+      );
+      break;
+    case NoPreviewTarget():
+    case CollectionPreviewTarget():
+    case RelationPreviewTarget():
+    case TimelineRecordPreviewTarget():
+      break;
   }
   return panels;
 }

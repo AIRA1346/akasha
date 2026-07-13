@@ -22,11 +22,12 @@ mixin HomeShellControllerVaultMixin on HomeShellControllerBase {
     // Home dashboard (계속 탐험하기 / 사전에서 발견) still resolves against the
     // legacy vault item list. Skipping loadItems on linked cold-start left
     // Home empty until the user re-selected the folder (which calls loadItems).
-    // Cold start lands on Home; Work-archive browse is Library / explicit Explore.
+    // A new/default profile lands on Home. Existing legacy sidebar selections
+    // keep their mapped AppDestination instead of being overwritten here.
     await loadItems();
-    if (vault.isVaultLinked) {
-      await navigation.goHome();
-    }
+    await navigation.finalizeInitialDestination(
+      vaultLinked: vault.isVaultLinked,
+    );
     await loadRecentExploration();
     await vault.runStartupAutoArchiveIfNeeded();
     await prefetchRegistryForCurrentFilters();

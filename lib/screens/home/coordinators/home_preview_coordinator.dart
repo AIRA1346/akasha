@@ -46,13 +46,22 @@ class HomePreviewCoordinator {
   final Future<void> Function(AkashaItem item) onWorkPersisted;
   final UserCatalogEntity? Function(String entityId) resolveEntity;
 
-  AkashaItem? workPreviewItem;
-  UserCatalogEntity? entityPreviewItem;
-  final List<PreviewFrame> _backStack = [];
+  PreviewTarget _previewTarget = NoPreviewTarget.instance;
+  PreviewTarget get previewTarget => _previewTarget;
+  final List<PreviewTarget> _backStack = [];
   PreviewReturnSnapshot? _returnSnapshot;
 
-  bool get hasOpenPreview =>
-      workPreviewItem != null || entityPreviewItem != null;
+  AkashaItem? get workPreviewItem => switch (previewTarget) {
+    WorkPreviewTarget(:final item) => item,
+    _ => null,
+  };
+
+  UserCatalogEntity? get entityPreviewItem => switch (previewTarget) {
+    EntityPreviewTarget(:final entity) => entity,
+    _ => null,
+  };
+
+  bool get hasOpenPreview => previewTarget is! NoPreviewTarget;
 
   bool get canPopPreview => _backStack.isNotEmpty;
 
@@ -170,8 +179,7 @@ class HomePreviewCoordinator {
     } else {
       _backStack.clear();
     }
-    entityPreviewItem = null;
-    workPreviewItem = resolved;
+    _previewTarget = WorkPreviewTarget(resolved);
     recordWorkExploration(resolved.workId);
     rebuild();
   }
@@ -185,16 +193,14 @@ class HomePreviewCoordinator {
     } else {
       _backStack.clear();
     }
-    workPreviewItem = null;
-    entityPreviewItem = entity;
+    _previewTarget = EntityPreviewTarget(entity);
     recordEntityExploration(entity.entityId);
     rebuild();
   }
 
   void closeAllPreviews() {
     final hadPreview = hasOpenPreview;
-    workPreviewItem = null;
-    entityPreviewItem = null;
+    _previewTarget = NoPreviewTarget.instance;
     _backStack.clear();
     clearReturnSnapshot();
     if (hadPreview) rebuild();
@@ -221,7 +227,7 @@ class HomePreviewCoordinator {
       closeAllPreviews();
       return;
     }
-    _restoreFrame(_backStack.removeLast());
+    _restoreTarget(_backStack.removeLast());
     rebuild();
   }
 
@@ -252,7 +258,7 @@ class HomePreviewCoordinator {
   Future<void> openWorkDetail(AkashaItem item) async {
     var resolved = resolveItemForOpen(item);
     if (VaultWorkPresence.isRegistryOnlyPreview(resolved, getVaultItems())) {
-      workPreviewItem = resolved;
+      _previewTarget = WorkPreviewTarget(resolved);
       await archiveRegistryWorkFromPreview();
       final updated = workPreviewItem;
       if (updated == null ||
@@ -313,7 +319,7 @@ class HomePreviewCoordinator {
   void maybeClearReturnForWork(String workId) {
     final snapshot = _returnSnapshot;
     if (snapshot == null) return;
-    if (snapshot.current case WorkPreviewFrame(
+    if (snapshot.current case WorkPreviewTarget(
       :final item,
     ) when item.workId == workId) {
       clearReturnSnapshot();
@@ -323,7 +329,7 @@ class HomePreviewCoordinator {
   void maybeClearReturnForEntity(String entityId) {
     final snapshot = _returnSnapshot;
     if (snapshot == null) return;
-    if (snapshot.current case EntityPreviewFrame(
+    if (snapshot.current case EntityPreviewTarget(
       :final entity,
     ) when entity.entityId == entityId) {
       clearReturnSnapshot();
@@ -335,17 +341,18 @@ class HomePreviewCoordinator {
     if (snapshot == null) return;
 
     final matches = switch (snapshot.current) {
-      WorkPreviewFrame(:final item) => workId != null && item.workId == workId,
-      EntityPreviewFrame(:final entity) =>
+      WorkPreviewTarget(:final item) => workId != null && item.workId == workId,
+      EntityPreviewTarget(:final entity) =>
         entityId != null && entity.entityId == entityId,
+      _ => false,
     };
     if (!matches) return;
 
     clearReturnSnapshot();
     _backStack
       ..clear()
-      ..addAll(snapshot.backStack.map(_resolveFrame));
-    _restoreFrame(_resolveFrame(snapshot.current));
+      ..addAll(snapshot.backStack.map(_resolveTarget));
+    _restoreTarget(_resolveTarget(snapshot.current));
     await showBrowseInWorkbench();
     rebuild();
   }
@@ -354,47 +361,39 @@ class HomePreviewCoordinator {
     _returnSnapshot = null;
   }
 
-  PreviewFrame? _captureCurrentFrame() {
-    final work = workPreviewItem;
-    if (work != null) return WorkPreviewFrame(work);
-    final entity = entityPreviewItem;
-    if (entity != null) return EntityPreviewFrame(entity);
-    return null;
+  PreviewTarget? _captureCurrentTarget() {
+    return previewTarget is NoPreviewTarget ? null : previewTarget;
   }
 
   void _pushCurrentIfOpen() {
-    final current = _captureCurrentFrame();
+    final current = _captureCurrentTarget();
     if (current != null) {
       _backStack.add(current);
     }
   }
 
-  void _restoreFrame(PreviewFrame frame) {
-    switch (frame) {
-      case WorkPreviewFrame(:final item):
-        workPreviewItem = item;
-        entityPreviewItem = null;
-      case EntityPreviewFrame(:final entity):
-        entityPreviewItem = entity;
-        workPreviewItem = null;
-    }
+  void _restoreTarget(PreviewTarget target) {
+    _previewTarget = target;
   }
 
   PreviewReturnSnapshot? _captureReturnSnapshot() {
-    final current = _captureCurrentFrame();
+    final current = _captureCurrentTarget();
     if (current == null) return null;
     return PreviewReturnSnapshot(
       current: current,
-      backStack: List<PreviewFrame>.from(_backStack),
+      backStack: List<PreviewTarget>.from(_backStack),
     );
   }
 
-  PreviewFrame _resolveFrame(PreviewFrame frame) {
-    switch (frame) {
-      case WorkPreviewFrame(:final item):
-        return WorkPreviewFrame(resolveItemForOpen(item));
-      case EntityPreviewFrame(:final entity):
-        return EntityPreviewFrame(resolveEntity(entity.entityId) ?? entity);
-    }
+  PreviewTarget _resolveTarget(PreviewTarget target) {
+    return switch (target) {
+      WorkPreviewTarget(:final item) => WorkPreviewTarget(
+        resolveItemForOpen(item),
+      ),
+      EntityPreviewTarget(:final entity) => EntityPreviewTarget(
+        resolveEntity(entity.entityId) ?? entity,
+      ),
+      _ => target,
+    };
   }
 }

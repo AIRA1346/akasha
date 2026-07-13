@@ -29,6 +29,8 @@
 
 구현 순서는 Theme foundation → Responsive Shell → Graph/Timeline 기존 경로 복원 → Home 고도화 → Preview·핵심 화면 정돈 → 테마별 asset/effect와 회귀 검증이다. 기존 Graph/Timeline 내비게이션을 다시 보이게 하는 일은 새 그래프 엔진, 완성 캘린더, `SA-05 Timeline projection` 완료를 의미하지 않는다.
 
+**현재:** UX-1 Theme foundation과 UX-2 Responsive Shell·기존 Graph/Timeline 접근성 복원을 완료했다. 다음 구현 단계는 UX-3 Home 고도화이며, 기존 Home 콘텐츠 재설계는 UX-2 범위에 포함하지 않았다.
+
 공식 테마 카탈로그는 무료 `classicDark`·`midnightBlue`, premium `sakura`·`amethyst`·`nocturne`다. UX-1 foundation으로 no-IAP picker는 무료 2종만 제공하며 premium 구매·잠금 UI는 commerce 활성 전 노출하지 않는다. 잔여 style 이관은 [UX_THEME_MIGRATION_INVENTORY.md](UX_THEME_MIGRATION_INVENTORY.md)에서 추적한다.
 
 ---
@@ -105,6 +107,7 @@
 * **[x] 나의 서재 기본 뷰:** 아카이브한 작품만 모아 보는 전용 홈 모드 구축
 * **[x] 대시보드-서재 역할 분리:** 카탈로그 탐색 공간(Dashboard)과 나의 기록 공간(Library) 정비
 * **[x] UX-1 공식 테마 foundation:** canonical 5종 · app-root theme · 무료 2종 picker · premium 3종 fallback preset. Commerce 활성 전 구매·잠금 UI 미노출
+* **[x] UX-2 Responsive Shell:** 단일 `AppDestination`·`PreviewTarget`, 3단계 `ShellLayoutSpec`, Sidebar/Dock selection SSOT, 기존 Graph/Timeline 접근성, provider 없는 utility slot 숨김
 * **[x] Cast Collection / Hero Collection:** 인물·속성별 큐레이션 컬렉션 연동 기능
 * **[ ] (v1.1+) 서재 진열 방식 커스텀:** 그리드 밀도 및 표시 항목 개인화 (보류)
 * **[ ] (장기) Mixed Library:** 서로 다른 매체의 기록을 하나의 컬렉션으로 통합 (보류)

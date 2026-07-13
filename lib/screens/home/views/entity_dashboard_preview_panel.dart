@@ -25,6 +25,7 @@ class EntityDashboardPreviewPanel extends StatefulWidget {
   const EntityDashboardPreviewPanel({
     super.key,
     required this.entity,
+    this.width = 288,
     required this.userCatalog,
     required this.linkIndex,
     this.linkIndexRevision = 0,
@@ -42,6 +43,7 @@ class EntityDashboardPreviewPanel extends StatefulWidget {
   });
 
   final UserCatalogEntity entity;
+  final double width;
   final UserCatalogPort userCatalog;
   final RecordLinkPort linkIndex;
   final int linkIndexRevision;
@@ -166,7 +168,7 @@ class _EntityDashboardPreviewPanelState
     final palette = context.akashaPalette;
 
     return Container(
-      width: 320,
+      width: widget.width,
       decoration: BoxDecoration(
         color: palette.previewRail,
         border: Border(left: BorderSide(color: palette.borderSubtle(0.52))),

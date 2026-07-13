@@ -13,6 +13,7 @@ import '../../services/link_candidate_service.dart';
 import 'home_browse_filter_controller.dart';
 import 'home_personal_library_controller.dart';
 import 'home_section_preferences.dart';
+import 'preview_frame.dart';
 import 'views/browse_view.dart';
 import 'views/catalog_entity_browse_view.dart';
 import 'views/home_dashboard_view.dart';
@@ -44,8 +45,7 @@ class HomeShellBrowseContentBuilder {
     required this.personalLibCtrl,
     required this.vaultPath,
     required this.vaultLinked,
-    required this.workPreviewItem,
-    required this.entityPreviewItem,
+    required this.previewTarget,
     required this.onNavigateWorkPreview,
     required this.onNavigateEntityPreview,
     required this.onSearch,
@@ -87,8 +87,7 @@ class HomeShellBrowseContentBuilder {
   final HomePersonalLibraryController personalLibCtrl;
   final String? vaultPath;
   final bool vaultLinked;
-  final AkashaItem? workPreviewItem;
-  final UserCatalogEntity? entityPreviewItem;
+  final PreviewTarget previewTarget;
   final void Function(AkashaItem item) onNavigateWorkPreview;
   final void Function(UserCatalogEntity entity) onNavigateEntityPreview;
   final VoidCallback onSearch;
@@ -97,7 +96,7 @@ class HomeShellBrowseContentBuilder {
   final Future<void> Function() onGoKnowledgeGraph;
   final VoidCallback onSelectTimeline;
   final void Function(LinkCandidate candidate, AkashaItem work)
-      onConnectSuggestedFromHome;
+  onConnectSuggestedFromHome;
   final void Function(RegistryWork work) onPreviewRegistryWork;
   final void Function(AkashaItem item) onOpenBrowseItem;
   final void Function(AkashaItem item) onOpenItemDetail;
@@ -109,7 +108,8 @@ class HomeShellBrowseContentBuilder {
     List<BrowseCard> cards,
     int oldIndex,
     int newIndex,
-  ) onCuratedReorder;
+  )
+  onCuratedReorder;
   final void Function(EntityAnchorType? type)? onAddNewEntity;
   final void Function(CanvasRecord canvas)? onOpenCanvas;
 
@@ -118,8 +118,17 @@ class HomeShellBrowseContentBuilder {
     required bool isExploreBrowseMode,
   }) {
     final scope = filterCtrl.entityScope;
+    final workPreviewItem = switch (previewTarget) {
+      WorkPreviewTarget(:final item) => item,
+      _ => null,
+    };
+    final entityPreviewItem = switch (previewTarget) {
+      EntityPreviewTarget(:final entity) => entity,
+      _ => null,
+    };
 
-    final hasNoFilters = filterCtrl.categories.isEmpty &&
+    final hasNoFilters =
+        filterCtrl.categories.isEmpty &&
         filterCtrl.workStatuses.isEmpty &&
         filterCtrl.myStatuses.isEmpty &&
         filterCtrl.highlightEntityId == null;
@@ -132,8 +141,9 @@ class HomeShellBrowseContentBuilder {
         onOpenWork: onNavigateWorkPreview,
         onOpenEntity: onNavigateEntityPreview,
         onOpenRecord: onGraphOpenRecord,
-        onConnectEntity:
-            onAddNewEntity == null ? null : () => onAddNewEntity!(null),
+        onConnectEntity: onAddNewEntity == null
+            ? null
+            : () => onAddNewEntity!(null),
         vaultPath: vaultPath ?? '',
         onOpenCanvas: onOpenCanvas ?? (_) {},
       );

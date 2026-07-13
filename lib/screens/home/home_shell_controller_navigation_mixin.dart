@@ -1,4 +1,5 @@
 import '../../../models/browse_entity_scope.dart';
+import 'app_destination.dart';
 import 'home_shell_controller_base.dart';
 
 /// Sidebar·mode navigation.
@@ -23,6 +24,9 @@ mixin HomeShellControllerNavigationMixin on HomeShellControllerBase {
   Future<void> goCollection() => navigation.goCollection();
 
   Future<void> goKnowledgeGraph() => navigation.goKnowledgeGraph();
+
+  Future<void> selectDestination(AppDestination destination) =>
+      navigation.selectDestination(destination);
 
   Future<void> goExploreEntities(BrowseEntityScope scope) =>
       navigation.goExploreEntities(scope);

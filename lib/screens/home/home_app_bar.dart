@@ -29,8 +29,10 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     required this.onClearRegistryCache,
     this.onCatalogInbox,
     this.catalogContributionCount = 0,
-    required this.onAppTheme,
-    required this.appThemeAccent,
+    required this.onSettings,
+    this.currencySlot,
+    this.avatarSlot,
+    this.toolbarHeight = 64,
   });
 
   final bool isSidebarOpen;
@@ -46,14 +48,16 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback onClearRegistryCache;
   final VoidCallback? onCatalogInbox;
   final int catalogContributionCount;
-  final VoidCallback onAppTheme;
-  final Color appThemeAccent;
+  final VoidCallback onSettings;
+  final Widget? currencySlot;
+  final Widget? avatarSlot;
+  final double toolbarHeight;
 
   bool get _showTimelineCapture =>
       FeatureFlags.showTimeline && vaultLinked && onTimelineCapture != null;
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => Size.fromHeight(toolbarHeight);
 
   void _onMenuSelected(_HomeAppBarMenuAction action) {
     switch (action) {
@@ -129,8 +133,8 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         value: _HomeAppBarMenuAction.clearRegistryCache,
         child: _OverflowMenuRow(
           icon: Icons.delete_sweep_outlined,
-          label: l10n?.appBarClearRegistryCache ??
-              '글로벌 사전 JSON 캐시 삭제 (이미지 파일 아님)',
+          label:
+              l10n?.appBarClearRegistryCache ?? '글로벌 사전 JSON 캐시 삭제 (이미지 파일 아님)',
           destructive: true,
         ),
       ),
@@ -142,9 +146,11 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     final l10n = lookupAppL10n(context);
 
     return AppBar(
+      key: const ValueKey('home-shell-app-bar'),
+      toolbarHeight: toolbarHeight,
       leading: IconButton(
         icon: Icon(isSidebarOpen ? Icons.menu_open : Icons.menu),
-        tooltip: l10n?.appBarToggleSidebar ?? '사이드바 토글 (Tab)',
+        tooltip: l10n?.appBarToggleSidebar ?? '사이드바 토글 (Ctrl+B)',
         onPressed: onToggleSidebar,
       ),
       title: const Text(
@@ -157,14 +163,6 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       centerTitle: true,
       actions: [
-        IconButton(
-          icon: Icon(
-            Icons.palette_outlined,
-            color: appThemeAccent,
-          ),
-          tooltip: l10n?.appBarLibraryTheme ?? '앱 테마',
-          onPressed: onAppTheme,
-        ),
         if (onCatalogInbox != null)
           IconButton(
             tooltip: l10n?.appBarCatalogInbox ?? '카탈로그 제안함',
@@ -198,6 +196,45 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           itemBuilder: (context) => _buildOverflowMenuItems(context),
           icon: const Icon(Icons.more_vert),
         ),
+        HomeUtilityCluster(
+          currencySlot: currencySlot,
+          onSettings: onSettings,
+          avatarSlot: avatarSlot,
+        ),
+      ],
+    );
+  }
+}
+
+/// Production utility slot contract. Missing providers stay absent rather than
+/// rendering placeholder balances or identities.
+class HomeUtilityCluster extends StatelessWidget {
+  const HomeUtilityCluster({
+    super.key,
+    required this.onSettings,
+    this.currencySlot,
+    this.avatarSlot,
+  });
+
+  final Widget? currencySlot;
+  final VoidCallback onSettings;
+  final Widget? avatarSlot;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+    return Row(
+      key: const ValueKey('home-utility-cluster'),
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        ?currencySlot,
+        IconButton(
+          key: const ValueKey('home-utility-settings'),
+          tooltip: l10n?.appPreferencesTitle ?? 'Settings',
+          onPressed: onSettings,
+          icon: const Icon(Icons.settings_outlined),
+        ),
+        ?avatarSlot,
       ],
     );
   }
@@ -225,10 +262,7 @@ class _OverflowMenuRow extends StatelessWidget {
         Icon(icon, size: 20, color: color),
         const SizedBox(width: 12),
         Expanded(
-          child: Text(
-            label,
-            style: TextStyle(color: color),
-          ),
+          child: Text(label, style: TextStyle(color: color)),
         ),
         ?trailing,
       ],

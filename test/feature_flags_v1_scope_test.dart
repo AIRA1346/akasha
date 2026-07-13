@@ -11,7 +11,7 @@ void main() {
     expect(FeatureFlags.showPreviewMemoBar, isFalse);
   });
 
-  test('Steam v1 keeps core catalog enabled and Graph off', () {
+  test('Steam v1 keeps catalog enabled and experimental Graph CTAs off', () {
     expect(FeatureFlags.catalogContributions, isTrue);
     expect(FeatureFlags.showKnowledgeGraph, isFalse);
   });

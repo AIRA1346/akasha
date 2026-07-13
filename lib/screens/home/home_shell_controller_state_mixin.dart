@@ -2,10 +2,11 @@ import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/ports/record_link_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/browse_card.dart';
-import '../../../models/user_catalog_entity.dart';
 import '../../../services/link_candidate_service.dart';
 import '../../../services/personal_library_membership_service.dart';
+import 'app_destination.dart';
 import 'home_shell_controller_base.dart';
+import 'preview_frame.dart';
 
 /// Home shell UI-facing state getters.
 mixin HomeShellControllerStateMixin on HomeShellControllerBase {
@@ -23,8 +24,7 @@ mixin HomeShellControllerStateMixin on HomeShellControllerBase {
 
   List<AkashaItem> get recentExploreItems => recentExplore.items;
 
-  AkashaItem? get workPreviewItem => preview.workPreviewItem;
-  UserCatalogEntity? get entityPreviewItem => preview.entityPreviewItem;
+  PreviewTarget get previewTarget => preview.previewTarget;
   bool get hasOpenPreview => preview.hasOpenPreview;
   bool get canPopPreview => preview.canPopPreview;
 
@@ -44,17 +44,9 @@ mixin HomeShellControllerStateMixin on HomeShellControllerBase {
   int get catalogLoadedThrough => catalog.catalogLoadedThrough;
 
   bool get isSidebarOpen => navigation.isSidebarOpen;
+  AppDestination get currentDestination => navigation.currentDestination;
   int get timelineReloadToken => navigation.timelineReloadToken;
-  bool get isPersonalLibraryMode => navigation.isPersonalLibraryMode;
-  bool get isCollectibleCollectionMode =>
-      navigation.isCollectibleCollectionMode;
-  bool get isTimelineMode => navigation.isTimelineMode;
-  bool get isRecordsMode => navigation.isRecordsMode;
   bool get isCuratedLibraryActive => navigation.isCuratedLibraryActive;
-  bool get isHomeDashboardMode => navigation.isHomeDashboardMode;
-  bool get isExploreBrowseMode => navigation.isExploreBrowseMode;
-  bool get isKnowledgeGraphMode => navigation.isKnowledgeGraphMode;
-  bool get isExploreModeActive => navigation.isExploreModeActive;
   bool get canAddToLibrary => browse.canAddToLibrary;
 
   PersonalLibraryMembershipService get libraryMembership =>

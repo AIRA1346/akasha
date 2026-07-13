@@ -14,7 +14,10 @@ class FeatureFlags {
   /// 글로벌 사전 추가·수정 제안 (로컬 큐 → export / GitHub Issue)
   static const bool catalogContributions = true;
 
-  /// 지식 그래프 탐색 — v1.1에서 활성화 예정 (Steam v1 비활성 · C-04)
+  /// Home/Preview의 실험적 지식 그래프 CTA — v1.1에서 활성화 예정.
+  ///
+  /// UX-2에서 복원한 기존 Graph 전역 목적지는 이 플래그의 대상이 아니다.
+  /// 이 값은 새 graph engine이나 확장 기능의 출시를 의미한다.
   static const bool showKnowledgeGraph = false;
 
   // ── R15 / post-v1 홈 실험 UI ─────────────────────────────────────────
@@ -25,7 +28,10 @@ class FeatureFlags {
   /// 홈 지식 우주 오빗 시각화 (Discover·Graph 비전 UI).
   static const bool showHomeUniverseSection = false;
 
-  /// 타임라인·일지 빠른 액션 — v1 이후.
+  /// 타임라인·일지 빠른 capture와 Home CTA — v1 이후.
+  ///
+  /// 기존 Records/Timeline 조회 목적지는 UX-2 전역 내비게이션으로 접근할
+  /// 수 있으며, 이 값이 false일 때 새 projection이나 capture를 주장하지 않는다.
   static const bool showTimeline = false;
 
   // ── R15 워크벤치·프리뷰 크롬 ─────────────────────────────────────────

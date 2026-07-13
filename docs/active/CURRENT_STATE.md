@@ -13,9 +13,9 @@
 > - `system/` = durable non-rebuildable (candidates, ops, recovery, drafts); `.akasha/` = derived/disposable
 > - Bounded Home Read Closure (S0) · Architecture Closure **declared**
 > - Steam Inventory sandbox E2E POC passed; production IAP remains disabled
-> - Flutter app: `flutter analyze --no-pub` **0** · `flutter test --no-pub` **974**
+> - Flutter app: `flutter analyze --no-pub` **0** · `flutter test --no-pub` **1011**
 > - Commerce packages: domain `dart test` **14** · backend `dart test` **17** · both `dart analyze` **0**
-> - Windows debug build **OK (2026-07-13)**
+> - Windows debug/release build **OK (2026-07-13)**
 >
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)  
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
@@ -38,7 +38,7 @@
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
 
-**v1 blocking에 가까운 검증:** root `flutter test` **974** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
+**v1 blocking에 가까운 검증:** root `flutter test` **1011** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
 **v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.  
 **IAP:** `FeatureFlags.steamInAppPurchasesEnabled = false` — 미구현. Store IAP 표시·재심사 주장 금지 until Steam payment flow complete.
 ---
@@ -70,7 +70,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| root `flutter test` | **974 PASS** | ✅ |
+| root `flutter test` | **1011 PASS** | ✅ |
 | commerce domain `dart test` | **14 PASS** | ✅ |
 | commerce backend `dart test` | **17 PASS** | ✅ |
 | `flutter analyze lib` | 0 issue | ✅ |
@@ -82,6 +82,7 @@
 ### Ⅲ. Home Shell
 
 * Wave 1 + Foundation P2 분해 완료 — coordinator·preview·scaffold parts.
+* **UX-2 Responsive Shell 완료** — 단일 `AppDestination`·`PreviewTarget`, `ShellLayoutSpec` 3단계, Sidebar/Dock selection SSOT, 기존 Graph/Records 접근, compact drawer·Preview sheet, utility slot 계약. provider 없는 currency/avatar는 숨김.
 * **v1 관점:** browse/catalog UI는 **기록으로 이어지는 진입**이지 제품 정체성 자체가 아님.
 
 ---

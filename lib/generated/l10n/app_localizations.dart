@@ -203,7 +203,7 @@ abstract class AppLocalizations {
   /// No description provided for @appBarToggleSidebar.
   ///
   /// In en, this message translates to:
-  /// **'Toggle sidebar (Tab)'**
+  /// **'Toggle sidebar (Ctrl+B)'**
   String get appBarToggleSidebar;
 
   /// No description provided for @appBarLibraryTheme.

@@ -17,7 +17,7 @@
   "appPreferencesVaultSubtitle": "저장 폴더, 백업, 휴지통을 관리합니다.",
   "appPreferencesQuit": "종료",
   "appPreferencesClose": "닫기",
-  "appBarToggleSidebar": "사이드바 토글 (Tab)",
+  "appBarToggleSidebar": "사이드바 토글 (Ctrl+B)",
   "appBarLibraryTheme": "앱 테마",
   "appBarSearch": "검색",
   "appBarTimelineCapture": "타임라인 기록",

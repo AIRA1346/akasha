@@ -1,6 +1,7 @@
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/personal_library_config.dart';
 import 'package:akasha/models/work_drag_payload.dart';
+import 'package:akasha/screens/home/app_destination.dart';
 import 'package:akasha/screens/home/home_personal_library_controller.dart';
 import 'package:akasha/theme/akasha_theme.dart';
 import 'package:akasha/utils/helpers.dart';
@@ -22,19 +23,11 @@ void main() {
         home: Scaffold(
           body: DashboardSidebar(
             isOpen: true,
-            isHomeMode: true,
-            isExploreMode: false,
-            isPersonalLibraryMode: false,
-            isCollectibleCollectionMode: false,
-            isTimelineMode: false,
+            width: 256,
+            selectedDestination: AppDestination.home,
+            onSelectDestination: (_) {},
             selectionMode: SidebarSelectionMode.dashboard,
             personalLibraries: const [],
-            onGoHome: () async {},
-            onGoExplore: () async {},
-            onGoLibrary: () async {},
-            onGoCollection: () async {},
-            onGoKnowledgeGraph: () async {},
-            onSelectTimeline: () {},
             onSelectCollectibleCollection: (_) {},
             onAddPersonalLibrary: () => addTapped = true,
             onSelectPersonalLibrary: (id) => selectedId = id,
@@ -77,20 +70,12 @@ void main() {
         home: Scaffold(
           body: DashboardSidebar(
             isOpen: true,
-            isHomeMode: false,
-            isExploreMode: false,
-            isPersonalLibraryMode: true,
-            isCollectibleCollectionMode: false,
-            isTimelineMode: false,
+            width: 256,
+            selectedDestination: AppDestination.library,
+            onSelectDestination: (_) {},
             selectionMode: SidebarSelectionMode.personalLibrary,
             personalLibraries: libraries,
             activePersonalLibraryId: 'curated_demo',
-            onGoHome: () async {},
-            onGoExplore: () async {},
-            onGoLibrary: () async {},
-            onGoCollection: () async {},
-            onGoKnowledgeGraph: () async {},
-            onSelectTimeline: () {},
             onSelectCollectibleCollection: (_) {},
             onAddPersonalLibrary: () {},
             onSelectPersonalLibrary: (id) => selectedId = id,
@@ -160,20 +145,12 @@ void main() {
         home: Scaffold(
           body: DashboardSidebar(
             isOpen: true,
-            isHomeMode: false,
-            isExploreMode: false,
-            isPersonalLibraryMode: true,
-            isCollectibleCollectionMode: false,
-            isTimelineMode: false,
+            width: 256,
+            selectedDestination: AppDestination.library,
+            onSelectDestination: (_) {},
             selectionMode: SidebarSelectionMode.personalLibrary,
             personalLibraries: libraries,
             activePersonalLibraryId: PersonalLibraryConfig.masterArchiveId,
-            onGoHome: () async {},
-            onGoExplore: () async {},
-            onGoLibrary: () async {},
-            onGoCollection: () async {},
-            onGoKnowledgeGraph: () async {},
-            onSelectTimeline: () {},
             onSelectCollectibleCollection: (_) {},
             onAddPersonalLibrary: () {},
             onSelectPersonalLibrary: (_) {},

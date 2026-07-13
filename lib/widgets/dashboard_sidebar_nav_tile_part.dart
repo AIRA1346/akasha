@@ -2,6 +2,7 @@ part of 'dashboard_sidebar.dart';
 
 class _SidebarNavTile extends StatefulWidget {
   const _SidebarNavTile({
+    super.key,
     required this.icon,
     required this.label,
     required this.isSelected,
@@ -11,7 +12,7 @@ class _SidebarNavTile extends StatefulWidget {
   final IconData icon;
   final String label;
   final bool isSelected;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   @override
   State<_SidebarNavTile> createState() => _SidebarNavTileState();
@@ -19,6 +20,15 @@ class _SidebarNavTile extends StatefulWidget {
 
 class _SidebarNavTileState extends State<_SidebarNavTile> {
   bool _hovered = false;
+  late final FocusNode _focusNode = FocusNode(
+    debugLabel: 'sidebar-${widget.label}',
+  );
+
+  @override
+  void dispose() {
+    _focusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,58 +45,67 @@ class _SidebarNavTileState extends State<_SidebarNavTile> {
       onExit: (_) => setState(() => _hovered = false),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 2),
-        child: Material(
-          color: Colors.transparent,
-          child: InkWell(
-            onTap: widget.onTap,
-            borderRadius: BorderRadius.circular(10),
-            child: Container(
-              decoration: BoxDecoration(
-                color: bg,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-              child: Row(
-                children: [
-                  if (selected)
-                    Container(
-                      width: 3,
-                      height: 18,
-                      margin: const EdgeInsets.only(right: 10),
-                      decoration: BoxDecoration(
-                        color: palette.accent,
-                        borderRadius: BorderRadius.circular(2),
-                        boxShadow: [
-                          BoxShadow(
-                            color: palette.accent.withValues(alpha: 0.45),
-                            blurRadius: 6,
-                          ),
-                        ],
-                      ),
-                    )
-                  else
-                    const SizedBox(width: 13),
-                  Icon(
-                    widget.icon,
-                    size: 18,
-                    color: selected ? palette.accent : palette.textSecondary,
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: Text(
-                      widget.label,
-                      style:
-                          (selected
-                                  ? AkashaTypography.sidebarNavLabelSelected
-                                  : AkashaTypography.sidebarNavLabel)
-                              .copyWith(
-                                color: selected
-                                    ? palette.accent
-                                    : palette.textSecondary,
-                              ),
+        child: Semantics(
+          button: true,
+          selected: selected,
+          enabled: widget.onTap != null,
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              focusNode: _focusNode,
+              onTap: widget.onTap,
+              borderRadius: BorderRadius.circular(10),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: bg,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 10,
+                ),
+                child: Row(
+                  children: [
+                    if (selected)
+                      Container(
+                        width: 3,
+                        height: 18,
+                        margin: const EdgeInsets.only(right: 10),
+                        decoration: BoxDecoration(
+                          color: palette.accent,
+                          borderRadius: BorderRadius.circular(2),
+                          boxShadow: [
+                            BoxShadow(
+                              color: palette.accent.withValues(alpha: 0.45),
+                              blurRadius: 6,
+                            ),
+                          ],
+                        ),
+                      )
+                    else
+                      const SizedBox(width: 13),
+                    Icon(
+                      widget.icon,
+                      size: 18,
+                      color: selected ? palette.accent : palette.textSecondary,
                     ),
-                  ),
-                ],
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Text(
+                        widget.label,
+                        style:
+                            (selected
+                                    ? AkashaTypography.sidebarNavLabelSelected
+                                    : AkashaTypography.sidebarNavLabel)
+                                .copyWith(
+                                  color: selected
+                                      ? palette.accent
+                                      : palette.textSecondary,
+                                ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

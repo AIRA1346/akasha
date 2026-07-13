@@ -36,7 +36,7 @@ Code review of `lib/` against Constitution §3–5 and P0/SA contracts (2026-07-
 4. **`.akasha/` new writes** — derived indexes + vault spec only; durable ops live under `system/`.
 5. **Work Explore SA-02 slice** — `WorkSummaryBrowseView` + `LocalDerivedIndexLifecycle`.
 6. **Domain semantics** — separate stores/loaders; no Universal Record merge.
-7. **Bounded Home Read Closure** — precise vault watch; shared link index; single-path hydrate; repair-only full link rebuild; Graph off.
+7. **Bounded Home Read Closure** — precise vault watch; shared link index; single-path hydrate; repair-only full link rebuild; experimental Graph CTA off. UX-2 기존 Graph destination은 허용.
 
 ---
 
@@ -49,7 +49,7 @@ Code review of `lib/` against Constitution §3–5 and P0/SA contracts (2026-07-
 | C-01 | Legacy Home full-vault MD load on watch | Precise `applyVaultChange`; no `loadAllItems` on watch |
 | C-02 | Link index full rebuild every `loadItems` | Full rebuild = repair only |
 | C-03 | Adapter/detail-save `loadAllItems` | Path/id hydrate |
-| C-04 | Knowledge Graph ON vs v1.1 | `showKnowledgeGraph = false` |
+| C-04 | Experimental Knowledge Graph CTA ON vs v1.1 | `showKnowledgeGraph = false`; UX-2는 기존 Graph surface의 전역 접근만 복원 |
 | C-05 | Dual `RecordLinkIndexService` | `RecordLinkIndexService.shared` |
 
 ### Former S1 — **Migrated to Steam stability checklist**
@@ -71,7 +71,7 @@ Unchanged backlog (L-01–L-08). Do not start from this Closure doc. Track in [U
 | Save/query/index bypass P0? | **No** for P0 writers |
 | Unnecessary lock-in? | **No hard lock-in** |
 | Work/Entity/Journal/Timeline/Canvas meanings preserved? | **Yes** |
-| Steam v1 FeatureFlag Graph? | **Off** (C-04) |
+| Steam v1 experimental Graph CTA/expansion? | **Off** (C-04); 기존 Graph surface 접근은 UX-2에서 복원 |
 | Remaining full-scan paths? | Checklist-only (search/entity/auto-archive) — Steam track |
 
 ---

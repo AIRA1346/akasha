@@ -70,60 +70,64 @@ class _HomeBrowseSearchChromeState extends State<HomeBrowseSearchChrome> {
 
   @override
   Widget build(BuildContext context) {
-    final compact = MediaQuery.sizeOf(context).width < widget.compactBreakpoint;
     final palette = context.akashaPalette;
 
-    return ColoredBox(
-      color: palette.background,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 10, 16, 10),
-            child: Row(
-              children: [
-                Expanded(
-                  child: _SearchEntry(
-                    onTap: widget.onSearch,
-                    showCtrlKHint: !compact,
-                  ),
-                ),
-                const SizedBox(width: AkashaSpacing.sm),
-                _FilterToggleButton(
-                  expanded: _filtersExpanded,
-                  hasActiveFilters: _hasActiveFilters,
-                  onPressed: () =>
-                      setState(() => _filtersExpanded = !_filtersExpanded),
-                ),
-                if (widget.onAddNewEntity != null) ...[
-                  const SizedBox(width: AkashaSpacing.sm),
-                  _AddArchiveButton(
-                    onTap: () => widget.onAddNewEntity!(
-                      widget.selectedEntityScope.catalogEntityType,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final compact = constraints.maxWidth < widget.compactBreakpoint;
+        return ColoredBox(
+          color: palette.background,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 10, 16, 10),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: _SearchEntry(
+                        onTap: widget.onSearch,
+                        showCtrlKHint: !compact,
+                      ),
                     ),
-                  ),
-                ],
-              ],
-            ),
+                    const SizedBox(width: AkashaSpacing.sm),
+                    _FilterToggleButton(
+                      expanded: _filtersExpanded,
+                      hasActiveFilters: _hasActiveFilters,
+                      onPressed: () =>
+                          setState(() => _filtersExpanded = !_filtersExpanded),
+                    ),
+                    if (widget.onAddNewEntity != null) ...[
+                      const SizedBox(width: AkashaSpacing.sm),
+                      _AddArchiveButton(
+                        onTap: () => widget.onAddNewEntity!(
+                          widget.selectedEntityScope.catalogEntityType,
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+              if (_filtersExpanded) ...[
+                Divider(height: 1, color: palette.borderSubtle(0.18)),
+                FilterSection(
+                  selectedCategories: widget.selectedCategories,
+                  selectedWorkStatuses: widget.selectedWorkStatuses,
+                  selectedMyStatuses: widget.selectedMyStatuses,
+                  onToggleCategory: widget.onToggleCategory,
+                  onClearCategories: widget.onClearCategories,
+                  onToggleWorkStatus: widget.onToggleWorkStatus,
+                  onToggleMyStatus: widget.onToggleMyStatus,
+                  selectedEntityScope: widget.selectedEntityScope,
+                  onEntityScopeChanged: widget.onEntityScopeChanged,
+                ),
+                Divider(height: 1, color: palette.borderSubtle(0.18)),
+              ] else
+                Divider(height: 1, color: palette.borderSubtle(0.12)),
+            ],
           ),
-          if (_filtersExpanded) ...[
-            Divider(height: 1, color: palette.borderSubtle(0.18)),
-            FilterSection(
-              selectedCategories: widget.selectedCategories,
-              selectedWorkStatuses: widget.selectedWorkStatuses,
-              selectedMyStatuses: widget.selectedMyStatuses,
-              onToggleCategory: widget.onToggleCategory,
-              onClearCategories: widget.onClearCategories,
-              onToggleWorkStatus: widget.onToggleWorkStatus,
-              onToggleMyStatus: widget.onToggleMyStatus,
-              selectedEntityScope: widget.selectedEntityScope,
-              onEntityScopeChanged: widget.onEntityScopeChanged,
-            ),
-            Divider(height: 1, color: palette.borderSubtle(0.18)),
-          ] else
-            Divider(height: 1, color: palette.borderSubtle(0.12)),
-        ],
-      ),
+        );
+      },
     );
   }
 }

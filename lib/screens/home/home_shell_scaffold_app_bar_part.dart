@@ -3,13 +3,20 @@ part of 'home_shell_scaffold.dart';
 PreferredSizeWidget _homeShellScaffoldAppBar(
   BuildContext context,
   HomeShellController controller,
+  ShellLayoutSpec layoutSpec,
 ) {
   return HomeAppBar(
+    toolbarHeight: layoutSpec.appBarHeight,
     isSidebarOpen: controller.isSidebarOpen,
     isSyncing: controller.isSyncing,
     vaultLinked: controller.vaultLinked,
-    onAppTheme: controller.showLibraryThemePicker,
-    appThemeAccent: context.akashaPalette.accent,
+    onSettings: () => unawaited(
+      showAppPreferencesDialog(
+        context,
+        onOpenAppTheme: controller.showLibraryThemePicker,
+        onOpenVaultSettings: controller.openVaultSettingsDialog,
+      ),
+    ),
     onToggleSidebar: controller.toggleSidebar,
     onTimelineCapture: controller.openTimelineQuickCapture,
     onClipboardImport: controller.openClipboardImportDialog,

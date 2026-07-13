@@ -6,7 +6,7 @@
 > **갱신:** 2026-07-13
 > **Git:** `git rev-parse HEAD`  
 >
-> **Verification snapshot (2026-07-13):** root analyze **0** · root test **974** · commerce domain **14** · backend **17** · Steam Inventory sandbox E2E POC passed · Windows debug build OK · `system/` durable vs `.akasha/` derived
+> **Verification snapshot (2026-07-13):** root analyze **0** · root test **1011** · commerce domain **14** · backend **17** · Steam Inventory sandbox E2E POC passed · Windows debug/release build OK · `system/` durable vs `.akasha/` derived
 > **현재 실행:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) — Architecture Closure 선언 후 Steam 출시 블로커 트랙
 > **IAP:** 미구현 (`steamInAppPurchasesEnabled = false`). 결제 완성 전 Store IAP 표시·재심사 주장 금지.
 ---
@@ -15,11 +15,12 @@
  
 | 항목 | 상태 |
 |------|------|
-| **root flutter test** | **974 PASS** |
+| **root flutter test** | **1011 PASS** |
 | **commerce package tests** | domain **14 PASS** · backend **17 PASS** |
 | **flutter analyze** | **0 issue** (gates clean) |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
 | **앱 테마** | canonical 5 preset · 무료 2/premium 3 catalog · app-root controller · backdrop/harness ✅ |
+| **Responsive Shell** | UX-2A/B/C · destination/preview SSOT · 256/232/drawer · 288 inline/overlay/sheet · 기존 Graph/Records 접근 ✅ |
 | **Steam Inventory POC** | sandbox purchase · exchange E2E 통과 ✅ · production IAP는 계속 비활성 |
 | **사이드바 서재** | `나만의 서재` 목록·active·`+`·select·삭제·DnD ✅ |
 | **Poster Localizing** | URL 입력 → vault `posters/` 저장 → `poster: "posters/..."` ✅ |
@@ -90,7 +91,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| root `flutter test` | **974 PASS** | ✅ |
+| root `flutter test` | **1011 PASS** | ✅ |
 | commerce domain `dart test` | **14 PASS** | ✅ |
 | commerce backend `dart test` | **17 PASS** | ✅ |
 | `flutter analyze` | **0 issue** | ✅ |
@@ -108,7 +109,7 @@
 
 | 게이트 | 상태 | v1 blocking | 비고 |
 |--------|:----:|:-----------:|------|
-| **G-AUTO** | ✅ | ✅ | app **974** · domain **14** · backend **17** · analyze **0** · release build **PASS** |
+| **G-AUTO** | ✅ | ✅ | app **1011** · domain **14** · backend **17** · analyze **0** · release build **PASS** |
 | **G-VAULT** | ✅ | **✅** | 볼트 연동·아카이브·Sanctum 저장·기록 UI — 사용자 수동 dogfood 완료 |
 | **G-QA** | ✅ | ✅ | P0 수동 **12/12** (2026-06-13) · 사용자 dogfood 확인 |
 | **G-STEAM** | 🔶 | ✅ | no-IAP BuildID **24015480** 업로드 완료 · Set Live/review 대기 |
@@ -279,4 +280,5 @@
 | 2026-07-08 | **Canvas viewport persist v0.3-A.5** — layout session registry · Work/Entity 이탈/복귀 viewport 유지 · `alignment: topLeft` · full tests **838 PASS** · analyze **0** |
 | 2026-07-08 | **Canvas inertia zoom guard v0.3-B.2a** — pan fling 관성 중 wheel zoom 차단 · wheel `onInteractionStart` lock 해제 버그 수정 · Windows release build PASS · tip **`8df18978`** |
 | 2026-07-13 | **UX-1 Theme foundation** — canonical 5 preset · 무료 2/premium 3 catalog · preferred/effective resolver · app-root theme · backdrop/harness · full tests **974 PASS** · analyze **0** · Windows debug build PASS |
+| 2026-07-13 | **UX-2 Responsive Shell** — `AppDestination`/`PreviewTarget` SSOT · 3단계 `ShellLayoutSpec` · Sidebar/Dock 일치 · 기존 Graph/Records 접근 · dirty Workbench navigation guard · full tests **1011 PASS** · analyze **0** · Windows debug/release build PASS |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |

@@ -16,10 +16,13 @@ import '../../models/entity_browse_card.dart';
 import '../../models/enums.dart';
 import '../../models/user_catalog_entity.dart';
 import '../../services/link_candidate_service.dart';
+import '../../theme/akasha_palette.dart';
+import '../../utils/app_l10n.dart';
 import '../../utils/recall_picker.dart';
 import '../../widgets/today_recall_card.dart';
 import 'home_browse_search_chrome.dart';
 import 'coordinators/home_shell_wiring.dart';
+import 'app_destination.dart';
 import 'home_browse_filter_controller.dart';
 import 'home_collectible_collection_controller.dart';
 import 'home_section_preferences.dart';
@@ -28,6 +31,21 @@ import 'home_vault_banner.dart';
 import 'views/catalog_entity_browse_view.dart';
 import 'views/records_view.dart';
 
+@visibleForTesting
+bool shouldShowEmptyCollections({
+  required AppDestination destination,
+  required int collectionCount,
+}) {
+  return destination == AppDestination.collections && collectionCount == 0;
+}
+
+@visibleForTesting
+Widget buildHomeShellEmptyCollectionsView({
+  required VoidCallback onAddCollection,
+}) {
+  return _EmptyCollectionsView(onAddCollection: onAddCollection);
+}
+
 /// HomeShellBody — 필터 · recall · WorkbenchShell browse 영역.
 class HomeShellBodyCenterColumn extends StatelessWidget {
   const HomeShellBodyCenterColumn({
@@ -35,12 +53,7 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
     required this.vaultLinked,
     required this.vaultPath,
     required this.dailyRecall,
-    required this.isPersonalLibraryMode,
-    required this.isCollectibleCollectionMode,
-    required this.isTimelineMode,
-    required this.isExploreBrowseMode,
-    required this.isKnowledgeGraphMode,
-    required this.isHomeDashboardMode,
+    required this.destination,
     required this.isCatalogLoading,
     required this.filterCtrl,
     required this.sectionPrefs,
@@ -88,6 +101,7 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
     required this.onClearPendingEntityLink,
     required this.onNewTimelineEntry,
     required this.onNewJournalEntry,
+    required this.onAddCollectibleCollection,
     this.onEntityCollectionCuratedReorder,
     this.onCollectibleCollectionCuratedReorder,
   });
@@ -95,12 +109,7 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
   final bool vaultLinked;
   final String? vaultPath;
   final DailyRecall? dailyRecall;
-  final bool isPersonalLibraryMode;
-  final bool isCollectibleCollectionMode;
-  final bool isTimelineMode;
-  final bool isExploreBrowseMode;
-  final bool isKnowledgeGraphMode;
-  final bool isHomeDashboardMode;
+  final AppDestination destination;
   final bool isCatalogLoading;
   final HomeBrowseFilterController filterCtrl;
   final HomeSectionPreferences sectionPrefs;
@@ -128,21 +137,26 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
   final Future<void> Function(UserCatalogEntity entity) onOpenEntity;
   final void Function(AkashaItem item)? onOpenWorkFromCanvas;
   final Future<bool> Function(String entityId)? onOpenEntityFromCanvas;
-  final Future<void> Function(AkashaItem saved, {bool silent}) onWorkbenchWorkSaved;
-  final Future<void> Function(String tabId, AkashaItem item) onWorkbenchWorkDeleted;
+  final Future<void> Function(AkashaItem saved, {bool silent})
+  onWorkbenchWorkSaved;
+  final Future<void> Function(String tabId, AkashaItem item)
+  onWorkbenchWorkDeleted;
   final Future<void> Function(
     UserCatalogEntity entity,
     EntityJournalEntry? journal, {
     bool silent,
-  }) onWorkbenchEntitySaved;
+  })
+  onWorkbenchEntitySaved;
   final Future<void> Function(String tabId) onWorkbenchEntityDeleted;
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
-  final Future<void> Function(UserCatalogEntity entity)? onAddToLibraryForEntity;
+  final Future<void> Function(UserCatalogEntity entity)?
+  onAddToLibraryForEntity;
   final void Function(ParsedRecordLink link) onWikiLinkTap;
   final Future<EntityLinkSelection?> Function(
     BuildContext context,
     String selectedText,
-  ) onRequestEntityLink;
+  )
+  onRequestEntityLink;
   final Future<void> Function() onGoKnowledgeGraph;
   final EntityAnchorType? pendingWorkEntityLinkType;
   final String? pendingWorkEntityLinkWorkId;
@@ -155,16 +169,19 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
   final VoidCallback onClearPendingEntityLink;
   final VoidCallback onNewTimelineEntry;
   final VoidCallback onNewJournalEntry;
+  final VoidCallback onAddCollectibleCollection;
   final Future<void> Function(
     List<EntityBrowseCard> visibleCards,
     int oldIndex,
     int newIndex,
-  )? onEntityCollectionCuratedReorder;
+  )?
+  onEntityCollectionCuratedReorder;
   final Future<void> Function(
     List<CollectibleBrowseItem> visibleItems,
     int oldIndex,
     int newIndex,
-  )? onCollectibleCollectionCuratedReorder;
+  )?
+  onCollectibleCollectionCuratedReorder;
 
   @override
   Widget build(BuildContext context) {
@@ -176,8 +193,8 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
             onCreateDefaultVault: onCreateDefaultVault,
           ),
         if (!workbench.hasOpenDetail &&
-            !isTimelineMode &&
-            !isCollectibleCollectionMode)
+            destination != AppDestination.timeline &&
+            destination != AppDestination.collections)
           HomeBrowseSearchChrome(
             onSearch: onSearch,
             selectedCategories: filterCtrl.categories,
@@ -191,9 +208,9 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
             onEntityScopeChanged: onEntityScopeChanged,
             onAddNewEntity: onAddNewEntity,
           ),
-        if (!isPersonalLibraryMode &&
-            !isCollectibleCollectionMode &&
-            !isTimelineMode &&
+        if (destination != AppDestination.library &&
+            destination != AppDestination.collections &&
+            destination != AppDestination.timeline &&
             !workbench.hasOpenDetail &&
             isCatalogLoading)
           const LinearProgressIndicator(minHeight: 2),
@@ -222,7 +239,8 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
                   onGoKnowledgeGraph: () => onGoKnowledgeGraph(),
                   pendingWorkEntityLinkType: pendingWorkEntityLinkType,
                   pendingWorkEntityLinkWorkId: pendingWorkEntityLinkWorkId,
-                  pendingWorkEntityLinkCandidate: pendingWorkEntityLinkCandidate,
+                  pendingWorkEntityLinkCandidate:
+                      pendingWorkEntityLinkCandidate,
                   pendingWorkLinkPick: pendingWorkLinkPick,
                   onPendingWorkEntityLinkHandled: onClearPendingWorkEntityLink,
                   pendingEntityEntityLinkType: pendingEntityEntityLinkType,
@@ -245,7 +263,16 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
   }
 
   Widget _buildBrowseContent() {
-    if (isTimelineMode) {
+    if (shouldShowEmptyCollections(
+      destination: destination,
+      collectionCount: collectionCtrl.collections.length,
+    )) {
+      return buildHomeShellEmptyCollectionsView(
+        onAddCollection: onAddCollectibleCollection,
+      );
+    }
+
+    if (destination == AppDestination.timeline) {
       return RecordsView(
         vaultPath: vaultPath,
         vaultItems: items,
@@ -259,7 +286,7 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
       );
     }
 
-    if (isCollectibleCollectionMode) {
+    if (destination == AppDestination.collections) {
       return CatalogEntityBrowseView(
         userCatalog: userCatalog,
         linkIndex: linkIndex,
@@ -271,9 +298,9 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
         posterCardBuilder: posterCardBuilder,
         relatedWorksDiscoveryFactory: () =>
             HomeShellWiring.createEntityRelatedWorksDiscovery(
-          linkIndex: linkIndex,
-          vaultItems: items,
-        ),
+              linkIndex: linkIndex,
+              vaultItems: items,
+            ),
         collection: collectionCtrl.activeCollection,
         highlightEntityId: filterCtrl.highlightEntityId,
         entityGallerySort: sectionPrefs.entityGallerySort,
@@ -285,19 +312,55 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
             : null,
         onCollectibleCuratedReorder:
             collectionCtrl.activeCollection?.isCurated == true
-                ? onCollectibleCollectionCuratedReorder
-                : null,
+            ? onCollectibleCollectionCuratedReorder
+            : null,
         onAddNewEntity: onAddNewEntity,
       );
     }
 
-    if (isPersonalLibraryMode) {
+    if (destination == AppDestination.library) {
       return browse.buildPersonalLibraryBrowseContent();
     }
 
     return browse.buildDashboardBrowseContent(
-      isKnowledgeGraphMode: isKnowledgeGraphMode,
-      isExploreBrowseMode: isExploreBrowseMode,
+      isKnowledgeGraphMode: destination == AppDestination.graph,
+      isExploreBrowseMode: destination == AppDestination.explore,
+    );
+  }
+}
+
+class _EmptyCollectionsView extends StatelessWidget {
+  const _EmptyCollectionsView({required this.onAddCollection});
+
+  final VoidCallback onAddCollection;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            Icons.collections_bookmark_outlined,
+            size: 48,
+            color: palette.textMuted,
+          ),
+          const SizedBox(height: 12),
+          Text(
+            l10n?.sidebarNoCollections ?? 'No Collections',
+            style: TextStyle(color: palette.textSecondary),
+          ),
+          const SizedBox(height: 16),
+          FilledButton.icon(
+            key: const ValueKey('empty-collections-add'),
+            onPressed: onAddCollection,
+            icon: const Icon(Icons.add),
+            label: Text(l10n?.collectionAddTitle ?? 'Add Collection'),
+          ),
+        ],
+      ),
     );
   }
 }

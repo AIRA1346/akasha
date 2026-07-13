@@ -7,6 +7,7 @@ import '../../../data/adapters/registry_sync_adapter.dart';
 import '../../../data/adapters/user_catalog_store_adapter.dart';
 import '../../../data/adapters/works_registry_adapter.dart';
 import '../../../features/workbench/data/workbench_controller.dart';
+import '../../../features/workbench/presentation/dialogs/workbench_close_tab_dialog.dart';
 import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
@@ -145,6 +146,23 @@ class HomeShellCoordinatorBundle {
         await vault.ensureItemsLoaded();
         await recentExplore.refresh();
       },
+      requestWorkbenchNavigationDecision:
+          ({required title, required canSave}) async {
+            if (!host.mounted) return WorkbenchNavigationDecision.cancel;
+            final choice = await showWorkbenchCloseTabDialog(
+              host.context,
+              title: title,
+              canSave: canSave,
+            );
+            return switch (choice) {
+              WorkbenchCloseTabChoice.saveAndClose =>
+                WorkbenchNavigationDecision.save,
+              WorkbenchCloseTabChoice.discard =>
+                WorkbenchNavigationDecision.discard,
+              WorkbenchCloseTabChoice.cancel ||
+              null => WorkbenchNavigationDecision.cancel,
+            };
+          },
     );
 
     catalog = HomeCatalogCoordinator(

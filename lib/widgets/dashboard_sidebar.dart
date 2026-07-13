@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../config/feature_flags.dart';
 import '../models/akasha_item.dart';
 import '../models/collectible_collection.dart';
 import '../models/collectible_kind.dart';
@@ -8,6 +7,7 @@ import '../models/collectible_ref.dart';
 import '../models/personal_library_config.dart';
 import '../models/work_drag_payload.dart';
 import '../screens/home/home_personal_library_controller.dart';
+import '../screens/home/app_destination.dart';
 import '../screens/home/views/preview_record_view_model.dart';
 import '../theme/akasha_palette.dart';
 import '../theme/akasha_typography.dart';
@@ -28,15 +28,10 @@ part 'dashboard_sidebar_footer_part.dart';
 
 /// 홈 좌측 네비게이션 사이드바 (시안: primary nav · 최근 탐색 · 내 컬렉션).
 class DashboardSidebar extends StatelessWidget {
-  static const double _sidebarWidth = 280;
-
   final bool isOpen;
-  final bool isHomeMode;
-  final bool isExploreMode;
-  final bool isPersonalLibraryMode;
-  final bool isCollectibleCollectionMode;
-  final bool isKnowledgeGraphMode;
-  final bool isTimelineMode;
+  final double width;
+  final AppDestination selectedDestination;
+  final ValueChanged<AppDestination> onSelectDestination;
   final SidebarSelectionMode selectionMode;
   final List<AkashaItem> recentExploreItems;
   final List<AkashaItem> vaultItems;
@@ -44,12 +39,6 @@ class DashboardSidebar extends StatelessWidget {
   final String? activeCollectibleCollectionId;
   final List<PersonalLibraryConfig> personalLibraries;
   final String? activePersonalLibraryId;
-  final Future<void> Function() onGoHome;
-  final Future<void> Function() onGoExplore;
-  final Future<void> Function() onGoLibrary;
-  final Future<void> Function() onGoCollection;
-  final Future<void> Function() onGoKnowledgeGraph;
-  final VoidCallback onSelectTimeline;
   final void Function(AkashaItem item)? onOpenRecentExplore;
   final String? activeDetailWorkId;
   final String? activeDetailEntityId;
@@ -65,12 +54,9 @@ class DashboardSidebar extends StatelessWidget {
   const DashboardSidebar({
     super.key,
     required this.isOpen,
-    required this.isHomeMode,
-    required this.isExploreMode,
-    required this.isPersonalLibraryMode,
-    required this.isCollectibleCollectionMode,
-    this.isKnowledgeGraphMode = false,
-    required this.isTimelineMode,
+    required this.width,
+    required this.selectedDestination,
+    required this.onSelectDestination,
     required this.selectionMode,
     this.recentExploreItems = const [],
     this.vaultItems = const [],
@@ -78,12 +64,6 @@ class DashboardSidebar extends StatelessWidget {
     this.activeCollectibleCollectionId,
     this.personalLibraries = const [],
     this.activePersonalLibraryId,
-    required this.onGoHome,
-    required this.onGoExplore,
-    required this.onGoLibrary,
-    required this.onGoCollection,
-    required this.onGoKnowledgeGraph,
-    required this.onSelectTimeline,
     this.onOpenRecentExplore,
     this.activeDetailWorkId,
     this.activeDetailEntityId,
@@ -103,7 +83,7 @@ class DashboardSidebar extends StatelessWidget {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 200),
       curve: Curves.easeInOut,
-      width: isOpen ? _sidebarWidth : 0.0,
+      width: isOpen ? width : 0.0,
       decoration: BoxDecoration(
         color: palette.sidebar,
         border: Border(right: BorderSide(color: palette.borderSubtle(0.52))),
@@ -121,19 +101,8 @@ class DashboardSidebar extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         _DashboardSidebarPrimaryNav(
-                          isHomeMode: isHomeMode,
-                          isExploreMode: isExploreMode,
-                          isPersonalLibraryMode: isPersonalLibraryMode,
-                          isCollectibleCollectionMode:
-                              isCollectibleCollectionMode,
-                          isKnowledgeGraphMode: isKnowledgeGraphMode,
-                          isTimelineMode: isTimelineMode,
-                          onGoHome: onGoHome,
-                          onGoExplore: onGoExplore,
-                          onGoLibrary: onGoLibrary,
-                          onGoCollection: onGoCollection,
-                          onGoKnowledgeGraph: onGoKnowledgeGraph,
-                          onSelectTimeline: onSelectTimeline,
+                          selectedDestination: selectedDestination,
+                          onSelectDestination: onSelectDestination,
                         ),
                         const SizedBox(height: 20),
                         _DashboardSidebarPersonalLibrariesSection(
@@ -163,7 +132,8 @@ class DashboardSidebar extends StatelessWidget {
                           vaultItems: vaultItems,
                           activeCollectibleCollectionId:
                               activeCollectibleCollectionId,
-                          onGoCollection: onGoCollection,
+                          onGoCollection: () async =>
+                              onSelectDestination(AppDestination.collections),
                           onSelectCollectibleCollection:
                               onSelectCollectibleCollection,
                         ),

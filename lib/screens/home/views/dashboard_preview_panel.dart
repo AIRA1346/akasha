@@ -32,6 +32,7 @@ class DashboardPreviewPanel extends StatefulWidget {
   const DashboardPreviewPanel({
     super.key,
     required this.item,
+    this.width = 288,
     required this.userCatalog,
     required this.linkIndex,
     this.linkIndexRevision = 0,
@@ -51,6 +52,7 @@ class DashboardPreviewPanel extends StatefulWidget {
   });
 
   final AkashaItem item;
+  final double width;
   final UserCatalogPort userCatalog;
   final RecordLinkPort linkIndex;
   final int linkIndexRevision;
@@ -299,7 +301,7 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
     final record = PreviewRecordViewModel.fromWork(widget.item, l10n);
     final palette = context.akashaPalette;
     return Container(
-      width: 320,
+      width: widget.width,
       decoration: BoxDecoration(
         color: palette.previewRail,
         border: Border(left: BorderSide(color: palette.borderSubtle(0.52))),

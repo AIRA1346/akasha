@@ -59,7 +59,7 @@ Fix **only** when dogfood / review / large-vault ship friction is confirmed.
 | S-05 | Auto-archive `loadAllItems` | Auto-archive path used and slow | Defer |
 | S-06 | Stale `.akasha/candidates` comments | Maintainer confusion only | Opportunistic |
 | S-07 | `catalogContributions=true` E2E | Contribution loop claimed in store/dogfood | Dogfood |
-| S-08 | Timeline loaders while `showTimeline=false` | Accidental enable | Keep OFF |
+| S-08 | Timeline quick-capture/projection loaders while `showTimeline=false` | Accidental enable | Keep OFF; UX-2 기존 Records 조회 destination은 허용 |
 
 ---
 
@@ -130,14 +130,14 @@ Astra/Steam Wallet 결제 없음. Classic Dark와 Midnight Blue만 번들 무료
 | Preferences (Esc) | Title, language, scale, theme, vault, quit/close | **PASS** (screenshot) |
 | Locale persistence | English after restart | **PASS** |
 | Vault unlinked banner | English message + actions | **PASS** after l10n fix |
-| Home / sidebar nav | Home, Explore, Library, Collections | **PASS**; Timeline/Graph hidden by flag |
+| Home / global nav | Home, Explore, Library, Collections, Graph, Timeline | **PASS**; UX-2는 기존 Graph/Records surface 접근만 복원 |
 | Browse / search chrome | Labels, empty states | **PASS** on captured surfaces |
 | Work detail / Workbench | Info panel, save, tabs | **Deferred** — vault path unavailable this run |
 | Personal library / collection | Create/edit/delete | **Partial** — Library English labels OK |
 | Theme picker | Free themes only; no purchase lock copy | **PASS** (no IAP chrome) |
-| FeatureFlag-hidden surfaces | Timeline, Graph, Discovery, Universe, Recall | **PASS** after Timeline gate fix |
+| FeatureFlag-hidden surfaces | Timeline quick capture/projection, experimental Graph CTA, Discovery, Universe, Recall | **PASS**; 기존 Graph/Records destination은 대상 아님 |
 
-**Fixes in P1 slice:** vault banner + default-vault dialog l10n; Timeline FeatureFlag gate.
+**Fixes in P1 slice:** vault banner + default-vault dialog l10n; 당시 Timeline primary-nav gate. UX-2에서 이 판정은 기존 Records 조회 destination 허용으로 대체됐고, flag는 quick capture/projection만 계속 막는다.
 
 ---
 

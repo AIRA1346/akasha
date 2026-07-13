@@ -34,7 +34,7 @@
   "appPreferencesVaultSubtitle": "Manage the storage folder, backups, and trash.",
   "appPreferencesQuit": "Quit",
   "appPreferencesClose": "Close",
-  "appBarToggleSidebar": "Toggle sidebar (Tab)",
+  "appBarToggleSidebar": "Toggle sidebar (Ctrl+B)",
   "appBarLibraryTheme": "App theme",
   "appBarSearch": "Search",
   "appBarTimelineCapture": "Timeline note",

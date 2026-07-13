@@ -36,7 +36,9 @@ void main() {
       );
     });
 
-    testWidgets('shows search first and hides filter chips by default', (tester) async {
+    testWidgets('shows search first and hides filter chips by default', (
+      tester,
+    ) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
@@ -94,21 +96,24 @@ void main() {
     testWidgets('compact layout hides Ctrl K hint', (tester) async {
       await tester.pumpWidget(
         MaterialApp(
-          home: MediaQuery(
-            data: const MediaQueryData(size: Size(400, 800)),
-            child: Scaffold(
-              body: HomeBrowseSearchChrome(
-                onSearch: () {},
-                selectedCategories: const {},
-                selectedWorkStatuses: const {},
-                selectedMyStatuses: const {},
-                onToggleCategory: (_) {},
-                onClearCategories: () {},
-                onToggleWorkStatus: (_) {},
-                onToggleMyStatus: (_) {},
-                selectedEntityScope: BrowseEntityScope.all,
-                onEntityScopeChanged: (_) {},
-                compactBreakpoint: 720,
+          home: Scaffold(
+            body: Align(
+              alignment: Alignment.topLeft,
+              child: SizedBox(
+                width: 400,
+                child: HomeBrowseSearchChrome(
+                  onSearch: () {},
+                  selectedCategories: const {},
+                  selectedWorkStatuses: const {},
+                  selectedMyStatuses: const {},
+                  onToggleCategory: (_) {},
+                  onClearCategories: () {},
+                  onToggleWorkStatus: (_) {},
+                  onToggleMyStatus: (_) {},
+                  selectedEntityScope: BrowseEntityScope.all,
+                  onEntityScopeChanged: (_) {},
+                  compactBreakpoint: 720,
+                ),
               ),
             ),
           ),

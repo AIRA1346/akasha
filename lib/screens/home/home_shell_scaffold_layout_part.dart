@@ -4,7 +4,7 @@ List<BrowseCard> _homeShellScaffoldFilteredCards(
   HomeShellController controller,
 ) {
   final scope = controller.filterCtrl.entityScope;
-  return controller.isPersonalLibraryMode
+  return controller.currentDestination == AppDestination.library
       ? (scope.showsWorkGrid
             ? controller.personalBrowseCards
             : const <BrowseCard>[])
@@ -14,21 +14,24 @@ List<BrowseCard> _homeShellScaffoldFilteredCards(
 void _homeShellHandleEscape(
   BuildContext context,
   HomeShellController controller,
+  ShellLayoutSpec layoutSpec,
 ) {
   if (ModalRoute.of(context)?.isCurrent != true) return;
 
-  if (controller.hasOpenPreview) {
-    controller.closeAllPreviews();
-    return;
+  switch (resolveShellEscapeTarget(
+    layoutSpec: layoutSpec,
+    sidebarOpen: controller.isSidebarOpen,
+    previewOpen: controller.hasOpenPreview,
+  )) {
+    case ShellEscapeTarget.sidebar:
+      controller.toggleSidebar();
+      return;
+    case ShellEscapeTarget.preview:
+      controller.closeAllPreviews();
+      return;
+    case ShellEscapeTarget.none:
+      return;
   }
-
-  unawaited(
-    showAppPreferencesDialog(
-      context,
-      onOpenAppTheme: controller.showLibraryThemePicker,
-      onOpenVaultSettings: controller.openVaultSettingsDialog,
-    ),
-  );
 }
 
 Widget _homeShellScaffoldRoot(
@@ -38,10 +41,22 @@ Widget _homeShellScaffoldRoot(
 ) {
   final filtered = _homeShellScaffoldFilteredCards(controller);
   final palette = context.akashaPalette;
+  final layoutSpec = ShellLayoutSpec.resolve(MediaQuery.sizeOf(context).width);
+  final modalDrawerOpen =
+      controller.isSidebarOpen &&
+      layoutSpec.sidebarPresentation == ShellSidebarPresentation.drawer;
+  final appBar = _homeShellScaffoldAppBar(context, controller, layoutSpec);
+  final destinationShortcuts = AppDestinationRegistry.shortcutBindings(
+    enabled: () => ModalRoute.of(context)?.isCurrent == true,
+    onSelected: (destination) {
+      unawaited(controller.selectDestination(destination));
+    },
+  );
 
   return CallbackShortcuts(
     bindings: {
-      const SingleActivator(LogicalKeyboardKey.tab): () {
+      ...destinationShortcuts,
+      const SingleActivator(LogicalKeyboardKey.keyB, control: true): () {
         if (ModalRoute.of(context)?.isCurrent == true) {
           controller.toggleSidebar();
         }
@@ -52,7 +67,7 @@ Widget _homeShellScaffoldRoot(
         }
       },
       const SingleActivator(LogicalKeyboardKey.escape): () {
-        _homeShellHandleEscape(context, controller);
+        _homeShellHandleEscape(context, controller, layoutSpec);
       },
     },
     child: Focus(
@@ -60,12 +75,19 @@ Widget _homeShellScaffoldRoot(
       autofocus: true,
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: _homeShellScaffoldAppBar(context, controller),
-        body: _homeShellScaffoldBody(context, controller, filtered),
-        bottomNavigationBar: _homeShellScaffoldBottomNavigationBar(
-          context,
-          controller,
-          palette,
+        appBar: PreferredSize(
+          preferredSize: appBar.preferredSize,
+          child: ExcludeFocus(excluding: modalDrawerOpen, child: appBar),
+        ),
+        body: _homeShellScaffoldBody(context, controller, filtered, layoutSpec),
+        bottomNavigationBar: ExcludeFocus(
+          excluding: modalDrawerOpen,
+          child: _homeShellScaffoldBottomNavigationBar(
+            context,
+            controller,
+            palette,
+            layoutSpec,
+          ),
         ),
       ),
     ),

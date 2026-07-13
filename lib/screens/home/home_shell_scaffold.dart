@@ -4,18 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../config/feature_flags.dart';
-import '../../theme/akasha_colors.dart';
 import '../../theme/akasha_palette.dart';
 import '../../models/akasha_item.dart';
 import '../../models/user_catalog_entity.dart';
 import '../../models/browse_card.dart';
 import '../../models/browse_entity_scope.dart';
 import '../../models/work_drag_payload.dart';
+import 'app_destination.dart';
 import 'dialogs/app_preferences_dialog.dart';
 import 'dialogs/home_dialogs_facade.dart';
 import 'home_app_bar.dart';
 import 'home_shell_body.dart';
 import 'home_shell_controller.dart';
+import 'shell_layout_spec.dart';
 import '../../utils/app_l10n.dart';
 
 part 'home_shell_scaffold_layout_part.dart';

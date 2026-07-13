@@ -24,9 +24,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(
-      find.text(
-        'Exploring the catalog. Link a local folder to save records.',
-      ),
+      find.text('Exploring the catalog. Link a local folder to save records.'),
       findsOneWidget,
     );
     expect(find.text('Link existing folder'), findsOneWidget);
@@ -34,7 +32,7 @@ void main() {
     expect(find.textContaining('카탈로그'), findsNothing);
   });
 
-  test('Steam v1 keeps Timeline off the primary nav contract', () {
+  test('Steam v1 keeps Timeline quick capture and Home CTA off', () {
     expect(FeatureFlags.showTimeline, isFalse);
   });
 }

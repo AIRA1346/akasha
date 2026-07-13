@@ -38,7 +38,7 @@ Steam v1은 그 비전을 **작품 감상 아카이브**로 검증한다. Sanctu
 | 항목 | 비고 |
 |------|------|
 | 오늘의 회상 카드 | `FeatureFlags.showRecallCard` — v1.1 |
-| 타임라인 / 완성 캘린더 | `FeatureFlags.showTimeline` — v1 이후 |
+| Timeline projection / 완성 캘린더 / 빠른 capture | `FeatureFlags.showTimeline` — v1 이후. UX-2는 기존 Records 조회 경로만 복원 |
 | 취향 기반 추천 (Discover) | `FeatureFlags.showDiscoveryHome` — v1 이후 |
 | TMDB / IGDB 자동 메타·포스터 연동 | **폐기** — `externalIds.*` 식별자만 Fact로 유지 |
 | Riverpod 대규모 리팩터 | v1 이후 |
