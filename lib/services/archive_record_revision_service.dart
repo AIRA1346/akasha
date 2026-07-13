@@ -150,7 +150,7 @@ class ArchiveRecordRevisionService {
       );
     }
     final located = await pathIndex.lookup(vaultPath, id);
-    if (!located.isFound) {
+    if (located.isCorrupt || !located.isFound) {
       return const ArchiveRecordRevision(
         value: ArchiveRecordRevision.missing,
         exists: false,
@@ -175,6 +175,7 @@ class ArchiveRecordRevisionService {
     if (recordId == null || recordId.trim().isEmpty) return null;
     final pathIndex = const RecordPathIndexService();
     final located = await pathIndex.lookup(vaultPath, recordId);
+    if (located.isCorrupt) return null;
     if (located.isFound) {
       return p.joinAll([vaultPath, ...located.relativePath!.split('/')]);
     }

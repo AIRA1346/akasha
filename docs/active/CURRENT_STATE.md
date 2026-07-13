@@ -13,7 +13,8 @@
 > - `system/` = durable non-rebuildable (candidates, ops, recovery, drafts); `.akasha/` = derived/disposable
 > - Bounded Home Read Closure (S0) · Architecture Closure **declared**
 > - Steam Inventory sandbox E2E POC passed; production IAP remains disabled
-> - Flutter app: `flutter analyze --no-pub` **0** · `flutter test --no-pub` **1011**
+> - **Locator index atomic write + `.bak` restart recovery** — `DerivedIndexAtomicWrite` · Record/Entity path indexes · **done** (corrupt≠empty; stale `.tmp` never promoted). Follow-up only: concurrent write lock on same locator file (separate audit candidate; not blocking this closure)
+> - Flutter app: `flutter analyze --no-pub` **0** · `flutter test --no-pub` **1030**
 > - Commerce packages: domain `dart test` **14** · backend `dart test` **17** · both `dart analyze` **0**
 > - Windows debug/release build **OK (2026-07-13)**
 >

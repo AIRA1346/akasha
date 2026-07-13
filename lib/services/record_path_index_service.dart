@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:crypto/crypto.dart' as crypto;
 import 'package:path/path.dart' as p;
 
+import 'derived_index_atomic_write.dart';
 import 'vault_document_identity.dart';
 
 /// A sharded, rebuildable map from a stable Record id to its Markdown path.
@@ -13,7 +14,11 @@ import 'vault_document_identity.dart';
 /// Keeping the reverse path map alongside the id map lets one changed Markdown
 /// file update its old and new ids without loading a whole-vault index.
 class RecordPathIndexService {
-  const RecordPathIndexService();
+  const RecordPathIndexService({
+    this.atomicWrite = const DerivedIndexAtomicWrite(),
+  });
+
+  final DerivedIndexAtomicWrite atomicWrite;
 
   static const int schemaVersion = 1;
   static const String akashaDirName = '.akasha';
@@ -41,11 +46,15 @@ class RecordPathIndexService {
   ) async {
     final id = recordId.trim();
     if (!isStableRecordId(id)) return const RecordPathIndexLookup.empty();
-    final entries = await _readEntries(_idShardFile(vaultPath, _idShard(id)));
-    final matches = entries
-        .where((entry) => entry.recordId == id)
-        .toList(growable: false);
-    return RecordPathIndexLookup(entries: matches);
+    try {
+      final entries = await _readEntries(_idShardFile(vaultPath, _idShard(id)));
+      final matches = entries
+          .where((entry) => entry.recordId == id)
+          .toList(growable: false);
+      return RecordPathIndexLookup(entries: matches);
+    } on DerivedIndexCorruptException {
+      return const RecordPathIndexLookup.corrupt();
+    }
   }
 
   Future<void> ensureIndex(String vaultPath) async {
@@ -55,13 +64,11 @@ class RecordPathIndexService {
 
   Future<bool> isAvailable(String vaultPath) async {
     final file = _manifestFile(vaultPath);
-    if (!await file.exists()) return false;
-    try {
-      final decoded = jsonDecode(await file.readAsString());
-      return decoded is Map && decoded['version'] == schemaVersion;
-    } on Object {
-      return false;
-    }
+    final opened = await atomicWrite.openForRead(
+      target: file,
+      validateContent: _isValidManifestContent,
+    );
+    return opened.isReady;
   }
 
   /// Used by integrity validation. Normal record reads must use [lookup].
@@ -232,24 +239,41 @@ class RecordPathIndexService {
     RecordPathIndexStats? stats,
   }) async {
     final file = _manifestFile(vaultPath);
-    await file.parent.create(recursive: true);
     final payload = <String, Object?>{
       'version': schemaVersion,
       'updatedAt': DateTime.now().toUtc().toIso8601String(),
       if (stats != null) ...stats.toJson(),
     };
-    await file.writeAsString(jsonEncode(payload), flush: true);
+    await atomicWrite.writeText(
+      target: file,
+      content: jsonEncode(payload),
+    );
   }
 
   Future<List<RecordPathIndexEntry>> _readEntries(File file) async {
-    if (!await file.exists()) return <RecordPathIndexEntry>[];
+    final opened = await atomicWrite.openForRead(
+      target: file,
+      validateContent: _isValidShardContent,
+    );
+    if (opened.isMissing) return <RecordPathIndexEntry>[];
+    if (opened.isCorrupt) {
+      throw DerivedIndexCorruptException(file.path);
+    }
+
+    late final Object decoded;
     try {
-      final decoded = jsonDecode(await file.readAsString());
-      if (decoded is! Map || decoded['version'] != schemaVersion) {
-        return <RecordPathIndexEntry>[];
-      }
-      final raw = decoded['records'];
-      if (raw is! List) return <RecordPathIndexEntry>[];
+      decoded = jsonDecode(await file.readAsString());
+    } on Object catch (error) {
+      throw DerivedIndexCorruptException(file.path, error);
+    }
+    if (decoded is! Map || decoded['version'] != schemaVersion) {
+      throw DerivedIndexCorruptException(file.path);
+    }
+    final raw = decoded['records'];
+    if (raw is! List) {
+      throw DerivedIndexCorruptException(file.path);
+    }
+    try {
       return _sortedUnique(
         raw
             .whereType<Map>()
@@ -264,8 +288,8 @@ class RecordPathIndexService {
                   _isSafeRelativePath(entry.relativePath),
             ),
       );
-    } catch (_) {
-      return <RecordPathIndexEntry>[];
+    } on Object catch (error) {
+      throw DerivedIndexCorruptException(file.path, error);
     }
   }
 
@@ -274,16 +298,34 @@ class RecordPathIndexService {
     required String shard,
     required Iterable<RecordPathIndexEntry> records,
   }) async {
-    await file.parent.create(recursive: true);
     final sorted = _sortedUnique(records);
-    await file.writeAsString(
-      jsonEncode({
+    await atomicWrite.writeText(
+      target: file,
+      content: jsonEncode({
         'version': schemaVersion,
         'shard': shard,
         'records': sorted.map((entry) => entry.toJson()).toList(),
       }),
-      flush: true,
     );
+  }
+
+  static bool _isValidManifestContent(String content) {
+    try {
+      final decoded = jsonDecode(content);
+      return decoded is Map && decoded['version'] == schemaVersion;
+    } on Object {
+      return false;
+    }
+  }
+
+  static bool _isValidShardContent(String content) {
+    try {
+      final decoded = jsonDecode(content);
+      if (decoded is! Map || decoded['version'] != schemaVersion) return false;
+      return decoded['records'] is List;
+    } on Object {
+      return false;
+    }
   }
 
   Stream<File> _scanRecordFiles(String vaultPath) async* {
@@ -365,14 +407,24 @@ class RecordPathIndexEntry {
 }
 
 class RecordPathIndexLookup {
-  const RecordPathIndexLookup({required this.entries});
+  const RecordPathIndexLookup({
+    required this.entries,
+    this.isCorrupt = false,
+  });
 
-  const RecordPathIndexLookup.empty() : entries = const [];
+  const RecordPathIndexLookup.empty()
+    : entries = const [],
+      isCorrupt = false;
+
+  const RecordPathIndexLookup.corrupt()
+    : entries = const [],
+      isCorrupt = true;
 
   final List<RecordPathIndexEntry> entries;
+  final bool isCorrupt;
 
-  bool get isFound => entries.length == 1;
-  bool get isAmbiguous => entries.length > 1;
+  bool get isFound => !isCorrupt && entries.length == 1;
+  bool get isAmbiguous => !isCorrupt && entries.length > 1;
   String? get relativePath => isFound ? entries.single.relativePath : null;
 }
 

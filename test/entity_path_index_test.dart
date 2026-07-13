@@ -5,6 +5,7 @@ import 'package:path/path.dart' as p;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
+import 'package:akasha/services/derived_index_atomic_write.dart';
 import 'package:akasha/services/entity_journal_parser.dart';
 import 'package:akasha/services/entity_path_index_service.dart';
 import 'package:akasha/services/entity_vault_loader.dart';
@@ -19,6 +20,8 @@ void main() {
   setUp(() {
     SharedPreferences.setMockInitialValues({});
   });
+
+  tearDown(() {});
 
   group('VaultReadmeWriter & VaultSpecWriter', () {
     test('writes VAULT_README.md on vault connect', () async {
@@ -78,6 +81,10 @@ void main() {
         await tempDir.delete(recursive: true);
       }
     });
+
+    File indexFile() => File(
+      p.join(tempDir.path, '.akasha', EntityPathIndexService.indexFileName),
+    );
 
     test('upsert and lookup relative path', () async {
       const entityId = 'pe_u_idx0001';
@@ -185,6 +192,188 @@ void main() {
         );
       },
     );
+
+    test('failed replace leaves the previous good index intact', () async {
+      const entityId = 'pe_u_keepidx01';
+      final path = p.join(tempDir.path, 'entities', 'person', 'Keep.md');
+      await index.upsert(
+        vaultPath: tempDir.path,
+        entityId: entityId,
+        absolutePath: path,
+      );
+      final before = await indexFile().readAsString();
+
+      final failing = EntityPathIndexService(
+        atomicWrite: DerivedIndexAtomicWrite(
+          beforeReplace: (_) async {
+            throw StateError('injected replace failure');
+          },
+        ),
+      );
+
+      await expectLater(
+        () => failing.upsert(
+          vaultPath: tempDir.path,
+          entityId: 'pe_u_otheridx01',
+          absolutePath: p.join(tempDir.path, 'entities', 'person', 'Other.md'),
+        ),
+        throwsA(isA<StateError>()),
+      );
+
+      expect(await indexFile().readAsString(), before);
+      expect(await index.isAvailable(tempDir.path), isTrue);
+      expect(await index.lookupRelativePath(tempDir.path, entityId), isNotNull);
+    });
+
+    test('missing target + valid bak restores without rebuild', () async {
+      const entityId = 'pe_u_bakrest01';
+      await index.upsert(
+        vaultPath: tempDir.path,
+        entityId: entityId,
+        absolutePath: p.join(tempDir.path, 'entities', 'person', 'A.md'),
+      );
+      final file = indexFile();
+      final good = await file.readAsString();
+      await file.rename('${file.path}.bak');
+
+      expect(await index.lookupRelativePath(tempDir.path, entityId), isNotNull);
+      expect(await file.exists(), isTrue);
+      expect(await file.readAsString(), good);
+      expect(await File('${file.path}.bak').exists(), isFalse);
+    });
+
+    test('corrupt target + valid bak restores from bak', () async {
+      const entityId = 'pe_u_bakcorr01';
+      await index.upsert(
+        vaultPath: tempDir.path,
+        entityId: entityId,
+        absolutePath: p.join(tempDir.path, 'entities', 'person', 'B.md'),
+      );
+      final file = indexFile();
+      final good = await file.readAsString();
+      await File('${file.path}.bak').writeAsString(good);
+      await file.writeAsString('{truncated');
+
+      expect(await index.lookupRelativePath(tempDir.path, entityId), isNotNull);
+      expect(await file.readAsString(), good);
+    });
+
+    test('corrupt target + corrupt bak is unavailable', () async {
+      const entityId = 'pe_u_bothbad01';
+      await index.upsert(
+        vaultPath: tempDir.path,
+        entityId: entityId,
+        absolutePath: p.join(tempDir.path, 'entities', 'person', 'C.md'),
+      );
+      final file = indexFile();
+      await File('${file.path}.bak').writeAsString('{bad-bak');
+      await file.writeAsString('{bad-target');
+
+      expect(await index.isAvailable(tempDir.path), isFalse);
+      final loaded = await index.loadPathsResult(tempDir.path);
+      expect(loaded.isCorrupt, isTrue);
+    });
+
+    test('missing target + stale tmp is not promoted', () async {
+      const entityId = 'pe_u_staletmp01';
+      await index.upsert(
+        vaultPath: tempDir.path,
+        entityId: entityId,
+        absolutePath: p.join(tempDir.path, 'entities', 'person', 'D.md'),
+      );
+      final file = indexFile();
+      final good = await file.readAsString();
+      await file.delete();
+      await File('${file.path}.tmp').writeAsString(good);
+
+      expect(await index.isAvailable(tempDir.path), isFalse);
+      expect(await index.lookupRelativePath(tempDir.path, entityId), isNull);
+      expect(await File('${file.path}.tmp').exists(), isFalse);
+
+      await index.ensureIndex(tempDir.path);
+      // No entities tree → empty rebuild → available empty index.
+      expect(await index.isAvailable(tempDir.path), isTrue);
+    });
+
+    test('valid target + stale tmp/bak cleans sidecars', () async {
+      const entityId = 'pe_u_cleansc01';
+      await index.upsert(
+        vaultPath: tempDir.path,
+        entityId: entityId,
+        absolutePath: p.join(tempDir.path, 'entities', 'person', 'E.md'),
+      );
+      final file = indexFile();
+      final good = await file.readAsString();
+      await File('${file.path}.tmp').writeAsString('{tmp');
+      await File('${file.path}.bak').writeAsString('{bak');
+
+      expect(await index.lookupRelativePath(tempDir.path, entityId), isNotNull);
+      expect(await file.readAsString(), good);
+      expect(await File('${file.path}.tmp').exists(), isFalse);
+      expect(await File('${file.path}.bak').exists(), isFalse);
+    });
+
+    test('failed bak restore keeps bak', () async {
+      const entityId = 'pe_u_restfail01';
+      await index.upsert(
+        vaultPath: tempDir.path,
+        entityId: entityId,
+        absolutePath: p.join(tempDir.path, 'entities', 'person', 'F.md'),
+      );
+      final file = indexFile();
+      final good = await file.readAsString();
+      await file.rename('${file.path}.bak');
+
+      final failing = EntityPathIndexService(
+        atomicWrite: DerivedIndexAtomicWrite(
+          beforeBakRestore: (_, _) async {
+            throw StateError('injected restore failure');
+          },
+        ),
+      );
+
+      expect(await failing.isAvailable(tempDir.path), isFalse);
+      expect(await File('${file.path}.bak').exists(), isTrue);
+      expect(await File('${file.path}.bak').readAsString(), good);
+      expect(await file.exists(), isFalse);
+    });
+
+    test('corrupt index without bak is unavailable, not empty hit', () async {
+      const entityId = 'pe_u_corrupt01';
+      await index.upsert(
+        vaultPath: tempDir.path,
+        entityId: entityId,
+        absolutePath: p.join(tempDir.path, 'entities', 'person', 'G.md'),
+      );
+      await indexFile().writeAsString('{truncated');
+
+      expect(await index.isAvailable(tempDir.path), isFalse);
+      final loaded = await index.loadPathsResult(tempDir.path);
+      expect(loaded.isCorrupt, isTrue);
+      expect(await index.lookupRelativePath(tempDir.path, entityId), isNull);
+    });
+
+    test('rebuildFromVault recovers corrupt index from Markdown', () async {
+      await store.saveCatalogEntity(
+        vaultPath: tempDir.path,
+        entity: UserCatalogEntity.userLocal(
+          entityId: 'pe_u_recover01',
+          type: EntityAnchorType.person,
+          title: 'Recover',
+        ),
+        body: 'body',
+      );
+      await indexFile().writeAsString('{truncated');
+      expect(await index.isAvailable(tempDir.path), isFalse);
+
+      await index.rebuildFromVault(tempDir.path);
+
+      expect(await index.isAvailable(tempDir.path), isTrue);
+      expect(
+        await index.lookupRelativePath(tempDir.path, 'pe_u_recover01'),
+        isNotNull,
+      );
+    });
   });
 
   group('EntityVaultStore title rename', () {

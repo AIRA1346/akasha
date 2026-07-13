@@ -125,6 +125,12 @@ class ArchiveGatewayRecordReadCommand {
     }
 
     final located = await _recordPathIndex.lookup(vaultPath, request.recordId);
+    if (located.isCorrupt) {
+      return ArchiveGatewayRecordReadCommandResult.failure(
+        'record_locator_index_corrupt',
+        'The derived Record locator index is corrupt; rebuild it from Markdown.',
+      );
+    }
     if (located.isAmbiguous) {
       return ArchiveGatewayRecordReadCommandResult.failure(
         'record_id_ambiguous',
