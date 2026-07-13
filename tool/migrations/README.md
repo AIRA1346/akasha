@@ -18,5 +18,7 @@ dart run tool/migrations/migrate_shards_v3_to_v4_hash.dart --dry-run
 | `migrate_wk_pad9.dart` | wk_ ID 패딩 |
 | `sync_legacy_works_registry.dart` | 구 works_registry 동기화 |
 | `migrate_manga_to_webtoon.dart` | manga → webtoon 카테고리 |
+| `migrate_domain_normalize.dart` | `generalCulture` 도메인 정규화 |
+| `migrate_personal_vault.dart` | 개인 Vault를 Spec v3로 정규화 |
 
 루트 `tool/` 유틸(`wk_id_utils.dart`, `registry_hash_utils.dart` 등)은 `../`로 import합니다.

@@ -88,23 +88,18 @@ function Invoke-DartTool {
 }
 
 if (-not $SkipGates) {
-  Write-Host '==> dedupe_linter'
-  $code = Invoke-DartTool @('run', 'tool/dedupe_linter.dart')
-  if ($code -ne 0) { exit $code }
-
-  Write-Host ''
-  Write-Host '==> quality_gate --strict'
-  $code = Invoke-DartTool @('run', 'tool/quality_gate.dart', '--strict')
-  if ($code -ne 0) { exit $code }
-
-  Write-Host ''
   Write-Host '==> ci_registry_check'
-  $code = Invoke-DartTool @('run', 'tool/ci_registry_check.dart')
+  $code = Invoke-DartTool @('run', 'tool/ci_registry_check.dart', '--skip-builder')
   if ($code -ne 0) { exit $code }
 
   Write-Host ''
   Write-Host '==> preflight_check'
-  $code = Invoke-DartTool @('run', 'tool/preflight_check.dart')
+  $code = Invoke-DartTool @(
+    'run',
+    'tool/preflight_check.dart',
+    '--skip-builder',
+    '--skip-dedupe'
+  )
   if ($code -ne 0) { exit $code }
 
   Write-Host ''

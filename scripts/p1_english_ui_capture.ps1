@@ -1,7 +1,7 @@
 # P1 English UI visual capture against Steam Release akasha.exe
 param(
-  [string]$Exe = (Join-Path $PSScriptRoot '..\..\build\windows\x64\runner\Release\akasha.exe' | Resolve-Path),
-  [string]$OutDir = (Join-Path $PSScriptRoot '..\..\docs\active\evidence\p1-english-ui-2026-07-12' | Resolve-Path),
+  [string]$Exe = (Join-Path $PSScriptRoot '..\build\windows\x64\runner\Release\akasha.exe' | Resolve-Path),
+  [string]$OutDir = (Join-Path $PSScriptRoot '..\docs\active\evidence\p1-english-ui-2026-07-12' | Resolve-Path),
   [string]$PrefsPath = "$env:APPDATA\Rune Atelier\AKASHA\shared_preferences.json"
 )
 

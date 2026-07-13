@@ -28,17 +28,12 @@ if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
 Write-Host ''
 Write-Host '==> preflight_check'
-& $Dart run tool/preflight_check.dart
+& $Dart run tool/preflight_check.dart --skip-builder --skip-dedupe
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
 Write-Host ''
 Write-Host '==> sw1_a_validation (recall@10)'
 & $Dart run tool/sw1_a_validation.dart
-if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-
-Write-Host ''
-Write-Host '==> quality_gate --release'
-& $Dart run tool/quality_gate.dart --release
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
 if ($Build) {

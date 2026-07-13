@@ -4,7 +4,7 @@ import '../models/browse_card.dart';
 
 /// DnD-B — curated 서재 그리드 내 순서 변경 (좌측 핸들만)
 ///
-/// [BrowsePosterGrid]와 동일하게 비스크롤 [Wrap] — 중첩 Scrollbar 방지.
+/// 비스크롤 [Wrap]을 사용해 중첩 Scrollbar를 방지합니다.
 class CuratedReorderGrid extends StatelessWidget {
   final List<BrowseCard> cards;
   final Widget Function(BrowseCard card) cardBuilder;

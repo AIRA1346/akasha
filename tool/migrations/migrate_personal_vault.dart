@@ -20,7 +20,10 @@ void main(List<String> args) async {
   final paths = args.where((a) => !a.startsWith('--')).toList();
 
   if (paths.isEmpty) {
-    print('Usage: dart run tool/migrate_personal_vault.dart <vault_path> [--apply]');
+    print(
+      'Usage: dart run tool/migrations/migrate_personal_vault.dart '
+      '<vault_path> [--apply]',
+    );
     exit(1);
   }
 
@@ -70,7 +73,7 @@ void main(List<String> args) async {
     // Read file content
     final content = file.readAsStringSync();
     final frontmatter = _extractFrontmatter(content);
-    
+
     if (frontmatter == null) {
       skippedCount++;
       continue;
@@ -93,7 +96,7 @@ void main(List<String> args) async {
     final workId = yaml['work_id'] ?? yaml['workId'];
 
     // Determine if it is a work file
-    final isWork = isLegacyWorkDir || 
+    final isWork = isLegacyWorkDir ||
         yaml['record_kind'] == 'workJournal' ||
         (yaml['entity_type'] == 'work') ||
         workId != null;
@@ -143,7 +146,7 @@ void main(List<String> args) async {
       if (!isAlreadyCanonical) {
         migratedCount++;
         final updatedContent = _normalizeWorkToV3(content, yaml, resolvedWkId, category);
-        
+
         print('[Migrate] $relPath -> $newRelPath');
 
         if (apply) {
@@ -161,7 +164,7 @@ void main(List<String> args) async {
       // Non-work files (timeline, journal, entities)
       final recordKind = yaml['record_kind'] ?? yaml['recordKind'];
       final entityType = yaml['entity_type'] ?? yaml['entityType'];
-      
+
       // Determine record kind if missing
       String? resolvedKind = recordKind?.toString();
       if (resolvedKind == null) {
@@ -354,7 +357,7 @@ String _normalizeWorkToV3(String content, Map<dynamic, dynamic> yaml, String wkI
   }
 
   buffer.writeln('---');
-  
+
   // Extract and append Markdown Body
   final body = _extractBody(content);
   if (body.isNotEmpty) {
