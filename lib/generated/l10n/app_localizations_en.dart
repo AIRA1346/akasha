@@ -1334,6 +1334,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get labelDashboardContinueExplore => 'Continue Exploring';
 
   @override
+  String dashboardContinueItemCount(int count) {
+    return '$count items';
+  }
+
+  @override
   String get helpDashboardContinueExploreColdStart =>
       'Recent works and entities you viewed will appear here once you start exploring.';
 

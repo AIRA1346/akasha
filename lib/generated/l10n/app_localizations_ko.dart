@@ -1307,6 +1307,11 @@ class AppLocalizationsKo extends AppLocalizations {
   String get labelDashboardContinueExplore => '계속 탐험하기';
 
   @override
+  String dashboardContinueItemCount(int count) {
+    return '$count개';
+  }
+
+  @override
   String get helpDashboardContinueExploreColdStart =>
       '탐험을 시작하면 최근에 본 작품과 인물이 여기에 표시됩니다.';
 

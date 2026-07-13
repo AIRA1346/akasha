@@ -489,6 +489,12 @@
     }
   },
   "labelDashboardContinueExplore": "계속 탐험하기",
+  "dashboardContinueItemCount": "{count}개",
+  "@dashboardContinueItemCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
   "helpDashboardContinueExploreColdStart": "탐험을 시작하면 최근에 본 작품과 인물이 여기에 표시됩니다.",
   "helpDashboardContinueExploreEmpty": "아직 탐색 기록이 없습니다. 작품이나 인물을 열면 여기에 표시됩니다.",
   "helpDashboardContinueExploreFallback": "최근 추가한 작품부터 탐험해 보세요.",

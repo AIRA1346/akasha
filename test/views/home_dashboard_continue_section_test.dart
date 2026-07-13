@@ -50,20 +50,33 @@ List<AkashaItem> _sampleItems(int count) {
   );
 }
 
-Widget _wrap({required List<AkashaItem> items, double width = 480}) {
+Widget _wrap({
+  required List<AkashaItem> items,
+  double width = 480,
+  AkashaItem? selectedItem,
+  VoidCallback? onExplore,
+  double textScale = 1,
+}) {
   return MaterialApp(
     theme: AkashaTheme.dark(),
     locale: const Locale('ko'),
     localizationsDelegates: AppLocalizations.localizationsDelegates,
     supportedLocales: AppLocalizations.supportedLocales,
+    builder: (context, child) => MediaQuery(
+      data: MediaQuery.of(
+        context,
+      ).copyWith(textScaler: TextScaler.linear(textScale)),
+      child: child!,
+    ),
     home: Scaffold(
       body: Center(
         child: SizedBox(
           width: width,
           child: HomeDashboardContinueSection(
             recentExploreItems: items,
-            selectedPreviewItem: null,
+            selectedPreviewItem: selectedItem,
             onItemTap: (_) {},
+            onExplore: onExplore,
           ),
         ),
       ),
@@ -139,6 +152,60 @@ void main() {
 
       expect(controller.offset, greaterThan(0));
       expect(find.byTooltip('이전'), findsOneWidget);
+    });
+
+    testWidgets('keeps rail offset when selection changes with the same IDs', (
+      tester,
+    ) async {
+      final items = _sampleItems(8);
+      await tester.pumpWidget(_wrap(items: items, width: 480));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byTooltip('다음'));
+      await tester.pumpAndSettle();
+      final before = tester
+          .widget<Scrollable>(find.byType(Scrollable).first)
+          .controller!
+          .offset;
+      expect(before, greaterThan(0));
+
+      await tester.pumpWidget(
+        _wrap(
+          items: List<AkashaItem>.from(items),
+          width: 480,
+          selectedItem: items.first,
+        ),
+      );
+      await tester.pump();
+
+      final after = tester
+          .widget<Scrollable>(find.byType(Scrollable).first)
+          .controller!
+          .offset;
+      expect(after, before);
+    });
+
+    testWidgets('empty state exposes the real Explore action', (tester) async {
+      var exploreCount = 0;
+      await tester.pumpWidget(
+        _wrap(items: const [], onExplore: () => exploreCount++),
+      );
+
+      expect(
+        find.byKey(HomeDashboardContinueSection.emptyActionKey),
+        findsOneWidget,
+      );
+      await tester.tap(find.byKey(HomeDashboardContinueSection.emptyActionKey));
+      expect(exploreCount, 1);
+    });
+
+    testWidgets('rail has no overflow at 125% text scale', (tester) async {
+      await tester.pumpWidget(
+        _wrap(items: _sampleItems(8), width: 480, textScale: 1.25),
+      );
+      await tester.pump();
+
+      expect(tester.takeException(), isNull);
     });
   });
 }

@@ -2444,6 +2444,12 @@ abstract class AppLocalizations {
   /// **'Continue Exploring'**
   String get labelDashboardContinueExplore;
 
+  /// No description provided for @dashboardContinueItemCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} items'**
+  String dashboardContinueItemCount(int count);
+
   /// No description provided for @helpDashboardContinueExploreColdStart.
   ///
   /// In en, this message translates to:

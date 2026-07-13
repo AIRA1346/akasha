@@ -86,6 +86,7 @@ class _HomeDashboardDiscoverySectionState
         Row(
           children: [
             HomeDashboardStyles.sectionHeader(
+              context,
               l10n?.dashboardDiscoveryTitle ?? '발견의 여정',
             ),
             const Spacer(),

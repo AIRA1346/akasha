@@ -6,7 +6,7 @@
 > **갱신:** 2026-07-14
 > **Git:** `git rev-parse HEAD`  
 >
-> **Verification snapshot (2026-07-14):** root analyze **0** · root test **1085** · commerce domain **14** · backend **17** · Steam Inventory sandbox E2E POC passed · Windows debug/release build OK · `system/` durable vs `.akasha/` derived · **UX-3A actual-summary Hero done** · **Locator index atomic+`.bak` recovery done** (concurrent write lock = follow-up only) · **Entity vault load diagnostics done** · **Entity path index rebuild/upsert issue exposure = follow-up only** · **Workbench recovery draft I/O transition diagnostics done** · **Entity `derivedIndexesUpdated` Home skip + debounce AND-coalesce done** (Work/Journal/Timeline = follow-up) · **HomeShell God Class 전면 리팩터 기각** · **vault-watch dispose lifecycle ACTION A done** · **Package modularization audit closed** — 단일 앱 + `akasha_commerce_domain` only · graph acyclic · no new EXTRACT_NOW · Melos/lib 전면 분할 기각 · Archive=PREPARE_BOUNDARY · Vault/UI/Home=KEEP_IN_APP · Steam→CMake optional when IAP/no-IAP exclude needed · reopen only on documented triggers
+> **Verification snapshot (2026-07-14):** root analyze **0** · root test **1094** · commerce domain **14** · backend **17** · Steam Inventory sandbox E2E POC passed · Windows debug/release build OK · `system/` durable vs `.akasha/` derived · **UX-3A/B Home Hero·Continue·Quick Actions done** · **Locator index atomic+`.bak` recovery done** (concurrent write lock = follow-up only) · **Entity vault load diagnostics done** · **Entity path index rebuild/upsert issue exposure = follow-up only** · **Workbench recovery draft I/O transition diagnostics done** · **Entity `derivedIndexesUpdated` Home skip + debounce AND-coalesce done** (Work/Journal/Timeline = follow-up) · **HomeShell God Class 전면 리팩터 기각** · **vault-watch dispose lifecycle ACTION A done** · **Package modularization audit closed** — 단일 앱 + `akasha_commerce_domain` only · graph acyclic · no new EXTRACT_NOW · Melos/lib 전면 분할 기각 · Archive=PREPARE_BOUNDARY · Vault/UI/Home=KEEP_IN_APP · Steam→CMake optional when IAP/no-IAP exclude needed · reopen only on documented triggers
 > **현재 실행:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) — Architecture Closure 선언 후 Steam 출시 블로커 트랙
 > **IAP:** 미구현 (`steamInAppPurchasesEnabled = false`). 결제 완성 전 Store IAP 표시·재심사 주장 금지.
 ---
@@ -15,10 +15,10 @@
  
 | 항목 | 상태 |
 |------|------|
-| **root flutter test** | **1085 PASS** |
+| **root flutter test** | **1094 PASS** |
 | **commerce package tests** | domain **14 PASS** · backend **17 PASS** |
 | **flutter analyze** | **0 issue** (gates clean) |
-| **Home UI** | **UX-3A actual-summary Hero** ✅ · empty start action · theme artwork fallback · 계속 탐험하기 rail |
+| **Home UI** | **UX-3A/B** ✅ · actual-summary Hero · scroll-preserving Continue rail · responsive Quick Actions |
 | **앱 테마** | canonical 5 preset · 무료 2/premium 3 catalog · app-root controller · backdrop/harness ✅ |
 | **Responsive Shell** | UX-2A/B/C · destination/preview SSOT · 256/232/drawer · 288 inline/overlay/sheet · 기존 Graph/Records 접근 ✅ |
 | **Steam Inventory POC** | sandbox purchase · exchange E2E 통과 ✅ · production IAP는 계속 비활성 |
@@ -290,6 +290,7 @@
 | 2026-07-13 | **UX-1 Theme foundation** — canonical 5 preset · 무료 2/premium 3 catalog · preferred/effective resolver · app-root theme · backdrop/harness · full tests **974 PASS** · analyze **0** · Windows debug build PASS |
 | 2026-07-13 | **UX-2 Responsive Shell** — `AppDestination`/`PreviewTarget` SSOT · 3단계 `ShellLayoutSpec` · Sidebar/Dock 일치 · 기존 Graph/Records 접근 · dirty Workbench navigation guard · full tests **1011 PASS** · analyze **0** · Windows debug/release build PASS |
 | 2026-07-14 | **UX-3A Home Hero** — 실제 record/entity/collection/tag summary · empty start action · `AkashaThemeVisuals` Hero asset/effect 계약 · 3 viewport/125% text · Classic/Midnight geometry 동일 · full tests **1085 PASS** · analyze **0** · Windows debug/release build PASS |
+| 2026-07-14 | **UX-3B Continue + Quick Actions** — ID 기반 rail scroll 보존 · 실제 status/tag/creator · 휴리스틱 % 제거 · empty Explore action · 1/2/3열 action panel · keyboard/focus/theme geometry · full tests **1094 PASS** · analyze **0** · Windows debug/release build PASS |
 | 2026-07-13 | **Locator index atomic write + `.bak` restart recovery** — `DerivedIndexAtomicWrite` · Record/Entity path indexes · corrupt≠empty · stale `.tmp` never promoted · full tests **1030 PASS** · analyze **0** · concurrent write lock = follow-up only |
 | 2026-07-13 | **Entity vault load diagnostics** — `loadFromVaultWithIssues` · `parseDetailed` · empty≠corrupt-only · no auto-log (consumers handle `issues`) · callers unchanged · full tests **1042 PASS** · analyze **0** · tip **`13eb227f`** |
 | 2026-07-13 | **Entity path index rebuild issue exposure (조사만)** — `rebuildFromVault`/`upsertMarkdownFile` 무음 skip · `rebuildFromVaultWithIssues` 단독 구현 보류 · 명시적 소비자 대기 · 코드 미변경 |

@@ -101,6 +101,7 @@ class _HomeDashboardRegistryBridgeSectionState
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             HomeDashboardStyles.sectionHeader(
+              context,
               l10n?.dashboardRegistryBridgeTitle ?? '사전에서 발견',
             ),
             const SizedBox(height: 12),

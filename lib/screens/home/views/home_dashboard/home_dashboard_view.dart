@@ -143,7 +143,17 @@ class HomeDashboardView extends StatelessWidget {
               selectedEntityPreviewId: entityPreviewItem?.entityId,
               onItemTap: _handleItemTap,
               onItemDoubleTap: _handleItemDoubleTap,
+              onExplore: onGoExplore,
               isColdStart: isColdStart,
+            ),
+            const SizedBox(height: 32),
+            HomeDashboardQuickActionsSection(
+              onSearch: onSearch,
+              onExploreEntities: () =>
+                  onGoExploreEntities(BrowseEntityScope.person),
+              onGoExplore: onGoExplore,
+              onGoKnowledgeGraph: onGoKnowledgeGraph,
+              onTimeline: onTimeline,
             ),
             if (FeatureFlags.showDiscoveryHome) ...[
               const SizedBox(height: 32),
@@ -181,15 +191,6 @@ class HomeDashboardView extends StatelessWidget {
                 onPreviewRegistryWork: onPreviewRegistryWork!,
               ),
             ],
-            const SizedBox(height: 32),
-            HomeDashboardQuickActionsSection(
-              onSearch: onSearch,
-              onExploreEntities: () =>
-                  onGoExploreEntities(BrowseEntityScope.person),
-              onGoExplore: onGoExplore,
-              onGoKnowledgeGraph: onGoKnowledgeGraph,
-              onTimeline: onTimeline,
-            ),
             const SizedBox(height: 24),
           ],
         ),

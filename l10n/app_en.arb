@@ -794,6 +794,12 @@
     }
   },
   "labelDashboardContinueExplore": "Continue Exploring",
+  "dashboardContinueItemCount": "{count} items",
+  "@dashboardContinueItemCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
   "helpDashboardContinueExploreColdStart": "Recent works and entities you viewed will appear here once you start exploring.",
   "helpDashboardContinueExploreEmpty": "No exploration history yet. Open a work or entity to see it here.",
   "helpDashboardContinueExploreFallback": "Try exploring from the recently added works.",
