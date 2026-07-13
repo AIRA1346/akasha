@@ -111,7 +111,7 @@
 | **G-AUTO** | ✅ | ✅ | app **952** · domain **14** · backend **17** · analyze **0** · release build **PASS** |
 | **G-VAULT** | ✅ | **✅** | 볼트 연동·아카이브·Sanctum 저장·기록 UI — 사용자 수동 dogfood 완료 |
 | **G-QA** | ✅ | ✅ | P0 수동 **12/12** (2026-06-13) · 사용자 dogfood 확인 |
-| **G-STEAM** | 🔶 | ✅ | SteamPipe 스크립트/SDK 확인 · 실제 upload/review 대기 |
+| **G-STEAM** | 🔶 | ✅ | no-IAP BuildID **24015480** 업로드 완료 · Set Live/review 대기 |
 | **G-COPY** | ✅ | ✅ | Privacy doc · [STEAM_RELEASE.md](STEAM_RELEASE.md) copy |
 | **G-CATALOG** | ✅ | — | 10048작 · recall 87/87 — **optional / post-v1 scale** |
 | **G-DISCOVERY** | ✅ | — | Wikidata spine — **v1 메시지·blocking 아님** |
@@ -122,8 +122,8 @@
 
 | 트랙 | 다음 | v1 우선 |
 |------|------|:-------:|
-| **정리 스프린트** | Home UI·테마·사이드바·포스터 로컬라이징 ✅ · analyze 0 · test 709 | — |
-| **akasha-db 소유권** | 구조 감사 · 내부 148파일 dirty · backup branch **제안** | **P0** |
+| **정리 스프린트** | dead wiring·도구·Registry legacy 정리 ✅ · analyze 0 · test 952 | — |
+| **akasha-db 소유권** | backup branch 완료 · 장기 A/B/C 구조 결정은 보류 | — |
 | **Personal Archive (v1)** | vault 안정성 · Sanctum · Library/Collection · Agent Protocol | **P0** |
 | **Sprint B** | ✅ B1 · Vault agent 가이드 | — |
 | **Wave 1 Home** | ✅ shell 분해 완료 | — |
@@ -182,9 +182,9 @@
 | **302** | 내부 `akasha-db` **148파일** → `backup/local-sync-20260630` @ **`bef52e7`** | ✅ pushed | audit §6 |
 | **303** | 장기 구조 결정 — **A** vendored+`.git` 제거 · **B** submodule/subtree · **C** dual push | ⏸️ 보류 | audit §5 |
 | **304** | `AIRA1346/akasha-db` remote vs 앱 repo shard 커밋 **동기화** | 🔶 | audit §3.1 |
-| **305** | registry manifest 4파일 — rebuild 산출물 **커밋 제외** 관례 유지 | ✅ 관례 | 본 문서 헤더 |
+| **305** | registry manifest 4파일 — 동일 `generatedAt` metadata를 별도 커밋으로 정렬 | ✅ `8ada29d5` | 본 문서 헤더 |
 | **306** | Home UI 정리 — search-first · Slice 1 앱 테마 · Slice 2 사이드바 서재 · dead wiring cleanup | ✅ | `0db21d38` |
-| **307** | `flutter test` **709** · `flutter analyze lib` **0** 유지 | ✅ | §2 Gate |
+| **307** | root `flutter test` **952** · `flutter analyze` **0** 유지 | ✅ | §2 Gate |
 | **308** | Agent Vault UI dogfood — P1-8 raw wiki link · P1-9 중앙 감상 밀도 · P1-10 앱 테마 범위 | 🔶 | [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
 | **309** | M3 · Agent/player implementation layer · 대규모 index/path migration | 🚫 **금지** (본 스프린트) | — |
 | **310** | `PreviewMemoBar` — post-v1 dormant UI cleanup 후보 (`showPreviewMemoBar` false · `내 감상` 카드와 역할 중복) | ⏸️ v1 비활성 유지 | [preview_memo_bar.dart](../../lib/screens/home/views/preview_memo_bar.dart) · dogfood §P2 |
