@@ -12,12 +12,12 @@
 import 'dart:convert';
 import 'dart:io';
 
-import '../poster_url_policy.dart';
+import 'tmdb_poster_legacy/poster_url_policy.dart';
 import '../pre_insert_dedupe_gate.dart';
 import '../registry_hash_utils.dart';
 
 const _tmdbImageBase = 'https://image.tmdb.org/t/p/w500';
-const _posterCacheFile = 'akasha-db/tmdb_poster_cache.json';
+const _posterCacheFile = 'tool/archive/tmdb_poster_legacy/fixtures/tmdb_poster_cache.json';
 
 void main(List<String> args) async {
   final apply = args.contains('--apply');

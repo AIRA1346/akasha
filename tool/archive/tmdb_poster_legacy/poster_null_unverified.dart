@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print
-// 검증되지 않은 posterPath를 null 처리합니다.
-// Usage: dart run tool/poster_null_unverified.dart [--apply]
+// Archived pre-Fact-only poster cleanup.
+// Usage: dart run tool/archive/tmdb_poster_legacy/poster_null_unverified.dart [--apply]
 
 import 'dart:convert';
 import 'dart:io';
@@ -59,7 +59,7 @@ void main(List<String> args) {
 }
 
 Map<int, String> _loadPosterCache(Directory projectRoot) {
-  final file = File('${projectRoot.path}/akasha-db/tmdb_poster_cache.json');
+  final file = File('${projectRoot.path}/tool/archive/tmdb_poster_legacy/fixtures/tmdb_poster_cache.json');
   if (!file.existsSync()) return {};
   final decoded = json.decode(file.readAsStringSync()) as Map<String, dynamic>;
   return decoded.map((k, v) => MapEntry(int.parse(k), v as String));

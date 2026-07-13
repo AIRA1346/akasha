@@ -1,12 +1,12 @@
 // ignore_for_file: avoid_print
-// anilistcdn posterPath → TMDB / Open Library / Steam 등으로 교체
+// Archived: anilistcdn posterPath → TMDB / Open Library / Steam 등으로 교체
 //
 // Usage:
-//   dart run tool/migrate_anilistcdn_posters.dart           # dry-run
-//   dart run tool/migrate_anilistcdn_posters.dart --apply
-//   dart run tool/migrate_anilistcdn_posters.dart --fetch --apply  # TMDB API (TMDB_API_KEY)
+//   dart run tool/archive/tmdb_poster_legacy/migrate_anilistcdn_posters.dart           # dry-run
+//   dart run tool/archive/tmdb_poster_legacy/migrate_anilistcdn_posters.dart --apply
+//   dart run tool/archive/tmdb_poster_legacy/migrate_anilistcdn_posters.dart --fetch --apply
 //
-// Policy: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)
+// Policy: [akasha-db-policy.md](../../docs/history/policy/akasha-db-policy.md)
 
 import 'dart:convert';
 import 'dart:io';
@@ -365,7 +365,7 @@ Future<void> _scrapeTmdbPoster(
 }
 
 void _loadCachedTmdbPosters(Map<int, String> cache) {
-  final file = File('akasha-db/tmdb_poster_cache.json');
+  final file = File('tool/archive/tmdb_poster_legacy/fixtures/tmdb_poster_cache.json');
   if (!file.existsSync()) return;
   try {
     final decoded = json.decode(file.readAsStringSync());
@@ -390,7 +390,7 @@ void _saveTmdbPosterCache(Directory root, Map<int, String> cache) {
   }
   final keys = sorted.keys.toList()..sort();
   final ordered = {for (final k in keys) k: sorted[k]!};
-  final file = File('${root.path}/akasha-db/tmdb_poster_cache.json');
+  final file = File('${root.path}/tool/archive/tmdb_poster_legacy/fixtures/tmdb_poster_cache.json');
   final encoder = const JsonEncoder.withIndent('  ');
   file.writeAsStringSync('${encoder.convert(ordered)}\n');
   print('Saved ${file.path}');

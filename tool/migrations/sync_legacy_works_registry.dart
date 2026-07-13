@@ -1,5 +1,5 @@
 // ignore_for_file: avoid_print
-// ?�거??works_registry.json??poster/extensions�??�드 마스???�이?�로 ?�기?�합?�다.
+// Legacy works_registry.json의 허용된 extensions를 shard 기준으로 동기화합니다.
 //
 // Usage: dart run tool/migrations/sync_legacy_works_registry.dart [--dry-run]
 
@@ -22,17 +22,18 @@ void main(List<String> args) {
     json.decode(aliasesPath.readAsStringSync()) as Map,
   );
   final masterWorks = _loadAllShardWorks(shardsRoot);
-  final legacy =
-      Map<String, dynamic>.from(json.decode(legacyPath.readAsStringSync()) as Map);
+  final legacy = Map<String, dynamic>.from(
+    json.decode(legacyPath.readAsStringSync()) as Map,
+  );
 
   var updated = 0;
-  var justwatchFixed = 0;
 
   legacy.forEach((key, value) {
     if (value is! Map) return;
     final work = Map<String, dynamic>.from(value);
     final legacyWorkId = work['workId']?.toString() ?? key;
-    final masterId = aliases[legacyWorkId] ??
+    final masterId =
+        aliases[legacyWorkId] ??
         aliases[key] ??
         (masterWorks.containsKey(legacyWorkId) ? legacyWorkId : null);
     if (masterId == null) return;
@@ -41,24 +42,15 @@ void main(List<String> args) {
     if (shard == null) return;
 
     var changed = false;
-    final currentPoster = work['posterPath']?.toString() ?? '';
-    final shardPoster = shard['posterPath']?.toString() ?? '';
-
-    if (shardPoster.isNotEmpty &&
-        (currentPoster.contains('justwatch.com') ||
-            (currentPoster.isNotEmpty && currentPoster != shardPoster))) {
-      print('$legacyWorkId poster:');
-      print('  legacy: $currentPoster');
-      print('  shard:  $shardPoster');
-      work['posterPath'] = shardPoster;
-      changed = true;
-      if (currentPoster.contains('justwatch.com')) justwatchFixed++;
-    }
-
     final shardExtensions = shard['extensions'];
     if (shardExtensions is Map && shardExtensions.isNotEmpty) {
-      work['extensions'] = shardExtensions;
-      changed = true;
+      final extensions = Map<String, dynamic>.from(shardExtensions)
+        ..remove('posterSource')
+        ..remove('posterVerified');
+      if (extensions.isNotEmpty) {
+        work['extensions'] = extensions;
+        changed = true;
+      }
     }
 
     if (changed) {
@@ -72,9 +64,11 @@ void main(List<String> args) {
     legacyPath.writeAsStringSync('${encoder.convert(legacy)}\n');
   }
 
-  print(dryRun
-      ? 'Dry run: $updated entry(ies), $justwatchFixed JustWatch poster(s) would update.'
-      : 'Updated $updated entry(ies), fixed $justwatchFixed JustWatch poster(s).');
+  print(
+    dryRun
+        ? 'Dry run: $updated legacy entry(ies) would update.'
+        : 'Updated $updated legacy entry(ies).',
+  );
 }
 
 Map<String, Map<String, dynamic>> _loadAllShardWorks(Directory shardsRoot) {
@@ -82,10 +76,9 @@ Map<String, Map<String, dynamic>> _loadAllShardWorks(Directory shardsRoot) {
   if (!shardsRoot.existsSync()) return works;
 
   for (final categoryDir in shardsRoot.listSync().whereType<Directory>()) {
-    for (final shardFile in categoryDir
-        .listSync()
-        .whereType<File>()
-        .where((f) => f.path.endsWith('.json'))) {
+    for (final shardFile in categoryDir.listSync().whereType<File>().where(
+      (f) => f.path.endsWith('.json'),
+    )) {
       final decoded = json.decode(shardFile.readAsStringSync());
       if (decoded is! Map) continue;
       decoded.forEach((key, value) {

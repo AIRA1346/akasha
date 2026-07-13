@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print
 // TMDB TV 페이지 제목과 작품명을 대조해 오매핑 포스터를 null 처리합니다.
-// Usage: dart run tool/poster_validate_tmdb.dart [--apply] [--fetch]
+// Usage: dart run tool/archive/tmdb_poster_legacy/poster_validate_tmdb.dart [--apply] [--fetch]
 
 import 'dart:convert';
 import 'dart:io';

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Registry poster URL health check.
- * Usage: node tool/check_poster_urls.mjs [--root assets/registry|akasha-db]
+ * Usage: node tool/archive/tmdb_poster_legacy/check_poster_urls.mjs [--root assets/registry|akasha-db]
  */
 import fs from 'node:fs';
 import path from 'node:path';

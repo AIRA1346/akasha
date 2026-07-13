@@ -10,6 +10,7 @@ class RegistryShardMeta {
   final String path;
   final bool eager;
   final int entryCount;
+
   /// v4 — 샤드 JSON 본문 SHA-256 (증분 sync)
   final String? sha256;
 
@@ -43,6 +44,7 @@ class RegistryManifest {
   final int version;
   final String? generatedAt;
   final List<RegistryShardMeta> shards;
+
   /// v4 — `hash(wk_) % 2^shardBits`
   final int? shardBits;
   final int? entryCount;
@@ -130,8 +132,11 @@ class RegistrySearchIndexManifest {
       generatedAt: json['generatedAt']?.toString(),
       shards: shardList
           .whereType<Map>()
-          .map((e) =>
-              RegistrySearchIndexShardMeta.fromJson(Map<String, dynamic>.from(e)))
+          .map(
+            (e) => RegistrySearchIndexShardMeta.fromJson(
+              Map<String, dynamic>.from(e),
+            ),
+          )
           .where((s) => s.path.isNotEmpty)
           .toList(),
     );
@@ -153,9 +158,10 @@ class RegistrySearchIndexEntry {
   final AppDomain domain;
   final String creator;
   final List<String> tags;
-  final String? posterPath;
+
   /// v3 — 교차 언어·별칭 검색용 (registry_builder가 생성)
   final List<String> searchTokens;
+
   /// 빌드 시 파생 — shard에 저장하지 않음
   final int qualityScore;
   final int qualityTier;
@@ -168,7 +174,6 @@ class RegistrySearchIndexEntry {
     required this.domain,
     this.creator = '',
     this.tags = const [],
-    this.posterPath,
     this.searchTokens = const [],
     this.qualityScore = 0,
     this.qualityTier = 0,
@@ -176,7 +181,6 @@ class RegistrySearchIndexEntry {
 
   factory RegistrySearchIndexEntry.fromJson(Map<String, dynamic> json) {
     final categoryStr = json['category']?.toString() ?? 'manga';
-    final poster = json['posterPath']?.toString();
     return RegistrySearchIndexEntry(
       workId: json['workId']?.toString() ?? '',
       title: json['title']?.toString() ?? '',
@@ -187,17 +191,16 @@ class RegistrySearchIndexEntry {
       ),
       domain: AppDomain.fromStorage(json['domain']?.toString()),
       creator: json['creator']?.toString() ?? '',
-      tags: (json['tags'] as List?)?.map((e) => e.toString()).toList() ??
+      tags:
+          (json['tags'] as List?)?.map((e) => e.toString()).toList() ??
           const [],
-      posterPath:
-          poster != null && poster.isNotEmpty ? poster : null,
-      searchTokens: (json['searchTokens'] as List?)
+      searchTokens:
+          (json['searchTokens'] as List?)
               ?.map((e) => e.toString())
               .where((e) => e.isNotEmpty)
               .toList() ??
           const [],
-      qualityScore:
-          int.tryParse(json['qualityScore']?.toString() ?? '') ?? 0,
+      qualityScore: int.tryParse(json['qualityScore']?.toString() ?? '') ?? 0,
       qualityTier: int.tryParse(json['qualityTier']?.toString() ?? '') ?? 0,
     );
   }

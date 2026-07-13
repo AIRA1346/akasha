@@ -1,4 +1,4 @@
-// batch5 이전 카탈로그 + batch5 ID 수정 오버라이드
+// Archived batch5 catalog TMDB overrides.
 // TMDB TV ID — 애니 메타 DB 기준 (만화 카드에도 동일 애니 키비주얼 사용)
 library;
 

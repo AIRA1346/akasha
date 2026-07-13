@@ -1,4 +1,3 @@
-import '../config/catalog_poster_policy.dart';
 import '../models/enums.dart';
 import '../models/registry_work.dart';
 import '../models/work_id_codec.dart';
@@ -66,15 +65,8 @@ class WorksRegistry {
       if (value is! Map) return;
       final map = Map<String, dynamic>.from(value);
       final incoming = RegistryWork.fromJson(map);
-      final resolvedId = _loader.resolveWorkId(incoming.workId.isNotEmpty
-          ? incoming.workId
-          : key);
-      final existing =
-          _registry[resolvedId] ?? _registry[key];
-      final posterPath = _resolveMergedPosterPath(
-        workId: resolvedId,
-        incoming: incoming,
-        existing: existing,
+      final resolvedId = _loader.resolveWorkId(
+        incoming.workId.isNotEmpty ? incoming.workId : key,
       );
       final work = RegistryWork(
         workId: resolvedId,
@@ -86,47 +78,12 @@ class WorksRegistry {
         domain: incoming.domain,
         creator: incoming.creator,
         releaseYear: incoming.releaseYear,
-        description: incoming.description,
         tags: incoming.tags,
-        posterPath: posterPath,
         extensions: incoming.extensions,
       );
       _registry[resolvedId] = work;
       _registry[key] = work;
     });
-  }
-
-  static bool _isPosterVerified(RegistryWork work) =>
-      work.extensions['posterVerified'] == true;
-
-  static String? _posterFromSearchIndex(String workId) {
-    for (final entry in _loader.searchIndex) {
-      if (entry.workId == workId) {
-        final poster = entry.posterPath;
-        if (poster != null && poster.isNotEmpty) return poster;
-        break;
-      }
-    }
-    return null;
-  }
-
-  static String? _resolveMergedPosterPath({
-    required String workId,
-    required RegistryWork incoming,
-    required RegistryWork? existing,
-  }) {
-    if (existing != null &&
-        _isPosterVerified(existing) &&
-        !_isPosterVerified(incoming)) {
-      return existing.posterPath;
-    }
-    if (_isPosterVerified(incoming)) return incoming.posterPath;
-
-    final fromIndex = _posterFromSearchIndex(workId);
-    if (fromIndex != null && fromIndex.isNotEmpty) {
-      return fromIndex;
-    }
-    return incoming.posterPath ?? existing?.posterPath;
   }
 
   static RegistryWork? getWorkById(String workId) {
@@ -155,8 +112,9 @@ class WorksRegistry {
     }
     final list = results.values.toList();
     list.sort((a, b) {
-      final scoreCmp =
-          qualityScoreFor(b.workId).compareTo(qualityScoreFor(a.workId));
+      final scoreCmp = qualityScoreFor(
+        b.workId,
+      ).compareTo(qualityScoreFor(a.workId));
       if (scoreCmp != 0) return scoreCmp;
       return a.title.compareTo(b.title);
     });
@@ -241,7 +199,8 @@ class WorksRegistry {
     bool fetchRemote = false,
   }) async {
     final total = catalogIndexEntryCount(domain: domain, category: category);
-    final useFullBundledCatalog = domain == null &&
+    final useFullBundledCatalog =
+        domain == null &&
         category == null &&
         offset == 0 &&
         total > 0 &&
@@ -251,8 +210,8 @@ class WorksRegistry {
       await _loader.ensureSearchIndexLoaded();
       await _loader.ensureAllManifestShardsLoaded();
       if (fetchRemote) {
-        final shardIds = _loader.manifest?.shards.map((s) => s.id).toSet() ??
-            const {};
+        final shardIds =
+            _loader.manifest?.shards.map((s) => s.id).toSet() ?? const {};
         await RegistrySyncService().syncShardsByIds(shardIds);
         await _loader.ensureAllManifestShardsLoaded();
       }
@@ -290,8 +249,7 @@ class WorksRegistry {
   static int catalogIndexEntryCount({
     AppDomain? domain,
     MediaCategory? category,
-  }) =>
-      _loader.countIndexEntries(domain: domain, category: category);
+  }) => _loader.countIndexEntries(domain: domain, category: category);
 
   /// 필터 범위 샤드 온디맨드 프리페치 (원격 fetch → 캐시/번들 로드)
   /// domain·categories 모두 비어 있으면 no-op (전체 샤드 bulk fetch 방지)
@@ -342,26 +300,6 @@ class WorksRegistry {
       }
     }
     return false;
-  }
-
-  /// Tier 1 registry 포스터 URL (v1: 비활성 — 유저 볼트만).
-  static String? resolvePosterPath(String workId) {
-    if (!CatalogPosterPolicy.tier1RegistryPostersEnabled) return null;
-    if (workId.isEmpty) return null;
-    final resolved = _loader.resolveWorkId(workId);
-    final work = getWorkById(resolved);
-    final fromIndex =
-        _posterFromSearchIndex(resolved) ?? _posterFromSearchIndex(workId);
-
-    if (work != null && _isPosterVerified(work)) {
-      final fromShard = work.posterPath;
-      if (fromShard != null && fromShard.isNotEmpty) return fromShard;
-    }
-    if (fromIndex != null && fromIndex.isNotEmpty) return fromIndex;
-
-    final fallback = work?.posterPath;
-    if (fallback != null && fallback.isNotEmpty) return fallback;
-    return null;
   }
 
   static bool isLegacyWorkId(String workId) =>

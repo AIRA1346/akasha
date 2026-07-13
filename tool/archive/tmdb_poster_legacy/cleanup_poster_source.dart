@@ -1,5 +1,5 @@
 // ignore_for_file: avoid_print
-// 레거시 정리 — posterPath 없는데 extensions.posterSource/posterVerified만
+// Archived cleanup — posterPath 없는데 extensions.posterSource/posterVerified만
 // 남은 작품에서 해당 provenance 키를 제거 (docs/data-policy.md provenance_warn).
 //
 // Usage:

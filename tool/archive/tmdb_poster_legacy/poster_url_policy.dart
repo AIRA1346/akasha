@@ -1,5 +1,5 @@
 // ignore_for_file: avoid_print
-// akasha-db posterPath URL policy — [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)
+// Archived URL policy from before Tier 1 posterPath was fully prohibited.
 //
 // - absoluteDenylist: any occurrence fails CI (e.g. justwatch)
 // - incrementDenylist: count must not exceed baseline (e.g. legacy anilistcdn)
@@ -19,7 +19,7 @@ const incrementDenylistPatterns = [
   'anilistcdn',
 ];
 
-const posterUrlBaselineFile = 'akasha-db/poster_url_baseline.json';
+const posterUrlBaselineFile = 'tool/archive/tmdb_poster_legacy/fixtures/poster_url_baseline.json';
 
 class PosterUrlScanResult {
   final int workCount;

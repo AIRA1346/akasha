@@ -2,7 +2,7 @@
 // Copy posterPath from assets/registry shards into akasha-db when assets has a
 // non-JustWatch URL and akasha-db differs.
 //
-// Usage: dart run tool/sync_posters_from_assets.dart [--dry-run]
+// Usage: dart run tool/archive/tmdb_poster_legacy/sync_posters_from_assets.dart [--dry-run]
 
 import 'dart:convert';
 import 'dart:io';

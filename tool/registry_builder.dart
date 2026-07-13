@@ -12,7 +12,6 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-import 'poster_url_policy.dart';
 import 'quality_score_utils.dart';
 import 'registry_hash_utils.dart';
 import 'registry_v3_utils.dart';
@@ -375,7 +374,7 @@ void _validateWork(
   }
   if (domain == 'generalCulture') {
     errors.add(
-      '$shardPath/$workId: generalCulture deprecated — run tool/migrate_domain_normalize.dart',
+      '$shardPath/$workId: generalCulture deprecated — run tool/migrations/migrate_domain_normalize.dart',
     );
   }
   if (domain.isEmpty) {
@@ -404,12 +403,17 @@ void _validateWork(
     errors.add('$shardPath/$workId: externalIds must be a JSON object');
   }
 
-  final poster = work['posterPath']?.toString();
-  final posterError = validatePosterUrlForShard(
-    poster != null && poster.isNotEmpty ? poster : null,
-  );
-  if (posterError != null) {
-    errors.add('$shardPath/$workId: $posterError');
+  if (work.containsKey('posterPath')) {
+    errors.add(
+      '$shardPath/$workId: Tier 1 posterPath forbidden — '
+      'user Sanctum vault only',
+    );
+  }
+  if (work.containsKey('description')) {
+    errors.add(
+      '$shardPath/$workId: Tier 1 description forbidden — '
+      'user Sanctum vault only',
+    );
   }
 
   final extensions = work['extensions'];

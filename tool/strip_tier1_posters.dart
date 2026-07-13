@@ -20,10 +20,11 @@ void main(List<String> args) async {
   var stripped = 0;
   var filesTouched = 0;
 
-  for (final shardFile in shardsRoot
-      .listSync(recursive: true)
-      .whereType<File>()
-      .where((f) => f.path.endsWith('.json'))) {
+  for (final shardFile
+      in shardsRoot
+          .listSync(recursive: true)
+          .whereType<File>()
+          .where((f) => f.path.endsWith('.json'))) {
     final decoded = json.decode(shardFile.readAsStringSync());
     if (decoded is! Map<String, dynamic>) continue;
 
@@ -34,7 +35,8 @@ void main(List<String> args) async {
       if (entry.value is! Map) continue;
       final work = Map<String, dynamic>.from(entry.value as Map);
       final workId = work['workId']?.toString() ?? entry.key;
-      final hadPoster = work.containsKey('posterPath') &&
+      final hadPoster =
+          work.containsKey('posterPath') &&
           (work['posterPath']?.toString().isNotEmpty ?? false);
 
       if (work.containsKey('posterPath')) {
@@ -84,8 +86,69 @@ void main(List<String> args) async {
     }
   }
 
+  final legacyFile = File(
+    p.join(root.path, 'akasha-db', 'works_registry.json'),
+  );
+  if (legacyFile.existsSync()) {
+    final legacy = Map<String, dynamic>.from(
+      json.decode(legacyFile.readAsStringSync()) as Map,
+    );
+    var legacyDirty = false;
+    for (final entry in legacy.entries.toList()) {
+      if (entry.value is! Map) continue;
+      final work = Map<String, dynamic>.from(entry.value as Map);
+      final hadPoster = work['posterPath']?.toString().isNotEmpty ?? false;
+      var workDirty = work.containsKey('posterPath');
+      work.remove('posterPath');
+
+      final extensions = work['extensions'];
+      if (extensions is Map) {
+        final ext = Map<String, dynamic>.from(extensions);
+        final removedSource = ext.remove('posterSource') != null;
+        final removedVerified = ext.remove('posterVerified') != null;
+        if (removedSource || removedVerified) {
+          if (ext.isEmpty) {
+            work.remove('extensions');
+          } else {
+            work['extensions'] = ext;
+          }
+          workDirty = true;
+        }
+      }
+
+      final signals = work['qualitySignals'];
+      if (signals is Map) {
+        final qs = Map<String, dynamic>.from(signals);
+        final removedHasPoster = qs.remove('hasPoster') != null;
+        final removedPosterVerified = qs.remove('posterVerified') != null;
+        if (removedHasPoster || removedPosterVerified) {
+          if (qs.isEmpty) {
+            work.remove('qualitySignals');
+          } else {
+            work['qualitySignals'] = qs;
+          }
+          workDirty = true;
+        }
+      }
+
+      if (!workDirty) continue;
+      legacy[entry.key] = work;
+      legacyDirty = true;
+      if (hadPoster) stripped++;
+    }
+    if (legacyDirty) {
+      filesTouched++;
+      if (apply) {
+        legacyFile.writeAsStringSync(
+          '${const JsonEncoder.withIndent('  ').convert(legacy)}\n',
+        );
+      }
+    }
+  }
+
   print(
-    'Done: posterPath stripped from $stripped works, $filesTouched shard files',
+    'Done: posterPath stripped from $stripped works, '
+    '$filesTouched registry files',
   );
   if (!apply && stripped > 0) {
     print('Dry-run. Pass --apply to write shards.');
@@ -94,11 +157,11 @@ void main(List<String> args) async {
 
   if (apply && syncAssets) {
     print('Running registry_builder --sync-assets ...');
-    final result = await Process.run(
-      Platform.executable,
-      ['run', 'tool/registry_builder.dart', '--sync-assets'],
-      workingDirectory: root.path,
-    );
+    final result = await Process.run(Platform.executable, [
+      'run',
+      'tool/registry_builder.dart',
+      '--sync-assets',
+    ], workingDirectory: root.path);
     stdout.write(result.stdout);
     stderr.write(result.stderr);
     if (result.exitCode != 0) {

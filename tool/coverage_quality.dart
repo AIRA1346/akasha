@@ -28,10 +28,9 @@ class EnTitleValidation {
 }
 
 final _hangul = RegExp(r'[\u3131-\uD79D]');
+
 /// 연도만(`1984`)은 허용 — 구분자 포함 날짜형만 거부.
-final _dateOnly = RegExp(
-  r'^\d{4}([-/\.]\d{1,2}([-/\.]\d{1,2})?)+$',
-);
+final _dateOnly = RegExp(r'^\d{4}([-/\.]\d{1,2}([-/\.]\d{1,2})?)+$');
 final _controlChars = RegExp(r'[\x00-\x08\x0b\x0c\x0e-\x1f]');
 final _literalPlaceholder = RegExp(
   r'^(TODO|TBD|null|undefined|N/?A)$',
@@ -45,25 +44,53 @@ EnTitleValidation validateEnTitle(String? raw) {
   }
   final t = raw.trim();
   if (t.isEmpty) {
-    return EnTitleValidation(valid: false, reason: InvalidEnReason.empty, value: raw);
+    return EnTitleValidation(
+      valid: false,
+      reason: InvalidEnReason.empty,
+      value: raw,
+    );
   }
   if (t.length < 2) {
-    return EnTitleValidation(valid: false, reason: InvalidEnReason.tooShort, value: t);
+    return EnTitleValidation(
+      valid: false,
+      reason: InvalidEnReason.tooShort,
+      value: t,
+    );
   }
   if (_controlChars.hasMatch(t)) {
-    return EnTitleValidation(valid: false, reason: InvalidEnReason.malformed, value: t);
+    return EnTitleValidation(
+      valid: false,
+      reason: InvalidEnReason.malformed,
+      value: t,
+    );
   }
   if (t.contains('#=') || t.contains('{{') || t.contains('dataItem')) {
-    return EnTitleValidation(valid: false, reason: InvalidEnReason.placeholder, value: t);
+    return EnTitleValidation(
+      valid: false,
+      reason: InvalidEnReason.placeholder,
+      value: t,
+    );
   }
   if (_literalPlaceholder.hasMatch(t)) {
-    return EnTitleValidation(valid: false, reason: InvalidEnReason.placeholder, value: t);
+    return EnTitleValidation(
+      valid: false,
+      reason: InvalidEnReason.placeholder,
+      value: t,
+    );
   }
   if (_hangul.hasMatch(t)) {
-    return EnTitleValidation(valid: false, reason: InvalidEnReason.hangulInEn, value: t);
+    return EnTitleValidation(
+      valid: false,
+      reason: InvalidEnReason.hangulInEn,
+      value: t,
+    );
   }
   if (_dateOnly.hasMatch(t)) {
-    return EnTitleValidation(valid: false, reason: InvalidEnReason.dateLike, value: t);
+    return EnTitleValidation(
+      valid: false,
+      reason: InvalidEnReason.dateLike,
+      value: t,
+    );
   }
   return EnTitleValidation(valid: true, value: t);
 }
@@ -71,13 +98,13 @@ EnTitleValidation validateEnTitle(String? raw) {
 bool isValidEnTitle(String? raw) => validateEnTitle(raw).valid;
 
 String invalidEnReasonLabel(InvalidEnReason reason) => switch (reason) {
-      InvalidEnReason.empty => 'empty',
-      InvalidEnReason.tooShort => 'too_short',
-      InvalidEnReason.placeholder => 'placeholder',
-      InvalidEnReason.hangulInEn => 'hangul_in_en',
-      InvalidEnReason.dateLike => 'date_like',
-      InvalidEnReason.malformed => 'malformed',
-    };
+  InvalidEnReason.empty => 'empty',
+  InvalidEnReason.tooShort => 'too_short',
+  InvalidEnReason.placeholder => 'placeholder',
+  InvalidEnReason.hangulInEn => 'hangul_in_en',
+  InvalidEnReason.dateLike => 'date_like',
+  InvalidEnReason.malformed => 'malformed',
+};
 
 /// Registry-wide titles.en quality scan.
 class QualityScanResult {
@@ -104,9 +131,13 @@ const _maxSamples = 20;
 
 /// akasha-db manifest shards → work maps.
 List<Map<String, dynamic>> loadRegistryWorkMaps(Directory root) {
-  final manifest = jsonDecode(
-    File(p.join(root.path, 'akasha-db', 'manifest.json')).readAsStringSync(),
-  ) as Map<String, dynamic>;
+  final manifest =
+      jsonDecode(
+            File(
+              p.join(root.path, 'akasha-db', 'manifest.json'),
+            ).readAsStringSync(),
+          )
+          as Map<String, dynamic>;
 
   final out = <Map<String, dynamic>>[];
   for (final shardMeta in manifest['shards'] as List) {
@@ -154,7 +185,7 @@ QualityScanResult scanTitlesEnQuality(List<Map<String, dynamic>> works) {
         'workId': work['workId']?.toString() ?? '',
         'titlesEn': en,
         'reason': label,
-        if (method != null) 'method': method,
+        'method': ?method,
       });
     }
   }
@@ -177,14 +208,6 @@ bool hasAutoSourceTrace(Map<String, dynamic> work) {
   if (ext is Map) {
     final method = ext['coverageSprint03']?.toString() ?? '';
     if (method == 'tmdb_fetch' || method == 'steam_fetch') return true;
-  }
-  final external = work['externalIds'];
-  if (external is Map) {
-    if (external.containsKey('tmdb') || external.containsKey('steam')) return true;
-  }
-  final poster = work['posterPath']?.toString() ?? '';
-  if (poster.contains('steam/apps/') || poster.contains('image.tmdb.org')) {
-    return true;
   }
   return false;
 }
@@ -250,8 +273,11 @@ LocaleCoverageScanResult scanLocaleCoverage(List<Map<String, dynamic>> works) {
     titlesEnPopulated: enPopulated,
     titlesEnMissing: total - enPopulated,
     titlesEnRate: enRate,
-    koStatus: koRate >= LocaleCoverageScanResult.koMinimumRate ? 'PASS' : 'FAIL',
-    enCoverageStatus:
-        enRate >= LocaleCoverageScanResult.enMinimumRate ? 'PASS' : 'FAIL',
+    koStatus: koRate >= LocaleCoverageScanResult.koMinimumRate
+        ? 'PASS'
+        : 'FAIL',
+    enCoverageStatus: enRate >= LocaleCoverageScanResult.enMinimumRate
+        ? 'PASS'
+        : 'FAIL',
   );
 }

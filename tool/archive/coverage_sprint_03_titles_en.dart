@@ -15,7 +15,7 @@ import 'package:path/path.dart' as p;
 
 import '../coverage_quality.dart';
 import '../dedupe_utils.dart';
-import '../poster_verification.dart';
+import 'tmdb_poster_legacy/poster_verification.dart';
 
 const _milestoneCount = 101;
 const _targetRate = 0.50;

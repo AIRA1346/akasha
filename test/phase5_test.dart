@@ -74,7 +74,7 @@ domain: subculture
 
     test('user custom URL persists to YAML', () {
       const masterId = 'sub_manga_detective-conan_1994';
-      const registryCdn = 'https://example.com/registry-default.jpg';
+      const customPosterUrl = 'https://example.com/custom-poster.jpg';
 
       final item = createItem(
         workId: masterId,
@@ -84,7 +84,7 @@ domain: subculture
         workStatus: '완결',
         myStatus: '전부 봄',
         rating: 5.0,
-        posterPath: registryCdn,
+        posterPath: customPosterUrl,
         memorableQuotes: [],
         review: 'Great.',
         isHallOfFame: true,
@@ -94,10 +94,10 @@ domain: subculture
       expect(MarkdownParser.shouldPersistPosterToYaml(item), isTrue);
 
       final serialized = MarkdownParser.serialize(item);
-      expect(serialized, contains('poster: "$registryCdn"'));
+      expect(serialized, contains('poster: "$customPosterUrl"'));
     });
 
-    test('legacy work_id resolves without Tier 1 poster fusion', () {
+    test('legacy work_id resolves without adding a poster', () {
       const yaml = '''
 ---
 work_id: "sub_manga_detective-conan_1994"
@@ -148,7 +148,7 @@ category: manga
     );
 
     test(
-      'MarkdownParser deserializes custom poster path prioritizing it over registry defaults',
+      'MarkdownParser deserializes a custom poster path from user YAML',
       () async {
         const masterId = 'sub_manga_shigatsu-wa-kimi-no-uso_2011';
         final item = createItem(

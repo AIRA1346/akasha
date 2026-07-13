@@ -12,9 +12,7 @@ void main() {
         'domain': 'subculture',
         'creator': '테스트 제작사',
         'releaseYear': 2026,
-        'description': '테스트용 설명',
         'tags': ['테스트', '인디'],
-        'posterPath': 'posters/test.png',
       };
 
       final work = RegistryWork.fromJson(jsonMap);
@@ -26,7 +24,20 @@ void main() {
       expect(work.creator, '테스트 제작사');
       expect(work.releaseYear, 2026);
       expect(work.tags, contains('테스트'));
-      expect(work.posterPath, 'posters/test.png');
+    });
+
+    test('ignores legacy Tier 1 presentation fields', () {
+      final work = RegistryWork.fromJson({
+        'workId': 'legacy_presentation',
+        'title': '레거시 작품',
+        'category': 'movie',
+        'domain': 'subculture',
+        'description': '글로벌 설명',
+        'posterPath': 'https://image.tmdb.org/t/p/w500/legacy.jpg',
+      });
+
+      expect(work.description, isEmpty);
+      expect(work.posterPath, isNull);
     });
 
     test('defaults on invalid category/domain', () {

@@ -16,13 +16,12 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-import '../poster_verification.dart';
+import 'tmdb_poster_legacy/poster_verification.dart';
 import '../quality_loop_utils.dart';
 
 const _targetExternalIdCount = 201;
 
 void main(List<String> args) {
-  final dryRun = args.contains('--dry-run') || !args.contains('--apply');
   final apply = args.contains('--apply');
   final phase = _argValue(args, '--phase') ?? 'auto';
   final batchSize = int.tryParse(_argValue(args, '--batch-size') ?? '') ?? 9999;
@@ -225,8 +224,9 @@ Map<String, dynamic> _auditCandidate(_Candidate c, Map<int, String> tmdbCache) {
       work['posterPath']?.toString() ?? '',
     );
     final legacyId = _steamAppIdFromLegacy(work['legacyIds']);
-    if (posterId == null && legacyId == null)
+    if (posterId == null && legacyId == null) {
       reasons.add('steam_appid_missing');
+    }
     if (posterId != null && legacyId != null && posterId != legacyId) {
       reasons.add('steam_poster_legacy_mismatch');
     }
@@ -294,7 +294,7 @@ Map<String, String> _buildTmdbReverseCache(Map<int, String> cache) {
 }
 
 Map<int, String> _loadTmdbPosterCache(Directory root) {
-  final file = File(p.join(root.path, 'akasha-db', 'tmdb_poster_cache.json'));
+  final file = File(p.join(root.path, 'tool', 'archive', 'tmdb_poster_legacy', 'fixtures', 'tmdb_poster_cache.json'));
   final decoded = jsonDecode(file.readAsStringSync()) as Map;
   final out = <int, String>{};
   decoded.forEach((k, v) {

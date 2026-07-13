@@ -1,4 +1,4 @@
-// akasha-db posterPath 검증 규칙
+// Archived akasha-db posterPath verification rules.
 library;
 
 import 'dart:convert';

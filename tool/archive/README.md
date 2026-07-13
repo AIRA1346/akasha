@@ -16,6 +16,7 @@ dart run tool/archive/a5_scale_supply_batch.dart --batch 1
 | 시드 확장 | `seed_expansion_batch5.dart`, `seed_expansion_batch6.dart`, `seed_expansion_batch7.dart` |
 | 커버리지 스프린트 | `coverage_sprint_01_gap_enrich.dart` … `coverage_sprint_04_high_risk_analyze.dart` (9개) |
 | A5 스케일 | `a5_pilot_supply_batch.dart`, `a5_scale_*.dart` (8개) |
+| TMDB 포스터 레거시 | `tmdb_poster_legacy/` — Fact-only 전환 전 도구, 신규 실행 금지 |
 | 기타 | `fix_batch5_posters.dart`, `scale_5k_sim.dart` |
 
 루트 `tool/` 유틸(`pre_insert_dedupe_gate.dart`, `coverage_quality.dart` 등)은 `../`로 import합니다.

@@ -33,10 +33,7 @@ void main() {
         },
         relativePath: 'shards/manga/01.json',
       );
-      expect(
-        issues.any((i) => i.rule == 'forbidden_field'),
-        isTrue,
-      );
+      expect(issues.any((i) => i.rule == 'forbidden_field'), isTrue);
     });
 
     test('rejects API blob signature map', () {
@@ -73,7 +70,7 @@ void main() {
       expect(issues.any((i) => i.rule == 'tier1_description'), isTrue);
     });
 
-    test('rejects invalid posterSource', () {
+    test('rejects Tier 1 posterPath regardless of provider', () {
       final issues = lintWorkEntry(
         workId: 'wk_000000005',
         work: {
@@ -81,12 +78,29 @@ void main() {
           'title': '테스트',
           'category': 'game',
           'domain': 'subculture',
-          'posterPath': 'https://cdn.akamai.steamstatic.com/steam/apps/1/header.jpg',
-          'extensions': {'posterSource': 'anilistcdn'},
+          'posterPath':
+              'https://cdn.akamai.steamstatic.com/steam/apps/1/header.jpg',
         },
         relativePath: 'shards/game/04.json',
       );
-      expect(issues.any((i) => i.rule == 'provenance'), isTrue);
+      expect(issues.any((i) => i.rule == 'tier1_poster'), isTrue);
+    });
+
+    test('rejects empty Tier 1 presentation keys by presence', () {
+      final issues = lintWorkEntry(
+        workId: 'wk_000000006',
+        work: {
+          'workId': 'wk_000000006',
+          'title': '테스트',
+          'category': 'game',
+          'domain': 'subculture',
+          'posterPath': null,
+          'description': '',
+        },
+        relativePath: 'shards/game/05.json',
+      );
+      expect(issues.any((i) => i.rule == 'tier1_poster'), isTrue);
+      expect(issues.any((i) => i.rule == 'tier1_description'), isTrue);
     });
 
     test('rejects searchTokens in shard', () {

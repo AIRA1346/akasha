@@ -2,10 +2,7 @@ import 'enums.dart';
 import 'work_titles.dart';
 
 /// 유저가 글로벌 사전(akasha-db)에 보내는 제안 종류
-enum CatalogContributionKind {
-  addWork,
-  fixWork,
-}
+enum CatalogContributionKind { addWork, fixWork }
 
 /// GitHub akasha-db 에서 관리하는 제안 상태 (서버비 0원)
 enum CatalogContributionStatus {
@@ -16,12 +13,12 @@ enum CatalogContributionStatus {
   merged;
 
   String get jsonName => switch (this) {
-        CatalogContributionStatus.submitted => 'submitted',
-        CatalogContributionStatus.aiVerified => 'ai_verified',
-        CatalogContributionStatus.accepted => 'accepted',
-        CatalogContributionStatus.rejected => 'rejected',
-        CatalogContributionStatus.merged => 'merged',
-      };
+    CatalogContributionStatus.submitted => 'submitted',
+    CatalogContributionStatus.aiVerified => 'ai_verified',
+    CatalogContributionStatus.accepted => 'accepted',
+    CatalogContributionStatus.rejected => 'rejected',
+    CatalogContributionStatus.merged => 'merged',
+  };
 
   static CatalogContributionStatus fromJsonName(String? raw) {
     switch (raw) {
@@ -41,12 +38,12 @@ enum CatalogContributionStatus {
 
   /// akasha-db/contributions/{add|fix}/{folder}/ 경로 세그먼트
   String get repoFolderName => switch (this) {
-        CatalogContributionStatus.submitted => 'pending',
-        CatalogContributionStatus.aiVerified => 'pending',
-        CatalogContributionStatus.accepted => 'accepted',
-        CatalogContributionStatus.rejected => 'rejected',
-        CatalogContributionStatus.merged => 'merged',
-      };
+    CatalogContributionStatus.submitted => 'pending',
+    CatalogContributionStatus.aiVerified => 'pending',
+    CatalogContributionStatus.accepted => 'accepted',
+    CatalogContributionStatus.rejected => 'rejected',
+    CatalogContributionStatus.merged => 'merged',
+  };
 
   bool get isTerminal =>
       this == CatalogContributionStatus.rejected ||
@@ -61,8 +58,6 @@ class CatalogAddWorkProposal {
   final int? releaseYear;
   final MediaCategory category;
   final AppDomain domain;
-  final String? posterPath;
-  final String description;
   final List<String> tags;
   final Map<String, String> externalIds;
   final String? searchQuery;
@@ -74,28 +69,23 @@ class CatalogAddWorkProposal {
     this.releaseYear,
     required this.category,
     required this.domain,
-    this.posterPath,
-    this.description = '',
     this.tags = const [],
     this.externalIds = const {},
     this.searchQuery,
   });
 
   Map<String, dynamic> toJson() => {
-        'title': title,
-        if (!titles.isEmpty) 'titles': titles.toJson(),
-        'creator': creator,
-        if (releaseYear != null) 'releaseYear': releaseYear,
-        'category': category.name,
-        'domain': domain.name,
-        if (posterPath != null && posterPath!.isNotEmpty)
-          'posterPath': posterPath,
-        if (description.isNotEmpty) 'description': description,
-        if (tags.isNotEmpty) 'tags': tags,
-        if (externalIds.isNotEmpty) 'externalIds': externalIds,
-        if (searchQuery != null && searchQuery!.isNotEmpty)
-          'searchQuery': searchQuery,
-      };
+    'title': title,
+    if (!titles.isEmpty) 'titles': titles.toJson(),
+    'creator': creator,
+    if (releaseYear != null) 'releaseYear': releaseYear,
+    'category': category.name,
+    'domain': domain.name,
+    if (tags.isNotEmpty) 'tags': tags,
+    if (externalIds.isNotEmpty) 'externalIds': externalIds,
+    if (searchQuery != null && searchQuery!.isNotEmpty)
+      'searchQuery': searchQuery,
+  };
 
   factory CatalogAddWorkProposal.fromJson(Map<String, dynamic> json) {
     return CatalogAddWorkProposal(
@@ -111,9 +101,8 @@ class CatalogAddWorkProposal {
         (e) => e.name == json['domain']?.toString(),
         orElse: () => AppDomain.subculture,
       ),
-      posterPath: json['posterPath']?.toString(),
-      description: json['description']?.toString() ?? '',
-      tags: (json['tags'] as List?)?.map((e) => e.toString()).toList() ??
+      tags:
+          (json['tags'] as List?)?.map((e) => e.toString()).toList() ??
           const [],
       externalIds: _parseStringMap(json['externalIds']),
       searchQuery: json['searchQuery']?.toString(),
@@ -127,17 +116,21 @@ class CatalogFixWorkProposal {
   final Map<String, dynamic> fields;
   final String issue;
 
-  const CatalogFixWorkProposal({
+  CatalogFixWorkProposal({
     required this.targetWorkId,
-    this.fields = const {},
+    Map<String, dynamic> fields = const {},
     this.issue = '',
-  });
+  }) : fields = Map.unmodifiable(
+         Map<String, dynamic>.from(fields)
+           ..remove('posterPath')
+           ..remove('description'),
+       );
 
   Map<String, dynamic> toJson() => {
-        'targetWorkId': targetWorkId,
-        if (fields.isNotEmpty) 'fields': fields,
-        if (issue.isNotEmpty) 'issue': issue,
-      };
+    'targetWorkId': targetWorkId,
+    if (fields.isNotEmpty) 'fields': fields,
+    if (issue.isNotEmpty) 'issue': issue,
+  };
 
   factory CatalogFixWorkProposal.fromJson(Map<String, dynamic> json) {
     final rawFields = json['fields'];
@@ -181,9 +174,9 @@ class CatalogContribution {
 
   /// akasha-db repo 상대 경로 (import 시)
   String get repoKindSegment => switch (kind) {
-        CatalogContributionKind.addWork => 'add',
-        CatalogContributionKind.fixWork => 'fix',
-      };
+    CatalogContributionKind.addWork => 'add',
+    CatalogContributionKind.fixWork => 'fix',
+  };
 
   String get repoRelativePath =>
       'contributions/$repoKindSegment/${status.repoFolderName}/$id.json';
@@ -206,18 +199,16 @@ class CatalogContribution {
   }
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'kind': kind.name,
-        'status': status.jsonName,
-        'createdAt': createdAt.toUtc().toIso8601String(),
-        if (updatedAt != null)
-          'updatedAt': updatedAt!.toUtc().toIso8601String(),
-        if (note != null && note!.isNotEmpty) 'note': note,
-        if (statusNote != null && statusNote!.isNotEmpty)
-          'statusNote': statusNote,
-        if (addWork != null) 'addWork': addWork!.toJson(),
-        if (fixWork != null) 'fixWork': fixWork!.toJson(),
-      };
+    'id': id,
+    'kind': kind.name,
+    'status': status.jsonName,
+    'createdAt': createdAt.toUtc().toIso8601String(),
+    if (updatedAt != null) 'updatedAt': updatedAt!.toUtc().toIso8601String(),
+    if (note != null && note!.isNotEmpty) 'note': note,
+    if (statusNote != null && statusNote!.isNotEmpty) 'statusNote': statusNote,
+    if (addWork != null) 'addWork': addWork!.toJson(),
+    if (fixWork != null) 'fixWork': fixWork!.toJson(),
+  };
 
   factory CatalogContribution.fromJson(Map<String, dynamic> json) {
     final kind = CatalogContributionKind.values.firstWhere(
@@ -230,7 +221,8 @@ class CatalogContribution {
       status: CatalogContributionStatus.fromJsonName(
         json['status']?.toString(),
       ),
-      createdAt: DateTime.tryParse(json['createdAt']?.toString() ?? '') ??
+      createdAt:
+          DateTime.tryParse(json['createdAt']?.toString() ?? '') ??
           DateTime.now().toUtc(),
       updatedAt: DateTime.tryParse(json['updatedAt']?.toString() ?? ''),
       note: json['note']?.toString(),
@@ -274,26 +266,29 @@ class CatalogContributionBundle {
   });
 
   Map<String, dynamic> toJson() => {
-        'version': version,
-        'exportedAt': exportedAt.toUtc().toIso8601String(),
-        'appVersion': appVersion,
-        'contributions': contributions.map((c) => c.toJson()).toList(),
-      };
+    'version': version,
+    'exportedAt': exportedAt.toUtc().toIso8601String(),
+    'appVersion': appVersion,
+    'contributions': contributions.map((c) => c.toJson()).toList(),
+  };
 
   factory CatalogContributionBundle.fromJson(Map<String, dynamic> json) {
     final list = json['contributions'];
     return CatalogContributionBundle(
       version: json['version'] as int? ?? 1,
-      exportedAt: DateTime.tryParse(json['exportedAt']?.toString() ?? '') ??
+      exportedAt:
+          DateTime.tryParse(json['exportedAt']?.toString() ?? '') ??
           DateTime.now().toUtc(),
       appVersion: json['appVersion']?.toString() ?? '',
       contributions: list is List
           ? list
-              .whereType<Map>()
-              .map((e) => CatalogContribution.fromJson(
+                .whereType<Map>()
+                .map(
+                  (e) => CatalogContribution.fromJson(
                     Map<String, dynamic>.from(e),
-                  ))
-              .toList()
+                  ),
+                )
+                .toList()
           : const [],
     );
   }

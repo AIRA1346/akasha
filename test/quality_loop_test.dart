@@ -7,16 +7,18 @@ import '../tool/quality_score_utils.dart';
 
 void main() {
   group('applyFixToWork', () {
-    test('posterPath fix sets posterVerified', () {
+    test('posterPath and description fixes are skipped for Tier 1', () {
       final result = applyFixToWork(
         {'workId': 'wk_1', 'title': '테스트', 'category': 'manga'},
-        {'posterPath': 'https://image.tmdb.org/t/p/w500/x.jpg'},
+        {
+          'posterPath': 'https://image.tmdb.org/t/p/w500/x.jpg',
+          'description': '글로벌 사전에 저장하면 안 되는 설명',
+        },
       );
-      expect(result.work['posterPath'], contains('tmdb'));
-      expect(result.verifiedSignals, contains('posterVerified'));
-      final signals = result.work['qualitySignals'] as Map;
-      expect(signals['posterVerified'], isTrue);
-      expect(signals['hasPoster'], isTrue);
+      expect(result.work.containsKey('posterPath'), isFalse);
+      expect(result.work.containsKey('description'), isFalse);
+      expect(result.skippedFields, containsAll(['posterPath', 'description']));
+      expect(result.verifiedSignals, isEmpty);
     });
 
     test('externalIds fix merges and sets externalIdVerified', () {
@@ -45,17 +47,6 @@ void main() {
       expect(result.verifiedSignals, contains('franchiseVerified'));
     });
 
-    test('description fix sets descriptionVerified', () {
-      final result = applyFixToWork(
-        {'workId': 'wk_1', 'title': '테스트'},
-        {'description': '자체 작성 설명 문장.'},
-      );
-      expect(result.verifiedSignals, contains('descriptionVerified'));
-      final signals = result.work['qualitySignals'] as Map;
-      expect(signals['descriptionVerified'], isTrue);
-      expect(signals['hasDescription'], isTrue);
-    });
-
     test('forbidden field is skipped, not written', () {
       final result = applyFixToWork(
         {'workId': 'wk_1', 'title': '테스트'},
@@ -73,7 +64,7 @@ void main() {
   });
 
   group('loop raises qualityScore', () {
-    test('poster + externalId verification increases score and tier', () {
+    test('externalId + franchise verification increases score and tier', () {
       final before = {
         'workId': 'wk_1',
         'title': '테스트',
@@ -81,19 +72,21 @@ void main() {
         'domain': 'subculture',
         'releaseYear': 2020,
         'creator': '작가',
-        'externalIds': {'mal': '1'},
       };
-      final beforeSignals =
-          resolveQualitySignals(before, franchiseMember: false);
+      final beforeSignals = resolveQualitySignals(
+        before,
+        franchiseMember: false,
+      );
       final beforeScore = computeQualityScore(before, beforeSignals);
 
       final result = applyFixToWork(before, {
-        'posterPath': 'https://image.tmdb.org/t/p/w500/x.jpg',
         'externalIds': {'tmdb': '37854'},
-        'description': '자체 작성 2~3문장 설명입니다.',
+        'franchise': 'franchise_test',
       });
-      final afterSignals =
-          resolveQualitySignals(result.work, franchiseMember: false);
+      final afterSignals = resolveQualitySignals(
+        result.work,
+        franchiseMember: false,
+      );
       final afterScore = computeQualityScore(result.work, afterSignals);
 
       expect(afterScore, greaterThan(beforeScore));

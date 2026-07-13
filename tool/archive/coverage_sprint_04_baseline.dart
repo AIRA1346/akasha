@@ -11,7 +11,7 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 
 import '../coverage_quality.dart';
-import '../poster_verification.dart';
+import 'tmdb_poster_legacy/poster_verification.dart';
 import '../quality_loop_utils.dart';
 
 const g2TargetRate = 0.50;
@@ -266,7 +266,7 @@ Map<String, String> _buildTmdbReverseCache(Map<int, String> cache) {
 }
 
 Map<int, String> _loadTmdbPosterCache(Directory root) {
-  final file = File(p.join(root.path, 'akasha-db', 'tmdb_poster_cache.json'));
+  final file = File(p.join(root.path, 'tool', 'archive', 'tmdb_poster_legacy', 'fixtures', 'tmdb_poster_cache.json'));
   final decoded = jsonDecode(file.readAsStringSync()) as Map;
   final out = <int, String>{};
   decoded.forEach((k, v) {

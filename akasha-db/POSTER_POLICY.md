@@ -1,7 +1,7 @@
 # AKASHA 포스터 정책 (v1 Steam)
 
-> **마스터 정책:** [docs/data-policy.md](../docs/data-policy.md) §0.3  
-> **코드 SSOT:** `lib/config/catalog_poster_policy.dart`
+> **마스터 정책:** [data-policy.md](../docs/history/policy/data-policy.md) §0.3
+> **코드 SSOT:** `tool/data_policy_utils.dart` · `tool/registry_builder.dart`
 
 ## v1 핵심
 
@@ -27,7 +27,7 @@
 
 - TMDB / AniList / Steam CDN URL을 `akasha-db` shard·`search_index`에 저장
 - `registry_builder`가 search_index에 `posterPath` 복제
-- 앱이 `WorksRegistry.resolvePosterPath()`로 Tier 1 포스터 fusion
+- 앱 runtime에서 Tier 1 포스터 fallback·fusion
 
 ## CI·도구
 

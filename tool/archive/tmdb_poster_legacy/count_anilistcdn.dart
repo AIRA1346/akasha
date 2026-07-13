@@ -1,4 +1,5 @@
 // ignore_for_file: avoid_print
+// Archived poster-provider counter from the pre-Fact-only registry.
 import 'dart:convert';
 import 'dart:io';
 

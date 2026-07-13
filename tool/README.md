@@ -10,7 +10,7 @@
 | `steam_get_report.dart` | **Admin-only** Steam GetReport evidence (env key; not in client build) |
 | `vault_format_validator.dart` | **Vault Format Spec v3 적합성 검증** — `dart run tool/vault_format_validator.dart <vault> [--strict]` (앱 코드 무의존; 명세가 기준) |
 | `preflight_check.dart` | registry 변경 후 4종 gate 일괄 |
-| `ci_registry_check.dart` | CI — 레지스트리·프랜차이즈·포스터 denylist |
+| `ci_registry_check.dart` | CI — 레지스트리·프랜차이즈·Fact-only 정책 |
 | `quality_gate.dart` | 품질 게이트 (`--strict`, `--release`, `--locale-minimum`) |
 | `registry_builder.dart` | 샤드 빌드 · `--sync-assets` · `--bundle-eager-only` |
 | `dedupe_linter.dart` | 중복 작품 검사 |
@@ -20,6 +20,9 @@
 | `pre_insert_dedupe_gate.dart` | insert 전 dedupe |
 | `apply_catalog_contributions.dart` | 카탈로그 기여 import |
 | `franchise_linter.dart` | 프랜차이즈 그룹 검증 |
+
+`preflight_check.dart`와 `ci_registry_check.dart`는 상위 스크립트에서 이미
+실행한 단계를 재사용할 수 있도록 `--skip-builder`·`--skip-dedupe`를 지원합니다.
 
 **빠른 시작**
 
@@ -40,7 +43,7 @@ Wikidata·trial 채널 등 **카탈로그 확장** 배치. SSOT: `scripts/discov
 
 ## 마이그레이션 (`migrations/`)
 
-v3→v4 등 **완료된 스키마 전환** 스크립트. 상세 목록: [`migrations/README.md`](migrations/README.md)
+registry·데이터·Vault의 **완료된 전환** 스크립트. 상세 목록: [`migrations/README.md`](migrations/README.md)
 
 ```bash
 dart run tool/migrations/migrate_registry_v3.dart --dry-run
@@ -62,15 +65,15 @@ dart run tool/migrations/migrate_registry_v3.dart --dry-run
 | 스크립트 | 용도 |
 |----------|------|
 | `data_policy_linter.dart` | Fact-only 정책 |
-| `poster_url_policy.dart` | 포스터 URL 정책 |
+| `strip_tier1_posters.dart` | 금지된 Tier 1 포스터 복구 제거 |
 | `search_index_validation.dart` | search_index 검증 |
 | `wk_id_utils.dart` | wk_ ID 헬퍼 (다른 스크립트에서 import) |
 
 ## CI에서 호출되는 경로
 
-`.github/workflows/flutter_ci.yml`:
+`.github/workflows/registry_check.yml`:
 
-- `tool/quality_gate.dart --strict`
+- `tool/preflight_check.dart`
 - `tool/ci_registry_check.dart`
 - `tool/catalog_scale_baseline.dart --strict`
 

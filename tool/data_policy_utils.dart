@@ -1,7 +1,5 @@
-// [docs/data-policy.md](../docs/data-policy.md) — Registry CI 강제 규칙
+// [data-policy.md](../docs/history/policy/data-policy.md) — Registry CI 강제 규칙
 library;
-
-import 'poster_url_policy.dart';
 
 /// Tier 1 WorkEntry — description·posterPath 금지 (v1 Fact only)
 const dataPolicyMaxDescriptionChars = 500;
@@ -49,8 +47,6 @@ const allowedWikidataRelationKeys = {'p', 'target'};
 
 /// extensions 내 허용 키 (레거시·provenance)
 const allowedExtensionsKeys = {
-  'posterSource',
-  'posterVerified',
   'registeredVia',
   'ingestSource',
   'ingestChannel',
@@ -82,17 +78,6 @@ const allowedExtensionsKeys = {
   'coverageScaleEnrich',
 };
 
-const allowedPosterSourceValues = {
-  'tmdb',
-  'steam',
-  'openlibrary',
-  'igdb',
-  'official',
-  'manual',
-  'contributor',
-  'wikimedia',
-};
-
 const allowedRegisteredViaValues = {
   'manual_pr',
   'official_db',
@@ -101,14 +86,7 @@ const allowedRegisteredViaValues = {
   'curation',
 };
 
-const allowedQualitySignalKeys = {
-  'hasPoster',
-  'hasDescription',
-  'posterVerified',
-  'externalIdVerified',
-  'descriptionVerified',
-  'franchiseVerified',
-};
+const allowedQualitySignalKeys = {'externalIdVerified', 'franchiseVerified'};
 
 /// 금지 필드명 (어디에 있든 금지 — Copyright Risk / UGC 미러)
 const forbiddenFieldKeys = {
@@ -167,6 +145,7 @@ class DataPolicyViolation {
   final String relativePath;
   final String rule;
   final String detail;
+
   /// true면 CI 실패에 포함하지 않음 (기존 카탈로그 정리 전 경고)
   final bool warnOnly;
 
@@ -181,6 +160,7 @@ class DataPolicyViolation {
   @override
   String toString() => '$relativePath/$workId [$rule] $detail';
 }
+
 /// WorkEntry 1건 검사
 List<DataPolicyViolation> lintWorkEntry({
   required String workId,
@@ -215,12 +195,14 @@ List<DataPolicyViolation> lintWorkEntry({
     maxDepth: 6,
   );
 
-  _detectApiBlobMaps(work, onBlob: (path) {
-    add('api_blob', 'possible raw API payload at "$path"');
-  });
+  _detectApiBlobMaps(
+    work,
+    onBlob: (path) {
+      add('api_blob', 'possible raw API payload at "$path"');
+    },
+  );
 
-  final description = work['description']?.toString() ?? '';
-  if (description.isNotEmpty) {
+  if (work.containsKey('description')) {
     add(
       'tier1_description',
       'Tier 1 description forbidden — user Sanctum vault only (v1)',
@@ -282,17 +264,11 @@ List<DataPolicyViolation> lintWorkEntry({
     }
   }
 
-  final poster = work['posterPath']?.toString();
-  if (poster != null && poster.isNotEmpty) {
+  if (work.containsKey('posterPath')) {
     add(
       'tier1_poster',
       'Tier 1 posterPath forbidden — user Sanctum vault only (v1)',
     );
-  } else {
-    final posterError = validatePosterUrlForShard(poster);
-    if (posterError != null) {
-      add('poster_url', posterError);
-    }
   }
 
   final extensions = work['extensions'];
@@ -304,36 +280,15 @@ List<DataPolicyViolation> lintWorkEntry({
       }
     }
 
-    final posterSource = extensions['posterSource']?.toString().trim() ?? '';
-    if (posterSource.isNotEmpty &&
-        !allowedPosterSourceValues.contains(posterSource.toLowerCase())) {
-      add('provenance', 'extensions.posterSource invalid: "$posterSource"');
-    }
-
-    final registeredVia =
-        extensions['registeredVia']?.toString().trim() ?? '';
+    final registeredVia = extensions['registeredVia']?.toString().trim() ?? '';
     if (registeredVia.isNotEmpty &&
         !allowedRegisteredViaValues.contains(registeredVia)) {
       add('provenance', 'extensions.registeredVia invalid: "$registeredVia"');
     }
 
     final ingestSource = extensions['ingestSource']?.toString().trim() ?? '';
-    if (ingestSource.isNotEmpty &&
-        forbiddenFieldKeys.contains(ingestSource)) {
+    if (ingestSource.isNotEmpty && forbiddenFieldKeys.contains(ingestSource)) {
       add('provenance', 'extensions.ingestSource suspicious: "$ingestSource"');
-    }
-
-    if (posterSource.isNotEmpty &&
-        (poster == null || poster.isEmpty)) {
-      issues.add(
-        DataPolicyViolation(
-          workId: workId,
-          relativePath: relativePath,
-          rule: 'provenance_warn',
-          detail: 'extensions.posterSource set but posterPath is empty',
-          warnOnly: true,
-        ),
-      );
     }
   }
 
@@ -343,13 +298,6 @@ List<DataPolicyViolation> lintWorkEntry({
       if (!allowedQualitySignalKeys.contains(key.toString())) {
         add('provenance', 'qualitySignals.$key not allowed');
       }
-    }
-    if (qualitySignals['posterVerified'] == true &&
-        (poster == null || poster.isEmpty)) {
-      add(
-        'provenance',
-        'qualitySignals.posterVerified true but posterPath empty',
-      );
     }
   }
 
@@ -396,7 +344,10 @@ void _lintWikidataSpineFields(
         add('wikidata_relations', 'wikidataRelations[$i].p invalid: "$p"');
       }
       if (target.isNotEmpty && !wikidataQidPattern.hasMatch(target)) {
-        add('wikidata_relations', 'wikidataRelations[$i].target invalid: "$target"');
+        add(
+          'wikidata_relations',
+          'wikidataRelations[$i].target invalid: "$target"',
+        );
       }
     }
   }
@@ -418,7 +369,10 @@ void _lintWikidataSpineFields(
         }
         final q = row['wikidata']?.toString().trim() ?? '';
         if (q.isNotEmpty && !wikidataQidPattern.hasMatch(q)) {
-          add('wikidata_seasons', 'extensions.seasons[$i].wikidata invalid: "$q"');
+          add(
+            'wikidata_seasons',
+            'extensions.seasons[$i].wikidata invalid: "$q"',
+          );
         }
         final seriesQ = row['seriesQid']?.toString().trim() ?? '';
         if (seriesQ.isNotEmpty && !wikidataQidPattern.hasMatch(seriesQ)) {
@@ -445,7 +399,8 @@ void _walkForbiddenKeys(
     final key = entry.key.toString();
     final lower = key.toLowerCase();
 
-    if (forbiddenFieldKeys.contains(key) || forbiddenFieldKeys.contains(lower)) {
+    if (forbiddenFieldKeys.contains(key) ||
+        forbiddenFieldKeys.contains(lower)) {
       onForbidden(pathPrefix, key);
     }
 

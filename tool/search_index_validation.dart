@@ -47,8 +47,11 @@ void main(List<String> args) async {
   outDir.createSync(recursive: true);
 
   final scales = _parseScales(args);
-  final searchIterations = int.tryParse(_argValue(args, '--search-iterations') ?? '') ?? 200;
-  final realBaseline = File(p.join(root.path, 'akasha-db', 'search_index.json'));
+  final searchIterations =
+      int.tryParse(_argValue(args, '--search-iterations') ?? '') ?? 200;
+  final realBaseline = File(
+    p.join(root.path, 'akasha-db', 'search_index.json'),
+  );
 
   print('search_index_validation — Architecture Validation');
   print('  scales: ${scales.join(', ')}');
@@ -99,7 +102,9 @@ void main(List<String> args) async {
 
   final failed = results.where((r) => r.githubHardLimit).length;
   if (failed > 0) {
-    stderr.writeln('\nNOTE: $failed scale(s) exceed GitHub 100MB single-file limit');
+    stderr.writeln(
+      '\nNOTE: $failed scale(s) exceed GitHub 100MB single-file limit',
+    );
     exit(1);
   }
 }
@@ -155,10 +160,7 @@ Future<double> _writeSyntheticIndex(int count, File file) async {
       if (i % 3 == 0) '명작',
       if (i % 5 == 0) 'SF',
     ];
-    final aliases = [
-      if (i % 4 == 0) 'Alias-$i',
-      if (i % 7 == 0) 'シンセティック$i',
-    ];
+    final aliases = [if (i % 4 == 0) 'Alias-$i', if (i % 7 == 0) 'シンセティック$i'];
     final titles = {
       'en': title,
       if (i % 2 == 0) 'ja': '合成作品$i',
@@ -182,19 +184,17 @@ Future<double> _writeSyntheticIndex(int count, File file) async {
       'tags': tags,
       'searchTokens': searchTokens,
       'titles': titles,
-      if (i % 2 == 0)
-        'posterPath':
-            'https://image.tmdb.org/t/p/w500/synthetic_${i % 1000}.jpg',
       'qualityScore': 40 + (i % 50),
       'qualityTier': 2 + (i % 3),
     };
 
     if (i > 1) sink.writeln(',');
     sink.write('  ');
-    sink.write(const JsonEncoder.withIndent('  ').convert(entry).replaceAll(
-          '\n',
-          '\n  ',
-        ));
+    sink.write(
+      const JsonEncoder.withIndent(
+        '  ',
+      ).convert(entry).replaceAll('\n', '\n  '),
+    );
   }
 
   sink.writeln();
@@ -276,9 +276,8 @@ int _countQueryHits(List<Map<String, dynamic>> entries, String query) {
 
   var hits = 0;
   for (final entry in entries) {
-    final tokens = (entry['searchTokens'] as List?)
-            ?.map((e) => e.toString())
-            .toList() ??
+    final tokens =
+        (entry['searchTokens'] as List?)?.map((e) => e.toString()).toList() ??
         const <String>[];
     var matched = false;
     for (final token in tokens) {
@@ -320,15 +319,16 @@ String _formatReport(List<ValidationResult> results) {
   buf.writeln('## 결과');
   buf.writeln();
   buf.writeln(
-    '| scale | file | bytes/work | parse | RSS Δ | search (${
-      results.isEmpty ? '?' : results.first.searchIterations
-    }×) | ms/query | Git 100MB |',
+    '| scale | file | bytes/work | parse | RSS Δ | search (${results.isEmpty ? '?' : results.first.searchIterations}×) | ms/query | Git 100MB |',
   );
-  buf.writeln('|-------|------|------------|-------|-------|--------|----------|-----------|');
+  buf.writeln(
+    '|-------|------|------------|-------|-------|--------|----------|-----------|',
+  );
 
   for (final r in results) {
-    final msPerQuery =
-        r.searchIterations == 0 ? 0 : r.searchMs / r.searchIterations;
+    final msPerQuery = r.searchIterations == 0
+        ? 0
+        : r.searchMs / r.searchIterations;
     buf.writeln(
       '| ${r.label} | ${_fmtBytes(r.fileBytes)} | '
       '${r.bytesPerWork.toStringAsFixed(1)} | ${r.parseMs}ms | '
@@ -344,36 +344,28 @@ String _formatReport(List<ValidationResult> results) {
 
   final firstHard = results.where((r) => r.githubHardLimit).map((r) => r.label);
   if (firstHard.isNotEmpty) {
-    buf.writeln(
-      '- GitHub 100MB 단일 파일: **${firstHard.first}** 에서 초과',
-    );
+    buf.writeln('- GitHub 100MB 단일 파일: **${firstHard.first}** 에서 초과');
   } else {
     buf.writeln('- GitHub 100MB 단일 파일: 이번 측정 범위 내 미초과');
   }
 
   final slowParse = results.where((r) => r.parseMs > 3000).toList();
   if (slowParse.isNotEmpty) {
-    buf.writeln(
-      '- parse > 3s: ${slowParse.map((r) => r.label).join(', ')}',
-    );
+    buf.writeln('- parse > 3s: ${slowParse.map((r) => r.label).join(', ')}');
   }
 
-  final highRss = results.where((r) => r.rssDeltaBytes > 200 * 1024 * 1024).toList();
+  final highRss = results
+      .where((r) => r.rssDeltaBytes > 200 * 1024 * 1024)
+      .toList();
   if (highRss.isNotEmpty) {
-    buf.writeln(
-      '- RSS Δ > 200MB: ${highRss.map((r) => r.label).join(', ')}',
-    );
+    buf.writeln('- RSS Δ > 200MB: ${highRss.map((r) => r.label).join(', ')}');
   }
 
   buf.writeln();
   buf.writeln('## 해석');
   buf.writeln();
-  buf.writeln(
-    '- 이 보고서는 **search_index가 첫 병목인지 최종 확정**하기 위한 실측이다.',
-  );
-  buf.writeln(
-    '- 구조 변경(샤드화 / inverted index / SQLite FTS)은 이 결과 합의 후에만 논의한다.',
-  );
+  buf.writeln('- 이 보고서는 **search_index가 첫 병목인지 최종 확정**하기 위한 실측이다.');
+  buf.writeln('- 구조 변경(샤드화 / inverted index / SQLite FTS)은 이 결과 합의 후에만 논의한다.');
   buf.writeln();
   buf.writeln('## 재현');
   buf.writeln();

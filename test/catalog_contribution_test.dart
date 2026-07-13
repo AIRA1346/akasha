@@ -4,6 +4,9 @@ import 'package:akasha/models/enums.dart';
 import 'package:akasha/utils/catalog_contribution_export.dart';
 import 'package:akasha/config/catalog_contribution_config.dart';
 
+// ignore: avoid_relative_lib_imports
+import '../tool/catalog_contribution_validate.dart';
+
 void main() {
   test('CatalogContribution status defaults to submitted', () {
     final c = CatalogContribution(
@@ -31,7 +34,6 @@ void main() {
         category: MediaCategory.manga,
         domain: AppDomain.subculture,
         releaseYear: 2020,
-        posterPath: 'https://example.com/poster.jpg',
         searchQuery: '테스트',
       ),
     );
@@ -39,6 +41,55 @@ void main() {
     final restored = CatalogContribution.fromJson(c.toJson());
     expect(restored.status, CatalogContributionStatus.accepted);
     expect(restored.addWork?.title, '테스트 작품');
+    expect(restored.addWork?.releaseYear, 2020);
+  });
+
+  test('legacy addWork JSON drops Tier 1 poster and description fields', () {
+    final proposal = CatalogAddWorkProposal.fromJson({
+      'title': '레거시 작품',
+      'category': 'manga',
+      'domain': 'subculture',
+      'posterPath': 'https://image.tmdb.org/t/p/w500/legacy.jpg',
+      'description': '레거시 설명',
+    });
+
+    expect(proposal.toJson().containsKey('posterPath'), isFalse);
+    expect(proposal.toJson().containsKey('description'), isFalse);
+
+    final fixProposal = CatalogFixWorkProposal.fromJson({
+      'targetWorkId': 'wk_000000001',
+      'fields': {'title': '정상 제목 수정', 'posterPath': null, 'description': ''},
+    });
+    expect(fixProposal.fields, {'title': '정상 제목 수정'});
+  });
+
+  test('contribution validator rejects Tier 1 presentation fields', () {
+    final errors = validateContributionMap({
+      'id': 'legacy_add',
+      'kind': 'addWork',
+      'addWork': {
+        'title': '레거시 작품',
+        'category': 'manga',
+        'domain': 'subculture',
+        'posterPath': 'https://image.tmdb.org/t/p/w500/legacy.jpg',
+        'description': '레거시 설명',
+      },
+    });
+
+    expect(errors, contains(contains('posterPath is forbidden')));
+    expect(errors, contains(contains('description is forbidden')));
+
+    final fixErrors = validateContributionMap({
+      'id': 'legacy_fix',
+      'kind': 'fixWork',
+      'fixWork': {
+        'targetWorkId': 'wk_000000001',
+        'issue': '금지 필드 제거 확인',
+        'fields': {'posterPath': null, 'description': ''},
+      },
+    });
+    expect(fixErrors, contains(contains('posterPath is forbidden')));
+    expect(fixErrors, contains(contains('description is forbidden')));
   });
 
   test('repoRelativePath maps status to GitHub folders', () {
@@ -59,7 +110,7 @@ void main() {
       kind: CatalogContributionKind.fixWork,
       status: CatalogContributionStatus.merged,
       createdAt: DateTime.utc(2026, 6, 8),
-      fixWork: const CatalogFixWorkProposal(targetWorkId: 'wk_000000001'),
+      fixWork: CatalogFixWorkProposal(targetWorkId: 'wk_000000001'),
     );
     expect(fixMerged.repoRelativePath, 'contributions/fix/merged/f1.json');
   });
@@ -99,7 +150,7 @@ void main() {
       id: 'x',
       kind: CatalogContributionKind.fixWork,
       createdAt: DateTime.utc(2026, 6, 8),
-      fixWork: const CatalogFixWorkProposal(targetWorkId: 'wk_1'),
+      fixWork: CatalogFixWorkProposal(targetWorkId: 'wk_1'),
     );
     final merged = c.withStatus(CatalogContributionStatus.merged);
     expect(merged.status, CatalogContributionStatus.merged);

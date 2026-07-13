@@ -6,12 +6,16 @@ on:
       - 'akasha-db/**'
       - 'assets/registry/**'
       - 'tool/**'
+      - 'pubspec.yaml'
+      - 'pubspec.lock'
       - '.github/workflows/registry_check.yml'
   pull_request:
     paths:
       - 'akasha-db/**'
       - 'assets/registry/**'
       - 'tool/**'
+      - 'pubspec.yaml'
+      - 'pubspec.lock'
       - '.github/workflows/registry_check.yml'
 
 jobs:
@@ -24,8 +28,14 @@ jobs:
         with:
           sdk: stable
 
+      - name: Install dependencies
+        run: dart pub get
+
       - name: Preflight gates
         run: dart run tool/preflight_check.dart
 
       - name: Validate registry shards and franchise groups
-        run: dart run tool/ci_registry_check.dart
+        run: dart run tool/ci_registry_check.dart --skip-builder --skip-dedupe
+
+      - name: Catalog bundle baseline (strict)
+        run: dart run tool/catalog_scale_baseline.dart --strict

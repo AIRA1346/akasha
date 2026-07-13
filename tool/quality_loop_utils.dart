@@ -9,9 +9,7 @@ library;
 /// fixWork 필드가 승인됐을 때 켜지는 검증 신호.
 /// 값이 null이면 검증 신호 없이 필드만 반영한다.
 const fixFieldToVerifiedSignal = <String, String?>{
-  'posterPath': 'posterVerified',
   'externalIds': 'externalIdVerified',
-  'description': 'descriptionVerified',
   'franchise': 'franchiseVerified',
   'franchiseId': 'franchiseVerified',
   // 사실 필드 — 반영만, 검증 신호 없음
@@ -89,13 +87,6 @@ QualityLoopResult applyFixToWork(
       verified.add(signal);
     }
   }
-
-  // 파생 신호(hasPoster/hasDescription)는 builder가 필드에서 다시 유도하지만,
-  // merge 직후 일관성을 위해 명시 반영한다.
-  final poster = next['posterPath']?.toString() ?? '';
-  if (poster.isNotEmpty) existingSignals['hasPoster'] = true;
-  final description = next['description']?.toString() ?? '';
-  if (description.trim().isNotEmpty) existingSignals['hasDescription'] = true;
 
   if (existingSignals.isNotEmpty) {
     next['qualitySignals'] = existingSignals;

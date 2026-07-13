@@ -4,7 +4,6 @@ import '../../../config/catalog_contribution_config.dart';
 import '../../../models/catalog_contribution.dart';
 import '../../../models/enums.dart';
 import '../../../services/catalog_contribution_service.dart';
-import '../../../widgets/web_image_search_dialog.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../utils/app_l10n.dart';
 
@@ -18,8 +17,6 @@ Future<bool?> showCatalogAddContributionDialog(
   final titleCtrl = TextEditingController(text: initialTitle ?? '');
   final creatorCtrl = TextEditingController();
   final yearCtrl = TextEditingController();
-  final posterCtrl = TextEditingController();
-  final descCtrl = TextEditingController();
   final noteCtrl = TextEditingController();
   final anilistCtrl = TextEditingController();
   final domain = AppDomain.newWorkDefault;
@@ -91,45 +88,6 @@ Future<bool?> showCatalogAddContributionDialog(
                   },
                 ),
                 const SizedBox(height: 10),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        controller: posterCtrl,
-                        decoration: InputDecoration(
-                          labelText: l10n?.labelPosterUrl ?? '포스터 URL (https)',
-                          border: const OutlineInputBorder(),
-                          isDense: true,
-                        ),
-                      ),
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.image_search),
-                      tooltip: l10n?.tooltipImageSearch ?? '이미지 검색',
-                      onPressed: () async {
-                        final url = await showDialog<String>(
-                          context: context,
-                          builder: (_) => WebImageSearchDialog(
-                            initialQuery: titleCtrl.text,
-                            category: category,
-                          ),
-                        );
-                        if (url != null) posterCtrl.text = url;
-                      },
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 10),
-                TextField(
-                  controller: descCtrl,
-                  maxLines: 3,
-                  decoration: InputDecoration(
-                    labelText: l10n?.labelDescriptionBrief ?? '설명 (직접 작성, 짧게)',
-                    border: const OutlineInputBorder(),
-                    alignLabelWithHint: true,
-                  ),
-                ),
-                const SizedBox(height: 10),
                 TextField(
                   controller: anilistCtrl,
                   decoration: InputDecoration(
@@ -168,18 +126,6 @@ Future<bool?> showCatalogAddContributionDialog(
                 );
                 return;
               }
-              final poster = posterCtrl.text.trim();
-              if (poster.isNotEmpty && !poster.startsWith('http')) {
-                ScaffoldMessenger.of(ctx).showSnackBar(
-                  SnackBar(
-                    content: Text(
-                      l10n?.validationPosterHttpsOnly ??
-                          '포스터는 https URL만 제안할 수 있습니다.',
-                    ),
-                  ),
-                );
-                return;
-              }
               final anilist = anilistCtrl.text.trim();
               await CatalogContributionService.instance.proposeAddWork(
                 CatalogAddWorkProposal(
@@ -188,8 +134,6 @@ Future<bool?> showCatalogAddContributionDialog(
                   releaseYear: int.tryParse(yearCtrl.text.trim()),
                   category: category,
                   domain: domain,
-                  posterPath: poster.isEmpty ? null : poster,
-                  description: descCtrl.text.trim(),
                   searchQuery: searchQuery ?? initialTitle,
                   externalIds: anilist.isNotEmpty
                       ? {'anilist': anilist}

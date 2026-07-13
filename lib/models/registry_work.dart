@@ -10,6 +10,7 @@ import 'work_titles.dart';
 /// [displayTitle] 또는 [resolveCatalogDisplayTitle]로 로케일별 resolve.
 class RegistryWork {
   final String workId;
+
   /// 레거시 단일 제목 — 하위 호환·정렬 키 (v3: `titles`와 동기화 권장)
   final String title;
   final WorkTitles titles;
@@ -50,12 +51,12 @@ class RegistryWork {
   }
 
   List<String> get searchTokens => buildWorkSearchTokens(
-        legacyTitle: title,
-        titles: titles,
-        aliases: aliases,
-        creator: creator,
-        tags: tags,
-      );
+    legacyTitle: title,
+    titles: titles,
+    aliases: aliases,
+    creator: creator,
+    tags: tags,
+  );
 
   factory RegistryWork.fromJson(Map<String, dynamic> json) {
     final workId = json['workId']?.toString() ?? '';
@@ -82,7 +83,8 @@ class RegistryWork {
       titles = inferTitlesFromLegacyTitle(title);
     }
 
-    final aliases = (json['aliases'] as List?)
+    final aliases =
+        (json['aliases'] as List?)
             ?.map((e) => e.toString().trim())
             .where((e) => e.isNotEmpty)
             .toList() ??
@@ -104,9 +106,9 @@ class RegistryWork {
       domain: domain,
       creator: json['creator']?.toString() ?? '',
       releaseYear: int.tryParse(json['releaseYear']?.toString() ?? ''),
-      description: json['description']?.toString() ?? '',
-      tags: (json['tags'] as List?)?.map((e) => e.toString()).toList() ?? const [],
-      posterPath: json['posterPath']?.toString(),
+      tags:
+          (json['tags'] as List?)?.map((e) => e.toString()).toList() ??
+          const [],
       extensions: extensions,
     );
   }

@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 // 검증된 TMDB TV ID로 posterPath를 재등록합니다.
 // Usage:
-//   dart run tool/poster_fixup_tmdb.dart --fetch-posters --apply
+//   dart run tool/archive/tmdb_poster_legacy/poster_fixup_tmdb.dart --fetch-posters --apply
 
 import 'dart:convert';
 import 'dart:io';
@@ -9,9 +9,9 @@ import 'dart:io';
 import 'poster_verification.dart';
 import 'tmdb_tv_legacy_map.dart';
 
-const _posterCacheFile = 'akasha-db/tmdb_poster_cache.json';
-const _batch5SeedFile = 'tool/seed_expansion_batch5.dart';
-const _batch6SeedFile = 'tool/seed_expansion_batch6.dart';
+const _posterCacheFile = 'tool/archive/tmdb_poster_legacy/fixtures/tmdb_poster_cache.json';
+const _batch5SeedFile = 'tool/archive/seed_expansion_batch5.dart';
+const _batch6SeedFile = 'tool/archive/seed_expansion_batch6.dart';
 
 void main(List<String> args) async {
   final apply = args.contains('--apply');
@@ -29,7 +29,8 @@ void main(List<String> args) async {
   var failed = 0;
   final client = createTmdbHttpClient();
 
-  for (final shardFile in shardsRoot.listSync(recursive: true).whereType<File>()) {
+  for (final shardFile
+      in shardsRoot.listSync(recursive: true).whereType<File>()) {
     if (!shardFile.path.endsWith('.json')) continue;
 
     final decoded = json.decode(shardFile.readAsStringSync());
@@ -101,8 +102,6 @@ void main(List<String> args) async {
       shardFile.writeAsStringSync(
         '${const JsonEncoder.withIndent('  ').convert(shard)}\n',
       );
-    } else if (dirty) {
-      skipped += applied;
     }
   }
 
@@ -125,9 +124,7 @@ Map<String, int> _parseBatchTmdbIds(File seedFile) {
   if (!seedFile.existsSync()) return {};
   final src = seedFile.readAsStringSync();
   final map = <String, int>{};
-  final entryRe = RegExp(
-    r"workId:\s*'([^']+)'[\s\S]*?tmdbTvId:\s*(\d+)",
-  );
+  final entryRe = RegExp(r"workId:\s*'([^']+)'[\s\S]*?tmdbTvId:\s*(\d+)");
   for (final m in entryRe.allMatches(src)) {
     final workId = m.group(1)!;
     final id = int.parse(m.group(2)!);
@@ -182,8 +179,9 @@ Future<void> _scrapeTmdbPoster(
         'User-Agent',
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
       );
-      final response =
-          await request.close().timeout(const Duration(seconds: 20));
+      final response = await request.close().timeout(
+        const Duration(seconds: 20),
+      );
       if (response.statusCode != 200) continue;
       final html = await response
           .transform(utf8.decoder)

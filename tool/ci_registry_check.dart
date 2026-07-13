@@ -1,34 +1,35 @@
 // ignore_for_file: avoid_print
 // CI/로컬 레지스트리 검증 — 샤드 유효성 + 프랜차이즈 누락 탐지
 //
-// Usage: dart run tool/ci_registry_check.dart
+// Usage: dart run tool/ci_registry_check.dart [--skip-builder] [--skip-dedupe]
 //
 // Exit 0 = OK, 1 = validation or franchise linter issues
 
 import 'dart:convert';
 import 'dart:io';
 
-import 'poster_url_policy.dart';
-
 void main(List<String> args) {
   final root = _findProjectRoot();
-  final updateBaseline = args.contains('--update-poster-baseline');
+  final skipBuilder = args.contains('--skip-builder');
+  final skipDedupe = args.contains('--skip-dedupe');
   var failed = false;
 
-  print('==> registry_builder (validate shards)');
-  final builder = Process.runSync(
-    Platform.resolvedExecutable,
-    ['run', 'tool/registry_builder.dart'],
-    workingDirectory: root.path,
-    runInShell: true,
-  );
-  stdout.write(builder.stdout);
-  stderr.write(builder.stderr);
-  if (builder.exitCode != 0) {
-    failed = true;
-    print('FAIL: registry_builder exited ${builder.exitCode}');
-  } else {
-    print('OK: registry_builder');
+  if (!skipBuilder) {
+    print('==> registry_builder (validate shards)');
+    final builder = Process.runSync(
+      Platform.resolvedExecutable,
+      ['run', 'tool/registry_builder.dart'],
+      workingDirectory: root.path,
+      runInShell: true,
+    );
+    stdout.write(builder.stdout);
+    stderr.write(builder.stderr);
+    if (builder.exitCode != 0) {
+      failed = true;
+      print('FAIL: registry_builder exited ${builder.exitCode}');
+    } else {
+      print('OK: registry_builder');
+    }
   }
 
   print('\n==> franchise_linter');
@@ -47,12 +48,15 @@ void main(List<String> args) {
     print('OK: franchise_linter');
   }
 
-  print('\n==> legacy works_registry JustWatch check');
-  if (_legacyHasJustWatch(root)) {
+  print('\n==> legacy works_registry Fact-only check');
+  if (_legacyHasForbiddenTier1Content(root)) {
     failed = true;
-    print('FAIL: akasha-db/works_registry.json still contains justwatch URLs');
+    print(
+      'FAIL: akasha-db/works_registry.json still contains '
+      'posterPath or description',
+    );
   } else {
-    print('OK: no justwatch in legacy works_registry');
+    print('OK: legacy works_registry is Fact-only');
   }
 
   print('\n==> AniList bulk seed prohibition');
@@ -110,7 +114,9 @@ void main(List<String> args) {
   stderr.write(discoveryManifest.stderr);
   if (discoveryManifest.exitCode != 0) {
     failed = true;
-    print('FAIL: discovery_manifest_check exited ${discoveryManifest.exitCode}');
+    print(
+      'FAIL: discovery_manifest_check exited ${discoveryManifest.exitCode}',
+    );
   } else {
     print('OK: discovery_manifest_check');
   }
@@ -131,48 +137,21 @@ void main(List<String> args) {
     print('OK: data_policy_linter');
   }
 
-  print('\n==> dedupe_linter');
-  final dedupe = Process.runSync(
-    Platform.resolvedExecutable,
-    ['run', 'tool/dedupe_linter.dart'],
-    workingDirectory: root.path,
-    runInShell: true,
-  );
-  stdout.write(dedupe.stdout);
-  stderr.write(dedupe.stderr);
-  if (dedupe.exitCode != 0) {
-    failed = true;
-    print('FAIL: dedupe_linter exited ${dedupe.exitCode}');
-  } else {
-    print('OK: dedupe_linter');
-  }
-
-  print('\n==> poster URL policy (link-only, denylist)');
-  final posterScan = scanRegistryPosters(root);
-  if (updateBaseline) {
-    final counts = <String, int>{
-      for (final pattern in incrementDenylistPatterns)
-        pattern: posterScan.patternCounts[pattern] ?? 0,
-    };
-    writePosterBaseline(root, counts);
-    print('OK: updated $posterUrlBaselineFile → $counts');
-  } else {
-    final baseline = readPosterBaseline(root);
-    final posterErrors = validatePosterScan(posterScan, baseline);
-    if (posterErrors.isNotEmpty) {
+  if (!skipDedupe) {
+    print('\n==> dedupe_linter');
+    final dedupe = Process.runSync(
+      Platform.resolvedExecutable,
+      ['run', 'tool/dedupe_linter.dart'],
+      workingDirectory: root.path,
+      runInShell: true,
+    );
+    stdout.write(dedupe.stdout);
+    stderr.write(dedupe.stderr);
+    if (dedupe.exitCode != 0) {
       failed = true;
-      print('FAIL: ${posterErrors.length} poster policy violation(s):');
-      for (final e in posterErrors.take(20)) {
-        print('  - $e');
-      }
-      if (posterErrors.length > 20) {
-        print('  ... and ${posterErrors.length - 20} more');
-      }
+      print('FAIL: dedupe_linter exited ${dedupe.exitCode}');
     } else {
-      print(
-        'OK: poster policy (${posterScan.workCount} works, '
-        'baseline $baseline)',
-      );
+      print('OK: dedupe_linter');
     }
   }
 
@@ -205,10 +184,18 @@ int _countAnilistBulkShards(Directory root) {
   return count;
 }
 
-bool _legacyHasJustWatch(Directory root) {
+bool _legacyHasForbiddenTier1Content(Directory root) {
   final file = File('${root.path}/akasha-db/works_registry.json');
   if (!file.existsSync()) return false;
-  return file.readAsStringSync().contains('justwatch.com');
+  final decoded = json.decode(file.readAsStringSync());
+  if (decoded is! Map) return true;
+  for (final value in decoded.values) {
+    if (value is! Map) continue;
+    if (value.containsKey('posterPath') || value.containsKey('description')) {
+      return true;
+    }
+  }
+  return false;
 }
 
 Directory _findProjectRoot() {

@@ -2,8 +2,6 @@
 // Maintainer — 카탈로그 제안 JSON 검증 (자동 shard merge 없음)
 library;
 
-import 'poster_url_policy.dart';
-
 const validCategories = {
   'manga',
   'webtoon',
@@ -50,11 +48,12 @@ List<String> validateContributionMap(Map<String, dynamic> contribution) {
     if (domain != 'subculture') {
       errors.add('$id: domain must be subculture (got $domain)');
     }
-    final poster = map['posterPath']?.toString();
-    final posterErr = validatePosterUrlForShard(
-      poster != null && poster.isNotEmpty ? poster : null,
-    );
-    if (posterErr != null) errors.add('$id: $posterErr');
+    if (map.containsKey('posterPath')) {
+      errors.add('$id: posterPath is forbidden in Tier 1 contributions');
+    }
+    if (map.containsKey('description')) {
+      errors.add('$id: description is forbidden in Tier 1 contributions');
+    }
   } else if (kind == 'fixWork') {
     final fix = contribution['fixWork'];
     if (fix is! Map) {
@@ -71,11 +70,10 @@ List<String> validateContributionMap(Map<String, dynamic> contribution) {
       errors.add('$id: fields must be non-empty');
     } else {
       if (fields.containsKey('posterPath')) {
-        final poster = fields['posterPath']?.toString();
-        if (poster != null && poster.isNotEmpty) {
-          final posterErr = validatePosterUrlForShard(poster);
-          if (posterErr != null) errors.add('$id: $posterErr');
-        }
+        errors.add('$id: posterPath is forbidden in Tier 1 contributions');
+      }
+      if (fields.containsKey('description')) {
+        errors.add('$id: description is forbidden in Tier 1 contributions');
       }
     }
   } else {
@@ -98,9 +96,7 @@ List<String> validateContributionBundle(Map<String, dynamic> bundle) {
   }
   for (final entry in list) {
     if (entry is! Map) continue;
-    errors.addAll(
-      validateContributionMap(Map<String, dynamic>.from(entry)),
-    );
+    errors.addAll(validateContributionMap(Map<String, dynamic>.from(entry)));
   }
   return errors;
 }
