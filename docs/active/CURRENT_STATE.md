@@ -14,7 +14,8 @@
 > - Bounded Home Read Closure (S0) · Architecture Closure **declared**
 > - Steam Inventory sandbox E2E POC passed; production IAP remains disabled
 > - **Locator index atomic write + `.bak` restart recovery** — `DerivedIndexAtomicWrite` · Record/Entity path indexes · **done** (corrupt≠empty; stale `.tmp` never promoted). Follow-up only: concurrent write lock on same locator file (separate audit candidate; not blocking this closure)
-> - Flutter app: `flutter analyze --no-pub` **0** · `flutter test --no-pub` **1030**
+> - **Entity vault load diagnostics** — `EntityVaultLoader.loadFromVaultWithIssues` · `EntityJournalParser.parseDetailed` · per-file isolation preserved · empty vault ≠ corrupt-only via `issues` · `loadFromVault` remains List wrapper · **no auto-log**; diagnostic consumers handle `issues` explicitly. Residual asymmetry: `EntityPathIndexService.rebuildFromVault` still silent-skips (follow-up only)
+> - Flutter app: `flutter analyze --no-pub` **0** · `flutter test --no-pub` **1042**
 > - Commerce packages: domain `dart test` **14** · backend `dart test` **17** · both `dart analyze` **0**
 > - Windows debug/release build **OK (2026-07-13)**
 >

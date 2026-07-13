@@ -6,7 +6,7 @@
 > **갱신:** 2026-07-13
 > **Git:** `git rev-parse HEAD`  
 >
-> **Verification snapshot (2026-07-13):** root analyze **0** · root test **1030** · commerce domain **14** · backend **17** · Steam Inventory sandbox E2E POC passed · Windows debug/release build OK · `system/` durable vs `.akasha/` derived · **Locator index atomic+`.bak` recovery done** (concurrent write lock = follow-up only)
+> **Verification snapshot (2026-07-13):** root analyze **0** · root test **1042** · commerce domain **14** · backend **17** · Steam Inventory sandbox E2E POC passed · Windows debug/release build OK · `system/` durable vs `.akasha/` derived · **Locator index atomic+`.bak` recovery done** (concurrent write lock = follow-up only) · **Entity vault load diagnostics done** (`loadFromVaultWithIssues`, no auto-log; index rebuild silent-skip = follow-up only)
 > **현재 실행:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) — Architecture Closure 선언 후 Steam 출시 블로커 트랙
 > **IAP:** 미구현 (`steamInAppPurchasesEnabled = false`). 결제 완성 전 Store IAP 표시·재심사 주장 금지.
 ---
@@ -15,7 +15,7 @@
  
 | 항목 | 상태 |
 |------|------|
-| **root flutter test** | **1030 PASS** |
+| **root flutter test** | **1042 PASS** |
 | **commerce package tests** | domain **14 PASS** · backend **17 PASS** |
 | **flutter analyze** | **0 issue** (gates clean) |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
@@ -172,6 +172,8 @@
 | 6 | Operation crash recovery marker — write 성공 후 log 실패를 roll-forward | P0 architecture |
 | 7 | ~~Locator index in-place overwrite + corrupt silent empty + `.bak` restart recovery~~ | **완료** — `DerivedIndexAtomicWrite` · Record/Entity path indexes · analyze **0** · test **1030** |
 | 8 | Locator concurrent write lock (same shard/file) | **후속 감사 후보** — 이번 Locator 종료와 분리 · 착수 전 dogfood 확인 |
+| 9 | ~~Entity malformed Markdown/YAML silent skip~~ | **완료** — `loadFromVaultWithIssues` · no auto-log · callers unchanged |
+| 10 | `EntityPathIndexService.rebuildFromVault` silent skip | **후속 감사 후보** — Entity load diagnostics와 비대칭 · 이번 범위 밖 |
 
 ---
 
@@ -284,4 +286,5 @@
 | 2026-07-13 | **UX-1 Theme foundation** — canonical 5 preset · 무료 2/premium 3 catalog · preferred/effective resolver · app-root theme · backdrop/harness · full tests **974 PASS** · analyze **0** · Windows debug build PASS |
 | 2026-07-13 | **UX-2 Responsive Shell** — `AppDestination`/`PreviewTarget` SSOT · 3단계 `ShellLayoutSpec` · Sidebar/Dock 일치 · 기존 Graph/Records 접근 · dirty Workbench navigation guard · full tests **1011 PASS** · analyze **0** · Windows debug/release build PASS |
 | 2026-07-13 | **Locator index atomic write + `.bak` restart recovery** — `DerivedIndexAtomicWrite` · Record/Entity path indexes · corrupt≠empty · stale `.tmp` never promoted · full tests **1030 PASS** · analyze **0** · concurrent write lock = follow-up only |
+| 2026-07-13 | **Entity vault load diagnostics** — `loadFromVaultWithIssues` · `parseDetailed` · empty≠corrupt-only · no auto-log (consumers handle `issues`) · callers unchanged · `EntityPathIndexService.rebuildFromVault` silent-skip = follow-up · full tests **1042 PASS** · analyze **0** |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |

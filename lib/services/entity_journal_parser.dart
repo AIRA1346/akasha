@@ -7,54 +7,137 @@ import '../core/archiving/record_kind.dart';
 import '../core/utils/unicode_helper.dart';
 import '../models/entity_id_codec.dart';
 import '../utils/entity_tags.dart';
+import 'entity_vault_load_result.dart';
 
 /// `vault/entities/{type}/*.md` parser — Wave 4.
 abstract final class EntityJournalParser {
   static const String entitiesDirName = 'entities';
 
-  static EntityJournalEntry? parse(String content, String filePath) {
-    final split = _splitFrontmatter(content);
-    if (split == null) return null;
+  /// Compatibility wrapper over [parseDetailed].
+  static EntityJournalEntry? parse(String content, String filePath) =>
+      parseDetailed(content, filePath).entry;
 
-    final yaml = YamlMap.wrap(loadYaml(split.frontmatter) as YamlMap);
+  /// Parses one entity journal and classifies soft/hard failures without
+  /// embedding Markdown body text in diagnostics.
+  static EntityJournalParseResult parseDetailed(
+    String content,
+    String filePath,
+  ) {
+    final relativeHint = filePath.replaceAll('\\', '/');
+    final split = _splitFrontmatterDetailed(content);
+    if (split.status == _FrontmatterSplitStatus.missing) {
+      return EntityJournalParseResult.issue(
+        EntityVaultLoadIssue(
+          relativePath: relativeHint,
+          errorCode: 'frontmatter_missing',
+          severity: EntityVaultIssueSeverity.ignored,
+        ),
+      );
+    }
+    if (split.status == _FrontmatterSplitStatus.unclosed) {
+      return EntityJournalParseResult.issue(
+        EntityVaultLoadIssue(
+          relativePath: relativeHint,
+          errorCode: 'frontmatter_invalid',
+          severity: EntityVaultIssueSeverity.error,
+          diagnostic: 'unclosed_frontmatter',
+        ),
+      );
+    }
+
+    final frontmatter = split.frontmatter!;
+    late final Object? decoded;
+    try {
+      decoded = loadYaml(frontmatter);
+    } on Object {
+      return EntityJournalParseResult.issue(
+        EntityVaultLoadIssue(
+          relativePath: relativeHint,
+          errorCode: 'yaml_parse_failed',
+          severity: EntityVaultIssueSeverity.error,
+        ),
+      );
+    }
+
+    if (decoded is! Map) {
+      return EntityJournalParseResult.issue(
+        EntityVaultLoadIssue(
+          relativePath: relativeHint,
+          errorCode: 'frontmatter_invalid',
+          severity: EntityVaultIssueSeverity.error,
+          diagnostic: 'frontmatter_not_map',
+        ),
+      );
+    }
+
+    final yaml = YamlMap.wrap(Map<dynamic, dynamic>.from(decoded));
     final kind = yaml['record_kind']?.toString();
-    if (kind != RecordKind.entityJournal.name) return null;
+    if (kind != RecordKind.entityJournal.name) {
+      return EntityJournalParseResult.issue(
+        EntityVaultLoadIssue(
+          relativePath: relativeHint,
+          errorCode: 'unexpected_record_kind',
+          severity: EntityVaultIssueSeverity.ignored,
+          diagnostic: kind == null || kind.isEmpty ? 'missing' : 'mismatch',
+        ),
+      );
+    }
 
     final rawEntityId = yaml['entity_id']?.toString().trim() ?? '';
     final entityId = UnicodeHelper.toNfc(rawEntityId);
-    if (entityId.isEmpty) return null;
+    if (entityId.isEmpty) {
+      return EntityJournalParseResult.issue(
+        EntityVaultLoadIssue(
+          relativePath: relativeHint,
+          errorCode: 'entity_id_missing',
+          severity: EntityVaultIssueSeverity.error,
+        ),
+      );
+    }
 
-    final entityType = _parseEntityType(
-      yaml['entity_type']?.toString(),
-      entityId,
-    );
-    final rawTitle = yaml['title']?.toString().trim() ?? entityId;
-    final title = UnicodeHelper.toNfc(rawTitle);
-    final recordMetadata = ArchiveRecordContract.metadataFromYaml(yaml);
-    final addedAt =
-        ArchiveRecordContract.createdAtFromYaml(yaml) ?? DateTime.now();
-    final aliases = recordMetadata.aliases;
-    final tags = EntityTags.parseYaml(yaml['tags']);
-    final posterPath = yaml['poster_path']?.toString().trim();
-    final sourceOperationId = recordMetadata.sourceOperationId;
+    try {
+      final entityType = _parseEntityType(
+        yaml['entity_type']?.toString(),
+        entityId,
+      );
+      final rawTitle = yaml['title']?.toString().trim() ?? entityId;
+      final title = UnicodeHelper.toNfc(rawTitle);
+      final recordMetadata = ArchiveRecordContract.metadataFromYaml(yaml);
+      final addedAt =
+          ArchiveRecordContract.createdAtFromYaml(yaml) ?? DateTime.now();
+      final aliases = recordMetadata.aliases;
+      final tags = EntityTags.parseYaml(yaml['tags']);
+      final posterPath = yaml['poster_path']?.toString().trim();
+      final sourceOperationId = recordMetadata.sourceOperationId;
 
-    return EntityJournalEntry(
-      entityType: entityType,
-      entityId: entityId,
-      title: title.isNotEmpty ? title : entityId,
-      body: split.body.trim(),
-      addedAt: addedAt,
-      storagePath: filePath,
-      aliases: aliases,
-      tags: tags,
-      posterPath: posterPath,
-      sourceOperationId:
-          sourceOperationId != null && sourceOperationId.isNotEmpty
-          ? sourceOperationId
-          : null,
-      recordMetadata: recordMetadata,
-      entitySubtype: recordMetadata.entitySubtype,
-    );
+      return EntityJournalParseResult.entry(
+        EntityJournalEntry(
+          entityType: entityType,
+          entityId: entityId,
+          title: title.isNotEmpty ? title : entityId,
+          body: (split.body ?? '').trim(),
+          addedAt: addedAt,
+          storagePath: filePath,
+          aliases: aliases,
+          tags: tags,
+          posterPath: posterPath,
+          sourceOperationId:
+              sourceOperationId != null && sourceOperationId.isNotEmpty
+              ? sourceOperationId
+              : null,
+          recordMetadata: recordMetadata,
+          entitySubtype: recordMetadata.entitySubtype,
+        ),
+      );
+    } on Object {
+      return EntityJournalParseResult.issue(
+        EntityVaultLoadIssue(
+          relativePath: relativeHint,
+          errorCode: 'metadata_parse_failed',
+          severity: EntityVaultIssueSeverity.error,
+        ),
+      );
+    }
   }
 
   static String serialize({
@@ -77,7 +160,9 @@ abstract final class EntityJournalParser {
       aliases: aliases,
       updatedAt: metadata.updatedAt ?? DateTime.now().toUtc(),
       sourceOperationId: sourceOperationId ?? metadata.sourceOperationId,
-      entitySubtype: entitySubtype.isNotEmpty ? entitySubtype : metadata.entitySubtype,
+      entitySubtype: entitySubtype.isNotEmpty
+          ? entitySubtype
+          : metadata.entitySubtype,
     );
     final buffer = StringBuffer()
       ..writeln('---')
@@ -87,7 +172,9 @@ abstract final class EntityJournalParser {
       ..writeln('entity_id: "${_escape(nfcEntityId)}"')
       ..writeln('record_kind: ${RecordKind.entityJournal.name}')
       ..writeln('title: "${_escape(nfcTitle)}"')
-      ..writeln('added_at: "${ArchiveRecordContract.formatSystemTimestamp(added)}"');
+      ..writeln(
+        'added_at: "${ArchiveRecordContract.formatSystemTimestamp(added)}"',
+      );
     ArchiveRecordContract.writeContractFields(
       buffer,
       createdAt: added,
@@ -116,9 +203,11 @@ abstract final class EntityJournalParser {
     return EntityIdCodec.typeFromId(entityId) ?? EntityAnchorType.object;
   }
 
-  static _Split? _splitFrontmatter(String content) {
+  static _FrontmatterSplit _splitFrontmatterDetailed(String content) {
     final lines = content.split('\n');
-    if (lines.isEmpty || lines.first.trim() != '---') return null;
+    if (lines.isEmpty || lines.first.trim() != '---') {
+      return const _FrontmatterSplit.missing();
+    }
     var end = -1;
     for (var i = 1; i < lines.length; i++) {
       if (lines[i].trim() == '---') {
@@ -126,8 +215,8 @@ abstract final class EntityJournalParser {
         break;
       }
     }
-    if (end < 0) return null;
-    return _Split(
+    if (end < 0) return const _FrontmatterSplit.unclosed();
+    return _FrontmatterSplit.ok(
       frontmatter: lines.sublist(1, end).join('\n'),
       body: lines.sublist(end + 1).join('\n'),
     );
@@ -136,8 +225,44 @@ abstract final class EntityJournalParser {
   static String _escape(String value) => ArchiveRecordContract.escape(value);
 }
 
-class _Split {
-  _Split({required this.frontmatter, required this.body});
-  final String frontmatter;
-  final String body;
+enum _FrontmatterSplitStatus { missing, unclosed, ok }
+
+class _FrontmatterSplit {
+  const _FrontmatterSplit._({
+    required this.status,
+    this.frontmatter,
+    this.body,
+  });
+
+  const _FrontmatterSplit.missing()
+    : this._(status: _FrontmatterSplitStatus.missing);
+
+  const _FrontmatterSplit.unclosed()
+    : this._(status: _FrontmatterSplitStatus.unclosed);
+
+  const _FrontmatterSplit.ok({
+    required String frontmatter,
+    required String body,
+  }) : this._(
+         status: _FrontmatterSplitStatus.ok,
+         frontmatter: frontmatter,
+         body: body,
+       );
+
+  final _FrontmatterSplitStatus status;
+  final String? frontmatter;
+  final String? body;
+}
+
+class EntityJournalParseResult {
+  const EntityJournalParseResult._({this.entry, this.issue});
+
+  const EntityJournalParseResult.entry(EntityJournalEntry entry)
+    : this._(entry: entry);
+
+  const EntityJournalParseResult.issue(EntityVaultLoadIssue issue)
+    : this._(issue: issue);
+
+  final EntityJournalEntry? entry;
+  final EntityVaultLoadIssue? issue;
 }
