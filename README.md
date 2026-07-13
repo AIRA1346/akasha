@@ -40,7 +40,7 @@ Steam v1은 그 비전을 **작품 감상 아카이브**로 검증한다. Sanctu
 | 오늘의 회상 카드 | `FeatureFlags.showRecallCard` — v1.1 |
 | 타임라인 / 완성 캘린더 | `FeatureFlags.showTimeline` — v1 이후 |
 | 취향 기반 추천 (Discover) | `FeatureFlags.showDiscoveryHome` — v1 이후 |
-| TMDB / IGDB 등 외부 API | 저작권·운영 리스크, v1 이후 |
+| TMDB / IGDB 자동 메타·포스터 연동 | **폐기** — `externalIds.*` 식별자만 Fact로 유지 |
 | Riverpod 대규모 리팩터 | v1 이후 |
 | 모바일 (Android / iOS) | Windows 검증 후 |
 
@@ -102,7 +102,7 @@ https://akasha-db.pages.dev/
 
 ### 3. 🗺️ 다음 여정으로의 인도 (Discover & Journey) — **v1 이후**
 
-- 외부 API 자동 메타 — v1 이후 (저작권 주의)
+- 외부 API 자동 메타·포스터 수집은 하지 않음 — 검증된 식별자 Fact만 저장
 - **취향 기반 추천** — v1 이후
 
 ---
@@ -123,7 +123,7 @@ flowchart LR
 ```
 
 - **work_id:** `wk_` + 9자리 영구 ID (예: `wk_000000111`) — 작품명과 무관한 불변 키. 구 슬러그 ID(`{sub|gen}_{category}_{slug}_{year}`)는 `legacy_aliases`로 자동 해석
-- **대시보드 서재:** IP당 1카드 (`FranchiseDisplayPolicy`) · 포스터 없는 Fact 카드
+- **대시보드 서재:** IP당 1카드 (`FranchiseFusionService` · `RegistryVisibilityService`) · 포스터 없는 Fact 카드
 - **나만의 서재:** 아카이브된 `.md`만 표시 · 유저 `poster:` / `posters/` 이미지 표시
 - **검색:** 로컬 + 사전 + 가상 항목; 같은 IP는 검색에서만 매체별 노출 가능
 
@@ -212,11 +212,11 @@ Windows 실행 파일: `build/windows/x64/runner/Release/akasha.exe`
 
 - [docs/active/VISION.md](docs/active/VISION.md) — **제품 북극성** (Fact index + Sanctum vault)
 - [docs/active/ROADMAP.md](docs/active/ROADMAP.md) — 마일스톤·백로그·구현 상태 (프로젝트 TODO)
-- [docs/history/policy/akasha-db-policy.md](docs/history/policy/akasha-db-policy.md) — **사전 구축·포스터·CI 마스터 정책**
+- [akasha-db/POSTER_POLICY.md](akasha-db/POSTER_POLICY.md) — **Tier 1 포스터 금지 정책**
 - [docs/history/akasha-db-implementation-plan.md](docs/history/akasha-db-implementation-plan.md) — 사전 구현 계획·진행 상태
 - [akasha-db/SCHEMA.md](akasha-db/SCHEMA.md) — 사전 v4 필드 규격 (`wk_`·해시 샤드)
 - [docs/active/PROJECT_STATUS.md](docs/active/PROJECT_STATUS.md) — Gate·Registry·프로그램 현황 스냅샷
 - [docs/history/policy/locale-catalog-policy.md](docs/history/policy/locale-catalog-policy.md) — 언어·작품명·검색 정책
 - [docs/history/policy/commerce-boundary.md](docs/history/policy/commerce-boundary.md) — Steam IAP vs 제휴 커머스
 - [akasha-db/README.md](akasha-db/README.md) — 사전 기여·샤딩 규칙
-- `tool/ci_registry_check.dart` — 레지스트리·프랜차이즈·포스터 denylist CI
+- `tool/ci_registry_check.dart` — 레지스트리·프랜차이즈·Fact-only CI

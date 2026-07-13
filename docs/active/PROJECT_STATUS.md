@@ -3,10 +3,10 @@
 > **지위:** Gate·Registry·프로그램 **운영 SSOT**  
 > **원칙:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) · **비전:** [VISION.md](VISION.md) · **구현:** [CURRENT_STATE.md](CURRENT_STATE.md)  
 > **출시:** [STEAM_RELEASE.md](STEAM_RELEASE.md)  
-> **갱신:** 2026-07-12  
+> **갱신:** 2026-07-13
 > **Git:** `git rev-parse HEAD`  
 >
-> **Verification snapshot (2026-07-12):** analyze **0** · test **924** · Windows debug build OK · P1 local record/candidate CLI · SA-01/02/03 foundation · `system/` durable vs `.akasha/` derived  
+> **Verification snapshot (2026-07-13):** root analyze **0** · root test **952** · commerce domain **14** · backend **17** · Steam Inventory sandbox E2E POC passed · Windows debug build OK · `system/` durable vs `.akasha/` derived
 > **현재 실행:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) — Architecture Closure 선언 후 Steam 출시 블로커 트랙
 > **IAP:** 미구현 (`steamInAppPurchasesEnabled = false`). 결제 완성 전 Store IAP 표시·재심사 주장 금지.
 ---
@@ -15,10 +15,12 @@
  
 | 항목 | 상태 |
 |------|------|
-| **flutter test** | **924 PASS** |
+| **root flutter test** | **952 PASS** |
+| **commerce package tests** | domain **14 PASS** · backend **17 PASS** |
 | **flutter analyze** | **0 issue** (gates clean) |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
 | **앱 테마** | `AkashaPalette` ThemeExtension · sidebar/bottom/search/card/preview rail 반영 ✅ |
+| **Steam Inventory POC** | sandbox purchase · exchange E2E 통과 ✅ · production IAP는 계속 비활성 |
 | **사이드바 서재** | `나만의 서재` 목록·active·`+`·select·삭제·DnD ✅ |
 | **Poster Localizing** | URL 입력 → vault `posters/` 저장 → `poster: "posters/..."` ✅ |
 | **Canvas Editor (지식 지도)** | v0.3-B.1 ✅ · v0.3-A.5 viewport persist ✅ · v0.3-B.2a inertia zoom guard ✅ · Work/Entity 더블클릭 → Workbench · Canvas+Detail 2탭 — [CANVAS_NODE_OPEN_v0.3-B.1_IMPLEMENTATION_PLAN.md](../draft/CANVAS_NODE_OPEN_v0.3-B.1_IMPLEMENTATION_PLAN.md) |
@@ -29,7 +31,7 @@
 | **Vault Layout v3 Slice** | 새 Work/Entity ID path canonical · `schema_version: 3` · full tests **709 PASS** · analyze **0** ✅ |
 | **ArchiveOperation Contract** | `createRecord/updateFrontmatter/appendSection/tag/rating/status/link/promote/merge` validator slice ✅ · focused tests **11 PASS** · analyze **0** |
 | **Candidate Store** | `catalog/candidates.json` · 후보/승격/중복 검증 · focused archive contract tests **21 PASS** ✅ |
-| **Candidate Store Scale** | `.akasha/candidates/*` sharded queue · name-index duplicate lookup · legacy candidate JSON read compatibility · full tests **718 PASS** |
+| **Candidate Store Scale** | `system/candidates/*` sharded queue · name-index duplicate lookup · legacy candidate JSON read compatibility · full tests **718 PASS** |
 | **Taste Index** | `.akasha/indexes/taste_index.json` evidence-backed rating/status/favorite/tag/memo/quote/link signals · focused tests **2 PASS** · full tests **720 PASS** · analyze **0** |
 | **Index Manager** | `ArchiveIndexManager` record/entity/link/candidate/taste rebuild coordinator · candidate name-index recovery · focused tests **17 PASS** · full tests **723 PASS** · analyze **0** |
 | **Incremental Indexing** | changed/deleted Markdown path updates record/taste/link/entity-path/title-alias indexes without full vault scan · focused title/link/entity tests **25 PASS** · write-flow tests **19 PASS** · full tests **733 PASS** · analyze **0** |
@@ -37,7 +39,7 @@
 | **Index Validator** | `ArchiveIndexValidatorService` rebuilds and audits record/entity-path/title-alias/link/candidate/taste indexes against Markdown source · focused validator tests **5 PASS** · focused index suite **27 PASS** · full tests **738 PASS** · analyze **0** |
 | **Record Contract** | `ArchiveRecordContract` freezes v3 Work/Entity/Journal/Timeline metadata (`created_at`, `updated_at`, `source`, `aliases`, `original_title`, `external_ids`, `evidence`, `links`) · focused contract suite **60 PASS** · full tests **774 PASS** · analyze **0** |
 | **Operation Executor** | validated `promoteCandidate` → Entity journal · catalog mirror · candidate close ✅ · focused contract tests **34 PASS** · full tests **709 PASS** |
-| **Operation Applied Log** | `.akasha/ops/applied.jsonl` · `operationId` retry-safe · `alreadyApplied` result ✅ |
+| **Operation Applied Log** | `system/ops/applied.jsonl` · `operationId` retry-safe · `alreadyApplied` result ✅ |
 | **Operation Conflict Guard** | `expectedRevision` · mtime/length/hash revision · existing target overwrite block ✅ |
 | **Ultimate Archive Backlog** | 발견된 후속 작업 전체 목록화 ✅ — [ULTIMATE_ARCHIVE_BACKLOG.md](ULTIMATE_ARCHIVE_BACKLOG.md) |
 | **v1 핵심** | **Personal Sanctum vault 아카이브** — 말하기/쓰기 → `.md`/YAML → 예쁜 UI → 외부 도구가 읽기 쉬운 기록 |
@@ -65,7 +67,7 @@
 |-----------------------------|-----------------------------------------------|
 | 로컬 vault 안정성 · watch · 원자적 저장 | 10k 글로벌 사전 **강조** |
 | 직접 작품 추가 · 아카이브 `.md` 생성 | 대규모 registry **확장** 트랙 |
-| 감상·평점·상태·태그·명장면·갤러리 (Sanctum) | Wikidata / 외부 API **확장** |
+| 감상·평점·상태·태그·명장면·갤러리 (Sanctum) | TMDB/IGDB 자동 메타·포스터 연동 **제외** · 식별자 Fact만 유지 |
 | Personal Library · Collection | Discovery / recommendation |
 | Agent Vault Protocol v1 범위 ([AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md)) · 현장 ([VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)) | CDN·search recall **scale gate**를 v1 출시 조건으로 두지 않음 |
 | 예쁜 기록 UI (Workbench · Sanctum) | |
@@ -88,7 +90,9 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **924 PASS** | ✅ |
+| root `flutter test` | **952 PASS** | ✅ |
+| commerce domain `dart test` | **14 PASS** | ✅ |
+| commerce backend `dart test` | **17 PASS** | ✅ |
 | `flutter analyze` | **0 issue** | ✅ |
 | `preflight_check` | PASS | ✅ |
 | `registry_builder` | PASS | — (post-v1 scale) |
@@ -104,7 +108,7 @@
 
 | 게이트 | 상태 | v1 blocking | 비고 |
 |--------|:----:|:-----------:|------|
-| **G-AUTO** | ✅ | ✅ | test **709** · analyze **0** · release build **PASS** |
+| **G-AUTO** | ✅ | ✅ | app **952** · domain **14** · backend **17** · analyze **0** · release build **PASS** |
 | **G-VAULT** | ✅ | **✅** | 볼트 연동·아카이브·Sanctum 저장·기록 UI — 사용자 수동 dogfood 완료 |
 | **G-QA** | ✅ | ✅ | P0 수동 **12/12** (2026-06-13) · 사용자 dogfood 확인 |
 | **G-STEAM** | 🔶 | ✅ | SteamPipe 스크립트/SDK 확인 · 실제 upload/review 대기 |

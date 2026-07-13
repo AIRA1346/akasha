@@ -25,6 +25,7 @@ AKASHA 프로젝트의 문서 관리 시스템입니다.
 | [AKASHA_ARCHIVE_CONSTITUTION.md](active/AKASHA_ARCHIVE_CONSTITUTION.md) | **Supreme SSOT** | 사용자 소유 개인 아카이브 프로토콜. 장기 원칙·아키텍처 거부 기준. |
 | [ARCHITECTURE_CLOSURE_AUDIT.md](active/ARCHITECTURE_CLOSURE_AUDIT.md) | **Architecture Closure** | 2026-07-12 선언. S0 closed · 추가 범용 감사 중단. |
 | [STEAM_RELEASE_BLOCKER_CLOSURE.md](active/STEAM_RELEASE_BLOCKER_CLOSURE.md) | **Current track** | Steam 출시 블로커: l10n · IAP 정직성 · Astra/Echo · Wallet · GetReport. |
+| [STEAM_INVENTORY_COMMERCE_FEASIBILITY_GATE.md](active/STEAM_INVENTORY_COMMERCE_FEASIBILITY_GATE.md) | **Inventory feasibility gate** | Steam Inventory 샌드박스 E2E 결과와 production IAP 보류 조건. |
 | [COMMERCE_CURRENCY_CONTRACT.md](active/COMMERCE_CURRENCY_CONTRACT.md) | **Commerce contract** | Astra/Echo (`premium`/`earned`) 불변조건 · 첫 출시 범위 · domain slice. |
 | [VISION.md](active/VISION.md) | **v1 Product SSOT** | Steam v1 제품 범위·유저 여정·티어 정책 (원칙은 Constitution). |
 | [CURRENT_STATE.md](active/CURRENT_STATE.md) | **Reality SSOT** | 실제 코드 및 레지스트리 상태 기준 구현 현황. |

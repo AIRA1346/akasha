@@ -3,20 +3,23 @@
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
 > **원칙:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) — 구현이 원칙과 충돌하면 구현·본 문서를 교정한다.
 > **제품 범위:** [VISION.md](VISION.md)
-> **갱신:** 2026-07-12
+> **갱신:** 2026-07-13
 > **Git:** `git rev-parse HEAD` (문서 커밋 tip과 어긋나면 tip을 따름)
 >
-> **Verification snapshot (2026-07-12):**
+> **Verification snapshot (2026-07-13):**
 > - P0 recoverable Vault write · SA-01/02/03 derived-index foundation
 > - P1 local CLI: bounded `record lookup`/`record read` · user-started `candidate.create`
 > - Candidate provenance review UX · Vault-spec self-description
 > - `system/` = durable non-rebuildable (candidates, ops, recovery, drafts); `.akasha/` = derived/disposable
 > - Bounded Home Read Closure (S0) · Architecture Closure **declared**
-> - `flutter analyze --no-pub` **0** · `flutter test --no-pub` **930** · `flutter build windows --debug --no-pub` OK
+> - Steam Inventory sandbox E2E POC passed; production IAP remains disabled
+> - Flutter app: `flutter analyze --no-pub` **0** · `flutter test --no-pub` **952**
+> - Commerce packages: domain `dart test` **14** · backend `dart test` **17** · both `dart analyze` **0**
+> - Windows debug build **OK (2026-07-13)**
 >
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)  
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
-> **Architecture Closure:** [ARCHITECTURE_CLOSURE_AUDIT.md](ARCHITECTURE_CLOSURE_AUDIT.md) — **declared** (analyze 0 · test 930)
+> **Architecture Closure:** [ARCHITECTURE_CLOSURE_AUDIT.md](ARCHITECTURE_CLOSURE_AUDIT.md) — **declared** (closure baseline: analyze 0 · test 930)
 > **Current track:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md)
 ---
 
@@ -35,7 +38,7 @@
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
 
-**v1 blocking에 가까운 검증:** `flutter test` **930** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).  
+**v1 blocking에 가까운 검증:** root `flutter test` **952** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
 **v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.  
 **IAP:** `FeatureFlags.steamInAppPurchasesEnabled = false` — 미구현. Store IAP 표시·재심사 주장 금지 until Steam payment flow complete.
 ---
@@ -67,7 +70,9 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| `flutter test` | **930 PASS** | ✅ |
+| root `flutter test` | **952 PASS** | ✅ |
+| commerce domain `dart test` | **14 PASS** | ✅ |
+| commerce backend `dart test` | **17 PASS** | ✅ |
 | `flutter analyze lib` | 0 issue | ✅ |
 | `vault_format_validator` | 적합성 검증기 (spec v3 · 앱 무의존) | — |
 | `preflight_check` | PASS | ✅ |

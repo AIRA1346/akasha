@@ -308,9 +308,9 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 
 | 금지 | 허용 |
 |------|------|
-| AniList/TMDB 응답 **그대로** Git 영구 저장 | Pipeline이 **Fact만** 가공·검증 후 저장 |
+| AniList/TMDB API 자동 fetch·응답 저장 | 자동 연동 없음 · 검증된 `externalIds.*` 식별자 Fact만 저장 |
 | Tier 1 `posterPath`·`description` | Tier 2 유저 vault |
-| `anilistcdn` 등 denylist CDN | — |
+| 외부 포스터 CDN별 denylist | Tier 1 이미지 URL 전체 금지로 별도 denylist 불필요 |
 | 검증 없는 68만작 일괄 시드 | **Dedupe + CI** 통과 분만 merge |
 
 **핵심:** AKASHA는 **Fact index**만 배포. 이미지·창작 텍스트는 유저 Sanctum vault.

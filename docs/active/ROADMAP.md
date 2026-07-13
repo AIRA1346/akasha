@@ -73,7 +73,7 @@
 * **[x] 검색 Recall@10:** CI 품질 자산 — **v1 blocking 아님**
 * **[x] Wikidata (wikidata_ko):** post-v1 Discovery spine — 구현 유지
 * **[ ] (post-v1) 취향 기반 추천 (Discover):** 보류
-* **[ ] (post-v1) 외부 API 연동:** TMDB · IGDB — 보류
+* **[x] 외부 API 자동 연동 제외:** TMDB · IGDB 메타·포스터 fetch는 폐기, `externalIds.*` 식별자만 유지
 
 ---
 
