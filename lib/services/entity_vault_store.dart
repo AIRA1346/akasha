@@ -26,11 +26,16 @@ class EntityVaultStore {
   EntityVaultStore({
     EventLedgerService? eventLedger,
     EntityPathIndexService? pathIndex,
+    ArchiveIndexManager? archiveIndex,
   }) : _eventLedger = eventLedger ?? EventLedgerService(),
-       _pathIndex = pathIndex ?? EntityPathIndexService();
+       _pathIndex = pathIndex ?? EntityPathIndexService(),
+       _archiveIndex = archiveIndex;
 
   final EventLedgerService _eventLedger;
   final EntityPathIndexService _pathIndex;
+  final ArchiveIndexManager? _archiveIndex;
+
+  ArchiveIndexManager get _indexes => _archiveIndex ?? ArchiveIndexManager();
 
   static String resolveStoragePath({
     required String vaultPath,
@@ -158,7 +163,7 @@ class EntityVaultStore {
       recordMetadata: recordMetadata,
       openedRevision: writeResult.newRevision,
     );
-    await ArchiveIndexManager().updateChangedRecord(
+    final indexResult = await _indexes.updateChangedRecord(
       vaultPath: vaultPath,
       absolutePath: targetPath,
     );
@@ -166,6 +171,7 @@ class EntityVaultStore {
       VaultChangeBatch.fromAbsolutePaths(
         vaultPath: vaultPath,
         upsertedPaths: [targetPath],
+        derivedIndexesUpdated: indexResult.succeeded,
       ),
     );
     await _eventLedger.append(
@@ -261,6 +267,7 @@ class EntityVaultStore {
       expectedRevisionPath: sourcePath,
     );
 
+    var indexesUpdated = true;
     if (targetPath != entry.storagePath) {
       final oldFile = File(entry.storagePath);
       if (await oldFile.exists()) {
@@ -275,12 +282,13 @@ class EntityVaultStore {
           vaultPath: vaultRoot,
           absolutePath: entry.storagePath,
         );
-        await ArchiveIndexManager().removeRecord(
+        final removeResult = await _indexes.removeRecord(
           vaultPath: vaultRoot,
           absolutePath: entry.storagePath,
           sourceRecordId: _entitySourceRecordId(entry.entityId),
           entityId: entry.entityId,
         );
+        indexesUpdated = removeResult.succeeded;
       }
     }
 
@@ -298,10 +306,11 @@ class EntityVaultStore {
       recordMetadata: recordMetadata,
       openedRevision: writeResult.newRevision,
     );
-    await ArchiveIndexManager().updateChangedRecord(
+    final indexResult = await _indexes.updateChangedRecord(
       vaultPath: vaultRoot,
       absolutePath: targetPath,
     );
+    indexesUpdated = indexesUpdated && indexResult.succeeded;
     await AppVault.port.signalVaultChange(
       VaultChangeBatch.fromAbsolutePaths(
         vaultPath: vaultRoot,
@@ -309,6 +318,7 @@ class EntityVaultStore {
         deletedPaths: targetPath == entry.storagePath
             ? const []
             : [entry.storagePath],
+        derivedIndexesUpdated: indexesUpdated,
       ),
     );
     await _eventLedger.append(
@@ -343,7 +353,7 @@ class EntityVaultStore {
       vaultPath: vaultRoot,
       absolutePath: storagePath,
     );
-    await ArchiveIndexManager().removeRecord(
+    final removeResult = await _indexes.removeRecord(
       vaultPath: vaultRoot,
       absolutePath: storagePath,
       sourceRecordId: _entitySourceRecordId(entityId),
@@ -354,6 +364,7 @@ class EntityVaultStore {
       VaultChangeBatch.fromAbsolutePaths(
         vaultPath: vaultRoot,
         deletedPaths: [storagePath],
+        derivedIndexesUpdated: removeResult.succeeded,
       ),
     );
     await _eventLedger.append(

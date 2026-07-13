@@ -8,11 +8,22 @@ import 'package:path/path.dart' as p;
 enum VaultPathChangeKind { upsert, delete }
 
 class VaultPathChange {
-  const VaultPathChange({required this.relativePath, required this.kind});
+  const VaultPathChange({
+    required this.relativePath,
+    required this.kind,
+    this.derivedIndexesUpdated = false,
+  });
 
   /// Normalized, slash-separated path relative to the Vault root.
   final String relativePath;
   final VaultPathChangeKind kind;
+
+  /// When true, derived indexes for this path were already mutated successfully
+  /// by the app writer. Home must skip [ArchiveIndexManager] mutation but still
+  /// run UI side-effects. Defaults to false for watch/external/compat callers.
+  ///
+  /// Merge rule: `true && false == false` (any pending index work wins).
+  final bool derivedIndexesUpdated;
 }
 
 /// A bounded description of a Vault change observed by the app or file watch.
@@ -39,25 +50,56 @@ class VaultChangeBatch {
     Iterable<String> upsertedPaths = const [],
     Iterable<String> deletedPaths = const [],
     bool reconciliationRequired = false,
+    bool derivedIndexesUpdated = false,
   }) {
     final changes = <VaultPathChange>[];
-    final seen = <String>{};
 
     void addAll(Iterable<String> paths, VaultPathChangeKind kind) {
       for (final path in paths) {
         final relative = _relativePath(vaultPath, path);
-        final key = '${kind.name}:$relative';
-        if (!seen.add(key)) continue;
-        changes.add(VaultPathChange(relativePath: relative, kind: kind));
+        changes.add(
+          VaultPathChange(
+            relativePath: relative,
+            kind: kind,
+            derivedIndexesUpdated: derivedIndexesUpdated,
+          ),
+        );
       }
     }
 
     addAll(deletedPaths, VaultPathChangeKind.delete);
     addAll(upsertedPaths, VaultPathChangeKind.upsert);
     return VaultChangeBatch(
-      changes: List.unmodifiable(changes),
+      changes: List.unmodifiable(coalesceChanges(changes)),
       reconciliationRequired: reconciliationRequired,
     );
+  }
+
+  /// Merges path entries with the same kind+path.
+  ///
+  /// [VaultPathChange.derivedIndexesUpdated] is combined with logical AND so a
+  /// pending external/false update is never masked by an already-indexed true.
+  static List<VaultPathChange> coalesceChanges(
+    Iterable<VaultPathChange> changes,
+  ) {
+    final order = <String>[];
+    final byKey = <String, VaultPathChange>{};
+    for (final change in changes) {
+      final key = '${change.kind.name}:${change.relativePath}';
+      final existing = byKey[key];
+      if (existing == null) {
+        order.add(key);
+        byKey[key] = change;
+        continue;
+      }
+      byKey[key] = VaultPathChange(
+        relativePath: change.relativePath,
+        kind: change.kind,
+        derivedIndexesUpdated:
+            existing.derivedIndexesUpdated && change.derivedIndexesUpdated,
+      );
+    }
+    return [for (final key in order) byKey[key]!];
   }
 
   static String _relativePath(String vaultPath, String absolutePath) {

@@ -17,7 +17,8 @@
 > - **Entity vault load diagnostics** — `EntityVaultLoader.loadFromVaultWithIssues` · `EntityJournalParser.parseDetailed` · per-file isolation preserved · empty vault ≠ corrupt-only via `issues` · `loadFromVault` remains List wrapper · **no auto-log**; diagnostic consumers handle `issues` explicitly.
 > - **Follow-up only (not implemented):** `EntityPathIndexService.rebuildFromVault` still drops parse/I/O failures without exposing issues; `upsertMarkdownFile` has the same diagnostic asymmetry. Do **not** add `rebuildFromVaultWithIssues` alone while all callers keep using `rebuildFromVault` and would discard issues. Reuse `parseDetailed` + `EntityVaultLoadIssue` when an explicit index audit/rebuild consumer exists.
 > - **Workbench recovery draft I/O diagnostics** — Work/Entity `_saveRecoveryDraftNow` / `_deleteRecoveryDraft` use transition `appLog` via `WorkbenchRecoveryDraftIoDiagnostics` (save≠delete state; no spam; no UI). **Follow-up only:** late draft write vs delete race · stale draft vs vault freshness · Work/Entity deactivate autosave flush asymmetry
-> - Flutter app: `flutter analyze --no-pub` **0** · `flutter test --no-pub` **1055**
+> - **Entity derivedIndexesUpdated** — Entity save/delete sets per-path `VaultPathChange.derivedIndexesUpdated` after successful index mutation; Home skips `ArchiveIndexManager` only (UI side-effects kept). Home debounce **AND-coalesces** pending path flags across batches (`false` survives later `true`). Work/Journal/Timeline still double-update (follow-up)
+> - Flutter app: `flutter analyze --no-pub` **0** · `flutter test --no-pub` **1070**
 > - Commerce packages: domain `dart test` **14** · backend `dart test` **17** · both `dart analyze` **0**
 > - Windows debug/release build **OK (2026-07-13)**
 >

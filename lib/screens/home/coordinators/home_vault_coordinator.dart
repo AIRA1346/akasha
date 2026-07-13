@@ -30,7 +30,8 @@ class HomeVaultCoordinator {
     required this.scheduleRebuild,
     required this.onVaultItemsSynced,
     required this.prefetchRegistry,
-  }) {
+    ArchiveIndexManager? archiveIndexManager,
+  }) : _archiveIndexManager = archiveIndexManager {
     eventLedger = EventLedgerService(vault: vault);
     linkIndex = RecordLinkIndexService.shared;
   }
@@ -42,6 +43,7 @@ class HomeVaultCoordinator {
   final void Function(void Function()) scheduleRebuild;
   final void Function(List<AkashaItem> items) onVaultItemsSynced;
   final Future<void> Function() prefetchRegistry;
+  final ArchiveIndexManager? _archiveIndexManager;
 
   List<AkashaItem> items = [];
   bool _hasLoadedItems = false;
@@ -56,6 +58,8 @@ class HomeVaultCoordinator {
 
   StreamSubscription<VaultChangeBatch>? vaultChangeSubscription;
   Timer? vaultReloadDebounce;
+  final List<VaultPathChange> _pendingVaultPathChanges = [];
+  bool _pendingVaultReconciliation = false;
 
   late final EventLedgerService eventLedger;
   late final RecordLinkIndexService linkIndex;
@@ -131,23 +135,28 @@ class HomeVaultCoordinator {
       return;
     }
 
-    final manager = ArchiveIndexManager(linkIndex: linkIndex);
+    final manager =
+        _archiveIndexManager ?? ArchiveIndexManager(linkIndex: linkIndex);
     for (final entry in change.changes) {
       if (!_isMarkdownRelativePath(entry.relativePath)) continue;
       final absolutePath = p.normalize(p.join(vaultPath, entry.relativePath));
       if (entry.kind == VaultPathChangeKind.delete) {
-        await manager.removeRecord(
-          vaultPath: vaultPath,
-          absolutePath: absolutePath,
-        );
+        if (!entry.derivedIndexesUpdated) {
+          await manager.removeRecord(
+            vaultPath: vaultPath,
+            absolutePath: absolutePath,
+          );
+        }
         _removeLoadedItemByAbsolutePath(absolutePath);
       } else {
-        await manager.updateChangedRecord(
-          vaultPath: vaultPath,
-          absolutePath: absolutePath,
-          userCatalog: userCatalog,
-          vaultItems: items,
-        );
+        if (!entry.derivedIndexesUpdated) {
+          await manager.updateChangedRecord(
+            vaultPath: vaultPath,
+            absolutePath: absolutePath,
+            userCatalog: userCatalog,
+            vaultItems: items,
+          );
+        }
         if (_hasLoadedItems) {
           await _upsertLoadedItemFromRelativePath(entry.relativePath);
         }
@@ -210,18 +219,58 @@ class HomeVaultCoordinator {
     required Future<void> Function(VaultChangeBatch change) onVaultChanged,
   }) {
     vaultChangeSubscription?.cancel();
+    _clearPendingVaultChanges();
     vaultChangeSubscription = vault.onVaultChanges.listen((change) {
+      if (change.reconciliationRequired) {
+        _pendingVaultReconciliation = true;
+        _pendingVaultPathChanges.clear();
+      } else {
+        final merged = VaultChangeBatch.coalesceChanges([
+          ..._pendingVaultPathChanges,
+          ...change.changes,
+        ]);
+        _pendingVaultPathChanges
+          ..clear()
+          ..addAll(merged);
+      }
       vaultReloadDebounce?.cancel();
       vaultReloadDebounce = Timer(const Duration(milliseconds: 400), () {
-        if (isMounted()) {
-          unawaited(onVaultChanged(change));
+        if (!isMounted()) {
+          _clearPendingVaultChanges();
+          return;
         }
+        final batch = _drainPendingVaultChangeBatch();
+        unawaited(onVaultChanged(batch));
       });
     });
   }
 
-  void dispose() {
+  void _clearPendingVaultChanges() {
     vaultReloadDebounce?.cancel();
+    vaultReloadDebounce = null;
+    _pendingVaultPathChanges.clear();
+    _pendingVaultReconciliation = false;
+  }
+
+  VaultChangeBatch _drainPendingVaultChangeBatch() {
+    if (_pendingVaultReconciliation) {
+      _clearPendingVaultChanges();
+      return VaultChangeBatch.reconciliation;
+    }
+    final changes = List<VaultPathChange>.unmodifiable(
+      VaultChangeBatch.coalesceChanges(_pendingVaultPathChanges),
+    );
+    _pendingVaultPathChanges.clear();
+    _pendingVaultReconciliation = false;
+    vaultReloadDebounce = null;
+    if (changes.isEmpty) {
+      return VaultChangeBatch.reconciliation;
+    }
+    return VaultChangeBatch(changes: changes);
+  }
+
+  void dispose() {
+    _clearPendingVaultChanges();
     vaultChangeSubscription?.cancel();
   }
 
