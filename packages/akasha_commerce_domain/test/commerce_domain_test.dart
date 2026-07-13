@@ -1,5 +1,5 @@
-import 'package:akasha/core/commerce/commerce.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:akasha_commerce_domain/akasha_commerce_domain.dart';
+import 'package:test/test.dart';
 
 void main() {
   late FakeCommerceRepository repo;

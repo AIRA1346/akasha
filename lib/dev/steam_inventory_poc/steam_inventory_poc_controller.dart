@@ -189,42 +189,13 @@ class SteamInventoryPocController {
     prices = await client.requestPrices();
   }
 
-  Future<String?> buyAstraPack100() async {
-    if (isMutationPending) return null;
-    if (!await client.isOnline) {
-      activeOp = const SteamInventoryOperation(
-        kind: SteamInventoryOpKind.purchase,
-        status: SteamInventoryOpStatus.failed,
-        detail: 'offline',
-      );
-      return null;
-    }
-    activeOp = const SteamInventoryOperation(
-      kind: SteamInventoryOpKind.purchase,
-      status: SteamInventoryOpStatus.pending,
-    );
-    try {
-      final handle = await client.startPurchase(
-        itemDefIds: const [SteamInventoryPocIds.astraPack100],
-        quantities: const [1],
-      );
-      activeOp = SteamInventoryOperation(
-        kind: SteamInventoryOpKind.purchase,
-        status: SteamInventoryOpStatus.pending,
-        resultHandle: handle,
-      );
-      return handle;
-    } catch (e) {
-      activeOp = SteamInventoryOperation(
-        kind: SteamInventoryOpKind.purchase,
-        status: SteamInventoryOpStatus.failed,
-        detail: '$e',
-      );
-      return null;
-    }
-  }
+  Future<String?> buyAstraPack100() =>
+      _startPurchase(SteamInventoryPocIds.astraPack100);
 
-  Future<String?> buySupport() async {
+  Future<String?> buySupport() =>
+      _startPurchase(SteamInventoryPocIds.supportAkasha);
+
+  Future<String?> _startPurchase(int itemDefId) async {
     if (isMutationPending) return null;
     if (!await client.isOnline) {
       activeOp = const SteamInventoryOperation(
@@ -240,7 +211,7 @@ class SteamInventoryPocController {
     );
     try {
       final handle = await client.startPurchase(
-        itemDefIds: const [SteamInventoryPocIds.supportAkasha],
+        itemDefIds: [itemDefId],
         quantities: const [1],
       );
       activeOp = SteamInventoryOperation(

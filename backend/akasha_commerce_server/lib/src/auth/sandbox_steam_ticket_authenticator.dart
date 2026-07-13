@@ -1,5 +1,6 @@
 import '../steam/steam_api_types.dart';
 import '../steam/steam_publisher_credentials.dart';
+import '../steam/steam_secret_redactor.dart';
 import 'steam_ticket_authenticator.dart';
 
 /// Sandbox/test authenticator — never trusts client-supplied SteamID strings.
@@ -89,7 +90,7 @@ class HttpSteamTicketAuthenticator implements SteamTicketAuthenticator {
       method: 'AuthenticateUserTicket',
       ok: response.statusCode == 200,
       receivedAt: DateTime.now().toUtc(),
-      redactedBody: redactSecrets(response.body),
+      redactedBody: SteamSecretRedactor.redact(response.body),
       httpStatus: response.statusCode,
     );
     auditLog.add(audit);
@@ -114,12 +115,6 @@ class HttpSteamTicketAuthenticator implements SteamTicketAuthenticator {
       throw const SteamAuthException('appid_mismatch', 'AppID mismatch.');
     }
     return identity;
-  }
-
-  static String redactSecrets(String body) {
-    return body
-        .replaceAll(RegExp(r'(key|Key)=[^&\s"]+'), 'key=***')
-        .replaceAll(RegExp(r'"key"\s*:\s*"[^"]+"'), '"key":"***"');
   }
 
   static String? _extractSteamId(String body) {

@@ -1,6 +1,8 @@
 import 'package:akasha_commerce_server/akasha_commerce_server.dart';
 import 'package:test/test.dart';
 
+import 'support/in_memory_steam_sandbox_transport.dart';
+
 void main() {
   const realSteamId = '76561198000000001';
   const spoofSteamId = '76561198999999999';
@@ -49,7 +51,13 @@ void main() {
         productId: CommerceCatalog.premiumPack100.id,
         idempotencyKey: 'op-1',
       ),
-      throwsA(isA<SteamAuthException>().having((e) => e.code, 'code', 'ticket_invalid')),
+      throwsA(
+        isA<SteamAuthException>().having(
+          (e) => e.code,
+          'code',
+          'ticket_invalid',
+        ),
+      ),
     );
   });
 
@@ -66,7 +74,9 @@ void main() {
         productId: CommerceCatalog.premiumPack100.id,
         idempotencyKey: 'op-2',
       ),
-      throwsA(isA<SteamAuthException>().having((e) => e.code, 'code', 'ticket_reuse')),
+      throwsA(
+        isA<SteamAuthException>().having((e) => e.code, 'code', 'ticket_reuse'),
+      ),
     );
   });
 
@@ -78,45 +88,57 @@ void main() {
         productId: CommerceCatalog.premiumPack100.id,
         idempotencyKey: 'op-1',
       ),
-      throwsA(isA<SteamAuthException>().having((e) => e.code, 'code', 'appid_mismatch')),
-    );
-  });
-
-  test('verified SteamID owns order; spoofed client SteamID is irrelevant', () async {
-    issue('t1');
-    final order = await gateway.beginPremiumPackPurchase(
-      authTicketHex: 't1',
-      productId: CommerceCatalog.premiumPack100.id,
-      idempotencyKey: 'op-1',
-    );
-    expect(order.steamId, realSteamId);
-    expect(repo.accounts.containsKey(spoofSteamId), isFalse);
-    expect(repo.accounts.containsKey(realSteamId), isTrue);
-  });
-
-  test('authorization callback correlates AppID/OrderID/SteamID then grants once', () async {
-    issue('t-begin');
-    final order = await gateway.beginPremiumPackPurchase(
-      authTicketHex: 't-begin',
-      productId: CommerceCatalog.premiumPack100.id,
-      idempotencyKey: 'op-1',
-    );
-    expect((await service.wallet(realSteamId)).premium, 0);
-
-    issue('t-fin');
-    final wallet = await gateway.completeAfterUserAuthorization(
-      authTicketHex: 't-fin',
-      callback: MicroTxnAuthorizationCallback(
-        appId: credentials.appId,
-        orderId: order.orderId,
-        authorized: true,
-        clientClaimedSteamId: spoofSteamId,
+      throwsA(
+        isA<SteamAuthException>().having(
+          (e) => e.code,
+          'code',
+          'appid_mismatch',
+        ),
       ),
-      finalizeIdempotencyKey: 'fin-1',
     );
-    expect(wallet.premium, 100);
-    expect(order.steamId, isNot(spoofSteamId));
   });
+
+  test(
+    'verified SteamID owns order; spoofed client SteamID is irrelevant',
+    () async {
+      issue('t1');
+      final order = await gateway.beginPremiumPackPurchase(
+        authTicketHex: 't1',
+        productId: CommerceCatalog.premiumPack100.id,
+        idempotencyKey: 'op-1',
+      );
+      expect(order.steamId, realSteamId);
+      expect(repo.accounts.containsKey(spoofSteamId), isFalse);
+      expect(repo.accounts.containsKey(realSteamId), isTrue);
+    },
+  );
+
+  test(
+    'authorization callback correlates AppID/OrderID/SteamID then grants once',
+    () async {
+      issue('t-begin');
+      final order = await gateway.beginPremiumPackPurchase(
+        authTicketHex: 't-begin',
+        productId: CommerceCatalog.premiumPack100.id,
+        idempotencyKey: 'op-1',
+      );
+      expect((await service.wallet(realSteamId)).premium, 0);
+
+      issue('t-fin');
+      final wallet = await gateway.completeAfterUserAuthorization(
+        authTicketHex: 't-fin',
+        callback: MicroTxnAuthorizationCallback(
+          appId: credentials.appId,
+          orderId: order.orderId,
+          authorized: true,
+          clientClaimedSteamId: spoofSteamId,
+        ),
+        finalizeIdempotencyKey: 'fin-1',
+      );
+      expect(wallet.premium, 100);
+      expect(order.steamId, isNot(spoofSteamId));
+    },
+  );
 
   test('callback AppID mismatch rejected', () async {
     issue('t-begin');
@@ -136,107 +158,135 @@ void main() {
         ),
         finalizeIdempotencyKey: 'fin-1',
       ),
-      throwsA(isA<CommerceRejected>().having((e) => e.code, 'code', 'appid_mismatch')),
-    );
-  });
-
-  test('callback SteamID mismatch rejected when ticket is another user', () async {
-    issue('t-begin');
-    final order = await gateway.beginPremiumPackPurchase(
-      authTicketHex: 't-begin',
-      productId: CommerceCatalog.premiumPack100.id,
-      idempotencyKey: 'op-1',
-    );
-    issue('t-other', steamId: spoofSteamId);
-    await expectLater(
-      gateway.completeAfterUserAuthorization(
-        authTicketHex: 't-other',
-        callback: MicroTxnAuthorizationCallback(
-          appId: credentials.appId,
-          orderId: order.orderId,
-          authorized: true,
-        ),
-        finalizeIdempotencyKey: 'fin-1',
+      throwsA(
+        isA<CommerceRejected>().having((e) => e.code, 'code', 'appid_mismatch'),
       ),
-      throwsA(isA<CommerceRejected>().having((e) => e.code, 'code', 'steamid_mismatch')),
     );
   });
 
-  test('sandbox adapter redacts key in audit and does not grant on InitTxn', () async {
-    final transport = InMemorySteamSandboxTransport();
-    final audit = <SteamApiResponseAudit>[];
-    final adapter = SandboxSteamMicroTxnAdapter(
-      credentials: credentials,
-      transport: transport,
-      auditLog: audit,
-    );
-    final harness = SecureCommerceService(
-      repository: FakeSecureCommerceRepository(),
-      steam: adapter,
-      orderIds: MonotonicOrderId64Generator(start: 1),
-      idFactory: () => 's_1',
-    );
-    final order = await harness.beginPremiumPackPurchase(
-      steamId: realSteamId,
-      productId: CommerceCatalog.premiumPack100.id,
-      idempotencyKey: 's-op',
-    );
-    expect((await harness.wallet(realSteamId)).premium, 0);
-    expect(order.state, ServerOrderState.authorizationPending);
-    expect(audit, isNotEmpty);
-    expect(audit.first.method, 'InitTxn');
-    expect(audit.first.redactedBody.contains(credentials.webApiKey), isFalse);
-    expect(audit.first.redactedBody.contains('key=***') || true, isTrue);
-
-    await harness.completePremiumPackPurchase(
-      orderId: order.orderId,
-      finalizeIdempotencyKey: 's-fin',
-    );
-    expect((await harness.wallet(realSteamId)).premium, 100);
-    expect(audit.any((a) => a.method == 'FinalizeTxn'), isTrue);
-  });
-
-  test('sandbox GetUserInfo / QueryTxn / RefundTxn / GetReport audited', () async {
-    final transport = InMemorySteamSandboxTransport();
-    final audit = <SteamApiResponseAudit>[];
-    final adapter = SandboxSteamMicroTxnAdapter(
-      credentials: credentials,
-      transport: transport,
-      auditLog: audit,
-      reportQueue: [
-        const SteamReportRow(
-          orderId: '1',
-          steamId: realSteamId,
-          phase: SteamTxnPhase.reportCompleted,
-          reportId: 'r1',
+  test(
+    'callback SteamID mismatch rejected when ticket is another user',
+    () async {
+      issue('t-begin');
+      final order = await gateway.beginPremiumPackPurchase(
+        authTicketHex: 't-begin',
+        productId: CommerceCatalog.premiumPack100.id,
+        idempotencyKey: 'op-1',
+      );
+      issue('t-other', steamId: spoofSteamId);
+      await expectLater(
+        gateway.completeAfterUserAuthorization(
+          authTicketHex: 't-other',
+          callback: MicroTxnAuthorizationCallback(
+            appId: credentials.appId,
+            orderId: order.orderId,
+            authorized: true,
+          ),
+          finalizeIdempotencyKey: 'fin-1',
         ),
-      ],
-    );
-    expect((await adapter.getUserInfo(steamId: realSteamId)).phase, SteamTxnPhase.userAuthorized);
-    await adapter.initTxn(
-      steamId: realSteamId,
-      orderId: '1',
-      productId: 'p',
-      premiumGrantAmount: 100,
-    );
-    transport.orderStatus['1'] = 'Succeeded';
-    expect((await adapter.queryTxn(steamId: realSteamId, orderId: '1')).phase, SteamTxnPhase.reportCompleted);
-    await adapter.refundTxn(steamId: realSteamId, orderId: '1');
-    final rows = await adapter.getReport(cursorHighWater: '0');
-    expect(rows.single.reportId, 'r1');
-    expect(transport.getReportCalls, 1);
-    final methods = audit.map((a) => a.method).toSet();
-    expect(
-      methods.containsAll([
-        'GetUserInfo',
-        'InitTxn',
-        'QueryTxn',
-        'RefundTxn',
-        'GetReport',
-      ]),
-      isTrue,
-    );
-  });
+        throwsA(
+          isA<CommerceRejected>().having(
+            (e) => e.code,
+            'code',
+            'steamid_mismatch',
+          ),
+        ),
+      );
+    },
+  );
+
+  test(
+    'sandbox adapter redacts key in audit and does not grant on InitTxn',
+    () async {
+      final transport = InMemorySteamSandboxTransport();
+      final audit = <SteamApiResponseAudit>[];
+      final adapter = SandboxSteamMicroTxnAdapter(
+        credentials: credentials,
+        transport: transport,
+        auditLog: audit,
+      );
+      final harness = SecureCommerceService(
+        repository: FakeSecureCommerceRepository(),
+        steam: adapter,
+        orderIds: MonotonicOrderId64Generator(start: 1),
+        idFactory: () => 's_1',
+      );
+      final order = await harness.beginPremiumPackPurchase(
+        steamId: realSteamId,
+        productId: CommerceCatalog.premiumPack100.id,
+        idempotencyKey: 's-op',
+      );
+      expect((await harness.wallet(realSteamId)).premium, 0);
+      expect(order.state, ServerOrderState.authorizationPending);
+      expect(audit, isNotEmpty);
+      expect(audit.first.method, 'InitTxn');
+      expect(audit.first.redactedBody.contains(credentials.webApiKey), isFalse);
+      expect(
+        SandboxSteamMicroTxnAdapter.redact(
+          'key=${credentials.webApiKey}&status=OK',
+        ),
+        'key=***&status=OK',
+      );
+
+      await harness.completePremiumPackPurchase(
+        orderId: order.orderId,
+        finalizeIdempotencyKey: 's-fin',
+      );
+      expect((await harness.wallet(realSteamId)).premium, 100);
+      expect(audit.any((a) => a.method == 'FinalizeTxn'), isTrue);
+    },
+  );
+
+  test(
+    'sandbox GetUserInfo / QueryTxn / RefundTxn / GetReport audited',
+    () async {
+      final transport = InMemorySteamSandboxTransport();
+      final audit = <SteamApiResponseAudit>[];
+      final adapter = SandboxSteamMicroTxnAdapter(
+        credentials: credentials,
+        transport: transport,
+        auditLog: audit,
+        reportQueue: [
+          const SteamReportRow(
+            orderId: '1',
+            steamId: realSteamId,
+            phase: SteamTxnPhase.reportCompleted,
+            reportId: 'r1',
+          ),
+        ],
+      );
+      expect(
+        (await adapter.getUserInfo(steamId: realSteamId)).phase,
+        SteamTxnPhase.userAuthorized,
+      );
+      await adapter.initTxn(
+        steamId: realSteamId,
+        orderId: '1',
+        productId: 'p',
+        premiumGrantAmount: 100,
+      );
+      transport.orderStatus['1'] = 'Succeeded';
+      expect(
+        (await adapter.queryTxn(steamId: realSteamId, orderId: '1')).phase,
+        SteamTxnPhase.reportCompleted,
+      );
+      await adapter.refundTxn(steamId: realSteamId, orderId: '1');
+      final rows = await adapter.getReport(cursorHighWater: '0');
+      expect(rows.single.reportId, 'r1');
+      expect(transport.getReportCalls, 1);
+      final methods = audit.map((a) => a.method).toSet();
+      expect(
+        methods.containsAll([
+          'GetUserInfo',
+          'InitTxn',
+          'QueryTxn',
+          'RefundTxn',
+          'GetReport',
+        ]),
+        isTrue,
+      );
+    },
+  );
 
   test('production credentials require env; harness does not', () {
     expect(

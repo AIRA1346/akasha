@@ -1,0 +1,6 @@
+include: package:lints/recommended.yaml
+
+linter:
+  rules:
+    # Public dependency names intentionally initialize private fields.
+    prefer_initializing_formals: false

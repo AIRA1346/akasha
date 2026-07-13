@@ -3,6 +3,7 @@ import '../steam_adapter.dart';
 import '../steam_txn_phase.dart';
 import 'steam_api_types.dart';
 import 'steam_publisher_credentials.dart';
+import 'steam_secret_redactor.dart';
 
 /// Sandbox Steam microtxn adapter (ISteamMicroTxnSandbox).
 ///
@@ -34,9 +35,7 @@ class SandboxSteamMicroTxnAdapter implements SteamMicroTxnAdapter {
 
   void _record(SteamApiResponseAudit audit) => auditLog.add(audit);
 
-  static String redact(String body) => HttpSteamTicketAuthenticatorRedactor.redact(
-        body,
-      );
+  static String redact(String body) => SteamSecretRedactor.redact(body);
 
   SteamTxnPhase _parseResultBody(String body, {required SteamTxnPhase onOk}) {
     if (body.contains('Indeterminate') ||
@@ -88,10 +87,7 @@ class SandboxSteamMicroTxnAdapter implements SteamMicroTxnAdapter {
       return const SteamAdapterResult(phase: SteamTxnPhase.denied);
     }
     return SteamAdapterResult(
-      phase: _parseResultBody(
-        response.body,
-        onOk: SteamTxnPhase.initAccepted,
-      ),
+      phase: _parseResultBody(response.body, onOk: SteamTxnPhase.initAccepted),
     );
   }
 
@@ -100,10 +96,7 @@ class SandboxSteamMicroTxnAdapter implements SteamMicroTxnAdapter {
     required String steamId,
     required String orderId,
   }) async {
-    final uri = _uri('FinalizeTxn', {
-      'steamid': steamId,
-      'orderid': orderId,
-    });
+    final uri = _uri('FinalizeTxn', {'steamid': steamId, 'orderid': orderId});
     final response = await transport.post(uri, {});
     _record(
       SteamApiResponseAudit(
@@ -131,10 +124,7 @@ class SandboxSteamMicroTxnAdapter implements SteamMicroTxnAdapter {
     required String steamId,
     required String orderId,
   }) async {
-    final uri = _uri('QueryTxn', {
-      'steamid': steamId,
-      'orderid': orderId,
-    });
+    final uri = _uri('QueryTxn', {'steamid': steamId, 'orderid': orderId});
     final response = await transport.get(uri);
     _record(
       SteamApiResponseAudit(
@@ -160,10 +150,7 @@ class SandboxSteamMicroTxnAdapter implements SteamMicroTxnAdapter {
     required String steamId,
     required String orderId,
   }) async {
-    final uri = _uri('RefundTxn', {
-      'steamid': steamId,
-      'orderid': orderId,
-    });
+    final uri = _uri('RefundTxn', {'steamid': steamId, 'orderid': orderId});
     final response = await transport.post(uri, {});
     _record(
       SteamApiResponseAudit(
@@ -194,7 +181,8 @@ class SandboxSteamMicroTxnAdapter implements SteamMicroTxnAdapter {
       ),
     );
     if (response.statusCode == 200 &&
-        (response.body.contains('OK') || response.body.contains('"result":"OK"'))) {
+        (response.body.contains('OK') ||
+            response.body.contains('"result":"OK"'))) {
       return const SteamAdapterResult(phase: SteamTxnPhase.userAuthorized);
     }
     return const SteamAdapterResult(phase: SteamTxnPhase.denied);
@@ -222,88 +210,5 @@ class SandboxSteamMicroTxnAdapter implements SteamMicroTxnAdapter {
     final rows = List<SteamReportRow>.from(reportQueue);
     reportQueue.clear();
     return rows;
-  }
-}
-
-/// Shared redactor (avoid importing auth from steam adapter cyclically).
-abstract final class HttpSteamTicketAuthenticatorRedactor {
-  static String redact(String body) {
-    return body
-        .replaceAll(RegExp(r'(key|Key)=[^&\s"]+'), 'key=***')
-        .replaceAll(RegExp(r'"key"\s*:\s*"[^"]+"'), '"key":"***"');
-  }
-}
-
-/// In-memory Steam sandbox transport (no network, no real key required).
-class InMemorySteamSandboxTransport implements SteamHttpTransport {
-  InMemorySteamSandboxTransport();
-
-  final Map<String, String> orderStatus = {};
-  bool nextFinalizeIndeterminate = false;
-  int getReportCalls = 0;
-
-  @override
-  Future<SteamHttpResponse> get(Uri uri) async {
-    final path = uri.path;
-    if (path.contains('QueryTxn')) {
-      final orderId = uri.queryParameters['orderid'] ?? '';
-      final status = orderStatus[orderId] ?? 'Pending';
-      return SteamHttpResponse(
-        statusCode: 200,
-        body: '{"response":{"result":"OK","params":{"status":"$status"}}}',
-      );
-    }
-    if (path.contains('GetUserInfo')) {
-      return const SteamHttpResponse(
-        statusCode: 200,
-        body: '{"response":{"result":"OK"}}',
-      );
-    }
-    if (path.contains('GetReport')) {
-      getReportCalls++;
-      return const SteamHttpResponse(
-        statusCode: 200,
-        body: '{"response":{"result":"OK","params":{"orders":[]}}}',
-      );
-    }
-    if (path.contains('AuthenticateUserTicket')) {
-      return const SteamHttpResponse(statusCode: 403, body: '{}');
-    }
-    return const SteamHttpResponse(statusCode: 404, body: '{}');
-  }
-
-  @override
-  Future<SteamHttpResponse> post(Uri uri, Map<String, String> fields) async {
-    final path = uri.path;
-    final orderId = uri.queryParameters['orderid'] ?? '';
-    if (path.contains('InitTxn')) {
-      orderStatus[orderId] = 'Init';
-      return const SteamHttpResponse(
-        statusCode: 200,
-        body: '{"response":{"result":"OK"}}',
-      );
-    }
-    if (path.contains('FinalizeTxn')) {
-      if (nextFinalizeIndeterminate) {
-        nextFinalizeIndeterminate = false;
-        return const SteamHttpResponse(
-          statusCode: 200,
-          body: '{"response":{"result":"Pending"}}',
-        );
-      }
-      orderStatus[orderId] = 'Succeeded';
-      return const SteamHttpResponse(
-        statusCode: 200,
-        body: '{"response":{"result":"OK"}}',
-      );
-    }
-    if (path.contains('RefundTxn')) {
-      orderStatus[orderId] = 'Refunded';
-      return const SteamHttpResponse(
-        statusCode: 200,
-        body: '{"response":{"result":"OK"}}',
-      );
-    }
-    return const SteamHttpResponse(statusCode: 404, body: '{}');
   }
 }

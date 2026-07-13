@@ -37,6 +37,30 @@ void main() {
     expect(h, isNotNull);
   });
 
+  test(
+    'support purchase forwards itemDef and completes through refresh',
+    () async {
+      final h = await poc.buySupport();
+      expect(h, isNotNull);
+      expect(poc.activeOp.kind, SteamInventoryOpKind.purchase);
+      expect(poc.activeOp.status, SteamInventoryOpStatus.pending);
+      expect(poc.activeOp.resultHandle, h);
+      expect(fake.stackQty(SteamInventoryPocIds.supportAkasha), 0);
+
+      final completed = await poc.pump();
+      expect(completed, hasLength(1));
+      expect(completed.single.kind, SteamInventoryOpKind.purchase);
+      expect(completed.single.status, SteamInventoryOpStatus.ok);
+      expect(completed.single.resultHandle, h);
+      expect(fake.stackQty(SteamInventoryPocIds.supportAkasha), 1);
+      expect(
+        poc.lastSnapshot!.quantityOf(SteamInventoryPocIds.supportAkasha),
+        1,
+      );
+      expect(poc.activeOp.status, SteamInventoryOpStatus.ok);
+    },
+  );
+
   test('delayed purchase stays pending until complete', () async {
     fake.delayPurchase = true;
     final h = await poc.buyAstraPack100();

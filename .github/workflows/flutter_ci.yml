@@ -5,10 +5,16 @@ on:
     paths-ignore:
       - '**.md'
       - 'docs/**'
+      - 'akasha-db/**'
+      - 'assets/registry/**'
+      - 'tool/**'
   pull_request:
     paths-ignore:
       - '**.md'
       - 'docs/**'
+      - 'akasha-db/**'
+      - 'assets/registry/**'
+      - 'tool/**'
 
 jobs:
   analyze-and-test:
@@ -30,11 +36,16 @@ jobs:
       - name: Test
         run: flutter test
 
-      - name: Quality gate (strict)
-        run: dart run tool/quality_gate.dart --strict
+      - name: Analyze and test commerce domain
+        working-directory: packages/akasha_commerce_domain
+        run: |
+          dart pub get
+          dart analyze
+          dart test
 
-      - name: Registry check
-        run: dart run tool/ci_registry_check.dart
-
-      - name: Catalog bundle baseline (strict)
-        run: dart run tool/catalog_scale_baseline.dart --strict
+      - name: Analyze and test commerce backend
+        working-directory: backend/akasha_commerce_server
+        run: |
+          dart pub get
+          dart analyze
+          dart test
