@@ -6,7 +6,7 @@
 > **갱신:** 2026-07-13
 > **Git:** `git rev-parse HEAD`  
 >
-> **Verification snapshot (2026-07-13):** root analyze **0** · root test **1070** · commerce domain **14** · backend **17** · Steam Inventory sandbox E2E POC passed · Windows debug/release build OK · `system/` durable vs `.akasha/` derived · **Locator index atomic+`.bak` recovery done** (concurrent write lock = follow-up only) · **Entity vault load diagnostics done** · **Entity path index rebuild/upsert issue exposure = follow-up only** · **Workbench recovery draft I/O transition diagnostics done** · **Entity `derivedIndexesUpdated` Home skip + debounce AND-coalesce done** (Work/Journal/Timeline = follow-up)
+> **Verification snapshot (2026-07-13):** root analyze **0** · root test **1078** · commerce domain **14** · backend **17** · Steam Inventory sandbox E2E POC passed · Windows debug/release build OK · `system/` durable vs `.akasha/` derived · **Locator index atomic+`.bak` recovery done** (concurrent write lock = follow-up only) · **Entity vault load diagnostics done** · **Entity path index rebuild/upsert issue exposure = follow-up only** · **Workbench recovery draft I/O transition diagnostics done** · **Entity `derivedIndexesUpdated` Home skip + debounce AND-coalesce done** (Work/Journal/Timeline = follow-up) · **HomeShell God Class 전면 리팩터 기각** · **vault-watch dispose lifecycle ACTION A done** (`HomeVaultWatchReactor` + `syncEntityTabs` disposed guard; COUPLED/DEFERRED unchanged)
 > **현재 실행:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) — Architecture Closure 선언 후 Steam 출시 블로커 트랙
 > **IAP:** 미구현 (`steamInAppPurchasesEnabled = false`). 결제 완성 전 Store IAP 표시·재심사 주장 금지.
 ---
@@ -15,7 +15,7 @@
  
 | 항목 | 상태 |
 |------|------|
-| **root flutter test** | **1070 PASS** |
+| **root flutter test** | **1078 PASS** |
 | **commerce package tests** | domain **14 PASS** · backend **17 PASS** |
 | **flutter analyze** | **0 issue** (gates clean) |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
@@ -294,4 +294,5 @@
 | 2026-07-13 | **Entity path index rebuild issue exposure (조사만)** — `rebuildFromVault`/`upsertMarkdownFile` 무음 skip · `rebuildFromVaultWithIssues` 단독 구현 보류 · 명시적 소비자 대기 · 코드 미변경 |
 | 2026-07-13 | **Workbench recovery draft I/O transition diagnostics** — Work/Entity save/delete 전환형 `appLog` · UI/포맷 불변 · stale/race/deactivate flush = follow-up · full tests **1055 PASS** · analyze **0** |
 | 2026-07-13 | **Entity derivedIndexesUpdated** — Home skips duplicate `ArchiveIndexManager` mutation · debounce AND-coalesce (`false` survives later `true`) · UI rebuild kept · Work/Journal/Timeline = follow-up · full tests **1070 PASS** · analyze **0** |
+| 2026-07-13 | **HomeShell vault-watch dispose lifecycle (ACTION A)** — God Class 전면 리팩터 기각 · `HomeVaultWatchReactor` generation cancel · dispose 순서 reactor→vault→workbench · `syncEntityTabs` `_disposed` guard · full tests **1078 PASS** · analyze **0** |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |

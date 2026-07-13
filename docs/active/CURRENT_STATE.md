@@ -18,7 +18,8 @@
 > - **Follow-up only (not implemented):** `EntityPathIndexService.rebuildFromVault` still drops parse/I/O failures without exposing issues; `upsertMarkdownFile` has the same diagnostic asymmetry. Do **not** add `rebuildFromVaultWithIssues` alone while all callers keep using `rebuildFromVault` and would discard issues. Reuse `parseDetailed` + `EntityVaultLoadIssue` when an explicit index audit/rebuild consumer exists.
 > - **Workbench recovery draft I/O diagnostics** — Work/Entity `_saveRecoveryDraftNow` / `_deleteRecoveryDraft` use transition `appLog` via `WorkbenchRecoveryDraftIoDiagnostics` (save≠delete state; no spam; no UI). **Follow-up only:** late draft write vs delete race · stale draft vs vault freshness · Work/Entity deactivate autosave flush asymmetry
 > - **Entity derivedIndexesUpdated** — Entity save/delete sets per-path `VaultPathChange.derivedIndexesUpdated` after successful index mutation; Home skips `ArchiveIndexManager` only (UI side-effects kept). Home debounce **AND-coalesces** pending path flags across batches (`false` survives later `true`). Work/Journal/Timeline still double-update (follow-up)
-> - Flutter app: `flutter analyze --no-pub` **0** · `flutter test --no-pub` **1070**
+> - **HomeShell vault-watch dispose lifecycle (ACTION A)** — God Class 전면 리팩터 **기각** (상태 소유권은 이미 coordinator로 분리). `HomeVaultWatchReactor` generation cancel + dispose 순서(reactor → vault sub/debounce → workbench) + `WorkbenchController.syncEntityTabs` await 후 `_disposed` guard. **COUPLED/DEFERRED 유지:** timeline token 과다 bump · 이중 rebuild · Catalog `isCatalogLoading` 직접 set · Vault cold-start bootstrap 추출
+> - Flutter app: `flutter analyze --no-pub` **0** · `flutter test --no-pub` **1078**
 > - Commerce packages: domain `dart test` **14** · backend `dart test` **17** · both `dart analyze` **0**
 > - Windows debug/release build **OK (2026-07-13)**
 >

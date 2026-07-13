@@ -16,6 +16,7 @@ import 'coordinators/home_recent_exploration_coordinator.dart';
 import 'coordinators/home_shell_coordinator_bundle.dart';
 import 'coordinators/home_shell_wiring.dart';
 import 'coordinators/home_vault_coordinator.dart';
+import 'coordinators/home_vault_watch_reactor.dart';
 import 'coordinators/home_workbench_coordinator.dart';
 import 'home_browse_filter_controller.dart';
 import 'home_collectible_collection_controller.dart';
@@ -69,6 +70,9 @@ class HomeShellController extends HomeShellControllerBase
   @override
   final UserCatalogPort userCatalog = HomeShellDefaultPorts.userCatalog;
   final registrySyncPort = HomeShellDefaultPorts.registrySync;
+
+  @override
+  final HomeVaultWatchReactor vaultWatchReactor = HomeVaultWatchReactor();
 
   @override
   late HomeShellCoordinatorBundle coordinators;
@@ -166,8 +170,12 @@ class HomeShellController extends HomeShellControllerBase
   }
 
   void dispose() {
+    // 1) Invalidate in-flight vault watch fan-out first.
+    vaultWatchReactor.dispose();
+    // 2) Cancel vault subscription + debounce (and catalog timer).
+    coordinators.dispose();
+    // 3) Then detach workbench listener and dispose the notifier.
     workbenchCoord.dispose();
     workbench.dispose();
-    coordinators.dispose();
   }
 }

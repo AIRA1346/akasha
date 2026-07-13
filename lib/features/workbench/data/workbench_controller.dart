@@ -1,6 +1,6 @@
-import 'dart:io';
 import 'package:flutter/foundation.dart';
 
+import 'dart:io';
 import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
@@ -26,7 +26,21 @@ class WorkbenchController extends ChangeNotifier {
   /// 활성 Canvas 탭의 viewport 즉시 저장 (browse 이탈·탭 닫기 직전).
   Future<void> Function()? flushActiveCanvasViewport;
 
+  bool _disposed = false;
+  bool get isDisposed => _disposed;
+
+  /// Test-only gate before each entity-tab file IO in [syncEntityTabs].
+  @visibleForTesting
+  Future<void> Function()? debugSyncEntityTabsBeforeFileIo;
+
   bool get prefsLoaded => _prefsLoaded;
+
+  @override
+  void dispose() {
+    _disposed = true;
+    debugSyncEntityTabsBeforeFileIo = null;
+    super.dispose();
+  }
 
   /// Work · Entity 상세가 메인에 표시 중인지.
   bool get hasOpenDetail =>
@@ -254,25 +268,36 @@ class WorkbenchController extends ChangeNotifier {
   }
 
   Future<void> syncEntityTabs(String vaultPath) async {
+    if (_disposed) return;
     var changed = false;
     for (final tab in tabs) {
+      if (_disposed) return;
       if (tab is! EntityCollectibleTab || tab.isDirty) continue;
       final path = tab.journal?.storagePath;
       if (path == null || path.isEmpty) continue;
       final file = File(path);
+      final beforeIo = debugSyncEntityTabsBeforeFileIo;
+      if (beforeIo != null) {
+        await beforeIo();
+        if (_disposed) return;
+      }
       if (!await file.exists()) continue;
+      if (_disposed) return;
       try {
         final content = await file.readAsString();
+        if (_disposed) return;
         final updatedJournal = EntityJournalParser.parse(content, path);
         if (updatedJournal != null) {
           if (tab.journal?.body != updatedJournal.body ||
               !listEquals(tab.journal?.tags, updatedJournal.tags)) {
+            if (_disposed) return;
             tab.journal = updatedJournal;
             changed = true;
           }
         }
       } catch (_) {}
     }
+    if (_disposed) return;
     if (changed) notifyListeners();
   }
 

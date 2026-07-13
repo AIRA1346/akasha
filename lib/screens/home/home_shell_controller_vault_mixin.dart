@@ -33,15 +33,18 @@ mixin HomeShellControllerVaultMixin on HomeShellControllerBase {
     await prefetchRegistryForCurrentFilters();
     await refreshLastSyncTime();
     vault.bindVaultWatch(
-      onVaultChanged: (change) async {
-        await vault.applyVaultChange(change);
-        await refreshRecentExploration();
-        final vaultPath = this.vaultPath;
-        if (vaultPath != null && vaultPath.isNotEmpty) {
-          await workbench.syncEntityTabs(vaultPath);
-        }
-        host.scheduleRebuild(() => navigation.timelineReloadToken++);
-      },
+      onVaultChanged: (change) => vaultWatchReactor.onVaultChanged(
+        applyVaultChange: () => vault.applyVaultChange(change),
+        refreshRecentExploration: refreshRecentExploration,
+        syncEntityTabs: () async {
+          final path = vaultPath;
+          if (path == null || path.isEmpty) return;
+          await workbench.syncEntityTabs(path);
+        },
+        bumpTimelineReload: () {
+          host.scheduleRebuild(() => navigation.timelineReloadToken++);
+        },
+      ),
     );
     catalog.registrySync.checkAutoSync();
   }

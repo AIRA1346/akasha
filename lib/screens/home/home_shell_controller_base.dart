@@ -10,6 +10,7 @@ import 'coordinators/home_recent_exploration_coordinator.dart';
 import 'coordinators/home_shell_coordinator_bundle.dart';
 import 'coordinators/home_shell_wiring.dart';
 import 'coordinators/home_vault_coordinator.dart';
+import 'coordinators/home_vault_watch_reactor.dart';
 import 'coordinators/home_workbench_coordinator.dart';
 import 'home_browse_filter_controller.dart';
 import 'home_collectible_collection_controller.dart';
@@ -33,6 +34,7 @@ abstract class HomeShellControllerBase {
   UserCatalogPort get userCatalog;
 
   HomeShellCoordinatorBundle get coordinators;
+  HomeVaultWatchReactor get vaultWatchReactor;
 
   HomeVaultCoordinator get vault;
   HomeCatalogCoordinator get catalog;
