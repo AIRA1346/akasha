@@ -16,7 +16,8 @@
 > - **Locator index atomic write + `.bak` restart recovery** — `DerivedIndexAtomicWrite` · Record/Entity path indexes · **done** (corrupt≠empty; stale `.tmp` never promoted). Follow-up only: concurrent write lock on same locator file (separate audit candidate; not blocking this closure)
 > - **Entity vault load diagnostics** — `EntityVaultLoader.loadFromVaultWithIssues` · `EntityJournalParser.parseDetailed` · per-file isolation preserved · empty vault ≠ corrupt-only via `issues` · `loadFromVault` remains List wrapper · **no auto-log**; diagnostic consumers handle `issues` explicitly.
 > - **Follow-up only (not implemented):** `EntityPathIndexService.rebuildFromVault` still drops parse/I/O failures without exposing issues; `upsertMarkdownFile` has the same diagnostic asymmetry. Do **not** add `rebuildFromVaultWithIssues` alone while all callers keep using `rebuildFromVault` and would discard issues. Reuse `parseDetailed` + `EntityVaultLoadIssue` when an explicit index audit/rebuild consumer exists.
-> - Flutter app: `flutter analyze --no-pub` **0** · `flutter test --no-pub` **1042**
+> - **Workbench recovery draft I/O diagnostics** — Work/Entity `_saveRecoveryDraftNow` / `_deleteRecoveryDraft` use transition `appLog` via `WorkbenchRecoveryDraftIoDiagnostics` (save≠delete state; no spam; no UI). **Follow-up only:** late draft write vs delete race · stale draft vs vault freshness · Work/Entity deactivate autosave flush asymmetry
+> - Flutter app: `flutter analyze --no-pub` **0** · `flutter test --no-pub` **1055**
 > - Commerce packages: domain `dart test` **14** · backend `dart test` **17** · both `dart analyze` **0**
 > - Windows debug/release build **OK (2026-07-13)**
 >

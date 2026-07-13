@@ -6,7 +6,7 @@
 > **갱신:** 2026-07-13
 > **Git:** `git rev-parse HEAD`  
 >
-> **Verification snapshot (2026-07-13):** root analyze **0** · root test **1042** · commerce domain **14** · backend **17** · Steam Inventory sandbox E2E POC passed · Windows debug/release build OK · `system/` durable vs `.akasha/` derived · **Locator index atomic+`.bak` recovery done** (concurrent write lock = follow-up only) · **Entity vault load diagnostics done** (`loadFromVaultWithIssues`, no auto-log) · **Entity path index rebuild/upsert issue exposure = follow-up only** (no WithIssues API until an explicit consumer exists)
+> **Verification snapshot (2026-07-13):** root analyze **0** · root test **1055** · commerce domain **14** · backend **17** · Steam Inventory sandbox E2E POC passed · Windows debug/release build OK · `system/` durable vs `.akasha/` derived · **Locator index atomic+`.bak` recovery done** (concurrent write lock = follow-up only) · **Entity vault load diagnostics done** (`loadFromVaultWithIssues`, no auto-log) · **Entity path index rebuild/upsert issue exposure = follow-up only** · **Workbench recovery draft I/O transition diagnostics done** (stale/race/deactivate flush = follow-up)
 > **현재 실행:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) — Architecture Closure 선언 후 Steam 출시 블로커 트랙
 > **IAP:** 미구현 (`steamInAppPurchasesEnabled = false`). 결제 완성 전 Store IAP 표시·재심사 주장 금지.
 ---
@@ -15,7 +15,7 @@
  
 | 항목 | 상태 |
 |------|------|
-| **root flutter test** | **1042 PASS** |
+| **root flutter test** | **1055 PASS** |
 | **commerce package tests** | domain **14 PASS** · backend **17 PASS** |
 | **flutter analyze** | **0 issue** (gates clean) |
 | **Home UI** | **search-first chrome** ✅ · 본문 검색·접이식 필터 · 계속 탐험하기 rail |
@@ -174,6 +174,8 @@
 | 8 | Locator concurrent write lock (same shard/file) | **후속 감사 후보** — 이번 Locator 종료와 분리 · 착수 전 dogfood 확인 |
 | 9 | ~~Entity malformed Markdown/YAML silent skip~~ | **완료** — `loadFromVaultWithIssues` · no auto-log · callers unchanged |
 | 10 | `EntityPathIndexService.rebuildFromVault` parse/I/O issue 미노출 | **후속 감사 후보** — 상세 API 단독 추가는 보류(호출자가 `rebuildFromVault`만 쓰면 issues 폐기). `upsertMarkdownFile` 동일 비대칭. 명시적 index audit/rebuild 소비자 등장 시 `parseDetailed`+`EntityVaultLoadIssue` 재사용 |
+| 11 | ~~Work/Entity recovery draft I/O silent catch~~ | **완료** — 전환형 `appLog` · UI/포맷 불변 |
+| 12 | Recovery draft late-write vs delete race · stale vs vault freshness · deactivate flush 비대칭 | **후속 감사 후보** — 이번 진단 슬라이스와 분리 |
 
 ---
 
@@ -288,4 +290,5 @@
 | 2026-07-13 | **Locator index atomic write + `.bak` restart recovery** — `DerivedIndexAtomicWrite` · Record/Entity path indexes · corrupt≠empty · stale `.tmp` never promoted · full tests **1030 PASS** · analyze **0** · concurrent write lock = follow-up only |
 | 2026-07-13 | **Entity vault load diagnostics** — `loadFromVaultWithIssues` · `parseDetailed` · empty≠corrupt-only · no auto-log (consumers handle `issues`) · callers unchanged · full tests **1042 PASS** · analyze **0** · tip **`13eb227f`** |
 | 2026-07-13 | **Entity path index rebuild issue exposure (조사만)** — `rebuildFromVault`/`upsertMarkdownFile` 무음 skip · `rebuildFromVaultWithIssues` 단독 구현 보류 · 명시적 소비자 대기 · 코드 미변경 |
+| 2026-07-13 | **Workbench recovery draft I/O transition diagnostics** — Work/Entity save/delete 전환형 `appLog` · UI/포맷 불변 · stale/race/deactivate flush = follow-up · full tests **1055 PASS** · analyze **0** |
 | 2026-06-29 | **Post-P30 SSOT** — P27~P30 분해·P28 tokens · 400줄+ 재실측 · `origin/main` **9d17f75** · test **610** |

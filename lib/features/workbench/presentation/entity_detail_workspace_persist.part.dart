@@ -73,36 +73,33 @@ mixin _EntityDetailWorkspacePersist on _EntityDetailWorkspaceStateBase {
   Future<void> _saveRecoveryDraftNow() async {
     final vaultPath = WorkbenchVault.port.vaultPath;
     if (_suppressPersist || vaultPath == null || vaultPath.isEmpty) return;
-    try {
-      await _recoveryDraftStore.save(
-        vaultPath: vaultPath,
-        draft: WorkbenchRecoveryDraft(
-          kind: WorkbenchRecoveryRecordKind.entity,
-          recordId: widget.tabId,
-          updatedAt: DateTime.now().toUtc(),
-          title: _entity.title,
-          posterPath: _posterUrlCtrl.text.trim().isNotEmpty
-              ? _posterUrlCtrl.text.trim()
-              : null,
-          bodyText: _bodyCtrl.text,
-          fileText: _fileCtrl.text,
-          tags: List<String>.from(_draftTags),
-          pageView: _pageView.name,
-        ),
-      );
-    } catch (_) {}
+    await _recoveryDraftIo.runSave(
+      store: _recoveryDraftStore,
+      vaultPath: vaultPath,
+      draft: WorkbenchRecoveryDraft(
+        kind: WorkbenchRecoveryRecordKind.entity,
+        recordId: widget.tabId,
+        updatedAt: DateTime.now().toUtc(),
+        title: _entity.title,
+        posterPath: _posterUrlCtrl.text.trim().isNotEmpty
+            ? _posterUrlCtrl.text.trim()
+            : null,
+        bodyText: _bodyCtrl.text,
+        fileText: _fileCtrl.text,
+        tags: List<String>.from(_draftTags),
+        pageView: _pageView.name,
+      ),
+    );
   }
 
   Future<void> _deleteRecoveryDraft() async {
     final vaultPath = WorkbenchVault.port.vaultPath;
     if (vaultPath == null || vaultPath.isEmpty) return;
-    try {
-      await _recoveryDraftStore.delete(
-        vaultPath: vaultPath,
-        kind: WorkbenchRecoveryRecordKind.entity,
-        recordId: widget.tabId,
-      );
-    } catch (_) {}
+    await _recoveryDraftIo.runDelete(
+      store: _recoveryDraftStore,
+      vaultPath: vaultPath,
+      recordId: widget.tabId,
+    );
   }
 
   Future<void> _maybeOfferRecoveryDraft() async {

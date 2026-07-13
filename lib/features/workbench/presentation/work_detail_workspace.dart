@@ -30,6 +30,7 @@ import 'work_detail_save_orchestrator.dart';
 import 'work_detail_save_ui_patch.dart';
 import 'workbench_autosave_scheduler.dart';
 import 'workbench_linked_record_ops.dart';
+import 'workbench_recovery_draft_io_diagnostics.dart';
 import 'workbench_vault.dart';
 import 'workbench_vault_disk_ops.dart';
 import 'workbench_vault_reload_flow.dart';
@@ -78,6 +79,7 @@ class WorkDetailWorkspace extends StatefulWidget {
   final VoidCallback? onPendingEntityLinkHandled;
   final void Function(AkashaItem item)? onRecordOpenWork;
   final Future<void> Function(UserCatalogEntity entity)? onRecordOpenEntity;
+  final WorkbenchRecoveryDraftStore? recoveryDraftStore;
 
   const WorkDetailWorkspace({
     super.key,
@@ -108,6 +110,7 @@ class WorkDetailWorkspace extends StatefulWidget {
     this.onPendingEntityLinkHandled,
     this.onRecordOpenWork,
     this.onRecordOpenEntity,
+    this.recoveryDraftStore,
   });
 
   @override
@@ -136,8 +139,8 @@ abstract class _WorkDetailWorkspaceStateBase
   late final WorkDetailConnectionsCoordinator _connections;
   DateTime? _lastSavedAt;
   final WorkbenchAutosaveScheduler _autosave = WorkbenchAutosaveScheduler();
-  final WorkbenchRecoveryDraftStore _recoveryDraftStore =
-      const WorkbenchRecoveryDraftStore();
+  late final WorkbenchRecoveryDraftStore _recoveryDraftStore;
+  late final WorkbenchRecoveryDraftIoDiagnostics _recoveryDraftIo;
   Timer? _recoveryDraftTimer;
   bool _recoveryPromptShown = false;
   bool _suppressPersist = false;
@@ -215,6 +218,11 @@ class _WorkDetailWorkspaceState extends _WorkDetailWorkspaceStateBase
   @override
   void initState() {
     super.initState();
+    _recoveryDraftStore =
+        widget.recoveryDraftStore ?? const WorkbenchRecoveryDraftStore();
+    _recoveryDraftIo = WorkbenchRecoveryDraftIoDiagnostics(
+      kind: WorkbenchRecoveryRecordKind.work,
+    );
     _connections = WorkDetailConnectionsCoordinator(
       onStateChanged: () {
         if (mounted) setState(() {});

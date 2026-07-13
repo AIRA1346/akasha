@@ -28,6 +28,7 @@ import 'entity_detail_save_orchestrator.dart';
 import 'entity_detail_save_ui_patch.dart';
 import 'workbench_autosave_scheduler.dart';
 import 'workbench_linked_record_ops.dart';
+import 'workbench_recovery_draft_io_diagnostics.dart';
 import 'workbench_vault.dart';
 import 'workbench_vault_disk_ops.dart';
 import 'workbench_vault_reload_flow.dart';
@@ -74,6 +75,7 @@ class EntityDetailWorkspace extends StatefulWidget {
     this.pendingEntityLinkEntityId,
     this.pendingEntityWorkLinkPick = false,
     this.onPendingEntityLinkHandled,
+    this.recoveryDraftStore,
   });
 
   final UserCatalogEntity entity;
@@ -119,6 +121,7 @@ class EntityDetailWorkspace extends StatefulWidget {
   final String? pendingEntityLinkEntityId;
   final bool pendingEntityWorkLinkPick;
   final VoidCallback? onPendingEntityLinkHandled;
+  final WorkbenchRecoveryDraftStore? recoveryDraftStore;
 
   @override
   State<EntityDetailWorkspace> createState() => _EntityDetailWorkspaceState();
@@ -139,8 +142,8 @@ abstract class _EntityDetailWorkspaceStateBase
   bool _suppressPersist = false;
   DateTime? _lastSavedAt;
   final WorkbenchAutosaveScheduler _autosave = WorkbenchAutosaveScheduler();
-  final WorkbenchRecoveryDraftStore _recoveryDraftStore =
-      const WorkbenchRecoveryDraftStore();
+  late final WorkbenchRecoveryDraftStore _recoveryDraftStore;
+  late final WorkbenchRecoveryDraftIoDiagnostics _recoveryDraftIo;
   Timer? _recoveryDraftTimer;
   bool _recoveryPromptShown = false;
   StreamSubscription<void>? _vaultSub;
@@ -196,6 +199,11 @@ class _EntityDetailWorkspaceState extends _EntityDetailWorkspaceStateBase
   @override
   void initState() {
     super.initState();
+    _recoveryDraftStore =
+        widget.recoveryDraftStore ?? const WorkbenchRecoveryDraftStore();
+    _recoveryDraftIo = WorkbenchRecoveryDraftIoDiagnostics(
+      kind: WorkbenchRecoveryRecordKind.entity,
+    );
     _connections = EntityDetailConnectionsCoordinator(
       onStateChanged: () {
         if (mounted) setState(() {});
