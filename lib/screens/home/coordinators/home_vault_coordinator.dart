@@ -7,10 +7,7 @@ import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/ports/vault_change.dart';
 import '../../../core/ports/vault_port.dart';
 import '../../../models/akasha_item.dart';
-import '../../../models/library_theme.dart';
 import '../../../services/archive_index_manager.dart';
-import '../../../services/entitlement_service.dart';
-import '../../../services/library_theme_preferences.dart';
 import '../../../services/record_link_index_service.dart';
 import '../../../services/event_ledger_service.dart';
 import '../../../core/archiving/vault_ledger_event.dart';
@@ -50,7 +47,6 @@ class HomeVaultCoordinator {
   bool _hasLoadedItems = false;
   String displayName = UserPreferences.defaultDisplayName;
   bool autoArchiveRegistry = false;
-  LibraryTheme libraryTheme = LibraryTheme.classic;
 
   /// Bumped when link index memory changes — preview connection sections.
   int linkIndexRevision = 0;
@@ -72,8 +68,6 @@ class HomeVaultCoordinator {
     displayName = await UserPreferences.getDisplayName();
     autoArchiveRegistry = await UserPreferences.isAutoArchiveRegistryEnabled();
     await UserRegistryPreferences.instance.load();
-    await EntitlementService.instance.load();
-    libraryTheme = await LibraryThemePreferences.load();
     if (isMounted()) scheduleRebuild(() {});
   }
 

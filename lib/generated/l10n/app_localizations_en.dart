@@ -1381,7 +1381,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get appThemePickerFreeNotice =>
-      'All currently available app themes are free.';
+      'Classic Dark and Midnight Blue are included free themes.';
+
+  @override
+  String get themeClassicDarkName => 'Classic Dark';
+
+  @override
+  String get themeMidnightBlueName => 'Midnight Blue';
+
+  @override
+  String get themeSakuraName => 'Sakura';
+
+  @override
+  String get themeAmethystName => 'Amethyst';
+
+  @override
+  String get themeNocturneName => 'Nocturne';
 
   @override
   String get dashboardHeroTitle => 'Record, connect, and discover';

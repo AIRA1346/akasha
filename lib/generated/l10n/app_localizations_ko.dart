@@ -1349,7 +1349,23 @@ class AppLocalizationsKo extends AppLocalizations {
   String get descDashboardWrite => '타임라인과 일지에서 시간순 기록을 확인합니다.';
 
   @override
-  String get appThemePickerFreeNotice => '현재 제공되는 앱 테마는 모두 무료입니다.';
+  String get appThemePickerFreeNotice =>
+      'Classic Dark와 Midnight Blue는 기본 무료 테마입니다.';
+
+  @override
+  String get themeClassicDarkName => '클래식 다크';
+
+  @override
+  String get themeMidnightBlueName => '미드나이트 블루';
+
+  @override
+  String get themeSakuraName => '벚꽃';
+
+  @override
+  String get themeAmethystName => '자수정';
+
+  @override
+  String get themeNocturneName => '녹턴';
 
   @override
   String get dashboardHeroTitle => '기록하고, 연결하고, 발견하세요';

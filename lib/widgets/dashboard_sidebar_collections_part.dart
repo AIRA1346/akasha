@@ -20,16 +20,19 @@ class _DashboardSidebarCollectionsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         _DashboardSidebarSectionTitle(
           l10n?.sidebarMyCollections ?? '내 컬렉션',
-          trailingLabel:
-              collectibleCollections.isNotEmpty ? (l10n?.sidebarViewAll ?? '모두 보기') : null,
-          onTrailing:
-              collectibleCollections.isNotEmpty ? () => onGoCollection() : null,
+          trailingLabel: collectibleCollections.isNotEmpty
+              ? (l10n?.sidebarViewAll ?? '모두 보기')
+              : null,
+          onTrailing: collectibleCollections.isNotEmpty
+              ? () => onGoCollection()
+              : null,
         ),
         const SizedBox(height: 6),
         if (collectibleCollections.isEmpty)
@@ -38,20 +41,25 @@ class _DashboardSidebarCollectionsSection extends StatelessWidget {
             child: Text(
               l10n?.sidebarNoCollections ?? '컬렉션이 없습니다',
               style: AkashaTypography.bodySecondary.copyWith(
-                color: AkashaColors.textCaption,
+                color: palette.textMuted,
               ),
             ),
           )
         else
-          ...collectibleCollections.take(4).map((col) => _buildCollectionRow(col, l10n)),
+          ...collectibleCollections
+              .take(4)
+              .map((col) => _buildCollectionRow(col, l10n)),
       ],
     );
   }
 
-  Widget _buildCollectionRow(CollectibleCollection col, AppLocalizations? l10n) {
+  Widget _buildCollectionRow(
+    CollectibleCollection col,
+    AppLocalizations? l10n,
+  ) {
     final isActive =
         selectionMode == SidebarSelectionMode.collectibleCollection &&
-            activeCollectibleCollectionId == col.id;
+        activeCollectibleCollectionId == col.id;
     final count = col.isCurated ? col.memberOrder.length : 0;
     final subtitle = count > 0
         ? (l10n?.libraryWorkCount(count) ?? '$count 작품')

@@ -7,22 +7,29 @@ class _DashboardSidebarCollapseFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return InkWell(
       onTap: onToggleSidebar,
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-        decoration: const BoxDecoration(
-          color: AkashaColors.sidebarFooter,
-          border: Border(top: BorderSide(color: AkashaColors.border)),
+        decoration: BoxDecoration(
+          color: palette.sidebarFooter,
+          border: Border(top: BorderSide(color: palette.borderSubtle(0.45))),
         ),
         child: Row(
           children: [
-            Icon(Icons.chevron_left_rounded, size: 18, color: AkashaColors.textMuted),
+            Icon(
+              Icons.chevron_left_rounded,
+              size: 18,
+              color: palette.textMuted,
+            ),
             const SizedBox(width: 6),
             Text(
               '접기',
-              style: AkashaTypography.sidebarFooterLabel,
+              style: AkashaTypography.sidebarFooterLabel.copyWith(
+                color: palette.textMuted,
+              ),
             ),
           ],
         ),

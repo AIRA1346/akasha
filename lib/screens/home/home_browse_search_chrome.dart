@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../core/archiving/entity_anchor.dart';
 import '../../models/browse_entity_scope.dart';
 import '../../models/enums.dart';
-import '../../theme/akasha_colors.dart';
 import '../../theme/akasha_palette.dart';
 import '../../theme/akasha_spacing.dart';
 import '../../theme/akasha_typography.dart';
@@ -99,7 +98,9 @@ class _HomeBrowseSearchChromeState extends State<HomeBrowseSearchChrome> {
                 if (widget.onAddNewEntity != null) ...[
                   const SizedBox(width: AkashaSpacing.sm),
                   _AddArchiveButton(
-                    onTap: () => widget.onAddNewEntity!(widget.selectedEntityScope.catalogEntityType),
+                    onTap: () => widget.onAddNewEntity!(
+                      widget.selectedEntityScope.catalogEntityType,
+                    ),
                   ),
                 ],
               ],
@@ -152,13 +153,13 @@ class _SearchEntry extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Icon(Icons.search_rounded, size: 18, color: AkashaColors.textMuted),
+            Icon(Icons.search_rounded, size: 18, color: palette.textMuted),
             const SizedBox(width: AkashaSpacing.sm),
             Expanded(
               child: Text(
                 placeholder,
                 style: AkashaTypography.bodySecondary.copyWith(
-                  color: AkashaColors.textMuted,
+                  color: palette.textMuted,
                   fontSize: 12,
                 ),
                 maxLines: 1,
@@ -177,7 +178,7 @@ class _SearchEntry extends StatelessWidget {
                 child: Text(
                   'Ctrl K',
                   style: AkashaTypography.micro.copyWith(
-                    color: AkashaColors.textMuted,
+                    color: palette.textMuted,
                     fontFamily: 'Consolas',
                   ),
                 ),
@@ -218,7 +219,7 @@ class _FilterToggleButton extends StatelessWidget {
         child: Icon(
           expanded ? Icons.filter_list_off : Icons.filter_list,
           size: 20,
-          color: hasActiveFilters ? palette.accent : AkashaColors.textSecondary,
+          color: hasActiveFilters ? palette.accent : palette.textSecondary,
         ),
       ),
       padding: EdgeInsets.zero,
@@ -242,8 +243,9 @@ class _AddArchiveButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
     return Material(
-      color: AkashaColors.accent.withValues(alpha: 0.12),
+      color: palette.accentSoft,
       borderRadius: BorderRadius.circular(8),
       child: InkWell(
         borderRadius: BorderRadius.circular(8),
@@ -253,21 +255,19 @@ class _AddArchiveButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 12),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            border: Border.all(
-              color: AkashaColors.accent.withValues(alpha: 0.3),
-            ),
+            border: Border.all(color: palette.accent.withValues(alpha: 0.3)),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.add, size: 16, color: AkashaColors.accent),
+              Icon(Icons.add, size: 16, color: palette.accent),
               const SizedBox(width: 6),
               Text(
                 l10n?.filterAddArchive ?? '아카이브',
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
-                  color: AkashaColors.accent,
+                  color: palette.accent,
                 ),
               ),
             ],

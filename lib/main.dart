@@ -7,10 +7,12 @@ import 'data/adapters/works_registry_adapter.dart';
 import 'screens/home/home_shell.dart';
 import 'services/catalog_locale_preferences.dart';
 import 'services/akasha_command_runner.dart';
+import 'services/akasha_theme_controller.dart';
 import 'services/franchise_registry.dart';
 import 'services/local_derived_index_lifecycle.dart';
 import 'services/user_preferences.dart';
 import 'theme/akasha_theme.dart';
+import 'widgets/akasha_theme_backdrop.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  AKASHA — 확장형 올인원 아카이브 앱
@@ -30,7 +32,8 @@ void main() async {
   await FranchiseRegistry.init();
   // cold start: manifest + eager 샤드만 (browse는 search_index 윈도우 lazy load)
 
-  runApp(const AkashaApp());
+  final themeController = await AkashaThemeController.load();
+  runApp(AkashaApp(themeController: themeController));
 }
 
 /// Invoked only by the Windows runner for the command vocabulary it recognizes.
@@ -41,22 +44,31 @@ Future<void> commandMain(List<String> args) =>
     AkashaCommandRunner().runFromProcess(args);
 
 class AkashaApp extends StatefulWidget {
-  const AkashaApp({super.key});
+  const AkashaApp({super.key, this.themeController, this.home});
+
+  final AkashaThemeController? themeController;
+  final Widget? home;
 
   @override
   State<AkashaApp> createState() => _AkashaAppState();
 }
 
 class _AkashaAppState extends State<AkashaApp> {
+  late AkashaThemeController _themeController;
+  late bool _ownsThemeController;
+
   @override
   void initState() {
     super.initState();
+    _installThemeController(widget.themeController);
     CatalogLocaleScope.localeListenable.addListener(_onLocaleChanged);
     UserPreferences.uiScaleListenable.addListener(_onUiScaleChanged);
   }
 
   @override
   void dispose() {
+    _themeController.removeListener(_onThemeChanged);
+    if (_ownsThemeController) _themeController.dispose();
     CatalogLocaleScope.localeListenable.removeListener(_onLocaleChanged);
     UserPreferences.uiScaleListenable.removeListener(_onUiScaleChanged);
     super.dispose();
@@ -64,31 +76,54 @@ class _AkashaAppState extends State<AkashaApp> {
 
   void _onLocaleChanged() => setState(() {});
   void _onUiScaleChanged() => setState(() {});
+  void _onThemeChanged() => setState(() {});
+
+  void _installThemeController(AkashaThemeController? controller) {
+    _themeController = controller ?? AkashaThemeController.fallback();
+    _ownsThemeController = controller == null;
+    _themeController.addListener(_onThemeChanged);
+  }
+
+  @override
+  void didUpdateWidget(covariant AkashaApp oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.themeController == widget.themeController) return;
+    _themeController.removeListener(_onThemeChanged);
+    if (_ownsThemeController) _themeController.dispose();
+    _installThemeController(widget.themeController);
+  }
 
   Locale get _appLocale => Locale(CatalogLocaleScope.current.tag);
 
   @override
   Widget build(BuildContext context) {
+    final effectivePreset = _themeController.effectivePreset;
     return MaterialApp(
       title: 'AKASHA',
       debugShowCheckedModeBanner: false,
       locale: _appLocale,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      theme: AkashaTheme.dark(),
+      theme: AkashaTheme.forPreset(effectivePreset),
       builder: (context, child) {
-        final mediaQuery = MediaQuery.maybeOf(context);
-        if (mediaQuery == null) return child ?? const SizedBox.shrink();
-        return MediaQuery(
-          data: mediaQuery.copyWith(
-            textScaler: TextScaler.linear(
-              UserPreferences.uiScaleListenable.value,
-            ),
-          ),
+        Widget content = AkashaThemeBackdrop(
+          preset: effectivePreset,
           child: child ?? const SizedBox.shrink(),
         );
+        final mediaQuery = MediaQuery.maybeOf(context);
+        if (mediaQuery != null) {
+          content = MediaQuery(
+            data: mediaQuery.copyWith(
+              textScaler: TextScaler.linear(
+                UserPreferences.uiScaleListenable.value,
+              ),
+            ),
+            child: content,
+          );
+        }
+        return AkashaThemeScope(controller: _themeController, child: content);
       },
-      home: const HomeShell(),
+      home: widget.home ?? const HomeShell(),
     );
   }
 }

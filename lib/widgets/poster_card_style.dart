@@ -81,7 +81,7 @@ abstract final class PosterCardStyle {
       return (
         border: Border.all(
           color: showPoster
-              ? Colors.white.withValues(alpha: 0.17)
+              ? palette.textPrimary.withValues(alpha: 0.17)
               : categoryAccent.withValues(alpha: 0.44),
           width: borderWidthNotStarted,
         ),
@@ -100,7 +100,7 @@ abstract final class PosterCardStyle {
       );
     }
     final watchingAccent =
-        Color.lerp(activeAccent, Colors.greenAccent, 0.32) ?? activeAccent;
+        Color.lerp(activeAccent, palette.success, 0.32) ?? activeAccent;
     return (
       border: Border.all(
         color: watchingAccent.withValues(alpha: 0.65),
@@ -115,9 +115,10 @@ abstract final class PosterCardStyle {
     required bool hovered,
     required Color glowColor,
     required bool softGlow,
+    required AkashaPalette palette,
   }) {
     final depth = BoxShadow(
-      color: Colors.black.withValues(alpha: hovered ? 0.32 : 0.28),
+      color: palette.shadow.withValues(alpha: hovered ? 0.72 : 0.62),
       blurRadius: depthShadowBlur,
       offset: Offset(0, hovered ? depthShadowOffsetY + 1 : depthShadowOffsetY),
     );

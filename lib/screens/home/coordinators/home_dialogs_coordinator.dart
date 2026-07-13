@@ -12,13 +12,14 @@ import '../../../models/registry_work.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../models/catalog_entity_add_result.dart';
 import '../../../models/work_id_codec.dart';
-import '../../../models/library_theme.dart';
 import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../services/entity_archive_service.dart';
 import '../../../services/entity_catalog_sync.dart';
 import '../../../services/entity_vault_loader.dart';
 import '../../../services/entity_vault_path_conflict.dart';
 import '../../../services/open_collectible.dart';
+import '../../../services/akasha_theme_controller.dart';
+import '../../../models/library_theme.dart';
 import '../dialogs/home_dialogs_facade.dart';
 import '../dialogs/add_catalog_entity_dialog.dart';
 import '../../../utils/entity_tag_validation.dart';
@@ -91,7 +92,6 @@ class HomeDialogsCoordinator {
   DateTime? get lastSyncTime => catalog.lastSyncTime;
   String get displayName => vault.displayName;
   bool get autoArchiveRegistry => vault.autoArchiveRegistry;
-  LibraryTheme get libraryTheme => vault.libraryTheme;
 
   /// Persists a Work and updates only the active Home representation. The
   /// bounded Work browse projection receives its own precise Vault change, so
@@ -134,8 +134,9 @@ class HomeDialogsCoordinator {
   Future<void> selectVaultFolder() =>
       _homeDialogsCoordinatorSelectVaultFolder(this);
 
-  Future<void> createDefaultVault({DefaultVaultPathResolver resolver = const DefaultVaultPathResolver()}) =>
-      _homeDialogsCoordinatorCreateDefaultVault(this, resolver: resolver);
+  Future<void> createDefaultVault({
+    DefaultVaultPathResolver resolver = const DefaultVaultPathResolver(),
+  }) => _homeDialogsCoordinatorCreateDefaultVault(this, resolver: resolver);
 
   Future<void> openAddEntityDialog(EntityAnchorType? forceType) =>
       _homeDialogsCoordinatorOpenAddEntityDialog(this, forceType);

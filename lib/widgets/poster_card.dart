@@ -86,6 +86,7 @@ class _PosterCardState extends State<PosterCard> {
             hovered: _isHovered,
             glowColor: chrome.glowColor,
             softGlow: chrome.softGlow,
+            palette: palette,
           ),
         ),
         child: widget.showPoster

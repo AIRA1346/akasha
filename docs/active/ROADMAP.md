@@ -1,7 +1,7 @@
 # AKASHA Roadmap (로드맵)
 
 > **지위:** 프로젝트 개발 로드맵 SSOT (5대 정체성 카테고리 기준)
-> **갱신:** 2026-07-12 — 문서 2차 · Constitution §8 필터 정렬
+> **갱신:** 2026-07-13 — UX·Theme 횡단 트랙 연결
 > **최상위 지침:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) · [VISION.md](VISION.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md)
 > **기능 거부 기준:** [Constitution §8](AKASHA_ARCHIVE_CONSTITUTION.md) (구 PROJECT_CONSTITUTION 필터는 [historical](../history/PROJECT_CONSTITUTION.md))
 
@@ -20,6 +20,16 @@
 | — | E. Scale | **post-v1** — vault 파생 인덱스 · akasha-db/CDN |
 
 **Steam v1 무료 출시:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) 트랙. Architecture Closure 선언됨. IAP는 `steamInAppPurchasesEnabled=false` — 결제 검증 전 Store/앱에 구매로 표시하지 않음.
+
+---
+
+## 횡단 트랙: UX & Theme (2026-07-13)
+
+사용자 경험과 시각 표현은 A–E 제품 카테고리를 가로지르는 공통 계약이다. 정보 구조, Desktop Shell, 컴포넌트 규격, 테마 확장 기준은 [UX_DESIGN_SYSTEM.md](UX_DESIGN_SYSTEM.md)를 따른다.
+
+구현 순서는 Theme foundation → Responsive Shell → Graph/Timeline 기존 경로 복원 → Home 고도화 → Preview·핵심 화면 정돈 → 테마별 asset/effect와 회귀 검증이다. 기존 Graph/Timeline 내비게이션을 다시 보이게 하는 일은 새 그래프 엔진, 완성 캘린더, `SA-05 Timeline projection` 완료를 의미하지 않는다.
+
+공식 테마 카탈로그는 무료 `classicDark`·`midnightBlue`, premium `sakura`·`amethyst`·`nocturne`다. UX-1 foundation으로 no-IAP picker는 무료 2종만 제공하며 premium 구매·잠금 UI는 commerce 활성 전 노출하지 않는다. 잔여 style 이관은 [UX_THEME_MIGRATION_INVENTORY.md](UX_THEME_MIGRATION_INVENTORY.md)에서 추적한다.
 
 ---
 
@@ -94,7 +104,7 @@
 
 * **[x] 나의 서재 기본 뷰:** 아카이브한 작품만 모아 보는 전용 홈 모드 구축
 * **[x] 대시보드-서재 역할 분리:** 카탈로그 탐색 공간(Dashboard)과 나의 기록 공간(Library) 정비
-* **[x] 나의 서재 테마 커스텀:** 배경색/테마 프리셋 피커. v1 테마는 무료 제공, 결제 연동은 post-launch 보류
+* **[x] UX-1 공식 테마 foundation:** canonical 5종 · app-root theme · 무료 2종 picker · premium 3종 fallback preset. Commerce 활성 전 구매·잠금 UI 미노출
 * **[x] Cast Collection / Hero Collection:** 인물·속성별 큐레이션 컬렉션 연동 기능
 * **[ ] (v1.1+) 서재 진열 방식 커스텀:** 그리드 밀도 및 표시 항목 개인화 (보류)
 * **[ ] (장기) Mixed Library:** 서로 다른 매체의 기록을 하나의 컬렉션으로 통합 (보류)

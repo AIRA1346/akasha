@@ -9,7 +9,6 @@ import '../models/personal_library_config.dart';
 import '../models/work_drag_payload.dart';
 import '../screens/home/home_personal_library_controller.dart';
 import '../screens/home/views/preview_record_view_model.dart';
-import '../theme/akasha_colors.dart';
 import '../theme/akasha_palette.dart';
 import '../theme/akasha_typography.dart';
 import '../generated/l10n/app_localizations.dart';
@@ -29,10 +28,6 @@ part 'dashboard_sidebar_footer_part.dart';
 
 /// 홈 좌측 네비게이션 사이드바 (시안: primary nav · 최근 탐색 · 내 컬렉션).
 class DashboardSidebar extends StatelessWidget {
-  static const Color dashboardAccent = AkashaColors.accent;
-  static const Color personalAccent = Colors.amberAccent;
-  static const Color collectionAccent = AkashaColors.accentDark;
-
   static const double _sidebarWidth = 280;
 
   final bool isOpen;

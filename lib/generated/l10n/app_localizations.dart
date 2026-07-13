@@ -2525,8 +2525,38 @@ abstract class AppLocalizations {
   /// No description provided for @appThemePickerFreeNotice.
   ///
   /// In en, this message translates to:
-  /// **'All currently available app themes are free.'**
+  /// **'Classic Dark and Midnight Blue are included free themes.'**
   String get appThemePickerFreeNotice;
+
+  /// No description provided for @themeClassicDarkName.
+  ///
+  /// In en, this message translates to:
+  /// **'Classic Dark'**
+  String get themeClassicDarkName;
+
+  /// No description provided for @themeMidnightBlueName.
+  ///
+  /// In en, this message translates to:
+  /// **'Midnight Blue'**
+  String get themeMidnightBlueName;
+
+  /// No description provided for @themeSakuraName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sakura'**
+  String get themeSakuraName;
+
+  /// No description provided for @themeAmethystName.
+  ///
+  /// In en, this message translates to:
+  /// **'Amethyst'**
+  String get themeAmethystName;
+
+  /// No description provided for @themeNocturneName.
+  ///
+  /// In en, this message translates to:
+  /// **'Nocturne'**
+  String get themeNocturneName;
 
   /// No description provided for @dashboardHeroTitle.
   ///

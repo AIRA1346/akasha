@@ -9,7 +9,7 @@ PreferredSizeWidget _homeShellScaffoldAppBar(
     isSyncing: controller.isSyncing,
     vaultLinked: controller.vaultLinked,
     onAppTheme: controller.showLibraryThemePicker,
-    appThemeAccent: controller.libraryTheme.accentColor,
+    appThemeAccent: context.akashaPalette.accent,
     onToggleSidebar: controller.toggleSidebar,
     onTimelineCapture: controller.openTimelineQuickCapture,
     onClipboardImport: controller.openClipboardImportDialog,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../generated/l10n/app_localizations.dart';
 import '../models/library_theme.dart';
-import '../services/library_theme_preferences.dart';
-import '../theme/akasha_colors.dart';
+import '../models/theme_catalog.dart';
 import '../theme/akasha_palette.dart';
 import '../utils/app_l10n.dart';
 
@@ -16,6 +16,9 @@ Future<LibraryTheme?> showLibraryThemePicker(
     backgroundColor: context.akashaPalette.surfaceElevated,
     builder: (ctx) {
       final l10n = lookupAppL10n(ctx);
+      final bundledThemes = LibraryTheme.all.where(
+        (theme) => ThemeCatalog.byPresetId(theme.id)?.isBundled ?? false,
+      );
       return SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
@@ -32,11 +35,15 @@ Future<LibraryTheme?> showLibraryThemePicker(
               ),
               const SizedBox(height: 4),
               Text(
-                l10n?.appThemePickerFreeNotice ?? '현재 제공되는 앱 테마는 모두 무료입니다.',
-                style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
+                l10n?.appThemePickerFreeNotice ??
+                    'Classic Dark와 Midnight Blue는 기본 무료 테마입니다.',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: ctx.akashaPalette.textMuted,
+                ),
               ),
               const SizedBox(height: 12),
-              ...LibraryTheme.all.map((theme) {
+              ...bundledThemes.map((theme) {
                 final selected = current.id == theme.id;
                 return ListTile(
                   shape: RoundedRectangleBorder(
@@ -46,13 +53,12 @@ Future<LibraryTheme?> showLibraryThemePicker(
                       ? theme.accentColor.withValues(alpha: 0.08)
                       : null,
                   leading: _ThemeSwatch(theme: theme),
-                  title: Text(theme.name),
+                  title: Text(_localizedThemeName(l10n, theme)),
                   trailing: selected
                       ? Icon(Icons.check, color: theme.accentColor)
                       : null,
-                  onTap: () async {
-                    await LibraryThemePreferences.save(theme);
-                    if (ctx.mounted) Navigator.pop(ctx, theme);
+                  onTap: () {
+                    Navigator.pop(ctx, theme);
                   },
                 );
               }),
@@ -62,6 +68,17 @@ Future<LibraryTheme?> showLibraryThemePicker(
       );
     },
   );
+}
+
+String _localizedThemeName(AppLocalizations? l10n, LibraryTheme theme) {
+  return switch (theme.id) {
+    'classicDark' => l10n?.themeClassicDarkName ?? 'Classic Dark',
+    'midnightBlue' => l10n?.themeMidnightBlueName ?? 'Midnight Blue',
+    'sakura' => l10n?.themeSakuraName ?? 'Sakura',
+    'amethyst' => l10n?.themeAmethystName ?? 'Amethyst',
+    'nocturne' => l10n?.themeNocturneName ?? 'Nocturne',
+    _ => theme.name,
+  };
 }
 
 class _ThemeSwatch extends StatelessWidget {

@@ -27,7 +27,6 @@ Widget _homeShellScaffoldBody(
     canAddToLibrary: controller.canAddToLibrary,
     vaultLinked: controller.vaultLinked,
     vaultPath: controller.vaultPath,
-    libraryTheme: controller.libraryTheme,
     displayName: controller.displayName,
     items: controller.items,
     recentExploreItems: controller.recentExploreItems,
@@ -99,29 +98,32 @@ Widget _homeShellScaffoldBody(
       id: id,
       setState: controller.wrapSetState,
     ),
-    onEditCollectibleCollection: (col) => controller.collectionUi.showEditDialog(
-      controller.host.context,
-      config: col,
-      setState: controller.wrapSetState,
-      vaultItems: controller.items,
-    ),
-    onDeleteCollectibleCollection: (id) => controller.collectionUi.confirmDelete(
-      controller.host.context,
-      id: id,
-      setState: controller.wrapSetState,
-    ),
+    onEditCollectibleCollection: (col) =>
+        controller.collectionUi.showEditDialog(
+          controller.host.context,
+          config: col,
+          setState: controller.wrapSetState,
+          vaultItems: controller.items,
+        ),
+    onDeleteCollectibleCollection: (id) =>
+        controller.collectionUi.confirmDelete(
+          controller.host.context,
+          id: id,
+          setState: controller.wrapSetState,
+        ),
     onDropWorkToLibrary: controller.canAddToLibrary
         ? (String libraryId, WorkDragPayload payload) =>
-            controller.libraryUi.onDropWorkToLibrary(
-              controller.host.context,
-              libraryId: libraryId,
-              payload: payload,
-              setState: controller.wrapSetState,
-              selectPersonalLibrary: controller.selectPersonalLibrary,
-            )
+              controller.libraryUi.onDropWorkToLibrary(
+                controller.host.context,
+                libraryId: libraryId,
+                payload: payload,
+                setState: controller.wrapSetState,
+                selectPersonalLibrary: controller.selectPersonalLibrary,
+              )
         : null,
-    onLibraryDragStarted:
-        controller.canAddToLibrary ? controller.onLibraryDragStarted : null,
+    onLibraryDragStarted: controller.canAddToLibrary
+        ? controller.onLibraryDragStarted
+        : null,
     onConnectVault: controller.selectVaultFolder,
     onCreateDefaultVault: controller.createDefaultVault,
     onToggleCategory: controller.toggleCategory,
@@ -135,7 +137,8 @@ Widget _homeShellScaffoldBody(
     onOpenEntityDetail: controller.openEntity,
     onOpenRecentExplore: controller.openRecentExploreItem,
     onOpenEntity: controller.openEntity,
-    onOpenCanvas: (canvas) => controller.openCanvas(canvas.canvasId, canvas.title),
+    onOpenCanvas: (canvas) =>
+        controller.openCanvas(canvas.canvasId, canvas.title),
     workPreviewItem: controller.workPreviewItem,
     entityPreviewItem: controller.entityPreviewItem,
     onPreviewWork: controller.openWorkPreview,
@@ -160,8 +163,7 @@ Widget _homeShellScaffoldBody(
     pendingEntityLinkEntityId: controller.pendingEntityLinkEntityId,
     pendingEntityWorkLinkPick: controller.pendingEntityWorkLinkPick,
     onClearPendingEntityLink: controller.clearPendingEntityLink,
-    onConnectEntityFromEntityPreview:
-        controller.openEntityFromPreviewToConnect,
+    onConnectEntityFromEntityPreview: controller.openEntityFromPreviewToConnect,
     onConnectWorkFromEntityPreview:
         controller.openEntityFromPreviewToConnectWork,
     onConnectSuggestedFromPreview:
@@ -176,36 +178,37 @@ Widget _homeShellScaffoldBody(
     onWorkbenchEntityDeleted: controller.onWorkbenchEntityDeleted,
     onAddToLibrary: controller.canAddToLibrary
         ? (AkashaItem item) => controller.libraryUi.showAddToLibraryForItem(
-              controller.host.context,
-              item: item,
-              isCuratedLibraryActive: controller.isCuratedLibraryActive,
-              items: controller.items,
-              resolveItemForOpen: controller.resolveItemForOpen,
-              setState: controller.wrapSetState,
-              onCreateLibrary: () =>
-                  controller.libraryUi.promptCreateCuratedLibrary(
-                controller.host.context,
-                setState: controller.wrapSetState,
-              ),
-            )
+            controller.host.context,
+            item: item,
+            isCuratedLibraryActive: controller.isCuratedLibraryActive,
+            items: controller.items,
+            resolveItemForOpen: controller.resolveItemForOpen,
+            setState: controller.wrapSetState,
+            onCreateLibrary: () =>
+                controller.libraryUi.promptCreateCuratedLibrary(
+                  controller.host.context,
+                  setState: controller.wrapSetState,
+                ),
+          )
         : null,
     onAddToLibraryForEntity: controller.canAddToLibrary
         ? (UserCatalogEntity entity) =>
-            controller.libraryUi.showAddToLibraryForEntity(
-              controller.host.context,
-              entity: entity,
-              isCuratedLibraryActive: controller.isCuratedLibraryActive,
-              items: controller.items,
-              setState: controller.wrapSetState,
-              onCreateLibrary: () =>
-                  controller.libraryUi.promptCreateCuratedLibrary(
+              controller.libraryUi.showAddToLibraryForEntity(
                 controller.host.context,
+                entity: entity,
+                isCuratedLibraryActive: controller.isCuratedLibraryActive,
+                items: controller.items,
                 setState: controller.wrapSetState,
-              ),
-            )
+                onCreateLibrary: () =>
+                    controller.libraryUi.promptCreateCuratedLibrary(
+                      controller.host.context,
+                      setState: controller.wrapSetState,
+                    ),
+              )
         : null,
     onCuratedReorder: controller.onCuratedReorder,
-    onEntityCollectionCuratedReorder: controller.onEntityCollectionCuratedReorder,
+    onEntityCollectionCuratedReorder:
+        controller.onEntityCollectionCuratedReorder,
     onCollectibleCollectionCuratedReorder:
         controller.onCollectibleCollectionCuratedReorder,
     onSearch: controller.openSearchDialog,

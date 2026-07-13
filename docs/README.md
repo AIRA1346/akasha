@@ -8,6 +8,7 @@ AKASHA 프로젝트의 문서 관리 시스템입니다.
 |---|---|---|
 | **원칙** | [AKASHA_ARCHIVE_CONSTITUTION.md](active/AKASHA_ARCHIVE_CONSTITUTION.md) | 왜 존재하는가 · 거부 기준 · 장기 아키텍처 |
 | **v1 제품 범위** | [VISION.md](active/VISION.md) | Steam v1 범위·여정 (원칙과 충돌 시 Constitution 우선) |
+| **경험·시각 표현** | [UX_DESIGN_SYSTEM.md](active/UX_DESIGN_SYSTEM.md) | IA · Shell · 컴포넌트 · 테마 확장 계약 |
 | **구현 현실** | 코드 + [CURRENT_STATE.md](active/CURRENT_STATE.md) | 실제로 무엇이 동작하는가 |
 
 구현 현황 문서는 코드를 뒤따라 최신화한다. 원칙 문서는 코드보다 앞설 수 있으며, 구현이 원칙과 어긋나면 구현·CURRENT_STATE를 교정한다.
@@ -28,6 +29,8 @@ AKASHA 프로젝트의 문서 관리 시스템입니다.
 | [STEAM_INVENTORY_COMMERCE_FEASIBILITY_GATE.md](active/STEAM_INVENTORY_COMMERCE_FEASIBILITY_GATE.md) | **Inventory feasibility gate** | Steam Inventory 샌드박스 E2E 결과와 production IAP 보류 조건. |
 | [COMMERCE_CURRENCY_CONTRACT.md](active/COMMERCE_CURRENCY_CONTRACT.md) | **Commerce contract** | Astra/Echo (`premium`/`earned`) 불변조건 · 첫 출시 범위 · domain slice. |
 | [VISION.md](active/VISION.md) | **v1 Product SSOT** | Steam v1 제품 범위·유저 여정·티어 정책 (원칙은 Constitution). |
+| [UX_DESIGN_SYSTEM.md](active/UX_DESIGN_SYSTEM.md) | **UX & Visual SSOT** | 정보 구조 · Desktop Shell · 공통 컴포넌트 · 테마 확장과 검증 계약. |
+| [UX_THEME_MIGRATION_INVENTORY.md](active/UX_THEME_MIGRATION_INVENTORY.md) | **Theme Migration Inventory** | 공식 5종 카탈로그 · 현재 코드 불일치 · hardcoded style와 Phase별 이관표. |
 | [CURRENT_STATE.md](active/CURRENT_STATE.md) | **Reality SSOT** | 실제 코드 및 레지스트리 상태 기준 구현 현황. |
 | [PROJECT_CONSTITUTION.md](active/PROJECT_CONSTITUTION.md) | **Stub (superseded)** | 구헌법 리다이렉트 → [history](history/PROJECT_CONSTITUTION.md). |
 | [ARCHITECTURE.md](active/ARCHITECTURE.md) | **Architecture SSOT** | v4 런타임 및 해시 샤딩 인프라 아키텍처. |

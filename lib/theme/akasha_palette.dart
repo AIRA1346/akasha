@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/library_theme.dart';
+import 'akasha_theme_preset.dart';
 
 @immutable
 class AkashaPalette extends ThemeExtension<AkashaPalette> {
@@ -22,6 +23,18 @@ class AkashaPalette extends ThemeExtension<AkashaPalette> {
   final Color accent;
   final Color accentSoft;
   final Color thumbPlaceholder;
+  final Color textPrimary;
+  final Color textSecondary;
+  final Color textMuted;
+  final Color onAccent;
+  final Color focusRing;
+  final Color success;
+  final Color warning;
+  final Color danger;
+  final Color info;
+  final Color scrim;
+  final Color shadow;
+  final Color artworkOverlay;
 
   const AkashaPalette({
     required this.background,
@@ -42,13 +55,31 @@ class AkashaPalette extends ThemeExtension<AkashaPalette> {
     required this.accent,
     required this.accentSoft,
     required this.thumbPlaceholder,
+    required this.textPrimary,
+    required this.textSecondary,
+    required this.textMuted,
+    required this.onAccent,
+    required this.focusRing,
+    required this.success,
+    required this.warning,
+    required this.danger,
+    required this.info,
+    required this.scrim,
+    required this.shadow,
+    required this.artworkOverlay,
   });
 
-  static final classic = AkashaPalette.fromLibraryTheme(LibraryTheme.classic);
+  static final classic = AkashaPalette.fromPreset(
+    AkashaThemePreset.classicDark,
+  );
 
   factory AkashaPalette.fromLibraryTheme(LibraryTheme theme) {
-    final background = theme.backgroundColor;
-    final accent = theme.accentColor;
+    return AkashaPalette.fromPreset(theme.preset);
+  }
+
+  factory AkashaPalette.fromPreset(AkashaThemePreset preset) {
+    final background = preset.backgroundColor;
+    final accent = preset.accentColor;
     final surface = _mix(background, Colors.white, 0.045);
     final surfaceElevated = _mix(background, Colors.white, 0.085);
     final sidebar = _mix(background, accent, 0.08);
@@ -84,7 +115,35 @@ class AkashaPalette extends ThemeExtension<AkashaPalette> {
       accent: accent,
       accentSoft: accent.withValues(alpha: 0.14),
       thumbPlaceholder: thumbPlaceholder,
+      textPrimary: const Color(0xFFF6F4FC),
+      textSecondary: const Color(0xFFCBC7D8),
+      textMuted: const Color(0xFFB0ACBE),
+      onAccent: bestForegroundOn(accent),
+      focusRing: accent,
+      success: const Color(0xFF4CD7A5),
+      warning: const Color(0xFFF2B84B),
+      danger: const Color(0xFFFF6B7A),
+      info: const Color(0xFF64B5F6),
+      scrim: Colors.black.withValues(alpha: 0.62),
+      shadow: Colors.black.withValues(alpha: 0.45),
+      artworkOverlay: background.withValues(alpha: 0.58),
     );
+  }
+
+  static Color bestForegroundOn(Color background) {
+    const light = Colors.white;
+    const dark = Colors.black;
+    return contrastRatio(light, background) >= contrastRatio(dark, background)
+        ? light
+        : dark;
+  }
+
+  static double contrastRatio(Color foreground, Color background) {
+    final a = foreground.computeLuminance();
+    final b = background.computeLuminance();
+    final lighter = a > b ? a : b;
+    final darker = a > b ? b : a;
+    return (lighter + 0.05) / (darker + 0.05);
   }
 
   static Color _mix(Color a, Color b, double amount) {
@@ -121,6 +180,18 @@ class AkashaPalette extends ThemeExtension<AkashaPalette> {
     Color? accent,
     Color? accentSoft,
     Color? thumbPlaceholder,
+    Color? textPrimary,
+    Color? textSecondary,
+    Color? textMuted,
+    Color? onAccent,
+    Color? focusRing,
+    Color? success,
+    Color? warning,
+    Color? danger,
+    Color? info,
+    Color? scrim,
+    Color? shadow,
+    Color? artworkOverlay,
   }) {
     return AkashaPalette(
       background: background ?? this.background,
@@ -141,6 +212,18 @@ class AkashaPalette extends ThemeExtension<AkashaPalette> {
       accent: accent ?? this.accent,
       accentSoft: accentSoft ?? this.accentSoft,
       thumbPlaceholder: thumbPlaceholder ?? this.thumbPlaceholder,
+      textPrimary: textPrimary ?? this.textPrimary,
+      textSecondary: textSecondary ?? this.textSecondary,
+      textMuted: textMuted ?? this.textMuted,
+      onAccent: onAccent ?? this.onAccent,
+      focusRing: focusRing ?? this.focusRing,
+      success: success ?? this.success,
+      warning: warning ?? this.warning,
+      danger: danger ?? this.danger,
+      info: info ?? this.info,
+      scrim: scrim ?? this.scrim,
+      shadow: shadow ?? this.shadow,
+      artworkOverlay: artworkOverlay ?? this.artworkOverlay,
     );
   }
 
@@ -177,6 +260,20 @@ class AkashaPalette extends ThemeExtension<AkashaPalette> {
       thumbPlaceholder:
           Color.lerp(thumbPlaceholder, other.thumbPlaceholder, t) ??
           thumbPlaceholder,
+      textPrimary: Color.lerp(textPrimary, other.textPrimary, t) ?? textPrimary,
+      textSecondary:
+          Color.lerp(textSecondary, other.textSecondary, t) ?? textSecondary,
+      textMuted: Color.lerp(textMuted, other.textMuted, t) ?? textMuted,
+      onAccent: Color.lerp(onAccent, other.onAccent, t) ?? onAccent,
+      focusRing: Color.lerp(focusRing, other.focusRing, t) ?? focusRing,
+      success: Color.lerp(success, other.success, t) ?? success,
+      warning: Color.lerp(warning, other.warning, t) ?? warning,
+      danger: Color.lerp(danger, other.danger, t) ?? danger,
+      info: Color.lerp(info, other.info, t) ?? info,
+      scrim: Color.lerp(scrim, other.scrim, t) ?? scrim,
+      shadow: Color.lerp(shadow, other.shadow, t) ?? shadow,
+      artworkOverlay:
+          Color.lerp(artworkOverlay, other.artworkOverlay, t) ?? artworkOverlay,
     );
   }
 }

@@ -2,7 +2,6 @@ import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/ports/record_link_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/browse_card.dart';
-import '../../../models/library_theme.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/link_candidate_service.dart';
 import '../../../services/personal_library_membership_service.dart';
@@ -32,7 +31,6 @@ mixin HomeShellControllerStateMixin on HomeShellControllerBase {
   List<AkashaItem> get items => vault.items;
   String get displayName => vault.displayName;
   bool get autoArchiveRegistry => vault.autoArchiveRegistry;
-  LibraryTheme get libraryTheme => vault.libraryTheme;
 
   bool get isSyncing => catalog.isSyncing;
   bool get isCatalogLoading => catalog.isCatalogLoading;
@@ -48,7 +46,8 @@ mixin HomeShellControllerStateMixin on HomeShellControllerBase {
   bool get isSidebarOpen => navigation.isSidebarOpen;
   int get timelineReloadToken => navigation.timelineReloadToken;
   bool get isPersonalLibraryMode => navigation.isPersonalLibraryMode;
-  bool get isCollectibleCollectionMode => navigation.isCollectibleCollectionMode;
+  bool get isCollectibleCollectionMode =>
+      navigation.isCollectibleCollectionMode;
   bool get isTimelineMode => navigation.isTimelineMode;
   bool get isRecordsMode => navigation.isRecordsMode;
   bool get isCuratedLibraryActive => navigation.isCuratedLibraryActive;

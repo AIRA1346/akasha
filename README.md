@@ -24,7 +24,7 @@ Steam v1은 그 비전을 **작품 감상 아카이브**로 검증한다. Sanctu
 | **Sanctum 볼트** | 로컬 `.md` + YAML front-matter, 폴더 연동·자동 감시 |
 | **엄선 작품 사전** | GitHub raw sync (`akasha-db`), 샤딩·온디맨드 로드 |
 | **IP 1카드 그리드** | 같은 IP는 카드 1장, 매체는 하단 칩으로 전부 표시 |
-| **나의 서재** *(신규 구현)* | 아카이브한 작품 전용 뷰(기본 무료) + 테마·꾸미기(IAP) |
+| **나의 서재** *(신규 구현)* | 아카이브한 작품 전용 뷰 + 번들 무료 테마 2종. Premium 테마 3종은 commerce 검증 후 판매 계획 |
 
 ### v1에 포함하는 부가 기능 (이미 구현 → 다듬기)
 
@@ -49,8 +49,11 @@ Steam v1은 그 비전을 **작품 감상 아카이브**로 검증한다. Sanctu
 ## 💰 Steam 배포 모델
 
 - **기본 앱:** 무료
-- **Steam IAP (코스메틱만):**
-  - 나의 서재 **테마·꾸미기** (배경, 진열 방식 등)
+- **번들 무료 테마:** Classic Dark · Midnight Blue
+- **Premium 테마 계획:** Sakura · Amethyst · Nocturne
+- **Steam IAP:** 현재 비활성. commerce gate 통과 전 premium 테마의 구매·잠금 UI를 표시하지 않음
+- **향후 코스메틱 범위:**
+  - 나의 서재 테마·꾸미기 (배경, 진열 방식 등)
   - 비주얼 테마·서재 꾸미기 팩
   - 서포터 팩
 - **작품 구매·감상 (장기):** 플랫폼 제휴·웹결제 — Steam 수수료 회피 ([commerce-boundary.md](docs/history/policy/commerce-boundary.md))

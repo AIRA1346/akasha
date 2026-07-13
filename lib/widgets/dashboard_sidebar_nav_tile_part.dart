@@ -69,9 +69,7 @@ class _SidebarNavTileState extends State<_SidebarNavTile> {
                   Icon(
                     widget.icon,
                     size: 18,
-                    color: selected
-                        ? palette.accent
-                        : AkashaColors.textSecondary,
+                    color: selected ? palette.accent : palette.textSecondary,
                   ),
                   const SizedBox(width: 12),
                   Expanded(
@@ -82,7 +80,9 @@ class _SidebarNavTileState extends State<_SidebarNavTile> {
                                   ? AkashaTypography.sidebarNavLabelSelected
                                   : AkashaTypography.sidebarNavLabel)
                               .copyWith(
-                                color: selected ? palette.accent : null,
+                                color: selected
+                                    ? palette.accent
+                                    : palette.textSecondary,
                               ),
                     ),
                   ),

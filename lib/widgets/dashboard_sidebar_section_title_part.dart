@@ -15,13 +15,16 @@ class _DashboardSidebarSectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
         children: [
           Text(
             title,
-            style: AkashaTypography.sidebarSectionTitle,
+            style: AkashaTypography.sidebarSectionTitle.copyWith(
+              color: palette.textMuted,
+            ),
           ),
           const Spacer(),
           if (onAdd != null)
@@ -30,11 +33,7 @@ class _DashboardSidebarSectionTitle extends StatelessWidget {
               borderRadius: BorderRadius.circular(4),
               child: Padding(
                 padding: const EdgeInsets.all(4),
-                child: Icon(
-                  Icons.add,
-                  size: 16,
-                  color: AkashaColors.textCaption,
-                ),
+                child: Icon(Icons.add, size: 16, color: palette.textMuted),
               ),
             ),
           if (trailingLabel != null && onTrailing != null)
@@ -45,7 +44,9 @@ class _DashboardSidebarSectionTitle extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
                 child: Text(
                   trailingLabel!,
-                  style: AkashaTypography.sidebarTrailingLink,
+                  style: AkashaTypography.sidebarTrailingLink.copyWith(
+                    color: palette.accent,
+                  ),
                 ),
               ),
             ),

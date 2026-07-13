@@ -15,12 +15,14 @@ Future<void> _homeDialogsCoordinatorShowCustomUrlDialog(
 Future<void> _homeDialogsCoordinatorShowLibraryThemePicker(
   HomeDialogsCoordinator coord,
 ) async {
+  final context = coord.hostContext();
+  final themeController = AkashaThemeScope.of(context);
   final picked = await HomeDialogsFacade.pickLibraryTheme(
-    coord.hostContext(),
-    current: coord.libraryTheme,
+    context,
+    current: LibraryTheme.fromPreset(themeController.effectivePreset),
   );
   if (picked != null && coord.isMounted()) {
-    coord.scheduleRebuild(() => coord.vault.libraryTheme = picked);
+    await themeController.setPreferredTheme(picked.id);
   }
 }
 
@@ -122,9 +124,7 @@ Future<void> _homeDialogsCoordinatorCreateDefaultVault(
         showDialog(
           context: context,
           builder: (dialogCtx) => AlertDialog(
-            title: Text(
-              dialogL10n?.homeVaultCreateDoneTitle ?? '아카이브 생성 완료',
-            ),
+            title: Text(dialogL10n?.homeVaultCreateDoneTitle ?? '아카이브 생성 완료'),
             content: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,

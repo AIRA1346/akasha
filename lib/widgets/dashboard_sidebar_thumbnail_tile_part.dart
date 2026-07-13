@@ -71,7 +71,7 @@ class _SidebarThumbnailTileState extends State<_SidebarThumbnailTile> {
                               child: Icon(
                                 widget.fallbackIcon,
                                 size: 16,
-                                color: AkashaColors.textCaption,
+                                color: palette.textMuted,
                               ),
                             ),
                     ),

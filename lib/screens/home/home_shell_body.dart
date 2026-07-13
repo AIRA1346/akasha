@@ -16,7 +16,6 @@ import '../../models/entity_browse_card.dart';
 import '../../models/browse_card.dart';
 import '../../models/dashboard_config.dart';
 import '../../models/enums.dart';
-import '../../models/library_theme.dart';
 import '../../models/collectible_collection.dart';
 import '../../models/personal_library_config.dart';
 import '../../models/user_catalog_entity.dart';
@@ -56,7 +55,6 @@ class HomeShellBody extends StatelessWidget {
   final bool canAddToLibrary;
   final bool vaultLinked;
   final String? vaultPath;
-  final LibraryTheme libraryTheme;
   final String displayName;
   final List<AkashaItem> items;
   final List<AkashaItem> recentExploreItems;
@@ -120,7 +118,8 @@ class HomeShellBody extends StatelessWidget {
   onWorkbenchEntitySaved;
   final Future<void> Function(String tabId) onWorkbenchEntityDeleted;
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
-  final Future<void> Function(UserCatalogEntity entity)? onAddToLibraryForEntity;
+  final Future<void> Function(UserCatalogEntity entity)?
+  onAddToLibraryForEntity;
   final void Function(CanvasRecord canvas)? onOpenCanvas;
   final Future<void> Function(
     List<BrowseCard> cards,
@@ -207,7 +206,6 @@ class HomeShellBody extends StatelessWidget {
     required this.canAddToLibrary,
     required this.vaultLinked,
     required this.vaultPath,
-    required this.libraryTheme,
     required this.displayName,
     required this.items,
     required this.recentExploreItems,

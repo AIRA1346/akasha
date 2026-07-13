@@ -13,7 +13,7 @@
 > - `system/` = durable non-rebuildable (candidates, ops, recovery, drafts); `.akasha/` = derived/disposable
 > - Bounded Home Read Closure (S0) · Architecture Closure **declared**
 > - Steam Inventory sandbox E2E POC passed; production IAP remains disabled
-> - Flutter app: `flutter analyze --no-pub` **0** · `flutter test --no-pub` **952**
+> - Flutter app: `flutter analyze --no-pub` **0** · `flutter test --no-pub` **974**
 > - Commerce packages: domain `dart test` **14** · backend `dart test` **17** · both `dart analyze` **0**
 > - Windows debug build **OK (2026-07-13)**
 >
@@ -38,7 +38,7 @@
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
 
-**v1 blocking에 가까운 검증:** root `flutter test` **952** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
+**v1 blocking에 가까운 검증:** root `flutter test` **974** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
 **v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.  
 **IAP:** `FeatureFlags.steamInAppPurchasesEnabled = false` — 미구현. Store IAP 표시·재심사 주장 금지 until Steam payment flow complete.
 ---
@@ -70,7 +70,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| root `flutter test` | **952 PASS** | ✅ |
+| root `flutter test` | **974 PASS** | ✅ |
 | commerce domain `dart test` | **14 PASS** | ✅ |
 | commerce backend `dart test` | **17 PASS** | ✅ |
 | `flutter analyze lib` | 0 issue | ✅ |
@@ -92,6 +92,7 @@
 
 * **나의 서재 (Personal Library):** v1 핵심 — 아카이브 작품 포스터·테마.
 * **대시보드 (Dashboard):** optional catalog 탐색 — Fact 카드 그리드.
+* **앱 테마 foundation:** canonical preset 5종과 별도 catalog, preferred/effective resolver, app-root theme, backdrop fallback, 5종 harness 구현. no-IAP picker는 Classic Dark·Midnight Blue만 노출하며 premium 3종은 미노출. `LibraryTheme`는 저장 ID 호환 adapter로 유지. 이관표는 [UX_THEME_MIGRATION_INVENTORY.md](UX_THEME_MIGRATION_INVENTORY.md).
 
 ### Ⅱ. 워크벤치 (4열 상세 편집기)
 * **탭 관리:** 다중 Work 및 Entity 탭을 열어둔 다단계 작업 공간.

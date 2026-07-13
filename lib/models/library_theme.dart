@@ -1,54 +1,68 @@
 import 'package:flutter/material.dart';
 
-/// 앱 비주얼 테마. Steam v1 무료 출시에서는 모든 기본 테마를 무료로 제공한다.
+import '../theme/akasha_theme_preset.dart';
+import 'theme_catalog.dart';
+
+/// Compatibility adapter for code written before the app-wide theme model.
+///
+/// New theme rendering code should use [AkashaThemePreset]. Product access and
+/// display metadata belong to [ThemeCatalog]. This adapter remains during the
+/// stored-ID migration so existing Home surfaces do not need a flag-day
+/// rewrite.
+@Deprecated('Use AkashaThemePreset and ThemeCatalog.')
 class LibraryTheme {
-  final String id;
-  final String name;
-  final Color backgroundColor;
-  final Color accentColor;
-  final bool requiresIap;
+  final AkashaThemePreset preset;
 
-  const LibraryTheme({
-    required this.id,
-    required this.name,
-    required this.backgroundColor,
-    this.accentColor = const Color(0xFF6C63FF),
-    this.requiresIap = false,
-  });
+  const LibraryTheme._(this.preset);
 
-  static const LibraryTheme classic = LibraryTheme(
-    id: 'classic',
-    name: 'Classic Dark',
-    backgroundColor: Color(0xFF13131D),
+  String get id => preset.id;
+  Color get backgroundColor => preset.backgroundColor;
+  Color get accentColor => preset.accentColor;
+
+  String get name => switch (id) {
+    'classicDark' => 'Classic Dark',
+    'midnightBlue' => 'Midnight Blue',
+    'sakura' => 'Sakura',
+    'amethyst' => 'Amethyst',
+    'nocturne' => 'Nocturne',
+    _ => id,
+  };
+
+  static const LibraryTheme classic = LibraryTheme._(
+    AkashaThemePreset.classicDark,
+  );
+  static const LibraryTheme midnight = LibraryTheme._(
+    AkashaThemePreset.midnightBlue,
+  );
+  static const LibraryTheme sakura = LibraryTheme._(AkashaThemePreset.sakura);
+  static const LibraryTheme amethyst = LibraryTheme._(
+    AkashaThemePreset.amethyst,
+  );
+  static const LibraryTheme nocturne = LibraryTheme._(
+    AkashaThemePreset.nocturne,
   );
 
-  static const LibraryTheme midnight = LibraryTheme(
-    id: 'midnight',
-    name: 'Midnight Blue',
-    backgroundColor: Color(0xFF0D1B2A),
-    accentColor: Color(0xFF64B5F6),
-  );
+  static const List<LibraryTheme> all = [
+    classic,
+    midnight,
+    sakura,
+    amethyst,
+    nocturne,
+  ];
 
-  static const LibraryTheme sakura = LibraryTheme(
-    id: 'sakura',
-    name: 'Sakura',
-    backgroundColor: Color(0xFF2A1A22),
-    accentColor: Color(0xFFF48FB1),
-  );
-
-  static const LibraryTheme amethyst = LibraryTheme(
-    id: 'amethyst',
-    name: 'Amethyst',
-    backgroundColor: Color(0xFF1A1A1A),
-    accentColor: Color(0xFFB39DDB),
-  );
-
-  static const List<LibraryTheme> all = [classic, midnight, sakura, amethyst];
-
-  static LibraryTheme? byId(String id) {
-    final normalized = id == 'obsidian' ? 'amethyst' : id;
+  static LibraryTheme fromPreset(AkashaThemePreset preset) {
     for (final theme in all) {
-      if (theme.id == normalized) return theme;
+      if (theme.id == preset.id) return theme;
+    }
+    return classic;
+  }
+
+  /// Accepts canonical IDs and the known persisted legacy aliases.
+  static LibraryTheme? byId(String id) {
+    final canonical = ThemeCatalog.canonicalPresetId(id);
+    if (canonical == null) return null;
+    for (final theme in all) {
+      if (theme.id == canonical) return theme;
     }
     return null;
   }

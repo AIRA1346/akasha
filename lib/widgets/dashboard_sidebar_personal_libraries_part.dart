@@ -27,6 +27,7 @@ class _DashboardSidebarPersonalLibrariesSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -42,12 +43,14 @@ class _DashboardSidebarPersonalLibrariesSection extends StatelessWidget {
             child: Text(
               l10n?.sidebarCreateMyLibraryPrompt ?? '나만의 서재를 만들어 보세요',
               style: AkashaTypography.bodySecondary.copyWith(
-                color: AkashaColors.textCaption,
+                color: palette.textMuted,
               ),
             ),
           )
         else
-          ...personalLibraries.map((lib) => _buildLibraryRow(lib, l10n)),
+          ...personalLibraries.map(
+            (lib) => _buildLibraryRow(lib, l10n, palette),
+          ),
       ],
     );
   }
@@ -55,6 +58,7 @@ class _DashboardSidebarPersonalLibrariesSection extends StatelessWidget {
   Widget _buildLibraryRow(
     PersonalLibraryConfig library,
     AppLocalizations? l10n,
+    AkashaPalette palette,
   ) {
     final isActive =
         selectionMode == SidebarSelectionMode.personalLibrary &&
@@ -76,13 +80,13 @@ class _DashboardSidebarPersonalLibrariesSection extends StatelessWidget {
       isActive: isActive,
       fallbackIcon: _iconForLibrary(library),
       onTap: () => onSelectPersonalLibrary(library.id),
-      trailing: _libraryMenu(library, l10n),
+      trailing: _libraryMenu(library, l10n, palette),
     );
 
     if (!library.isCurated || onDropWorkToLibrary == null) return tile;
 
     return PersonalLibraryDropTarget(
-      accentColor: DashboardSidebar.personalAccent,
+      accentColor: palette.accent,
       onAccept: (payload) {
         onDropWorkToLibrary?.call(library.id, payload);
       },
@@ -90,7 +94,11 @@ class _DashboardSidebarPersonalLibrariesSection extends StatelessWidget {
     );
   }
 
-  Widget? _libraryMenu(PersonalLibraryConfig library, AppLocalizations? l10n) {
+  Widget? _libraryMenu(
+    PersonalLibraryConfig library,
+    AppLocalizations? l10n,
+    AkashaPalette palette,
+  ) {
     final canEdit = onEditPersonalLibrary != null;
     final canDelete =
         onDeletePersonalLibrary != null && !library.isMasterArchive;
@@ -99,11 +107,7 @@ class _DashboardSidebarPersonalLibrariesSection extends StatelessWidget {
     return PopupMenuButton<_PersonalLibraryMenuAction>(
       tooltip: l10n?.appBarMoreToolsTooltip ?? '더보기',
       padding: EdgeInsets.zero,
-      icon: const Icon(
-        Icons.more_horiz,
-        size: 18,
-        color: AkashaColors.textCaption,
-      ),
+      icon: Icon(Icons.more_horiz, size: 18, color: palette.textMuted),
       itemBuilder: (context) => [
         if (canEdit)
           PopupMenuItem(

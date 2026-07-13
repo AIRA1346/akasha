@@ -2,12 +2,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../config/feature_flags.dart';
 import '../models/library_theme.dart';
+import '../models/theme_catalog.dart';
 
 /// Post-launch 권한 종류.
 /// Steam IAP는 [FeatureFlags.steamInAppPurchasesEnabled]가 true일 때만 실연동한다.
 enum EntitlementKind {
   /// 향후 Steam microtxn 후보 — 테마·서포터 등 코스메틱만.
   cosmetic,
+
   /// 향후 외부 콘텐츠 권한 후보.
   content,
 }
@@ -69,11 +71,14 @@ class EntitlementService {
   bool owns(String productId) => _owned.contains(productId);
 
   /// 제휴 콘텐츠 SKU (partnerId:sku 또는 workId 기반)
-  bool ownsContent(String entitlementKey) => _contentOwned.contains(entitlementKey);
+  bool ownsContent(String entitlementKey) =>
+      _contentOwned.contains(entitlementKey);
 
+  @Deprecated('Use AkashaThemeController access resolution.')
   bool canUseTheme(LibraryTheme theme) {
-    if (!theme.requiresIap) return true;
-    return owns(libraryThemePackId);
+    final entry = ThemeCatalog.byPresetId(theme.id);
+    if (entry == null) return false;
+    return entry.isBundled;
   }
 
   /// Cosmetic purchase entry. Returns false while IAP is unimplemented.
