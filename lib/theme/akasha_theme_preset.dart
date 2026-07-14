@@ -27,6 +27,27 @@ class AkashaThemeAssets {
   });
 
   static const none = AkashaThemeAssets();
+
+  Iterable<String> get paths sync* {
+    if (backdropAssetPath case final path?) yield path;
+    if (heroAssetPath case final path?) yield path;
+    if (textureAssetPath case final path?) yield path;
+    if (ambientAssetPath case final path?) yield path;
+  }
+
+  bool get isEmpty => paths.isEmpty;
+
+  AkashaThemeAssets withoutAmbient() {
+    return AkashaThemeAssets(
+      backdropAssetPath: backdropAssetPath,
+      heroAssetPath: heroAssetPath,
+      textureAssetPath: textureAssetPath,
+      backdropFit: backdropFit,
+      backdropAlignment: backdropAlignment,
+      heroFit: heroFit,
+      heroAlignment: heroAlignment,
+    );
+  }
 }
 
 /// Theme-controlled atmospheric effects.
@@ -56,6 +77,20 @@ class AkashaThemeEffects {
     overlayOpacity: 0.62,
     particleIntensity: 0,
   );
+
+  AkashaThemeEffects copyWith({
+    double? glowIntensity,
+    double? shadowIntensity,
+    double? overlayOpacity,
+    double? particleIntensity,
+  }) {
+    return AkashaThemeEffects(
+      glowIntensity: glowIntensity ?? this.glowIntensity,
+      shadowIntensity: shadowIntensity ?? this.shadowIntensity,
+      overlayOpacity: overlayOpacity ?? this.overlayOpacity,
+      particleIntensity: particleIntensity ?? this.particleIntensity,
+    );
+  }
 }
 
 /// Theme-owned visual resources exposed through the root [ThemeData].
@@ -77,6 +112,14 @@ class AkashaThemeVisuals extends ThemeExtension<AkashaThemeVisuals> {
   static final fallback = AkashaThemeVisuals.fromPreset(
     AkashaThemePreset.classicDark,
   );
+
+  AkashaThemeVisuals resolveForMotion({required bool reduceMotion}) {
+    if (!reduceMotion) return this;
+    return AkashaThemeVisuals(
+      assets: assets.withoutAmbient(),
+      effects: effects.copyWith(particleIntensity: 0),
+    );
+  }
 
   @override
   AkashaThemeVisuals copyWith({
@@ -129,6 +172,14 @@ extension AkashaThemeVisualsContext on BuildContext {
   AkashaThemeVisuals get akashaThemeVisuals =>
       Theme.of(this).extension<AkashaThemeVisuals>() ??
       AkashaThemeVisuals.fallback;
+
+  AkashaThemeVisuals get resolvedAkashaThemeVisuals {
+    final mediaQuery = MediaQuery.maybeOf(this);
+    final reduceMotion =
+        (mediaQuery?.disableAnimations ?? false) ||
+        (mediaQuery?.accessibleNavigation ?? false);
+    return akashaThemeVisuals.resolveForMotion(reduceMotion: reduceMotion);
+  }
 }
 
 /// A visual-only AKASHA theme preset.
@@ -150,6 +201,15 @@ class AkashaThemePreset {
     required this.assets,
     required this.effects,
   });
+
+  /// Optional bitmap resources for a pack must stay under this namespace.
+  /// A pack with no bitmap assets intentionally uses the shared code fallback.
+  String get assetNamespace => 'assets/themes/$id/';
+
+  bool get usesSharedArtworkFallback => assets.isEmpty;
+
+  bool get hasValidAssetNamespace =>
+      assets.paths.every((path) => path.startsWith(assetNamespace));
 
   static const classicDark = AkashaThemePreset(
     id: 'classicDark',

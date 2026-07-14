@@ -254,10 +254,12 @@ void main() {
       };
     }
 
-    final classic = await geometry(AkashaThemePreset.classicDark);
-    final midnight = await geometry(AkashaThemePreset.midnightBlue);
-
-    expect(midnight, classic);
+    Map<String, Rect>? baseline;
+    for (final preset in AkashaThemePreset.all) {
+      final current = await geometry(preset);
+      baseline ??= current;
+      expect(current, baseline, reason: preset.id);
+    }
   });
 
   testWidgets('inline and overlay Preview share the 288px rail contract', (
@@ -315,15 +317,18 @@ void main() {
       };
     }
 
-    final classic = await geometry(AkashaThemePreset.classicDark);
-    final midnight = await geometry(AkashaThemePreset.midnightBlue);
+    Map<String, Rect>? baseline;
+    for (final preset in AkashaThemePreset.all) {
+      final current = await geometry(preset);
+      baseline ??= current;
+      expect(current, baseline, reason: preset.id);
+    }
 
-    expect(classic['panel']!.width, 1024);
+    expect(baseline!['panel']!.width, 1024);
     expect(
-      classic['content']!.width,
+      baseline['content']!.width,
       PreviewPanelLayoutSpec.sheetContentMaxWidth,
     );
-    expect(classic['hero']!.height, PreviewPanelLayoutSpec.sheetHeroMaxHeight);
-    expect(midnight, classic);
+    expect(baseline['hero']!.height, PreviewPanelLayoutSpec.sheetHeroMaxHeight);
   });
 }

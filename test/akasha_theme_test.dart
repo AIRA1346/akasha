@@ -15,6 +15,8 @@ void main() {
       expect(visuals, isNotNull, reason: preset.id);
       expect(visuals!.assets, same(preset.assets), reason: preset.id);
       expect(visuals.effects, same(preset.effects), reason: preset.id);
+      expect(preset.hasValidAssetNamespace, isTrue, reason: preset.id);
+      expect(preset.assetNamespace, 'assets/themes/${preset.id}/');
       expect(
         AkashaPalette.contrastRatio(palette!.onAccent, palette.accent),
         greaterThanOrEqualTo(4.5),
@@ -34,6 +36,38 @@ void main() {
         );
       }
     }
+  });
+
+  test('reduced motion removes ambient art and particle intensity only', () {
+    const visuals = AkashaThemeVisuals(
+      assets: AkashaThemeAssets(
+        backdropAssetPath: 'assets/themes/fixture/backdrop.png',
+        heroAssetPath: 'assets/themes/fixture/hero.png',
+        textureAssetPath: 'assets/themes/fixture/texture.png',
+        ambientAssetPath: 'assets/themes/fixture/ambient.png',
+      ),
+      effects: AkashaThemeEffects(
+        glowIntensity: 0.7,
+        shadowIntensity: 0.4,
+        overlayOpacity: 0.5,
+        particleIntensity: 0.9,
+      ),
+    );
+
+    final resolved = visuals.resolveForMotion(reduceMotion: true);
+
+    expect(resolved.assets.backdropAssetPath, visuals.assets.backdropAssetPath);
+    expect(resolved.assets.heroAssetPath, visuals.assets.heroAssetPath);
+    expect(resolved.assets.textureAssetPath, visuals.assets.textureAssetPath);
+    expect(resolved.assets.ambientAssetPath, isNull);
+    expect(resolved.effects.glowIntensity, visuals.effects.glowIntensity);
+    expect(resolved.effects.shadowIntensity, visuals.effects.shadowIntensity);
+    expect(resolved.effects.overlayOpacity, visuals.effects.overlayOpacity);
+    expect(resolved.effects.particleIntensity, 0);
+    expect(
+      identical(visuals.resolveForMotion(reduceMotion: false), visuals),
+      isTrue,
+    );
   });
 
   test('app theme projects LibraryTheme into ThemeData and AkashaPalette', () {

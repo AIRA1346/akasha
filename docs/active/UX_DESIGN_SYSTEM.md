@@ -496,9 +496,18 @@ UX-4D 검증: root analyze **0**, root test **1119**, Windows Debug/Release buil
 
 ### Phase UX-5 — Theme packs와 회귀 검증
 
-- Classic Dark, Midnight Blue, Sakura, Amethyst, Nocturne asset/effect pack
-- theme × surface × viewport matrix 검증
-- screenshot/golden 기준과 reduced motion 검증
+**UX-5A 완료 (2026-07-14).** 최종 artwork보다 먼저 테마 패키지와 회귀 계약을 고정했다. 상세 SSOT는 [UX_THEME_REGRESSION_MATRIX.md](UX_THEME_REGRESSION_MATRIX.md)다.
+
+- [x] 5개 preset의 `assets/themes/<presetId>/` namespace와 누락 asset fallback 계약
+- [x] reduced motion에서 ambient artwork·particle만 제거하는 공통 resolver
+- [x] 5개 테마 × 핵심 surface × 3 viewport × 125% text geometry 회귀
+- [x] Classic Dark·Midnight Blue Windows component golden baseline
+- [ ] Classic Dark·Midnight Blue 승인 artwork 통합 — UX-5B
+- [ ] Sakura·Amethyst·Nocturne 최종 reference·art/effect 통합 — UX-5C
+
+UX-5A는 premium 구매·entitlement를 구현하지 않으며, 현재 다섯 preset은 모두 안전한 code fallback을 사용한다.
+
+UX-5A 검증: root analyze **0**, root test **1121**, Windows Debug/Release build PASS. `AkashaColors.*` 고정 측정은 UX-4D와 동일한 **328 lines / 81 files**다.
 
 ---
 
@@ -525,5 +534,6 @@ UX-4D 검증: root analyze **0**, root test **1119**, Windows Debug/Release buil
 | 재화의 의미와 authority | [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md) |
 | Timeline 시간 의미 | [TIMELINE_TIME_SEMANTICS_PLAN.md](../architecture/TIMELINE_TIME_SEMANTICS_PLAN.md) |
 | Theme migration 현실과 UX-0 inventory | [UX_THEME_MIGRATION_INVENTORY.md](UX_THEME_MIGRATION_INVENTORY.md) |
+| Theme package와 시각 회귀 matrix | [UX_THEME_REGRESSION_MATRIX.md](UX_THEME_REGRESSION_MATRIX.md) |
 
 기존 `docs/draft/`의 R14 UI/UX 감사와 Home redesign 문서는 역사적 분석 자료다. 현재의 UX 결정은 이 문서를 따른다.

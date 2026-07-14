@@ -110,17 +110,16 @@ void main() {
         Size(1366, 768),
         Size(1024, 720),
       ]) {
-        final classic = await geometry(
-          destination,
-          size,
-          AkashaThemePreset.classicDark,
-        );
-        final midnight = await geometry(
-          destination,
-          size,
-          AkashaThemePreset.midnightBlue,
-        );
-        expect(midnight, classic, reason: '${destination.name} $size');
+        Map<String, Rect>? baseline;
+        for (final preset in AkashaThemePreset.all) {
+          final current = await geometry(destination, size, preset);
+          baseline ??= current;
+          expect(
+            current,
+            baseline,
+            reason: '${destination.name} ${preset.id} $size',
+          );
+        }
       }
     }
   });

@@ -72,7 +72,7 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('Classic and Midnight keep identical shell geometry', (
+  testWidgets('all official themes keep identical shell geometry', (
     tester,
   ) async {
     addTearDown(() => tester.binding.setSurfaceSize(null));
@@ -81,20 +81,14 @@ void main() {
       Size(1366, 768),
       Size(1024, 720),
     ]) {
-      await _pumpFrame(
-        tester,
-        size: size,
-        preset: AkashaThemePreset.classicDark,
-      );
-      final classic = _geometry(tester);
-
-      await _pumpFrame(
-        tester,
-        size: size,
-        preset: AkashaThemePreset.midnightBlue,
-      );
-      expect(_geometry(tester), classic, reason: '$size');
-      expect(tester.takeException(), isNull, reason: '$size');
+      Map<String, Rect>? baseline;
+      for (final preset in AkashaThemePreset.all) {
+        await _pumpFrame(tester, size: size, preset: preset);
+        final current = _geometry(tester);
+        baseline ??= current;
+        expect(current, baseline, reason: '${preset.id} $size');
+        expect(tester.takeException(), isNull, reason: '${preset.id} $size');
+      }
     }
   });
 

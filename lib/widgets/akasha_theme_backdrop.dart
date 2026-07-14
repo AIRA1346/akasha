@@ -34,6 +34,9 @@ class AkashaThemeBackdrop extends StatelessWidget {
         (mediaQuery?.accessibleNavigation ?? false);
     final resolvedFit = fit ?? preset.assets.backdropFit;
     final resolvedAlignment = alignment ?? preset.assets.backdropAlignment;
+    final visuals = AkashaThemeVisuals.fromPreset(
+      preset,
+    ).resolveForMotion(reduceMotion: reduceMotion || !showAmbient);
 
     return Stack(
       fit: StackFit.passthrough,
@@ -42,10 +45,10 @@ class AkashaThemeBackdrop extends StatelessWidget {
           child: IgnorePointer(
             child: _ThemeDecoration(
               preset: preset,
+              visuals: visuals,
               fit: resolvedFit,
               alignment: resolvedAlignment,
               showTexture: showTexture,
-              showAmbient: showAmbient && !reduceMotion,
             ),
           ),
         ),
@@ -57,23 +60,23 @@ class AkashaThemeBackdrop extends StatelessWidget {
 
 class _ThemeDecoration extends StatelessWidget {
   final AkashaThemePreset preset;
+  final AkashaThemeVisuals visuals;
   final BoxFit fit;
   final AlignmentGeometry alignment;
   final bool showTexture;
-  final bool showAmbient;
 
   const _ThemeDecoration({
     required this.preset,
+    required this.visuals,
     required this.fit,
     required this.alignment,
     required this.showTexture,
-    required this.showAmbient,
   });
 
   @override
   Widget build(BuildContext context) {
-    final assets = preset.assets;
-    final effects = preset.effects;
+    final assets = visuals.assets;
+    final effects = visuals.effects;
 
     return Stack(
       fit: StackFit.expand,
@@ -105,12 +108,11 @@ class _ThemeDecoration extends StatelessWidget {
               opacity: effects.overlayOpacity.clamp(0.0, 1.0),
               child: _BackdropImage(path: path, fit: fit, alignment: alignment),
             ),
-        if (showAmbient)
-          if (assets.ambientAssetPath case final path?)
-            Opacity(
-              opacity: effects.particleIntensity.clamp(0.0, 1.0),
-              child: _BackdropImage(path: path, fit: fit, alignment: alignment),
-            ),
+        if (assets.ambientAssetPath case final path?)
+          Opacity(
+            opacity: effects.particleIntensity.clamp(0.0, 1.0),
+            child: _BackdropImage(path: path, fit: fit, alignment: alignment),
+          ),
         DecoratedBox(
           decoration: BoxDecoration(
             color: preset.backgroundColor.withValues(

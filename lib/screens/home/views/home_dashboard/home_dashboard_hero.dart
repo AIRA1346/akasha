@@ -39,7 +39,7 @@ class HomeDashboardHero extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
     final palette = context.akashaPalette;
-    final visuals = context.akashaThemeVisuals;
+    final visuals = context.resolvedAkashaThemeVisuals;
     final title = l10n?.dashboardHeroTitle ?? '기록하고, 연결하고, 발견하세요';
     final subtitle =
         l10n?.dashboardHeroSubtitle ??

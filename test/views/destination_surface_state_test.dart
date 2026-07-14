@@ -146,10 +146,13 @@ void main() {
       Size(1366, 768),
       Size(1024, 720),
     ]) {
-      final classic = await geometry(size, AkashaThemePreset.classicDark);
-      final midnight = await geometry(size, AkashaThemePreset.midnightBlue);
-      expect(midnight, classic, reason: '$size');
-      expect(tester.takeException(), isNull, reason: '$size');
+      Map<String, Rect>? baseline;
+      for (final preset in AkashaThemePreset.all) {
+        final current = await geometry(size, preset);
+        baseline ??= current;
+        expect(current, baseline, reason: '${preset.id} $size');
+        expect(tester.takeException(), isNull, reason: '${preset.id} $size');
+      }
     }
   });
 }

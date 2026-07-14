@@ -78,21 +78,19 @@ void main() {
     );
   }
 
-  testWidgets('Classic Dark and Midnight Blue keep identical Hero geometry', (
+  testWidgets('all official themes keep identical Hero geometry', (
     tester,
   ) async {
-    final classic = await _pumpHero(
-      tester,
-      size: const Size(1366, 768),
-      preset: AkashaThemePreset.classicDark,
-    );
-    final midnight = await _pumpHero(
-      tester,
-      size: const Size(1366, 768),
-      preset: AkashaThemePreset.midnightBlue,
-    );
-
-    expect(midnight, classic);
+    Map<String, Rect>? baseline;
+    for (final preset in AkashaThemePreset.all) {
+      final current = await _pumpHero(
+        tester,
+        size: const Size(1366, 768),
+        preset: preset,
+      );
+      baseline ??= current;
+      expect(current, baseline, reason: preset.id);
+    }
   });
 
   test('summary factory counts actual records and normalizes tags', () {
