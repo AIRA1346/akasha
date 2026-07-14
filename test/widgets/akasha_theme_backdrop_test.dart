@@ -66,10 +66,13 @@ void main() {
       accentColor: Color(0xFF8070FF),
       assets: AkashaThemeAssets(ambientAssetPath: 'missing/ambient.png'),
       effects: AkashaThemeEffects(
-        glowIntensity: 0,
-        shadowIntensity: 0,
-        overlayOpacity: 0,
-        particleIntensity: 1,
+        backdrop: AkashaBackdropEffects(
+          glowIntensity: 0,
+          scrimOpacity: 0,
+          textureOpacity: 0,
+          ambientOpacity: 1,
+        ),
+        hero: AkashaHeroEffects(glowIntensity: 0, shadowIntensity: 0),
       ),
     );
 

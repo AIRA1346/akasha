@@ -1,26 +1,21 @@
 import 'package:flutter/material.dart';
 
-import '../models/library_theme.dart';
 import 'akasha_palette.dart';
+import 'akasha_theme_registry.dart';
 import 'akasha_theme_preset.dart';
 
 /// AKASHA 글로벌 Material 3 다크 테마.
 abstract final class AkashaTheme {
-  static ThemeData dark({LibraryTheme appTheme = LibraryTheme.classic}) {
-    final base = ThemeData.dark(useMaterial3: true);
-    return withAppTheme(base, appTheme);
-  }
+  static ThemeData dark({AkashaThemePreset? preset}) =>
+      forPreset(preset ?? AkashaThemeRegistry.classicDarkPreset);
 
   static ThemeData forPreset(AkashaThemePreset preset) {
     return withPreset(ThemeData.dark(useMaterial3: true), preset);
   }
 
-  static ThemeData withAppTheme(ThemeData base, LibraryTheme appTheme) {
-    return withPreset(base, appTheme.preset);
-  }
-
   static ThemeData withPreset(ThemeData base, AkashaThemePreset preset) {
     final palette = AkashaPalette.fromPreset(preset);
+    final interaction = preset.effects.interaction;
     final colorScheme =
         ColorScheme.fromSeed(
           seedColor: palette.accent,
@@ -47,9 +42,23 @@ abstract final class AkashaTheme {
       colorScheme: colorScheme,
       textTheme: textTheme,
       primaryTextTheme: textTheme,
-      focusColor: palette.focusRing.withValues(alpha: 0.28),
-      hoverColor: palette.hoverSurface,
-      splashColor: palette.accentSoft,
+      focusColor: palette.focusRing.withValues(
+        alpha: 0.28 * interaction.focusIntensity,
+      ),
+      hoverColor:
+          Color.lerp(
+            Colors.transparent,
+            palette.hoverSurface,
+            interaction.hoverIntensity,
+          ) ??
+          palette.hoverSurface,
+      splashColor:
+          Color.lerp(
+            Colors.transparent,
+            palette.accentSoft,
+            interaction.pressedIntensity,
+          ) ??
+          palette.accentSoft,
       extensions: [
         ...base.extensions.values.where(
           (ext) => ext is! AkashaPalette && ext is! AkashaThemeVisuals,

@@ -1,4 +1,4 @@
-import 'package:akasha/services/library_theme_preferences.dart';
+import 'package:akasha/services/akasha_theme_preferences.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -14,7 +14,7 @@ void main() {
       SharedPreferences.setMockInitialValues({
         'akasha_library_theme_id': entry.key,
       });
-      expect(await LibraryThemePreferences.loadPreferredId(), entry.value);
+      expect(await AkashaThemePreferences.loadPreferredId(), entry.value);
       final prefs = await SharedPreferences.getInstance();
       expect(prefs.getString('akasha_preferred_theme_id'), entry.value);
     }
@@ -25,7 +25,7 @@ void main() {
       'akasha_preferred_theme_id': 'futureTheme',
     });
 
-    expect(await LibraryThemePreferences.loadPreferredId(), 'futureTheme');
+    expect(await AkashaThemePreferences.loadPreferredId(), 'futureTheme');
     final prefs = await SharedPreferences.getInstance();
     expect(prefs.getString('akasha_preferred_theme_id'), 'futureTheme');
   });
@@ -35,17 +35,14 @@ void main() {
       'akasha_library_theme_id': 'futureLegacyTheme',
     });
 
-    expect(
-      await LibraryThemePreferences.loadPreferredId(),
-      'futureLegacyTheme',
-    );
+    expect(await AkashaThemePreferences.loadPreferredId(), 'futureLegacyTheme');
     final prefs = await SharedPreferences.getInstance();
     expect(prefs.getString('akasha_preferred_theme_id'), 'futureLegacyTheme');
   });
 
   test('save normalizes known legacy alias', () async {
     SharedPreferences.setMockInitialValues({});
-    await LibraryThemePreferences.savePreferredId('midnight');
+    await AkashaThemePreferences.savePreferredId('midnight');
     final prefs = await SharedPreferences.getInstance();
     expect(prefs.getString('akasha_preferred_theme_id'), 'midnightBlue');
   });

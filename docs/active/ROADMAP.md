@@ -108,7 +108,7 @@
 * **[x] 대시보드-서재 역할 분리:** 카탈로그 탐색 공간(Dashboard)과 나의 기록 공간(Library) 정비
 * **[x] UX-1 공식 테마 foundation:** canonical 5종 · app-root theme · 무료 2종 picker · premium 3종 fallback preset. Commerce 활성 전 구매·잠금 UI 미노출
 * **[x] UX-2 Responsive Shell:** 단일 `AppDestination`·`PreviewTarget`, 3단계 `ShellLayoutSpec`, Sidebar/Dock selection SSOT, 기존 Graph/Timeline 접근성, provider 없는 utility slot 숨김
-* **[x] UX-5 Theme packages:** 공식 5테마 실제 backdrop/Hero 10개, 공통 geometry·fallback·reduced-motion 계약, Windows decode/paint golden. Premium 구매·entitlement는 계속 후속
+* **[x] UX-5 Theme packages:** 공식 5테마 실제 backdrop/Hero 10개, 공통 geometry·fallback·reduced-motion 계약, Windows decode/paint golden, 단일 registry와 surface별 effect 계약. Premium 구매·entitlement와 runtime 다운로드 pack은 계속 후속
 * **[x] Cast Collection / Hero Collection:** 인물·속성별 큐레이션 컬렉션 연동 기능
 * **[ ] (v1.1+) 서재 진열 방식 커스텀:** 그리드 밀도 및 표시 항목 개인화 (보류)
 * **[ ] (장기) Mixed Library:** 서로 다른 매체의 기록을 하나의 컬렉션으로 통합 (보류)

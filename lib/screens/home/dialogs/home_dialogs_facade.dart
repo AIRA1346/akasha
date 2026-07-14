@@ -14,14 +14,13 @@ import '../../../services/journal_vault_store.dart';
 import '../../../services/person_seed_registry.dart';
 import '../../../services/timeline_vault_store.dart';
 import '../../../utils/app_l10n.dart';
-import '../../../models/library_theme.dart';
 import '../../../core/ports/registry_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/ports/vault_port.dart';
 import '../../../services/works_registry.dart';
 import '../../../utils/entity_tag_validation.dart';
 import '../../../widgets/fusion_search_dialog.dart';
-import '../../../widgets/library_theme_picker.dart';
+import '../../../widgets/akasha_theme_picker.dart';
 import 'add_catalog_entity_dialog.dart';
 import 'add_work_dialog.dart';
 import 'catalog_add_contribution_dialog.dart';
@@ -69,7 +68,9 @@ class HomeDialogsFacade {
     );
   }
 
-  static Future<void> showCatalogContributionsInbox(BuildContext context) async {
+  static Future<void> showCatalogContributionsInbox(
+    BuildContext context,
+  ) async {
     await showCatalogContributionsInboxDialog(context);
   }
 
@@ -87,7 +88,9 @@ class HomeDialogsFacade {
     );
     if (saved == true) {
       await refreshContributionCount();
-      showMessage(l10n?.proposalSaved ?? '글로벌 사전 추가 제안이 저장되었습니다. (제안함에서 export)');
+      showMessage(
+        l10n?.proposalSaved ?? '글로벌 사전 추가 제안이 저장되었습니다. (제안함에서 export)',
+      );
     }
   }
 
@@ -322,11 +325,11 @@ class HomeDialogsFacade {
     await showPromptTemplatesDialog(context);
   }
 
-  static Future<LibraryTheme?> pickLibraryTheme(
+  static Future<String?> pickAppTheme(
     BuildContext context, {
-    required LibraryTheme current,
+    required String currentThemeId,
   }) {
-    return showLibraryThemePicker(context, current: current);
+    return showAkashaThemePicker(context, currentThemeId: currentThemeId);
   }
 
   static Future<void> refreshCatalogContributionCount({
@@ -343,10 +346,10 @@ class HomeDialogsFacade {
   }) {
     if (!FeatureFlags.catalogContributions) return null;
     return (query) => proposeCatalogAdd(
-          context: context,
-          query: query,
-          refreshContributionCount: refreshContributionCount,
-          showMessage: showMessage,
-        );
+      context: context,
+      query: query,
+      refreshContributionCount: refreshContributionCount,
+      showMessage: showMessage,
+    );
   }
 }

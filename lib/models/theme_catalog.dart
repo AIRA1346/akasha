@@ -10,6 +10,7 @@ enum ThemeAccessType { bundled, premium }
 class ThemeCatalogEntry {
   final String presetId;
   final String displayNameL10nKey;
+  final String fallbackDisplayName;
   final ThemeAccessType accessType;
   final int? astraCost;
   final int? echoCost;
@@ -18,6 +19,7 @@ class ThemeCatalogEntry {
   const ThemeCatalogEntry({
     required this.presetId,
     required this.displayNameL10nKey,
+    required this.fallbackDisplayName,
     required this.accessType,
     this.astraCost,
     this.echoCost,
@@ -26,70 +28,6 @@ class ThemeCatalogEntry {
 
   bool get isBundled => accessType == ThemeAccessType.bundled;
   bool get isPremium => accessType == ThemeAccessType.premium;
-}
-
-/// Canonical product catalog for the first five AKASHA themes.
-abstract final class ThemeCatalog {
-  static const classicDark = ThemeCatalogEntry(
-    presetId: 'classicDark',
-    displayNameL10nKey: 'themeClassicDarkName',
-    accessType: ThemeAccessType.bundled,
-  );
-
-  static const midnightBlue = ThemeCatalogEntry(
-    presetId: 'midnightBlue',
-    displayNameL10nKey: 'themeMidnightBlueName',
-    accessType: ThemeAccessType.bundled,
-  );
-
-  static const sakura = ThemeCatalogEntry(
-    presetId: 'sakura',
-    displayNameL10nKey: 'themeSakuraName',
-    accessType: ThemeAccessType.premium,
-  );
-
-  static const amethyst = ThemeCatalogEntry(
-    presetId: 'amethyst',
-    displayNameL10nKey: 'themeAmethystName',
-    accessType: ThemeAccessType.premium,
-  );
-
-  static const nocturne = ThemeCatalogEntry(
-    presetId: 'nocturne',
-    displayNameL10nKey: 'themeNocturneName',
-    accessType: ThemeAccessType.premium,
-  );
-
-  static const List<ThemeCatalogEntry> all = [
-    classicDark,
-    midnightBlue,
-    sakura,
-    amethyst,
-    nocturne,
-  ];
-
-  static ThemeCatalogEntry? byPresetId(String presetId) {
-    for (final entry in all) {
-      if (entry.presetId == presetId) return entry;
-    }
-    return null;
-  }
-
-  /// Converts only known persisted aliases. Unknown values stay unknown so the
-  /// preference layer can preserve the raw value without inventing meaning.
-  static String? canonicalPresetId(String persistedId) {
-    return switch (persistedId) {
-      'classic' => classicDark.presetId,
-      'midnight' => midnightBlue.presetId,
-      'obsidian' => amethyst.presetId,
-      'classicDark' ||
-      'midnightBlue' ||
-      'sakura' ||
-      'amethyst' ||
-      'nocturne' => persistedId,
-      _ => null,
-    };
-  }
 }
 
 enum ThemeAccessState { free, owned, locked, checking, unavailable }

@@ -1,12 +1,9 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../models/library_theme.dart';
-import '../models/theme_catalog.dart';
+import '../theme/akasha_theme_registry.dart';
 
-/// Stored theme preference compatibility and canonical-ID migration.
-class LibraryThemePreferences {
-  LibraryThemePreferences._();
-
+/// Stored app-theme preference compatibility and canonical-ID migration.
+abstract final class AkashaThemePreferences {
   static const _legacyPrefsKey = 'akasha_library_theme_id';
   static const _preferredPrefsKey = 'akasha_preferred_theme_id';
 
@@ -19,8 +16,8 @@ class LibraryThemePreferences {
     final raw =
         prefs.getString(_preferredPrefsKey) ??
         prefs.getString(_legacyPrefsKey) ??
-        ThemeCatalog.classicDark.presetId;
-    final canonical = ThemeCatalog.canonicalPresetId(raw);
+        AkashaThemeRegistry.defaultThemeId;
+    final canonical = AkashaThemeRegistry.canonicalId(raw);
     if (canonical == null) {
       if (prefs.getString(_preferredPrefsKey) == null) {
         await prefs.setString(_preferredPrefsKey, raw);
@@ -34,21 +31,11 @@ class LibraryThemePreferences {
   }
 
   static Future<void> savePreferredId(String presetId) async {
-    final canonical = ThemeCatalog.canonicalPresetId(presetId);
+    final canonical = AkashaThemeRegistry.canonicalId(presetId);
     if (canonical == null) {
       throw ArgumentError.value(presetId, 'presetId', 'Unknown theme preset');
     }
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_preferredPrefsKey, canonical);
-  }
-
-  /// Legacy object API retained for the Home migration window.
-  static Future<LibraryTheme> load() async {
-    final preferredId = await loadPreferredId();
-    return LibraryTheme.byId(preferredId) ?? LibraryTheme.classic;
-  }
-
-  static Future<void> save(LibraryTheme theme) async {
-    await savePreferredId(theme.id);
   }
 }

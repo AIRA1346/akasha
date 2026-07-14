@@ -6,6 +6,7 @@ import 'package:akasha/core/ports/record_link_port.dart';
 import 'package:akasha/core/ports/user_catalog_port.dart';
 import 'package:akasha/generated/l10n/app_localizations.dart';
 import 'package:akasha/models/akasha_item.dart';
+import 'package:akasha/theme/akasha_theme_registry.dart';
 import 'package:akasha/screens/home/views/destination_empty_state.dart';
 import 'package:akasha/screens/home/views/knowledge_graph_view.dart';
 import 'package:akasha/screens/home/views/timeline_view.dart';
@@ -147,7 +148,7 @@ void main() {
       Size(1024, 720),
     ]) {
       Map<String, Rect>? baseline;
-      for (final preset in AkashaThemePreset.all) {
+      for (final preset in AkashaThemeRegistry.presets) {
         final current = await geometry(size, preset);
         baseline ??= current;
         expect(current, baseline, reason: '${preset.id} $size');
@@ -160,7 +161,7 @@ void main() {
 Future<void> _pumpSurface(
   WidgetTester tester,
   Widget child, {
-  AkashaThemePreset preset = AkashaThemePreset.classicDark,
+  AkashaThemePreset preset = AkashaThemeRegistry.classicDarkPreset,
   Size size = const Size(1024, 720),
   double textScale = 1,
 }) async {

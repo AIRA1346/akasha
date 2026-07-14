@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
 
 import '../generated/l10n/app_localizations.dart';
-import '../models/library_theme.dart';
-import '../models/theme_catalog.dart';
+import '../theme/akasha_theme_registry.dart';
 import '../theme/akasha_palette.dart';
+import '../theme/akasha_theme_preset.dart';
 import '../utils/app_l10n.dart';
 
-/// 앱 테마 선택 바텀시트.
-Future<LibraryTheme?> showLibraryThemePicker(
+/// App-theme picker. Access filtering comes from the canonical registry; the
+/// picker returns a canonical preset ID and never owns persistence or access
+/// resolution.
+Future<String?> showAkashaThemePicker(
   BuildContext context, {
-  required LibraryTheme current,
+  required String currentThemeId,
 }) async {
-  return showModalBottomSheet<LibraryTheme>(
+  return showModalBottomSheet<String>(
     context: context,
     backgroundColor: context.akashaPalette.surfaceElevated,
     builder: (ctx) {
       final l10n = lookupAppL10n(ctx);
-      final bundledThemes = LibraryTheme.all.where(
-        (theme) => ThemeCatalog.byPresetId(theme.id)?.isBundled ?? false,
+      final bundledThemes = AkashaThemeRegistry.all.where(
+        (definition) => definition.catalog.isBundled,
       );
       return SafeArea(
         child: Padding(
@@ -43,23 +45,22 @@ Future<LibraryTheme?> showLibraryThemePicker(
                 ),
               ),
               const SizedBox(height: 12),
-              ...bundledThemes.map((theme) {
-                final selected = current.id == theme.id;
+              ...bundledThemes.map((definition) {
+                final selected = currentThemeId == definition.id;
+                final preset = definition.preset;
                 return ListTile(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                   tileColor: selected
-                      ? theme.accentColor.withValues(alpha: 0.08)
+                      ? preset.accentColor.withValues(alpha: 0.08)
                       : null,
-                  leading: _ThemeSwatch(theme: theme),
-                  title: Text(_localizedThemeName(l10n, theme)),
+                  leading: _ThemeSwatch(preset: preset),
+                  title: Text(_localizedThemeName(l10n, definition)),
                   trailing: selected
-                      ? Icon(Icons.check, color: theme.accentColor)
+                      ? Icon(Icons.check, color: preset.accentColor)
                       : null,
-                  onTap: () {
-                    Navigator.pop(ctx, theme);
-                  },
+                  onTap: () => Navigator.pop(ctx, definition.id),
                 );
               }),
             ],
@@ -70,25 +71,33 @@ Future<LibraryTheme?> showLibraryThemePicker(
   );
 }
 
-String _localizedThemeName(AppLocalizations? l10n, LibraryTheme theme) {
-  return switch (theme.id) {
-    'classicDark' => l10n?.themeClassicDarkName ?? 'Classic Dark',
-    'midnightBlue' => l10n?.themeMidnightBlueName ?? 'Midnight Blue',
-    'sakura' => l10n?.themeSakuraName ?? 'Sakura',
-    'amethyst' => l10n?.themeAmethystName ?? 'Amethyst',
-    'nocturne' => l10n?.themeNocturneName ?? 'Nocturne',
-    _ => theme.name,
+String _localizedThemeName(
+  AppLocalizations? l10n,
+  AkashaThemeDefinition definition,
+) {
+  final catalog = definition.catalog;
+  return switch (catalog.displayNameL10nKey) {
+    'themeClassicDarkName' =>
+      l10n?.themeClassicDarkName ?? catalog.fallbackDisplayName,
+    'themeMidnightBlueName' =>
+      l10n?.themeMidnightBlueName ?? catalog.fallbackDisplayName,
+    'themeSakuraName' => l10n?.themeSakuraName ?? catalog.fallbackDisplayName,
+    'themeAmethystName' =>
+      l10n?.themeAmethystName ?? catalog.fallbackDisplayName,
+    'themeNocturneName' =>
+      l10n?.themeNocturneName ?? catalog.fallbackDisplayName,
+    _ => catalog.fallbackDisplayName,
   };
 }
 
 class _ThemeSwatch extends StatelessWidget {
-  const _ThemeSwatch({required this.theme});
+  const _ThemeSwatch({required this.preset});
 
-  final LibraryTheme theme;
+  final AkashaThemePreset preset;
 
   @override
   Widget build(BuildContext context) {
-    final preview = AkashaPalette.fromLibraryTheme(theme);
+    final preview = AkashaPalette.fromPreset(preset);
 
     return Container(
       width: 42,

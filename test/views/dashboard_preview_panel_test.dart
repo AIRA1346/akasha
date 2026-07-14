@@ -4,6 +4,7 @@ import 'package:akasha/core/ports/record_link_port.dart';
 import 'package:akasha/core/ports/user_catalog_port.dart';
 import 'package:akasha/generated/l10n/app_localizations.dart';
 import 'package:akasha/models/akasha_item.dart';
+import 'package:akasha/theme/akasha_theme_registry.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/screens/home/views/dashboard_preview_panel.dart';
@@ -81,7 +82,7 @@ Future<void> _pumpPanel(
   WidgetTester tester, {
   required AkashaItem item,
   required List<AkashaItem> vaultItems,
-  AkashaThemePreset preset = AkashaThemePreset.classicDark,
+  AkashaThemePreset preset = AkashaThemeRegistry.classicDarkPreset,
   double textScale = 1,
   Size surfaceSize = const Size(360, 900),
   ShellPreviewPresentation previewPresentation =
@@ -139,7 +140,7 @@ void main() {
     var actionCount = 0;
     await tester.pumpWidget(
       MaterialApp(
-        theme: AkashaTheme.forPreset(AkashaThemePreset.classicDark),
+        theme: AkashaTheme.forPreset(AkashaThemeRegistry.classicDarkPreset),
         home: Scaffold(
           body: PreviewRecordActionBar(onPressed: () => actionCount++),
         ),
@@ -255,7 +256,7 @@ void main() {
     }
 
     Map<String, Rect>? baseline;
-    for (final preset in AkashaThemePreset.all) {
+    for (final preset in AkashaThemeRegistry.presets) {
       final current = await geometry(preset);
       baseline ??= current;
       expect(current, baseline, reason: preset.id);
@@ -318,7 +319,7 @@ void main() {
     }
 
     Map<String, Rect>? baseline;
-    for (final preset in AkashaThemePreset.all) {
+    for (final preset in AkashaThemeRegistry.presets) {
       final current = await geometry(preset);
       baseline ??= current;
       expect(current, baseline, reason: preset.id);

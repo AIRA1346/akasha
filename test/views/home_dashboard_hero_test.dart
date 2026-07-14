@@ -1,5 +1,6 @@
 import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/models/akasha_item.dart';
+import 'package:akasha/theme/akasha_theme_registry.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/screens/home/views/home_dashboard/home_dashboard_hero.dart';
@@ -69,7 +70,7 @@ void main() {
         await _pumpHero(
           tester,
           size: size,
-          preset: AkashaThemePreset.classicDark,
+          preset: AkashaThemeRegistry.classicDarkPreset,
           textScale: 1.25,
         );
 
@@ -82,7 +83,7 @@ void main() {
     tester,
   ) async {
     Map<String, Rect>? baseline;
-    for (final preset in AkashaThemePreset.all) {
+    for (final preset in AkashaThemeRegistry.presets) {
       final current = await _pumpHero(
         tester,
         size: const Size(1366, 768),

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:akasha/dev/theme/akasha_theme_harness.dart';
+import 'package:akasha/theme/akasha_theme_registry.dart';
 import 'package:akasha/screens/home/views/home_dashboard/home_dashboard_hero.dart';
 import 'package:akasha/screens/home/views/home_dashboard/home_dashboard_summary.dart';
 import 'package:akasha/theme/akasha_theme.dart';
@@ -24,23 +25,23 @@ void main() {
 
       for (final fixture in const [
         (
-          preset: AkashaThemePreset.classicDark,
+          preset: AkashaThemeRegistry.classicDarkPreset,
           golden: 'goldens/theme_classic_dark_standard.png',
         ),
         (
-          preset: AkashaThemePreset.midnightBlue,
+          preset: AkashaThemeRegistry.midnightBluePreset,
           golden: 'goldens/theme_midnight_blue_standard.png',
         ),
         (
-          preset: AkashaThemePreset.sakura,
+          preset: AkashaThemeRegistry.sakuraPreset,
           golden: 'goldens/theme_sakura_standard.png',
         ),
         (
-          preset: AkashaThemePreset.amethyst,
+          preset: AkashaThemeRegistry.amethystPreset,
           golden: 'goldens/theme_amethyst_standard.png',
         ),
         (
-          preset: AkashaThemePreset.nocturne,
+          preset: AkashaThemeRegistry.nocturnePreset,
           golden: 'goldens/theme_nocturne_standard.png',
         ),
       ]) {
@@ -73,23 +74,23 @@ void main() {
 
       for (final fixture in const [
         (
-          preset: AkashaThemePreset.classicDark,
+          preset: AkashaThemeRegistry.classicDarkPreset,
           golden: 'goldens/theme_classic_dark_hero.png',
         ),
         (
-          preset: AkashaThemePreset.midnightBlue,
+          preset: AkashaThemeRegistry.midnightBluePreset,
           golden: 'goldens/theme_midnight_blue_hero.png',
         ),
         (
-          preset: AkashaThemePreset.sakura,
+          preset: AkashaThemeRegistry.sakuraPreset,
           golden: 'goldens/theme_sakura_hero.png',
         ),
         (
-          preset: AkashaThemePreset.amethyst,
+          preset: AkashaThemeRegistry.amethystPreset,
           golden: 'goldens/theme_amethyst_hero.png',
         ),
         (
-          preset: AkashaThemePreset.nocturne,
+          preset: AkashaThemeRegistry.nocturnePreset,
           golden: 'goldens/theme_nocturne_hero.png',
         ),
       ]) {

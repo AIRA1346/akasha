@@ -7,6 +7,7 @@ import 'package:akasha/core/ports/record_link_port.dart';
 import 'package:akasha/core/ports/user_catalog_port.dart';
 import 'package:akasha/generated/l10n/app_localizations.dart';
 import 'package:akasha/models/akasha_item.dart';
+import 'package:akasha/theme/akasha_theme_registry.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/screens/home/views/entity_dashboard_preview_panel.dart';
@@ -153,8 +154,8 @@ void main() {
       };
     }
 
-    final classic = await geometry(AkashaThemePreset.classicDark);
-    final midnight = await geometry(AkashaThemePreset.midnightBlue);
+    final classic = await geometry(AkashaThemeRegistry.classicDarkPreset);
+    final midnight = await geometry(AkashaThemeRegistry.midnightBluePreset);
 
     expect(midnight, classic);
   });
@@ -174,7 +175,7 @@ void main() {
 
     await tester.pumpWidget(
       MaterialApp(
-        theme: AkashaTheme.forPreset(AkashaThemePreset.classicDark),
+        theme: AkashaTheme.forPreset(AkashaThemeRegistry.classicDarkPreset),
         locale: const Locale('ko'),
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,

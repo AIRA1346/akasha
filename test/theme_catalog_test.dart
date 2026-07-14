@@ -1,35 +1,55 @@
+import 'package:akasha/theme/akasha_theme_registry.dart';
 import 'package:akasha/models/theme_catalog.dart';
-import 'package:akasha/theme/akasha_theme_preset.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  test('official preset and catalog IDs match and are unique', () {
-    final presetIds = AkashaThemePreset.all.map((e) => e.id).toSet();
-    final catalogIds = ThemeCatalog.all.map((e) => e.presetId).toSet();
+  test(
+    'registry keeps preset and product metadata in one valid definition',
+    () {
+      final definitions = AkashaThemeRegistry.all;
+      final ids = definitions.map((definition) => definition.id).toSet();
 
-    expect(presetIds, hasLength(5));
-    expect(catalogIds, hasLength(5));
-    expect(presetIds, catalogIds);
-    expect(ThemeCatalog.classicDark.isBundled, isTrue);
-    expect(ThemeCatalog.midnightBlue.isBundled, isTrue);
-    expect(ThemeCatalog.sakura.isPremium, isTrue);
-    expect(ThemeCatalog.amethyst.isPremium, isTrue);
-    expect(ThemeCatalog.nocturne.isPremium, isTrue);
-  });
+      expect(definitions, hasLength(5));
+      expect(ids, hasLength(definitions.length));
+      for (final definition in definitions) {
+        expect(definition.catalog.presetId, definition.preset.id);
+        expect(definition.catalog.displayNameL10nKey, isNotEmpty);
+        expect(definition.catalog.fallbackDisplayName, isNotEmpty);
+        expect(AkashaThemeRegistry.byId(definition.id), same(definition));
+        expect(
+          AkashaThemeRegistry.presetById(definition.id),
+          same(definition.preset),
+        );
+        expect(
+          AkashaThemeRegistry.catalogById(definition.id),
+          same(definition.catalog),
+        );
+        expect(AkashaThemeRegistry.canonicalId(definition.id), definition.id);
+      }
+
+      expect(AkashaThemeRegistry.presets, hasLength(definitions.length));
+      expect(AkashaThemeRegistry.catalogEntries, hasLength(definitions.length));
+      expect(AkashaThemeRegistry.classicDarkCatalog.isBundled, isTrue);
+      expect(AkashaThemeRegistry.midnightBlueCatalog.isBundled, isTrue);
+      expect(AkashaThemeRegistry.sakuraCatalog.isPremium, isTrue);
+      expect(AkashaThemeRegistry.amethystCatalog.isPremium, isTrue);
+      expect(AkashaThemeRegistry.nocturneCatalog.isPremium, isTrue);
+    },
+  );
 
   test('legacy IDs normalize without inventing an Astral alias', () {
-    expect(ThemeCatalog.canonicalPresetId('classic'), 'classicDark');
-    expect(ThemeCatalog.canonicalPresetId('midnight'), 'midnightBlue');
-    expect(ThemeCatalog.canonicalPresetId('obsidian'), 'amethyst');
-    expect(ThemeCatalog.canonicalPresetId('sakura'), 'sakura');
-    expect(ThemeCatalog.canonicalPresetId('astral'), isNull);
-    expect(ThemeCatalog.canonicalPresetId('unknown'), isNull);
+    for (final alias in AkashaThemeRegistry.persistedAliases.entries) {
+      expect(AkashaThemeRegistry.byId(alias.value), isNotNull);
+      expect(AkashaThemeRegistry.canonicalId(alias.key), alias.value);
+    }
+    expect(AkashaThemeRegistry.canonicalId('astral'), isNull);
+    expect(AkashaThemeRegistry.canonicalId('unknown'), isNull);
   });
 
   test('access resolver distinguishes all provider states', () {
     expect(
       ThemeAccessResolver.resolve(
-        entry: ThemeCatalog.classicDark,
+        entry: AkashaThemeRegistry.classicDarkCatalog,
         authorityAvailable: false,
         isChecking: false,
         isOwned: null,
@@ -38,7 +58,7 @@ void main() {
     );
     expect(
       ThemeAccessResolver.resolve(
-        entry: ThemeCatalog.sakura,
+        entry: AkashaThemeRegistry.sakuraCatalog,
         authorityAvailable: false,
         isChecking: false,
         isOwned: null,
@@ -47,7 +67,7 @@ void main() {
     );
     expect(
       ThemeAccessResolver.resolve(
-        entry: ThemeCatalog.sakura,
+        entry: AkashaThemeRegistry.sakuraCatalog,
         authorityAvailable: true,
         isChecking: true,
         isOwned: null,
@@ -56,7 +76,7 @@ void main() {
     );
     expect(
       ThemeAccessResolver.resolve(
-        entry: ThemeCatalog.sakura,
+        entry: AkashaThemeRegistry.sakuraCatalog,
         authorityAvailable: true,
         isChecking: false,
         isOwned: false,
@@ -65,7 +85,7 @@ void main() {
     );
     expect(
       ThemeAccessResolver.resolve(
-        entry: ThemeCatalog.sakura,
+        entry: AkashaThemeRegistry.sakuraCatalog,
         authorityAvailable: true,
         isChecking: false,
         isOwned: true,
@@ -77,7 +97,7 @@ void main() {
   test('selection preserves preferred ID while effective falls back', () {
     final selection = ThemeAccessResolver.select(
       preferredThemeId: 'sakura',
-      availablePresetIds: AkashaThemePreset.all.map((e) => e.id).toSet(),
+      availablePresetIds: AkashaThemeRegistry.presets.map((e) => e.id).toSet(),
       accessByPresetId: const {'sakura': ThemeAccessState.unavailable},
     );
 

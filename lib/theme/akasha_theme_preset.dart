@@ -50,45 +50,209 @@ class AkashaThemeAssets {
   }
 }
 
-/// Theme-controlled atmospheric effects.
-///
-/// Every value is normalized to the inclusive 0-1 range. Geometry and motion
-/// behavior remain component concerns and are deliberately absent here.
+/// Theme-controlled backdrop effects.
 @immutable
-class AkashaThemeEffects {
+class AkashaBackdropEffects {
+  final double glowIntensity;
+  final double scrimOpacity;
+  final double textureOpacity;
+  final double ambientOpacity;
+
+  const AkashaBackdropEffects({
+    required this.glowIntensity,
+    required this.scrimOpacity,
+    required this.textureOpacity,
+    required this.ambientOpacity,
+  }) : assert(glowIntensity >= 0 && glowIntensity <= 1),
+       assert(scrimOpacity >= 0 && scrimOpacity <= 1),
+       assert(textureOpacity >= 0 && textureOpacity <= 1),
+       assert(ambientOpacity >= 0 && ambientOpacity <= 1);
+
+  AkashaBackdropEffects copyWith({
+    double? glowIntensity,
+    double? scrimOpacity,
+    double? textureOpacity,
+    double? ambientOpacity,
+  }) {
+    return AkashaBackdropEffects(
+      glowIntensity: glowIntensity ?? this.glowIntensity,
+      scrimOpacity: scrimOpacity ?? this.scrimOpacity,
+      textureOpacity: textureOpacity ?? this.textureOpacity,
+      ambientOpacity: ambientOpacity ?? this.ambientOpacity,
+    );
+  }
+
+  AkashaBackdropEffects lerp(AkashaBackdropEffects other, double t) {
+    return AkashaBackdropEffects(
+      glowIntensity: _lerpDouble(glowIntensity, other.glowIntensity, t),
+      scrimOpacity: _lerpDouble(scrimOpacity, other.scrimOpacity, t),
+      textureOpacity: _lerpDouble(textureOpacity, other.textureOpacity, t),
+      ambientOpacity: _lerpDouble(ambientOpacity, other.ambientOpacity, t),
+    );
+  }
+}
+
+/// Theme-controlled Home Hero effects.
+@immutable
+class AkashaHeroEffects {
   final double glowIntensity;
   final double shadowIntensity;
-  final double overlayOpacity;
-  final double particleIntensity;
 
-  const AkashaThemeEffects({
+  const AkashaHeroEffects({
     required this.glowIntensity,
     required this.shadowIntensity,
-    required this.overlayOpacity,
-    required this.particleIntensity,
   }) : assert(glowIntensity >= 0 && glowIntensity <= 1),
-       assert(shadowIntensity >= 0 && shadowIntensity <= 1),
-       assert(overlayOpacity >= 0 && overlayOpacity <= 1),
-       assert(particleIntensity >= 0 && particleIntensity <= 1);
+       assert(shadowIntensity >= 0 && shadowIntensity <= 1);
+
+  AkashaHeroEffects lerp(AkashaHeroEffects other, double t) {
+    return AkashaHeroEffects(
+      glowIntensity: _lerpDouble(glowIntensity, other.glowIntensity, t),
+      shadowIntensity: _lerpDouble(shadowIntensity, other.shadowIntensity, t),
+    );
+  }
+}
+
+/// Theme-controlled interaction emphasis without changing hit targets.
+@immutable
+class AkashaInteractionEffects {
+  final double hoverIntensity;
+  final double pressedIntensity;
+  final double focusIntensity;
+
+  const AkashaInteractionEffects({
+    required this.hoverIntensity,
+    required this.pressedIntensity,
+    required this.focusIntensity,
+  }) : assert(hoverIntensity >= 0 && hoverIntensity <= 1),
+       assert(pressedIntensity >= 0 && pressedIntensity <= 1),
+       assert(focusIntensity >= 0 && focusIntensity <= 1);
+
+  static const neutral = AkashaInteractionEffects(
+    hoverIntensity: 1,
+    pressedIntensity: 1,
+    focusIntensity: 1,
+  );
+
+  AkashaInteractionEffects lerp(AkashaInteractionEffects other, double t) {
+    return AkashaInteractionEffects(
+      hoverIntensity: _lerpDouble(hoverIntensity, other.hoverIntensity, t),
+      pressedIntensity: _lerpDouble(
+        pressedIntensity,
+        other.pressedIntensity,
+        t,
+      ),
+      focusIntensity: _lerpDouble(focusIntensity, other.focusIntensity, t),
+    );
+  }
+}
+
+/// Shared motion timing. Reduced motion resolves every decorative duration to
+/// zero while leaving layout and input behavior unchanged.
+@immutable
+class AkashaMotionEffects {
+  final Duration quickDuration;
+  final Duration standardDuration;
+  final Duration themeTransitionDuration;
+  final Curve standardCurve;
+
+  const AkashaMotionEffects({
+    required this.quickDuration,
+    required this.standardDuration,
+    required this.themeTransitionDuration,
+    required this.standardCurve,
+  });
+
+  static const standard = AkashaMotionEffects(
+    quickDuration: Duration(milliseconds: 140),
+    standardDuration: Duration(milliseconds: 200),
+    themeTransitionDuration: Duration(milliseconds: 200),
+    standardCurve: Curves.linear,
+  );
+
+  static const reduced = AkashaMotionEffects(
+    quickDuration: Duration.zero,
+    standardDuration: Duration.zero,
+    themeTransitionDuration: Duration.zero,
+    standardCurve: Curves.linear,
+  );
+
+  bool get isReduced =>
+      quickDuration == Duration.zero &&
+      standardDuration == Duration.zero &&
+      themeTransitionDuration == Duration.zero;
+
+  AkashaMotionEffects lerp(AkashaMotionEffects other, double t) {
+    return AkashaMotionEffects(
+      quickDuration: _lerpDuration(quickDuration, other.quickDuration, t),
+      standardDuration: _lerpDuration(
+        standardDuration,
+        other.standardDuration,
+        t,
+      ),
+      themeTransitionDuration: _lerpDuration(
+        themeTransitionDuration,
+        other.themeTransitionDuration,
+        t,
+      ),
+      standardCurve: t < 0.5 ? standardCurve : other.standardCurve,
+    );
+  }
+}
+
+/// Theme effects are grouped by the surface that consumes them. This prevents
+/// a backdrop tuning value from silently changing Hero or interaction chrome.
+@immutable
+class AkashaThemeEffects {
+  final AkashaBackdropEffects backdrop;
+  final AkashaHeroEffects hero;
+  final AkashaInteractionEffects interaction;
+  final AkashaMotionEffects motion;
+
+  const AkashaThemeEffects({
+    required this.backdrop,
+    required this.hero,
+    this.interaction = AkashaInteractionEffects.neutral,
+    this.motion = AkashaMotionEffects.standard,
+  });
 
   static const neutral = AkashaThemeEffects(
-    glowIntensity: 0.2,
-    shadowIntensity: 0.45,
-    overlayOpacity: 0.62,
-    particleIntensity: 0,
+    backdrop: AkashaBackdropEffects(
+      glowIntensity: 0.2,
+      scrimOpacity: 0.62,
+      textureOpacity: 0.62,
+      ambientOpacity: 0,
+    ),
+    hero: AkashaHeroEffects(glowIntensity: 0.2, shadowIntensity: 0.45),
   );
 
   AkashaThemeEffects copyWith({
-    double? glowIntensity,
-    double? shadowIntensity,
-    double? overlayOpacity,
-    double? particleIntensity,
+    AkashaBackdropEffects? backdrop,
+    AkashaHeroEffects? hero,
+    AkashaInteractionEffects? interaction,
+    AkashaMotionEffects? motion,
   }) {
     return AkashaThemeEffects(
-      glowIntensity: glowIntensity ?? this.glowIntensity,
-      shadowIntensity: shadowIntensity ?? this.shadowIntensity,
-      overlayOpacity: overlayOpacity ?? this.overlayOpacity,
-      particleIntensity: particleIntensity ?? this.particleIntensity,
+      backdrop: backdrop ?? this.backdrop,
+      hero: hero ?? this.hero,
+      interaction: interaction ?? this.interaction,
+      motion: motion ?? this.motion,
+    );
+  }
+
+  AkashaThemeEffects resolveForMotion({required bool reduceMotion}) {
+    if (!reduceMotion) return this;
+    return copyWith(
+      backdrop: backdrop.copyWith(ambientOpacity: 0),
+      motion: AkashaMotionEffects.reduced,
+    );
+  }
+
+  AkashaThemeEffects lerp(AkashaThemeEffects other, double t) {
+    return AkashaThemeEffects(
+      backdrop: backdrop.lerp(other.backdrop, t),
+      hero: hero.lerp(other.hero, t),
+      interaction: interaction.lerp(other.interaction, t),
+      motion: motion.lerp(other.motion, t),
     );
   }
 }
@@ -109,15 +273,16 @@ class AkashaThemeVisuals extends ThemeExtension<AkashaThemeVisuals> {
     return AkashaThemeVisuals(assets: preset.assets, effects: preset.effects);
   }
 
-  static final fallback = AkashaThemeVisuals.fromPreset(
-    AkashaThemePreset.classicDark,
+  static const fallback = AkashaThemeVisuals(
+    assets: AkashaThemeAssets.none,
+    effects: AkashaThemeEffects.neutral,
   );
 
   AkashaThemeVisuals resolveForMotion({required bool reduceMotion}) {
     if (!reduceMotion) return this;
     return AkashaThemeVisuals(
       assets: assets.withoutAmbient(),
-      effects: effects.copyWith(particleIntensity: 0),
+      effects: effects.resolveForMotion(reduceMotion: true),
     );
   }
 
@@ -140,32 +305,9 @@ class AkashaThemeVisuals extends ThemeExtension<AkashaThemeVisuals> {
     if (other is! AkashaThemeVisuals) return this;
     return AkashaThemeVisuals(
       assets: t < 0.5 ? assets : other.assets,
-      effects: AkashaThemeEffects(
-        glowIntensity: _lerpDouble(
-          effects.glowIntensity,
-          other.effects.glowIntensity,
-          t,
-        ),
-        shadowIntensity: _lerpDouble(
-          effects.shadowIntensity,
-          other.effects.shadowIntensity,
-          t,
-        ),
-        overlayOpacity: _lerpDouble(
-          effects.overlayOpacity,
-          other.effects.overlayOpacity,
-          t,
-        ),
-        particleIntensity: _lerpDouble(
-          effects.particleIntensity,
-          other.effects.particleIntensity,
-          t,
-        ),
-      ),
+      effects: effects.lerp(other.effects, t),
     );
   }
-
-  static double _lerpDouble(double a, double b, double t) => a + (b - a) * t;
 }
 
 extension AkashaThemeVisualsContext on BuildContext {
@@ -210,94 +352,16 @@ class AkashaThemePreset {
 
   bool get hasValidAssetNamespace =>
       assets.paths.every((path) => path.startsWith(assetNamespace));
+}
 
-  static const classicDark = AkashaThemePreset(
-    id: 'classicDark',
-    backgroundColor: Color(0xFF13131D),
-    accentColor: Color(0xFF6C63FF),
-    assets: AkashaThemeAssets(
-      backdropAssetPath: 'assets/themes/classicDark/backdrop.png',
-      heroAssetPath: 'assets/themes/classicDark/hero.png',
-    ),
-    effects: AkashaThemeEffects.neutral,
+double _lerpDouble(double a, double b, double t) => a + (b - a) * t;
+
+Duration _lerpDuration(Duration a, Duration b, double t) {
+  return Duration(
+    microseconds: _lerpDouble(
+      a.inMicroseconds.toDouble(),
+      b.inMicroseconds.toDouble(),
+      t,
+    ).round(),
   );
-
-  static const midnightBlue = AkashaThemePreset(
-    id: 'midnightBlue',
-    backgroundColor: Color(0xFF0D1B2A),
-    accentColor: Color(0xFF64B5F6),
-    assets: AkashaThemeAssets(
-      backdropAssetPath: 'assets/themes/midnightBlue/backdrop.png',
-      heroAssetPath: 'assets/themes/midnightBlue/hero.png',
-    ),
-    effects: AkashaThemeEffects(
-      glowIntensity: 0.16,
-      shadowIntensity: 0.48,
-      overlayOpacity: 0.64,
-      particleIntensity: 0,
-    ),
-  );
-
-  static const sakura = AkashaThemePreset(
-    id: 'sakura',
-    backgroundColor: Color(0xFF2A1A22),
-    accentColor: Color(0xFFF48FB1),
-    assets: AkashaThemeAssets(
-      backdropAssetPath: 'assets/themes/sakura/backdrop.png',
-      heroAssetPath: 'assets/themes/sakura/hero.png',
-    ),
-    effects: AkashaThemeEffects(
-      glowIntensity: 0.18,
-      shadowIntensity: 0.48,
-      overlayOpacity: 0.62,
-      particleIntensity: 0,
-    ),
-  );
-
-  static const amethyst = AkashaThemePreset(
-    id: 'amethyst',
-    backgroundColor: Color(0xFF1A1A1A),
-    accentColor: Color(0xFFB39DDB),
-    assets: AkashaThemeAssets(
-      backdropAssetPath: 'assets/themes/amethyst/backdrop.png',
-      heroAssetPath: 'assets/themes/amethyst/hero.png',
-    ),
-    effects: AkashaThemeEffects(
-      glowIntensity: 0.22,
-      shadowIntensity: 0.52,
-      overlayOpacity: 0.64,
-      particleIntensity: 0,
-    ),
-  );
-
-  static const nocturne = AkashaThemePreset(
-    id: 'nocturne',
-    backgroundColor: Color(0xFF090B0F),
-    accentColor: Color(0xFF93A4BD),
-    assets: AkashaThemeAssets(
-      backdropAssetPath: 'assets/themes/nocturne/backdrop.png',
-      heroAssetPath: 'assets/themes/nocturne/hero.png',
-    ),
-    effects: AkashaThemeEffects(
-      glowIntensity: 0.10,
-      shadowIntensity: 0.55,
-      overlayOpacity: 0.68,
-      particleIntensity: 0,
-    ),
-  );
-
-  static const List<AkashaThemePreset> all = [
-    classicDark,
-    midnightBlue,
-    sakura,
-    amethyst,
-    nocturne,
-  ];
-
-  static AkashaThemePreset? byId(String id) {
-    for (final preset in all) {
-      if (preset.id == id) return preset;
-    }
-    return null;
-  }
 }

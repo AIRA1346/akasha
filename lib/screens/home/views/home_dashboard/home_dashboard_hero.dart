@@ -63,7 +63,8 @@ class HomeDashboardHero extends StatelessWidget {
                   boxShadow: [
                     BoxShadow(
                       color: palette.shadow.withValues(
-                        alpha: 0.16 + visuals.effects.shadowIntensity * 0.16,
+                        alpha:
+                            0.16 + visuals.effects.hero.shadowIntensity * 0.16,
                       ),
                       blurRadius: 18,
                       offset: const Offset(0, 8),
@@ -76,7 +77,7 @@ class HomeDashboardHero extends StatelessWidget {
                       child: IgnorePointer(
                         child: _HeroWash(
                           palette: palette,
-                          glowIntensity: visuals.effects.glowIntensity,
+                          glowIntensity: visuals.effects.hero.glowIntensity,
                           wide: wide,
                         ),
                       ),
@@ -362,7 +363,7 @@ class _HeroArtwork extends StatelessWidget {
     if (assetPath == null) {
       return _HeroBrandVisual(
         palette: palette,
-        glowIntensity: visuals.effects.glowIntensity,
+        glowIntensity: visuals.effects.hero.glowIntensity,
       );
     }
 
@@ -376,7 +377,7 @@ class _HeroArtwork extends StatelessWidget {
           excludeFromSemantics: true,
           errorBuilder: (_, _, _) => _HeroBrandVisual(
             palette: palette,
-            glowIntensity: visuals.effects.glowIntensity,
+            glowIntensity: visuals.effects.hero.glowIntensity,
           ),
         ),
         DecoratedBox(

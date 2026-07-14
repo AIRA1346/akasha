@@ -4,6 +4,7 @@ import 'package:akasha/core/ports/record_link_port.dart';
 import 'package:akasha/core/ports/user_catalog_port.dart';
 import 'package:akasha/generated/l10n/app_localizations.dart';
 import 'package:akasha/models/akasha_item.dart';
+import 'package:akasha/theme/akasha_theme_registry.dart';
 import 'package:akasha/screens/home/views/home_dashboard/home_dashboard_insight_loader.dart';
 import 'package:akasha/screens/home/views/home_dashboard/home_dashboard_lower_section.dart';
 import 'package:akasha/screens/home/views/home_dashboard/home_dashboard_quick_actions_section.dart';
@@ -96,7 +97,7 @@ VaultRecordSummary _record({
 Future<Map<String, Rect>> _pumpLowerSection(
   WidgetTester tester, {
   required double width,
-  AkashaThemePreset preset = AkashaThemePreset.classicDark,
+  AkashaThemePreset preset = AkashaThemeRegistry.classicDarkPreset,
   double textScale = 1,
   RecordLinkPort? linkIndex,
   RecordSummaryIndexService? recordIndex,
@@ -263,7 +264,7 @@ void main() {
     final midnight = await _pumpLowerSection(
       tester,
       width: 1200,
-      preset: AkashaThemePreset.midnightBlue,
+      preset: AkashaThemeRegistry.midnightBluePreset,
     );
 
     expect(midnight, classic);
@@ -286,7 +287,7 @@ void main() {
     var vaultPath = 'C:/vault-a';
 
     Widget buildApp() => MaterialApp(
-      theme: AkashaTheme.forPreset(AkashaThemePreset.classicDark),
+      theme: AkashaTheme.forPreset(AkashaThemeRegistry.classicDarkPreset),
       locale: const Locale('ko'),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,

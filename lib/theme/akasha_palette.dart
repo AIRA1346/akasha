@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/library_theme.dart';
+import 'akasha_theme_registry.dart';
 import 'akasha_theme_preset.dart';
 
 @immutable
@@ -70,12 +70,8 @@ class AkashaPalette extends ThemeExtension<AkashaPalette> {
   });
 
   static final classic = AkashaPalette.fromPreset(
-    AkashaThemePreset.classicDark,
+    AkashaThemeRegistry.classicDarkPreset,
   );
-
-  factory AkashaPalette.fromLibraryTheme(LibraryTheme theme) {
-    return AkashaPalette.fromPreset(theme.preset);
-  }
 
   factory AkashaPalette.fromPreset(AkashaThemePreset preset) {
     final background = preset.backgroundColor;

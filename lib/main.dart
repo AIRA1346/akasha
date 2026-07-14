@@ -105,6 +105,9 @@ class _AkashaAppState extends State<AkashaApp> {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: AkashaTheme.forPreset(effectivePreset),
+      themeAnimationDuration:
+          effectivePreset.effects.motion.themeTransitionDuration,
+      themeAnimationCurve: effectivePreset.effects.motion.standardCurve,
       builder: (context, child) {
         Widget content = AkashaThemeBackdrop(
           preset: effectivePreset,

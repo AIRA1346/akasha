@@ -12,17 +12,17 @@ Future<void> _homeDialogsCoordinatorShowCustomUrlDialog(
   );
 }
 
-Future<void> _homeDialogsCoordinatorShowLibraryThemePicker(
+Future<void> _homeDialogsCoordinatorShowAppThemePicker(
   HomeDialogsCoordinator coord,
 ) async {
   final context = coord.hostContext();
   final themeController = AkashaThemeScope.of(context);
-  final picked = await HomeDialogsFacade.pickLibraryTheme(
+  final pickedId = await HomeDialogsFacade.pickAppTheme(
     context,
-    current: LibraryTheme.fromPreset(themeController.effectivePreset),
+    currentThemeId: themeController.effectiveThemeId,
   );
-  if (picked != null && coord.isMounted()) {
-    await themeController.setPreferredTheme(picked.id);
+  if (pickedId != null && coord.isMounted()) {
+    await themeController.setPreferredTheme(pickedId);
   }
 }
 

@@ -1,4 +1,5 @@
 import 'package:akasha/generated/l10n/app_localizations.dart';
+import 'package:akasha/theme/akasha_theme_registry.dart';
 import 'package:akasha/screens/home/app_destination.dart';
 import 'package:akasha/screens/home/views/catalog_entity_browse_widgets.dart';
 import 'package:akasha/screens/home/views/destination_context_header.dart';
@@ -55,7 +56,7 @@ void main() {
   ) async {
     await tester.pumpWidget(
       MaterialApp(
-        theme: AkashaTheme.forPreset(AkashaThemePreset.classicDark),
+        theme: AkashaTheme.forPreset(AkashaThemeRegistry.classicDarkPreset),
         locale: const Locale('ko'),
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
@@ -111,7 +112,7 @@ void main() {
         Size(1024, 720),
       ]) {
         Map<String, Rect>? baseline;
-        for (final preset in AkashaThemePreset.all) {
+        for (final preset in AkashaThemeRegistry.presets) {
           final current = await geometry(destination, size, preset);
           baseline ??= current;
           expect(
@@ -128,7 +129,7 @@ void main() {
 Future<void> _pumpHeader(
   WidgetTester tester, {
   required AppDestination destination,
-  AkashaThemePreset preset = AkashaThemePreset.classicDark,
+  AkashaThemePreset preset = AkashaThemeRegistry.classicDarkPreset,
   double textScale = 1,
   Size surfaceSize = const Size(1024, 720),
 }) async {

@@ -1,8 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../config/feature_flags.dart';
-import '../models/library_theme.dart';
-import '../models/theme_catalog.dart';
 
 /// Post-launch 권한 종류.
 /// Steam IAP는 [FeatureFlags.steamInAppPurchasesEnabled]가 true일 때만 실연동한다.
@@ -32,14 +30,14 @@ class EntitlementService {
   EntitlementService._();
   static final EntitlementService instance = EntitlementService._();
 
-  static const String libraryThemePackId = 'akasha_library_theme_pack';
+  static const String themePackProductId = 'akasha_library_theme_pack';
   static const String supporterPackId = 'akasha_supporter_pack';
   static const _prefsKey = 'akasha_entitlements';
   static const _contentPrefsKey = 'akasha_content_entitlements';
 
   static const List<CommerceProduct> catalog = [
     CommerceProduct(
-      id: libraryThemePackId,
+      id: themePackProductId,
       kind: EntitlementKind.cosmetic,
       label: '나의 서재 테마 팩',
     ),
@@ -73,13 +71,6 @@ class EntitlementService {
   /// 제휴 콘텐츠 SKU (partnerId:sku 또는 workId 기반)
   bool ownsContent(String entitlementKey) =>
       _contentOwned.contains(entitlementKey);
-
-  @Deprecated('Use AkashaThemeController access resolution.')
-  bool canUseTheme(LibraryTheme theme) {
-    final entry = ThemeCatalog.byPresetId(theme.id);
-    if (entry == null) return false;
-    return entry.isBundled;
-  }
 
   /// Cosmetic purchase entry. Returns false while IAP is unimplemented.
   Future<bool> purchaseCosmetic(String productId) async {
@@ -117,10 +108,5 @@ class EntitlementService {
     _contentOwned.add(entitlementKey);
     final prefs = await SharedPreferences.getInstance();
     await prefs.setStringList(_contentPrefsKey, _contentOwned.toList());
-  }
-
-  /// 개발·QA용 legacy helper.
-  Future<void> devUnlockLibraryThemes() async {
-    await grantEntitlement(libraryThemePackId);
   }
 }

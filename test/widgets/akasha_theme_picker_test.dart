@@ -1,5 +1,5 @@
-import 'package:akasha/models/library_theme.dart';
-import 'package:akasha/widgets/library_theme_picker.dart';
+import 'package:akasha/theme/akasha_theme_registry.dart';
+import 'package:akasha/widgets/akasha_theme_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -11,15 +11,17 @@ void main() {
     SharedPreferences.setMockInitialValues({});
   });
 
-  testWidgets('library theme picker uses app theme copy', (tester) async {
+  testWidgets('app theme picker exposes only bundled registry themes', (
+    tester,
+  ) async {
     await tester.pumpWidget(
       MaterialApp(
         home: Builder(
           builder: (context) {
             return ElevatedButton(
-              onPressed: () => showLibraryThemePicker(
+              onPressed: () => showAkashaThemePicker(
                 context,
-                current: LibraryTheme.classic,
+                currentThemeId: AkashaThemeRegistry.classicDark.id,
               ),
               child: const Text('open'),
             );

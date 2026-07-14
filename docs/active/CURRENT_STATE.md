@@ -3,10 +3,10 @@
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
 > **원칙:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) — 구현이 원칙과 충돌하면 구현·본 문서를 교정한다.
 > **제품 범위:** [VISION.md](VISION.md)
-> **갱신:** 2026-07-14
+> **갱신:** 2026-07-15
 > **Git:** `git rev-parse HEAD` (문서 커밋 tip과 어긋나면 tip을 따름)
 >
-> **Verification snapshot (2026-07-14):**
+> **Verification snapshot (2026-07-15):**
 > - P0 recoverable Vault write · SA-01/02/03 derived-index foundation
 > - P1 local CLI: bounded `record lookup`/`record read` · user-started `candidate.create`
 > - Candidate provenance review UX · Vault-spec self-description
@@ -22,10 +22,11 @@
 > - **Package modularization audit (closed)** — 단일 Flutter 앱 + `akasha_commerce_domain`(유일한 성공 공유 package) + 별도 backend 유지 · package graph **비순환** · 신규 EXTRACT_NOW **없음** · Melos / `akasha_core`·database·ui 전면 분할·줄 수 기준 분리 **기각**. Archive format/codec = PREPARE_BOUNDARY · Vault I/O / UI / Home orchestration = KEEP_IN_APP · Steam bridge는 production IAP·no-IAP 빌드 제외 요구 시 **CMake optional부터** 재검토 · Melos는 package 수·공통 orchestration 필요성이 실제로 늘 때만. **재오픈 트리거:** 앱 외 제2 소비자 · 플랫폼 완전 빌드 제외 · 안정 API/의존 방향 · 앱 타입 역참조 없음 · 독립 테스트·배포·CI 격리 실측 · unrelated 동시 변경 반복
 > - Flutter app: `flutter analyze` **0** · `flutter test` **1124**
 > - Commerce packages: domain `dart test` **14** · backend `dart test` **17** · both `dart analyze` **0**
-> - Windows debug/release build **OK (2026-07-14)**
+> - Windows debug/release build **OK (2026-07-15)**
 > - **UX-5A Theme package regression foundation** — 5 preset asset namespace/fallback/reduced-motion 계약 · 핵심 surface 3 viewport/125% text geometry · Classic Dark/Midnight Blue Windows golden · **done**. 실제 bundled artwork 검증은 아래 UX-5B로 확장.
 > - **UX-5B Bundled theme artwork** — Classic Dark·Midnight Blue 실제 backdrop/Hero 4개 · asset bundle/hash 검증 · 실제 decode/paint golden · **done**.
 > - **UX-5C Premium theme artwork** — Sakura·Amethyst·Nocturne reference·palette·effect 확정 · 실제 backdrop/Hero 6개 · 공식 5테마 Windows golden · **done**. Commerce·entitlement는 계속 비활성.
+> - **UX-5D Theme extensibility hardening** — 단일 `AkashaThemeRegistry` · ID-only preference migration · Backdrop/Hero/Interaction/Motion effect 분리 · legacy `LibraryTheme` runtime 제거 · 기존 golden 불변 · **done**.
 >
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)  
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
@@ -48,7 +49,7 @@
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
 
-**v1 blocking에 가까운 검증:** root `flutter test` **1119** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
+**v1 blocking에 가까운 검증:** root `flutter test` **1124** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
 **v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.  
 **IAP:** `FeatureFlags.steamInAppPurchasesEnabled = false` — 미구현. Store IAP 표시·재심사 주장 금지 until Steam payment flow complete.
 ---
@@ -80,7 +81,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| root `flutter test` | **1119 PASS** | ✅ |
+| root `flutter test` | **1124 PASS** | ✅ |
 | commerce domain `dart test` | **14 PASS** | ✅ |
 | commerce backend `dart test` | **17 PASS** | ✅ |
 | `flutter analyze lib` | 0 issue | ✅ |
@@ -108,7 +109,7 @@
 
 * **나의 서재 (Personal Library):** v1 핵심 — 아카이브 작품 포스터·테마.
 * **대시보드 (Dashboard):** optional catalog 탐색 — Fact 카드 그리드.
-* **앱 테마 foundation + UX-5A/B/C:** canonical preset 5종과 별도 catalog, preferred/effective resolver, app-root theme, backdrop fallback, 5종 harness 구현. asset namespace·reduced-motion resolver·5테마 핵심 surface geometry matrix를 고정하고 공식 5테마의 실제 backdrop/Hero 10개와 Windows decode/paint golden을 통합했다. premium 3종의 artwork는 준비됐지만 no-IAP에서 판매·구매·entitlement UI는 계속 미노출이다. `LibraryTheme`는 저장 ID 호환 adapter로 유지. 이관표는 [UX_THEME_MIGRATION_INVENTORY.md](UX_THEME_MIGRATION_INVENTORY.md), 회귀 SSOT는 [UX_THEME_REGRESSION_MATRIX.md](UX_THEME_REGRESSION_MATRIX.md), artwork 기록은 [assets/themes/ARTWORK_PROVENANCE.md](../../assets/themes/ARTWORK_PROVENANCE.md).
+* **앱 테마 foundation + UX-5A/B/C/D:** canonical preset 5종과 별도 catalog, preferred/effective resolver, app-root theme, backdrop fallback, 5종 harness 구현. asset namespace·reduced-motion resolver·5테마 핵심 surface geometry matrix를 고정하고 공식 5테마의 실제 backdrop/Hero 10개와 Windows decode/paint golden을 통합했다. preset·catalog·alias는 단일 `AkashaThemeRegistry`에서 등록하고 효과는 Backdrop/Hero/Interaction/Motion으로 분리한다. premium 3종의 artwork는 준비됐지만 no-IAP에서 판매·구매·entitlement UI는 계속 미노출이다. 이관표는 [UX_THEME_MIGRATION_INVENTORY.md](UX_THEME_MIGRATION_INVENTORY.md), 회귀 SSOT는 [UX_THEME_REGRESSION_MATRIX.md](UX_THEME_REGRESSION_MATRIX.md), artwork 기록은 [assets/themes/ARTWORK_PROVENANCE.md](../../assets/themes/ARTWORK_PROVENANCE.md).
 
 ### Ⅱ. 워크벤치 (4열 상세 편집기)
 * **탭 관리:** 다중 Work 및 Entity 탭을 열어둔 다단계 작업 공간.

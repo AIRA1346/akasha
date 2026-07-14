@@ -1,4 +1,5 @@
 import 'package:akasha/generated/l10n/app_localizations.dart';
+import 'package:akasha/theme/akasha_theme_registry.dart';
 import 'package:akasha/screens/home/views/home_dashboard/home_dashboard_quick_actions_section.dart';
 import 'package:akasha/theme/akasha_theme.dart';
 import 'package:akasha/theme/akasha_theme_preset.dart';
@@ -9,7 +10,7 @@ import 'package:flutter_test/flutter_test.dart';
 Future<Map<String, Rect>> _pumpSection(
   WidgetTester tester, {
   required double width,
-  AkashaThemePreset preset = AkashaThemePreset.classicDark,
+  AkashaThemePreset preset = AkashaThemeRegistry.classicDarkPreset,
   double textScale = 1,
   VoidCallback? onSearch,
   VoidCallback? onEntities,
@@ -89,7 +90,7 @@ void main() {
     final midnight = await _pumpSection(
       tester,
       width: 1200,
-      preset: AkashaThemePreset.midnightBlue,
+      preset: AkashaThemeRegistry.midnightBluePreset,
     );
 
     expect(midnight, classic);

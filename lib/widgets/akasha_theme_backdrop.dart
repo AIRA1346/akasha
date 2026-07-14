@@ -76,7 +76,7 @@ class _ThemeDecoration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final assets = visuals.assets;
-    final effects = visuals.effects;
+    final effects = visuals.effects.backdrop;
 
     return Stack(
       fit: StackFit.expand,
@@ -105,18 +105,18 @@ class _ThemeDecoration extends StatelessWidget {
         if (showTexture)
           if (assets.textureAssetPath case final path?)
             Opacity(
-              opacity: effects.overlayOpacity.clamp(0.0, 1.0),
+              opacity: effects.textureOpacity.clamp(0.0, 1.0),
               child: _BackdropImage(path: path, fit: fit, alignment: alignment),
             ),
         if (assets.ambientAssetPath case final path?)
           Opacity(
-            opacity: effects.particleIntensity.clamp(0.0, 1.0),
+            opacity: effects.ambientOpacity.clamp(0.0, 1.0),
             child: _BackdropImage(path: path, fit: fit, alignment: alignment),
           ),
         DecoratedBox(
           decoration: BoxDecoration(
             color: preset.backgroundColor.withValues(
-              alpha: effects.overlayOpacity.clamp(0.0, 1.0),
+              alpha: effects.scrimOpacity.clamp(0.0, 1.0),
             ),
           ),
         ),

@@ -1,9 +1,10 @@
 import 'package:flutter/widgets.dart';
 
 import '../config/feature_flags.dart';
+import '../theme/akasha_theme_registry.dart';
 import '../models/theme_catalog.dart';
 import '../theme/akasha_theme_preset.dart';
-import 'library_theme_preferences.dart';
+import 'akasha_theme_preferences.dart';
 
 /// App-root theme state.
 ///
@@ -27,7 +28,7 @@ class AkashaThemeController extends ChangeNotifier {
 
   static Future<AkashaThemeController> load() async {
     return AkashaThemeController._(
-      preferredThemeId: await LibraryThemePreferences.loadPreferredId(),
+      preferredThemeId: await AkashaThemePreferences.loadPreferredId(),
       commerceEnabled: FeatureFlags.steamInAppPurchasesEnabled,
       authorityAvailable: false,
       isChecking: false,
@@ -37,7 +38,7 @@ class AkashaThemeController extends ChangeNotifier {
 
   /// Synchronous Classic fallback for widget tests and recovery surfaces.
   factory AkashaThemeController.fallback({
-    String preferredThemeId = 'classicDark',
+    String preferredThemeId = AkashaThemeRegistry.defaultThemeId,
   }) {
     return AkashaThemeController._(
       preferredThemeId: preferredThemeId,
@@ -61,7 +62,8 @@ class AkashaThemeController extends ChangeNotifier {
   ThemeSelection get selection => _selection;
 
   AkashaThemePreset get effectivePreset =>
-      AkashaThemePreset.byId(effectiveThemeId) ?? AkashaThemePreset.classicDark;
+      AkashaThemeRegistry.presetById(effectiveThemeId) ??
+      AkashaThemeRegistry.classicDarkPreset;
 
   Map<String, ThemeAccessState> get accessByPresetId =>
       Map.unmodifiable(_buildAccessMap());
@@ -69,14 +71,14 @@ class AkashaThemeController extends ChangeNotifier {
   /// Selects only a currently usable preset. Locked/unavailable choices are
   /// not persisted, while an already stored premium preference remains intact.
   Future<bool> setPreferredTheme(String presetId) async {
-    final canonical = ThemeCatalog.canonicalPresetId(presetId);
-    if (canonical == null || AkashaThemePreset.byId(canonical) == null) {
+    final canonical = AkashaThemeRegistry.canonicalId(presetId);
+    if (canonical == null) {
       return false;
     }
     final access = _buildAccessMap()[canonical];
     if (access == null || !access.grantsAccess) return false;
 
-    await LibraryThemePreferences.savePreferredId(canonical);
+    await AkashaThemePreferences.savePreferredId(canonical);
     _preferredThemeId = canonical;
     _recompute();
     notifyListeners();
@@ -100,7 +102,7 @@ class AkashaThemeController extends ChangeNotifier {
 
   Map<String, ThemeAccessState> _buildAccessMap() {
     return {
-      for (final entry in ThemeCatalog.all)
+      for (final entry in AkashaThemeRegistry.catalogEntries)
         entry.presetId: ThemeAccessResolver.resolve(
           entry: entry,
           authorityAvailable: _commerceEnabled && _authorityAvailable,
@@ -114,10 +116,10 @@ class AkashaThemeController extends ChangeNotifier {
     _selection = ThemeAccessResolver.select(
       preferredThemeId: _preferredThemeId,
       availablePresetIds: {
-        for (final preset in AkashaThemePreset.all) preset.id,
+        for (final preset in AkashaThemeRegistry.presets) preset.id,
       },
       accessByPresetId: _buildAccessMap(),
-      fallbackThemeId: ThemeCatalog.classicDark.presetId,
+      fallbackThemeId: AkashaThemeRegistry.defaultThemeId,
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:akasha/main.dart';
+import 'package:akasha/theme/akasha_theme_registry.dart';
 import 'package:akasha/services/akasha_theme_controller.dart';
 import 'package:akasha/theme/akasha_palette.dart';
-import 'package:akasha/theme/akasha_theme_preset.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -24,7 +24,20 @@ void main() {
     final context = tester.element(find.text('root theme'));
     expect(
       context.akashaPalette.background,
-      AkashaThemePreset.midnightBlue.backgroundColor,
+      AkashaThemeRegistry.midnightBluePreset.backgroundColor,
+    );
+    final app = tester.widget<MaterialApp>(find.byType(MaterialApp));
+    expect(
+      app.themeAnimationDuration,
+      AkashaThemeRegistry
+          .midnightBluePreset
+          .effects
+          .motion
+          .themeTransitionDuration,
+    );
+    expect(
+      app.themeAnimationCurve,
+      AkashaThemeRegistry.midnightBluePreset.effects.motion.standardCurve,
     );
   });
 
@@ -57,7 +70,7 @@ void main() {
     final context = tester.element(find.text('themed dialog'));
     expect(
       context.akashaPalette.accent,
-      AkashaThemePreset.midnightBlue.accentColor,
+      AkashaThemeRegistry.midnightBluePreset.accentColor,
     );
   });
 
@@ -106,7 +119,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(
       tester.element(find.text('themed sheet')).akashaPalette.accent,
-      AkashaThemePreset.midnightBlue.accentColor,
+      AkashaThemeRegistry.midnightBluePreset.accentColor,
     );
     Navigator.of(tester.element(find.text('themed sheet'))).pop();
     await tester.pumpAndSettle();
@@ -115,7 +128,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(
       tester.element(find.text('themed popup')).akashaPalette.accent,
-      AkashaThemePreset.midnightBlue.accentColor,
+      AkashaThemeRegistry.midnightBluePreset.accentColor,
     );
     Navigator.of(tester.element(find.text('themed popup'))).pop();
     await tester.pumpAndSettle();
@@ -124,7 +137,7 @@ void main() {
     await tester.pump();
     expect(
       tester.element(find.text('themed snackbar')).akashaPalette.accent,
-      AkashaThemePreset.midnightBlue.accentColor,
+      AkashaThemeRegistry.midnightBluePreset.accentColor,
     );
   });
 }

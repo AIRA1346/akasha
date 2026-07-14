@@ -206,12 +206,6 @@ abstract class AppLocalizations {
   /// **'Toggle sidebar (Ctrl+B)'**
   String get appBarToggleSidebar;
 
-  /// No description provided for @appBarLibraryTheme.
-  ///
-  /// In en, this message translates to:
-  /// **'App theme'**
-  String get appBarLibraryTheme;
-
   /// No description provided for @appBarSearch.
   ///
   /// In en, this message translates to:

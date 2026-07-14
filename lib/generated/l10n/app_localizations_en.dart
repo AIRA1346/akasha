@@ -69,9 +69,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appBarToggleSidebar => 'Toggle sidebar (Ctrl+B)';
 
   @override
-  String get appBarLibraryTheme => 'App theme';
-
-  @override
   String get appBarSearch => 'Search';
 
   @override

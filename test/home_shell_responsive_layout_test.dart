@@ -1,3 +1,4 @@
+import 'package:akasha/theme/akasha_theme_registry.dart';
 import 'package:akasha/screens/home/shell_layout_frame.dart';
 import 'package:akasha/screens/home/shell_layout_spec.dart';
 import 'package:akasha/theme/akasha_theme.dart';
@@ -82,7 +83,7 @@ void main() {
       Size(1024, 720),
     ]) {
       Map<String, Rect>? baseline;
-      for (final preset in AkashaThemePreset.all) {
+      for (final preset in AkashaThemeRegistry.presets) {
         await _pumpFrame(tester, size: size, preset: preset);
         final current = _geometry(tester);
         baseline ??= current;
@@ -278,7 +279,7 @@ void main() {
 Future<void> _pumpFrame(
   WidgetTester tester, {
   required Size size,
-  AkashaThemePreset preset = AkashaThemePreset.classicDark,
+  AkashaThemePreset preset = AkashaThemeRegistry.classicDarkPreset,
   bool showPreview = true,
   Widget? center,
   Widget? preview,

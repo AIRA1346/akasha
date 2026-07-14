@@ -3,10 +3,10 @@
 > **지위:** Gate·Registry·프로그램 **운영 SSOT**  
 > **원칙:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) · **비전:** [VISION.md](VISION.md) · **구현:** [CURRENT_STATE.md](CURRENT_STATE.md)  
 > **출시:** [STEAM_RELEASE.md](STEAM_RELEASE.md)  
-> **갱신:** 2026-07-14
+> **갱신:** 2026-07-15
 > **Git:** `git rev-parse HEAD`  
 >
-> **Verification snapshot (2026-07-14):** root analyze **0** · root test **1124** · commerce domain **14** · backend **17** · Steam Inventory sandbox E2E POC passed · Windows debug/release build OK · `system/` durable vs `.akasha/` derived · **UX-3 Home complete · UX-4A/B/C/D core surfaces done · UX-5A/B/C five-theme package and artwork done** · **Locator index atomic+`.bak` recovery done** (concurrent write lock = follow-up only) · **Entity vault load diagnostics done** · **Entity path index rebuild/upsert issue exposure = follow-up only** · **Workbench recovery draft I/O transition diagnostics done** · **Entity `derivedIndexesUpdated` Home skip + debounce AND-coalesce done** (Work/Journal/Timeline = follow-up) · **HomeShell God Class 전면 리팩터 기각** · **vault-watch dispose lifecycle ACTION A done** · **Package modularization audit closed** — 단일 앱 + `akasha_commerce_domain` only · graph acyclic · no new EXTRACT_NOW · Melos/lib 전면 분할 기각 · Archive=PREPARE_BOUNDARY · Vault/UI/Home=KEEP_IN_APP · Steam→CMake optional when IAP/no-IAP exclude needed · reopen only on documented triggers
+> **Verification snapshot (2026-07-15):** root analyze **0** · root test **1124** · commerce domain **14** · backend **17** · Steam Inventory sandbox E2E POC passed · Windows debug/release build OK · `system/` durable vs `.akasha/` derived · **UX-3 Home complete · UX-4A/B/C/D core surfaces done · UX-5A/B/C/D five-theme package, artwork, extensibility hardening done** · **Locator index atomic+`.bak` recovery done** (concurrent write lock = follow-up only) · **Entity vault load diagnostics done** · **Entity path index rebuild/upsert issue exposure = follow-up only** · **Workbench recovery draft I/O transition diagnostics done** · **Entity `derivedIndexesUpdated` Home skip + debounce AND-coalesce done** (Work/Journal/Timeline = follow-up) · **HomeShell God Class 전면 리팩터 기각** · **vault-watch dispose lifecycle ACTION A done** · **Package modularization audit closed** — 단일 앱 + `akasha_commerce_domain` only · graph acyclic · no new EXTRACT_NOW · Melos/lib 전면 분할 기각 · Archive=PREPARE_BOUNDARY · Vault/UI/Home=KEEP_IN_APP · Steam→CMake optional when IAP/no-IAP exclude needed · reopen only on documented triggers
 > **현재 실행:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) — Architecture Closure 선언 후 Steam 출시 블로커 트랙
 > **IAP:** 미구현 (`steamInAppPurchasesEnabled = false`). 결제 완성 전 Store IAP 표시·재심사 주장 금지.
 ---
@@ -19,7 +19,7 @@
 | **commerce package tests** | domain **14 PASS** · backend **17 PASS** |
 | **flutter analyze** | **0 issue** (gates clean) |
 | **Home UI** | **UX-3A/B/C** ✅ · **UX-4A/B/C/D 핵심 surface** ✅ · honest CTA · responsive Preview · 목적지 역할/빈 상태 분리 |
-| **앱 테마** | UX-5A/B/C ✅ · canonical 5 preset · 무료 2/premium 3 catalog · 5테마 실제 backdrop/Hero 10개 · fallback · 5테마 geometry matrix · decode/paint golden · no-IAP 구매 UI 미노출 |
+| **앱 테마** | UX-5A/B/C/D ✅ · canonical 5 preset · 단일 registry · 무료 2/premium 3 catalog · surface별 effect · 실제 backdrop/Hero 10개 · fallback · geometry matrix · decode/paint golden · no-IAP 구매 UI 미노출 |
 | **Responsive Shell** | UX-2A/B/C · destination/preview SSOT · 256/232/drawer · 288 inline/overlay/sheet · 기존 Graph/Records 접근 ✅ |
 | **Steam Inventory POC** | sandbox purchase · exchange E2E 통과 ✅ · production IAP는 계속 비활성 |
 | **사이드바 서재** | `나만의 서재` 목록·active·`+`·select·삭제·DnD ✅ |
@@ -91,7 +91,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| root `flutter test` | **1119 PASS** | ✅ |
+| root `flutter test` | **1124 PASS** | ✅ |
 | commerce domain `dart test` | **14 PASS** | ✅ |
 | commerce backend `dart test` | **17 PASS** | ✅ |
 | `flutter analyze` | **0 issue** | ✅ |
@@ -109,7 +109,7 @@
 
 | 게이트 | 상태 | v1 blocking | 비고 |
 |--------|:----:|:-----------:|------|
-| **G-AUTO** | ✅ | ✅ | app **1119** · domain **14** · backend **17** · analyze **0** · release build **PASS** |
+| **G-AUTO** | ✅ | ✅ | app **1124** · domain **14** · backend **17** · analyze **0** · release build **PASS** |
 | **G-VAULT** | ✅ | **✅** | 볼트 연동·아카이브·Sanctum 저장·기록 UI — 사용자 수동 dogfood 완료 |
 | **G-QA** | ✅ | ✅ | P0 수동 **12/12** (2026-06-13) · 사용자 dogfood 확인 |
 | **G-STEAM** | 🔶 | ✅ | no-IAP BuildID **24015480** 업로드 완료 · Set Live/review 대기 |
@@ -298,6 +298,8 @@
 | 2026-07-14 | **UX-4D Graph/Timeline surfaces** — Graph 기존 Canvas=`지식 지도`/파생 index=`연결 목록` 구분 · Timeline 기록 허브 설명 · 목적지별 search/loading/recall chrome 정책 · 공통 empty/unavailable state · 탭 semantics · vault path reload · 3 viewport/125% text/Classic-Midnight geometry · `AkashaColors` **334→328 lines** · full tests **1119 PASS** · analyze **0** · Windows debug/release build PASS |
 | 2026-07-14 | **UX-5A Theme package regression foundation** — 5 preset asset namespace/fallback/reduced-motion 계약 · 5테마 핵심 surface × 3 viewport × 125% text geometry · Classic Dark/Midnight Blue Windows golden · 실제 artwork와 commerce는 후속 · full tests **1121 PASS** · analyze **0** · Windows debug/release build PASS |
 | 2026-07-14 | **UX-5B Bundled theme artwork** — Classic Dark·Midnight Blue 실제 backdrop/Hero 4개 (`6,282,701 bytes`) · asset namespace/bundle/hash 검증 · actual decode/paint Backdrop+Hero golden · provenance/prompt 기록 · premium 3종과 commerce는 후속 · full tests **1124 PASS** · analyze **0** · Windows debug/release build PASS |
+| 2026-07-14 | **UX-5C Premium theme artwork** — Sakura·Amethyst·Nocturne 실제 backdrop/Hero 6개 · 공식 5테마 artwork 10개 · Windows decode/paint golden · release bundle hash 일치 · commerce는 후속 · full tests **1124 PASS** · analyze **0** · Windows debug/release build PASS |
+| 2026-07-15 | **UX-5D Theme extensibility hardening** — 단일 `AkashaThemeRegistry` · ID-only preference migration · Backdrop/Hero/Interaction/Motion effect 분리 · `LibraryTheme` runtime 제거 · 기존 golden 불변 · `AkashaColors` **328 lines / 81 files** 유지 · full tests **1124 PASS** · analyze **0** · Windows debug/release build PASS |
 | 2026-07-13 | **Locator index atomic write + `.bak` restart recovery** — `DerivedIndexAtomicWrite` · Record/Entity path indexes · corrupt≠empty · stale `.tmp` never promoted · full tests **1030 PASS** · analyze **0** · concurrent write lock = follow-up only |
 | 2026-07-13 | **Entity vault load diagnostics** — `loadFromVaultWithIssues` · `parseDetailed` · empty≠corrupt-only · no auto-log (consumers handle `issues`) · callers unchanged · full tests **1042 PASS** · analyze **0** · tip **`13eb227f`** |
 | 2026-07-13 | **Entity path index rebuild issue exposure (조사만)** — `rebuildFromVault`/`upsertMarkdownFile` 무음 skip · `rebuildFromVaultWithIssues` 단독 구현 보류 · 명시적 소비자 대기 · 코드 미변경 |

@@ -13,7 +13,7 @@ PreferredSizeWidget _homeShellScaffoldAppBar(
     onSettings: () => unawaited(
       showAppPreferencesDialog(
         context,
-        onOpenAppTheme: controller.showLibraryThemePicker,
+        onOpenAppTheme: controller.showAppThemePicker,
         onOpenVaultSettings: controller.openVaultSettingsDialog,
       ),
     ),

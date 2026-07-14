@@ -19,7 +19,6 @@ import '../../../services/entity_vault_loader.dart';
 import '../../../services/entity_vault_path_conflict.dart';
 import '../../../services/open_collectible.dart';
 import '../../../services/akasha_theme_controller.dart';
-import '../../../models/library_theme.dart';
 import '../dialogs/home_dialogs_facade.dart';
 import '../dialogs/add_catalog_entity_dialog.dart';
 import '../../../utils/entity_tag_validation.dart';
@@ -113,8 +112,8 @@ class HomeDialogsCoordinator {
   Future<void> showCustomUrlDialog() =>
       _homeDialogsCoordinatorShowCustomUrlDialog(this);
 
-  Future<void> showLibraryThemePicker() =>
-      _homeDialogsCoordinatorShowLibraryThemePicker(this);
+  Future<void> showAppThemePicker() =>
+      _homeDialogsCoordinatorShowAppThemePicker(this);
 
   Future<void> openCatalogContributionsInbox() =>
       _homeDialogsCoordinatorOpenCatalogContributionsInbox(this);

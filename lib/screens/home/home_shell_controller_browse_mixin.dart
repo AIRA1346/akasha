@@ -8,12 +8,15 @@ import '../../../models/enums.dart';
 import '../../../core/archiving/entity_anchor.dart';
 import 'coordinators/home_collection_reorder_ops.dart';
 import 'home_shell_controller_base.dart';
+
 mixin HomeShellControllerBrowseMixin on HomeShellControllerBase {
   Future<void> openSearchDialog() => dialogs.openSearchDialog();
 
-  Future<void> onAddWorksFromLibraryEdit() => dialogs.onAddWorksFromLibraryEdit();
+  Future<void> onAddWorksFromLibraryEdit() =>
+      dialogs.onAddWorksFromLibraryEdit();
 
-  void toggleCategory(MediaCategory category) => browse.toggleCategory(category);
+  void toggleCategory(MediaCategory category) =>
+      browse.toggleCategory(category);
 
   void clearCategories() => browse.clearCategories();
 
@@ -27,26 +30,27 @@ mixin HomeShellControllerBrowseMixin on HomeShellControllerBase {
   Widget buildPosterCard(BrowseCard card) => browse.buildPosterCard(card);
 
   Future<void> clearRegistryCache() => registryUi.clearDiskCacheAndReload(
-        host.context,
-        registry: registry,
-        dashboardCtrl: dashboardCtrl,
-        filterCtrl: filterCtrl,
-        onCatalogLoadingChanged: (v) => catalog.isCatalogLoading = v,
-        isMounted: () => host.mounted,
-        setState: wrapSetState,
-        onDataChanged: rebuild,
-      );
+    host.context,
+    registry: registry,
+    dashboardCtrl: dashboardCtrl,
+    filterCtrl: filterCtrl,
+    onCatalogLoadingChanged: (v) => catalog.isCatalogLoading = v,
+    isMounted: () => host.mounted,
+    setState: wrapSetState,
+    onDataChanged: rebuild,
+  );
 
   Future<void> showCustomUrlDialog() => dialogs.showCustomUrlDialog();
 
-  Future<void> showLibraryThemePicker() => dialogs.showLibraryThemePicker();
+  Future<void> showAppThemePicker() => dialogs.showAppThemePicker();
 
   Future<void> openCatalogContributionsInbox() =>
       dialogs.openCatalogContributionsInbox();
 
   Future<void> openVaultSettingsDialog() => dialogs.openVaultSettingsDialog();
 
-  Future<void> openClipboardImportDialog() => dialogs.openClipboardImportDialog();
+  Future<void> openClipboardImportDialog() =>
+      dialogs.openClipboardImportDialog();
 
   Future<void> openTimelineQuickCapture() => dialogs.openTimelineQuickCapture();
 
@@ -63,8 +67,7 @@ mixin HomeShellControllerBrowseMixin on HomeShellControllerBase {
     List<BrowseCard> cards,
     int oldIndex,
     int newIndex,
-  ) =>
-      browse.onCuratedReorder(cards, oldIndex, newIndex);
+  ) => browse.onCuratedReorder(cards, oldIndex, newIndex);
 
   Future<void> onEntityCollectionCuratedReorder(
     List<EntityBrowseCard> visibleCards,
