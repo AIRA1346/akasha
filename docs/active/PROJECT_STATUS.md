@@ -6,7 +6,7 @@
 > **갱신:** 2026-07-14
 > **Git:** `git rev-parse HEAD`  
 >
-> **Verification snapshot (2026-07-14):** root analyze **0** · root test **1124** · commerce domain **14** · backend **17** · Steam Inventory sandbox E2E POC passed · Windows debug/release build OK · `system/` durable vs `.akasha/` derived · **UX-3 Home complete · UX-4A/B/C/D core surfaces done · UX-5A/B theme package and bundled artwork done** · **Locator index atomic+`.bak` recovery done** (concurrent write lock = follow-up only) · **Entity vault load diagnostics done** · **Entity path index rebuild/upsert issue exposure = follow-up only** · **Workbench recovery draft I/O transition diagnostics done** · **Entity `derivedIndexesUpdated` Home skip + debounce AND-coalesce done** (Work/Journal/Timeline = follow-up) · **HomeShell God Class 전면 리팩터 기각** · **vault-watch dispose lifecycle ACTION A done** · **Package modularization audit closed** — 단일 앱 + `akasha_commerce_domain` only · graph acyclic · no new EXTRACT_NOW · Melos/lib 전면 분할 기각 · Archive=PREPARE_BOUNDARY · Vault/UI/Home=KEEP_IN_APP · Steam→CMake optional when IAP/no-IAP exclude needed · reopen only on documented triggers
+> **Verification snapshot (2026-07-14):** root analyze **0** · root test **1124** · commerce domain **14** · backend **17** · Steam Inventory sandbox E2E POC passed · Windows debug/release build OK · `system/` durable vs `.akasha/` derived · **UX-3 Home complete · UX-4A/B/C/D core surfaces done · UX-5A/B/C five-theme package and artwork done** · **Locator index atomic+`.bak` recovery done** (concurrent write lock = follow-up only) · **Entity vault load diagnostics done** · **Entity path index rebuild/upsert issue exposure = follow-up only** · **Workbench recovery draft I/O transition diagnostics done** · **Entity `derivedIndexesUpdated` Home skip + debounce AND-coalesce done** (Work/Journal/Timeline = follow-up) · **HomeShell God Class 전면 리팩터 기각** · **vault-watch dispose lifecycle ACTION A done** · **Package modularization audit closed** — 단일 앱 + `akasha_commerce_domain` only · graph acyclic · no new EXTRACT_NOW · Melos/lib 전면 분할 기각 · Archive=PREPARE_BOUNDARY · Vault/UI/Home=KEEP_IN_APP · Steam→CMake optional when IAP/no-IAP exclude needed · reopen only on documented triggers
 > **현재 실행:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) — Architecture Closure 선언 후 Steam 출시 블로커 트랙
 > **IAP:** 미구현 (`steamInAppPurchasesEnabled = false`). 결제 완성 전 Store IAP 표시·재심사 주장 금지.
 ---
@@ -19,7 +19,7 @@
 | **commerce package tests** | domain **14 PASS** · backend **17 PASS** |
 | **flutter analyze** | **0 issue** (gates clean) |
 | **Home UI** | **UX-3A/B/C** ✅ · **UX-4A/B/C/D 핵심 surface** ✅ · honest CTA · responsive Preview · 목적지 역할/빈 상태 분리 |
-| **앱 테마** | UX-5A/B ✅ · canonical 5 preset · 무료 2/premium 3 catalog · 무료 2테마 실제 backdrop/Hero · premium fallback · 5테마 geometry matrix · decode/paint golden |
+| **앱 테마** | UX-5A/B/C ✅ · canonical 5 preset · 무료 2/premium 3 catalog · 5테마 실제 backdrop/Hero 10개 · fallback · 5테마 geometry matrix · decode/paint golden · no-IAP 구매 UI 미노출 |
 | **Responsive Shell** | UX-2A/B/C · destination/preview SSOT · 256/232/drawer · 288 inline/overlay/sheet · 기존 Graph/Records 접근 ✅ |
 | **Steam Inventory POC** | sandbox purchase · exchange E2E 통과 ✅ · production IAP는 계속 비활성 |
 | **사이드바 서재** | `나만의 서재` 목록·active·`+`·select·삭제·DnD ✅ |

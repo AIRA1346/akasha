@@ -83,6 +83,9 @@ flutter:
     - assets/branding/
     - assets/themes/classicDark/
     - assets/themes/midnightBlue/
+    - assets/themes/sakura/
+    - assets/themes/amethyst/
+    - assets/themes/nocturne/
     - assets/registry/manifest.json
     - assets/registry/search_index.json
     - assets/registry/search_index/

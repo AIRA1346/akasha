@@ -238,31 +238,52 @@ class AkashaThemePreset {
     ),
   );
 
-  /// Temporary color fallback until the final Sakura artwork pack is ready.
   static const sakura = AkashaThemePreset(
     id: 'sakura',
     backgroundColor: Color(0xFF2A1A22),
     accentColor: Color(0xFFF48FB1),
-    assets: AkashaThemeAssets.none,
-    effects: AkashaThemeEffects.neutral,
+    assets: AkashaThemeAssets(
+      backdropAssetPath: 'assets/themes/sakura/backdrop.png',
+      heroAssetPath: 'assets/themes/sakura/hero.png',
+    ),
+    effects: AkashaThemeEffects(
+      glowIntensity: 0.18,
+      shadowIntensity: 0.48,
+      overlayOpacity: 0.62,
+      particleIntensity: 0,
+    ),
   );
 
-  /// Temporary color fallback until the final Amethyst artwork pack is ready.
   static const amethyst = AkashaThemePreset(
     id: 'amethyst',
     backgroundColor: Color(0xFF1A1A1A),
     accentColor: Color(0xFFB39DDB),
-    assets: AkashaThemeAssets.none,
-    effects: AkashaThemeEffects.neutral,
+    assets: AkashaThemeAssets(
+      backdropAssetPath: 'assets/themes/amethyst/backdrop.png',
+      heroAssetPath: 'assets/themes/amethyst/hero.png',
+    ),
+    effects: AkashaThemeEffects(
+      glowIntensity: 0.22,
+      shadowIntensity: 0.52,
+      overlayOpacity: 0.64,
+      particleIntensity: 0,
+    ),
   );
 
-  /// Neutral fallback only. Nocturne's final visual direction is undecided.
   static const nocturne = AkashaThemePreset(
     id: 'nocturne',
-    backgroundColor: Color(0xFF13131D),
-    accentColor: Color(0xFF6C63FF),
-    assets: AkashaThemeAssets.none,
-    effects: AkashaThemeEffects.neutral,
+    backgroundColor: Color(0xFF090B0F),
+    accentColor: Color(0xFF93A4BD),
+    assets: AkashaThemeAssets(
+      backdropAssetPath: 'assets/themes/nocturne/backdrop.png',
+      heroAssetPath: 'assets/themes/nocturne/hero.png',
+    ),
+    effects: AkashaThemeEffects(
+      glowIntensity: 0.10,
+      shadowIntensity: 0.55,
+      overlayOpacity: 0.68,
+      particleIntensity: 0,
+    ),
   );
 
   static const List<AkashaThemePreset> all = [

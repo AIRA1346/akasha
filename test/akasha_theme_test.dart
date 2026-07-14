@@ -71,35 +71,19 @@ void main() {
     );
   });
 
-  test(
-    'bundled themes own artwork while premium themes keep safe fallbacks',
-    () {
-      for (final preset in const [
-        AkashaThemePreset.classicDark,
-        AkashaThemePreset.midnightBlue,
-      ]) {
-        expect(preset.usesSharedArtworkFallback, isFalse, reason: preset.id);
-        expect(preset.assets.backdropAssetPath, isNotNull, reason: preset.id);
-        expect(preset.assets.heroAssetPath, isNotNull, reason: preset.id);
-      }
+  test('all official themes own namespaced artwork', () {
+    for (final preset in AkashaThemePreset.all) {
+      expect(preset.usesSharedArtworkFallback, isFalse, reason: preset.id);
+      expect(preset.assets.backdropAssetPath, isNotNull, reason: preset.id);
+      expect(preset.assets.heroAssetPath, isNotNull, reason: preset.id);
+      expect(preset.hasValidAssetNamespace, isTrue, reason: preset.id);
+    }
+  });
 
-      for (final preset in const [
-        AkashaThemePreset.sakura,
-        AkashaThemePreset.amethyst,
-        AkashaThemePreset.nocturne,
-      ]) {
-        expect(preset.usesSharedArtworkFallback, isTrue, reason: preset.id);
-      }
-    },
-  );
-
-  testWidgets('bundled artwork paths resolve from the Flutter asset bundle', (
+  testWidgets('official artwork paths resolve from the Flutter asset bundle', (
     tester,
   ) async {
-    for (final preset in const [
-      AkashaThemePreset.classicDark,
-      AkashaThemePreset.midnightBlue,
-    ]) {
+    for (final preset in AkashaThemePreset.all) {
       for (final path in preset.assets.paths) {
         final data = await rootBundle.load(path);
         expect(data.lengthInBytes, greaterThan(0), reason: path);

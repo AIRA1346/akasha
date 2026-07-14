@@ -24,7 +24,8 @@
 > - Commerce packages: domain `dart test` **14** · backend `dart test` **17** · both `dart analyze` **0**
 > - Windows debug/release build **OK (2026-07-14)**
 > - **UX-5A Theme package regression foundation** — 5 preset asset namespace/fallback/reduced-motion 계약 · 핵심 surface 3 viewport/125% text geometry · Classic Dark/Midnight Blue Windows golden · **done**. 실제 bundled artwork 검증은 아래 UX-5B로 확장.
-> - **UX-5B Bundled theme artwork** — Classic Dark·Midnight Blue 실제 backdrop/Hero 4개 · asset bundle/hash 검증 · 실제 decode/paint golden · **done**. Premium 3종 artwork는 UX-5C 후속.
+> - **UX-5B Bundled theme artwork** — Classic Dark·Midnight Blue 실제 backdrop/Hero 4개 · asset bundle/hash 검증 · 실제 decode/paint golden · **done**.
+> - **UX-5C Premium theme artwork** — Sakura·Amethyst·Nocturne reference·palette·effect 확정 · 실제 backdrop/Hero 6개 · 공식 5테마 Windows golden · **done**. Commerce·entitlement는 계속 비활성.
 >
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)  
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
@@ -107,7 +108,7 @@
 
 * **나의 서재 (Personal Library):** v1 핵심 — 아카이브 작품 포스터·테마.
 * **대시보드 (Dashboard):** optional catalog 탐색 — Fact 카드 그리드.
-* **앱 테마 foundation + UX-5A/B:** canonical preset 5종과 별도 catalog, preferred/effective resolver, app-root theme, backdrop fallback, 5종 harness 구현. asset namespace·reduced-motion resolver·5테마 핵심 surface geometry matrix를 고정하고 Classic Dark·Midnight Blue 실제 backdrop/Hero와 Windows decode/paint golden을 통합했다. premium 3종은 fallback과 no-IAP 미노출을 유지한다. `LibraryTheme`는 저장 ID 호환 adapter로 유지. 이관표는 [UX_THEME_MIGRATION_INVENTORY.md](UX_THEME_MIGRATION_INVENTORY.md), 회귀 SSOT는 [UX_THEME_REGRESSION_MATRIX.md](UX_THEME_REGRESSION_MATRIX.md), artwork 기록은 [assets/themes/ARTWORK_PROVENANCE.md](../../assets/themes/ARTWORK_PROVENANCE.md).
+* **앱 테마 foundation + UX-5A/B/C:** canonical preset 5종과 별도 catalog, preferred/effective resolver, app-root theme, backdrop fallback, 5종 harness 구현. asset namespace·reduced-motion resolver·5테마 핵심 surface geometry matrix를 고정하고 공식 5테마의 실제 backdrop/Hero 10개와 Windows decode/paint golden을 통합했다. premium 3종의 artwork는 준비됐지만 no-IAP에서 판매·구매·entitlement UI는 계속 미노출이다. `LibraryTheme`는 저장 ID 호환 adapter로 유지. 이관표는 [UX_THEME_MIGRATION_INVENTORY.md](UX_THEME_MIGRATION_INVENTORY.md), 회귀 SSOT는 [UX_THEME_REGRESSION_MATRIX.md](UX_THEME_REGRESSION_MATRIX.md), artwork 기록은 [assets/themes/ARTWORK_PROVENANCE.md](../../assets/themes/ARTWORK_PROVENANCE.md).
 
 ### Ⅱ. 워크벤치 (4열 상세 편집기)
 * **탭 관리:** 다중 Work 및 Entity 탭을 열어둔 다단계 작업 공간.

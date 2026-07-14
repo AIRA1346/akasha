@@ -17,7 +17,7 @@ void main() {
   );
 
   testWidgets(
-    'bundled themes match the standard viewport visual baseline',
+    'official themes match the standard viewport visual baseline',
     (tester) async {
       addTearDown(() => tester.binding.setSurfaceSize(null));
       await tester.binding.setSurfaceSize(const Size(960, 640));
@@ -30,6 +30,18 @@ void main() {
         (
           preset: AkashaThemePreset.midnightBlue,
           golden: 'goldens/theme_midnight_blue_standard.png',
+        ),
+        (
+          preset: AkashaThemePreset.sakura,
+          golden: 'goldens/theme_sakura_standard.png',
+        ),
+        (
+          preset: AkashaThemePreset.amethyst,
+          golden: 'goldens/theme_amethyst_standard.png',
+        ),
+        (
+          preset: AkashaThemePreset.nocturne,
+          golden: 'goldens/theme_nocturne_standard.png',
         ),
       ]) {
         await tester.pumpWidget(
@@ -54,7 +66,7 @@ void main() {
   );
 
   testWidgets(
-    'bundled theme Hero artwork matches the visual baseline',
+    'official theme Hero artwork matches the visual baseline',
     (tester) async {
       addTearDown(() => tester.binding.setSurfaceSize(null));
       await tester.binding.setSurfaceSize(const Size(960, 320));
@@ -67,6 +79,18 @@ void main() {
         (
           preset: AkashaThemePreset.midnightBlue,
           golden: 'goldens/theme_midnight_blue_hero.png',
+        ),
+        (
+          preset: AkashaThemePreset.sakura,
+          golden: 'goldens/theme_sakura_hero.png',
+        ),
+        (
+          preset: AkashaThemePreset.amethyst,
+          golden: 'goldens/theme_amethyst_hero.png',
+        ),
+        (
+          preset: AkashaThemePreset.nocturne,
+          golden: 'goldens/theme_nocturne_hero.png',
         ),
       ]) {
         await tester.pumpWidget(
