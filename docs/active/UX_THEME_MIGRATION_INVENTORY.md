@@ -68,12 +68,13 @@ rg -n "AkashaColors\." lib `
 - UX-4B 시작 결과: **354 lines / 90 files**.
 - UX-4B 종료 결과: **342 lines / 86 files**. Preview가 실제 사용하는 link neighbor chrome·character·connected work·theme cluster만 semantic palette로 이관했다.
 - UX-4C 종료 결과: **334 lines / 83 files**. Explore·Library·Collections 역할 정리에서 실제로 만진 browse/empty/entity strip surface만 이관했다.
+- UX-4D 종료 결과: **328 lines / 81 files**. Graph·Timeline에서 실제로 만진 empty/list/dialog surface만 이관했다.
 - 앞으로의 전후 비교는 이 명령과 단위만 사용한다.
 
 | 분류 | occurrence | 영향 파일 | 판단 |
 |---|---:|---:|---|
 | `Color(0x...)` / `Colors.*` | 195 | 64 | 이 중 `Colors.transparent` 제외 시 169 / 54 |
-| `AkashaColors.*` 직접 참조 | 334 lines | 83 | UX-4C 종료 시점의 고정 측정 계약 결과. UX-4C 시작은 342 / 86 |
+| `AkashaColors.*` 직접 참조 | 328 lines | 81 | UX-4D 종료 시점의 고정 측정 계약 결과. UX-4D 시작은 334 / 83 |
 | 고정 `fontSize` | 210 | 69 | 이 중 `< 11px` 51 / 31 |
 | `EdgeInsets.*` 직접 선언 | 321 | 116 | 공통 spacing token 후보 |
 | 고정 width/height/min/max | 599 | 130 | 콘텐츠 고유 크기와 shell metric을 분리해야 함 |

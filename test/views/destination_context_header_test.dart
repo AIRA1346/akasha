@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('browse destinations state distinct product roles', (
+  testWidgets('dedicated destinations state distinct product roles', (
     tester,
   ) async {
     const expectations = {
@@ -23,6 +23,14 @@ void main() {
       AppDestination.collections: (
         title: '컬렉션',
         description: '작품과 엔티티를 의도적으로 묶은 컬렉션입니다.',
+      ),
+      AppDestination.graph: (
+        title: '그래프',
+        description: '직접 만든 지식 지도와 기록에서 파생된 연결을 함께 살펴봅니다.',
+      ),
+      AppDestination.timeline: (
+        title: '타임라인',
+        description: '시간순 기록과 메모, 엔티티 기록, 연결 후보를 한곳에서 관리합니다.',
       ),
     };
 
@@ -70,12 +78,13 @@ void main() {
     tester,
   ) async {
     Future<Map<String, Rect>> geometry(
+      AppDestination destination,
       Size size,
       AkashaThemePreset preset,
     ) async {
       await _pumpHeader(
         tester,
-        destination: AppDestination.explore,
+        destination: destination,
         preset: preset,
         textScale: 1.25,
         surfaceSize: size,
@@ -91,14 +100,28 @@ void main() {
       };
     }
 
-    for (final size in const [
-      Size(1600, 900),
-      Size(1366, 768),
-      Size(1024, 720),
+    for (final destination in const [
+      AppDestination.explore,
+      AppDestination.graph,
+      AppDestination.timeline,
     ]) {
-      final classic = await geometry(size, AkashaThemePreset.classicDark);
-      final midnight = await geometry(size, AkashaThemePreset.midnightBlue);
-      expect(midnight, classic, reason: '$size');
+      for (final size in const [
+        Size(1600, 900),
+        Size(1366, 768),
+        Size(1024, 720),
+      ]) {
+        final classic = await geometry(
+          destination,
+          size,
+          AkashaThemePreset.classicDark,
+        );
+        final midnight = await geometry(
+          destination,
+          size,
+          AkashaThemePreset.midnightBlue,
+        );
+        expect(midnight, classic, reason: '${destination.name} $size');
+      }
     }
   });
 }

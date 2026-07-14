@@ -51,6 +51,8 @@
   "destinationExploreDescription": "Find the next subject to record across the catalog and your archive.",
   "destinationLibraryDescription": "Review the records and personal libraries kept in your vault.",
   "destinationCollectionsDescription": "Browse works and entities grouped with deliberate intent.",
+  "destinationGraphDescription": "Review knowledge maps you arranged and connections derived from records.",
+  "destinationTimelineDescription": "Manage chronological entries, notes, entity records, and link candidates in one place.",
   "browseEntityDiscoveryCount": "Explore entities · {count}",
   "@browseEntityDiscoveryCount": {
     "placeholders": {
@@ -918,9 +920,10 @@
   "dashboardTodaysLinksConnectedWork": "Connected work",
   "dashboardTodaysLinksSuggestion": "Connection suggestion",
   "registryDiscoveryMoreFromCatalog": "More from Catalog",
-  "knowledgeGraphTitle": "Connection List",
-  "knowledgeGraphSubtitle": "View connections grouped by work. (This is not a node graph.)",
-  "knowledgeGraphEmptyVault": "No works in the vault.",
+  "knowledgeGraphTitle": "Knowledge Maps & Connections",
+  "knowledgeGraphSubtitle": "Review knowledge maps you arranged and connections derived from records.",
+  "knowledgeGraphEmptyVault": "No archived works yet.",
+  "knowledgeGraphEmptyVaultBody": "Archive a work to explore connections derived from its records here.",
   "knowledgeGraphConnectEntity": "Connect Entity",
   "knowledgeGraphConnectionCount": "{count} connections",
   "@knowledgeGraphConnectionCount": {
@@ -933,8 +936,8 @@
   "knowledgeGraphNoConnections": "No connections · Add links from records",
   "knowledgeGraphOpen": "Open",
   "knowledgeGraphExpandToLoad": "Expand to load connections.",
-  "knowledgeGraphEmptyTitle": "No connected knowledge yet.",
-  "knowledgeGraphEmptyBody": "Create your first connection. Add links to work records and they will appear here.",
+  "knowledgeGraphEmptyTitle": "No record-derived connections yet.",
+  "knowledgeGraphEmptyBody": "Add links to work or entity records and they will appear in the connection list.",
   "knowledgeGraphOpenRecord": "Open record",
   "actionClose": "Close",
   "labelNowViewing": "Now Viewing",
@@ -961,8 +964,10 @@
   "tooltipRefresh": "Refresh",
   "actionEditTimeline": "Edit Timeline",
   "confirmDeleteTimeline": "Delete this timeline record?",
-  "helpTimelineConnectVault": "Connect a vault to view the timeline.",
-  "helpTimelineEmpty": "No timeline records yet.",
+  "helpTimelineConnectVault": "Connect a vault first.",
+  "timelineConnectVaultBody": "Timeline and record-hub content is stored in your local vault.",
+  "helpTimelineEmpty": "No chronological entries yet.",
+  "timelineEmptyBody": "Create your first entry and it will appear here in date and time order.",
   "actionWriteFirstRecord": "Write First Record",
   "countTimelineRecords": "Timeline ({count})",
   "@countTimelineRecords": {
@@ -1306,8 +1311,8 @@
     }
   },
   "graphNoConnectionsDesc": "No connections · Add links in records",
-  "graphTabMyKnowledgeMap": "My Knowledge Map (Canvas)",
-  "graphTabAutoConnections": "Auto Connections by Work",
+  "graphTabMyKnowledgeMap": "Knowledge Maps",
+  "graphTabAutoConnections": "Connection List",
   "graphCanvasesListHeader": "Knowledge Map List ({count})",
   "@graphCanvasesListHeader": {
     "placeholders": {
@@ -1316,7 +1321,10 @@
       }
     }
   },
-  "graphEmptyCanvases": "No knowledge maps created yet.\nCreate a new map and define your own connection networks!",
+  "graphEmptyCanvases": "No knowledge maps yet.",
+  "graphEmptyCanvasBody": "Arrange works and entities on a canvas to define relationships in your own way.",
+  "graphVaultRequiredTitle": "Connect a vault first.",
+  "graphVaultRequiredBody": "Knowledge maps and connection lists use records stored in your local vault.",
   "graphBtnCreateFirstCanvas": "Create First Knowledge Map",
   "graphLastModified": "Modified: {date}",
   "@graphLastModified": {

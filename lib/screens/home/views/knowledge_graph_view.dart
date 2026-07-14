@@ -5,7 +5,6 @@ import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../screens/home/coordinators/home_shell_wiring.dart';
-import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
@@ -16,6 +15,7 @@ import '../../../widgets/poster_image.dart';
 import '../../../widgets/work_link_neighbors_sections.dart';
 import '../../../core/archiving/canvas_record.dart';
 import '../../../services/canvas_store.dart';
+import 'destination_empty_state.dart';
 
 /// 볼트 작품별 위키 링크 연결을 탐색하는 연결 목록 뷰 (v1.1 리스트형).
 class KnowledgeGraphView extends StatefulWidget {
@@ -82,7 +82,11 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
   }
 
   Future<void> _loadCanvases() async {
-    if (widget.vaultPath.isEmpty) return;
+    if (widget.vaultPath.isEmpty) {
+      _canvases = const [];
+      _loadingCanvases = false;
+      return;
+    }
     setState(() => _loadingCanvases = true);
     try {
       final list = await CanvasStore.instance.listCanvases(widget.vaultPath);
@@ -167,27 +171,25 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
-            padding: AkashaSpacing.graphPageHeader,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            padding: const EdgeInsets.fromLTRB(
+              AkashaSpacing.lg,
+              AkashaSpacing.md,
+              AkashaSpacing.lg,
+              AkashaSpacing.sm,
+            ),
+            child: Wrap(
+              spacing: AkashaSpacing.sm,
+              runSpacing: AkashaSpacing.sm,
               children: [
-                Text(
-                  l10n?.knowledgeGraphTitle ?? '연결 목록',
-                  style: AkashaTypography.graphTitle,
+                _buildTabButton(
+                  0,
+                  l10n?.graphTabMyKnowledgeMap ?? '지식 지도',
+                  palette,
                 ),
-                SizedBox(height: AkashaSpacing.xs + 2),
-                Text(
-                  l10n?.knowledgeGraphSubtitle ??
-                      '작품별로 묶인 연결을 목록으로 봅니다. (노드 그래프가 아닙니다)',
-                  style: AkashaTypography.body,
-                ),
-                const SizedBox(height: AkashaSpacing.md),
-                Row(
-                  children: [
-                    _buildTabButton(0, l10n?.graphTabMyKnowledgeMap ?? '나의 지식 지도 (Canvas)', palette),
-                    const SizedBox(width: AkashaSpacing.sm),
-                    _buildTabButton(1, l10n?.graphTabAutoConnections ?? '작품별 자동 연결', palette),
-                  ],
+                _buildTabButton(
+                  1,
+                  l10n?.graphTabAutoConnections ?? '연결 목록',
+                  palette,
                 ),
               ],
             ),
@@ -200,28 +202,29 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
               const Expanded(
                 child: Center(child: CircularProgressIndicator(strokeWidth: 2)),
               )
+            else if (widget.vaultPath.isEmpty)
+              Expanded(child: _buildVaultRequiredState())
             else if (works.isEmpty)
               Expanded(
-                child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        l10n?.knowledgeGraphEmptyVault ?? '볼트에 작품이 없습니다.',
-                        style: AkashaTypography.body,
-                      ),
-                      if (widget.onConnectEntity != null) ...[
-                        SizedBox(height: AkashaSpacing.md),
-                        OutlinedButton(
+                child: DestinationEmptyState(
+                  stateId: 'graph-connections-empty-vault',
+                  icon: Icons.hub_outlined,
+                  title: l10n?.knowledgeGraphEmptyVault ?? '아카이브된 작품이 없습니다.',
+                  body:
+                      l10n?.knowledgeGraphEmptyVaultBody ??
+                      '작품을 아카이브하면 기록에서 파생된 연결을 여기서 탐색할 수 있습니다.',
+                  action: widget.onConnectEntity == null
+                      ? null
+                      : OutlinedButton.icon(
                           onPressed: widget.onConnectEntity,
-                          child: Text(
+                          icon: const Icon(
+                            Icons.person_add_alt_1_outlined,
+                            size: 16,
+                          ),
+                          label: Text(
                             l10n?.knowledgeGraphConnectEntity ?? '엔티티 연결하기',
-                            style: AkashaTypography.compactLabel,
                           ),
                         ),
-                      ],
-                    ],
-                  ),
                 ),
               )
             else
@@ -276,7 +279,12 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                             style: AkashaTypography.listItemTitle,
                           ),
                           subtitle: Text(
-                            count > 0 ? (l10n != null ? l10n.graphConnectionsCountDesc(count) : '연결 $count개') : (l10n?.graphNoConnectionsDesc ?? '연결 없음 · 기록에서 링크 추가'),
+                            count > 0
+                                ? (l10n != null
+                                      ? l10n.graphConnectionsCountDesc(count)
+                                      : '연결 $count개')
+                                : (l10n?.graphNoConnectionsDesc ??
+                                      '연결 없음 · 기록에서 링크 추가'),
                             style: AkashaTypography.bodySecondary.copyWith(
                               color: count > 0 ? palette.accent : null,
                             ),
@@ -323,26 +331,34 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
 
   Widget _buildTabButton(int index, String label, AkashaPalette palette) {
     final selected = _activeTabIndex == index;
-    return InkWell(
-      onTap: () => setState(() => _activeTabIndex = index),
-      borderRadius: BorderRadius.circular(6),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        decoration: BoxDecoration(
-          color: selected ? palette.accentSoft : Colors.transparent,
-          borderRadius: BorderRadius.circular(6),
-          border: Border.all(
-            color: selected
-                ? palette.accent.withValues(alpha: 0.4)
-                : palette.borderSubtle(0.18),
-          ),
-        ),
-        child: Text(
-          label,
-          style: TextStyle(
-            fontSize: 12,
-            fontWeight: selected ? FontWeight.bold : FontWeight.normal,
-            color: selected ? palette.accent : palette.borderSubtle(0.7),
+    return Semantics(
+      button: true,
+      selected: selected,
+      child: Tooltip(
+        message: label,
+        child: InkWell(
+          key: ValueKey<String>('graph-tab-$index'),
+          onTap: () => setState(() => _activeTabIndex = index),
+          borderRadius: AkashaRadius.smBorder,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: BoxDecoration(
+              color: selected ? palette.accentSoft : Colors.transparent,
+              borderRadius: AkashaRadius.smBorder,
+              border: Border.all(
+                color: selected
+                    ? palette.accent.withValues(alpha: 0.4)
+                    : palette.borderSubtle(0.18),
+              ),
+            ),
+            child: Text(
+              label,
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: selected ? FontWeight.bold : FontWeight.normal,
+                color: selected ? palette.accent : palette.textMuted,
+              ),
+            ),
           ),
         ),
       ),
@@ -351,6 +367,10 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
 
   Widget _buildCanvasTab(AkashaPalette palette) {
     final l10n = lookupAppL10n(context);
+    if (widget.vaultPath.isEmpty) {
+      return _buildVaultRequiredState();
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -360,7 +380,9 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
             vertical: AkashaSpacing.xs,
           ),
           child: Text(
-            l10n != null ? l10n.graphCanvasesListHeader(_canvases.length) : '지식 지도 목록 (${_canvases.length})',
+            l10n != null
+                ? l10n.graphCanvasesListHeader(_canvases.length)
+                : '지식 지도 목록 (${_canvases.length})',
             style: AkashaTypography.compactLabel.copyWith(
               fontWeight: FontWeight.bold,
             ),
@@ -372,22 +394,17 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
           )
         else if (_canvases.isEmpty)
           Expanded(
-            child: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    l10n?.graphEmptyCanvases ?? '생성된 지식 지도가 없습니다.\n새 지식 지도를 만들고 나만의 생각 관계망을 정의해 보세요!',
-                    textAlign: TextAlign.center,
-                    style: AkashaTypography.body,
-                  ),
-                  const SizedBox(height: AkashaSpacing.md),
-                  OutlinedButton.icon(
-                    onPressed: _showCreateCanvasDialog,
-                    icon: const Icon(Icons.add, size: 14),
-                    label: Text(l10n?.graphBtnCreateFirstCanvas ?? '첫 지식 지도 만들기'),
-                  ),
-                ],
+            child: DestinationEmptyState(
+              stateId: 'graph-canvas-empty',
+              icon: Icons.map_outlined,
+              title: l10n?.graphEmptyCanvases ?? '아직 지식 지도가 없습니다.',
+              body:
+                  l10n?.graphEmptyCanvasBody ??
+                  '캔버스에 작품과 엔티티를 직접 배치해 나만의 관계를 정리해 보세요.',
+              action: OutlinedButton.icon(
+                onPressed: _showCreateCanvasDialog,
+                icon: const Icon(Icons.add, size: 16),
+                label: Text(l10n?.graphBtnCreateFirstCanvas ?? '첫 지식 지도 만들기'),
               ),
             ),
           )
@@ -413,14 +430,24 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                     ),
                     leading: CircleAvatar(
                       backgroundColor: palette.accentSoft,
-                      child: Icon(Icons.map_outlined, color: palette.accent, size: 20),
+                      child: Icon(
+                        Icons.map_outlined,
+                        color: palette.accent,
+                        size: 20,
+                      ),
                     ),
                     title: Text(
                       canvas.title,
                       style: AkashaTypography.listItemTitle,
                     ),
                     subtitle: Text(
-                      l10n != null ? l10n.graphLastModified(canvas.updatedAt.toLocal().toString().split('.')[0]) : '수정일: ${canvas.updatedAt.toLocal().toString().split('.')[0]}',
+                      l10n != null
+                          ? l10n.graphLastModified(
+                              canvas.updatedAt.toLocal().toString().split(
+                                '.',
+                              )[0],
+                            )
+                          : '수정일: ${canvas.updatedAt.toLocal().toString().split('.')[0]}',
                       style: AkashaTypography.bodySecondary,
                     ),
                     trailing: const Icon(Icons.chevron_right, size: 20),
@@ -452,14 +479,18 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
               TextField(
                 controller: titleController,
                 decoration: InputDecoration(
-                  labelText: l10n?.graphDialogCreateCanvasLabelTitle ?? '지도 제목 (예: 리제로 인물 관계도)',
+                  labelText:
+                      l10n?.graphDialogCreateCanvasLabelTitle ??
+                      '지도 제목 (예: 리제로 인물 관계도)',
                 ),
               ),
               const SizedBox(height: AkashaSpacing.sm),
               TextField(
                 controller: slugController,
                 decoration: InputDecoration(
-                  labelText: l10n?.graphDialogCreateCanvasLabelSlug ?? 'URL 슬러그 (예: re-zero)',
+                  labelText:
+                      l10n?.graphDialogCreateCanvasLabelSlug ??
+                      'URL 슬러그 (예: re-zero)',
                 ),
               ),
             ],
@@ -497,6 +528,17 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
     widget.onOpenCanvas(record);
   }
 
+  Widget _buildVaultRequiredState() {
+    final l10n = lookupAppL10n(context);
+    return DestinationEmptyState(
+      stateId: 'graph-vault-required',
+      icon: Icons.folder_open_outlined,
+      title: l10n?.graphVaultRequiredTitle ?? '볼트를 먼저 연결하세요.',
+      body:
+          l10n?.graphVaultRequiredBody ?? '지식 지도와 연결 목록은 로컬 볼트에 저장된 기록을 사용합니다.',
+    );
+  }
+
   Widget _buildEmptyLinksBanner() {
     final l10n = lookupAppL10n(context);
     return Padding(
@@ -513,10 +555,10 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              l10n?.knowledgeGraphEmptyTitle ?? '아직 연결된 지식이 없습니다.',
+              l10n?.knowledgeGraphEmptyTitle ?? '기록에서 파생된 연결이 없습니다.',
               style: AkashaTypography.compactLabel.copyWith(
                 fontWeight: FontWeight.bold,
-                color: AkashaColors.textSecondary,
+                color: context.akashaPalette.textSecondary,
               ),
             ),
             SizedBox(height: AkashaSpacing.xs),

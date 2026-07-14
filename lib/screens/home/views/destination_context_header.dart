@@ -7,10 +7,10 @@ import '../../../theme/akasha_typography.dart';
 import '../../../utils/app_l10n.dart';
 import '../app_destination.dart';
 
-/// Compact role statement for browse destinations.
+/// Compact role statement for global destinations with dedicated content.
 ///
-/// It clarifies why Explore, Library, and Collections are separate without
-/// changing their navigation, filters, or local scroll state.
+/// It clarifies the role of each surface without changing navigation or local
+/// content state.
 class DestinationContextHeader extends StatelessWidget {
   const DestinationContextHeader({super.key, required this.destination});
 
@@ -27,7 +27,7 @@ class DestinationContextHeader extends StatelessWidget {
     final definition = AppDestinationRegistry.definitionFor(destination);
     final l10n = lookupAppL10n(context);
     final description = definition.resolvePurposeDescription(l10n);
-    if (!definition.showsBrowseContextHeader || description == null) {
+    if (!definition.showsContextHeader || description == null) {
       return const SizedBox.shrink();
     }
 
@@ -110,7 +110,7 @@ class DestinationContextFrame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final definition = AppDestinationRegistry.definitionFor(destination);
-    if (!definition.showsBrowseContextHeader) return child;
+    if (!definition.showsContextHeader) return child;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -122,6 +122,14 @@ class AppLocalizationsEn extends AppLocalizations {
       'Browse works and entities grouped with deliberate intent.';
 
   @override
+  String get destinationGraphDescription =>
+      'Review knowledge maps you arranged and connections derived from records.';
+
+  @override
+  String get destinationTimelineDescription =>
+      'Manage chronological entries, notes, entity records, and link candidates in one place.';
+
+  @override
   String browseEntityDiscoveryCount(int count) {
     return 'Explore entities · $count';
   }
@@ -1615,14 +1623,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get registryDiscoveryMoreFromCatalog => 'More from Catalog';
 
   @override
-  String get knowledgeGraphTitle => 'Connection List';
+  String get knowledgeGraphTitle => 'Knowledge Maps & Connections';
 
   @override
   String get knowledgeGraphSubtitle =>
-      'View connections grouped by work. (This is not a node graph.)';
+      'Review knowledge maps you arranged and connections derived from records.';
 
   @override
-  String get knowledgeGraphEmptyVault => 'No works in the vault.';
+  String get knowledgeGraphEmptyVault => 'No archived works yet.';
+
+  @override
+  String get knowledgeGraphEmptyVaultBody =>
+      'Archive a work to explore connections derived from its records here.';
 
   @override
   String get knowledgeGraphConnectEntity => 'Connect Entity';
@@ -1643,11 +1655,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get knowledgeGraphExpandToLoad => 'Expand to load connections.';
 
   @override
-  String get knowledgeGraphEmptyTitle => 'No connected knowledge yet.';
+  String get knowledgeGraphEmptyTitle => 'No record-derived connections yet.';
 
   @override
   String get knowledgeGraphEmptyBody =>
-      'Create your first connection. Add links to work records and they will appear here.';
+      'Add links to work or entity records and they will appear in the connection list.';
 
   @override
   String get knowledgeGraphOpenRecord => 'Open record';
@@ -1700,11 +1712,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get confirmDeleteTimeline => 'Delete this timeline record?';
 
   @override
-  String get helpTimelineConnectVault =>
-      'Connect a vault to view the timeline.';
+  String get helpTimelineConnectVault => 'Connect a vault first.';
 
   @override
-  String get helpTimelineEmpty => 'No timeline records yet.';
+  String get timelineConnectVaultBody =>
+      'Timeline and record-hub content is stored in your local vault.';
+
+  @override
+  String get helpTimelineEmpty => 'No chronological entries yet.';
+
+  @override
+  String get timelineEmptyBody =>
+      'Create your first entry and it will appear here in date and time order.';
 
   @override
   String get actionWriteFirstRecord => 'Write First Record';
@@ -2352,10 +2371,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get graphNoConnectionsDesc => 'No connections · Add links in records';
 
   @override
-  String get graphTabMyKnowledgeMap => 'My Knowledge Map (Canvas)';
+  String get graphTabMyKnowledgeMap => 'Knowledge Maps';
 
   @override
-  String get graphTabAutoConnections => 'Auto Connections by Work';
+  String get graphTabAutoConnections => 'Connection List';
 
   @override
   String graphCanvasesListHeader(int count) {
@@ -2363,8 +2382,18 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get graphEmptyCanvases =>
-      'No knowledge maps created yet.\nCreate a new map and define your own connection networks!';
+  String get graphEmptyCanvases => 'No knowledge maps yet.';
+
+  @override
+  String get graphEmptyCanvasBody =>
+      'Arrange works and entities on a canvas to define relationships in your own way.';
+
+  @override
+  String get graphVaultRequiredTitle => 'Connect a vault first.';
+
+  @override
+  String get graphVaultRequiredBody =>
+      'Knowledge maps and connection lists use records stored in your local vault.';
 
   @override
   String get graphBtnCreateFirstCanvas => 'Create First Knowledge Map';

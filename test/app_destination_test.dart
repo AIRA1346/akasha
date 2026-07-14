@@ -22,9 +22,9 @@ void main() {
     expect(entries.every((entry) => entry.shortcut.alt), isTrue);
   });
 
-  test('browse context headers are limited to discovery archive curation', () {
+  test('dedicated destination context headers exclude Home dashboard only', () {
     final visible = AppDestinationRegistry.ordered
-        .where((entry) => entry.showsBrowseContextHeader)
+        .where((entry) => entry.showsContextHeader)
         .map((entry) => entry.destination)
         .toList();
 
@@ -32,7 +32,39 @@ void main() {
       AppDestination.explore,
       AppDestination.library,
       AppDestination.collections,
+      AppDestination.graph,
+      AppDestination.timeline,
     ]);
+  });
+
+  test('destination purpose owns shell chrome visibility', () {
+    final byDestination = {
+      for (final entry in AppDestinationRegistry.ordered)
+        entry.destination: entry,
+    };
+
+    expect(
+      byDestination.entries
+          .where((entry) => entry.value.showsBrowseSearchChrome)
+          .map((entry) => entry.key),
+      const [
+        AppDestination.home,
+        AppDestination.explore,
+        AppDestination.library,
+      ],
+    );
+    expect(
+      byDestination.entries
+          .where((entry) => entry.value.showsCatalogLoadingIndicator)
+          .map((entry) => entry.key),
+      const [AppDestination.home, AppDestination.explore],
+    );
+    expect(
+      byDestination.entries
+          .where((entry) => entry.value.showsDailyRecall)
+          .map((entry) => entry.key),
+      const [AppDestination.home],
+    );
   });
 
   test('Graph and Timeline remain available existing destinations', () {

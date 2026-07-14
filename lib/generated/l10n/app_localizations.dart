@@ -302,6 +302,18 @@ abstract class AppLocalizations {
   /// **'Browse works and entities grouped with deliberate intent.'**
   String get destinationCollectionsDescription;
 
+  /// No description provided for @destinationGraphDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Review knowledge maps you arranged and connections derived from records.'**
+  String get destinationGraphDescription;
+
+  /// No description provided for @destinationTimelineDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage chronological entries, notes, entity records, and link candidates in one place.'**
+  String get destinationTimelineDescription;
+
   /// No description provided for @browseEntityDiscoveryCount.
   ///
   /// In en, this message translates to:
@@ -2927,20 +2939,26 @@ abstract class AppLocalizations {
   /// No description provided for @knowledgeGraphTitle.
   ///
   /// In en, this message translates to:
-  /// **'Connection List'**
+  /// **'Knowledge Maps & Connections'**
   String get knowledgeGraphTitle;
 
   /// No description provided for @knowledgeGraphSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'View connections grouped by work. (This is not a node graph.)'**
+  /// **'Review knowledge maps you arranged and connections derived from records.'**
   String get knowledgeGraphSubtitle;
 
   /// No description provided for @knowledgeGraphEmptyVault.
   ///
   /// In en, this message translates to:
-  /// **'No works in the vault.'**
+  /// **'No archived works yet.'**
   String get knowledgeGraphEmptyVault;
+
+  /// No description provided for @knowledgeGraphEmptyVaultBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive a work to explore connections derived from its records here.'**
+  String get knowledgeGraphEmptyVaultBody;
 
   /// No description provided for @knowledgeGraphConnectEntity.
   ///
@@ -2975,13 +2993,13 @@ abstract class AppLocalizations {
   /// No description provided for @knowledgeGraphEmptyTitle.
   ///
   /// In en, this message translates to:
-  /// **'No connected knowledge yet.'**
+  /// **'No record-derived connections yet.'**
   String get knowledgeGraphEmptyTitle;
 
   /// No description provided for @knowledgeGraphEmptyBody.
   ///
   /// In en, this message translates to:
-  /// **'Create your first connection. Add links to work records and they will appear here.'**
+  /// **'Add links to work or entity records and they will appear in the connection list.'**
   String get knowledgeGraphEmptyBody;
 
   /// No description provided for @knowledgeGraphOpenRecord.
@@ -3083,14 +3101,26 @@ abstract class AppLocalizations {
   /// No description provided for @helpTimelineConnectVault.
   ///
   /// In en, this message translates to:
-  /// **'Connect a vault to view the timeline.'**
+  /// **'Connect a vault first.'**
   String get helpTimelineConnectVault;
+
+  /// No description provided for @timelineConnectVaultBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Timeline and record-hub content is stored in your local vault.'**
+  String get timelineConnectVaultBody;
 
   /// No description provided for @helpTimelineEmpty.
   ///
   /// In en, this message translates to:
-  /// **'No timeline records yet.'**
+  /// **'No chronological entries yet.'**
   String get helpTimelineEmpty;
+
+  /// No description provided for @timelineEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Create your first entry and it will appear here in date and time order.'**
+  String get timelineEmptyBody;
 
   /// No description provided for @actionWriteFirstRecord.
   ///
@@ -4271,13 +4301,13 @@ abstract class AppLocalizations {
   /// No description provided for @graphTabMyKnowledgeMap.
   ///
   /// In en, this message translates to:
-  /// **'My Knowledge Map (Canvas)'**
+  /// **'Knowledge Maps'**
   String get graphTabMyKnowledgeMap;
 
   /// No description provided for @graphTabAutoConnections.
   ///
   /// In en, this message translates to:
-  /// **'Auto Connections by Work'**
+  /// **'Connection List'**
   String get graphTabAutoConnections;
 
   /// No description provided for @graphCanvasesListHeader.
@@ -4289,8 +4319,26 @@ abstract class AppLocalizations {
   /// No description provided for @graphEmptyCanvases.
   ///
   /// In en, this message translates to:
-  /// **'No knowledge maps created yet.\nCreate a new map and define your own connection networks!'**
+  /// **'No knowledge maps yet.'**
   String get graphEmptyCanvases;
+
+  /// No description provided for @graphEmptyCanvasBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Arrange works and entities on a canvas to define relationships in your own way.'**
+  String get graphEmptyCanvasBody;
+
+  /// No description provided for @graphVaultRequiredTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect a vault first.'**
+  String get graphVaultRequiredTitle;
+
+  /// No description provided for @graphVaultRequiredBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Knowledge maps and connection lists use records stored in your local vault.'**
+  String get graphVaultRequiredBody;
 
   /// No description provided for @graphBtnCreateFirstCanvas.
   ///

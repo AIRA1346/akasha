@@ -61,16 +61,38 @@ class AppDestinationDefinition {
         l10n?.destinationLibraryDescription ?? '볼트에 보관한 기록과 나만의 서재를 살펴봅니다.',
       AppDestinationPurpose.curation =>
         l10n?.destinationCollectionsDescription ?? '작품과 엔티티를 의도적으로 묶은 컬렉션입니다.',
+      AppDestinationPurpose.relationships =>
+        l10n?.destinationGraphDescription ??
+            '직접 만든 지식 지도와 기록에서 파생된 연결을 함께 살펴봅니다.',
+      AppDestinationPurpose.chronology =>
+        l10n?.destinationTimelineDescription ??
+            '시간순 기록과 메모, 엔티티 기록, 연결 후보를 한곳에서 관리합니다.',
       _ => null,
     };
   }
 
-  bool get showsBrowseContextHeader => switch (purpose) {
+  bool get showsContextHeader => switch (purpose) {
     AppDestinationPurpose.discovery ||
     AppDestinationPurpose.archive ||
-    AppDestinationPurpose.curation => true,
+    AppDestinationPurpose.curation ||
+    AppDestinationPurpose.relationships ||
+    AppDestinationPurpose.chronology => true,
     _ => false,
   };
+
+  bool get showsBrowseSearchChrome => switch (purpose) {
+    AppDestinationPurpose.dashboard ||
+    AppDestinationPurpose.discovery ||
+    AppDestinationPurpose.archive => true,
+    _ => false,
+  };
+
+  bool get showsCatalogLoadingIndicator => switch (purpose) {
+    AppDestinationPurpose.dashboard || AppDestinationPurpose.discovery => true,
+    _ => false,
+  };
+
+  bool get showsDailyRecall => purpose == AppDestinationPurpose.dashboard;
 
   AppDestinationBinding bind({
     required AppDestination currentDestination,

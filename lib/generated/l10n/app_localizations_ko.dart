@@ -115,6 +115,14 @@ class AppLocalizationsKo extends AppLocalizations {
   String get destinationCollectionsDescription => '작품과 엔티티를 의도적으로 묶은 컬렉션입니다.';
 
   @override
+  String get destinationGraphDescription =>
+      '직접 만든 지식 지도와 기록에서 파생된 연결을 함께 살펴봅니다.';
+
+  @override
+  String get destinationTimelineDescription =>
+      '시간순 기록과 메모, 엔티티 기록, 연결 후보를 한곳에서 관리합니다.';
+
+  @override
   String browseEntityDiscoveryCount(int count) {
     return '엔티티 둘러보기 · $count';
   }
@@ -1573,13 +1581,17 @@ class AppLocalizationsKo extends AppLocalizations {
   String get registryDiscoveryMoreFromCatalog => '사전에서 더 보기';
 
   @override
-  String get knowledgeGraphTitle => '연결 목록';
+  String get knowledgeGraphTitle => '지식 지도와 연결';
 
   @override
-  String get knowledgeGraphSubtitle => '작품별로 묶인 연결을 목록으로 봅니다. (노드 그래프가 아닙니다)';
+  String get knowledgeGraphSubtitle => '직접 만든 지식 지도와 기록에서 파생된 연결을 함께 살펴봅니다.';
 
   @override
-  String get knowledgeGraphEmptyVault => '볼트에 작품이 없습니다.';
+  String get knowledgeGraphEmptyVault => '아카이브된 작품이 없습니다.';
+
+  @override
+  String get knowledgeGraphEmptyVaultBody =>
+      '작품을 아카이브하면 기록에서 파생된 연결을 여기서 탐색할 수 있습니다.';
 
   @override
   String get knowledgeGraphConnectEntity => '엔티티 연결하기';
@@ -1599,11 +1611,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get knowledgeGraphExpandToLoad => '펼쳐서 연결을 불러오세요.';
 
   @override
-  String get knowledgeGraphEmptyTitle => '아직 연결된 지식이 없습니다.';
+  String get knowledgeGraphEmptyTitle => '기록에서 파생된 연결이 없습니다.';
 
   @override
-  String get knowledgeGraphEmptyBody =>
-      '첫 연결을 만들어 보세요. 작품 기록에 링크를 추가하면 여기에 표시됩니다.';
+  String get knowledgeGraphEmptyBody => '작품이나 엔티티 기록에 링크를 추가하면 연결 목록에 표시됩니다.';
 
   @override
   String get knowledgeGraphOpenRecord => '기록 열기';
@@ -1656,10 +1667,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String get confirmDeleteTimeline => '이 타임라인 기록을 삭제할까요?';
 
   @override
-  String get helpTimelineConnectVault => '볼트를 연결하면 타임라인을 볼 수 있습니다.';
+  String get helpTimelineConnectVault => '볼트를 먼저 연결하세요.';
 
   @override
-  String get helpTimelineEmpty => '아직 타임라인 기록이 없습니다.';
+  String get timelineConnectVaultBody => '타임라인과 기록 허브는 로컬 볼트에 저장된 기록을 사용합니다.';
+
+  @override
+  String get helpTimelineEmpty => '아직 시간순 기록이 없습니다.';
+
+  @override
+  String get timelineEmptyBody => '첫 기록을 남기면 날짜와 시간 순서로 이곳에 모입니다.';
 
   @override
   String get actionWriteFirstRecord => '첫 기록 작성';
@@ -2298,10 +2315,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get graphNoConnectionsDesc => '연결 없음 · 기록에서 링크 추가';
 
   @override
-  String get graphTabMyKnowledgeMap => '나의 지식 지도 (Canvas)';
+  String get graphTabMyKnowledgeMap => '지식 지도';
 
   @override
-  String get graphTabAutoConnections => '작품별 자동 연결';
+  String get graphTabAutoConnections => '연결 목록';
 
   @override
   String graphCanvasesListHeader(int count) {
@@ -2309,8 +2326,16 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get graphEmptyCanvases =>
-      '생성된 지식 지도가 없습니다.\n새 지식 지도를 만들고 나만의 생각 관계망을 정의해 보세요!';
+  String get graphEmptyCanvases => '아직 지식 지도가 없습니다.';
+
+  @override
+  String get graphEmptyCanvasBody => '캔버스에 작품과 엔티티를 직접 배치해 나만의 관계를 정리해 보세요.';
+
+  @override
+  String get graphVaultRequiredTitle => '볼트를 먼저 연결하세요.';
+
+  @override
+  String get graphVaultRequiredBody => '지식 지도와 연결 목록은 로컬 볼트에 저장된 기록을 사용합니다.';
 
   @override
   String get graphBtnCreateFirstCanvas => '첫 지식 지도 만들기';

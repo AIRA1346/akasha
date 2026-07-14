@@ -8,9 +8,12 @@ import '../../../data/adapters/vault_archive_record_adapter.dart';
 import '../../../models/akasha_item.dart';
 import '../../../services/timeline_vault_loader.dart';
 import '../../../services/vault_recovery_write_service.dart';
-import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_palette.dart';
+import '../../../theme/akasha_radius.dart';
+import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
 import '../../../utils/app_l10n.dart';
+import 'destination_empty_state.dart';
 
 /// Phase 4.4 — Timeline entry 시간순 목록.
 class TimelineView extends StatefulWidget {
@@ -20,6 +23,7 @@ class TimelineView extends StatefulWidget {
     required this.vaultItems,
     required this.onOpenWork,
     required this.onNewEntry,
+    this.loader = const TimelineVaultLoader(),
     this.reloadToken = 0,
   });
 
@@ -27,6 +31,7 @@ class TimelineView extends StatefulWidget {
   final List<AkashaItem> vaultItems;
   final void Function(AkashaItem item) onOpenWork;
   final VoidCallback onNewEntry;
+  final TimelineVaultLoader loader;
   final int reloadToken;
 
   @override
@@ -34,7 +39,6 @@ class TimelineView extends StatefulWidget {
 }
 
 class _TimelineViewState extends State<TimelineView> {
-  final _loader = const TimelineVaultLoader();
   final _adapter = VaultArchiveRecordAdapter();
   List<TimelineEntry> _entries = const [];
   bool _loading = true;
@@ -48,7 +52,9 @@ class _TimelineViewState extends State<TimelineView> {
   @override
   void didUpdateWidget(covariant TimelineView oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.reloadToken != widget.reloadToken) {
+    if (oldWidget.reloadToken != widget.reloadToken ||
+        oldWidget.vaultPath != widget.vaultPath ||
+        oldWidget.loader != widget.loader) {
       _reload();
     }
   }
@@ -56,7 +62,7 @@ class _TimelineViewState extends State<TimelineView> {
   Future<void> _reload() async {
     setState(() => _loading = true);
     final path = widget.vaultPath;
-    final entries = await _loader.loadFromVault(path);
+    final entries = await widget.loader.loadFromVault(path);
     if (!mounted) return;
     setState(() {
       _entries = entries;
@@ -82,6 +88,7 @@ class _TimelineViewState extends State<TimelineView> {
       builder: (ctx) => StatefulBuilder(
         builder: (ctx, setLocal) {
           final l10n = lookupAppL10n(ctx);
+          final palette = ctx.akashaPalette;
           return AlertDialog(
             title: Text(
               editing ? (l10n?.actionEditTimeline ?? '타임라인 편집') : entry.title,
@@ -95,9 +102,9 @@ class _TimelineViewState extends State<TimelineView> {
                   children: [
                     Text(
                       _formatWhen(entry.occurredAt),
-                      style: Theme.of(ctx).textTheme.bodySmall?.copyWith(
-                        color: AkashaColors.textMuted,
-                      ),
+                      style: Theme.of(
+                        ctx,
+                      ).textTheme.bodySmall?.copyWith(color: palette.textMuted),
                     ),
                     if (entry.entityId != null && !editing) ...[
                       const SizedBox(height: 8),
@@ -111,9 +118,21 @@ class _TimelineViewState extends State<TimelineView> {
                             }
                           }
                         },
-                        child: Text(
-                          '🔗 ${_workTitleFor(entry.entityId)}',
-                          style: const TextStyle(color: Colors.tealAccent),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.link, size: 14, color: palette.info),
+                            const SizedBox(width: AkashaSpacing.xs),
+                            Flexible(
+                              child: Text(
+                                _workTitleFor(entry.entityId) ??
+                                    entry.entityId!,
+                                style: AkashaTypography.compactLabel.copyWith(
+                                  color: palette.info,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -171,17 +190,17 @@ class _TimelineViewState extends State<TimelineView> {
                     }
                     try {
                       await _adapter.save(
-                      ArchiveRecord(
-                        recordId: entry.recordId,
-                        kind: RecordKind.timelineEntry,
-                        title: title,
-                        timeAnchor: entry.occurredAt,
-                        storagePath: entry.storagePath,
-                        entity: entity,
-                        openedRevision: entry.openedRevision,
-                      ),
-                      bodyMarkdown: body,
-                    );
+                        ArchiveRecord(
+                          recordId: entry.recordId,
+                          kind: RecordKind.timelineEntry,
+                          title: title,
+                          timeAnchor: entry.occurredAt,
+                          storagePath: entry.storagePath,
+                          entity: entity,
+                          openedRevision: entry.openedRevision,
+                        ),
+                        bodyMarkdown: body,
+                      );
                       if (ctx.mounted) Navigator.pop(ctx);
                     } on VaultWriteConflictException {
                       if (ctx.mounted) {
@@ -226,7 +245,7 @@ class _TimelineViewState extends State<TimelineView> {
                 },
                 child: Text(
                   l10n?.actionDelete ?? '삭제',
-                  style: const TextStyle(color: Colors.redAccent),
+                  style: TextStyle(color: palette.danger),
                 ),
               ),
               TextButton(
@@ -273,12 +292,16 @@ class _TimelineViewState extends State<TimelineView> {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
 
     if (widget.vaultPath == null) {
-      return Center(
-        child: Text(
-          l10n?.helpTimelineConnectVault ?? '볼트를 연결하면 타임라인을 볼 수 있습니다.',
-        ),
+      return DestinationEmptyState(
+        stateId: 'timeline-vault-required',
+        icon: Icons.folder_open_outlined,
+        title: l10n?.helpTimelineConnectVault ?? '볼트를 먼저 연결하세요.',
+        body:
+            l10n?.timelineConnectVaultBody ??
+            '타임라인과 기록 허브는 로컬 볼트에 저장된 기록을 사용합니다.',
       );
     }
 
@@ -287,20 +310,15 @@ class _TimelineViewState extends State<TimelineView> {
     }
 
     if (_entries.isEmpty) {
-      return Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(Icons.timeline, size: 48, color: AkashaColors.textMuted),
-            const SizedBox(height: 12),
-            Text(l10n?.helpTimelineEmpty ?? '아직 타임라인 기록이 없습니다.'),
-            const SizedBox(height: 16),
-            FilledButton.icon(
-              onPressed: widget.onNewEntry,
-              icon: const Icon(Icons.edit_note_outlined),
-              label: Text(l10n?.actionWriteFirstRecord ?? '첫 기록 작성'),
-            ),
-          ],
+      return DestinationEmptyState(
+        stateId: 'timeline-empty',
+        icon: Icons.timeline,
+        title: l10n?.helpTimelineEmpty ?? '아직 시간순 기록이 없습니다.',
+        body: l10n?.timelineEmptyBody ?? '첫 기록을 남기면 날짜와 시간 순서로 이곳에 모입니다.',
+        action: FilledButton.icon(
+          onPressed: widget.onNewEntry,
+          icon: const Icon(Icons.edit_note_outlined, size: 18),
+          label: Text(l10n?.actionWriteFirstRecord ?? '첫 기록 작성'),
         ),
       );
     }
@@ -309,7 +327,12 @@ class _TimelineViewState extends State<TimelineView> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Padding(
-          padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
+          padding: const EdgeInsets.fromLTRB(
+            AkashaSpacing.lg,
+            AkashaSpacing.xs,
+            AkashaSpacing.lg,
+            AkashaSpacing.xs,
+          ),
           child: Row(
             children: [
               Text(
@@ -336,19 +359,24 @@ class _TimelineViewState extends State<TimelineView> {
         ),
         Expanded(
           child: ListView.separated(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(AkashaSpacing.md),
             itemCount: _entries.length,
-            separatorBuilder: (_, _) => const SizedBox(height: 8),
+            separatorBuilder: (_, _) =>
+                const SizedBox(height: AkashaSpacing.sm),
             itemBuilder: (context, index) {
               final entry = _entries[index];
               return Material(
-                color: AkashaColors.workbenchListTile,
-                borderRadius: BorderRadius.circular(8),
+                key: ValueKey<String>('timeline-entry-${entry.recordId}'),
+                color: palette.workbenchTile,
+                shape: RoundedRectangleBorder(
+                  borderRadius: AkashaRadius.mdBorder,
+                  side: BorderSide(color: palette.borderSubtle(0.2)),
+                ),
                 child: InkWell(
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: AkashaRadius.mdBorder,
                   onTap: () => _openDetail(entry),
                   child: Padding(
-                    padding: const EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(AkashaSpacing.md),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -365,25 +393,38 @@ class _TimelineViewState extends State<TimelineView> {
                             Text(
                               _formatWhen(entry.occurredAt),
                               style: AkashaTypography.bodySecondary.copyWith(
-                                color: AkashaColors.textMuted,
+                                color: palette.textMuted,
                               ),
                             ),
                           ],
                         ),
                         if (entry.entityId != null) ...[
                           const SizedBox(height: 4),
-                          Text(
-                            '🔗 ${_workTitleFor(entry.entityId)}',
-                            style: AkashaTypography.compactLabel.copyWith(
-                              color: Colors.tealAccent,
-                            ),
+                          Row(
+                            children: [
+                              Icon(Icons.link, size: 14, color: palette.info),
+                              const SizedBox(width: AkashaSpacing.xs),
+                              Expanded(
+                                child: Text(
+                                  _workTitleFor(entry.entityId) ??
+                                      entry.entityId!,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: AkashaTypography.compactLabel.copyWith(
+                                    color: palette.info,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                         const SizedBox(height: 6),
                         Text(
                           _preview(entry.body),
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
                           style: AkashaTypography.listItemTitle.copyWith(
-                            color: AkashaColors.textSecondary,
+                            color: palette.textSecondary,
                             height: 1.35,
                           ),
                         ),

@@ -186,6 +186,9 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final destinationDefinition = AppDestinationRegistry.definitionFor(
+      destination,
+    );
     return Column(
       children: [
         if (!vaultLinked)
@@ -194,8 +197,7 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
             onCreateDefaultVault: onCreateDefaultVault,
           ),
         if (!workbench.hasOpenDetail &&
-            destination != AppDestination.timeline &&
-            destination != AppDestination.collections)
+            destinationDefinition.showsBrowseSearchChrome)
           HomeBrowseSearchChrome(
             onSearch: onSearch,
             selectedCategories: filterCtrl.categories,
@@ -209,16 +211,16 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
             onEntityScopeChanged: onEntityScopeChanged,
             onAddNewEntity: onAddNewEntity,
           ),
-        if (destination != AppDestination.library &&
-            destination != AppDestination.collections &&
-            destination != AppDestination.timeline &&
+        if (destinationDefinition.showsCatalogLoadingIndicator &&
             !workbench.hasOpenDetail &&
             isCatalogLoading)
           const LinearProgressIndicator(minHeight: 2),
         Expanded(
           child: Column(
             children: [
-              if (dailyRecall != null && !workbench.hasOpenDetail)
+              if (dailyRecall != null &&
+                  destinationDefinition.showsDailyRecall &&
+                  !workbench.hasOpenDetail)
                 TodayRecallCard(
                   recall: dailyRecall!,
                   onTap: () => onPreviewWork(dailyRecall!.item),
