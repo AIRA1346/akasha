@@ -421,6 +421,7 @@ class HomeShellBody extends StatelessWidget {
       workbenchHasOpenDetail: workbench.hasOpenDetail,
       previewTarget: previewTarget,
       previewWidth: previewWidth,
+      previewPresentation: layoutSpec.previewPresentation,
       userCatalog: userCatalog,
       linkIndex: linkIndex,
       linkIndexRevision: linkIndexRevision,

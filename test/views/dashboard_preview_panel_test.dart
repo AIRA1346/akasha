@@ -7,7 +7,9 @@ import 'package:akasha/models/akasha_item.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/screens/home/views/dashboard_preview_panel.dart';
+import 'package:akasha/screens/home/views/preview_panel_layout.dart';
 import 'package:akasha/screens/home/views/preview_work_panel_content.dart';
+import 'package:akasha/screens/home/shell_layout_spec.dart';
 import 'package:akasha/theme/akasha_theme.dart';
 import 'package:akasha/theme/akasha_theme_preset.dart';
 import 'package:flutter/material.dart';
@@ -81,13 +83,16 @@ Future<void> _pumpPanel(
   required List<AkashaItem> vaultItems,
   AkashaThemePreset preset = AkashaThemePreset.classicDark,
   double textScale = 1,
+  Size surfaceSize = const Size(360, 900),
+  ShellPreviewPresentation previewPresentation =
+      ShellPreviewPresentation.inline,
   bool canGoBack = false,
   VoidCallback? onBack,
   VoidCallback? onOpenDetail,
   Future<void> Function()? onArchive,
   void Function(EntityAnchorType type)? onConnectEntityType,
 }) async {
-  await tester.binding.setSurfaceSize(const Size(360, 900));
+  await tester.binding.setSurfaceSize(surfaceSize);
   addTearDown(() => tester.binding.setSurfaceSize(null));
 
   await tester.pumpWidget(
@@ -107,7 +112,10 @@ Future<void> _pumpPanel(
           alignment: Alignment.centerRight,
           child: DashboardPreviewPanel(
             item: item,
-            width: 288,
+            width: previewPresentation == ShellPreviewPresentation.sheet
+                ? double.infinity
+                : 288,
+            previewPresentation: previewPresentation,
             userCatalog: _FakeUserCatalog(),
             linkIndex: _FakeLinkIndex(),
             vaultItems: vaultItems,
@@ -249,6 +257,73 @@ void main() {
     final classic = await geometry(AkashaThemePreset.classicDark);
     final midnight = await geometry(AkashaThemePreset.midnightBlue);
 
+    expect(midnight, classic);
+  });
+
+  testWidgets('inline and overlay Preview share the 288px rail contract', (
+    tester,
+  ) async {
+    final item = _work();
+
+    for (final presentation in const [
+      ShellPreviewPresentation.inline,
+      ShellPreviewPresentation.overlay,
+    ]) {
+      await _pumpPanel(
+        tester,
+        item: item,
+        vaultItems: [item],
+        textScale: 1.25,
+        surfaceSize: const Size(360, 768),
+        previewPresentation: presentation,
+      );
+
+      expect(tester.getSize(find.byType(DashboardPreviewPanel)).width, 288);
+      expect(
+        tester.getSize(find.byKey(PreviewPanelScrollBody.contentKey)).width,
+        259,
+      );
+      expect(
+        tester.getSize(find.byType(PreviewRecordHero)).height,
+        PreviewPanelLayoutSpec.railHeroMaxHeight,
+      );
+      expect(tester.takeException(), isNull);
+    }
+  });
+
+  testWidgets('compact Preview sheet caps readable width and hero height', (
+    tester,
+  ) async {
+    final item = _work();
+
+    Future<Map<String, Rect>> geometry(AkashaThemePreset preset) async {
+      await _pumpPanel(
+        tester,
+        item: item,
+        vaultItems: [item],
+        preset: preset,
+        textScale: 1.25,
+        surfaceSize: const Size(1024, 520),
+        previewPresentation: ShellPreviewPresentation.sheet,
+      );
+      return {
+        'panel': tester.getRect(find.byType(DashboardPreviewPanel)),
+        'content': tester.getRect(
+          find.byKey(PreviewPanelScrollBody.contentKey),
+        ),
+        'hero': tester.getRect(find.byType(PreviewRecordHero)),
+      };
+    }
+
+    final classic = await geometry(AkashaThemePreset.classicDark);
+    final midnight = await geometry(AkashaThemePreset.midnightBlue);
+
+    expect(classic['panel']!.width, 1024);
+    expect(
+      classic['content']!.width,
+      PreviewPanelLayoutSpec.sheetContentMaxWidth,
+    );
+    expect(classic['hero']!.height, PreviewPanelLayoutSpec.sheetHeroMaxHeight);
     expect(midnight, classic);
   });
 }

@@ -10,7 +10,9 @@ import 'package:akasha/models/akasha_item.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/screens/home/views/entity_dashboard_preview_panel.dart';
+import 'package:akasha/screens/home/views/preview_panel_layout.dart';
 import 'package:akasha/screens/home/views/preview_work_panel_content.dart';
+import 'package:akasha/screens/home/shell_layout_spec.dart';
 import 'package:akasha/theme/akasha_theme.dart';
 import 'package:akasha/theme/akasha_theme_preset.dart';
 
@@ -155,5 +157,57 @@ void main() {
     final midnight = await geometry(AkashaThemePreset.midnightBlue);
 
     expect(midnight, classic);
+  });
+
+  testWidgets('Entity compact sheet shares the capped Preview geometry', (
+    tester,
+  ) async {
+    final entity = UserCatalogEntity.userLocal(
+      entityId: 'ent_sheet_geometry',
+      type: EntityAnchorType.person,
+      title: '컴팩트 시트 인물',
+      subtype: MediaCategory.animation,
+      addedAt: DateTime(2026),
+    );
+    await tester.binding.setSurfaceSize(const Size(1024, 520));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: AkashaTheme.forPreset(AkashaThemePreset.classicDark),
+        locale: const Locale('ko'),
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        builder: (context, child) => MediaQuery(
+          data: MediaQuery.of(
+            context,
+          ).copyWith(textScaler: const TextScaler.linear(1.25)),
+          child: child!,
+        ),
+        home: Scaffold(
+          body: EntityDashboardPreviewPanel(
+            entity: entity,
+            width: double.infinity,
+            previewPresentation: ShellPreviewPresentation.sheet,
+            userCatalog: _FakeUserCatalog(),
+            linkIndex: _FakeLinkIndex(),
+            vaultItems: const [],
+            onClose: () {},
+            onOpenDetail: () {},
+          ),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(tester.takeException(), isNull);
+    expect(
+      tester.getSize(find.byKey(PreviewPanelScrollBody.contentKey)).width,
+      PreviewPanelLayoutSpec.sheetContentMaxWidth,
+    );
+    expect(
+      tester.getSize(find.byType(PreviewRecordHero)).height,
+      PreviewPanelLayoutSpec.sheetHeroMaxHeight,
+    );
   });
 }

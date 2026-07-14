@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/akasha_item.dart';
-import '../theme/akasha_colors.dart';
+import '../theme/akasha_palette.dart';
 import '../theme/akasha_typography.dart';
 import '../utils/connection_similarity.dart';
 import 'poster_image.dart';
@@ -22,13 +22,15 @@ class WorkLinkConnectedWorksList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return Column(
       children: works.map((work) {
         final bridge = bridgeLabelsByWorkId[work.workId];
         final percent = sourceWork != null
             ? workPairSimilarityPercent(sourceWork!, work)
             : null;
-        final subtitle = bridge ?? (percent != null ? '서사 유사도 $percent%' : null);
+        final subtitle =
+            bridge ?? (percent != null ? '서사 유사도 $percent%' : null);
 
         return Padding(
           padding: const EdgeInsets.only(bottom: 8),
@@ -56,9 +58,9 @@ class WorkLinkConnectedWorksList extends StatelessWidget {
                           work.title,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 11,
-                            color: Colors.white,
+                            color: palette.textPrimary,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -71,8 +73,8 @@ class WorkLinkConnectedWorksList extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 9,
                               color: bridge != null
-                                  ? AkashaColors.accent.withValues(alpha: 0.85)
-                                  : AkashaColors.textCaption,
+                                  ? palette.accent.withValues(alpha: 0.85)
+                                  : palette.textMuted,
                             ),
                           ),
                         ],
@@ -86,14 +88,14 @@ class WorkLinkConnectedWorksList extends StatelessWidget {
                         vertical: 2,
                       ),
                       decoration: BoxDecoration(
-                        color: AkashaColors.accent.withValues(alpha: 0.12),
+                        color: palette.accentSoft,
                         borderRadius: BorderRadius.circular(4),
                       ),
                       child: Text(
                         '$percent%',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 8,
-                          color: AkashaColors.accent,
+                          color: palette.accent,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -105,16 +107,14 @@ class WorkLinkConnectedWorksList extends StatelessWidget {
                         vertical: 2,
                       ),
                       decoration: BoxDecoration(
-                        color: AkashaColors.surface,
+                        color: palette.surface,
                         borderRadius: BorderRadius.circular(4),
-                        border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.08),
-                        ),
+                        border: Border.all(color: palette.borderSubtle(0.2)),
                       ),
                       child: Text(
                         '링크 연결',
                         style: AkashaTypography.micro.copyWith(
-                          color: AkashaColors.textMuted,
+                          color: palette.textMuted,
                         ),
                       ),
                     ),

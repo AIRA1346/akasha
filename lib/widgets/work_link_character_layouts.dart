@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../core/archiving/entity_anchor.dart';
 import '../models/akasha_item.dart';
 import '../models/user_catalog_entity.dart';
-import '../theme/akasha_colors.dart';
 import '../theme/akasha_palette.dart';
 import '../theme/akasha_typography.dart';
 import 'poster_image.dart';
@@ -148,7 +147,7 @@ class _CharacterPagerButton extends StatelessWidget {
               size: 18,
               color: enabled
                   ? palette.accent
-                  : Colors.white.withValues(alpha: 0.28),
+                  : palette.textMuted.withValues(alpha: 0.56),
             ),
           ),
         ),
@@ -225,11 +224,11 @@ class _CharacterGridTile extends StatelessWidget {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 10.5,
                   height: 1.05,
                   fontWeight: FontWeight.w700,
-                  color: Colors.white,
+                  color: palette.textPrimary,
                 ),
               ),
             ],
@@ -274,6 +273,7 @@ class WorkLinkCharacterRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -313,10 +313,10 @@ class WorkLinkCharacterRow extends StatelessWidget {
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.w500,
-                        color: Colors.white,
+                        color: palette.textPrimary,
                       ),
                     ),
                   ],
@@ -343,6 +343,7 @@ class WorkLinkCharacterWorkbenchList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return Column(
       children: characters.map((person) {
         final avatarItem = EntityItem(
@@ -362,7 +363,7 @@ class WorkLinkCharacterWorkbenchList extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.only(bottom: 8),
           child: Material(
-            color: Colors.white.withValues(alpha: 0.03),
+            color: palette.workbenchTile,
             borderRadius: BorderRadius.circular(8),
             child: InkWell(
               onTap: onOpenEntity == null ? null : () => onOpenEntity!(person),
@@ -387,10 +388,10 @@ class WorkLinkCharacterWorkbenchList extends StatelessWidget {
                             person.title,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 11,
                               fontWeight: FontWeight.w600,
-                              color: Colors.white,
+                              color: palette.textPrimary,
                             ),
                           ),
                           Text(role, style: AkashaTypography.caption),
@@ -400,7 +401,7 @@ class WorkLinkCharacterWorkbenchList extends StatelessWidget {
                     Icon(
                       Icons.link_rounded,
                       size: 16,
-                      color: AkashaColors.accent.withValues(alpha: 0.8),
+                      color: palette.accent.withValues(alpha: 0.8),
                     ),
                   ],
                 ),

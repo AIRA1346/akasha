@@ -65,12 +65,14 @@ rg -n "AkashaColors\." lib `
 - 수치 단위: 명령 출력의 **일치 line 수**다. 한 line에 참조가 여러 번 있어도 1건으로 센다.
 - UX-2 시작 baseline: **422 lines / 106 files**.
 - UX-2 종료 결과: **421 lines / 105 files**. UX-2와 무관한 전수 이관은 수행하지 않았다.
+- UX-4B 시작 결과: **354 lines / 90 files**.
+- UX-4B 종료 결과: **342 lines / 86 files**. Preview가 실제 사용하는 link neighbor chrome·character·connected work·theme cluster만 semantic palette로 이관했다.
 - 앞으로의 전후 비교는 이 명령과 단위만 사용한다.
 
 | 분류 | occurrence | 영향 파일 | 판단 |
 |---|---:|---:|---|
 | `Color(0x...)` / `Colors.*` | 195 | 64 | 이 중 `Colors.transparent` 제외 시 169 / 54 |
-| `AkashaColors.*` 직접 참조 | 421 lines | 105 | UX-2 종료 시점의 고정 측정 계약 결과. 시작 baseline은 422 / 106 |
+| `AkashaColors.*` 직접 참조 | 342 lines | 86 | UX-4B 종료 시점의 고정 측정 계약 결과. UX-4B 시작은 354 / 90 |
 | 고정 `fontSize` | 210 | 69 | 이 중 `< 11px` 51 / 31 |
 | `EdgeInsets.*` 직접 선언 | 321 | 116 | 공통 spacing token 후보 |
 | 고정 width/height/min/max | 599 | 130 | 콘텐츠 고유 크기와 shell metric을 분리해야 함 |
@@ -154,8 +156,8 @@ BoxShadow | BackdropFilter | ImageFiltered | ShaderMask
 | `lib/widgets/dashboard_sidebar.dart` | `256/232/drawer` 공통 spec과 destination registry 적용 | 잔여 nav spacing token 이관 | UX-2/4 | Medium |
 | `lib/widgets/dashboard_sidebar_footer_part.dart` | palette가 아닌 Classic static surface | Sidebar semantic surface | UX-2 | High |
 | `lib/screens/home/home_shell_scaffold_bottom_nav_part.dart` | `56px` 공통 metric·palette·destination registry 적용 | 잔여 typography token 이관 | UX-2/4 | Medium |
-| `lib/screens/home/views/dashboard_preview_panel.dart` | 주입된 공통 Preview rail `288px`, 직접 spacing 잔존 | 공통 Preview section tokens | UX-4 | High |
-| `lib/screens/home/views/entity_dashboard_preview_panel.dart` | 주입된 공통 Preview rail `288px`, 별도 content geometry 잔존 | 동일 Preview section contract | UX-4 | High |
+| `lib/screens/home/views/dashboard_preview_panel.dart` | `PreviewPanelLayoutSpec` 기반 288px rail·680px compact sheet와 공통 section spacing | Explore/Library 역할 정리와 함께 실제 surface 시각 회귀 지속 | UX-4 | Medium |
+| `lib/screens/home/views/entity_dashboard_preview_panel.dart` | Work와 동일한 Preview surface·content·Hero geometry | entity strip 역할 정리와 함께 실제 surface 시각 회귀 지속 | UX-4 | Medium |
 | `lib/screens/home/views/home_dashboard/home_dashboard_view.dart` | 고정 32px padding, max width 없음 | responsive content gutter/max width | UX-3 | High |
 | `lib/screens/home/views/home_dashboard/home_dashboard_continue_section.dart` | raw/static 색, geometry, 직접 gradient | ArchiveCard rail + effect token | UX-3 | High |
 | `lib/screens/home/views/home_dashboard/home_dashboard_discovery_cards.dart` | raw/static 색과 카드별 geometry | 공통 dashboard card | UX-3 | High |

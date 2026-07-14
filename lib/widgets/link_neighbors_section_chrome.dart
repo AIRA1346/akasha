@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../models/user_catalog_entity.dart';
-import '../theme/akasha_colors.dart';
 import '../theme/akasha_palette.dart';
 import '../theme/akasha_radius.dart';
 import '../theme/akasha_typography.dart';
@@ -162,7 +161,7 @@ class LinkNeighborsEntityChipList extends StatelessWidget {
           label: Text(
             entity.title,
             style: AkashaTypography.caption.copyWith(
-              color: AkashaColors.textPrimary,
+              color: palette.textPrimary,
             ),
           ),
           backgroundColor: palette.workbenchTile,
@@ -192,9 +191,7 @@ class LinkNeighborsConceptTagChip extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: AkashaTypography.caption.copyWith(
-          color: AkashaColors.textSecondary,
-        ),
+        style: AkashaTypography.caption.copyWith(color: palette.textSecondary),
       ),
     );
   }

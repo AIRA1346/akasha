@@ -467,7 +467,7 @@ UX-3 검증: root analyze **0**, root test **1102**, Windows Debug/Release build
 
 ### Phase UX-4 — Preview와 핵심 화면
 
-**진행 중 (2026-07-14, UX-4A 완료).** Preview를 선택을 유지하며 다음 행동을 결정하는 contextual inspector로 정돈했다.
+**진행 중 (2026-07-14, UX-4A/B 완료).** Preview를 선택을 유지하며 다음 행동을 결정하는 contextual inspector로 정돈했다.
 
 - [x] Preview back/close navigation을 header로 분리하고 primary action과 경쟁하지 않게 함
 - [x] 저장된 Work/Entity는 `상세 정보`, registry-only Work는 실제 의미대로 `아카이브`를 primary action으로 사용
@@ -476,12 +476,17 @@ UX-3 검증: root analyze **0**, root test **1102**, Windows Debug/Release build
 - [x] 연결 0건의 다섯 개 타입별 버튼을 기능 보존형 `연결 추가` 메뉴로 통합
 - [x] Preview chrome, action, core info, reflection, empty/registry surface를 semantic palette로 이관
 - [x] primary action keyboard activation, 288px rail, 125% text, Classic/Midnight geometry 회귀 테스트
+- [x] inline/overlay는 288px rail을 유지하고 compact sheet는 readable content 680px·Hero 260px 상한을 사용하는 공통 `PreviewPanelLayoutSpec` 적용
+- [x] compact sheet의 상단 radius·elevation과 rail/overlay/sheet 공통 spacing을 테마 불변 geometry로 고정
+- [x] link neighbor chrome, character, connected work, theme cluster의 Preview 경로 직접색을 semantic palette로 이관
 - [ ] Explore/Library/Collections의 역할과 entity strip 범위 정리
 - [ ] Graph/Timeline의 명칭, copy, empty state, interaction 정돈
 
 Preview 선택과 상세 화면 열기는 계속 별도 의미를 갖는다. Preview를 닫거나 back stack을 이동하는 동작은 중앙 화면 상태를 초기화하지 않으며, registry-only Work를 여는 동작을 상세 보기처럼 위장하지 않는다.
 
 UX-4A 검증: root analyze **0**, root test **1107**, Windows Debug/Release build PASS.
+
+UX-4B 검증: root analyze **0**, root test **1110**, Windows Debug/Release build PASS. `AkashaColors.*` 고정 측정 계약은 UX-4B 시작 **354 lines / 90 files**에서 **342 lines / 86 files**로 감소했다.
 
 ### Phase UX-5 — Theme packs와 회귀 검증
 

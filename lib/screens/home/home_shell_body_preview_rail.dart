@@ -10,12 +10,14 @@ import '../../services/link_candidate_service.dart';
 import 'views/dashboard_preview_panel.dart';
 import 'views/entity_dashboard_preview_panel.dart';
 import 'preview_frame.dart';
+import 'shell_layout_spec.dart';
 
 /// Work·entity preview 패널 (Workbench detail 열림 시 숨김).
 List<Widget> buildHomeShellBodyPreviewPanels({
   required bool workbenchHasOpenDetail,
   required PreviewTarget previewTarget,
   required double previewWidth,
+  required ShellPreviewPresentation previewPresentation,
   required UserCatalogPort userCatalog,
   required RecordLinkPort linkIndex,
   required int linkIndexRevision,
@@ -47,6 +49,7 @@ List<Widget> buildHomeShellBodyPreviewPanels({
       panels.add(
         DashboardPreviewPanel(
           width: previewWidth,
+          previewPresentation: previewPresentation,
           item: item,
           userCatalog: userCatalog,
           linkIndex: linkIndex,
@@ -71,6 +74,7 @@ List<Widget> buildHomeShellBodyPreviewPanels({
       panels.add(
         EntityDashboardPreviewPanel(
           width: previewWidth,
+          previewPresentation: previewPresentation,
           entity: entity,
           userCatalog: userCatalog,
           linkIndex: linkIndex,
