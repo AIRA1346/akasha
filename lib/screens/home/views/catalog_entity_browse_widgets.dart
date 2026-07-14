@@ -8,9 +8,9 @@ import '../../../models/collectible_collection.dart';
 import '../../../models/entity_browse_card.dart';
 import '../../../models/entity_gallery_sort.dart';
 import '../../../models/user_catalog_entity.dart';
-import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../utils/app_l10n.dart';
 import '../../../widgets/entity_collectible_card.dart';
 import '../../../widgets/entity_gallery_sort_dropdown.dart';
 import '../dialogs/add_catalog_entity_dialog.dart';
@@ -34,13 +34,9 @@ class CatalogEntityBrowseEmptyState extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            Icons.inventory_2_outlined,
-            size: 48,
-            color: AkashaColors.textCaption,
-          ),
+          Icon(Icons.inventory_2_outlined, size: 48, color: palette.textMuted),
           const SizedBox(height: 12),
-          Text(message, style: TextStyle(color: AkashaColors.textMuted)),
+          Text(message, style: TextStyle(color: palette.textMuted)),
           if (onAddNewEntity != null) ...[
             const SizedBox(height: 16),
             FilledButton.icon(
@@ -93,7 +89,11 @@ class CatalogEntityBrowseCompactStrip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final palette = context.akashaPalette;
+    final title =
+        l10n?.browseEntityDiscoveryCount(cards.length) ??
+        '엔티티 둘러보기 · ${cards.length}';
     return SizedBox(
       height: 132,
       child: Column(
@@ -102,7 +102,7 @@ class CatalogEntityBrowseCompactStrip extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 8, 12, 4),
             child: Text(
-              'Entity Discovery · ${cards.length}',
+              title,
               style: AkashaTypography.body.copyWith(
                 fontWeight: FontWeight.w600,
                 color: palette.accent,

@@ -13,33 +13,28 @@ enum BrowseEntityScope {
 
 extension BrowseEntityScopeX on BrowseEntityScope {
   String get label => switch (this) {
-        BrowseEntityScope.all => '전체',
-        BrowseEntityScope.work => 'Work',
-        BrowseEntityScope.person => 'Person',
-        BrowseEntityScope.concept => 'Concept',
-        BrowseEntityScope.event => 'Event',
-        BrowseEntityScope.place => 'Place',
-        BrowseEntityScope.organization => 'Org',
-      };
+    BrowseEntityScope.all => '전체',
+    BrowseEntityScope.work => 'Work',
+    BrowseEntityScope.person => 'Person',
+    BrowseEntityScope.concept => 'Concept',
+    BrowseEntityScope.event => 'Event',
+    BrowseEntityScope.place => 'Place',
+    BrowseEntityScope.organization => 'Org',
+  };
 
   bool get showsWorkGrid =>
       this == BrowseEntityScope.work || this == BrowseEntityScope.all;
 
-  /// Work grid 위 compact Entity strip — [`BrowseEntityScope.all`] only.
-  bool get showsEntityDiscoveryStrip => this == BrowseEntityScope.all;
-
-  bool get showsCatalogEntities =>
-      this != BrowseEntityScope.work;
+  bool get showsCatalogEntities => this != BrowseEntityScope.work;
 
   EntityAnchorType? get catalogEntityType => switch (this) {
-        BrowseEntityScope.person => EntityAnchorType.person,
-        BrowseEntityScope.concept => EntityAnchorType.concept,
-        BrowseEntityScope.event => EntityAnchorType.event,
-        BrowseEntityScope.place => EntityAnchorType.place,
-        BrowseEntityScope.organization => EntityAnchorType.organization,
-        _ => null,
-      };
-
+    BrowseEntityScope.person => EntityAnchorType.person,
+    BrowseEntityScope.concept => EntityAnchorType.concept,
+    BrowseEntityScope.event => EntityAnchorType.event,
+    BrowseEntityScope.place => EntityAnchorType.place,
+    BrowseEntityScope.organization => EntityAnchorType.organization,
+    _ => null,
+  };
 }
 
 BrowseEntityScope browseScopeForEntityType(EntityAnchorType type) =>

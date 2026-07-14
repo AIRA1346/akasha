@@ -10,6 +10,7 @@ import '../../models/browse_entity_scope.dart';
 import '../../models/registry_work.dart';
 import '../../models/user_catalog_entity.dart';
 import '../../services/link_candidate_service.dart';
+import 'app_destination.dart';
 import 'home_browse_filter_controller.dart';
 import 'home_personal_library_controller.dart';
 import 'home_section_preferences.dart';
@@ -20,6 +21,16 @@ import 'views/home_dashboard_view.dart';
 import 'views/knowledge_graph_view.dart';
 import 'views/personal_library_view.dart';
 import 'views/work_summary_browse_view.dart';
+
+@visibleForTesting
+bool shouldShowEntityDiscoveryStrip({
+  required AppDestination destination,
+  required BrowseEntityScope scope,
+}) {
+  final purpose = AppDestinationRegistry.definitionFor(destination).purpose;
+  return purpose == AppDestinationPurpose.discovery &&
+      scope == BrowseEntityScope.all;
+}
 
 /// HomeShellBody — 대시보드·라이브러리·엔티티 browse 라우팅.
 class HomeShellBrowseContentBuilder {
@@ -115,10 +126,11 @@ class HomeShellBrowseContentBuilder {
   final void Function(EntityAnchorType? type)? onAddNewEntity;
   final void Function(CanvasRecord canvas)? onOpenCanvas;
 
-  Widget buildDashboardBrowseContent({
-    required bool isKnowledgeGraphMode,
-    required bool isExploreBrowseMode,
-  }) {
+  Widget buildDashboardBrowseContent({required AppDestination destination}) {
+    final isKnowledgeGraphMode = destination == AppDestination.graph;
+    final isExploreBrowseMode =
+        AppDestinationRegistry.definitionFor(destination).purpose ==
+        AppDestinationPurpose.discovery;
     final scope = filterCtrl.entityScope;
     final workPreviewItem = switch (previewTarget) {
       WorkPreviewTarget(:final item) => item,
@@ -210,7 +222,11 @@ class HomeShellBrowseContentBuilder {
       onStateChanged: onStateChanged,
     );
 
-    return wrapWorkGridWithOptionalEntityStrip(scope, workGrid);
+    return wrapWorkGridWithOptionalEntityStrip(
+      destination: destination,
+      scope: scope,
+      workGrid: workGrid,
+    );
   }
 
   Widget buildPersonalLibraryBrowseContent() {
@@ -234,7 +250,7 @@ class HomeShellBrowseContentBuilder {
       onSearch: onSearch,
     );
 
-    return wrapWorkGridWithOptionalEntityStrip(scope, workGrid);
+    return workGrid;
   }
 
   Widget buildCatalogEntityBrowse(BrowseEntityScope scope) {
@@ -255,11 +271,15 @@ class HomeShellBrowseContentBuilder {
     );
   }
 
-  Widget wrapWorkGridWithOptionalEntityStrip(
-    BrowseEntityScope scope,
-    Widget workGrid,
-  ) {
-    if (!scope.showsEntityDiscoveryStrip) {
+  Widget wrapWorkGridWithOptionalEntityStrip({
+    required AppDestination destination,
+    required BrowseEntityScope scope,
+    required Widget workGrid,
+  }) {
+    if (!shouldShowEntityDiscoveryStrip(
+      destination: destination,
+      scope: scope,
+    )) {
       return workGrid;
     }
 

@@ -29,6 +29,7 @@ import 'home_section_preferences.dart';
 import 'home_shell_browse_content.dart';
 import 'home_vault_banner.dart';
 import 'views/catalog_entity_browse_view.dart';
+import 'views/destination_context_header.dart';
 import 'views/records_view.dart';
 
 @visibleForTesting
@@ -263,6 +264,13 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
   }
 
   Widget _buildBrowseContent() {
+    return DestinationContextFrame(
+      destination: destination,
+      child: _buildDestinationContent(),
+    );
+  }
+
+  Widget _buildDestinationContent() {
     if (shouldShowEmptyCollections(
       destination: destination,
       collectionCount: collectionCtrl.collections.length,
@@ -322,10 +330,7 @@ class HomeShellBodyCenterColumn extends StatelessWidget {
       return browse.buildPersonalLibraryBrowseContent();
     }
 
-    return browse.buildDashboardBrowseContent(
-      isKnowledgeGraphMode: destination == AppDestination.graph,
-      isExploreBrowseMode: destination == AppDestination.explore,
-    );
+    return browse.buildDashboardBrowseContent(destination: destination);
   }
 }
 

@@ -48,6 +48,17 @@
   "sidebarExplore": "Explore",
   "sidebarLibrary": "Library",
   "sidebarCollections": "Collections",
+  "destinationExploreDescription": "Find the next subject to record across the catalog and your archive.",
+  "destinationLibraryDescription": "Review the records and personal libraries kept in your vault.",
+  "destinationCollectionsDescription": "Browse works and entities grouped with deliberate intent.",
+  "browseEntityDiscoveryCount": "Explore entities · {count}",
+  "@browseEntityDiscoveryCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "sidebarGraph": "Graph",
   "sidebarTimeline": "Timeline",
   "sidebarMyLibraries": "My Libraries",

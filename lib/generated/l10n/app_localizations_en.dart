@@ -110,6 +110,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String get sidebarCollections => 'Collections';
 
   @override
+  String get destinationExploreDescription =>
+      'Find the next subject to record across the catalog and your archive.';
+
+  @override
+  String get destinationLibraryDescription =>
+      'Review the records and personal libraries kept in your vault.';
+
+  @override
+  String get destinationCollectionsDescription =>
+      'Browse works and entities grouped with deliberate intent.';
+
+  @override
+  String browseEntityDiscoveryCount(int count) {
+    return 'Explore entities · $count';
+  }
+
+  @override
   String get sidebarGraph => 'Graph';
 
   @override

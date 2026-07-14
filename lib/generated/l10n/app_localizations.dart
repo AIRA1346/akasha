@@ -284,6 +284,30 @@ abstract class AppLocalizations {
   /// **'Collections'**
   String get sidebarCollections;
 
+  /// No description provided for @destinationExploreDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Find the next subject to record across the catalog and your archive.'**
+  String get destinationExploreDescription;
+
+  /// No description provided for @destinationLibraryDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Review the records and personal libraries kept in your vault.'**
+  String get destinationLibraryDescription;
+
+  /// No description provided for @destinationCollectionsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse works and entities grouped with deliberate intent.'**
+  String get destinationCollectionsDescription;
+
+  /// No description provided for @browseEntityDiscoveryCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore entities · {count}'**
+  String browseEntityDiscoveryCount(int count);
+
   /// No description provided for @sidebarGraph.
   ///
   /// In en, this message translates to:

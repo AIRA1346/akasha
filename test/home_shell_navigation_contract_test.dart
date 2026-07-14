@@ -96,6 +96,7 @@ void main() {
     var selections = 0;
     const unavailable = AppDestinationDefinition(
       destination: AppDestination.graph,
+      purpose: AppDestinationPurpose.relationships,
       stableId: 'graph-unavailable-fixture',
       l10nLabelKey: 'sidebarGraph',
       fallbackLabel: 'Graph',

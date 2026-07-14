@@ -106,6 +106,20 @@ class AppLocalizationsKo extends AppLocalizations {
   String get sidebarCollections => '컬렉션';
 
   @override
+  String get destinationExploreDescription => '사전과 아카이브에서 다음 기록 대상을 찾습니다.';
+
+  @override
+  String get destinationLibraryDescription => '볼트에 보관한 기록과 나만의 서재를 살펴봅니다.';
+
+  @override
+  String get destinationCollectionsDescription => '작품과 엔티티를 의도적으로 묶은 컬렉션입니다.';
+
+  @override
+  String browseEntityDiscoveryCount(int count) {
+    return '엔티티 둘러보기 · $count';
+  }
+
+  @override
   String get sidebarGraph => '그래프';
 
   @override

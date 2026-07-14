@@ -10,6 +10,7 @@ void main() {
     expect(entries.map((entry) => entry.destination), AppDestination.values);
     expect(entries.map((entry) => entry.stableId).toSet(), hasLength(6));
     expect(entries.map((entry) => entry.l10nLabelKey).toSet(), hasLength(6));
+    expect(entries.map((entry) => entry.purpose), AppDestinationPurpose.values);
     expect(entries.map((entry) => entry.shortcut.trigger), const [
       LogicalKeyboardKey.digit1,
       LogicalKeyboardKey.digit2,
@@ -19,6 +20,19 @@ void main() {
       LogicalKeyboardKey.digit6,
     ]);
     expect(entries.every((entry) => entry.shortcut.alt), isTrue);
+  });
+
+  test('browse context headers are limited to discovery archive curation', () {
+    final visible = AppDestinationRegistry.ordered
+        .where((entry) => entry.showsBrowseContextHeader)
+        .map((entry) => entry.destination)
+        .toList();
+
+    expect(visible, const [
+      AppDestination.explore,
+      AppDestination.library,
+      AppDestination.collections,
+    ]);
   });
 
   test('Graph and Timeline remain available existing destinations', () {

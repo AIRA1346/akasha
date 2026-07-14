@@ -5,11 +5,25 @@ import '../../generated/l10n/app_localizations.dart';
 
 enum AppDestination { home, explore, library, collections, graph, timeline }
 
+/// Product role for each global destination.
+///
+/// Navigation surfaces, destination context copy, and browse composition read
+/// this metadata instead of inferring meaning from individual widgets.
+enum AppDestinationPurpose {
+  dashboard,
+  discovery,
+  archive,
+  curation,
+  relationships,
+  chronology,
+}
+
 /// Immutable navigation metadata shared by every global navigation surface.
 @immutable
 class AppDestinationDefinition {
   const AppDestinationDefinition({
     required this.destination,
+    required this.purpose,
     required this.stableId,
     required this.l10nLabelKey,
     required this.fallbackLabel,
@@ -19,6 +33,7 @@ class AppDestinationDefinition {
   });
 
   final AppDestination destination;
+  final AppDestinationPurpose purpose;
   final String stableId;
   final String l10nLabelKey;
   final String fallbackLabel;
@@ -37,6 +52,25 @@ class AppDestinationDefinition {
       AppDestination.timeline => l10n.sidebarTimeline,
     };
   }
+
+  String? resolvePurposeDescription(AppLocalizations? l10n) {
+    return switch (purpose) {
+      AppDestinationPurpose.discovery =>
+        l10n?.destinationExploreDescription ?? '사전과 아카이브에서 다음 기록 대상을 찾습니다.',
+      AppDestinationPurpose.archive =>
+        l10n?.destinationLibraryDescription ?? '볼트에 보관한 기록과 나만의 서재를 살펴봅니다.',
+      AppDestinationPurpose.curation =>
+        l10n?.destinationCollectionsDescription ?? '작품과 엔티티를 의도적으로 묶은 컬렉션입니다.',
+      _ => null,
+    };
+  }
+
+  bool get showsBrowseContextHeader => switch (purpose) {
+    AppDestinationPurpose.discovery ||
+    AppDestinationPurpose.archive ||
+    AppDestinationPurpose.curation => true,
+    _ => false,
+  };
 
   AppDestinationBinding bind({
     required AppDestination currentDestination,
@@ -71,6 +105,7 @@ abstract final class AppDestinationRegistry {
   static const List<AppDestinationDefinition> ordered = [
     AppDestinationDefinition(
       destination: AppDestination.home,
+      purpose: AppDestinationPurpose.dashboard,
       stableId: 'home',
       l10nLabelKey: 'sidebarHome',
       fallbackLabel: 'Home',
@@ -80,6 +115,7 @@ abstract final class AppDestinationRegistry {
     ),
     AppDestinationDefinition(
       destination: AppDestination.explore,
+      purpose: AppDestinationPurpose.discovery,
       stableId: 'explore',
       l10nLabelKey: 'sidebarExplore',
       fallbackLabel: 'Explore',
@@ -89,6 +125,7 @@ abstract final class AppDestinationRegistry {
     ),
     AppDestinationDefinition(
       destination: AppDestination.library,
+      purpose: AppDestinationPurpose.archive,
       stableId: 'library',
       l10nLabelKey: 'sidebarLibrary',
       fallbackLabel: 'Library',
@@ -98,6 +135,7 @@ abstract final class AppDestinationRegistry {
     ),
     AppDestinationDefinition(
       destination: AppDestination.collections,
+      purpose: AppDestinationPurpose.curation,
       stableId: 'collections',
       l10nLabelKey: 'sidebarCollections',
       fallbackLabel: 'Collections',
@@ -110,6 +148,7 @@ abstract final class AppDestinationRegistry {
     // not claim or introduce a new graph engine or visualization feature.
     AppDestinationDefinition(
       destination: AppDestination.graph,
+      purpose: AppDestinationPurpose.relationships,
       stableId: 'graph',
       l10nLabelKey: 'sidebarGraph',
       fallbackLabel: 'Graph',
@@ -122,6 +161,7 @@ abstract final class AppDestinationRegistry {
     // add a new timeline data model or capability.
     AppDestinationDefinition(
       destination: AppDestination.timeline,
+      purpose: AppDestinationPurpose.chronology,
       stableId: 'timeline',
       l10nLabelKey: 'sidebarTimeline',
       fallbackLabel: 'Timeline',

@@ -20,7 +20,7 @@
 > - **Entity derivedIndexesUpdated** — Entity save/delete sets per-path `VaultPathChange.derivedIndexesUpdated` after successful index mutation; Home skips `ArchiveIndexManager` only (UI side-effects kept). Home debounce **AND-coalesces** pending path flags across batches (`false` survives later `true`). Work/Journal/Timeline still double-update (follow-up)
 > - **HomeShell vault-watch dispose lifecycle (ACTION A)** — God Class 전면 리팩터 **기각** (상태 소유권은 이미 coordinator로 분리). `HomeVaultWatchReactor` generation cancel + dispose 순서(reactor → vault sub/debounce → workbench) + `WorkbenchController.syncEntityTabs` await 후 `_disposed` guard. **COUPLED/DEFERRED 유지:** timeline token 과다 bump · 이중 rebuild · Catalog `isCatalogLoading` 직접 set · Vault cold-start bootstrap 추출
 > - **Package modularization audit (closed)** — 단일 Flutter 앱 + `akasha_commerce_domain`(유일한 성공 공유 package) + 별도 backend 유지 · package graph **비순환** · 신규 EXTRACT_NOW **없음** · Melos / `akasha_core`·database·ui 전면 분할·줄 수 기준 분리 **기각**. Archive format/codec = PREPARE_BOUNDARY · Vault I/O / UI / Home orchestration = KEEP_IN_APP · Steam bridge는 production IAP·no-IAP 빌드 제외 요구 시 **CMake optional부터** 재검토 · Melos는 package 수·공통 orchestration 필요성이 실제로 늘 때만. **재오픈 트리거:** 앱 외 제2 소비자 · 플랫폼 완전 빌드 제외 · 안정 API/의존 방향 · 앱 타입 역참조 없음 · 독립 테스트·배포·CI 격리 실측 · unrelated 동시 변경 반복
-> - Flutter app: `flutter analyze` **0** · `flutter test` **1110**
+> - Flutter app: `flutter analyze` **0** · `flutter test` **1115**
 > - Commerce packages: domain `dart test` **14** · backend `dart test` **17** · both `dart analyze` **0**
 > - Windows debug/release build **OK (2026-07-14)**
 >
@@ -45,7 +45,7 @@
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
 
-**v1 blocking에 가까운 검증:** root `flutter test` **1110** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
+**v1 blocking에 가까운 검증:** root `flutter test` **1115** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
 **v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.  
 **IAP:** `FeatureFlags.steamInAppPurchasesEnabled = false` — 미구현. Store IAP 표시·재심사 주장 금지 until Steam payment flow complete.
 ---
@@ -77,7 +77,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| root `flutter test` | **1110 PASS** | ✅ |
+| root `flutter test` | **1115 PASS** | ✅ |
 | commerce domain `dart test` | **14 PASS** | ✅ |
 | commerce backend `dart test` | **17 PASS** | ✅ |
 | `flutter analyze lib` | 0 issue | ✅ |
@@ -93,6 +93,7 @@
 * **UX-3 Home 핵심 흐름 완료** — 실제 summary Hero, empty start action, theme-owned Hero artwork fallback, ID 기반 scroll 보존 Continue rail, 실제 metadata card, 반응형 Quick Actions, 기존 link index 기반 Connection Insight, record index 기반 Today activity. 미연결·빈 결과·인덱스 오류를 구분하며 새 추천/그래프 기능으로 과장하지 않음.
 * **UX-4A Preview hierarchy 완료** — back/close navigation과 primary action 분리, registry-only Work의 archive 의미 명시, 개인 rating·archive CTA 중복 제거, 연결 0건 action menu, 공통 Preview semantic palette. 중복 dormant `PreviewMemoBar` 플래그·위젯 제거.
 * **UX-4B Preview responsive density 완료** — inline/overlay 288px rail 유지, compact sheet readable content 680px·Hero 260px 상한, sheet radius/elevation과 공통 spacing 계약, 연결 하위 표면 semantic palette. 125% text와 Classic/Midnight geometry 회귀 검증.
+* **UX-4C Destination roles 완료** — `AppDestinationPurpose`로 Explore=discovery, Library=archive, Collections=curation 역할 고정. 공통 context header를 추가하고 entity discovery strip을 Explore `all` scope에만 제한해 Library·Collections의 의미를 분리.
 * **v1 관점:** browse/catalog UI는 **기록으로 이어지는 진입**이지 제품 정체성 자체가 아님.
 
 ---

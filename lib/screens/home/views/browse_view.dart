@@ -8,7 +8,7 @@ import '../../../utils/helpers.dart';
 import '../../../widgets/browse_dashboard_sections.dart';
 import '../home_section_preferences.dart';
 import '../../../models/browse_card.dart';
-import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_typography.dart';
 
 /// 비-개인서재(대시보드) browse 그리드·섹션 prefs 연동
@@ -64,6 +64,7 @@ class _BrowseViewState extends State<BrowseView> {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
 
     if (widget.isCatalogLoading) {
       return Center(
@@ -78,7 +79,7 @@ class _BrowseViewState extends State<BrowseView> {
             const SizedBox(height: 12),
             Text(
               l10n?.browseLoadingCatalog ?? '글로벌 작품 사전 불러오는 중…',
-              style: const TextStyle(color: AkashaColors.textMuted),
+              style: TextStyle(color: palette.textMuted),
             ),
           ],
         ),
@@ -90,11 +91,11 @@ class _BrowseViewState extends State<BrowseView> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.search_off, size: 48, color: AkashaColors.textCaption),
+            Icon(Icons.search_off, size: 48, color: palette.textMuted),
             const SizedBox(height: 12),
             Text(
               l10n?.browseNoResults ?? '조건에 맞는 작품이 없습니다.',
-              style: TextStyle(color: AkashaColors.textMuted),
+              style: TextStyle(color: palette.textMuted),
             ),
           ],
         ),
@@ -102,8 +103,10 @@ class _BrowseViewState extends State<BrowseView> {
     }
 
     final sectionPrefs = widget.sectionPrefs;
-    final catalogCards =
-        sortBrowseCards(widget.filteredCards, sectionPrefs.librarySort);
+    final catalogCards = sortBrowseCards(
+      widget.filteredCards,
+      sectionPrefs.librarySort,
+    );
     final categoryGroups = BrowseCategoryGroups.fromCards(
       catalogCards,
       sectionPrefs.librarySort,
@@ -183,6 +186,7 @@ class _CatalogWindowFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
       child: Column(
@@ -191,7 +195,7 @@ class _CatalogWindowFooter extends StatelessWidget {
             l10n != null
                 ? l10n.browseCatalogIndexed(loadedThrough, totalEntries)
                 : '글로벌 사전 $loadedThrough / $totalEntries 작품 색인 로드됨',
-            style: AkashaTypography.body.copyWith(color: AkashaColors.textMuted),
+            style: AkashaTypography.body.copyWith(color: palette.textMuted),
           ),
           if (hasMore) ...[
             const SizedBox(height: 8),
