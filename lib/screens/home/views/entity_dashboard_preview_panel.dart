@@ -16,7 +16,6 @@ import '../../../utils/entity_link_neighbors.dart';
 import '../../../widgets/entity_link_neighbors_sections.dart';
 import '../../../widgets/entity_preview_empty_connections.dart';
 import '../../../widgets/registry_discovery_candidates_section.dart';
-import 'preview_memo_bar.dart';
 import 'preview_panel_chrome.dart';
 import 'preview_record_view_model.dart';
 import 'preview_work_panel_content.dart';
@@ -145,7 +144,6 @@ class _EntityDashboardPreviewPanelState
                 : () => widget.onConnectEntityType!(
                     EntityAnchorType.organization,
                   ),
-            onOpenRecord: widget.onOpenDetail,
           );
         }
         return EntityLinkNeighborsSections(
@@ -191,11 +189,7 @@ class _EntityDashboardPreviewPanelState
                     const SizedBox(height: 14),
                     PreviewRecordTitleBlock(model: record),
                     const SizedBox(height: 12),
-                    PreviewRecordActionBar(
-                      onOpenDetail: widget.onOpenDetail,
-                      canGoBack: widget.canGoBack,
-                      onBack: widget.onBack,
-                    ),
+                    PreviewRecordActionBar(onPressed: widget.onOpenDetail),
                     const SizedBox(height: 18),
                     PreviewRecordCoreInfoSection(rows: record.coreInfoRows),
                     const SizedBox(height: 18),
@@ -252,8 +246,6 @@ class _EntityDashboardPreviewPanelState
               ),
             ),
           ),
-          if (FeatureFlags.showPreviewMemoBar)
-            PreviewMemoBar(onOpenDetail: widget.onOpenDetail),
         ],
       ),
     );

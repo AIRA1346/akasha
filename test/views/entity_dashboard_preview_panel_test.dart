@@ -5,11 +5,14 @@ import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/core/archiving/record_link.dart';
 import 'package:akasha/core/ports/record_link_port.dart';
 import 'package:akasha/core/ports/user_catalog_port.dart';
+import 'package:akasha/generated/l10n/app_localizations.dart';
 import 'package:akasha/models/akasha_item.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/screens/home/views/entity_dashboard_preview_panel.dart';
+import 'package:akasha/screens/home/views/preview_work_panel_content.dart';
 import 'package:akasha/theme/akasha_theme.dart';
+import 'package:akasha/theme/akasha_theme_preset.dart';
 
 class _FakeUserCatalog implements UserCatalogPort {
   @override
@@ -91,7 +94,66 @@ void main() {
     expect(find.text('인물'), findsWidgets);
     expect(find.text('상세 정보'), findsOneWidget);
     expect(find.text('핵심 정보'), findsOneWidget);
-    expect(find.text('연결이 없습니다.'), findsOneWidget);
-    expect(find.textContaining('연결을 추가'), findsOneWidget);
+    expect(find.text('아직 연결이 없습니다'), findsOneWidget);
+    expect(find.textContaining('작품이나 다른 엔티티'), findsOneWidget);
+  });
+
+  testWidgets('Entity Preview geometry is theme invariant at 125% text', (
+    tester,
+  ) async {
+    final entity = UserCatalogEntity.userLocal(
+      entityId: 'ent_geometry',
+      type: EntityAnchorType.person,
+      title: '테마 불변 인물',
+      subtype: MediaCategory.animation,
+      aliases: const ['Theme invariant entity'],
+      addedAt: DateTime(2026),
+    );
+    await tester.binding.setSurfaceSize(const Size(360, 900));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+
+    Future<Map<String, Rect>> geometry(AkashaThemePreset preset) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: AkashaTheme.forPreset(preset),
+          locale: const Locale('ko'),
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          builder: (context, child) => MediaQuery(
+            data: MediaQuery.of(
+              context,
+            ).copyWith(textScaler: const TextScaler.linear(1.25)),
+            child: child!,
+          ),
+          home: Scaffold(
+            body: Align(
+              alignment: Alignment.centerRight,
+              child: EntityDashboardPreviewPanel(
+                entity: entity,
+                width: 288,
+                userCatalog: _FakeUserCatalog(),
+                linkIndex: _FakeLinkIndex(),
+                vaultItems: const [],
+                onClose: () {},
+                onOpenDetail: () {},
+              ),
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+      return {
+        'panel': tester.getRect(find.byType(EntityDashboardPreviewPanel)),
+        'hero': tester.getRect(find.byType(PreviewRecordHero)),
+        'action': tester.getRect(find.byType(PreviewRecordActionBar)),
+        'core': tester.getRect(find.byType(PreviewRecordCoreInfoSection)),
+      };
+    }
+
+    final classic = await geometry(AkashaThemePreset.classicDark);
+    final midnight = await geometry(AkashaThemePreset.midnightBlue);
+
+    expect(midnight, classic);
   });
 }

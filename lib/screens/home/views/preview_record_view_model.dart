@@ -5,8 +5,6 @@ import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../generated/l10n/app_localizations.dart';
 import '../../../services/works_registry.dart';
-import '../../../theme/akasha_colors.dart';
-import '../../../theme/akasha_typography.dart';
 
 /// Work·Entity 프리뷰 패널 공통 표시 모델.
 class PreviewRecordViewModel {
@@ -137,7 +135,6 @@ class PreviewRecordViewModel {
         label: l10n?.previewStudio ?? '제작사',
         value: studio,
       ),
-      PreviewCoreInfoRow.rating(item.rating, l10n),
     ];
   }
 
@@ -192,40 +189,11 @@ class PreviewCoreInfoRow {
     required this.icon,
     required this.label,
     this.value,
-    this.valueWidget,
   });
-
-  factory PreviewCoreInfoRow.rating(double rating, [AppLocalizations? l10n]) {
-    return PreviewCoreInfoRow(
-      icon: Icons.star_rounded,
-      label: l10n?.previewRating ?? '평점',
-      valueWidget: rating > 0
-          ? Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.star, size: 12, color: AkashaColors.statusWarning),
-                const SizedBox(width: 4),
-                Text(
-                  rating.toStringAsFixed(1),
-                  style: AkashaTypography.bodySecondary.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: AkashaColors.textPrimary,
-                  ),
-                ),
-                Text(' / 5', style: AkashaTypography.caption),
-              ],
-            )
-          : Text(
-              l10n?.previewNoRating ?? '평가 없음',
-              style: AkashaTypography.bodySecondary,
-            ),
-    );
-  }
 
   final IconData icon;
   final String label;
   final String? value;
-  final Widget? valueWidget;
 }
 
 String entityTypeDisplayLabel(EntityAnchorType type, [AppLocalizations? l10n]) {

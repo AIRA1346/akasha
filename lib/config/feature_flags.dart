@@ -38,7 +38,4 @@ class FeatureFlags {
 
   /// 워크벤치 상단 경로 breadcrumb (`서재 > 작품 > 제목`).
   static const bool showWorkbenchBreadcrumb = false;
-
-  /// 홈 프리뷰 패널 하단 빠른 메모 진입 바.
-  static const bool showPreviewMemoBar = false;
 }

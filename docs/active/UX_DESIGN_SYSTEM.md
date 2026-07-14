@@ -467,9 +467,21 @@ UX-3 검증: root analyze **0**, root test **1102**, Windows Debug/Release build
 
 ### Phase UX-4 — Preview와 핵심 화면
 
-- Preview 정보 밀도와 action hierarchy 정돈
-- Explore/Library/Collections의 역할과 entity strip 범위 정리
-- Graph/Timeline의 명칭, copy, empty state, interaction 정돈
+**진행 중 (2026-07-14, UX-4A 완료).** Preview를 선택을 유지하며 다음 행동을 결정하는 contextual inspector로 정돈했다.
+
+- [x] Preview back/close navigation을 header로 분리하고 primary action과 경쟁하지 않게 함
+- [x] 저장된 Work/Entity는 `상세 정보`, registry-only Work는 실제 의미대로 `아카이브`를 primary action으로 사용
+- [x] Work 개인 평점을 `내 감상`에만 남기고 핵심 정보의 중복 평점 제거
+- [x] registry archive CTA 중복과 dormant `PreviewMemoBar`/`showPreviewMemoBar` 제거
+- [x] 연결 0건의 다섯 개 타입별 버튼을 기능 보존형 `연결 추가` 메뉴로 통합
+- [x] Preview chrome, action, core info, reflection, empty/registry surface를 semantic palette로 이관
+- [x] primary action keyboard activation, 288px rail, 125% text, Classic/Midnight geometry 회귀 테스트
+- [ ] Explore/Library/Collections의 역할과 entity strip 범위 정리
+- [ ] Graph/Timeline의 명칭, copy, empty state, interaction 정돈
+
+Preview 선택과 상세 화면 열기는 계속 별도 의미를 갖는다. Preview를 닫거나 back stack을 이동하는 동작은 중앙 화면 상태를 초기화하지 않으며, registry-only Work를 여는 동작을 상세 보기처럼 위장하지 않는다.
+
+UX-4A 검증: root analyze **0**, root test **1107**, Windows Debug/Release build PASS.
 
 ### Phase UX-5 — Theme packs와 회귀 검증
 

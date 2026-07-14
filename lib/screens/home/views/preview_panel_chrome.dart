@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
@@ -62,6 +61,16 @@ class PreviewPanelChrome extends StatelessWidget {
     final palette = context.akashaPalette;
     return Row(
       children: [
+        if (canGoBack && onBack != null) ...[
+          IconButton(
+            icon: const Icon(Icons.arrow_back_rounded, size: 18),
+            color: palette.textSecondary,
+            onPressed: onBack,
+            splashRadius: 20,
+            tooltip: l10n?.actionPrev ?? '이전',
+          ),
+          const SizedBox(width: AkashaSpacing.xs),
+        ],
         Container(
           padding: const EdgeInsets.symmetric(
             horizontal: AkashaSpacing.sm,
@@ -75,14 +84,14 @@ class PreviewPanelChrome extends StatelessWidget {
             typeLabel,
             style: AkashaTypography.caption.copyWith(
               fontWeight: FontWeight.bold,
-              color: AkashaColors.textMuted,
+              color: palette.textSecondary,
             ),
           ),
         ),
         const Spacer(),
         IconButton(
           icon: const Icon(Icons.close_rounded, size: 20),
-          color: AkashaColors.textCaption,
+          color: palette.textMuted,
           onPressed: onClose,
           splashRadius: 20,
           tooltip: l10n?.actionClose ?? '닫기',
@@ -114,7 +123,7 @@ class PreviewPanelChrome extends StatelessWidget {
               child: Text(
                 typeLabel,
                 style: AkashaTypography.micro.copyWith(
-                  color: AkashaColors.textMuted,
+                  color: palette.textMuted,
                   letterSpacing: 0.3,
                 ),
               ),
@@ -122,7 +131,7 @@ class PreviewPanelChrome extends StatelessWidget {
             const Spacer(),
             IconButton(
               icon: const Icon(Icons.close_rounded, size: 20),
-              color: AkashaColors.textCaption,
+              color: palette.textMuted,
               onPressed: onClose,
               splashRadius: 20,
               tooltip: l10n?.actionClose ?? '닫기',
@@ -159,7 +168,7 @@ class PreviewPanelChrome extends StatelessWidget {
                       horizontal: 10,
                       vertical: AkashaSpacing.sm,
                     ),
-                    foregroundColor: AkashaColors.textSecondary,
+                    foregroundColor: palette.textSecondary,
                     side: BorderSide(color: palette.borderSubtle(0.28)),
                   ),
                 ),

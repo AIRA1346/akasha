@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../core/archiving/entity_anchor.dart';
+import '../generated/l10n/app_localizations.dart';
 import '../services/link_candidate_service.dart';
-import '../theme/akasha_colors.dart';
+import '../utils/app_l10n.dart';
+import 'preview_connection_empty_state.dart';
 
-/// Work Preview — 연결 0건일 때 다음 행동 CTA.
+/// Work Preview — 연결 0건일 때 한 개의 메뉴로 다음 행동을 정돈한다.
 class WorkPreviewEmptyConnections extends StatelessWidget {
   const WorkPreviewEmptyConnections({
     super.key,
@@ -15,7 +17,6 @@ class WorkPreviewEmptyConnections extends StatelessWidget {
     this.onConnectConcept,
     this.onConnectPlace,
     this.onConnectOrganization,
-    this.onOpenRecord,
   });
 
   final List<LinkCandidate> suggestedLinks;
@@ -25,143 +26,76 @@ class WorkPreviewEmptyConnections extends StatelessWidget {
   final VoidCallback? onConnectConcept;
   final VoidCallback? onConnectPlace;
   final VoidCallback? onConnectOrganization;
-  final VoidCallback? onOpenRecord;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: const Color(0xFF161824),
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.06)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            '연결이 없습니다.',
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.bold,
-              color: AkashaColors.textSecondary,
-            ),
+    final l10n = lookupAppL10n(context);
+    final actions = <PreviewConnectionAction>[
+      if (onConnectPerson != null)
+        _action(
+          l10n?.entityTypePerson ?? '인물',
+          Icons.person_outline,
+          onConnectPerson!,
+          l10n,
+        ),
+      if (onConnectEvent != null)
+        _action(
+          l10n?.entityTypeEvent ?? '사건',
+          Icons.event_outlined,
+          onConnectEvent!,
+          l10n,
+        ),
+      if (onConnectConcept != null)
+        _action(
+          l10n?.entityTypeConcept ?? '개념',
+          Icons.lightbulb_outline,
+          onConnectConcept!,
+          l10n,
+        ),
+      if (onConnectPlace != null)
+        _action(
+          l10n?.entityTypePlace ?? '장소',
+          Icons.place_outlined,
+          onConnectPlace!,
+          l10n,
+        ),
+      if (onConnectOrganization != null)
+        _action(
+          l10n?.entityTypeOrganization ?? '조직',
+          Icons.groups_outlined,
+          onConnectOrganization!,
+          l10n,
+        ),
+    ];
+
+    return PreviewConnectionEmptyState(
+      description:
+          l10n?.previewWorkNoConnectionsDescription ??
+          '작품 기록에 링크를 추가하면 아카이브의 연결로 표시됩니다.',
+      actions: actions,
+      suggestions: [
+        for (final candidate in suggestedLinks.take(3))
+          PreviewConnectionSuggestion(
+            label: candidate.title,
+            icon: _iconFor(candidate.anchorType),
+            onPressed: onSelectSuggested == null
+                ? null
+                : () => onSelectSuggested!(candidate),
           ),
-          const SizedBox(height: 4),
-          Text(
-            '이 작품 기록에서 링크로 지식 우주를 확장해 보세요.',
-            style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
-          ),
-          if (suggestedLinks.isNotEmpty) ...[
-            const SizedBox(height: 12),
-            Text(
-              '추천 연결',
-              style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
-            ),
-            const SizedBox(height: 6),
-            Wrap(
-              spacing: 6,
-              runSpacing: 6,
-              children: [
-                for (final candidate in suggestedLinks.take(3))
-                  ActionChip(
-                    visualDensity: VisualDensity.compact,
-                    label: Text(
-                      candidate.title,
-                      style: const TextStyle(fontSize: 10),
-                    ),
-                    avatar: Icon(
-                      _iconFor(candidate.anchorType),
-                      size: 14,
-                      color: AkashaColors.accent,
-                    ),
-                    onPressed: onSelectSuggested == null
-                        ? null
-                        : () => onSelectSuggested!(candidate),
-                  ),
-              ],
-            ),
-          ],
-          const SizedBox(height: 12),
-          Text(
-            '이 작품에서',
-            style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
-          ),
-          const SizedBox(height: 6),
-          _linkButton(
-            label: '인물 연결하기',
-            icon: Icons.person_outline,
-            onPressed: onConnectPerson,
-          ),
-          _linkButton(
-            label: '사건 연결하기',
-            icon: Icons.event_outlined,
-            onPressed: onConnectEvent,
-          ),
-          _linkButton(
-            label: '개념 연결하기',
-            icon: Icons.lightbulb_outline,
-            onPressed: onConnectConcept,
-          ),
-          _linkButton(
-            label: '장소 연결하기',
-            icon: Icons.place_outlined,
-            onPressed: onConnectPlace,
-          ),
-          _linkButton(
-            label: '조직 연결하기',
-            icon: Icons.groups_outlined,
-            onPressed: onConnectOrganization,
-          ),
-          if (onOpenRecord != null) ...[
-            const SizedBox(height: 8),
-            SizedBox(
-              width: double.infinity,
-              child: OutlinedButton(
-                onPressed: onOpenRecord,
-                style: OutlinedButton.styleFrom(
-                  visualDensity: VisualDensity.compact,
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  side: BorderSide(
-                    color: AkashaColors.accent.withValues(alpha: 0.4),
-                  ),
-                ),
-                child: const Text(
-                  '기록 열고 직접 작성하기',
-                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-          ],
-        ],
-      ),
+      ],
     );
   }
 
-  Widget _linkButton({
-    required String label,
-    required IconData icon,
-    VoidCallback? onPressed,
-  }) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 4),
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: TextButton.icon(
-          onPressed: onPressed,
-          style: TextButton.styleFrom(
-            visualDensity: VisualDensity.compact,
-            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-            minimumSize: Size.zero,
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          ),
-          icon: Icon(icon, size: 14, color: AkashaColors.accent),
-          label: Text(
-            label,
-            style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-          ),
-        ),
-      ),
+  PreviewConnectionAction _action(
+    String typeLabel,
+    IconData icon,
+    VoidCallback onPressed,
+    AppLocalizations? l10n,
+  ) {
+    return PreviewConnectionAction(
+      label: l10n?.previewConnectType(typeLabel) ?? '$typeLabel 연결',
+      icon: icon,
+      onPressed: onPressed,
     );
   }
 

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../models/registry_work.dart';
 import '../services/registry_discovery_candidate_service.dart';
-import '../theme/akasha_colors.dart';
 import '../theme/akasha_palette.dart';
+import '../theme/akasha_typography.dart';
 import '../utils/app_l10n.dart';
 
 /// Registry Discovery Bridge — 사전 작품 추천 섹션 (R11).
@@ -48,18 +48,14 @@ class RegistryDiscoveryCandidatesSection extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(
-                Icons.cloud_outlined,
-                size: 14,
-                color: AkashaColors.textMuted,
-              ),
+              Icon(Icons.cloud_outlined, size: 14, color: palette.textMuted),
               const SizedBox(width: 6),
               Text(
                 l10n?.registryDiscoveryMoreFromCatalog ?? '사전에서 더 보기',
-                style: TextStyle(
+                style: AkashaTypography.micro.copyWith(
                   fontSize: compact ? 10 : 11,
                   fontWeight: FontWeight.bold,
-                  color: AkashaColors.textSecondary,
+                  color: palette.textSecondary,
                 ),
               ),
             ],
@@ -68,7 +64,7 @@ class RegistryDiscoveryCandidatesSection extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               bridgeHint!,
-              style: TextStyle(fontSize: 10, color: AkashaColors.textCaption),
+              style: AkashaTypography.micro.copyWith(color: palette.textMuted),
             ),
           ],
           const SizedBox(height: 6),
@@ -83,9 +79,9 @@ class RegistryDiscoveryCandidatesSection extends StatelessWidget {
                   side: BorderSide(color: palette.borderSubtle(0.28)),
                   label: Text(
                     candidate.work.displayTitle(),
-                    style: TextStyle(
+                    style: AkashaTypography.micro.copyWith(
                       fontSize: compact ? 9 : 10,
-                      color: AkashaColors.textPrimary,
+                      color: palette.textPrimary,
                     ),
                   ),
                   avatar: Icon(

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../core/archiving/entity_anchor.dart';
 import '../models/akasha_item.dart';
 import '../models/user_catalog_entity.dart';
-import '../theme/akasha_colors.dart';
+import '../theme/akasha_palette.dart';
 import '../theme/akasha_typography.dart';
 import '../utils/entity_link_neighbors.dart';
 import 'link_neighbors_section_chrome.dart';
@@ -56,6 +56,7 @@ class EntityLinkNeighborsSections extends StatelessWidget {
     }
 
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
     final titleStyle = sectionTitleStyle ?? _defaultSectionTitle;
 
     return Column(
@@ -66,7 +67,7 @@ class EntityLinkNeighborsSections extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 12),
             child: Row(
               children: [
-                const Icon(Icons.link, size: 14, color: AkashaColors.textMuted),
+                Icon(Icons.link, size: 14, color: palette.textMuted),
                 const SizedBox(width: 6),
                 Text(
                   l10n != null

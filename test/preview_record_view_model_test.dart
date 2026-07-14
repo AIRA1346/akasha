@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('PreviewRecordViewModel', () {
-    test('work core info rating uses five-point scale', () {
+    test('work core info does not duplicate personal rating', () {
       final item = createItem(
         workId: 'wk_u_agnt0001',
         title: 'Agent Slice',
@@ -17,10 +17,7 @@ void main() {
       );
 
       final model = PreviewRecordViewModel.fromWork(item);
-      final ratingRow = model.coreInfoRows.last;
-
-      expect(ratingRow.label, '평점');
-      expect(ratingRow.valueWidget, isNotNull);
+      expect(model.coreInfoRows.map((row) => row.label), ['장르', '원작', '제작사']);
     });
 
     test('work hero uses a poster-shaped aspect ratio', () {
@@ -33,20 +30,6 @@ void main() {
       final model = PreviewRecordViewModel.fromWork(item);
 
       expect(model.heroAspectRatio, closeTo(2 / 3, 0.001));
-    });
-
-    testWidgets('core info rating row shows / 5 not / 10', (tester) async {
-      final row = PreviewCoreInfoRow.rating(4.5);
-
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Scaffold(body: PreviewRecordCoreInfoSection(rows: [row])),
-        ),
-      );
-
-      expect(find.text(' / 5'), findsOneWidget);
-      expect(find.text(' / 10'), findsNothing);
-      expect(find.text('4.5'), findsOneWidget);
     });
 
     testWidgets('preview hero shows the whole poster without cropping', (

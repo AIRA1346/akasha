@@ -512,6 +512,54 @@ abstract class AppLocalizations {
   /// **'View in Graph'**
   String get previewViewInGraph;
 
+  /// No description provided for @previewCatalogWorkTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Catalog work'**
+  String get previewCatalogWorkTitle;
+
+  /// No description provided for @previewCatalogWorkDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'This work is not in your Vault yet. Archive it to start recording and connecting it.'**
+  String get previewCatalogWorkDescription;
+
+  /// No description provided for @previewNoConnectionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No connections yet'**
+  String get previewNoConnectionsTitle;
+
+  /// No description provided for @previewWorkNoConnectionsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Add links to the work record to make them part of your archive connections.'**
+  String get previewWorkNoConnectionsDescription;
+
+  /// No description provided for @previewEntityNoConnectionsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect this record to a work or another entity.'**
+  String get previewEntityNoConnectionsDescription;
+
+  /// No description provided for @previewSuggestedConnections.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggested connections'**
+  String get previewSuggestedConnections;
+
+  /// No description provided for @previewAddConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'Add connection'**
+  String get previewAddConnection;
+
+  /// No description provided for @previewConnectType.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect {type}'**
+  String previewConnectType(String type);
+
   /// No description provided for @catalogPrefix.
   ///
   /// In en, this message translates to:

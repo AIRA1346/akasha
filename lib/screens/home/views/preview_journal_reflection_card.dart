@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../core/archiving/record_link.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/akasha_item.dart';
-import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
@@ -33,6 +33,7 @@ class PreviewJournalReflectionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
     final memo = JournalReflectionPreview.formatMemo(item.review);
     final hasMemo = JournalReflectionPreview.hasMemo(item.review);
     final hasTags = JournalReflectionPreview.hasTags(item);
@@ -41,13 +42,18 @@ class PreviewJournalReflectionCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(l10n?.previewMyNotes ?? '내 감상', style: AkashaTypography.sectionLabel),
+        Text(
+          l10n?.previewMyNotes ?? '내 감상',
+          style: AkashaTypography.sectionLabel.copyWith(
+            color: palette.textSecondary,
+          ),
+        ),
         SizedBox(height: AkashaSpacing.sm + 2),
         DecoratedBox(
           decoration: BoxDecoration(
-            color: AkashaColors.borderSubtle(0.035),
+            color: palette.surface,
             borderRadius: AkashaRadius.lgBorder,
-            border: Border.all(color: AkashaColors.borderSubtle(0.08)),
+            border: Border.all(color: palette.borderSubtle(0.2)),
           ),
           child: Padding(
             padding: const EdgeInsets.fromLTRB(12, 10, 12, 12),
@@ -66,7 +72,7 @@ class PreviewJournalReflectionCard extends StatelessWidget {
                     userCatalog: userCatalog,
                     onWikiLinkTap: onWikiLinkTap,
                     style: AkashaTypography.dialogBody.copyWith(
-                      color: AkashaColors.textPrimary,
+                      color: palette.textPrimary,
                       height: 1.45,
                     ),
                   )
@@ -89,7 +95,9 @@ class PreviewJournalReflectionCard extends StatelessWidget {
                       ),
                       child: Text(
                         l10n?.actionRecord ?? '기록하기',
-                        style: AkashaTypography.bodyEmphasis.copyWith(fontSize: 11),
+                        style: AkashaTypography.bodyEmphasis.copyWith(
+                          fontSize: 11,
+                        ),
                       ),
                     ),
                   ),
@@ -111,6 +119,7 @@ class _MetaRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
     final hasRating = JournalReflectionPreview.hasRating(item);
     final hasStatus = JournalReflectionPreview.hasMeaningfulStatus(item);
 
@@ -122,9 +131,7 @@ class _MetaRow extends StatelessWidget {
         else
           Text(
             l10n?.previewNoRating ?? '평가 없음',
-            style: AkashaTypography.caption.copyWith(
-              color: AkashaColors.textMuted,
-            ),
+            style: AkashaTypography.caption.copyWith(color: palette.textMuted),
           ),
         if (hasStatus) ...[
           const SizedBox(width: 10),
@@ -151,6 +158,7 @@ class _TagWrap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
     return Wrap(
       spacing: 6,
       runSpacing: 6,
@@ -159,13 +167,13 @@ class _TagWrap extends StatelessWidget {
             (tag) => Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
               decoration: BoxDecoration(
-                color: AkashaColors.accent.withValues(alpha: 0.12),
+                color: palette.accentSoft,
                 borderRadius: AkashaRadius.smBorder,
               ),
               child: Text(
                 tag.startsWith('#') ? tag : '#$tag',
                 style: AkashaTypography.caption.copyWith(
-                  color: AkashaColors.accent,
+                  color: palette.accent,
                   fontWeight: FontWeight.w600,
                 ),
               ),

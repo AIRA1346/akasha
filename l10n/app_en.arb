@@ -93,6 +93,19 @@
   "previewTags": "Tags",
   "previewRating": "Rating",
   "previewViewInGraph": "View in Graph",
+  "previewCatalogWorkTitle": "Catalog work",
+  "previewCatalogWorkDescription": "This work is not in your Vault yet. Archive it to start recording and connecting it.",
+  "previewNoConnectionsTitle": "No connections yet",
+  "previewWorkNoConnectionsDescription": "Add links to the work record to make them part of your archive connections.",
+  "previewEntityNoConnectionsDescription": "Connect this record to a work or another entity.",
+  "previewSuggestedConnections": "Suggested connections",
+  "previewAddConnection": "Add connection",
+  "previewConnectType": "Connect {type}",
+  "@previewConnectType": {
+    "placeholders": {
+      "type": { "type": "String" }
+    }
+  },
   "catalogPrefix": "Catalog · {category}",
   "@catalogPrefix": {
     "placeholders": {

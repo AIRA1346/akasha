@@ -222,6 +222,35 @@ class AppLocalizationsKo extends AppLocalizations {
   String get previewViewInGraph => '그래프에서 보기';
 
   @override
+  String get previewCatalogWorkTitle => '사전 작품';
+
+  @override
+  String get previewCatalogWorkDescription =>
+      '아직 내 볼트에 없습니다. 아카이브하면 기록과 연결을 시작할 수 있습니다.';
+
+  @override
+  String get previewNoConnectionsTitle => '아직 연결이 없습니다';
+
+  @override
+  String get previewWorkNoConnectionsDescription =>
+      '작품 기록에 링크를 추가하면 아카이브의 연결로 표시됩니다.';
+
+  @override
+  String get previewEntityNoConnectionsDescription =>
+      '이 기록에 작품이나 다른 엔티티를 연결할 수 있습니다.';
+
+  @override
+  String get previewSuggestedConnections => '추천 연결';
+
+  @override
+  String get previewAddConnection => '연결 추가';
+
+  @override
+  String previewConnectType(String type) {
+    return '$type 연결';
+  }
+
+  @override
   String catalogPrefix(String category) {
     return '사전 · $category';
   }

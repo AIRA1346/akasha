@@ -8,7 +8,6 @@ void main() {
     expect(FeatureFlags.showHomeUniverseSection, isFalse);
     expect(FeatureFlags.showTimeline, isFalse);
     expect(FeatureFlags.showWorkbenchBreadcrumb, isFalse);
-    expect(FeatureFlags.showPreviewMemoBar, isFalse);
   });
 
   test('Steam v1 keeps catalog enabled and experimental Graph CTAs off', () {

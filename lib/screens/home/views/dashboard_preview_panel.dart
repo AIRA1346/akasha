@@ -23,7 +23,6 @@ import '../../../widgets/work_preview_empty_connections.dart';
 import '../../../widgets/work_preview_next_connections.dart';
 import '../../../widgets/work_preview_registry_surface.dart';
 import 'preview_journal_reflection_card.dart';
-import 'preview_memo_bar.dart';
 import 'preview_panel_chrome.dart';
 import 'preview_record_view_model.dart';
 import 'preview_work_panel_content.dart';
@@ -256,7 +255,6 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                     : () => widget.onConnectEntityType!(
                         EntityAnchorType.organization,
                       ),
-                onOpenRecord: widget.onOpenDetail,
               );
             },
           );
@@ -325,9 +323,15 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                     PreviewRecordTitleBlock(model: record),
                     const SizedBox(height: 12),
                     PreviewRecordActionBar(
-                      onOpenDetail: widget.onOpenDetail,
-                      canGoBack: widget.canGoBack,
-                      onBack: widget.onBack,
+                      onPressed: _isRegistryOnly
+                          ? (widget.onArchiveRegistryWork == null
+                                ? null
+                                : _handleArchive)
+                          : widget.onOpenDetail,
+                      kind: _isRegistryOnly
+                          ? PreviewPrimaryActionKind.archive
+                          : PreviewPrimaryActionKind.openDetail,
+                      busy: _isRegistryOnly && _archiving,
                     ),
                     const SizedBox(height: 18),
                     PreviewRecordCoreInfoSection(rows: record.coreInfoRows),
@@ -345,9 +349,7 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                       const SizedBox(height: 14),
                       WorkPreviewRegistrySurface(
                         archiving: _archiving,
-                        onArchive: widget.onArchiveRegistryWork == null
-                            ? null
-                            : _handleArchive,
+                        onArchive: null,
                       ),
                     ],
                     const SizedBox(height: 18),
@@ -401,8 +403,6 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
               ),
             ),
           ),
-          if (FeatureFlags.showPreviewMemoBar)
-            PreviewMemoBar(onOpenDetail: widget.onOpenDetail),
         ],
       ),
     );

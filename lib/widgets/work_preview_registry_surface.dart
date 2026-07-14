@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../theme/akasha_colors.dart';
+import '../theme/akasha_palette.dart';
+import '../theme/akasha_radius.dart';
+import '../theme/akasha_spacing.dart';
+import '../theme/akasha_typography.dart';
+import '../utils/app_l10n.dart';
 
 /// Registry-only Work Preview 배너 · 아카이브 CTA (R11 P2).
 class WorkPreviewRegistrySurface extends StatelessWidget {
@@ -15,72 +19,75 @@ class WorkPreviewRegistrySurface extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
     return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      padding: const EdgeInsets.all(12),
+      margin: const EdgeInsets.only(bottom: AkashaSpacing.md),
+      padding: const EdgeInsets.all(AkashaSpacing.md),
       decoration: BoxDecoration(
-        color: const Color(0xFF141A28),
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+        color: palette.accentSoft,
+        borderRadius: AkashaRadius.lgBorder,
+        border: Border.all(color: palette.borderSubtle(0.24)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Row(
             children: [
-              Icon(Icons.cloud_outlined, size: 16, color: AkashaColors.textSecondary),
-              const SizedBox(width: 8),
+              Icon(
+                Icons.cloud_outlined,
+                size: 16,
+                color: palette.textSecondary,
+              ),
+              const SizedBox(width: AkashaSpacing.sm),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '사전 작품',
-                      style: TextStyle(
-                        fontSize: 11,
+                      l10n?.previewCatalogWorkTitle ?? '사전 작품',
+                      style: AkashaTypography.caption.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: AkashaColors.textSecondary,
+                        color: palette.textSecondary,
                       ),
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      '아직 내 볼트에 없습니다. 아카이브하면 연결 그래프에 참여합니다.',
-                      style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
+                      l10n?.previewCatalogWorkDescription ??
+                          '아직 내 볼트에 없습니다. 아카이브하면 기록과 연결을 시작할 수 있습니다.',
+                      style: AkashaTypography.micro.copyWith(
+                        color: palette.textMuted,
+                        height: 1.35,
+                      ),
                     ),
                   ],
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 10),
-          SizedBox(
-            width: double.infinity,
-            child: OutlinedButton.icon(
-              onPressed: archiving ? null : onArchive,
-              icon: archiving
-                  ? const SizedBox(
-                      width: 14,
-                      height: 14,
-                      child: CircularProgressIndicator(strokeWidth: 2),
-                    )
-                  : const Icon(Icons.download_outlined, size: 14),
-              label: Text(
-                archiving ? '아카이브 중…' : '볼트에 아카이브',
-                style: const TextStyle(
-                  fontSize: 10,
-                  fontWeight: FontWeight.bold,
+          if (onArchive != null) ...[
+            const SizedBox(height: AkashaSpacing.sm + 2),
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton.icon(
+                onPressed: archiving ? null : onArchive,
+                icon: archiving
+                    ? const SizedBox(
+                        width: 14,
+                        height: 14,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      )
+                    : const Icon(Icons.archive_outlined, size: 14),
+                label: Text(l10n?.actionArchive ?? '아카이브'),
+                style: OutlinedButton.styleFrom(
+                  visualDensity: VisualDensity.compact,
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  side: BorderSide(color: palette.borderSubtle(0.42)),
+                  foregroundColor: palette.accent,
                 ),
-              ),
-              style: OutlinedButton.styleFrom(
-                visualDensity: VisualDensity.compact,
-                padding: const EdgeInsets.symmetric(vertical: 8),
-                side: BorderSide(
-                  color: AkashaColors.accent.withValues(alpha: 0.5),
-                ),
-                foregroundColor: AkashaColors.accent,
               ),
             ),
-          ),
+          ],
         ],
       ),
     );

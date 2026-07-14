@@ -227,6 +227,35 @@ class AppLocalizationsEn extends AppLocalizations {
   String get previewViewInGraph => 'View in Graph';
 
   @override
+  String get previewCatalogWorkTitle => 'Catalog work';
+
+  @override
+  String get previewCatalogWorkDescription =>
+      'This work is not in your Vault yet. Archive it to start recording and connecting it.';
+
+  @override
+  String get previewNoConnectionsTitle => 'No connections yet';
+
+  @override
+  String get previewWorkNoConnectionsDescription =>
+      'Add links to the work record to make them part of your archive connections.';
+
+  @override
+  String get previewEntityNoConnectionsDescription =>
+      'Connect this record to a work or another entity.';
+
+  @override
+  String get previewSuggestedConnections => 'Suggested connections';
+
+  @override
+  String get previewAddConnection => 'Add connection';
+
+  @override
+  String previewConnectType(String type) {
+    return 'Connect $type';
+  }
+
+  @override
   String catalogPrefix(String category) {
     return 'Catalog · $category';
   }
