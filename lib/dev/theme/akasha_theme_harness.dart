@@ -46,6 +46,7 @@ class AkashaThemeHarness extends StatelessWidget {
             child: AkashaThemeBackdrop(
               preset: preset,
               child: Scaffold(
+                backgroundColor: Colors.transparent,
                 appBar: AppBar(title: Text(preset.id)),
                 body: ListView(
                   padding: const EdgeInsets.all(16),

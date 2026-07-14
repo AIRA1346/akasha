@@ -215,7 +215,10 @@ class AkashaThemePreset {
     id: 'classicDark',
     backgroundColor: Color(0xFF13131D),
     accentColor: Color(0xFF6C63FF),
-    assets: AkashaThemeAssets.none,
+    assets: AkashaThemeAssets(
+      backdropAssetPath: 'assets/themes/classicDark/backdrop.png',
+      heroAssetPath: 'assets/themes/classicDark/hero.png',
+    ),
     effects: AkashaThemeEffects.neutral,
   );
 
@@ -223,7 +226,10 @@ class AkashaThemePreset {
     id: 'midnightBlue',
     backgroundColor: Color(0xFF0D1B2A),
     accentColor: Color(0xFF64B5F6),
-    assets: AkashaThemeAssets.none,
+    assets: AkashaThemeAssets(
+      backdropAssetPath: 'assets/themes/midnightBlue/backdrop.png',
+      heroAssetPath: 'assets/themes/midnightBlue/hero.png',
+    ),
     effects: AkashaThemeEffects(
       glowIntensity: 0.16,
       shadowIntensity: 0.48,

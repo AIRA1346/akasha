@@ -81,6 +81,8 @@ flutter:
 
   assets:
     - assets/branding/
+    - assets/themes/classicDark/
+    - assets/themes/midnightBlue/
     - assets/registry/manifest.json
     - assets/registry/search_index.json
     - assets/registry/search_index/

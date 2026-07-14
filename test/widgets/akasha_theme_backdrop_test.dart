@@ -5,13 +5,21 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets('fallback backdrop preserves child and geometry', (tester) async {
+    const preset = AkashaThemePreset(
+      id: 'fallbackFixture',
+      backgroundColor: Color(0xFF101018),
+      accentColor: Color(0xFF8070FF),
+      assets: AkashaThemeAssets.none,
+      effects: AkashaThemeEffects.neutral,
+    );
+
     await tester.pumpWidget(
       const MaterialApp(
         home: SizedBox(
           width: 320,
           height: 240,
           child: AkashaThemeBackdrop(
-            preset: AkashaThemePreset.classicDark,
+            preset: preset,
             child: SizedBox(key: Key('content')),
           ),
         ),

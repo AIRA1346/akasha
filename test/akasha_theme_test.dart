@@ -3,6 +3,7 @@ import 'package:akasha/theme/akasha_palette.dart';
 import 'package:akasha/theme/akasha_theme.dart';
 import 'package:akasha/theme/akasha_theme_preset.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -68,6 +69,42 @@ void main() {
       identical(visuals.resolveForMotion(reduceMotion: false), visuals),
       isTrue,
     );
+  });
+
+  test(
+    'bundled themes own artwork while premium themes keep safe fallbacks',
+    () {
+      for (final preset in const [
+        AkashaThemePreset.classicDark,
+        AkashaThemePreset.midnightBlue,
+      ]) {
+        expect(preset.usesSharedArtworkFallback, isFalse, reason: preset.id);
+        expect(preset.assets.backdropAssetPath, isNotNull, reason: preset.id);
+        expect(preset.assets.heroAssetPath, isNotNull, reason: preset.id);
+      }
+
+      for (final preset in const [
+        AkashaThemePreset.sakura,
+        AkashaThemePreset.amethyst,
+        AkashaThemePreset.nocturne,
+      ]) {
+        expect(preset.usesSharedArtworkFallback, isTrue, reason: preset.id);
+      }
+    },
+  );
+
+  testWidgets('bundled artwork paths resolve from the Flutter asset bundle', (
+    tester,
+  ) async {
+    for (final preset in const [
+      AkashaThemePreset.classicDark,
+      AkashaThemePreset.midnightBlue,
+    ]) {
+      for (final path in preset.assets.paths) {
+        final data = await rootBundle.load(path);
+        expect(data.lengthInBytes, greaterThan(0), reason: path);
+      }
+    }
   });
 
   test('app theme projects LibraryTheme into ThemeData and AkashaPalette', () {

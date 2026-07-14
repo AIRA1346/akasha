@@ -502,12 +502,14 @@ UX-4D 검증: root analyze **0**, root test **1119**, Windows Debug/Release buil
 - [x] reduced motion에서 ambient artwork·particle만 제거하는 공통 resolver
 - [x] 5개 테마 × 핵심 surface × 3 viewport × 125% text geometry 회귀
 - [x] Classic Dark·Midnight Blue Windows component golden baseline
-- [ ] Classic Dark·Midnight Blue 승인 artwork 통합 — UX-5B
+- [x] Classic Dark·Midnight Blue backdrop·Hero artwork와 decode/paint golden 통합 — UX-5B
 - [ ] Sakura·Amethyst·Nocturne 최종 reference·art/effect 통합 — UX-5C
 
-UX-5A는 premium 구매·entitlement를 구현하지 않으며, 현재 다섯 preset은 모두 안전한 code fallback을 사용한다.
+UX-5B까지 무료 두 preset은 실제 artwork를 사용하고 premium 세 preset은 안전한 code fallback을 유지한다. artwork provenance와 prompt는 [assets/themes/ARTWORK_PROVENANCE.md](../../assets/themes/ARTWORK_PROVENANCE.md)에 기록한다. Theme 작업은 premium 구매·entitlement를 구현하지 않는다.
 
 UX-5A 검증: root analyze **0**, root test **1121**, Windows Debug/Release build PASS. `AkashaColors.*` 고정 측정은 UX-4D와 동일한 **328 lines / 81 files**다.
+
+UX-5B 검증: root analyze **0**, root test **1124**, Windows Debug/Release build PASS. Release asset bundle의 4개 hash가 workspace provenance와 일치하며 `AkashaColors.*`는 **328 lines / 81 files**를 유지한다.
 
 ---
 
