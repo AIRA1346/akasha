@@ -444,7 +444,7 @@ UX-1에서는 Home 재설계, Responsive Shell 변경, Graph/Timeline 복원, cu
 
 ### Phase UX-3 — Home 고도화
 
-**진행 중 (2026-07-14, UX-3A/B 완료).** 레퍼런스의 숫자와 장식을 복제하지 않고 실제 로컬 데이터와 공통 geometry를 먼저 고정했다.
+**완료 (2026-07-14, UX-3A/B/C).** 레퍼런스의 숫자와 장식을 복제하지 않고 실제 로컬 데이터와 공통 geometry를 먼저 고정했다.
 
 - [x] 실제 vault record, non-work entity, collection, unique tag 기반 Hero summary
 - [x] 전체 데이터가 비어 있으면 가짜 `0` 통계 대신 `첫 기록 시작` action 노출
@@ -456,12 +456,14 @@ UX-1에서는 Home 재설계, Responsive Shell 변경, Graph/Timeline 복원, cu
 - [x] 의미가 불명확한 휴리스틱 진행률을 제거하고 저장된 status·tag·creator만 표시
 - [x] Quick Actions를 Home 핵심 흐름의 세 번째 순서로 이동하고 1·2·3/4열 자동 배치
 - [x] Continue card와 Quick Action의 focus/selection/keyboard 및 semantic palette 적용
-- [ ] Connection Insight의 실제 link summary source·loading/empty/error 계약
-- [ ] Today in Archive의 실제 activity source·loading/empty/error 계약
+- [x] Connection Insight의 실제 link summary source·loading/empty/error 계약
+- [x] Today in Archive의 실제 activity source·loading/empty/error 계약
+- [x] 하단 3패널의 compact/standard/wide 배치와 Windows text scale 125% 회귀 테스트
+- [x] Classic Dark와 Midnight Blue 하단 패널 geometry 동일성 테스트
 
-연결 수는 현재 `RecordLinkPort`가 비동기 개별 조회만 제공하므로 Hero에 추정값을 넣지 않는다. UX-3C에서 집계 source와 갱신 기준을 먼저 정의한 후 노출한다.
+Connection Insight는 `RecordLinkPort.loadSummary()`로 이미 로드된 파생 link index의 실제 link·record·entity 수만 읽으며 이 read path에서 Vault 전체 스캔을 시작하지 않는다. Today in Archive는 rebuildable `.akasha/record_index.json`의 `addedAt`·`updatedAt`을 사용해 오늘의 최신 활동을 record당 하나씩 표시한다. 이벤트 이력이나 추천 결과로 과장하지 않으며, Vault 미연결·빈 결과·인덱스 오류를 서로 다른 상태로 보여 준다. 두 패널은 `linkIndexRevision` 변경 시 함께 새로고침된다.
 
-UX-3A/B 검증: root analyze **0**, root test **1094**, Windows Debug/Release build PASS.
+UX-3 검증: root analyze **0**, root test **1102**, Windows Debug/Release build PASS.
 
 ### Phase UX-4 — Preview와 핵심 화면
 

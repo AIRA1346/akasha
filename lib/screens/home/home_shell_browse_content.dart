@@ -159,6 +159,8 @@ class HomeShellBrowseContentBuilder {
         vaultItems: items,
         recentExploreItems: recentExploreItems,
         collectionCount: collectionCount,
+        vaultPath: vaultPath,
+        linkIndexRevision: linkIndexRevision,
         userCatalog: userCatalog,
         linkIndex: linkIndex,
         previewItem: workPreviewItem,

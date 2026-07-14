@@ -503,6 +503,41 @@
   "labelHasRecord": "기록 있음",
   "tooltipVaultSettings": "볼트 설정",
   "labelDashboardQuickActions": "빠른 액션",
+  "dashboardConnectionInsightTitle": "연결 인사이트",
+  "dashboardConnectionCount": "{count}개의 연결",
+  "@dashboardConnectionCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "dashboardConnectionDescription": "아카이브 기록 사이에 실제로 저장된 연결입니다.",
+  "dashboardLinkedRecordsCount": "연결된 기록 {count}개",
+  "@dashboardLinkedRecordsCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "dashboardConnectedEntitiesCount": "연결된 엔티티 {count}개",
+  "@dashboardConnectedEntitiesCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "dashboardConnectionEmpty": "아직 저장된 기록 연결이 없습니다.",
+  "dashboardConnectionError": "연결 요약을 잠시 불러올 수 없습니다.",
+  "dashboardExploreGraph": "그래프 탐색",
+  "dashboardTodayTitle": "오늘의 기록",
+  "dashboardTodayCount": "변경 {count}개",
+  "@dashboardTodayCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "dashboardTodayEmpty": "오늘 추가되거나 수정된 기록이 없습니다.",
+  "dashboardTodayUnavailable": "볼트를 연결하면 오늘의 기록 활동을 볼 수 있습니다.",
+  "dashboardTodayError": "오늘의 기록 활동을 잠시 불러올 수 없습니다.",
+  "dashboardActivityAdded": "새 기록 추가",
+  "dashboardActivityUpdated": "기록 수정",
   "descDashboardSearchWorks": "볼트·카탈로그에서 작품과 인물을 찾습니다.",
   "descDashboardExploreEntities": "등록된 인물 엔티티를 갤러리로 봅니다.",
   "descDashboardConnectionMap": "볼트의 [[wiki]] 링크로 이어진 작품·인물 관계를 봅니다.",

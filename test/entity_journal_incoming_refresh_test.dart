@@ -86,11 +86,14 @@ class _IncomingRefreshHarnessState extends State<_IncomingRefreshHarness> {
 }
 
 class _FakeLinkIndex implements RecordLinkPort {
+  @override
+  Future<RecordLinkSummary> loadSummary() async => RecordLinkSummary.empty;
+
   _FakeLinkIndex({
     Map<String, List<String>>? incomingByEntity,
     Map<String, List<RecordLink>>? outgoingByPath,
-  })  : incomingByEntity = incomingByEntity ?? {},
-        outgoingByPath = outgoingByPath ?? {};
+  }) : incomingByEntity = incomingByEntity ?? {},
+       outgoingByPath = outgoingByPath ?? {};
 
   final Map<String, List<String>> incomingByEntity;
   final Map<String, List<RecordLink>> outgoingByPath;
@@ -127,8 +130,9 @@ class _FakeLinkIndex implements RecordLinkPort {
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('refresh reloads incoming and stale counts after index change',
-      (tester) async {
+  testWidgets('refresh reloads incoming and stale counts after index change', (
+    tester,
+  ) async {
     const entityId = 'pe_u_target01';
     const workPath = r'C:\vault\works\memo.md';
     const currentTitle = '스바루';

@@ -12,7 +12,7 @@ import '../../../../theme/akasha_palette.dart';
 import 'home_dashboard_hero.dart';
 import 'home_dashboard_continue_section.dart';
 import 'home_dashboard_discovery_section.dart';
-import 'home_dashboard_quick_actions_section.dart';
+import 'home_dashboard_lower_section.dart';
 import 'home_dashboard_registry_bridge_section.dart';
 import 'home_dashboard_summary.dart';
 import 'home_dashboard_universe_section.dart';
@@ -40,11 +40,15 @@ class HomeDashboardView extends StatelessWidget {
     this.onOpenRecordFromHome,
     this.onOpenItemDetail,
     this.onOpenEntityDetail,
+    this.vaultPath,
+    this.linkIndexRevision = 0,
   });
 
   final List<AkashaItem> vaultItems;
   final List<AkashaItem> recentExploreItems;
   final int collectionCount;
+  final String? vaultPath;
+  final int linkIndexRevision;
   final UserCatalogPort userCatalog;
   final RecordLinkPort linkIndex;
   final void Function(AkashaItem) onPreviewWork;
@@ -147,7 +151,10 @@ class HomeDashboardView extends StatelessWidget {
               isColdStart: isColdStart,
             ),
             const SizedBox(height: 32),
-            HomeDashboardQuickActionsSection(
+            HomeDashboardLowerSection(
+              linkIndex: linkIndex,
+              linkIndexRevision: linkIndexRevision,
+              vaultPath: vaultPath,
               onSearch: onSearch,
               onExploreEntities: () =>
                   onGoExploreEntities(BrowseEntityScope.person),

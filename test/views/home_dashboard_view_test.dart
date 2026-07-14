@@ -47,6 +47,9 @@ class _FakeUserCatalog implements UserCatalogPort {
 
 class _FakeLinkIndex implements RecordLinkPort {
   @override
+  Future<RecordLinkSummary> loadSummary() async => RecordLinkSummary.empty;
+
+  @override
   Future<void> rebuildIndex({
     String? changedPath,
     UserCatalogPort? userCatalog,
@@ -95,6 +98,7 @@ void main() {
     tester,
   ) async {
     await tester.pumpWidget(_wrap(_dashboard()));
+    await tester.pumpAndSettle();
 
     expect(find.text('기록하고, 연결하고, 발견하세요'), findsOneWidget);
     expect(
@@ -106,6 +110,8 @@ void main() {
     expect(find.text('빠른 액션'), findsOneWidget);
     expect(find.text('작품 검색'), findsOneWidget);
     expect(find.text('인물 탐색'), findsOneWidget);
+    expect(find.text('아직 저장된 기록 연결이 없습니다.'), findsOneWidget);
+    expect(find.text('볼트를 연결하면 오늘의 기록 활동을 볼 수 있습니다.'), findsOneWidget);
 
     if (FeatureFlags.showKnowledgeGraph) {
       expect(find.text('연결 맵'), findsOneWidget);

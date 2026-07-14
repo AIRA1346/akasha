@@ -39,8 +39,7 @@ class _FakeUserCatalog implements UserCatalogPort {
     String query, {
     MediaCategory? subtype,
     EntityAnchorType? entityType,
-  }) =>
-      const [];
+  }) => const [];
 
   @override
   Future<void> upsert(UserCatalogEntity entity) async {}
@@ -51,7 +50,7 @@ class _FakeUserCatalog implements UserCatalogPort {
 
 class _FakeDiscovery implements EntityRelatedWorksDiscovery {
   _FakeDiscovery({required Map<String, Set<String>> workToEntities})
-      : _workToEntities = workToEntities;
+    : _workToEntities = workToEntities;
 
   final Map<String, Set<String>> _workToEntities;
 
@@ -90,6 +89,9 @@ class _FakeDiscovery implements EntityRelatedWorksDiscovery {
 }
 
 class _FakeLinkIndex implements RecordLinkPort {
+  @override
+  Future<RecordLinkSummary> loadSummary() async => RecordLinkSummary.empty;
+
   _FakeLinkIndex({this.outgoingByPath = const {}});
 
   final Map<String, List<RecordLink>> outgoingByPath;
@@ -334,11 +336,11 @@ void main() {
 
       final clusters =
           await RelationshipDiscoveryService.conceptThemeClustersForWork(
-        workId: 'wk_a',
-        vaultItems: vaultItems,
-        userCatalog: catalog,
-        discovery: discovery,
-      );
+            workId: 'wk_a',
+            vaultItems: vaultItems,
+            userCatalog: catalog,
+            discovery: discovery,
+          );
 
       expect(clusters, hasLength(1));
       expect(clusters.first.concept.title, '정체성');

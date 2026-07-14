@@ -96,7 +96,7 @@ class HomeDashboardQuickActionsSection extends StatelessWidget {
               builder: (context, constraints) {
                 final int columns = constraints.maxWidth >= 920
                     ? actions.length
-                    : constraints.maxWidth >= 520
+                    : constraints.maxWidth >= 320
                     ? 2
                     : 1;
                 const gap = AkashaSpacing.md;

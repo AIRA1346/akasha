@@ -2498,6 +2498,96 @@ abstract class AppLocalizations {
   /// **'Quick Actions'**
   String get labelDashboardQuickActions;
 
+  /// No description provided for @dashboardConnectionInsightTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection Insight'**
+  String get dashboardConnectionInsightTitle;
+
+  /// No description provided for @dashboardConnectionCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} connections'**
+  String dashboardConnectionCount(int count);
+
+  /// No description provided for @dashboardConnectionDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Actual links stored between your archive records.'**
+  String get dashboardConnectionDescription;
+
+  /// No description provided for @dashboardLinkedRecordsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} linked records'**
+  String dashboardLinkedRecordsCount(int count);
+
+  /// No description provided for @dashboardConnectedEntitiesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} connected entities'**
+  String dashboardConnectedEntitiesCount(int count);
+
+  /// No description provided for @dashboardConnectionEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No stored record links yet.'**
+  String get dashboardConnectionEmpty;
+
+  /// No description provided for @dashboardConnectionError.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection summary is temporarily unavailable.'**
+  String get dashboardConnectionError;
+
+  /// No description provided for @dashboardExploreGraph.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore graph'**
+  String get dashboardExploreGraph;
+
+  /// No description provided for @dashboardTodayTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Today in Archive'**
+  String get dashboardTodayTitle;
+
+  /// No description provided for @dashboardTodayCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} changes'**
+  String dashboardTodayCount(int count);
+
+  /// No description provided for @dashboardTodayEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No records were added or updated today.'**
+  String get dashboardTodayEmpty;
+
+  /// No description provided for @dashboardTodayUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect a vault to see today\'s archive activity.'**
+  String get dashboardTodayUnavailable;
+
+  /// No description provided for @dashboardTodayError.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s archive activity is temporarily unavailable.'**
+  String get dashboardTodayError;
+
+  /// No description provided for @dashboardActivityAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Record added'**
+  String get dashboardActivityAdded;
+
+  /// No description provided for @dashboardActivityUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Record updated'**
+  String get dashboardActivityUpdated;
+
   /// No description provided for @descDashboardSearchWorks.
   ///
   /// In en, this message translates to:

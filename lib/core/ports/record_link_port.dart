@@ -16,4 +16,30 @@ abstract interface class RecordLinkPort {
 
   /// Entity ids with at least one incoming record link in the index.
   Future<Iterable<String>> incomingEntityIds();
+
+  /// Lightweight aggregate facts for read-only dashboard surfaces.
+  ///
+  /// Implementations must use the existing derived index and must not trigger
+  /// a vault-wide repair scan from this read path.
+  Future<RecordLinkSummary> loadSummary();
+}
+
+class RecordLinkSummary {
+  const RecordLinkSummary({
+    required this.totalLinkCount,
+    required this.linkedRecordCount,
+    required this.connectedEntityCount,
+  });
+
+  static const empty = RecordLinkSummary(
+    totalLinkCount: 0,
+    linkedRecordCount: 0,
+    connectedEntityCount: 0,
+  );
+
+  final int totalLinkCount;
+  final int linkedRecordCount;
+  final int connectedEntityCount;
+
+  bool get isEmpty => totalLinkCount == 0;
 }

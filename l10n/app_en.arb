@@ -808,6 +808,41 @@
   "labelHasRecord": "Has Record",
   "tooltipVaultSettings": "Vault Settings",
   "labelDashboardQuickActions": "Quick Actions",
+  "dashboardConnectionInsightTitle": "Connection Insight",
+  "dashboardConnectionCount": "{count} connections",
+  "@dashboardConnectionCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "dashboardConnectionDescription": "Actual links stored between your archive records.",
+  "dashboardLinkedRecordsCount": "{count} linked records",
+  "@dashboardLinkedRecordsCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "dashboardConnectedEntitiesCount": "{count} connected entities",
+  "@dashboardConnectedEntitiesCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "dashboardConnectionEmpty": "No stored record links yet.",
+  "dashboardConnectionError": "Connection summary is temporarily unavailable.",
+  "dashboardExploreGraph": "Explore graph",
+  "dashboardTodayTitle": "Today in Archive",
+  "dashboardTodayCount": "{count} changes",
+  "@dashboardTodayCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "dashboardTodayEmpty": "No records were added or updated today.",
+  "dashboardTodayUnavailable": "Connect a vault to see today's archive activity.",
+  "dashboardTodayError": "Today's archive activity is temporarily unavailable.",
+  "dashboardActivityAdded": "Record added",
+  "dashboardActivityUpdated": "Record updated",
   "descDashboardSearchWorks": "Find works and entities in the vault and catalog.",
   "descDashboardExploreEntities": "View registered person entities in a gallery.",
   "descDashboardConnectionMap": "View the relationships of works and entities linked via [[wiki]].",

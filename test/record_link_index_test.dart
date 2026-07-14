@@ -71,6 +71,11 @@ added_at: "2026-06-19T10:00:00.000"
           expect(incoming.length, 1);
           expect(p.normalize(incoming.first), normalizedWork);
 
+          final summary = await index.loadSummary();
+          expect(summary.totalLinkCount, 2);
+          expect(summary.linkedRecordCount, 2);
+          expect(summary.connectedEntityCount, 2);
+
           final indexFile = File(
             p.join(
               tempDir.path,

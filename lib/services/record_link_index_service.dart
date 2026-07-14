@@ -253,6 +253,19 @@ class RecordLinkIndexService implements RecordLinkPort {
     return _incoming.keys;
   }
 
+  @override
+  Future<RecordLinkSummary> loadSummary() async {
+    await _ensureLoaded();
+    return RecordLinkSummary(
+      totalLinkCount: _outgoing.values.fold<int>(
+        0,
+        (total, links) => total + links.length,
+      ),
+      linkedRecordCount: _outgoing.length,
+      connectedEntityCount: _incoming.length,
+    );
+  }
+
   Future<void> _ensureLoaded() async {
     if (_loaded) return;
     final vaultPath = _vault.vaultPath;

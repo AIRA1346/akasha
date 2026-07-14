@@ -3,10 +3,10 @@
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
 > **원칙:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) — 구현이 원칙과 충돌하면 구현·본 문서를 교정한다.
 > **제품 범위:** [VISION.md](VISION.md)
-> **갱신:** 2026-07-13
+> **갱신:** 2026-07-14
 > **Git:** `git rev-parse HEAD` (문서 커밋 tip과 어긋나면 tip을 따름)
 >
-> **Verification snapshot (2026-07-13):**
+> **Verification snapshot (2026-07-14):**
 > - P0 recoverable Vault write · SA-01/02/03 derived-index foundation
 > - P1 local CLI: bounded `record lookup`/`record read` · user-started `candidate.create`
 > - Candidate provenance review UX · Vault-spec self-description
@@ -20,9 +20,9 @@
 > - **Entity derivedIndexesUpdated** — Entity save/delete sets per-path `VaultPathChange.derivedIndexesUpdated` after successful index mutation; Home skips `ArchiveIndexManager` only (UI side-effects kept). Home debounce **AND-coalesces** pending path flags across batches (`false` survives later `true`). Work/Journal/Timeline still double-update (follow-up)
 > - **HomeShell vault-watch dispose lifecycle (ACTION A)** — God Class 전면 리팩터 **기각** (상태 소유권은 이미 coordinator로 분리). `HomeVaultWatchReactor` generation cancel + dispose 순서(reactor → vault sub/debounce → workbench) + `WorkbenchController.syncEntityTabs` await 후 `_disposed` guard. **COUPLED/DEFERRED 유지:** timeline token 과다 bump · 이중 rebuild · Catalog `isCatalogLoading` 직접 set · Vault cold-start bootstrap 추출
 > - **Package modularization audit (closed)** — 단일 Flutter 앱 + `akasha_commerce_domain`(유일한 성공 공유 package) + 별도 backend 유지 · package graph **비순환** · 신규 EXTRACT_NOW **없음** · Melos / `akasha_core`·database·ui 전면 분할·줄 수 기준 분리 **기각**. Archive format/codec = PREPARE_BOUNDARY · Vault I/O / UI / Home orchestration = KEEP_IN_APP · Steam bridge는 production IAP·no-IAP 빌드 제외 요구 시 **CMake optional부터** 재검토 · Melos는 package 수·공통 orchestration 필요성이 실제로 늘 때만. **재오픈 트리거:** 앱 외 제2 소비자 · 플랫폼 완전 빌드 제외 · 안정 API/의존 방향 · 앱 타입 역참조 없음 · 독립 테스트·배포·CI 격리 실측 · unrelated 동시 변경 반복
-> - Flutter app: `flutter analyze --no-pub` **0** · `flutter test --no-pub` **1078** (기존 검증 기준선; 본 문서-only 갱신에서 재실행하지 않음)
+> - Flutter app: `flutter analyze` **0** · `flutter test` **1102**
 > - Commerce packages: domain `dart test` **14** · backend `dart test` **17** · both `dart analyze` **0**
-> - Windows debug/release build **OK (2026-07-13)**
+> - Windows debug/release build **OK (2026-07-14)**
 >
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)  
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
@@ -45,7 +45,7 @@
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
 
-**v1 blocking에 가까운 검증:** root `flutter test` **1011** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
+**v1 blocking에 가까운 검증:** root `flutter test` **1102** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
 **v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.  
 **IAP:** `FeatureFlags.steamInAppPurchasesEnabled = false` — 미구현. Store IAP 표시·재심사 주장 금지 until Steam payment flow complete.
 ---
@@ -77,7 +77,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| root `flutter test` | **1011 PASS** | ✅ |
+| root `flutter test` | **1102 PASS** | ✅ |
 | commerce domain `dart test` | **14 PASS** | ✅ |
 | commerce backend `dart test` | **17 PASS** | ✅ |
 | `flutter analyze lib` | 0 issue | ✅ |
@@ -90,7 +90,7 @@
 
 * Wave 1 + Foundation P2 분해 완료 — coordinator·preview·scaffold parts.
 * **UX-2 Responsive Shell 완료** — 단일 `AppDestination`·`PreviewTarget`, `ShellLayoutSpec` 3단계, Sidebar/Dock selection SSOT, 기존 Graph/Records 접근, compact drawer·Preview sheet, utility slot 계약. provider 없는 currency/avatar는 숨김.
-* **UX-3A/B Home 핵심 흐름 완료** — 실제 summary Hero, empty start action, theme-owned Hero artwork fallback, ID 기반 scroll 보존 Continue rail, 실제 metadata card, 반응형 Quick Actions. Connection Insight/Today는 실제 집계 계약을 다루는 UX-3C 범위.
+* **UX-3 Home 핵심 흐름 완료** — 실제 summary Hero, empty start action, theme-owned Hero artwork fallback, ID 기반 scroll 보존 Continue rail, 실제 metadata card, 반응형 Quick Actions, 기존 link index 기반 Connection Insight, record index 기반 Today activity. 미연결·빈 결과·인덱스 오류를 구분하며 새 추천/그래프 기능으로 과장하지 않음.
 * **v1 관점:** browse/catalog UI는 **기록으로 이어지는 진입**이지 제품 정체성 자체가 아님.
 
 ---

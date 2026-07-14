@@ -32,14 +32,16 @@ class _FakeUserCatalog implements UserCatalogPort {
     String query, {
     MediaCategory? subtype,
     EntityAnchorType? entityType,
-  }) =>
-      const [];
+  }) => const [];
 
   @override
   Future<void> upsert(UserCatalogEntity entity) async {}
 }
 
 class _FakeLinkIndex implements RecordLinkPort {
+  @override
+  Future<RecordLinkSummary> loadSummary() async => RecordLinkSummary.empty;
+
   @override
   Future<void> rebuildIndex({
     String? changedPath,

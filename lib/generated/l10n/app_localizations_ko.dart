@@ -1338,6 +1338,59 @@ class AppLocalizationsKo extends AppLocalizations {
   String get labelDashboardQuickActions => '빠른 액션';
 
   @override
+  String get dashboardConnectionInsightTitle => '연결 인사이트';
+
+  @override
+  String dashboardConnectionCount(int count) {
+    return '$count개의 연결';
+  }
+
+  @override
+  String get dashboardConnectionDescription => '아카이브 기록 사이에 실제로 저장된 연결입니다.';
+
+  @override
+  String dashboardLinkedRecordsCount(int count) {
+    return '연결된 기록 $count개';
+  }
+
+  @override
+  String dashboardConnectedEntitiesCount(int count) {
+    return '연결된 엔티티 $count개';
+  }
+
+  @override
+  String get dashboardConnectionEmpty => '아직 저장된 기록 연결이 없습니다.';
+
+  @override
+  String get dashboardConnectionError => '연결 요약을 잠시 불러올 수 없습니다.';
+
+  @override
+  String get dashboardExploreGraph => '그래프 탐색';
+
+  @override
+  String get dashboardTodayTitle => '오늘의 기록';
+
+  @override
+  String dashboardTodayCount(int count) {
+    return '변경 $count개';
+  }
+
+  @override
+  String get dashboardTodayEmpty => '오늘 추가되거나 수정된 기록이 없습니다.';
+
+  @override
+  String get dashboardTodayUnavailable => '볼트를 연결하면 오늘의 기록 활동을 볼 수 있습니다.';
+
+  @override
+  String get dashboardTodayError => '오늘의 기록 활동을 잠시 불러올 수 없습니다.';
+
+  @override
+  String get dashboardActivityAdded => '새 기록 추가';
+
+  @override
+  String get dashboardActivityUpdated => '기록 수정';
+
+  @override
   String get descDashboardSearchWorks => '볼트·카탈로그에서 작품과 인물을 찾습니다.';
 
   @override

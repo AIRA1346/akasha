@@ -1366,6 +1366,63 @@ class AppLocalizationsEn extends AppLocalizations {
   String get labelDashboardQuickActions => 'Quick Actions';
 
   @override
+  String get dashboardConnectionInsightTitle => 'Connection Insight';
+
+  @override
+  String dashboardConnectionCount(int count) {
+    return '$count connections';
+  }
+
+  @override
+  String get dashboardConnectionDescription =>
+      'Actual links stored between your archive records.';
+
+  @override
+  String dashboardLinkedRecordsCount(int count) {
+    return '$count linked records';
+  }
+
+  @override
+  String dashboardConnectedEntitiesCount(int count) {
+    return '$count connected entities';
+  }
+
+  @override
+  String get dashboardConnectionEmpty => 'No stored record links yet.';
+
+  @override
+  String get dashboardConnectionError =>
+      'Connection summary is temporarily unavailable.';
+
+  @override
+  String get dashboardExploreGraph => 'Explore graph';
+
+  @override
+  String get dashboardTodayTitle => 'Today in Archive';
+
+  @override
+  String dashboardTodayCount(int count) {
+    return '$count changes';
+  }
+
+  @override
+  String get dashboardTodayEmpty => 'No records were added or updated today.';
+
+  @override
+  String get dashboardTodayUnavailable =>
+      'Connect a vault to see today\'s archive activity.';
+
+  @override
+  String get dashboardTodayError =>
+      'Today\'s archive activity is temporarily unavailable.';
+
+  @override
+  String get dashboardActivityAdded => 'Record added';
+
+  @override
+  String get dashboardActivityUpdated => 'Record updated';
+
+  @override
   String get descDashboardSearchWorks =>
       'Find works and entities in the vault and catalog.';
 
