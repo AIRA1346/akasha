@@ -1,16 +1,26 @@
 import 'currency_kind.dart';
 
 enum ProductKind {
-  /// Steam-finalized pack that grants [CurrencyKind.premium].
+  /// Steam Inventory purchase that grants [CurrencyKind.premium].
   premiumPack,
 
-  /// Spend currency → permanent theme entitlement.
-  themeUnlock,
+  /// One complete visual theme package and its theme-specific effects.
+  themePackage,
+
+  /// Future standalone pointer/touch interaction effect.
+  interactionEffect,
+
+  /// Future standalone OST or audio package.
+  audioPack,
 
   /// Spend [CurrencyKind.premium] only; no entitlement / no gameplay advantage.
   /// Display: EN "Support AKASHA" · KO "AKASHA 후원" (not "Donation").
   support,
 }
+
+/// Catalog publication state. This never implies that a local client can
+/// transact; the live provider and feature flag must also be ready.
+enum CommerceOfferState { planned, available, paused }
 
 /// How a product may be paid.
 enum PaymentPolicy {
@@ -44,13 +54,26 @@ class PaymentOption {
       (kind == CurrencyKind.premium && premiumPrice != null) ||
           (kind == CurrencyKind.earned && earnedPrice != null),
   };
+
+  List<CurrencyKind> get acceptedCurrencies => [
+    for (final kind in CurrencyKind.values)
+      if (allows(kind)) kind,
+  ];
+
+  /// Payment is always made with exactly one selected currency. A caller never
+  /// supplies partial Astra plus partial Echo amounts.
+  bool canPayEntirelyWith(CurrencyKind kind, int balance) {
+    final price = priceFor(kind);
+    return allows(kind) && price != null && price > 0 && balance >= price;
+  }
 }
 
 class CommerceProduct {
   const CommerceProduct({
     required this.id,
     required this.kind,
-    required this.payment,
+    this.offerState = CommerceOfferState.planned,
+    this.payment,
     this.grantPremiumAmount,
     this.entitlementKey,
     this.displayNameEn,
@@ -59,12 +82,15 @@ class CommerceProduct {
 
   final String id;
   final ProductKind kind;
-  final PaymentOption payment;
+  final CommerceOfferState offerState;
+
+  /// In-app currency alternatives. `null` for real-money Astra packs.
+  final PaymentOption? payment;
 
   /// For [ProductKind.premiumPack] — amount of Astra granted after finalization.
   final int? grantPremiumAmount;
 
-  /// For [ProductKind.themeUnlock] — stable entitlement id (not a display name).
+  /// Stable entitlement id (not a display name or provider ItemDef id).
   final String? entitlementKey;
 
   /// Optional catalog display (UI). Never used as a storage key.
@@ -74,12 +100,7 @@ class CommerceProduct {
 
 /// Domain order lifecycle for the pure commerce slice.
 /// Steam adapter maps external txn states separately (see P4-B).
-enum OrderStatus {
-  pendingPayment,
-  completed,
-  refunded,
-  failed,
-}
+enum OrderStatus { pendingPayment, completed, refunded, failed }
 
 class CommerceOrder {
   const CommerceOrder({

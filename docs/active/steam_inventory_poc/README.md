@@ -1,11 +1,12 @@
 # Steam Inventory Minimal POC
 
 > **Status:** **Steam Inventory Sandbox E2E POC passed** (2026-07-13)  
-> **Flag:** `steamInAppPurchasesEnabled = false` (unchanged; no product store UI)  
-> **Not done:** Cloud Run, Postgres, custom MicroTxn backend, store UI, Store IAP claim, production price policy
+> **Flag:** `steamInAppPurchasesEnabled = false` (unchanged; no active purchase UI)
+> **Not done:** Cloud Run, Postgres, custom MicroTxn backend, active Store purchase UI, Store IAP claim, production ItemDef ids/localized pack prices
 
 This POC proved client-side inventory orchestration against **Steam Inventory Service in a developer Sandbox**.  
-It does **not** claim production IAP, depot/library ship, or finalized economy numbers.
+It does **not** claim production IAP, depot/library ship, production ItemDef ids,
+or finalized localized Steam pack prices.
 
 ### Limitations
 
@@ -14,7 +15,8 @@ It does **not** claim production IAP, depot/library ship, or finalized economy n
 | Developer sandbox Steam account | Verified |
 | Local Release exe (`AKASHA_STEAM_INVENTORY_POC`) | Verified |
 | Steam depot / library launch build | **Not re-verified** |
-| Production price policy (VLV100 / Astra×100 / theme cost 100) | **POC tech settings only — not product policy** |
+| Product economy | **Approved separately:** USD 1 reference = Astra 100; launch theme = Astra 500 or Echo 500 |
+| POC ItemDef ids / costs | **Technical fixtures only — not production provider configuration** |
 | `steamInAppPurchasesEnabled` | **`false`** |
 
 ## Layout

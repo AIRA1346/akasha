@@ -22,7 +22,8 @@ class CommerceService {
   final String Function() _id;
 
   static var _seq = 0;
-  static String _defaultId() => 'id_${++_seq}_${DateTime.now().microsecondsSinceEpoch}';
+  static String _defaultId() =>
+      'id_${++_seq}_${DateTime.now().microsecondsSinceEpoch}';
 
   Future<WalletProjection> wallet(String userId) async =>
       projectWalletFromLedger(
@@ -114,7 +115,9 @@ class CommerceService {
       );
     }
 
-    final raced = await _repo.findLedgerByIdempotencyKey(finalizeIdempotencyKey);
+    final raced = await _repo.findLedgerByIdempotencyKey(
+      finalizeIdempotencyKey,
+    );
     if (raced != null) {
       return wallet(order.userId);
     }
@@ -187,7 +190,7 @@ class CommerceService {
     if (existingEnt != null) return existingEnt;
 
     final product = await _requireProduct(productId);
-    if (product.kind != ProductKind.themeUnlock) {
+    if (product.kind != ProductKind.themePackage) {
       throw const CommerceRejected(
         'not_theme',
         'Product is not a theme unlock.',
@@ -200,13 +203,14 @@ class CommerceService {
         'Theme product requires entitlementKey.',
       );
     }
-    if (!product.payment.allows(payWith)) {
+    final payment = product.payment;
+    if (payment == null || !payment.allows(payWith)) {
       throw const CommerceRejected(
         'payment_not_allowed',
         'Currency not accepted for this product.',
       );
     }
-    final price = product.payment.priceFor(payWith);
+    final price = payment.priceFor(payWith);
     if (price == null || price <= 0) {
       throw const CommerceRejected(
         'invalid_price',
@@ -275,13 +279,14 @@ class CommerceService {
         'Product is not a support SKU.',
       );
     }
-    if (!product.payment.allows(CurrencyKind.premium)) {
+    final payment = product.payment;
+    if (payment == null || !payment.allows(CurrencyKind.premium)) {
       throw const CommerceRejected(
         'support_premium_only',
         'Support must be paid with premium currency.',
       );
     }
-    final price = product.payment.premiumPrice;
+    final price = payment.premiumPrice;
     if (price == null || price <= 0) {
       throw const CommerceRejected(
         'invalid_price',

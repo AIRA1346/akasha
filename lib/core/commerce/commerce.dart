@@ -1,7 +1,8 @@
-/// Shared commerce domain + thin client contract (Astra/Echo).
+/// Shared commerce domain and provider boundaries (Astra/Echo).
 ///
-/// Payment authority is **not** in this tree. See
-/// `backend/akasha_commerce_server/` and docs/active/COMMERCE_CURRENCY_CONTRACT.md.
+/// Payment authority is **not** in this tree. The v1 path is Steam Inventory;
+/// the custom HTTP backend remains an unwired, deferred alternative. See
+/// `docs/active/COMMERCE_CURRENCY_CONTRACT.md`.
 library;
 
 export 'package:akasha_commerce_domain/akasha_commerce_domain.dart';

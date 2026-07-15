@@ -1,7 +1,8 @@
 import 'commerce_models.dart';
 import 'currency_kind.dart';
 
-/// Server-side persistence port (implementations: fake now, secure backend later).
+/// Legacy ledger-domain persistence port. The v1 Steam Inventory path uses
+/// [CommerceGateway] instead; this remains for the deferred custom backend.
 abstract class CommerceRepository {
   Future<CommerceProduct?> getProduct(String productId);
 
@@ -44,11 +45,7 @@ WalletProjection projectWalletFromLedger({
         earned += e.signedDelta;
     }
   }
-  return WalletProjection(
-    userId: userId,
-    premium: premium,
-    earned: earned,
-  );
+  return WalletProjection(userId: userId, premium: premium, earned: earned);
 }
 
 /// External payment finalization port (fake now; Steam FinalizeTxn later).

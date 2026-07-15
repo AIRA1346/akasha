@@ -3,7 +3,7 @@
 > **Date:** 2026-07-13  
 > **Verdict:** **Steam Inventory Sandbox E2E POC passed** — not production IAP Go  
 > **POC runbook:** [steam_inventory_poc/README.md](steam_inventory_poc/README.md)  
-> **Scope:** Feasibility audit + minimal in-repo POC harness — no store UI / flag still false  
+> **Scope:** Feasibility audit + minimal in-repo POC harness — POC has no store UI / flag still false
 > **Flag:** `steamInAppPurchasesEnabled = false` (unchanged)  
 > **Sources:** [Steam Inventory Service](https://partner.steamgames.com/doc/features/inventory), [Inventory Schema](https://partner.steamgames.com/doc/features/inventory/schema), [Item Store](https://partner.steamgames.com/doc/features/inventory/itemstore), [ISteamInventory](https://partner.steamgames.com/doc/api/isteaminventory), [Microtransactions Implementation](https://partner.steamgames.com/doc/features/microtransactions/implementation)
 
@@ -20,7 +20,8 @@ AKASHA v1 paid themes + Astra packs + Support **can** be owned and settled by **
 | Developer sandbox Steam account verified | Yes |
 | Local Release exe (`AKASHA_STEAM_INVENTORY_POC`) verified | Yes |
 | Steam depot / library launch build re-verified | **Not yet** |
-| Production price policy (VLV / Astra pack / theme cost) | **Not finalized** — current numbers are POC tech settings |
+| Product economy policy | **Finalized 2026-07-15** — USD 1 reference = Astra 100; launch themes = Astra 500 or Echo 500, never mixed |
+| Production ItemDef ids / localized pack prices | **Not finalized** — current numbers are POC tech settings |
 | `steamInAppPurchasesEnabled` | **`false`** (must remain until product IAP work) |
 | Real-money end-user purchase outside Sandbox | **Not claimed** |
 
@@ -65,7 +66,10 @@ Echo v1 earn
   — not attendance / invites / app-private events
 ```
 
-**Choose-one currency for the same theme:** put **two recipes** on the theme’s `exchange` field, semicolon-separated, e.g. `10001x300;10002x3000` (Astra×300 **or** Echo×3000). Steam picks the first recipe satisfied by the materials the client submits.
+**Choose-one currency for the same theme:** publish two recipes that grant the
+same theme ItemDef: Astra×500 **or** Echo×500. The client submits exactly one
+selected recipe; mixed Astra+Echo material lists are forbidden by product
+policy. Exact production ItemDef ids remain adapter configuration.
 
 ---
 
@@ -129,7 +133,7 @@ Authority remains Steam inventory contents, not Flutter SharedPreferences / Vaul
 | `packages/akasha_commerce_domain/` | **Keep** — product rules / naming / later mapping aid |
 | `backend/akasha_commerce_server/` | **Defer** — do not delete; freeze Cloud Run / Postgres / production MicroTxn adapter |
 | `lib/core/commerce/client/` | **Keep unwired** — may later wrap Inventory SDK instead of HTTP ledger API |
-| Flutter store UI | **Still forbidden** until Inventory POC green |
+| Flutter store UI | Read-only approved catalog is allowed; active purchase UI remains gated |
 
 ---
 
@@ -159,4 +163,4 @@ Authority remains Steam inventory contents, not Flutter SharedPreferences / Vaul
 3. Live `ISteamInventory` link after ItemDefs publish — prove purchase / exchange / restart  
 4. If live POC fails consistency → **No-Go escalate**, unfreeze custom backend path  
 
-**Still paused:** Cloud Run, PostgreSQL, production MicroTxn adapter, store UI, `steamInAppPurchasesEnabled=true`.
+**Still paused:** Cloud Run, PostgreSQL, production MicroTxn adapter, active Store purchase UI, `steamInAppPurchasesEnabled=true`.

@@ -2,6 +2,7 @@
 library;
 
 export 'src/commerce_catalog.dart';
+export 'src/commerce_account.dart';
 export 'src/commerce_exceptions.dart';
 export 'src/commerce_models.dart';
 export 'src/commerce_ports.dart';

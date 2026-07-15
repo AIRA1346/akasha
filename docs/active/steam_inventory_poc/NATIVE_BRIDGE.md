@@ -3,7 +3,7 @@
 > **Slice:** Windows `ISteamInventory` MethodChannel bridge  
 > **Flag:** `steamInAppPurchasesEnabled = false`  
 > **Sandbox E2E:** purchase + exchange proven on developer account / local Release — see [README.md](README.md)  
-> **Not claimed:** production IAP, depot/library ship, finalized prices
+> **Not claimed:** production IAP, depot/library ship, production ItemDef ids or localized pack prices
 
 ## SDK link
 
@@ -52,7 +52,8 @@ Flutter `SteamInventoryPocController` updates Astra/Echo/Theme **only** from suc
 2. [x] Sandbox StartPurchase + ExchangeItems on local Release
 3. [ ] Cold restart GetAllItems (user checklist in README)
 4. [ ] SteamPipe / library build re-verify
-5. [ ] Production price policy + `steamInAppPurchasesEnabled` decision
+5. [x] Product economy policy — Astra 100/USD reference; launch themes 500 Astra or 500 Echo
+6. [ ] Production ItemDefs/localized pack prices + `steamInAppPurchasesEnabled` decision
 
 ## Build paths
 

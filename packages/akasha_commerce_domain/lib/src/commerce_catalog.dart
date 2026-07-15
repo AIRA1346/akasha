@@ -1,72 +1,90 @@
 import 'commerce_models.dart';
 
-/// First-ship product seed (domain catalog — not Steam SKU registration).
+/// Approved product policy (domain catalog — not Steam ItemDef registration).
 abstract final class CommerceCatalog {
+  /// Economy reference only. Local UI must display Steam's localized price,
+  /// not derive a checkout price from this value.
+  static const int astraUnitsPerReferenceUsd = 100;
+
+  static const int launchThemeAstraPrice = 500;
+  static const int launchThemeEchoPrice = 500;
+  static const String sakuraThemeProductId = 'theme_package_sakura';
+  static const String sakuraThemeEntitlementKey = 'theme:sakura';
+  static const String amethystThemeProductId = 'theme_package_amethyst';
+  static const String amethystThemeEntitlementKey = 'theme:amethyst';
+  static const String nocturneThemeProductId = 'theme_package_nocturne';
+  static const String nocturneThemeEntitlementKey = 'theme:nocturne';
+
   static const premiumPack100 = CommerceProduct(
     id: 'astra_pack_100',
     kind: ProductKind.premiumPack,
-    payment: PaymentOption(policy: PaymentPolicy.premiumOnly),
     grantPremiumAmount: 100,
+    displayNameEn: '100 Astra',
+    displayNameKo: '아스트라 100개',
   );
 
-  /// Theme unlockable with Astra or Echo (buyer chooses one).
-  static const themeFlex = CommerceProduct(
-    id: 'theme_unlock_flex',
-    kind: ProductKind.themeUnlock,
+  static const sakuraThemePackage = CommerceProduct(
+    id: sakuraThemeProductId,
+    kind: ProductKind.themePackage,
     payment: PaymentOption(
       policy: PaymentPolicy.chooseOne,
-      premiumPrice: 50,
-      earnedPrice: 80,
+      premiumPrice: launchThemeAstraPrice,
+      earnedPrice: launchThemeEchoPrice,
     ),
-    entitlementKey: 'theme:flex_demo',
+    entitlementKey: sakuraThemeEntitlementKey,
+    displayNameEn: 'Sakura Theme Package',
+    displayNameKo: '벚꽃 테마 패키지',
   );
 
-  /// Astra-only theme.
-  static const themePremiumOnly = CommerceProduct(
-    id: 'theme_unlock_astra_only',
-    kind: ProductKind.themeUnlock,
-    payment: PaymentOption(
-      policy: PaymentPolicy.premiumOnly,
-      premiumPrice: 60,
-    ),
-    entitlementKey: 'theme:astra_only_demo',
-  );
-
-  /// Second choose-one theme (for multi-unlock tests).
-  static const themeFlexB = CommerceProduct(
-    id: 'theme_unlock_flex_b',
-    kind: ProductKind.themeUnlock,
+  static const amethystThemePackage = CommerceProduct(
+    id: amethystThemeProductId,
+    kind: ProductKind.themePackage,
     payment: PaymentOption(
       policy: PaymentPolicy.chooseOne,
-      premiumPrice: 50,
-      earnedPrice: 40,
+      premiumPrice: launchThemeAstraPrice,
+      earnedPrice: launchThemeEchoPrice,
     ),
-    entitlementKey: 'theme:flex_b_demo',
+    entitlementKey: amethystThemeEntitlementKey,
+    displayNameEn: 'Amethyst Theme Package',
+    displayNameKo: '자수정 테마 패키지',
   );
 
-  /// Developer support — Astra spend, no entitlement (not a charity donation).
-  static const supportAkasha = CommerceProduct(
-    id: 'support_akasha_10',
-    kind: ProductKind.support,
+  static const nocturneThemePackage = CommerceProduct(
+    id: nocturneThemeProductId,
+    kind: ProductKind.themePackage,
     payment: PaymentOption(
-      policy: PaymentPolicy.premiumOnly,
-      premiumPrice: 10,
+      policy: PaymentPolicy.chooseOne,
+      premiumPrice: launchThemeAstraPrice,
+      earnedPrice: launchThemeEchoPrice,
     ),
-    displayNameEn: 'Support AKASHA',
-    displayNameKo: 'AKASHA 후원',
+    entitlementKey: nocturneThemeEntitlementKey,
+    displayNameEn: 'Nocturne Theme Package',
+    displayNameKo: '녹턴 테마 패키지',
   );
 
   static const List<CommerceProduct> all = [
     premiumPack100,
-    themeFlex,
-    themeFlexB,
-    themePremiumOnly,
-    supportAkasha,
+    sakuraThemePackage,
+    amethystThemePackage,
+    nocturneThemePackage,
+  ];
+
+  static const List<CommerceProduct> launchThemePackages = [
+    sakuraThemePackage,
+    amethystThemePackage,
+    nocturneThemePackage,
   ];
 
   static CommerceProduct? byId(String id) {
     for (final p in all) {
       if (p.id == id) return p;
+    }
+    return null;
+  }
+
+  static CommerceProduct? byEntitlementKey(String entitlementKey) {
+    for (final product in all) {
+      if (product.entitlementKey == entitlementKey) return product;
     }
     return null;
   }

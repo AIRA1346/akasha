@@ -16,5 +16,8 @@ void main() {
       'Astra',
     );
     expect(CommerceCatalog.premiumPack100.grantPremiumAmount, 100);
+    expect(CommerceCatalog.launchThemePackages, hasLength(3));
+    expect(CommerceCatalog.sakuraThemePackage.payment?.premiumPrice, 500);
+    expect(CommerceCatalog.sakuraThemePackage.payment?.earnedPrice, 500);
   });
 }

@@ -1,119 +1,175 @@
-# AKASHA Commerce Currency Contract (P4 slice)
+# AKASHA Commerce, Currency, Store, and Inventory Contract
 
-> **Status:** Active — P4-C physical backend boundary (2026-07-12)  
-> **Track:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md)  
-> **Shared domain:** `packages/akasha_commerce_domain/` (re-exported from `lib/core/commerce/`)  
-> **Deployable authority:** `backend/akasha_commerce_server/`  
-> **Flutter client:** `lib/core/commerce/client/` (`CommerceApiClient` only)  
-> **Flag:** `FeatureFlags.steamInAppPurchasesEnabled = false` (unchanged; store UI / production API not wired)
+> **Status:** Active product SSOT (2026-07-15)
+> **Authority path:** Steam Inventory Service
+> **Shared domain:** `packages/akasha_commerce_domain/`
+> **Flutter boundary:** `lib/core/commerce/`
+> **Feature flag:** `FeatureFlags.steamInAppPurchasesEnabled = false` until production transaction verification
 
-## Physical boundary
+This document is the single source of truth for the launch economy, product
+catalog, inventory meaning, and store behavior. The older custom MicroTxn
+backend remains deferred and must not override this contract.
 
-```text
-Flutter app
-├─ Steam GetAuthTicketForWebApi
-├─ CommerceApiClient (HTTP)
-├─ MicroTxnAuthorizationResponse → backend
-└─ UI
-       │
-       ▼
-backend/akasha_commerce_server (or separate deployable)
-├─ Publisher Web API Key (env / secret manager only)
-├─ AuthenticateUserTicket → verified 64-bit SteamID
-├─ Orders · ledger · entitlement authority
-├─ InitTxn / FinalizeTxn / QueryTxn / RefundTxn
-└─ GetReport reconciliation
-```
+## 1. Currency policy
 
-Do **not** place Steam HTTP adapters, secrets, or authoritative repositories under
-`lib/core/commerce/server/`. P4-B code there was a domain prototype only; P4-C
-relocates authority to `backend/`.
-
-## Display names vs stable ids
-
-| Kind (code / ledger / DB) | EN display | KO display | UI qualifier |
+| Stable kind | Display | Acquisition | Launch purchasing power |
 |---|---|---|---|
-| `CurrencyKind.premium` | Astra | 아스트라 | Paid / 유료 |
-| `CurrencyKind.earned` | Echo | 에코 | Earned / 무료 획득 |
+| `CurrencyKind.premium` | Astra / 아스트라 | Purchased through Steam | 1 Astra |
+| `CurrencyKind.earned` | Echo / 에코 | Steam-verifiable play events and promotions | 1 Echo |
 
-Do **not** use `Pearl`, `BlackPearl`, or display strings as storage keys.
+- Economy reference: **USD 1 = 100 Astra**.
+- The reference is not a client-side exchange-rate calculator. Checkout always
+  displays Steam's localized real-money price.
+- Astra and Echo have equal purchasing power for products that accept both.
+- Astra and Echo are never convertible in either direction.
+- Mixed payment is forbidden. A purchase consumes its full price from exactly
+  one selected currency.
+- Echo is not sold for money.
+- Friend-invite Echo rewards are deferred until a trusted service can verify
+  inviter, invitee, completion, duplication, and abuse. The client never grants
+  invite rewards by itself.
 
-## Identity
+## 2. Launch theme catalog
 
-- Client sends auth ticket; backend calls `AuthenticateUserTicket`.
-- Only the verified 64-bit SteamID is the commerce account authority.
-- Never trust a client-supplied SteamID string.
+Classic Dark and Midnight Blue are bundled and need no commerce entitlement.
+The three paid themes are complete theme packages, not palette-only unlocks.
 
-## Astra grant timing (finalized ≠ settlement report)
+| Product id | Entitlement | Astra | Echo | Launch offer |
+|---|---|---:|---:|---|
+| `theme_package_sakura` | `theme:sakura` | 500 | 500 | choose one |
+| `theme_package_amethyst` | `theme:amethyst` | 500 | 500 | choose one |
+| `theme_package_nocturne` | `theme:nocturne` | 500 | 500 | choose one |
 
-Astra (`premium`) is granted only after **FinalizeTxn succeeds** or **QueryTxn / GetReport independently confirms the transaction as completed**. Grant exactly once (idempotent). **InitTxn success alone never grants.**
+Each theme entitlement includes the complete theme-specific package:
 
-GetReport **SETTLEMENT** / **CHARGEBACK** rows are **post-hoc reconciliation** evidence — not a gate that must arrive before the first grant.
+- palette and component styling;
+- bundled artwork and backdrop;
+- theme-specific decoration and particles as they are implemented;
+- theme-specific motion and pointer/touch feedback as they are implemented.
+
+The same entitlement is granted regardless of whether Astra or Echo was used.
+Owning the entitlement disables every alternate purchase recipe for that theme.
+
+All three products remain `planned` while the production feature flag is false.
+The app may show the approved catalog and prices, but it must not show an active
+purchase action or claim that Steam purchases are live.
+
+## 3. Future product expansion
+
+The domain reserves distinct product kinds so later goods do not distort the
+theme package contract:
+
+- `themePackage`;
+- `interactionEffect` for a standalone pointer/touch effect;
+- `audioPack` for a standalone OST/audio product;
+- other kinds only after their ownership and composition rules are approved.
+
+Some future products may be Astra-only. This is expressed by a single Astra
+payment option, not by a special currency or a new store path. A theme-specific
+effect already included in a theme package must not be resold independently
+without an explicit duplicate-ownership policy.
+
+## 4. Inventory v1
+
+The first inventory contains only:
+
+1. Astra balance;
+2. Echo balance;
+3. owned theme packages, including the two bundled themes.
+
+Tabs for effects, OST, or other future item types stay hidden until real
+products exist. An empty speculative category is not a launch feature.
+
+`CommerceAccountSnapshot` is the UI read contract:
+
+- balance fields are nullable until Steam returns a real snapshot;
+- unknown is not converted to `0`;
+- `ready` is the only state that can transact;
+- `offlineCache` can display clearly marked cached ownership but cannot buy or
+  exchange;
+- `indeterminate` operations force an inventory refresh before retry.
+
+Steam Inventory contents are the authority for Astra, Echo, and premium theme
+ownership. Vault and SharedPreferences are never payment or entitlement
+authority. `EntitlementService` remains a legacy/dev stub until removed from
+production commerce paths.
+
+## 5. Store and theme-gallery behavior
+
+The Store and Theme Gallery read the same `CommerceCatalog` product ids,
+entitlement keys, and price policy.
+
+- Theme Gallery always exposes all five official themes.
+- Planned paid themes show `500 Astra or 500 Echo` and a non-transactional
+  launch-preparation state while the flag is false.
+- Store shows only approved products; it never invents a balance, discount,
+  avatar, notification, or localized Steam price.
+- The purchase sheet will require the user to choose Astra or Echo, show the
+  full selected-currency price and projected remaining balance, and never offer
+  a mixed amount.
+- Inventory shows only owned items; locked products belong in Store/Theme
+  Gallery.
+
+## 6. Steam Inventory transaction flow
 
 ```text
-Purchase path:   ticket → InitTxn → user auth callback → FinalizeTxn (or QueryTxn/GetReport completed) → grant Astra once
-Reconciliation:  GetReport settlement / chargeback → reversal / audit (after the fact)
+Buy Astra
+  StartPurchase(Astra pack ItemDef)
+  -> Steam Wallet / Overlay
+  -> SteamInventoryResultReady
+  -> GetAllItems refresh
+  -> display provider-returned Astra balance
+
+Buy theme with Astra or Echo
+  verify latest inventory snapshot
+  -> choose exactly one currency
+  -> ExchangeItems(one 500-unit recipe)
+  -> Steam atomically consumes currency and grants theme ItemDef
+  -> GetAllItems refresh
+  -> enable theme from entitlement ownership
 ```
 
-Steam API response models and internal `ServerOrderState` stay separate; map via
-`SteamToServerStateMapper`. Unknown Steam statuses → indeterminate / manual review.
+Each launch theme needs two provider recipes that grant the same theme ItemDef:
 
-## Invariants
+```text
+Astra recipe: Astra unit x500
+Echo recipe:  Echo unit x500
+```
 
-1. Astra is granted only on finalized/completed confirmation (above) — never because a SETTLEMENT report arrived first.
-2. Echo (`earned`) is issued only as free grants (test bootstrap, operator grant, limited event codes).
-3. Astra and Echo are **never** convertible.
-4. A product uses exactly one payment policy: premium-only, earned-only, or choose-one (premium **or** earned).
-5. Theme purchase spends currency **and** creates a permanent entitlement (separate records).
-6. **Support** (`ProductKind.support`) is an Astra-spend product with **no** functional advantage / entitlement. EN: “Support AKASHA”. KO: “AKASHA 후원”. Do not use English “Donation” for this SKU.
-7. Balances are projections over an **append-only** ledger — never a mutable balance field as authority.
-8. Premium currency, orders, transaction state, and entitlements are **server-authoritative**.
-9. User Vault must **not** store payment authority data.
-10. Refund / chargeback / cancel adds a **reversal** ledger entry referencing the original premium grant; never mutate or delete prior entries.
-11. Authorization callbacks must correlate AppID · OrderID · verified SteamID.
-12. Original Steam responses are retained as **secret-redacted** audit material.
+No Astra/Echo conversion ItemDef or exchange recipe may be published.
 
-## Refund / chargeback balance policy (v1)
+## 7. Authority and failure invariants
 
-| Rule | v1 behavior |
-|---|---|
-| Reversal | Append reversal against the original premium grant |
-| Negative premium | **Allowed** after reversal if Astra was already spent |
-| Further Astra spend | **Forbidden** while `premium <` required price (negative blocks all premium spend) |
-| Theme entitlement | **Not** auto-revoked on refund |
-| Entitlement clawback | Deferred until ops policy + purchase-source tracking exist |
-| Echo | Steam refund / chargeback **does not** affect `earned` |
+1. Provider ItemDef ids are adapter configuration, not domain product ids.
+2. Display names and localized copy are never storage keys.
+3. Purchase/exchange success is accepted only from Steam result completion and
+   a converged inventory refresh.
+4. A delayed or duplicate callback never grants local ownership.
+5. Already-owned themes are blocked in UI before exchange. Steam's inability to
+   hard-block every duplicate exchange remains an accepted v1 residual risk.
+6. Offline mode cannot purchase or exchange.
+7. Publisher keys never ship in Flutter.
+8. Payment, currency, and entitlement data never enter the user Vault.
 
-## First-ship scope (P4–P6)
+## 8. Gates and deferred systems
 
-In scope:
+Production purchase actions stay disabled until all of the following pass:
 
-- Buy Astra packs (finalized/completed → premium grant)
-- Read Astra / Echo balances (wallet projection)
-- Unlock themes with Astra or Echo (per product policy)
-- Astra-only theme SKUs
-- Astra **Support** (spend-only)
-- Server transaction ledger + idempotency / no double-grant
-- Steam InitTxn / FinalizeTxn / refund / GetReport (sandbox first)
+- production ItemDefs and localized Steam prices are published;
+- depot/library-launch build verifies purchase, exchange, restart, and
+  cross-device ownership refresh;
+- cancellation, timeout, duplicate callback, insufficient balance, and
+  indeterminate recovery tests pass;
+- GetReport evidence tooling and release documentation are ready;
+- `steamInAppPurchasesEnabled` is deliberately enabled in a reviewed change.
 
-Deferred until payment system is stable:
+Deferred:
 
-- Attendance check-in
-- Friend invites
-- Recurring events
-- Activity-based auto rewards
-- Season economy
-- Automatic entitlement revocation on refund
+- friend-invite Echo rewards;
+- arbitrary app-private Echo grants;
+- standalone touch effects and OST products;
+- the custom Cloud Run/PostgreSQL MicroTxn authority.
 
-## This slice
-
-| Deliverable | State |
-|---|---|
-| Thin contract (this doc) | Done |
-| Shared domain package | Done — `packages/akasha_commerce_domain/` |
-| **P4-B** Secure backend foundation (prototype) | Accepted as domain prototype; authority moved in P4-C |
-| **P4-C** Physical backend + Sandbox Steam adapter + ticket auth | Done — `backend/akasha_commerce_server/` |
-| Flutter `CommerceApiClient` (unwired) | Done — not connected to store UI / production |
-| Production Steam / FeatureFlag | **Not connected** — `steamInAppPurchasesEnabled = false` |
-
-Next: **Steam Inventory Minimal POC** — [steam_inventory_poc/README.md](steam_inventory_poc/README.md). Feasibility is provisional Go only; final Go requires live Steamworks checklist. Cloud Run / Postgres / production MicroTxn remain paused; `backend/akasha_commerce_server/` stays deferred. Flag stays false.
+The Steam Inventory feasibility evidence remains in
+`STEAM_INVENTORY_COMMERCE_FEASIBILITY_GATE.md`. POC ItemDef numbers and costs
+remain technical test fixtures and are not production catalog policy.
