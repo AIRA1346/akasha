@@ -105,9 +105,16 @@ products exist. An empty speculative category is not a launch feature.
 
 - balance fields are nullable until Steam returns a real snapshot;
 - unknown is not converted to `0`;
-- `ready` is the only state that can transact;
+- `ready` means the current inventory read succeeded;
+- `transactionsEnabled` is a separate capability and must also be true before
+  `canTransact` becomes true;
 - `offlineCache` can display clearly marked cached ownership but cannot buy or
   exchange;
+- approved Astra pack prices preserve Steam's currency code and opaque raw
+  current/base amounts; the app does not infer a display unit from the USD
+  economy reference;
+- an online diagnostic must report AppID `4677560` before any ItemDef is
+  interpreted;
 - `indeterminate` operations force an inventory refresh before retry.
 
 Steam Inventory contents are the authority for Astra, Echo, and premium theme
@@ -163,6 +170,28 @@ matches either recipe. Separate wrapper ItemDefs remain valid but are not
 required.
 
 No Astra/Echo conversion ItemDef or exchange recipe may be published.
+
+## 6.1 Current production read boundary
+
+`lib/core/commerce/steam_inventory/` now contains the production ItemDef
+registry, a read-only native port, and `SteamInventoryCommerceGateway`.
+
+- only production currency ItemDefs `40001` and `40002` are summed;
+- only production theme ItemDefs `41001-41003` grant entitlement keys;
+- only approved pack ItemDefs `40110-40112` expose localized price data;
+- every retired POC ItemDef is ignored even when it remains in a developer
+  account;
+- a later offline refresh may expose the last in-memory provider snapshot as
+  `offlineCache`, but a cold offline start keeps balances unknown;
+- price lookup failure does not erase a valid balance/ownership snapshot;
+- purchase and exchange methods return `steam_commerce_read_only` without
+  invoking a native mutation;
+- the app root selects this gateway only behind
+  `steamInAppPurchasesEnabled`, which remains `false`.
+
+The Flutter/native transport is `akasha/steam_inventory`. The historical C++
+source and diagnostic client retain POC-oriented names as evidence, but
+production code imports only the read-only facade.
 
 ## 7. Authority and failure invariants
 

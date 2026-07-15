@@ -16,7 +16,7 @@
 | AppID file | `windows/runner/steam_appid.txt` → `4677560` (copied next to EXE) |
 | Callbacks | `SteamAPI_RunCallbacks()` via `SteamRuntime::Pump` on window timer |
 
-## MethodChannel API (`akasha/steam_inventory_poc`)
+## MethodChannel API (`akasha/steam_inventory`)
 
 | Method | Notes |
 |---|---|
@@ -31,7 +31,7 @@
 | `destroyResult` | **No-op for Steam handles** — see DestroyResult ownership |
 | `shutdown` | Channel teardown only; process owns `SteamAPI_Shutdown` |
 
-Event stream: `akasha/steam_inventory_poc/events`  
+Event stream: `akasha/steam_inventory/events`
 Statuses: `pending` / `success` / `canceled` / `failed` / `indeterminate`  
 `SteamInventoryFullUpdate_t` → `kind=fullUpdate` (ResultReady still owns DestroyResult)
 

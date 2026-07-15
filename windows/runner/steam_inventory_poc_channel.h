@@ -5,7 +5,7 @@
 
 #include <flutter/flutter_engine.h>
 
-// MethodChannel akasha/steam_inventory_poc (+ events stream).
+// MethodChannel akasha/steam_inventory (+ events stream).
 // Links ISteamInventory when SteamAPI_Init succeeds; otherwise returns
 // explicit failure codes (steam_not_running, offline, ...).
 class SteamInventoryPocChannel {

@@ -43,7 +43,11 @@ void main() async {
   final windowController = await initializeAkashaDesktopWindow();
   final themeController = await AkashaThemeController.load();
   final commerceController = CommerceController(
-    gateway: const UnavailableCommerceGateway(),
+    gateway: FeatureFlags.steamInAppPurchasesEnabled
+        ? SteamInventoryCommerceGateway(
+            port: const MethodChannelSteamInventoryReadPort(),
+          )
+        : const UnavailableCommerceGateway(),
     enabled: FeatureFlags.steamInAppPurchasesEnabled,
   );
   runApp(

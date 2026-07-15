@@ -28,6 +28,27 @@ POC IDs `10001`, `10002`, `10010`, `10020`, `10021`, `20001`, `20010`, and
 adapters must ignore every POC ID even if a developer account still owns old
 instances.
 
+## Client read adapter
+
+The local draft is mirrored by the explicit registry in
+`lib/core/commerce/steam_inventory/steam_inventory_itemdefs.dart`. The
+production read gateway:
+
+- verifies diagnostic AppID `4677560`, then obtains a fresh account inventory
+  through `GetAllItems`;
+- maps only production currency and entitlement ItemDefs;
+- obtains the user's currency code and priced pack amounts through
+  `RequestPrices` followed by `GetItemsWithPrices`;
+- never accepts raw ItemDef ids from UI;
+- exposes no active purchase, exchange, promo, consume, or playtime reward
+  path;
+- remains unreachable in the normal app while the production feature flag is
+  false.
+
+The returned Steam price integer is stored as an opaque amount. It must not be
+called a micro-unit or formatted by guessing currency decimals before sandbox
+evidence confirms the display contract.
+
 ## Launch definitions
 
 | ItemDef | Role | Contract |

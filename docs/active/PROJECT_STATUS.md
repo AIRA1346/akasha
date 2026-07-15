@@ -6,7 +6,7 @@
 > **갱신:** 2026-07-15
 > **Git:** `git rev-parse HEAD`  
 >
-> **Verification snapshot (2026-07-15):** root analyze **0** · root test **1145** · commerce domain **17** · backend **18** · Steam Inventory sandbox E2E POC passed · Windows debug/release build OK · Release runtime F11/Esc window bounds restore passed · `system/` durable vs `.akasha/` derived · **UX-3 Home complete · UX-4A/B/C/D core surfaces done · UX-5A/B/C/D five-theme package, artwork, extensibility hardening done · UX-6 window frame and theme gallery done · Commerce catalog foundation done · production ItemDef local draft done** · **Locator index atomic+`.bak` recovery done** (concurrent write lock = follow-up only) · **Entity vault load diagnostics done** · **Entity path index rebuild/upsert issue exposure = follow-up only** · **Workbench recovery draft I/O transition diagnostics done** · **Entity `derivedIndexesUpdated` Home skip + debounce AND-coalesce done** (Work/Journal/Timeline = follow-up) · **HomeShell God Class 전면 리팩터 기각** · **vault-watch dispose lifecycle ACTION A done** · **Package modularization audit closed** — 단일 앱 + `akasha_commerce_domain` only · graph acyclic · no new EXTRACT_NOW · Melos/lib 전면 분할 기각 · Archive=PREPARE_BOUNDARY · Vault/UI/Home=KEEP_IN_APP · Steam→CMake optional when IAP/no-IAP exclude needed · reopen only on documented triggers
+> **Verification snapshot (2026-07-15):** root analyze **0** · root test **1156** · commerce domain **17** · backend **18** · Steam Inventory sandbox E2E POC passed · Windows debug/release build OK · Release runtime F11/Esc window bounds restore passed · `system/` durable vs `.akasha/` derived · **UX-3 Home complete · UX-4A/B/C/D core surfaces done · UX-5A/B/C/D five-theme package, artwork, extensibility hardening done · UX-6 window frame and theme gallery done · Commerce catalog foundation done · production ItemDef local draft/read gateway done** · **Locator index atomic+`.bak` recovery done** (concurrent write lock = follow-up only) · **Entity vault load diagnostics done** · **Entity path index rebuild/upsert issue exposure = follow-up only** · **Workbench recovery draft I/O transition diagnostics done** · **Entity `derivedIndexesUpdated` Home skip + debounce AND-coalesce done** (Work/Journal/Timeline = follow-up) · **HomeShell God Class 전면 리팩터 기각** · **vault-watch dispose lifecycle ACTION A done** · **Package modularization audit closed** — 단일 앱 + `akasha_commerce_domain` only · graph acyclic · no new EXTRACT_NOW · Melos/lib 전면 분할 기각 · Archive=PREPARE_BOUNDARY · Vault/UI/Home=KEEP_IN_APP · Steam→CMake optional when IAP/no-IAP exclude needed · reopen only on documented triggers
 > **현재 실행:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) — Architecture Closure 선언 후 Steam 출시 블로커 트랙
 > **IAP:** 미구현 (`steamInAppPurchasesEnabled = false`). 확정 catalog/가격 read-only preview만 허용하며 결제 완성 전 활성 구매·Steam IAP 가능 표시·재심사 주장은 금지.
 ---
@@ -15,12 +15,12 @@
  
 | 항목 | 상태 |
 |------|------|
-| **root flutter test** | **1132 PASS** |
+| **root flutter test** | **1156 PASS** |
 | **commerce package tests** | domain **17 PASS** · backend **18 PASS** |
 | **flutter analyze** | **0 issue** (gates clean) |
 | **Home UI** | **UX-3A/B/C** ✅ · **UX-4A/B/C/D 핵심 surface** ✅ · honest CTA · responsive Preview · 목적지 역할/빈 상태 분리 |
 | **앱 테마** | UX-5A/B/C/D + UX-6 Gallery ✅ · canonical 5 preset · 단일 registry · 공식 5종 노출 · premium 3 planned · 승인 가격 500 Astra/500 Echo preview · 실제 backdrop/Hero 10개 · 구매 CTA 비활성 |
-| **Commerce UX 기반** | Steam Inventory authority SSOT · 공식 테마 패키지 3종 · `CommerceGateway`/nullable snapshot · app-root controller/scope · Store/Inventory/theme access 단일 snapshot · fake zero/혼합결제/재화교환 금지 ✅ |
+| **Commerce UX 기반** | Steam Inventory authority SSOT · 공식 테마 패키지 3종 · production ItemDef registry/read gateway · app-root controller/scope · Store/Inventory/theme access 단일 snapshot · POC ID 무시 · fake zero/혼합결제/재화교환 금지 ✅ |
 | **Responsive Shell** | UX-2A/B/C + UX-6 Window frame · destination/preview SSOT · 256/232/drawer · 288 inline/overlay/sheet · custom chrome · 창/최대화/F11 fullscreen · 기존 Graph/Records 접근 ✅ |
 | **Steam Inventory POC** | sandbox purchase · exchange E2E 통과 ✅ · production IAP는 계속 비활성 |
 | **사이드바 서재** | `나만의 서재` 목록·active·`+`·select·삭제·DnD ✅ |
@@ -92,8 +92,8 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| root `flutter test` | **1132 PASS** | ✅ |
-| commerce domain `dart test` | **14 PASS** | ✅ |
+| root `flutter test` | **1156 PASS** | ✅ |
+| commerce domain `dart test` | **17 PASS** | ✅ |
 | commerce backend `dart test` | **18 PASS** | ✅ |
 | `flutter analyze` | **0 issue** | ✅ |
 | `preflight_check` | PASS | ✅ |
@@ -110,7 +110,7 @@
 
 | 게이트 | 상태 | v1 blocking | 비고 |
 |--------|:----:|:-----------:|------|
-| **G-AUTO** | ✅ | ✅ | app **1145** · domain **17** · backend **18** · analyze **0** · release build **PASS** |
+| **G-AUTO** | ✅ | ✅ | app **1156** · domain **17** · backend **18** · analyze **0** · debug/release build **PASS** |
 | **G-VAULT** | ✅ | **✅** | 볼트 연동·아카이브·Sanctum 저장·기록 UI — 사용자 수동 dogfood 완료 |
 | **G-QA** | ✅ | ✅ | P0 수동 **12/12** (2026-06-13) · 사용자 dogfood 확인 |
 | **G-STEAM** | 🔶 | ✅ | no-IAP BuildID **24015480** 업로드 완료 · Set Live/review 대기 |
@@ -304,6 +304,7 @@
 | 2026-07-15 | **UX-6 Window frame + Theme Gallery** — 32px themed custom chrome · 창모드/최대화/`F11` fullscreen · Escape 복원 · control 우측 정렬/hover overlay 격리 · Sidebar 하단 접기 제거 · 공식 5테마 gallery · premium 3종 planned/no fake price · offer/access 상태 분리 · full tests **1128 PASS** · analyze **0** · Windows debug/release build PASS · Release runtime F11/Esc bounds restore PASS |
 | 2026-07-15 | **Commerce catalog foundation** — Astra/Echo·Steam Inventory authority SSOT · Astra pack 500/1,000/2,500 allowlist와 backend 호출 guard · launch theme package 3종 500/500 choose-one · mixed/convert 금지 · nullable account snapshot/gateway · app-root CommerceController/scope로 Store·Inventory와 theme entitlement 연결 · POC generator weight 의미 보정 · domain **17 PASS** · backend **18 PASS** · analyze **0** |
 | 2026-07-15 | **Steam production ItemDef local draft** — POC ID 8종 `hidden` retirement · production `40000-41199` 분리 · Astra pack VLV500/1000/2500 · Echo Pack 10 + 10분/6회/1,440분 generator · starter promo/Support 제외 · 테마 3종 500 Astra 또는 500 Echo exchange · schema tests **5 PASS** · full **1145 PASS** · analyze **0** · Steamworks 미게시 |
+| 2026-07-15 | **Steam production read gateway** — production ItemDef registry · AppID 검증 · `GetAllItems` 잔액/entitlement mapping · POC ID 무시 · `RequestPrices` 통화/raw current/base amount 보존 · account/price failure 및 cold-offline/in-memory cache 분리 · read-only transaction guard · generic `akasha/steam_inventory` channel · root **1156 PASS** · domain **17 PASS** · backend **18 PASS** · analyze **0** · Windows debug/release PASS · feature flag 계속 OFF |
 | 2026-07-13 | **Locator index atomic write + `.bak` restart recovery** — `DerivedIndexAtomicWrite` · Record/Entity path indexes · corrupt≠empty · stale `.tmp` never promoted · full tests **1030 PASS** · analyze **0** · concurrent write lock = follow-up only |
 | 2026-07-13 | **Entity vault load diagnostics** — `loadFromVaultWithIssues` · `parseDetailed` · empty≠corrupt-only · no auto-log (consumers handle `issues`) · callers unchanged · full tests **1042 PASS** · analyze **0** · tip **`13eb227f`** |
 | 2026-07-13 | **Entity path index rebuild issue exposure (조사만)** — `rebuildFromVault`/`upsertMarkdownFile` 무음 skip · `rebuildFromVaultWithIssues` 단독 구현 보류 · 명시적 소비자 대기 · 코드 미변경 |

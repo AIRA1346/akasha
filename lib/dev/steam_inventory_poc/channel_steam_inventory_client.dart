@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
+import '../../core/commerce/steam_inventory/steam_inventory_channel_contract.dart';
 import 'steam_inventory_client.dart';
 import 'steam_inventory_models.dart';
 
@@ -14,9 +15,10 @@ class ChannelSteamInventoryClient implements SteamInventoryClient {
   ChannelSteamInventoryClient({
     MethodChannel? channel,
     EventChannel? events,
-  })  : _channel = channel ?? const MethodChannel('akasha/steam_inventory_poc'),
-        _events =
-            events ?? const EventChannel('akasha/steam_inventory_poc/events');
+  }) : _channel =
+           channel ?? const MethodChannel(SteamInventoryChannelContract.methods),
+       _events =
+           events ?? const EventChannel(SteamInventoryChannelContract.events);
 
   final MethodChannel _channel;
   final EventChannel _events;

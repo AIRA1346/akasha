@@ -20,8 +20,11 @@ class CommerceAccountSnapshot {
     this.astraBalance,
     this.echoBalance,
     this.entitlementKeys = const {},
+    this.localizedPrices = const {},
+    this.transactionsEnabled = false,
     this.observedAt,
     this.issueCode,
+    this.priceIssueCode,
   });
 
   const CommerceAccountSnapshot.disabled()
@@ -29,24 +32,50 @@ class CommerceAccountSnapshot {
       astraBalance = null,
       echoBalance = null,
       entitlementKeys = const {},
+      localizedPrices = const {},
+      transactionsEnabled = false,
       observedAt = null,
-      issueCode = null;
+      issueCode = null,
+      priceIssueCode = null;
 
   final CommerceAuthorityState state;
   final int? astraBalance;
   final int? echoBalance;
   final Set<String> entitlementKeys;
+  final Map<String, CommerceLocalizedPrice> localizedPrices;
+  final bool transactionsEnabled;
   final DateTime? observedAt;
   final String? issueCode;
+  final String? priceIssueCode;
 
   bool get hasKnownBalances => astraBalance != null && echoBalance != null;
-  bool get canTransact => state == CommerceAuthorityState.ready;
+  bool get canTransact =>
+      state == CommerceAuthorityState.ready && transactionsEnabled;
   bool owns(String entitlementKey) => entitlementKeys.contains(entitlementKey);
+  CommerceLocalizedPrice? priceOf(String productId) =>
+      localizedPrices[productId];
 
   int? balanceOf(CurrencyKind currency) => switch (currency) {
     CurrencyKind.premium => astraBalance,
     CurrencyKind.earned => echoBalance,
   };
+}
+
+/// Opaque price values returned by the commerce provider for one approved
+/// product. Formatting remains provider/platform-specific; the client must not
+/// infer a checkout price from the economy reference in [CommerceCatalog].
+class CommerceLocalizedPrice {
+  const CommerceLocalizedPrice({
+    required this.productId,
+    required this.currencyCode,
+    required this.currentAmount,
+    this.baseAmount,
+  });
+
+  final String productId;
+  final String currencyCode;
+  final int currentAmount;
+  final int? baseAmount;
 }
 
 enum CommerceOperationStatus {

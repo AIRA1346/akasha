@@ -53,7 +53,8 @@ class SteamInventorySnapshot {
   final bool loadFailed;
   final String? loadError;
 
-  static SteamInventorySnapshot emptyFailed(String error) => SteamInventorySnapshot(
+  static SteamInventorySnapshot emptyFailed(String error) =>
+      SteamInventorySnapshot(
         items: const [],
         fetchedAt: DateTime.fromMillisecondsSinceEpoch(0, isUtc: true),
         loadFailed: true,
@@ -77,6 +78,8 @@ class SteamInventorySnapshot {
 class SteamItemPrice {
   const SteamItemPrice({required this.itemDefId, required this.priceMicro});
   final int itemDefId;
-  /// Steam price in micro-units of local currency when available.
+
+  /// Legacy POC field name for Steam's raw local-currency price amount.
+  /// Production code must not infer a display unit from this name.
   final int priceMicro;
 }

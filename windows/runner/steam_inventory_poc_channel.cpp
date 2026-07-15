@@ -21,8 +21,8 @@
 
 namespace {
 
-constexpr char kMethodChannel[] = "akasha/steam_inventory_poc";
-constexpr char kEventChannel[] = "akasha/steam_inventory_poc/events";
+constexpr char kMethodChannel[] = "akasha/steam_inventory";
+constexpr char kEventChannel[] = "akasha/steam_inventory/events";
 constexpr DWORD kWaitTimeoutMs = 20000;
 
 flutter::EncodableMap M(
@@ -699,8 +699,10 @@ struct SteamInventoryPocChannel::Impl {
   void OnPrices(SteamInventoryRequestPricesResult_t* r, bool io_fail) {
     flutter::EncodableList prices;
     std::string status = "failed";
+    std::string currency_code;
     if (!io_fail && r && r->m_result == k_EResultOK) {
       status = "success";
+      currency_code = r->m_rgchCurrency;
       const uint32 n = SteamInventory()->GetNumItemsWithPrices();
       if (n > 0) {
         std::vector<SteamItemDef_t> defs(n);
@@ -711,6 +713,12 @@ struct SteamInventoryPocChannel::Impl {
             prices.push_back(flutter::EncodableValue(M({
                 {"itemDefId",
                  flutter::EncodableValue(static_cast<int32_t>(defs[i]))},
+                {"priceAmount",
+                 flutter::EncodableValue(static_cast<int64_t>(cur[i]))},
+                {"basePriceAmount",
+                 flutter::EncodableValue(static_cast<int64_t>(base[i]))},
+                // Legacy POC key retained while production reads use the
+                // unit-neutral priceAmount name.
                 {"priceMicro",
                  flutter::EncodableValue(static_cast<int64_t>(cur[i]))},
             })));
@@ -721,6 +729,7 @@ struct SteamInventoryPocChannel::Impl {
     Emit(M({{"kind", flutter::EncodableValue("prices")},
             {"status", flutter::EncodableValue(status)},
             {"handle", flutter::EncodableValue(prices_corr)},
+            {"currencyCode", flutter::EncodableValue(currency_code)},
             {"prices", flutter::EncodableValue(prices)}}));
   }
 
@@ -964,15 +973,22 @@ void SteamInventoryPocChannel::Register(flutter::FlutterEngine* engine) {
           }
           auto sit = done.find(flutter::EncodableValue("status"));
           auto pit = done.find(flutter::EncodableValue("prices"));
+          auto cit = done.find(flutter::EncodableValue("currencyCode"));
           const bool ok = sit != done.end() &&
                           std::get<std::string>(sit->second) == "success";
           flutter::EncodableList prices;
           if (pit != done.end()) {
             prices = std::get<flutter::EncodableList>(pit->second);
           }
+          std::string currency_code;
+          if (cit != done.end() &&
+              std::holds_alternative<std::string>(cit->second)) {
+            currency_code = std::get<std::string>(cit->second);
+          }
           result->Success(flutter::EncodableValue(M({
               {"ok", flutter::EncodableValue(ok)},
               {"status", flutter::EncodableValue(ok ? "success" : "failed")},
+              {"currencyCode", flutter::EncodableValue(currency_code)},
               {"prices", flutter::EncodableValue(prices)},
               {"handle", flutter::EncodableValue(impl_->prices_corr)},
           })));

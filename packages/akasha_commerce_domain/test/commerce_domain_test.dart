@@ -122,7 +122,15 @@ void main() {
         echoBalance: 0,
       );
       expect(ready.hasKnownBalances, isTrue);
-      expect(ready.canTransact, isTrue);
+      expect(ready.canTransact, isFalse);
+
+      const transactional = CommerceAccountSnapshot(
+        state: CommerceAuthorityState.ready,
+        astraBalance: 0,
+        echoBalance: 0,
+        transactionsEnabled: true,
+      );
+      expect(transactional.canTransact, isTrue);
     });
   });
 

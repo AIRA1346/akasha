@@ -50,21 +50,30 @@ class CommerceController extends ChangeNotifier {
         astraBalance: previous.astraBalance,
         echoBalance: previous.echoBalance,
         entitlementKeys: previous.entitlementKeys,
+        localizedPrices: previous.localizedPrices,
+        transactionsEnabled: previous.transactionsEnabled,
         observedAt: previous.observedAt,
+        priceIssueCode: previous.priceIssueCode,
       ),
     );
 
     try {
       _setSnapshot(await _gateway.loadAccount());
     } catch (_) {
+      final hasCache = previous.hasKnownBalances;
       _setSnapshot(
         CommerceAccountSnapshot(
-          state: CommerceAuthorityState.unavailable,
+          state: hasCache
+              ? CommerceAuthorityState.offlineCache
+              : CommerceAuthorityState.unavailable,
           astraBalance: previous.astraBalance,
           echoBalance: previous.echoBalance,
           entitlementKeys: previous.entitlementKeys,
+          localizedPrices: previous.localizedPrices,
+          transactionsEnabled: false,
           observedAt: previous.observedAt,
           issueCode: 'commerce_gateway_error',
+          priceIssueCode: previous.priceIssueCode,
         ),
       );
     }

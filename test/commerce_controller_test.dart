@@ -35,6 +35,13 @@ void main() {
         astraBalance: 700,
         echoBalance: 125,
         entitlementKeys: const {'theme:nocturne'},
+        localizedPrices: const {
+          CommerceCatalog.astraPack500ProductId: CommerceLocalizedPrice(
+            productId: CommerceCatalog.astraPack500ProductId,
+            currencyCode: 'KRW',
+            currentAmount: 5500,
+          ),
+        },
         observedAt: DateTime.utc(2026, 7, 15),
       ),
     );
@@ -44,6 +51,12 @@ void main() {
     expect(controller.snapshot.astraBalance, 700);
     expect(controller.snapshot.echoBalance, 125);
     expect(controller.snapshot.owns('theme:nocturne'), isTrue);
+    expect(
+      controller.snapshot
+          .priceOf(CommerceCatalog.astraPack500ProductId)
+          ?.currencyCode,
+      'KRW',
+    );
   });
 
   test('gateway exception becomes unavailable without fake balances', () async {
@@ -58,6 +71,36 @@ void main() {
     expect(controller.snapshot.echoBalance, isNull);
     expect(controller.snapshot.issueCode, 'commerce_gateway_error');
   });
+
+  test(
+    'gateway exception preserves a previous snapshot as offline cache',
+    () async {
+      final gateway = _TestCommerceGateway(
+        loadResult: Future.value(
+          CommerceAccountSnapshot(
+            state: CommerceAuthorityState.ready,
+            astraBalance: 10,
+            echoBalance: 20,
+            entitlementKeys: const {'theme:sakura'},
+            observedAt: DateTime.utc(2026, 7, 15),
+          ),
+        ),
+      );
+      final controller = CommerceController(gateway: gateway, enabled: true);
+      addTearDown(controller.dispose);
+      await controller.refresh();
+      gateway.error = StateError('offline');
+
+      await controller.refresh();
+
+      expect(controller.snapshot.state, CommerceAuthorityState.offlineCache);
+      expect(controller.snapshot.astraBalance, 10);
+      expect(controller.snapshot.echoBalance, 20);
+      expect(controller.snapshot.owns('theme:sakura'), isTrue);
+      expect(controller.snapshot.canTransact, isFalse);
+      expect(controller.snapshot.issueCode, 'commerce_gateway_error');
+    },
+  );
 
   test('late provider completion is ignored after disposal', () async {
     final completion = Completer<CommerceAccountSnapshot>();
@@ -84,8 +127,8 @@ void main() {
 class _TestCommerceGateway implements CommerceGateway {
   _TestCommerceGateway({this.loadResult, this.error});
 
-  final Future<CommerceAccountSnapshot>? loadResult;
-  final Object? error;
+  Future<CommerceAccountSnapshot>? loadResult;
+  Object? error;
   int loadCalls = 0;
 
   @override
