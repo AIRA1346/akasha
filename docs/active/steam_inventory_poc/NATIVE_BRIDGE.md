@@ -3,7 +3,7 @@
 > **Slice:** Windows `ISteamInventory` MethodChannel bridge  
 > **Flag:** `steamInAppPurchasesEnabled = false`  
 > **Sandbox E2E:** purchase + exchange proven on developer account / local Release — see [README.md](README.md)  
-> **Not claimed:** production IAP, depot/library ship, production ItemDef ids or localized pack prices
+> **Not claimed:** production IAP, depot/library ship, published production ItemDefs or live localized pack prices
 
 ## SDK link
 

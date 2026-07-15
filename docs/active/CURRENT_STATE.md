@@ -20,7 +20,7 @@
 > - **Entity derivedIndexesUpdated** — Entity save/delete sets per-path `VaultPathChange.derivedIndexesUpdated` after successful index mutation; Home skips `ArchiveIndexManager` only (UI side-effects kept). Home debounce **AND-coalesces** pending path flags across batches (`false` survives later `true`). Work/Journal/Timeline still double-update (follow-up)
 > - **HomeShell vault-watch dispose lifecycle (ACTION A)** — God Class 전면 리팩터 **기각** (상태 소유권은 이미 coordinator로 분리). `HomeVaultWatchReactor` generation cancel + dispose 순서(reactor → vault sub/debounce → workbench) + `WorkbenchController.syncEntityTabs` await 후 `_disposed` guard. **COUPLED/DEFERRED 유지:** timeline token 과다 bump · 이중 rebuild · Catalog `isCatalogLoading` 직접 set · Vault cold-start bootstrap 추출
 > - **Package modularization audit (closed)** — 단일 Flutter 앱 + `akasha_commerce_domain`(유일한 성공 공유 package) + 별도 backend 유지 · package graph **비순환** · 신규 EXTRACT_NOW **없음** · Melos / `akasha_core`·database·ui 전면 분할·줄 수 기준 분리 **기각**. Archive format/codec = PREPARE_BOUNDARY · Vault I/O / UI / Home orchestration = KEEP_IN_APP · Steam bridge는 production IAP·no-IAP 빌드 제외 요구 시 **CMake optional부터** 재검토 · Melos는 package 수·공통 orchestration 필요성이 실제로 늘 때만. **재오픈 트리거:** 앱 외 제2 소비자 · 플랫폼 완전 빌드 제외 · 안정 API/의존 방향 · 앱 타입 역참조 없음 · 독립 테스트·배포·CI 격리 실측 · unrelated 동시 변경 반복
-> - Flutter app: `flutter analyze` **0** · `flutter test` **1140**
+> - Flutter app: `flutter analyze` **0** · `flutter test` **1145**
 > - Commerce packages: domain `dart test` **17** · backend `dart test` **18** · domain/root `dart analyze` **0**
 > - Windows debug/release build **OK (2026-07-15)**
 > - **UX-5A Theme package regression foundation** — 5 preset asset namespace/fallback/reduced-motion 계약 · 핵심 surface 3 viewport/125% text geometry · Classic Dark/Midnight Blue Windows golden · **done**. 실제 bundled artwork 검증은 아래 UX-5B로 확장.
@@ -30,6 +30,7 @@
 > - **UX-6 Window frame + Theme Gallery** — 32px themed custom chrome · 창모드/최대화/`F11` fullscreen과 Escape 복원 · control 우측 정렬/hover overlay 격리 · Sidebar 하단 `접기` 제거 · 공식 5테마 gallery · offer/access 상태 분리 · **done**. Release runtime에서 F11/Esc 후 원래 window bounds 복원을 확인했다.
 > - **Commerce catalog foundation** — Steam Inventory authority·Astra/Echo 정책 SSOT · 공식 테마 패키지 3종 `500 Astra 또는 500 Echo` · 혼합/상호 교환 금지 · provider-neutral `CommerceAccountSnapshot`/`CommerceGateway` · app-root `CommerceController`/scope가 Store·Inventory와 테마 entitlement를 단일 snapshot으로 연결 · unknown balance는 `0` 대신 미확인 표시 · production 구매 CTA/flag는 계속 비활성 · **done**.
 > - **POC ItemDef semantics correction** — `playtimegenerator`의 `10002x5`는 수량 5가 아니라 선택 weight이므로 현재 게시 POC는 성공 시 Echo 1개를 지급한다. Fake/test를 실제 의미에 맞췄고 historical JSON은 증거 보존을 위해 유지한다. production 다중 지급은 intermediate Echo bundle을 사용한다.
+> - **Production ItemDef local draft** — POC ID 8개는 `hidden` 퇴역하고 출시 정의는 `40000-41199`로 분리했다. Echo는 10분당 10개·1,440분 창당 최대 6회, starter promo/Support 제외, 테마 3종은 Astra 500 또는 Echo 500의 단일 선택 recipe다. JSON·불변조건 테스트는 완료했지만 Steamworks 게시와 feature flag 활성화는 하지 않았다.
 >
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)  
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)

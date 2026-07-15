@@ -5,6 +5,7 @@
 > **Shared domain:** `packages/akasha_commerce_domain/`
 > **Flutter boundary:** `lib/core/commerce/`
 > **Feature flag:** `FeatureFlags.steamInAppPurchasesEnabled = false` until production transaction verification
+> **Steam draft:** [`steam_inventory_production/itemdefs_production_draft.json`](steam_inventory_production/itemdefs_production_draft.json)
 
 This document is the single source of truth for the launch economy, product
 catalog, inventory meaning, and store behavior. The older custom MicroTxn
@@ -15,7 +16,7 @@ backend remains deferred and must not override this contract.
 | Stable kind | Display | Acquisition | Launch purchasing power |
 |---|---|---|---|
 | `CurrencyKind.premium` | Astra / 아스트라 | Purchased through Steam | 1 Astra |
-| `CurrencyKind.earned` | Echo / 에코 | Steam-verifiable play events and promotions | 1 Echo |
+| `CurrencyKind.earned` | Echo / 에코 | Steam-verified playtime rewards | 1 Echo |
 
 - Economy reference: **USD 1 = 100 Astra**.
 - The reference is not a client-side exchange-rate calculator. Checkout always
@@ -25,6 +26,11 @@ backend remains deferred and must not override this contract.
 - Mixed payment is forbidden. A purchase consumes its full price from exactly
   one selected currency.
 - Echo is not sold for money.
+- Launch Echo policy is **10 Echo after 10 eligible play minutes**, up to **6
+  grants per 1,440-minute Steam cooldown window** (maximum 60 Echo per window).
+  This does not promise a Korean-calendar midnight reset. The app triggers
+  evaluation; Steam validates playtime and the cooldown window.
+- No starter Echo promo ships at launch.
 - Friend-invite Echo rewards are deferred until a trusted service can verify
   inviter, invitee, completion, duplication, and abuse. The client never grants
   invite rewards by itself.
@@ -75,6 +81,9 @@ theme package contract:
 - `interactionEffect` for a standalone pointer/touch effect;
 - `audioPack` for a standalone OST/audio product;
 - other kinds only after their ownership and composition rules are approved.
+
+The experimental Support AKASHA item is not a launch product. A future support
+offer requires separate product and refund UX approval before publication.
 
 Some future products may be Astra-only. This is expressed by a single Astra
 payment option, not by a special currency or a new store path. A theme-specific
@@ -182,6 +191,7 @@ Production purchase actions stay disabled until all of the following pass:
 
 Deferred:
 
+- starter Echo promotions and Support AKASHA purchases;
 - friend-invite Echo rewards;
 - arbitrary app-private Echo grants;
 - standalone touch effects and OST products;
