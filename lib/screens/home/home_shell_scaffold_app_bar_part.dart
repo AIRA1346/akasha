@@ -14,6 +14,7 @@ PreferredSizeWidget _homeShellScaffoldAppBar(
       showAppPreferencesDialog(
         context,
         onOpenAppTheme: controller.showAppThemePicker,
+        onOpenCommerceCenter: () => showCommerceCenterDialog(context),
         onOpenVaultSettings: controller.openVaultSettingsDialog,
       ),
     ),

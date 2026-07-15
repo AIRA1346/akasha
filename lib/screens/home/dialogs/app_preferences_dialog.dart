@@ -16,6 +16,7 @@ import '../../../theme/akasha_typography.dart';
 Future<void> showAppPreferencesDialog(
   BuildContext hostContext, {
   VoidCallback? onOpenAppTheme,
+  VoidCallback? onOpenCommerceCenter,
   VoidCallback? onOpenVaultSettings,
   VoidCallback? onQuit,
 }) {
@@ -145,6 +146,15 @@ Future<void> showAppPreferencesDialog(
                     ),
                     ListTile(
                       contentPadding: EdgeInsets.zero,
+                      leading: const Icon(Icons.storefront_outlined),
+                      title: Text(l10n.appPreferencesCommerceTitle),
+                      subtitle: Text(l10n.appPreferencesCommerceSubtitle),
+                      onTap: onOpenCommerceCenter == null
+                          ? null
+                          : () => closeThen(onOpenCommerceCenter),
+                    ),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
                       leading: const Icon(Icons.folder_open_outlined),
                       title: Text(l10n.appPreferencesVaultTitle),
                       subtitle: Text(l10n.appPreferencesVaultSubtitle),
@@ -161,12 +171,10 @@ Future<void> showAppPreferencesDialog(
                         subtitle: const Text(
                           'Internal harness only — IAP flag stays false',
                         ),
-                        onTap: () => closeThen(
-                          () {
-                            if (!hostContext.mounted) return;
-                            showSteamInventoryPocDialog(hostContext);
-                          },
-                        ),
+                        onTap: () => closeThen(() {
+                          if (!hostContext.mounted) return;
+                          showSteamInventoryPocDialog(hostContext);
+                        }),
                       ),
                     ],
                   ],
