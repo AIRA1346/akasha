@@ -6,10 +6,7 @@ import 'steam_inventory_poc_ids.dart';
 ///
 /// Does not claim live Steamworks success.
 class FakeSteamInventoryClient implements SteamInventoryClient {
-  FakeSteamInventoryClient({
-    this.online = true,
-    Map<int, int>? initialStacks,
-  }) {
+  FakeSteamInventoryClient({this.online = true, Map<int, int>? initialStacks}) {
     if (initialStacks != null) {
       for (final e in initialStacks.entries) {
         _setStack(e.key, e.value);
@@ -77,8 +74,14 @@ class FakeSteamInventoryClient implements SteamInventoryClient {
   Future<List<SteamItemPrice>> requestPrices() async {
     if (!online) return const [];
     return const [
-      SteamItemPrice(itemDefId: SteamInventoryPocIds.astraPack100, priceMicro: 990000),
-      SteamItemPrice(itemDefId: SteamInventoryPocIds.supportAkasha, priceMicro: 990000),
+      SteamItemPrice(
+        itemDefId: SteamInventoryPocIds.astraPack100,
+        priceMicro: 990000,
+      ),
+      SteamItemPrice(
+        itemDefId: SteamInventoryPocIds.supportAkasha,
+        priceMicro: 990000,
+      ),
     ];
   }
 
@@ -218,10 +221,12 @@ class FakeSteamInventoryClient implements SteamInventoryClient {
     _pending[handle] = _Pending(
       kind: SteamInventoryOpKind.playtimeDrop,
       apply: () {
-        if (playtimeGeneratorDefId == SteamInventoryPocIds.echoPlaytimeGenerator) {
+        if (playtimeGeneratorDefId ==
+            SteamInventoryPocIds.echoPlaytimeGenerator) {
           _setStack(
             SteamInventoryPocIds.echoUnit,
-            stackQty(SteamInventoryPocIds.echoUnit) + 5,
+            stackQty(SteamInventoryPocIds.echoUnit) +
+                SteamInventoryPocIds.echoPlaytimeGrantAmount,
           );
         }
       },

@@ -29,6 +29,18 @@ backend remains deferred and must not override this contract.
   inviter, invitee, completion, duplication, and abuse. The client never grants
   invite rewards by itself.
 
+Approved launch Astra packs:
+
+| Product id | Astra grant | USD reference | Checkout display |
+|---|---:|---:|---|
+| `astra_pack_500` | 500 | $4.99 | Steam localized price |
+| `astra_pack_1000` | 1,000 | $9.99 | Steam localized price |
+| `astra_pack_2500` | 2,500 | $24.99 | Steam localized price |
+
+Only these domain product ids may map to priced Steam ItemDefs. The raw Astra
+unit ItemDef is never a purchase SKU even though it carries a hidden component
+price for bundle accounting.
+
 ## 2. Launch theme catalog
 
 Classic Dark and Midnight Blue are bundled and need no commerce entitlement.
@@ -129,12 +141,17 @@ Buy theme with Astra or Echo
   -> enable theme from entitlement ownership
 ```
 
-Each launch theme needs two provider recipes that grant the same theme ItemDef:
+Each launch theme needs provider exchange alternatives that grant the same
+theme ItemDef. One wrapper ItemDef can express both alternatives:
 
 ```text
-Astra recipe: Astra unit x500
-Echo recipe:  Echo unit x500
+exchange: "Astra unit x500;Echo unit x500"
 ```
+
+The semicolon separates alternative recipes. The client submits instance
+quantities for exactly one selected currency, so Astra 250 plus Echo 250 never
+matches either recipe. Separate wrapper ItemDefs remain valid but are not
+required.
 
 No Astra/Echo conversion ItemDef or exchange recipe may be published.
 

@@ -11,7 +11,6 @@ import 'server_order_state.dart';
 import 'steam_adapter.dart';
 import 'steam_txn_phase.dart';
 
-
 /// Server-side orchestration over accounts, 64-bit orders, Steam adapter, ledger.
 class SecureCommerceService {
   SecureCommerceService({
@@ -313,7 +312,9 @@ class SecureCommerceService {
     required SteamTxnPhase steamPhase,
     required DateTime now,
   }) async {
-    final raced = await _repo.findLedgerByIdempotencyKey(finalizeIdempotencyKey);
+    final raced = await _repo.findLedgerByIdempotencyKey(
+      finalizeIdempotencyKey,
+    );
     if (raced != null) return wallet(order.steamId);
 
     final grant = order.premiumGrantAmount ?? 0;
@@ -418,6 +419,12 @@ class SecureCommerceService {
   }
 
   Future<CommerceProduct> _requirePremiumPack(String productId) async {
+    if (!CommerceCatalog.isApprovedAstraPack(productId)) {
+      throw const CommerceRejected(
+        'unapproved_astra_pack',
+        'Product is not an approved Astra pack.',
+      );
+    }
     final product =
         await _repo.getProduct(productId) ?? CommerceCatalog.byId(productId);
     if (product == null || product.kind != ProductKind.premiumPack) {

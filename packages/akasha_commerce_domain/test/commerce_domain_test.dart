@@ -96,6 +96,19 @@ void main() {
       }
     });
 
+    test('publishes only the approved launch Astra pack amounts', () {
+      expect(
+        CommerceCatalog.astraPacks.map((pack) => pack.grantPremiumAmount),
+        [500, 1000, 2500],
+      );
+      expect(
+        CommerceCatalog.astraPacks.map((pack) => pack.id).toSet(),
+        hasLength(3),
+      );
+      expect(CommerceCatalog.isApprovedAstraPack('astra_pack_100'), isFalse);
+      expect(CommerceCatalog.isApprovedAstraPack('astra_unit'), isFalse);
+    });
+
     test('account snapshot never invents unknown zero balances', () {
       const disabled = CommerceAccountSnapshot.disabled();
       expect(disabled.astraBalance, isNull);
@@ -117,14 +130,14 @@ void main() {
     test('grants Astra once after FinalizeTxn succeeds', () async {
       final order = await commerce.createPremiumPackOrder(
         userId: 'u1',
-        productId: CommerceCatalog.premiumPack100.id,
+        productId: CommerceCatalog.astraPack500.id,
         idempotencyKey: 'order-1',
       );
       final wallet = await commerce.finalizePremiumPackPurchase(
         orderId: order.id,
         finalizeIdempotencyKey: 'finalize-1',
       );
-      expect(wallet.premium, 100);
+      expect(wallet.premium, 500);
       expect(wallet.earned, 0);
       expect(payments.finalizeCalls, 1);
       expect((await repo.getOrder(order.id))!.status, OrderStatus.completed);
@@ -135,7 +148,7 @@ void main() {
       () async {
         final order = await commerce.createPremiumPackOrder(
           userId: 'u1',
-          productId: CommerceCatalog.premiumPack100.id,
+          productId: CommerceCatalog.astraPack500.id,
           idempotencyKey: 'order-1',
         );
         await commerce.finalizePremiumPackPurchase(
@@ -146,7 +159,7 @@ void main() {
           orderId: order.id,
           finalizeIdempotencyKey: 'finalize-1',
         );
-        expect(again.premium, 100);
+        expect(again.premium, 500);
         expect(repo.ledger.where((e) => e.userId == 'u1').length, 1);
       },
     );
@@ -154,12 +167,12 @@ void main() {
     test('createPremiumPackOrder is idempotent on order key', () async {
       final a = await commerce.createPremiumPackOrder(
         userId: 'u1',
-        productId: CommerceCatalog.premiumPack100.id,
+        productId: CommerceCatalog.astraPack500.id,
         idempotencyKey: 'order-1',
       );
       final b = await commerce.createPremiumPackOrder(
         userId: 'u1',
-        productId: CommerceCatalog.premiumPack100.id,
+        productId: CommerceCatalog.astraPack500.id,
         idempotencyKey: 'order-1',
       );
       expect(a.id, b.id);
@@ -169,17 +182,15 @@ void main() {
 
   group('theme unlock', () {
     Future<void> fundPremium() async {
-      for (var i = 0; i < 5; i++) {
-        final order = await commerce.createPremiumPackOrder(
-          userId: 'u1',
-          productId: CommerceCatalog.premiumPack100.id,
-          idempotencyKey: 'order-fund-$i',
-        );
-        await commerce.finalizePremiumPackPurchase(
-          orderId: order.id,
-          finalizeIdempotencyKey: 'finalize-fund-$i',
-        );
-      }
+      final order = await commerce.createPremiumPackOrder(
+        userId: 'u1',
+        productId: CommerceCatalog.astraPack500.id,
+        idempotencyKey: 'order-fund',
+      );
+      await commerce.finalizePremiumPackPurchase(
+        orderId: order.id,
+        finalizeIdempotencyKey: 'finalize-fund',
+      );
     }
 
     test('unlocks theme with Astra and creates entitlement', () async {
@@ -284,7 +295,7 @@ void main() {
       repo.products[testSupport.id] = testSupport;
       final order = await commerce.createPremiumPackOrder(
         userId: 'u1',
-        productId: CommerceCatalog.premiumPack100.id,
+        productId: CommerceCatalog.astraPack500.id,
         idempotencyKey: 'order-1',
       );
       await commerce.finalizePremiumPackPurchase(
@@ -296,7 +307,7 @@ void main() {
         productId: testSupport.id,
         idempotencyKey: 'support-1',
       );
-      expect(wallet.premium, 90);
+      expect(wallet.premium, 490);
       expect(repo.entitlementsByUserKey, isEmpty);
       expect(testSupport.displayNameEn, 'Support AKASHA');
       expect(testSupport.displayNameKo, 'AKASHA 후원');
@@ -306,7 +317,7 @@ void main() {
     test('refund adds reversal and does not delete prior credit', () async {
       final order = await commerce.createPremiumPackOrder(
         userId: 'u1',
-        productId: CommerceCatalog.premiumPack100.id,
+        productId: CommerceCatalog.astraPack500.id,
         idempotencyKey: 'order-1',
       );
       await commerce.finalizePremiumPackPurchase(
@@ -332,7 +343,7 @@ void main() {
         repo.products[testSupport.id] = testSupport;
         final order = await commerce.createPremiumPackOrder(
           userId: 'u1',
-          productId: CommerceCatalog.premiumPack100.id,
+          productId: CommerceCatalog.astraPack500.id,
           idempotencyKey: 'order-1',
         );
         await commerce.finalizePremiumPackPurchase(
@@ -397,7 +408,7 @@ void main() {
     test('refund idempotency does not double-reverse', () async {
       final order = await commerce.createPremiumPackOrder(
         userId: 'u1',
-        productId: CommerceCatalog.premiumPack100.id,
+        productId: CommerceCatalog.astraPack500.id,
         idempotencyKey: 'order-1',
       );
       await commerce.finalizePremiumPackPurchase(

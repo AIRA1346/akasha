@@ -32,9 +32,9 @@ AKASHA v1 paid themes + Astra packs + Support **can** be owned and settled by **
 | AKASHA concept | ItemDef role | Suggested shape | Key schema flags |
 |---|---|---|---|
 | Astra unit | Stackable currency | `type: item`, id e.g. `10001` | `auto_stack: true`, `tradable: false`, `marketable: false` (no `commodity`) |
-| Astra pack (e.g. 100) | Priced sellable grant | `type: bundle` → `10001x100` **or** priced item that expands to units | `price` / `price_category` (VLV…); not tradable/marketable |
+| Astra packs (500/1,000/2,500) | Priced sellable grants | `type: bundle` → Astra unit quantity | `price` / `price_category` (VLV…); not tradable/marketable; explicit adapter allowlist |
 | Echo unit | Free-earned stackable | `type: item`, id e.g. `10002` | Same stack/trade flags as Astra; **no** store price |
-| Echo grant sources | Promo / playtime | `promo` rules; `type: playtimegenerator` → Echo | Client may call `AddPromoItem` / `TriggerItemDrop`; Steam enforces rules |
+| Echo grant sources | Promo / playtime | `playtimegenerator` → intermediate multi-unit Echo bundle | Generator `xN` is weight, not quantity; client calls `AddPromoItem` / `TriggerItemDrop` |
 | Theme (e.g. Nocturne) | Permanent unlock | ItemDef `20001`; exchange via bundle `20010` | Ownership qty ≥ 1; **do not** put legacy `exchange` on `20001` |
 | Support AKASHA | Cosmetic / token | Priced `item` (badge or spend-token) | No gameplay entitlement; optional `purchase_limit`; not tradable/marketable |
 
@@ -66,10 +66,11 @@ Echo v1 earn
   — not attendance / invites / app-private events
 ```
 
-**Choose-one currency for the same theme:** publish two recipes that grant the
-same theme ItemDef: Astra×500 **or** Echo×500. The client submits exactly one
-selected recipe; mixed Astra+Echo material lists are forbidden by product
-policy. Exact production ItemDef ids remain adapter configuration.
+**Choose-one currency for the same theme:** one wrapper ItemDef may define
+`exchange: "10001x500;10002x500"`. The semicolon separates alternative
+recipes, so Astra×500 **or** Echo×500 can grant the same theme while a mixed
+Astra+Echo material list matches neither. Separate wrappers are also valid but
+not required. Exact production ItemDef ids remain adapter configuration.
 
 ---
 

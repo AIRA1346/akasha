@@ -47,6 +47,20 @@ or finalized localized Steam pack prices.
 Playtime Echo requires the **app** to call `TriggerItemDrop`. Promo uses `AddPromoItem`.  
 Attendance / invites / arbitrary activity grants are **out of scope**.
 
+### Published POC generator semantics correction
+
+The published POC definition `10020` contains `bundle: 10002x5`. For a
+`generator` or `playtimegenerator`, `x5` is a relative selection weight, not a
+grant quantity. Because `10002` is the only candidate, one successful trigger
+grants **one Echo**, not five. Its 30-minute interval and one-drop-per-1440-
+minute window also make it unsuitable for the launch reward policy.
+
+The Fake client and tests intentionally mirror that exact POC behavior. A
+production multi-unit Echo grant must select an intermediate `bundle` such as
+`Echo Pack 10 -> 10002x10`; the playtime generator then selects that bundle.
+The historical POC JSON remains unchanged so it continues to match the schema
+that was published for the recorded sandbox evidence.
+
 ## Debug harness
 
 - Debug / Release+`AKASHA_STEAM_INVENTORY_POC=true` → App Preferences → **Steam Inventory POC**
@@ -96,4 +110,6 @@ flutter test
 
 ## Next (separate work)
 
-Finalize **product** price / Theme economy. Current VLV100, Astra pack 100, theme exchange 100 are **technical POC settings**, not locked product policy.
+Finalize the production Echo cadence and daily cap. Current VLV100, Astra pack
+100, one-Echo playtime drop, and theme exchange 100 are **technical POC
+settings**, not locked product policy.

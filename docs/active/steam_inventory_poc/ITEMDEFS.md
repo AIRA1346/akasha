@@ -24,7 +24,7 @@
 | 10001 | Astra unit (`auto_stack`) |
 | 10010 | Astra Pack 100 (bundle) |
 | 10002 | Echo unit (`auto_stack`) |
-| 10020 | Echo playtime generator |
+| 10020 | Echo playtime generator — `10002x5` means weight 5 and grants one Echo because it is the only candidate |
 | 10021 | Echo starter promo (`owns:4677560`) — prefer as promo bundle target; adjust if Steam rejects `bundle` on promo item |
 | 20001 | Theme Nocturne — ownership = qty ≥ 1 |
 | 20010 | Theme exchange bundle — `bundle: 20001x1`, `exchange: 10001x100` |
@@ -34,6 +34,9 @@
 
 - Allowed: `promo`, `played:…`, `playtimegenerator` + **`TriggerItemDrop` from the app**
 - Playtime is **not** automatic; the client must call `TriggerItemDrop` when appropriate
+- In a generator, `xN` is selection weight rather than quantity. Multi-unit
+  production rewards require an intermediate bundle that expands to
+  `10002xN`.
 - **Out of scope:** attendance, friend invites, arbitrary in-app activity grants
 
 ## Theme ownership

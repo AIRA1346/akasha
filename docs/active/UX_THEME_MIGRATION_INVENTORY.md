@@ -25,7 +25,7 @@ UX-5C 검증은 root analyze **0**, root test **1124**, Windows Debug/Release PA
 
 2026-07-15 UX-6에서 `ThemeOfferState`를 access state와 분리하고 no-IAP Theme Gallery도 공식 5종을 모두 발견 가능하게 바꿨다. 이 시점의 premium 3종은 `planned`로 표시하며 가격·구매 CTA·가짜 잔액을 노출하지 않았다. Windows custom chrome과 창모드·최대화·`F11` fullscreen 계약도 app root에 추가했다. control은 가로축 전체 폭·우측 정렬을 고정하고 root overlay 밖에서는 Tooltip을 만들지 않아 hover feedback이 버튼 영역을 벗어나지 않는다. 검증은 root analyze **0**, root test **1128**, Windows Debug/Release PASS이며 실제 Release runtime에서 `F11` 진입·복원과 fullscreen 중 Escape의 원래 window bounds 복원을 확인했다.
 
-같은 날 후속 Commerce catalog foundation에서 사용자가 승인한 launch 정책을 별도 SSOT로 고정했다. Sakura·Amethyst·Nocturne는 각각 `500 Astra 또는 500 Echo` choose-one이며 혼합·재화 교환은 금지한다. Theme Gallery와 read-only Store & Inventory는 동일 `CommerceCatalog`를 읽어 가격을 표시하지만 production 구매 CTA는 계속 비활성이다. `CommerceAccountSnapshot`의 미확인 잔액은 nullable이며 가짜 `0`을 만들지 않는다. 검증은 root analyze **0**, root test **1132**, commerce domain **16**이다.
+같은 날 후속 Commerce catalog foundation에서 사용자가 승인한 launch 정책을 별도 SSOT로 고정했다. Sakura·Amethyst·Nocturne는 각각 `500 Astra 또는 500 Echo` choose-one이며 혼합·재화 교환은 금지한다. Astra pack은 500/1,000/2,500 allowlist다. Theme Gallery와 read-only Store & Inventory는 동일 `CommerceCatalog`를 읽어 가격을 표시하지만 production 구매 CTA는 계속 비활성이다. `CommerceAccountSnapshot`의 미확인 잔액은 nullable이며 가짜 `0`을 만들지 않는다. 검증은 root analyze **0**, root test **1140**, commerce domain **17**이다.
 
 | 항목 | UX-1 이전 | 현재 결과 |
 |---|---|---|

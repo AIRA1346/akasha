@@ -8,6 +8,9 @@ abstract final class CommerceCatalog {
 
   static const int launchThemeAstraPrice = 500;
   static const int launchThemeEchoPrice = 500;
+  static const String astraPack500ProductId = 'astra_pack_500';
+  static const String astraPack1000ProductId = 'astra_pack_1000';
+  static const String astraPack2500ProductId = 'astra_pack_2500';
   static const String sakuraThemeProductId = 'theme_package_sakura';
   static const String sakuraThemeEntitlementKey = 'theme:sakura';
   static const String amethystThemeProductId = 'theme_package_amethyst';
@@ -15,12 +18,28 @@ abstract final class CommerceCatalog {
   static const String nocturneThemeProductId = 'theme_package_nocturne';
   static const String nocturneThemeEntitlementKey = 'theme:nocturne';
 
-  static const premiumPack100 = CommerceProduct(
-    id: 'astra_pack_100',
+  static const astraPack500 = CommerceProduct(
+    id: astraPack500ProductId,
     kind: ProductKind.premiumPack,
-    grantPremiumAmount: 100,
-    displayNameEn: '100 Astra',
-    displayNameKo: '아스트라 100개',
+    grantPremiumAmount: 500,
+    displayNameEn: '500 Astra',
+    displayNameKo: '아스트라 500개',
+  );
+
+  static const astraPack1000 = CommerceProduct(
+    id: astraPack1000ProductId,
+    kind: ProductKind.premiumPack,
+    grantPremiumAmount: 1000,
+    displayNameEn: '1,000 Astra',
+    displayNameKo: '아스트라 1,000개',
+  );
+
+  static const astraPack2500 = CommerceProduct(
+    id: astraPack2500ProductId,
+    kind: ProductKind.premiumPack,
+    grantPremiumAmount: 2500,
+    displayNameEn: '2,500 Astra',
+    displayNameKo: '아스트라 2,500개',
   );
 
   static const sakuraThemePackage = CommerceProduct(
@@ -63,11 +82,22 @@ abstract final class CommerceCatalog {
   );
 
   static const List<CommerceProduct> all = [
-    premiumPack100,
+    ...astraPacks,
     sakuraThemePackage,
     amethystThemePackage,
     nocturneThemePackage,
   ];
+
+  /// The only domain product IDs that a production adapter may map to priced
+  /// Steam ItemDefs. Raw currency ItemDefs are never accepted for purchase.
+  static const List<CommerceProduct> astraPacks = [
+    astraPack500,
+    astraPack1000,
+    astraPack2500,
+  ];
+
+  static bool isApprovedAstraPack(String productId) =>
+      astraPacks.any((product) => product.id == productId);
 
   static const List<CommerceProduct> launchThemePackages = [
     sakuraThemePackage,

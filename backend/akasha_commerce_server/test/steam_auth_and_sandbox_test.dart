@@ -48,7 +48,7 @@ void main() {
     await expectLater(
       gateway.beginPremiumPackPurchase(
         authTicketHex: 'missing',
-        productId: CommerceCatalog.premiumPack100.id,
+        productId: CommerceCatalog.astraPack500.id,
         idempotencyKey: 'op-1',
       ),
       throwsA(
@@ -65,13 +65,13 @@ void main() {
     issue('ticket-once');
     await gateway.beginPremiumPackPurchase(
       authTicketHex: 'ticket-once',
-      productId: CommerceCatalog.premiumPack100.id,
+      productId: CommerceCatalog.astraPack500.id,
       idempotencyKey: 'op-1',
     );
     await expectLater(
       gateway.beginPremiumPackPurchase(
         authTicketHex: 'ticket-once',
-        productId: CommerceCatalog.premiumPack100.id,
+        productId: CommerceCatalog.astraPack500.id,
         idempotencyKey: 'op-2',
       ),
       throwsA(
@@ -85,7 +85,7 @@ void main() {
     await expectLater(
       gateway.beginPremiumPackPurchase(
         authTicketHex: 'bad-app',
-        productId: CommerceCatalog.premiumPack100.id,
+        productId: CommerceCatalog.astraPack500.id,
         idempotencyKey: 'op-1',
       ),
       throwsA(
@@ -104,7 +104,7 @@ void main() {
       issue('t1');
       final order = await gateway.beginPremiumPackPurchase(
         authTicketHex: 't1',
-        productId: CommerceCatalog.premiumPack100.id,
+        productId: CommerceCatalog.astraPack500.id,
         idempotencyKey: 'op-1',
       );
       expect(order.steamId, realSteamId);
@@ -119,7 +119,7 @@ void main() {
       issue('t-begin');
       final order = await gateway.beginPremiumPackPurchase(
         authTicketHex: 't-begin',
-        productId: CommerceCatalog.premiumPack100.id,
+        productId: CommerceCatalog.astraPack500.id,
         idempotencyKey: 'op-1',
       );
       expect((await service.wallet(realSteamId)).premium, 0);
@@ -135,7 +135,7 @@ void main() {
         ),
         finalizeIdempotencyKey: 'fin-1',
       );
-      expect(wallet.premium, 100);
+      expect(wallet.premium, 500);
       expect(order.steamId, isNot(spoofSteamId));
     },
   );
@@ -144,7 +144,7 @@ void main() {
     issue('t-begin');
     final order = await gateway.beginPremiumPackPurchase(
       authTicketHex: 't-begin',
-      productId: CommerceCatalog.premiumPack100.id,
+      productId: CommerceCatalog.astraPack500.id,
       idempotencyKey: 'op-1',
     );
     issue('t-fin');
@@ -170,7 +170,7 @@ void main() {
       issue('t-begin');
       final order = await gateway.beginPremiumPackPurchase(
         authTicketHex: 't-begin',
-        productId: CommerceCatalog.premiumPack100.id,
+        productId: CommerceCatalog.astraPack500.id,
         idempotencyKey: 'op-1',
       );
       issue('t-other', steamId: spoofSteamId);
@@ -213,7 +213,7 @@ void main() {
       );
       final order = await harness.beginPremiumPackPurchase(
         steamId: realSteamId,
-        productId: CommerceCatalog.premiumPack100.id,
+        productId: CommerceCatalog.astraPack500.id,
         idempotencyKey: 's-op',
       );
       expect((await harness.wallet(realSteamId)).premium, 0);
@@ -232,7 +232,7 @@ void main() {
         orderId: order.orderId,
         finalizeIdempotencyKey: 's-fin',
       );
-      expect((await harness.wallet(realSteamId)).premium, 100);
+      expect((await harness.wallet(realSteamId)).premium, 500);
       expect(audit.any((a) => a.method == 'FinalizeTxn'), isTrue);
     },
   );

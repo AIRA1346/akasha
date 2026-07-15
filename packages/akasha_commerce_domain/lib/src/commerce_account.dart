@@ -1,3 +1,4 @@
+import 'commerce_catalog.dart';
 import 'currency_kind.dart';
 
 /// Read state for the external commerce authority.
@@ -78,6 +79,9 @@ class CommerceOperationResult {
 abstract interface class CommerceGateway {
   Future<CommerceAccountSnapshot> loadAccount();
 
+  /// Accepts only domain product ids approved by
+  /// [CommerceCatalog.isApprovedAstraPack]. A provider adapter must never pass
+  /// through a raw ItemDef supplied by UI or external input.
   Future<CommerceOperationResult> purchaseAstraPack({
     required String productId,
   });

@@ -15,7 +15,18 @@ void main() {
       CurrencyDisplay.name(CurrencyKind.premium, languageTag: 'en'),
       'Astra',
     );
-    expect(CommerceCatalog.premiumPack100.grantPremiumAmount, 100);
+    expect(CommerceCatalog.astraPacks.map((pack) => pack.grantPremiumAmount), [
+      500,
+      1000,
+      2500,
+    ]);
+    expect(
+      CommerceCatalog.astraPacks.every(
+        (pack) => CommerceCatalog.isApprovedAstraPack(pack.id),
+      ),
+      isTrue,
+    );
+    expect(CommerceCatalog.isApprovedAstraPack('astra_unit'), isFalse);
     expect(CommerceCatalog.launchThemePackages, hasLength(3));
     expect(CommerceCatalog.sakuraThemePackage.payment?.premiumPrice, 500);
     expect(CommerceCatalog.sakuraThemePackage.payment?.earnedPrice, 500);
