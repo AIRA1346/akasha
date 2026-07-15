@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:akasha_commerce_domain/akasha_commerce_domain.dart';
 
 import '../models/theme_catalog.dart';
 import 'akasha_theme_preset.dart';
@@ -35,6 +36,7 @@ abstract final class AkashaThemeRegistry {
     displayNameL10nKey: 'themeClassicDarkName',
     fallbackDisplayName: 'Classic Dark',
     accessType: ThemeAccessType.bundled,
+    offerState: ThemeOfferState.included,
   );
 
   static const classicDark = AkashaThemeDefinition(
@@ -66,6 +68,7 @@ abstract final class AkashaThemeRegistry {
     displayNameL10nKey: 'themeMidnightBlueName',
     fallbackDisplayName: 'Midnight Blue',
     accessType: ThemeAccessType.bundled,
+    offerState: ThemeOfferState.included,
   );
 
   static const midnightBlue = AkashaThemeDefinition(
@@ -97,6 +100,11 @@ abstract final class AkashaThemeRegistry {
     displayNameL10nKey: 'themeSakuraName',
     fallbackDisplayName: 'Sakura',
     accessType: ThemeAccessType.premium,
+    offerState: ThemeOfferState.planned,
+    astraCost: CommerceCatalog.launchThemeAstraPrice,
+    echoCost: CommerceCatalog.launchThemeEchoPrice,
+    commerceProductId: CommerceCatalog.sakuraThemeProductId,
+    entitlementKey: CommerceCatalog.sakuraThemeEntitlementKey,
   );
 
   static const sakura = AkashaThemeDefinition(
@@ -128,6 +136,11 @@ abstract final class AkashaThemeRegistry {
     displayNameL10nKey: 'themeAmethystName',
     fallbackDisplayName: 'Amethyst',
     accessType: ThemeAccessType.premium,
+    offerState: ThemeOfferState.planned,
+    astraCost: CommerceCatalog.launchThemeAstraPrice,
+    echoCost: CommerceCatalog.launchThemeEchoPrice,
+    commerceProductId: CommerceCatalog.amethystThemeProductId,
+    entitlementKey: CommerceCatalog.amethystThemeEntitlementKey,
   );
 
   static const amethyst = AkashaThemeDefinition(
@@ -159,6 +172,11 @@ abstract final class AkashaThemeRegistry {
     displayNameL10nKey: 'themeNocturneName',
     fallbackDisplayName: 'Nocturne',
     accessType: ThemeAccessType.premium,
+    offerState: ThemeOfferState.planned,
+    astraCost: CommerceCatalog.launchThemeAstraPrice,
+    echoCost: CommerceCatalog.launchThemeEchoPrice,
+    commerceProductId: CommerceCatalog.nocturneThemeProductId,
+    entitlementKey: CommerceCatalog.nocturneThemeEntitlementKey,
   );
 
   static const nocturne = AkashaThemeDefinition(

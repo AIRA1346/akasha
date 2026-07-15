@@ -176,6 +176,18 @@ abstract class AppLocalizations {
   /// **'Change the color palette.'**
   String get appPreferencesThemeSubtitle;
 
+  /// No description provided for @appPreferencesCommerceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Store & Inventory'**
+  String get appPreferencesCommerceTitle;
+
+  /// No description provided for @appPreferencesCommerceSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse theme packages and review currencies and ownership.'**
+  String get appPreferencesCommerceSubtitle;
+
   /// No description provided for @appPreferencesVaultTitle.
   ///
   /// In en, this message translates to:
@@ -2701,6 +2713,204 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Classic Dark and Midnight Blue are included free themes.'**
   String get appThemePickerFreeNotice;
+
+  /// No description provided for @appThemeGalleryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme Gallery'**
+  String get appThemeGalleryTitle;
+
+  /// No description provided for @appThemeGallerySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore all official themes. Premium themes stay visible before sales open.'**
+  String get appThemeGallerySubtitle;
+
+  /// No description provided for @appThemeGalleryAvailableCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{available} of {total} available'**
+  String appThemeGalleryAvailableCount(int available, int total);
+
+  /// No description provided for @themeStatusIncluded.
+  ///
+  /// In en, this message translates to:
+  /// **'Included'**
+  String get themeStatusIncluded;
+
+  /// No description provided for @themeStatusOwned.
+  ///
+  /// In en, this message translates to:
+  /// **'Owned'**
+  String get themeStatusOwned;
+
+  /// No description provided for @themeStatusPlannedPremium.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium · Coming soon'**
+  String get themeStatusPlannedPremium;
+
+  /// No description provided for @themePriceChooseOne.
+  ///
+  /// In en, this message translates to:
+  /// **'{astra} Astra or {echo} Echo'**
+  String themePriceChooseOne(int astra, int echo);
+
+  /// No description provided for @commerceCenterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Store & Inventory'**
+  String get commerceCenterTitle;
+
+  /// No description provided for @commerceCenterSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme packages, currencies, and ownership in one place.'**
+  String get commerceCenterSubtitle;
+
+  /// No description provided for @commerceStoreTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Store'**
+  String get commerceStoreTab;
+
+  /// No description provided for @commerceInventoryTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Inventory'**
+  String get commerceInventoryTab;
+
+  /// No description provided for @commerceStorePreviewNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchases are still disabled. Only approved products and prices are shown.'**
+  String get commerceStorePreviewNotice;
+
+  /// No description provided for @commerceCurrencySection.
+  ///
+  /// In en, this message translates to:
+  /// **'Currencies'**
+  String get commerceCurrencySection;
+
+  /// No description provided for @commerceOwnedThemeSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme inventory'**
+  String get commerceOwnedThemeSection;
+
+  /// No description provided for @commerceAstraLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Astra'**
+  String get commerceAstraLabel;
+
+  /// No description provided for @commerceEchoLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Echo'**
+  String get commerceEchoLabel;
+
+  /// No description provided for @commerceBalanceUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Shown after Steam connects'**
+  String get commerceBalanceUnavailable;
+
+  /// No description provided for @commerceIncluded.
+  ///
+  /// In en, this message translates to:
+  /// **'Included'**
+  String get commerceIncluded;
+
+  /// No description provided for @commerceOwned.
+  ///
+  /// In en, this message translates to:
+  /// **'Owned'**
+  String get commerceOwned;
+
+  /// No description provided for @commerceOwnershipUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Ownership unavailable'**
+  String get commerceOwnershipUnavailable;
+
+  /// No description provided for @commerceThemePackageLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme package'**
+  String get commerceThemePackageLabel;
+
+  /// No description provided for @commerceThemePackageContents.
+  ///
+  /// In en, this message translates to:
+  /// **'Includes the full palette, artwork, backdrop, and theme-specific effects.'**
+  String get commerceThemePackageContents;
+
+  /// No description provided for @commerceComingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing for launch'**
+  String get commerceComingSoon;
+
+  /// No description provided for @commerceAuthorityNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Steam Inventory is the authority for Astra, Echo, and premium ownership. Your Vault never stores payment authority.'**
+  String get commerceAuthorityNotice;
+
+  /// No description provided for @themeStatusChecking.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking ownership'**
+  String get themeStatusChecking;
+
+  /// No description provided for @themeStatusPurchaseRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchase required'**
+  String get themeStatusPurchaseRequired;
+
+  /// No description provided for @themeStatusOfferPaused.
+  ///
+  /// In en, this message translates to:
+  /// **'Temporarily unavailable'**
+  String get themeStatusOfferPaused;
+
+  /// No description provided for @themeStatusUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Ownership unavailable'**
+  String get themeStatusUnavailable;
+
+  /// No description provided for @themeStatusCurrent.
+  ///
+  /// In en, this message translates to:
+  /// **'In use'**
+  String get themeStatusCurrent;
+
+  /// No description provided for @windowMinimize.
+  ///
+  /// In en, this message translates to:
+  /// **'Minimize'**
+  String get windowMinimize;
+
+  /// No description provided for @windowMaximize.
+  ///
+  /// In en, this message translates to:
+  /// **'Maximize'**
+  String get windowMaximize;
+
+  /// No description provided for @windowRestore.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get windowRestore;
+
+  /// No description provided for @windowClose.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get windowClose;
 
   /// No description provided for @themeClassicDarkName.
   ///

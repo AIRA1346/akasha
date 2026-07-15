@@ -254,6 +254,15 @@ void main() {
         layoutSpec: ShellLayoutSpec.compact,
         sidebarOpen: true,
         previewOpen: true,
+        fullscreen: true,
+      ),
+      ShellEscapeTarget.fullscreen,
+    );
+    expect(
+      resolveShellEscapeTarget(
+        layoutSpec: ShellLayoutSpec.compact,
+        sidebarOpen: true,
+        previewOpen: true,
       ),
       ShellEscapeTarget.sidebar,
     );

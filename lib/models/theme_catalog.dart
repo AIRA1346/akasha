@@ -2,6 +2,13 @@ import 'package:flutter/foundation.dart';
 
 enum ThemeAccessType { bundled, premium }
 
+/// Whether a catalog entry currently has a real product offer.
+///
+/// This is deliberately separate from [ThemeAccessState]. A premium theme may
+/// be discoverable while its offer is still planned, and an owned theme remains
+/// usable even if a later offer is paused.
+enum ThemeOfferState { included, planned, purchasable, paused }
+
 /// Product-facing metadata for a visual theme preset.
 ///
 /// Prices and entitlement identifiers remain nullable until production catalog
@@ -12,22 +19,28 @@ class ThemeCatalogEntry {
   final String displayNameL10nKey;
   final String fallbackDisplayName;
   final ThemeAccessType accessType;
+  final ThemeOfferState offerState;
   final int? astraCost;
   final int? echoCost;
-  final String? entitlementItemDefId;
+  final String? commerceProductId;
+  final String? entitlementKey;
 
   const ThemeCatalogEntry({
     required this.presetId,
     required this.displayNameL10nKey,
     required this.fallbackDisplayName,
     required this.accessType,
+    required this.offerState,
     this.astraCost,
     this.echoCost,
-    this.entitlementItemDefId,
+    this.commerceProductId,
+    this.entitlementKey,
   });
 
   bool get isBundled => accessType == ThemeAccessType.bundled;
   bool get isPremium => accessType == ThemeAccessType.premium;
+  bool get hasActiveOffer => offerState == ThemeOfferState.purchasable;
+  bool get hasApprovedPrice => astraCost != null || echoCost != null;
 }
 
 enum ThemeAccessState { free, owned, locked, checking, unavailable }

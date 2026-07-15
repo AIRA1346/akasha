@@ -8,11 +8,13 @@ import 'screens/home/home_shell.dart';
 import 'services/catalog_locale_preferences.dart';
 import 'services/akasha_command_runner.dart';
 import 'services/akasha_theme_controller.dart';
+import 'services/akasha_window_controller.dart';
 import 'services/franchise_registry.dart';
 import 'services/local_derived_index_lifecycle.dart';
 import 'services/user_preferences.dart';
 import 'theme/akasha_theme.dart';
 import 'widgets/akasha_theme_backdrop.dart';
+import 'widgets/akasha_window_frame.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  AKASHA — 확장형 올인원 아카이브 앱
@@ -32,8 +34,14 @@ void main() async {
   await FranchiseRegistry.init();
   // cold start: manifest + eager 샤드만 (browse는 search_index 윈도우 lazy load)
 
+  final windowController = await initializeAkashaDesktopWindow();
   final themeController = await AkashaThemeController.load();
-  runApp(AkashaApp(themeController: themeController));
+  runApp(
+    AkashaApp(
+      themeController: themeController,
+      windowController: windowController,
+    ),
+  );
 }
 
 /// Invoked only by the Windows runner for the command vocabulary it recognizes.
@@ -44,9 +52,15 @@ Future<void> commandMain(List<String> args) =>
     AkashaCommandRunner().runFromProcess(args);
 
 class AkashaApp extends StatefulWidget {
-  const AkashaApp({super.key, this.themeController, this.home});
+  const AkashaApp({
+    super.key,
+    this.themeController,
+    this.windowController,
+    this.home,
+  });
 
   final AkashaThemeController? themeController;
+  final AkashaWindowController? windowController;
   final Widget? home;
 
   @override
@@ -113,6 +127,12 @@ class _AkashaAppState extends State<AkashaApp> {
           preset: effectivePreset,
           child: child ?? const SizedBox.shrink(),
         );
+        if (widget.windowController case final windowController?) {
+          content = AkashaWindowFrame(
+            controller: windowController,
+            child: content,
+          );
+        }
         final mediaQuery = MediaQuery.maybeOf(context);
         if (mediaQuery != null) {
           content = MediaQuery(

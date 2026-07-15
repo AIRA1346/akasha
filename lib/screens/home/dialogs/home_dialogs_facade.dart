@@ -9,6 +9,7 @@ import '../../../data/adapters/vault_archive_record_adapter.dart';
 import '../../../core/ports/entity_registry_port.dart';
 import '../../../models/catalog_entity_add_result.dart';
 import '../../../models/akasha_item.dart';
+import '../../../models/theme_catalog.dart';
 import '../../../services/catalog_contribution_service.dart';
 import '../../../services/journal_vault_store.dart';
 import '../../../services/person_seed_registry.dart';
@@ -328,8 +329,13 @@ class HomeDialogsFacade {
   static Future<String?> pickAppTheme(
     BuildContext context, {
     required String currentThemeId,
+    required Map<String, ThemeAccessState> accessByPresetId,
   }) {
-    return showAkashaThemePicker(context, currentThemeId: currentThemeId);
+    return showAkashaThemePicker(
+      context,
+      currentThemeId: currentThemeId,
+      accessByPresetId: accessByPresetId,
+    );
   }
 
   static Future<void> refreshCatalogContributionCount({

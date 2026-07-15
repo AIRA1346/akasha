@@ -52,6 +52,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get appPreferencesThemeSubtitle => '색상 팔레트를 바꿉니다.';
 
   @override
+  String get appPreferencesCommerceTitle => '상점 및 인벤토리';
+
+  @override
+  String get appPreferencesCommerceSubtitle => '테마 패키지를 살펴보고 재화와 소유권을 확인합니다.';
+
+  @override
   String get appPreferencesVaultTitle => '볼트 설정';
 
   @override
@@ -1457,6 +1463,112 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get appThemePickerFreeNotice =>
       'Classic Dark와 Midnight Blue는 기본 무료 테마입니다.';
+
+  @override
+  String get appThemeGalleryTitle => '테마 갤러리';
+
+  @override
+  String get appThemeGallerySubtitle =>
+      '공식 테마를 한곳에서 살펴보세요. 유료 테마도 판매 전부터 확인할 수 있습니다.';
+
+  @override
+  String appThemeGalleryAvailableCount(int available, int total) {
+    return '전체 $total개 중 $available개 사용 가능';
+  }
+
+  @override
+  String get themeStatusIncluded => '무료 포함';
+
+  @override
+  String get themeStatusOwned => '보유 중';
+
+  @override
+  String get themeStatusPlannedPremium => '유료 · 출시 예정';
+
+  @override
+  String themePriceChooseOne(int astra, int echo) {
+    return '$astra Astra 또는 $echo Echo';
+  }
+
+  @override
+  String get commerceCenterTitle => '상점 및 인벤토리';
+
+  @override
+  String get commerceCenterSubtitle => '테마 패키지와 재화, 소유권을 한곳에서 확인합니다.';
+
+  @override
+  String get commerceStoreTab => '상점';
+
+  @override
+  String get commerceInventoryTab => '인벤토리';
+
+  @override
+  String get commerceStorePreviewNotice =>
+      '구매 기능은 아직 비활성 상태입니다. 확정된 상품과 가격만 미리 보여줍니다.';
+
+  @override
+  String get commerceCurrencySection => '재화';
+
+  @override
+  String get commerceOwnedThemeSection => '보유 테마';
+
+  @override
+  String get commerceAstraLabel => '아스트라';
+
+  @override
+  String get commerceEchoLabel => '에코';
+
+  @override
+  String get commerceBalanceUnavailable => 'Steam 연결 후 표시';
+
+  @override
+  String get commerceIncluded => '기본 포함';
+
+  @override
+  String get commerceOwned => '보유 중';
+
+  @override
+  String get commerceOwnershipUnavailable => '소유권 확인 불가';
+
+  @override
+  String get commerceThemePackageLabel => '테마 패키지';
+
+  @override
+  String get commerceThemePackageContents => '색상·아트·배경·테마 전용 효과 전체를 포함합니다.';
+
+  @override
+  String get commerceComingSoon => '출시 준비 중';
+
+  @override
+  String get commerceAuthorityNotice =>
+      'Astra, Echo와 유료 소유권의 기준은 Steam Inventory입니다. Vault에는 결제 권한을 저장하지 않습니다.';
+
+  @override
+  String get themeStatusChecking => '소유권 확인 중';
+
+  @override
+  String get themeStatusPurchaseRequired => '구매 필요';
+
+  @override
+  String get themeStatusOfferPaused => '일시 판매 중지';
+
+  @override
+  String get themeStatusUnavailable => '소유권 확인 불가';
+
+  @override
+  String get themeStatusCurrent => '사용 중';
+
+  @override
+  String get windowMinimize => '최소화';
+
+  @override
+  String get windowMaximize => '최대화';
+
+  @override
+  String get windowRestore => '이전 크기로 복원';
+
+  @override
+  String get windowClose => '닫기';
 
   @override
   String get themeClassicDarkName => '클래식 다크';

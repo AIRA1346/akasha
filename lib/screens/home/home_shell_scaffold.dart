@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 
 import '../../config/feature_flags.dart';
 import '../../theme/akasha_palette.dart';
+import '../../widgets/akasha_window_frame.dart';
 import '../../models/akasha_item.dart';
 import '../../models/user_catalog_entity.dart';
 import '../../models/browse_card.dart';

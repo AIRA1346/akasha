@@ -8,14 +8,16 @@ enum ShellSidebarPresentation { persistent, drawer }
 enum ShellPreviewPresentation { inline, overlay, sheet }
 
 /// The topmost modal shell layer dismissed by Escape.
-enum ShellEscapeTarget { none, sidebar, preview }
+enum ShellEscapeTarget { none, fullscreen, sidebar, preview }
 
 /// Resolves Escape ordering independently from shell controller state.
 ShellEscapeTarget resolveShellEscapeTarget({
   required ShellLayoutSpec layoutSpec,
   required bool sidebarOpen,
   required bool previewOpen,
+  bool fullscreen = false,
 }) {
+  if (fullscreen) return ShellEscapeTarget.fullscreen;
   if (sidebarOpen &&
       layoutSpec.sidebarPresentation == ShellSidebarPresentation.drawer) {
     return ShellEscapeTarget.sidebar;

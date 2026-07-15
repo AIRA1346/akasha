@@ -53,6 +53,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appPreferencesThemeSubtitle => 'Change the color palette.';
 
   @override
+  String get appPreferencesCommerceTitle => 'Store & Inventory';
+
+  @override
+  String get appPreferencesCommerceSubtitle =>
+      'Browse theme packages and review currencies and ownership.';
+
+  @override
   String get appPreferencesVaultTitle => 'Vault settings';
 
   @override
@@ -1495,6 +1502,114 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get appThemePickerFreeNotice =>
       'Classic Dark and Midnight Blue are included free themes.';
+
+  @override
+  String get appThemeGalleryTitle => 'Theme Gallery';
+
+  @override
+  String get appThemeGallerySubtitle =>
+      'Explore all official themes. Premium themes stay visible before sales open.';
+
+  @override
+  String appThemeGalleryAvailableCount(int available, int total) {
+    return '$available of $total available';
+  }
+
+  @override
+  String get themeStatusIncluded => 'Included';
+
+  @override
+  String get themeStatusOwned => 'Owned';
+
+  @override
+  String get themeStatusPlannedPremium => 'Premium · Coming soon';
+
+  @override
+  String themePriceChooseOne(int astra, int echo) {
+    return '$astra Astra or $echo Echo';
+  }
+
+  @override
+  String get commerceCenterTitle => 'Store & Inventory';
+
+  @override
+  String get commerceCenterSubtitle =>
+      'Theme packages, currencies, and ownership in one place.';
+
+  @override
+  String get commerceStoreTab => 'Store';
+
+  @override
+  String get commerceInventoryTab => 'Inventory';
+
+  @override
+  String get commerceStorePreviewNotice =>
+      'Purchases are still disabled. Only approved products and prices are shown.';
+
+  @override
+  String get commerceCurrencySection => 'Currencies';
+
+  @override
+  String get commerceOwnedThemeSection => 'Theme inventory';
+
+  @override
+  String get commerceAstraLabel => 'Astra';
+
+  @override
+  String get commerceEchoLabel => 'Echo';
+
+  @override
+  String get commerceBalanceUnavailable => 'Shown after Steam connects';
+
+  @override
+  String get commerceIncluded => 'Included';
+
+  @override
+  String get commerceOwned => 'Owned';
+
+  @override
+  String get commerceOwnershipUnavailable => 'Ownership unavailable';
+
+  @override
+  String get commerceThemePackageLabel => 'Theme package';
+
+  @override
+  String get commerceThemePackageContents =>
+      'Includes the full palette, artwork, backdrop, and theme-specific effects.';
+
+  @override
+  String get commerceComingSoon => 'Preparing for launch';
+
+  @override
+  String get commerceAuthorityNotice =>
+      'Steam Inventory is the authority for Astra, Echo, and premium ownership. Your Vault never stores payment authority.';
+
+  @override
+  String get themeStatusChecking => 'Checking ownership';
+
+  @override
+  String get themeStatusPurchaseRequired => 'Purchase required';
+
+  @override
+  String get themeStatusOfferPaused => 'Temporarily unavailable';
+
+  @override
+  String get themeStatusUnavailable => 'Ownership unavailable';
+
+  @override
+  String get themeStatusCurrent => 'In use';
+
+  @override
+  String get windowMinimize => 'Minimize';
+
+  @override
+  String get windowMaximize => 'Maximize';
+
+  @override
+  String get windowRestore => 'Restore';
+
+  @override
+  String get windowClose => 'Close';
 
   @override
   String get themeClassicDarkName => 'Classic Dark';

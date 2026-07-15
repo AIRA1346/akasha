@@ -18,11 +18,17 @@ void _homeShellHandleEscape(
 ) {
   if (ModalRoute.of(context)?.isCurrent != true) return;
 
+  final windowController = AkashaWindowScope.maybeOf(context);
+
   switch (resolveShellEscapeTarget(
     layoutSpec: layoutSpec,
     sidebarOpen: controller.isSidebarOpen,
     previewOpen: controller.hasOpenPreview,
+    fullscreen: windowController?.isFullScreen ?? false,
   )) {
+    case ShellEscapeTarget.fullscreen:
+      unawaited(windowController!.exitFullScreen());
+      return;
     case ShellEscapeTarget.sidebar:
       controller.toggleSidebar();
       return;

@@ -52,6 +52,7 @@ dependencies:
   pasteboard: ^0.5.0
   crypto: ^3.0.6
   sqflite_common_ffi: 2.4.2
+  window_manager: ^0.5.2
 
 dev_dependencies:
   flutter_test:

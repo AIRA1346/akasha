@@ -24,7 +24,6 @@ part 'dashboard_sidebar_nav_part.dart';
 part 'dashboard_sidebar_recent_part.dart';
 part 'dashboard_sidebar_personal_libraries_part.dart';
 part 'dashboard_sidebar_collections_part.dart';
-part 'dashboard_sidebar_footer_part.dart';
 
 /// 홈 좌측 네비게이션 사이드바 (시안: primary nav · 최근 탐색 · 내 컬렉션).
 class DashboardSidebar extends StatelessWidget {
@@ -49,7 +48,6 @@ class DashboardSidebar extends StatelessWidget {
   final void Function(String id)? onDeletePersonalLibrary;
   final Future<void> Function(String libraryId, WorkDragPayload payload)?
   onDropWorkToLibrary;
-  final VoidCallback? onToggleSidebar;
 
   const DashboardSidebar({
     super.key,
@@ -73,7 +71,6 @@ class DashboardSidebar extends StatelessWidget {
     this.onEditPersonalLibrary,
     this.onDeletePersonalLibrary,
     this.onDropWorkToLibrary,
-    this.onToggleSidebar,
   });
 
   @override
@@ -141,10 +138,6 @@ class DashboardSidebar extends StatelessWidget {
                     ),
                   ),
                 ),
-                if (onToggleSidebar != null)
-                  _DashboardSidebarCollapseFooter(
-                    onToggleSidebar: onToggleSidebar!,
-                  ),
               ],
             )
           : const SizedBox.shrink(),

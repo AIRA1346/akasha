@@ -38,6 +38,7 @@ void main() {
 
     expect(find.text('나만의 서재'), findsOneWidget);
     expect(find.text('나만의 서재를 만들어 보세요'), findsOneWidget);
+    expect(find.text('접기'), findsNothing);
 
     await tester.tap(find.byIcon(Icons.add));
     expect(addTapped, isTrue);

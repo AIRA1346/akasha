@@ -20,6 +20,7 @@ Future<void> _homeDialogsCoordinatorShowAppThemePicker(
   final pickedId = await HomeDialogsFacade.pickAppTheme(
     context,
     currentThemeId: themeController.effectiveThemeId,
+    accessByPresetId: themeController.accessByPresetId,
   );
   if (pickedId != null && coord.isMounted()) {
     await themeController.setPreferredTheme(pickedId);
