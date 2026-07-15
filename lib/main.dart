@@ -1,6 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
+import 'config/feature_flags.dart';
 import 'config/catalog_locale.dart';
+import 'core/commerce/commerce.dart';
 import 'generated/l10n/app_localizations.dart';
 import 'data/adapters/markdown_vault_adapter.dart';
 import 'data/adapters/works_registry_adapter.dart';
@@ -9,10 +13,12 @@ import 'services/catalog_locale_preferences.dart';
 import 'services/akasha_command_runner.dart';
 import 'services/akasha_theme_controller.dart';
 import 'services/akasha_window_controller.dart';
+import 'services/commerce_controller.dart';
 import 'services/franchise_registry.dart';
 import 'services/local_derived_index_lifecycle.dart';
 import 'services/user_preferences.dart';
 import 'theme/akasha_theme.dart';
+import 'theme/akasha_theme_registry.dart';
 import 'widgets/akasha_theme_backdrop.dart';
 import 'widgets/akasha_window_frame.dart';
 
@@ -36,12 +42,18 @@ void main() async {
 
   final windowController = await initializeAkashaDesktopWindow();
   final themeController = await AkashaThemeController.load();
+  final commerceController = CommerceController(
+    gateway: const UnavailableCommerceGateway(),
+    enabled: FeatureFlags.steamInAppPurchasesEnabled,
+  );
   runApp(
     AkashaApp(
       themeController: themeController,
       windowController: windowController,
+      commerceController: commerceController,
     ),
   );
+  unawaited(commerceController.refresh());
 }
 
 /// Invoked only by the Windows runner for the command vocabulary it recognizes.
@@ -56,11 +68,13 @@ class AkashaApp extends StatefulWidget {
     super.key,
     this.themeController,
     this.windowController,
+    this.commerceController,
     this.home,
   });
 
   final AkashaThemeController? themeController;
   final AkashaWindowController? windowController;
+  final CommerceController? commerceController;
   final Widget? home;
 
   @override
@@ -70,11 +84,15 @@ class AkashaApp extends StatefulWidget {
 class _AkashaAppState extends State<AkashaApp> {
   late AkashaThemeController _themeController;
   late bool _ownsThemeController;
+  late CommerceController _commerceController;
+  late bool _ownsCommerceController;
 
   @override
   void initState() {
     super.initState();
     _installThemeController(widget.themeController);
+    _installCommerceController(widget.commerceController);
+    _syncThemeAccess();
     CatalogLocaleScope.localeListenable.addListener(_onLocaleChanged);
     UserPreferences.uiScaleListenable.addListener(_onUiScaleChanged);
   }
@@ -83,6 +101,8 @@ class _AkashaAppState extends State<AkashaApp> {
   void dispose() {
     _themeController.removeListener(_onThemeChanged);
     if (_ownsThemeController) _themeController.dispose();
+    _commerceController.removeListener(_onCommerceChanged);
+    if (_ownsCommerceController) _commerceController.dispose();
     CatalogLocaleScope.localeListenable.removeListener(_onLocaleChanged);
     UserPreferences.uiScaleListenable.removeListener(_onUiScaleChanged);
     super.dispose();
@@ -91,6 +111,7 @@ class _AkashaAppState extends State<AkashaApp> {
   void _onLocaleChanged() => setState(() {});
   void _onUiScaleChanged() => setState(() {});
   void _onThemeChanged() => setState(() {});
+  void _onCommerceChanged() => _syncThemeAccess();
 
   void _installThemeController(AkashaThemeController? controller) {
     _themeController = controller ?? AkashaThemeController.fallback();
@@ -98,13 +119,44 @@ class _AkashaAppState extends State<AkashaApp> {
     _themeController.addListener(_onThemeChanged);
   }
 
+  void _installCommerceController(CommerceController? controller) {
+    _commerceController = controller ?? CommerceController.disabled();
+    _ownsCommerceController = controller == null;
+    _commerceController.addListener(_onCommerceChanged);
+  }
+
+  void _syncThemeAccess() {
+    final snapshot = _commerceController.snapshot;
+    final authorityAvailable =
+        snapshot.state == CommerceAuthorityState.ready ||
+        snapshot.state == CommerceAuthorityState.offlineCache;
+    _themeController.updateAccess(
+      commerceEnabled: _commerceController.enabled,
+      authorityAvailable: authorityAvailable,
+      isChecking: snapshot.state == CommerceAuthorityState.loading,
+      ownedPresetIds: AkashaThemeRegistry.presetIdsForEntitlements(
+        snapshot.entitlementKeys,
+      ),
+    );
+  }
+
   @override
   void didUpdateWidget(covariant AkashaApp oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.themeController == widget.themeController) return;
-    _themeController.removeListener(_onThemeChanged);
-    if (_ownsThemeController) _themeController.dispose();
-    _installThemeController(widget.themeController);
+    var shouldSyncThemeAccess = false;
+    if (oldWidget.themeController != widget.themeController) {
+      _themeController.removeListener(_onThemeChanged);
+      if (_ownsThemeController) _themeController.dispose();
+      _installThemeController(widget.themeController);
+      shouldSyncThemeAccess = true;
+    }
+    if (oldWidget.commerceController != widget.commerceController) {
+      _commerceController.removeListener(_onCommerceChanged);
+      if (_ownsCommerceController) _commerceController.dispose();
+      _installCommerceController(widget.commerceController);
+      shouldSyncThemeAccess = true;
+    }
+    if (shouldSyncThemeAccess) _syncThemeAccess();
   }
 
   Locale get _appLocale => Locale(CatalogLocaleScope.current.tag);
@@ -144,7 +196,10 @@ class _AkashaAppState extends State<AkashaApp> {
             child: content,
           );
         }
-        return AkashaThemeScope(controller: _themeController, child: content);
+        return CommerceScope(
+          controller: _commerceController,
+          child: AkashaThemeScope(controller: _themeController, child: content),
+        );
       },
       home: widget.home ?? const HomeShell(),
     );

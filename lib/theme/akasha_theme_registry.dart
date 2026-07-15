@@ -216,6 +216,18 @@ abstract final class AkashaThemeRegistry {
 
   static ThemeCatalogEntry? catalogById(String id) => byId(id)?.catalog;
 
+  /// Maps provider entitlement keys to visual preset IDs without allowing the
+  /// provider adapter to know about theme rendering identifiers.
+  static Set<String> presetIdsForEntitlements(Iterable<String> keys) {
+    final owned = keys.toSet();
+    return {
+      for (final definition in all)
+        if (definition.catalog.entitlementKey case final key?
+            when owned.contains(key))
+          definition.id,
+    };
+  }
+
   /// Converts known persisted aliases and accepts every registered canonical
   /// ID automatically. Unknown values remain unknown so preferences can retain
   /// them without inventing meaning.

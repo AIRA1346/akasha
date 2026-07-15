@@ -67,6 +67,18 @@ void main() {
     expect(AkashaThemeRegistry.canonicalId('unknown'), isNull);
   });
 
+  test('provider entitlements map to premium preset IDs only', () {
+    expect(
+      AkashaThemeRegistry.presetIdsForEntitlements({
+        'theme:sakura',
+        'theme:nocturne',
+        'future:unknown',
+      }),
+      {'sakura', 'nocturne'},
+    );
+    expect(AkashaThemeRegistry.presetIdsForEntitlements(const {}), isEmpty);
+  });
+
   test('access resolver distinguishes all provider states', () {
     expect(
       ThemeAccessResolver.resolve(

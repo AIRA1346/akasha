@@ -29,7 +29,7 @@
 
 구현 순서는 Theme foundation → Responsive Shell → Graph/Timeline 기존 경로 복원 → Home 고도화 → Preview·핵심 화면 정돈 → 테마별 asset/effect와 회귀 검증이다. 기존 Graph/Timeline 내비게이션을 다시 보이게 하는 일은 새 그래프 엔진, 완성 캘린더, `SA-05 Timeline projection` 완료를 의미하지 않는다.
 
-**현재:** UX-1/2 Theme foundation·Responsive Shell, UX-3 Home, UX-4 핵심 surface, UX-5 테마 package·회귀 기반, UX-6 Window frame·Theme Gallery와 Commerce catalog foundation을 완료했다. Store & Inventory는 확정 상품과 nullable provider snapshot을 읽는 read-only surface까지 연결됐다. 다음 단계는 production ItemDef mapping과 실제 Steam `CommerceGateway`를 연결해 재화·보유 상태를 공급하는 것이다. Touch effect와 background particle은 Interaction/Motion/Backdrop 계약 위에서 별도 성능·reduced-motion 검증과 함께 확장한다.
+**현재:** UX-1/2 Theme foundation·Responsive Shell, UX-3 Home, UX-4 핵심 surface, UX-5 테마 package·회귀 기반, UX-6 Window frame·Theme Gallery와 Commerce catalog foundation을 완료했다. Store & Inventory와 premium theme access는 app-root `CommerceController`의 동일한 nullable provider snapshot을 읽는다. 다음 단계는 production ItemDef mapping과 실제 Steam `CommerceGateway`를 연결해 재화·보유 상태를 공급하는 것이다. Touch effect와 background particle은 Interaction/Motion/Backdrop 계약 위에서 별도 성능·reduced-motion 검증과 함께 확장한다.
 
 공식 테마 카탈로그는 무료 `classicDark`·`midnightBlue`, premium `sakura`·`amethyst`·`nocturne`다. premium 3종은 `planned`와 승인 가격 `500 Astra 또는 500 Echo`를 표시하되 commerce 활성 전 구매 CTA는 노출하지 않는다. 잔여 style 이관은 [UX_THEME_MIGRATION_INVENTORY.md](UX_THEME_MIGRATION_INVENTORY.md)에서 추적한다.
 

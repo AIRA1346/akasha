@@ -2,6 +2,7 @@ import 'package:akasha_commerce_domain/akasha_commerce_domain.dart';
 import 'package:flutter/material.dart';
 
 import '../generated/l10n/app_localizations.dart';
+import '../services/commerce_controller.dart';
 import '../theme/akasha_palette.dart';
 import '../theme/akasha_theme_registry.dart';
 
@@ -10,7 +11,7 @@ import '../theme/akasha_theme_registry.dart';
 /// without changing the store or inventory geometry.
 Future<void> showCommerceCenterDialog(
   BuildContext context, {
-  CommerceAccountSnapshot account = const CommerceAccountSnapshot.disabled(),
+  CommerceAccountSnapshot? account,
 }) {
   return showDialog<void>(
     context: context,
@@ -20,6 +21,10 @@ Future<void> showCommerceCenterDialog(
       final height = (viewport.height - 48).clamp(440.0, 700.0);
       final l10n = AppLocalizations.of(dialogContext);
       final palette = dialogContext.akashaPalette;
+      final effectiveAccount =
+          account ??
+          CommerceScope.maybeOf(dialogContext)?.snapshot ??
+          const CommerceAccountSnapshot.disabled();
 
       return Dialog(
         key: const ValueKey('commerce-center-dialog'),
@@ -86,7 +91,10 @@ Future<void> showCommerceCenterDialog(
                   child: TabBarView(
                     children: [
                       _CommerceStoreTab(l10n: l10n),
-                      _CommerceInventoryTab(l10n: l10n, account: account),
+                      _CommerceInventoryTab(
+                        l10n: l10n,
+                        account: effectiveAccount,
+                      ),
                     ],
                   ),
                 ),
