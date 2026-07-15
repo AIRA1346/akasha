@@ -1547,6 +1547,47 @@ class AppLocalizationsEn extends AppLocalizations {
       'Purchases are still disabled. Only approved products and prices are shown.';
 
   @override
+  String get commerceAstraPackSection => 'Get Astra';
+
+  @override
+  String get commerceAstraPackSectionBody =>
+      'Launch products planned for purchase through Steam Wallet.';
+
+  @override
+  String commerceAstraPackGrant(int amount) {
+    return '$amount Astra';
+  }
+
+  @override
+  String get commerceThemePackageSection => 'Theme packages';
+
+  @override
+  String commerceSteamPriceReady(String currency) {
+    return 'Steam local price available · $currency';
+  }
+
+  @override
+  String get commerceSteamPricePending =>
+      'Local price shown after Steam connects';
+
+  @override
+  String get commerceAccountLoading => 'Checking your Steam inventory.';
+
+  @override
+  String get commerceAccountReadyReadOnly =>
+      'Steam is connected. Purchases are still disabled.';
+
+  @override
+  String get commerceAccountOfflineCache =>
+      'Offline. Showing the last verified information.';
+
+  @override
+  String get commerceAccountUnavailable => 'Steam inventory is unavailable.';
+
+  @override
+  String get commerceRetry => 'Try again';
+
+  @override
   String get commerceCurrencySection => 'Currencies';
 
   @override

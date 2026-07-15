@@ -15,10 +15,19 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('상점 및 인벤토리'), findsOneWidget);
+    expect(find.text('아스트라 충전'), findsOneWidget);
+    expect(find.text('아스트라 500개'), findsOneWidget);
+    expect(find.text('아스트라 1,000개'), findsOneWidget);
+    expect(find.text('아스트라 2,500개'), findsOneWidget);
     expect(find.text('500 Astra 또는 500 Echo'), findsNWidgets(3));
-    expect(find.text('출시 준비 중'), findsNWidgets(3));
+    expect(find.text('출시 준비 중'), findsNWidgets(6));
+    expect(find.text('Steam 연결 후 현지 가격 확인'), findsNWidgets(3));
     expect(find.text('Steam에서 구매'), findsNothing);
     expect(find.text('Astra 0'), findsNothing);
+    expect(
+      find.byKey(const ValueKey('commerce-authority-disabled')),
+      findsOneWidget,
+    );
 
     await tester.tap(find.text('인벤토리'));
     await tester.pumpAndSettle();
@@ -29,6 +38,11 @@ void main() {
     expect(find.text('클래식 다크'), findsOneWidget);
     expect(find.text('미드나이트 블루'), findsOneWidget);
     expect(find.text('벚꽃'), findsNothing);
+    await tester.drag(
+      find.byKey(const PageStorageKey('commerce-inventory-scroll')),
+      const Offset(0, -500),
+    );
+    await tester.pumpAndSettle();
     expect(find.text('소유권 확인 불가'), findsOneWidget);
   });
 
@@ -42,19 +56,92 @@ void main() {
           astraBalance: 120,
           echoBalance: 45,
           entitlementKeys: {'theme:sakura'},
+          localizedPrices: {
+            CommerceCatalog.astraPack500ProductId: CommerceLocalizedPrice(
+              productId: CommerceCatalog.astraPack500ProductId,
+              currencyCode: 'KRW',
+              currentAmount: 5500,
+            ),
+          },
         ),
       ),
     );
     await tester.tap(find.text('open'));
-    await tester.pumpAndSettle();
+    await tester.pump(const Duration(seconds: 1));
+
+    expect(find.text('Steam 현지 가격 확인됨 · KRW'), findsOneWidget);
+    expect(
+      find.byKey(const ValueKey('commerce-authority-ready')),
+      findsOneWidget,
+    );
+    expect(find.text('보유 중'), findsOneWidget);
+
     await tester.tap(find.text('인벤토리'));
     await tester.pumpAndSettle();
 
     expect(find.text('120'), findsOneWidget);
     expect(find.text('45'), findsOneWidget);
     expect(find.text('벚꽃'), findsOneWidget);
-    expect(find.text('보유 중'), findsOneWidget);
+    expect(find.text('보유 중'), findsWidgets);
     expect(find.text('소유권 확인 불가'), findsNothing);
+  });
+
+  testWidgets('shows loading authority without inventing account values', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      _harness(
+        account: const CommerceAccountSnapshot(
+          state: CommerceAuthorityState.loading,
+        ),
+      ),
+    );
+    await tester.tap(find.text('open'));
+    // The loading indicator is intentionally continuous, so settle cannot
+    // complete while this authority state is visible.
+    await tester.pump(const Duration(seconds: 1));
+
+    expect(
+      find.byKey(const ValueKey('commerce-authority-loading')),
+      findsOneWidget,
+    );
+    expect(find.byType(LinearProgressIndicator), findsOneWidget);
+    expect(find.text('Astra 0'), findsNothing);
+    expect(find.byKey(const ValueKey('commerce-retry-button')), findsNothing);
+  });
+
+  testWidgets('retries an unavailable provider and exposes refreshed data', (
+    tester,
+  ) async {
+    final gateway = _RetryCommerceGateway();
+    final controller = CommerceController(gateway: gateway, enabled: true);
+    addTearDown(controller.dispose);
+    await controller.refresh();
+
+    await tester.pumpWidget(
+      _harness(account: null, commerceController: controller),
+    );
+    await tester.tap(find.text('open'));
+    await tester.pumpAndSettle();
+
+    expect(
+      find.byKey(const ValueKey('commerce-authority-unavailable')),
+      findsOneWidget,
+    );
+    await tester.tap(find.byKey(const ValueKey('commerce-retry-button')));
+    await tester.pumpAndSettle();
+
+    expect(gateway.loadCalls, 2);
+    expect(
+      find.byKey(const ValueKey('commerce-authority-ready')),
+      findsOneWidget,
+    );
+    expect(find.text('Steam 현지 가격 확인됨 · KRW'), findsOneWidget);
+
+    await tester.tap(find.text('인벤토리'));
+    await tester.pumpAndSettle();
+    expect(find.text('900'), findsOneWidget);
+    expect(find.text('60'), findsOneWidget);
   });
 
   testWidgets(
@@ -92,11 +179,32 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(tester.takeException(), isNull);
-    expect(find.text('500 Astra 또는 500 Echo'), findsNWidgets(3));
+    expect(find.text('아스트라 충전'), findsOneWidget);
 
     await tester.tap(find.text('인벤토리'));
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('480 by 720 compact layout remains usable at 125 percent', (
+    tester,
+  ) async {
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+    await tester.binding.setSurfaceSize(const Size(480, 720));
+    await tester.pumpWidget(
+      _harness(textScaler: const TextScaler.linear(1.25)),
+    );
+    await tester.tap(find.text('open'));
+    await tester.pumpAndSettle();
+
+    expect(tester.takeException(), isNull);
+    expect(find.text('아스트라 충전'), findsOneWidget);
+
+    await tester.tap(find.byIcon(Icons.inventory_2_outlined));
+    await tester.pumpAndSettle();
+    expect(tester.takeException(), isNull);
+    expect(find.text('아스트라'), findsOneWidget);
+    expect(find.text('에코'), findsOneWidget);
   });
 }
 
@@ -145,6 +253,39 @@ class _DialogCommerceGateway implements CommerceGateway {
         echoBalance: 654,
         entitlementKeys: {'theme:amethyst'},
       );
+
+  @override
+  Future<CommerceOperationResult> exchangeProduct({
+    required String productId,
+    required CurrencyKind payWith,
+  }) => throw UnimplementedError();
+
+  @override
+  Future<CommerceOperationResult> purchaseAstraPack({
+    required String productId,
+  }) => throw UnimplementedError();
+}
+
+class _RetryCommerceGateway implements CommerceGateway {
+  int loadCalls = 0;
+
+  @override
+  Future<CommerceAccountSnapshot> loadAccount() async {
+    loadCalls += 1;
+    if (loadCalls == 1) throw StateError('offline');
+    return const CommerceAccountSnapshot(
+      state: CommerceAuthorityState.ready,
+      astraBalance: 900,
+      echoBalance: 60,
+      localizedPrices: {
+        CommerceCatalog.astraPack500ProductId: CommerceLocalizedPrice(
+          productId: CommerceCatalog.astraPack500ProductId,
+          currencyCode: 'KRW',
+          currentAmount: 5500,
+        ),
+      },
+    );
+  }
 
   @override
   Future<CommerceOperationResult> exchangeProduct({

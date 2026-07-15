@@ -29,7 +29,7 @@
 
 구현 순서는 Theme foundation → Responsive Shell → Graph/Timeline 기존 경로 복원 → Home 고도화 → Preview·핵심 화면 정돈 → 테마별 asset/effect와 회귀 검증이다. 기존 Graph/Timeline 내비게이션을 다시 보이게 하는 일은 새 그래프 엔진, 완성 캘린더, `SA-05 Timeline projection` 완료를 의미하지 않는다.
 
-**현재:** UX-1/2 Theme foundation·Responsive Shell, UX-3 Home, UX-4 핵심 surface, UX-5 테마 package·회귀 기반, UX-6 Window frame·Theme Gallery와 Commerce catalog foundation을 완료했다. Production ItemDef registry와 읽기 전용 Steam gateway도 연결되어, feature flag가 켜지는 검증 빌드에서는 `GetAllItems`/`RequestPrices` 기반의 실제 재화·보유권·현지 가격 snapshot을 공급할 수 있다. 다음 단계는 Store/Inventory의 loading·offline·retry·owned 상태를 고도화한 뒤 sandbox purchase/exchange reconciliation을 붙이는 것이다. Touch effect와 background particle은 Interaction/Motion/Backdrop 계약 위에서 별도 성능·reduced-motion 검증과 함께 확장한다.
+**현재:** UX-1/2 Theme foundation·Responsive Shell, UX-3 Home, UX-4 핵심 surface, UX-5 테마 package·회귀 기반, UX-6 Window frame·Theme Gallery와 Commerce catalog foundation을 완료했다. Production ItemDef registry와 읽기 전용 Steam gateway가 연결되었고, Store/Inventory도 승인 Astra pack·테마 package 구분, loading·offline·retry·owned 상태, compact/125% text 회귀를 갖춘 단일 snapshot 소비 화면으로 고도화했다. feature flag가 켜지는 검증 빌드에서는 `GetAllItems`/`RequestPrices` 기반의 실제 재화·보유권·현지 가격 가용성을 표시하지만 raw 가격 단위를 임의 포맷하지 않고 구매 CTA도 계속 비활성이다. 다음 단계는 Steam sandbox purchase/exchange completion과 inventory reconciliation을 별도 transaction 단계로 붙이는 것이다. Touch effect와 background particle은 Interaction/Motion/Backdrop 계약 위에서 별도 성능·reduced-motion 검증과 함께 확장한다.
 
 공식 테마 카탈로그는 무료 `classicDark`·`midnightBlue`, premium `sakura`·`amethyst`·`nocturne`다. premium 3종은 `planned`와 승인 가격 `500 Astra 또는 500 Echo`를 표시하되 commerce 활성 전 구매 CTA는 노출하지 않는다. 잔여 style 이관은 [UX_THEME_MIGRATION_INVENTORY.md](UX_THEME_MIGRATION_INVENTORY.md)에서 추적한다.
 

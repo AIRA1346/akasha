@@ -20,7 +20,7 @@
 > - **Entity derivedIndexesUpdated** — Entity save/delete sets per-path `VaultPathChange.derivedIndexesUpdated` after successful index mutation; Home skips `ArchiveIndexManager` only (UI side-effects kept). Home debounce **AND-coalesces** pending path flags across batches (`false` survives later `true`). Work/Journal/Timeline still double-update (follow-up)
 > - **HomeShell vault-watch dispose lifecycle (ACTION A)** — God Class 전면 리팩터 **기각** (상태 소유권은 이미 coordinator로 분리). `HomeVaultWatchReactor` generation cancel + dispose 순서(reactor → vault sub/debounce → workbench) + `WorkbenchController.syncEntityTabs` await 후 `_disposed` guard. **COUPLED/DEFERRED 유지:** timeline token 과다 bump · 이중 rebuild · Catalog `isCatalogLoading` 직접 set · Vault cold-start bootstrap 추출
 > - **Package modularization audit (closed)** — 단일 Flutter 앱 + `akasha_commerce_domain`(유일한 성공 공유 package) + 별도 backend 유지 · package graph **비순환** · 신규 EXTRACT_NOW **없음** · Melos / `akasha_core`·database·ui 전면 분할·줄 수 기준 분리 **기각**. Archive format/codec = PREPARE_BOUNDARY · Vault I/O / UI / Home orchestration = KEEP_IN_APP · Steam bridge는 production IAP·no-IAP 빌드 제외 요구 시 **CMake optional부터** 재검토 · Melos는 package 수·공통 orchestration 필요성이 실제로 늘 때만. **재오픈 트리거:** 앱 외 제2 소비자 · 플랫폼 완전 빌드 제외 · 안정 API/의존 방향 · 앱 타입 역참조 없음 · 독립 테스트·배포·CI 격리 실측 · unrelated 동시 변경 반복
-> - Flutter app: `flutter analyze` **0** · `flutter test` **1156**
+> - Flutter app: `flutter analyze` **0** · `flutter test` **1159**
 > - Commerce packages: domain `dart test` **17** · backend `dart test` **18** · domain/root `dart analyze` **0**
 > - Windows debug/release build **OK (2026-07-15)**
 > - **UX-5A Theme package regression foundation** — 5 preset asset namespace/fallback/reduced-motion 계약 · 핵심 surface 3 viewport/125% text geometry · Classic Dark/Midnight Blue Windows golden · **done**. 실제 bundled artwork 검증은 아래 UX-5B로 확장.
@@ -32,6 +32,7 @@
 > - **POC ItemDef semantics correction** — `playtimegenerator`의 `10002x5`는 수량 5가 아니라 선택 weight이므로 현재 게시 POC는 성공 시 Echo 1개를 지급한다. Fake/test를 실제 의미에 맞췄고 historical JSON은 증거 보존을 위해 유지한다. production 다중 지급은 intermediate Echo bundle을 사용한다.
 > - **Production ItemDef local draft** — POC ID 8개는 `hidden` 퇴역하고 출시 정의는 `40000-41199`로 분리했다. Echo는 10분당 10개·1,440분 창당 최대 6회, starter promo/Support 제외, 테마 3종은 Astra 500 또는 Echo 500의 단일 선택 recipe다. JSON·불변조건 테스트는 완료했지만 Steamworks 게시와 feature flag 활성화는 하지 않았다.
 > - **Production Steam read gateway** — 단일 production ItemDef registry와 읽기 전용 `SteamInventoryCommerceGateway`를 연결했다. `GetAllItems`의 production 재화/테마만 snapshot으로 만들고 모든 POC ID를 무시하며, `RequestPrices`의 통화 코드와 raw current/base amount를 보존한다. 가격 실패는 유효한 계정 snapshot을 지우지 않고 거래 메서드는 `read_only`로 거부한다. feature flag와 구매 CTA는 계속 비활성이다.
+> - **Store/Inventory read UX** — 승인 Astra pack 3종과 테마 package를 분리하고 `disabled/loading/ready/offlineCache/unavailable` 상태, live retry, provider-owned 표시, compact currency layout을 단일 account snapshot 위에 구현했다. Steam raw 가격은 단위를 추정하지 않고 통화 코드와 가격 데이터 가용성만 알리며 모든 구매/교환 CTA는 계속 비활성이다.
 >
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)  
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
@@ -54,7 +55,7 @@
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
 
-**v1 blocking에 가까운 검증:** root `flutter test` **1156** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
+**v1 blocking에 가까운 검증:** root `flutter test` **1159** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
 **v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.  
 **IAP:** `FeatureFlags.steamInAppPurchasesEnabled = false` — 확정 상품·가격의 read-only preview만 존재한다. 활성 구매 CTA·Steam 결제 가능 표시·재심사 주장은 payment flow 검증 전 금지한다.
 ---
@@ -86,7 +87,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| root `flutter test` | **1156 PASS** | ✅ |
+| root `flutter test` | **1159 PASS** | ✅ |
 | commerce domain `dart test` | **17 PASS** | ✅ |
 | commerce backend `dart test` | **18 PASS** | ✅ |
 | `flutter analyze lib` | 0 issue | ✅ |
@@ -114,7 +115,7 @@
 
 * **나의 서재 (Personal Library):** v1 핵심 — 아카이브 작품 포스터·테마.
 * **대시보드 (Dashboard):** optional catalog 탐색 — Fact 카드 그리드.
-* **앱 테마 foundation + UX-5A/B/C/D + UX-6 Gallery:** canonical preset 5종과 별도 catalog, preferred/effective resolver, app-root theme, backdrop fallback, 5종 harness 구현. asset namespace·reduced-motion resolver·5테마 핵심 surface geometry matrix를 고정하고 공식 5테마의 실제 backdrop/Hero 10개와 Windows decode/paint golden을 통합했다. preset·catalog·alias는 단일 `AkashaThemeRegistry`에서 등록하고 효과는 Backdrop/Hero/Interaction/Motion으로 분리한다. no-IAP Theme Gallery도 공식 5종을 모두 보여주며 premium 3종은 `planned`와 승인 가격 `500 Astra 또는 500 Echo`를 표시하되 구매 CTA는 비활성이다. Store & Inventory는 app-root `CommerceController`의 nullable snapshot을 읽고, 동일 entitlement snapshot이 premium theme access에도 전달된다. 미연결 재화를 가짜 `0`으로 표시하지 않는다. 이관표는 [UX_THEME_MIGRATION_INVENTORY.md](UX_THEME_MIGRATION_INVENTORY.md), commerce SSOT는 [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md), 회귀 SSOT는 [UX_THEME_REGRESSION_MATRIX.md](UX_THEME_REGRESSION_MATRIX.md), artwork 기록은 [assets/themes/ARTWORK_PROVENANCE.md](../../assets/themes/ARTWORK_PROVENANCE.md).
+* **앱 테마 foundation + UX-5A/B/C/D + UX-6 Gallery:** canonical preset 5종과 별도 catalog, preferred/effective resolver, app-root theme, backdrop fallback, 5종 harness 구현. asset namespace·reduced-motion resolver·5테마 핵심 surface geometry matrix를 고정하고 공식 5테마의 실제 backdrop/Hero 10개와 Windows decode/paint golden을 통합했다. preset·catalog·alias는 단일 `AkashaThemeRegistry`에서 등록하고 효과는 Backdrop/Hero/Interaction/Motion으로 분리한다. no-IAP Theme Gallery도 공식 5종을 모두 보여주며 premium 3종은 `planned`와 승인 가격 `500 Astra 또는 500 Echo`를 표시하되 구매 CTA는 비활성이다. Store & Inventory는 app-root `CommerceController`의 nullable snapshot을 읽고, 승인 pack/theme section과 loading·offline·retry·owned 상태를 동일 snapshot에서 표시한다. 미연결 재화를 가짜 `0`으로 표시하거나 Steam raw 가격의 단위를 임의 추정하지 않는다. 이관표는 [UX_THEME_MIGRATION_INVENTORY.md](UX_THEME_MIGRATION_INVENTORY.md), commerce SSOT는 [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md), 회귀 SSOT는 [UX_THEME_REGRESSION_MATRIX.md](UX_THEME_REGRESSION_MATRIX.md), artwork 기록은 [assets/themes/ARTWORK_PROVENANCE.md](../../assets/themes/ARTWORK_PROVENANCE.md).
 
 ### Ⅱ. 워크벤치 (4열 상세 편집기)
 * **탭 관리:** 다중 Work 및 Entity 탭을 열어둔 다단계 작업 공간.

@@ -1507,6 +1507,45 @@ class AppLocalizationsKo extends AppLocalizations {
       '구매 기능은 아직 비활성 상태입니다. 확정된 상품과 가격만 미리 보여줍니다.';
 
   @override
+  String get commerceAstraPackSection => '아스트라 충전';
+
+  @override
+  String get commerceAstraPackSectionBody =>
+      'Steam Wallet을 통해 구매할 예정인 출시 상품입니다.';
+
+  @override
+  String commerceAstraPackGrant(int amount) {
+    return '$amount Astra';
+  }
+
+  @override
+  String get commerceThemePackageSection => '테마 패키지';
+
+  @override
+  String commerceSteamPriceReady(String currency) {
+    return 'Steam 현지 가격 확인됨 · $currency';
+  }
+
+  @override
+  String get commerceSteamPricePending => 'Steam 연결 후 현지 가격 확인';
+
+  @override
+  String get commerceAccountLoading => 'Steam 인벤토리를 확인하는 중입니다.';
+
+  @override
+  String get commerceAccountReadyReadOnly =>
+      'Steam 계정이 연결되었습니다. 구매 기능은 아직 비활성입니다.';
+
+  @override
+  String get commerceAccountOfflineCache => '오프라인 상태입니다. 마지막으로 확인한 정보를 표시합니다.';
+
+  @override
+  String get commerceAccountUnavailable => 'Steam 인벤토리를 확인할 수 없습니다.';
+
+  @override
+  String get commerceRetry => '다시 시도';
+
+  @override
   String get commerceCurrencySection => '재화';
 
   @override

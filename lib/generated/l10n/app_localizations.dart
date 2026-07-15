@@ -2786,6 +2786,72 @@ abstract class AppLocalizations {
   /// **'Purchases are still disabled. Only approved products and prices are shown.'**
   String get commerceStorePreviewNotice;
 
+  /// No description provided for @commerceAstraPackSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Get Astra'**
+  String get commerceAstraPackSection;
+
+  /// No description provided for @commerceAstraPackSectionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Launch products planned for purchase through Steam Wallet.'**
+  String get commerceAstraPackSectionBody;
+
+  /// No description provided for @commerceAstraPackGrant.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} Astra'**
+  String commerceAstraPackGrant(int amount);
+
+  /// No description provided for @commerceThemePackageSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme packages'**
+  String get commerceThemePackageSection;
+
+  /// No description provided for @commerceSteamPriceReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Steam local price available · {currency}'**
+  String commerceSteamPriceReady(String currency);
+
+  /// No description provided for @commerceSteamPricePending.
+  ///
+  /// In en, this message translates to:
+  /// **'Local price shown after Steam connects'**
+  String get commerceSteamPricePending;
+
+  /// No description provided for @commerceAccountLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking your Steam inventory.'**
+  String get commerceAccountLoading;
+
+  /// No description provided for @commerceAccountReadyReadOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Steam is connected. Purchases are still disabled.'**
+  String get commerceAccountReadyReadOnly;
+
+  /// No description provided for @commerceAccountOfflineCache.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline. Showing the last verified information.'**
+  String get commerceAccountOfflineCache;
+
+  /// No description provided for @commerceAccountUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Steam inventory is unavailable.'**
+  String get commerceAccountUnavailable;
+
+  /// No description provided for @commerceRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get commerceRetry;
+
   /// No description provided for @commerceCurrencySection.
   ///
   /// In en, this message translates to:

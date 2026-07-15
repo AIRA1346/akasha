@@ -17,19 +17,23 @@ Future<void> showCommerceCenterDialog(
     context: context,
     builder: (dialogContext) {
       final viewport = MediaQuery.sizeOf(dialogContext);
-      final width = (viewport.width - 48).clamp(320.0, 920.0);
-      final height = (viewport.height - 48).clamp(440.0, 700.0);
+      final inset = viewport.width < 600 ? 12.0 : 24.0;
+      final width = (viewport.width - (inset * 2)).clamp(280.0, 920.0);
+      final height = (viewport.height - (inset * 2)).clamp(400.0, 700.0);
       final l10n = AppLocalizations.of(dialogContext);
       final palette = dialogContext.akashaPalette;
+      final controller = account == null
+          ? CommerceScope.maybeOf(dialogContext)
+          : null;
       final effectiveAccount =
           account ??
-          CommerceScope.maybeOf(dialogContext)?.snapshot ??
+          controller?.snapshot ??
           const CommerceAccountSnapshot.disabled();
 
       return Dialog(
         key: const ValueKey('commerce-center-dialog'),
         backgroundColor: palette.surfaceElevated,
-        insetPadding: const EdgeInsets.all(24),
+        insetPadding: EdgeInsets.all(inset),
         clipBehavior: Clip.antiAlias,
         child: SizedBox(
           width: width,
@@ -90,10 +94,15 @@ Future<void> showCommerceCenterDialog(
                 Expanded(
                   child: TabBarView(
                     children: [
-                      _CommerceStoreTab(l10n: l10n),
+                      _CommerceStoreTab(
+                        l10n: l10n,
+                        account: effectiveAccount,
+                        controller: controller,
+                      ),
                       _CommerceInventoryTab(
                         l10n: l10n,
                         account: effectiveAccount,
+                        controller: controller,
                       ),
                     ],
                   ),
@@ -108,48 +117,63 @@ Future<void> showCommerceCenterDialog(
 }
 
 class _CommerceStoreTab extends StatelessWidget {
-  const _CommerceStoreTab({required this.l10n});
+  const _CommerceStoreTab({
+    required this.l10n,
+    required this.account,
+    required this.controller,
+  });
 
   final AppLocalizations l10n;
+  final CommerceAccountSnapshot account;
+  final CommerceController? controller;
 
   @override
   Widget build(BuildContext context) {
-    final palette = context.akashaPalette;
     final definitions = AkashaThemeRegistry.all
         .where((definition) => definition.catalog.isPremium)
         .toList(growable: false);
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Container(
-          margin: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 11),
-          decoration: BoxDecoration(
-            color: palette.warning.withValues(alpha: 0.10),
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: palette.warning.withValues(alpha: 0.28)),
-          ),
-          child: Row(
-            children: [
-              Icon(
-                Icons.info_outline_rounded,
-                color: palette.warning,
-                size: 18,
-              ),
-              const SizedBox(width: 9),
-              Expanded(
-                child: Text(
-                  l10n.commerceStorePreviewNotice,
-                  style: const TextStyle(fontSize: 12),
-                ),
-              ),
-            ],
+    return CustomScrollView(
+      key: const PageStorageKey('commerce-store-scroll'),
+      slivers: [
+        SliverToBoxAdapter(
+          child: _CommerceAuthorityBanner(
+            l10n: l10n,
+            account: account,
+            controller: controller,
           ),
         ),
-        Expanded(
-          child: GridView.builder(
-            padding: const EdgeInsets.all(16),
+        SliverToBoxAdapter(
+          child: _CommerceSectionHeader(
+            title: l10n.commerceAstraPackSection,
+            body: l10n.commerceAstraPackSectionBody,
+          ),
+        ),
+        SliverPadding(
+          padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+          sliver: SliverGrid.builder(
+            itemCount: CommerceCatalog.astraPacks.length,
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 260,
+              mainAxisExtent: 184,
+              crossAxisSpacing: 12,
+              mainAxisSpacing: 12,
+            ),
+            itemBuilder: (context, index) => _AstraPackCard(
+              product: CommerceCatalog.astraPacks[index],
+              account: account,
+              l10n: l10n,
+            ),
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: _CommerceSectionHeader(
+            title: l10n.commerceThemePackageSection,
+          ),
+        ),
+        SliverPadding(
+          padding: const EdgeInsets.fromLTRB(16, 0, 16, 18),
+          sliver: SliverGrid.builder(
             itemCount: definitions.length,
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 300,
@@ -157,8 +181,11 @@ class _CommerceStoreTab extends StatelessWidget {
               crossAxisSpacing: 12,
               mainAxisSpacing: 12,
             ),
-            itemBuilder: (context, index) =>
-                _ThemePackageCard(definition: definitions[index], l10n: l10n),
+            itemBuilder: (context, index) => _ThemePackageCard(
+              definition: definitions[index],
+              account: account,
+              l10n: l10n,
+            ),
           ),
         ),
       ],
@@ -166,10 +193,138 @@ class _CommerceStoreTab extends StatelessWidget {
   }
 }
 
+class _CommerceSectionHeader extends StatelessWidget {
+  const _CommerceSectionHeader({required this.title, this.body});
+
+  final String title;
+  final String? body;
+
+  @override
+  Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(18, 18, 18, 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+          ),
+          if (body case final body?) ...[
+            const SizedBox(height: 3),
+            Text(
+              body,
+              style: TextStyle(color: palette.textMuted, fontSize: 11),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+class _AstraPackCard extends StatelessWidget {
+  const _AstraPackCard({
+    required this.product,
+    required this.account,
+    required this.l10n,
+  });
+
+  final CommerceProduct product;
+  final CommerceAccountSnapshot account;
+  final AppLocalizations l10n;
+
+  @override
+  Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
+    final price = account.priceOf(product.id);
+    final amount = product.grantPremiumAmount ?? 0;
+    final priceLabel = price == null
+        ? l10n.commerceSteamPricePending
+        : l10n.commerceSteamPriceReady(price.currencyCode);
+
+    return Material(
+      color: palette.surface,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(14),
+        side: BorderSide(color: palette.borderSubtle(0.62)),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(14),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Container(
+                  width: 38,
+                  height: 38,
+                  decoration: BoxDecoration(
+                    color: palette.accentSoft,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Icon(
+                    Icons.auto_awesome_rounded,
+                    color: palette.accent,
+                    size: 20,
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    l10n.commerceAstraPackGrant(amount),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.end,
+                    style: TextStyle(
+                      color: palette.accent,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            Text(
+              _productName(context, product),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              priceLabel,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(color: palette.textMuted, fontSize: 10),
+            ),
+            const Spacer(),
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton.icon(
+                onPressed: null,
+                icon: const Icon(Icons.schedule_rounded, size: 16),
+                label: Text(l10n.commerceComingSoon),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class _ThemePackageCard extends StatelessWidget {
-  const _ThemePackageCard({required this.definition, required this.l10n});
+  const _ThemePackageCard({
+    required this.definition,
+    required this.account,
+    required this.l10n,
+  });
 
   final AkashaThemeDefinition definition;
+  final CommerceAccountSnapshot account;
   final AppLocalizations l10n;
 
   @override
@@ -182,6 +337,8 @@ class _ThemePackageCard extends StatelessWidget {
     final payment = product?.payment;
     final astra = payment?.premiumPrice ?? catalog.astraCost;
     final echo = payment?.earnedPrice ?? catalog.echoCost;
+    final owned =
+        catalog.entitlementKey != null && account.owns(catalog.entitlementKey!);
 
     return Material(
       color: palette.surface,
@@ -249,8 +406,15 @@ class _ThemePackageCard extends StatelessWidget {
                     width: double.infinity,
                     child: OutlinedButton.icon(
                       onPressed: null,
-                      icon: const Icon(Icons.schedule_rounded, size: 16),
-                      label: Text(l10n.commerceComingSoon),
+                      icon: Icon(
+                        owned
+                            ? Icons.check_circle_outline_rounded
+                            : Icons.schedule_rounded,
+                        size: 16,
+                      ),
+                      label: Text(
+                        owned ? l10n.commerceOwned : l10n.commerceComingSoon,
+                      ),
                     ),
                   ),
                 ],
@@ -264,10 +428,15 @@ class _ThemePackageCard extends StatelessWidget {
 }
 
 class _CommerceInventoryTab extends StatelessWidget {
-  const _CommerceInventoryTab({required this.l10n, required this.account});
+  const _CommerceInventoryTab({
+    required this.l10n,
+    required this.account,
+    required this.controller,
+  });
 
   final AppLocalizations l10n;
   final CommerceAccountSnapshot account;
+  final CommerceController? controller;
 
   @override
   Widget build(BuildContext context) {
@@ -281,33 +450,49 @@ class _CommerceInventoryTab extends StatelessWidget {
         .toList(growable: false);
 
     return ListView(
+      key: const PageStorageKey('commerce-inventory-scroll'),
       padding: const EdgeInsets.all(18),
       children: [
+        _CommerceAuthorityBanner(
+          l10n: l10n,
+          account: account,
+          controller: controller,
+          margin: EdgeInsets.zero,
+        ),
+        const SizedBox(height: 18),
         Text(
           l10n.commerceCurrencySection,
           style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
         ),
         const SizedBox(height: 10),
-        Row(
-          children: [
-            Expanded(
-              child: _CurrencyCard(
-                icon: Icons.auto_awesome_rounded,
-                label: l10n.commerceAstraLabel,
-                value: account.astraBalance,
-                unavailableLabel: l10n.commerceBalanceUnavailable,
-              ),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: _CurrencyCard(
-                icon: Icons.graphic_eq_rounded,
-                label: l10n.commerceEchoLabel,
-                value: account.echoBalance,
-                unavailableLabel: l10n.commerceBalanceUnavailable,
-              ),
-            ),
-          ],
+        LayoutBuilder(
+          builder: (context, constraints) {
+            final astra = _CurrencyCard(
+              icon: Icons.auto_awesome_rounded,
+              label: l10n.commerceAstraLabel,
+              value: account.astraBalance,
+              unavailableLabel: l10n.commerceBalanceUnavailable,
+            );
+            final echo = _CurrencyCard(
+              icon: Icons.graphic_eq_rounded,
+              label: l10n.commerceEchoLabel,
+              value: account.echoBalance,
+              unavailableLabel: l10n.commerceBalanceUnavailable,
+            );
+            if (constraints.maxWidth < 480) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [astra, const SizedBox(height: 10), echo],
+              );
+            }
+            return Row(
+              children: [
+                Expanded(child: astra),
+                const SizedBox(width: 12),
+                Expanded(child: echo),
+              ],
+            );
+          },
         ),
         const SizedBox(height: 12),
         Container(
@@ -398,6 +583,115 @@ class _CommerceInventoryTab extends StatelessWidget {
   }
 }
 
+class _CommerceAuthorityBanner extends StatelessWidget {
+  const _CommerceAuthorityBanner({
+    required this.l10n,
+    required this.account,
+    required this.controller,
+    this.margin = const EdgeInsets.fromLTRB(16, 16, 16, 0),
+  });
+
+  final AppLocalizations l10n;
+  final CommerceAccountSnapshot account;
+  final CommerceController? controller;
+  final EdgeInsetsGeometry margin;
+
+  @override
+  Widget build(BuildContext context) {
+    final palette = context.akashaPalette;
+    final (
+      icon,
+      color,
+      message,
+      showProgress,
+      canRetry,
+    ) = switch (account.state) {
+      CommerceAuthorityState.disabled => (
+        Icons.info_outline_rounded,
+        palette.warning,
+        l10n.commerceStorePreviewNotice,
+        false,
+        false,
+      ),
+      CommerceAuthorityState.loading => (
+        Icons.sync_rounded,
+        palette.info,
+        l10n.commerceAccountLoading,
+        true,
+        false,
+      ),
+      CommerceAuthorityState.ready => (
+        Icons.verified_outlined,
+        palette.success,
+        l10n.commerceAccountReadyReadOnly,
+        false,
+        false,
+      ),
+      CommerceAuthorityState.offlineCache => (
+        Icons.cloud_off_outlined,
+        palette.warning,
+        l10n.commerceAccountOfflineCache,
+        false,
+        controller?.enabled == true,
+      ),
+      CommerceAuthorityState.unavailable => (
+        Icons.error_outline_rounded,
+        palette.danger,
+        l10n.commerceAccountUnavailable,
+        false,
+        controller?.enabled == true,
+      ),
+    };
+
+    return Semantics(
+      container: true,
+      liveRegion: true,
+      label: message,
+      child: Container(
+        key: ValueKey('commerce-authority-${account.state.name}'),
+        margin: margin,
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 11),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.10),
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: color.withValues(alpha: 0.28)),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              children: [
+                Icon(icon, color: color, size: 18),
+                const SizedBox(width: 9),
+                Expanded(
+                  child: Text(message, style: const TextStyle(fontSize: 12)),
+                ),
+                if (canRetry) ...[
+                  const SizedBox(width: 8),
+                  TextButton.icon(
+                    key: const ValueKey('commerce-retry-button'),
+                    onPressed: controller?.refresh,
+                    icon: const Icon(Icons.refresh_rounded, size: 16),
+                    label: Text(l10n.commerceRetry),
+                  ),
+                ],
+              ],
+            ),
+            if (showProgress) ...[
+              const SizedBox(height: 9),
+              LinearProgressIndicator(
+                minHeight: 2,
+                color: color,
+                backgroundColor: color.withValues(alpha: 0.14),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class _CurrencyCard extends StatelessWidget {
   const _CurrencyCard({
     required this.icon,
@@ -469,4 +763,12 @@ String _themeName(AppLocalizations l10n, AkashaThemeDefinition definition) {
     'themeNocturneName' => l10n.themeNocturneName,
     _ => catalog.fallbackDisplayName,
   };
+}
+
+String _productName(BuildContext context, CommerceProduct product) {
+  final locale = Localizations.localeOf(context).languageCode;
+  if (locale == 'ko') {
+    return product.displayNameKo ?? product.displayNameEn ?? '';
+  }
+  return product.displayNameEn ?? product.displayNameKo ?? '';
 }

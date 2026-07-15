@@ -900,6 +900,27 @@
   "commerceStoreTab": "Store",
   "commerceInventoryTab": "Inventory",
   "commerceStorePreviewNotice": "Purchases are still disabled. Only approved products and prices are shown.",
+  "commerceAstraPackSection": "Get Astra",
+  "commerceAstraPackSectionBody": "Launch products planned for purchase through Steam Wallet.",
+  "commerceAstraPackGrant": "{amount} Astra",
+  "@commerceAstraPackGrant": {
+    "placeholders": {
+      "amount": { "type": "int" }
+    }
+  },
+  "commerceThemePackageSection": "Theme packages",
+  "commerceSteamPriceReady": "Steam local price available · {currency}",
+  "@commerceSteamPriceReady": {
+    "placeholders": {
+      "currency": { "type": "String" }
+    }
+  },
+  "commerceSteamPricePending": "Local price shown after Steam connects",
+  "commerceAccountLoading": "Checking your Steam inventory.",
+  "commerceAccountReadyReadOnly": "Steam is connected. Purchases are still disabled.",
+  "commerceAccountOfflineCache": "Offline. Showing the last verified information.",
+  "commerceAccountUnavailable": "Steam inventory is unavailable.",
+  "commerceRetry": "Try again",
   "commerceCurrencySection": "Currencies",
   "commerceOwnedThemeSection": "Theme inventory",
   "commerceAstraLabel": "Astra",

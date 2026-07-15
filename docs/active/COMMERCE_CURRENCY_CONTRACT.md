@@ -132,6 +132,16 @@ entitlement keys, and price policy.
   launch-preparation state while the flag is false.
 - Store shows only approved products; it never invents a balance, discount,
   avatar, notification, or localized Steam price.
+- Store separates approved Astra packs from the launch theme package section.
+  Pack cards expose only provider-confirmed currency availability; raw Steam
+  amounts remain opaque until their display-unit contract is verified in the
+  production sandbox.
+- Store and Inventory show explicit `disabled`, `loading`, `ready`,
+  `offlineCache`, and `unavailable` authority states. Retry is available only
+  when a live controller is enabled and the last read failed or fell back to
+  cache.
+- A provider-confirmed theme entitlement changes the matching Store card to
+  owned without creating a second local ownership source.
 - The purchase sheet will require the user to choose Astra or Echo, show the
   full selected-currency price and projected remaining balance, and never offer
   a mixed amount.
@@ -188,6 +198,11 @@ registry, a read-only native port, and `SteamInventoryCommerceGateway`.
   invoking a native mutation;
 - the app root selects this gateway only behind
   `steamInAppPurchasesEnabled`, which remains `false`.
+
+The current Store/Inventory implementation is a responsive, read-only consumer
+of this boundary. It has loading/offline/unavailable feedback, retry, owned
+theme state, compact currency-card layout, and 125% text-scale coverage. Every
+purchase and exchange control remains disabled.
 
 The Flutter/native transport is `akasha/steam_inventory`. The historical C++
 source and diagnostic client retain POC-oriented names as evidence, but
