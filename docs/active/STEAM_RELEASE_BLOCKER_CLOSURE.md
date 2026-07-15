@@ -69,7 +69,7 @@ Fix **only** when dogfood / review / large-vault ship friction is confirmed.
 |---|---|
 | `FeatureFlags.steamInAppPurchasesEnabled` | **`false`** — no live Steam IAP |
 | `EntitlementService.purchaseCosmetic` | Stub; returns `false`; no Steamworks microtxn |
-| Themes | Classic Dark / Midnight Blue bundled free; premium 3 hidden in no-IAP build |
+| Themes | Classic Dark / Midnight Blue bundled free; premium 3 visible as planned, with no price or purchase action |
 | Store Page “In-App Purchases” | **May be cleared** until P5+P6 complete |
 | Astra / Echo (`premium` / `earned`) | Domain contract + fake tests landed; **no live purchase** |
 
@@ -116,7 +116,7 @@ Korean mirror (internal):
 영어 전환: Esc → Preferences → Display language → English
 (또는 볼트 설정 내 동일 드롭다운).
 인앱 구매: 본 빌드 미구현. steamInAppPurchasesEnabled=false.
-Astra/Steam Wallet 결제 없음. Classic Dark와 Midnight Blue만 번들 무료로 노출하며 premium 3종은 숨김. IAP 완성 전 Store IAP 표시 제거 가능.
+Astra/Steam Wallet 결제 없음. Classic Dark와 Midnight Blue는 번들 무료로 적용 가능하고 premium 3종은 승인 가격 `500 Astra 또는 500 Echo · 출시 예정`의 read-only catalog로 노출한다. IAP 완성 전 활성 구매 버튼·Steam 결제 가능 표시·Store IAP 주장은 없음.
 ```
 
 ---

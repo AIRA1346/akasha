@@ -27,7 +27,7 @@ AKASHA가 예쁘게 정리해서 보여준다.
 - AI agent/player/tool 구현 약속
 - 음악 재생, 추천 엔진, 자동화된 외부 도구 연동 약속
 
-v1 picker에는 번들 무료 테마 Classic Dark와 Midnight Blue만 제공한다. Sakura·Amethyst·Nocturne는 premium 계획이지만 현재 빌드에서는 노출·판매하지 않는다. Steam IAP / Astra·Echo는 [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md)와 [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) P5–P6이 검증되기 전에 스토어·앱에 구매로 표시하지 않는다.
+v1 Theme Gallery는 공식 5종을 모두 보여준다. Classic Dark와 Midnight Blue는 번들 무료로 적용할 수 있고 Sakura·Amethyst·Nocturne는 승인된 가격 `500 Astra 또는 500 Echo · 출시 예정`으로 표시할 수 있다. [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md)와 [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) P5–P6 검증 전에는 활성 구매 버튼이나 Steam 결제 가능 상태로 표시하지 않는다.
 
 ---
 
@@ -120,7 +120,7 @@ AKASHA는 만화, 애니메이션, 영화, 게임, 음악, 인물, 장소처럼 
 • 그래프, 타임라인, 저널 기반 탐색
 • 휴지통, 복구 초안, ZIP 백업 내보내기
 • 한국어/영어 UI 전환 및 데스크톱 환경 설정
-• 무료 앱 테마 2종 선택
+• 무료 앱 테마 2종 선택 및 premium 예정 테마 3종 미리보기
 
 AKASHA는 출시 후에도 실제 사용자의 vault dogfood를 바탕으로 UI/UX, 대량 기록 관리, 가져오기/내보내기, 안정성을 계속 개선합니다.
 

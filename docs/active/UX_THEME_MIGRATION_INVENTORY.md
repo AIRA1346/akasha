@@ -23,11 +23,15 @@ UX-5C 검증은 root analyze **0**, root test **1124**, Windows Debug/Release PA
 
 2026-07-15 UX-5D에서 preset·catalog·persisted alias의 중복 등록을 `AkashaThemeRegistry` 하나로 통합하고 `LibraryTheme` runtime adapter, legacy picker/preferences 타입을 제거했다. effect는 Backdrop·Hero·Interaction·Motion 그룹으로 분리했다. 검증은 root analyze **0**, root test **1124**, Windows Debug/Release PASS이며 기존 golden은 갱신 없이 통과했다.
 
+2026-07-15 UX-6에서 `ThemeOfferState`를 access state와 분리하고 no-IAP Theme Gallery도 공식 5종을 모두 발견 가능하게 바꿨다. 이 시점의 premium 3종은 `planned`로 표시하며 가격·구매 CTA·가짜 잔액을 노출하지 않았다. Windows custom chrome과 창모드·최대화·`F11` fullscreen 계약도 app root에 추가했다. control은 가로축 전체 폭·우측 정렬을 고정하고 root overlay 밖에서는 Tooltip을 만들지 않아 hover feedback이 버튼 영역을 벗어나지 않는다. 검증은 root analyze **0**, root test **1128**, Windows Debug/Release PASS이며 실제 Release runtime에서 `F11` 진입·복원과 fullscreen 중 Escape의 원래 window bounds 복원을 확인했다.
+
+같은 날 후속 Commerce catalog foundation에서 사용자가 승인한 launch 정책을 별도 SSOT로 고정했다. Sakura·Amethyst·Nocturne는 각각 `500 Astra 또는 500 Echo` choose-one이며 혼합·재화 교환은 금지한다. Theme Gallery와 read-only Store & Inventory는 동일 `CommerceCatalog`를 읽어 가격을 표시하지만 production 구매 CTA는 계속 비활성이다. `CommerceAccountSnapshot`의 미확인 잔액은 nullable이며 가짜 `0`을 만들지 않는다. 검증은 root analyze **0**, root test **1132**, commerce domain **16**이다.
+
 | 항목 | UX-1 이전 | 현재 결과 |
 |---|---|---|
 | Preset | legacy ID 4개 | canonical ID 5개 + 단일 `AkashaThemeRegistry` |
 | Access | 네 preset 모두 `requiresIap=false` | visual preset과 무료 2·premium 3 catalog 분리 |
-| Picker | 네 preset 전부 노출·즉시 저장 | no-IAP에서 무료 2종만 노출, controller가 저장 |
+| Picker | 네 preset 전부 노출·즉시 저장 | 공식 5종 gallery, 무료/보유만 controller가 저장 |
 | Selection | preference와 effective 혼합 | preferred/effective + 5 access state resolver |
 | Theme scope | Home Shell 내부 중첩 `Theme` | app root 전체 + Material overlay 상속 |
 | Nocturne | Steam Inventory POC에만 존재 | canonical preset + near-black/silver-blue artwork 통합, SKU는 후속 |
@@ -116,10 +120,11 @@ BoxShadow | BackdropFilter | ImageFiltered | ShaderMask
 | `lib/screens/home/coordinators/home_vault_coordinator.dart` | preference/effective 혼합 | Home local theme SSOT 제거 — **완료** | UX-1 | Closed |
 | `lib/services/library_theme_preferences.dart` | unknown ID를 Classic으로 소실 | canonical migration + raw unknown 보존 — **완료** | UX-1 | Closed |
 | `lib/models/library_theme.dart` | visual·판매 결합 legacy 모델 | visual adapter와 catalog 분리 — **완료** | UX-1 | Closed |
-| `lib/widgets/library_theme_picker.dart` | 4종 노출·직접 저장 | 무료 2종 선택 UI, root controller 저장 — **완료** | UX-1 | Closed |
-| `lib/services/entitlement_service.dart` | 단일 theme pack, SharedPreferences ownership stub | production authority로 사용 금지; catalog access provider 경계 | UX-1 문서/adapter | High |
+| `lib/widgets/akasha_theme_picker.dart` | 무료 2종 목록 | 공식 5종 gallery, offer/access 상태 분리, root controller 저장 — **완료** | UX-6 | Closed |
+| `lib/services/entitlement_service.dart` | SharedPreferences compatibility stub | production authority 사용 금지 주석·legacy type 명시; Store/Inventory는 `CommerceGateway` 경계 | Commerce foundation | Closed |
+| `lib/widgets/commerce_center_dialog.dart` | 없음 | 공식 catalog 기반 read-only Store & Inventory; nullable balance·owned-only inventory·125% text 대응 | Commerce foundation | Closed |
 | `lib/dev/steam_inventory_poc/**` | Nocturne ItemDef `20001`, exchange `20010`, Astra POC cost `100` | POC 유지; production catalog/SKU로 승격하지 않음 | Commerce 후속 | High |
-| `l10n/app_ko.arb`, `l10n/app_en.arb` | “모든 테마 무료” 고정 안내 | 무료 2종 안내와 5종 표시명 l10n — **완료** | UX-1 | Closed |
+| `l10n/app_ko.arb`, `l10n/app_en.arb` | “모든 테마 무료” 고정 안내 | 5종 표시명과 included/owned/planned/checking/locked 상태 l10n — **완료** | UX-6 | Closed |
 | dialog/bottom-sheet coordinator 호출부 | overlay가 Classic을 상속할 수 있음 | root Theme로 dialog/menu/snackbar 일관 적용 — **완료** | UX-1 | Closed |
 
 현재 `lib/`에는 명시적인 `Navigator.push`/`MaterialPageRoute` page 이동이 없다. 그러나 설정·프로필·상점 route가 생기면 지금 구조에서는 root Classic으로 돌아가므로 UX-1에서 먼저 경계를 고친다.
@@ -162,7 +167,7 @@ BoxShadow | BackdropFilter | ImageFiltered | ShaderMask
 |---|---|---|:---:|:---:|
 | `lib/screens/home/home_browse_search_chrome.dart` | semantic palette 이관, 실제 content width 기준 compact 판정 | 잔여 spacing/radius token 이관 | UX-2/4 | Medium |
 | `lib/widgets/dashboard_sidebar.dart` | `256/232/drawer` 공통 spec과 destination registry 적용 | 잔여 nav spacing token 이관 | UX-2/4 | Medium |
-| `lib/widgets/dashboard_sidebar_footer_part.dart` | palette가 아닌 Classic static surface | Sidebar semantic surface | UX-2 | High |
+| `lib/widgets/dashboard_sidebar_footer_part.dart` | 하단 `접기` 전용 surface | UX-6에서 행과 파일 제거; Top bar toggle/`Ctrl+B`로 계약 통일 | UX-6 | Closed |
 | `lib/screens/home/home_shell_scaffold_bottom_nav_part.dart` | `56px` 공통 metric·palette·destination registry 적용 | 잔여 typography token 이관 | UX-2/4 | Medium |
 | `lib/screens/home/views/dashboard_preview_panel.dart` | `PreviewPanelLayoutSpec` 기반 288px rail·680px compact sheet와 공통 section spacing | Explore/Library 역할 정리와 함께 실제 surface 시각 회귀 지속 | UX-4 | Medium |
 | `lib/screens/home/views/entity_dashboard_preview_panel.dart` | Work와 동일한 Preview surface·content·Hero geometry | entity strip 역할 정리와 함께 실제 surface 시각 회귀 지속 | UX-4 | Medium |
@@ -279,7 +284,7 @@ Migration 순서:
 - [x] legacy ID와 unknown preference migration test
 - [x] `preferredThemeId` / `effectiveThemeId` resolver test
 - [x] `free/owned/locked/checking/unavailable` state test
-- [x] no-IAP picker는 무료 2종만 노출, 구매·잠금 CTA 없음
+- [x] no-IAP Theme Gallery는 공식 5종과 승인 가격을 노출, premium 3종은 planned이며 구매 CTA 없음
 - [x] 저장된 Midnight Blue로 시작할 때 Classic flash 없음
 - [x] dialog/menu/snackbar/bottom sheet가 root effective theme 상속
 - [x] 모든 preset의 asset fallback과 `onAccent` contrast 검증

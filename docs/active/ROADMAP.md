@@ -1,7 +1,7 @@
 # AKASHA Roadmap (로드맵)
 
 > **지위:** 프로젝트 개발 로드맵 SSOT (5대 정체성 카테고리 기준)
-> **갱신:** 2026-07-13 — UX·Theme 횡단 트랙 연결
+> **갱신:** 2026-07-15 — Commerce catalog·Store/Inventory foundation 반영
 > **최상위 지침:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) · [VISION.md](VISION.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md)
 > **기능 거부 기준:** [Constitution §8](AKASHA_ARCHIVE_CONSTITUTION.md) (구 PROJECT_CONSTITUTION 필터는 [historical](../history/PROJECT_CONSTITUTION.md))
 
@@ -19,7 +19,7 @@
 | — | B. Discovery | **optional** — starter catalog 검색 유지 |
 | — | E. Scale | **post-v1** — vault 파생 인덱스 · akasha-db/CDN |
 
-**Steam v1 무료 출시:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) 트랙. Architecture Closure 선언됨. IAP는 `steamInAppPurchasesEnabled=false` — 결제 검증 전 Store/앱에 구매로 표시하지 않음.
+**Steam v1 무료 출시:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) 트랙. Architecture Closure 선언됨. IAP는 `steamInAppPurchasesEnabled=false` — 승인 catalog/가격 preview는 가능하지만 결제 검증 전 활성 구매로 표시하지 않음.
 
 ---
 
@@ -29,9 +29,9 @@
 
 구현 순서는 Theme foundation → Responsive Shell → Graph/Timeline 기존 경로 복원 → Home 고도화 → Preview·핵심 화면 정돈 → 테마별 asset/effect와 회귀 검증이다. 기존 Graph/Timeline 내비게이션을 다시 보이게 하는 일은 새 그래프 엔진, 완성 캘린더, `SA-05 Timeline projection` 완료를 의미하지 않는다.
 
-**현재:** UX-1 Theme foundation과 UX-2 Responsive Shell·기존 Graph/Timeline 접근성 복원을 완료했다. 다음 구현 단계는 UX-3 Home 고도화이며, 기존 Home 콘텐츠 재설계는 UX-2 범위에 포함하지 않았다.
+**현재:** UX-1/2 Theme foundation·Responsive Shell, UX-3 Home, UX-4 핵심 surface, UX-5 테마 package·회귀 기반, UX-6 Window frame·Theme Gallery와 Commerce catalog foundation을 완료했다. Store & Inventory는 확정 상품과 nullable provider snapshot을 읽는 read-only surface까지 연결됐다. 다음 단계는 production ItemDef mapping과 실제 Steam `CommerceGateway`를 연결해 재화·보유 상태를 공급하는 것이다. Touch effect와 background particle은 Interaction/Motion/Backdrop 계약 위에서 별도 성능·reduced-motion 검증과 함께 확장한다.
 
-공식 테마 카탈로그는 무료 `classicDark`·`midnightBlue`, premium `sakura`·`amethyst`·`nocturne`다. UX-1 foundation으로 no-IAP picker는 무료 2종만 제공하며 premium 구매·잠금 UI는 commerce 활성 전 노출하지 않는다. 잔여 style 이관은 [UX_THEME_MIGRATION_INVENTORY.md](UX_THEME_MIGRATION_INVENTORY.md)에서 추적한다.
+공식 테마 카탈로그는 무료 `classicDark`·`midnightBlue`, premium `sakura`·`amethyst`·`nocturne`다. premium 3종은 `planned`와 승인 가격 `500 Astra 또는 500 Echo`를 표시하되 commerce 활성 전 구매 CTA는 노출하지 않는다. 잔여 style 이관은 [UX_THEME_MIGRATION_INVENTORY.md](UX_THEME_MIGRATION_INVENTORY.md)에서 추적한다.
 
 ---
 
@@ -106,7 +106,7 @@
 
 * **[x] 나의 서재 기본 뷰:** 아카이브한 작품만 모아 보는 전용 홈 모드 구축
 * **[x] 대시보드-서재 역할 분리:** 카탈로그 탐색 공간(Dashboard)과 나의 기록 공간(Library) 정비
-* **[x] UX-1 공식 테마 foundation:** canonical 5종 · app-root theme · 무료 2종 picker · premium 3종 fallback preset. Commerce 활성 전 구매·잠금 UI 미노출
+* **[x] UX-1/6 공식 테마 foundation·gallery:** canonical 5종 · app-root theme · 공식 5종 gallery · 무료/보유 테마만 적용 · premium 3종 planned 상태 · 승인 가격 preview · Commerce 활성 전 구매 CTA 미노출
 * **[x] UX-2 Responsive Shell:** 단일 `AppDestination`·`PreviewTarget`, 3단계 `ShellLayoutSpec`, Sidebar/Dock selection SSOT, 기존 Graph/Timeline 접근성, provider 없는 utility slot 숨김
 * **[x] UX-5 Theme packages:** 공식 5테마 실제 backdrop/Hero 10개, 공통 geometry·fallback·reduced-motion 계약, Windows decode/paint golden, 단일 registry와 surface별 effect 계약. Premium 구매·entitlement와 runtime 다운로드 pack은 계속 후속
 * **[x] Cast Collection / Hero Collection:** 인물·속성별 큐레이션 컬렉션 연동 기능
