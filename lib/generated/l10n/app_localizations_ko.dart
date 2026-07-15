@@ -1632,6 +1632,9 @@ class AppLocalizationsKo extends AppLocalizations {
       '테마 소유권을 Steam Inventory에서 확인했습니다.';
 
   @override
+  String get commerceResultNoChange => 'Steam에서 인벤토리 변경 없음으로 확인했습니다.';
+
+  @override
   String get commerceResultCancelled => 'Steam 거래를 취소했습니다.';
 
   @override

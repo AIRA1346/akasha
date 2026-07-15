@@ -658,6 +658,7 @@
   "commerceContinue": "계속",
   "commerceResultPurchaseConfirmed": "아스트라 지급을 Steam Inventory에서 확인했습니다.",
   "commerceResultExchangeConfirmed": "테마 소유권을 Steam Inventory에서 확인했습니다.",
+  "commerceResultNoChange": "Steam에서 인벤토리 변경 없음으로 확인했습니다.",
   "commerceResultCancelled": "Steam 거래를 취소했습니다.",
   "commerceResultRejected": "거래 조건을 충족하지 못했습니다. 잔액과 소유 상태를 확인해 주세요.",
   "commerceResultFailed": "Steam 거래를 완료하지 못했습니다. 잠시 후 다시 시도해 주세요.",

@@ -167,6 +167,7 @@ void _showOperationFeedback(
       isPurchase
           ? l10n.commerceResultPurchaseConfirmed
           : l10n.commerceResultExchangeConfirmed,
+    CommerceOperationStatus.noChange => l10n.commerceResultNoChange,
     CommerceOperationStatus.cancelled => l10n.commerceResultCancelled,
     CommerceOperationStatus.rejected => l10n.commerceResultRejected,
     CommerceOperationStatus.failed => l10n.commerceResultFailed,

@@ -54,6 +54,7 @@ class CommerceController extends ChangeNotifier {
   Future<CommerceOperationResult> purchaseAstraPack(String productId) =>
       _runOperation(
         productId: productId,
+        canRun: (snapshot) => snapshot.canTransact,
         operation: () => _gateway.purchaseAstraPack(productId: productId),
       );
 
@@ -63,12 +64,34 @@ class CommerceController extends ChangeNotifier {
   }) => _runOperation(
     productId: productId,
     currency: payWith,
+    canRun: (snapshot) => snapshot.canTransact,
     operation: () =>
         _gateway.exchangeProduct(productId: productId, payWith: payWith),
   );
 
+  Future<CommerceOperationResult> claimEchoPlaytimeReward() {
+    final rewardGateway = _gateway is CommercePlaytimeRewardGateway
+        ? _gateway as CommercePlaytimeRewardGateway
+        : null;
+    if (rewardGateway == null) {
+      return Future.value(
+        CommerceOperationResult(
+          status: CommerceOperationStatus.rejected,
+          snapshot: _snapshot,
+          issueCode: 'commerce_playtime_rewards_unavailable',
+        ),
+      );
+    }
+    return _runOperation(
+      productId: 'echo_playtime_reward',
+      canRun: (snapshot) => snapshot.canClaimPlaytimeReward,
+      operation: rewardGateway.claimPlaytimeReward,
+    );
+  }
+
   Future<CommerceOperationResult> _runOperation({
     required String productId,
+    required bool Function(CommerceAccountSnapshot snapshot) canRun,
     required Future<CommerceOperationResult> Function() operation,
     CurrencyKind? currency,
   }) {
@@ -90,7 +113,7 @@ class CommerceController extends ChangeNotifier {
         ),
       );
     }
-    if (!_snapshot.canTransact) {
+    if (!canRun(_snapshot)) {
       return Future.value(
         CommerceOperationResult(
           status: CommerceOperationStatus.rejected,
@@ -145,6 +168,7 @@ class CommerceController extends ChangeNotifier {
         entitlementKeys: previous.entitlementKeys,
         localizedPrices: previous.localizedPrices,
         transactionsEnabled: previous.transactionsEnabled,
+        playtimeRewardsEnabled: previous.playtimeRewardsEnabled,
         observedAt: previous.observedAt,
         priceIssueCode: previous.priceIssueCode,
       ),
@@ -164,6 +188,7 @@ class CommerceController extends ChangeNotifier {
           entitlementKeys: previous.entitlementKeys,
           localizedPrices: previous.localizedPrices,
           transactionsEnabled: false,
+          playtimeRewardsEnabled: false,
           observedAt: previous.observedAt,
           issueCode: 'commerce_gateway_error',
           priceIssueCode: previous.priceIssueCode,

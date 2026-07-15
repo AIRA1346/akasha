@@ -1,15 +1,45 @@
-# Steam Inventory Production ItemDef Draft
+# Steam Inventory Production ItemDefs
 
-> **Status:** reviewed local draft; not published
+> **Status:** locally validated Steamworks upload candidate; not published
 > **AppID:** `4677560`
-> **Draft:** [`itemdefs_production_draft.json`](itemdefs_production_draft.json)
+> **Upload file:** [`itemdefs_steamworks_upload.json`](itemdefs_steamworks_upload.json)
 > **Product SSOT:** [`../COMMERCE_CURRENCY_CONTRACT.md`](../COMMERCE_CURRENCY_CONTRACT.md)
 
-This file is separate from the historical
-[`../steam_inventory_poc/itemdefs_poc.json`](../steam_inventory_poc/itemdefs_poc.json).
-The POC file remains unchanged evidence of the sandbox experiment. The draft
-uses a new production ID range so old POC currency and the cheaply exchanged
-POC Nocturne entitlement cannot become launch ownership.
+Do **not** upload the historical
+[`../steam_inventory_poc/itemdefs_poc.json`](../steam_inventory_poc/itemdefs_poc.json)
+as the next schema revision. It records the completed sandbox experiment and
+still contains the Pack 100, one-Echo playtime drop, 100-Astra Nocturne recipe,
+starter promo, and Support item. The upload candidate uses a separate production
+ID range and includes the old POC definitions only as retired records.
+
+## Upload shape
+
+The checked-in file follows Steam's documented whole-schema shape:
+
+```json
+{
+  "appid": "4677560",
+  "items": []
+}
+```
+
+Use that file when the Steamworks Inventory Service page asks for the complete
+ItemDef JSON. If automation later calls the publisher-only
+`IGameInventory/UpdateItemDefs` Web API, send only the value of the `items`
+array as its `itemdefs` parameter. A Steam publisher Web API key must remain on
+a trusted server or operator machine and must never be added to Flutter,
+scripts committed with credentials, or a distributed build.
+
+Run the local preflight before every upload:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\validate_steam_inventory_itemdefs.ps1
+```
+
+Steamworks remains the final validator. Publish to the private partner sandbox
+first and complete
+[`SANDBOX_TRANSACTION_CHECKLIST.md`](SANDBOX_TRANSACTION_CHECKLIST.md) before
+considering release commerce.
 
 ## Approved production ID ranges
 
@@ -24,51 +54,22 @@ POC Nocturne entitlement cannot become launch ownership.
 | `43000-43999` | reserved for future audio/OST products |
 
 POC IDs `10001`, `10002`, `10010`, `10020`, `10021`, `20001`, `20010`, and
-`30001` are included only as `hidden: true` retirement records. Production
-adapters must ignore every POC ID even if a developer account still owns old
-instances.
+`30001` are present only as `hidden: true` retirement records. The deprecated
+POC playtime generator also has `use_drop_limit: true` and `drop_limit: 0`, the
+Steam-documented combination for preventing future drops. Production adapters
+ignore every POC ID even if a developer account still owns old instances.
 
-## Client adapter
-
-The local draft is mirrored by the explicit registry in
-`lib/core/commerce/steam_inventory/steam_inventory_itemdefs.dart`. The
-production gateway:
-
-- verifies diagnostic AppID `4677560`, then obtains a fresh account inventory
-  through `GetAllItems`;
-- maps only production currency and entitlement ItemDefs;
-- obtains the user's currency code and priced pack amounts through
-  `RequestPrices` followed by `GetItemsWithPrices`;
-- never accepts raw ItemDef ids from UI;
-- exposes purchase and exchange only through approved domain product IDs and
-  the production ItemDef registry;
-- preserves real Steam instance IDs for exact single-currency exchange input;
-- treats native API acceptance as pending, waits for the matching terminal
-  result, and confirms only after a fresh inventory read exposes the expected
-  balance or entitlement change;
-- blocks duplicate, already-owned, insufficient-balance, and indeterminate
-  retry paths before another Steam mutation;
-- keeps promo, consume, and playtime reward methods outside the production
-  transaction port;
-- remains unreachable in the normal app while both the release IAP flag and
-  the explicit sandbox transaction build define are false.
-
-The returned Steam price integer is stored as an opaque amount. It must not be
-called a micro-unit or formatted by guessing currency decimals before sandbox
-evidence confirms the display contract.
-
-Internal transaction builds use
-`--dart-define=AKASHA_STEAM_SANDBOX_TRANSACTIONS=true` through
-[`scripts/build_steam_inventory_sandbox.ps1`](../../../scripts/build_steam_inventory_sandbox.ps1).
-This does not change `steamInAppPurchasesEnabled`, which remains false. The live
-manual matrix is tracked in
-[`SANDBOX_TRANSACTION_CHECKLIST.md`](SANDBOX_TRANSACTION_CHECKLIST.md).
+Every definition is `game_only: true`, non-tradable, non-marketable, and hidden
+from the public Steam Item Store. Therefore public icon URLs are not a
+functional prerequisite for the in-app sandbox flow. Add and validate icons
+before changing those visibility decisions or exposing a Steam-hosted Item
+Store/Backpack experience.
 
 ## Launch definitions
 
 | ItemDef | Role | Contract |
 |---:|---|---|
-| `40001` | Astra unit | stackable; hidden from Item Store; internal USD 0.01 value |
+| `40001` | Astra unit | stackable; internal USD 0.01 component value; never a standalone SKU |
 | `40002` | Echo unit | stackable; never real-money priced |
 | `40110` | Astra Pack 500 | `VLV500` = USD 4.99 reference |
 | `40111` | Astra Pack 1,000 | `VLV1000` = USD 9.99 reference |
@@ -78,10 +79,38 @@ manual matrix is tracked in
 | `41001-41003` | Sakura/Amethyst/Nocturne | permanent theme entitlement, ownership quantity `>= 1` |
 | `41101-41103` | theme exchange wrappers | one selected recipe: Astra 500 **or** Echo 500 |
 
-The six-grant cap is a Steam-managed cooldown window and does not promise a
-Korean-calendar midnight reset. The app calls `TriggerItemDrop(40220)` when it
-believes a grant is due; Steam remains responsible for playtime and window
-validation.
+For a generator, `xN` means selection weight rather than output quantity. The
+generator therefore selects ItemDef `40210`; that bundle expands to exactly 10
+Echo. The six-grant cap is a Steam-managed cooldown window and does not promise
+a Korean-calendar midnight reset. The app calls `TriggerItemDrop(40220)`;
+Steam validates eligible playtime and the window limit.
+
+The theme recipe `40001x500;40002x500` contains two alternatives separated by
+a semicolon. It accepts 500 Astra or 500 Echo, never a mixed 250/250 payment.
+
+## Client adapter
+
+The schema is mirrored by
+`lib/core/commerce/steam_inventory/steam_inventory_itemdefs.dart`. The current
+production adapter:
+
+- verifies diagnostic AppID `4677560` before interpreting inventory;
+- reads only production currency and entitlement ItemDefs;
+- maps UI product IDs through an allowlisted registry and never accepts raw
+  ItemDef IDs from Store UI;
+- preserves real Steam instance IDs for exact single-currency exchanges;
+- waits for a matching terminal callback and then confirms purchase, exchange,
+  or reward only after a fresh inventory read exposes the expected change;
+- treats an accepted operation with an unknown durable outcome as
+  `indeterminate` and blocks further provider mutations for that session;
+- keeps transaction and playtime-reward capabilities independently gated;
+- never writes local Astra, Echo, or theme ownership.
+
+Internal transaction/reward builds use
+`--dart-define=AKASHA_STEAM_SANDBOX_TRANSACTIONS=true` and
+`--dart-define=AKASHA_STEAM_PLAYTIME_REWARDS=true` through
+[`scripts/build_steam_inventory_sandbox.ps1`](../../../scripts/build_steam_inventory_sandbox.ps1).
+Neither define changes `steamInAppPurchasesEnabled`, which remains false.
 
 ## Explicitly absent at launch
 
@@ -90,22 +119,20 @@ validation.
 - no Astra/Echo conversion;
 - no mixed-currency theme recipe;
 - no priced Echo ItemDef;
-- no active purchase/exchange path for POC IDs.
+- no active purchase, exchange, or reward path for POC IDs.
 
 ## Before publishing or enabling commerce
 
-1. Add public `icon_url` and `icon_url_large` assets for visible pack and theme
-   definitions.
-2. Review English and `koreana` names/descriptions in Steamworks.
-3. Publish only to the partner sandbox first and confirm POC IDs are hidden.
-4. Verify `RequestPrices` returns Valve-localized prices for `40110-40112`.
+1. Run the local validation script and retain its SHA-256 result.
+2. Review English and `koreana` names/descriptions in the Steamworks preview.
+3. Publish only to the private partner sandbox and confirm all POC IDs are
+   hidden and ItemDef `10020` cannot drop.
+4. Verify Steam returns localized prices for `40110-40112`.
 5. Test six successful `TriggerItemDrop(40220)` grants and confirm a seventh is
-   denied within the same 1,440-minute window.
-6. Complete every row in
-   [`SANDBOX_TRANSACTION_CHECKLIST.md`](SANDBOX_TRANSACTION_CHECKLIST.md),
-   including all six theme exchange paths and duplicate-entitlement guards.
-7. Test restart and a second PC before enabling
-   `FeatureFlags.steamInAppPurchasesEnabled`.
+   denied in the same 1,440-minute window.
+6. Complete every transaction, reward, recovery, restart, and second-PC row in
+   the sandbox checklist.
+7. Enable release IAP only in a separate reviewed change.
 
-Uploading/publishing ItemDefs and enabling the Steam Item Store are external
-Steamworks operations and are never performed by repository tests.
+Uploading or publishing ItemDefs is an external Steamworks action and is never
+performed by repository tests.

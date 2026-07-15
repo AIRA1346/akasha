@@ -14,6 +14,7 @@ import 'services/akasha_command_runner.dart';
 import 'services/akasha_theme_controller.dart';
 import 'services/akasha_window_controller.dart';
 import 'services/commerce_controller.dart';
+import 'services/commerce_playtime_reward_scheduler.dart';
 import 'services/franchise_registry.dart';
 import 'services/local_derived_index_lifecycle.dart';
 import 'services/user_preferences.dart';
@@ -49,7 +50,12 @@ void main() async {
             transactionPort: FeatureFlags.steamCommerceTransactionsEnabled
                 ? const MethodChannelSteamInventoryTransactionPort()
                 : null,
+            rewardPort: FeatureFlags.steamInventoryPlaytimeRewardsEnabled
+                ? const MethodChannelSteamInventoryRewardPort()
+                : null,
             transactionsEnabled: FeatureFlags.steamCommerceTransactionsEnabled,
+            playtimeRewardsEnabled:
+                FeatureFlags.steamInventoryPlaytimeRewardsEnabled,
           )
         : const UnavailableCommerceGateway(),
     enabled: FeatureFlags.steamCommerceProviderEnabled,
@@ -59,6 +65,7 @@ void main() async {
       themeController: themeController,
       windowController: windowController,
       commerceController: commerceController,
+      playtimeRewardsEnabled: FeatureFlags.steamInventoryPlaytimeRewardsEnabled,
     ),
   );
   unawaited(commerceController.refresh());
@@ -77,12 +84,14 @@ class AkashaApp extends StatefulWidget {
     this.themeController,
     this.windowController,
     this.commerceController,
+    this.playtimeRewardsEnabled = false,
     this.home,
   });
 
   final AkashaThemeController? themeController;
   final AkashaWindowController? windowController;
   final CommerceController? commerceController;
+  final bool playtimeRewardsEnabled;
   final Widget? home;
 
   @override
@@ -94,12 +103,14 @@ class _AkashaAppState extends State<AkashaApp> {
   late bool _ownsThemeController;
   late CommerceController _commerceController;
   late bool _ownsCommerceController;
+  CommercePlaytimeRewardScheduler? _playtimeRewardScheduler;
 
   @override
   void initState() {
     super.initState();
     _installThemeController(widget.themeController);
     _installCommerceController(widget.commerceController);
+    _syncPlaytimeRewardScheduler();
     _syncThemeAccess();
     CatalogLocaleScope.localeListenable.addListener(_onLocaleChanged);
     UserPreferences.uiScaleListenable.addListener(_onUiScaleChanged);
@@ -107,6 +118,7 @@ class _AkashaAppState extends State<AkashaApp> {
 
   @override
   void dispose() {
+    _playtimeRewardScheduler?.dispose();
     _themeController.removeListener(_onThemeChanged);
     if (_ownsThemeController) _themeController.dispose();
     _commerceController.removeListener(_onCommerceChanged);
@@ -152,6 +164,8 @@ class _AkashaAppState extends State<AkashaApp> {
   void didUpdateWidget(covariant AkashaApp oldWidget) {
     super.didUpdateWidget(oldWidget);
     var shouldSyncThemeAccess = false;
+    var shouldSyncPlaytimeRewards =
+        oldWidget.playtimeRewardsEnabled != widget.playtimeRewardsEnabled;
     if (oldWidget.themeController != widget.themeController) {
       _themeController.removeListener(_onThemeChanged);
       if (_ownsThemeController) _themeController.dispose();
@@ -163,8 +177,19 @@ class _AkashaAppState extends State<AkashaApp> {
       if (_ownsCommerceController) _commerceController.dispose();
       _installCommerceController(widget.commerceController);
       shouldSyncThemeAccess = true;
+      shouldSyncPlaytimeRewards = true;
     }
     if (shouldSyncThemeAccess) _syncThemeAccess();
+    if (shouldSyncPlaytimeRewards) _syncPlaytimeRewardScheduler();
+  }
+
+  void _syncPlaytimeRewardScheduler() {
+    _playtimeRewardScheduler?.dispose();
+    _playtimeRewardScheduler = null;
+    if (!widget.playtimeRewardsEnabled) return;
+    _playtimeRewardScheduler = CommercePlaytimeRewardScheduler(
+      controller: _commerceController,
+    )..start();
   }
 
   Locale get _appLocale => Locale(CatalogLocaleScope.current.tag);

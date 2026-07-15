@@ -1675,6 +1675,9 @@ class AppLocalizationsEn extends AppLocalizations {
       'Theme ownership was verified in Steam Inventory.';
 
   @override
+  String get commerceResultNoChange => 'Steam reported no inventory change.';
+
+  @override
   String get commerceResultCancelled => 'The Steam transaction was cancelled.';
 
   @override

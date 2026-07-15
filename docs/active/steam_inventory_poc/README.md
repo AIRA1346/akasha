@@ -4,6 +4,10 @@
 > **Flag:** `steamInAppPurchasesEnabled = false` (unchanged; no active purchase UI)
 > **Not done:** Cloud Run, Postgres, custom MicroTxn backend, active Store purchase UI, Store IAP claim, production ItemDef publication/icons/live verification
 
+> **Historical evidence — do not upload as the next schema revision.** Use the
+> reviewed production candidate
+> [`../steam_inventory_production/itemdefs_steamworks_upload.json`](../steam_inventory_production/itemdefs_steamworks_upload.json).
+
 This POC proved client-side inventory orchestration against **Steam Inventory Service in a developer Sandbox**.  
 It does **not** claim production IAP, depot/library ship, published production
 ItemDefs, or live localized Steam pack-price verification.
@@ -23,8 +27,8 @@ ItemDefs, or live localized Steam pack-price verification.
 
 | Path | Role |
 |---|---|
-| [`itemdefs_poc.json`](itemdefs_poc.json) / [`ITEMDEFS.md`](ITEMDEFS.md) | Test ItemDefs (upload = **user**) |
-| [`../steam_inventory_production/README.md`](../steam_inventory_production/README.md) | Separate launch ItemDef draft and POC retirement policy |
+| [`itemdefs_poc.json`](itemdefs_poc.json) / [`ITEMDEFS.md`](ITEMDEFS.md) | Historical test ItemDefs; do not re-upload as production |
+| [`../steam_inventory_production/README.md`](../steam_inventory_production/README.md) | Production upload candidate and POC retirement policy |
 | [`NATIVE_BRIDGE.md`](NATIVE_BRIDGE.md) | Windows Steam SDK link + MethodChannel contract |
 | `lib/dev/steam_inventory_poc/` | Fake + controller + debug/internal harness |
 | `windows/runner/steam_inventory_poc_channel.*` | Live `ISteamInventory` MethodChannel |
@@ -115,4 +119,4 @@ The launch policy is now fixed separately: 10 Echo after 10 eligible play
 minutes, maximum six grants per 1,440-minute Steam cooldown window. Starter
 promo and Support are excluded from launch. Current VLV100, Astra pack 100,
 one-Echo playtime drop, and theme exchange 100 remain **technical POC settings**
-and are retired by the production draft rather than repurposed.
+and are retired by the production upload candidate rather than repurposed.

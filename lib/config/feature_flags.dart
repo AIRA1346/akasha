@@ -19,8 +19,19 @@ class FeatureFlags {
         defaultValue: false,
       );
 
+  /// Independent gate for Steam-verified Echo playtime reward evaluation.
+  ///
+  /// This does not enable purchases. Steam remains the eligibility and daily
+  /// window authority; the app only calls TriggerItemDrop and reconciles.
+  static const bool steamInventoryPlaytimeRewardsEnabled = bool.fromEnvironment(
+    'AKASHA_STEAM_PLAYTIME_REWARDS',
+    defaultValue: false,
+  );
+
   static const bool steamCommerceProviderEnabled =
-      steamInAppPurchasesEnabled || steamInventorySandboxTransactionsEnabled;
+      steamInAppPurchasesEnabled ||
+      steamInventorySandboxTransactionsEnabled ||
+      steamInventoryPlaytimeRewardsEnabled;
 
   static const bool steamCommerceTransactionsEnabled =
       steamInAppPurchasesEnabled || steamInventorySandboxTransactionsEnabled;

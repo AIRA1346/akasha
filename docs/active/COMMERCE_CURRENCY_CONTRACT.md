@@ -5,7 +5,7 @@
 > **Shared domain:** `packages/akasha_commerce_domain/`
 > **Flutter boundary:** `lib/core/commerce/`
 > **Feature flag:** `FeatureFlags.steamInAppPurchasesEnabled = false` until production transaction verification
-> **Steam draft:** [`steam_inventory_production/itemdefs_production_draft.json`](steam_inventory_production/itemdefs_production_draft.json)
+> **Steam upload candidate:** [`steam_inventory_production/itemdefs_steamworks_upload.json`](steam_inventory_production/itemdefs_steamworks_upload.json)
 
 This document is the single source of truth for the launch economy, product
 catalog, inventory meaning, and store behavior. The older custom MicroTxn
@@ -108,6 +108,8 @@ products exist. An empty speculative category is not a launch feature.
 - `ready` means the current inventory read succeeded;
 - `transactionsEnabled` is a separate capability and must also be true before
   `canTransact` becomes true;
+- `playtimeRewardsEnabled` is independent from paid transactions and must be
+  true before the app may request a Steam-verified reward;
 - `offlineCache` can display clearly marked cached ownership but cannot buy or
   exchange;
 - approved Astra pack prices preserve Steam's currency code and opaque raw
@@ -190,6 +192,8 @@ registry, separately-capable read and transaction ports, and
 - only production currency ItemDefs `40001` and `40002` are summed;
 - only production theme ItemDefs `41001-41003` grant entitlement keys;
 - only approved pack ItemDefs `40110-40112` expose localized price data;
+- only playtime generator `40220` may be triggered, and its expected grant is
+  verified as an Echo balance increase of 10 after a fresh inventory read;
 - every retired POC ItemDef is ignored even when it remains in a developer
   account;
 - a later offline refresh may expose the last in-memory provider snapshot as
@@ -208,8 +212,9 @@ registry, separately-capable read and transaction ports, and
   mutations for the current session;
 - purchase order and transaction IDs are preserved only in the in-memory
   operation result for sandbox/GetReport evidence;
-- the app root selects this gateway only behind the release IAP flag or the
-  explicit internal `AKASHA_STEAM_SANDBOX_TRANSACTIONS` build define. Both are
+- the app root selects this gateway only behind the release IAP flag, the
+  explicit internal `AKASHA_STEAM_SANDBOX_TRANSACTIONS` build define, or the
+  independently gated `AKASHA_STEAM_PLAYTIME_REWARDS` define. All three are
   false in the normal build.
 
 The Store/Inventory implementation has loading/offline/unavailable feedback,
@@ -217,7 +222,8 @@ retry, owned-theme state, compact currency-card layout, and 125% text-scale
 coverage. Normal builds keep every purchase and exchange control disabled. An
 explicit sandbox build adds Astra purchase confirmation, one-currency theme
 selection, in-flight locking, and reconciled outcome feedback without enabling
-release IAP.
+release IAP. Its reward scheduler checks at a ten-minute cadence, but Steam —
+not the local timer — decides eligibility and enforces the six-grant window.
 
 The Flutter/native transport is `akasha/steam_inventory`. The historical C++
 source and diagnostic client retain POC-oriented names as evidence, but

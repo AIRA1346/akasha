@@ -37,7 +37,7 @@ AKASHA v1 paid themes + Astra packs **can** be owned and settled by **Steam Inve
 | Echo unit | Free-earned stackable | `type: item`, production id `40002` | Same stack/trade flags as Astra; **no** store price |
 | Echo grant source | Playtime | `40220 playtimegenerator` → `40210 Echo Pack 10` | 10 minutes; max 6 grants per 1,440-minute cooldown window; client calls `TriggerItemDrop` |
 | Theme (e.g. Nocturne) | Permanent unlock | ItemDef `41003`; exchange via bundle `41103` | Ownership qty ≥ 1; entitlement and exchange stay separate |
-| Support AKASHA | POC evidence only | Retired POC ItemDef `30001` | `hidden: true` in production draft; not a launch offer |
+| Support AKASHA | POC evidence only | Retired POC ItemDef `30001` | `hidden: true` in the Steamworks upload candidate; not a launch offer |
 
 Display names (Astra/Echo) stay in UI/l10n; ItemDef `name` can match EN for Steam Store surfaces.
 

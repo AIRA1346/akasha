@@ -22,6 +22,7 @@ class CommerceAccountSnapshot {
     this.entitlementKeys = const {},
     this.localizedPrices = const {},
     this.transactionsEnabled = false,
+    this.playtimeRewardsEnabled = false,
     this.observedAt,
     this.issueCode,
     this.priceIssueCode,
@@ -34,6 +35,7 @@ class CommerceAccountSnapshot {
       entitlementKeys = const {},
       localizedPrices = const {},
       transactionsEnabled = false,
+      playtimeRewardsEnabled = false,
       observedAt = null,
       issueCode = null,
       priceIssueCode = null;
@@ -44,6 +46,7 @@ class CommerceAccountSnapshot {
   final Set<String> entitlementKeys;
   final Map<String, CommerceLocalizedPrice> localizedPrices;
   final bool transactionsEnabled;
+  final bool playtimeRewardsEnabled;
   final DateTime? observedAt;
   final String? issueCode;
   final String? priceIssueCode;
@@ -51,6 +54,8 @@ class CommerceAccountSnapshot {
   bool get hasKnownBalances => astraBalance != null && echoBalance != null;
   bool get canTransact =>
       state == CommerceAuthorityState.ready && transactionsEnabled;
+  bool get canClaimPlaytimeReward =>
+      state == CommerceAuthorityState.ready && playtimeRewardsEnabled;
   bool owns(String entitlementKey) => entitlementKeys.contains(entitlementKey);
   CommerceLocalizedPrice? priceOf(String productId) =>
       localizedPrices[productId];
@@ -80,6 +85,7 @@ class CommerceLocalizedPrice {
 
 enum CommerceOperationStatus {
   confirmed,
+  noChange,
   cancelled,
   rejected,
   failed,
@@ -123,4 +129,12 @@ abstract interface class CommerceGateway {
     required String productId,
     required CurrencyKind payWith,
   });
+}
+
+/// Optional provider capability for Steam-verified playtime rewards.
+///
+/// Reward eligibility and grant limits remain provider authority. The client
+/// may only request evaluation and reconcile the resulting inventory.
+abstract interface class CommercePlaytimeRewardGateway {
+  Future<CommerceOperationResult> claimPlaytimeReward();
 }

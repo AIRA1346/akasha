@@ -9,7 +9,7 @@ void main() {
       jsonDecode(
             File(
               'docs/active/steam_inventory_production/'
-              'itemdefs_production_draft.json',
+              'itemdefs_steamworks_upload.json',
             ).readAsStringSync(),
           )
           as Map<String, Object?>;
@@ -20,7 +20,7 @@ void main() {
   };
 
   test(
-    'production draft has unique IDs and retires every published POC ID',
+    'upload candidate has unique IDs and retires every published POC ID',
     () {
       expect(schema['appid'], '4677560');
       expect(byId, hasLength(items.length));
@@ -44,9 +44,56 @@ void main() {
         '30001',
       ]) {
         expect(byId[id]?['hidden'], isTrue, reason: 'POC ItemDef $id');
+        expect(byId[id]?['game_only'], isTrue, reason: 'POC ItemDef $id');
       }
+
+      expect(byId['10020']?['use_drop_limit'], isTrue);
+      expect(byId['10020']?['drop_limit'], 0);
     },
   );
+
+  test('upload schema is app-only and all recipes resolve safely', () {
+    final activeIds = <String>{
+      for (final item in items)
+        if (item['hidden'] != true) item['itemdefid']! as String,
+    };
+
+    for (final item in items) {
+      final id = item['itemdefid']! as String;
+      expect(item['appid'], schema['appid'], reason: 'ItemDef $id AppID');
+      expect(item['tradable'], isFalse, reason: 'ItemDef $id tradable');
+      expect(item['marketable'], isFalse, reason: 'ItemDef $id marketable');
+      expect(item['game_only'], isTrue, reason: 'ItemDef $id game_only');
+      expect(item['store_hidden'], isTrue, reason: 'ItemDef $id store_hidden');
+      expect(
+        !(item.containsKey('price') && item.containsKey('price_category')),
+        isTrue,
+        reason: 'ItemDef $id cannot define price and price_category together',
+      );
+
+      for (final property in const ['bundle', 'exchange']) {
+        final recipe = item[property] as String?;
+        if (recipe == null) continue;
+        final referencedIds = RegExp(
+          r'(?:^|[;,])(\d+)(?:x\d+)?',
+        ).allMatches(recipe).map((match) => match.group(1)!);
+        for (final referencedId in referencedIds) {
+          expect(
+            byId,
+            contains(referencedId),
+            reason: 'ItemDef $id $property references missing $referencedId',
+          );
+          if (item['hidden'] != true) {
+            expect(
+              activeIds,
+              contains(referencedId),
+              reason: 'Active ItemDef $id references retired $referencedId',
+            );
+          }
+        }
+      }
+    }
+  });
 
   test(
     'approved Astra pack allowlist maps to production bundles and prices',

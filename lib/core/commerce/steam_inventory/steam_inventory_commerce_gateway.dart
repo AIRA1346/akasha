@@ -2,6 +2,7 @@ import 'package:akasha_commerce_domain/akasha_commerce_domain.dart';
 
 import 'steam_inventory_itemdefs.dart';
 import 'steam_inventory_read_port.dart';
+import 'steam_inventory_reward_port.dart';
 import 'steam_inventory_transaction_port.dart';
 
 /// Production adapter for Steam-backed balances, entitlements, localized
@@ -10,18 +11,25 @@ import 'steam_inventory_transaction_port.dart';
 /// Transaction completion is never trusted on its own. Every mutation ends in
 /// a fresh inventory read and is confirmed only when the expected balance or
 /// entitlement change is visible in that provider snapshot.
-class SteamInventoryCommerceGateway implements CommerceGateway {
+class SteamInventoryCommerceGateway
+    implements CommerceGateway, CommercePlaytimeRewardGateway {
   SteamInventoryCommerceGateway({
     required SteamInventoryReadPort port,
     SteamInventoryTransactionPort? transactionPort,
+    SteamInventoryRewardPort? rewardPort,
     bool transactionsEnabled = false,
+    bool playtimeRewardsEnabled = false,
   }) : _port = port,
        _transactionPort = transactionPort,
-       _transactionsConfigured = transactionsEnabled;
+       _rewardPort = rewardPort,
+       _transactionsConfigured = transactionsEnabled,
+       _playtimeRewardsConfigured = playtimeRewardsEnabled;
 
   final SteamInventoryReadPort _port;
   final SteamInventoryTransactionPort? _transactionPort;
+  final SteamInventoryRewardPort? _rewardPort;
   final bool _transactionsConfigured;
+  final bool _playtimeRewardsConfigured;
   CommerceAccountSnapshot _lastSnapshot = const CommerceAccountSnapshot(
     state: CommerceAuthorityState.unavailable,
     issueCode: 'steam_account_not_loaded',
@@ -33,6 +41,11 @@ class SteamInventoryCommerceGateway implements CommerceGateway {
   bool get _transactionsAvailable =>
       _transactionsConfigured &&
       _transactionPort != null &&
+      !_reconciliationRequired;
+
+  bool get _playtimeRewardsAvailable =>
+      _playtimeRewardsConfigured &&
+      _rewardPort != null &&
       !_reconciliationRequired;
 
   @override
@@ -103,6 +116,7 @@ class SteamInventoryCommerceGateway implements CommerceGateway {
       entitlementKeys: Set.unmodifiable(entitlements),
       localizedPrices: Map.unmodifiable(localizedPrices),
       transactionsEnabled: _transactionsAvailable,
+      playtimeRewardsEnabled: _playtimeRewardsAvailable,
       observedAt: inventory.observedAt ?? DateTime.now().toUtc(),
       priceIssueCode: priceIssueCode,
     );
@@ -121,6 +135,7 @@ class SteamInventoryCommerceGateway implements CommerceGateway {
         entitlementKeys: previous.entitlementKeys,
         localizedPrices: previous.localizedPrices,
         transactionsEnabled: false,
+        playtimeRewardsEnabled: false,
         observedAt: previous.observedAt,
         issueCode: issueCode,
         priceIssueCode: previous.priceIssueCode,
@@ -131,6 +146,7 @@ class SteamInventoryCommerceGateway implements CommerceGateway {
       state: CommerceAuthorityState.unavailable,
       issueCode: issueCode,
       transactionsEnabled: false,
+      playtimeRewardsEnabled: false,
     );
     return _lastSnapshot;
   }
@@ -166,7 +182,7 @@ class SteamInventoryCommerceGateway implements CommerceGateway {
       _reconciliationRequired = true;
       return CommerceOperationResult(
         status: CommerceOperationStatus.indeterminate,
-        snapshot: _withoutTransactions(_lastSnapshot),
+        snapshot: _withoutProviderMutations(_lastSnapshot),
         issueCode: 'steam_transaction_exception_after_start',
       );
     } finally {
@@ -232,8 +248,75 @@ class SteamInventoryCommerceGateway implements CommerceGateway {
       _reconciliationRequired = true;
       return CommerceOperationResult(
         status: CommerceOperationStatus.indeterminate,
-        snapshot: _withoutTransactions(_lastSnapshot),
+        snapshot: _withoutProviderMutations(_lastSnapshot),
         issueCode: 'steam_transaction_exception_after_start',
+      );
+    } finally {
+      _mutationInFlight = false;
+    }
+  }
+
+  @override
+  Future<CommerceOperationResult> claimPlaytimeReward() async {
+    final guard = _rewardGuard();
+    if (guard != null) return guard;
+
+    final before = _lastSnapshot.echoBalance!;
+    _mutationInFlight = true;
+    try {
+      final reward = await _rewardPort!.triggerPlaytimeReward(
+        generatorItemDefId: SteamInventoryItemDefs.echoPlaytimeReward,
+        expectedItemDefId: SteamInventoryItemDefs.echoUnit,
+      );
+      final refreshed = await loadAccount();
+      final observed =
+          refreshed.state == CommerceAuthorityState.ready &&
+          (refreshed.echoBalance ?? -1) >=
+              before + SteamInventoryItemDefs.echoPlaytimeGrantAmount;
+      if (observed) {
+        _reconciliationRequired = false;
+        return CommerceOperationResult(
+          status: CommerceOperationStatus.confirmed,
+          snapshot: refreshed,
+          providerHandle: reward.providerHandle,
+        );
+      }
+      if (reward.status == SteamInventoryRewardStatus.notEligible) {
+        return CommerceOperationResult(
+          status: CommerceOperationStatus.noChange,
+          snapshot: refreshed,
+          providerHandle: reward.providerHandle,
+          issueCode: reward.issueCode,
+        );
+      }
+      if (reward.status == SteamInventoryRewardStatus.granted ||
+          reward.status == SteamInventoryRewardStatus.indeterminate) {
+        _reconciliationRequired = true;
+        final blocked = _withoutProviderMutations(refreshed);
+        _lastSnapshot = blocked;
+        return CommerceOperationResult(
+          status: CommerceOperationStatus.indeterminate,
+          snapshot: blocked,
+          providerHandle: reward.providerHandle,
+          issueCode: reward.issueCode ?? 'steam_reward_reconciliation_missing',
+        );
+      }
+      return CommerceOperationResult(
+        status: reward.status == SteamInventoryRewardStatus.rejected
+            ? CommerceOperationStatus.rejected
+            : CommerceOperationStatus.failed,
+        snapshot: refreshed,
+        providerHandle: reward.providerHandle,
+        issueCode: reward.issueCode,
+      );
+    } catch (_) {
+      _reconciliationRequired = true;
+      final blocked = _withoutProviderMutations(_lastSnapshot);
+      _lastSnapshot = blocked;
+      return CommerceOperationResult(
+        status: CommerceOperationStatus.indeterminate,
+        snapshot: blocked,
+        issueCode: 'steam_reward_exception_after_start',
       );
     } finally {
       _mutationInFlight = false;
@@ -249,6 +332,21 @@ class SteamInventoryCommerceGateway implements CommerceGateway {
       return _rejected('steam_reconciliation_required');
     }
     if (!_lastSnapshot.canTransact || !_lastSnapshot.hasKnownBalances) {
+      return _rejected('steam_account_not_ready');
+    }
+    return null;
+  }
+
+  CommerceOperationResult? _rewardGuard() {
+    if (!_playtimeRewardsConfigured || _rewardPort == null) {
+      return _rejected('steam_playtime_rewards_disabled');
+    }
+    if (_mutationInFlight) return _rejected('steam_operation_in_progress');
+    if (_reconciliationRequired) {
+      return _rejected('steam_reconciliation_required');
+    }
+    if (!_lastSnapshot.canClaimPlaytimeReward ||
+        !_lastSnapshot.hasKnownBalances) {
       return _rejected('steam_account_not_ready');
     }
     return null;
@@ -283,7 +381,7 @@ class SteamInventoryCommerceGateway implements CommerceGateway {
     if (transaction.status == SteamInventoryTransactionStatus.confirmed ||
         transaction.status == SteamInventoryTransactionStatus.indeterminate) {
       _reconciliationRequired = true;
-      final blocked = _withoutTransactions(refreshed);
+      final blocked = _withoutProviderMutations(refreshed);
       _lastSnapshot = blocked;
       return CommerceOperationResult(
         status: CommerceOperationStatus.indeterminate,
@@ -328,7 +426,7 @@ class SteamInventoryCommerceGateway implements CommerceGateway {
     return remaining == 0 ? List.unmodifiable(allocated) : null;
   }
 
-  CommerceAccountSnapshot _withoutTransactions(
+  CommerceAccountSnapshot _withoutProviderMutations(
     CommerceAccountSnapshot snapshot,
   ) => CommerceAccountSnapshot(
     state: snapshot.state,
@@ -337,6 +435,7 @@ class SteamInventoryCommerceGateway implements CommerceGateway {
     entitlementKeys: snapshot.entitlementKeys,
     localizedPrices: snapshot.localizedPrices,
     transactionsEnabled: false,
+    playtimeRewardsEnabled: false,
     observedAt: snapshot.observedAt,
     issueCode: snapshot.issueCode,
     priceIssueCode: snapshot.priceIssueCode,

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:akasha/core/commerce/commerce.dart';
 import 'package:akasha/services/commerce_controller.dart';
+import 'package:akasha/services/commerce_playtime_reward_scheduler.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -246,6 +247,81 @@ void main() {
       expect(gateway.exchangeCalls, 1);
     },
   );
+
+  test('playtime reward uses its independent provider capability', () async {
+    const initial = CommerceAccountSnapshot(
+      state: CommerceAuthorityState.ready,
+      astraBalance: 0,
+      echoBalance: 40,
+      playtimeRewardsEnabled: true,
+    );
+    const rewarded = CommerceAccountSnapshot(
+      state: CommerceAuthorityState.ready,
+      astraBalance: 0,
+      echoBalance: 50,
+      playtimeRewardsEnabled: true,
+    );
+    final gateway = _TestRewardCommerceGateway(
+      loadResult: Future.value(initial),
+      rewardResult: Future.value(
+        const CommerceOperationResult(
+          status: CommerceOperationStatus.confirmed,
+          snapshot: rewarded,
+          providerHandle: 'drop_1',
+        ),
+      ),
+    );
+    final controller = CommerceController(gateway: gateway, enabled: true);
+    addTearDown(controller.dispose);
+    await controller.refresh();
+
+    final result = await controller.claimEchoPlaytimeReward();
+
+    expect(result.status, CommerceOperationStatus.confirmed);
+    expect(controller.snapshot.echoBalance, 50);
+    expect(gateway.rewardCalls, 1);
+  });
+
+  test('playtime scheduler coalesces overlapping checks', () async {
+    final completion = Completer<CommerceOperationResult>();
+    final gateway = _TestRewardCommerceGateway(
+      loadResult: Future.value(
+        const CommerceAccountSnapshot(
+          state: CommerceAuthorityState.ready,
+          astraBalance: 0,
+          echoBalance: 40,
+          playtimeRewardsEnabled: true,
+        ),
+      ),
+      rewardResult: completion.future,
+    );
+    final controller = CommerceController(gateway: gateway, enabled: true);
+    final scheduler = CommercePlaytimeRewardScheduler(controller: controller);
+    addTearDown(() {
+      scheduler.dispose();
+      controller.dispose();
+    });
+    await controller.refresh();
+
+    final first = scheduler.checkNow();
+    final duplicate = scheduler.checkNow();
+    await duplicate;
+    expect(gateway.rewardCalls, 1);
+
+    completion.complete(
+      const CommerceOperationResult(
+        status: CommerceOperationStatus.noChange,
+        snapshot: CommerceAccountSnapshot(
+          state: CommerceAuthorityState.ready,
+          astraBalance: 0,
+          echoBalance: 40,
+          playtimeRewardsEnabled: true,
+        ),
+      ),
+    );
+    await first;
+    expect(controller.lastOperation?.status, CommerceOperationStatus.noChange);
+  });
 }
 
 class _TestCommerceGateway implements CommerceGateway {
@@ -303,5 +379,19 @@ class _TestCommerceGateway implements CommerceGateway {
             issueCode: 'fake_purchase_unavailable',
           ),
         );
+  }
+}
+
+class _TestRewardCommerceGateway extends _TestCommerceGateway
+    implements CommercePlaytimeRewardGateway {
+  _TestRewardCommerceGateway({super.loadResult, required this.rewardResult});
+
+  final Future<CommerceOperationResult> rewardResult;
+  int rewardCalls = 0;
+
+  @override
+  Future<CommerceOperationResult> claimPlaytimeReward() {
+    rewardCalls += 1;
+    return rewardResult;
   }
 }

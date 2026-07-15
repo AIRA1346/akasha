@@ -16,6 +16,7 @@ abstract final class SteamInventoryItemDefs {
 
   static const int echoPack10 = 40210;
   static const int echoPlaytimeReward = 40220;
+  static const int echoPlaytimeGrantAmount = 10;
 
   static const int sakuraThemeEntitlement = 41001;
   static const int amethystThemeEntitlement = 41002;

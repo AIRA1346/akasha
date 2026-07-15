@@ -963,6 +963,7 @@
   "commerceContinue": "Continue",
   "commerceResultPurchaseConfirmed": "The Astra grant was verified in Steam Inventory.",
   "commerceResultExchangeConfirmed": "Theme ownership was verified in Steam Inventory.",
+  "commerceResultNoChange": "Steam reported no inventory change.",
   "commerceResultCancelled": "The Steam transaction was cancelled.",
   "commerceResultRejected": "The transaction requirements were not met. Check your balance and ownership.",
   "commerceResultFailed": "The Steam transaction could not be completed. Try again later.",

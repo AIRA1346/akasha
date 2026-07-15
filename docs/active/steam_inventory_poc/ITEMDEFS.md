@@ -1,8 +1,9 @@
 # Steam Inventory POC — ItemDefs
 
 > AppID: `4677560` · File: [`itemdefs_poc.json`](itemdefs_poc.json)  
-> **User step:** Steamworks → App → Inventory Service → enable → paste/upload JSON.  
-> Until uploaded + published, live purchase/exchange **cannot** be claimed successful.
+> **Historical evidence:** this is the schema used for the completed POC. Do
+> **not** upload it as the next production revision. Use
+> [`../steam_inventory_production/itemdefs_steamworks_upload.json`](../steam_inventory_production/itemdefs_steamworks_upload.json).
 
 ## Pack approach decision
 

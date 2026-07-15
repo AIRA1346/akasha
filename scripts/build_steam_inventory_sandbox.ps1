@@ -12,7 +12,8 @@ Write-Host '==> Building Windows Release with production ItemDef sandbox transac
 Write-Host '    Requires ItemDefs 40001-41103 to be published in the partner sandbox.'
 
 & "$PSScriptRoot\flutter.ps1" build windows --release `
-  --dart-define=AKASHA_STEAM_SANDBOX_TRANSACTIONS=true
+  --dart-define=AKASHA_STEAM_SANDBOX_TRANSACTIONS=true `
+  --dart-define=AKASHA_STEAM_PLAYTIME_REWARDS=true
 if ($LASTEXITCODE -ne 0) {
   throw "flutter build failed (exit $LASTEXITCODE). Close akasha.exe if the linker cannot overwrite it."
 }
@@ -33,4 +34,4 @@ Write-Host "  $Dll"
 Write-Host "  $AppId"
 Write-Host ''
 Write-Host 'Launch through Steam with a Steamworks partner account.'
-Write-Host 'Store transactions are sandbox-only; release IAP remains disabled.'
+Write-Host 'Store transactions and Echo reward checks are sandbox-only; release IAP remains disabled.'

@@ -501,6 +501,192 @@ void main() {
     });
   });
 
+  group('SteamInventoryCommerceGateway playtime rewards', () {
+    test('confirms ten Echo only after inventory reconciliation', () async {
+      final readPort = _FakeSteamInventoryReadPort(
+        itemSequence: [
+          _inventory([
+            _item('1', SteamInventoryItemDefs.astraUnit, 0),
+            _item('2', SteamInventoryItemDefs.echoUnit, 40),
+          ]),
+          _inventory([
+            _item('1', SteamInventoryItemDefs.astraUnit, 0),
+            _item('2', SteamInventoryItemDefs.echoUnit, 50),
+          ]),
+        ],
+      );
+      final rewardPort = _FakeSteamInventoryRewardPort(
+        result: const SteamInventoryRewardResult(
+          status: SteamInventoryRewardStatus.granted,
+          providerHandle: 'drop_1',
+          reportedGrantQuantity: 10,
+        ),
+      );
+      final gateway = SteamInventoryCommerceGateway(
+        port: readPort,
+        rewardPort: rewardPort,
+        playtimeRewardsEnabled: true,
+      );
+
+      final initial = await gateway.loadAccount();
+      final result = await gateway.claimPlaytimeReward();
+
+      expect(initial.canClaimPlaytimeReward, isTrue);
+      expect(result.status, CommerceOperationStatus.confirmed);
+      expect(result.snapshot.echoBalance, 50);
+      expect(result.providerHandle, 'drop_1');
+      expect(rewardPort.generatorItemDefIds, [40220]);
+      expect(rewardPort.expectedItemDefIds, [40002]);
+    });
+
+    test('empty eligible result is a safe no-change outcome', () async {
+      final inventory = _inventory([
+        _item('1', SteamInventoryItemDefs.astraUnit, 0),
+        _item('2', SteamInventoryItemDefs.echoUnit, 40),
+      ]);
+      final gateway = SteamInventoryCommerceGateway(
+        port: _FakeSteamInventoryReadPort(itemSequence: [inventory, inventory]),
+        rewardPort: _FakeSteamInventoryRewardPort(
+          result: const SteamInventoryRewardResult(
+            status: SteamInventoryRewardStatus.notEligible,
+            providerHandle: 'drop_2',
+            issueCode: 'steam_reward_not_eligible',
+          ),
+        ),
+        playtimeRewardsEnabled: true,
+      );
+      await gateway.loadAccount();
+
+      final result = await gateway.claimPlaytimeReward();
+
+      expect(result.status, CommerceOperationStatus.noChange);
+      expect(result.snapshot.echoBalance, 40);
+      expect(result.snapshot.canClaimPlaytimeReward, isTrue);
+    });
+
+    test('reported grant without Echo delta blocks repeat mutations', () async {
+      final inventory = _inventory([
+        _item('1', SteamInventoryItemDefs.astraUnit, 500),
+        _item('2', SteamInventoryItemDefs.echoUnit, 40),
+      ]);
+      final rewardPort = _FakeSteamInventoryRewardPort(
+        result: const SteamInventoryRewardResult(
+          status: SteamInventoryRewardStatus.granted,
+          providerHandle: 'drop_3',
+          reportedGrantQuantity: 10,
+        ),
+      );
+      final gateway = SteamInventoryCommerceGateway(
+        port: _FakeSteamInventoryReadPort(itemSequence: [inventory, inventory]),
+        transactionPort: _FakeSteamInventoryTransactionPort(),
+        rewardPort: rewardPort,
+        transactionsEnabled: true,
+        playtimeRewardsEnabled: true,
+      );
+      await gateway.loadAccount();
+
+      final result = await gateway.claimPlaytimeReward();
+      final retry = await gateway.claimPlaytimeReward();
+      final purchase = await gateway.purchaseAstraPack(
+        productId: CommerceCatalog.astraPack500ProductId,
+      );
+
+      expect(result.status, CommerceOperationStatus.indeterminate);
+      expect(result.snapshot.canClaimPlaytimeReward, isFalse);
+      expect(result.snapshot.canTransact, isFalse);
+      expect(retry.issueCode, 'steam_reconciliation_required');
+      expect(purchase.issueCode, 'steam_reconciliation_required');
+      expect(rewardPort.generatorItemDefIds, [40220]);
+    });
+  });
+
+  group('MethodChannelSteamInventoryRewardPort', () {
+    const channel = MethodChannel('akasha/test/steam_rewards');
+
+    tearDown(() {
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+          .setMockMethodCallHandler(channel, null);
+    });
+
+    test('maps a matching Echo grant from ResultReady', () async {
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+          .setMockMethodCallHandler(channel, (call) async {
+            if (call.method == 'triggerItemDrop') {
+              expect(call.arguments, {'generatorDefId': 40220});
+              return <String, Object?>{
+                'ok': true,
+                'status': 'pending',
+                'handle': 'playtimeDrop_1',
+              };
+            }
+            return <String, Object?>{
+              'ok': true,
+              'ops': [
+                {
+                  'status': 'success',
+                  'handle': 'playtimeDrop_1',
+                  'steamResultName': 'k_EResultOK',
+                  'grantedItems': [
+                    {'itemDefId': 40002, 'quantity': 10},
+                  ],
+                },
+              ],
+            };
+          });
+      const port = MethodChannelSteamInventoryRewardPort(
+        channel: channel,
+        pollInterval: Duration.zero,
+        completionTimeout: Duration(seconds: 1),
+      );
+
+      final result = await port.triggerPlaytimeReward(
+        generatorItemDefId: 40220,
+        expectedItemDefId: 40002,
+      );
+
+      expect(result.status, SteamInventoryRewardStatus.granted);
+      expect(result.reportedGrantQuantity, 10);
+      expect(result.providerHandle, 'playtimeDrop_1');
+    });
+
+    test('maps a successful empty result to not eligible', () async {
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+          .setMockMethodCallHandler(channel, (call) async {
+            if (call.method == 'triggerItemDrop') {
+              return <String, Object?>{
+                'ok': true,
+                'status': 'pending',
+                'handle': 'playtimeDrop_2',
+              };
+            }
+            return <String, Object?>{
+              'ok': true,
+              'ops': [
+                {
+                  'status': 'success',
+                  'handle': 'playtimeDrop_2',
+                  'steamResultName': 'k_EResultOK',
+                  'grantedItems': const [],
+                },
+              ],
+            };
+          });
+      const port = MethodChannelSteamInventoryRewardPort(
+        channel: channel,
+        pollInterval: Duration.zero,
+        completionTimeout: Duration(seconds: 1),
+      );
+
+      final result = await port.triggerPlaytimeReward(
+        generatorItemDefId: 40220,
+        expectedItemDefId: 40002,
+      );
+
+      expect(result.status, SteamInventoryRewardStatus.notEligible);
+      expect(result.reportedGrantQuantity, 0);
+    });
+  });
+
   group('MethodChannelSteamInventoryTransactionPort', () {
     const channel = MethodChannel('akasha/test/steam_transactions');
 
@@ -797,6 +983,24 @@ class _FakeSteamInventoryTransactionPort
     exchangeGenerateItemDefIds.add(generateItemDefId);
     exchangeDestroyItems.add(destroyItems);
     return exchangeResult;
+  }
+}
+
+class _FakeSteamInventoryRewardPort implements SteamInventoryRewardPort {
+  _FakeSteamInventoryRewardPort({required this.result});
+
+  final SteamInventoryRewardResult result;
+  final List<int> generatorItemDefIds = [];
+  final List<int> expectedItemDefIds = [];
+
+  @override
+  Future<SteamInventoryRewardResult> triggerPlaytimeReward({
+    required int generatorItemDefId,
+    required int expectedItemDefId,
+  }) async {
+    generatorItemDefIds.add(generatorItemDefId);
+    expectedItemDefIds.add(expectedItemDefId);
+    return result;
   }
 }
 
