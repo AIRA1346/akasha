@@ -93,12 +93,16 @@ class CommerceOperationResult {
     required this.status,
     required this.snapshot,
     this.providerHandle,
+    this.providerOrderId,
+    this.providerTransactionId,
     this.issueCode,
   });
 
   final CommerceOperationStatus status;
   final CommerceAccountSnapshot snapshot;
   final String? providerHandle;
+  final String? providerOrderId;
+  final String? providerTransactionId;
   final String? issueCode;
 }
 

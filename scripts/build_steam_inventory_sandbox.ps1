@@ -1,0 +1,36 @@
+# Windows production-ItemDef Steam Inventory sandbox build.
+# Usage: .\scripts\build_steam_inventory_sandbox.ps1
+#
+# This internal build enables guarded transaction UI for Steamworks partner
+# testing. It does not change FeatureFlags.steamInAppPurchasesEnabled.
+
+$ErrorActionPreference = 'Stop'
+$Root = Split-Path $PSScriptRoot -Parent
+Set-Location $Root
+
+Write-Host '==> Building Windows Release with production ItemDef sandbox transactions'
+Write-Host '    Requires ItemDefs 40001-41103 to be published in the partner sandbox.'
+
+& "$PSScriptRoot\flutter.ps1" build windows --release `
+  --dart-define=AKASHA_STEAM_SANDBOX_TRANSACTIONS=true
+if ($LASTEXITCODE -ne 0) {
+  throw "flutter build failed (exit $LASTEXITCODE). Close akasha.exe if the linker cannot overwrite it."
+}
+
+$Out = Join-Path $Root 'build\windows\x64\runner\Release'
+$Exe = Join-Path $Out 'akasha.exe'
+$Dll = Join-Path $Out 'steam_api64.dll'
+$AppId = Join-Path $Out 'steam_appid.txt'
+
+if (-not (Test-Path $Exe)) { throw "Missing $Exe" }
+if (-not (Test-Path $Dll)) { throw "Missing $Dll" }
+if (-not (Test-Path $AppId)) { throw "Missing $AppId" }
+
+Write-Host ''
+Write-Host 'OK Steam Inventory production sandbox build:'
+Write-Host "  $Exe"
+Write-Host "  $Dll"
+Write-Host "  $AppId"
+Write-Host ''
+Write-Host 'Launch through Steam with a Steamworks partner account.'
+Write-Host 'Store transactions are sandbox-only; release IAP remains disabled.'

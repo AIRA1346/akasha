@@ -167,6 +167,101 @@ void main() {
     },
   );
 
+  testWidgets('sandbox Astra purchase requires confirmation and reconciles', (
+    tester,
+  ) async {
+    final gateway = _TransactionCommerceGateway();
+    final controller = CommerceController(gateway: gateway, enabled: true);
+    addTearDown(controller.dispose);
+    await controller.refresh();
+    await tester.pumpWidget(
+      _harness(account: null, commerceController: controller),
+    );
+    await tester.tap(find.text('open'));
+    await tester.pumpAndSettle();
+
+    expect(
+      find.text('Steam 거래가 활성화되어 있습니다. 완료 후 인벤토리에서 결과를 확인합니다.'),
+      findsOneWidget,
+    );
+    await tester.tap(find.byKey(const ValueKey('commerce-buy-astra_pack_500')));
+    await tester.pumpAndSettle();
+    expect(
+      find.byKey(const ValueKey('commerce-purchase-confirmation')),
+      findsOneWidget,
+    );
+    expect(gateway.purchaseProductIds, isEmpty);
+
+    await tester.tap(find.byKey(const ValueKey('commerce-confirm-purchase')));
+    await tester.pumpAndSettle();
+
+    expect(gateway.purchaseProductIds, [CommerceCatalog.astraPack500ProductId]);
+    expect(
+      find.byKey(const ValueKey('commerce-result-confirmed')),
+      findsOneWidget,
+    );
+    await tester.tap(find.byIcon(Icons.inventory_2_outlined));
+    await tester.pumpAndSettle();
+    expect(find.text('1000'), findsOneWidget);
+  });
+
+  testWidgets('theme exchange enforces one affordable currency choice', (
+    tester,
+  ) async {
+    final gateway = _TransactionCommerceGateway(
+      initialAstra: 400,
+      initialEcho: 600,
+    );
+    final controller = CommerceController(gateway: gateway, enabled: true);
+    addTearDown(controller.dispose);
+    await controller.refresh();
+    await tester.pumpWidget(
+      _harness(account: null, commerceController: controller),
+    );
+    await tester.tap(find.text('open'));
+    await tester.pumpAndSettle();
+    await tester.drag(
+      find.byKey(const PageStorageKey('commerce-store-scroll')),
+      const Offset(0, -650),
+    );
+    await tester.pumpAndSettle();
+
+    await tester.tap(
+      find.byKey(const ValueKey('commerce-exchange-theme_package_sakura')),
+    );
+    await tester.pumpAndSettle();
+
+    final astra = tester.widget<OutlinedButton>(
+      find.descendant(
+        of: find.byKey(const ValueKey('commerce-pay-astra')),
+        matching: find.byType(OutlinedButton),
+      ),
+    );
+    final echo = tester.widget<OutlinedButton>(
+      find.descendant(
+        of: find.byKey(const ValueKey('commerce-pay-echo')),
+        matching: find.byType(OutlinedButton),
+      ),
+    );
+    expect(astra.onPressed, isNull);
+    expect(echo.onPressed, isNotNull);
+
+    await tester.tap(find.byKey(const ValueKey('commerce-pay-echo')));
+    await tester.pumpAndSettle();
+
+    expect(gateway.exchangeProductIds, [CommerceCatalog.sakuraThemeProductId]);
+    expect(gateway.exchangeCurrencies, [CurrencyKind.earned]);
+    expect(controller.snapshot.echoBalance, 100);
+    expect(
+      controller.snapshot.owns(CommerceCatalog.sakuraThemeEntitlementKey),
+      isTrue,
+    );
+    expect(
+      find.byKey(const ValueKey('commerce-result-confirmed')),
+      findsOneWidget,
+    );
+  });
+
   testWidgets('1024 by 720 at 125 percent text scale does not overflow', (
     tester,
   ) async {
@@ -297,4 +392,80 @@ class _RetryCommerceGateway implements CommerceGateway {
   Future<CommerceOperationResult> purchaseAstraPack({
     required String productId,
   }) => throw UnimplementedError();
+}
+
+class _TransactionCommerceGateway implements CommerceGateway {
+  _TransactionCommerceGateway({this.initialAstra = 500, this.initialEcho = 500})
+    : _snapshot = CommerceAccountSnapshot(
+        state: CommerceAuthorityState.ready,
+        astraBalance: initialAstra,
+        echoBalance: initialEcho,
+        localizedPrices: const {
+          CommerceCatalog.astraPack500ProductId: CommerceLocalizedPrice(
+            productId: CommerceCatalog.astraPack500ProductId,
+            currencyCode: 'KRW',
+            currentAmount: 5500,
+          ),
+        },
+        transactionsEnabled: true,
+      );
+
+  final int initialAstra;
+  final int initialEcho;
+  final List<String> purchaseProductIds = [];
+  final List<String> exchangeProductIds = [];
+  final List<CurrencyKind> exchangeCurrencies = [];
+  CommerceAccountSnapshot _snapshot;
+
+  @override
+  Future<CommerceAccountSnapshot> loadAccount() async => _snapshot;
+
+  @override
+  Future<CommerceOperationResult> purchaseAstraPack({
+    required String productId,
+  }) async {
+    purchaseProductIds.add(productId);
+    _snapshot = CommerceAccountSnapshot(
+      state: CommerceAuthorityState.ready,
+      astraBalance: (_snapshot.astraBalance ?? 0) + 500,
+      echoBalance: _snapshot.echoBalance,
+      entitlementKeys: _snapshot.entitlementKeys,
+      localizedPrices: _snapshot.localizedPrices,
+      transactionsEnabled: true,
+    );
+    return CommerceOperationResult(
+      status: CommerceOperationStatus.confirmed,
+      snapshot: _snapshot,
+      providerHandle: 'purchase_1',
+    );
+  }
+
+  @override
+  Future<CommerceOperationResult> exchangeProduct({
+    required String productId,
+    required CurrencyKind payWith,
+  }) async {
+    exchangeProductIds.add(productId);
+    exchangeCurrencies.add(payWith);
+    _snapshot = CommerceAccountSnapshot(
+      state: CommerceAuthorityState.ready,
+      astraBalance: payWith == CurrencyKind.premium
+          ? (_snapshot.astraBalance ?? 0) - 500
+          : _snapshot.astraBalance,
+      echoBalance: payWith == CurrencyKind.earned
+          ? (_snapshot.echoBalance ?? 0) - 500
+          : _snapshot.echoBalance,
+      entitlementKeys: {
+        ..._snapshot.entitlementKeys,
+        CommerceCatalog.sakuraThemeEntitlementKey,
+      },
+      localizedPrices: _snapshot.localizedPrices,
+      transactionsEnabled: true,
+    );
+    return CommerceOperationResult(
+      status: CommerceOperationStatus.confirmed,
+      snapshot: _snapshot,
+      providerHandle: 'exchange_1',
+    );
+  }
 }

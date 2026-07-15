@@ -181,10 +181,11 @@ required.
 
 No Astra/Echo conversion ItemDef or exchange recipe may be published.
 
-## 6.1 Current production read boundary
+## 6.1 Current production adapter boundary
 
 `lib/core/commerce/steam_inventory/` now contains the production ItemDef
-registry, a read-only native port, and `SteamInventoryCommerceGateway`.
+registry, separately-capable read and transaction ports, and
+`SteamInventoryCommerceGateway`.
 
 - only production currency ItemDefs `40001` and `40002` are summed;
 - only production theme ItemDefs `41001-41003` grant entitlement keys;
@@ -194,19 +195,33 @@ registry, a read-only native port, and `SteamInventoryCommerceGateway`.
 - a later offline refresh may expose the last in-memory provider snapshot as
   `offlineCache`, but a cold offline start keeps balances unknown;
 - price lookup failure does not erase a valid balance/ownership snapshot;
-- purchase and exchange methods return `steam_commerce_read_only` without
-  invoking a native mutation;
-- the app root selects this gateway only behind
-  `steamInAppPurchasesEnabled`, which remains `false`.
+- raw ItemDef ids never cross from Store UI; only approved domain product ids
+  are mapped by the adapter;
+- purchase waits for the matching terminal Steam result and then requires the
+  exact Astra pack delta in a fresh inventory snapshot;
+- exchange allocates exactly 500 units across real instance IDs belonging to
+  one selected currency, waits for the terminal result, and then requires the
+  target entitlement in a fresh inventory snapshot;
+- cancellation, rejection, and provider failure never create a local grant;
+- timeout, callback success without the expected inventory outcome, or a poll
+  failure after API acceptance becomes `indeterminate` and blocks repeat
+  mutations for the current session;
+- purchase order and transaction IDs are preserved only in the in-memory
+  operation result for sandbox/GetReport evidence;
+- the app root selects this gateway only behind the release IAP flag or the
+  explicit internal `AKASHA_STEAM_SANDBOX_TRANSACTIONS` build define. Both are
+  false in the normal build.
 
-The current Store/Inventory implementation is a responsive, read-only consumer
-of this boundary. It has loading/offline/unavailable feedback, retry, owned
-theme state, compact currency-card layout, and 125% text-scale coverage. Every
-purchase and exchange control remains disabled.
+The Store/Inventory implementation has loading/offline/unavailable feedback,
+retry, owned-theme state, compact currency-card layout, and 125% text-scale
+coverage. Normal builds keep every purchase and exchange control disabled. An
+explicit sandbox build adds Astra purchase confirmation, one-currency theme
+selection, in-flight locking, and reconciled outcome feedback without enabling
+release IAP.
 
 The Flutter/native transport is `akasha/steam_inventory`. The historical C++
 source and diagnostic client retain POC-oriented names as evidence, but
-production code imports only the read-only facade.
+production code imports only the capability-scoped read/transaction facades.
 
 ## 7. Authority and failure invariants
 

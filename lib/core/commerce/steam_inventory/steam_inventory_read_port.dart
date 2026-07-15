@@ -17,10 +17,12 @@ class SteamInventoryDiagnostic {
 
 class SteamInventoryReadItem {
   const SteamInventoryReadItem({
+    required this.instanceId,
     required this.itemDefId,
     required this.quantity,
   });
 
+  final String instanceId;
   final int itemDefId;
   final int quantity;
 }

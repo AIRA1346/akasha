@@ -122,14 +122,147 @@ void main() {
     await expectLater(refresh, completes);
     expect(controller.snapshot.state, CommerceAuthorityState.loading);
   });
+
+  test(
+    'transaction guard refuses a snapshot without provider capability',
+    () async {
+      final gateway = _TestCommerceGateway(
+        loadResult: Future.value(
+          const CommerceAccountSnapshot(
+            state: CommerceAuthorityState.ready,
+            astraBalance: 500,
+            echoBalance: 500,
+            transactionsEnabled: false,
+          ),
+        ),
+      );
+      final controller = CommerceController(gateway: gateway, enabled: true);
+      addTearDown(controller.dispose);
+      await controller.refresh();
+
+      final result = await controller.purchaseAstraPack(
+        CommerceCatalog.astraPack500ProductId,
+      );
+
+      expect(result.status, CommerceOperationStatus.rejected);
+      expect(result.issueCode, 'commerce_account_not_ready');
+      expect(gateway.purchaseCalls, 0);
+    },
+  );
+
+  test(
+    'one pending operation blocks duplicates and publishes reconciliation',
+    () async {
+      final completion = Completer<CommerceOperationResult>();
+      const initial = CommerceAccountSnapshot(
+        state: CommerceAuthorityState.ready,
+        astraBalance: 500,
+        echoBalance: 500,
+        transactionsEnabled: true,
+      );
+      const refreshed = CommerceAccountSnapshot(
+        state: CommerceAuthorityState.ready,
+        astraBalance: 1000,
+        echoBalance: 500,
+        transactionsEnabled: true,
+      );
+      final gateway = _TestCommerceGateway(
+        loadResult: Future.value(initial),
+        purchaseResult: completion.future,
+      );
+      final controller = CommerceController(gateway: gateway, enabled: true);
+      addTearDown(controller.dispose);
+      await controller.refresh();
+
+      final pending = controller.purchaseAstraPack(
+        CommerceCatalog.astraPack500ProductId,
+      );
+      expect(controller.operationInFlight, isTrue);
+      expect(controller.activeProductId, CommerceCatalog.astraPack500ProductId);
+      final duplicate = await controller.purchaseAstraPack(
+        CommerceCatalog.astraPack500ProductId,
+      );
+      expect(duplicate.status, CommerceOperationStatus.rejected);
+      expect(duplicate.issueCode, 'commerce_operation_in_progress');
+
+      completion.complete(
+        const CommerceOperationResult(
+          status: CommerceOperationStatus.confirmed,
+          snapshot: refreshed,
+          providerHandle: 'purchase_1',
+        ),
+      );
+      final result = await pending;
+
+      expect(result.status, CommerceOperationStatus.confirmed);
+      expect(controller.snapshot.astraBalance, 1000);
+      expect(controller.lastOperation, same(result));
+      expect(controller.operationInFlight, isFalse);
+      expect(controller.activeProductId, isNull);
+      expect(gateway.purchaseCalls, 1);
+    },
+  );
+
+  test(
+    'theme exchange publishes the reconciled entitlement snapshot',
+    () async {
+      const initial = CommerceAccountSnapshot(
+        state: CommerceAuthorityState.ready,
+        astraBalance: 700,
+        echoBalance: 500,
+        transactionsEnabled: true,
+      );
+      const owned = CommerceAccountSnapshot(
+        state: CommerceAuthorityState.ready,
+        astraBalance: 200,
+        echoBalance: 500,
+        entitlementKeys: {CommerceCatalog.sakuraThemeEntitlementKey},
+        transactionsEnabled: true,
+      );
+      final gateway = _TestCommerceGateway(
+        loadResult: Future.value(initial),
+        exchangeResult: Future.value(
+          const CommerceOperationResult(
+            status: CommerceOperationStatus.confirmed,
+            snapshot: owned,
+            providerHandle: 'exchange_1',
+          ),
+        ),
+      );
+      final controller = CommerceController(gateway: gateway, enabled: true);
+      addTearDown(controller.dispose);
+      await controller.refresh();
+
+      final result = await controller.exchangeTheme(
+        productId: CommerceCatalog.sakuraThemeProductId,
+        payWith: CurrencyKind.premium,
+      );
+
+      expect(result.status, CommerceOperationStatus.confirmed);
+      expect(
+        controller.snapshot.owns(CommerceCatalog.sakuraThemeEntitlementKey),
+        isTrue,
+      );
+      expect(gateway.exchangeCalls, 1);
+    },
+  );
 }
 
 class _TestCommerceGateway implements CommerceGateway {
-  _TestCommerceGateway({this.loadResult, this.error});
+  _TestCommerceGateway({
+    this.loadResult,
+    this.purchaseResult,
+    this.exchangeResult,
+    this.error,
+  });
 
   Future<CommerceAccountSnapshot>? loadResult;
+  Future<CommerceOperationResult>? purchaseResult;
+  Future<CommerceOperationResult>? exchangeResult;
   Object? error;
   int loadCalls = 0;
+  int purchaseCalls = 0;
+  int exchangeCalls = 0;
 
   @override
   Future<CommerceAccountSnapshot> loadAccount() {
@@ -145,10 +278,30 @@ class _TestCommerceGateway implements CommerceGateway {
   Future<CommerceOperationResult> exchangeProduct({
     required String productId,
     required CurrencyKind payWith,
-  }) => throw UnimplementedError();
+  }) {
+    exchangeCalls += 1;
+    return exchangeResult ??
+        Future.value(
+          CommerceOperationResult(
+            status: CommerceOperationStatus.rejected,
+            snapshot: const CommerceAccountSnapshot.disabled(),
+            issueCode: 'fake_exchange_unavailable',
+          ),
+        );
+  }
 
   @override
   Future<CommerceOperationResult> purchaseAstraPack({
     required String productId,
-  }) => throw UnimplementedError();
+  }) {
+    purchaseCalls += 1;
+    return purchaseResult ??
+        Future.value(
+          CommerceOperationResult(
+            status: CommerceOperationStatus.rejected,
+            snapshot: const CommerceAccountSnapshot.disabled(),
+            issueCode: 'fake_purchase_unavailable',
+          ),
+        );
+  }
 }

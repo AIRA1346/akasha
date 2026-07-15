@@ -24,14 +24,23 @@ class CommerceController extends ChangeNotifier {
   final bool _enabled;
   CommerceAccountSnapshot _snapshot;
   Future<void>? _activeRefresh;
+  Future<CommerceOperationResult>? _activeOperation;
+  CommerceOperationResult? _lastOperation;
+  String? _activeProductId;
+  CurrencyKind? _activeCurrency;
   bool _disposed = false;
 
   bool get enabled => _enabled;
   CommerceAccountSnapshot get snapshot => _snapshot;
+  bool get operationInFlight => _activeOperation != null;
+  CommerceOperationResult? get lastOperation => _lastOperation;
+  String? get activeProductId => _activeProductId;
+  CurrencyKind? get activeCurrency => _activeCurrency;
 
   /// Refreshes once even when several surfaces request data concurrently.
   Future<void> refresh() {
     if (_disposed || !_enabled) return Future<void>.value();
+    if (_activeOperation != null) return Future<void>.value();
     final active = _activeRefresh;
     if (active != null) return active;
 
@@ -40,6 +49,90 @@ class CommerceController extends ChangeNotifier {
     return refresh.whenComplete(() {
       if (identical(_activeRefresh, refresh)) _activeRefresh = null;
     });
+  }
+
+  Future<CommerceOperationResult> purchaseAstraPack(String productId) =>
+      _runOperation(
+        productId: productId,
+        operation: () => _gateway.purchaseAstraPack(productId: productId),
+      );
+
+  Future<CommerceOperationResult> exchangeTheme({
+    required String productId,
+    required CurrencyKind payWith,
+  }) => _runOperation(
+    productId: productId,
+    currency: payWith,
+    operation: () =>
+        _gateway.exchangeProduct(productId: productId, payWith: payWith),
+  );
+
+  Future<CommerceOperationResult> _runOperation({
+    required String productId,
+    required Future<CommerceOperationResult> Function() operation,
+    CurrencyKind? currency,
+  }) {
+    if (_disposed || !_enabled) {
+      return Future.value(
+        CommerceOperationResult(
+          status: CommerceOperationStatus.rejected,
+          snapshot: _snapshot,
+          issueCode: 'commerce_disabled',
+        ),
+      );
+    }
+    if (_activeOperation != null) {
+      return Future.value(
+        CommerceOperationResult(
+          status: CommerceOperationStatus.rejected,
+          snapshot: _snapshot,
+          issueCode: 'commerce_operation_in_progress',
+        ),
+      );
+    }
+    if (!_snapshot.canTransact) {
+      return Future.value(
+        CommerceOperationResult(
+          status: CommerceOperationStatus.rejected,
+          snapshot: _snapshot,
+          issueCode: 'commerce_account_not_ready',
+        ),
+      );
+    }
+
+    _activeProductId = productId;
+    _activeCurrency = currency;
+    final future = _executeOperation(operation);
+    _activeOperation = future;
+    notifyListeners();
+    return future.whenComplete(() {
+      if (identical(_activeOperation, future)) {
+        _activeOperation = null;
+        _activeProductId = null;
+        _activeCurrency = null;
+        if (!_disposed) notifyListeners();
+      }
+    });
+  }
+
+  Future<CommerceOperationResult> _executeOperation(
+    Future<CommerceOperationResult> Function() operation,
+  ) async {
+    CommerceOperationResult result;
+    try {
+      result = await operation();
+    } catch (_) {
+      result = CommerceOperationResult(
+        status: CommerceOperationStatus.indeterminate,
+        snapshot: _snapshot,
+        issueCode: 'commerce_operation_exception',
+      );
+    }
+    if (!_disposed) {
+      _lastOperation = result;
+      _setSnapshot(result.snapshot);
+    }
+    return result;
   }
 
   Future<void> _loadAccount() async {

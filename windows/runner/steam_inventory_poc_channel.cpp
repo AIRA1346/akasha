@@ -1011,6 +1011,12 @@ void SteamInventoryPocChannel::Register(flutter::FlutterEngine* engine) {
             fail("invalid_args");
             return;
           }
+          for (size_t i = 0; i < defs.size(); ++i) {
+            if (defs[i] <= 0 || qtys[i] <= 0) {
+              fail("invalid_purchase_item");
+              return;
+            }
+          }
           std::vector<SteamItemDef_t> d(defs.begin(), defs.end());
           std::vector<uint32> q;
           for (auto x : qtys) q.push_back(static_cast<uint32>(x));
@@ -1158,8 +1164,8 @@ void SteamInventoryPocChannel::Register(flutter::FlutterEngine* engine) {
           }
           const int32_t gen = AsI32(git->second);
           const int32_t genq = gqit == map.end() ? 1 : AsI32(gqit->second);
-          // POC contract: generate ItemDef 20010 ×1, array length 1.
-          if (genq != 1) {
+          // Steam currently accepts one generated target with quantity one.
+          if (gen <= 0 || genq != 1) {
             fail("invalid_generate_quantity");
             return;
           }
@@ -1174,8 +1180,17 @@ void SteamInventoryPocChannel::Register(flutter::FlutterEngine* engine) {
           std::vector<SteamItemInstanceID_t> destroy;
           std::vector<uint32> destroy_q;
           for (size_t i = 0; i < ids.size(); ++i) {
-            destroy.push_back(static_cast<SteamItemInstanceID_t>(
-                std::stoull(ids[i])));
+            if (qs[i] <= 0) {
+              fail("invalid_destroy_quantity");
+              return;
+            }
+            try {
+              destroy.push_back(static_cast<SteamItemInstanceID_t>(
+                  std::stoull(ids[i])));
+            } catch (...) {
+              fail("invalid_instance_id");
+              return;
+            }
             destroy_q.push_back(static_cast<uint32>(qs[i]));
           }
           SteamInventoryResult_t handle = k_SteamInventoryResultInvalid;

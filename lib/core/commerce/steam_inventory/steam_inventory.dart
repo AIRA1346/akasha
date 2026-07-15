@@ -1,5 +1,7 @@
 export 'method_channel_steam_inventory_read_port.dart';
+export 'method_channel_steam_inventory_transaction_port.dart';
 export 'steam_inventory_channel_contract.dart';
 export 'steam_inventory_commerce_gateway.dart';
 export 'steam_inventory_itemdefs.dart';
 export 'steam_inventory_read_port.dart';
+export 'steam_inventory_transaction_port.dart';

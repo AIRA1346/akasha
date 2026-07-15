@@ -62,8 +62,7 @@ import 'app_localizations_ko.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale)
-    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -71,8 +70,7 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations)!;
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -84,18 +82,17 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
-      <LocalizationsDelegate<dynamic>>[
-        delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ];
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
+    delegate,
+    GlobalMaterialLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+  ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
-    Locale('ko'),
+    Locale('ko')
   ];
 
   /// No description provided for @browseLoadingCatalog.
@@ -2834,6 +2831,12 @@ abstract class AppLocalizations {
   /// **'Steam is connected. Purchases are still disabled.'**
   String get commerceAccountReadyReadOnly;
 
+  /// No description provided for @commerceAccountReadyTransactions.
+  ///
+  /// In en, this message translates to:
+  /// **'Steam transactions are enabled. Results are verified in Inventory after completion.'**
+  String get commerceAccountReadyTransactions;
+
   /// No description provided for @commerceAccountOfflineCache.
   ///
   /// In en, this message translates to:
@@ -2917,6 +2920,108 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Preparing for launch'**
   String get commerceComingSoon;
+
+  /// No description provided for @commerceBuyOnSteam.
+  ///
+  /// In en, this message translates to:
+  /// **'Buy on Steam'**
+  String get commerceBuyOnSteam;
+
+  /// No description provided for @commerceChooseCurrency.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose currency'**
+  String get commerceChooseCurrency;
+
+  /// No description provided for @commerceOperationInProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Verifying transaction'**
+  String get commerceOperationInProgress;
+
+  /// No description provided for @commercePurchaseConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Buy {product}'**
+  String commercePurchaseConfirmTitle(String product);
+
+  /// No description provided for @commercePurchaseConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm the local price and payment method in the Steam overlay. AKASHA will refresh Steam Inventory after completion.'**
+  String get commercePurchaseConfirmBody;
+
+  /// No description provided for @commerceExchangeConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Exchange for {product}'**
+  String commerceExchangeConfirmTitle(String product);
+
+  /// No description provided for @commerceChooseCurrencyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose either Astra or Echo. Mixed payment is not supported.'**
+  String get commerceChooseCurrencyBody;
+
+  /// No description provided for @commerceCurrencyOption.
+  ///
+  /// In en, this message translates to:
+  /// **'{cost} {currency} · balance {balance}'**
+  String commerceCurrencyOption(String currency, int cost, int balance);
+
+  /// No description provided for @commerceInsufficientCurrency.
+  ///
+  /// In en, this message translates to:
+  /// **'Insufficient balance'**
+  String get commerceInsufficientCurrency;
+
+  /// No description provided for @commerceCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get commerceCancel;
+
+  /// No description provided for @commerceContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get commerceContinue;
+
+  /// No description provided for @commerceResultPurchaseConfirmed.
+  ///
+  /// In en, this message translates to:
+  /// **'The Astra grant was verified in Steam Inventory.'**
+  String get commerceResultPurchaseConfirmed;
+
+  /// No description provided for @commerceResultExchangeConfirmed.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme ownership was verified in Steam Inventory.'**
+  String get commerceResultExchangeConfirmed;
+
+  /// No description provided for @commerceResultCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'The Steam transaction was cancelled.'**
+  String get commerceResultCancelled;
+
+  /// No description provided for @commerceResultRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'The transaction requirements were not met. Check your balance and ownership.'**
+  String get commerceResultRejected;
+
+  /// No description provided for @commerceResultFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'The Steam transaction could not be completed. Try again later.'**
+  String get commerceResultFailed;
+
+  /// No description provided for @commerceResultIndeterminate.
+  ///
+  /// In en, this message translates to:
+  /// **'Transaction verification is delayed. Do not retry the transaction; refresh Inventory first.'**
+  String get commerceResultIndeterminate;
 
   /// No description provided for @commerceAuthorityNotice.
   ///
@@ -4875,8 +4980,7 @@ abstract class AppLocalizations {
   String get htmlExportSaveFirst;
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -4885,26 +4989,25 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'ko'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'ko'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {
+
+
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'en':
-      return AppLocalizationsEn();
-    case 'ko':
-      return AppLocalizationsKo();
+    case 'en': return AppLocalizationsEn();
+    case 'ko': return AppLocalizationsKo();
   }
 
   throw FlutterError(
     'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.',
+    'that was used.'
   );
 }

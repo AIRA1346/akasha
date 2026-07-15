@@ -28,11 +28,11 @@ POC IDs `10001`, `10002`, `10010`, `10020`, `10021`, `20001`, `20010`, and
 adapters must ignore every POC ID even if a developer account still owns old
 instances.
 
-## Client read adapter
+## Client adapter
 
 The local draft is mirrored by the explicit registry in
 `lib/core/commerce/steam_inventory/steam_inventory_itemdefs.dart`. The
-production read gateway:
+production gateway:
 
 - verifies diagnostic AppID `4677560`, then obtains a fresh account inventory
   through `GetAllItems`;
@@ -40,14 +40,29 @@ production read gateway:
 - obtains the user's currency code and priced pack amounts through
   `RequestPrices` followed by `GetItemsWithPrices`;
 - never accepts raw ItemDef ids from UI;
-- exposes no active purchase, exchange, promo, consume, or playtime reward
-  path;
-- remains unreachable in the normal app while the production feature flag is
-  false.
+- exposes purchase and exchange only through approved domain product IDs and
+  the production ItemDef registry;
+- preserves real Steam instance IDs for exact single-currency exchange input;
+- treats native API acceptance as pending, waits for the matching terminal
+  result, and confirms only after a fresh inventory read exposes the expected
+  balance or entitlement change;
+- blocks duplicate, already-owned, insufficient-balance, and indeterminate
+  retry paths before another Steam mutation;
+- keeps promo, consume, and playtime reward methods outside the production
+  transaction port;
+- remains unreachable in the normal app while both the release IAP flag and
+  the explicit sandbox transaction build define are false.
 
 The returned Steam price integer is stored as an opaque amount. It must not be
 called a micro-unit or formatted by guessing currency decimals before sandbox
 evidence confirms the display contract.
+
+Internal transaction builds use
+`--dart-define=AKASHA_STEAM_SANDBOX_TRANSACTIONS=true` through
+[`scripts/build_steam_inventory_sandbox.ps1`](../../../scripts/build_steam_inventory_sandbox.ps1).
+This does not change `steamInAppPurchasesEnabled`, which remains false. The live
+manual matrix is tracked in
+[`SANDBOX_TRANSACTION_CHECKLIST.md`](SANDBOX_TRANSACTION_CHECKLIST.md).
 
 ## Launch definitions
 
@@ -86,7 +101,9 @@ validation.
 4. Verify `RequestPrices` returns Valve-localized prices for `40110-40112`.
 5. Test six successful `TriggerItemDrop(40220)` grants and confirm a seventh is
    denied within the same 1,440-minute window.
-6. Test all six theme exchange paths and duplicate-entitlement client guards.
+6. Complete every row in
+   [`SANDBOX_TRANSACTION_CHECKLIST.md`](SANDBOX_TRANSACTION_CHECKLIST.md),
+   including all six theme exchange paths and duplicate-entitlement guards.
 7. Test restart and a second PC before enabling
    `FeatureFlags.steamInAppPurchasesEnabled`.
 

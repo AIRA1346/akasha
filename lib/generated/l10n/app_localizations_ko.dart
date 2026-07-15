@@ -1537,6 +1537,10 @@ class AppLocalizationsKo extends AppLocalizations {
       'Steam 계정이 연결되었습니다. 구매 기능은 아직 비활성입니다.';
 
   @override
+  String get commerceAccountReadyTransactions =>
+      'Steam 거래가 활성화되어 있습니다. 완료 후 인벤토리에서 결과를 확인합니다.';
+
+  @override
   String get commerceAccountOfflineCache => '오프라인 상태입니다. 마지막으로 확인한 정보를 표시합니다.';
 
   @override
@@ -1577,6 +1581,68 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get commerceComingSoon => '출시 준비 중';
+
+  @override
+  String get commerceBuyOnSteam => 'Steam에서 구매';
+
+  @override
+  String get commerceChooseCurrency => '재화 선택';
+
+  @override
+  String get commerceOperationInProgress => '거래 확인 중';
+
+  @override
+  String commercePurchaseConfirmTitle(String product) {
+    return '$product 구매';
+  }
+
+  @override
+  String get commercePurchaseConfirmBody =>
+      'Steam 오버레이에서 현지 가격과 결제 수단을 최종 확인합니다. 완료 후 Steam Inventory를 다시 조회합니다.';
+
+  @override
+  String commerceExchangeConfirmTitle(String product) {
+    return '$product 교환';
+  }
+
+  @override
+  String get commerceChooseCurrencyBody =>
+      '아스트라 또는 에코 중 하나만 선택할 수 있습니다. 혼합 결제는 지원하지 않습니다.';
+
+  @override
+  String commerceCurrencyOption(String currency, int cost, int balance) {
+    return '$currency $cost개 · 보유 $balance개';
+  }
+
+  @override
+  String get commerceInsufficientCurrency => '잔액 부족';
+
+  @override
+  String get commerceCancel => '취소';
+
+  @override
+  String get commerceContinue => '계속';
+
+  @override
+  String get commerceResultPurchaseConfirmed =>
+      '아스트라 지급을 Steam Inventory에서 확인했습니다.';
+
+  @override
+  String get commerceResultExchangeConfirmed =>
+      '테마 소유권을 Steam Inventory에서 확인했습니다.';
+
+  @override
+  String get commerceResultCancelled => 'Steam 거래를 취소했습니다.';
+
+  @override
+  String get commerceResultRejected => '거래 조건을 충족하지 못했습니다. 잔액과 소유 상태를 확인해 주세요.';
+
+  @override
+  String get commerceResultFailed => 'Steam 거래를 완료하지 못했습니다. 잠시 후 다시 시도해 주세요.';
+
+  @override
+  String get commerceResultIndeterminate =>
+      '거래 결과 확인이 지연되고 있습니다. 중복 거래를 시도하지 말고 인벤토리를 다시 확인해 주세요.';
 
   @override
   String get commerceAuthorityNotice =>

@@ -107,11 +107,22 @@ class MethodChannelSteamInventoryReadPort implements SteamInventoryReadPort {
     for (final value in raw['items'] as List<dynamic>? ?? const []) {
       if (value is! Map) continue;
       final row = Map<Object?, Object?>.from(value);
+      final instanceId = '${row['instanceId'] ?? ''}'.trim();
       final itemDefId = _asInt(row['itemDefId']);
       final quantity = _asInt(row['quantity']);
-      if (itemDefId == null || quantity == null || quantity < 0) continue;
+      if (instanceId.isEmpty ||
+          !_instanceIdPattern.hasMatch(instanceId) ||
+          itemDefId == null ||
+          quantity == null ||
+          quantity < 0) {
+        continue;
+      }
       items.add(
-        SteamInventoryReadItem(itemDefId: itemDefId, quantity: quantity),
+        SteamInventoryReadItem(
+          instanceId: instanceId,
+          itemDefId: itemDefId,
+          quantity: quantity,
+        ),
       );
     }
     return SteamInventoryItemsResult(
@@ -171,6 +182,8 @@ class MethodChannelSteamInventoryReadPort implements SteamInventoryReadPort {
     final num value => value.toInt(),
     _ => null,
   };
+
+  static final RegExp _instanceIdPattern = RegExp(r'^[0-9]+$');
 
   static String _issue(Map<String, Object?>? raw, String fallback) {
     final value = '${raw?['code'] ?? raw?['status'] ?? fallback}'.trim();

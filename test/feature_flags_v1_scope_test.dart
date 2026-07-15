@@ -17,5 +17,8 @@ void main() {
 
   test('Steam IAP remains disabled until payment flow is verified', () {
     expect(FeatureFlags.steamInAppPurchasesEnabled, isFalse);
+    expect(FeatureFlags.steamInventorySandboxTransactionsEnabled, isFalse);
+    expect(FeatureFlags.steamCommerceProviderEnabled, isFalse);
+    expect(FeatureFlags.steamCommerceTransactionsEnabled, isFalse);
   });
 }

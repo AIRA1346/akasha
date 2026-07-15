@@ -20,9 +20,9 @@
 > - **Entity derivedIndexesUpdated** — Entity save/delete sets per-path `VaultPathChange.derivedIndexesUpdated` after successful index mutation; Home skips `ArchiveIndexManager` only (UI side-effects kept). Home debounce **AND-coalesces** pending path flags across batches (`false` survives later `true`). Work/Journal/Timeline still double-update (follow-up)
 > - **HomeShell vault-watch dispose lifecycle (ACTION A)** — God Class 전면 리팩터 **기각** (상태 소유권은 이미 coordinator로 분리). `HomeVaultWatchReactor` generation cancel + dispose 순서(reactor → vault sub/debounce → workbench) + `WorkbenchController.syncEntityTabs` await 후 `_disposed` guard. **COUPLED/DEFERRED 유지:** timeline token 과다 bump · 이중 rebuild · Catalog `isCatalogLoading` 직접 set · Vault cold-start bootstrap 추출
 > - **Package modularization audit (closed)** — 단일 Flutter 앱 + `akasha_commerce_domain`(유일한 성공 공유 package) + 별도 backend 유지 · package graph **비순환** · 신규 EXTRACT_NOW **없음** · Melos / `akasha_core`·database·ui 전면 분할·줄 수 기준 분리 **기각**. Archive format/codec = PREPARE_BOUNDARY · Vault I/O / UI / Home orchestration = KEEP_IN_APP · Steam bridge는 production IAP·no-IAP 빌드 제외 요구 시 **CMake optional부터** 재검토 · Melos는 package 수·공통 orchestration 필요성이 실제로 늘 때만. **재오픈 트리거:** 앱 외 제2 소비자 · 플랫폼 완전 빌드 제외 · 안정 API/의존 방향 · 앱 타입 역참조 없음 · 독립 테스트·배포·CI 격리 실측 · unrelated 동시 변경 반복
-> - Flutter app: `flutter analyze` **0** · `flutter test` **1159**
+> - Flutter app: `flutter analyze` **0** · `flutter test` **1176**
 > - Commerce packages: domain `dart test` **17** · backend `dart test` **18** · domain/root `dart analyze` **0**
-> - Windows debug/release build **OK (2026-07-15)**
+> - Windows debug/default release/sandbox release build **OK (2026-07-15)**
 > - **UX-5A Theme package regression foundation** — 5 preset asset namespace/fallback/reduced-motion 계약 · 핵심 surface 3 viewport/125% text geometry · Classic Dark/Midnight Blue Windows golden · **done**. 실제 bundled artwork 검증은 아래 UX-5B로 확장.
 > - **UX-5B Bundled theme artwork** — Classic Dark·Midnight Blue 실제 backdrop/Hero 4개 · asset bundle/hash 검증 · 실제 decode/paint golden · **done**.
 > - **UX-5C Premium theme artwork** — Sakura·Amethyst·Nocturne reference·palette·effect 확정 · 실제 backdrop/Hero 6개 · 공식 5테마 Windows golden · **done**. Commerce·entitlement는 계속 비활성.
@@ -31,8 +31,9 @@
 > - **Commerce catalog foundation** — Steam Inventory authority·Astra/Echo 정책 SSOT · 공식 테마 패키지 3종 `500 Astra 또는 500 Echo` · 혼합/상호 교환 금지 · provider-neutral `CommerceAccountSnapshot`/`CommerceGateway` · app-root `CommerceController`/scope가 Store·Inventory와 테마 entitlement를 단일 snapshot으로 연결 · unknown balance는 `0` 대신 미확인 표시 · production 구매 CTA/flag는 계속 비활성 · **done**.
 > - **POC ItemDef semantics correction** — `playtimegenerator`의 `10002x5`는 수량 5가 아니라 선택 weight이므로 현재 게시 POC는 성공 시 Echo 1개를 지급한다. Fake/test를 실제 의미에 맞췄고 historical JSON은 증거 보존을 위해 유지한다. production 다중 지급은 intermediate Echo bundle을 사용한다.
 > - **Production ItemDef local draft** — POC ID 8개는 `hidden` 퇴역하고 출시 정의는 `40000-41199`로 분리했다. Echo는 10분당 10개·1,440분 창당 최대 6회, starter promo/Support 제외, 테마 3종은 Astra 500 또는 Echo 500의 단일 선택 recipe다. JSON·불변조건 테스트는 완료했지만 Steamworks 게시와 feature flag 활성화는 하지 않았다.
-> - **Production Steam read gateway** — 단일 production ItemDef registry와 읽기 전용 `SteamInventoryCommerceGateway`를 연결했다. `GetAllItems`의 production 재화/테마만 snapshot으로 만들고 모든 POC ID를 무시하며, `RequestPrices`의 통화 코드와 raw current/base amount를 보존한다. 가격 실패는 유효한 계정 snapshot을 지우지 않고 거래 메서드는 `read_only`로 거부한다. feature flag와 구매 CTA는 계속 비활성이다.
-> - **Store/Inventory read UX** — 승인 Astra pack 3종과 테마 package를 분리하고 `disabled/loading/ready/offlineCache/unavailable` 상태, live retry, provider-owned 표시, compact currency layout을 단일 account snapshot 위에 구현했다. Steam raw 가격은 단위를 추정하지 않고 통화 코드와 가격 데이터 가용성만 알리며 모든 구매/교환 CTA는 계속 비활성이다.
+> - **Production Steam gateway** — 단일 production ItemDef registry와 `SteamInventoryCommerceGateway`를 연결했다. `GetAllItems`의 production 재화/테마만 snapshot으로 만들고 모든 POC ID를 무시하며, `RequestPrices`의 통화 코드와 raw current/base amount를 보존한다. 명시적 sandbox build에서만 승인 pack `StartPurchase`와 단일 재화 `ExchangeItems`를 허용하고, 실제 instance ID와 terminal result 뒤의 새 inventory snapshot으로만 성공을 확정한다.
+> - **Store/Inventory UX** — 승인 Astra pack 3종과 테마 package를 분리하고 `disabled/loading/ready/offlineCache/unavailable` 상태, live retry, provider-owned 표시, compact currency layout을 단일 account snapshot 위에 구현했다. Steam raw 가격 단위를 추정하지 않는다. 정상 build에서는 구매/교환 CTA가 계속 비활성이며 sandbox build에서만 확인 dialog와 Astra/Echo 단일 선택 경로를 노출한다.
+> - **Steam sandbox transaction foundation** — transaction port·MethodChannel polling·allowlist·중복 mutation guard·취소/거절/실패/불확정 상태·재조회 reconciliation을 구현했다. 불확정 결과는 세션 내 추가 거래를 막아 중복 결제를 피하고, 로컬에서 잔액이나 entitlement를 직접 지급하지 않는다. 코드/자동 검증과 sandbox Release 빌드는 완료했지만 production ItemDef 게시 및 Steam partner 계정의 실제 취소/완료/교환 E2E는 [sandbox checklist](steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md)에 남아 있다. `steamInAppPurchasesEnabled`는 계속 `false`다.
 >
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)  
 > **무한 아카이브 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
@@ -55,9 +56,9 @@
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
 
-**v1 blocking에 가까운 검증:** root `flutter test` **1159** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
+**v1 blocking에 가까운 검증:** root `flutter test` **1176** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
 **v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.  
-**IAP:** `FeatureFlags.steamInAppPurchasesEnabled = false` — 확정 상품·가격의 read-only preview만 존재한다. 활성 구매 CTA·Steam 결제 가능 표시·재심사 주장은 payment flow 검증 전 금지한다.
+**IAP:** `FeatureFlags.steamInAppPurchasesEnabled = false` — 정상 build의 구매 CTA는 비활성이다. 별도 내부 sandbox define에서만 거래 adapter를 열 수 있으며, 실제 Steamworks checklist 검증 전 production 결제 가능 표시·재심사 주장은 금지한다.
 ---
 
 ## 1. 데이터 계층
@@ -87,7 +88,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| root `flutter test` | **1159 PASS** | ✅ |
+| root `flutter test` | **1176 PASS** | ✅ |
 | commerce domain `dart test` | **17 PASS** | ✅ |
 | commerce backend `dart test` | **18 PASS** | ✅ |
 | `flutter analyze lib` | 0 issue | ✅ |

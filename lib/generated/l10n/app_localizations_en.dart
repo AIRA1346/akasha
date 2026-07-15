@@ -1578,6 +1578,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'Steam is connected. Purchases are still disabled.';
 
   @override
+  String get commerceAccountReadyTransactions =>
+      'Steam transactions are enabled. Results are verified in Inventory after completion.';
+
+  @override
   String get commerceAccountOfflineCache =>
       'Offline. Showing the last verified information.';
 
@@ -1620,6 +1624,70 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get commerceComingSoon => 'Preparing for launch';
+
+  @override
+  String get commerceBuyOnSteam => 'Buy on Steam';
+
+  @override
+  String get commerceChooseCurrency => 'Choose currency';
+
+  @override
+  String get commerceOperationInProgress => 'Verifying transaction';
+
+  @override
+  String commercePurchaseConfirmTitle(String product) {
+    return 'Buy $product';
+  }
+
+  @override
+  String get commercePurchaseConfirmBody =>
+      'Confirm the local price and payment method in the Steam overlay. AKASHA will refresh Steam Inventory after completion.';
+
+  @override
+  String commerceExchangeConfirmTitle(String product) {
+    return 'Exchange for $product';
+  }
+
+  @override
+  String get commerceChooseCurrencyBody =>
+      'Choose either Astra or Echo. Mixed payment is not supported.';
+
+  @override
+  String commerceCurrencyOption(String currency, int cost, int balance) {
+    return '$cost $currency · balance $balance';
+  }
+
+  @override
+  String get commerceInsufficientCurrency => 'Insufficient balance';
+
+  @override
+  String get commerceCancel => 'Cancel';
+
+  @override
+  String get commerceContinue => 'Continue';
+
+  @override
+  String get commerceResultPurchaseConfirmed =>
+      'The Astra grant was verified in Steam Inventory.';
+
+  @override
+  String get commerceResultExchangeConfirmed =>
+      'Theme ownership was verified in Steam Inventory.';
+
+  @override
+  String get commerceResultCancelled => 'The Steam transaction was cancelled.';
+
+  @override
+  String get commerceResultRejected =>
+      'The transaction requirements were not met. Check your balance and ownership.';
+
+  @override
+  String get commerceResultFailed =>
+      'The Steam transaction could not be completed. Try again later.';
+
+  @override
+  String get commerceResultIndeterminate =>
+      'Transaction verification is delayed. Do not retry the transaction; refresh Inventory first.';
 
   @override
   String get commerceAuthorityNotice =>

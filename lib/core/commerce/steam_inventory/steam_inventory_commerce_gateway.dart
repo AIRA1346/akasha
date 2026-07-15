@@ -2,21 +2,38 @@ import 'package:akasha_commerce_domain/akasha_commerce_domain.dart';
 
 import 'steam_inventory_itemdefs.dart';
 import 'steam_inventory_read_port.dart';
+import 'steam_inventory_transaction_port.dart';
 
-/// Read-only production adapter for Steam-backed balances, entitlements, and
-/// localized Astra pack prices.
+/// Production adapter for Steam-backed balances, entitlements, localized
+/// Astra pack prices, and guarded sandbox transactions.
 ///
-/// Mutating methods deliberately reject until transaction reconciliation has
-/// passed the Steam sandbox gate.
+/// Transaction completion is never trusted on its own. Every mutation ends in
+/// a fresh inventory read and is confirmed only when the expected balance or
+/// entitlement change is visible in that provider snapshot.
 class SteamInventoryCommerceGateway implements CommerceGateway {
-  SteamInventoryCommerceGateway({required SteamInventoryReadPort port})
-    : _port = port;
+  SteamInventoryCommerceGateway({
+    required SteamInventoryReadPort port,
+    SteamInventoryTransactionPort? transactionPort,
+    bool transactionsEnabled = false,
+  }) : _port = port,
+       _transactionPort = transactionPort,
+       _transactionsConfigured = transactionsEnabled;
 
   final SteamInventoryReadPort _port;
+  final SteamInventoryTransactionPort? _transactionPort;
+  final bool _transactionsConfigured;
   CommerceAccountSnapshot _lastSnapshot = const CommerceAccountSnapshot(
     state: CommerceAuthorityState.unavailable,
     issueCode: 'steam_account_not_loaded',
   );
+  List<SteamInventoryReadItem> _lastInventoryItems = const [];
+  bool _mutationInFlight = false;
+  bool _reconciliationRequired = false;
+
+  bool get _transactionsAvailable =>
+      _transactionsConfigured &&
+      _transactionPort != null &&
+      !_reconciliationRequired;
 
   @override
   Future<CommerceAccountSnapshot> loadAccount() async {
@@ -37,6 +54,7 @@ class SteamInventoryCommerceGateway implements CommerceGateway {
         inventory.issueCode ?? 'steam_inventory_read_failed',
       );
     }
+    _lastInventoryItems = List.unmodifiable(inventory.items);
 
     final totals = <int, int>{};
     for (final item in inventory.items) {
@@ -84,7 +102,7 @@ class SteamInventoryCommerceGateway implements CommerceGateway {
       echoBalance: totals[SteamInventoryItemDefs.echoUnit] ?? 0,
       entitlementKeys: Set.unmodifiable(entitlements),
       localizedPrices: Map.unmodifiable(localizedPrices),
-      transactionsEnabled: false,
+      transactionsEnabled: _transactionsAvailable,
       observedAt: inventory.observedAt ?? DateTime.now().toUtc(),
       priceIssueCode: priceIssueCode,
     );
@@ -120,19 +138,222 @@ class SteamInventoryCommerceGateway implements CommerceGateway {
   @override
   Future<CommerceOperationResult> purchaseAstraPack({
     required String productId,
-  }) async => CommerceOperationResult(
-    status: CommerceOperationStatus.rejected,
-    snapshot: _lastSnapshot,
-    issueCode: 'steam_commerce_read_only',
-  );
+  }) async {
+    final product = CommerceCatalog.byId(productId);
+    final itemDefId = SteamInventoryItemDefs.pricedPackByProductId[productId];
+    if (product == null ||
+        !CommerceCatalog.isApprovedAstraPack(productId) ||
+        itemDefId == null ||
+        product.grantPremiumAmount == null) {
+      return _rejected('steam_product_not_allowed');
+    }
+    final guard = _mutationGuard();
+    if (guard != null) return guard;
+
+    final before = _lastSnapshot.astraBalance!;
+    _mutationInFlight = true;
+    try {
+      final transaction = await _transactionPort!.startPurchase(
+        itemDefId: itemDefId,
+      );
+      return _reconcileMutation(
+        transaction: transaction,
+        outcomeObserved: (snapshot) =>
+            (snapshot.astraBalance ?? -1) >=
+            before + product.grantPremiumAmount!,
+      );
+    } catch (_) {
+      _reconciliationRequired = true;
+      return CommerceOperationResult(
+        status: CommerceOperationStatus.indeterminate,
+        snapshot: _withoutTransactions(_lastSnapshot),
+        issueCode: 'steam_transaction_exception_after_start',
+      );
+    } finally {
+      _mutationInFlight = false;
+    }
+  }
 
   @override
   Future<CommerceOperationResult> exchangeProduct({
     required String productId,
     required CurrencyKind payWith,
-  }) async => CommerceOperationResult(
-    status: CommerceOperationStatus.rejected,
-    snapshot: _lastSnapshot,
-    issueCode: 'steam_commerce_read_only',
+  }) async {
+    final product = CommerceCatalog.byId(productId);
+    final generateItemDefId =
+        SteamInventoryItemDefs.exchangeByProductId[productId];
+    final entitlementKey = product?.entitlementKey;
+    final payment = product?.payment;
+    final price = switch (payWith) {
+      CurrencyKind.premium => payment?.premiumPrice,
+      CurrencyKind.earned => payment?.earnedPrice,
+    };
+    if (product == null ||
+        product.kind != ProductKind.themePackage ||
+        generateItemDefId == null ||
+        entitlementKey == null ||
+        price == null ||
+        price <= 0) {
+      return _rejected('steam_product_not_allowed');
+    }
+    final guard = _mutationGuard();
+    if (guard != null) return guard;
+    if (_lastSnapshot.owns(entitlementKey)) {
+      return _rejected('steam_theme_already_owned');
+    }
+    final balance = _lastSnapshot.balanceOf(payWith)!;
+    if (balance < price) {
+      return _rejected('steam_insufficient_currency');
+    }
+
+    final currencyItemDefId = switch (payWith) {
+      CurrencyKind.premium => SteamInventoryItemDefs.astraUnit,
+      CurrencyKind.earned => SteamInventoryItemDefs.echoUnit,
+    };
+    final destroyItems = _allocateDestroyItems(
+      itemDefId: currencyItemDefId,
+      quantity: price,
+    );
+    if (destroyItems == null) {
+      return _rejected('steam_currency_instances_unavailable');
+    }
+
+    _mutationInFlight = true;
+    try {
+      final transaction = await _transactionPort!.exchangeItems(
+        generateItemDefId: generateItemDefId,
+        destroyItems: destroyItems,
+      );
+      return _reconcileMutation(
+        transaction: transaction,
+        outcomeObserved: (snapshot) => snapshot.owns(entitlementKey),
+      );
+    } catch (_) {
+      _reconciliationRequired = true;
+      return CommerceOperationResult(
+        status: CommerceOperationStatus.indeterminate,
+        snapshot: _withoutTransactions(_lastSnapshot),
+        issueCode: 'steam_transaction_exception_after_start',
+      );
+    } finally {
+      _mutationInFlight = false;
+    }
+  }
+
+  CommerceOperationResult? _mutationGuard() {
+    if (!_transactionsConfigured || _transactionPort == null) {
+      return _rejected('steam_commerce_read_only');
+    }
+    if (_mutationInFlight) return _rejected('steam_operation_in_progress');
+    if (_reconciliationRequired) {
+      return _rejected('steam_reconciliation_required');
+    }
+    if (!_lastSnapshot.canTransact || !_lastSnapshot.hasKnownBalances) {
+      return _rejected('steam_account_not_ready');
+    }
+    return null;
+  }
+
+  CommerceOperationResult _rejected(String issueCode) =>
+      CommerceOperationResult(
+        status: CommerceOperationStatus.rejected,
+        snapshot: _lastSnapshot,
+        issueCode: issueCode,
+      );
+
+  Future<CommerceOperationResult> _reconcileMutation({
+    required SteamInventoryTransactionResult transaction,
+    required bool Function(CommerceAccountSnapshot snapshot) outcomeObserved,
+  }) async {
+    final refreshed = await loadAccount();
+    final observed =
+        refreshed.state == CommerceAuthorityState.ready &&
+        outcomeObserved(refreshed);
+    if (observed) {
+      _reconciliationRequired = false;
+      return CommerceOperationResult(
+        status: CommerceOperationStatus.confirmed,
+        snapshot: refreshed,
+        providerHandle: transaction.providerHandle,
+        providerOrderId: transaction.orderId,
+        providerTransactionId: transaction.transactionId,
+      );
+    }
+
+    if (transaction.status == SteamInventoryTransactionStatus.confirmed ||
+        transaction.status == SteamInventoryTransactionStatus.indeterminate) {
+      _reconciliationRequired = true;
+      final blocked = _withoutTransactions(refreshed);
+      _lastSnapshot = blocked;
+      return CommerceOperationResult(
+        status: CommerceOperationStatus.indeterminate,
+        snapshot: blocked,
+        providerHandle: transaction.providerHandle,
+        providerOrderId: transaction.orderId,
+        providerTransactionId: transaction.transactionId,
+        issueCode:
+            transaction.issueCode ?? 'steam_reconciliation_outcome_missing',
+      );
+    }
+
+    return CommerceOperationResult(
+      status: _commerceStatus(transaction.status),
+      snapshot: refreshed,
+      providerHandle: transaction.providerHandle,
+      providerOrderId: transaction.orderId,
+      providerTransactionId: transaction.transactionId,
+      issueCode: transaction.issueCode,
+    );
+  }
+
+  List<SteamInventoryDestroyItem>? _allocateDestroyItems({
+    required int itemDefId,
+    required int quantity,
+  }) {
+    var remaining = quantity;
+    final allocated = <SteamInventoryDestroyItem>[];
+    for (final item in _lastInventoryItems) {
+      if (remaining <= 0) break;
+      if (item.itemDefId != itemDefId ||
+          item.instanceId.isEmpty ||
+          item.quantity <= 0) {
+        continue;
+      }
+      final take = item.quantity < remaining ? item.quantity : remaining;
+      allocated.add(
+        SteamInventoryDestroyItem(instanceId: item.instanceId, quantity: take),
+      );
+      remaining -= take;
+    }
+    return remaining == 0 ? List.unmodifiable(allocated) : null;
+  }
+
+  CommerceAccountSnapshot _withoutTransactions(
+    CommerceAccountSnapshot snapshot,
+  ) => CommerceAccountSnapshot(
+    state: snapshot.state,
+    astraBalance: snapshot.astraBalance,
+    echoBalance: snapshot.echoBalance,
+    entitlementKeys: snapshot.entitlementKeys,
+    localizedPrices: snapshot.localizedPrices,
+    transactionsEnabled: false,
+    observedAt: snapshot.observedAt,
+    issueCode: snapshot.issueCode,
+    priceIssueCode: snapshot.priceIssueCode,
   );
+
+  static CommerceOperationStatus _commerceStatus(
+    SteamInventoryTransactionStatus status,
+  ) => switch (status) {
+    SteamInventoryTransactionStatus.confirmed =>
+      CommerceOperationStatus.confirmed,
+    SteamInventoryTransactionStatus.cancelled =>
+      CommerceOperationStatus.cancelled,
+    SteamInventoryTransactionStatus.rejected =>
+      CommerceOperationStatus.rejected,
+    SteamInventoryTransactionStatus.failed => CommerceOperationStatus.failed,
+    SteamInventoryTransactionStatus.pending ||
+    SteamInventoryTransactionStatus.indeterminate =>
+      CommerceOperationStatus.indeterminate,
+  };
 }

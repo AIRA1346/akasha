@@ -5,6 +5,7 @@ import '../generated/l10n/app_localizations.dart';
 import '../services/commerce_controller.dart';
 import '../theme/akasha_palette.dart';
 import '../theme/akasha_theme_registry.dart';
+import 'commerce_transaction_dialogs.dart';
 
 /// Read-only commerce discovery surface while production Steam transactions
 /// remain disabled. A real [CommerceAccountSnapshot] can be injected later
@@ -162,6 +163,7 @@ class _CommerceStoreTab extends StatelessWidget {
             itemBuilder: (context, index) => _AstraPackCard(
               product: CommerceCatalog.astraPacks[index],
               account: account,
+              controller: controller,
               l10n: l10n,
             ),
           ),
@@ -184,6 +186,7 @@ class _CommerceStoreTab extends StatelessWidget {
             itemBuilder: (context, index) => _ThemePackageCard(
               definition: definitions[index],
               account: account,
+              controller: controller,
               l10n: l10n,
             ),
           ),
@@ -228,11 +231,13 @@ class _AstraPackCard extends StatelessWidget {
   const _AstraPackCard({
     required this.product,
     required this.account,
+    required this.controller,
     required this.l10n,
   });
 
   final CommerceProduct product;
   final CommerceAccountSnapshot account;
+  final CommerceController? controller;
   final AppLocalizations l10n;
 
   @override
@@ -243,6 +248,15 @@ class _AstraPackCard extends StatelessWidget {
     final priceLabel = price == null
         ? l10n.commerceSteamPricePending
         : l10n.commerceSteamPriceReady(price.currencyCode);
+    final operationForProduct =
+        controller?.operationInFlight == true &&
+        controller?.activeProductId == product.id;
+    final canBuy =
+        controller != null &&
+        account.canTransact &&
+        price != null &&
+        controller?.operationInFlight != true;
+    final productName = _productName(context, product);
 
     return Material(
       color: palette.surface,
@@ -288,7 +302,7 @@ class _AstraPackCard extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Text(
-              _productName(context, product),
+              productName,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
@@ -304,9 +318,33 @@ class _AstraPackCard extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: OutlinedButton.icon(
-                onPressed: null,
-                icon: const Icon(Icons.schedule_rounded, size: 16),
-                label: Text(l10n.commerceComingSoon),
+                key: ValueKey('commerce-buy-${product.id}'),
+                onPressed: canBuy
+                    ? () => confirmAstraPackPurchase(
+                        context,
+                        controller: controller!,
+                        product: product,
+                        productName: productName,
+                      )
+                    : null,
+                icon: operationForProduct
+                    ? const SizedBox.square(
+                        dimension: 16,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      )
+                    : Icon(
+                        canBuy
+                            ? Icons.shopping_bag_outlined
+                            : Icons.schedule_rounded,
+                        size: 16,
+                      ),
+                label: Text(
+                  operationForProduct
+                      ? l10n.commerceOperationInProgress
+                      : canBuy
+                      ? l10n.commerceBuyOnSteam
+                      : l10n.commerceComingSoon,
+                ),
               ),
             ),
           ],
@@ -320,11 +358,13 @@ class _ThemePackageCard extends StatelessWidget {
   const _ThemePackageCard({
     required this.definition,
     required this.account,
+    required this.controller,
     required this.l10n,
   });
 
   final AkashaThemeDefinition definition;
   final CommerceAccountSnapshot account;
+  final CommerceController? controller;
   final AppLocalizations l10n;
 
   @override
@@ -339,6 +379,17 @@ class _ThemePackageCard extends StatelessWidget {
     final echo = payment?.earnedPrice ?? catalog.echoCost;
     final owned =
         catalog.entitlementKey != null && account.owns(catalog.entitlementKey!);
+    final operationForProduct =
+        product != null &&
+        controller?.operationInFlight == true &&
+        controller?.activeProductId == product.id;
+    final canExchange =
+        product != null &&
+        controller != null &&
+        account.canTransact &&
+        !owned &&
+        controller?.operationInFlight != true;
+    final themeName = _themeName(l10n, definition);
 
     return Material(
       color: palette.surface,
@@ -372,7 +423,7 @@ class _ThemePackageCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    _themeName(l10n, definition),
+                    themeName,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
@@ -405,15 +456,39 @@ class _ThemePackageCard extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton.icon(
-                      onPressed: null,
-                      icon: Icon(
-                        owned
-                            ? Icons.check_circle_outline_rounded
-                            : Icons.schedule_rounded,
-                        size: 16,
-                      ),
+                      key: product == null
+                          ? null
+                          : ValueKey('commerce-exchange-${product.id}'),
+                      onPressed: canExchange
+                          ? () => chooseThemeExchangeCurrency(
+                              context,
+                              controller: controller!,
+                              product: product,
+                              productName: themeName,
+                              account: account,
+                            )
+                          : null,
+                      icon: operationForProduct
+                          ? const SizedBox.square(
+                              dimension: 16,
+                              child: CircularProgressIndicator(strokeWidth: 2),
+                            )
+                          : Icon(
+                              owned
+                                  ? Icons.check_circle_outline_rounded
+                                  : canExchange
+                                  ? Icons.payments_outlined
+                                  : Icons.schedule_rounded,
+                              size: 16,
+                            ),
                       label: Text(
-                        owned ? l10n.commerceOwned : l10n.commerceComingSoon,
+                        owned
+                            ? l10n.commerceOwned
+                            : operationForProduct
+                            ? l10n.commerceOperationInProgress
+                            : canExchange
+                            ? l10n.commerceChooseCurrency
+                            : l10n.commerceComingSoon,
                       ),
                     ),
                   ),
@@ -623,7 +698,9 @@ class _CommerceAuthorityBanner extends StatelessWidget {
       CommerceAuthorityState.ready => (
         Icons.verified_outlined,
         palette.success,
-        l10n.commerceAccountReadyReadOnly,
+        account.transactionsEnabled
+            ? l10n.commerceAccountReadyTransactions
+            : l10n.commerceAccountReadyReadOnly,
         false,
         false,
       ),

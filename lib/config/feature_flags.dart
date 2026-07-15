@@ -8,6 +8,23 @@ class FeatureFlags {
   /// POC: docs/active/steam_inventory_poc/README.md
   static const bool steamInAppPurchasesEnabled = false;
 
+  /// Explicit internal build gate for the production ItemDef sandbox flow.
+  ///
+  /// Enable only with
+  /// `--dart-define=AKASHA_STEAM_SANDBOX_TRANSACTIONS=true` in a reviewed
+  /// Steamworks developer build. This does not change the release IAP claim.
+  static const bool steamInventorySandboxTransactionsEnabled =
+      bool.fromEnvironment(
+        'AKASHA_STEAM_SANDBOX_TRANSACTIONS',
+        defaultValue: false,
+      );
+
+  static const bool steamCommerceProviderEnabled =
+      steamInAppPurchasesEnabled || steamInventorySandboxTransactionsEnabled;
+
+  static const bool steamCommerceTransactionsEnabled =
+      steamInAppPurchasesEnabled || steamInventorySandboxTransactionsEnabled;
+
   /// 오늘의 회상 카드 — v1.1에서 활성화 예정
   static const bool showRecallCard = false;
 

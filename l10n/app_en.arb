@@ -918,6 +918,7 @@
   "commerceSteamPricePending": "Local price shown after Steam connects",
   "commerceAccountLoading": "Checking your Steam inventory.",
   "commerceAccountReadyReadOnly": "Steam is connected. Purchases are still disabled.",
+  "commerceAccountReadyTransactions": "Steam transactions are enabled. Results are verified in Inventory after completion.",
   "commerceAccountOfflineCache": "Offline. Showing the last verified information.",
   "commerceAccountUnavailable": "Steam inventory is unavailable.",
   "commerceRetry": "Try again",
@@ -932,6 +933,40 @@
   "commerceThemePackageLabel": "Theme package",
   "commerceThemePackageContents": "Includes the full palette, artwork, backdrop, and theme-specific effects.",
   "commerceComingSoon": "Preparing for launch",
+  "commerceBuyOnSteam": "Buy on Steam",
+  "commerceChooseCurrency": "Choose currency",
+  "commerceOperationInProgress": "Verifying transaction",
+  "commercePurchaseConfirmTitle": "Buy {product}",
+  "@commercePurchaseConfirmTitle": {
+    "placeholders": {
+      "product": { "type": "String" }
+    }
+  },
+  "commercePurchaseConfirmBody": "Confirm the local price and payment method in the Steam overlay. AKASHA will refresh Steam Inventory after completion.",
+  "commerceExchangeConfirmTitle": "Exchange for {product}",
+  "@commerceExchangeConfirmTitle": {
+    "placeholders": {
+      "product": { "type": "String" }
+    }
+  },
+  "commerceChooseCurrencyBody": "Choose either Astra or Echo. Mixed payment is not supported.",
+  "commerceCurrencyOption": "{cost} {currency} · balance {balance}",
+  "@commerceCurrencyOption": {
+    "placeholders": {
+      "currency": { "type": "String" },
+      "cost": { "type": "int" },
+      "balance": { "type": "int" }
+    }
+  },
+  "commerceInsufficientCurrency": "Insufficient balance",
+  "commerceCancel": "Cancel",
+  "commerceContinue": "Continue",
+  "commerceResultPurchaseConfirmed": "The Astra grant was verified in Steam Inventory.",
+  "commerceResultExchangeConfirmed": "Theme ownership was verified in Steam Inventory.",
+  "commerceResultCancelled": "The Steam transaction was cancelled.",
+  "commerceResultRejected": "The transaction requirements were not met. Check your balance and ownership.",
+  "commerceResultFailed": "The Steam transaction could not be completed. Try again later.",
+  "commerceResultIndeterminate": "Transaction verification is delayed. Do not retry the transaction; refresh Inventory first.",
   "commerceAuthorityNotice": "Steam Inventory is the authority for Astra, Echo, and premium ownership. Your Vault never stores payment authority.",
   "themeStatusChecking": "Checking ownership",
   "themeStatusPurchaseRequired": "Purchase required",
