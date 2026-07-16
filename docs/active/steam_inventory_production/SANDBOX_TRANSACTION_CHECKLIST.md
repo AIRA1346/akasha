@@ -1,7 +1,8 @@
 # Steam Inventory Production Sandbox Checklist
 
-> **Status:** ItemDefs published and localized prices verified; first
-> `StartPurchase(40110)` attempt failed before a visible Overlay checkout
+> **Status:** `40110.store_hidden=false` A/B opened Steam checkout; apply the
+> confirmed sale-bundle visibility rule to `40111-40112` and complete the
+> cancel/complete/reconciliation matrix
 > **Release IAP:** disabled
 > **Build:** `scripts/build_steam_inventory_sandbox.ps1`
 > **ItemDefs:** `itemdefs_steamworks_upload.json`
@@ -31,22 +32,24 @@ historical POC and does not authorize release commerce.
 - Confirm the account reports `subscribedApp=true` and has publisher-group or
   valid package access.
 
-### Observed incident — 2026-07-16
+### Observed incident and resolution — 2026-07-16/17
 
 | Step | Result |
 |---|---|
 | Production ItemDefs published | PASS |
 | `RequestPrices` for `40110-40112` | PASS (`KRW`) |
 | Store purchase button | Enabled by current sandbox configuration |
-| `StartPurchase(40110)` | FAIL before visible Overlay checkout |
+| `40110-40112` with `store_hidden=true` | FAIL at callback: `k_EResultFail`, transaction ID `0` |
+| `40110.store_hidden=false` A/B | PASS: Steam checkout Overlay opened |
+| `40111-40112.store_hidden=false` | Upload/publish and checkout verification pending |
 | Historical POC Overlay checkout | PASS |
-| Exact provider phase / `EResult` | Not captured in the failed build; next build retains and copies it |
+| Exact provider phase / `EResult` | PASS: copied for all three sale bundles |
 | Inventory grant | No grant claimed |
 
-The previous green banner was not proof of Overlay readiness. The updated
-build enables transactions only after initialized/logged-on/subscribed/Overlay
-and all-price checks pass. If checkout still does not appear, use **Copy Steam
-diagnostics** before retrying and attach the exact phase/result to this matrix.
+The single-variable A/B established the ItemDef visibility cause without an app
+or SteamPipe change. Keep `40001.store_hidden=true`, publish
+`40110-40112.store_hidden=false`, and retain **Copy Steam diagnostics** for each
+remaining cancel/complete test.
 
 Do not set `steamInAppPurchasesEnabled=true`. The internal build enables only
 `AKASHA_STEAM_SANDBOX_TRANSACTIONS` and

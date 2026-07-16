@@ -1,7 +1,7 @@
 "DepotBuild"
 {
 	"DepotID" "4677561"
-	"ContentRoot" "..\..\build\steam\depot_windows"
+	"ContentRoot" "C:\Users\rkdwl\RuneAtelier\akasha\build\steam\depot_windows"
 	"FileMapping"
 	{
 		"LocalPath" "*"

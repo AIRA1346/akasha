@@ -1,7 +1,7 @@
 # Steam Service and Commerce Release Readiness
 
 > **Status:** Active release gate
-> **Updated:** 2026-07-16
+> **Updated:** 2026-07-17
 > **Current verdict:** **Commerce No-Go** until a Steam-library build completes
 > the purchase, inventory, restart, and recovery matrix
 > **AppID:** `4677560`
@@ -15,45 +15,24 @@ the Astra, Echo, or theme pricing policy.
 
 ## 1. Observed incident
 
-On 2026-07-16, the production ItemDefs were visible through
-`RequestPrices`: KRW prices for `40110-40112` were returned and the Store UI
-enabled its sandbox purchase buttons.
+On 2026-07-16, `RequestPrices` returned KRW prices for `40110-40112`, but all
+three sale bundles reached `SteamInventoryStartPurchaseResult_t` with
+`k_EResultFail`, a valid order ID, and transaction ID `0`. Inventory Service,
+Asset Server configuration, account access, Steam-library launch, BuildID
+`24240688`, and Overlay capability were verified.
 
-Calling `StartPurchase(40110)` did not open a Steam Overlay checkout and AKASHA
-reported a generic transaction failure.
+The published production definitions matched the local schema. The meaningful
+difference from the successful historical POC was that the POC sale bundle
+`10010` was not store-hidden, while production sale bundles `40110-40112` used
+`store_hidden: true`.
 
-The historical POC purchase flow opened the Steam Overlay successfully on the
-same project. That is strong evidence that the renderer hook and basic native
-Overlay integration can work. It does not prove that the newly published
-production ItemDef, current account/package access, or current launch build is
-valid. Investigation therefore prioritizes the exact production
-`StartPurchase` result over rebuilding the Overlay integration.
-
-Confirmed from the screenshot and code:
-
-- Steam initialized sufficiently to read inventory definitions and prices.
-- The purchase did not reach a user-visible checkout.
-- No Astra grant was claimed and no local balance was invented.
-- The exact Steam `EResult`, immediate API phase, launch context, and overlay
-  capability were not visible in the product UI.
-
-Therefore the incident is **not yet assigned to one root cause**. The next
-attempt must distinguish these cases:
-
-1. production ItemDef/provider rejection such as invalid item, access denied,
-   or service unavailable;
-2. the account is missing the app license, partner-group access, or a valid
-   Dev Comp package;
-3. the test executable was run directly while `steam_appid.txt` was present,
-   rather than installed and launched from the Steam library;
-4. the current published application/Overlay configuration differs from the
-   previously successful POC environment;
-5. the Steam client and app are running under different Windows privilege
-   levels.
-
-The updated sandbox build now retains the exact phase, API call handle,
-`steamResultCode`, `steamResultName`, order/transaction IDs, and sanitized
-detail required to distinguish them.
+On 2026-07-17, a controlled A/B changed only
+`40110.store_hidden: true -> false`. `game_only`, `bundle`, `price_category`,
+`use_bundle_price`, the `40001` component price, app code, and SteamPipe build
+all remained unchanged. `StartPurchase(40110)` then opened the Steam checkout
+Overlay. The checkout failure is therefore assigned to store-hiding the priced
+sale bundle. Internal component ItemDef `40001` remains store-hidden; actual
+sale bundles `40110-40112` must not be.
 
 ## 2. What the current implementation gets right
 
@@ -83,7 +62,8 @@ The Store now enables purchase actions only when all of the following are true:
 Missing capability leaves the account readable but transactions disabled with
 an actionable banner. The user can refresh after the Overlay finishes hooking.
 
-**Remaining evidence:** confirm these values from a Steam-library build.
+**Evidence:** confirmed from the Steam-library build on `commerce-sandbox`,
+BuildID `24240688`.
 
 ### R1 — provider failure evidence implemented
 
@@ -101,8 +81,9 @@ persona names, Steam IDs, credentials, publisher keys, absolute paths, and Vault
 content. User feedback distinguishes provider configuration, access, transient
 service failure, cancellation, and indeterminate reconciliation.
 
-**Remaining evidence:** reproduce `StartPurchase(40110)` once and retain the
-copied report.
+**Evidence:** retained for `40110`, `40111`, and `40112`; all three failed at
+`start_purchase_callback` with `k_EResultFail` and transaction ID `0` before
+the `40110` single-field A/B opened checkout.
 
 ### R2 — depot packaging defect fixed
 
@@ -127,22 +108,16 @@ SteamCMD command are recorded in
 `depot_windows.json` is an internal verification manifest, not a SteamCMD
 upload script.
 
-**Remaining evidence:** upload that staged payload to an internal branch and
-verify the installed manifest.
+**Evidence:** uploaded and installed from `commerce-sandbox` as BuildID
+`24240688`, Depot `4677561`, with 97 payload files and no forbidden files.
 
-### R3 — Steamworks configuration is not yet a checked contract
+### R3 — Steamworks configuration checked
 
-Before another purchase attempt, record screenshots or exported evidence for:
-
-- Inventory Service enabled and ItemDefs published;
-- application type;
-- Installation > General Installation >
-  **Enable Steam Overlay for Application** enabled and published;
-- launch executable and working directory;
-- default/closed beta build set live;
-- Dev Comp package includes the AppID and depot;
-- tester account belongs to the publisher group or owns an appropriate key;
-- global and per-app Steam Overlay settings enabled.
+Inventory Service is enabled, Asset Server URL/key are configured, Item
+visibility is Private, the test account is a developer account, and the remote
+definitions matched the upload schema. `40110` checkout opened after changing
+only sale-bundle visibility. Remaining Steamworks work is to publish the same
+`store_hidden: false` policy for `40111-40112` and verify each checkout.
 
 ## 4. Required test order
 

@@ -18,6 +18,7 @@ void main() {
   final byId = <String, Map<String, Object?>>{
     for (final item in items) item['itemdefid']! as String: item,
   };
+  const salePackIds = {'40110', '40111', '40112'};
 
   test(
     'upload candidate has unique IDs and retires every published POC ID',
@@ -64,7 +65,11 @@ void main() {
       expect(item['tradable'], isFalse, reason: 'ItemDef $id tradable');
       expect(item['marketable'], isFalse, reason: 'ItemDef $id marketable');
       expect(item['game_only'], isTrue, reason: 'ItemDef $id game_only');
-      expect(item['store_hidden'], isTrue, reason: 'ItemDef $id store_hidden');
+      expect(
+        item['store_hidden'],
+        salePackIds.contains(id) ? isFalse : isTrue,
+        reason: 'ItemDef $id store visibility',
+      );
       expect(
         !(item.containsKey('price') && item.containsKey('price_category')),
         isTrue,
@@ -124,7 +129,7 @@ void main() {
         expect(item['bundle'], bundle);
         expect(item['price_category'], priceCategory);
         expect(item['use_bundle_price'], isTrue);
-        expect(item['store_hidden'], isTrue);
+        expect(item['store_hidden'], isFalse);
       }
 
       expect(byId['40001']?['price'], '1;USD1');

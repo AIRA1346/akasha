@@ -1,8 +1,8 @@
 # Steam Inventory Production ItemDefs
 
-> **Status:** published to the private partner environment; localized price
-> reads pass, but the first production-pack `StartPurchase` attempt failed
-> before a visible Overlay checkout
+> **Status:** partner-sandbox A/B confirmed that priced sale bundles must not
+> use `store_hidden: true`; `40110` opens checkout with `store_hidden: false`,
+> and the upload candidate applies the same rule to `40111-40112`
 > **AppID:** `4677560`
 > **Upload file:** [`itemdefs_steamworks_upload.json`](itemdefs_steamworks_upload.json)
 > **Product SSOT:** [`../COMMERCE_CURRENCY_CONTRACT.md`](../COMMERCE_CURRENCY_CONTRACT.md)
@@ -70,11 +70,12 @@ POC playtime generator also has `use_drop_limit: true` and `drop_limit: 0`, the
 Steam-documented combination for preventing future drops. Production adapters
 ignore every POC ID even if a developer account still owns old instances.
 
-Every definition is `game_only: true`, non-tradable, non-marketable, and hidden
-from the public Steam Item Store. Therefore public icon URLs are not a
-functional prerequisite for the in-app sandbox flow. Add and validate icons
-before changing those visibility decisions or exposing a Steam-hosted Item
-Store/Backpack experience.
+Every definition remains `game_only: true`, non-tradable, and non-marketable.
+Internal units, rewards, entitlements, and exchange wrappers stay hidden from
+the public Steam Item Store. The three priced Astra sale bundles
+`40110-40112` use `store_hidden: false`; a controlled partner-sandbox A/B showed
+that `40110` returned `k_EResultFail` while hidden and opened checkout after
+that single field was changed.
 
 ## Launch definitions
 
@@ -139,9 +140,11 @@ Neither define changes `steamInAppPurchasesEnabled`, which remains false.
 
 ItemDef `40001` has `price: "1;USD1"` because Steam requires bundle components
 to carry prices for bundle accounting, while `40110-40112` use exact
-`use_bundle_price` overrides. Steam documents `store_hidden` as hiding an item
-from the public Item Store, whereas only `hidden` explicitly makes an ItemDef
-unavailable for purchase.
+`use_bundle_price` overrides. The component remains `store_hidden: true` so it
+is not sold independently. The actual sale bundles use `store_hidden: false`.
+On AppID `4677560`, changing only `40110.store_hidden` from `true` to `false`
+changed `StartPurchase` from callback-level `k_EResultFail` to a visible Steam
+checkout, while `game_only`, bundle contents, and price fields stayed fixed.
 
 AKASHA therefore applies two client guards: the commerce gateway maps only the
 three approved domain pack products, and the production transaction port
@@ -150,13 +153,11 @@ This prevents accidental or injected raw ItemDef input through production app
 surfaces, but it is not claimed as a Steam-server security boundary against a
 separately modified client.
 
-Do not set `hidden: true` on active currency units before sandbox evidence:
-Steam's bundle-selling guidance explicitly recommends component prices plus
-`store_hidden`, and changing that relationship before validating checkout
-could break pack pricing or grants. After publication, run one controlled
-partner-sandbox probe for `StartPurchase(40001, 1)`. If Steam accepts it, record
-the result as a residual provider behavior and keep the app allowlist; revisit
-the economy schema only if pack-only sales must also be enforced by Steam.
+Do not set `hidden: true` on active currency units. Keep the component price and
+`store_hidden: true` on `40001`, keep the app and native purchase allowlists,
+and expose only `40110-40112` as sale bundles. A raw-unit provider probe remains
+optional defense-in-depth evidence and is not required to explain the resolved
+pack checkout failure.
 
 ## Explicitly absent at launch
 

@@ -245,9 +245,11 @@ production code imports only the capability-scoped read/transaction facades.
 7. Publisher keys never ship in Flutter.
 8. Payment, currency, and entitlement data never enter the user Vault.
 9. `40001` keeps its component price for Steam bundle accounting.
-   `store_hidden` is not treated as a server-side purchase prohibition, so a
-   controlled partner-sandbox `StartPurchase(40001, 1)` probe remains a release
-   gate even though production app surfaces and ports reject it.
+   It remains `store_hidden: true`, while the actual sale bundles
+   `40110-40112` use `store_hidden: false`. A partner-sandbox A/B on `40110`
+   confirmed that hiding the sale bundle caused callback-level
+   `k_EResultFail`; changing only that field opened Steam checkout. Production
+   app surfaces and native ports still reject direct `40001` purchase calls.
 
 ## 8. Gates and deferred systems
 
