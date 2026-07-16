@@ -171,17 +171,34 @@ void _showOperationFeedback(
   required bool isPurchase,
 }) {
   final l10n = AppLocalizations.of(context);
-  final message = switch (result.status) {
-    CommerceOperationStatus.confirmed =>
-      isPurchase
-          ? l10n.commerceResultPurchaseConfirmed
-          : l10n.commerceResultExchangeConfirmed,
-    CommerceOperationStatus.noChange => l10n.commerceResultNoChange,
-    CommerceOperationStatus.cancelled => l10n.commerceResultCancelled,
-    CommerceOperationStatus.rejected => l10n.commerceResultRejected,
-    CommerceOperationStatus.failed => l10n.commerceResultFailed,
-    CommerceOperationStatus.indeterminate => l10n.commerceResultIndeterminate,
+  final providerMessage = switch (result.issueCode) {
+    'steam_api_call_invalid' ||
+    'steam_invalid_param' => l10n.commerceResultProviderConfiguration,
+    'steam_access_denied' ||
+    'steam_insufficient_privilege' ||
+    'steam_app_subscription_missing' => l10n.commerceResultAccessDenied,
+    'steam_service_unavailable' ||
+    'steam_no_connection' ||
+    'steam_timeout' ||
+    'steam_busy' ||
+    'steam_remote_disconnect' ||
+    'steam_io_failure' => l10n.commerceResultServiceUnavailable,
+    _ => null,
   };
+  final message =
+      providerMessage ??
+      switch (result.status) {
+        CommerceOperationStatus.confirmed =>
+          isPurchase
+              ? l10n.commerceResultPurchaseConfirmed
+              : l10n.commerceResultExchangeConfirmed,
+        CommerceOperationStatus.noChange => l10n.commerceResultNoChange,
+        CommerceOperationStatus.cancelled => l10n.commerceResultCancelled,
+        CommerceOperationStatus.rejected => l10n.commerceResultRejected,
+        CommerceOperationStatus.failed => l10n.commerceResultFailed,
+        CommerceOperationStatus.indeterminate =>
+          l10n.commerceResultIndeterminate,
+      };
   final messenger = ScaffoldMessenger.maybeOf(context);
   messenger
     ?..hideCurrentSnackBar()

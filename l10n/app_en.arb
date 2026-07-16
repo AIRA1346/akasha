@@ -1,4 +1,12 @@
 {
+  "commerceAccountOverlayUnavailable": "Transactions are locked because the Steam Overlay is unavailable. Launch from Steam and refresh the connection status.",
+  "commerceAccountSubscriptionMissing": "Transactions are locked because this Steam account does not currently report access to AKASHA.",
+  "commerceAccountPricesIncomplete": "Transactions are locked because not all approved Astra pack prices are available from Steam.",
+  "commerceCopyDiagnostics": "Copy Steam diagnostics",
+  "commerceDiagnosticsCopied": "Steam diagnostics copied to the clipboard.",
+  "commerceResultProviderConfiguration": "Steam rejected the purchase item request. Copy diagnostics and verify the ItemDef and release configuration.",
+  "commerceResultAccessDenied": "The current Steam account or app permission cannot start this transaction.",
+  "commerceResultServiceUnavailable": "Steam transaction services are temporarily unavailable. Try again later.",
   "@@locale": "en",
   "browseLoadingCatalog": "Loading global works catalog…",
   "browseNoResults": "No works match your filters.",

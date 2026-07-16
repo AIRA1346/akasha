@@ -22,6 +22,13 @@ enabled its sandbox purchase buttons.
 Calling `StartPurchase(40110)` did not open a Steam Overlay checkout and AKASHA
 reported a generic transaction failure.
 
+The historical POC purchase flow opened the Steam Overlay successfully on the
+same project. That is strong evidence that the renderer hook and basic native
+Overlay integration can work. It does not prove that the newly published
+production ItemDef, current account/package access, or current launch build is
+valid. Investigation therefore prioritizes the exact production
+`StartPurchase` result over rebuilding the Overlay integration.
+
 Confirmed from the screenshot and code:
 
 - Steam initialized sufficiently to read inventory definitions and prices.
@@ -30,22 +37,23 @@ Confirmed from the screenshot and code:
 - The exact Steam `EResult`, immediate API phase, launch context, and overlay
   capability were not visible in the product UI.
 
-Therefore the incident is **not yet assigned to one root cause**. The most
-probable external preconditions to verify first are:
+Therefore the incident is **not yet assigned to one root cause**. The next
+attempt must distinguish these cases:
 
-1. the test executable was run directly while `steam_appid.txt` was present,
-   rather than installed and launched from the Steam library;
-2. AKASHA's Steam app type/settings do not yet have **Enable Steam Overlay for
-   Application** published;
-3. the Steam client or per-app user setting has Overlay disabled;
-4. the account is missing the app license, partner-group access, or a valid
+1. production ItemDef/provider rejection such as invalid item, access denied,
+   or service unavailable;
+2. the account is missing the app license, partner-group access, or a valid
    Dev Comp package;
-5. the app and Steam client are running under different Windows privilege
+3. the test executable was run directly while `steam_appid.txt` was present,
+   rather than installed and launched from the Steam library;
+4. the current published application/Overlay configuration differs from the
+   previously successful POC environment;
+5. the Steam client and app are running under different Windows privilege
    levels.
 
-The current generic error message cannot distinguish these from provider
-rejections such as `k_EResultInvalidParam`, `k_EResultAccessDenied`, or
-`k_EResultServiceUnavailable`.
+The updated sandbox build now retains the exact phase, API call handle,
+`steamResultCode`, `steamResultName`, order/transaction IDs, and sanitized
+detail required to distinguish them.
 
 ## 2. What the current implementation gets right
 
@@ -60,46 +68,43 @@ rejections such as `k_EResultInvalidParam`, `k_EResultAccessDenied`, or
 | Failure safety | Unknown accepted outcomes become indeterminate and block more mutations | Correct duplicate-charge defense |
 | SDK binaries | headers, import library, and `steam_api64.dll` come from the same SDK root | Correct version coupling |
 
-## 3. Gaps that block release commerce
+## 3. Closed code gaps and remaining release evidence
 
-### R0 — capability is confused with configuration
+### R0 — runtime capability gate implemented
 
-The green Store banner currently means the sandbox transaction feature was
-compiled on and the account snapshot is ready. It does **not** mean:
+The Store now enables purchase actions only when all of the following are true:
 
-- the process was launched by Steam;
+- Steam initialized and is logged on;
+- the active account reports subscription to AppID `4677560`;
 - `ISteamUtils::IsOverlayEnabled()` is true;
-- the user owns/subscribes to AppID `4677560`;
-- every approved pack has a valid price;
-- `StartPurchase` is currently usable.
+- all three approved pack prices `40110-40112` are present;
+- the sandbox/release transaction gate and guarded transaction port are active.
 
-The native diagnostic already exposes `subscribedApp`, `overlayEnabled`,
-`overlayActive`, executable path, build mode, and callback counters. The Dart
-production diagnostic discards all but status and AppID.
+Missing capability leaves the account readable but transactions disabled with
+an actionable banner. The user can refresh after the Overlay finishes hooking.
 
-**Required change:** introduce a production `SteamRuntimeCapability` snapshot
-and derive purchase availability from it. A purchase button must be disabled
-with an actionable reason unless all required capabilities are ready.
+**Remaining evidence:** confirm these values from a Steam-library build.
 
-### R1 — the exact provider failure is hidden
+### R1 — provider failure evidence implemented
 
-Native operations already emit:
+Native and Dart operations now preserve:
 
 - phase (`start_purchase_api`, `start_purchase_callback`, result-ready);
 - `steamResultCode` and `steamResultName`;
+- API call handle;
 - order and transaction IDs;
 - correlation handle;
 - overlay activation events.
 
-The end-user Snackbar collapses every failed result into one generic sentence.
+The commerce dialog provides **Copy Steam diagnostics**. The report excludes
+persona names, Steam IDs, credentials, publisher keys, absolute paths, and Vault
+content. User feedback distinguishes provider configuration, access, transient
+service failure, cancellation, and indeterminate reconciliation.
 
-**Required change:** retain a sanitized local commerce audit record and provide
-an internal **Copy Steam diagnostics** action. User-facing messages should
-separate launch/overlay problems, offline state, cancellation, insufficient
-funds, provider rejection, and delayed reconciliation. Publisher keys, full
-Steam credentials, and Vault content must never enter this log.
+**Remaining evidence:** reproduce `StartPurchase(40110)` once and retain the
+copied report.
 
-### R2 — local executable testing is not release-path testing
+### R2 — depot packaging defect fixed
 
 The local sandbox build intentionally contains `steam_appid.txt`. Steam
 documents that this file overrides the AppID supplied by Steam and makes
@@ -109,16 +114,16 @@ launched through the Steam client.
 The file is useful beside a local developer executable, but it must not be in
 the Steam depot. The raw Flutter build directory contains it.
 
-AKASHA's current `scripts/steam/upload_steam_build.ps1` maps that Release
-directory recursively and excludes only `*.pdb`. Therefore it can upload
-`steam_appid.txt`. This is a **confirmed release-packaging defect**, independent
-of the still-unknown `StartPurchase` failure.
+`scripts/steam/prepare_steam_depot.ps1` now copies the raw Release output into
+`build/steam/depot_windows`, excludes `steam_appid.txt` and `*.pdb`, verifies
+the executable, Steam DLL, and Flutter assets, and writes a SHA-256 file
+manifest. The upload script uses only this staged directory and repeats both
+VDF exclusions defensively.
 
-**Required change:** add a Steam-depot packaging/preflight script that fails if
-`steam_appid.txt` is present, verifies `steam_api64.dll`, records file hashes,
-and uploads only the prepared package directory. The upload VDF must also
-exclude `steam_appid.txt` defensively. Do not upload another build with the
-current script until this gate is fixed.
+The 2026-07-16 preflight produced 97 staged files and no forbidden file.
+
+**Remaining evidence:** upload that staged payload to an internal branch and
+verify the installed manifest.
 
 ### R3 — Steamworks configuration is not yet a checked contract
 
@@ -136,15 +141,13 @@ Before another purchase attempt, record screenshots or exported evidence for:
 
 ## 4. Required test order
 
-Do not begin with another purchase. Use this order so one failure identifies
-one layer.
+Use this order so one failure identifies one layer.
 
 ### Gate A — Steam library launch
 
-1. Fix the Steam upload/package path so `steam_appid.txt` cannot enter the
-   depot.
-2. Prepare a depot build without `steam_appid.txt`.
-3. Upload it to a password-protected internal branch.
+1. Run `scripts/steam/prepare_steam_depot.ps1`.
+2. Retain `build/steam/manifests/depot_windows.json`.
+3. Upload the staged payload to a password-protected internal branch.
 4. Install and launch it from the Steam library.
 5. Confirm AppID, logged-on, subscribed-app, and same Windows user context.
 
@@ -175,6 +178,10 @@ For each pack, separately verify:
 5. completion produces the exact Astra delta only after
    `SteamInventoryResultReady_t` and a fresh `GetAllItems`;
 6. a cold restart and a second PC show the same Steam-authoritative result.
+
+If a checkout does not appear, immediately use **Copy Steam diagnostics** and
+record the report before retrying. Do not change ItemDefs based only on the
+generic visual symptom.
 
 ### Gate E — exchange, rewards, and recovery
 

@@ -532,6 +532,7 @@ struct SteamInventoryPocChannel::Impl {
     Emit(M({
         {"kind", flutter::EncodableValue(kind)},
         {"status", flutter::EncodableValue(status)},
+        {"phase", flutter::EncodableValue("inventory_result_ready")},
         {"handle", flutter::EncodableValue(corr)},
         {"steamResult", flutter::EncodableValue(std::to_string(code))},
         {"steamResultCode", flutter::EncodableValue(code)},

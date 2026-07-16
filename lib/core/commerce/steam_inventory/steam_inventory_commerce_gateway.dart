@@ -1,5 +1,6 @@
 import 'package:akasha_commerce_domain/akasha_commerce_domain.dart';
 
+import '../commerce_support_gateway.dart';
 import 'steam_inventory_itemdefs.dart';
 import 'steam_inventory_read_port.dart';
 import 'steam_inventory_reward_port.dart';
@@ -12,7 +13,10 @@ import 'steam_inventory_transaction_port.dart';
 /// a fresh inventory read and is confirmed only when the expected balance or
 /// entitlement change is visible in that provider snapshot.
 class SteamInventoryCommerceGateway
-    implements CommerceGateway, CommercePlaytimeRewardGateway {
+    implements
+        CommerceGateway,
+        CommercePlaytimeRewardGateway,
+        CommerceSupportGateway {
   SteamInventoryCommerceGateway({
     required SteamInventoryReadPort port,
     SteamInventoryTransactionPort? transactionPort,
@@ -35,15 +39,21 @@ class SteamInventoryCommerceGateway
     issueCode: 'steam_account_not_loaded',
   );
   List<SteamInventoryReadItem> _lastInventoryItems = const [];
+  SteamInventoryDiagnostic? _lastDiagnostic;
+  SteamInventoryPricesResult? _lastPricesResult;
+  SteamInventoryTransactionResult? _lastTransaction;
+  String? _lastOperation;
+  String? _lastProductId;
+  int? _lastItemDefId;
   bool _mutationInFlight = false;
   bool _reconciliationRequired = false;
 
-  bool get _transactionsAvailable =>
+  bool get _transactionsConfiguredAvailable =>
       _transactionsConfigured &&
       _transactionPort != null &&
       !_reconciliationRequired;
 
-  bool get _playtimeRewardsAvailable =>
+  bool get _playtimeRewardsConfiguredAvailable =>
       _playtimeRewardsConfigured &&
       _rewardPort != null &&
       !_reconciliationRequired;
@@ -51,6 +61,7 @@ class SteamInventoryCommerceGateway
   @override
   Future<CommerceAccountSnapshot> loadAccount() async {
     final diagnostic = await _port.diagnostic();
+    _lastDiagnostic = diagnostic;
     if (!diagnostic.isAvailable) {
       return _rememberUnavailable(diagnostic.issueCode ?? 'steam_unavailable');
     }
@@ -88,6 +99,7 @@ class SteamInventoryCommerceGateway
     }
 
     final pricesResult = await _port.requestPrices();
+    _lastPricesResult = pricesResult;
     final localizedPrices = <String, CommerceLocalizedPrice>{};
     String? priceIssueCode;
     final currencyCode = pricesResult.currencyCode;
@@ -108,6 +120,25 @@ class SteamInventoryCommerceGateway
       priceIssueCode =
           pricesResult.issueCode ?? 'steam_localized_prices_unavailable';
     }
+    final hasEveryApprovedPrice = SteamInventoryItemDefs
+        .pricedPackByProductId
+        .keys
+        .every(localizedPrices.containsKey);
+    if (!hasEveryApprovedPrice) {
+      priceIssueCode ??= 'steam_purchase_prices_incomplete';
+    }
+
+    final transactionIssueCode = _transactionsConfigured
+        ? diagnostic.transactionCapabilityIssueCode ??
+              (hasEveryApprovedPrice
+                  ? null
+                  : 'steam_purchase_prices_incomplete')
+        : null;
+    final transactionsEnabled =
+        _transactionsConfiguredAvailable && transactionIssueCode == null;
+    final playtimeRewardsEnabled =
+        _playtimeRewardsConfiguredAvailable &&
+        diagnostic.inventoryMutationIssueCode == null;
 
     _lastSnapshot = CommerceAccountSnapshot(
       state: CommerceAuthorityState.ready,
@@ -115,9 +146,10 @@ class SteamInventoryCommerceGateway
       echoBalance: totals[SteamInventoryItemDefs.echoUnit] ?? 0,
       entitlementKeys: Set.unmodifiable(entitlements),
       localizedPrices: Map.unmodifiable(localizedPrices),
-      transactionsEnabled: _transactionsAvailable,
-      playtimeRewardsEnabled: _playtimeRewardsAvailable,
+      transactionsEnabled: transactionsEnabled,
+      playtimeRewardsEnabled: playtimeRewardsEnabled,
       observedAt: inventory.observedAt ?? DateTime.now().toUtc(),
+      issueCode: transactionIssueCode,
       priceIssueCode: priceIssueCode,
     );
     return _lastSnapshot;
@@ -167,11 +199,17 @@ class SteamInventoryCommerceGateway
     if (guard != null) return guard;
 
     final before = _lastSnapshot.astraBalance!;
+    _rememberOperation(
+      operation: 'purchase',
+      productId: productId,
+      itemDefId: itemDefId,
+    );
     _mutationInFlight = true;
     try {
       final transaction = await _transactionPort!.startPurchase(
         itemDefId: itemDefId,
       );
+      _lastTransaction = transaction;
       return _reconcileMutation(
         transaction: transaction,
         outcomeObserved: (snapshot) =>
@@ -235,11 +273,17 @@ class SteamInventoryCommerceGateway
     }
 
     _mutationInFlight = true;
+    _rememberOperation(
+      operation: 'exchange',
+      productId: productId,
+      itemDefId: generateItemDefId,
+    );
     try {
       final transaction = await _transactionPort!.exchangeItems(
         generateItemDefId: generateItemDefId,
         destroyItems: destroyItems,
       );
+      _lastTransaction = transaction;
       return _reconcileMutation(
         transaction: transaction,
         outcomeObserved: (snapshot) => snapshot.owns(entitlementKey),
@@ -358,6 +402,82 @@ class SteamInventoryCommerceGateway
         snapshot: _lastSnapshot,
         issueCode: issueCode,
       );
+
+  void _rememberOperation({
+    required String operation,
+    required String productId,
+    required int itemDefId,
+  }) {
+    _lastOperation = operation;
+    _lastProductId = productId;
+    _lastItemDefId = itemDefId;
+    _lastTransaction = null;
+  }
+
+  @override
+  String buildSupportReport() {
+    final diagnostic = _lastDiagnostic;
+    final prices = _lastPricesResult;
+    final transaction = _lastTransaction;
+    final approvedPriceCount =
+        prices?.prices
+            .where(
+              (row) => SteamInventoryItemDefs.approvedPurchaseItemDefs.contains(
+                row.itemDefId,
+              ),
+            )
+            .length ??
+        0;
+    final lines = <String>[
+      'AKASHA Steam Commerce Diagnostics',
+      'generatedAt=${DateTime.now().toUtc().toIso8601String()}',
+      'appId=${diagnostic?.appId ?? SteamInventoryItemDefs.appId}',
+      'readStatus=${diagnostic?.status.name ?? 'not_loaded'}',
+      'initialized=${diagnostic?.initialized ?? false}',
+      'loggedOn=${diagnostic?.loggedOn ?? false}',
+      'subscribedApp=${diagnostic?.subscribedApp ?? false}',
+      'overlayEnabled=${diagnostic?.overlayEnabled ?? false}',
+      'overlayActive=${diagnostic?.overlayActive ?? false}',
+      'restartRequested=${diagnostic?.restartRequested ?? false}',
+      'buildMode=${diagnostic?.buildMode ?? 'unknown'}',
+      'steamTimerTickCount=${diagnostic?.steamTimerTickCount ?? 0}',
+      'overlayNeedsPresentTrueCount=${diagnostic?.overlayNeedsPresentTrueCount ?? 0}',
+      'overlayForceRedrawCount=${diagnostic?.overlayForceRedrawCount ?? 0}',
+      'accountState=${_lastSnapshot.state.name}',
+      'accountIssue=${_lastSnapshot.issueCode ?? 'none'}',
+      'priceStatus=${prices?.status.name ?? 'not_loaded'}',
+      'priceCurrency=${prices?.currencyCode ?? 'unknown'}',
+      'approvedPriceCount=$approvedPriceCount/${SteamInventoryItemDefs.approvedPurchaseItemDefs.length}',
+      'priceIssue=${_lastSnapshot.priceIssueCode ?? 'none'}',
+      'transactionsConfigured=$_transactionsConfigured',
+      'transactionsEnabled=${_lastSnapshot.transactionsEnabled}',
+      'playtimeRewardsConfigured=$_playtimeRewardsConfigured',
+      'playtimeRewardsEnabled=${_lastSnapshot.playtimeRewardsEnabled}',
+      'reconciliationRequired=$_reconciliationRequired',
+      'lastOperation=${_lastOperation ?? 'none'}',
+      'lastProductId=${_lastProductId ?? 'none'}',
+      'lastItemDefId=${_lastItemDefId ?? 0}',
+      'transactionStatus=${transaction?.status.name ?? 'none'}',
+      'transactionIssue=${transaction?.issueCode ?? 'none'}',
+      'transactionPhase=${transaction?.phase ?? 'none'}',
+      'steamResultCode=${transaction?.providerResultCode ?? 0}',
+      'steamResultName=${transaction?.providerResultName ?? 'none'}',
+      'apiCallHandle=${transaction?.apiCallHandle ?? 'none'}',
+      'providerHandle=${transaction?.providerHandle ?? 'none'}',
+      'orderId=${transaction?.orderId ?? 'none'}',
+      'transactionId=${transaction?.transactionId ?? 'none'}',
+      'detail=${_sanitizeSupportValue(transaction?.detail)}',
+    ];
+    return lines.join('\n');
+  }
+
+  static String _sanitizeSupportValue(String? value) {
+    final compact = (value ?? 'none')
+        .replaceAll(RegExp(r'[\r\n\t]+'), ' ')
+        .trim();
+    if (compact.isEmpty) return 'none';
+    return compact.length <= 240 ? compact : compact.substring(0, 240);
+  }
 
   Future<CommerceOperationResult> _reconcileMutation({
     required SteamInventoryTransactionResult transaction,

@@ -98,6 +98,54 @@ abstract class AppLocalizations {
     Locale('ko'),
   ];
 
+  /// No description provided for @commerceAccountOverlayUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Transactions are locked because the Steam Overlay is unavailable. Launch from Steam and refresh the connection status.'**
+  String get commerceAccountOverlayUnavailable;
+
+  /// No description provided for @commerceAccountSubscriptionMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'Transactions are locked because this Steam account does not currently report access to AKASHA.'**
+  String get commerceAccountSubscriptionMissing;
+
+  /// No description provided for @commerceAccountPricesIncomplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Transactions are locked because not all approved Astra pack prices are available from Steam.'**
+  String get commerceAccountPricesIncomplete;
+
+  /// No description provided for @commerceCopyDiagnostics.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy Steam diagnostics'**
+  String get commerceCopyDiagnostics;
+
+  /// No description provided for @commerceDiagnosticsCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'Steam diagnostics copied to the clipboard.'**
+  String get commerceDiagnosticsCopied;
+
+  /// No description provided for @commerceResultProviderConfiguration.
+  ///
+  /// In en, this message translates to:
+  /// **'Steam rejected the purchase item request. Copy diagnostics and verify the ItemDef and release configuration.'**
+  String get commerceResultProviderConfiguration;
+
+  /// No description provided for @commerceResultAccessDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'The current Steam account or app permission cannot start this transaction.'**
+  String get commerceResultAccessDenied;
+
+  /// No description provided for @commerceResultServiceUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Steam transaction services are temporarily unavailable. Try again later.'**
+  String get commerceResultServiceUnavailable;
+
   /// No description provided for @browseLoadingCatalog.
   ///
   /// In en, this message translates to:

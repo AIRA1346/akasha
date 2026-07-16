@@ -76,6 +76,7 @@ void main() {
                 baseAmount: 6000,
               ),
               SteamInventoryPriceRow(itemDefId: 40111, currentAmount: 11000),
+              SteamInventoryPriceRow(itemDefId: 40112, currentAmount: 27500),
               SteamInventoryPriceRow(itemDefId: 40001, currentAmount: 10),
               SteamInventoryPriceRow(itemDefId: 10010, currentAmount: 100),
             ],
@@ -95,7 +96,7 @@ void main() {
         expect(snapshot.transactionsEnabled, isFalse);
         expect(snapshot.canTransact, isFalse);
         expect(snapshot.priceIssueCode, isNull);
-        expect(snapshot.localizedPrices, hasLength(2));
+        expect(snapshot.localizedPrices, hasLength(3));
         expect(
           snapshot.priceOf(CommerceCatalog.astraPack500ProductId)?.currencyCode,
           'KRW',
@@ -278,6 +279,73 @@ void main() {
 
         expect(snapshot.canTransact, isTrue);
         expect(snapshot.transactionsEnabled, isTrue);
+      },
+    );
+
+    test('keeps account read-only when Steam Overlay is unavailable', () async {
+      final gateway = SteamInventoryCommerceGateway(
+        port: _FakeSteamInventoryReadPort(
+          diagnostic: const SteamInventoryDiagnostic(
+            status: SteamInventoryReadStatus.success,
+            appId: 4677560,
+            initialized: true,
+            loggedOn: true,
+            subscribedApp: true,
+            overlayEnabled: false,
+          ),
+          items: _inventory([
+            _item('1', SteamInventoryItemDefs.astraUnit, 500),
+            _item('2', SteamInventoryItemDefs.echoUnit, 500),
+          ]),
+        ),
+        transactionPort: _FakeSteamInventoryTransactionPort(),
+        transactionsEnabled: true,
+      );
+
+      final snapshot = await gateway.loadAccount();
+
+      expect(snapshot.state, CommerceAuthorityState.ready);
+      expect(snapshot.transactionsEnabled, isFalse);
+      expect(snapshot.issueCode, 'steam_overlay_unavailable');
+      expect(snapshot.canTransact, isFalse);
+      expect(
+        gateway.buildSupportReport(),
+        allOf(
+          contains('overlayEnabled=false'),
+          contains('transactionsEnabled=false'),
+        ),
+      );
+    });
+
+    test(
+      'requires every approved Astra pack price before transactions',
+      () async {
+        final gateway = SteamInventoryCommerceGateway(
+          port: _FakeSteamInventoryReadPort(
+            items: _inventory([
+              _item('1', SteamInventoryItemDefs.astraUnit, 500),
+              _item('2', SteamInventoryItemDefs.echoUnit, 500),
+            ]),
+            prices: const SteamInventoryPricesResult(
+              status: SteamInventoryReadStatus.success,
+              currencyCode: 'USD',
+              prices: [
+                SteamInventoryPriceRow(
+                  itemDefId: SteamInventoryItemDefs.astraPack500,
+                  currentAmount: 499,
+                ),
+              ],
+            ),
+          ),
+          transactionPort: _FakeSteamInventoryTransactionPort(),
+          transactionsEnabled: true,
+        );
+
+        final snapshot = await gateway.loadAccount();
+
+        expect(snapshot.transactionsEnabled, isFalse);
+        expect(snapshot.issueCode, 'steam_purchase_prices_incomplete');
+        expect(snapshot.priceIssueCode, 'steam_purchase_prices_incomplete');
       },
     );
 
@@ -775,6 +843,10 @@ void main() {
                         'handle': 'purchase_10',
                         'orderId': '90010',
                         'transactionId': '80010',
+                        'phase': 'start_purchase_callback',
+                        'apiCallHandle': '70010',
+                        'steamResultCode': 1,
+                        'steamResultName': 'k_EResultOK',
                       },
                     ],
                   };
@@ -785,6 +857,8 @@ void main() {
                     {
                       'status': 'success',
                       'handle': 'purchase_10',
+                      'phase': 'inventory_result_ready',
+                      'steamResultCode': 1,
                       'steamResultName': 'k_EResultOK',
                     },
                   ],
@@ -804,6 +878,10 @@ void main() {
         expect(result.providerHandle, 'purchase_10');
         expect(result.orderId, '90010');
         expect(result.transactionId, '80010');
+        expect(result.phase, 'inventory_result_ready');
+        expect(result.apiCallHandle, '70010');
+        expect(result.providerResultCode, 1);
+        expect(result.providerResultName, 'k_EResultOK');
         expect(pollCount, 2);
       },
     );
@@ -872,6 +950,28 @@ void main() {
       expect(insufficient.issueCode, 'steam_insufficient_funds');
     });
 
+    test('preserves immediate StartPurchase rejection evidence', () {
+      final rejected =
+          MethodChannelSteamInventoryTransactionPort.parseOperation({
+            'ok': false,
+            'status': 'failed',
+            'phase': 'start_purchase_api',
+            'code': 'k_uAPICallInvalid',
+            'steamResultCode': 0,
+            'steamResultName': 'k_uAPICallInvalid',
+            'apiCallHandle': '0',
+            'handle': 'purchase_13',
+            'detail': 'StartPurchase returned k_uAPICallInvalid',
+          });
+
+      expect(rejected.status, SteamInventoryTransactionStatus.failed);
+      expect(rejected.issueCode, 'steam_api_call_invalid');
+      expect(rejected.phase, 'start_purchase_api');
+      expect(rejected.apiCallHandle, '0');
+      expect(rejected.providerResultCode, 0);
+      expect(rejected.providerResultName, 'k_uAPICallInvalid');
+    });
+
     test('timeout after API acceptance is indeterminate', () async {
       TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
           .setMockMethodCallHandler(channel, (call) async {
@@ -898,6 +998,32 @@ void main() {
   });
 
   group('MethodChannelSteamInventoryReadPort parsing', () {
+    test('preserves production Steam runtime capability fields', () {
+      final result = MethodChannelSteamInventoryReadPort.parseDiagnostic({
+        'ok': true,
+        'initialized': true,
+        'loggedOn': true,
+        'subscribedApp': true,
+        'overlayEnabled': true,
+        'overlayActive': false,
+        'restartRequested': false,
+        'appId': 4677560,
+        'buildMode': 'Release',
+        'steamTimerTickCount': 123,
+        'overlayNeedsPresentTrueCount': 4,
+        'overlayForceRedrawCount': 3,
+      });
+
+      expect(result.status, SteamInventoryReadStatus.success);
+      expect(result.transactionCapabilityIssueCode, isNull);
+      expect(result.subscribedApp, isTrue);
+      expect(result.overlayEnabled, isTrue);
+      expect(result.buildMode, 'Release');
+      expect(result.steamTimerTickCount, 123);
+      expect(result.overlayNeedsPresentTrueCount, 4);
+      expect(result.overlayForceRedrawCount, 3);
+    });
+
     test('preserves Steam currency and raw current/base amounts', () {
       final result = MethodChannelSteamInventoryReadPort.parsePrices({
         'ok': true,
@@ -959,6 +1085,10 @@ class _FakeSteamInventoryReadPort implements SteamInventoryReadPort {
     SteamInventoryDiagnostic diagnostic = const SteamInventoryDiagnostic(
       status: SteamInventoryReadStatus.success,
       appId: 4677560,
+      initialized: true,
+      loggedOn: true,
+      subscribedApp: true,
+      overlayEnabled: true,
     ),
     this.items = const SteamInventoryItemsResult(
       status: SteamInventoryReadStatus.success,
@@ -967,6 +1097,11 @@ class _FakeSteamInventoryReadPort implements SteamInventoryReadPort {
     this.prices = const SteamInventoryPricesResult(
       status: SteamInventoryReadStatus.success,
       currencyCode: 'USD',
+      prices: [
+        SteamInventoryPriceRow(itemDefId: 40110, currentAmount: 499),
+        SteamInventoryPriceRow(itemDefId: 40111, currentAmount: 999),
+        SteamInventoryPriceRow(itemDefId: 40112, currentAmount: 2499),
+      ],
     ),
   }) : diagnosticResult = diagnostic;
 

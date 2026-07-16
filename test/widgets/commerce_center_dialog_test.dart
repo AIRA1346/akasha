@@ -1,9 +1,10 @@
+import 'package:akasha/core/commerce/commerce.dart';
 import 'package:akasha/widgets/commerce_center_dialog.dart';
 import 'package:akasha/generated/l10n/app_localizations.dart';
 import 'package:akasha/services/commerce_controller.dart';
 import 'package:akasha/theme/akasha_theme.dart';
-import 'package:akasha_commerce_domain/akasha_commerce_domain.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -166,6 +167,42 @@ void main() {
       expect(find.text('654'), findsOneWidget);
     },
   );
+
+  testWidgets('copies the sanitized Steam support report', (tester) async {
+    String? clipboardText;
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(SystemChannels.platform, (call) async {
+          if (call.method == 'Clipboard.setData') {
+            final arguments = Map<Object?, Object?>.from(call.arguments as Map);
+            clipboardText = arguments['text'] as String?;
+          }
+          return null;
+        });
+    addTearDown(
+      () => TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+          .setMockMethodCallHandler(SystemChannels.platform, null),
+    );
+    final controller = CommerceController(
+      gateway: const _SupportCommerceGateway(),
+      enabled: true,
+    );
+    addTearDown(controller.dispose);
+    await controller.refresh();
+
+    await tester.pumpWidget(
+      _harness(account: null, commerceController: controller),
+    );
+    await tester.tap(find.text('open'));
+    await tester.pumpAndSettle();
+    await tester.tap(
+      find.byKey(const ValueKey('commerce-copy-diagnostics')).first,
+    );
+    await tester.pumpAndSettle();
+
+    expect(clipboardText, contains('AKASHA Steam Commerce Diagnostics'));
+    expect(clipboardText, contains('steamResultName=k_EResultInvalidParam'));
+    expect(find.text('Steam 진단 정보를 클립보드에 복사했습니다.'), findsOneWidget);
+  });
 
   testWidgets('sandbox Astra purchase requires confirmation and reconciles', (
     tester,
@@ -348,6 +385,35 @@ class _DialogCommerceGateway implements CommerceGateway {
         astraBalance: 321,
         echoBalance: 654,
         entitlementKeys: {'theme:amethyst'},
+      );
+
+  @override
+  Future<CommerceOperationResult> exchangeProduct({
+    required String productId,
+    required CurrencyKind payWith,
+  }) => throw UnimplementedError();
+
+  @override
+  Future<CommerceOperationResult> purchaseAstraPack({
+    required String productId,
+  }) => throw UnimplementedError();
+}
+
+class _SupportCommerceGateway
+    implements CommerceGateway, CommerceSupportGateway {
+  const _SupportCommerceGateway();
+
+  @override
+  String buildSupportReport() =>
+      'AKASHA Steam Commerce Diagnostics\n'
+      'steamResultName=k_EResultInvalidParam';
+
+  @override
+  Future<CommerceAccountSnapshot> loadAccount() async =>
+      const CommerceAccountSnapshot(
+        state: CommerceAuthorityState.ready,
+        astraBalance: 0,
+        echoBalance: 0,
       );
 
   @override

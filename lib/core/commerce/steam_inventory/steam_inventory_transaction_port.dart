@@ -13,6 +13,11 @@ class SteamInventoryTransactionResult {
     this.providerHandle,
     this.orderId,
     this.transactionId,
+    this.phase,
+    this.apiCallHandle,
+    this.providerResultCode,
+    this.providerResultName,
+    this.detail,
     this.issueCode,
   });
 
@@ -20,6 +25,11 @@ class SteamInventoryTransactionResult {
   final String? providerHandle;
   final String? orderId;
   final String? transactionId;
+  final String? phase;
+  final String? apiCallHandle;
+  final int? providerResultCode;
+  final String? providerResultName;
+  final String? detail;
   final String? issueCode;
 
   bool get isTerminal => status != SteamInventoryTransactionStatus.pending;

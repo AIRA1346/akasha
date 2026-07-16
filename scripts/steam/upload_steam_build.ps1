@@ -28,7 +28,9 @@ if (-not (Test-Path (Join-Path $ReleaseDir 'akasha.exe'))) {
     & (Join-Path (Split-Path $PSScriptRoot -Parent) 'build_release.ps1')
 }
 
-$releaseEscaped = $ReleaseDir -replace '\\', '\\'
+& "$PSScriptRoot\prepare_steam_depot.ps1"
+
+$releaseEscaped = $DepotStageDir -replace '\\', '\\'
 $outputEscaped = $BuildOutput -replace '\\', '\\'
 
 $depotVdf = Join-Path $SteamSdkRoot 'output\_akasha_depot_build.vdf'
@@ -46,6 +48,7 @@ $appVdf = Join-Path $SteamSdkRoot 'output\_akasha_app_build.vdf'
 		"Recursive" "1"
 	}
 	"FileExclusion" "*.pdb"
+	"FileExclusion" "steam_appid.txt"
 }
 '@ -replace '\{DEPOT_ID\}', $SteamDepotId -replace '\{RELEASE_DIR\}', $releaseEscaped |
     Set-Content $depotVdf -Encoding UTF8
@@ -74,7 +77,8 @@ $depotFileName = Split-Path $depotVdf -Leaf
 Write-Host ""
 Write-Host "App ID:   $SteamAppId"
 Write-Host "Depot ID: $SteamDepotId"
-Write-Host "Content:  $ReleaseDir"
+Write-Host "Content:  $DepotStageDir"
+Write-Host "Manifest: $DepotManifestPath"
 Write-Host "VDF:      $appVdf"
 Write-Host ""
 Write-Host "Steam 로그인 + Steam Guard 입력이 필요합니다."

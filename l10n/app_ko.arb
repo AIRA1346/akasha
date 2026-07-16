@@ -1,4 +1,12 @@
 {
+  "commerceAccountOverlayUnavailable": "Steam 오버레이를 사용할 수 없어 거래가 잠겨 있습니다. Steam에서 실행한 뒤 연결 상태를 다시 확인해 주세요.",
+  "commerceAccountSubscriptionMissing": "현재 Steam 계정에서 AKASHA 앱 사용 권한을 확인할 수 없어 거래가 잠겨 있습니다.",
+  "commerceAccountPricesIncomplete": "승인된 아스트라 상품의 Steam 가격 정보가 모두 준비되지 않아 거래가 잠겨 있습니다.",
+  "commerceCopyDiagnostics": "Steam 진단 정보 복사",
+  "commerceDiagnosticsCopied": "Steam 진단 정보를 클립보드에 복사했습니다.",
+  "commerceResultProviderConfiguration": "Steam이 구매 상품 요청을 거부했습니다. 진단 정보를 복사해 ItemDef와 출시 설정을 확인해 주세요.",
+  "commerceResultAccessDenied": "현재 Steam 계정 또는 앱 권한으로 거래를 시작할 수 없습니다.",
+  "commerceResultServiceUnavailable": "Steam 거래 서비스에 일시적으로 연결할 수 없습니다. 잠시 후 다시 시도해 주세요.",
   "@@locale": "ko",
   "browseLoadingCatalog": "글로벌 작품 사전 불러오는 중…",
   "browseNoResults": "조건에 맞는 작품이 없습니다.",

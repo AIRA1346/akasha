@@ -46,9 +46,11 @@ first and complete
 considering release commerce.
 
 The 2026-07-16 incident proved that price availability is not sufficient
-evidence that Overlay checkout is usable. Do not repeat purchase tests until
-the Steam library launch, Overlay capability, account subscription, and
-diagnostic-result gates in the release-readiness document are in place.
+evidence that Overlay checkout is usable. The historical POC did open the
+Overlay, so the next production attempt must capture the exact provider result
+instead of assuming a renderer integration failure. Runtime capability,
+sanitized support diagnostics, and staged-depot gates are now in place; follow
+the release-readiness order.
 
 ## Approved production ID ranges
 
@@ -115,8 +117,17 @@ production adapter:
   or reward only after a fresh inventory read exposes the expected change;
 - treats an accepted operation with an unknown durable outcome as
   `indeterminate` and blocks further provider mutations for that session;
+- requires logged-on/subscribed/Overlay-ready runtime capability and all three
+  approved prices before enabling purchases;
+- preserves phase, API call handle, Steam result code/name, order/transaction
+  IDs, and sanitized detail for the **Copy Steam diagnostics** support report;
 - keeps transaction and playtime-reward capabilities independently gated;
 - never writes local Astra, Echo, or theme ownership.
+
+SteamPipe uploads must run through
+`scripts/steam/prepare_steam_depot.ps1`. The raw Flutter Release directory is a
+developer artifact containing `steam_appid.txt`; the prepared
+`build/steam/depot_windows` directory is the only upload content root.
 
 Internal transaction/reward builds use
 `--dart-define=AKASHA_STEAM_SANDBOX_TRANSACTIONS=true` and

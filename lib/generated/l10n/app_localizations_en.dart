@@ -9,6 +9,37 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get commerceAccountOverlayUnavailable =>
+      'Transactions are locked because the Steam Overlay is unavailable. Launch from Steam and refresh the connection status.';
+
+  @override
+  String get commerceAccountSubscriptionMissing =>
+      'Transactions are locked because this Steam account does not currently report access to AKASHA.';
+
+  @override
+  String get commerceAccountPricesIncomplete =>
+      'Transactions are locked because not all approved Astra pack prices are available from Steam.';
+
+  @override
+  String get commerceCopyDiagnostics => 'Copy Steam diagnostics';
+
+  @override
+  String get commerceDiagnosticsCopied =>
+      'Steam diagnostics copied to the clipboard.';
+
+  @override
+  String get commerceResultProviderConfiguration =>
+      'Steam rejected the purchase item request. Copy diagnostics and verify the ItemDef and release configuration.';
+
+  @override
+  String get commerceResultAccessDenied =>
+      'The current Steam account or app permission cannot start this transaction.';
+
+  @override
+  String get commerceResultServiceUnavailable =>
+      'Steam transaction services are temporarily unavailable. Try again later.';
+
+  @override
   String get browseLoadingCatalog => 'Loading global works catalog…';
 
   @override

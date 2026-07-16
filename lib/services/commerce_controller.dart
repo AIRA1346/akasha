@@ -36,6 +36,11 @@ class CommerceController extends ChangeNotifier {
   CommerceOperationResult? get lastOperation => _lastOperation;
   String? get activeProductId => _activeProductId;
   CurrencyKind? get activeCurrency => _activeCurrency;
+  String? buildSupportReport() {
+    final gateway = _gateway;
+    if (gateway is! CommerceSupportGateway) return null;
+    return (gateway as CommerceSupportGateway).buildSupportReport();
+  }
 
   /// Refreshes once even when several surfaces request data concurrently.
   Future<void> refresh() {

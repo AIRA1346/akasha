@@ -119,6 +119,11 @@ class MethodChannelSteamInventoryTransactionPort
           ? SteamInventoryTransactionResult(
               status: SteamInventoryTransactionStatus.failed,
               providerHandle: immediate.providerHandle,
+              phase: immediate.phase,
+              apiCallHandle: immediate.apiCallHandle,
+              providerResultCode: immediate.providerResultCode,
+              providerResultName: immediate.providerResultName,
+              detail: immediate.detail,
               issueCode: immediate.issueCode ?? 'steam_transaction_not_started',
             )
           : immediate;

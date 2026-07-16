@@ -79,6 +79,19 @@ class MethodChannelSteamInventoryReadPort implements SteamInventoryReadPort {
       return SteamInventoryDiagnostic(
         status: SteamInventoryReadStatus.unavailable,
         appId: _asInt(raw?['appId']),
+        initialized: raw?['initialized'] == true,
+        loggedOn: raw?['loggedOn'] == true || raw?['online'] == true,
+        subscribedApp:
+            raw?['subscribedApp'] == true || raw?['subscribed'] == true,
+        overlayEnabled: raw?['overlayEnabled'] == true,
+        overlayActive: raw?['overlayActive'] == true,
+        restartRequested: raw?['restartRequested'] == true,
+        buildMode: _stringOrNull(raw?['buildMode']),
+        steamTimerTickCount: _asInt(raw?['steamTimerTickCount']),
+        overlayNeedsPresentTrueCount: _asInt(
+          raw?['overlayNeedsPresentTrueCount'],
+        ),
+        overlayForceRedrawCount: _asInt(raw?['overlayForceRedrawCount']),
         issueCode: _issue(raw, 'steam_unavailable'),
       );
     }
@@ -88,6 +101,16 @@ class MethodChannelSteamInventoryReadPort implements SteamInventoryReadPort {
           ? SteamInventoryReadStatus.success
           : SteamInventoryReadStatus.offline,
       appId: _asInt(raw['appId']),
+      initialized: raw['initialized'] == true,
+      loggedOn: online,
+      subscribedApp: raw['subscribedApp'] == true || raw['subscribed'] == true,
+      overlayEnabled: raw['overlayEnabled'] == true,
+      overlayActive: raw['overlayActive'] == true,
+      restartRequested: raw['restartRequested'] == true,
+      buildMode: _stringOrNull(raw['buildMode']),
+      steamTimerTickCount: _asInt(raw['steamTimerTickCount']),
+      overlayNeedsPresentTrueCount: _asInt(raw['overlayNeedsPresentTrueCount']),
+      overlayForceRedrawCount: _asInt(raw['overlayForceRedrawCount']),
       issueCode: online ? null : 'steam_offline',
     );
   }
@@ -184,6 +207,11 @@ class MethodChannelSteamInventoryReadPort implements SteamInventoryReadPort {
   };
 
   static final RegExp _instanceIdPattern = RegExp(r'^[0-9]+$');
+
+  static String? _stringOrNull(Object? value) {
+    final text = '${value ?? ''}'.trim();
+    return text.isEmpty ? null : text;
+  }
 
   static String _issue(Map<String, Object?>? raw, String fallback) {
     final value = '${raw?['code'] ?? raw?['status'] ?? fallback}'.trim();

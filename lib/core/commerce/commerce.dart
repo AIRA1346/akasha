@@ -8,4 +8,5 @@ library;
 export 'package:akasha_commerce_domain/akasha_commerce_domain.dart';
 
 export 'client/commerce_api_client.dart';
+export 'commerce_support_gateway.dart';
 export 'steam_inventory/steam_inventory.dart';

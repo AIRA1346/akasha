@@ -34,4 +34,6 @@ Write-Host "  $Dll"
 Write-Host "  $AppId"
 Write-Host ''
 Write-Host 'Launch through Steam with a Steamworks partner account.'
+Write-Host 'Do not upload this raw Release directory; it contains steam_appid.txt.'
+Write-Host 'Use scripts\steam\prepare_steam_depot.ps1 before any SteamPipe upload.'
 Write-Host 'Store transactions and Echo reward checks are sandbox-only; release IAP remains disabled.'

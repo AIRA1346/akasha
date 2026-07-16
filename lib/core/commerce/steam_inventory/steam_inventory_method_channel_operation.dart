@@ -43,6 +43,11 @@ class SteamInventoryMethodChannelOperationPoller {
     final deadline = DateTime.now().add(completionTimeout);
     String? orderId;
     String? transactionId;
+    String? phase;
+    String? apiCallHandle;
+    int? providerResultCode;
+    String? providerResultName;
+    String? detail;
     while (DateTime.now().isBefore(deadline)) {
       Map<String, Object?>? raw;
       try {
@@ -63,6 +68,13 @@ class SteamInventoryMethodChannelOperationPoller {
         if (operation.result.providerHandle != handle) continue;
         orderId ??= operation.result.orderId;
         transactionId ??= operation.result.transactionId;
+        phase = operation.result.phase ?? phase;
+        apiCallHandle = operation.result.apiCallHandle ?? apiCallHandle;
+        providerResultCode =
+            operation.result.providerResultCode ?? providerResultCode;
+        providerResultName =
+            operation.result.providerResultName ?? providerResultName;
+        detail = operation.result.detail ?? detail;
         if (!operation.result.isTerminal) continue;
         return SteamInventoryPolledOperation(
           result: SteamInventoryTransactionResult(
@@ -70,6 +82,13 @@ class SteamInventoryMethodChannelOperationPoller {
             providerHandle: operation.result.providerHandle,
             orderId: operation.result.orderId ?? orderId,
             transactionId: operation.result.transactionId ?? transactionId,
+            phase: operation.result.phase ?? phase,
+            apiCallHandle: operation.result.apiCallHandle ?? apiCallHandle,
+            providerResultCode:
+                operation.result.providerResultCode ?? providerResultCode,
+            providerResultName:
+                operation.result.providerResultName ?? providerResultName,
+            detail: operation.result.detail ?? detail,
             issueCode: operation.result.issueCode,
           ),
           grantedItems: operation.grantedItems,
@@ -85,6 +104,11 @@ class SteamInventoryMethodChannelOperationPoller {
         providerHandle: handle,
         orderId: orderId,
         transactionId: transactionId,
+        phase: phase,
+        apiCallHandle: apiCallHandle,
+        providerResultCode: providerResultCode,
+        providerResultName: providerResultName,
+        detail: detail,
         issueCode: 'steam_transaction_timeout',
       ),
     );
@@ -98,6 +122,11 @@ class SteamInventoryMethodChannelOperationPoller {
     final transactionId = stringOrNull(
       raw?['transactionId'] ?? raw?['transId'],
     );
+    final phase = stringOrNull(raw?['phase']);
+    final apiCallHandle = stringOrNull(raw?['apiCallHandle']);
+    final providerResultCode = _asInt(raw?['steamResultCode']);
+    final providerResultName = stringOrNull(raw?['steamResultName']);
+    final detail = stringOrNull(raw?['detail']);
     if (raw?['steamIdOk'] == false) {
       return SteamInventoryPolledOperation(
         result: SteamInventoryTransactionResult(
@@ -105,13 +134,21 @@ class SteamInventoryMethodChannelOperationPoller {
           providerHandle: handle,
           orderId: orderId,
           transactionId: transactionId,
+          phase: phase,
+          apiCallHandle: apiCallHandle,
+          providerResultCode: providerResultCode,
+          providerResultName: providerResultName,
+          detail: detail,
           issueCode: 'steam_id_mismatch',
         ),
       );
     }
     final statusName = '${raw?['status'] ?? 'failed'}'.trim();
-    final resultName = '${raw?['steamResultName'] ?? ''}'.trim();
-    final issueSource = resultName.isNotEmpty ? resultName : statusName;
+    final resultName = providerResultName ?? '';
+    final nativeCode = stringOrNull(raw?['code']);
+    final issueSource = resultName.isNotEmpty
+        ? resultName
+        : nativeCode ?? statusName;
     final status = switch (statusName) {
       'pending' => SteamInventoryTransactionStatus.pending,
       'success' || 'ok' => SteamInventoryTransactionStatus.confirmed,
@@ -130,6 +167,11 @@ class SteamInventoryMethodChannelOperationPoller {
         providerHandle: handle,
         orderId: orderId,
         transactionId: transactionId,
+        phase: phase,
+        apiCallHandle: apiCallHandle,
+        providerResultCode: providerResultCode,
+        providerResultName: providerResultName,
+        detail: detail,
         issueCode:
             status == SteamInventoryTransactionStatus.confirmed ||
                 status == SteamInventoryTransactionStatus.pending
@@ -147,6 +189,11 @@ class SteamInventoryMethodChannelOperationPoller {
     'k_EResultAlreadyOwned',
     'k_EResultDuplicateRequest',
     'k_EResultInsufficientPrivilege',
+    'k_EResultAccessDenied',
+    'k_EResultInvalidState',
+    'k_EResultRegionLocked',
+    'k_EResultRestrictedDevice',
+    'k_EResultParentalControlRestricted',
   }.contains(name);
 
   static String? stringOrNull(Object? value) {
@@ -155,6 +202,7 @@ class SteamInventoryMethodChannelOperationPoller {
   }
 
   static String snakeCase(String input) {
+    if (input == 'k_uAPICallInvalid') return 'api_call_invalid';
     final withoutPrefix = input.replaceFirst(RegExp(r'^k_EResult'), '');
     final value = withoutPrefix
         .replaceAllMapped(
@@ -174,6 +222,7 @@ class SteamInventoryMethodChannelOperationPoller {
     result: SteamInventoryTransactionResult(
       status: SteamInventoryTransactionStatus.indeterminate,
       providerHandle: handle,
+      phase: 'poll',
       issueCode: issueCode,
     ),
   );

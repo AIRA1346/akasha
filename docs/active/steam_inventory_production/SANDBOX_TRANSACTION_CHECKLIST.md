@@ -17,15 +17,15 @@ historical POC and does not authorize release commerce.
 - Confirm all eight retired POC ItemDefs are hidden and `10020` cannot drop.
 - Review Korean/English text and every ItemDef in the Steamworks validator.
 - Build with `scripts/build_steam_inventory_sandbox.ps1`.
-- Launch the resulting Release executable through Steam with a partner account.
+- Run `scripts/steam/prepare_steam_depot.ps1`; retain the generated manifest.
+- Upload only `build/steam/depot_windows` to an internal Steam branch.
+- Install and launch that depot build through Steam with a partner account.
 - Confirm Store reports real Steam currency availability for `40110-40112`.
 - Confirm the Steamworks **Enable Steam Overlay for Application** setting is
   enabled and published, especially if the app type is Software.
 - For the authoritative transaction run, install a Steam depot/beta build that
   does not contain `steam_appid.txt`; do not treat a directly launched local
   executable as release-path evidence.
-- Do not use the current recursive Steam upload script until it excludes
-  `steam_appid.txt` and verifies the staged depot manifest.
 - Confirm Shift+Tab works and the runtime reports `overlayEnabled=true` before
   enabling a purchase button.
 - Confirm the account reports `subscribedApp=true` and has publisher-group or
@@ -39,11 +39,14 @@ historical POC and does not authorize release commerce.
 | `RequestPrices` for `40110-40112` | PASS (`KRW`) |
 | Store purchase button | Enabled by current sandbox configuration |
 | `StartPurchase(40110)` | FAIL before visible Overlay checkout |
-| Exact provider phase / `EResult` | Not captured by current product UI |
+| Historical POC Overlay checkout | PASS |
+| Exact provider phase / `EResult` | Not captured in the failed build; next build retains and copies it |
 | Inventory grant | No grant claimed |
 
-The Store's green transaction banner is not proof of Overlay readiness. The
-next attempt is blocked until launch/Overlay diagnostics can be recorded.
+The previous green banner was not proof of Overlay readiness. The updated
+build enables transactions only after initialized/logged-on/subscribed/Overlay
+and all-price checks pass. If checkout still does not appear, use **Copy Steam
+diagnostics** before retrying and attach the exact phase/result to this matrix.
 
 Do not set `steamInAppPurchasesEnabled=true`. The internal build enables only
 `AKASHA_STEAM_SANDBOX_TRANSACTIONS` and
@@ -147,7 +150,11 @@ inventory reconciliation establishes the outcome.
 - build commit and executable hash;
 - ItemDef upload file SHA-256, Steamworks revision, and publication time;
 - account AppID diagnostic (`4677560`);
+- initialized/logged-on/subscribed/Overlay capability and callback counters;
+- copied transaction phase, API call handle, `steamResultCode`, and
+  `steamResultName`;
 - provider correlation handle, purchase order ID, and transaction ID;
+- staged-depot SHA-256 manifest proving `steam_appid.txt` is absent;
 - before/after inventory totals and entitlement set;
 - native granted-item rows for playtime rewards;
 - Steamworks transaction/GetReport evidence;

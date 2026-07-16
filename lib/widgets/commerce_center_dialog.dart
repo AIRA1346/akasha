@@ -1,5 +1,6 @@
 import 'package:akasha_commerce_domain/akasha_commerce_domain.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../core/commerce/steam_inventory/steam_inventory_price_formatter.dart';
 import '../generated/l10n/app_localizations.dart';
@@ -681,6 +682,14 @@ class _CommerceAuthorityBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final palette = context.akashaPalette;
+    final readyIssueMessage = switch (account.issueCode) {
+      'steam_overlay_unavailable' => l10n.commerceAccountOverlayUnavailable,
+      'steam_app_subscription_missing' =>
+        l10n.commerceAccountSubscriptionMissing,
+      'steam_purchase_prices_incomplete' =>
+        l10n.commerceAccountPricesIncomplete,
+      _ => l10n.commerceAccountReadyReadOnly,
+    };
     final (
       icon,
       color,
@@ -703,13 +712,17 @@ class _CommerceAuthorityBanner extends StatelessWidget {
         false,
       ),
       CommerceAuthorityState.ready => (
-        Icons.verified_outlined,
-        palette.success,
+        account.transactionsEnabled
+            ? Icons.verified_outlined
+            : Icons.warning_amber_rounded,
+        account.transactionsEnabled ? palette.success : palette.warning,
         account.transactionsEnabled
             ? l10n.commerceAccountReadyTransactions
-            : l10n.commerceAccountReadyReadOnly,
+            : readyIssueMessage,
         false,
-        false,
+        !account.transactionsEnabled &&
+            account.issueCode != null &&
+            controller?.enabled == true,
       ),
       CommerceAuthorityState.offlineCache => (
         Icons.cloud_off_outlined,
@@ -726,6 +739,7 @@ class _CommerceAuthorityBanner extends StatelessWidget {
         controller?.enabled == true,
       ),
     };
+    final supportReport = controller?.buildSupportReport();
 
     return Semantics(
       container: true,
@@ -757,6 +771,28 @@ class _CommerceAuthorityBanner extends StatelessWidget {
                     onPressed: controller?.refresh,
                     icon: const Icon(Icons.refresh_rounded, size: 16),
                     label: Text(l10n.commerceRetry),
+                  ),
+                ],
+                if (supportReport != null) ...[
+                  const SizedBox(width: 4),
+                  IconButton(
+                    key: const ValueKey('commerce-copy-diagnostics'),
+                    tooltip: l10n.commerceCopyDiagnostics,
+                    onPressed: () async {
+                      await Clipboard.setData(
+                        ClipboardData(text: supportReport),
+                      );
+                      if (!context.mounted) return;
+                      final messenger = ScaffoldMessenger.maybeOf(context);
+                      messenger
+                        ?..hideCurrentSnackBar()
+                        ..showSnackBar(
+                          SnackBar(
+                            content: Text(l10n.commerceDiagnosticsCopied),
+                          ),
+                        );
+                    },
+                    icon: const Icon(Icons.content_copy_rounded, size: 17),
                   ),
                 ],
               ],
