@@ -3,7 +3,7 @@
 > **일자:** 2026-06-22  
 > **유형:** Design Token · Workbench 패널 · Typography 코드 감사 (구현 전)  
 > **선행:** [R14_UI_UX_AUDIT.md](./R14_UI_UX_AUDIT.md), [R4_PLANNING_MASTER_PLAN.md](./R4_PLANNING_MASTER_PLAN.md), [R5_DOGFOOD_ROUND2_REPORT.md](./R5_DOGFOOD_ROUND2_REPORT.md)  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../active/PROJECT_CONSTITUTION.md)
+> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md)
 
 **방법:** `lib/` 전역 색·간격·타이포·Workbench 패널 코드를 정량 집계 + 파일별 대조. **코드 수정 없음.**
 

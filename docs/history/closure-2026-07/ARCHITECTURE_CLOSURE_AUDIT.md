@@ -1,10 +1,10 @@
 # Architecture Closure Audit
 
 > **Status:** **Architecture Closure declared** (2026-07-12)  
-> **Authority:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) · P0 · SA-02/03/04  
+> **Authority:** [AKASHA_ARCHIVE_CONSTITUTION.md](../../active/AKASHA_ARCHIVE_CONSTITUTION.md) · P0 · SA-02/03/04
 > **Scope (historical):** Verify implementation against Constitution. No Universal Record, §7 ADR, behavioral traces, or Relationship Assertion work.  
 > **Next track:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) — not another architecture audit  
-> **Related:** [ULTIMATE_ARCHIVE_BACKLOG.md](ULTIMATE_ARCHIVE_BACKLOG.md) · [SA_02_HOME_WORK_SUMMARY_BOUNDARY.md](SA_02_HOME_WORK_SUMMARY_BOUNDARY.md) · [P0_RECOVERABLE_VAULT_WRITE_GATE.md](P0_RECOVERABLE_VAULT_WRITE_GATE.md)
+> **Related:** [ULTIMATE_ARCHIVE_BACKLOG.md](../../draft/ULTIMATE_ARCHIVE_BACKLOG.md) · [SA_02_HOME_WORK_SUMMARY_BOUNDARY.md](SA_02_HOME_WORK_SUMMARY_BOUNDARY.md) · [P0_RECOVERABLE_VAULT_WRITE_GATE.md](P0_RECOVERABLE_VAULT_WRITE_GATE.md)
 
 ## Verdict
 
@@ -58,7 +58,7 @@ See [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) §Steam
 
 ### S2 — Long backlog
 
-Unchanged backlog (L-01–L-08). Do not start from this Closure doc. Track in [ULTIMATE_ARCHIVE_BACKLOG.md](ULTIMATE_ARCHIVE_BACKLOG.md) only when product needs them.
+Unchanged backlog (L-01–L-08). Do not start from this Closure doc. Track in [ULTIMATE_ARCHIVE_BACKLOG.md](../../draft/ULTIMATE_ARCHIVE_BACKLOG.md) only when product needs them.
 
 ---
 

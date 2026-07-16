@@ -1,7 +1,7 @@
 # Gateway Permission and Receipt Cases
 
 > **Status:** Semantic regression fixtures for
-> [GATEWAY_PERMISSION_AND_RECEIPT_ADR.md](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md).
+> [GATEWAY_PERMISSION_AND_RECEIPT_ADR.md](../../active/GATEWAY_PERMISSION_AND_RECEIPT_ADR.md).
 > They are not API payloads, credential formats, permission UI mocks, or
 > implementation tests.
 

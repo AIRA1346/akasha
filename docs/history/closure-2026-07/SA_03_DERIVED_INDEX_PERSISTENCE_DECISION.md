@@ -4,7 +4,7 @@
 > Explore. Universal Record/Link/Taste query projections, packaged-target
 > measurement, and full repair controls remain pending.
 > **Date:** 2026-07-10
-> **Related:** [SA_02_HOME_WORK_SUMMARY_BOUNDARY.md](SA_02_HOME_WORK_SUMMARY_BOUNDARY.md) · [SCALE_ACCESS_PATH_INVENTORY.md](SCALE_ACCESS_PATH_INVENTORY.md#sa-03--bounded-index-persistence-next) · [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)
+> **Related:** [SA_02_HOME_WORK_SUMMARY_BOUNDARY.md](SA_02_HOME_WORK_SUMMARY_BOUNDARY.md) · [SCALE_ACCESS_PATH_INVENTORY.md](SCALE_ACCESS_PATH_INVENTORY.md#sa-03--bounded-index-persistence-next) · [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](../../active/AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)
 
 ## 1. Decision Proposal
 

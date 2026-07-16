@@ -1,7 +1,7 @@
 # Extension Namespace and Reserved-Field Cases
 
 > **Status:** Semantic regression fixtures for
-> [EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md](EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md).
+> [EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md](../../active/EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md).
 > They are not parser fixtures, serializer tests, migration instructions, or
 > authorization payloads.
 

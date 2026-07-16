@@ -7,7 +7,7 @@
 > **Scope:** Current Vault read, change-notification, and derived-index paths.
 > This is an architecture-cleanup inventory. It introduces no schema, storage
 > engine, migration, or Universal Record model.
-> **Related:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md#421-current-scale-gap-and-readiness-gate) · [ADR-014](../history/adr/ADR-014-core-archive-ontology.md)
+> **Related:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](../../active/INFINITE_ARCHIVE_HARDENING_PLAN.md#421-current-scale-gap-and-readiness-gate) · [ADR-014](../adr/ADR-014-core-archive-ontology.md)
 
 ## 1. Decision
 

@@ -1,4 +1,4 @@
-/// Steam Inventory Minimal POC — IDs match docs/active/steam_inventory_poc/itemdefs_poc.json
+/// Steam Inventory Minimal POC — IDs match the historical POC ItemDef fixture.
 library;
 
 abstract final class SteamInventoryPocIds {

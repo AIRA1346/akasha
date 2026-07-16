@@ -1,7 +1,7 @@
 # P1-A Core Archive Ontology 사례 fixture
 
 - 상태: 의미론 검증용 사례. 제품 fixture, 모델, serializer, migration은 아님.
-- 기준 ADR: [ADR-014](../history/adr/ADR-014-core-archive-ontology.md)
+- 기준 ADR: [ADR-014](../adr/ADR-014-core-archive-ontology.md)
 - 목적: 현재 Vault 파일을 읽을 때 물리 저장 단위와 장기 의미 단위를 혼동하지 않도록 하는 회귀 사례다.
 
 ## 사례 1 — Work 파일은 대상과 주된 기록을 함께 담는다
@@ -24,7 +24,7 @@
 
 - Journal Markdown은 Document이고, 그 서술은 특정 시점의 Record다.
 - 본문 wiki link는 독자가 A/B를 탐색하도록 돕는 연결이다.
-- "A가 B에 영향을 주었다"를 장기 관계로 남기려면 Journal Record를 출처로 하여 [Relation Tiers ADR](RELATION_TIERS_AND_ASSERTIONS_ADR.md)의 별도 Relationship Assertion으로 명시 승격해야 한다.
+- "A가 B에 영향을 주었다"를 장기 관계로 남기려면 Journal Record를 출처로 하여 [Relation Tiers ADR](../../active/RELATION_TIERS_AND_ASSERTIONS_ADR.md)의 별도 Relationship Assertion으로 명시 승격해야 한다.
 
 ## 사례 3 — Timeline은 경험 시간과 저장 시간을 분리한다
 
@@ -46,7 +46,7 @@
 | --- | --- |
 | 사용자 Journal 원본 | 기존 Record와 본문을 그대로 보존 |
 | AI 해석 | 별도의 파생 Record로 보존 |
-| 두 Record의 연결 | [Provenance ADR](PROVENANCE_AND_DERIVED_INPUT_ADR.md)의 입력 revision·변환·actor 계약으로 보존 |
+| 두 Record의 연결 | [Provenance ADR](../../active/PROVENANCE_AND_DERIVED_INPUT_ADR.md)의 입력 revision·변환·actor 계약으로 보존 |
 
 현재 v3에는 이 연결의 완전한 스키마가 없으므로, 이 사례는 구현 지시가 아니다. 단, 파생 결과를 원본 frontmatter나 본문에 자동 병합하는 것은 이 ADR의 의미론에 맞지 않는다.
 
@@ -77,7 +77,7 @@ v3 `links`의 `target`, `relation`, `label`은 Record 내부의 구조화된 연
 
 - 현재 링크는 Record의 맥락에서 읽는 탐색·분류 힌트다.
 - 링크만으로 누가 그 관계를 주장했는지, 언제 유효한지, 어떤 증거가 있는지, 철회되었는지를 표현할 수 없다.
-- 따라서 기존 structured link를 일괄 변환하지 않는다. [Relation Tiers ADR](RELATION_TIERS_AND_ASSERTIONS_ADR.md) 기준으로 독립 관계가 필요하다고 명시한 경우에만 새로운 Assertion을 추가한다.
+- 따라서 기존 structured link를 일괄 변환하지 않는다. [Relation Tiers ADR](../../active/RELATION_TIERS_AND_ASSERTIONS_ADR.md) 기준으로 독립 관계가 필요하다고 명시한 경우에만 새로운 Assertion을 추가한다.
 
 ## 사례 8 — 파일 이동·휴지통·복구는 의미 객체의 삭제가 아니다
 
@@ -85,7 +85,7 @@ P0의 recoverable write와 Vault trash는 파일을 보존·복구하는 저장 
 
 - 파일 경로 변경은 Document의 위치 변화이며, Entity/Record ID의 변화가 아니다.
 - `.trash` 이동은 현재 물리 삭제 상태이지, "이 Record는 철회되었다"라는 lifecycle Assertion이 아니다.
-- [Lifecycle ADR](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md)의 tombstone·supersede·merge도 P0 백업·충돌 보존·unknown YAML 보존을 대체하지 않는다.
+- [Lifecycle ADR](../../active/LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md)의 tombstone·supersede·merge도 P0 백업·충돌 보존·unknown YAML 보존을 대체하지 않는다.
 
 ## 사례 판정 규칙
 

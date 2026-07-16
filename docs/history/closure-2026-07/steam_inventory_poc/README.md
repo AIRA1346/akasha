@@ -6,7 +6,7 @@
 
 > **Historical evidence — do not upload as the next schema revision.** Use the
 > reviewed production candidate
-> [`../steam_inventory_production/itemdefs_steamworks_upload.json`](../steam_inventory_production/itemdefs_steamworks_upload.json).
+> [`../steam_inventory_production/itemdefs_steamworks_upload.json`](../../../active/steam_inventory_production/itemdefs_steamworks_upload.json).
 
 This POC proved client-side inventory orchestration against **Steam Inventory Service in a developer Sandbox**.  
 It does **not** claim production IAP, depot/library ship, published production
@@ -28,7 +28,7 @@ ItemDefs, or live localized Steam pack-price verification.
 | Path | Role |
 |---|---|
 | [`itemdefs_poc.json`](itemdefs_poc.json) / [`ITEMDEFS.md`](ITEMDEFS.md) | Historical test ItemDefs; do not re-upload as production |
-| [`../steam_inventory_production/README.md`](../steam_inventory_production/README.md) | Production upload candidate and POC retirement policy |
+| [`../steam_inventory_production/README.md`](../../../active/steam_inventory_production/README.md) | Production upload candidate and POC retirement policy |
 | [`NATIVE_BRIDGE.md`](NATIVE_BRIDGE.md) | Windows Steam SDK link + MethodChannel contract |
 | `lib/dev/steam_inventory_poc/` | Fake + controller + debug/internal harness |
 | `windows/runner/steam_inventory_poc_channel.*` | Live `ISteamInventory` MethodChannel |

@@ -3,7 +3,7 @@
 > **일자:** 2026-06-22  
 > **유형:** Level 3(관계 발견) 가능성 분석 + 설계안 (코드 수정 없음)  
 > **선행:** [R9_DISCOVERY_ENGINE_AUDIT.md](./R9_DISCOVERY_ENGINE_AUDIT.md), [R10_PLACE_ORG_AUDIT.md](./R10_PLACE_ORG_AUDIT.md), [R11_REGISTRY_BRIDGE_AUDIT.md](./R11_REGISTRY_BRIDGE_AUDIT.md), [R6_DISCOVERY_AUDIT.md](./R6_DISCOVERY_AUDIT.md)  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../active/PROJECT_CONSTITUTION.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)
+> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)
 
 **방법:** R8–R11 Foundation 위 코드 사실만 인용 · 이번 Sprint는 **Audit + Design만** 수행.
 

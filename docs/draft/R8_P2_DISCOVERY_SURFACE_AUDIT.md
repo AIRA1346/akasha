@@ -4,7 +4,7 @@
 > **Sprint:** R8-P2 Discovery Surface  
 > **전제:** R8-P0/P1 Foundation 완료 — 첫 연결 생성 경로 확보  
 > **선행:** [R6_DISCOVERY_AUDIT.md](./R6_DISCOVERY_AUDIT.md), [R7_DISCOVERY_FOUNDATION_AUDIT.md](./R7_DISCOVERY_FOUNDATION_AUDIT.md), [R8_P1_IMPLEMENTATION_REPORT.md](./R8_P1_IMPLEMENTATION_REPORT.md)  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../active/PROJECT_CONSTITUTION.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)
+> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)
 
 **금지 준수:** Search Index · Recall Validation · Link Index Schema · Discovery Semantics · Collection Pipeline · Registry Sync · Preview Stack · Save Return **무변경**  
 **범위:** Discovery **Engine** 수정 없음 · **Surface** (Home · Preview · Graph UI) 강화만

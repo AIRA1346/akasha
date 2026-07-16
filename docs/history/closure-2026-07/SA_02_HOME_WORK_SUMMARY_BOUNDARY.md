@@ -4,7 +4,7 @@
 > graph, Canvas, personal-library, Entity, Journal, Timeline, and relation
 > surfaces remain separate migrations.
 > **Date:** 2026-07-10
-> **Related:** [SCALE_ACCESS_PATH_INVENTORY.md](SCALE_ACCESS_PATH_INVENTORY.md#sa-02--home-work-summary-read-path) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
+> **Related:** [SCALE_ACCESS_PATH_INVENTORY.md](SCALE_ACCESS_PATH_INVENTORY.md#sa-02--home-work-summary-read-path) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](../../active/INFINITE_ARCHIVE_HARDENING_PLAN.md)
 
 ## 1. Decision
 

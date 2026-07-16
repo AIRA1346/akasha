@@ -8,12 +8,12 @@
 > **Scope:** This document defines why AKASHA exists and the principles that
 > decide future architecture. It does not introduce a schema, serializer,
 > migration, AI service, or storage implementation.
-> **Supersedes:** [PROJECT_CONSTITUTION.md](PROJECT_CONSTITUTION.md) (historical stub → [history](../history/PROJECT_CONSTITUTION.md))
+> **Supersedes:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md) (historical stub → [history](../history/PROJECT_CONSTITUTION.md))
 > **Related:** [VISION.md](VISION.md) (v1 product scope),
 > [CURRENT_STATE.md](CURRENT_STATE.md) (implementation reality),
 > [docs README](../README.md) (document index),
 > [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md),
-> [P0 Recoverable Vault Write Gate](P0_RECOVERABLE_VAULT_WRITE_GATE.md),
+> [P0 Recoverable Vault Write Gate](../history/closure-2026-07/P0_RECOVERABLE_VAULT_WRITE_GATE.md),
 > [Provenance and Derived Input ADR](PROVENANCE_AND_DERIVED_INPUT_ADR.md)
 
 ## 1. Definition

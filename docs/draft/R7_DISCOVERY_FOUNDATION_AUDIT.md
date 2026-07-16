@@ -4,7 +4,7 @@
 > **전제:** R3~R5 UX Sprint **종료** · UX 재개편 **없음**  
 > **목표:** `기록 + 연결` → `기록 + 연결 + 발견` 이동을 위한 **엔지니어링 기반** 분석  
 > **선행:** [R6_DISCOVERY_AUDIT.md](./R6_DISCOVERY_AUDIT.md)  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../active/PROJECT_CONSTITUTION.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)
+> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)
 
 **금지 준수:** UX 리디자인 · Preview · Navigation · Workbench 수정 없음 · 코드 수정 없음.
 

@@ -2,7 +2,7 @@
 
 > **일자:** 2026-06-30  
 > **지위:** 구조 감사·결정 전 SSOT (draft) — **destructive 변경 없음**  
-> **상위:** [PROJECT_STATUS.md](../active/PROJECT_STATUS.md) · [catalog-ownership.md](../history/policy/catalog-ownership.md)  
+> **상위:** [PROJECT_STATUS.md](../history/closure-2026-07/PROJECT_STATUS.md) · [catalog-ownership.md](../history/policy/catalog-ownership.md)
 > **앱 repo tip:** `45f89b7` (`origin/main` 동기화)
 
 ---

@@ -4,7 +4,7 @@
 > **Date:** 2026-07-03
 > **Last architecture review:** 2026-07-10
 > **Scope:** Make AKASHA safe for unbounded personal archiving and external AI/tool use without making AKASHA an AI service, media player, or orchestrator.
-> **Related:** [P0_RECOVERABLE_VAULT_WRITE_GATE.md](P0_RECOVERABLE_VAULT_WRITE_GATE.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) · [VISION.md](VISION.md) · [ARCHITECTURE.md](ARCHITECTURE.md) · [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) · [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md)
+> **Related:** [P0_RECOVERABLE_VAULT_WRITE_GATE.md](../history/closure-2026-07/P0_RECOVERABLE_VAULT_WRITE_GATE.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](../history/closure-2026-07/ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) · [VISION.md](VISION.md) · [ARCHITECTURE.md](ARCHITECTURE.md) · [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) · [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md)
 
 ## 1. Decision
 
@@ -19,7 +19,7 @@ The next architecture hardening target is not "add AI." The target is:
 
 > Keep AKASHA as the archive substrate, then make indexes, taste signals, agent writes, and ID paths strict enough that the archive can grow without losing meaning, speed, or trust.
 
-Pre-release note: because Steam v1 has not shipped yet, [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) may override the earlier "post-v1 only" posture for ID paths and operation contracts if the migration is contained and well-tested.
+Pre-release note: because Steam v1 has not shipped yet, [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](../history/closure-2026-07/ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) may override the earlier "post-v1 only" posture for ID paths and operation contracts if the migration is contained and well-tested.
 
 ## 2. Product Boundary
 
@@ -59,7 +59,7 @@ This boundary must remain true even when future AI workflows become powerful.
 
 Before any new archive feature, Universal Record work, or behavior evidence,
 AKASHA must pass the release-blocking
-[P0 Recoverable Vault Write Gate](P0_RECOVERABLE_VAULT_WRITE_GATE.md).
+[P0 Recoverable Vault Write Gate](../history/closure-2026-07/P0_RECOVERABLE_VAULT_WRITE_GATE.md).
 
 The gate is intentionally stronger than an "atomic save" claim: it requires a
 verified old or new copy after interruption, non-destructive conflict handling,

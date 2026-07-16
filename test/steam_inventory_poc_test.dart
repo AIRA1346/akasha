@@ -19,7 +19,8 @@ void main() {
     final schema =
         jsonDecode(
               File(
-                'docs/active/steam_inventory_poc/itemdefs_poc.json',
+                'docs/history/closure-2026-07/steam_inventory_poc/'
+                'itemdefs_poc.json',
               ).readAsStringSync(),
             )
             as Map<String, Object?>;

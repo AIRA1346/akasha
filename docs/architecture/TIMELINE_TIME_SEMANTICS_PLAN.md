@@ -31,8 +31,8 @@
 
 | Field | File | Parser | Current Behavior | Risk |
 | :--- | :--- | :--- | :--- | :--- |
-| `occurredAt` | [timeline_entry_parser.dart](file:///C:/Users/rkdwl/RuneAtelier/akasha/lib/services/timeline_entry_parser.dart#L33-L36) | `_parseDateTime` → `DateTime.tryParse` | YAML의 `occurred_at` 문자열 파싱. 없으면 `createdAt` 및 `DateTime.now()`로 폴백 | **P1**: Z 없는 문자열을 직접 파싱하므로, 로드하는 기기의 로컬 타임존에 따라 노출 시각이 달라질 수 있습니다 |
-| `timeAnchor` | [timeline_vault_store.dart](file:///C:/Users/rkdwl/RuneAtelier/akasha/lib/services/timeline_vault_store.dart#L68) | `record.timeAnchor ?? DateTime.now()` | 인메모리 `ArchiveRecord`에서 `timeAnchor`를 꺼내 `occurredAt`으로 재할당 | **P2**: 명시적인 검증 없이 UI에서 전달받은 DateTime에 의존하며, null 시 로컬 `DateTime.now()` 적용 |
+| `occurredAt` | [timeline_entry_parser.dart](../../lib/services/timeline_entry_parser.dart#L33-L36) | `_parseDateTime` → `DateTime.tryParse` | YAML의 `occurred_at` 문자열 파싱. 없으면 `createdAt` 및 `DateTime.now()`로 폴백 | **P1**: Z 없는 문자열을 직접 파싱하므로, 로드하는 기기의 로컬 타임존에 따라 노출 시각이 달라질 수 있습니다 |
+| `timeAnchor` | [timeline_vault_store.dart](../../lib/services/timeline_vault_store.dart#L68) | `record.timeAnchor ?? DateTime.now()` | 인메모리 `ArchiveRecord`에서 `timeAnchor`를 꺼내 `occurredAt`으로 재할당 | **P2**: 명시적인 검증 없이 UI에서 전달받은 DateTime에 의존하며, null 시 로컬 `DateTime.now()` 적용 |
 
 ---
 
@@ -40,8 +40,8 @@
 
 | Field | File | Writer | Current Serialized Form | Risk |
 | :--- | :--- | :--- | :--- | :--- |
-| `occurredAt` | [timeline_entry_parser.dart](file:///C:/Users/rkdwl/RuneAtelier/akasha/lib/services/timeline_entry_parser.dart#L72) | `formatDateTime` → `value.toIso8601String()` | `occurred_at: "2026-07-05T22:30:00.000"` (Z 없음) | **P1**: 타임존 지정이 배제된 문자열로 직렬화되어, 다른 장치에서 읽을 때 해석 기준이 달라질 수 있습니다 |
-| `timeAnchor` | [timeline_vault_store.dart](file:///C:/Users/rkdwl/RuneAtelier/akasha/lib/services/timeline_vault_store.dart#L108) | `TimelineEntryParser.serialize`로 전달 | 파일에는 직접 직렬화되지 않음. `occurred_at`으로 바인딩되어 간접 저장 | **P2**: 저장 흐름이 `occurredAt`에 전적으로 의존하므로, 향후 의도하지 않은 시계열 꼬임 가능성이 있습니다 |
+| `occurredAt` | [timeline_entry_parser.dart](../../lib/services/timeline_entry_parser.dart#L72) | `formatDateTime` → `value.toIso8601String()` | `occurred_at: "2026-07-05T22:30:00.000"` (Z 없음) | **P1**: 타임존 지정이 배제된 문자열로 직렬화되어, 다른 장치에서 읽을 때 해석 기준이 달라질 수 있습니다 |
+| `timeAnchor` | [timeline_vault_store.dart](../../lib/services/timeline_vault_store.dart#L108) | `TimelineEntryParser.serialize`로 전달 | 파일에는 직접 직렬화되지 않음. `occurred_at`으로 바인딩되어 간접 저장 | **P2**: 저장 흐름이 `occurredAt`에 전적으로 의존하므로, 향후 의도하지 않은 시계열 꼬임 가능성이 있습니다 |
 
 ---
 

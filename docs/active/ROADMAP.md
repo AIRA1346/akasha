@@ -2,7 +2,7 @@
 
 > **지위:** 프로젝트 개발 로드맵 SSOT (5대 정체성 카테고리 기준)
 > **갱신:** 2026-07-16 — Steamworks pre-upload operation allowlist 반영
-> **최상위 지침:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) · [VISION.md](VISION.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md)
+> **최상위 지침:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) · [VISION.md](VISION.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](../history/closure-2026-07/ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md)
 > **기능 거부 기준:** [Constitution §8](AKASHA_ARCHIVE_CONSTITUTION.md) (구 PROJECT_CONSTITUTION 필터는 [historical](../history/PROJECT_CONSTITUTION.md))
 
 ---
@@ -19,7 +19,7 @@
 | — | B. Discovery | **optional** — starter catalog 검색 유지 |
 | — | E. Scale | **post-v1** — vault 파생 인덱스 · akasha-db/CDN |
 
-**Steam v1 무료 출시:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) 트랙. Architecture Closure 선언됨. IAP는 `steamInAppPurchasesEnabled=false` — 승인 catalog/가격 preview는 가능하지만 결제 검증 전 활성 구매로 표시하지 않음.
+**Steam v1 무료 출시:** [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md) release gate. Architecture Closure는 선언됐고, IAP는 `steamInAppPurchasesEnabled=false`다. 승인 catalog/가격 preview는 가능하지만 Steam-library transaction/recovery matrix가 닫히기 전 활성 구매로 표시하지 않는다.
 
 ---
 
@@ -31,7 +31,7 @@
 
 **현재:** UX-1/2 Theme foundation·Responsive Shell, UX-3 Home, UX-4 핵심 surface, UX-5 테마 package·회귀 기반, UX-6 Window frame·Theme Gallery와 Commerce catalog foundation을 완료했다. Production ItemDef registry와 Steam read/transaction/reward gateway가 연결되었고, Store/Inventory도 승인 Astra pack·테마 package 구분, loading·offline·retry·owned 상태, compact/125% text 회귀를 갖춘 단일 snapshot 소비 화면으로 고도화했다. 정상 빌드는 release IAP와 두 sandbox define이 모두 false라 구매 CTA와 playtime reward trigger가 비활성이며, 명시적 내부 Sandbox 빌드만 `StartPurchase`·단일 재화 `ExchangeItems`·`TriggerItemDrop(40220)`·terminal result·`GetAllItems` reconciliation을 실행한다. Gateway와 production port는 purchase `40110-40112`, exchange `41101-41103`, reward `40220 -> 40002`만 허용하며 raw unit/POC ID는 native call 전에 거절한다. `40110.store_hidden=false` 단일 변수 A/B에서 Steam checkout Overlay가 열려 판매 팩 visibility 원인을 확정했으며, 구성품 `40001`은 숨김을 유지하고 실제 판매 팩 `40110-40112`만 store-visible로 관리한다. 다음 단계는 갱신된 [Steamworks upload candidate](steam_inventory_production/itemdefs_steamworks_upload.json)를 게시해 `40111-40112` checkout을 확인하고, [Sandbox checklist](steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md)의 취소/완료, 6개 테마 경로, Echo 6회/7번째 거절, 재시작·2PC·GetReport 증거를 수행하는 것이다. Touch effect와 background particle은 Interaction/Motion/Backdrop 계약 위에서 별도 성능·reduced-motion 검증과 함께 확장한다.
 
-공식 테마 카탈로그는 무료 `classicDark`·`midnightBlue`, premium `sakura`·`amethyst`·`nocturne`다. premium 3종은 `planned`와 승인 가격 `500 Astra 또는 500 Echo`를 표시하되 commerce 활성 전 구매 CTA는 노출하지 않는다. 잔여 style 이관은 [UX_THEME_MIGRATION_INVENTORY.md](UX_THEME_MIGRATION_INVENTORY.md)에서 추적한다.
+공식 테마 카탈로그는 무료 `classicDark`·`midnightBlue`, premium `sakura`·`amethyst`·`nocturne`다. premium 3종은 `planned`와 승인 가격 `500 Astra 또는 500 Echo`를 표시하되 commerce 활성 전 구매 CTA는 노출하지 않는다. 잔여 style 이관은 [UX_THEME_MIGRATION_INVENTORY.md](../history/closure-2026-07/UX_THEME_MIGRATION_INVENTORY.md)에서 추적한다.
 
 ---
 

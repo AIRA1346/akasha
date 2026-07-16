@@ -2,7 +2,7 @@
 
 > **Sprint:** UX Recovery  
 > **갱신:** 2026-06-22  
-> **기준:** 실제 코드 (`lib/`) + [PROJECT_CONSTITUTION.md](../active/PROJECT_CONSTITUTION.md)  
+> **기준:** 실제 코드 (`lib/`) + [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md)
 > **주의:** [CURRENT_STATE.md](../active/CURRENT_STATE.md), [ROADMAP.md](../active/ROADMAP.md)는 일부 항목이 코드보다 뒤처져 있음 (본 문서는 **코드 우선**)
 
 ---

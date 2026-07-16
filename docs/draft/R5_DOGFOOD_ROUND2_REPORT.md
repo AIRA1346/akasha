@@ -2,7 +2,7 @@
 
 > **일자:** 2026-06-22  
 > **범위:** R4-A ~ R4-C 반영 후 · 코드·UI 흐름 추적 + widget test  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../active/PROJECT_CONSTITUTION.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)  
+> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)
 > **선행 Dogfood:** [R3H_DOGFOOD_VALIDATION.md](./R3H_DOGFOOD_VALIDATION.md)  
 > **선행 구현:** [R4A](./R4A_IMPLEMENTATION_REPORT.md) · [R4B](./R4B_IMPLEMENTATION_REPORT.md) · [R4C](./R4C_IMPLEMENTATION_REPORT.md)
 

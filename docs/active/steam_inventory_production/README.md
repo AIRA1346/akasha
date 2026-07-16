@@ -10,7 +10,7 @@
 > [`../STEAM_SERVICE_RELEASE_READINESS.md`](../STEAM_SERVICE_RELEASE_READINESS.md)
 
 Do **not** upload the historical
-[`../steam_inventory_poc/itemdefs_poc.json`](../steam_inventory_poc/itemdefs_poc.json)
+[`../steam_inventory_poc/itemdefs_poc.json`](../../history/closure-2026-07/steam_inventory_poc/itemdefs_poc.json)
 as the next schema revision. It records the completed sandbox experiment and
 still contains the Pack 100, one-Echo playtime drop, 100-Astra Nocturne recipe,
 starter promo, and Support item. The upload candidate uses a separate production

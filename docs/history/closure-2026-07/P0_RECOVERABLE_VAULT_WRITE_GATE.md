@@ -3,7 +3,7 @@
 > **Status:** Passed on 2026-07-10
 > **Date:** 2026-07-10
 > **Scope:** Every durable write to a user Vault. The P0 feature freeze is lifted; future changes must retain these invariants.
-> **Related:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)
+> **Related:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](../../active/INFINITE_ARCHIVE_HARDENING_PLAN.md) · [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](../../active/AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)
 
 ---
 

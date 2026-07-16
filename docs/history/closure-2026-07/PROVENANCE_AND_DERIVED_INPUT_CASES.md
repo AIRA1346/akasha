@@ -1,7 +1,7 @@
 # Provenance and Derived-Input Cases
 
 > **Status:** Semantic regression fixtures for
-> [PROVENANCE_AND_DERIVED_INPUT_ADR.md](PROVENANCE_AND_DERIVED_INPUT_ADR.md).
+> [PROVENANCE_AND_DERIVED_INPUT_ADR.md](../../active/PROVENANCE_AND_DERIVED_INPUT_ADR.md).
 > They are not API payloads, models, serializers, fixtures for product tests,
 > or migration instructions.
 

@@ -2,7 +2,7 @@
 
 > **Status:** Active development track (2026-07-12)  
 > **Predecessor:** [ARCHITECTURE_CLOSURE_AUDIT.md](ARCHITECTURE_CLOSURE_AUDIT.md) — **Architecture Closure declared**  
-> **Ops companion:** [STEAM_RELEASE.md](STEAM_RELEASE.md)  
+> **Ops companion:** [STEAM_RELEASE.md](../../active/STEAM_RELEASE.md)
 > **Rule:** No new generic architecture audits. No SA-05 / §7 ADR / Universal Record / Relationship Assertion.  
 > **Fix rule:** Former S1 items live here as a **stability checklist**. Fix only when dogfood or ship is blocked, in small units.
 
@@ -21,7 +21,7 @@ Close Steam review / payment / localization blockers so AKASHA can ship and dogf
 | **P1** | English localization applies to all major UI in a real build | **Visual pass (chrome)** — see [evidence/p1-english-ui-2026-07-12](evidence/p1-english-ui-2026-07-12/README.md); deep Work/Entity vault flows deferred when vault path unavailable |
 | **P2** | Exact English switch path + resubmission Notes for Steam reviewers | **Draft ready** (§Reviewer English path) |
 | **P3** | Unimplemented IAP stated clearly in docs + `FeatureFlags` | **Done in this slice** — `steamInAppPurchasesEnabled = false` |
-| **P4** | Astra/Echo (`premium`/`earned`) currency contract + support · unlock domain | **Domain done** — [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md) · `packages/akasha_commerce_domain/` |
+| **P4** | Astra/Echo (`premium`/`earned`) currency contract + support · unlock domain | **Domain done** — [COMMERCE_CURRENCY_CONTRACT.md](../../active/COMMERCE_CURRENCY_CONTRACT.md) · `packages/akasha_commerce_domain/` |
 | **P4-B** | Secure Commerce Backend Foundation (prototype) | **Accepted as domain prototype** — relocated in P4-C |
 | **P4-C** | Secure backend physical boundary + Steam Sandbox adapter | **Done / deferred asset** — `backend/akasha_commerce_server/`; Cloud Run·Postgres·prod MicroTxn **paused** |
 | **Inv-Gate** | Steam Inventory Commerce Feasibility | **Sandbox E2E POC passed** — [STEAM_INVENTORY_COMMERCE_FEASIBILITY_GATE.md](STEAM_INVENTORY_COMMERCE_FEASIBILITY_GATE.md); production IAP **not** Go |
@@ -143,7 +143,7 @@ Astra/Steam Wallet 결제 없음. Classic Dark와 Midnight Blue는 번들 무료
 
 ## P4 — Astra / Echo commerce domain
 
-**SSOT:** [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md)
+**SSOT:** [COMMERCE_CURRENCY_CONTRACT.md](../../active/COMMERCE_CURRENCY_CONTRACT.md)
 
 | Kind | Display | Qualifier |
 |---|---|---|

@@ -2,7 +2,7 @@
 
 > **일자:** 2026-06-25 (F0) · **재검토:** 2026-06-30 (Post-P2 분해 SSOT)
 > **지위:** Foundation Sprint 감사 SSOT (draft)  
-> **상위:** [PROJECT_STATUS.md](../active/PROJECT_STATUS.md) · [CURRENT_STATE.md](../active/CURRENT_STATE.md)  
+> **상위:** [PROJECT_STATUS.md](../history/closure-2026-07/PROJECT_STATUS.md) · [CURRENT_STATE.md](../active/CURRENT_STATE.md)
 > **레거시:** [LEGACY_REMOVAL_POLICY.md](LEGACY_REMOVAL_POLICY.md)
 
 ---

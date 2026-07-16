@@ -7,9 +7,9 @@
 > **Scope:** Replace scan-based read access one domain at a time without
 > flattening Work, Entity, Journal, Timeline, Canvas, or future derived Records.
 > **Related:** [Core Archive Ontology](P1_A_CORE_ARCHIVE_ONTOLOGY_CASES.md),
-> [Provenance and Derived Input](PROVENANCE_AND_DERIVED_INPUT_ADR.md),
+> [Provenance and Derived Input](../../active/PROVENANCE_AND_DERIVED_INPUT_ADR.md),
 > [SA-03 Derived Index Persistence](SA_03_DERIVED_INDEX_PERSISTENCE_DECISION.md),
-> [Local Agent Command Protocol](LOCAL_AGENT_COMMAND_PROTOCOL.md)
+> [Local Agent Command Protocol](../../active/LOCAL_AGENT_COMMAND_PROTOCOL.md)
 
 ## 1. Decision
 

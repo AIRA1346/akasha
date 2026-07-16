@@ -3,7 +3,7 @@
 > **Sprint:** UX Recovery (Audit + Redesign only)  
 > **갱신:** 2026-06-22  
 > **제약:** 코드·데이터·파이프라인 변경 없음  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../active/PROJECT_CONSTITUTION.md) — 기록 → 연결 → 발견
+> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md) — 기록 → 연결 → 발견
 
 ---
 

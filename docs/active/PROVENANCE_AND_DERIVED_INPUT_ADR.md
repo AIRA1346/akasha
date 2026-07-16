@@ -5,8 +5,8 @@
 > **Date:** 2026-07-11  
 > **Scope:** The provenance a durable Record needs when it is created from a
 > user, an external source, a tool, or one or more prior Vault records.  
-> **Related:** [P1_A_CORE_ARCHIVE_ONTOLOGY_CASES.md](P1_A_CORE_ARCHIVE_ONTOLOGY_CASES.md), [AI_ARCHIVE_WRITE_GATEWAY_ADR.md](AI_ARCHIVE_WRITE_GATEWAY_ADR.md), [P0_RECOVERABLE_VAULT_WRITE_GATE.md](P0_RECOVERABLE_VAULT_WRITE_GATE.md), [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)
-> **Cases:** [PROVENANCE_AND_DERIVED_INPUT_CASES.md](PROVENANCE_AND_DERIVED_INPUT_CASES.md)
+> **Related:** [P1_A_CORE_ARCHIVE_ONTOLOGY_CASES.md](../history/closure-2026-07/P1_A_CORE_ARCHIVE_ONTOLOGY_CASES.md), [AI_ARCHIVE_WRITE_GATEWAY_ADR.md](AI_ARCHIVE_WRITE_GATEWAY_ADR.md), [P0_RECOVERABLE_VAULT_WRITE_GATE.md](../history/closure-2026-07/P0_RECOVERABLE_VAULT_WRITE_GATE.md), [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)
+> **Cases:** [PROVENANCE_AND_DERIVED_INPUT_CASES.md](../history/closure-2026-07/PROVENANCE_AND_DERIVED_INPUT_CASES.md)
 
 ## 1. Decision
 
@@ -224,7 +224,7 @@ receipts. P0 conflict evidence remains separate from canonical provenance.
 | AI writes directly to a folder | An external edit that may be preserved/reindexed, but has no fabricated Gateway actor, receipt, or input lineage. |
 
 The detailed regression fixtures are in
-[PROVENANCE_AND_DERIVED_INPUT_CASES.md](PROVENANCE_AND_DERIVED_INPUT_CASES.md).
+[PROVENANCE_AND_DERIVED_INPUT_CASES.md](../history/closure-2026-07/PROVENANCE_AND_DERIVED_INPUT_CASES.md).
 
 ## 8. Alternatives rejected
 

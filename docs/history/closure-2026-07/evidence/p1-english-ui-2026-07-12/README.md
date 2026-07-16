@@ -2,7 +2,7 @@
 
 > **Date:** 2026-07-12  
 > **Build:** `scripts/build_release.ps1` → `build\windows\x64\runner\Release\akasha.exe` (then rebuild after l10n fixes with `flutter build windows --release`)  
-> **Track:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](../STEAM_RELEASE_BLOCKER_CLOSURE.md)  
+> **Track:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](../../STEAM_RELEASE_BLOCKER_CLOSURE.md)
 > **IAP:** remains `FeatureFlags.steamInAppPurchasesEnabled = false` (unchanged)
 
 ## Method

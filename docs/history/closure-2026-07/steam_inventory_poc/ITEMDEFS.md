@@ -3,7 +3,7 @@
 > AppID: `4677560` · File: [`itemdefs_poc.json`](itemdefs_poc.json)  
 > **Historical evidence:** this is the schema used for the completed POC. Do
 > **not** upload it as the next production revision. Use
-> [`../steam_inventory_production/itemdefs_steamworks_upload.json`](../steam_inventory_production/itemdefs_steamworks_upload.json).
+> [`../steam_inventory_production/itemdefs_steamworks_upload.json`](../../../active/steam_inventory_production/itemdefs_steamworks_upload.json).
 
 ## Pack approach decision
 

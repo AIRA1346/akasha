@@ -4,7 +4,7 @@
 > **Date:** 2026-07-12
 > **Scope:** Do not forget the architecture work discovered while hardening AKASHA as an ultimate archive substrate.
 > **Boundary:** AKASHA is the durable archive layer. AI agents, media playback, recommendations, and external automation remain outside AKASHA unless they write/read through explicit archive contracts.
-> **Related:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) · [ROADMAP.md](ROADMAP.md) · [PROJECT_STATUS.md](PROJECT_STATUS.md)
+> **Related:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](../active/INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](../history/closure-2026-07/ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) · [ROADMAP.md](../active/ROADMAP.md) · [PROJECT_STATUS.md](../history/closure-2026-07/PROJECT_STATUS.md)
 
 ## 1. Already Landed
 
@@ -117,12 +117,12 @@ These fields were identified as useful but are not fully standardized everywhere
 | `updated_at` | Conflict checks and index freshness | landed; serializers/stores update and index summaries read it |
 | `source` | user/app/agent/import/script provenance | creation source is standardized, but existing-record edits must preserve it; full provenance remains P1 work |
 | `evidence` | Agent/candidate/taste claims need proof | landed as preserved v3 metadata list; candidate promotion writes evidence |
-| `links` / `relations` | Structured relation layer beyond wiki body links | structured links are landed; [Relation Tier semantics](RELATION_TIERS_AND_ASSERTIONS_ADR.md) are fixed, while physical Assertion storage remains P1 work |
+| `links` / `relations` | Structured relation layer beyond wiki body links | structured links are landed; [Relation Tier semantics](../active/RELATION_TIERS_AND_ASSERTIONS_ADR.md) are fixed, while physical Assertion storage remains P1 work |
 | `entity_subtype` | character/creator/studio/franchise/track without exploding top-level types | planned |
 | `source_operation_id` | Trace write back to operation | landed for operation-created entity journals; extend to future operation record types |
-| lifecycle / tombstone / supersede | Preserve retirement and replacement without confusing them with deletion | [Semantic lifecycle contract](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md) is fixed; physical representation remains deferred |
-| extension namespace | Add future AKASHA metadata without claiming user/tool YAML | [`x_akasha` contract](EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md) is fixed; writer/spec update remains deferred |
-| Gateway authority / receipts | Apply external archive operations only by user choice | [Default-deny grant and receipt contract](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md) is fixed; first candidate intake and bounded Record command are implemented |
+| lifecycle / tombstone / supersede | Preserve retirement and replacement without confusing them with deletion | [Semantic lifecycle contract](../active/LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md) is fixed; physical representation remains deferred |
+| extension namespace | Add future AKASHA metadata without claiming user/tool YAML | [`x_akasha` contract](../active/EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md) is fixed; writer/spec update remains deferred |
+| Gateway authority / receipts | Apply external archive operations only by user choice | [Default-deny grant and receipt contract](../active/GATEWAY_PERMISSION_AND_RECEIPT_ADR.md) is fixed; first candidate intake and bounded Record command are implemented |
 
 ## 7. Entity Taxonomy Follow-Ups
 
@@ -146,7 +146,7 @@ These matter, but they are not the current ultimate-archive core.
 | ID | Work | Note |
 | --- | --- | --- |
 | D-001 | Steam BuildID `24015480` Set Live / review update | Release/ops, not archive architecture |
-| D-002 | Paid themes / IAP / Astra·Echo | [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md); flag off until P5–P6 verified |
+| D-002 | Paid themes / IAP / Astra·Echo | [COMMERCE_CURRENCY_CONTRACT.md](../active/COMMERCE_CURRENCY_CONTRACT.md); flag off until P5–P6 verified |
 | D-003 | Agent/player implementation layer | AKASHA must not become the player/orchestrator |
 | D-004 | akasha-db ownership A/B/C decision | Repo/registry operations track |
 | D-005 | Registry manifest 4 generated files | Keep excluded from commit unless intentionally rebuilding registry |
@@ -154,9 +154,9 @@ These matter, but they are not the current ultimate-archive core.
 
 ## 9. Current Next Step
 
-**Architecture Closure:** [ARCHITECTURE_CLOSURE_AUDIT.md](ARCHITECTURE_CLOSURE_AUDIT.md) — **declared** (S0 closed · analyze 0 · test 930). No further generic architecture audits.
+**Architecture Closure:** [ARCHITECTURE_CLOSURE_AUDIT.md](../history/closure-2026-07/ARCHITECTURE_CLOSURE_AUDIT.md) — **declared** (S0 closed · analyze 0 · test 930). No further generic architecture audits.
 
-**Product track:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) — localization · reviewer Notes · IAP honesty · [Astra/Echo commerce](COMMERCE_CURRENCY_CONTRACT.md) · Steam Wallet · GetReport.
+**Product track:** [STEAM_SERVICE_RELEASE_READINESS.md](../active/STEAM_SERVICE_RELEASE_READINESS.md) — Steam-library transaction/recovery evidence · IAP honesty · [Astra/Echo commerce](../active/COMMERCE_CURRENCY_CONTRACT.md).
 
 Former audit S1 rows are a **Steam stability checklist** only (fix when dogfood/ship blocks).
 

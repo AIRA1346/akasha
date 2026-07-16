@@ -3,7 +3,7 @@
 > **일자:** 2026-06-30
 > **지위:** 구현 확장 **전** UI/UX 관찰·리뷰 (draft)
 > **범위:** Windows/desktop · Home 프리뷰 `내 감상` · Workbench Sanctum `# 📝 메모`
-> **상위:** [AGENT_VAULT_LOOP_SLICE.md](../active/AGENT_VAULT_LOOP_SLICE.md) · [AGENT_VAULT_PROTOCOL_V1.md](../active/AGENT_VAULT_PROTOCOL_V1.md)
+> **상위:** [AGENT_VAULT_LOOP_SLICE.md](../history/closure-2026-07/AGENT_VAULT_LOOP_SLICE.md) · [AGENT_VAULT_PROTOCOL_V1.md](../active/AGENT_VAULT_PROTOCOL_V1.md)
 > **초기 리뷰 기준:** `8840986` (`feat: add Agent Vault work journal UI slice`) · **P0-1 적용:** 이번 커밋
 
 ---
@@ -186,7 +186,7 @@ Text(' / 5', style: AkashaTypography.caption),
 | 6 | Sanctum 보기 탭 — memo가 **명대사 카드**와 구분됨 | ☐ |
 | 7 | P0-1 — 핵심 정보 **4.5 / 5**와 내 감상 별점 일치 | ☐ |
 
-결과는 [AGENT_VAULT_LOOP_SLICE.md](../active/AGENT_VAULT_LOOP_SLICE.md) §5에 이어 기록.
+결과는 [AGENT_VAULT_LOOP_SLICE.md](../history/closure-2026-07/AGENT_VAULT_LOOP_SLICE.md) §5에 이어 기록.
 
 ---
 

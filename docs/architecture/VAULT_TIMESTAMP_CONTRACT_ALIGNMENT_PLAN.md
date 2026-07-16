@@ -16,9 +16,9 @@ vault store 3종(`journal_vault_store`, `timeline_vault_store`, `entity_vault_st
 
 | Location | Code | `isUtc` |
 | :--- | :--- | :--- |
-| [journal_vault_store.dart:72](file:///C:/Users/rkdwl/RuneAtelier/akasha/lib/services/journal_vault_store.dart#L72) | `var addedAt = DateTime.now();` | **false** (local) |
-| [timeline_vault_store.dart:74](file:///C:/Users/rkdwl/RuneAtelier/akasha/lib/services/timeline_vault_store.dart#L74) | `var addedAt = DateTime.now();` | **false** (local) |
-| [akasha_item.dart:58](file:///C:/Users/rkdwl/RuneAtelier/akasha/lib/models/akasha_item.dart#L58) | `addedAt = addedAt ?? DateTime.now(),` | **false** (local) |
+| [journal_vault_store.dart:72](../../lib/services/journal_vault_store.dart#L72) | `var addedAt = DateTime.now();` | **false** (local) |
+| [timeline_vault_store.dart:74](../../lib/services/timeline_vault_store.dart#L74) | `var addedAt = DateTime.now();` | **false** (local) |
+| [akasha_item.dart:58](../../lib/models/akasha_item.dart#L58) | `addedAt = addedAt ?? DateTime.now(),` | **false** (local) |
 
 이 로컬 `DateTime`은 직렬화 경로를 거쳐 파일에 쓰인다:
 
@@ -237,19 +237,19 @@ static void writeContractFields(
 
 | File | Change | Risk |
 | :--- | :--- | :--- |
-| [archive_record_contract.dart](file:///C:/Users/rkdwl/RuneAtelier/akasha/lib/core/archiving/archive_record_contract.dart) | `formatDateTime` → `.toUtc().toIso8601String()` | 낮음 — 기존 UTC DateTime 입력 시 동작 불변 |
-| [journal_vault_store.dart](file:///C:/Users/rkdwl/RuneAtelier/akasha/lib/services/journal_vault_store.dart) | L72 `DateTime.now()` → `DateTime.now().toUtc()` | 낮음 |
-| [timeline_vault_store.dart](file:///C:/Users/rkdwl/RuneAtelier/akasha/lib/services/timeline_vault_store.dart) | L74 `DateTime.now()` → `DateTime.now().toUtc()` | 낮음 |
-| [timeline_vault_store.dart](file:///C:/Users/rkdwl/RuneAtelier/akasha/lib/services/timeline_vault_store.dart) | L68 `DateTime.now()` → `DateTime.now().toUtc()` | **Open Decision #2** |
-| [akasha_item.dart](file:///C:/Users/rkdwl/RuneAtelier/akasha/lib/models/akasha_item.dart) | L58 `DateTime.now()` → `DateTime.now().toUtc()` | 낮음 — UI 표시 시 `.toLocal()` 변환 필요 여부 확인 필요 |
+| [archive_record_contract.dart](../../lib/core/archiving/archive_record_contract.dart) | `formatDateTime` → `.toUtc().toIso8601String()` | 낮음 — 기존 UTC DateTime 입력 시 동작 불변 |
+| [journal_vault_store.dart](../../lib/services/journal_vault_store.dart) | L72 `DateTime.now()` → `DateTime.now().toUtc()` | 낮음 |
+| [timeline_vault_store.dart](../../lib/services/timeline_vault_store.dart) | L74 `DateTime.now()` → `DateTime.now().toUtc()` | 낮음 |
+| [timeline_vault_store.dart](../../lib/services/timeline_vault_store.dart) | L68 `DateTime.now()` → `DateTime.now().toUtc()` | **Open Decision #2** |
+| [akasha_item.dart](../../lib/models/akasha_item.dart) | L58 `DateTime.now()` → `DateTime.now().toUtc()` | 낮음 — UI 표시 시 `.toLocal()` 변환 필요 여부 확인 필요 |
 
 ### 6.2 Reader 수정 (핵심)
 
 | File | Change | Risk |
 | :--- | :--- | :--- |
-| [archive_record_contract.dart](file:///C:/Users/rkdwl/RuneAtelier/akasha/lib/core/archiving/archive_record_contract.dart) | `parseSystemTimestamp` 신규 메서드 추가. `createdAtFromYaml`, `metadataFromYaml` 변경 | 중간 — 4개 vault 파서에 영향 |
-| [record_summary_index_parse_part.dart](file:///C:/Users/rkdwl/RuneAtelier/akasha/lib/services/record_summary_index_parse_part.dart) | `_parseVaultInstantAsUtc` → `ArchiveRecordContract.parseSystemTimestamp` 호출로 대체 | 낮음 — 동작 동일 |
-| [record_summary_index_service.dart](file:///C:/Users/rkdwl/RuneAtelier/akasha/lib/services/record_summary_index_service.dart) | `@visibleForTesting` wrapper가 새 위치를 가리키도록 변경 | 낮음 |
+| [archive_record_contract.dart](../../lib/core/archiving/archive_record_contract.dart) | `parseSystemTimestamp` 신규 메서드 추가. `createdAtFromYaml`, `metadataFromYaml` 변경 | 중간 — 4개 vault 파서에 영향 |
+| [record_summary_index_parse_part.dart](../../lib/services/record_summary_index_parse_part.dart) | `_parseVaultInstantAsUtc` → `ArchiveRecordContract.parseSystemTimestamp` 호출로 대체 | 낮음 — 동작 동일 |
+| [record_summary_index_service.dart](../../lib/services/record_summary_index_service.dart) | `@visibleForTesting` wrapper가 새 위치를 가리키도록 변경 | 낮음 |
 
 ### 6.3 수정 불필요 (이미 안전)
 
@@ -321,7 +321,7 @@ static void writeContractFields(
 
 ### 9.1 기존 테스트 현황
 
-*   [parse_vault_instant_as_utc_test.dart](file:///C:/Users/rkdwl/RuneAtelier/akasha/test/parse_vault_instant_as_utc_test.dart) — 9개 시나리오. `_parseVaultInstantAsUtc` 검증 전용.
+*   [parse_vault_instant_as_utc_test.dart](../../test/parse_vault_instant_as_utc_test.dart) — 9개 시나리오. `_parseVaultInstantAsUtc` 검증 전용.
 *   `ArchiveRecordContract.parseDateTime`에 대한 직접 테스트: **없음**
 *   `formatDateTime`에 대한 직접 테스트: **없음**
 

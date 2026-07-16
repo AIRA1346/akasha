@@ -1,6 +1,6 @@
 # AI Archive Write Gateway Cases
 
-> **Status:** Semantic fixtures for [AI_ARCHIVE_WRITE_GATEWAY_ADR.md](AI_ARCHIVE_WRITE_GATEWAY_ADR.md). Case 1 is covered by the narrow local Gateway service; the remaining cases are still contracts, not API payloads, models, serializers, or migrations.
+> **Status:** Semantic fixtures for [AI_ARCHIVE_WRITE_GATEWAY_ADR.md](../../active/AI_ARCHIVE_WRITE_GATEWAY_ADR.md). Case 1 is covered by the narrow local Gateway service; the remaining cases are still contracts, not API payloads, models, serializers, or migrations.
 
 ## Case 1 — AI finds a possible Entity
 

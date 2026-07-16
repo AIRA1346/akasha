@@ -1,13 +1,12 @@
 # Steam Release - AKASHA
 
-> **2026-07-16 packaging hold:** Do not run the current Steam upload script for
-> another depot build. It recursively maps the Flutter Release directory and
-> can include development-only `steam_appid.txt`. Fix the staged package and
-> VDF exclusion, then verify the depot manifest before any review or release
-> build. See [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md).
+> **Packaging contract:** SteamPipe uploads only the verified
+> `build/steam/depot_windows` stage. The stage and VDF both exclude
+> `steam_appid.txt` and PDB files; the manifest must validate before upload.
+> See [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md).
 
-> **Updated:** 2026-07-12
-> **Status:** Architecture Closure declared. Active track = [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md).
+> **Updated:** 2026-07-17
+> **Status:** Architecture Closure declared. Active gate = [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md).
 > **Release stance:** Early Access가 아니라 **무료 일반 출시**.  
 > **IAP:** **미구현** (`FeatureFlags.steamInAppPurchasesEnabled = false`). Store Page 인앱 구매 표시는 결제 흐름 완성 전까지 **제거 가능**. 부분 구현으로 구매가 있다고 표시·재제출하지 않는다.
 
@@ -33,13 +32,13 @@ AKASHA가 예쁘게 정리해서 보여준다.
 - AI agent/player/tool 구현 약속
 - 음악 재생, 추천 엔진, 자동화된 외부 도구 연동 약속
 
-v1 Theme Gallery는 공식 5종을 모두 보여준다. Classic Dark와 Midnight Blue는 번들 무료로 적용할 수 있고 Sakura·Amethyst·Nocturne는 승인된 가격 `500 Astra 또는 500 Echo · 출시 예정`으로 표시할 수 있다. [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md)와 [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) P5–P6 검증 전에는 활성 구매 버튼이나 Steam 결제 가능 상태로 표시하지 않는다.
+v1 Theme Gallery는 공식 5종을 모두 보여준다. Classic Dark와 Midnight Blue는 번들 무료로 적용할 수 있고 Sakura·Amethyst·Nocturne는 승인된 가격 `500 Astra 또는 500 Echo · 출시 예정`으로 표시할 수 있다. [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md)와 [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md)의 transaction/recovery gate를 통과하기 전에는 활성 구매 버튼이나 Steam 결제 가능 상태로 표시하지 않는다.
 
 ---
 
 ## 1b. Reviewer English switch (summary)
 
-Exact path and resubmission Notes: [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) §Reviewer English path.
+Exact path and resubmission Notes: [STEAM_RELEASE_BLOCKER_CLOSURE.md](../history/closure-2026-07/STEAM_RELEASE_BLOCKER_CLOSURE.md) §Reviewer English path.
 
 Short: Esc → Preferences → Display language → English.
 
@@ -49,7 +48,7 @@ Short: Esc → Preferences → Display language → English.
 
 | Gate | Result |
 |------|--------|
-| `flutter test` | PASS, **672/672** |
+| `flutter test` | PASS — 현재 개수는 [CURRENT_STATE.md](CURRENT_STATE.md) 참조 |
 | `flutter analyze lib` | PASS, **0 issue** |
 | `dogfood_precheck.ps1 -Build` | PASS |
 | Windows release build | PASS |
@@ -235,4 +234,6 @@ This document replaces these as the operational Steam release reference:
 - `docs/history/programs/m2-steam-store-page.md`
 - `docs/history/release-readiness-checklist.md`
 
-Historical files may remain for context, but release decisions should use this file and `PROJECT_STATUS.md`.
+Historical files may remain for context, but release decisions should use this
+file, [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md),
+and [CURRENT_STATE.md](CURRENT_STATE.md).

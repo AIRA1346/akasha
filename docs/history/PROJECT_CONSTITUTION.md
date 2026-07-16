@@ -2,7 +2,7 @@
 
 > **Status:** historical — superseded on 2026-07-12
 > **Current supreme SSOT:** [AKASHA Archive Constitution](../active/AKASHA_ARCHIVE_CONSTITUTION.md)
-> **Active stub:** [docs/active/PROJECT_CONSTITUTION.md](../active/PROJECT_CONSTITUTION.md)
+> **Active stub:** [docs/active/PROJECT_CONSTITUTION.md](closure-2026-07/PROJECT_CONSTITUTION_STUB.md)
 > **원 지위 (폐기):** 프로젝트 최상위 헌법  
 > **원 갱신:** 2026-07-03
 

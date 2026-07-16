@@ -3,7 +3,7 @@
 > **Status:** Active pre-release architecture audit
 > **Date:** 2026-07-03
 > **Scope:** Decide whether AKASHA should keep the current vault architecture, harden it, or migrate to a stronger canonical layout before Steam v1.
-> **Related:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ARCHITECTURE.md](ARCHITECTURE.md) · [VISION.md](VISION.md) · [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md)
+> **Related:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](../../active/INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ARCHITECTURE.md](../../active/ARCHITECTURE.md) · [VISION.md](../../active/VISION.md) · [AGENT_VAULT_PROTOCOL_V1.md](../../active/AGENT_VAULT_PROTOCOL_V1.md)
 
 > **2026-07-10 architecture correction:** This audit predates the durable-data
 > migration and P0. Its `.akasha/` paths for candidates and operations are

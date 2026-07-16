@@ -1,7 +1,7 @@
 # Relation Tiers and Relationship Assertion Cases
 
 > **Status:** Semantic regression fixtures for
-> [RELATION_TIERS_AND_ASSERTIONS_ADR.md](RELATION_TIERS_AND_ASSERTIONS_ADR.md).
+> [RELATION_TIERS_AND_ASSERTIONS_ADR.md](../../active/RELATION_TIERS_AND_ASSERTIONS_ADR.md).
 > They are not product models, serializers, migrations, graph data, or API
 > payloads.
 

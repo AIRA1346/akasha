@@ -10,7 +10,7 @@
 > **갱신:** 2026-07-06 (형식 명세 v3 동기화)
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md) — 필드·시간·관계 규칙은 명세가 최상위 기준 (볼트 내 `.akasha/spec/spec_v3.md` 동봉)
 > **Git:** code/test baseline **7be7b51b** · current tip은 `git log -1` 기준
-> **상위:** [VISION.md](VISION.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md) · [SPRINT_B1_DOGFOOD.md](SPRINT_B1_DOGFOOD.md)
+> **상위:** [VISION.md](VISION.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md) · [SPRINT_B1_DOGFOOD.md](../history/closure-2026-07/SPRINT_B1_DOGFOOD.md)
 > **구현 참고:** `AkashaFileService` watch · `TimelineEntryParser` · `EntityVaultStore` (제품 코드 — 본 문서는 **파일 프로토콜 계약**)
 
 ---
@@ -273,7 +273,7 @@ Agent 저장은 **앱 native save**와 동일 형식을 따른다.
 | A9 | Collection / Library | **앱 UI**로 반영 확인 (Agent 직접 쓰기 아님) |
 | A10 | 금지 준수 | F1–F8 위반 없음 (삭제·경로·registry·대량 catalog 없음) |
 
-결과 기록: [SPRINT_B1_DOGFOOD.md](SPRINT_B1_DOGFOOD.md) §3.4 (Agent 루프).
+결과 기록: [SPRINT_B1_DOGFOOD.md](../history/closure-2026-07/SPRINT_B1_DOGFOOD.md) §3.4 (Agent 루프).
 
 ---
 
@@ -299,8 +299,8 @@ Agent 저장은 **앱 native save**와 동일 형식을 따른다.
 | [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) | agent operation · index · taste signal · ID path hardening |
 | [sanctum-md-customization.md](../history/product/sanctum-md-customization.md) | 슬롯·bodyRaw |
 | [VISION.md](VISION.md) | v1 Personal Archive 북극성 |
-| [PROJECT_STATUS.md](PROJECT_STATUS.md) | v1 blocking · M3 보류 |
-| [SPRINT_B1_DOGFOOD.md](SPRINT_B1_DOGFOOD.md) | 수동 dogfood SSOT |
+| [CURRENT_STATE.md](CURRENT_STATE.md) | 현재 v1 blocking · M3 상태 |
+| [SPRINT_B1_DOGFOOD.md](../history/closure-2026-07/SPRINT_B1_DOGFOOD.md) | 수동 dogfood SSOT |
 
 ---
 

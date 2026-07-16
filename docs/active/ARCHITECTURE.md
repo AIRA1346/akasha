@@ -4,7 +4,7 @@
 > **기준일:** 2026-07-02
 > **제품·포스터 SSOT:** [VISION.md](VISION.md) · **아카이빙 북극성:** [history/product/ultimate-archiving-vision.md](../history/product/ultimate-archiving-vision.md)
 
-관련: [history/policy/akasha-db-policy.md](../history/policy/akasha-db-policy.md) · [history/policy/catalog-ownership.md](../history/policy/catalog-ownership.md) · [ROADMAP.md](ROADMAP.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md)
+관련: [history/policy/akasha-db-policy.md](../history/policy/akasha-db-policy.md) · [history/policy/catalog-ownership.md](../history/policy/catalog-ownership.md) · [ROADMAP.md](ROADMAP.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](../history/closure-2026-07/ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md)
 
 ---
 
@@ -13,7 +13,7 @@
 ### 0.0 무한 아카이브 Hardening (2026-07-03)
 
 > **실행 계획:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
-> **출시 전 감사:** [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md)
+> **출시 전 감사:** [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](../history/closure-2026-07/ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md)
 
 이 문서에서 "AI 친화적"은 AKASHA가 AI 서비스, 플레이어, 도구 오케스트레이터가 된다는 뜻이 아니다. AKASHA의 책임은 **원본 vault를 보존하고, 외부 도구/AI가 읽고 쓸 수 있는 안정적인 아카이브 계약을 제공하는 것**이다.
 
@@ -462,7 +462,7 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 | [canonicalization-policy.md](../history/policy/canonicalization-policy.md) | identity·dedupe 규칙 |
 | [catalog-ownership.md](../history/policy/catalog-ownership.md) | 3계층·소유권 |
 | [v4-migration-plan.md](../history/v4-migration-plan.md) | **Steam 전 실행 계획** |
-| [akasha-db/SCHEMA.md](../akasha-db/SCHEMA.md) | v3 현재 · v4 `wk_`·해시 샤드 |
+| [akasha-db/SCHEMA.md](../../akasha-db/SCHEMA.md) | v3 현재 · v4 `wk_`·해시 샤드 |
 
 ---
 

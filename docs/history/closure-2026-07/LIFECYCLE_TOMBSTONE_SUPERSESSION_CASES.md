@@ -1,7 +1,7 @@
 # Lifecycle, Tombstone, and Supersession Cases
 
 > **Status:** Semantic regression fixtures for
-> [LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md](LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md).
+> [LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md](../../active/LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md).
 > They are not product models, serializers, migrations, retention policy, or
 > secure-erasure instructions.
 

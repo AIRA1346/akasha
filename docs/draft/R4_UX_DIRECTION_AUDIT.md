@@ -2,7 +2,7 @@
 
 > **일자:** 2026-06-22  
 > **범위:** R3-A ~ R3-G 완료 시점 · 코드 수정 없음  
-> **근거:** [PROJECT_CONSTITUTION.md](../active/PROJECT_CONSTITUTION.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md), R3E/F/G/H Dogfood 문서, `lib/screens/home/` · `lib/features/workbench/` 코드 추적
+> **근거:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md), R3E/F/G/H Dogfood 문서, `lib/screens/home/` · `lib/features/workbench/` 코드 추적
 
 ---
 

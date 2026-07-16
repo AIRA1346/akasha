@@ -3,7 +3,7 @@
 > **Date:** 2026-07-13  
 > **Verdict:** **Steam Inventory Sandbox E2E POC passed** — not production IAP Go  
 > **POC runbook:** [steam_inventory_poc/README.md](steam_inventory_poc/README.md)  
-> **Production draft:** [steam_inventory_production/README.md](steam_inventory_production/README.md)
+> **Production draft:** [steam_inventory_production/README.md](../../active/steam_inventory_production/README.md)
 > **Scope:** Feasibility audit + minimal in-repo POC harness — POC has no store UI / flag still false
 > **Flag:** `steamInAppPurchasesEnabled = false` (unchanged)  
 > **Sources:** [Steam Inventory Service](https://partner.steamgames.com/doc/features/inventory), [Inventory Schema](https://partner.steamgames.com/doc/features/inventory/schema), [Item Store](https://partner.steamgames.com/doc/features/inventory/itemstore), [ISteamInventory](https://partner.steamgames.com/doc/api/isteaminventory), [Microtransactions Implementation](https://partner.steamgames.com/doc/features/microtransactions/implementation)

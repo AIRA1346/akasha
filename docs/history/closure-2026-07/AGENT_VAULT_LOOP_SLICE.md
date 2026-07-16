@@ -2,7 +2,7 @@
 
 > **지위:** Agent Vault dogfood **A1~A6** Work journal 최소 사이클 기록
 > **갱신:** 2026-06-30
-> **상위:** [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) · [SPRINT_B1_DOGFOOD.md](SPRINT_B1_DOGFOOD.md) §3.4
+> **상위:** [AGENT_VAULT_PROTOCOL_V1.md](../../active/AGENT_VAULT_PROTOCOL_V1.md) · [SPRINT_B1_DOGFOOD.md](SPRINT_B1_DOGFOOD.md) §3.4
 
 ---
 
@@ -27,8 +27,8 @@
 
 | 파일 | 단계 |
 |------|------|
-| [test/fixtures/vault_agent_slice_create.md](../../test/fixtures/vault_agent_slice_create.md) | A1 create — rating 0 · 태그 없음 · 짧은 메모 |
-| [test/fixtures/vault_agent_slice_full.md](../../test/fixtures/vault_agent_slice_full.md) | A2~A4 반영 — rating 4.5 · status · tags · 긴 메모 |
+| [test/fixtures/vault_agent_slice_create.md](../../../test/fixtures/vault_agent_slice_create.md) | A1 create — rating 0 · 태그 없음 · 짧은 메모 |
+| [test/fixtures/vault_agent_slice_full.md](../../../test/fixtures/vault_agent_slice_full.md) | A2~A4 반영 — rating 4.5 · status · tags · 긴 메모 |
 
 경로 예: `{vault}/animation/Agent Slice 테스트 애니.md` (또는 `works/animation/`)
 
@@ -79,7 +79,7 @@
 
 ## 5. 수동 dogfood 체크리스트
 
-**UI/UX 리뷰 (코드·fixture 기준):** [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) §7
+**UI/UX 리뷰 (코드·fixture 기준):** [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) §7
 
 | # | 항목 | Pass |
 |---|------|:----:|

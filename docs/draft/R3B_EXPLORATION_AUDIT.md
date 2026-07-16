@@ -3,7 +3,7 @@
 > **갱신:** 2026-06-22  
 > **범위:** P0–P7 UX Recovery Sprint 이후 실측  
 > **방법:** `lib/` 코드 추적만. 런타임 테스트·추측 없음.  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../active/PROJECT_CONSTITUTION.md) — 문화 지식 그래프 기반 개인 지식 우주
+> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md) — 문화 지식 그래프 기반 개인 지식 우주
 
 ---
 

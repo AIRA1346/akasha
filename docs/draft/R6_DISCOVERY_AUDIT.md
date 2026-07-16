@@ -2,7 +2,7 @@
 
 > **일자:** 2026-06-22  
 > **전제:** R3/R4 UX Sprint **종료** · 현재 UX **충분** ([R5](./R5_DOGFOOD_ROUND2_REPORT.md) 판정 A)  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../active/PROJECT_CONSTITUTION.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)  
+> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)
 > **질문:** 「어떻게 더 보기 좋게 만들까?」가 아니라 **「왜 사용자가 새로운 것을 발견하지 못하는가?」**
 
 **금지 준수:** UX/UI/Navigation/Preview/Workbench 변경 없음 · 코드 수정 없음.

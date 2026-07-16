@@ -9,9 +9,10 @@ Steam v1은 그 비전을 **작품 감상 아카이브**로 검증한다. Sanctu
 **1차 출시 목표:** Steam (Windows) · **v1 목표 시점:** 2026년 3분기
 
 > **원칙 SSOT:** [docs/active/AKASHA_ARCHIVE_CONSTITUTION.md](docs/active/AKASHA_ARCHIVE_CONSTITUTION.md)  
-> **구현 현황 SSOT:** 코드·레지스트리의 **현재 상태**는 [docs/active/CURRENT_STATE.md](docs/active/CURRENT_STATE.md)만 기준으로 삼습니다. README·ROADMAP·PROJECT_STATUS의 수치·게이트는 보조 참고입니다.
+> **구현 현황 SSOT:** 코드·레지스트리의 **현재 상태**는 [docs/active/CURRENT_STATE.md](docs/active/CURRENT_STATE.md)만 기준으로 삼습니다. README·ROADMAP과 history의 이전 상태 문서는 보조 참고입니다.
 
-상세 마일스톤·백로그는 [ROADMAP.md](ROADMAP.md)를 참고하세요.
+상세 마일스톤은 [ROADMAP.md](docs/active/ROADMAP.md), 문서 체계는
+[docs/README.md](docs/README.md)를 참고하세요.
 
 ---
 
@@ -218,7 +219,7 @@ Windows 실행 파일: `build/windows/x64/runner/Release/akasha.exe`
 - [akasha-db/POSTER_POLICY.md](akasha-db/POSTER_POLICY.md) — **Tier 1 포스터 금지 정책**
 - [docs/history/akasha-db-implementation-plan.md](docs/history/akasha-db-implementation-plan.md) — 사전 구현 계획·진행 상태
 - [akasha-db/SCHEMA.md](akasha-db/SCHEMA.md) — 사전 v4 필드 규격 (`wk_`·해시 샤드)
-- [docs/active/PROJECT_STATUS.md](docs/active/PROJECT_STATUS.md) — Gate·Registry·프로그램 현황 스냅샷
+- [docs/history/closure-2026-07/PROJECT_STATUS.md](docs/history/closure-2026-07/PROJECT_STATUS.md) — 이전 Gate·Registry·프로그램 현황 스냅샷
 - [docs/history/policy/locale-catalog-policy.md](docs/history/policy/locale-catalog-policy.md) — 언어·작품명·검색 정책
 - [docs/history/policy/commerce-boundary.md](docs/history/policy/commerce-boundary.md) — Steam IAP vs 제휴 커머스
 - [akasha-db/README.md](akasha-db/README.md) — 사전 기여·샤딩 규칙

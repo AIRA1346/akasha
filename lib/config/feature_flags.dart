@@ -4,8 +4,8 @@ class FeatureFlags {
   ///
   /// **false = 미구현.** Store Page에 IAP를 표시하거나 재심사에서 구매가
   /// 있다고 주장하지 않는다. Inventory POC / GetReport 증거가 검증되기 전에
-  /// true로 올리지 말 것. 트랙: docs/active/STEAM_RELEASE_BLOCKER_CLOSURE.md
-  /// POC: docs/active/steam_inventory_poc/README.md
+  /// true로 올리지 말 것. 트랙: docs/active/STEAM_SERVICE_RELEASE_READINESS.md
+  /// Historical POC: docs/history/closure-2026-07/steam_inventory_poc/README.md
   static const bool steamInAppPurchasesEnabled = false;
 
   /// Explicit internal build gate for the production ItemDef sandbox flow.

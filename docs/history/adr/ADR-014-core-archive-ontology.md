@@ -2,7 +2,7 @@
 
 - 상태: 채택됨 — 의미 경계만 정의하며 구현 스키마는 도입하지 않음
 - 날짜: 2026-07-10
-- 관련: [ADR-008](ADR-008-record-entity-time-model.md), [ADR-013](ADR-013-connection-link-index.md), [Vault Format Specification v3](../../active/AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md), [P1-A 사례 fixture](../../active/P1_A_CORE_ARCHIVE_ONTOLOGY_CASES.md)
+- 관련: [ADR-008](ADR-008-record-entity-time-model.md), [ADR-013](ADR-013-connection-link-index.md), [Vault Format Specification v3](../../active/AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md), [P1-A 사례 fixture](../closure-2026-07/P1_A_CORE_ARCHIVE_ONTOLOGY_CASES.md)
 
 ## 맥락
 
