@@ -98,6 +98,9 @@ production adapter:
 - reads only production currency and entitlement ItemDefs;
 - maps UI product IDs through an allowlisted registry and never accepts raw
   ItemDef IDs from Store UI;
+- enforces the same allowlist again at the production MethodChannel ports:
+  purchases accept only `40110-40112`, exchanges only `41101-41103`, and
+  rewards only `40220 -> 40002`;
 - preserves real Steam instance IDs for exact single-currency exchanges;
 - waits for a matching terminal callback and then confirms purchase, exchange,
   or reward only after a fresh inventory read exposes the expected change;
@@ -111,6 +114,29 @@ Internal transaction/reward builds use
 `--dart-define=AKASHA_STEAM_PLAYTIME_REWARDS=true` through
 [`scripts/build_steam_inventory_sandbox.ps1`](../../../scripts/build_steam_inventory_sandbox.ps1).
 Neither define changes `steamInAppPurchasesEnabled`, which remains false.
+
+## Astra unit price and direct-purchase probe
+
+ItemDef `40001` has `price: "1;USD1"` because Steam requires bundle components
+to carry prices for bundle accounting, while `40110-40112` use exact
+`use_bundle_price` overrides. Steam documents `store_hidden` as hiding an item
+from the public Item Store, whereas only `hidden` explicitly makes an ItemDef
+unavailable for purchase.
+
+AKASHA therefore applies two client guards: the commerce gateway maps only the
+three approved domain pack products, and the production transaction port
+rejects every purchase ItemDef except `40110-40112` before calling native code.
+This prevents accidental or injected raw ItemDef input through production app
+surfaces, but it is not claimed as a Steam-server security boundary against a
+separately modified client.
+
+Do not set `hidden: true` on active currency units before sandbox evidence:
+Steam's bundle-selling guidance explicitly recommends component prices plus
+`store_hidden`, and changing that relationship before validating checkout
+could break pack pricing or grants. After publication, run one controlled
+partner-sandbox probe for `StartPurchase(40001, 1)`. If Steam accepts it, record
+the result as a residual provider behavior and keep the app allowlist; revisit
+the economy schema only if pack-only sales must also be enforced by Steam.
 
 ## Explicitly absent at launch
 
@@ -128,11 +154,13 @@ Neither define changes `steamInAppPurchasesEnabled`, which remains false.
 3. Publish only to the private partner sandbox and confirm all POC IDs are
    hidden and ItemDef `10020` cannot drop.
 4. Verify Steam returns localized prices for `40110-40112`.
-5. Test six successful `TriggerItemDrop(40220)` grants and confirm a seventh is
+5. Run the controlled `StartPurchase(40001, 1)` probe and record whether Steam
+   permits a store-hidden component unit; never expose this probe in Store UI.
+6. Test six successful `TriggerItemDrop(40220)` grants and confirm a seventh is
    denied in the same 1,440-minute window.
-6. Complete every transaction, reward, recovery, restart, and second-PC row in
+7. Complete every transaction, reward, recovery, restart, and second-PC row in
    the sandbox checklist.
-7. Enable release IAP only in a separate reviewed change.
+8. Enable release IAP only in a separate reviewed change.
 
 Uploading or publishing ItemDefs is an external Steamworks action and is never
 performed by repository tests.

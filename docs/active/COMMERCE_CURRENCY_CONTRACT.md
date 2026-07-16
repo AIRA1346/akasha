@@ -201,6 +201,9 @@ registry, separately-capable read and transaction ports, and
 - price lookup failure does not erase a valid balance/ownership snapshot;
 - raw ItemDef ids never cross from Store UI; only approved domain product ids
   are mapped by the adapter;
+- production MethodChannel ports repeat the allowlist and reject raw Astra
+  unit `40001`, every retired POC purchase/exchange ID, mismatched reward IDs,
+  and all other non-catalog targets before invoking native code;
 - purchase waits for the matching terminal Steam result and then requires the
   exact Astra pack delta in a fresh inventory snapshot;
 - exchange allocates exactly 500 units across real instance IDs belonging to
@@ -241,6 +244,10 @@ production code imports only the capability-scoped read/transaction facades.
 6. Offline mode cannot purchase or exchange.
 7. Publisher keys never ship in Flutter.
 8. Payment, currency, and entitlement data never enter the user Vault.
+9. `40001` keeps its component price for Steam bundle accounting.
+   `store_hidden` is not treated as a server-side purchase prohibition, so a
+   controlled partner-sandbox `StartPurchase(40001, 1)` probe remains a release
+   gate even though production app surfaces and ports reject it.
 
 ## 8. Gates and deferred systems
 

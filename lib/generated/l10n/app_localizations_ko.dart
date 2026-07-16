@@ -1607,7 +1607,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get commerceChooseCurrencyBody =>
-      '아스트라 또는 에코 중 하나만 선택할 수 있습니다. 혼합 결제는 지원하지 않습니다.';
+      '선택한 재화는 즉시 소비되며 이 테마가 영구 잠금 해제됩니다. 아스트라 또는 에코 중 하나만 선택할 수 있으며 혼합 결제는 지원하지 않습니다.';
 
   @override
   String commerceCurrencyOption(String currency, int cost, int balance) {

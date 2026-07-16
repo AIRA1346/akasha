@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 
 import 'steam_inventory_channel_contract.dart';
+import 'steam_inventory_itemdefs.dart';
 import 'steam_inventory_method_channel_operation.dart';
 import 'steam_inventory_transaction_port.dart';
 
@@ -29,10 +30,16 @@ class MethodChannelSteamInventoryTransactionPort
     required int itemDefId,
     int quantity = 1,
   }) async {
-    if (itemDefId <= 0 || quantity != 1) {
+    if (!SteamInventoryItemDefs.approvedPurchaseItemDefs.contains(itemDefId)) {
       return const SteamInventoryTransactionResult(
         status: SteamInventoryTransactionStatus.rejected,
-        issueCode: 'steam_invalid_purchase_request',
+        issueCode: 'steam_purchase_itemdef_not_allowed',
+      );
+    }
+    if (quantity != 1) {
+      return const SteamInventoryTransactionResult(
+        status: SteamInventoryTransactionStatus.rejected,
+        issueCode: 'steam_invalid_purchase_quantity',
       );
     }
     return _startAndAwait(
@@ -50,8 +57,15 @@ class MethodChannelSteamInventoryTransactionPort
     required int generateItemDefId,
     required List<SteamInventoryDestroyItem> destroyItems,
   }) async {
-    if (generateItemDefId <= 0 ||
-        destroyItems.isEmpty ||
+    if (!SteamInventoryItemDefs.approvedExchangeItemDefs.contains(
+      generateItemDefId,
+    )) {
+      return const SteamInventoryTransactionResult(
+        status: SteamInventoryTransactionStatus.rejected,
+        issueCode: 'steam_exchange_itemdef_not_allowed',
+      );
+    }
+    if (destroyItems.isEmpty ||
         destroyItems.any(
           (item) =>
               item.instanceId.isEmpty ||

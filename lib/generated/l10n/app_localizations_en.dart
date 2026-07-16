@@ -1650,7 +1650,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get commerceChooseCurrencyBody =>
-      'Choose either Astra or Echo. Mixed payment is not supported.';
+      'The selected currency is consumed immediately to permanently unlock this theme. Choose either Astra or Echo; mixed payment is not supported.';
 
   @override
   String commerceCurrencyOption(String currency, int cost, int balance) {

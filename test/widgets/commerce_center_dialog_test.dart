@@ -231,6 +231,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
+    expect(find.textContaining('선택한 재화는 즉시 소비'), findsOneWidget);
     final astra = tester.widget<OutlinedButton>(
       find.descendant(
         of: find.byKey(const ValueKey('commerce-pay-astra')),

@@ -1,7 +1,7 @@
 # AKASHA Roadmap (로드맵)
 
 > **지위:** 프로젝트 개발 로드맵 SSOT (5대 정체성 카테고리 기준)
-> **갱신:** 2026-07-15 — Steamworks upload candidate·Echo reward foundation 반영
+> **갱신:** 2026-07-16 — Steamworks pre-upload operation allowlist 반영
 > **최상위 지침:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) · [VISION.md](VISION.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md)
 > **기능 거부 기준:** [Constitution §8](AKASHA_ARCHIVE_CONSTITUTION.md) (구 PROJECT_CONSTITUTION 필터는 [historical](../history/PROJECT_CONSTITUTION.md))
 
@@ -29,7 +29,7 @@
 
 구현 순서는 Theme foundation → Responsive Shell → Graph/Timeline 기존 경로 복원 → Home 고도화 → Preview·핵심 화면 정돈 → 테마별 asset/effect와 회귀 검증이다. 기존 Graph/Timeline 내비게이션을 다시 보이게 하는 일은 새 그래프 엔진, 완성 캘린더, `SA-05 Timeline projection` 완료를 의미하지 않는다.
 
-**현재:** UX-1/2 Theme foundation·Responsive Shell, UX-3 Home, UX-4 핵심 surface, UX-5 테마 package·회귀 기반, UX-6 Window frame·Theme Gallery와 Commerce catalog foundation을 완료했다. Production ItemDef registry와 Steam read/transaction/reward gateway가 연결되었고, Store/Inventory도 승인 Astra pack·테마 package 구분, loading·offline·retry·owned 상태, compact/125% text 회귀를 갖춘 단일 snapshot 소비 화면으로 고도화했다. 정상 빌드는 release IAP와 두 sandbox define이 모두 false라 구매 CTA와 playtime reward trigger가 비활성이며, 명시적 내부 Sandbox 빌드만 `StartPurchase`·단일 재화 `ExchangeItems`·`TriggerItemDrop(40220)`·terminal result·`GetAllItems` reconciliation을 실행한다. 다음 단계는 [Steamworks upload candidate](steam_inventory_production/itemdefs_steamworks_upload.json)를 partner sandbox에 게시하고 [Sandbox checklist](steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md)의 실결제 취소/완료, 6개 테마 경로, Echo 6회/7번째 거절, 재시작·2PC·GetReport 증거를 수행하는 것이다. Touch effect와 background particle은 Interaction/Motion/Backdrop 계약 위에서 별도 성능·reduced-motion 검증과 함께 확장한다.
+**현재:** UX-1/2 Theme foundation·Responsive Shell, UX-3 Home, UX-4 핵심 surface, UX-5 테마 package·회귀 기반, UX-6 Window frame·Theme Gallery와 Commerce catalog foundation을 완료했다. Production ItemDef registry와 Steam read/transaction/reward gateway가 연결되었고, Store/Inventory도 승인 Astra pack·테마 package 구분, loading·offline·retry·owned 상태, compact/125% text 회귀를 갖춘 단일 snapshot 소비 화면으로 고도화했다. 정상 빌드는 release IAP와 두 sandbox define이 모두 false라 구매 CTA와 playtime reward trigger가 비활성이며, 명시적 내부 Sandbox 빌드만 `StartPurchase`·단일 재화 `ExchangeItems`·`TriggerItemDrop(40220)`·terminal result·`GetAllItems` reconciliation을 실행한다. Gateway와 production port는 purchase `40110-40112`, exchange `41101-41103`, reward `40220 -> 40002`만 허용하며 raw unit/POC ID는 native call 전에 거절한다. 다음 단계는 [Steamworks upload candidate](steam_inventory_production/itemdefs_steamworks_upload.json)를 partner sandbox에 게시하고 [Sandbox checklist](steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md)의 `40001 x1` provider probe, 실결제 취소/완료, 6개 테마 경로, Echo 6회/7번째 거절, 재시작·2PC·GetReport 증거를 수행하는 것이다. Touch effect와 background particle은 Interaction/Motion/Backdrop 계약 위에서 별도 성능·reduced-motion 검증과 함께 확장한다.
 
 공식 테마 카탈로그는 무료 `classicDark`·`midnightBlue`, premium `sakura`·`amethyst`·`nocturne`다. premium 3종은 `planned`와 승인 가격 `500 Astra 또는 500 Echo`를 표시하되 commerce 활성 전 구매 CTA는 노출하지 않는다. 잔여 style 이관은 [UX_THEME_MIGRATION_INVENTORY.md](UX_THEME_MIGRATION_INVENTORY.md)에서 추적한다.
 

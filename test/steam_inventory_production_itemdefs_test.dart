@@ -132,6 +132,35 @@ void main() {
     },
   );
 
+  test('production operation allowlists exclude units and retired POC IDs', () {
+    expect(SteamInventoryItemDefs.approvedPurchaseItemDefs, {
+      SteamInventoryItemDefs.astraPack500,
+      SteamInventoryItemDefs.astraPack1000,
+      SteamInventoryItemDefs.astraPack2500,
+    });
+    expect(SteamInventoryItemDefs.approvedExchangeItemDefs, {
+      SteamInventoryItemDefs.sakuraThemeExchange,
+      SteamInventoryItemDefs.amethystThemeExchange,
+      SteamInventoryItemDefs.nocturneThemeExchange,
+    });
+    expect(
+      SteamInventoryItemDefs.approvedPurchaseItemDefs,
+      isNot(contains(SteamInventoryItemDefs.astraUnit)),
+    );
+    expect(
+      SteamInventoryItemDefs.approvedPurchaseItemDefs.intersection(
+        SteamInventoryItemDefs.retiredPocItemDefs,
+      ),
+      isEmpty,
+    );
+    expect(
+      SteamInventoryItemDefs.approvedExchangeItemDefs.intersection(
+        SteamInventoryItemDefs.retiredPocItemDefs,
+      ),
+      isEmpty,
+    );
+  });
+
   test('Echo play reward grants ten with a six-per-window Steam cap', () {
     final echoUnit = byId['40002']!;
     final rewardBundle = byId['40210']!;

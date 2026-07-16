@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 
 import 'steam_inventory_channel_contract.dart';
+import 'steam_inventory_itemdefs.dart';
 import 'steam_inventory_method_channel_operation.dart';
 import 'steam_inventory_reward_port.dart';
 import 'steam_inventory_transaction_port.dart';
@@ -29,10 +30,11 @@ class MethodChannelSteamInventoryRewardPort
     required int generatorItemDefId,
     required int expectedItemDefId,
   }) async {
-    if (generatorItemDefId <= 0 || expectedItemDefId <= 0) {
+    if (generatorItemDefId != SteamInventoryItemDefs.echoPlaytimeReward ||
+        expectedItemDefId != SteamInventoryItemDefs.echoUnit) {
       return const SteamInventoryRewardResult(
         status: SteamInventoryRewardStatus.rejected,
-        issueCode: 'steam_invalid_reward_request',
+        issueCode: 'steam_reward_itemdef_not_allowed',
       );
     }
 

@@ -26,6 +26,18 @@ abstract final class SteamInventoryItemDefs {
   static const int amethystThemeExchange = 41102;
   static const int nocturneThemeExchange = 41103;
 
+  static const Set<int> approvedPurchaseItemDefs = {
+    astraPack500,
+    astraPack1000,
+    astraPack2500,
+  };
+
+  static const Set<int> approvedExchangeItemDefs = {
+    sakuraThemeExchange,
+    amethystThemeExchange,
+    nocturneThemeExchange,
+  };
+
   static const Map<String, int> pricedPackByProductId = {
     CommerceCatalog.astraPack500ProductId: astraPack500,
     CommerceCatalog.astraPack1000ProductId: astraPack1000,

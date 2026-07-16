@@ -2963,7 +2963,7 @@ abstract class AppLocalizations {
   /// No description provided for @commerceChooseCurrencyBody.
   ///
   /// In en, this message translates to:
-  /// **'Choose either Astra or Echo. Mixed payment is not supported.'**
+  /// **'The selected currency is consumed immediately to permanently unlock this theme. Choose either Astra or Echo; mixed payment is not supported.'**
   String get commerceChooseCurrencyBody;
 
   /// No description provided for @commerceCurrencyOption.

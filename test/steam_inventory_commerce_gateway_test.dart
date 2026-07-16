@@ -608,6 +608,34 @@ void main() {
           .setMockMethodCallHandler(channel, null);
     });
 
+    test(
+      'rejects retired or mismatched reward ItemDefs before native call',
+      () async {
+        var nativeCalls = 0;
+        TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+            .setMockMethodCallHandler(channel, (call) async {
+              nativeCalls += 1;
+              return null;
+            });
+        const port = MethodChannelSteamInventoryRewardPort(channel: channel);
+
+        final retired = await port.triggerPlaytimeReward(
+          generatorItemDefId: 10020,
+          expectedItemDefId: 10002,
+        );
+        final mismatched = await port.triggerPlaytimeReward(
+          generatorItemDefId: 40220,
+          expectedItemDefId: 10002,
+        );
+
+        expect(retired.status, SteamInventoryRewardStatus.rejected);
+        expect(retired.issueCode, 'steam_reward_itemdef_not_allowed');
+        expect(mismatched.status, SteamInventoryRewardStatus.rejected);
+        expect(mismatched.issueCode, 'steam_reward_itemdef_not_allowed');
+        expect(nativeCalls, 0);
+      },
+    );
+
     test('maps a matching Echo grant from ResultReady', () async {
       TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
           .setMockMethodCallHandler(channel, (call) async {
@@ -693,6 +721,33 @@ void main() {
     tearDown(() {
       TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
           .setMockMethodCallHandler(channel, null);
+    });
+
+    test('rejects raw currency and POC ItemDefs before native call', () async {
+      var nativeCalls = 0;
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+          .setMockMethodCallHandler(channel, (call) async {
+            nativeCalls += 1;
+            return null;
+          });
+      const port = MethodChannelSteamInventoryTransactionPort(channel: channel);
+
+      final currencyUnit = await port.startPurchase(itemDefId: 40001);
+      final retiredPack = await port.startPurchase(itemDefId: 10010);
+      final retiredExchange = await port.exchangeItems(
+        generateItemDefId: 20010,
+        destroyItems: const [
+          SteamInventoryDestroyItem(instanceId: '1', quantity: 100),
+        ],
+      );
+
+      expect(currencyUnit.status, SteamInventoryTransactionStatus.rejected);
+      expect(currencyUnit.issueCode, 'steam_purchase_itemdef_not_allowed');
+      expect(retiredPack.status, SteamInventoryTransactionStatus.rejected);
+      expect(retiredPack.issueCode, 'steam_purchase_itemdef_not_allowed');
+      expect(retiredExchange.status, SteamInventoryTransactionStatus.rejected);
+      expect(retiredExchange.issueCode, 'steam_exchange_itemdef_not_allowed');
+      expect(nativeCalls, 0);
     });
 
     test(

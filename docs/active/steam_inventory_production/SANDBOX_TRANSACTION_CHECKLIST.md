@@ -42,6 +42,23 @@ For every row:
    transaction ID.
 4. Restart AKASHA and confirm the same Steam-backed balance.
 
+### Raw Astra unit probe
+
+The production gateway and MethodChannel transaction port must reject
+`40001`, `10010`, and every other non-allowlisted purchase ItemDef without a
+native call. Separately, use a controlled partner-only diagnostic to attempt
+`StartPurchase(40001, 1)` once:
+
+| Probe | Expected app behavior | Steam provider result | Result |
+|---|---|---|:---:|
+| Raw Astra unit `40001 x1` | Production Store/port rejects before native call | Record accepted or rejected; no release UI exposure | [ ] |
+
+If Steam accepts the raw provider call, confirm it charges the localized
+equivalent of USD 0.01 and grants exactly one `40001`. This is not a cheaper
+path than approved packs, but it means pack-only sales are enforced by AKASHA's
+allowlist rather than the ItemDef schema alone. Do not repeat the probe outside
+the partner sandbox.
+
 ## 3. Echo playtime reward matrix
 
 The app timer is only a trigger cadence. Steam decides eligibility, accrued

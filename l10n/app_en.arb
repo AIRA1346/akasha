@@ -949,7 +949,7 @@
       "product": { "type": "String" }
     }
   },
-  "commerceChooseCurrencyBody": "Choose either Astra or Echo. Mixed payment is not supported.",
+  "commerceChooseCurrencyBody": "The selected currency is consumed immediately to permanently unlock this theme. Choose either Astra or Echo; mixed payment is not supported.",
   "commerceCurrencyOption": "{cost} {currency} · balance {balance}",
   "@commerceCurrencyOption": {
     "placeholders": {
