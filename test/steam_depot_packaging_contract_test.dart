@@ -10,14 +10,25 @@ void main() {
     final prepare = File(
       'scripts/steam/prepare_steam_depot.ps1',
     ).readAsStringSync();
+    final validate = File(
+      'scripts/steam/validate_steam_pipe_config.ps1',
+    ).readAsStringSync();
     final config = File(
       'scripts/steam/steam_upload_config.ps1',
     ).readAsStringSync();
+    final appVdf = File(
+      'scripts/steam/app_build_4677560_commerce_sandbox.vdf',
+    ).readAsStringSync();
+    final depotVdf = File(
+      'scripts/steam/depot_build_4677561.vdf',
+    ).readAsStringSync();
 
     expect(upload, contains('prepare_steam_depot.ps1'));
+    expect(upload, contains('validate_steam_pipe_config.ps1'));
     expect(upload, contains(r'$DepotStageDir'));
-    expect(upload, contains('"FileExclusion" "steam_appid.txt"'));
+    expect(upload, contains(r'+run_app_build $AppBuildVdf'));
     expect(upload, isNot(contains(r'Content:  $ReleaseDir')));
+    expect(upload, isNot(contains('Set-Content')));
 
     expect(prepare, contains('/XF steam_appid.txt *.pdb'));
     expect(prepare, contains("'steam_appid.txt'"));
@@ -28,5 +39,31 @@ void main() {
 
     expect(config, contains(r"build\steam\depot_windows"));
     expect(config, contains(r"build\steam\manifests\depot_windows.json"));
+    expect(config, contains(r"$SteamBranchName = 'commerce-sandbox'"));
+    expect(config, contains('app_build_4677560_commerce_sandbox.vdf'));
+    expect(config, contains('depot_build_4677561.vdf'));
+
+    expect(appVdf, contains('"AppID" "4677560"'));
+    expect(appVdf, contains('"SetLive" "commerce-sandbox"'));
+    expect(
+      appVdf,
+      contains(r'"ContentRoot" "..\..\build\steam\depot_windows"'),
+    );
+    expect(appVdf, contains('"4677561" "depot_build_4677561.vdf"'));
+
+    expect(depotVdf, contains('"DepotID" "4677561"'));
+    expect(depotVdf, contains('"FileExclusion" "*.pdb"'));
+    expect(depotVdf, contains('"FileExclusion" "steam_appid.txt"'));
+    expect(
+      depotVdf,
+      contains(r'"ContentRoot" "..\..\build\steam\depot_windows"'),
+    );
+
+    expect(validate, contains('ConvertFrom-Json'));
+    expect(validate, contains('Stage hash mismatch'));
+    expect(validate, contains('App VDF ContentRoot mismatch'));
+    expect(validate, contains('must map the entire staged ContentRoot'));
+    expect(validate, contains('SteamCMD upload command (NOT executed)'));
+    expect(validate, isNot(contains(r'& $SteamCmd +login')));
   });
 }

@@ -1,7 +1,7 @@
 "DepotBuild"
 {
 	"DepotID" "4677561"
-	"ContentRoot" "C:\\Users\\rkdwl\\RuneAtelier\\akasha\\build\\windows\\x64\\runner\\Release"
+	"ContentRoot" "..\..\build\steam\depot_windows"
 	"FileMapping"
 	{
 		"LocalPath" "*"
@@ -9,4 +9,5 @@
 		"Recursive" "1"
 	}
 	"FileExclusion" "*.pdb"
+	"FileExclusion" "steam_appid.txt"
 }

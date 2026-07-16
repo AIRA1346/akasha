@@ -207,7 +207,13 @@ Then:
 .\scripts\steam\upload_steam_build.ps1 -SteamUsername <steam_login>
 ```
 
-5. In Steamworks, set the uploaded build live on the intended branch and publish the SteamPipe change.
+For the current commerce sandbox, follow the exact VDF, branch, preflight, and
+SteamCMD contract in
+[STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md](steam_inventory_production/STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md).
+The generated `build/steam/manifests/depot_windows.json` is verification
+evidence only and is not accepted by SteamCMD as an upload script.
+
+5. In Steamworks, confirm the uploaded build is live on the intended branch and publish the SteamPipe change.
 6. Submit Store Page review and Build review.
 7. After Steam review approval and required Coming Soon time, use Steamworks release controls.
 

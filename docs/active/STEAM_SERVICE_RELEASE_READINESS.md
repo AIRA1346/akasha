@@ -121,6 +121,11 @@ manifest. The upload script uses only this staged directory and repeats both
 VDF exclusions defensively.
 
 The 2026-07-16 preflight produced 97 staged files and no forbidden file.
+The exact AppBuild/DepotBuild contract, private branch, preflight, and
+SteamCMD command are recorded in
+[STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md](steam_inventory_production/STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md).
+`depot_windows.json` is an internal verification manifest, not a SteamCMD
+upload script.
 
 **Remaining evidence:** upload that staged payload to an internal branch and
 verify the installed manifest.
