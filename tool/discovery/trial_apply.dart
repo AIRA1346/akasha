@@ -106,9 +106,11 @@ void main(List<String> args) async {
       .where((i) => i.outcome == ShadowWriteOutcome.mergeCandidate)
       .toList();
 
-  print('Shadow KPI: wouldCreate=${result.kpi.wouldCreate} '
-      'mergeCandidates=${result.kpi.mergeCandidates} '
-      'wouldReject=${result.kpi.wouldReject}');
+  print(
+    'Shadow KPI: wouldCreate=${result.kpi.wouldCreate} '
+    'mergeCandidates=${result.kpi.mergeCandidates} '
+    'wouldReject=${result.kpi.wouldReject}',
+  );
 
   if (!apply) {
     print('\nDry-run. Pass --apply to write shards, id_registry, cursor.');
@@ -140,71 +142,73 @@ void main(List<String> args) async {
   final createdRegistryEntries = <Map<String, dynamic>>[];
 
   if (!mergeOnly) {
-  for (var i = 0; i < createLimit; i++) {
-    final item = creates[i];
-    final draft = Map<String, dynamic>.from(item.draft ?? {});
-    final wk = item.shadowWorkId ?? draft['workId']?.toString() ?? '';
-    if (!isWkId(wk)) {
-      stderr.writeln('ABORT: invalid workId for create ${item.externalId}');
-      exit(1);
-    }
-
-    final qid = _externalIdsFromDraft(draft)['wikidata'];
-    if (qid != null && qid.isNotEmpty) {
-      final extKey = 'wikidata:$qid';
-      if (preApplySnap.byExternalKey.containsKey(extKey) ||
-          createdWikidataIds.contains(qid)) {
-        print('SKIP duplicate wikidata:$qid (${item.title})');
-        skippedDuplicateQid++;
-        continue;
+    for (var i = 0; i < createLimit; i++) {
+      final item = creates[i];
+      final draft = Map<String, dynamic>.from(item.draft ?? {});
+      final wk = item.shadowWorkId ?? draft['workId']?.toString() ?? '';
+      if (!isWkId(wk)) {
+        stderr.writeln('ABORT: invalid workId for create ${item.externalId}');
+        exit(1);
       }
-      createdWikidataIds.add(qid);
-    }
 
-    _enrichProvenance(draft, channelId, config.source);
-    _sanitizeTitlesEn(draft);
-    final category = draft['category']?.toString() ?? config.category;
-    final hex = shardHexForWorkId(wk);
-    final relPath = v4ShardPath(category, hex);
-    final shardFile = File(p.join(dbRoot.path, relPath));
+      final qid = _externalIdsFromDraft(draft)['wikidata'];
+      if (qid != null && qid.isNotEmpty) {
+        final extKey = 'wikidata:$qid';
+        if (preApplySnap.byExternalKey.containsKey(extKey) ||
+            createdWikidataIds.contains(qid)) {
+          print('SKIP duplicate wikidata:$qid (${item.title})');
+          skippedDuplicateQid++;
+          continue;
+        }
+        createdWikidataIds.add(qid);
+      }
 
-    final issues = lintWorkEntry(
-      workId: wk,
-      work: draft,
-      relativePath: relPath,
-    );
-    if (issues.isNotEmpty) {
-      stderr.writeln('ABORT: policy ${item.externalId}: ${issues.first.rule}');
-      exit(1);
-    }
+      _enrichProvenance(draft, channelId, config.source);
+      _sanitizeTitlesEn(draft);
+      final category = draft['category']?.toString() ?? config.category;
+      final hex = shardHexForWorkId(wk);
+      final relPath = v4ShardPath(category, hex);
+      final shardFile = File(p.join(dbRoot.path, relPath));
 
-    Map<String, dynamic> shardMap = {};
-    if (shardFile.existsSync()) {
-      final decoded = json.decode(shardFile.readAsStringSync());
-      if (decoded is Map<String, dynamic>) {
-        shardMap = Map<String, dynamic>.from(decoded);
+      final issues = lintWorkEntry(
+        workId: wk,
+        work: draft,
+        relativePath: relPath,
+      );
+      if (issues.isNotEmpty) {
+        stderr.writeln(
+          'ABORT: policy ${item.externalId}: ${issues.first.rule}',
+        );
+        exit(1);
+      }
+
+      Map<String, dynamic> shardMap = {};
+      if (shardFile.existsSync()) {
+        final decoded = json.decode(shardFile.readAsStringSync());
+        if (decoded is Map<String, dynamic>) {
+          shardMap = Map<String, dynamic>.from(decoded);
+        }
+      }
+      if (shardMap.containsKey(wk)) {
+        stderr.writeln('ABORT: duplicate workId $wk in $relPath');
+        exit(1);
+      }
+
+      shardMap[wk] = draft;
+      shardFile.parent.createSync(recursive: true);
+      shardFile.writeAsStringSync(
+        '${const JsonEncoder.withIndent('  ').convert(shardMap)}\n',
+      );
+      print('CREATE $wk ${config.source}:${item.externalId} -> $relPath');
+      created++;
+      createdWks.add(wk);
+      createdRegistryEntries.add({'workId': wk, 'category': category});
+
+      final seq = parseWkSequence(wk);
+      if (seq != null && (highestSeq == null || seq > highestSeq)) {
+        highestSeq = seq;
       }
     }
-    if (shardMap.containsKey(wk)) {
-      stderr.writeln('ABORT: duplicate workId $wk in $relPath');
-      exit(1);
-    }
-
-    shardMap[wk] = draft;
-    shardFile.parent.createSync(recursive: true);
-    shardFile.writeAsStringSync(
-      '${const JsonEncoder.withIndent('  ').convert(shardMap)}\n',
-    );
-    print('CREATE $wk ${config.source}:${item.externalId} -> $relPath');
-    created++;
-    createdWks.add(wk);
-    createdRegistryEntries.add({'workId': wk, 'category': category});
-
-    final seq = parseWkSequence(wk);
-    if (seq != null && (highestSeq == null || seq > highestSeq!)) {
-      highestSeq = seq;
-    }
-  }
   }
 
   if (!skipMerge) {
@@ -234,9 +238,7 @@ void main(List<String> args) async {
         continue;
       }
 
-      final existing = inPreRegistry
-          ? preApplySnap.byWorkId[targetId]!
-          : null;
+      final existing = inPreRegistry ? preApplySnap.byWorkId[targetId]! : null;
 
       final newExt = _externalIdsFromDraft(draft);
       final qid = newExt['wikidata'];
@@ -261,7 +263,8 @@ void main(List<String> args) async {
         continue;
       }
 
-      final category = existing?.category ??
+      final category =
+          existing?.category ??
           draft['category']?.toString() ??
           config.category;
       final hex = shardHexForWorkId(targetId);
@@ -313,12 +316,13 @@ void main(List<String> args) async {
   }
 
   if (!mergeOnly && created > 0 && highestSeq != null) {
+    final nextSequence = highestSeq + 1;
     _patchIdRegistry(
       File(p.join(dbRoot.path, 'id_registry.json')),
       createdRegistryEntries,
-      highestSeq! + 1,
+      nextSequence,
     );
-    print('id_registry nextWorkId -> ${highestSeq! + 1}');
+    print('id_registry nextWorkId -> $nextSequence');
   }
 
   if (!mergeOnly) {
@@ -337,8 +341,10 @@ void main(List<String> args) async {
     print('cursor offset $oldOffset -> $newOffset');
   }
 
-  print('\nDone: $created created, $merged merged, $skippedMerge merge skipped'
-      '${skippedDuplicateQid > 0 ? ', $skippedDuplicateQid duplicate qid skipped' : ''}');
+  print(
+    '\nDone: $created created, $merged merged, $skippedMerge merge skipped'
+    '${skippedDuplicateQid > 0 ? ', $skippedDuplicateQid duplicate qid skipped' : ''}',
+  );
 }
 
 void _enrichProvenance(

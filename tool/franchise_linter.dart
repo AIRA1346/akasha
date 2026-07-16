@@ -74,11 +74,13 @@ void main(List<String> args) {
     final workIds = members.map((m) => m['workId']?.toString() ?? '').toList();
     final primary = _suggestPrimary(workIds);
 
-    print('─ ${entry.key} (${members.length} works, ${categories.length} media)');
+    print(
+      '─ ${entry.key} (${members.length} works, ${categories.length} media)',
+    );
     for (var i = 0; i < members.length; i++) {
       final wid = workIds[i];
       final fid = memberToFranchise[wid];
-      final tag = fid == null ? 'MISSING' : fid;
+      final tag = fid ?? 'MISSING';
       print('  [$tag] ${titles[i]} ($wid)');
     }
     print('  suggested primaryWorkId: $primary');

@@ -1,0 +1,10 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    # Tool constructors use explicit field names for CLI/config readability.
+    prefer_initializing_formals: false
+    # CLI tools intentionally report progress and results to stdout.
+    avoid_print: false
+    # Keep map output explicit while older tool snapshots remain supported.
+    use_null_aware_elements: false

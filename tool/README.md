@@ -7,7 +7,7 @@
 
 | 스크립트 | 용도 |
 |----------|------|
-| `steam_get_report.dart` | **Admin-only** Steam GetReport evidence (env key; not in client build) |
+| `steam_get_report.dart` | **Admin-only** Steam GetReport evidence (env key; not in client build). 기본 출력은 ignored `build/steam/get_report_evidence`; 보존 위치는 `--out`으로 명시 |
 | `vault_format_validator.dart` | **Vault Format Spec v3 적합성 검증** — `dart run tool/vault_format_validator.dart <vault> [--strict]` (앱 코드 무의존; 명세가 기준) |
 | `preflight_check.dart` | registry 변경 후 4종 gate 일괄 |
 | `ci_registry_check.dart` | CI — 레지스트리·프랜차이즈·Fact-only 정책 |
@@ -27,6 +27,7 @@
 **빠른 시작**
 
 ```bash
+dart analyze tool
 dart run tool/preflight_check.dart
 dart run tool/ci_registry_check.dart
 dart run tool/registry_builder.dart --sync-assets --bundle-eager-only
@@ -73,8 +74,9 @@ dart run tool/migrations/migrate_registry_v3.dart --dry-run
 
 `.github/workflows/registry_check.yml`:
 
+- `dart analyze tool` — `tool/analysis_options.yaml` 기준 전체 tool 정적 분석
 - `tool/preflight_check.dart`
 - `tool/ci_registry_check.dart`
 - `tool/catalog_scale_baseline.dart --strict`
 
-**이 세 경로는 폴더 이동 시 CI를 반드시 함께 수정하세요.**
+**이 분석 명령과 세 실행 경로는 폴더 이동 시 CI를 반드시 함께 수정하세요.**

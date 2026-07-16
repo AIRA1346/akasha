@@ -24,12 +24,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: dart-lang/setup-dart@v1
+      - uses: subosito/flutter-action@v2
         with:
-          sdk: stable
+          channel: stable
+          cache: true
 
       - name: Install dependencies
-        run: dart pub get
+        run: flutter pub get
+
+      - name: Analyze tool scripts
+        run: dart analyze tool
 
       - name: Preflight gates
         run: dart run tool/preflight_check.dart

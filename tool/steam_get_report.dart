@@ -37,7 +37,7 @@ Future<void> main(List<String> args) async {
   final time = opts['time'] ?? '2026-07-01T00:00:00Z';
   final fixture = opts['fixture'];
   final outDir = Directory(
-    opts['out'] ?? 'docs/active/steam_inventory_poc/evidence',
+    opts['out'] ?? 'build/steam/get_report_evidence',
   );
   await outDir.create(recursive: true);
 

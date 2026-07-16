@@ -13,7 +13,7 @@ import 'package:path/path.dart' as p;
 /// compatibility without AKASHA installed.
 ///
 /// Usage:
-///   dart run tool/vault_format_validator.dart <vault_path> [--strict]
+///   `dart run tool/vault_format_validator.dart <vault_path> [--strict]`
 ///
 /// Exit codes: 0 = conforming, 1 = errors found (or warnings with --strict),
 /// 2 = usage/IO failure.
@@ -172,7 +172,10 @@ class VaultFormatValidator {
   Future<List<File>> _listMdFiles(Directory dir) async {
     final files = <File>[];
     try {
-      await for (final entity in dir.list(recursive: false, followLinks: false)) {
+      await for (final entity in dir.list(
+        recursive: false,
+        followLinks: false,
+      )) {
         if (entity is File) {
           files.add(entity);
         } else if (entity is Directory) {
@@ -214,14 +217,22 @@ class VaultFormatValidator {
     try {
       final loaded = loadYaml(frontmatter);
       if (loaded is! Map) {
-        _error(report, 'frontmatter_not_map', path,
-            'frontmatter must be a YAML mapping (§2).');
+        _error(
+          report,
+          'frontmatter_not_map',
+          path,
+          'frontmatter must be a YAML mapping (§2).',
+        );
         return;
       }
       yaml = loaded;
     } catch (e) {
-      _error(report, 'frontmatter_invalid_yaml', path,
-          'frontmatter is not parseable YAML (§2): $e');
+      _error(
+        report,
+        'frontmatter_invalid_yaml',
+        path,
+        'frontmatter is not parseable YAML (§2): $e',
+      );
       return;
     }
 
@@ -234,8 +245,12 @@ class VaultFormatValidator {
       return;
     }
     if (schemaVersion is! int) {
-      _error(report, 'schema_version_type', path,
-          'schema_version must be an integer (§2.1).');
+      _error(
+        report,
+        'schema_version_type',
+        path,
+        'schema_version must be an integer (§2.1).',
+      );
       return;
     }
     if (schemaVersion > 3) {
@@ -250,8 +265,12 @@ class VaultFormatValidator {
         ),
       );
     } else if (schemaVersion != 3) {
-      _error(report, 'schema_version_value', path,
-          'schema_version must be 3 for v3 records (§2.1).');
+      _error(
+        report,
+        'schema_version_value',
+        path,
+        'schema_version must be 3 for v3 records (§2.1).',
+      );
     }
     report.v3Count++;
 
@@ -270,8 +289,12 @@ class VaultFormatValidator {
           ),
         );
       } else {
-        _error(report, 'record_kind_unknown', path,
-            'record_kind "$kind" is not in the v3 enum (§2.1).');
+        _error(
+          report,
+          'record_kind_unknown',
+          path,
+          'record_kind "$kind" is not in the v3 enum (§2.1).',
+        );
       }
     }
     _requireNonEmptyString(yaml, 'title', path, report);
@@ -283,11 +306,19 @@ class VaultFormatValidator {
 
     final source = yaml['source']?.toString() ?? '';
     if (source.isEmpty) {
-      _error(report, 'source_required', path,
-          'source is required for v3 records (§2.1).');
+      _error(
+        report,
+        'source_required',
+        path,
+        'source is required for v3 records (§2.1).',
+      );
     } else if (!sources.contains(source)) {
-      _error(report, 'source_unknown', path,
-          'source "$source" is not in the provenance enum (§2.1).');
+      _error(
+        report,
+        'source_unknown',
+        path,
+        'source "$source" is not in the provenance enum (§2.1).',
+      );
     }
 
     _validateOccurredAt(yaml, path, report);
@@ -304,8 +335,12 @@ class VaultFormatValidator {
     if (kind.isNotEmpty &&
         !recordKinds.contains(kind) &&
         !legacyRecordKinds.contains(kind)) {
-      _error(report, 'record_kind_unknown', path,
-          'record_kind "$kind" is not a known record kind (§2.1).');
+      _error(
+        report,
+        'record_kind_unknown',
+        path,
+        'record_kind "$kind" is not a known record kind (§2.1).',
+      );
     }
   }
 
@@ -320,17 +355,29 @@ class VaultFormatValidator {
     final anchored = entityAnchoredKinds.contains(kind);
 
     if (anchored && entityType.isEmpty) {
-      _error(report, 'entity_type_required', path,
-          'entity_type is required for $kind (§2.1).');
+      _error(
+        report,
+        'entity_type_required',
+        path,
+        'entity_type is required for $kind (§2.1).',
+      );
     }
     if (anchored && entityId.isEmpty) {
-      _error(report, 'entity_id_required', path,
-          'entity_id is required for $kind (§2.1).');
+      _error(
+        report,
+        'entity_id_required',
+        path,
+        'entity_id is required for $kind (§2.1).',
+      );
     }
 
     if (entityType.isNotEmpty && !typePrefixes.containsKey(entityType)) {
-      _error(report, 'entity_type_unknown', path,
-          'entity_type "$entityType" is not one of the 7 anchor types (§3).');
+      _error(
+        report,
+        'entity_type_unknown',
+        path,
+        'entity_type "$entityType" is not one of the 7 anchor types (§3).',
+      );
     }
 
     if (entityId.isNotEmpty && entityType.isNotEmpty) {
@@ -338,23 +385,30 @@ class VaultFormatValidator {
       if (prefix != null) {
         if (entityId.startsWith('cu_')) {
           if (entityType != 'object') {
-            _error(report, 'entity_id_prefix_mismatch', path,
-                'legacy cu_ IDs map to object, not "$entityType" (§3).');
+            _error(
+              report,
+              'entity_id_prefix_mismatch',
+              path,
+              'legacy cu_ IDs map to object, not "$entityType" (§3).',
+            );
           } else {
             report.issues.add(
               VaultFormatIssue(
                 severity: 'warning',
                 code: 'entity_id_legacy_cu',
                 path: path,
-                message:
-                    'legacy cu_ ID; new IDs must use ob_ for object (§3).',
+                message: 'legacy cu_ ID; new IDs must use ob_ for object (§3).',
               ),
             );
           }
         } else if (!entityId.startsWith('${prefix}_')) {
-          _error(report, 'entity_id_prefix_mismatch', path,
-              'entity_id "$entityId" does not match "$entityType" '
-              '(expected ${prefix}_ prefix, §3).');
+          _error(
+            report,
+            'entity_id_prefix_mismatch',
+            path,
+            'entity_id "$entityId" does not match "$entityType" '
+                '(expected ${prefix}_ prefix, §3).',
+          );
         }
       }
     }
@@ -370,15 +424,23 @@ class VaultFormatValidator {
     final raw = yaml[key];
     if (raw == null) {
       if (required) {
-        _error(report, '${key}_required', path,
-            '$key is required for v3 records (§2.1).');
+        _error(
+          report,
+          '${key}_required',
+          path,
+          '$key is required for v3 records (§2.1).',
+        );
       }
       return;
     }
     final value = raw.toString();
     if (!_utcZPattern.hasMatch(value)) {
-      _error(report, '${key}_not_utc', path,
-          '$key "$value" must be UTC ISO-8601 ending in Z (§2.2).');
+      _error(
+        report,
+        '${key}_not_utc',
+        path,
+        '$key "$value" must be UTC ISO-8601 ending in Z (§2.2).',
+      );
     }
   }
 
@@ -407,8 +469,12 @@ class VaultFormatValidator {
       );
       return;
     }
-    _error(report, 'occurred_at_invalid', path,
-        'occurred_at "$value" is not an ISO-8601 wall-clock timestamp (§2.3).');
+    _error(
+      report,
+      'occurred_at_invalid',
+      path,
+      'occurred_at "$value" is not an ISO-8601 wall-clock timestamp (§2.3).',
+    );
   }
 
   void _validateLinks(
@@ -420,8 +486,12 @@ class VaultFormatValidator {
     if (links is! Iterable) return;
     for (final link in links) {
       if (link is! Map) {
-        _error(report, 'link_not_map', path,
-            'links entries must be mappings (§4.1).');
+        _error(
+          report,
+          'link_not_map',
+          path,
+          'links entries must be mappings (§4.1).',
+        );
         continue;
       }
       final relation = link['relation']?.toString() ?? 'related';
@@ -452,8 +522,12 @@ class VaultFormatValidator {
   ) {
     final value = yaml[key]?.toString().trim() ?? '';
     if (value.isEmpty) {
-      _error(report, '${key}_required', path,
-          '$key is required for v3 records (§2.1).');
+      _error(
+        report,
+        '${key}_required',
+        path,
+        '$key is required for v3 records (§2.1).',
+      );
     }
   }
 
@@ -493,14 +567,24 @@ class VaultFormatValidator {
     report.recordCount++;
     final mdFile = File(mdFilePath);
     if (!mdFile.existsSync()) {
-      _error(report, 'canvas_file_not_found', relPath, 'Canvas Markdown file does not exist.');
+      _error(
+        report,
+        'canvas_file_not_found',
+        relPath,
+        'Canvas Markdown file does not exist.',
+      );
       return;
     }
 
     final mdContent = mdFile.readAsStringSync();
     final frontmatter = _extractFrontmatter(mdContent);
     if (frontmatter == null) {
-      _error(report, 'canvas_no_frontmatter', relPath, 'Canvas Markdown file has no frontmatter.');
+      _error(
+        report,
+        'canvas_no_frontmatter',
+        relPath,
+        'Canvas Markdown file has no frontmatter.',
+      );
       return;
     }
 
@@ -508,46 +592,86 @@ class VaultFormatValidator {
     try {
       final loaded = loadYaml(frontmatter);
       if (loaded is! Map) {
-        _error(report, 'canvas_frontmatter_not_map', relPath, 'Canvas frontmatter is not a YAML mapping.');
+        _error(
+          report,
+          'canvas_frontmatter_not_map',
+          relPath,
+          'Canvas frontmatter is not a YAML mapping.',
+        );
         return;
       }
       yaml = loaded;
     } catch (e) {
-      _error(report, 'canvas_invalid_yaml', relPath, 'Canvas frontmatter is not parseable YAML: $e');
+      _error(
+        report,
+        'canvas_invalid_yaml',
+        relPath,
+        'Canvas frontmatter is not parseable YAML: $e',
+      );
       return;
     }
 
     final schemaVersion = yaml['schema_version'];
     if (schemaVersion != 3) {
-      _error(report, 'canvas_schema_version_invalid', relPath, 'Canvas schema_version must be 3.');
+      _error(
+        report,
+        'canvas_schema_version_invalid',
+        relPath,
+        'Canvas schema_version must be 3.',
+      );
     }
     report.v3Count++;
 
-    final docKind = yaml['document_kind']?.toString() ?? yaml['record_kind']?.toString() ?? '';
+    final docKind =
+        yaml['document_kind']?.toString() ??
+        yaml['record_kind']?.toString() ??
+        '';
     if (docKind != 'canvas') {
-      _error(report, 'canvas_document_kind_invalid', relPath, 'Canvas document_kind must be "canvas".');
+      _error(
+        report,
+        'canvas_document_kind_invalid',
+        relPath,
+        'Canvas document_kind must be "canvas".',
+      );
     }
 
     final canvasId = yaml['canvas_id']?.toString() ?? '';
     if (canvasId.isEmpty || !canvasId.startsWith('cv_u_')) {
-      _error(report, 'canvas_id_invalid', relPath, 'Canvas canvas_id must start with "cv_u_".');
+      _error(
+        report,
+        'canvas_id_invalid',
+        relPath,
+        'Canvas canvas_id must start with "cv_u_".',
+      );
     }
 
     _requireNonEmptyString(yaml, 'title', relPath, report);
 
     final layoutRef = yaml['layout_ref']?.toString() ?? '';
     if (layoutRef.isEmpty) {
-      _error(report, 'canvas_layout_ref_missing', relPath, 'Canvas layout_ref is required.');
+      _error(
+        report,
+        'canvas_layout_ref_missing',
+        relPath,
+        'Canvas layout_ref is required.',
+      );
       return;
     }
 
     final parentDir = File(mdFilePath).parent.path;
     final jsonFilePath = p.normalize(p.join(parentDir, layoutRef));
     final jsonFile = File(jsonFilePath);
-    final jsonRelPath = p.relative(jsonFilePath, from: vaultPath).replaceAll('\\', '/');
+    final jsonRelPath = p
+        .relative(jsonFilePath, from: vaultPath)
+        .replaceAll('\\', '/');
 
     if (!jsonFile.existsSync()) {
-      _error(report, 'canvas_layout_file_missing', relPath, 'Companion layout JSON file at $layoutRef does not exist.');
+      _error(
+        report,
+        'canvas_layout_file_missing',
+        relPath,
+        'Companion layout JSON file at $layoutRef does not exist.',
+      );
       return;
     }
 
@@ -556,28 +680,55 @@ class VaultFormatValidator {
       final jsonContent = jsonFile.readAsStringSync();
       final decoded = jsonDecode(jsonContent);
       if (decoded is! Map<String, dynamic>) {
-        _error(report, 'canvas_layout_not_map', jsonRelPath, 'layout.json must be a JSON object.');
+        _error(
+          report,
+          'canvas_layout_not_map',
+          jsonRelPath,
+          'layout.json must be a JSON object.',
+        );
         return;
       }
       json = decoded;
     } catch (e) {
-      _error(report, 'canvas_layout_invalid_json', jsonRelPath, 'layout.json is not parseable JSON: $e');
+      _error(
+        report,
+        'canvas_layout_invalid_json',
+        jsonRelPath,
+        'layout.json is not parseable JSON: $e',
+      );
       return;
     }
 
     final layoutSchemaVersion = json['layout_schema_version'];
     if (layoutSchemaVersion != 1) {
-      _error(report, 'canvas_layout_schema_version_invalid', jsonRelPath, 'layout_schema_version must be 1.');
+      _error(
+        report,
+        'canvas_layout_schema_version_invalid',
+        jsonRelPath,
+        'layout_schema_version must be 1.',
+      );
     }
 
     final jsonCanvasId = json['canvas_id']?.toString() ?? '';
     if (jsonCanvasId != canvasId) {
-      _error(report, 'canvas_id_mismatch', jsonRelPath, 'canvas_id in layout.json ($jsonCanvasId) does not match canvas.md ($canvasId).');
+      _error(
+        report,
+        'canvas_id_mismatch',
+        jsonRelPath,
+        'canvas_id in layout.json ($jsonCanvasId) does not match canvas.md ($canvasId).',
+      );
     }
 
     final layoutMode = json['layout_mode']?.toString() ?? '';
-    if (layoutMode != 'freeform' && layoutMode != 'mindmap' && layoutMode != 'graph') {
-      _error(report, 'canvas_layout_mode_invalid', jsonRelPath, 'layout_mode must be one of: freeform, mindmap, graph.');
+    if (layoutMode != 'freeform' &&
+        layoutMode != 'mindmap' &&
+        layoutMode != 'graph') {
+      _error(
+        report,
+        'canvas_layout_mode_invalid',
+        jsonRelPath,
+        'layout_mode must be one of: freeform, mindmap, graph.',
+      );
     }
 
     final nodes = json['nodes'] as List?;
@@ -585,18 +736,37 @@ class VaultFormatValidator {
     if (nodes != null) {
       for (final node in nodes) {
         if (node is! Map) {
-          _error(report, 'canvas_node_not_map', jsonRelPath, 'Each node in nodes array must be a JSON object.');
+          _error(
+            report,
+            'canvas_node_not_map',
+            jsonRelPath,
+            'Each node in nodes array must be a JSON object.',
+          );
           continue;
         }
         final nodeId = node['node_id']?.toString() ?? '';
         if (nodeId.isEmpty) {
-          _error(report, 'canvas_node_id_empty', jsonRelPath, 'Each node must have a non-empty node_id.');
+          _error(
+            report,
+            'canvas_node_id_empty',
+            jsonRelPath,
+            'Each node must have a non-empty node_id.',
+          );
         } else {
           nodeIds.add(nodeId);
         }
         final kind = node['kind']?.toString() ?? '';
-        if (kind != 'work' && kind != 'entity' && kind != 'record' && kind != 'text' && kind != 'group') {
-          _error(report, 'canvas_node_kind_invalid', jsonRelPath, 'Node kind must be one of: work, entity, record, text, group.');
+        if (kind != 'work' &&
+            kind != 'entity' &&
+            kind != 'record' &&
+            kind != 'text' &&
+            kind != 'group') {
+          _error(
+            report,
+            'canvas_node_kind_invalid',
+            jsonRelPath,
+            'Node kind must be one of: work, entity, record, text, group.',
+          );
         }
 
         final entityId = node['entity_id']?.toString();
@@ -606,28 +776,63 @@ class VaultFormatValidator {
 
         if (kind == 'work') {
           if (workId == null || workId.isEmpty) {
-            _error(report, 'canvas_node_invariant_violation', jsonRelPath, 'Node of kind "work" must have "work_id".');
+            _error(
+              report,
+              'canvas_node_invariant_violation',
+              jsonRelPath,
+              'Node of kind "work" must have "work_id".',
+            );
           }
           if (entityId != null || recordId != null) {
-            _error(report, 'canvas_node_invariant_violation', jsonRelPath, 'Node of kind "work" must not have "entity_id" or "record_id".');
+            _error(
+              report,
+              'canvas_node_invariant_violation',
+              jsonRelPath,
+              'Node of kind "work" must not have "entity_id" or "record_id".',
+            );
           }
         } else if (kind == 'entity') {
           if (entityId == null || entityId.isEmpty) {
-            _error(report, 'canvas_node_invariant_violation', jsonRelPath, 'Node of kind "entity" must have "entity_id".');
+            _error(
+              report,
+              'canvas_node_invariant_violation',
+              jsonRelPath,
+              'Node of kind "entity" must have "entity_id".',
+            );
           }
           if (workId != null || recordId != null) {
-            _error(report, 'canvas_node_invariant_violation', jsonRelPath, 'Node of kind "entity" must not have "work_id" or "record_id".');
+            _error(
+              report,
+              'canvas_node_invariant_violation',
+              jsonRelPath,
+              'Node of kind "entity" must not have "work_id" or "record_id".',
+            );
           }
         } else if (kind == 'record') {
           if (recordId == null || recordId.isEmpty) {
-            _error(report, 'canvas_node_invariant_violation', jsonRelPath, 'Node of kind "record" must have "record_id".');
+            _error(
+              report,
+              'canvas_node_invariant_violation',
+              jsonRelPath,
+              'Node of kind "record" must have "record_id".',
+            );
           }
           if (workId != null || entityId != null) {
-            _error(report, 'canvas_node_invariant_violation', jsonRelPath, 'Node of kind "record" must not have "work_id" or "entity_id".');
+            _error(
+              report,
+              'canvas_node_invariant_violation',
+              jsonRelPath,
+              'Node of kind "record" must not have "work_id" or "entity_id".',
+            );
           }
         } else if (kind == 'text') {
           if (text == null) {
-            _error(report, 'canvas_node_invariant_violation', jsonRelPath, 'Node of kind "text" must have "text".');
+            _error(
+              report,
+              'canvas_node_invariant_violation',
+              jsonRelPath,
+              'Node of kind "text" must have "text".',
+            );
           }
         }
       }
@@ -637,29 +842,61 @@ class VaultFormatValidator {
     if (edges != null) {
       for (final edge in edges) {
         if (edge is! Map) {
-          _error(report, 'canvas_edge_not_map', jsonRelPath, 'Each edge in edges array must be a JSON object.');
+          _error(
+            report,
+            'canvas_edge_not_map',
+            jsonRelPath,
+            'Each edge in edges array must be a JSON object.',
+          );
           continue;
         }
         final from = edge['from']?.toString() ?? '';
         final to = edge['to']?.toString() ?? '';
         if (from.isEmpty || to.isEmpty) {
-          _error(report, 'canvas_edge_endpoint_empty', jsonRelPath, 'Edge endpoints from/to cannot be empty.');
+          _error(
+            report,
+            'canvas_edge_endpoint_empty',
+            jsonRelPath,
+            'Edge endpoints from/to cannot be empty.',
+          );
         } else {
           if (!nodeIds.contains(from)) {
-            _error(report, 'canvas_edge_from_invalid', jsonRelPath, 'Edge endpoint from "$from" does not refer to a valid node_id.');
+            _error(
+              report,
+              'canvas_edge_from_invalid',
+              jsonRelPath,
+              'Edge endpoint from "$from" does not refer to a valid node_id.',
+            );
           }
           if (!nodeIds.contains(to)) {
-            _error(report, 'canvas_edge_to_invalid', jsonRelPath, 'Edge endpoint to "$to" does not refer to a valid node_id.');
+            _error(
+              report,
+              'canvas_edge_to_invalid',
+              jsonRelPath,
+              'Edge endpoint to "$to" does not refer to a valid node_id.',
+            );
           }
         }
         final edgeKind = edge['edge_kind']?.toString() ?? '';
-        if (edgeKind != 'canonical_view' && edgeKind != 'canvas_only' && edgeKind != 'candidate') {
-          _error(report, 'canvas_edge_kind_invalid', jsonRelPath, 'Edge edge_kind must be one of: canonical_view, canvas_only, candidate.');
+        if (edgeKind != 'canonical_view' &&
+            edgeKind != 'canvas_only' &&
+            edgeKind != 'candidate') {
+          _error(
+            report,
+            'canvas_edge_kind_invalid',
+            jsonRelPath,
+            'Edge edge_kind must be one of: canonical_view, canvas_only, candidate.',
+          );
         }
         if (edgeKind == 'canonical_view') {
           final ref = edge['link_ref'] as Map?;
           if (ref == null) {
-            _error(report, 'canvas_canonical_view_ref_missing', jsonRelPath, 'canonical_view edge must contain a link_ref object.');
+            _error(
+              report,
+              'canvas_canonical_view_ref_missing',
+              jsonRelPath,
+              'canonical_view edge must contain a link_ref object.',
+            );
           }
         }
       }

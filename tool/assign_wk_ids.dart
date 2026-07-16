@@ -31,13 +31,12 @@ void main(List<String> args) async {
 
   final collected = <_CollectedWork>[];
   for (final categoryDir in shardsRoot.listSync().whereType<Directory>()) {
-    final category = p.basename(categoryDir.path);
-    for (final shardFile in categoryDir
-        .listSync()
-        .whereType<File>()
-        .where((f) => f.path.endsWith('.json'))) {
+    final category = _PathTools.basename(categoryDir.path);
+    for (final shardFile in categoryDir.listSync().whereType<File>().where(
+      (f) => f.path.endsWith('.json'),
+    )) {
       final relativePath =
-          'shards/$category/${p.basename(shardFile.path)}';
+          'shards/$category/${_PathTools.basename(shardFile.path)}';
       final shard = Map<String, dynamic>.from(
         json.decode(shardFile.readAsStringSync()) as Map,
       );
@@ -46,7 +45,9 @@ void main(List<String> args) async {
         final work = Map<String, dynamic>.from(entry.value as Map);
         final workId = work['workId']?.toString() ?? entry.key;
         if (entry.key != workId) {
-          stderr.writeln('WARN: key mismatch $relativePath $entry.key != $workId');
+          stderr.writeln(
+            'WARN: key mismatch $relativePath $entry.key != $workId',
+          );
         }
         collected.add(
           _CollectedWork(
@@ -73,7 +74,9 @@ void main(List<String> args) async {
     if (legacyIds[i] == legacyIds[i - 1]) dupes.add(legacyIds[i]);
   }
   if (dupes.isNotEmpty) {
-    stderr.writeln('ERROR: duplicate legacy workIds: ${dupes.toSet().join(', ')}');
+    stderr.writeln(
+      'ERROR: duplicate legacy workIds: ${dupes.toSet().join(', ')}',
+    );
     exit(1);
   }
 
@@ -86,7 +89,8 @@ void main(List<String> args) async {
   var seq = 1;
   for (final item in collected) {
     if (isWkIdAny(item.legacyId)) {
-      legacyToWk[item.legacyId] = canonicalizeWkId(item.legacyId) ?? item.legacyId;
+      legacyToWk[item.legacyId] =
+          canonicalizeWkId(item.legacyId) ?? item.legacyId;
       final n = parseWkSequence(item.legacyId);
       if (n != null && n >= seq) seq = n + 1;
       continue;
@@ -96,10 +100,7 @@ void main(List<String> args) async {
   }
 
   final idRegistry = _buildIdRegistry(legacyToWk, collected, seq);
-  final aliases = _buildLegacyAliases(
-    root,
-    legacyToWk,
-  );
+  final aliases = _buildLegacyAliases(root, legacyToWk);
 
   print('assign_wk_ids — ${collected.length} works');
   print('  already wk_: $alreadyWk');
@@ -243,7 +244,10 @@ String _resolveAliasChain(String start, Map<String, String> aliases) {
   return current;
 }
 
-void _applyShards(List<_CollectedWork> collected, Map<String, String> legacyToWk) {
+void _applyShards(
+  List<_CollectedWork> collected,
+  Map<String, String> legacyToWk,
+) {
   final byFile = <String, Map<String, dynamic>>{};
 
   for (final item in collected) {
@@ -306,7 +310,8 @@ void _updateFranchiseGroups(Directory root, Map<String, String> legacyToWk) {
       if (key == '_schema' || value is! Map) return;
       final group = Map<String, dynamic>.from(value);
 
-      final members = (group['members'] as List?)
+      final members =
+          (group['members'] as List?)
               ?.map((e) => e.toString())
               .map((id) => legacyToWk[id] ?? id)
               .toList() ??
@@ -342,7 +347,7 @@ Directory _findProjectRoot() {
 }
 
 /// path.basename — registry_builder와 동일하게 로컬 구현
-class p {
+class _PathTools {
   static String basename(String path) {
     final sep = path.contains('\\') ? '\\' : '/';
     return path.split(sep).last;

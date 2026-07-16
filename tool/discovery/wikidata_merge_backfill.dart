@@ -12,7 +12,6 @@ import 'package:path/path.dart' as p;
 
 import '../dedupe_utils.dart';
 import '../registry_hash_utils.dart';
-import '../registry_v3_utils.dart';
 import 'contract_test_runner.dart';
 import 'discovery_manifest.dart';
 import 'discovery_source_fetch.dart';
@@ -53,7 +52,9 @@ void main(List<String> args) async {
 
   print('wikidata_merge_backfill — $channelId');
   print('  apply: $apply');
-  print('  offset range: $startOffset .. $endOffset (step ${config.trialBatchSize})');
+  print(
+    '  offset range: $startOffset .. $endOffset (step ${config.trialBatchSize})',
+  );
   print('');
 
   final contractRunner = ContractTestRunner.fromProject(
@@ -69,9 +70,11 @@ void main(List<String> args) async {
   final linkedWorks = <String>{};
   final linkedQids = <String>{};
 
-  for (var offset = startOffset;
-      offset <= endOffset;
-      offset += config.trialBatchSize) {
+  for (
+    var offset = startOffset;
+    offset <= endOffset;
+    offset += config.trialBatchSize
+  ) {
     print('fetch offset $offset...');
     final nodes = await fetchDiscoveryBatch(
       config: config,
@@ -108,8 +111,9 @@ void main(List<String> args) async {
 
       final currentQ = existing.externalIds['wikidata']?.trim() ?? '';
       if (currentQ.isNotEmpty) {
-        if (currentQ == qid) skipped++;
-        else {
+        if (currentQ == qid) {
+          skipped++;
+        } else {
           stderr.writeln(
             'WARN: $targetId already wikidata:$currentQ — skip $qid (${record.title})',
           );
@@ -227,9 +231,7 @@ bool _applyMerge({
   }
 
   final work = Map<String, dynamic>.from(workRaw);
-  final extMap = Map<String, dynamic>.from(
-    work['externalIds'] as Map? ?? {},
-  );
+  final extMap = Map<String, dynamic>.from(work['externalIds'] as Map? ?? {});
   extMap['wikidata'] = qid;
   work['externalIds'] = extMap;
 

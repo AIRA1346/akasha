@@ -1,10 +1,7 @@
 // Registry Snapshot Compare — 402 vs 412 가상 적용 diff.
 library;
 
-import 'dart:convert';
 import 'dart:io';
-
-import 'package:path/path.dart' as p;
 
 import '../registry_v3_utils.dart';
 import 'registry_impact_selector.dart';
@@ -27,14 +24,14 @@ class CoverageMetrics {
   double rate(int count) => total == 0 ? 0 : count / total;
 
   Map<String, dynamic> toJson() => {
-        'total': total,
-        'withCreator': withCreator,
-        'withAliases': withAliases,
-        'withReleaseYear': withReleaseYear,
-        'creatorRate': rate(withCreator),
-        'aliasRate': rate(withAliases),
-        'releaseYearRate': rate(withReleaseYear),
-      };
+    'total': total,
+    'withCreator': withCreator,
+    'withAliases': withAliases,
+    'withReleaseYear': withReleaseYear,
+    'creatorRate': rate(withCreator),
+    'aliasRate': rate(withAliases),
+    'releaseYearRate': rate(withReleaseYear),
+  };
 }
 
 CoverageMetrics coverageMetricsForAnimation(RegistryVirtualState state) {
@@ -127,13 +124,13 @@ class SearchWin {
   bool get improves => hitsAfter > hitsBefore;
 
   Map<String, dynamic> toJson() => {
-        'query': query,
-        'hitsBefore': hitsBefore,
-        'hitsAfter': hitsAfter,
-        'newTopTitle': newTopTitle,
-        'newTopWorkId': newTopWorkId,
-        'rankAfter': rankAfter,
-      };
+    'query': query,
+    'hitsBefore': hitsBefore,
+    'hitsAfter': hitsAfter,
+    'newTopTitle': newTopTitle,
+    'newTopWorkId': newTopWorkId,
+    'rankAfter': rankAfter,
+  };
 }
 
 class FranchiseDiffEntry {
@@ -174,25 +171,25 @@ class RegistryDiffResult {
   });
 
   Map<String, dynamic> toJson() => {
-        'entriesBefore': entriesBefore,
-        'entriesAfter': entriesAfter,
-        'zeroToHitCount': zeroToHitCount,
-        'searchWins': searchWins.map((s) => s.toJson()).toList(),
-        'coverageBefore': coverageBefore.toJson(),
-        'coverageAfter': coverageAfter.toJson(),
-        'franchiseGains': franchiseGains
-            .map(
-              (f) => {
-                'franchise': f.franchiseLabel,
-                'title': f.addedTitle,
-                'workId': f.addedWorkId,
-              },
-            )
-            .toList(),
-        'userVisibleWins': userVisibleWins,
-        'diffStrong': diffStrong,
-        'recommend5bPatch': recommend5bPatch,
-      };
+    'entriesBefore': entriesBefore,
+    'entriesAfter': entriesAfter,
+    'zeroToHitCount': zeroToHitCount,
+    'searchWins': searchWins.map((s) => s.toJson()).toList(),
+    'coverageBefore': coverageBefore.toJson(),
+    'coverageAfter': coverageAfter.toJson(),
+    'franchiseGains': franchiseGains
+        .map(
+          (f) => {
+            'franchise': f.franchiseLabel,
+            'title': f.addedTitle,
+            'workId': f.addedWorkId,
+          },
+        )
+        .toList(),
+    'userVisibleWins': userVisibleWins,
+    'diffStrong': diffStrong,
+    'recommend5bPatch': recommend5bPatch,
+  };
 }
 
 RegistryDiffResult compareRegistrySnapshots({
@@ -220,8 +217,10 @@ RegistryDiffResult compareRegistrySnapshots({
   var zeroToHit = 0;
   final userWins = <String>[];
 
-  final selectedIds =
-      selected.map((s) => s.item.shadowWorkId).whereType<String>().toSet();
+  final selectedIds = selected
+      .map((s) => s.item.shadowWorkId)
+      .whereType<String>()
+      .toSet();
 
   for (final query in probes) {
     final b = probeSearch(query, before);
@@ -234,8 +233,10 @@ RegistryDiffResult compareRegistrySnapshots({
       final id = a.topWorkIds[i];
       if (selectedIds.contains(id)) {
         topId = id;
-        topTitle =
-            selected.firstWhere((s) => s.item.shadowWorkId == id).item.title;
+        topTitle = selected
+            .firstWhere((s) => s.item.shadowWorkId == id)
+            .item
+            .title;
         rank = i + 1;
         break;
       }
@@ -282,15 +283,19 @@ RegistryDiffResult compareRegistrySnapshots({
   }
 
   final creatorDelta =
-      covAfter.rate(covAfter.withCreator) - covBefore.rate(covBefore.withCreator);
+      covAfter.rate(covAfter.withCreator) -
+      covBefore.rate(covBefore.withCreator);
   final aliasDelta =
-      covAfter.rate(covAfter.withAliases) - covBefore.rate(covBefore.withAliases);
-  final yearDelta = covAfter.rate(covAfter.withReleaseYear) -
+      covAfter.rate(covAfter.withAliases) -
+      covBefore.rate(covBefore.withAliases);
+  final yearDelta =
+      covAfter.rate(covAfter.withReleaseYear) -
       covBefore.rate(covBefore.withReleaseYear);
 
   final minZeroHits = (selected.length / 2).ceil().clamp(1, selected.length);
   final minUserWins = selected.length >= 5 ? 3 : 1;
-  final diffStrong = zeroToHit >= minZeroHits &&
+  final diffStrong =
+      zeroToHit >= minZeroHits &&
       creatorDelta >= 0 &&
       aliasDelta >= 0 &&
       yearDelta >= 0 &&

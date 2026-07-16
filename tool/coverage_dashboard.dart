@@ -17,7 +17,13 @@ import 'dedupe_utils.dart';
 void main() {
   final root = _findProjectRoot();
   final outDir = Directory(
-    p.join(root.path, 'akasha-db', 'pipeline', 'artifacts', 'coverage_dashboard'),
+    p.join(
+      root.path,
+      'akasha-db',
+      'pipeline',
+      'artifacts',
+      'coverage_dashboard',
+    ),
   );
   outDir.createSync(recursive: true);
 
@@ -41,7 +47,7 @@ void main() {
   var franchiseNonPrimary = 0;
   var franchiseNonPrimaryEn = 0;
 
-  final _latinAlias = RegExp(r"^[A-Za-z][A-Za-z0-9 :.'\-]{2,}$");
+  final latinAlias = RegExp(r"^[A-Za-z][A-Za-z0-9 :.'\-]{2,}$");
   for (final w in works) {
     final titles = w.titles;
     if (_nonEmpty(titles['en'])) titlesEn++;
@@ -51,7 +57,7 @@ void main() {
     if (_nonEmpty(titles['romaji'])) titlesRomaji++;
 
     if (w.aliases.isNotEmpty) aliasField++;
-    if (w.hasAliasSurface(_latinAlias)) aliasSurface++;
+    if (w.hasAliasSurface(latinAlias)) aliasSurface++;
     if (w.externalIds.isNotEmpty) externalId++;
 
     final isAnimDrama = w.category == 'animation' || w.category == 'drama';
@@ -62,13 +68,13 @@ void main() {
 
     if (w.needsRomanization) {
       needsRoman++;
-      if (w.hasRomanizationSurface(_latinAlias)) hasRoman++;
+      if (w.hasRomanizationSurface(latinAlias)) hasRoman++;
     }
 
     final fr = franchise.primaryByMember[w.workId];
     if (fr != null && fr != w.workId) {
       franchiseNonPrimary++;
-      if (_nonEmpty(titles['en']) || w.aliases.any(_latinAlias.hasMatch)) {
+      if (_nonEmpty(titles['en']) || w.aliases.any(latinAlias.hasMatch)) {
         franchiseNonPrimaryEn++;
       }
     }
@@ -112,7 +118,11 @@ void main() {
     'alias_field': _kpi(aliasField, total, target: 0.90),
     'alias_surface': _kpi(aliasSurface, total, target: 0.90),
     'alias_panel': _kpi(aliasPanelHit, aliasPanel.length, target: 0.90),
-    'subtitle_panel': _kpi(subtitlePanelHit, subtitlePanel.length, target: 0.90),
+    'subtitle_panel': _kpi(
+      subtitlePanelHit,
+      subtitlePanel.length,
+      target: 0.90,
+    ),
     'franchise_spinoff_en': _kpi(
       franchiseNonPrimaryEn,
       franchiseNonPrimary,
@@ -131,14 +141,16 @@ void main() {
     'quality': {
       'invalid_en_count': qualityScan.invalidEnCount,
       'invalid_en_rate': qualityScan.invalidEnRate,
-      'invalid_en_percent': (qualityScan.invalidEnRate * 100).toStringAsFixed(2),
+      'invalid_en_percent': (qualityScan.invalidEnRate * 100).toStringAsFixed(
+        2,
+      ),
       'titles_en_populated': qualityScan.titlesEnPopulated,
       'source_breakage_count': qualityScan.sourceBreakageCount,
       'status': qualityScan.status,
       'by_reason': qualityScan.byReason,
       'invalid_en_samples': qualityScan.samples,
-      'release_block': qualityScan.invalidEnCount > 0 ||
-          qualityScan.sourceBreakageCount > 0,
+      'release_block':
+          qualityScan.invalidEnCount > 0 || qualityScan.sourceBreakageCount > 0,
     },
     'gapPanel': {
       'description': 'URV-A/SW1 GAP 표면형 — target wk_에 variant 부착 여부',
@@ -167,12 +179,15 @@ void main() {
       'alias_panel': '운영 게이트 — SW1 alias 버킷(81.8%)과 동일 축',
       'external_id_phaseTarget': 'G2 interim 50% · G3+ 90%',
       'gap_panel': '운영 게이트 — SW1 GAP 15건 표면형 직접 추적',
-      'quality': 'Coverage와 분리 — titles.en syntactic validity (quality-gate-mvp.md)',
+      'quality':
+          'Coverage와 분리 — titles.en syntactic validity (quality-gate-mvp.md)',
     },
   };
 
   final outFile = File(p.join(outDir.path, 'coverage_snapshot.json'));
-  outFile.writeAsStringSync(const JsonEncoder.withIndent('  ').convert(snapshot));
+  outFile.writeAsStringSync(
+    const JsonEncoder.withIndent('  ').convert(snapshot),
+  );
 
   print('Coverage Dashboard — 402 snapshot');
   print('  works: $total\n');
@@ -190,7 +205,9 @@ void main() {
     '(${qualityScan.invalidEnRate.toStringAsFixed(4)})  status=${qualityScan.status}',
   );
   print('  source_breakage_count: ${qualityScan.sourceBreakageCount}');
-  print('  release_block: ${qualityScan.invalidEnCount > 0 || qualityScan.sourceBreakageCount > 0}');
+  print(
+    '  release_block: ${qualityScan.invalidEnCount > 0 || qualityScan.sourceBreakageCount > 0}',
+  );
   print('\nWrote: ${outFile.path}');
 }
 
@@ -205,8 +222,8 @@ Map<String, dynamic> _kpi(
   final status = rate >= target
       ? 'PASS'
       : rate >= effectiveTarget
-          ? 'PARTIAL'
-          : 'FAIL';
+      ? 'PARTIAL'
+      : 'FAIL';
   return {
     'numerator': num,
     'denominator': den,
@@ -236,129 +253,229 @@ bool _panelVariantPresent(Map<String, dynamic> c, List<_Work> works) {
 }
 
 List<Map<String, dynamic>> _subtitlePanelCases() => [
-      {'id': 'GS075', 'variant': '귀멸의 칼날', 'workIds': ['wk_000000343'], 'axis': 'subtitle'},
-      {'id': 'GS076', 'variant': '무한열차', 'workIds': ['wk_000000404', 'wk_000000405'], 'axis': 'subtitle'},
-      {'id': 'GS077', 'variant': '스파이 패밀리', 'workIds': ['wk_000000387'], 'axis': 'subtitle'},
-      {'id': 'GS079', 'variant': '무직전생', 'workIds': ['wk_000000354'], 'axis': 'subtitle'},
-      {'id': 'GS080', 'variant': '반지의 제왕', 'workIds': ['wk_000000010'], 'axis': 'subtitle'},
-      {'id': 'GS081', 'variant': 'Lord of the Rings', 'workIds': ['wk_000000010', 'wk_000000158'], 'axis': 'subtitle'},
-      {'id': 'GS082', 'variant': 'The Fellowship of the Ring', 'workIds': ['wk_000000010'], 'axis': 'subtitle'},
-      {'id': 'GS083', 'variant': '단다단', 'workIds': ['wk_000000310'], 'axis': 'subtitle'},
-      {'id': 'GS084', 'variant': 'Dandadan', 'workIds': ['wk_000000310', 'wk_000000185'], 'axis': 'subtitle'},
-    ];
+  {
+    'id': 'GS075',
+    'variant': '귀멸의 칼날',
+    'workIds': ['wk_000000343'],
+    'axis': 'subtitle',
+  },
+  {
+    'id': 'GS076',
+    'variant': '무한열차',
+    'workIds': ['wk_000000404', 'wk_000000405'],
+    'axis': 'subtitle',
+  },
+  {
+    'id': 'GS077',
+    'variant': '스파이 패밀리',
+    'workIds': ['wk_000000387'],
+    'axis': 'subtitle',
+  },
+  {
+    'id': 'GS079',
+    'variant': '무직전생',
+    'workIds': ['wk_000000354'],
+    'axis': 'subtitle',
+  },
+  {
+    'id': 'GS080',
+    'variant': '반지의 제왕',
+    'workIds': ['wk_000000010'],
+    'axis': 'subtitle',
+  },
+  {
+    'id': 'GS081',
+    'variant': 'Lord of the Rings',
+    'workIds': ['wk_000000010', 'wk_000000158'],
+    'axis': 'subtitle',
+  },
+  {
+    'id': 'GS082',
+    'variant': 'The Fellowship of the Ring',
+    'workIds': ['wk_000000010'],
+    'axis': 'subtitle',
+  },
+  {
+    'id': 'GS083',
+    'variant': '단다단',
+    'workIds': ['wk_000000310'],
+    'axis': 'subtitle',
+  },
+  {
+    'id': 'GS084',
+    'variant': 'Dandadan',
+    'workIds': ['wk_000000310', 'wk_000000185'],
+    'axis': 'subtitle',
+  },
+];
 
 List<Map<String, dynamic>> _aliasPanelCases() => [
-      {'id': 'GS065', 'variant': 'SAO', 'workIds': ['wk_000000241'], 'axis': 'alias'},
-      {'id': 'GS066', 'variant': 'DanMachi', 'workIds': ['wk_000000186'], 'axis': 'alias'},
-      {'id': 'GS067', 'variant': 'GTO', 'workIds': ['wk_000000333'], 'axis': 'alias'},
-      {'id': 'GS068', 'variant': 'Dr. Stone', 'workIds': ['wk_000000189'], 'axis': 'alias'},
-      {'id': 'GS069', 'variant': 'Shokugeki', 'workIds': ['wk_000000382'], 'axis': 'alias'},
-      {'id': 'GS070', 'variant': '食戟', 'workIds': ['wk_000000382'], 'axis': 'alias'},
-      {'id': 'GS071', 'variant': 'Re:ゼロ', 'workIds': ['wk_000000230'], 'axis': 'alias'},
-      {'id': 'GS072', 'variant': 'FMA', 'workIds': ['wk_000000194', 'wk_000000325'], 'axis': 'alias'},
-      {'id': 'GS056', 'variant': 'GTO', 'workIds': ['wk_000000333'], 'axis': 'alias'},
-      {'id': 'GS042', 'variant': 'Re:제로', 'workIds': ['wk_000000230'], 'axis': 'alias'},
-      {'id': 'GS013', 'variant': 'SAO', 'workIds': ['wk_000000241'], 'axis': 'alias'},
-    ];
+  {
+    'id': 'GS065',
+    'variant': 'SAO',
+    'workIds': ['wk_000000241'],
+    'axis': 'alias',
+  },
+  {
+    'id': 'GS066',
+    'variant': 'DanMachi',
+    'workIds': ['wk_000000186'],
+    'axis': 'alias',
+  },
+  {
+    'id': 'GS067',
+    'variant': 'GTO',
+    'workIds': ['wk_000000333'],
+    'axis': 'alias',
+  },
+  {
+    'id': 'GS068',
+    'variant': 'Dr. Stone',
+    'workIds': ['wk_000000189'],
+    'axis': 'alias',
+  },
+  {
+    'id': 'GS069',
+    'variant': 'Shokugeki',
+    'workIds': ['wk_000000382'],
+    'axis': 'alias',
+  },
+  {
+    'id': 'GS070',
+    'variant': '食戟',
+    'workIds': ['wk_000000382'],
+    'axis': 'alias',
+  },
+  {
+    'id': 'GS071',
+    'variant': 'Re:ゼロ',
+    'workIds': ['wk_000000230'],
+    'axis': 'alias',
+  },
+  {
+    'id': 'GS072',
+    'variant': 'FMA',
+    'workIds': ['wk_000000194', 'wk_000000325'],
+    'axis': 'alias',
+  },
+  {
+    'id': 'GS056',
+    'variant': 'GTO',
+    'workIds': ['wk_000000333'],
+    'axis': 'alias',
+  },
+  {
+    'id': 'GS042',
+    'variant': 'Re:제로',
+    'workIds': ['wk_000000230'],
+    'axis': 'alias',
+  },
+  {
+    'id': 'GS013',
+    'variant': 'SAO',
+    'workIds': ['wk_000000241'],
+    'axis': 'alias',
+  },
+];
 
 List<Map<String, dynamic>> _gapPanelCases() => [
-      {
-        'id': 'GAP-romaji-01',
-        'variant': 'Demon Slayer',
-        'workIds': ['wk_000000343', 'wk_000000188'],
-        'axis': 'romanized',
-      },
-      {
-        'id': 'GAP-romaji-02',
-        'variant': 'Kimetsu no Yaiba',
-        'workIds': ['wk_000000343', 'wk_000000188'],
-        'axis': 'romanized',
-      },
-      {
-        'id': 'GAP-romaji-03',
-        'variant': 'Spy x Family',
-        'workIds': ['wk_000000387', 'wk_000000239'],
-        'axis': 'romanized',
-      },
-      {
-        'id': 'GAP-romaji-04',
-        'variant': 'Fullmetal Alchemist',
-        'workIds': ['wk_000000325', 'wk_000000194'],
-        'axis': 'romanized',
-      },
-      {
-        'id': 'GAP-romaji-05',
-        'variant': 'Mushoku Tensei',
-        'workIds': ['wk_000000354', 'wk_000000257'],
-        'axis': 'romanized',
-      },
-      {
-        'id': 'GAP-romaji-06',
-        'variant': 'Re:Zero',
-        'workIds': ['wk_000000230', 'wk_000000375'],
-        'axis': 'romanized',
-      },
-      {
-        'id': 'GAP-romaji-07',
-        'variant': '20th Century Boys',
-        'workIds': ['wk_000000291'],
-        'axis': 'romanized',
-      },
-      {
-        'id': 'GAP-cjk-01',
-        'variant': '鬼滅の刃',
-        'workIds': ['wk_000000343', 'wk_000000188'],
-        'axis': 'translation',
-      },
-      {
-        'id': 'GAP-cjk-02',
-        'variant': '鬼灭之刃',
-        'workIds': ['wk_000000343', 'wk_000000188'],
-        'axis': 'translation',
-      },
-      {
-        'id': 'GAP-cjk-03',
-        'variant': '死亡笔记',
-        'workIds': ['wk_000000187'],
-        'axis': 'translation',
-      },
-      {
-        'id': 'GAP-cjk-04',
-        'variant': '火影忍者',
-        'workIds': ['wk_000000218'],
-        'axis': 'translation',
-      },
-      {
-        'id': 'GAP-alias-01',
-        'variant': 'Re:ゼロ',
-        'workIds': ['wk_000000230'],
-        'axis': 'alias',
-      },
-      {
-        'id': 'GAP-alias-02',
-        'variant': 'FMA',
-        'workIds': ['wk_000000194', 'wk_000000325'],
-        'axis': 'alias',
-      },
-      {
-        'id': 'GAP-series-01',
-        'variant': 'Lord of the Rings',
-        'workIds': ['wk_000000010', 'wk_000000158'],
-        'axis': 'subtitle',
-      },
-      {
-        'id': 'GAP-series-02',
-        'variant': 'The Fellowship of the Ring',
-        'workIds': ['wk_000000010'],
-        'axis': 'subtitle',
-      },
-      {
-        'id': 'GAP-series-03',
-        'variant': 'Dandadan',
-        'workIds': ['wk_000000310', 'wk_000000185'],
-        'axis': 'subtitle',
-      },
-    ];
+  {
+    'id': 'GAP-romaji-01',
+    'variant': 'Demon Slayer',
+    'workIds': ['wk_000000343', 'wk_000000188'],
+    'axis': 'romanized',
+  },
+  {
+    'id': 'GAP-romaji-02',
+    'variant': 'Kimetsu no Yaiba',
+    'workIds': ['wk_000000343', 'wk_000000188'],
+    'axis': 'romanized',
+  },
+  {
+    'id': 'GAP-romaji-03',
+    'variant': 'Spy x Family',
+    'workIds': ['wk_000000387', 'wk_000000239'],
+    'axis': 'romanized',
+  },
+  {
+    'id': 'GAP-romaji-04',
+    'variant': 'Fullmetal Alchemist',
+    'workIds': ['wk_000000325', 'wk_000000194'],
+    'axis': 'romanized',
+  },
+  {
+    'id': 'GAP-romaji-05',
+    'variant': 'Mushoku Tensei',
+    'workIds': ['wk_000000354', 'wk_000000257'],
+    'axis': 'romanized',
+  },
+  {
+    'id': 'GAP-romaji-06',
+    'variant': 'Re:Zero',
+    'workIds': ['wk_000000230', 'wk_000000375'],
+    'axis': 'romanized',
+  },
+  {
+    'id': 'GAP-romaji-07',
+    'variant': '20th Century Boys',
+    'workIds': ['wk_000000291'],
+    'axis': 'romanized',
+  },
+  {
+    'id': 'GAP-cjk-01',
+    'variant': '鬼滅の刃',
+    'workIds': ['wk_000000343', 'wk_000000188'],
+    'axis': 'translation',
+  },
+  {
+    'id': 'GAP-cjk-02',
+    'variant': '鬼灭之刃',
+    'workIds': ['wk_000000343', 'wk_000000188'],
+    'axis': 'translation',
+  },
+  {
+    'id': 'GAP-cjk-03',
+    'variant': '死亡笔记',
+    'workIds': ['wk_000000187'],
+    'axis': 'translation',
+  },
+  {
+    'id': 'GAP-cjk-04',
+    'variant': '火影忍者',
+    'workIds': ['wk_000000218'],
+    'axis': 'translation',
+  },
+  {
+    'id': 'GAP-alias-01',
+    'variant': 'Re:ゼロ',
+    'workIds': ['wk_000000230'],
+    'axis': 'alias',
+  },
+  {
+    'id': 'GAP-alias-02',
+    'variant': 'FMA',
+    'workIds': ['wk_000000194', 'wk_000000325'],
+    'axis': 'alias',
+  },
+  {
+    'id': 'GAP-series-01',
+    'variant': 'Lord of the Rings',
+    'workIds': ['wk_000000010', 'wk_000000158'],
+    'axis': 'subtitle',
+  },
+  {
+    'id': 'GAP-series-02',
+    'variant': 'The Fellowship of the Ring',
+    'workIds': ['wk_000000010'],
+    'axis': 'subtitle',
+  },
+  {
+    'id': 'GAP-series-03',
+    'variant': 'Dandadan',
+    'workIds': ['wk_000000310', 'wk_000000185'],
+    'axis': 'subtitle',
+  },
+];
 
 class _FranchiseIndex {
   final Map<String, String> primaryByMember;
@@ -424,9 +541,13 @@ class _Work {
 }
 
 List<_Work> _loadWorks(Directory root) {
-  final manifest = json.decode(
-    File(p.join(root.path, 'akasha-db', 'manifest.json')).readAsStringSync(),
-  ) as Map<String, dynamic>;
+  final manifest =
+      json.decode(
+            File(
+              p.join(root.path, 'akasha-db', 'manifest.json'),
+            ).readAsStringSync(),
+          )
+          as Map<String, dynamic>;
 
   final indexSurfaces = _loadSearchSurfaces(root);
   final out = <_Work>[];
@@ -487,8 +608,9 @@ List<_Work> _loadWorks(Directory root) {
       titles.values.forEach(add);
       aliases.forEach(add);
 
-      final cjkPrimary = RegExp(r'[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]')
-          .hasMatch(title);
+      final cjkPrimary = RegExp(
+        r'[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]',
+      ).hasMatch(title);
       final needsRoman =
           cjkPrimary || _nonEmpty(titles['ja']) || _nonEmpty(titles['native']);
 
@@ -521,10 +643,8 @@ Map<String, List<String>> _loadSearchSurfaces(Directory root) {
     if (e is! Map) continue;
     final id = e['workId']?.toString();
     if (id == null) continue;
-    final tokens = (e['searchTokens'] as List?)
-            ?.map((t) => t.toString())
-            .toList() ??
-        [];
+    final tokens =
+        (e['searchTokens'] as List?)?.map((t) => t.toString()).toList() ?? [];
     out[id] = tokens;
   }
   return out;
