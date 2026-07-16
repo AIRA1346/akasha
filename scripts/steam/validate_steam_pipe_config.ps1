@@ -4,6 +4,14 @@
 $ErrorActionPreference = 'Stop'
 . "$PSScriptRoot\steam_upload_config.ps1"
 
+if ([string]::IsNullOrWhiteSpace($SteamCmd)) {
+    throw @"
+Steamworks ContentBuilder 경로가 설정되지 않았습니다.
+AKASHA_STEAM_CONTENT_BUILDER 환경 변수 또는 추적되지 않는
+scripts\steam\steam_content_builder.path 파일을 사용하세요.
+"@
+}
+
 function Get-VdfValue {
     param(
         [Parameter(Mandatory = $true)]

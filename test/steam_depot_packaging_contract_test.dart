@@ -39,9 +39,13 @@ void main() {
 
     expect(config, contains(r"build\steam\depot_windows"));
     expect(config, contains(r"build\steam\manifests\depot_windows.json"));
+    expect(config, contains('AKASHA_STEAM_CONTENT_BUILDER'));
+    expect(config, contains('steam_content_builder.path'));
+    expect(config, contains(r"build\steam\steamcmd_output"));
     expect(config, contains(r"$SteamBranchName = 'commerce-sandbox'"));
     expect(config, contains('app_build_4677560_commerce_sandbox.vdf'));
     expect(config, contains('depot_build_4677561.vdf'));
+    expect(config, isNot(contains(RegExp(r'[A-Za-z]:\\'))));
 
     expect(appVdf, contains('"AppID" "4677560"'));
     expect(appVdf, contains('"SetLive" "commerce-sandbox"'));
@@ -49,7 +53,12 @@ void main() {
       appVdf,
       contains(r'"ContentRoot" "..\..\build\steam\depot_windows"'),
     );
+    expect(
+      appVdf,
+      contains(r'"BuildOutput" "..\..\build\steam\steamcmd_output"'),
+    );
     expect(appVdf, contains('"4677561" "depot_build_4677561.vdf"'));
+    expect(appVdf, isNot(contains(RegExp(r'[A-Za-z]:\\'))));
 
     expect(depotVdf, contains('"DepotID" "4677561"'));
     expect(depotVdf, contains('"FileExclusion" "*.pdb"'));
@@ -58,6 +67,7 @@ void main() {
       depotVdf,
       contains(r'"ContentRoot" "..\..\build\steam\depot_windows"'),
     );
+    expect(depotVdf, isNot(contains(RegExp(r'[A-Za-z]:\\'))));
 
     expect(validate, contains('ConvertFrom-Json'));
     expect(validate, contains('Stage hash mismatch'));

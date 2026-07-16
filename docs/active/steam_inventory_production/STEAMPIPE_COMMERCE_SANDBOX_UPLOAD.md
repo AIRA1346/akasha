@@ -37,20 +37,21 @@ production/default-branch release.
 | Exclusions | `steam_appid.txt`, `*.pdb` |
 | Upload mode | `Preview 0` |
 | SetLive branch | `commerce-sandbox` |
-| Build output/cache | `C:\dev\steamworks\steamworks_sdk_164\sdk\tools\ContentBuilder\output` |
+| Build output/cache | `build/steam/steamcmd_output` |
 
 Both VDF files resolve `ContentRoot` relative to their location under
-`scripts/steam`. The resolved absolute path is:
+`scripts/steam`, regardless of the SteamCMD process working directory. The
+resolved repository path is:
 
 ```text
-C:\Users\rkdwl\RuneAtelier\akasha\build\steam\depot_windows
+<repository>\build\steam\depot_windows
 ```
 
 The files below are stale SDK-output artifacts and must not be used:
 
 ```text
-C:\dev\steamworks\steamworks_sdk_164\sdk\tools\ContentBuilder\output\_akasha_app_build.vdf
-C:\dev\steamworks\steamworks_sdk_164\sdk\tools\ContentBuilder\output\_akasha_depot_build.vdf
+<Steam ContentBuilder>\output\_akasha_app_build.vdf
+<Steam ContentBuilder>\output\_akasha_depot_build.vdf
 ```
 
 They point to the raw Flutter Release directory rather than the verified
@@ -73,9 +74,11 @@ branch. It does not publish to the default branch.
 
 This command validates the existing 97-file stage, every recorded SHA-256,
 the VDF IDs and paths, and the two exclusion rules. It does not invoke
-SteamCMD.
+SteamCMD. The validator still checks that the configured SteamCMD executable
+exists.
 
 ```powershell
+$env:AKASHA_STEAM_CONTENT_BUILDER = '<absolute path to Steamworks ContentBuilder>'
 powershell -ExecutionPolicy Bypass -File .\scripts\steam\validate_steam_pipe_config.ps1
 ```
 
@@ -86,22 +89,20 @@ powershell -ExecutionPolicy Bypass -File .\scripts\steam\prepare_steam_depot.ps1
 powershell -ExecutionPolicy Bypass -File .\scripts\steam\validate_steam_pipe_config.ps1
 ```
 
-## Exact SteamCMD upload command
+## SteamCMD location and upload command
 
 Do not store the account password or Steam Guard code in the repository.
-Replace only the account value, then let SteamCMD use its interactive or
-cached authentication flow.
+The Steamworks SDK location is also machine-local. Set it with the
+`AKASHA_STEAM_CONTENT_BUILDER` environment variable, or write the absolute
+ContentBuilder directory to the gitignored
+`scripts/steam/steam_content_builder.path` file.
 
 ```powershell
-$SteamBuildAccount = 'YOUR_STEAM_BUILD_ACCOUNT'
-& 'C:\dev\steamworks\steamworks_sdk_164\sdk\tools\ContentBuilder\builder\steamcmd.exe' `
-  +login $SteamBuildAccount `
-  +run_app_build 'C:\Users\rkdwl\RuneAtelier\akasha\scripts\steam\app_build_4677560_commerce_sandbox.vdf' `
-  +quit
+$env:AKASHA_STEAM_CONTENT_BUILDER = '<absolute path to Steamworks ContentBuilder>'
 ```
 
-The repository wrapper performs staging and validation before invoking the
-same AppBuild VDF:
+The repository wrapper performs staging and validation before invoking
+SteamCMD with the tracked AppBuild VDF:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\steam\upload_steam_build.ps1 `

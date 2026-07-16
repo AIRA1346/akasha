@@ -14,6 +14,19 @@ $DepotManifestPath = Join-Path $AkashaRoot 'build\steam\manifests\depot_windows.
 $AppBuildVdf = Join-Path $PSScriptRoot 'app_build_4677560_commerce_sandbox.vdf'
 $DepotBuildVdf = Join-Path $PSScriptRoot 'depot_build_4677561.vdf'
 
-$SteamSdkRoot = 'C:\dev\steamworks\steamworks_sdk_164\sdk\tools\ContentBuilder'
-$SteamCmd = Join-Path $SteamSdkRoot 'builder\steamcmd.exe'
-$BuildOutput = Join-Path $SteamSdkRoot 'output'
+$SteamContentBuilderPathFile = Join-Path $PSScriptRoot 'steam_content_builder.path'
+$SteamSdkRoot = $env:AKASHA_STEAM_CONTENT_BUILDER
+if ([string]::IsNullOrWhiteSpace($SteamSdkRoot) -and
+    (Test-Path -LiteralPath $SteamContentBuilderPathFile)) {
+    $SteamSdkRoot = (
+        Get-Content -Raw -Encoding UTF8 $SteamContentBuilderPathFile
+    ).Trim()
+}
+if ([string]::IsNullOrWhiteSpace($SteamSdkRoot)) {
+    $SteamSdkRoot = $null
+    $SteamCmd = $null
+} else {
+    $SteamSdkRoot = [System.IO.Path]::GetFullPath($SteamSdkRoot)
+    $SteamCmd = Join-Path $SteamSdkRoot 'builder\steamcmd.exe'
+}
+$BuildOutput = Join-Path $AkashaRoot 'build\steam\steamcmd_output'

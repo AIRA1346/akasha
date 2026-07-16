@@ -5,7 +5,7 @@
 	"Preview" "0"
 	"SetLive" "commerce-sandbox"
 	"ContentRoot" "..\..\build\steam\depot_windows"
-	"BuildOutput" "C:\dev\steamworks\steamworks_sdk_164\sdk\tools\ContentBuilder\output"
+	"BuildOutput" "..\..\build\steam\steamcmd_output"
 	"Depots"
 	{
 		"4677561" "depot_build_4677561.vdf"

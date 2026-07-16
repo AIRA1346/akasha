@@ -1,5 +1,6 @@
 # Local machine paths (do not commit)
 tool/flutter_sdk.path
+scripts/steam/steam_content_builder.path
 
 # Miscellaneous
 *.class
