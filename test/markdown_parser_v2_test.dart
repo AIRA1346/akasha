@@ -10,6 +10,7 @@ import 'package:akasha/services/markdown_parser.dart';
 import 'package:akasha/services/user_preferences.dart';
 import 'package:akasha/services/vault_work_journal_paths.dart';
 import 'package:akasha/utils/helpers.dart';
+import 'package:path/path.dart' as p;
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -111,7 +112,7 @@ void main() {
           useWorksLayout: false,
         );
 
-        expect(path, r'C:\vault\works\manga\wk_u_path01.md');
+        expect(path, p.join(r'C:\vault', 'works', 'manga', 'wk_u_path01.md'));
       },
     );
 
@@ -127,7 +128,7 @@ void main() {
         useWorksLayout: true,
       );
 
-      expect(path, r'C:\vault\works\animation\wk_u_path02.md');
+      expect(path, p.join(r'C:\vault', 'works', 'animation', 'wk_u_path02.md'));
     });
   });
 

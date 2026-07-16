@@ -95,6 +95,10 @@ void main() {
   );
 
   test('native Vault watch reports the changed Markdown path', () async {
+    if (!Platform.isWindows) {
+      markTestSkipped('Requires native Windows directory watching.');
+      return;
+    }
     final service = AkashaFileService();
     final vaultDir = await Directory.systemTemp.createTemp('akasha_watch_');
     const relativePath = 'works/movie/external_watch.md';
@@ -131,6 +135,10 @@ void main() {
   });
 
   test('native Vault watch includes Canvas layout artifacts', () async {
+    if (!Platform.isWindows) {
+      markTestSkipped('Requires native Windows directory watching.');
+      return;
+    }
     final service = AkashaFileService();
     final vaultDir = await Directory.systemTemp.createTemp('akasha_canvas_');
     const relativePath = 'canvases/map-01/layout.json';

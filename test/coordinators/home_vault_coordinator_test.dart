@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:akasha/models/akasha_item.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/screens/home/coordinators/home_vault_coordinator.dart';
@@ -10,8 +12,14 @@ import '../fakes/fake_vault_port.dart';
 
 void main() {
   test('loadItems reads vault port and syncs workbench items', () async {
+    final vaultDir = await Directory.systemTemp.createTemp(
+      'akasha_home_vault_coordinator_',
+    );
+    addTearDown(() async {
+      if (await vaultDir.exists()) await vaultDir.delete(recursive: true);
+    });
     final vault = FakeVaultPort();
-    await vault.setVaultPath('/fake/vault');
+    await vault.setVaultPath(vaultDir.path);
     await vault.saveItem(
       createItem(
         workId: 'wk_test',
@@ -39,7 +47,9 @@ void main() {
     await coordinator.ensureItemsLoaded();
     expect(coordinator.items, hasLength(1));
 
-    await coordinator.setVaultPath('/fake/other-vault');
+    await coordinator.setVaultPath(
+      '${vaultDir.path}${Platform.pathSeparator}other-vault',
+    );
     expect(coordinator.hasLoadedItems, isFalse);
     expect(coordinator.items, isEmpty);
   });
