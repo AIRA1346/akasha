@@ -15,10 +15,16 @@ import 'vault_trash_service.dart';
 
 /// `vault/journal/` 쓰기·삭제 — Wave 3.
 class JournalVaultStore {
-  const JournalVaultStore({JournalVaultLoader? loader})
-    : _loader = loader ?? const JournalVaultLoader();
+  const JournalVaultStore({
+    JournalVaultLoader? loader,
+    ArchiveIndexManager? archiveIndex,
+  }) : _loader = loader ?? const JournalVaultLoader(),
+       _archiveIndex = archiveIndex;
 
   final JournalVaultLoader _loader;
+  final ArchiveIndexManager? _archiveIndex;
+
+  ArchiveIndexManager get _indexes => _archiveIndex ?? ArchiveIndexManager();
 
   static String generateRecordId([DateTime? at]) {
     final now = at ?? DateTime.now();
@@ -38,6 +44,20 @@ class JournalVaultStore {
   }
 
   Future<JournalEntry> save({
+    required String vaultPath,
+    required ArchiveRecord record,
+    required String body,
+  }) async {
+    final result = await saveWithIndexResult(
+      vaultPath: vaultPath,
+      record: record,
+      body: body,
+    );
+    return result.entry;
+  }
+
+  Future<({JournalEntry entry, ArchiveIndexRebuildResult indexResult})>
+  saveWithIndexResult({
     required String vaultPath,
     required ArchiveRecord record,
     required String body,
@@ -132,21 +152,28 @@ class JournalVaultStore {
       recordMetadata: recordMetadata,
       openedRevision: writeResult.newRevision,
     );
-    await ArchiveIndexManager().updateChangedRecord(
+    final indexResult = await _indexes.updateChangedRecord(
       vaultPath: vaultPath,
       absolutePath: targetPath,
     );
-    return entry;
+    return (entry: entry, indexResult: indexResult);
   }
 
   Future<void> delete({
     required String vaultPath,
     required String recordId,
   }) async {
+    await deleteWithIndexResult(vaultPath: vaultPath, recordId: recordId);
+  }
+
+  Future<ArchiveIndexRebuildResult?> deleteWithIndexResult({
+    required String vaultPath,
+    required String recordId,
+  }) async {
     if (vaultPath.isEmpty) {
       throw StateError('Vault path not set');
     }
-    if (recordId.trim().isEmpty) return;
+    if (recordId.trim().isEmpty) return null;
 
     final entries = await _loader.loadFromVault(vaultPath);
     for (final entry in entries) {
@@ -157,14 +184,15 @@ class JournalVaultStore {
           vaultPath: vaultPath,
           absolutePath: entry.storagePath,
         );
-        await ArchiveIndexManager().removeRecord(
+        return _indexes.removeRecord(
           vaultPath: vaultPath,
           absolutePath: entry.storagePath,
           sourceRecordId: entry.recordId,
         );
       }
-      return;
+      return null;
     }
+    return null;
   }
 
   Future<JournalEntry?> _findByRecordId(

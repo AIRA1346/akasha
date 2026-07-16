@@ -165,6 +165,39 @@ Related [[pe_u_miss0001]]
     },
   );
 
+  test('validate exposes partial Entity locator rebuild diagnostics', () async {
+    final good = File(
+      p.join(vaultDir.path, 'entities', 'person', 'pe_u_validpartial.md'),
+    );
+    final bad = File(
+      p.join(vaultDir.path, 'entities', 'person', 'pe_u_badpartial.md'),
+    );
+    await good.parent.create(recursive: true);
+    await good.writeAsString(
+      EntityJournalParser.serialize(
+        entityType: EntityAnchorType.person,
+        entityId: 'pe_u_validpartial',
+        title: 'Valid Partial',
+        body: 'body',
+      ),
+    );
+    await bad.writeAsString('---\nrecord_kind: entityJournal\nbroken: [\n');
+
+    final result = await validator.validate(vaultPath: vaultDir.path);
+
+    expect(result.succeeded, isFalse);
+    final partial = result.warnings.singleWhere(
+      (issue) =>
+          issue.indexName == 'entityPath' &&
+          issue.code == 'index_rebuild_partial',
+    );
+    expect(
+      partial.details['malformedPaths'],
+      contains('entities/person/pe_u_badpartial.md'),
+    );
+    expect(await bad.exists(), isTrue);
+  });
+
   test('validate rejects an empty vault path', () async {
     final result = await validator.validate(vaultPath: '');
 

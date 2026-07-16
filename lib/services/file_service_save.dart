@@ -5,6 +5,9 @@ mixin _AkashaFileServiceSave
         _AkashaFileServiceBase,
         _AkashaFileServicePaths,
         _AkashaFileServiceWatch {
+  ArchiveIndexManager get _archiveIndexes =>
+      _archiveIndexManager ?? ArchiveIndexManager();
+
   /// AkashaItem을 마크다운 파일로 저장합니다.
   Future<void> saveItem(AkashaItem item, {String? oldTitle}) async {
     item.workId = MarkdownParser.ensureWorkId(item);
@@ -83,6 +86,7 @@ mixin _AkashaFileServiceSave
         expectedRevisionPath: revisionSourcePath,
       );
       item.openedRevision = writeResult.newRevision;
+      var indexesUpdated = true;
       if (oldPathToRetire != null &&
           p.normalize(oldPathToRetire) != p.normalize(targetPath)) {
         await VaultRecoveryWriteService().verifyExpectedRevision(
@@ -96,21 +100,24 @@ mixin _AkashaFileServiceSave
           vaultPath: _vaultPath!,
           absolutePath: oldPathToRetire,
         );
-        await ArchiveIndexManager().removeRecord(
+        final removeResult = await _archiveIndexes.removeRecord(
           vaultPath: _vaultPath!,
           absolutePath: oldPathToRetire,
           sourceRecordId: _workSourceRecordId(item.workId),
         );
+        indexesUpdated = indexesUpdated && removeResult.succeeded;
       }
-      await ArchiveIndexManager().updateChangedRecord(
+      final updateResult = await _archiveIndexes.updateChangedRecord(
         vaultPath: _vaultPath!,
         absolutePath: targetPath,
       );
+      indexesUpdated = indexesUpdated && updateResult.succeeded;
       _notifyVaultUpdated(
         VaultChangeBatch.fromAbsolutePaths(
           vaultPath: _vaultPath!,
           upsertedPaths: [targetPath],
           deletedPaths: oldPathToRetire == null ? const [] : [oldPathToRetire],
+          derivedIndexesUpdated: indexesUpdated,
         ),
       );
     } finally {
@@ -257,21 +264,24 @@ mixin _AkashaFileServiceSave
 
     _stopWatching();
     try {
+      var indexesUpdated = true;
       for (final file in existing) {
         await const VaultTrashService().moveFileToTrash(
           vaultPath: _vaultPath!,
           absolutePath: file.path,
         );
-        await ArchiveIndexManager().removeRecord(
+        final removeResult = await _archiveIndexes.removeRecord(
           vaultPath: _vaultPath!,
           absolutePath: file.path,
           sourceRecordId: sourceRecordId,
         );
+        indexesUpdated = indexesUpdated && removeResult.succeeded;
       }
       _notifyVaultUpdated(
         VaultChangeBatch.fromAbsolutePaths(
           vaultPath: _vaultPath!,
           deletedPaths: existing.map((file) => file.path),
+          derivedIndexesUpdated: indexesUpdated,
         ),
       );
       return true;

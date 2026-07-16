@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -44,9 +45,39 @@ class DerivedIndexAtomicWrite {
   /// Test-only: before deleting stale `.tmp` / `.bak` sidecars.
   final Future<void> Function(File target)? beforeSidecarCleanup;
 
+  static final Map<String, Future<void>> _mutationTails = {};
+
   static File tempSibling(File target) => File('${target.path}.tmp');
 
   static File bakSibling(File target) => File('${target.path}.bak');
+
+  /// Serializes one complete read-mutate-write transaction for [target].
+  ///
+  /// The queue is process-wide so separate service/atomic-writer instances
+  /// cannot bypass the same locator file lock. Different target paths retain
+  /// independent queues. A failed action still completes its queue tail so
+  /// later mutations are never permanently blocked.
+  Future<T> runExclusive<T>({
+    required File target,
+    required Future<T> Function() action,
+  }) async {
+    final absolutePath = target.absolute.path;
+    final key = Platform.isWindows ? absolutePath.toLowerCase() : absolutePath;
+    final previous = _mutationTails[key] ?? Future<void>.value();
+    final released = Completer<void>();
+    final tail = released.future;
+    _mutationTails[key] = tail;
+
+    await previous;
+    try {
+      return await action();
+    } finally {
+      released.complete();
+      if (identical(_mutationTails[key], tail)) {
+        _mutationTails.remove(key);
+      }
+    }
+  }
 
   /// Opens [target] for read, restoring a valid `.bak` when needed.
   ///
@@ -104,9 +135,7 @@ class DerivedIndexAtomicWrite {
 
     // Do not promote .tmp — completeness cannot be proven.
     if (await temp.exists()) {
-      appLog(
-        '[DerivedIndexAtomicWrite] ignoring stale tmp for ${target.path}',
-      );
+      appLog('[DerivedIndexAtomicWrite] ignoring stale tmp for ${target.path}');
       try {
         await temp.delete();
       } on Object catch (error, stack) {
@@ -216,8 +245,7 @@ class DerivedIndexAtomicWrite {
     }
 
     if (await backup.exists()) await backup.delete();
-    if (previousBakQuarantine != null &&
-        await previousBakQuarantine.exists()) {
+    if (previousBakQuarantine != null && await previousBakQuarantine.exists()) {
       await previousBakQuarantine.delete();
     }
     if (await temp.exists()) await temp.delete();

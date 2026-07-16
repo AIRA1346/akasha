@@ -87,7 +87,15 @@ class RecordPathIndexService {
     if (vaultPath.trim().isEmpty) {
       return const RecordPathIndexStats(records: 0, idShards: 0, pathShards: 0);
     }
+    return atomicWrite.runExclusive(
+      target: _manifestFile(vaultPath),
+      action: () => _rebuildFromVaultUnlocked(vaultPath),
+    );
+  }
 
+  Future<RecordPathIndexStats> _rebuildFromVaultUnlocked(
+    String vaultPath,
+  ) async {
     final byIdShard = <String, List<RecordPathIndexEntry>>{};
     final byPathShard = <String, List<RecordPathIndexEntry>>{};
     await for (final file in _scanRecordFiles(vaultPath)) {
@@ -140,10 +148,23 @@ class RecordPathIndexService {
     if (vaultPath.trim().isEmpty || absolutePath.trim().isEmpty) return null;
     if (!_isWithinVault(vaultPath, absolutePath)) return null;
 
+    return atomicWrite.runExclusive(
+      target: _manifestFile(vaultPath),
+      action: () => _upsertMarkdownFileUnlocked(
+        vaultPath: vaultPath,
+        absolutePath: absolutePath,
+      ),
+    );
+  }
+
+  Future<String?> _upsertMarkdownFileUnlocked({
+    required String vaultPath,
+    required String absolutePath,
+  }) async {
     final relativePath = _relativePath(vaultPath, absolutePath);
     final file = File(absolutePath);
     if (!await file.exists()) {
-      return removeByAbsolutePath(
+      return _removeByAbsolutePathUnlocked(
         vaultPath: vaultPath,
         absolutePath: absolutePath,
       );
@@ -151,7 +172,7 @@ class RecordPathIndexService {
 
     final recordId = await VaultDocumentIdentity.readRecordId(file);
     if (recordId == null || !isStableRecordId(recordId)) {
-      await removeByAbsolutePath(
+      await _removeByAbsolutePathUnlocked(
         vaultPath: vaultPath,
         absolutePath: absolutePath,
       );
@@ -195,6 +216,19 @@ class RecordPathIndexService {
     if (vaultPath.trim().isEmpty || absolutePath.trim().isEmpty) return null;
     if (!_isWithinVault(vaultPath, absolutePath)) return null;
 
+    return atomicWrite.runExclusive(
+      target: _manifestFile(vaultPath),
+      action: () => _removeByAbsolutePathUnlocked(
+        vaultPath: vaultPath,
+        absolutePath: absolutePath,
+      ),
+    );
+  }
+
+  Future<String?> _removeByAbsolutePathUnlocked({
+    required String vaultPath,
+    required String absolutePath,
+  }) async {
     final relativePath = _relativePath(vaultPath, absolutePath);
     final pathShard = _pathShard(relativePath);
     final pathFile = _pathShardFile(vaultPath, pathShard);
@@ -244,10 +278,7 @@ class RecordPathIndexService {
       'updatedAt': DateTime.now().toUtc().toIso8601String(),
       if (stats != null) ...stats.toJson(),
     };
-    await atomicWrite.writeText(
-      target: file,
-      content: jsonEncode(payload),
-    );
+    await atomicWrite.writeText(target: file, content: jsonEncode(payload));
   }
 
   Future<List<RecordPathIndexEntry>> _readEntries(File file) async {
@@ -407,18 +438,11 @@ class RecordPathIndexEntry {
 }
 
 class RecordPathIndexLookup {
-  const RecordPathIndexLookup({
-    required this.entries,
-    this.isCorrupt = false,
-  });
+  const RecordPathIndexLookup({required this.entries, this.isCorrupt = false});
 
-  const RecordPathIndexLookup.empty()
-    : entries = const [],
-      isCorrupt = false;
+  const RecordPathIndexLookup.empty() : entries = const [], isCorrupt = false;
 
-  const RecordPathIndexLookup.corrupt()
-    : entries = const [],
-      isCorrupt = true;
+  const RecordPathIndexLookup.corrupt() : entries = const [], isCorrupt = true;
 
   final List<RecordPathIndexEntry> entries;
   final bool isCorrupt;

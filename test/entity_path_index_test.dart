@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
@@ -374,6 +376,331 @@ void main() {
         isNotNull,
       );
     });
+
+    test(
+      'concurrent upserts preserve both ids across service instances',
+      () async {
+        final firstReachedReplace = Completer<void>();
+        final releaseFirst = Completer<void>();
+        var blocked = false;
+        final first = EntityPathIndexService(
+          atomicWrite: DerivedIndexAtomicWrite(
+            beforeReplace: (_) async {
+              if (blocked) return;
+              blocked = true;
+              firstReachedReplace.complete();
+              await releaseFirst.future;
+            },
+          ),
+        );
+        final second = EntityPathIndexService();
+
+        final firstMutation = first.upsert(
+          vaultPath: tempDir.path,
+          entityId: 'pe_u_concurrent01',
+          absolutePath: p.join(
+            tempDir.path,
+            'entities',
+            'person',
+            'Concurrent One.md',
+          ),
+        );
+        await firstReachedReplace.future;
+        final secondMutation = second.upsert(
+          vaultPath: tempDir.path,
+          entityId: 'pe_u_concurrent02',
+          absolutePath: p.join(
+            tempDir.path,
+            'entities',
+            'person',
+            'Concurrent Two.md',
+          ),
+        );
+
+        releaseFirst.complete();
+        await Future.wait([firstMutation, secondMutation]);
+
+        final paths = await index.loadPaths(tempDir.path);
+        expect(
+          paths.keys,
+          containsAll(['pe_u_concurrent01', 'pe_u_concurrent02']),
+        );
+        expect(jsonDecode(await indexFile().readAsString()), isA<Map>());
+      },
+    );
+
+    test('repeated concurrent upserts preserve every different id', () async {
+      const count = 24;
+      await Future.wait([
+        for (var i = 0; i < count; i++)
+          EntityPathIndexService().upsert(
+            vaultPath: tempDir.path,
+            entityId: 'pe_u_parallel${i.toString().padLeft(2, '0')}',
+            absolutePath: p.join(
+              tempDir.path,
+              'entities',
+              'person',
+              'Parallel $i.md',
+            ),
+          ),
+      ]);
+
+      final paths = await index.loadPaths(tempDir.path);
+      for (var i = 0; i < count; i++) {
+        expect(paths, contains('pe_u_parallel${i.toString().padLeft(2, '0')}'));
+      }
+      expect(jsonDecode(await indexFile().readAsString()), isA<Map>());
+    });
+
+    test(
+      'same id concurrent upserts deterministically keep queued last path',
+      () async {
+        final firstReachedReplace = Completer<void>();
+        final releaseFirst = Completer<void>();
+        final first = EntityPathIndexService(
+          atomicWrite: DerivedIndexAtomicWrite(
+            beforeReplace: (_) async {
+              firstReachedReplace.complete();
+              await releaseFirst.future;
+            },
+          ),
+        );
+        final second = EntityPathIndexService();
+        final firstPath = p.join(
+          tempDir.path,
+          'entities',
+          'person',
+          'Same First.md',
+        );
+        final secondPath = p.join(
+          tempDir.path,
+          'entities',
+          'person',
+          'Same Second.md',
+        );
+
+        final firstMutation = first.upsert(
+          vaultPath: tempDir.path,
+          entityId: 'pe_u_samequeue01',
+          absolutePath: firstPath,
+        );
+        await firstReachedReplace.future;
+        final secondMutation = second.upsert(
+          vaultPath: tempDir.path,
+          entityId: 'pe_u_samequeue01',
+          absolutePath: secondPath,
+        );
+
+        releaseFirst.complete();
+        await Future.wait([firstMutation, secondMutation]);
+
+        expect(
+          await index.lookupAbsolutePath(tempDir.path, 'pe_u_samequeue01'),
+          p.normalize(secondPath),
+        );
+        expect(jsonDecode(await indexFile().readAsString()), isA<Map>());
+      },
+    );
+
+    test(
+      'queued upsert then delete leaves valid JSON without the entry',
+      () async {
+        final firstReachedReplace = Completer<void>();
+        final releaseFirst = Completer<void>();
+        final first = EntityPathIndexService(
+          atomicWrite: DerivedIndexAtomicWrite(
+            beforeReplace: (_) async {
+              firstReachedReplace.complete();
+              await releaseFirst.future;
+            },
+          ),
+        );
+        final second = EntityPathIndexService();
+        final path = p.join(
+          tempDir.path,
+          'entities',
+          'person',
+          'Upsert Delete.md',
+        );
+
+        final upsert = first.upsert(
+          vaultPath: tempDir.path,
+          entityId: 'pe_u_upsertdelete',
+          absolutePath: path,
+        );
+        await firstReachedReplace.future;
+        final remove = second.removeByAbsolutePath(
+          vaultPath: tempDir.path,
+          absolutePath: path,
+        );
+
+        releaseFirst.complete();
+        await upsert;
+        expect(await remove, 'pe_u_upsertdelete');
+
+        expect(
+          await index.lookupRelativePath(tempDir.path, 'pe_u_upsertdelete'),
+          isNull,
+        );
+        expect(jsonDecode(await indexFile().readAsString()), isA<Map>());
+      },
+    );
+
+    test('failed mutation releases the queue for the next mutation', () async {
+      final firstReachedReplace = Completer<void>();
+      final releaseFailure = Completer<void>();
+      final failing = EntityPathIndexService(
+        atomicWrite: DerivedIndexAtomicWrite(
+          beforeReplace: (_) async {
+            firstReachedReplace.complete();
+            await releaseFailure.future;
+            throw StateError('injected queued failure');
+          },
+        ),
+      );
+      final succeeding = EntityPathIndexService();
+
+      final failedMutation = failing.upsert(
+        vaultPath: tempDir.path,
+        entityId: 'pe_u_queuefail01',
+        absolutePath: p.join(
+          tempDir.path,
+          'entities',
+          'person',
+          'Queue Fail.md',
+        ),
+      );
+      final failedExpectation = expectLater(
+        failedMutation,
+        throwsA(isA<StateError>()),
+      );
+      await firstReachedReplace.future;
+      final nextMutation = succeeding.upsert(
+        vaultPath: tempDir.path,
+        entityId: 'pe_u_queueok01',
+        absolutePath: p.join(tempDir.path, 'entities', 'person', 'Queue OK.md'),
+      );
+
+      releaseFailure.complete();
+      await failedExpectation;
+      await nextMutation;
+
+      expect(
+        await index.lookupRelativePath(tempDir.path, 'pe_u_queueok01'),
+        isNotNull,
+      );
+      expect(jsonDecode(await indexFile().readAsString()), isA<Map>());
+    });
+
+    test('incremental malformed Entity exposes a partial result', () async {
+      final path = p.join(tempDir.path, 'entities', 'person', 'Malformed.md');
+      final file = File(path);
+      await file.parent.create(recursive: true);
+      await index.upsert(
+        vaultPath: tempDir.path,
+        entityId: 'pe_u_malformed01',
+        absolutePath: path,
+      );
+      await file.writeAsString('---\nrecord_kind: entityJournal\nbroken: [\n');
+
+      final result = await index.upsertMarkdownFileDetailed(
+        vaultPath: tempDir.path,
+        absolutePath: path,
+      );
+
+      expect(result.succeeded, isFalse);
+      expect(result.partialSuccess, isTrue);
+      expect(result.operation, EntityPathIndexMutationOperation.skipped);
+      expect(result.entityId, 'pe_u_malformed01');
+      expect(result.skippedPath, 'entities/person/Malformed.md');
+      expect(
+        result.issues.map((issue) => issue.errorCode),
+        contains('frontmatter_invalid'),
+      );
+      expect(
+        await file.exists(),
+        isTrue,
+        reason: 'source Markdown is retained',
+      );
+      expect(
+        await index.lookupRelativePath(tempDir.path, 'pe_u_malformed01'),
+        isNull,
+      );
+    });
+
+    test(
+      'rebuild preserves valid entries and reports malformed files',
+      () async {
+        final good = File(
+          p.join(tempDir.path, 'entities', 'person', 'Good.md'),
+        );
+        final bad = File(p.join(tempDir.path, 'entities', 'person', 'Bad.md'));
+        await good.parent.create(recursive: true);
+        await good.writeAsString(
+          EntityJournalParser.serialize(
+            entityType: EntityAnchorType.person,
+            entityId: 'pe_u_rebuildgood',
+            title: 'Good',
+            body: 'body',
+          ),
+        );
+        await bad.writeAsString('---\nrecord_kind: entityJournal\nbroken: [\n');
+
+        final result = await index.rebuildFromVaultDetailed(tempDir.path);
+
+        expect(result.succeeded, isFalse);
+        expect(result.partialSuccess, isTrue);
+        expect(result.indexedEntries, 1);
+        expect(result.malformedPaths, contains('entities/person/Bad.md'));
+        expect(
+          await index.lookupRelativePath(tempDir.path, 'pe_u_rebuildgood'),
+          isNotNull,
+        );
+        expect(await bad.exists(), isTrue);
+      },
+    );
+
+    test(
+      'detailed mutation exposes a write issue without exception text',
+      () async {
+        final path = p.join(
+          tempDir.path,
+          'entities',
+          'person',
+          'Write Failure.md',
+        );
+        final file = File(path);
+        await file.parent.create(recursive: true);
+        await file.writeAsString(
+          EntityJournalParser.serialize(
+            entityType: EntityAnchorType.person,
+            entityId: 'pe_u_writefail01',
+            title: 'Write Failure',
+            body: 'body',
+          ),
+        );
+        final failing = EntityPathIndexService(
+          atomicWrite: DerivedIndexAtomicWrite(
+            beforeReplace: (_) async {
+              throw StateError('sensitive injected detail');
+            },
+          ),
+        );
+
+        final result = await failing.upsertMarkdownFileDetailed(
+          vaultPath: tempDir.path,
+          absolutePath: path,
+        );
+
+        expect(result.succeeded, isFalse);
+        expect(result.partialSuccess, isFalse);
+        expect(result.writeApplied, isFalse);
+        expect(result.writeFailure, isA<StateError>());
+        expect(result.issues.single.errorCode, 'index_write_failed');
+        expect(result.issues.single.diagnostic, 'StateError');
+        expect(result.toJson().toString(), isNot(contains('sensitive')));
+      },
+    );
   });
 
   group('EntityVaultStore title rename', () {

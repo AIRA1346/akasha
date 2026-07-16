@@ -370,6 +370,70 @@ void main() {
     },
   );
 
+  test('rebuildAll preserves Entity locator partial diagnostics', () async {
+    final good = File(
+      p.join(vaultDir.path, 'entities', 'person', 'pe_u_partialgood.md'),
+    );
+    final bad = File(
+      p.join(vaultDir.path, 'entities', 'person', 'pe_u_partialbad.md'),
+    );
+    await good.parent.create(recursive: true);
+    await good.writeAsString(
+      EntityJournalParser.serialize(
+        entityType: EntityAnchorType.person,
+        entityId: 'pe_u_partialgood',
+        title: 'Partial Good',
+        body: 'body',
+      ),
+    );
+    await bad.writeAsString('---\nrecord_kind: entityJournal\nbroken: [\n');
+
+    final result = await manager.rebuildAll(vaultPath: vaultDir.path);
+    final entityEntry = result.entry(ArchiveIndexManager.entityPathIndexName)!;
+
+    expect(result.succeeded, isFalse);
+    expect(entityEntry.status, ArchiveIndexRebuildStatus.partial);
+    expect(entityEntry.stats['entities'], 1);
+    expect(
+      entityEntry.stats['malformedPaths'],
+      contains('entities/person/pe_u_partialbad.md'),
+    );
+    final issues = entityEntry.stats['issues'] as List<dynamic>;
+    expect(
+      issues.map((issue) => (issue as Map<String, dynamic>)['code']),
+      contains('frontmatter_invalid'),
+    );
+    expect(await bad.exists(), isTrue);
+  });
+
+  test('incremental malformed Entity locator result is partial', () async {
+    final bad = File(
+      p.join(vaultDir.path, 'entities', 'person', 'pe_u_incrementbad.md'),
+    );
+    await bad.parent.create(recursive: true);
+    await bad.writeAsString('---\nrecord_kind: entityJournal\nbroken: [\n');
+
+    final result = await manager.updateChangedRecord(
+      vaultPath: vaultDir.path,
+      absolutePath: bad.path,
+    );
+    final entityEntry = result.entry(ArchiveIndexManager.entityPathIndexName)!;
+
+    expect(result.succeeded, isFalse);
+    expect(entityEntry.status, ArchiveIndexRebuildStatus.partial);
+    expect(
+      entityEntry.stats['skippedPath'],
+      'entities/person/pe_u_incrementbad.md',
+    );
+    expect(
+      (entityEntry.stats['issues'] as List<dynamic>).map(
+        (issue) => (issue as Map<String, dynamic>)['code'],
+      ),
+      contains('frontmatter_invalid'),
+    );
+    expect(await bad.exists(), isTrue);
+  });
+
   test('updateChangedRecord rejects paths outside the vault', () async {
     final outsideDir = await Directory.systemTemp.createTemp(
       'akasha_index_outside_',

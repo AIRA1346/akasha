@@ -14,10 +14,16 @@ import 'vault_trash_service.dart';
 
 /// `vault/timeline/` 쓰기·삭제 — Phase 4.2.
 class TimelineVaultStore {
-  const TimelineVaultStore({TimelineVaultLoader? loader})
-    : _loader = loader ?? const TimelineVaultLoader();
+  const TimelineVaultStore({
+    TimelineVaultLoader? loader,
+    ArchiveIndexManager? archiveIndex,
+  }) : _loader = loader ?? const TimelineVaultLoader(),
+       _archiveIndex = archiveIndex;
 
   final TimelineVaultLoader _loader;
+  final ArchiveIndexManager? _archiveIndex;
+
+  ArchiveIndexManager get _indexes => _archiveIndex ?? ArchiveIndexManager();
 
   /// `tl_{yyyyMMdd}_{hex6}` — vault 내 안정 ID.
   static String generateRecordId([DateTime? at]) {
@@ -38,6 +44,20 @@ class TimelineVaultStore {
   }
 
   Future<TimelineEntry> save({
+    required String vaultPath,
+    required ArchiveRecord record,
+    required String body,
+  }) async {
+    final result = await saveWithIndexResult(
+      vaultPath: vaultPath,
+      record: record,
+      body: body,
+    );
+    return result.entry;
+  }
+
+  Future<({TimelineEntry entry, ArchiveIndexRebuildResult indexResult})>
+  saveWithIndexResult({
     required String vaultPath,
     required ArchiveRecord record,
     required String body,
@@ -138,21 +158,28 @@ class TimelineVaultStore {
       recordMetadata: recordMetadata,
       openedRevision: writeResult.newRevision,
     );
-    await ArchiveIndexManager().updateChangedRecord(
+    final indexResult = await _indexes.updateChangedRecord(
       vaultPath: vaultPath,
       absolutePath: targetPath,
     );
-    return entry;
+    return (entry: entry, indexResult: indexResult);
   }
 
   Future<void> delete({
     required String vaultPath,
     required String recordId,
   }) async {
+    await deleteWithIndexResult(vaultPath: vaultPath, recordId: recordId);
+  }
+
+  Future<ArchiveIndexRebuildResult?> deleteWithIndexResult({
+    required String vaultPath,
+    required String recordId,
+  }) async {
     if (vaultPath.isEmpty) {
       throw StateError('Vault path not set');
     }
-    if (recordId.trim().isEmpty) return;
+    if (recordId.trim().isEmpty) return null;
 
     final entries = await _loader.loadFromVault(vaultPath);
     for (final entry in entries) {
@@ -163,14 +190,15 @@ class TimelineVaultStore {
           vaultPath: vaultPath,
           absolutePath: entry.storagePath,
         );
-        await ArchiveIndexManager().removeRecord(
+        return _indexes.removeRecord(
           vaultPath: vaultPath,
           absolutePath: entry.storagePath,
           sourceRecordId: entry.recordId,
         );
       }
-      return;
+      return null;
     }
+    return null;
   }
 
   Future<TimelineEntry?> _findByRecordId(

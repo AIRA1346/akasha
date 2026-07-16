@@ -1,16 +1,22 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:akasha/core/archiving/archive_record.dart';
+import 'package:akasha/core/archiving/record_kind.dart';
 import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/core/ports/user_catalog_port.dart';
 import 'package:akasha/core/ports/vault_change.dart';
+import 'package:akasha/data/adapters/vault_archive_record_adapter.dart';
 import 'package:akasha/models/akasha_item.dart';
+import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/screens/home/coordinators/home_vault_coordinator.dart';
 import 'package:akasha/services/archive_index_manager.dart';
 import 'package:akasha/services/entity_path_index_service.dart';
 import 'package:akasha/services/entity_vault_store.dart';
 import 'package:akasha/services/file_service.dart';
+import 'package:akasha/services/journal_vault_store.dart';
+import 'package:akasha/services/timeline_vault_store.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -164,11 +170,10 @@ void main() {
         ),
         body: 'body',
       );
-      final savedPath =
-          (await EntityPathIndexService().lookupAbsolutePath(
-            vault.path,
-            'pe_u_flagdel',
-          ))!;
+      final savedPath = (await EntityPathIndexService().lookupAbsolutePath(
+        vault.path,
+        'pe_u_flagdel',
+      ))!;
       counter.reset();
       lastBatch = null;
       rebuilds = 0;
@@ -186,23 +191,26 @@ void main() {
       expect(rebuilds, 1);
     });
 
-    test('derivedIndexesUpdated true skips Home mutation but rebuilds', () async {
-      counter.reset();
-      rebuilds = 0;
-      await coordinator.applyVaultChange(
-        VaultChangeBatch(
-          changes: [
-            VaultPathChange(
-              relativePath: 'entities/person/pe_u_skip.md',
-              kind: VaultPathChangeKind.upsert,
-              derivedIndexesUpdated: true,
-            ),
-          ],
-        ),
-      );
-      expect(counter.updateChangedRecordCalls, 0);
-      expect(rebuilds, 1);
-    });
+    test(
+      'derivedIndexesUpdated true skips Home mutation but rebuilds',
+      () async {
+        counter.reset();
+        rebuilds = 0;
+        await coordinator.applyVaultChange(
+          VaultChangeBatch(
+            changes: [
+              VaultPathChange(
+                relativePath: 'entities/person/pe_u_skip.md',
+                kind: VaultPathChangeKind.upsert,
+                derivedIndexesUpdated: true,
+              ),
+            ],
+          ),
+        );
+        expect(counter.updateChangedRecordCalls, 0);
+        expect(rebuilds, 1);
+      },
+    );
 
     test('false/default event still mutates indexes in Home', () async {
       await store.saveCatalogEntity(
@@ -297,6 +305,169 @@ void main() {
     });
   });
 
+  group('Work/Journal/Timeline derivedIndexesUpdated + Home', () {
+    late Directory vault;
+    late FakeVaultPort fakeVault;
+    late _CountingArchiveIndexManager counter;
+    late HomeVaultCoordinator coordinator;
+
+    setUp(() async {
+      vault = await Directory.systemTemp.createTemp('akasha_record_idx_flag_');
+      fakeVault = FakeVaultPort();
+      await fakeVault.setVaultPath(vault.path);
+      counter = _CountingArchiveIndexManager();
+      coordinator = HomeVaultCoordinator(
+        vault: fakeVault,
+        registry: FakeRegistryPort(),
+        userCatalog: FakeUserCatalogPort(),
+        isMounted: () => true,
+        scheduleRebuild: (fn) => fn(),
+        onVaultItemsSynced: (_) {},
+        prefetchRegistry: () async {},
+        archiveIndexManager: counter,
+      );
+    });
+
+    tearDown(() async {
+      AkashaFileService().setArchiveIndexManagerForTesting(null);
+      await AkashaFileService().setVaultPath('');
+      if (await vault.exists()) await vault.delete(recursive: true);
+    });
+
+    test('Work save + Home apply updates derived indexes once', () async {
+      final service = AkashaFileService();
+      await service.setVaultPath(vault.path);
+      service.setArchiveIndexManagerForTesting(counter);
+      final nextBatch = service.onVaultChanges.firstWhere(
+        (batch) => batch.hasPrecisePaths,
+      );
+
+      await service.saveItem(
+        ContentItem(
+          workId: 'wk_u_idxflag01',
+          title: 'Work Flag',
+          category: MediaCategory.manga,
+          domain: AppDomain.subculture,
+        ),
+      );
+
+      expect(counter.updateChangedRecordCalls, 1);
+      final batch = await nextBatch;
+      expect(batch.changes.single.derivedIndexesUpdated, isTrue);
+
+      await coordinator.applyVaultChange(batch);
+      expect(counter.updateChangedRecordCalls, 1);
+    });
+
+    test('Journal save + Home apply updates derived indexes once', () async {
+      final adapter = VaultArchiveRecordAdapter(
+        vault: fakeVault,
+        journalStore: JournalVaultStore(archiveIndex: counter),
+      );
+      final nextBatch = fakeVault.onVaultChanges.firstWhere(
+        (batch) => batch.hasPrecisePaths,
+      );
+
+      await adapter.save(
+        ArchiveRecord(
+          recordId: 'jr_20260717_idxflag',
+          kind: RecordKind.freeformJournal,
+          title: 'Journal Flag',
+        ),
+        bodyMarkdown: 'body',
+      );
+
+      expect(counter.updateChangedRecordCalls, 1);
+      final batch = await nextBatch;
+      expect(batch.changes.single.derivedIndexesUpdated, isTrue);
+
+      await coordinator.applyVaultChange(batch);
+      expect(counter.updateChangedRecordCalls, 1);
+    });
+
+    test('Timeline save + Home apply updates derived indexes once', () async {
+      final adapter = VaultArchiveRecordAdapter(
+        vault: fakeVault,
+        timelineStore: TimelineVaultStore(archiveIndex: counter),
+      );
+      final nextBatch = fakeVault.onVaultChanges.firstWhere(
+        (batch) => batch.hasPrecisePaths,
+      );
+
+      await adapter.save(
+        ArchiveRecord(
+          recordId: 'tl_20260717_idxflag',
+          kind: RecordKind.timelineEntry,
+          title: 'Timeline Flag',
+          timeAnchor: DateTime(2026, 7, 17, 10),
+        ),
+        bodyMarkdown: 'body',
+      );
+
+      expect(counter.updateChangedRecordCalls, 1);
+      final batch = await nextBatch;
+      expect(batch.changes.single.derivedIndexesUpdated, isTrue);
+
+      await coordinator.applyVaultChange(batch);
+      expect(counter.updateChangedRecordCalls, 1);
+    });
+
+    test('failed Work pre-update stays false and Home retries', () async {
+      final service = AkashaFileService();
+      await service.setVaultPath(vault.path);
+      service.setArchiveIndexManagerForTesting(
+        _FailingUpdateArchiveIndexManager(),
+      );
+      final nextBatch = service.onVaultChanges.firstWhere(
+        (batch) => batch.hasPrecisePaths,
+      );
+
+      await service.saveItem(
+        ContentItem(
+          workId: 'wk_u_idxfail01',
+          title: 'Work Fallback',
+          category: MediaCategory.manga,
+          domain: AppDomain.subculture,
+        ),
+      );
+
+      final batch = await nextBatch;
+      expect(batch.changes.single.derivedIndexesUpdated, isFalse);
+      expect(counter.updateChangedRecordCalls, 0);
+
+      await coordinator.applyVaultChange(batch);
+      expect(counter.updateChangedRecordCalls, 1);
+    });
+
+    test('failed Journal pre-update stays false and Home retries', () async {
+      final adapter = VaultArchiveRecordAdapter(
+        vault: fakeVault,
+        journalStore: JournalVaultStore(
+          archiveIndex: _FailingUpdateArchiveIndexManager(),
+        ),
+      );
+      final nextBatch = fakeVault.onVaultChanges.firstWhere(
+        (batch) => batch.hasPrecisePaths,
+      );
+
+      await adapter.save(
+        ArchiveRecord(
+          recordId: 'jr_20260717_idxfail',
+          kind: RecordKind.freeformJournal,
+          title: 'Journal Fallback',
+        ),
+        bodyMarkdown: 'body',
+      );
+
+      final batch = await nextBatch;
+      expect(batch.changes.single.derivedIndexesUpdated, isFalse);
+      expect(counter.updateChangedRecordCalls, 0);
+
+      await coordinator.applyVaultChange(batch);
+      expect(counter.updateChangedRecordCalls, 1);
+    });
+  });
+
   group('Home debounce cross-batch coalesce', () {
     late FakeVaultPort fakeVault;
     late _CountingArchiveIndexManager counter;
@@ -321,16 +492,17 @@ void main() {
         prefetchRegistry: () async {},
         archiveIndexManager: counter,
       );
-      coordinator.bindVaultWatch(
-        onVaultChanged: coordinator.applyVaultChange,
-      );
+      coordinator.bindVaultWatch(onVaultChanged: coordinator.applyVaultChange);
     });
 
     tearDown(() {
       coordinator.dispose();
     });
 
-    Future<void> emitThenWait(List<VaultPathChange> first, List<VaultPathChange> second) async {
+    Future<void> emitThenWait(
+      List<VaultPathChange> first,
+      List<VaultPathChange> second,
+    ) async {
       await fakeVault.signalVaultChange(VaultChangeBatch(changes: first));
       await fakeVault.signalVaultChange(VaultChangeBatch(changes: second));
       await Future<void>.delayed(const Duration(milliseconds: 500));

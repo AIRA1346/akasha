@@ -17,7 +17,7 @@ import 'record_summary_index_service.dart';
 import 'taste_index_service.dart';
 import 'title_alias_index_service.dart';
 
-enum ArchiveIndexRebuildStatus { rebuilt, failed }
+enum ArchiveIndexRebuildStatus { rebuilt, partial, failed }
 
 class ArchiveIndexRebuildEntry {
   const ArchiveIndexRebuildEntry({
@@ -37,6 +37,7 @@ class ArchiveIndexRebuildEntry {
   final String? error;
 
   bool get succeeded => status == ArchiveIndexRebuildStatus.rebuilt;
+  bool get partial => status == ArchiveIndexRebuildStatus.partial;
 
   Map<String, dynamic> toJson() => {
     'indexName': indexName,
@@ -164,7 +165,7 @@ class ArchiveIndexManager {
           (await _recordPathIndex.rebuildFromVault(vaultPath)).toJson(),
     );
 
-    await _run(
+    await _runEntityPathMutation(
       entries,
       indexName: entityPathIndexName,
       outputPath: p.join(
@@ -172,10 +173,10 @@ class ArchiveIndexManager {
         EntityPathIndexService.indexDirName,
         EntityPathIndexService.indexFileName,
       ),
-      action: () async {
-        await _entityPathIndex.rebuildFromVault(vaultPath);
-        final paths = await _entityPathIndex.loadPaths(vaultPath);
-        return {'entities': paths.length};
+      action: () => _entityPathIndex.rebuildFromVaultDetailed(vaultPath),
+      statsFor: (result) => {
+        ...result.toJson(),
+        'entities': result.indexedEntries,
       },
     );
 
@@ -326,7 +327,7 @@ class ArchiveIndexManager {
       },
     );
 
-    await _run(
+    await _runEntityPathMutation(
       entries,
       indexName: entityPathIndexName,
       outputPath: p.join(
@@ -334,16 +335,14 @@ class ArchiveIndexManager {
         EntityPathIndexService.indexDirName,
         EntityPathIndexService.indexFileName,
       ),
-      action: () async {
-        final entityId = await _entityPathIndex.upsertMarkdownFile(
-          vaultPath: vaultPath,
-          absolutePath: absolutePath,
-        );
-        return {
-          'mode': 'incremental',
-          if (entityId != null && entityId.isNotEmpty) 'entityId': entityId,
-          'changedPath': _relativePath(vaultPath, absolutePath),
-        };
+      action: () => _entityPathIndex.upsertMarkdownFileDetailed(
+        vaultPath: vaultPath,
+        absolutePath: absolutePath,
+      ),
+      statsFor: (result) => {
+        ...result.toJson(),
+        'mode': 'incremental',
+        'changedPath': _relativePath(vaultPath, absolutePath),
       },
     );
 
@@ -630,6 +629,51 @@ class ArchiveIndexManager {
           durationMs: stopwatch.elapsedMilliseconds,
           outputPath: outputPath,
           stats: stats,
+        ),
+      );
+    } catch (error) {
+      stopwatch.stop();
+      entries.add(
+        ArchiveIndexRebuildEntry(
+          indexName: indexName,
+          status: ArchiveIndexRebuildStatus.failed,
+          durationMs: stopwatch.elapsedMilliseconds,
+          outputPath: outputPath,
+          error: error.toString(),
+        ),
+      );
+    }
+  }
+
+  Future<void> _runEntityPathMutation(
+    List<ArchiveIndexRebuildEntry> entries, {
+    required String indexName,
+    required String outputPath,
+    required Future<EntityPathIndexMutationResult> Function() action,
+    required Map<String, dynamic> Function(EntityPathIndexMutationResult result)
+    statsFor,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    try {
+      final result = await action();
+      stopwatch.stop();
+      final status = result.succeeded
+          ? ArchiveIndexRebuildStatus.rebuilt
+          : result.partialSuccess
+          ? ArchiveIndexRebuildStatus.partial
+          : ArchiveIndexRebuildStatus.failed;
+      entries.add(
+        ArchiveIndexRebuildEntry(
+          indexName: indexName,
+          status: status,
+          durationMs: stopwatch.elapsedMilliseconds,
+          outputPath: outputPath,
+          stats: statsFor(result),
+          error: switch (status) {
+            ArchiveIndexRebuildStatus.rebuilt => null,
+            ArchiveIndexRebuildStatus.partial => 'entity_path_index_partial',
+            ArchiveIndexRebuildStatus.failed => 'entity_path_index_failed',
+          },
         ),
       );
     } catch (error) {

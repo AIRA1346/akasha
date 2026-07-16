@@ -35,6 +35,7 @@ part 'file_service_bootstrap.dart';
 
 abstract class _AkashaFileServiceBase {
   String? _vaultPath;
+  ArchiveIndexManager? _archiveIndexManager;
   StreamController<void>? _vaultUpdateController;
   StreamController<VaultChangeBatch>? _vaultChangeController;
   StreamSubscription<FileSystemEvent>? _watcherSubscription;
@@ -73,6 +74,11 @@ class AkashaFileService extends _AkashaFileServiceBase
   static final AkashaFileService _instance = AkashaFileService._internal();
   factory AkashaFileService() => _instance;
   AkashaFileService._internal();
+
+  @visibleForTesting
+  void setArchiveIndexManagerForTesting(ArchiveIndexManager? manager) {
+    _archiveIndexManager = manager;
+  }
 
   /// 외부 편집 감지 폴링 간격 — directory watch 실패 시 fallback.
   static Duration vaultPollInterval = const Duration(seconds: 2);

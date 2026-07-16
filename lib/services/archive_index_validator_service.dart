@@ -162,6 +162,19 @@ class ArchiveIndexValidatorService {
       );
       for (final entry in rebuildResult.entries) {
         if (entry.succeeded) continue;
+        if (entry.partial) {
+          _addIssue(
+            issues,
+            severity: ArchiveIndexValidationSeverity.warning,
+            indexName: entry.indexName,
+            code: 'index_rebuild_partial',
+            message:
+                entry.error ?? 'Index rebuild completed with partial results.',
+            path: entry.outputPath,
+            details: entry.stats,
+          );
+          continue;
+        }
         _addIssue(
           issues,
           severity: ArchiveIndexValidationSeverity.error,
@@ -169,6 +182,7 @@ class ArchiveIndexValidatorService {
           code: 'index_rebuild_failed',
           message: entry.error ?? 'Index rebuild failed.',
           path: entry.outputPath,
+          details: entry.stats,
         );
       }
     }
@@ -303,10 +317,7 @@ class ArchiveIndexValidatorService {
     final entries = await _recordPathIndex.loadAllIdEntries(vaultPath);
     stats['recordPathIndexRecords'] = entries.length;
 
-    final sourceById = _groupBy(
-      source,
-      (record) => record.documentRecordId!,
-    );
+    final sourceById = _groupBy(source, (record) => record.documentRecordId!);
     final indexedById = _groupBy(entries, (entry) => entry.recordId);
     for (final entry in sourceById.entries) {
       final expectedPaths = entry.value

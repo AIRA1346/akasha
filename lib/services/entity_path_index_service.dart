@@ -3,15 +3,14 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-import '../core/archiving/entity_journal_entry.dart';
 import 'derived_index_atomic_write.dart';
 import 'entity_journal_parser.dart';
+import 'entity_vault_load_result.dart';
 
 /// `{vault}/.akasha/entity_path_index.json` — entity_id → vault 상대 경로.
 class EntityPathIndexService {
-  EntityPathIndexService({
-    DerivedIndexAtomicWrite? atomicWrite,
-  }) : atomicWrite = atomicWrite ?? const DerivedIndexAtomicWrite();
+  EntityPathIndexService({DerivedIndexAtomicWrite? atomicWrite})
+    : atomicWrite = atomicWrite ?? const DerivedIndexAtomicWrite();
 
   final DerivedIndexAtomicWrite atomicWrite;
 
@@ -21,6 +20,8 @@ class EntityPathIndexService {
 
   String _indexPath(String vaultPath) =>
       p.join(vaultPath, indexDirName, indexFileName);
+
+  File _indexFile(String vaultPath) => File(_indexPath(vaultPath));
 
   Future<bool> isAvailable(String vaultPath) async {
     final result = await loadPathsResult(vaultPath);
@@ -91,50 +92,136 @@ class EntityPathIndexService {
     if (entityId.isEmpty || absolutePath.isEmpty) return;
     if (!_isWithinVault(vaultPath, absolutePath)) return;
 
-    final paths = await loadPaths(vaultPath);
-    paths[entityId] = p.relative(absolutePath, from: vaultPath);
-    await _write(vaultPath, paths);
+    await atomicWrite.runExclusive(
+      target: _indexFile(vaultPath),
+      action: () async {
+        final paths = await loadPaths(vaultPath);
+        paths[entityId] = p.relative(absolutePath, from: vaultPath);
+        await _write(vaultPath, paths);
+      },
+    );
   }
 
   Future<String?> upsertMarkdownFile({
     required String vaultPath,
     required String absolutePath,
   }) async {
-    if (vaultPath.trim().isEmpty || absolutePath.trim().isEmpty) return null;
-    if (!_isWithinVault(vaultPath, absolutePath)) return null;
+    final result = await upsertMarkdownFileDetailed(
+      vaultPath: vaultPath,
+      absolutePath: absolutePath,
+    );
+    result.throwIfWriteFailed();
+    return result.entityId;
+  }
 
-    final file = File(absolutePath);
-    if (!await file.exists()) {
-      await removeByAbsolutePath(
-        vaultPath: vaultPath,
-        absolutePath: absolutePath,
+  /// Incrementally mutates the locator while preserving parse/write issues.
+  ///
+  /// Non-Entity Markdown is a successful skipped operation. A malformed file
+  /// under `entities/` is reported as partial even when stale locator cleanup
+  /// succeeds. The source Markdown itself is never changed or deleted.
+  Future<EntityPathIndexMutationResult> upsertMarkdownFileDetailed({
+    required String vaultPath,
+    required String absolutePath,
+  }) async {
+    if (vaultPath.trim().isEmpty ||
+        absolutePath.trim().isEmpty ||
+        !_isWithinVault(vaultPath, absolutePath)) {
+      return EntityPathIndexMutationResult(
+        operation: EntityPathIndexMutationOperation.skipped,
+        writeApplied: false,
+        skippedPath: absolutePath,
+        issues: [
+          EntityVaultLoadIssue(
+            relativePath: absolutePath,
+            errorCode: 'entity_path_invalid',
+            severity: EntityVaultIssueSeverity.error,
+          ),
+        ],
       );
-      return null;
     }
 
-    EntityJournalEntry? parsed;
+    final file = File(absolutePath);
+    final relativePath = _relativePath(vaultPath, absolutePath);
+    if (!await file.exists()) {
+      try {
+        final removed = await removeByAbsolutePath(
+          vaultPath: vaultPath,
+          absolutePath: absolutePath,
+        );
+        return EntityPathIndexMutationResult(
+          operation: EntityPathIndexMutationOperation.removed,
+          writeApplied: true,
+          entityId: removed,
+        );
+      } on Object catch (error, stack) {
+        return _writeFailureResult(
+          operation: EntityPathIndexMutationOperation.removed,
+          path: relativePath,
+          error: error,
+          stack: stack,
+        );
+      }
+    }
+
+    EntityJournalParseResult parsed;
     try {
-      parsed = EntityJournalParser.parse(
+      parsed = EntityJournalParser.parseDetailed(
         await file.readAsString(),
         file.path,
       );
-    } catch (_) {
-      parsed = null;
-    }
-    if (parsed == null) {
-      await removeByAbsolutePath(
+    } on Object {
+      return _skipAndRemoveWithIssue(
         vaultPath: vaultPath,
         absolutePath: absolutePath,
+        issue: EntityVaultLoadIssue(
+          relativePath: relativePath,
+          errorCode: 'io_read_failed',
+          severity: EntityVaultIssueSeverity.error,
+        ),
       );
-      return null;
     }
 
-    await upsert(
-      vaultPath: vaultPath,
-      entityId: parsed.entityId,
-      absolutePath: file.path,
-    );
-    return parsed.entityId;
+    final parseIssue = parsed.issue;
+    final entry = parsed.entry;
+    if (parseIssue != null || entry == null) {
+      final issue = _normalizeIssue(
+        parseIssue ??
+            EntityVaultLoadIssue(
+              relativePath: relativePath,
+              errorCode: 'entity_parse_empty',
+              severity: EntityVaultIssueSeverity.error,
+            ),
+        vaultPath: vaultPath,
+        absolutePath: absolutePath,
+        promoteIgnored: _isEntityMarkdownPath(vaultPath, absolutePath),
+      );
+      return _skipAndRemoveWithIssue(
+        vaultPath: vaultPath,
+        absolutePath: absolutePath,
+        issue: issue,
+      );
+    }
+
+    try {
+      await upsert(
+        vaultPath: vaultPath,
+        entityId: entry.entityId,
+        absolutePath: file.path,
+      );
+      return EntityPathIndexMutationResult(
+        operation: EntityPathIndexMutationOperation.upserted,
+        writeApplied: true,
+        entityId: entry.entityId,
+      );
+    } on Object catch (error, stack) {
+      return _writeFailureResult(
+        operation: EntityPathIndexMutationOperation.upserted,
+        path: relativePath,
+        entityId: entry.entityId,
+        error: error,
+        stack: stack,
+      );
+    }
   }
 
   Future<void> remove({
@@ -143,9 +230,14 @@ class EntityPathIndexService {
   }) async {
     if (entityId.isEmpty) return;
 
-    final paths = await loadPaths(vaultPath);
-    if (paths.remove(entityId) == null) return;
-    await _write(vaultPath, paths);
+    await atomicWrite.runExclusive(
+      target: _indexFile(vaultPath),
+      action: () async {
+        final paths = await loadPaths(vaultPath);
+        if (paths.remove(entityId) == null) return;
+        await _write(vaultPath, paths);
+      },
+    );
   }
 
   Future<String?> removeByAbsolutePath({
@@ -155,17 +247,22 @@ class EntityPathIndexService {
     if (vaultPath.trim().isEmpty || absolutePath.trim().isEmpty) return null;
     if (!_isWithinVault(vaultPath, absolutePath)) return null;
 
-    final relative = p.relative(absolutePath, from: vaultPath);
-    final paths = await loadPaths(vaultPath);
-    String? removedEntityId;
-    paths.removeWhere((entityId, indexedPath) {
-      final matches = p.normalize(indexedPath) == p.normalize(relative);
-      if (matches) removedEntityId = entityId;
-      return matches;
-    });
-    if (removedEntityId == null) return null;
-    await _write(vaultPath, paths);
-    return removedEntityId;
+    return atomicWrite.runExclusive(
+      target: _indexFile(vaultPath),
+      action: () async {
+        final relative = p.relative(absolutePath, from: vaultPath);
+        final paths = await loadPaths(vaultPath);
+        String? removedEntityId;
+        paths.removeWhere((entityId, indexedPath) {
+          final matches = p.normalize(indexedPath) == p.normalize(relative);
+          if (matches) removedEntityId = entityId;
+          return matches;
+        });
+        if (removedEntityId == null) return null;
+        await _write(vaultPath, paths);
+        return removedEntityId;
+      },
+    );
   }
 
   /// Rebuilds when missing or corrupt; leaves a healthy index alone.
@@ -175,29 +272,185 @@ class EntityPathIndexService {
   }
 
   Future<void> rebuildFromVault(String vaultPath) async {
-    final paths = <String, String>{};
-    final root = Directory(
+    final result = await rebuildFromVaultDetailed(vaultPath);
+    result.throwIfWriteFailed();
+  }
+
+  /// Rebuilds every valid Entity locator and returns all per-file issues.
+  Future<EntityPathIndexMutationResult> rebuildFromVaultDetailed(
+    String vaultPath,
+  ) {
+    return atomicWrite.runExclusive(
+      target: _indexFile(vaultPath),
+      action: () async {
+        final paths = <String, String>{};
+        final issues = <EntityVaultLoadIssue>[];
+        final root = Directory(
+          p.join(vaultPath, EntityJournalParser.entitiesDirName),
+        );
+        if (await root.exists()) {
+          await for (final entity in root.list(
+            recursive: true,
+            followLinks: false,
+          )) {
+            if (entity is! File || !entity.path.endsWith('.md')) continue;
+            final relativePath = _relativePath(vaultPath, entity.path);
+            String content;
+            try {
+              content = await entity.readAsString();
+            } on Object {
+              issues.add(
+                EntityVaultLoadIssue(
+                  relativePath: relativePath,
+                  errorCode: 'io_read_failed',
+                  severity: EntityVaultIssueSeverity.error,
+                ),
+              );
+              continue;
+            }
+
+            final parsed = EntityJournalParser.parseDetailed(
+              content,
+              entity.path,
+            );
+            final parseIssue = parsed.issue;
+            if (parseIssue != null) {
+              issues.add(
+                _normalizeIssue(
+                  parseIssue,
+                  vaultPath: vaultPath,
+                  absolutePath: entity.path,
+                  promoteIgnored: true,
+                ),
+              );
+              continue;
+            }
+            final entry = parsed.entry;
+            if (entry == null) continue;
+            paths[entry.entityId] = p.relative(entity.path, from: vaultPath);
+          }
+        }
+        try {
+          await _write(vaultPath, paths);
+          return EntityPathIndexMutationResult(
+            operation: EntityPathIndexMutationOperation.rebuilt,
+            writeApplied: true,
+            indexedEntries: paths.length,
+            issues: List.unmodifiable(issues),
+          );
+        } on Object catch (error, stack) {
+          return EntityPathIndexMutationResult(
+            operation: EntityPathIndexMutationOperation.rebuilt,
+            writeApplied: false,
+            indexedEntries: paths.length,
+            issues: [
+              ...issues,
+              EntityVaultLoadIssue(
+                relativePath: _relativePath(
+                  vaultPath,
+                  _indexFile(vaultPath).path,
+                ),
+                errorCode: 'index_write_failed',
+                severity: EntityVaultIssueSeverity.error,
+                diagnostic: error.runtimeType.toString(),
+              ),
+            ],
+            writeFailure: error,
+            writeFailureStack: stack,
+          );
+        }
+      },
+    );
+  }
+
+  Future<EntityPathIndexMutationResult> _skipAndRemoveWithIssue({
+    required String vaultPath,
+    required String absolutePath,
+    required EntityVaultLoadIssue issue,
+  }) async {
+    try {
+      final removed = await removeByAbsolutePath(
+        vaultPath: vaultPath,
+        absolutePath: absolutePath,
+      );
+      return EntityPathIndexMutationResult(
+        operation: EntityPathIndexMutationOperation.skipped,
+        writeApplied: true,
+        entityId: removed,
+        skippedPath: _relativePath(vaultPath, absolutePath),
+        issues: [issue],
+      );
+    } on Object catch (error, stack) {
+      return EntityPathIndexMutationResult(
+        operation: EntityPathIndexMutationOperation.skipped,
+        writeApplied: false,
+        skippedPath: _relativePath(vaultPath, absolutePath),
+        issues: [
+          issue,
+          EntityVaultLoadIssue(
+            relativePath: _relativePath(vaultPath, absolutePath),
+            errorCode: 'index_write_failed',
+            severity: EntityVaultIssueSeverity.error,
+            diagnostic: error.runtimeType.toString(),
+          ),
+        ],
+        writeFailure: error,
+        writeFailureStack: stack,
+      );
+    }
+  }
+
+  EntityPathIndexMutationResult _writeFailureResult({
+    required EntityPathIndexMutationOperation operation,
+    required String path,
+    required Object error,
+    required StackTrace stack,
+    String? entityId,
+  }) {
+    return EntityPathIndexMutationResult(
+      operation: operation,
+      writeApplied: false,
+      entityId: entityId,
+      skippedPath: path,
+      issues: [
+        EntityVaultLoadIssue(
+          relativePath: path,
+          errorCode: 'index_write_failed',
+          severity: EntityVaultIssueSeverity.error,
+          diagnostic: error.runtimeType.toString(),
+        ),
+      ],
+      writeFailure: error,
+      writeFailureStack: stack,
+    );
+  }
+
+  static EntityVaultLoadIssue _normalizeIssue(
+    EntityVaultLoadIssue issue, {
+    required String vaultPath,
+    required String absolutePath,
+    required bool promoteIgnored,
+  }) {
+    return EntityVaultLoadIssue(
+      relativePath: _relativePath(vaultPath, absolutePath),
+      errorCode: issue.errorCode,
+      severity:
+          promoteIgnored && issue.severity == EntityVaultIssueSeverity.ignored
+          ? EntityVaultIssueSeverity.warning
+          : issue.severity,
+      diagnostic: issue.diagnostic,
+    );
+  }
+
+  static bool _isEntityMarkdownPath(String vaultPath, String absolutePath) {
+    final entitiesRoot = p.normalize(
       p.join(vaultPath, EntityJournalParser.entitiesDirName),
     );
-    if (await root.exists()) {
-      await for (final entity in root.list(
-        recursive: true,
-        followLinks: false,
-      )) {
-        if (entity is! File || !entity.path.endsWith('.md')) continue;
-        try {
-          final parsed = EntityJournalParser.parse(
-            await entity.readAsString(),
-            entity.path,
-          );
-          if (parsed == null) continue;
-          paths[parsed.entityId] = p.relative(entity.path, from: vaultPath);
-        } catch (_) {
-          // skip malformed
-        }
-      }
-    }
-    await _write(vaultPath, paths);
+    return p.isWithin(entitiesRoot, p.normalize(absolutePath));
+  }
+
+  static String _relativePath(String vaultPath, String absolutePath) {
+    return p.relative(absolutePath, from: vaultPath).replaceAll('\\', '/');
   }
 
   Future<void> _write(String vaultPath, Map<String, String> paths) async {
@@ -207,7 +460,7 @@ class EntityPathIndexService {
       'paths': paths,
     };
     await atomicWrite.writeText(
-      target: File(_indexPath(vaultPath)),
+      target: _indexFile(vaultPath),
       content: const JsonEncoder.withIndent('  ').convert(payload),
     );
   }
@@ -231,6 +484,75 @@ class EntityPathIndexService {
     if (p.isAbsolute(relative)) return false;
     return relative != '..' && !relative.startsWith('..${p.separator}');
   }
+}
+
+enum EntityPathIndexMutationOperation { upserted, removed, skipped, rebuilt }
+
+class EntityPathIndexMutationResult {
+  const EntityPathIndexMutationResult({
+    required this.operation,
+    required this.writeApplied,
+    this.entityId,
+    this.skippedPath,
+    this.indexedEntries = 0,
+    this.issues = const [],
+    this.writeFailure,
+    this.writeFailureStack,
+  });
+
+  final EntityPathIndexMutationOperation operation;
+  final bool writeApplied;
+  final String? entityId;
+  final String? skippedPath;
+  final int indexedEntries;
+  final List<EntityVaultLoadIssue> issues;
+
+  /// Preserved only so compatibility wrappers can rethrow write failures.
+  /// It is intentionally omitted from diagnostics and serialization.
+  final Object? writeFailure;
+  final StackTrace? writeFailureStack;
+
+  bool get hasReportableIssues =>
+      issues.any((issue) => issue.severity != EntityVaultIssueSeverity.ignored);
+
+  bool get succeeded => writeApplied && !hasReportableIssues;
+
+  bool get partialSuccess => writeApplied && hasReportableIssues;
+
+  List<String> get malformedPaths => issues
+      .where((issue) => issue.severity != EntityVaultIssueSeverity.ignored)
+      .map((issue) => issue.relativePath)
+      .toSet()
+      .toList(growable: false);
+
+  void throwIfWriteFailed() {
+    final failure = writeFailure;
+    if (failure == null) return;
+    Error.throwWithStackTrace(failure, writeFailureStack ?? StackTrace.current);
+  }
+
+  Map<String, dynamic> toJson() => {
+    'operation': operation.name,
+    'succeeded': succeeded,
+    'partialSuccess': partialSuccess,
+    'writeApplied': writeApplied,
+    'indexedEntries': indexedEntries,
+    if (entityId != null && entityId!.isNotEmpty) 'entityId': entityId,
+    if (skippedPath != null && skippedPath!.isNotEmpty)
+      'skippedPath': skippedPath,
+    if (malformedPaths.isNotEmpty) 'malformedPaths': malformedPaths,
+    if (issues.isNotEmpty)
+      'issues': [
+        for (final issue in issues)
+          {
+            'path': issue.relativePath,
+            'code': issue.errorCode,
+            'severity': issue.severity.name,
+            if (issue.diagnostic != null && issue.diagnostic!.isNotEmpty)
+              'diagnostic': issue.diagnostic,
+          },
+      ],
+  };
 }
 
 class EntityPathIndexLoadResult {

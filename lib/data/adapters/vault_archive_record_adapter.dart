@@ -134,7 +134,7 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
     }
 
     if (record.kind == RecordKind.timelineEntry) {
-      final saved = await _timelineStore.save(
+      final saved = await _timelineStore.saveWithIndexResult(
         vaultPath: vaultPath,
         record: record,
         body: bodyMarkdown ?? '',
@@ -142,14 +142,15 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
       await _vault.signalVaultChange(
         VaultChangeBatch.fromAbsolutePaths(
           vaultPath: vaultPath,
-          upsertedPaths: [saved.storagePath],
+          upsertedPaths: [saved.entry.storagePath],
+          derivedIndexesUpdated: saved.indexResult.succeeded,
         ),
       );
       return;
     }
 
     if (record.kind == RecordKind.freeformJournal) {
-      final saved = await _journalStore.save(
+      final saved = await _journalStore.saveWithIndexResult(
         vaultPath: vaultPath,
         record: record,
         body: bodyMarkdown ?? '',
@@ -157,7 +158,8 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
       await _vault.signalVaultChange(
         VaultChangeBatch.fromAbsolutePaths(
           vaultPath: vaultPath,
-          upsertedPaths: [saved.storagePath],
+          upsertedPaths: [saved.entry.storagePath],
+          derivedIndexesUpdated: saved.indexResult.succeeded,
         ),
       );
       return;
@@ -181,21 +183,39 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
     if (existing == null) return;
 
     if (existing.kind == RecordKind.timelineEntry) {
-      await _timelineStore.delete(vaultPath: vaultPath, recordId: recordId);
-      await _signalDeletedRecordPath(vaultPath, existing.storagePath);
+      final indexResult = await _timelineStore.deleteWithIndexResult(
+        vaultPath: vaultPath,
+        recordId: recordId,
+      );
+      await _signalDeletedRecordPath(
+        vaultPath,
+        existing.storagePath,
+        derivedIndexesUpdated: indexResult?.succeeded ?? false,
+      );
       return;
     }
 
     if (existing.kind == RecordKind.freeformJournal) {
-      await _journalStore.delete(vaultPath: vaultPath, recordId: recordId);
-      await _signalDeletedRecordPath(vaultPath, existing.storagePath);
+      final indexResult = await _journalStore.deleteWithIndexResult(
+        vaultPath: vaultPath,
+        recordId: recordId,
+      );
+      await _signalDeletedRecordPath(
+        vaultPath,
+        existing.storagePath,
+        derivedIndexesUpdated: indexResult?.succeeded ?? false,
+      );
       return;
     }
 
     throw UnsupportedError('timeline/journal only; workJournal via VaultPort');
   }
 
-  Future<void> _signalDeletedRecordPath(String vaultPath, String? storagePath) {
+  Future<void> _signalDeletedRecordPath(
+    String vaultPath,
+    String? storagePath, {
+    required bool derivedIndexesUpdated,
+  }) {
     if (storagePath == null || storagePath.isEmpty) {
       return _vault.signalVaultChanged();
     }
@@ -203,6 +223,7 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
       VaultChangeBatch.fromAbsolutePaths(
         vaultPath: vaultPath,
         deletedPaths: [storagePath],
+        derivedIndexesUpdated: derivedIndexesUpdated,
       ),
     );
   }

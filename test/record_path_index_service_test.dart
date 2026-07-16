@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -106,29 +107,32 @@ void main() {
     );
   });
 
-  test('missing target + valid bak restores without Markdown rebuild', () async {
-    final seed = const RecordPathIndexService();
-    final file = File(p.join(vault.path, 'journals', 'source.md'));
-    await file.parent.create(recursive: true);
-    await file.writeAsString(_journal(recordId: 'jr_bak_restore001'));
-    await seed.rebuildFromVault(vault.path);
+  test(
+    'missing target + valid bak restores without Markdown rebuild',
+    () async {
+      final seed = const RecordPathIndexService();
+      final file = File(p.join(vault.path, 'journals', 'source.md'));
+      await file.parent.create(recursive: true);
+      await file.writeAsString(_journal(recordId: 'jr_bak_restore001'));
+      await seed.rebuildFromVault(vault.path);
 
-    final shard = _idShardFile(vault.path, 'jr_bak_restore001');
-    final good = await shard.readAsString();
-    await shard.rename('${shard.path}.bak');
-    expect(await shard.exists(), isFalse);
+      final shard = _idShardFile(vault.path, 'jr_bak_restore001');
+      final good = await shard.readAsString();
+      await shard.rename('${shard.path}.bak');
+      expect(await shard.exists(), isFalse);
 
-    // Delete Markdown so a full rebuild could not recreate this shard.
-    await file.delete();
+      // Delete Markdown so a full rebuild could not recreate this shard.
+      await file.delete();
 
-    final lookup = await seed.lookup(vault.path, 'jr_bak_restore001');
-    expect(lookup.isCorrupt, isFalse);
-    expect(lookup.isFound, isTrue);
-    expect(lookup.relativePath, 'journals/source.md');
-    expect(await shard.exists(), isTrue);
-    expect(await shard.readAsString(), good);
-    expect(await File('${shard.path}.bak').exists(), isFalse);
-  });
+      final lookup = await seed.lookup(vault.path, 'jr_bak_restore001');
+      expect(lookup.isCorrupt, isFalse);
+      expect(lookup.isFound, isTrue);
+      expect(lookup.relativePath, 'journals/source.md');
+      expect(await shard.exists(), isTrue);
+      expect(await shard.readAsString(), good);
+      expect(await File('${shard.path}.bak').exists(), isFalse);
+    },
+  );
 
   test('corrupt target + valid bak restores from bak', () async {
     final index = const RecordPathIndexService();
@@ -189,10 +193,7 @@ void main() {
       isFalse,
     );
     await index.rebuildFromVault(vault.path);
-    expect(
-      (await index.lookup(vault.path, 'jr_stale_tmp001')).isFound,
-      isTrue,
-    );
+    expect((await index.lookup(vault.path, 'jr_stale_tmp001')).isFound, isTrue);
   });
 
   test('valid target + stale tmp keeps target and cleans tmp', () async {
@@ -298,6 +299,144 @@ void main() {
       isTrue,
     );
   });
+
+  test('concurrent upserts preserve both record locator entries', () async {
+    final firstReachedReplace = Completer<void>();
+    final releaseFirst = Completer<void>();
+    var blocked = false;
+    final first = RecordPathIndexService(
+      atomicWrite: DerivedIndexAtomicWrite(
+        beforeReplace: (_) async {
+          if (blocked) return;
+          blocked = true;
+          firstReachedReplace.complete();
+          await releaseFirst.future;
+        },
+      ),
+    );
+    const second = RecordPathIndexService();
+    final firstFile = File(p.join(vault.path, 'journals', 'concurrent-1.md'));
+    final secondFile = File(p.join(vault.path, 'journals', 'concurrent-2.md'));
+    await firstFile.parent.create(recursive: true);
+    await firstFile.writeAsString(_journal(recordId: 'jr_concurrent001'));
+    await secondFile.writeAsString(_journal(recordId: 'jr_concurrent002'));
+
+    final firstMutation = first.upsertMarkdownFile(
+      vaultPath: vault.path,
+      absolutePath: firstFile.path,
+    );
+    await firstReachedReplace.future;
+    final secondMutation = second.upsertMarkdownFile(
+      vaultPath: vault.path,
+      absolutePath: secondFile.path,
+    );
+
+    releaseFirst.complete();
+    await Future.wait([firstMutation, secondMutation]);
+
+    expect(
+      (await second.lookup(vault.path, 'jr_concurrent001')).isFound,
+      isTrue,
+    );
+    expect(
+      (await second.lookup(vault.path, 'jr_concurrent002')).isFound,
+      isTrue,
+    );
+    await _expectAllIndexJsonParsable(vault.path);
+  });
+
+  test(
+    'same record id concurrent upserts preserve deterministic duplicates',
+    () async {
+      final firstReachedReplace = Completer<void>();
+      final releaseFirst = Completer<void>();
+      var blocked = false;
+      final first = RecordPathIndexService(
+        atomicWrite: DerivedIndexAtomicWrite(
+          beforeReplace: (_) async {
+            if (blocked) return;
+            blocked = true;
+            firstReachedReplace.complete();
+            await releaseFirst.future;
+          },
+        ),
+      );
+      const second = RecordPathIndexService();
+      final firstFile = File(p.join(vault.path, 'journals', 'same-1.md'));
+      final secondFile = File(p.join(vault.path, 'journals', 'same-2.md'));
+      await firstFile.parent.create(recursive: true);
+      await firstFile.writeAsString(_journal(recordId: 'jr_same_concurrent'));
+      await secondFile.writeAsString(_journal(recordId: 'jr_same_concurrent'));
+
+      final firstMutation = first.upsertMarkdownFile(
+        vaultPath: vault.path,
+        absolutePath: firstFile.path,
+      );
+      await firstReachedReplace.future;
+      final secondMutation = second.upsertMarkdownFile(
+        vaultPath: vault.path,
+        absolutePath: secondFile.path,
+      );
+
+      releaseFirst.complete();
+      await Future.wait([firstMutation, secondMutation]);
+
+      final lookup = await second.lookup(vault.path, 'jr_same_concurrent');
+      expect(lookup.isAmbiguous, isTrue);
+      expect(
+        lookup.entries.map((entry) => entry.relativePath),
+        orderedEquals(['journals/same-1.md', 'journals/same-2.md']),
+      );
+      await _expectAllIndexJsonParsable(vault.path);
+    },
+  );
+
+  test('queued record upsert then delete leaves valid locator JSON', () async {
+    final firstReachedReplace = Completer<void>();
+    final releaseFirst = Completer<void>();
+    var blocked = false;
+    final first = RecordPathIndexService(
+      atomicWrite: DerivedIndexAtomicWrite(
+        beforeReplace: (_) async {
+          if (blocked) return;
+          blocked = true;
+          firstReachedReplace.complete();
+          await releaseFirst.future;
+        },
+      ),
+    );
+    const second = RecordPathIndexService();
+    final file = File(p.join(vault.path, 'journals', 'upsert-delete.md'));
+    await file.parent.create(recursive: true);
+    await file.writeAsString(_journal(recordId: 'jr_upsert_delete'));
+
+    final upsert = first.upsertMarkdownFile(
+      vaultPath: vault.path,
+      absolutePath: file.path,
+    );
+    await firstReachedReplace.future;
+    final remove = second.removeByAbsolutePath(
+      vaultPath: vault.path,
+      absolutePath: file.path,
+    );
+
+    releaseFirst.complete();
+    await upsert;
+    expect(await remove, 'jr_upsert_delete');
+    expect(
+      (await second.lookup(vault.path, 'jr_upsert_delete')).entries,
+      isEmpty,
+    );
+    await _expectAllIndexJsonParsable(vault.path);
+  });
+}
+
+Future<void> _expectAllIndexJsonParsable(String vaultPath) async {
+  final root = Directory(p.join(vaultPath, '.akasha', 'record_path_index'));
+  await for (final entity in root.list(recursive: true, followLinks: false)) {
+    if (entity is! File || !entity.path.endsWith('.json')) continue;
+    expect(jsonDecode(await entity.readAsString()), isA<Map>());
+  }
 }
 
 File _idShardFile(String vaultPath, String recordId) {
