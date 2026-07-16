@@ -1,9 +1,13 @@
 # Steam Inventory Production ItemDefs
 
-> **Status:** locally validated Steamworks upload candidate; not published
+> **Status:** published to the private partner environment; localized price
+> reads pass, but the first production-pack `StartPurchase` attempt failed
+> before a visible Overlay checkout
 > **AppID:** `4677560`
 > **Upload file:** [`itemdefs_steamworks_upload.json`](itemdefs_steamworks_upload.json)
 > **Product SSOT:** [`../COMMERCE_CURRENCY_CONTRACT.md`](../COMMERCE_CURRENCY_CONTRACT.md)
+> **Release readiness:**
+> [`../STEAM_SERVICE_RELEASE_READINESS.md`](../STEAM_SERVICE_RELEASE_READINESS.md)
 
 Do **not** upload the historical
 [`../steam_inventory_poc/itemdefs_poc.json`](../steam_inventory_poc/itemdefs_poc.json)
@@ -40,6 +44,11 @@ Steamworks remains the final validator. Publish to the private partner sandbox
 first and complete
 [`SANDBOX_TRANSACTION_CHECKLIST.md`](SANDBOX_TRANSACTION_CHECKLIST.md) before
 considering release commerce.
+
+The 2026-07-16 incident proved that price availability is not sufficient
+evidence that Overlay checkout is usable. Do not repeat purchase tests until
+the Steam library launch, Overlay capability, account subscription, and
+diagnostic-result gates in the release-readiness document are in place.
 
 ## Approved production ID ranges
 

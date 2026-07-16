@@ -1,5 +1,11 @@
 # Steam Release - AKASHA
 
+> **2026-07-16 packaging hold:** Do not run the current Steam upload script for
+> another depot build. It recursively maps the Flutter Release directory and
+> can include development-only `steam_appid.txt`. Fix the staged package and
+> VDF exclusion, then verify the depot manifest before any review or release
+> build. See [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md).
+
 > **Updated:** 2026-07-12
 > **Status:** Architecture Closure declared. Active track = [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md).
 > **Release stance:** Early Access가 아니라 **무료 일반 출시**.  

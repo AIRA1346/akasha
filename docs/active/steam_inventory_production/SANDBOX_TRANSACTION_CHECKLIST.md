@@ -1,9 +1,11 @@
 # Steam Inventory Production Sandbox Checklist
 
-> **Status:** implementation and local schema validation ready; live Steamworks run pending
+> **Status:** ItemDefs published and localized prices verified; first
+> `StartPurchase(40110)` attempt failed before a visible Overlay checkout
 > **Release IAP:** disabled
 > **Build:** `scripts/build_steam_inventory_sandbox.ps1`
 > **ItemDefs:** `itemdefs_steamworks_upload.json`
+> **Readiness gate:** [`../STEAM_SERVICE_RELEASE_READINESS.md`](../STEAM_SERVICE_RELEASE_READINESS.md)
 
 This checklist verifies the guarded production adapter. It does not replace the
 historical POC and does not authorize release commerce.
@@ -17,6 +19,31 @@ historical POC and does not authorize release commerce.
 - Build with `scripts/build_steam_inventory_sandbox.ps1`.
 - Launch the resulting Release executable through Steam with a partner account.
 - Confirm Store reports real Steam currency availability for `40110-40112`.
+- Confirm the Steamworks **Enable Steam Overlay for Application** setting is
+  enabled and published, especially if the app type is Software.
+- For the authoritative transaction run, install a Steam depot/beta build that
+  does not contain `steam_appid.txt`; do not treat a directly launched local
+  executable as release-path evidence.
+- Do not use the current recursive Steam upload script until it excludes
+  `steam_appid.txt` and verifies the staged depot manifest.
+- Confirm Shift+Tab works and the runtime reports `overlayEnabled=true` before
+  enabling a purchase button.
+- Confirm the account reports `subscribedApp=true` and has publisher-group or
+  valid package access.
+
+### Observed incident — 2026-07-16
+
+| Step | Result |
+|---|---|
+| Production ItemDefs published | PASS |
+| `RequestPrices` for `40110-40112` | PASS (`KRW`) |
+| Store purchase button | Enabled by current sandbox configuration |
+| `StartPurchase(40110)` | FAIL before visible Overlay checkout |
+| Exact provider phase / `EResult` | Not captured by current product UI |
+| Inventory grant | No grant claimed |
+
+The Store's green transaction banner is not proof of Overlay readiness. The
+next attempt is blocked until launch/Overlay diagnostics can be recorded.
 
 Do not set `steamInAppPurchasesEnabled=true`. The internal build enables only
 `AKASHA_STEAM_SANDBOX_TRANSACTIONS` and
