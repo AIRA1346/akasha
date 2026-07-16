@@ -60,7 +60,7 @@ void main() {
             CommerceCatalog.astraPack500ProductId: CommerceLocalizedPrice(
               productId: CommerceCatalog.astraPack500ProductId,
               currencyCode: 'KRW',
-              currentAmount: 5500,
+              currentAmount: 550000,
             ),
           },
         ),
@@ -69,7 +69,7 @@ void main() {
     await tester.tap(find.text('open'));
     await tester.pump(const Duration(seconds: 1));
 
-    expect(find.text('Steam 현지 가격 확인됨 · KRW'), findsOneWidget);
+    expect(find.text('Steam 가격 · 5,500 KRW'), findsOneWidget);
     expect(
       find.byKey(const ValueKey('commerce-authority-ready')),
       findsOneWidget,
@@ -136,7 +136,7 @@ void main() {
       find.byKey(const ValueKey('commerce-authority-ready')),
       findsOneWidget,
     );
-    expect(find.text('Steam 현지 가격 확인됨 · KRW'), findsOneWidget);
+    expect(find.text('Steam 가격 · 5,500 KRW'), findsOneWidget);
 
     await tester.tap(find.text('인벤토리'));
     await tester.pumpAndSettle();
@@ -377,7 +377,7 @@ class _RetryCommerceGateway implements CommerceGateway {
         CommerceCatalog.astraPack500ProductId: CommerceLocalizedPrice(
           productId: CommerceCatalog.astraPack500ProductId,
           currencyCode: 'KRW',
-          currentAmount: 5500,
+          currentAmount: 550000,
         ),
       },
     );
@@ -405,7 +405,7 @@ class _TransactionCommerceGateway implements CommerceGateway {
           CommerceCatalog.astraPack500ProductId: CommerceLocalizedPrice(
             productId: CommerceCatalog.astraPack500ProductId,
             currencyCode: 'KRW',
-            currentAmount: 5500,
+            currentAmount: 550000,
           ),
         },
         transactionsEnabled: true,

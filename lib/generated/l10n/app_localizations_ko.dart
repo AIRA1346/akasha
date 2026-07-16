@@ -1522,8 +1522,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get commerceThemePackageSection => '테마 패키지';
 
   @override
-  String commerceSteamPriceReady(String currency) {
-    return 'Steam 현지 가격 확인됨 · $currency';
+  String commerceSteamPriceReady(String price) {
+    return 'Steam 가격 · $price';
   }
 
   @override

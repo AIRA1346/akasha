@@ -1562,8 +1562,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commerceThemePackageSection => 'Theme packages';
 
   @override
-  String commerceSteamPriceReady(String currency) {
-    return 'Steam local price available · $currency';
+  String commerceSteamPriceReady(String price) {
+    return 'Steam price · $price';
   }
 
   @override

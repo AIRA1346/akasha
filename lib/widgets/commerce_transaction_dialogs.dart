@@ -9,6 +9,7 @@ Future<CommerceOperationResult?> confirmAstraPackPurchase(
   required CommerceController controller,
   required CommerceProduct product,
   required String productName,
+  required String priceLabel,
 }) async {
   final l10n = AppLocalizations.of(context);
   final accepted = await showDialog<bool>(
@@ -16,7 +17,15 @@ Future<CommerceOperationResult?> confirmAstraPackPurchase(
     builder: (context) => AlertDialog(
       key: const ValueKey('commerce-purchase-confirmation'),
       title: Text(l10n.commercePurchaseConfirmTitle(productName)),
-      content: Text(l10n.commercePurchaseConfirmBody),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(priceLabel, style: const TextStyle(fontWeight: FontWeight.w700)),
+          const SizedBox(height: 10),
+          Text(l10n.commercePurchaseConfirmBody),
+        ],
+      ),
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(false),

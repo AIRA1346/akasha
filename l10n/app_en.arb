@@ -909,10 +909,10 @@
     }
   },
   "commerceThemePackageSection": "Theme packages",
-  "commerceSteamPriceReady": "Steam local price available · {currency}",
+  "commerceSteamPriceReady": "Steam price · {price}",
   "@commerceSteamPriceReady": {
     "placeholders": {
-      "currency": { "type": "String" }
+      "price": { "type": "String" }
     }
   },
   "commerceSteamPricePending": "Local price shown after Steam connects",

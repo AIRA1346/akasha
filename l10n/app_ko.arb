@@ -604,10 +604,10 @@
     }
   },
   "commerceThemePackageSection": "테마 패키지",
-  "commerceSteamPriceReady": "Steam 현지 가격 확인됨 · {currency}",
+  "commerceSteamPriceReady": "Steam 가격 · {price}",
   "@commerceSteamPriceReady": {
     "placeholders": {
-      "currency": { "type": "String" }
+      "price": { "type": "String" }
     }
   },
   "commerceSteamPricePending": "Steam 연결 후 현지 가격 확인",

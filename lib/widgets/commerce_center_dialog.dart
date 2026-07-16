@@ -1,6 +1,7 @@
 import 'package:akasha_commerce_domain/akasha_commerce_domain.dart';
 import 'package:flutter/material.dart';
 
+import '../core/commerce/steam_inventory/steam_inventory_price_formatter.dart';
 import '../generated/l10n/app_localizations.dart';
 import '../services/commerce_controller.dart';
 import '../theme/akasha_palette.dart';
@@ -247,7 +248,12 @@ class _AstraPackCard extends StatelessWidget {
     final amount = product.grantPremiumAmount ?? 0;
     final priceLabel = price == null
         ? l10n.commerceSteamPricePending
-        : l10n.commerceSteamPriceReady(price.currencyCode);
+        : l10n.commerceSteamPriceReady(
+            formatSteamInventoryPrice(
+              price,
+              locale: Localizations.localeOf(context).toLanguageTag(),
+            ),
+          );
     final operationForProduct =
         controller?.operationInFlight == true &&
         controller?.activeProductId == product.id;
@@ -325,6 +331,7 @@ class _AstraPackCard extends StatelessWidget {
                         controller: controller!,
                         product: product,
                         productName: productName,
+                        priceLabel: priceLabel,
                       )
                     : null,
                 icon: operationForProduct

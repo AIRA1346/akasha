@@ -2813,8 +2813,8 @@ abstract class AppLocalizations {
   /// No description provided for @commerceSteamPriceReady.
   ///
   /// In en, this message translates to:
-  /// **'Steam local price available · {currency}'**
-  String commerceSteamPriceReady(String currency);
+  /// **'Steam price · {price}'**
+  String commerceSteamPriceReady(String price);
 
   /// No description provided for @commerceSteamPricePending.
   ///
