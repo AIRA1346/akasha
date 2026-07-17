@@ -5,6 +5,7 @@ import 'steam_inventory_itemdefs.dart';
 import 'steam_inventory_read_port.dart';
 import 'steam_inventory_reward_port.dart';
 import 'steam_inventory_transaction_port.dart';
+import 'steam_runtime_environment.dart';
 
 /// Production adapter for Steam-backed balances, entitlements, localized
 /// Astra pack prices, and guarded sandbox transactions.
@@ -438,12 +439,17 @@ class SteamInventoryCommerceGateway
       'subscribedApp=${diagnostic?.subscribedApp ?? false}',
       'overlayEnabled=${diagnostic?.overlayEnabled ?? false}',
       'overlayActive=${diagnostic?.overlayActive ?? false}',
+      'initializationAttempted=${diagnostic?.initializationAttempted ?? false}',
       'restartRequested=${diagnostic?.restartRequested ?? false}',
       'buildMode=${diagnostic?.buildMode ?? 'unknown'}',
+      'executionEnvironment=${diagnostic?.executionEnvironment.name ?? 'unknown'}',
+      'executablePath=${sanitizeSteamRuntimePath(diagnostic?.executablePath)}',
+      'currentWorkingDirectory=${sanitizeSteamRuntimePath(diagnostic?.currentWorkingDirectory)}',
       'steamTimerTickCount=${diagnostic?.steamTimerTickCount ?? 0}',
       'overlayNeedsPresentTrueCount=${diagnostic?.overlayNeedsPresentTrueCount ?? 0}',
       'overlayForceRedrawCount=${diagnostic?.overlayForceRedrawCount ?? 0}',
       'accountState=${_lastSnapshot.state.name}',
+      'inventoryAuthority=${_lastSnapshot.state.name}',
       'accountIssue=${_lastSnapshot.issueCode ?? 'none'}',
       'priceStatus=${prices?.status.name ?? 'not_loaded'}',
       'priceCurrency=${prices?.currencyCode ?? 'unknown'}',

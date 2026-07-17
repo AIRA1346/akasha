@@ -6,4 +6,5 @@ export 'steam_inventory_commerce_gateway.dart';
 export 'steam_inventory_itemdefs.dart';
 export 'steam_inventory_read_port.dart';
 export 'steam_inventory_reward_port.dart';
+export 'steam_runtime_environment.dart';
 export 'steam_inventory_transaction_port.dart';

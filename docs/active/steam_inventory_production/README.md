@@ -126,9 +126,11 @@ production adapter:
 - never writes local Astra, Echo, or theme ownership.
 
 SteamPipe uploads must run through
-`scripts/steam/prepare_steam_depot.ps1`. The raw Flutter Release directory is a
-developer artifact containing `steam_appid.txt`; the prepared
-`build/steam/depot_windows` directory is the only upload content root.
+`scripts/steam/prepare_steam_depot.ps1`. Release output must already be free of
+`steam_appid.txt`; staging repeats the check as defense in depth. The prepared
+`build/steam/depot_windows` directory remains the only upload content root.
+See [`../../steam/STEAM_RUNTIME_EXECUTION_CONTRACT.md`](../../steam/STEAM_RUNTIME_EXECUTION_CONTRACT.md)
+for the Debug/Release execution boundary.
 
 Internal transaction/reward builds use
 `--dart-define=AKASHA_STEAM_SANDBOX_TRANSACTIONS=true` and

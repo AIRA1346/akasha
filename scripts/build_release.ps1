@@ -25,6 +25,9 @@ if ($registryExit -ne 0) { exit $registryExit }
 
 $exe = Join-Path $Root 'build\windows\x64\runner\Release\akasha.exe'
 if (Test-Path $exe) {
+  & (Join-Path $Root 'tool\verify_steam_release_payload.ps1') `
+    -PayloadPath (Split-Path $exe -Parent) `
+    -PayloadKind Release
   Write-Host ""
   Write-Host "OK: $exe"
 } else {

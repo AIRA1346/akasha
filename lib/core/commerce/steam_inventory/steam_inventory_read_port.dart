@@ -1,3 +1,5 @@
+import 'steam_runtime_environment.dart';
+
 enum SteamInventoryReadStatus { success, unavailable, offline, failed }
 
 class SteamInventoryDiagnostic {
@@ -9,8 +11,11 @@ class SteamInventoryDiagnostic {
     this.subscribedApp = false,
     this.overlayEnabled = false,
     this.overlayActive = false,
+    this.initializationAttempted = false,
     this.restartRequested = false,
     this.buildMode,
+    this.executablePath,
+    this.currentWorkingDirectory,
     this.steamTimerTickCount,
     this.overlayNeedsPresentTrueCount,
     this.overlayForceRedrawCount,
@@ -24,12 +29,18 @@ class SteamInventoryDiagnostic {
   final bool subscribedApp;
   final bool overlayEnabled;
   final bool overlayActive;
+  final bool initializationAttempted;
   final bool restartRequested;
   final String? buildMode;
+  final String? executablePath;
+  final String? currentWorkingDirectory;
   final int? steamTimerTickCount;
   final int? overlayNeedsPresentTrueCount;
   final int? overlayForceRedrawCount;
   final String? issueCode;
+
+  SteamRuntimeExecutionEnvironment get executionEnvironment =>
+      classifySteamRuntimeExecution(executablePath);
 
   bool get isAvailable => status != SteamInventoryReadStatus.unavailable;
   bool get isOnline => status == SteamInventoryReadStatus.success;

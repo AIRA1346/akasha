@@ -40,10 +40,7 @@ add_custom_command(TARGET ${BINARY_NAME} POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy_if_different
     "${STEAMWORKS_SDK_ROOT}/redistributable_bin/win64/steam_api64.dll"
     "$<TARGET_FILE_DIR:${BINARY_NAME}>/steam_api64.dll"
-  COMMAND ${CMAKE_COMMAND} -E copy_if_different
-    "${CMAKE_CURRENT_SOURCE_DIR}/steam_appid.txt"
-    "$<TARGET_FILE_DIR:${BINARY_NAME}>/steam_appid.txt"
-  COMMENT "Copy Steam API redistributable and steam_appid.txt"
+  COMMENT "Copy Steam API redistributable"
 )
 
 set_source_files_properties(

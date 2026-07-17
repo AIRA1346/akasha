@@ -1,8 +1,7 @@
 # Prepare and verify the Windows Steam depot payload.
 #
-# The raw Flutter Release directory intentionally contains steam_appid.txt for
-# local development. Steam's depot must be staged separately so that file can
-# never be shipped.
+# Release builds are expected to be clean. Staging still excludes development
+# files as defense in depth before anything can become a Steam depot payload.
 
 param(
     [string]$SourceDir,
@@ -85,6 +84,10 @@ foreach ($required in $requiredStage) {
         throw "Incomplete depot stage: $required"
     }
 }
+
+& (Join-Path $AkashaRoot 'tool\verify_steam_release_payload.ps1') `
+    -PayloadPath $destinationFull `
+    -PayloadKind Depot
 
 $files = Get-ChildItem -LiteralPath $destinationFull -Recurse -File |
     Sort-Object FullName

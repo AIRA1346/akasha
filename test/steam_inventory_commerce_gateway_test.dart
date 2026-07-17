@@ -117,6 +117,43 @@ void main() {
       },
     );
 
+    test('support report classifies and sanitizes runtime paths', () async {
+      final gateway = SteamInventoryCommerceGateway(
+        port: _FakeSteamInventoryReadPort(
+          diagnostic: const SteamInventoryDiagnostic(
+            status: SteamInventoryReadStatus.success,
+            appId: 4677560,
+            initialized: true,
+            initializationAttempted: true,
+            loggedOn: true,
+            subscribedApp: true,
+            overlayEnabled: true,
+            buildMode: 'Debug',
+            executablePath:
+                r'C:\Users\Alice\src\akasha\build\windows\x64\runner\Debug\akasha.exe',
+            currentWorkingDirectory: r'C:\Users\Alice\src\akasha',
+          ),
+        ),
+      );
+
+      await gateway.loadAccount();
+      final report = gateway.buildSupportReport();
+
+      expect(report, contains('initializationAttempted=true'));
+      expect(report, contains('executionEnvironment=localDebug'));
+      expect(
+        report,
+        contains(
+          r'executablePath=<repo>\build\windows\x64\runner\Debug\akasha.exe',
+        ),
+      );
+      expect(
+        report,
+        contains(r'currentWorkingDirectory=<user-profile>\src\akasha'),
+      );
+      expect(report, isNot(contains('Alice')));
+    });
+
     test(
       'keeps a valid account when localized prices are unavailable',
       () async {
@@ -1006,9 +1043,12 @@ void main() {
         'subscribedApp': true,
         'overlayEnabled': true,
         'overlayActive': false,
+        'initializationAttempted': true,
         'restartRequested': false,
         'appId': 4677560,
         'buildMode': 'Release',
+        'executablePath': r'D:\SteamLibrary\steamapps\common\Akasha\akasha.exe',
+        'currentWorkingDirectory': r'D:\SteamLibrary\steamapps\common\Akasha',
         'steamTimerTickCount': 123,
         'overlayNeedsPresentTrueCount': 4,
         'overlayForceRedrawCount': 3,
@@ -1018,7 +1058,13 @@ void main() {
       expect(result.transactionCapabilityIssueCode, isNull);
       expect(result.subscribedApp, isTrue);
       expect(result.overlayEnabled, isTrue);
+      expect(result.initializationAttempted, isTrue);
       expect(result.buildMode, 'Release');
+      expect(
+        result.executionEnvironment,
+        SteamRuntimeExecutionEnvironment.steamInstall,
+      );
+      expect(result.executablePath, contains('SteamLibrary'));
       expect(result.steamTimerTickCount, 123);
       expect(result.overlayNeedsPresentTrueCount, 4);
       expect(result.overlayForceRedrawCount, 3);
