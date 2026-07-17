@@ -2,6 +2,7 @@
 param(
     [switch]$SkipBuild,
     [switch]$AllowSteamOffline,
+    [switch]$EnableSandboxCommerce,
     [switch]$ExitAfterValidation
 )
 
@@ -33,7 +34,14 @@ $sourceValue = Test-AkashaSteamAppIdFile `
 
 if (-not $SkipBuild) {
     Write-Host 'Building the Windows Debug bundle...'
-    & $flutter build windows --debug
+    $buildArgs = @('build', 'windows', '--debug')
+    if ($EnableSandboxCommerce) {
+        $buildArgs += @(
+            '--dart-define=AKASHA_STEAM_SANDBOX_TRANSACTIONS=true',
+            '--dart-define=AKASHA_STEAM_PLAYTIME_REWARDS=true'
+        )
+    }
+    & $flutter @buildArgs
     if ($LASTEXITCODE -ne 0) {
         throw "Flutter Debug build failed with exit code $LASTEXITCODE."
     }
@@ -70,6 +78,7 @@ Write-Host "App ID:     $sourceValue"
 Write-Host "Executable: $debugExe"
 Write-Host "Working dir:$debugDir"
 Write-Host 'Environment: local_steam_development'
+Write-Host "Sandbox commerce: $($EnableSandboxCommerce.IsPresent)"
 
 $process = $null
 try {

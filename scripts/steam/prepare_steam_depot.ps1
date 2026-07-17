@@ -91,6 +91,10 @@ foreach ($required in $requiredStage) {
 
 $files = Get-ChildItem -LiteralPath $destinationFull -Recurse -File |
     Sort-Object FullName
+$gitSha = (& git -C $AkashaRoot rev-parse HEAD).Trim()
+if ($LASTEXITCODE -ne 0 -or $gitSha -notmatch '^[0-9a-fA-F]{40}$') {
+    throw 'Unable to record the Git SHA for this Steam depot.'
+}
 $relativeStart = $destinationFull.TrimEnd(
     [System.IO.Path]::DirectorySeparatorChar,
     [System.IO.Path]::AltDirectorySeparatorChar
@@ -112,6 +116,7 @@ New-Item -ItemType Directory -Path $manifestDirectory -Force | Out-Null
     appId = $SteamAppId
     depotId = $SteamDepotId
     generatedAtUtc = [DateTime]::UtcNow.ToString('o')
+    gitSha = $gitSha.ToLowerInvariant()
     source = $sourceFull
     stage = $destinationFull
     fileCount = $files.Count
@@ -122,5 +127,6 @@ Write-Host ''
 Write-Host 'Steam depot preflight passed.'
 Write-Host "  Stage:    $destinationFull"
 Write-Host "  Files:    $($files.Count)"
+Write-Host "  Git SHA:  $gitSha"
 Write-Host "  Manifest: $manifestFull"
 Write-Host '  Excluded: steam_appid.txt, *.pdb'

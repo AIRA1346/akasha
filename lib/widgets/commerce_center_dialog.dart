@@ -761,6 +761,11 @@ class _CommerceAuthorityBanner extends StatelessWidget {
       ),
     };
     final supportReport = controller?.buildSupportReport();
+    final canRefreshDiagnostics =
+        supportReport != null &&
+        account.state == CommerceAuthorityState.ready &&
+        account.transactionsEnabled &&
+        controller?.enabled == true;
 
     return Semantics(
       container: true,
@@ -792,6 +797,15 @@ class _CommerceAuthorityBanner extends StatelessWidget {
                     onPressed: controller?.refresh,
                     icon: const Icon(Icons.refresh_rounded, size: 16),
                     label: Text(l10n.commerceRetry),
+                  ),
+                ],
+                if (canRefreshDiagnostics) ...[
+                  const SizedBox(width: 4),
+                  IconButton(
+                    key: const ValueKey('commerce-refresh-diagnostics'),
+                    tooltip: l10n.commerceRetry,
+                    onPressed: controller?.refresh,
+                    icon: const Icon(Icons.refresh_rounded, size: 17),
                   ),
                 ],
                 if (supportReport != null) ...[

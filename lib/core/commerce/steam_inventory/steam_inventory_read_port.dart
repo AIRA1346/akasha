@@ -11,6 +11,15 @@ class SteamInventoryDiagnostic {
     this.subscribedApp = false,
     this.overlayEnabled = false,
     this.overlayActive = false,
+    this.processUptimeMs,
+    this.overlayFirstSampleEnabled = false,
+    this.overlayFirstSampleElapsedMs,
+    this.overlayFirstTrueElapsedMs,
+    this.overlayEnabledSampleCount,
+    this.overlayEnabledTransitionCount,
+    this.overlayActivatedCallbackCount,
+    this.overlayDeactivatedCallbackCount,
+    this.overlayLastCallbackElapsedMs,
     this.initializationAttempted = false,
     this.restartRequested = false,
     this.buildMode,
@@ -29,6 +38,15 @@ class SteamInventoryDiagnostic {
   final bool subscribedApp;
   final bool overlayEnabled;
   final bool overlayActive;
+  final int? processUptimeMs;
+  final bool overlayFirstSampleEnabled;
+  final int? overlayFirstSampleElapsedMs;
+  final int? overlayFirstTrueElapsedMs;
+  final int? overlayEnabledSampleCount;
+  final int? overlayEnabledTransitionCount;
+  final int? overlayActivatedCallbackCount;
+  final int? overlayDeactivatedCallbackCount;
+  final int? overlayLastCallbackElapsedMs;
   final bool initializationAttempted;
   final bool restartRequested;
   final String? buildMode;

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
 
 import '../core/commerce/commerce.dart';
@@ -8,12 +10,21 @@ import '../core/commerce/commerce.dart';
 /// latest provider-derived snapshot in memory so Store, Inventory, and theme
 /// access observe one source of truth.
 class CommerceController extends ChangeNotifier {
-  CommerceController({required CommerceGateway gateway, required bool enabled})
-    : _gateway = gateway,
-      _enabled = enabled,
-      _snapshot = enabled
-          ? const CommerceAccountSnapshot(state: CommerceAuthorityState.loading)
-          : const CommerceAccountSnapshot.disabled();
+  CommerceController({
+    required CommerceGateway gateway,
+    required bool enabled,
+    List<Duration> overlayReadinessRetryDelays =
+        _defaultOverlayReadinessRetryDelays,
+  }) : _gateway = gateway,
+       _enabled = enabled,
+       _overlayReadinessRetryDelays = List.unmodifiable(
+         overlayReadinessRetryDelays,
+       ),
+       _snapshot = enabled
+           ? const CommerceAccountSnapshot(
+               state: CommerceAuthorityState.loading,
+             )
+           : const CommerceAccountSnapshot.disabled();
 
   factory CommerceController.disabled() => CommerceController(
     gateway: const UnavailableCommerceGateway(),
@@ -22,12 +33,15 @@ class CommerceController extends ChangeNotifier {
 
   final CommerceGateway _gateway;
   final bool _enabled;
+  final List<Duration> _overlayReadinessRetryDelays;
   CommerceAccountSnapshot _snapshot;
   Future<void>? _activeRefresh;
   Future<CommerceOperationResult>? _activeOperation;
   CommerceOperationResult? _lastOperation;
   String? _activeProductId;
   CurrencyKind? _activeCurrency;
+  Timer? _overlayReadinessTimer;
+  int _overlayReadinessAttempt = 0;
   bool _disposed = false;
 
   bool get enabled => _enabled;
@@ -180,26 +194,52 @@ class CommerceController extends ChangeNotifier {
     );
 
     try {
-      _setSnapshot(await _gateway.loadAccount());
+      final next = await _gateway.loadAccount();
+      _setSnapshot(next);
+      _updateOverlayReadinessProbe(next);
     } catch (_) {
       final hasCache = previous.hasKnownBalances;
-      _setSnapshot(
-        CommerceAccountSnapshot(
-          state: hasCache
-              ? CommerceAuthorityState.offlineCache
-              : CommerceAuthorityState.unavailable,
-          astraBalance: previous.astraBalance,
-          echoBalance: previous.echoBalance,
-          entitlementKeys: previous.entitlementKeys,
-          localizedPrices: previous.localizedPrices,
-          transactionsEnabled: false,
-          playtimeRewardsEnabled: false,
-          observedAt: previous.observedAt,
-          issueCode: 'commerce_gateway_error',
-          priceIssueCode: previous.priceIssueCode,
-        ),
+      final next = CommerceAccountSnapshot(
+        state: hasCache
+            ? CommerceAuthorityState.offlineCache
+            : CommerceAuthorityState.unavailable,
+        astraBalance: previous.astraBalance,
+        echoBalance: previous.echoBalance,
+        entitlementKeys: previous.entitlementKeys,
+        localizedPrices: previous.localizedPrices,
+        transactionsEnabled: false,
+        playtimeRewardsEnabled: false,
+        observedAt: previous.observedAt,
+        issueCode: 'commerce_gateway_error',
+        priceIssueCode: previous.priceIssueCode,
       );
+      _setSnapshot(next);
+      _updateOverlayReadinessProbe(next);
     }
+  }
+
+  void _updateOverlayReadinessProbe(CommerceAccountSnapshot next) {
+    final shouldProbe =
+        !_disposed && _enabled && next.issueCode == 'steam_overlay_unavailable';
+    if (!shouldProbe) {
+      _overlayReadinessTimer?.cancel();
+      _overlayReadinessTimer = null;
+      _overlayReadinessAttempt = 0;
+      return;
+    }
+    if (_overlayReadinessTimer != null ||
+        _overlayReadinessAttempt >= _overlayReadinessRetryDelays.length) {
+      return;
+    }
+
+    final delay = _overlayReadinessRetryDelays[_overlayReadinessAttempt++];
+    _overlayReadinessTimer = Timer(delay, () {
+      _overlayReadinessTimer = null;
+      if (_disposed || _snapshot.issueCode != 'steam_overlay_unavailable') {
+        return;
+      }
+      unawaited(refresh());
+    });
   }
 
   void _setSnapshot(CommerceAccountSnapshot next) {
@@ -211,9 +251,19 @@ class CommerceController extends ChangeNotifier {
   @override
   void dispose() {
     _disposed = true;
+    _overlayReadinessTimer?.cancel();
+    _overlayReadinessTimer = null;
     super.dispose();
   }
 }
+
+const _defaultOverlayReadinessRetryDelays = <Duration>[
+  Duration(seconds: 2),
+  Duration(seconds: 5),
+  Duration(seconds: 10),
+  Duration(seconds: 20),
+  Duration(seconds: 30),
+];
 
 /// Safe placeholder until the production Steam Inventory adapter is wired.
 ///

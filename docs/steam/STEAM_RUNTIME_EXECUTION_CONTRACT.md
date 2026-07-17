@@ -106,6 +106,15 @@ Windows build has no canonical injected build identity yet; adding one requires
 a separate reproducible-build contract rather than reading a mutable worktree
 at runtime.
 
+Overlay readiness is sampled at most once per second after Steam initializes.
+Diagnostics retain process uptime, the first Overlay value, first true time,
+enabled transitions, and `GameOverlayActivated_t` active/inactive callback
+counts. The app performs only the finite readiness refresh schedule documented
+in the development guide; it does not poll per frame or indefinitely. Depot
+manifests record the exact Git SHA, and successful upload tooling writes an
+ignored local receipt that pairs that SHA with the Steam BuildID when SteamCMD
+prints it.
+
 ## Failure response
 
 - `steam_appid.txt` missing or mismatched in local integration development:

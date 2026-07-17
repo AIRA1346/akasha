@@ -128,6 +128,15 @@ void main() {
             loggedOn: true,
             subscribedApp: true,
             overlayEnabled: true,
+            processUptimeMs: 12000,
+            overlayFirstSampleEnabled: false,
+            overlayFirstSampleElapsedMs: 25,
+            overlayFirstTrueElapsedMs: 8000,
+            overlayEnabledSampleCount: 9,
+            overlayEnabledTransitionCount: 1,
+            overlayActivatedCallbackCount: 1,
+            overlayDeactivatedCallbackCount: 1,
+            overlayLastCallbackElapsedMs: 11000,
             buildMode: 'Debug',
             executablePath:
                 r'C:\Users\Alice\src\akasha\build\windows\x64\runner\Debug\akasha.exe',
@@ -140,6 +149,12 @@ void main() {
       final report = gateway.buildSupportReport();
 
       expect(report, contains('initializationAttempted=true'));
+      expect(report, contains('processUptimeMs=12000'));
+      expect(report, contains('overlayFirstSampleEnabled=false'));
+      expect(report, contains('overlayFirstTrueElapsedMs=8000'));
+      expect(report, contains('overlayEnabledTransitionCount=1'));
+      expect(report, contains('overlayActivatedCallbackCount=1'));
+      expect(report, contains('overlayDeactivatedCallbackCount=1'));
       expect(report, contains('executionEnvironment=localDebug'));
       expect(
         report,
@@ -1043,6 +1058,15 @@ void main() {
         'subscribedApp': true,
         'overlayEnabled': true,
         'overlayActive': false,
+        'processUptimeMs': 15000,
+        'overlayFirstSampleEnabled': false,
+        'overlayFirstSampleElapsedMs': 20,
+        'overlayFirstTrueElapsedMs': 9000,
+        'overlayEnabledSampleCount': 10,
+        'overlayEnabledTransitionCount': 1,
+        'overlayActivatedCallbackCount': 2,
+        'overlayDeactivatedCallbackCount': 2,
+        'overlayLastCallbackElapsedMs': 14000,
         'initializationAttempted': true,
         'restartRequested': false,
         'appId': 4677560,
@@ -1058,6 +1082,15 @@ void main() {
       expect(result.transactionCapabilityIssueCode, isNull);
       expect(result.subscribedApp, isTrue);
       expect(result.overlayEnabled, isTrue);
+      expect(result.processUptimeMs, 15000);
+      expect(result.overlayFirstSampleEnabled, isFalse);
+      expect(result.overlayFirstSampleElapsedMs, 20);
+      expect(result.overlayFirstTrueElapsedMs, 9000);
+      expect(result.overlayEnabledSampleCount, 10);
+      expect(result.overlayEnabledTransitionCount, 1);
+      expect(result.overlayActivatedCallbackCount, 2);
+      expect(result.overlayDeactivatedCallbackCount, 2);
+      expect(result.overlayLastCallbackElapsedMs, 14000);
       expect(result.initializationAttempted, isTrue);
       expect(result.buildMode, 'Release');
       expect(

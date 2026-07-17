@@ -25,15 +25,21 @@ $AppId = Join-Path $Out 'steam_appid.txt'
 
 if (-not (Test-Path $Exe)) { throw "Missing $Exe" }
 if (-not (Test-Path $Dll)) { throw "Missing $Dll" }
-if (-not (Test-Path $AppId)) { throw "Missing $AppId" }
+if (Test-Path $AppId) {
+  throw "Release contract violation: development App ID file exists at $AppId"
+}
+
+& (Join-Path $Root 'tool\verify_steam_release_payload.ps1') `
+  -PayloadPath $Out `
+  -PayloadKind Release
 
 Write-Host ''
 Write-Host 'OK Steam Inventory production sandbox build:'
 Write-Host "  $Exe"
 Write-Host "  $Dll"
-Write-Host "  $AppId"
+Write-Host '  steam_appid.txt: absent (required)'
 Write-Host ''
-Write-Host 'Launch through Steam with a Steamworks partner account.'
-Write-Host 'Do not upload this raw Release directory; it contains steam_appid.txt.'
-Write-Host 'Use scripts\steam\prepare_steam_depot.ps1 before any SteamPipe upload.'
+Write-Host 'Stage and upload only to the password-protected internal branch.'
+Write-Host 'Do not launch this raw Release output as local release evidence.'
+Write-Host 'Use scripts\steam\prepare_steam_depot.ps1 before SteamPipe upload.'
 Write-Host 'Store transactions and Echo reward checks are sandbox-only; release IAP remains disabled.'

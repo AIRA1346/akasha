@@ -287,12 +287,12 @@ uint32_t ItemDefCount() {
 }
 
 flutter::EncodableMap BuildDiagnostics() {
+  SteamRuntime::ObserveOverlayEnabled();
   const bool init = SteamRuntime::Initialized();
   const bool logged_on = init && SteamUser() && SteamUser()->BLoggedOn();
   const bool subscribed =
       init && SteamApps() && SteamApps()->BIsSubscribedApp(SteamRuntime::kAppId);
-  const bool overlay =
-      init && SteamUtils() && SteamUtils()->IsOverlayEnabled();
+  const bool overlay = init && SteamRuntime::IsOverlayEnabled();
   std::string steam_id;
   std::string persona;
   if (init && SteamUser()) {
@@ -322,6 +322,31 @@ flutter::EncodableMap BuildDiagnostics() {
       {"overlayEnabled", flutter::EncodableValue(overlay)},
       {"overlayActive",
        flutter::EncodableValue(SteamRuntime::IsOverlayActive())},
+      {"processUptimeMs",
+       flutter::EncodableValue(
+           static_cast<int64_t>(SteamRuntime::ProcessUptimeMs()))},
+      {"overlayFirstSampleEnabled",
+       flutter::EncodableValue(SteamRuntime::OverlayFirstSampleEnabled())},
+      {"overlayFirstSampleElapsedMs",
+       flutter::EncodableValue(
+           SteamRuntime::OverlayFirstSampleElapsedMs())},
+      {"overlayFirstTrueElapsedMs",
+       flutter::EncodableValue(SteamRuntime::OverlayFirstTrueElapsedMs())},
+      {"overlayEnabledSampleCount",
+       flutter::EncodableValue(static_cast<int64_t>(
+           SteamRuntime::OverlayEnabledSampleCount()))},
+      {"overlayEnabledTransitionCount",
+       flutter::EncodableValue(static_cast<int64_t>(
+           SteamRuntime::OverlayEnabledTransitionCount()))},
+      {"overlayActivatedCallbackCount",
+       flutter::EncodableValue(static_cast<int64_t>(
+           SteamRuntime::OverlayActivatedCallbackCount()))},
+      {"overlayDeactivatedCallbackCount",
+       flutter::EncodableValue(static_cast<int64_t>(
+           SteamRuntime::OverlayDeactivatedCallbackCount()))},
+      {"overlayLastCallbackElapsedMs",
+       flutter::EncodableValue(
+           SteamRuntime::OverlayLastCallbackElapsedMs())},
       {"overlayNeedsPresent",
        flutter::EncodableValue(SteamRuntime::LastOverlayNeedsPresent())},
       {"steamTimerTickCount",

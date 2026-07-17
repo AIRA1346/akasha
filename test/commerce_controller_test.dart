@@ -124,6 +124,43 @@ void main() {
     expect(controller.snapshot.state, CommerceAuthorityState.loading);
   });
 
+  test('late Overlay readiness is refreshed with a finite probe', () async {
+    final gateway = _SequenceCommerceGateway([
+      const CommerceAccountSnapshot(
+        state: CommerceAuthorityState.ready,
+        astraBalance: 100,
+        echoBalance: 0,
+        transactionsEnabled: false,
+        issueCode: 'steam_overlay_unavailable',
+      ),
+      const CommerceAccountSnapshot(
+        state: CommerceAuthorityState.ready,
+        astraBalance: 100,
+        echoBalance: 0,
+        transactionsEnabled: true,
+      ),
+    ]);
+    final controller = CommerceController(
+      gateway: gateway,
+      enabled: true,
+      overlayReadinessRetryDelays: const [Duration.zero],
+    );
+    addTearDown(controller.dispose);
+    final ready = Completer<void>();
+    controller.addListener(() {
+      if (controller.snapshot.transactionsEnabled && !ready.isCompleted) {
+        ready.complete();
+      }
+    });
+
+    await controller.refresh();
+    await ready.future.timeout(const Duration(seconds: 1));
+
+    expect(gateway.loadCalls, 2);
+    expect(controller.snapshot.issueCode, isNull);
+    expect(controller.snapshot.transactionsEnabled, isTrue);
+  });
+
   test(
     'transaction guard refuses a snapshot without provider capability',
     () async {
@@ -393,5 +430,20 @@ class _TestRewardCommerceGateway extends _TestCommerceGateway
   Future<CommerceOperationResult> claimPlaytimeReward() {
     rewardCalls += 1;
     return rewardResult;
+  }
+}
+
+class _SequenceCommerceGateway extends _TestCommerceGateway {
+  _SequenceCommerceGateway(this.snapshots);
+
+  final List<CommerceAccountSnapshot> snapshots;
+
+  @override
+  Future<CommerceAccountSnapshot> loadAccount() {
+    loadCalls += 1;
+    final index = loadCalls - 1;
+    return Future.value(
+      snapshots[index < snapshots.length ? index : snapshots.length - 1],
+    );
   }
 }

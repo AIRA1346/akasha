@@ -68,6 +68,9 @@ if ([string]$manifest.appId -ne $SteamAppId) {
 if ([string]$manifest.depotId -ne $SteamDepotId) {
     throw "Manifest DepotID mismatch: $($manifest.depotId) != $SteamDepotId"
 }
+if ([string]$manifest.gitSha -notmatch '^[0-9a-fA-F]{40}$') {
+    throw 'Manifest Git SHA is missing or invalid.'
+}
 if ($manifestStage -ne $stageFull) {
     throw "Manifest stage mismatch: $manifestStage != $stageFull"
 }
@@ -188,6 +191,7 @@ Write-Host "  App VDF:     $AppBuildVdf"
 Write-Host "  Depot VDF:   $DepotBuildVdf"
 Write-Host "  ContentRoot: $stageFull"
 Write-Host "  Files:       $($actualFiles.Count)"
+Write-Host "  Git SHA:     $($manifest.gitSha)"
 Write-Host '  Exclusions:  steam_appid.txt, *.pdb'
 Write-Host ''
 Write-Host 'SteamCMD upload command (NOT executed):'

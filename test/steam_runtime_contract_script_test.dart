@@ -119,6 +119,9 @@ void main() {
     final releaseBuild = File(
       p.join(repoRoot, 'scripts', 'build_release.ps1'),
     ).readAsStringSync();
+    final sandboxBuild = File(
+      p.join(repoRoot, 'scripts', 'build_steam_inventory_sandbox.ps1'),
+    ).readAsStringSync();
 
     expect(runnerCmake, isNot(contains('steam_appid.txt')));
     expect(windowsCmake, contains('CONFIGURATIONS Debug'));
@@ -126,7 +129,11 @@ void main() {
     expect(launcher, contains(r"'build\windows\x64\runner\Debug'"));
     expect(launcher, contains(r'-WorkingDirectory $debugDir'));
     expect(launcher, contains('Get-AkashaExecutionEnvironment'));
+    expect(launcher, contains('EnableSandboxCommerce'));
     expect(releaseBuild, contains('verify_steam_release_payload.ps1'));
+    expect(sandboxBuild, contains('Release contract violation'));
+    expect(sandboxBuild, contains('verify_steam_release_payload.ps1'));
+    expect(sandboxBuild, isNot(contains('raw Release directory; it contains')));
   });
 }
 

@@ -28,13 +28,17 @@ void main() {
     expect(upload, contains(r'$DepotStageDir'));
     expect(upload, contains(r'+run_app_build $AppBuildVdf'));
     expect(upload, isNot(contains(r'Content:  $ReleaseDir')));
-    expect(upload, isNot(contains('Set-Content')));
+    expect(upload, contains(r'build\steam\upload_receipts'));
+    expect(upload, contains('gitSha'));
+    expect(upload, contains('buildId'));
 
     expect(prepare, contains('/XF steam_appid.txt *.pdb'));
     expect(prepare, contains("'steam_appid.txt'"));
     expect(prepare, contains("'steam_api64.dll'"));
     expect(prepare, contains(r"'data\flutter_assets'"));
     expect(prepare, contains('Get-FileHash'));
+    expect(prepare, contains('gitSha'));
+    expect(prepare, contains(r'git -C $AkashaRoot rev-parse HEAD'));
     expect(prepare, contains('Depot stage must stay under'));
 
     expect(config, contains(r"build\steam\depot_windows"));
@@ -71,6 +75,7 @@ void main() {
 
     expect(validate, contains('ConvertFrom-Json'));
     expect(validate, contains('Stage hash mismatch'));
+    expect(validate, contains('Manifest Git SHA is missing or invalid'));
     expect(validate, contains('App VDF ContentRoot mismatch'));
     expect(validate, contains('must map the entire staged ContentRoot'));
     expect(validate, contains('SteamCMD upload command (NOT executed)'));

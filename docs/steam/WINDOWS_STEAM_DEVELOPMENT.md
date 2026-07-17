@@ -34,6 +34,14 @@ Start Steam, sign in with an account that owns App ID `4677560`, then run:
 powershell -ExecutionPolicy Bypass -File .\tool\run_windows_steam_dev.ps1
 ```
 
+For reviewed Inventory Sandbox purchase testing, build and launch the same
+Debug path with the internal transaction gates:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\tool\run_windows_steam_dev.ps1 `
+  -EnableSandboxCommerce
+```
+
 The launcher refuses to overwrite a mismatched App ID file and refuses to run
 while another AKASHA process exists. It prints the expected and actual EXE,
 PID, working directory, and environment. Close AKASHA to complete the command.
@@ -53,10 +61,16 @@ After launch, verify in the Commerce diagnostics:
 - `subscribedApp=true`
 - `executionEnvironment=localDebug`
 - `overlayEnabled=true` after Steam has had time to hook
+- `overlayFirstSampleEnabled`, `overlayFirstTrueElapsedMs`, and
+  `overlayEnabledTransitionCount`
+- `overlayActivatedCallbackCount` and `overlayDeactivatedCallbackCount`
 - Inventory authority and expected item definition count
 
-Shift+Tab is the manual Overlay check. A false initial Overlay value can become
-true after injection; refresh diagnostics before concluding failure.
+The manual Overlay check uses the shortcut configured in the Steam client. The
+default is Shift+Tab, but a user override such as Shift+O is authoritative and
+must be recorded with the test evidence. A false initial Overlay value can
+become true after injection. AKASHA retries readiness only after 2, 5, 10, 20,
+and 30 seconds and stops once enabled or after the final attempt.
 
 ## Inspect the currently running executable
 
@@ -81,6 +95,7 @@ installed build; it is not the current worktree.
 Prepare and validate only the staged depot:
 
 ```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\build_steam_inventory_sandbox.ps1
 powershell -ExecutionPolicy Bypass -File .\scripts\steam\prepare_steam_depot.ps1
 powershell -ExecutionPolicy Bypass -File .\tool\verify_steam_release_payload.ps1 `
   -PayloadPath .\build\steam\depot_windows -PayloadKind Depot
@@ -92,6 +107,11 @@ script. Install the private branch from Steam, launch from the Library, and
 test restart behavior, launch options, Overlay, Inventory, prices, callbacks,
 updates, uninstall, and reinstall. A directly launched local Release executable
 does not replace this check.
+
+The existing internal branch is `commerce-sandbox`. Confirm that it is
+password-protected before upload. The depot manifest records `gitSha`; after a
+successful upload, `build\steam\upload_receipts` records the branch, Git SHA,
+and parsed BuildID. Never use or change the default branch in this workflow.
 
 ## Production release
 

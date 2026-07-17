@@ -85,6 +85,25 @@ class MethodChannelSteamInventoryReadPort implements SteamInventoryReadPort {
             raw?['subscribedApp'] == true || raw?['subscribed'] == true,
         overlayEnabled: raw?['overlayEnabled'] == true,
         overlayActive: raw?['overlayActive'] == true,
+        processUptimeMs: _asInt(raw?['processUptimeMs']),
+        overlayFirstSampleEnabled: raw?['overlayFirstSampleEnabled'] == true,
+        overlayFirstSampleElapsedMs: _asInt(
+          raw?['overlayFirstSampleElapsedMs'],
+        ),
+        overlayFirstTrueElapsedMs: _asInt(raw?['overlayFirstTrueElapsedMs']),
+        overlayEnabledSampleCount: _asInt(raw?['overlayEnabledSampleCount']),
+        overlayEnabledTransitionCount: _asInt(
+          raw?['overlayEnabledTransitionCount'],
+        ),
+        overlayActivatedCallbackCount: _asInt(
+          raw?['overlayActivatedCallbackCount'],
+        ),
+        overlayDeactivatedCallbackCount: _asInt(
+          raw?['overlayDeactivatedCallbackCount'],
+        ),
+        overlayLastCallbackElapsedMs: _asInt(
+          raw?['overlayLastCallbackElapsedMs'],
+        ),
         initializationAttempted: raw?['initializationAttempted'] == true,
         restartRequested: raw?['restartRequested'] == true,
         buildMode: _stringOrNull(raw?['buildMode']),
@@ -109,6 +128,21 @@ class MethodChannelSteamInventoryReadPort implements SteamInventoryReadPort {
       subscribedApp: raw['subscribedApp'] == true || raw['subscribed'] == true,
       overlayEnabled: raw['overlayEnabled'] == true,
       overlayActive: raw['overlayActive'] == true,
+      processUptimeMs: _asInt(raw['processUptimeMs']),
+      overlayFirstSampleEnabled: raw['overlayFirstSampleEnabled'] == true,
+      overlayFirstSampleElapsedMs: _asInt(raw['overlayFirstSampleElapsedMs']),
+      overlayFirstTrueElapsedMs: _asInt(raw['overlayFirstTrueElapsedMs']),
+      overlayEnabledSampleCount: _asInt(raw['overlayEnabledSampleCount']),
+      overlayEnabledTransitionCount: _asInt(
+        raw['overlayEnabledTransitionCount'],
+      ),
+      overlayActivatedCallbackCount: _asInt(
+        raw['overlayActivatedCallbackCount'],
+      ),
+      overlayDeactivatedCallbackCount: _asInt(
+        raw['overlayDeactivatedCallbackCount'],
+      ),
+      overlayLastCallbackElapsedMs: _asInt(raw['overlayLastCallbackElapsedMs']),
       initializationAttempted: raw['initializationAttempted'] == true,
       restartRequested: raw['restartRequested'] == true,
       buildMode: _stringOrNull(raw['buildMode']),

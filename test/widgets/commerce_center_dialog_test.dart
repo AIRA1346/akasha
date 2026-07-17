@@ -173,10 +173,8 @@ void main() {
       () => TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
           .setMockMethodCallHandler(SystemChannels.platform, null),
     );
-    final controller = CommerceController(
-      gateway: const _SupportCommerceGateway(),
-      enabled: true,
-    );
+    final gateway = _SupportCommerceGateway();
+    final controller = CommerceController(gateway: gateway, enabled: true);
     addTearDown(controller.dispose);
     await controller.refresh();
 
@@ -190,6 +188,12 @@ void main() {
 
     expect(clipboardText, contains('AKASHA Steam Commerce Diagnostics'));
     expect(clipboardText, contains('steamResultName=k_EResultInvalidParam'));
+
+    await tester.tap(
+      find.byKey(const ValueKey('commerce-refresh-diagnostics')).first,
+    );
+    await tester.pumpAndSettle();
+    expect(gateway.loadCalls, 2);
     expect(find.text('Steam 진단 정보를 클립보드에 복사했습니다.'), findsOneWidget);
   });
 
@@ -402,7 +406,7 @@ class _DialogCommerceGateway implements CommerceGateway {
 
 class _SupportCommerceGateway
     implements CommerceGateway, CommerceSupportGateway {
-  const _SupportCommerceGateway();
+  int loadCalls = 0;
 
   @override
   String buildSupportReport() =>
@@ -410,12 +414,15 @@ class _SupportCommerceGateway
       'steamResultName=k_EResultInvalidParam';
 
   @override
-  Future<CommerceAccountSnapshot> loadAccount() async =>
-      const CommerceAccountSnapshot(
-        state: CommerceAuthorityState.ready,
-        astraBalance: 0,
-        echoBalance: 0,
-      );
+  Future<CommerceAccountSnapshot> loadAccount() async {
+    loadCalls += 1;
+    return const CommerceAccountSnapshot(
+      state: CommerceAuthorityState.ready,
+      astraBalance: 0,
+      echoBalance: 0,
+      transactionsEnabled: true,
+    );
+  }
 
   @override
   Future<CommerceOperationResult> exchangeProduct({

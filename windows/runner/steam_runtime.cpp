@@ -18,10 +18,24 @@ std::atomic<bool> g_initialized{false};
 std::atomic<bool> g_restart{false};
 std::atomic<bool> g_shutdown{false};
 std::atomic<bool> g_overlay_active{false};
+std::atomic<bool> g_overlay_enabled{false};
+std::atomic<bool> g_overlay_first_sample_recorded{false};
+std::atomic<bool> g_overlay_first_sample_enabled{false};
 std::atomic<bool> g_last_needs_present{false};
+std::atomic<uint64_t> g_process_start_tick_ms{0};
+std::atomic<uint64_t> g_last_overlay_sample_tick_ms{0};
 std::atomic<uint64_t> g_timer_ticks{0};
 std::atomic<uint64_t> g_needs_present_true{0};
 std::atomic<uint64_t> g_force_redraws{0};
+std::atomic<uint64_t> g_overlay_enabled_samples{0};
+std::atomic<uint64_t> g_overlay_enabled_transitions{0};
+std::atomic<uint64_t> g_overlay_activated_callbacks{0};
+std::atomic<uint64_t> g_overlay_deactivated_callbacks{0};
+std::atomic<int64_t> g_overlay_first_sample_elapsed_ms{-1};
+std::atomic<int64_t> g_overlay_first_true_elapsed_ms{-1};
+std::atomic<int64_t> g_overlay_last_callback_elapsed_ms{-1};
+
+constexpr uint64_t kOverlaySampleIntervalMs = 1000;
 
 }  // namespace
 
@@ -29,6 +43,7 @@ bool Bootstrap() {
   if (g_attempted.exchange(true)) {
     return !g_restart.load();
   }
+  g_process_start_tick_ms = GetTickCount64();
 
   if (SteamAPI_RestartAppIfNecessary(kAppId)) {
     g_restart = true;
@@ -47,6 +62,7 @@ bool Bootstrap() {
   if (SteamInventory()) {
     SteamInventory()->LoadItemDefinitions();
   }
+  ObserveOverlayEnabled();
   OutputDebugStringW(L"[SteamRuntime] SteamAPI_Init ok (before Flutter/D3D)\n");
   return true;
 }
@@ -54,6 +70,7 @@ bool Bootstrap() {
 void Pump() {
   if (g_initialized.load() && !g_shutdown.load()) {
     SteamAPI_RunCallbacks();
+    ObserveOverlayEnabled();
   }
 }
 
@@ -89,8 +106,91 @@ bool OverlayNeedsPresent() {
   return needs;
 }
 
-void SetOverlayActive(bool active) { g_overlay_active = active; }
+void ObserveOverlayEnabled() {
+  if (!g_initialized.load() || g_shutdown.load() || !SteamUtils()) {
+    return;
+  }
+
+  const uint64_t now = GetTickCount64();
+  const uint64_t previous_sample = g_last_overlay_sample_tick_ms.load();
+  if (previous_sample != 0 &&
+      now - previous_sample < kOverlaySampleIntervalMs) {
+    return;
+  }
+  g_last_overlay_sample_tick_ms = now;
+
+  const bool enabled = SteamUtils()->IsOverlayEnabled();
+  const int64_t elapsed = static_cast<int64_t>(ProcessUptimeMs());
+  g_overlay_enabled_samples.fetch_add(1);
+  if (!g_overlay_first_sample_recorded.exchange(true)) {
+    g_overlay_first_sample_enabled = enabled;
+    g_overlay_first_sample_elapsed_ms = elapsed;
+    g_overlay_enabled = enabled;
+    if (enabled) {
+      g_overlay_first_true_elapsed_ms = elapsed;
+    }
+    OutputDebugStringW(
+        enabled ? L"[SteamRuntime] Overlay initial sample enabled\n"
+                : L"[SteamRuntime] Overlay initial sample disabled\n");
+    return;
+  }
+
+  const bool previous = g_overlay_enabled.exchange(enabled);
+  if (previous != enabled) {
+    g_overlay_enabled_transitions.fetch_add(1);
+    if (enabled && g_overlay_first_true_elapsed_ms.load() < 0) {
+      g_overlay_first_true_elapsed_ms = elapsed;
+    }
+    OutputDebugStringW(enabled ? L"[SteamRuntime] Overlay enabled transition\n"
+                               : L"[SteamRuntime] Overlay disabled transition\n");
+  }
+}
+
+bool IsOverlayEnabled() { return g_overlay_enabled.load(); }
+bool OverlayFirstSampleEnabled() {
+  return g_overlay_first_sample_enabled.load();
+}
+int64_t OverlayFirstSampleElapsedMs() {
+  return g_overlay_first_sample_elapsed_ms.load();
+}
+int64_t OverlayFirstTrueElapsedMs() {
+  return g_overlay_first_true_elapsed_ms.load();
+}
+uint64_t OverlayEnabledSampleCount() {
+  return g_overlay_enabled_samples.load();
+}
+uint64_t OverlayEnabledTransitionCount() {
+  return g_overlay_enabled_transitions.load();
+}
+
+void SetOverlayActive(bool active) {
+  g_overlay_active = active;
+  g_overlay_last_callback_elapsed_ms =
+      static_cast<int64_t>(ProcessUptimeMs());
+  if (active) {
+    g_overlay_activated_callbacks.fetch_add(1);
+    OutputDebugStringW(L"[SteamRuntime] GameOverlayActivated_t active\n");
+  } else {
+    g_overlay_deactivated_callbacks.fetch_add(1);
+    OutputDebugStringW(L"[SteamRuntime] GameOverlayActivated_t inactive\n");
+  }
+}
 bool IsOverlayActive() { return g_overlay_active.load(); }
+uint64_t OverlayActivatedCallbackCount() {
+  return g_overlay_activated_callbacks.load();
+}
+uint64_t OverlayDeactivatedCallbackCount() {
+  return g_overlay_deactivated_callbacks.load();
+}
+int64_t OverlayLastCallbackElapsedMs() {
+  return g_overlay_last_callback_elapsed_ms.load();
+}
+
+uint64_t ProcessUptimeMs() {
+  const uint64_t start = g_process_start_tick_ms.load();
+  if (start == 0) return 0;
+  return GetTickCount64() - start;
+}
 
 void NoteSteamTimerTick() { g_timer_ticks.fetch_add(1); }
 void NoteOverlayForceRedraw() { g_force_redraws.fetch_add(1); }
