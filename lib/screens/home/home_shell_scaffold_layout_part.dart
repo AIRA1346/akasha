@@ -23,6 +23,7 @@ void _homeShellHandleEscape(
   switch (resolveShellEscapeTarget(
     layoutSpec: layoutSpec,
     sidebarOpen: controller.isSidebarOpen,
+    commerceOpen: controller.isCommerceSurfaceOpen,
     previewOpen: controller.hasOpenPreview,
     fullscreen: windowController?.isFullScreen ?? false,
   )) {
@@ -31,6 +32,9 @@ void _homeShellHandleEscape(
       return;
     case ShellEscapeTarget.sidebar:
       controller.toggleSidebar();
+      return;
+    case ShellEscapeTarget.commerce:
+      controller.closeUtilitySurface();
       return;
     case ShellEscapeTarget.preview:
       controller.closeAllPreviews();

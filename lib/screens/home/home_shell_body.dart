@@ -26,6 +26,7 @@ import '../../models/work_drag_payload.dart';
 import '../../services/personal_library_membership_service.dart';
 import '../../utils/recall_picker.dart';
 import '../../widgets/dashboard_sidebar.dart';
+import '../../widgets/commerce_center_dialog.dart';
 import 'app_destination.dart';
 import 'home_browse_filter_controller.dart';
 import 'home_dashboard_controller.dart';
@@ -35,6 +36,7 @@ import 'home_section_preferences.dart';
 import 'home_shell_body_center.dart';
 import 'home_shell_body_preview_rail.dart';
 import 'home_shell_browse_content.dart';
+import 'home_utility_surface.dart';
 import 'preview_frame.dart';
 import 'shell_layout_frame.dart';
 import 'shell_layout_spec.dart';
@@ -59,6 +61,8 @@ class HomeShellBody extends StatelessWidget {
   final ShellLayoutSpec layoutSpec;
   final bool isSidebarOpen;
   final AppDestination destination;
+  final HomeUtilitySurface? activeUtilitySurface;
+  final VoidCallback onCloseUtilitySurface;
   final bool isCuratedLibraryActive;
   final bool isCatalogLoading;
   final bool isCatalogLoadingMore;
@@ -202,6 +206,8 @@ class HomeShellBody extends StatelessWidget {
     required this.layoutSpec,
     required this.isSidebarOpen,
     required this.destination,
+    required this.activeUtilitySurface,
+    required this.onCloseUtilitySurface,
     required this.isCuratedLibraryActive,
     required this.isCatalogLoading,
     this.isCatalogLoadingMore = false,
@@ -453,70 +459,81 @@ class HomeShellBody extends StatelessWidget {
       sidebarOpen: isSidebarOpen,
       onDismissSidebar: onToggleSidebar ?? () {},
       sidebar: buildSidebar(open: true),
-      center: ConstrainedBox(
-        constraints: BoxConstraints(minWidth: layoutSpec.mainContentMinWidth),
-        child: KeyedSubtree(
-          key: PageStorageKey<String>('shell-destination-${destination.name}'),
-          child: HomeShellBodyCenterColumn(
-            vaultLinked: vaultLinked,
-            vaultPath: vaultPath,
-            dailyRecall: dailyRecall,
-            destination: destination,
-            isCatalogLoading: isCatalogLoading,
-            filterCtrl: filterCtrl,
-            sectionPrefs: sectionPrefs,
-            workbench: workbench,
-            userCatalog: userCatalog,
-            linkIndex: linkIndex,
-            items: items,
-            timelineReloadToken: timelineReloadToken,
-            collectionCtrl: collectionCtrl,
-            posterCardBuilder: posterCardBuilder,
-            browse: browse,
-            onConnectVault: onConnectVault,
-            onCreateDefaultVault: onCreateDefaultVault,
-            onSearch: onSearch,
-            onToggleCategory: onToggleCategory,
-            onClearCategories: onClearCategories,
-            onToggleWorkStatus: onToggleWorkStatus,
-            onToggleMyStatus: onToggleMyStatus,
-            onEntityScopeChanged: onEntityScopeChanged,
-            onAddNewEntity: onAddNewEntity,
-            onStateChanged: onStateChanged,
-            onPreviewWork: onPreviewWork,
-            onPreviewEntity: onPreviewEntity,
-            onOpenBrowseItem: onOpenBrowseItem,
-            onOpenEntity: onOpenEntity,
-            onOpenWorkFromCanvas: onOpenWorkFromCanvas,
-            onOpenEntityFromCanvas: onOpenEntityFromCanvas,
-            onWorkbenchWorkSaved: onWorkbenchWorkSaved,
-            onWorkbenchWorkDeleted: onWorkbenchWorkDeleted,
-            onWorkbenchEntitySaved: onWorkbenchEntitySaved,
-            onWorkbenchEntityDeleted: onWorkbenchEntityDeleted,
-            onAddToLibrary: onAddToLibrary,
-            onAddToLibraryForEntity: onAddToLibraryForEntity,
-            onWikiLinkTap: onWikiLinkTap,
-            onRequestEntityLink: onRequestEntityLink,
-            onGoKnowledgeGraph: onGoKnowledgeGraph,
-            pendingWorkEntityLinkType: pendingWorkEntityLinkType,
-            pendingWorkEntityLinkWorkId: pendingWorkEntityLinkWorkId,
-            pendingWorkEntityLinkCandidate: pendingWorkEntityLinkCandidate,
-            pendingWorkLinkPick: pendingWorkLinkPick,
-            onClearPendingWorkEntityLink: onClearPendingWorkEntityLink,
-            pendingEntityEntityLinkType: pendingEntityEntityLinkType,
-            pendingEntityLinkEntityId: pendingEntityLinkEntityId,
-            pendingEntityWorkLinkPick: pendingEntityWorkLinkPick,
-            onClearPendingEntityLink: onClearPendingEntityLink,
-            onNewTimelineEntry: onNewTimelineEntry,
-            onNewJournalEntry: onNewJournalEntry,
-            onAddCollectibleCollection: onAddCollectibleCollection,
-            onEntityCollectionCuratedReorder: onEntityCollectionCuratedReorder,
-            onCollectibleCollectionCuratedReorder:
-                onCollectibleCollectionCuratedReorder,
+      center: HomeUtilitySurfaceStack(
+        utilityActive: activeUtilitySurface == HomeUtilitySurface.commerce,
+        primary: ConstrainedBox(
+          constraints: BoxConstraints(minWidth: layoutSpec.mainContentMinWidth),
+          child: KeyedSubtree(
+            key: PageStorageKey<String>(
+              'shell-destination-${destination.name}',
+            ),
+            child: HomeShellBodyCenterColumn(
+              vaultLinked: vaultLinked,
+              vaultPath: vaultPath,
+              dailyRecall: dailyRecall,
+              destination: destination,
+              isCatalogLoading: isCatalogLoading,
+              filterCtrl: filterCtrl,
+              sectionPrefs: sectionPrefs,
+              workbench: workbench,
+              userCatalog: userCatalog,
+              linkIndex: linkIndex,
+              items: items,
+              timelineReloadToken: timelineReloadToken,
+              collectionCtrl: collectionCtrl,
+              posterCardBuilder: posterCardBuilder,
+              browse: browse,
+              onConnectVault: onConnectVault,
+              onCreateDefaultVault: onCreateDefaultVault,
+              onSearch: onSearch,
+              onToggleCategory: onToggleCategory,
+              onClearCategories: onClearCategories,
+              onToggleWorkStatus: onToggleWorkStatus,
+              onToggleMyStatus: onToggleMyStatus,
+              onEntityScopeChanged: onEntityScopeChanged,
+              onAddNewEntity: onAddNewEntity,
+              onStateChanged: onStateChanged,
+              onPreviewWork: onPreviewWork,
+              onPreviewEntity: onPreviewEntity,
+              onOpenBrowseItem: onOpenBrowseItem,
+              onOpenEntity: onOpenEntity,
+              onOpenWorkFromCanvas: onOpenWorkFromCanvas,
+              onOpenEntityFromCanvas: onOpenEntityFromCanvas,
+              onWorkbenchWorkSaved: onWorkbenchWorkSaved,
+              onWorkbenchWorkDeleted: onWorkbenchWorkDeleted,
+              onWorkbenchEntitySaved: onWorkbenchEntitySaved,
+              onWorkbenchEntityDeleted: onWorkbenchEntityDeleted,
+              onAddToLibrary: onAddToLibrary,
+              onAddToLibraryForEntity: onAddToLibraryForEntity,
+              onWikiLinkTap: onWikiLinkTap,
+              onRequestEntityLink: onRequestEntityLink,
+              onGoKnowledgeGraph: onGoKnowledgeGraph,
+              pendingWorkEntityLinkType: pendingWorkEntityLinkType,
+              pendingWorkEntityLinkWorkId: pendingWorkEntityLinkWorkId,
+              pendingWorkEntityLinkCandidate: pendingWorkEntityLinkCandidate,
+              pendingWorkLinkPick: pendingWorkLinkPick,
+              onClearPendingWorkEntityLink: onClearPendingWorkEntityLink,
+              pendingEntityEntityLinkType: pendingEntityEntityLinkType,
+              pendingEntityLinkEntityId: pendingEntityLinkEntityId,
+              pendingEntityWorkLinkPick: pendingEntityWorkLinkPick,
+              onClearPendingEntityLink: onClearPendingEntityLink,
+              onNewTimelineEntry: onNewTimelineEntry,
+              onNewJournalEntry: onNewJournalEntry,
+              onAddCollectibleCollection: onAddCollectibleCollection,
+              onEntityCollectionCuratedReorder:
+                  onEntityCollectionCuratedReorder,
+              onCollectibleCollectionCuratedReorder:
+                  onCollectibleCollectionCuratedReorder,
+            ),
           ),
+        ),
+        utility: ConstrainedBox(
+          constraints: BoxConstraints(minWidth: layoutSpec.mainContentMinWidth),
+          child: CommerceCenterView(onClose: onCloseUtilitySurface),
         ),
       ),
       preview: keyedPreview,
+      previewVisible: activeUtilitySurface != HomeUtilitySurface.commerce,
     );
   }
 }

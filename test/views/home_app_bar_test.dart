@@ -1,3 +1,5 @@
+import 'dart:ui' show Tristate;
+
 import 'package:akasha/config/feature_flags.dart';
 import 'package:akasha/generated/l10n/app_localizations.dart';
 import 'package:akasha/screens/home/home_app_bar.dart';
@@ -33,7 +35,11 @@ void main() {
 
       final cluster = find.byKey(const ValueKey('home-utility-cluster'));
       final clusterRow = tester.widget<Row>(cluster);
-      expect(clusterRow.children, hasLength(1));
+      expect(clusterRow.children, hasLength(2));
+      expect(
+        find.byKey(const ValueKey('home-utility-commerce')),
+        findsOneWidget,
+      );
       expect(find.text('Astra'), findsNothing);
       expect(find.text('Echo'), findsNothing);
       expect(find.text('0'), findsNothing);
@@ -94,13 +100,22 @@ void main() {
 
     final cluster = find.byKey(const ValueKey('home-utility-cluster'));
     final clusterRow = tester.widget<Row>(cluster);
-    expect(clusterRow.children, hasLength(3));
+    expect(clusterRow.children, hasLength(4));
     expect(clusterRow.children[0].key, currencyKey);
-    expect(clusterRow.children[1].key, const ValueKey('home-utility-settings'));
-    expect(clusterRow.children[2].key, avatarKey);
+    expect(clusterRow.children[1].key, const ValueKey('home-utility-commerce'));
+    expect(clusterRow.children[2].key, const ValueKey('home-utility-settings'));
+    expect(clusterRow.children[3].key, avatarKey);
 
     expect(
       tester.getCenter(find.byKey(currencyKey)).dx,
+      lessThan(
+        tester
+            .getCenter(find.byKey(const ValueKey('home-utility-commerce')))
+            .dx,
+      ),
+    );
+    expect(
+      tester.getCenter(find.byKey(const ValueKey('home-utility-commerce'))).dx,
       lessThan(
         tester
             .getCenter(find.byKey(const ValueKey('home-utility-settings')))
@@ -110,6 +125,40 @@ void main() {
     expect(
       tester.getCenter(find.byKey(const ValueKey('home-utility-settings'))).dx,
       lessThan(tester.getCenter(find.byKey(avatarKey)).dx),
+    );
+  });
+
+  testWidgets('commerce utility button reports and renders selected state', (
+    tester,
+  ) async {
+    var commerceTapCount = 0;
+    await tester.pumpWidget(
+      _testApp(appBar: _appBar(onCommerce: () => commerceTapCount++)),
+    );
+
+    final commerce = find.byKey(const ValueKey('home-utility-commerce'));
+    expect(commerce, findsOneWidget);
+    expect(find.byIcon(Icons.storefront_outlined), findsOneWidget);
+    expect(
+      tester.getSemantics(commerce).flagsCollection.isSelected,
+      Tristate.isFalse,
+    );
+
+    await tester.tap(commerce);
+    expect(commerceTapCount, 1);
+
+    await tester.pumpWidget(
+      _testApp(
+        appBar: _appBar(
+          onCommerce: () => commerceTapCount++,
+          commerceSelected: true,
+        ),
+      ),
+    );
+    expect(find.byIcon(Icons.storefront), findsOneWidget);
+    expect(
+      tester.getSemantics(commerce).flagsCollection.isSelected,
+      Tristate.isTrue,
     );
   });
 
@@ -168,6 +217,8 @@ HomeAppBar _appBar({
   VoidCallback? onCatalogInbox,
   int catalogContributionCount = 0,
   VoidCallback? onSettings,
+  VoidCallback? onCommerce,
+  bool commerceSelected = false,
   Widget? currencySlot,
   Widget? avatarSlot,
 }) {
@@ -186,6 +237,8 @@ HomeAppBar _appBar({
     onCatalogInbox: onCatalogInbox,
     catalogContributionCount: catalogContributionCount,
     onSettings: onSettings ?? () {},
+    onCommerce: onCommerce ?? () {},
+    commerceSelected: commerceSelected,
     currencySlot: currencySlot,
     avatarSlot: avatarSlot,
   );

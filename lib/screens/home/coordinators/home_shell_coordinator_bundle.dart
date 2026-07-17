@@ -69,6 +69,7 @@ class HomeShellCoordinatorBundle {
     onEntityArchived,
     required void Function(AkashaItem item, {bool push}) onPreviewWork,
     required Future<void> Function(AkashaItem item) onOpenWorkDetail,
+    required void Function() onNavigationCommitted,
     required Future<void> Function({bool showFeedback})
     autoArchiveRegistryWorks,
   }) {
@@ -163,6 +164,7 @@ class HomeShellCoordinatorBundle {
               null => WorkbenchNavigationDecision.cancel,
             };
           },
+      onNavigationCommitted: onNavigationCommitted,
     );
 
     catalog = HomeCatalogCoordinator(

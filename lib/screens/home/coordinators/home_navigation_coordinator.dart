@@ -27,6 +27,7 @@ class HomeNavigationCoordinator {
     required this.rebuild,
     this.ensureLegacyItemsLoaded,
     this.requestWorkbenchNavigationDecision,
+    this.onNavigationCommitted,
   });
 
   static const String homeDashboardId = 'master_index';
@@ -40,6 +41,7 @@ class HomeNavigationCoordinator {
   final void Function() rebuild;
   final Future<void> Function()? ensureLegacyItemsLoaded;
   final WorkbenchNavigationGuardPrompt? requestWorkbenchNavigationDecision;
+  final void Function()? onNavigationCommitted;
 
   bool isSidebarOpen = false;
   int timelineReloadToken = 0;
@@ -318,7 +320,10 @@ class HomeNavigationCoordinator {
     await workbench.showBrowse();
     if (requestGeneration != _navigationGeneration) return;
 
-    scheduleRebuild(commit);
+    scheduleRebuild(() {
+      commit();
+      onNavigationCommitted?.call();
+    });
     if (prefetch) await prefetchRegistry();
   }
 

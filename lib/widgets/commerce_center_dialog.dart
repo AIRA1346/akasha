@@ -9,9 +9,7 @@ import '../theme/akasha_palette.dart';
 import '../theme/akasha_theme_registry.dart';
 import 'commerce_transaction_dialogs.dart';
 
-/// Read-only commerce discovery surface while production Steam transactions
-/// remain disabled. A real [CommerceAccountSnapshot] can be injected later
-/// without changing the store or inventory geometry.
+/// Compatibility wrapper for callers that still need a modal commerce surface.
 Future<void> showCommerceCenterDialog(
   BuildContext context, {
   CommerceAccountSnapshot? account,
@@ -23,15 +21,7 @@ Future<void> showCommerceCenterDialog(
       final inset = viewport.width < 600 ? 12.0 : 24.0;
       final width = (viewport.width - (inset * 2)).clamp(280.0, 920.0);
       final height = (viewport.height - (inset * 2)).clamp(400.0, 700.0);
-      final l10n = AppLocalizations.of(dialogContext);
       final palette = dialogContext.akashaPalette;
-      final controller = account == null
-          ? CommerceScope.maybeOf(dialogContext)
-          : null;
-      final effectiveAccount =
-          account ??
-          controller?.snapshot ??
-          const CommerceAccountSnapshot.disabled();
 
       return Dialog(
         key: const ValueKey('commerce-center-dialog'),
@@ -41,82 +31,113 @@ Future<void> showCommerceCenterDialog(
         child: SizedBox(
           width: width,
           height: height,
-          child: DefaultTabController(
-            length: 2,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(24, 20, 12, 10),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              l10n.commerceCenterTitle,
-                              style: const TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              l10n.commerceCenterSubtitle,
-                              style: TextStyle(
-                                color: palette.textMuted,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      IconButton(
-                        tooltip: l10n.appPreferencesClose,
-                        onPressed: () => Navigator.of(dialogContext).pop(),
-                        icon: const Icon(Icons.close_rounded),
-                      ),
-                    ],
-                  ),
-                ),
-                TabBar(
-                  tabs: [
-                    Tab(
-                      icon: const Icon(Icons.storefront_outlined),
-                      text: l10n.commerceStoreTab,
-                    ),
-                    Tab(
-                      icon: const Icon(Icons.inventory_2_outlined),
-                      text: l10n.commerceInventoryTab,
-                    ),
-                  ],
-                ),
-                Divider(height: 1, color: palette.borderSubtle(0.55)),
-                Expanded(
-                  child: TabBarView(
-                    children: [
-                      _CommerceStoreTab(
-                        l10n: l10n,
-                        account: effectiveAccount,
-                        controller: controller,
-                      ),
-                      _CommerceInventoryTab(
-                        l10n: l10n,
-                        account: effectiveAccount,
-                        controller: controller,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+          child: CommerceCenterView(
+            account: account,
+            onClose: () => Navigator.of(dialogContext).pop(),
           ),
         ),
       );
     },
   );
+}
+
+/// Store and inventory content shared by the Home utility surface and the
+/// compatibility dialog wrapper.
+class CommerceCenterView extends StatelessWidget {
+  const CommerceCenterView({super.key, this.account, this.onClose});
+
+  final CommerceAccountSnapshot? account;
+  final VoidCallback? onClose;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final palette = context.akashaPalette;
+    final controller = account == null ? CommerceScope.maybeOf(context) : null;
+    final effectiveAccount =
+        account ??
+        controller?.snapshot ??
+        const CommerceAccountSnapshot.disabled();
+
+    return Material(
+      key: const ValueKey('commerce-center-view'),
+      color: palette.surfaceElevated,
+      child: DefaultTabController(
+        length: 2,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(24, 20, 12, 10),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          l10n.commerceCenterTitle,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          l10n.commerceCenterSubtitle,
+                          style: TextStyle(
+                            color: palette.textMuted,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  if (onClose != null)
+                    IconButton(
+                      key: const ValueKey('commerce-center-close'),
+                      tooltip: l10n.appPreferencesClose,
+                      onPressed: onClose,
+                      icon: const Icon(Icons.close_rounded),
+                    ),
+                ],
+              ),
+            ),
+            TabBar(
+              tabs: [
+                Tab(
+                  icon: const Icon(Icons.storefront_outlined),
+                  text: l10n.commerceStoreTab,
+                ),
+                Tab(
+                  icon: const Icon(Icons.inventory_2_outlined),
+                  text: l10n.commerceInventoryTab,
+                ),
+              ],
+            ),
+            Divider(height: 1, color: palette.borderSubtle(0.55)),
+            Expanded(
+              child: TabBarView(
+                children: [
+                  _CommerceStoreTab(
+                    l10n: l10n,
+                    account: effectiveAccount,
+                    controller: controller,
+                  ),
+                  _CommerceInventoryTab(
+                    l10n: l10n,
+                    account: effectiveAccount,
+                    controller: controller,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 class _CommerceStoreTab extends StatelessWidget {

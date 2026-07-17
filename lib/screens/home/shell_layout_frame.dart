@@ -16,6 +16,7 @@ class ShellLayoutFrame extends StatefulWidget {
     required this.sidebar,
     required this.center,
     this.preview,
+    this.previewVisible = true,
   });
 
   static const sidebarFrameKey = ValueKey<String>('home-shell-sidebar-frame');
@@ -28,6 +29,7 @@ class ShellLayoutFrame extends StatefulWidget {
   final Widget sidebar;
   final Widget center;
   final Widget? preview;
+  final bool previewVisible;
 
   @override
   State<ShellLayoutFrame> createState() => _ShellLayoutFrameState();
@@ -110,6 +112,7 @@ class _ShellLayoutFrameState extends State<ShellLayoutFrame> {
     _drawerFocusScope.directionalTraversalEdgeBehavior =
         sidebarTraversalEdgeBehavior;
     final hasPreview = widget.preview != null;
+    final showsPreview = hasPreview && widget.previewVisible;
     final isSheet =
         widget.layoutSpec.previewPresentation == ShellPreviewPresentation.sheet;
     final centerLeft =
@@ -119,7 +122,7 @@ class _ShellLayoutFrameState extends State<ShellLayoutFrame> {
         ? widget.layoutSpec.sidebarWidth
         : 0.0;
     final centerRight =
-        hasPreview &&
+        showsPreview &&
             widget.layoutSpec.previewPresentation ==
                 ShellPreviewPresentation.inline
         ? widget.layoutSpec.previewWidth
@@ -142,20 +145,29 @@ class _ShellLayoutFrameState extends State<ShellLayoutFrame> {
         if (hasPreview)
           Positioned.fill(
             key: const ValueKey<String>('home-shell-preview-position'),
-            child: ExcludeFocus(
-              excluding: _isDrawerOpen,
-              child: Align(
-                alignment: isSheet
-                    ? Alignment.bottomCenter
-                    : Alignment.centerRight,
-                child: FractionallySizedBox(
-                  widthFactor: isSheet ? 1 : null,
-                  heightFactor: isSheet ? 0.72 : 1,
-                  child: SizedBox(
-                    width: isSheet
-                        ? double.infinity
-                        : widget.layoutSpec.previewWidth,
-                    child: _buildPreviewSurface(widget.preview!),
+            child: Offstage(
+              offstage: !showsPreview,
+              child: TickerMode(
+                enabled: showsPreview,
+                child: ExcludeSemantics(
+                  excluding: !showsPreview,
+                  child: ExcludeFocus(
+                    excluding: _isDrawerOpen || !showsPreview,
+                    child: Align(
+                      alignment: isSheet
+                          ? Alignment.bottomCenter
+                          : Alignment.centerRight,
+                      child: FractionallySizedBox(
+                        widthFactor: isSheet ? 1 : null,
+                        heightFactor: isSheet ? 0.72 : 1,
+                        child: SizedBox(
+                          width: isSheet
+                              ? double.infinity
+                              : widget.layoutSpec.previewWidth,
+                          child: _buildPreviewSurface(widget.preview!),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),

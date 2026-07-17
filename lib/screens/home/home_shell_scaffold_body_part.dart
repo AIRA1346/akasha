@@ -11,6 +11,8 @@ Widget _homeShellScaffoldBody(
     onToggleSidebar: controller.toggleSidebar,
     isSidebarOpen: controller.isSidebarOpen,
     destination: controller.currentDestination,
+    activeUtilitySurface: controller.activeUtilitySurface,
+    onCloseUtilitySurface: controller.closeUtilitySurface,
     isCuratedLibraryActive: controller.isCuratedLibraryActive,
     isCatalogLoading: controller.isCatalogLoading,
     isCatalogLoadingMore: controller.isCatalogLoadingMore,

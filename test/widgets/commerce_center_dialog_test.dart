@@ -12,8 +12,6 @@ void main() {
     tester,
   ) async {
     await tester.pumpWidget(_harness());
-    await tester.tap(find.text('open'));
-    await tester.pumpAndSettle();
 
     expect(find.text('상점 및 인벤토리'), findsOneWidget);
     expect(find.text('아스트라 충전'), findsOneWidget);
@@ -67,7 +65,6 @@ void main() {
         ),
       ),
     );
-    await tester.tap(find.text('open'));
     await tester.pump(const Duration(seconds: 1));
 
     expect(find.text('Steam 가격 · 5,500 KRW'), findsOneWidget);
@@ -97,7 +94,6 @@ void main() {
         ),
       ),
     );
-    await tester.tap(find.text('open'));
     // The loading indicator is intentionally continuous, so settle cannot
     // complete while this authority state is visible.
     await tester.pump(const Duration(seconds: 1));
@@ -122,9 +118,6 @@ void main() {
     await tester.pumpWidget(
       _harness(account: null, commerceController: controller),
     );
-    await tester.tap(find.text('open'));
-    await tester.pumpAndSettle();
-
     expect(
       find.byKey(const ValueKey('commerce-authority-unavailable')),
       findsOneWidget,
@@ -158,8 +151,6 @@ void main() {
       await tester.pumpWidget(
         _harness(account: null, commerceController: controller),
       );
-      await tester.tap(find.text('open'));
-      await tester.pumpAndSettle();
       await tester.tap(find.byIcon(Icons.inventory_2_outlined));
       await tester.pumpAndSettle();
 
@@ -192,8 +183,6 @@ void main() {
     await tester.pumpWidget(
       _harness(account: null, commerceController: controller),
     );
-    await tester.tap(find.text('open'));
-    await tester.pumpAndSettle();
     await tester.tap(
       find.byKey(const ValueKey('commerce-copy-diagnostics')).first,
     );
@@ -214,9 +203,6 @@ void main() {
     await tester.pumpWidget(
       _harness(account: null, commerceController: controller),
     );
-    await tester.tap(find.text('open'));
-    await tester.pumpAndSettle();
-
     expect(
       find.text('Steam 거래가 활성화되어 있습니다. 완료 후 인벤토리에서 결과를 확인합니다.'),
       findsOneWidget,
@@ -255,8 +241,6 @@ void main() {
     await tester.pumpWidget(
       _harness(account: null, commerceController: controller),
     );
-    await tester.tap(find.text('open'));
-    await tester.pumpAndSettle();
     await tester.drag(
       find.byKey(const PageStorageKey('commerce-store-scroll')),
       const Offset(0, -650),
@@ -308,9 +292,6 @@ void main() {
     await tester.pumpWidget(
       _harness(textScaler: const TextScaler.linear(1.25)),
     );
-    await tester.tap(find.text('open'));
-    await tester.pumpAndSettle();
-
     expect(tester.takeException(), isNull);
     expect(find.text('아스트라 충전'), findsOneWidget);
 
@@ -327,9 +308,6 @@ void main() {
     await tester.pumpWidget(
       _harness(textScaler: const TextScaler.linear(1.25)),
     );
-    await tester.tap(find.text('open'));
-    await tester.pumpAndSettle();
-
     expect(tester.takeException(), isNull);
     expect(find.text('아스트라 충전'), findsOneWidget);
 
@@ -338,6 +316,36 @@ void main() {
     expect(tester.takeException(), isNull);
     expect(find.text('아스트라'), findsOneWidget);
     expect(find.text('에코'), findsOneWidget);
+  });
+
+  testWidgets('compatibility dialog delegates to CommerceCenterView', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        locale: const Locale('ko'),
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        theme: AkashaTheme.dark(),
+        home: Scaffold(
+          body: Builder(
+            builder: (context) => TextButton(
+              onPressed: () => showCommerceCenterDialog(context),
+              child: const Text('open compatibility dialog'),
+            ),
+          ),
+        ),
+      ),
+    );
+
+    await tester.tap(find.text('open compatibility dialog'));
+    await tester.pumpAndSettle();
+
+    expect(
+      find.byKey(const ValueKey('commerce-center-dialog')),
+      findsOneWidget,
+    );
+    expect(find.byKey(const ValueKey('commerce-center-view')), findsOneWidget);
   });
 }
 
@@ -364,14 +372,7 @@ Widget _harness({
       }
       return content;
     },
-    home: Scaffold(
-      body: Builder(
-        builder: (context) => TextButton(
-          onPressed: () => showCommerceCenterDialog(context, account: account),
-          child: const Text('open'),
-        ),
-      ),
-    ),
+    home: Scaffold(body: CommerceCenterView(account: account)),
   );
 }
 

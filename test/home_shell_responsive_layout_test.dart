@@ -132,38 +132,43 @@ void main() {
     final scrollController = ScrollController();
     addTearDown(scrollController.dispose);
     const centerKey = ValueKey<String>('preview-toggle-center-sentinel');
+    const previewKey = ValueKey<String>('preview-toggle-preview-sentinel');
     final center = _MountedScrollableSentinel(
       key: centerKey,
       controller: scrollController,
     );
+    const preview = _MountedSentinel(key: previewKey, label: 'Preview');
     const size = Size(1366, 768);
 
-    await _pumpFrame(
-      tester,
-      size: size,
-      center: center,
-      preview: const _Slot(label: 'Preview'),
-    );
+    await _pumpFrame(tester, size: size, center: center, preview: preview);
     final centerState = tester.state(find.byKey(centerKey));
+    final previewState = tester.state(find.byKey(previewKey));
     final centerRect = tester.getRect(find.byKey(ShellLayoutFrame.centerKey));
     scrollController.jumpTo(320);
     await tester.pump();
     expect(scrollController.offset, 320);
 
-    await _pumpFrame(tester, size: size, showPreview: false, center: center);
+    await _pumpFrame(
+      tester,
+      size: size,
+      center: center,
+      preview: preview,
+      previewVisible: false,
+    );
     expect(find.byKey(ShellLayoutFrame.previewKey), findsNothing);
+    expect(
+      tester.state(find.byKey(previewKey, skipOffstage: false)),
+      same(previewState),
+    );
+    expect(previewState.mounted, isTrue);
     expect(tester.state(find.byKey(centerKey)), same(centerState));
     expect(centerState.mounted, isTrue);
     expect(scrollController.offset, 320);
     expect(tester.getRect(find.byKey(ShellLayoutFrame.centerKey)), centerRect);
 
-    await _pumpFrame(
-      tester,
-      size: size,
-      center: center,
-      preview: const _Slot(label: 'Preview'),
-    );
+    await _pumpFrame(tester, size: size, center: center, preview: preview);
     expect(find.byKey(ShellLayoutFrame.previewKey), findsOneWidget);
+    expect(tester.state(find.byKey(previewKey)), same(previewState));
     expect(tester.state(find.byKey(centerKey)), same(centerState));
     expect(centerState.mounted, isTrue);
     expect(scrollController.offset, 320);
@@ -248,11 +253,12 @@ void main() {
     },
   );
 
-  test('Escape dismisses compact drawer before an open preview', () {
+  test('Escape orders fullscreen, compact drawer, commerce, and preview', () {
     expect(
       resolveShellEscapeTarget(
         layoutSpec: ShellLayoutSpec.compact,
         sidebarOpen: true,
+        commerceOpen: true,
         previewOpen: true,
         fullscreen: true,
       ),
@@ -262,6 +268,7 @@ void main() {
       resolveShellEscapeTarget(
         layoutSpec: ShellLayoutSpec.compact,
         sidebarOpen: true,
+        commerceOpen: true,
         previewOpen: true,
       ),
       ShellEscapeTarget.sidebar,
@@ -270,9 +277,19 @@ void main() {
       resolveShellEscapeTarget(
         layoutSpec: ShellLayoutSpec.compact,
         sidebarOpen: false,
+        commerceOpen: true,
         previewOpen: true,
       ),
-      ShellEscapeTarget.preview,
+      ShellEscapeTarget.commerce,
+    );
+    expect(
+      resolveShellEscapeTarget(
+        layoutSpec: ShellLayoutSpec.standard,
+        sidebarOpen: true,
+        commerceOpen: true,
+        previewOpen: true,
+      ),
+      ShellEscapeTarget.commerce,
     );
     expect(
       resolveShellEscapeTarget(
@@ -290,6 +307,7 @@ Future<void> _pumpFrame(
   required Size size,
   AkashaThemePreset preset = AkashaThemeRegistry.classicDarkPreset,
   bool showPreview = true,
+  bool previewVisible = true,
   Widget? center,
   Widget? preview,
 }) async {
@@ -319,6 +337,7 @@ Future<void> _pumpFrame(
           preview: showPreview
               ? preview ?? const _Slot(label: 'Preview content at 125%')
               : null,
+          previewVisible: previewVisible,
         ),
       ),
     ),

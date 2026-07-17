@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../config/feature_flags.dart';
+import '../../theme/akasha_palette.dart';
 import '../../utils/app_l10n.dart';
 
 enum _HomeAppBarMenuAction {
@@ -30,6 +31,8 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.onCatalogInbox,
     this.catalogContributionCount = 0,
     required this.onSettings,
+    required this.onCommerce,
+    this.commerceSelected = false,
     this.currencySlot,
     this.avatarSlot,
     this.toolbarHeight = 64,
@@ -49,6 +52,8 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? onCatalogInbox;
   final int catalogContributionCount;
   final VoidCallback onSettings;
+  final VoidCallback onCommerce;
+  final bool commerceSelected;
   final Widget? currencySlot;
   final Widget? avatarSlot;
   final double toolbarHeight;
@@ -198,6 +203,8 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
         HomeUtilityCluster(
           currencySlot: currencySlot,
+          onCommerce: onCommerce,
+          commerceSelected: commerceSelected,
           onSettings: onSettings,
           avatarSlot: avatarSlot,
         ),
@@ -212,22 +219,52 @@ class HomeUtilityCluster extends StatelessWidget {
   const HomeUtilityCluster({
     super.key,
     required this.onSettings,
+    required this.onCommerce,
+    required this.commerceSelected,
     this.currencySlot,
     this.avatarSlot,
   });
 
   final Widget? currencySlot;
+  final VoidCallback onCommerce;
+  final bool commerceSelected;
   final VoidCallback onSettings;
   final Widget? avatarSlot;
 
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
+    final palette = context.akashaPalette;
+    final commerceTooltip = l10n?.commerceCenterTitle ?? 'Store & Inventory';
     return Row(
       key: const ValueKey('home-utility-cluster'),
       mainAxisSize: MainAxisSize.min,
       children: [
         ?currencySlot,
+        Semantics(
+          key: const ValueKey('home-utility-commerce'),
+          container: true,
+          button: true,
+          selected: commerceSelected,
+          label: commerceTooltip,
+          child: ExcludeSemantics(
+            child: Tooltip(
+              message: commerceTooltip,
+              child: IconButton(
+                onPressed: onCommerce,
+                isSelected: commerceSelected,
+                selectedIcon: const Icon(Icons.storefront),
+                icon: const Icon(Icons.storefront_outlined),
+                style: commerceSelected
+                    ? IconButton.styleFrom(
+                        foregroundColor: palette.accent,
+                        backgroundColor: palette.accentSoft,
+                      )
+                    : null,
+              ),
+            ),
+          ),
+        ),
         IconButton(
           key: const ValueKey('home-utility-settings'),
           tooltip: l10n?.appPreferencesTitle ?? 'Settings',

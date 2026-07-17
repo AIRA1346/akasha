@@ -36,6 +36,7 @@ import 'home_shell_controller_state_mixin.dart';
 import 'home_shell_controller_vault_mixin.dart';
 import 'home_shell_controller_workbench_mixin.dart';
 import 'home_shell_host.dart';
+import 'home_utility_surface.dart';
 
 /// Home 화면 조립·위임 (Wave 1.4 + E2).
 class HomeShellController extends HomeShellControllerBase
@@ -47,6 +48,34 @@ class HomeShellController extends HomeShellControllerBase
         HomeShellControllerWorkbenchMixin,
         HomeShellControllerBrowseMixin {
   HomeShellController(this.host);
+
+  HomeUtilitySurface? _activeUtilitySurface;
+
+  HomeUtilitySurface? get activeUtilitySurface => _activeUtilitySurface;
+  bool get isCommerceSurfaceOpen =>
+      _activeUtilitySurface == HomeUtilitySurface.commerce;
+
+  void openCommerceSurface() {
+    if (isCommerceSurfaceOpen) return;
+    wrapSetState(() => _activeUtilitySurface = HomeUtilitySurface.commerce);
+  }
+
+  void toggleCommerceSurface() {
+    wrapSetState(() {
+      _activeUtilitySurface = isCommerceSurfaceOpen
+          ? null
+          : HomeUtilitySurface.commerce;
+    });
+  }
+
+  void closeUtilitySurface() {
+    if (_activeUtilitySurface == null) return;
+    wrapSetState(() => _activeUtilitySurface = null);
+  }
+
+  void _closeUtilitySurfaceAfterNavigation() {
+    _activeUtilitySurface = null;
+  }
 
   @override
   final HomeShellHost host;
@@ -133,6 +162,7 @@ class HomeShellController extends HomeShellControllerBase
       onPreviewWork: (item, {bool push = false}) =>
           coordinators.preview.openWorkPreview(item, push: push),
       onOpenWorkDetail: (item) => coordinators.preview.openWorkDetail(item),
+      onNavigationCommitted: _closeUtilitySurfaceAfterNavigation,
       autoArchiveRegistryWorks: ({bool showFeedback = false}) =>
           vault.autoArchiveRegistryWorks(
             showFeedback: showFeedback,

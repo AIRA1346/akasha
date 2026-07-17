@@ -10,11 +10,13 @@ PreferredSizeWidget _homeShellScaffoldAppBar(
     isSidebarOpen: controller.isSidebarOpen,
     isSyncing: controller.isSyncing,
     vaultLinked: controller.vaultLinked,
+    onCommerce: controller.toggleCommerceSurface,
+    commerceSelected: controller.isCommerceSurfaceOpen,
     onSettings: () => unawaited(
       showAppPreferencesDialog(
         context,
         onOpenAppTheme: controller.showAppThemePicker,
-        onOpenCommerceCenter: () => showCommerceCenterDialog(context),
+        onOpenCommerceCenter: controller.openCommerceSurface,
         onOpenVaultSettings: controller.openVaultSettingsDialog,
       ),
     ),

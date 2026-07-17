@@ -32,11 +32,15 @@ void main() {
     late WorkbenchNavigationGuardPrompt guardPrompt;
     var rebuildCount = 0;
     var legacyLoadCount = 0;
+    var navigationCommitCount = 0;
+    var utilityOpen = false;
 
     setUp(() {
       SharedPreferences.setMockInitialValues({});
       rebuildCount = 0;
       legacyLoadCount = 0;
+      navigationCommitCount = 0;
+      utilityOpen = false;
       guardPrompt = ({required title, required canSave}) async =>
           WorkbenchNavigationDecision.cancel;
       dashboardCtrl = HomeDashboardController();
@@ -70,6 +74,10 @@ void main() {
         requestWorkbenchNavigationDecision:
             ({required title, required canSave}) =>
                 guardPrompt(title: title, canSave: canSave),
+        onNavigationCommitted: () {
+          navigationCommitCount++;
+          utilityOpen = false;
+        },
       );
     });
 
@@ -151,6 +159,7 @@ void main() {
       );
       workbench.openWork(item);
       workbench.markDirty(workbench.activeTab!.id);
+      utilityOpen = true;
       guardPrompt = ({required title, required canSave}) async {
         expect(title, 'Unsaved Work');
         expect(canSave, isFalse);
@@ -162,6 +171,8 @@ void main() {
       expect(navigation.currentDestination, AppDestination.home);
       expect(workbench.hasOpenDetail, isTrue);
       expect(workbench.tabs.single.isDirty, isTrue);
+      expect(navigationCommitCount, 0);
+      expect(utilityOpen, isTrue);
     });
 
     test('dirty Workbench discard allows destination navigation', () async {
@@ -172,6 +183,7 @@ void main() {
       );
       workbench.openWork(item);
       workbench.markDirty(workbench.activeTab!.id);
+      utilityOpen = true;
       guardPrompt = ({required title, required canSave}) async =>
           WorkbenchNavigationDecision.discard;
 
@@ -179,6 +191,8 @@ void main() {
 
       expect(navigation.currentDestination, AppDestination.graph);
       expect(workbench.tabs, isEmpty);
+      expect(navigationCommitCount, 1);
+      expect(utilityOpen, isFalse);
     });
 
     test('dirty Workbench save completes before navigation', () async {
@@ -190,6 +204,7 @@ void main() {
       workbench.openWork(item);
       final tabId = workbench.activeTab!.id;
       workbench.markDirty(tabId);
+      utilityOpen = true;
       var saveCount = 0;
       workbench.saveActiveTab = () async {
         saveCount++;
@@ -205,6 +220,8 @@ void main() {
       expect(saveCount, 1);
       expect(navigation.currentDestination, AppDestination.timeline);
       expect(workbench.tabs, isEmpty);
+      expect(navigationCommitCount, 1);
+      expect(utilityOpen, isFalse);
     });
 
     test('every dirty tab must be confirmed before navigation', () async {
