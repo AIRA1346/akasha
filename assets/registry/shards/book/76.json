@@ -1,0 +1,60 @@
+{
+  "wk_000003487": {
+    "workId": "wk_000003487",
+    "title": "설문해자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1072348"
+    },
+    "titles": {
+      "ko": "설문해자",
+      "en": "Shuowen Jiezi",
+      "ja": "説文解字"
+    },
+    "creator": "Xu Shen",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007120": {
+    "workId": "wk_000007120",
+    "title": "그날 밤 내가 죽인 소녀",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112117830"
+    },
+    "titles": {
+      "ko": "그날 밤 내가 죽인 소녀",
+      "en": "Q112117830"
+    },
+    "releaseYear": 2022,
+    "creator": "장은영",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009390": {
+    "workId": "wk_000009390",
+    "title": "목숨을 팝니다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11417099"
+    },
+    "titles": {
+      "ko": "목숨을 팝니다",
+      "en": "Life for Sale",
+      "ja": "命売ります"
+    },
+    "releaseYear": 1968,
+    "creator": "Yukio Mishima",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

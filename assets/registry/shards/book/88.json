@@ -1,0 +1,97 @@
+{
+  "wk_000001287": {
+    "workId": "wk_000001287",
+    "title": "내 방 여행하는 법",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10392559"
+    },
+    "titles": {
+      "ko": "내 방 여행하는 법",
+      "en": "Voyage Around My Room",
+      "ja": "わが部屋をめぐる旅"
+    },
+    "releaseYear": 1794,
+    "creator": "Xavier de Maistre",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005165": {
+    "workId": "wk_000005165",
+    "title": "가죽스타킹 이야기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1092918"
+    },
+    "titles": {
+      "ko": "가죽스타킹 이야기",
+      "en": "Leatherstocking Tales",
+      "ja": "革脚絆物語"
+    },
+    "releaseYear": 1823,
+    "creator": "James Fenimore Cooper",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005502": {
+    "workId": "wk_000005502",
+    "title": "동상기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458405"
+    },
+    "titles": {
+      "ko": "동상기",
+      "en": "Q109458405"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010091": {
+    "workId": "wk_000010091",
+    "title": "희망의 나라로 엑소더스",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11480923"
+    },
+    "titles": {
+      "ko": "희망의 나라로 엑소더스",
+      "en": "Q11480923",
+      "ja": "希望の国のエクソダス"
+    },
+    "releaseYear": 2000,
+    "creator": "Ryū Murakami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010191": {
+    "workId": "wk_000010191",
+    "title": "폭식의 베르세르크 ~나만 레벨이라는 개념을 돌파한다~",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114895912"
+    },
+    "titles": {
+      "ko": "폭식의 베르세르크 ~나만 레벨이라는 개념을 돌파한다~",
+      "en": "Berserk of Gluttony",
+      "ja": "暴食のベルセルク"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

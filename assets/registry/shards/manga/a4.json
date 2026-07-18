@@ -1,0 +1,78 @@
+{
+  "wk_000000637": {
+    "workId": "wk_000000637",
+    "title": "가족팔경",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855054"
+    },
+    "titles": {
+      "ko": "가족팔경",
+      "en": "Kazoku Hakkei",
+      "ja": "家族八景"
+    },
+    "releaseYear": 1972,
+    "creator": "Yasutaka Tsutsui",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001632": {
+    "workId": "wk_000001632",
+    "title": "동글동글 해롱이",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11277616"
+    },
+    "titles": {
+      "ko": "동글동글 해롱이",
+      "en": "Q11277616",
+      "ja": "へろへろくん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004802": {
+    "workId": "wk_000004802",
+    "title": "우스즈미의 끝",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122826929"
+    },
+    "titles": {
+      "ko": "우스즈미의 끝",
+      "en": "The Color of the End: Mission in the Apocalypse",
+      "ja": "ウスズミの果て"
+    },
+    "creator": "Haruo Iwamune",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006595": {
+    "workId": "wk_000006595",
+    "title": "하니하니의 멋진 모험",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1442570"
+    },
+    "titles": {
+      "ko": "하니하니의 멋진 모험",
+      "en": "Honey Honey no Suteki na Bouken",
+      "ja": "ハニーハニーのすてきな冒険"
+    },
+    "creator": "Hideko Mizuno",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

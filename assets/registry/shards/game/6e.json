@@ -1,0 +1,109 @@
+{
+  "wk_000000085": {
+    "workId": "wk_000000085",
+    "title": "로켓 리그",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Psyonix",
+    "releaseYear": 2015,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid252950_2015"
+    ],
+    "titles": {
+      "en": "Rocket League®",
+      "ko": "로켓 리그"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "252950",
+      "wikidata": "Q20031743"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000601": {
+    "workId": "wk_000000601",
+    "title": "랜드매스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10316215"
+    },
+    "titles": {
+      "ko": "랜드매스",
+      "en": "Landmass"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001808": {
+    "workId": "wk_000001808",
+    "title": "다크랜드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068006"
+    },
+    "titles": {
+      "ko": "다크랜드",
+      "en": "Darklands"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002467": {
+    "workId": "wk_000002467",
+    "title": "엑스디파이언트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107578877"
+    },
+    "titles": {
+      "ko": "엑스디파이언트",
+      "en": "XDefiant",
+      "ja": "エックスディファイアント"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008926": {
+    "workId": "wk_000008926",
+    "title": "트랜스포머: 더 게임",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1326987"
+    },
+    "titles": {
+      "ko": "트랜스포머: 더 게임",
+      "en": "Transformers: The Game",
+      "ja": "トランスフォーマー THE GAME"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

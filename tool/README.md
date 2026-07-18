@@ -12,9 +12,11 @@
 | `preflight_check.dart` | registry 변경 후 4종 gate 일괄 |
 | `ci_registry_check.dart` | CI — 레지스트리·프랜차이즈·Fact-only 정책 |
 | `quality_gate.dart` | 품질 게이트 (`--strict`, `--release`, `--locale-minimum`) |
-| `registry_builder.dart` | 샤드 빌드 · `--sync-assets` · `--bundle-eager-only` |
+| `registry_builder.dart` | source manifest/search index를 재생성하는 명시적 데이터 작업 |
+| `registry_bundle_builder.dart` | source를 수정하지 않는 결정적 full/eager bundle 생성·검증 |
+| `registry_bundle_ci.dart` | full bundle 완전성·결정성·source 불변성 CI 계약 |
 | `dedupe_linter.dart` | 중복 작품 검사 |
-| `catalog_scale_baseline.dart` | 번들 크기·15MB 게이트 |
+| `catalog_scale_baseline.dart` | 현재 full-bundle 기준선과 독립 scale hard gate |
 | `coverage_dashboard.dart` | titles_ko/en 커버리지 리포트 |
 | `sw1_a_validation.dart` | 검색 Recall@10 검증 |
 | `pre_insert_dedupe_gate.dart` | insert 전 dedupe |
@@ -30,7 +32,8 @@
 dart analyze tool
 dart run tool/preflight_check.dart
 dart run tool/ci_registry_check.dart
-dart run tool/registry_builder.dart --sync-assets --bundle-eager-only
+dart run tool/registry_builder.dart
+dart run tool/registry_bundle_builder.dart --source akasha-db --output assets/registry --bundle-all --source-revision <commit>
 ```
 
 ## Discovery (`tool/discovery/`)

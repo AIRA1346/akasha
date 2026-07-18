@@ -1,0 +1,21 @@
+{
+  "wk_000001024": {
+    "workId": "wk_000001024",
+    "title": "아라타 칸가타리",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049825"
+    },
+    "titles": {
+      "ko": "아라타 칸가타리",
+      "en": "Arata: The Legend",
+      "ja": "アラタ カンガタリ〜革神語〜"
+    },
+    "creator": "Yuu Watase",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

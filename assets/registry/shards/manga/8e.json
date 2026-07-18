@@ -1,0 +1,71 @@
+{
+  "wk_000000359": {
+    "workId": "wk_000000359",
+    "title": "일상",
+    "titles": {
+      "ko": "일상",
+      "en": "Nichijou - My Ordinary Life",
+      "ja": "日常"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아라와 케이이치로",
+    "releaseYear": 2006,
+    "tags": [
+      "코미디",
+      "일상",
+      "학원",
+      "개그"
+    ],
+    "legacyIds": [
+      "sub_manga_nichijou_2006"
+    ],
+    "externalIds": {
+      "wikidata": "Q483120"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000005533": {
+    "workId": "wk_000005533",
+    "title": "오니의 신부",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130324841"
+    },
+    "titles": {
+      "ko": "오니의 신부",
+      "en": "The Ogre's Bride",
+      "ja": "鬼の花嫁"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008696": {
+    "workId": "wk_000008696",
+    "title": "ABARA",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2413854"
+    },
+    "titles": {
+      "ko": "ABARA",
+      "en": "Abara",
+      "ja": "ABARA"
+    },
+    "creator": "Tsutomu Nihei",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

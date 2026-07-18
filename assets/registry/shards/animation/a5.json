@@ -1,0 +1,258 @@
+{
+  "wk_000001915": {
+    "workId": "wk_000001915",
+    "title": "백성녀와 흑목사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113645560"
+    },
+    "titles": {
+      "ko": "백성녀와 흑목사",
+      "en": "Saint Cecilia and Pastor Lawrence",
+      "ja": "白聖女と黒牧師"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002149": {
+    "workId": "wk_000002149",
+    "title": "인연의 알레르",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115233654"
+    },
+    "titles": {
+      "ko": "인연의 알레르",
+      "en": "Kizuna no Allele",
+      "ja": "絆のアリル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002215": {
+    "workId": "wk_000002215",
+    "title": "학원 헤븐 BOY'S LOVE SCRAMBLE!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1154265"
+    },
+    "titles": {
+      "ko": "학원 헤븐 BOY'S LOVE SCRAMBLE!",
+      "en": "Gakuen Heaven",
+      "ja": "学園ヘヴン BOY'S LOVE SCRAMBLE!"
+    },
+    "creator": "You Higuri",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003633": {
+    "workId": "wk_000003633",
+    "title": "담도백경",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125854410"
+    },
+    "titles": {
+      "ko": "담도백경",
+      "en": "Scenes From Awajima",
+      "ja": "淡島百景"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003783": {
+    "workId": "wk_000003783",
+    "title": "마법소녀대 아루스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1280574"
+    },
+    "titles": {
+      "ko": "마법소녀대 아루스",
+      "en": "Tweeny Witches",
+      "ja": "魔法少女隊アルス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005288": {
+    "workId": "wk_000005288",
+    "title": "샤를로트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18692527"
+    },
+    "titles": {
+      "ko": "샤를로트",
+      "en": "Charlotte",
+      "ja": "Charlotte"
+    },
+    "creator": "Jun Maeda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008230": {
+    "workId": "wk_000008230",
+    "title": "범죄의 기록: 비운의 후보",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q62383790"
+    },
+    "titles": {
+      "ko": "범죄의 기록: 비운의 후보",
+      "en": "Historia de un Crimen: Colosio",
+      "ja": "犯罪アンソロジー: 大統領候補の暗殺"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008430": {
+    "workId": "wk_000008430",
+    "title": "합체용사 플러스터",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q646801"
+    },
+    "titles": {
+      "ko": "합체용사 플러스터",
+      "en": "Pluster World",
+      "ja": "冒険遊記プラスターワールド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008562": {
+    "workId": "wk_000008562",
+    "title": "돈키호테",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q658540"
+    },
+    "titles": {
+      "ko": "돈키호테",
+      "en": "Zukkoke Knight - Don De La Mancha",
+      "ja": "ずっこけナイトドンデラマンチャ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008566": {
+    "workId": "wk_000008566",
+    "title": "건담 빌드 다이버즈 Re:RISE",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q66023719"
+    },
+    "titles": {
+      "ko": "건담 빌드 다이버즈 Re:RISE",
+      "en": "Gundam Build Divers Re:Rise",
+      "ja": "ガンダムビルドダイバーズRe:RISE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009042": {
+    "workId": "wk_000009042",
+    "title": "쥬베이짱",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q712466"
+    },
+    "titles": {
+      "ko": "쥬베이짱",
+      "en": "Jubei-chan: The Ninja Girl",
+      "ja": "十兵衛ちゃん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009118": {
+    "workId": "wk_000009118",
+    "title": "마스터스 오브 디 에어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q72638293"
+    },
+    "titles": {
+      "ko": "마스터스 오브 디 에어",
+      "en": "Masters of the Air",
+      "ja": "マスターズ・オブ・ザ・エアー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009182": {
+    "workId": "wk_000009182",
+    "title": "지옥소녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q753729"
+    },
+    "titles": {
+      "ko": "지옥소녀",
+      "en": "Hell Girl",
+      "ja": "地獄少女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009357": {
+    "workId": "wk_000009357",
+    "title": "세레비 시간을 초월한 만남",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q82579"
+    },
+    "titles": {
+      "ko": "세레비 시간을 초월한 만남",
+      "en": "Pokémon 4Ever",
+      "ja": "劇場版ポケットモンスター セレビィ 時を超えた遭遇"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

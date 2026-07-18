@@ -1,0 +1,207 @@
+{
+  "wk_000000597": {
+    "workId": "wk_000000597",
+    "title": "DayZ",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10279881"
+    },
+    "titles": {
+      "ko": "DayZ",
+      "en": "DayZ",
+      "ja": "DayZ"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000780": {
+    "workId": "wk_000000780",
+    "title": "파라다이스 킬러",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104161755"
+    },
+    "titles": {
+      "ko": "파라다이스 킬러",
+      "en": "Paradise Killer",
+      "ja": "パラダイスキラー"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000785": {
+    "workId": "wk_000000785",
+    "title": "아이돌마스터 팝 링크스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104210521"
+    },
+    "titles": {
+      "ko": "아이돌마스터 팝 링크스",
+      "en": "The Idolmaster Poplinks",
+      "ja": "アイドルマスター ポップリンクス"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001224": {
+    "workId": "wk_000001224",
+    "title": "워페이스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1052646"
+    },
+    "titles": {
+      "ko": "워페이스",
+      "en": "Warface: Clutch",
+      "ja": "Warface: Clutch"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001802": {
+    "workId": "wk_000001802",
+    "title": "차근차근 게임 코딩",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106725413"
+    },
+    "titles": {
+      "ko": "차근차근 게임 코딩",
+      "en": "Game Builder Garage",
+      "ja": "ナビつき！つくってわかる　はじめてゲームプログラミング"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002089": {
+    "workId": "wk_000002089",
+    "title": "퍼니싱: 그레이 레이븐",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107098508"
+    },
+    "titles": {
+      "ko": "퍼니싱: 그레이 레이븐",
+      "en": "Punishing: Gray Raven",
+      "ja": "パニシング:グレイレイヴン"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002323": {
+    "workId": "wk_000002323",
+    "title": "FBC: 파이어브레이크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107398147"
+    },
+    "titles": {
+      "ko": "FBC: 파이어브레이크",
+      "en": "FBC: Firebreak"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005561": {
+    "workId": "wk_000005561",
+    "title": "D.C. 다카포",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151363"
+    },
+    "titles": {
+      "ko": "D.C. 다카포",
+      "en": "Da Capo",
+      "ja": "D.C. 〜ダ・カーポ〜"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006481": {
+    "workId": "wk_000006481",
+    "title": "탈로스 법칙 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118645498"
+    },
+    "titles": {
+      "ko": "탈로스 법칙 2",
+      "en": "The Talos Principle 2"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006692": {
+    "workId": "wk_000006692",
+    "title": "클론다이크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1191033"
+    },
+    "titles": {
+      "ko": "클론다이크",
+      "en": "Klondike",
+      "ja": "クロンダイク"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007609": {
+    "workId": "wk_000007609",
+    "title": "아웃패스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123403997"
+    },
+    "titles": {
+      "ko": "아웃패스",
+      "en": "Outpath"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

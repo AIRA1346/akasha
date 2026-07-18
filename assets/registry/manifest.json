@@ -13708,5 +13708,9 @@
       "entryCount": 1,
       "sha256": "8defb878624906443589bfc6511d67e011ae27cb26304039304dad044f635408"
     }
-  ]
+  ],
+  "releaseId": "registry-8ada29d5d3cd061563c86a282f1a2f907bd12ee4",
+  "sourceRevision": "8ada29d5d3cd061563c86a282f1a2f907bd12ee4",
+  "schemaVersion": 4,
+  "bundleMode": "full"
 }

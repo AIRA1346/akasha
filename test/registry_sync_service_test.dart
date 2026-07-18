@@ -186,7 +186,7 @@ void main() {
       expect(await service.syncShardsForQuery('   '), isFalse);
     });
 
-    test('syncShardsByIds fetches unbundled shard when manifest matches local',
+    test('syncShardsByIds skips a bundled shard when manifest matches local',
         () async {
       WorksRegistry.loader.resetLoadedShardsForTesting();
       await WorksRegistry.clearDiskCacheAndReloadBundle();
@@ -195,15 +195,15 @@ void main() {
       final manifest = loader.manifest;
       expect(manifest, isNotNull);
 
-      RegistryShardMeta? unbundled;
+      RegistryShardMeta? target;
       for (final s in manifest!.shards) {
         if (s.eager) continue;
-        if (await loader.hasBundledShard(s.path)) continue;
-        unbundled = s;
+        if (!await loader.hasBundledShard(s.path)) continue;
+        target = s;
         break;
       }
-      expect(unbundled, isNotNull);
-      final target = unbundled!;
+      expect(target, isNotNull);
+      final bundled = target!;
 
       final fetchedUrls = <String>[];
       RegistrySyncService.setTextFetcherForTesting((url) async {
@@ -225,17 +225,17 @@ void main() {
                 .toList(),
           });
         }
-        if (url.endsWith(target.path)) {
+        if (url.endsWith(bundled.path)) {
           return jsonEncode({'wk_test_sync': {'workId': 'wk_test_sync'}});
         }
         return null;
       });
 
       final service = RegistrySyncService();
-      final ok = await service.syncShardsByIds({target.id});
+      final ok = await service.syncShardsByIds({bundled.id});
 
-      expect(ok, isTrue);
-      expect(fetchedUrls.where((u) => u.endsWith(target.path)), isNotEmpty);
+      expect(ok, isFalse);
+      expect(fetchedUrls.where((u) => u.endsWith(bundled.path)), isEmpty);
     });
   });
 }

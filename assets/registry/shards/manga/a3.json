@@ -1,0 +1,39 @@
+{
+  "wk_000003615": {
+    "workId": "wk_000003615",
+    "title": "노다와 다른합니다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11645923"
+    },
+    "titles": {
+      "ko": "노다와 다른합니다",
+      "en": "Noda to mōshimasu",
+      "ja": "野田ともうします。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006456": {
+    "workId": "wk_000006456",
+    "title": "이세계 하렘 이야기",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137636963"
+    },
+    "titles": {
+      "ko": "이세계 하렘 이야기",
+      "en": "Q137636963",
+      "ja": "異世界ハーレム物語"
+    },
+    "creator": "Omina Tachibana",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

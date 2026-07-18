@@ -1,0 +1,235 @@
+{
+  "wk_000000214": {
+    "workId": "wk_000000214",
+    "title": "모브 사이코 100",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "BONES",
+    "releaseYear": 2016,
+    "tags": [
+      "초능력",
+      "액션",
+      "코미디",
+      "성장"
+    ],
+    "externalIds": {
+      "tmdb": "67075",
+      "wikidata": "Q66313196"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_animation_mob-psycho-100_2016"
+    ],
+    "titles": {
+      "en": "MOB Psycho 100",
+      "ko": "모브 사이코 100"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000727": {
+    "workId": "wk_000000727",
+    "title": "친구 여동생이 나한테만 짜증나게 군다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105156949"
+    },
+    "titles": {
+      "ko": "친구 여동생이 나한테만 짜증나게 군다",
+      "en": "My Friend's Little Sister Has It In for Me!",
+      "ja": "友達の妹が俺にだけウザい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001653": {
+    "workId": "wk_000001653",
+    "title": "맡겨줘 스크랩퍼즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262421"
+    },
+    "titles": {
+      "ko": "맡겨줘 스크랩퍼즈",
+      "en": "Omakase Scrappers",
+      "ja": "おまかせスクラッパーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003022": {
+    "workId": "wk_000003022",
+    "title": "별의 커비",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1205191"
+    },
+    "titles": {
+      "ko": "별의 커비",
+      "en": "Kirby: Right Back at Ya!",
+      "ja": "星のカービィ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003918": {
+    "workId": "wk_000003918",
+    "title": "키리오 팬클럽",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130303270"
+    },
+    "titles": {
+      "ko": "키리오 팬클럽",
+      "en": "Kirio Fanclub",
+      "ja": "霧尾ファンクラブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004146": {
+    "workId": "wk_000004146",
+    "title": "추방자 식당에 어서 오세요!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131448079"
+    },
+    "titles": {
+      "ko": "추방자 식당에 어서 오세요!",
+      "en": "Welcome to the Outcast's Restaurant!",
+      "ja": "追放者食堂へようこそ！"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004278": {
+    "workId": "wk_000004278",
+    "title": "에스퍼 마미",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1323883"
+    },
+    "titles": {
+      "ko": "에스퍼 마미",
+      "en": "Esper Mami",
+      "ja": "エスパー魔美"
+    },
+    "creator": "藤子不二雄",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005412": {
+    "workId": "wk_000005412",
+    "title": "포포땅",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1988293"
+    },
+    "titles": {
+      "ko": "포포땅",
+      "en": "Popotan",
+      "ja": "ぽぽたん"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006395": {
+    "workId": "wk_000006395",
+    "title": "드림페스!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q27089505"
+    },
+    "titles": {
+      "ko": "드림페스!",
+      "en": "Dream Festival!",
+      "ja": "ドリフェス!"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007780": {
+    "workId": "wk_000007780",
+    "title": "대세는 백합",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q55728996"
+    },
+    "titles": {
+      "ko": "대세는 백합",
+      "en": "Lily Fever"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008570": {
+    "workId": "wk_000008570",
+    "title": "행복한 교도소",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q66685993"
+    },
+    "titles": {
+      "ko": "행복한 교도소",
+      "en": "Happy Jail",
+      "ja": "かくも楽しきムショ暮らし"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009037": {
+    "workId": "wk_000009037",
+    "title": "오자루마루",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q711735"
+    },
+    "titles": {
+      "ko": "오자루마루",
+      "en": "Ojarumaru",
+      "ja": "おじゃる丸"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "wk_000001318": {
+    "workId": "wk_000001318",
+    "title": "레인보우 식스: 크리티컬 아워",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1054951"
+    },
+    "titles": {
+      "ko": "레인보우 식스: 크리티컬 아워",
+      "en": "Tom Clancy's Rainbow Six: Critical Hour"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002909": {
+    "workId": "wk_000002909",
+    "title": "미소녀 만화경 -물망초와 영원의 소녀-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108573438"
+    },
+    "titles": {
+      "ko": "미소녀 만화경 -물망초와 영원의 소녀-",
+      "en": "Bishoujo Mangekyou -Wasurenagusa to Eien no Shoujo-",
+      "ja": "美少女万華鏡 -忘れな草と永遠の少女-"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005361": {
+    "workId": "wk_000005361",
+    "title": "열혈고교 피구부 축구편",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1145485"
+    },
+    "titles": {
+      "ko": "열혈고교 피구부 축구편",
+      "en": "Nintendo World Cup",
+      "ja": "熱血高校ドッジボール部 サッカー編"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006620": {
+    "workId": "wk_000006620",
+    "title": "그라비티 러시",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1188513"
+    },
+    "titles": {
+      "ko": "그라비티 러시",
+      "en": "Gravity Rush",
+      "ja": "GRAVITY DAZE/重力的眩暈:上層への帰還において彼女の内宇宙に生じた摂動"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006817": {
+    "workId": "wk_000006817",
+    "title": "소닉 더 헤지호그 4",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1194033"
+    },
+    "titles": {
+      "ko": "소닉 더 헤지호그 4",
+      "en": "Sonic the Hedgehog 4: Episode I",
+      "ja": "ソニック・ザ・ヘッジホッグ4"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007225": {
+    "workId": "wk_000007225",
+    "title": "바람의 크로노아 door to phantomile",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1201015"
+    },
+    "titles": {
+      "ko": "바람의 크로노아 door to phantomile",
+      "en": "Klonoa: Door to Phantomile",
+      "ja": "風のクロノア door to phantomile"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008643": {
+    "workId": "wk_000008643",
+    "title": "트로피코 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1316866"
+    },
+    "titles": {
+      "ko": "트로피코 3",
+      "en": "Tropico 3",
+      "ja": "トロピコ3"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009381": {
+    "workId": "wk_000009381",
+    "title": "블루 프로토콜: 스타 레조넌스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134471187"
+    },
+    "titles": {
+      "ko": "블루 프로토콜: 스타 레조넌스",
+      "en": "Blue Protocol: Star Resonance",
+      "ja": "ブループロトコル:スターレゾナンス"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "wk_000000141": {
+    "workId": "wk_000000141",
+    "title": "마인크래프트",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Mojang Studios",
+    "releaseYear": 2011,
+    "tags": [
+      "샌드박스",
+      "서바이벌",
+      "크래프팅",
+      "멀티플레이"
+    ],
+    "extensions": {
+      "platforms": [
+        "PC",
+        "콘솔"
+      ],
+      "steamAppId": "322170",
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "gen_game_minecraft_2011"
+    ],
+    "titles": {
+      "en": "Geometry Dash",
+      "ko": "마인크래프트"
+    },
+    "externalIds": {
+      "steam": "322170",
+      "wikidata": "Q49740"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001506": {
+    "workId": "wk_000001506",
+    "title": "포켓몬스터 샤이닝 펄",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105690902"
+    },
+    "titles": {
+      "ko": "포켓몬스터 샤이닝 펄",
+      "en": "Pokémon Shining Pearl",
+      "ja": "ポケットモンスター シャイニングパール"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002723": {
+    "workId": "wk_000002723",
+    "title": "쌈박",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10852674"
+    },
+    "titles": {
+      "ko": "쌈박",
+      "en": "Ssbak"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004902": {
+    "workId": "wk_000004902",
+    "title": "토이 스토리2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113793937"
+    },
+    "titles": {
+      "ko": "토이 스토리2",
+      "en": "Toy Story 2"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006347": {
+    "workId": "wk_000006347",
+    "title": "모두의마블2: 메타월드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117197943"
+    },
+    "titles": {
+      "ko": "모두의마블2: 메타월드",
+      "en": "Meta World: My City"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006762": {
+    "workId": "wk_000006762",
+    "title": "액티브 월드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193484"
+    },
+    "titles": {
+      "ko": "액티브 월드",
+      "en": "Active Worlds"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007655": {
+    "workId": "wk_000007655",
+    "title": "아네모이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123460050"
+    },
+    "titles": {
+      "ko": "아네모이",
+      "en": "Anemoi"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008092": {
+    "workId": "wk_000008092",
+    "title": "슬라이 쿠퍼 3: 최후의 대도",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1265969"
+    },
+    "titles": {
+      "ko": "슬라이 쿠퍼 3: 최후의 대도",
+      "en": "Sly 3: Honor Among Thieves"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

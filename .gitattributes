@@ -1,0 +1,4 @@
+# Registry hashes and deterministic bundle bytes use LF on every platform.
+assets/registry/*.json text eol=lf
+assets/registry/**/*.json text eol=lf
+

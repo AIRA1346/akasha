@@ -1,0 +1,21 @@
+{
+  "wk_000008525": {
+    "workId": "wk_000008525",
+    "title": "언디스퓨티드 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1078365"
+    },
+    "titles": {
+      "ko": "언디스퓨티드 2",
+      "en": "Undisputed II: Last Man Standing",
+      "ja": "デッドロックII"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

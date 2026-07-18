@@ -1,0 +1,95 @@
+{
+  "wk_000005216": {
+    "workId": "wk_000005216",
+    "title": "극장판 해피니스 차지 프리큐어! 인형 나라의 발레리나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18338868"
+    },
+    "titles": {
+      "ko": "극장판 해피니스 차지 프리큐어! 인형 나라의 발레리나",
+      "en": "HappinessCharge PreCure! the Movie: The Ballerina of the Land of Dolls",
+      "ja": "映画 ハピネスチャージプリキュア! 人形の国のバレリーナ"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005282": {
+    "workId": "wk_000005282",
+    "title": "올리브 키터리지",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18601923"
+    },
+    "titles": {
+      "ko": "올리브 키터리지",
+      "en": "Olive Kitteridge",
+      "ja": "オリーヴ・キタリッジ"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006993": {
+    "workId": "wk_000006993",
+    "title": "무적초인 점보트3",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q4023763"
+    },
+    "titles": {
+      "ko": "무적초인 점보트3",
+      "en": "Invincible Super Man Zambot 3",
+      "ja": "無敵超人ザンボット3"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009043": {
+    "workId": "wk_000009043",
+    "title": "몽키삼총사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q712538"
+    },
+    "titles": {
+      "ko": "몽키삼총사",
+      "en": "Kinkyū Hasshin Saver Kids",
+      "ja": "緊急発進セイバーキッズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009189": {
+    "workId": "wk_000009189",
+    "title": "폭구연발 슈퍼비드맨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7642153"
+    },
+    "titles": {
+      "ko": "폭구연발 슈퍼비드맨",
+      "en": "Super B-Daman",
+      "ja": "爆球連発!!スーパービーダマン"
+    },
+    "creator": "Shun Imaga",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

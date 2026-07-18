@@ -1,0 +1,74 @@
+{
+  "wk_000002895": {
+    "workId": "wk_000002895",
+    "title": "반푼이라 불리던 전 영웅은, 친가에서 추방됐으므로 맘대로 살기로 했습니다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119791199"
+    },
+    "titles": {
+      "ko": "반푼이라 불리던 전 영웅은, 친가에서 추방됐으므로 맘대로 살기로 했습니다",
+      "en": "The Banished Former Hero Lives as He Pleases",
+      "ja": "出来損ないと呼ばれた元英雄は、実家から追放されたので好き勝手に生きることにした"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003111": {
+    "workId": "wk_000003111",
+    "title": "태양의 아이 에스테반",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1218397"
+    },
+    "titles": {
+      "ko": "태양의 아이 에스테반",
+      "en": "The Mysterious Cities of Gold",
+      "ja": "太陽の子エステバン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003842": {
+    "workId": "wk_000003842",
+    "title": "입어주세요, 타카미네 양",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128292443"
+    },
+    "titles": {
+      "ko": "입어주세요, 타카미네 양",
+      "en": "Please Put Them On, Takamine-san",
+      "ja": "履いてください、鷹峰さん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006462": {
+    "workId": "wk_000006462",
+    "title": "키라키라☆프리큐어 아라모드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q28039618"
+    },
+    "titles": {
+      "ko": "키라키라☆프리큐어 아라모드",
+      "en": "KiraKira Pretty Cure a la Mode",
+      "ja": "キラキラ☆プリキュアアラモード"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

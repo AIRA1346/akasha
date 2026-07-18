@@ -1,0 +1,195 @@
+{
+  "wk_000000028": {
+    "workId": "wk_000000028",
+    "title": "데스티니 가디언즈",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Bungie",
+    "releaseYear": 2019,
+    "tags": [
+      "루트슈터",
+      "MMO",
+      "SF",
+      "협동"
+    ],
+    "legacyIds": [
+      "gen_game_appid1085660_2019"
+    ],
+    "titles": {
+      "en": "Destiny 2",
+      "ko": "데스티니 가디언즈"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "1085660",
+      "wikidata": "Q29045915"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000072": {
+    "workId": "wk_000000072",
+    "title": "유로 트럭 시뮬레이터 2",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "SCS Software",
+    "releaseYear": 2012,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid227300_2012"
+    ],
+    "titles": {
+      "en": "Euro Truck Simulator 2",
+      "ko": "유로 트럭 시뮬레이터 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "227300",
+      "wikidata": "Q2632206"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000093": {
+    "workId": "wk_000000093",
+    "title": "림월드",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Ludeon",
+    "releaseYear": 2018,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid294100_2018"
+    ],
+    "titles": {
+      "en": "RimWorld",
+      "ko": "림월드"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "294100",
+      "wikidata": "Q19581568"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000002969": {
+    "workId": "wk_000002969",
+    "title": "리프트브레이커",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108908477"
+    },
+    "titles": {
+      "ko": "리프트브레이커",
+      "en": "Q108908477",
+      "ja": "リフトブレイカー"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002973": {
+    "workId": "wk_000002973",
+    "title": "카운터-스트라이크 2D",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1090793"
+    },
+    "titles": {
+      "ko": "카운터-스트라이크 2D",
+      "en": "CS2D"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003648": {
+    "workId": "wk_000003648",
+    "title": "메루루의 아틀리에 ~알란드의 연금술사 3~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1113356"
+    },
+    "titles": {
+      "ko": "메루루의 아틀리에 ~알란드의 연금술사 3~",
+      "en": "Atelier Meruru: The Apprentice of Arland",
+      "ja": "メルルのアトリエ 〜アーランドの錬金術士3〜"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003862": {
+    "workId": "wk_000003862",
+    "title": "BUSHI청룡전~두 사람의 용사~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11191904"
+    },
+    "titles": {
+      "ko": "BUSHI청룡전~두 사람의 용사~",
+      "en": "Bushi Seiryūden: Futari no Yūsha",
+      "ja": "BUSHI青龍伝〜二人の勇者〜"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003927": {
+    "workId": "wk_000003927",
+    "title": "숲속의 작은 마녀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112052998"
+    },
+    "titles": {
+      "ko": "숲속의 작은 마녀",
+      "en": "Little Witch in the Woods"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

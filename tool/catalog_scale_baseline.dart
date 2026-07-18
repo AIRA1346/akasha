@@ -1,234 +1,219 @@
 // ignore_for_file: avoid_print
-// Catalog scale baseline — Phase 2.0 측정 (수정 전 스냅샷).
-//
-// Usage: dart run tool/catalog_scale_baseline.dart [--strict]
-//
-// Phase 2 (search/browse/bundle) 착수 **전**·**후** 비교용.
-// 490작에서 수치를 남겨 두면 G1 insert 시 병목 **증명**에 쓴다.
-//
-// `--strict`: G1+ 번들이 eager-only가 아니거나 assets/registry > 15MB면 exit 1.
 
-import 'dart:convert';
 import 'dart:io';
 
-const _eagerOnlyThreshold = 2500;
-const _bundleMaxBytes = 15 * 1024 * 1024;
+import 'registry_bundle_contract.dart';
 
+/// Reports the reviewed release baseline and the independent architecture
+/// ceilings for AKASHA's sharded JSON registry.
+///
+/// Usage: dart run tool/catalog_scale_baseline.dart [--strict]
 void main(List<String> args) {
   final strict = args.contains('--strict');
-  final root = _root();
-  final db = Directory('${root.path}/akasha-db');
-  final assets = Directory('${root.path}/assets/registry');
+  final root = _projectRoot();
+  final source = Directory('${root.path}/akasha-db');
+  final output = Directory('${root.path}/assets/registry');
+  final sourceRevision = _bundleSourceRevision(output);
+  final audit = auditRegistryBundle(
+    RegistryBundleSpec(
+      source: source,
+      output: output,
+      mode: RegistryBundleMode.all,
+      sourceRevision: sourceRevision,
+    ),
+  );
 
   print('AKASHA Catalog Scale Baseline');
-  print('root: ${root.path}\n');
-
-  _reportManifest(db, assets);
-  _reportSearchIndex(db, assets);
-  _reportShards(db, assets);
-  final assetsBytes = _reportAssetsTotal(assets);
-  final bundleMode = _reportBundleMode(db, assets);
-
-  print('\n--- Phase 2 trigger (architecture-evolution-phases) ---');
-  print('search_index parse > 50ms @490 → watch');
-  print('entryCount > 1000 OR master_index 체감 지연 → Phase 2.1~2.2');
-  print('entryCount > 2500 OR assets/registry > 5MB → Phase 2.3 eager-only (ADR-010)');
-  print('APK assets/registry > 15MB → CI/release mandatory eager-only');
-
-  if (!strict) return;
-
-  final entryCount = _readEntryCount(db);
-  final errors = <String>[];
-
-  if (entryCount > _eagerOnlyThreshold && bundleMode != 'eager-only') {
-    errors.add(
-      'bundle mode is "$bundleMode" (expected eager-only at entryCount $entryCount)',
+  print('root: ${root.path}');
+  print('sourceRevision: $sourceRevision');
+  print('schema: v${audit.registrySchemaVersion}');
+  print('works: ${audit.entryCount}');
+  print(
+    'shards: manifest=${audit.manifestShardCount}, '
+    'source=${audit.sourceShardFileCount}, eager=${audit.eagerShardCount}, '
+    'bundle=${audit.bundledShardCount}',
+  );
+  print('registry logical size: ${_size(audit.registryLogicalBytes)}');
+  print('search index size: ${_size(audit.searchIndexBytes)}');
+  print('category index size: ${_size(audit.categoryIndexBytes)}');
+  print('manifest size: ${_size(audit.manifestBytes)}');
+  print(
+    'bundle assets: ${audit.bundleAssetFileCount} files, '
+    '${_size(audit.bundleAssetBytes)}',
+  );
+  print(
+    'bundle integrity: missing=${audit.missingBundleShardCount}, '
+    'orphan=${audit.orphanBundleShardCount}, '
+    'manifestSha=${audit.manifestShaMismatchCount}, '
+    'searchSha=${audit.searchShaMismatchCount}, '
+    'searchMissingIds=${audit.searchMissingIdCount}, '
+    'searchOrphanIds=${audit.searchOrphanIdCount}',
+  );
+  print('canonical generalCulture: ${audit.canonicalGeneralCultureCount}');
+  print('categories:');
+  for (final entry in audit.categoryStats.entries) {
+    print(
+      '  ${entry.key}: works=${entry.value.works}, shards=${entry.value.shards}',
     );
   }
-  if (assetsBytes > _bundleMaxBytes) {
-    errors.add(
-      'assets/registry is ${_mb(assetsBytes)} MB (limit ${_mb(_bundleMaxBytes)} MB)',
-    );
+
+  print('\nScale ceilings (architecture redesign gate):');
+  print('  works <= ${CatalogScaleCeilings.entryCount}');
+  print('  shards <= ${CatalogScaleCeilings.shardCount}');
+  print('  bundle <= ${_size(CatalogScaleCeilings.bundleBytes)}');
+  print('  search index <= ${_size(CatalogScaleCeilings.searchIndexBytes)}');
+
+  if (!strict) {
+    if (!audit.isValid) {
+      stderr.writeln('\nAudit findings:');
+      for (final error in audit.errors) {
+        stderr.writeln('  - $error');
+      }
+    }
+    return;
   }
+
+  final errors = <String>[...audit.errors];
+  _expectExact(
+    errors,
+    'release works',
+    audit.entryCount,
+    CatalogReleaseBaseline.entryCount,
+  );
+  _expectExact(
+    errors,
+    'release manifest shards',
+    audit.manifestShardCount,
+    CatalogReleaseBaseline.manifestShardCount,
+  );
+  _expectExact(
+    errors,
+    'release source shard files',
+    audit.sourceShardFileCount,
+    CatalogReleaseBaseline.manifestShardCount,
+  );
+  _expectExact(
+    errors,
+    'release eager shards',
+    audit.eagerShardCount,
+    CatalogReleaseBaseline.eagerShardCount,
+  );
+  _expectExact(
+    errors,
+    'release schema',
+    audit.registrySchemaVersion,
+    CatalogReleaseBaseline.registrySchemaVersion,
+  );
+  _expectExact(
+    errors,
+    'canonical generalCulture records',
+    audit.canonicalGeneralCultureCount,
+    CatalogReleaseBaseline.canonicalGeneralCultureCount,
+  );
+  _expectExact(
+    errors,
+    'bundle missing shards',
+    audit.missingBundleShardCount,
+    CatalogReleaseBaseline.missingShardCount,
+  );
+  _expectExact(
+    errors,
+    'bundle orphan shards',
+    audit.orphanBundleShardCount,
+    CatalogReleaseBaseline.orphanShardCount,
+  );
+  _expectExact(
+    errors,
+    'manifest SHA mismatches',
+    audit.manifestShaMismatchCount,
+    CatalogReleaseBaseline.manifestShaMismatchCount,
+  );
+  _expectExact(
+    errors,
+    'packaged full-bundle shards',
+    audit.bundledShardCount,
+    audit.manifestShardCount,
+  );
+
+  _expectAtMost(
+    errors,
+    'works hard gate',
+    audit.entryCount,
+    CatalogScaleCeilings.entryCount,
+    'redesign search/index loading or move to a remote/data-pack release',
+  );
+  _expectAtMost(
+    errors,
+    'shard hard gate',
+    audit.manifestShardCount,
+    CatalogScaleCeilings.shardCount,
+    'revisit the seven-category v4 shard topology',
+  );
+  _expectAtMost(
+    errors,
+    'bundle hard gate',
+    audit.bundleAssetBytes,
+    CatalogScaleCeilings.bundleBytes,
+    're-evaluate a remote provider or separate data pack',
+  );
+  _expectAtMost(
+    errors,
+    'search-index hard gate',
+    audit.searchIndexBytes,
+    CatalogScaleCeilings.searchIndexBytes,
+    'redesign the search representation before adding more records',
+  );
 
   if (errors.isEmpty) {
     print('\nOK: catalog_scale_baseline --strict');
     return;
   }
-
   stderr.writeln('\nFAIL: catalog_scale_baseline --strict');
-  for (final e in errors) {
-    stderr.writeln('  - $e');
+  for (final error in errors) {
+    stderr.writeln('  - $error');
   }
-  exit(1);
+  exitCode = 1;
 }
 
-void _reportManifest(Directory db, Directory assets) {
-  for (final label in ['akasha-db', 'assets/registry']) {
-    final dir = label == 'akasha-db' ? db : assets;
-    final file = File('${dir.path}/manifest.json');
-    if (!file.existsSync()) {
-      print('[manifest] $label: missing');
-      continue;
-    }
-    final raw = file.readAsStringSync();
-    final json = jsonDecode(raw) as Map<String, dynamic>;
-    final entryCount = json['entryCount'];
-    final shardBits = json['shardBits'];
-    final shards = json['shards'];
-    final shardList = shards is List ? shards.length : '?';
-    print('[manifest] $label');
-    print('  entryCount: $entryCount');
-    print('  shardBits: $shardBits');
-    print('  shard entries: $shardList');
-    print('  file size: ${_kb(raw.length)} KB');
+void _expectExact(List<String> errors, String label, int actual, int expected) {
+  if (actual != expected) {
+    errors.add(
+      '$label changed: $actual (reviewed release baseline $expected). '
+      'Review the source change, then update CatalogReleaseBaseline explicitly.',
+    );
   }
 }
 
-void _reportSearchIndex(Directory db, Directory assets) {
-  for (final label in ['akasha-db', 'assets/registry']) {
-    final dir = label == 'akasha-db' ? db : assets;
-    _reportMonolithicSearchIndex(dir, label);
-    _reportShardedSearchIndex(dir, label);
+void _expectAtMost(
+  List<String> errors,
+  String label,
+  int actual,
+  int maximum,
+  String action,
+) {
+  if (actual > maximum) {
+    errors.add('$label exceeded: $actual > $maximum; $action.');
   }
 }
 
-void _reportMonolithicSearchIndex(Directory dir, String label) {
-  final file = File('${dir.path}/search_index.json');
-  if (!file.existsSync()) {
-    print('[search_index] $label (monolithic): missing');
-    return;
-  }
-  final bytes = file.lengthSync();
-  final raw = file.readAsStringSync();
-  final sw = Stopwatch()..start();
-  final decoded = jsonDecode(raw);
-  sw.stop();
-  final count = decoded is List ? decoded.length : 0;
-  print('[search_index] $label (monolithic v1)');
-  print('  entries: $count');
-  print('  file size: ${_kb(bytes)} KB');
-  print('  json parse: ${sw.elapsedMilliseconds} ms');
+String _bundleSourceRevision(Directory output) {
+  final manifest = File('${output.path}/manifest.json');
+  if (!manifest.existsSync()) return 'missing';
+  final match = RegExp(
+    r'"sourceRevision"\s*:\s*"([^"]+)"',
+  ).firstMatch(manifest.readAsStringSync());
+  return match?.group(1) ?? 'missing';
 }
 
-void _reportShardedSearchIndex(Directory dir, String label) {
-  final manifestFile = File('${dir.path}/search_index/manifest.json');
-  if (!manifestFile.existsSync()) {
-    print('[search_index] $label (sharded v2): missing');
-    return;
-  }
-  final manifestRaw = manifestFile.readAsStringSync();
-  final sw = Stopwatch()..start();
-  final manifest = jsonDecode(manifestRaw) as Map<String, dynamic>;
-  sw.stop();
-  final entryCount = manifest['entryCount'];
-  final shards = manifest['shards'];
-  final shardList = shards is List ? shards : const [];
-  print('[search_index] $label (sharded v2 manifest)');
-  print('  entryCount: $entryCount');
-  print('  category shards: ${shardList.length}');
-  print('  manifest parse: ${sw.elapsedMilliseconds} ms');
-  print('  manifest size: ${_kb(manifestRaw.length)} KB');
+String _size(int bytes) =>
+    '$bytes bytes (${(bytes / (1024 * 1024)).toStringAsFixed(2)} MiB)';
 
-  var totalBytes = 0;
-  for (final shard in shardList) {
-    if (shard is! Map) continue;
-    final path = shard['path']?.toString();
-    if (path == null || path.isEmpty) continue;
-    final shardFile = File('${dir.path}/$path');
-    if (shardFile.existsSync()) {
-      totalBytes += shardFile.lengthSync();
-    }
-  }
-  print('  category files total: ${_kb(totalBytes)} KB');
-}
-
-void _reportShards(Directory db, Directory assets) {
-  for (final label in ['akasha-db', 'assets/registry']) {
-    final dir = label == 'akasha-db' ? db : assets;
-    if (!dir.existsSync()) continue;
-    var files = 0;
-    var bytes = 0;
-    for (final entity in dir.listSync(recursive: true)) {
-      if (entity is! File) continue;
-      if (!entity.path.contains('${Platform.pathSeparator}shards${Platform.pathSeparator}')) {
-        continue;
-      }
-      if (!entity.path.endsWith('.json')) continue;
-      files++;
-      bytes += entity.lengthSync();
-    }
-    print('[shards] $label');
-    print('  shard files: $files');
-    print('  total size: ${_kb(bytes)} KB (${_mb(bytes)} MB)');
-  }
-}
-
-int _reportAssetsTotal(Directory assets) {
-  if (!assets.existsSync()) return 0;
-  var bytes = 0;
-  for (final entity in assets.listSync(recursive: true)) {
-    if (entity is File) bytes += entity.lengthSync();
-  }
-  print('[assets/registry] total');
-  print('  size: ${_kb(bytes)} KB (${_mb(bytes)} MB)');
-  return bytes;
-}
-
-String _reportBundleMode(Directory db, Directory assets) {
-  final manifestFile = File('${db.path}/manifest.json');
-  if (!manifestFile.existsSync()) return 'missing-manifest';
-  final manifest = jsonDecode(manifestFile.readAsStringSync()) as Map;
-  final shards = manifest['shards'];
-  if (shards is! List) return 'invalid-manifest';
-
-  var eagerInManifest = 0;
-  for (final s in shards) {
-    if (s is Map && s['eager'] == true) eagerInManifest++;
-  }
-
-  var bundledShardFiles = 0;
-  final shardsRoot = Directory('${assets.path}/shards');
-  if (shardsRoot.existsSync()) {
-    for (final entity in shardsRoot.listSync(recursive: true)) {
-      if (entity is File && entity.path.endsWith('.json')) bundledShardFiles++;
-    }
-  }
-
-  final mode = bundledShardFiles == shards.length
-      ? 'full'
-      : bundledShardFiles == eagerInManifest
-          ? 'eager-only (ADR-010)'
-          : 'partial ($bundledShardFiles bundled)';
-
-  print('[bundle] mode');
-  print('  manifest shards: ${shards.length}');
-  print('  eager in manifest: $eagerInManifest');
-  print('  bundled shard files: $bundledShardFiles');
-  print('  mode: $mode');
-  if (mode.startsWith('eager-only')) return 'eager-only';
-  if (mode == 'full') return 'full';
-  return 'partial';
-}
-
-int _readEntryCount(Directory db) {
-  final file = File('${db.path}/manifest.json');
-  if (!file.existsSync()) return 0;
-  final json = jsonDecode(file.readAsStringSync()) as Map;
-  final count = json['entryCount'];
-  return count is int ? count : 0;
-}
-
-String _kb(int bytes) => (bytes / 1024).toStringAsFixed(1);
-
-String _mb(int bytes) => (bytes / (1024 * 1024)).toStringAsFixed(2);
-
-Directory _root() {
+Directory _projectRoot() {
   var dir = Directory.current;
   while (true) {
     if (File('${dir.path}/pubspec.yaml').existsSync()) return dir;
-    final p = dir.parent;
-    if (p.path == dir.path) return Directory.current;
-    dir = p;
+    final parent = dir.parent;
+    if (parent.path == dir.path) return Directory.current;
+    dir = parent;
   }
 }

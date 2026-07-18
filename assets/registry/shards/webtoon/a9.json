@@ -1,0 +1,19 @@
+{
+  "wk_000003089": {
+    "workId": "wk_000003089",
+    "title": "불멸의 레지스",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3149115"
+    },
+    "titles": {
+      "ko": "불멸의 레지스",
+      "en": "Immortal Regis"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

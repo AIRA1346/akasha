@@ -1,0 +1,146 @@
+{
+  "wk_000004993": {
+    "workId": "wk_000004993",
+    "title": "크라우디드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111670669"
+    },
+    "titles": {
+      "ko": "크라우디드",
+      "en": "The Crowded Room",
+      "ja": "クラウデッド・ルーム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005852": {
+    "workId": "wk_000005852",
+    "title": "잠자리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11273612"
+    },
+    "titles": {
+      "ko": "잠자리",
+      "en": "Tonbo",
+      "ja": "とんぼ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006087": {
+    "workId": "wk_000006087",
+    "title": "드래그 레이스 벨기에",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112967616"
+    },
+    "titles": {
+      "ko": "드래그 레이스 벨기에",
+      "en": "Drag Race Belgium",
+      "ja": "ドラッグレース・ベルギー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006912": {
+    "workId": "wk_000006912",
+    "title": "형사 110 킬로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11396308"
+    },
+    "titles": {
+      "ko": "형사 110 킬로",
+      "en": "Kenji 110 Kilos",
+      "ja": "刑事110キロ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007196": {
+    "workId": "wk_000007196",
+    "title": "명탐정 코난의 영화 목록",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1145132"
+    },
+    "titles": {
+      "ko": "명탐정 코난의 영화 목록",
+      "en": "list of Detective Conan films",
+      "ja": "名探偵コナンの劇場版一覧"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008058": {
+    "workId": "wk_000008058",
+    "title": "약한영웅 Class 1",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116007300"
+    },
+    "titles": {
+      "ko": "약한영웅 Class 1",
+      "en": "Weak Hero Class 1",
+      "ja": "弱いヒーロー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009675": {
+    "workId": "wk_000009675",
+    "title": "탄금",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122730767"
+    },
+    "titles": {
+      "ko": "탄금",
+      "en": "Dear Hongrang",
+      "ja": "呑金/タングム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010117": {
+    "workId": "wk_000010117",
+    "title": "청실홍실",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124659203"
+    },
+    "titles": {
+      "ko": "청실홍실",
+      "en": "Q124659203"
+    },
+    "releaseYear": 1977,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

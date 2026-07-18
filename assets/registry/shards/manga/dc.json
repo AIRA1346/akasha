@@ -1,0 +1,110 @@
+{
+  "wk_000000352": {
+    "workId": "wk_000000352",
+    "title": "몬스터",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "우라사와 나오키",
+    "releaseYear": 1994,
+    "tags": [
+      "스릴러",
+      "심리",
+      "범죄",
+      "명작"
+    ],
+    "legacyIds": [
+      "sub_manga_monster_1994"
+    ],
+    "externalIds": {
+      "wikidata": "Q686592"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Monster",
+      "ko": "몬스터"
+    }
+  },
+  "wk_000004343": {
+    "workId": "wk_000004343",
+    "title": "히스토리에",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1192726"
+    },
+    "titles": {
+      "ko": "히스토리에",
+      "en": "Historie",
+      "ja": "ヒストリエ"
+    },
+    "releaseYear": 2004,
+    "creator": "Hitoshi Iwaaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005203": {
+    "workId": "wk_000005203",
+    "title": "메가도쿄",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249504"
+    },
+    "titles": {
+      "ko": "메가도쿄",
+      "en": "Megatokyo",
+      "ja": "メガトーキョー"
+    },
+    "creator": "Fred Gallagher",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007153": {
+    "workId": "wk_000007153",
+    "title": "미성년이지만 어린애는 아냐",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17212567"
+    },
+    "titles": {
+      "ko": "미성년이지만 어린애는 아냐",
+      "en": "Miseinen Dakedo Kodomo Janai",
+      "ja": "未成年だけどコドモじゃない"
+    },
+    "creator": "Kanan Minami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008220": {
+    "workId": "wk_000008220",
+    "title": "모모쿠리",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21080476"
+    },
+    "titles": {
+      "ko": "모모쿠리",
+      "en": "Momokuri",
+      "ja": "ももくり"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

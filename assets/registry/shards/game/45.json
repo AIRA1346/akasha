@@ -1,0 +1,176 @@
+{
+  "wk_000000136": {
+    "workId": "wk_000000136",
+    "title": "바이오쇼크",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Irrational Games",
+    "releaseYear": 2007,
+    "tags": [
+      "FPS",
+      "SF",
+      "철학",
+      "명작"
+    ],
+    "legacyIds": [
+      "gen_game_bioshock_2007"
+    ],
+    "titles": {
+      "en": "BioShock™",
+      "ko": "바이오쇼크"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "7670",
+      "wikidata": "Q57270"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000277": {
+    "workId": "wk_000000277",
+    "title": "승리의 여신: 니케",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Shift Up",
+    "releaseYear": 2022,
+    "tags": [
+      "포스트아포칼립스",
+      "건슈팅",
+      "수집형RPG",
+      "SF"
+    ],
+    "legacyIds": [
+      "sub_game_nikke_2022"
+    ],
+    "titles": {
+      "en": "GODDESS OF VICTORY: NIKKE",
+      "ko": "승리의 여신: 니케"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04R2Fix": "W6_nikke_identity",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q114836978"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000087": {
+    "workId": "wk_000000087",
+    "title": "시티즈: 스카이라인",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Colossal Order",
+    "releaseYear": 2015,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid255710_2015"
+    ],
+    "titles": {
+      "en": "Cities: Skylines",
+      "ko": "시티즈: 스카이라인"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "255710",
+      "wikidata": "Q18149274"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000563": {
+    "workId": "wk_000000563",
+    "title": "아칼라베스: 파멸의 세계",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102303"
+    },
+    "titles": {
+      "ko": "아칼라베스: 파멸의 세계",
+      "en": "Akalabeth: World of Doom"
+    },
+    "releaseYear": 1979,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004092": {
+    "workId": "wk_000004092",
+    "title": "슈퍼로봇대전 컴플리트박스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11253364"
+    },
+    "titles": {
+      "ko": "슈퍼로봇대전 컴플리트박스",
+      "en": "Q11253364",
+      "ja": "スーパーロボット大戦コンプリートボックス"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007476": {
+    "workId": "wk_000007476",
+    "title": "시너지",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122228156"
+    },
+    "titles": {
+      "ko": "시너지",
+      "en": "Synergy",
+      "ja": "シナジー"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007664": {
+    "workId": "wk_000007664",
+    "title": "퍼스트 버서커: 카잔",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123699058"
+    },
+    "titles": {
+      "ko": "퍼스트 버서커: 카잔",
+      "en": "The First Berserker: Khazan"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "wk_000005649": {
+    "workId": "wk_000005649",
+    "title": "마드레스 파랄렐라스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106103421"
+    },
+    "titles": {
+      "ko": "마드레스 파랄렐라스",
+      "en": "Parallel Mothers",
+      "ja": "パラレル・マザーズ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006303": {
+    "workId": "wk_000006303",
+    "title": "사무라이 울프",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10661039"
+    },
+    "titles": {
+      "ko": "사무라이 울프",
+      "en": "Samurai Wolf I",
+      "ja": "牙狼之介"
+    },
+    "releaseYear": 1966,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008215": {
+    "workId": "wk_000008215",
+    "title": "시니어 이어",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107639384"
+    },
+    "titles": {
+      "ko": "시니어 이어",
+      "en": "Senior Year",
+      "ja": "シニアイヤー"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008667": {
+    "workId": "wk_000008667",
+    "title": "귀신",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108033569"
+    },
+    "titles": {
+      "ko": "귀신",
+      "en": "Possessed"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010203": {
+    "workId": "wk_000010203",
+    "title": "이프 아이 워 유",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10912915"
+    },
+    "titles": {
+      "ko": "이프 아이 워 유",
+      "en": "If I Were You",
+      "ja": "変身男女"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

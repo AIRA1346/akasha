@@ -1,0 +1,56 @@
+{
+  "wk_000005214": {
+    "workId": "wk_000005214",
+    "title": "닥터 슬럼프",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18234002"
+    },
+    "titles": {
+      "ko": "닥터 슬럼프",
+      "en": "Dr. Slump",
+      "ja": "ドクタースランプ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006186": {
+    "workId": "wk_000006186",
+    "title": "아이돌 메모리즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q25807484"
+    },
+    "titles": {
+      "ko": "아이돌 메모리즈",
+      "en": "Idol Memories",
+      "ja": "アイドルメモリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009925": {
+    "workId": "wk_000009925",
+    "title": "배너의 모험",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q963199"
+    },
+    "titles": {
+      "ko": "배너의 모험",
+      "en": "Bannertail: The Story of Gray Squirrel",
+      "ja": "シートン動物記 りすのバナー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

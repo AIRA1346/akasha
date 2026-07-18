@@ -1,0 +1,78 @@
+{
+  "wk_000003432": {
+    "workId": "wk_000003432",
+    "title": "목소리의 형태",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11611205"
+    },
+    "titles": {
+      "ko": "목소리의 형태",
+      "en": "A Silent Voice",
+      "ja": "聲の形"
+    },
+    "creator": "Yoshitoki Ōima",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004877": {
+    "workId": "wk_000004877",
+    "title": "편리한 세미프렌드",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123478356"
+    },
+    "titles": {
+      "ko": "편리한 세미프렌드",
+      "en": "Convenient Semi-Friend",
+      "ja": "好都合セミフレンド"
+    },
+    "releaseYear": 2024,
+    "creator": "Minori Chigusa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005601": {
+    "workId": "wk_000005601",
+    "title": "호텔 인휴먼즈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131048073"
+    },
+    "titles": {
+      "ko": "호텔 인휴먼즈",
+      "en": "Hotel Inhumans",
+      "ja": "ホテル・インヒューマンズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006455": {
+    "workId": "wk_000006455",
+    "title": "선구의 꽃무녀",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137576578"
+    },
+    "titles": {
+      "ko": "선구의 꽃무녀",
+      "en": "Sakigake no Hana Miko",
+      "ja": "魁の花巫女"
+    },
+    "creator": "Ryoma Kitada",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

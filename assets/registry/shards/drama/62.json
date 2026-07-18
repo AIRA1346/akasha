@@ -1,0 +1,159 @@
+{
+  "wk_000000773": {
+    "workId": "wk_000000773",
+    "title": "트렁크 열차",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10385058"
+    },
+    "titles": {
+      "ko": "트렁크 열차",
+      "en": "Trunk Train",
+      "ja": "トランク・トレイン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001454": {
+    "workId": "wk_000001454",
+    "title": "링컨 차를 타는 변호사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106536181"
+    },
+    "titles": {
+      "ko": "링컨 차를 타는 변호사",
+      "en": "The Lincoln Lawyer",
+      "ja": "リンカーン弁護士"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002351": {
+    "workId": "wk_000002351",
+    "title": "동창회 ~ 러브 어게인 증후군",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10917698"
+    },
+    "titles": {
+      "ko": "동창회 ~ 러브 어게인 증후군",
+      "en": "Q10917698",
+      "ja": "同窓会〜ラブ・アゲイン症候群"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002998": {
+    "workId": "wk_000002998",
+    "title": "쉿! 그놈을 부탁해",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458226"
+    },
+    "titles": {
+      "ko": "쉿! 그놈을 부탁해",
+      "en": "Q109458226"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003336": {
+    "workId": "wk_000003336",
+    "title": "사건기록 - 그날의 선택",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460929"
+    },
+    "titles": {
+      "ko": "사건기록 - 그날의 선택",
+      "en": "Q109460929"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006775": {
+    "workId": "wk_000006775",
+    "title": "변론을 시작하겠습니다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113638583"
+    },
+    "titles": {
+      "ko": "변론을 시작하겠습니다",
+      "en": "May It Please the Court"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007192": {
+    "workId": "wk_000007192",
+    "title": "아내 그리고 여자 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11447163"
+    },
+    "titles": {
+      "ko": "아내 그리고 여자 시리즈",
+      "en": "Q11447163",
+      "ja": "妻そして女シリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009331": {
+    "workId": "wk_000009331",
+    "title": "사우스 오브 노웨어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1198457"
+    },
+    "titles": {
+      "ko": "사우스 오브 노웨어",
+      "en": "South of Nowhere"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010226": {
+    "workId": "wk_000010226",
+    "title": "페카도스 아헤노스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247680"
+    },
+    "titles": {
+      "ko": "페카도스 아헤노스",
+      "en": "Pecados Ajenos"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

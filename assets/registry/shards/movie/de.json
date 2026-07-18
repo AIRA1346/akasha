@@ -1,0 +1,76 @@
+{
+  "wk_000001183": {
+    "workId": "wk_000001183",
+    "title": "돌고래와 헤엄치기",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101130046"
+    },
+    "titles": {
+      "ko": "돌고래와 헤엄치기",
+      "en": "Diving with Dolphins"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006426": {
+    "workId": "wk_000006426",
+    "title": "틴 울프",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1067125"
+    },
+    "titles": {
+      "ko": "틴 울프",
+      "en": "Teen Wolf",
+      "ja": "ティーン・ウルフ"
+    },
+    "releaseYear": 1985,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009723": {
+    "workId": "wk_000009723",
+    "title": "유어 플레이스 오어 마인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108833247"
+    },
+    "titles": {
+      "ko": "유어 플레이스 오어 마인",
+      "en": "Your Place or Mine",
+      "ja": "ユアプレイス、マイプレイス"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010145": {
+    "workId": "wk_000010145",
+    "title": "기쿠지로의 여름",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1091097"
+    },
+    "titles": {
+      "ko": "기쿠지로의 여름",
+      "en": "Kikujiro",
+      "ja": "菊次郎の夏"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

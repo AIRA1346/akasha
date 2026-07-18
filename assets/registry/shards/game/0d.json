@@ -1,0 +1,111 @@
+{
+  "wk_000000108": {
+    "workId": "wk_000000108",
+    "title": "오버쿡드 2",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Team17",
+    "releaseYear": 2018,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid440900_2018"
+    ],
+    "titles": {
+      "en": "Conan Exiles Enhanced",
+      "ko": "오버쿡드 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "440900",
+      "wikidata": "Q55713667"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000007356": {
+    "workId": "wk_000007356",
+    "title": "마리오 파티 어드밴스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1206503"
+    },
+    "titles": {
+      "ko": "마리오 파티 어드밴스",
+      "en": "Mario Party Advance",
+      "ja": "マリオパーティ アドバンス"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009100": {
+    "workId": "wk_000009100",
+    "title": "다마고치 원더 샵",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133570166"
+    },
+    "titles": {
+      "ko": "다마고치 원더 샵",
+      "en": "Tamagotchi Plaza",
+      "ja": "たまごっちのプチプチおみせっち おまちど～さま!"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009636": {
+    "workId": "wk_000009636",
+    "title": "소녀는 언니를 사랑하고 있다",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1353904"
+    },
+    "titles": {
+      "ko": "소녀는 언니를 사랑하고 있다",
+      "en": "Otome wa Boku ni Koishiteru",
+      "ja": "処女はお姉さまに恋してる"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009830": {
+    "workId": "wk_000009830",
+    "title": "그란 투리스모 컨셉",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1369501"
+    },
+    "titles": {
+      "ko": "그란 투리스모 컨셉",
+      "en": "Gran Turismo Concept",
+      "ja": "グランツーリスモ コンセプト 2001 TOKYO"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

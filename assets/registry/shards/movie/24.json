@@ -1,0 +1,58 @@
+{
+  "wk_000004390": {
+    "workId": "wk_000004390",
+    "title": "레드 로켓",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105657351"
+    },
+    "titles": {
+      "ko": "레드 로켓",
+      "en": "Red Rocket",
+      "ja": "レッド・ロケット"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005445": {
+    "workId": "wk_000005445",
+    "title": "더 페일 블루 아이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105986042"
+    },
+    "titles": {
+      "ko": "더 페일 블루 아이",
+      "en": "The Pale Blue Eye",
+      "ja": "ほの蒼き瞳"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006642": {
+    "workId": "wk_000006642",
+    "title": "뉴 프렌드: 누군가 죽는다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106828779"
+    },
+    "titles": {
+      "ko": "뉴 프렌드: 누군가 죽는다",
+      "en": "Shook"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

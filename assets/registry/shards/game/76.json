@@ -1,0 +1,222 @@
+{
+  "wk_000000109": {
+    "workId": "wk_000000109",
+    "title": "팀 포트리스 2",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Valve",
+    "releaseYear": 2007,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid440_2007"
+    ],
+    "titles": {
+      "en": "Team Fortress 2",
+      "ko": "팀 포트리스 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "440",
+      "wikidata": "Q382108"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000561": {
+    "workId": "wk_000000561",
+    "title": "번아웃 파라다이스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1016838"
+    },
+    "titles": {
+      "ko": "번아웃 파라다이스",
+      "en": "Burnout Paradise",
+      "ja": "バーンアウト パラダイス"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001645": {
+    "workId": "wk_000001645",
+    "title": "드래곤 에이지 II",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1064927"
+    },
+    "titles": {
+      "ko": "드래곤 에이지 II",
+      "en": "Dragon Age II",
+      "ja": "ドラゴンエイジII"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002326": {
+    "workId": "wk_000002326",
+    "title": "디지몬 세이버즈 어나더 미션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1074021"
+    },
+    "titles": {
+      "ko": "디지몬 세이버즈 어나더 미션",
+      "en": "Digimon World Data Squad",
+      "ja": "デジモンセイバーズ アナザーミッション"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004294": {
+    "workId": "wk_000004294",
+    "title": "튜브 패닉",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11279423"
+    },
+    "titles": {
+      "ko": "튜브 패닉",
+      "en": "Tube Panic",
+      "ja": "チューブパニック"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005630": {
+    "workId": "wk_000005630",
+    "title": "다크 콜로니",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151827"
+    },
+    "titles": {
+      "ko": "다크 콜로니",
+      "en": "Dark Colony"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007006": {
+    "workId": "wk_000007006",
+    "title": "One ~빛나는 계절로~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1195840"
+    },
+    "titles": {
+      "ko": "One ~빛나는 계절로~",
+      "en": "One: Kagayaku Kisetsu e",
+      "ja": "ONE 〜輝く季節へ〜"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008022": {
+    "workId": "wk_000008022",
+    "title": "SAEKO: 거대한 그녀와의 기묘한 동거",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126096671"
+    },
+    "titles": {
+      "ko": "SAEKO: 거대한 그녀와의 기묘한 동거",
+      "en": "Saeko: Giantess Dating Sim",
+      "ja": "SAEKO: Giantess Dating Sim"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008642": {
+    "workId": "wk_000008642",
+    "title": "글라디아투스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1316604"
+    },
+    "titles": {
+      "ko": "글라디아투스",
+      "en": "Gladiatus"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009230": {
+    "workId": "wk_000009230",
+    "title": "에일리언 VS. 프레데터",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1340662"
+    },
+    "titles": {
+      "ko": "에일리언 VS. 프레데터",
+      "en": "Aliens vs. Predator",
+      "ja": "エイリアンVSプレデター"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009773": {
+    "workId": "wk_000009773",
+    "title": "음흉하고 한결같은 깡촌 오라버니와, 예스럽고 병약한 여동생",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136439003"
+    },
+    "titles": {
+      "ko": "음흉하고 한결같은 깡촌 오라버니와, 예스럽고 병약한 여동생",
+      "en": "Sickly Days and Summer Traces",
+      "ja": "エッチで一途なド田舎兄さまと、古式ゆかしい病弱妹"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

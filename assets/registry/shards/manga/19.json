@@ -1,0 +1,77 @@
+{
+  "wk_000000761": {
+    "workId": "wk_000000761",
+    "title": "아다마스의 마녀들",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109259300"
+    },
+    "titles": {
+      "ko": "아다마스의 마녀들",
+      "en": "The Witches of Adamas",
+      "ja": "アダマスの魔女たち"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003258": {
+    "workId": "wk_000003258",
+    "title": "딸기 마시마로",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1156204"
+    },
+    "titles": {
+      "ko": "딸기 마시마로",
+      "en": "Strawberry Marshmallow",
+      "ja": "苺ましまろ"
+    },
+    "creator": "Barasui",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007267": {
+    "workId": "wk_000007267",
+    "title": "동창생 ~ 사람은 세 번 사랑을 ~",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17220517"
+    },
+    "titles": {
+      "ko": "동창생 ~ 사람은 세 번 사랑을 ~",
+      "en": "Q17220517",
+      "ja": "同窓生〜人は、三度、恋をする〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009350": {
+    "workId": "wk_000009350",
+    "title": "네가 있는 마을",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2819940"
+    },
+    "titles": {
+      "ko": "네가 있는 마을",
+      "en": "A Town Where You Live",
+      "ja": "君のいる町"
+    },
+    "creator": "Kōji Seo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

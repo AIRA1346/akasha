@@ -1,0 +1,142 @@
+{
+  "wk_000000589": {
+    "workId": "wk_000000589",
+    "title": "고양이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102055710"
+    },
+    "titles": {
+      "ko": "고양이",
+      "en": "Q102055710",
+      "ja": "猫 (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003898": {
+    "workId": "wk_000003898",
+    "title": "100인의 선택, 턴업",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110113662"
+    },
+    "titles": {
+      "ko": "100인의 선택, 턴업",
+      "en": "Q110113662"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004176": {
+    "workId": "wk_000004176",
+    "title": "심야괴담회",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115537"
+    },
+    "titles": {
+      "ko": "심야괴담회",
+      "en": "Midnight Horror Story"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004271": {
+    "workId": "wk_000004271",
+    "title": "트로트2030 나를 알아줘",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110117964"
+    },
+    "titles": {
+      "ko": "트로트2030 나를 알아줘",
+      "en": "Q110117964"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005797": {
+    "workId": "wk_000005797",
+    "title": "단란",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11271643"
+    },
+    "titles": {
+      "ko": "단란",
+      "en": "Danran",
+      "ja": "だんらん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005870": {
+    "workId": "wk_000005870",
+    "title": "키스하마러닝",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11277437"
+    },
+    "titles": {
+      "ko": "키스하마러닝",
+      "en": "Q11277437",
+      "ja": "キス濱ラーニング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007038": {
+    "workId": "wk_000007038",
+    "title": "저선",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114228330"
+    },
+    "titles": {
+      "ko": "저선",
+      "en": "Draw The Line"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007130": {
+    "workId": "wk_000007130",
+    "title": "오오사키 쿠조 사건산보",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11435074"
+    },
+    "titles": {
+      "ko": "오오사키 쿠조 사건산보",
+      "en": "Ōsaki Ikuzō no Jiken Sanpo",
+      "ja": "大崎郁三の事件散歩"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

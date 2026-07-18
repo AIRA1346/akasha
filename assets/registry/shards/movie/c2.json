@@ -1,0 +1,77 @@
+{
+  "wk_000004388": {
+    "workId": "wk_000004388",
+    "title": "도쿄 공원",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1056260"
+    },
+    "titles": {
+      "ko": "도쿄 공원",
+      "en": "Tokyo Park",
+      "ja": "東京公園"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007554": {
+    "workId": "wk_000007554",
+    "title": "페넬로피",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1074032"
+    },
+    "titles": {
+      "ko": "페넬로피",
+      "en": "Penelope",
+      "ja": "ペネロピ"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008663": {
+    "workId": "wk_000008663",
+    "title": "맘보",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1080080"
+    },
+    "titles": {
+      "ko": "맘보",
+      "en": "Mambo",
+      "ja": "マンボ"
+    },
+    "releaseYear": 1954,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009321": {
+    "workId": "wk_000009321",
+    "title": "아나이스 인 러브",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108545088"
+    },
+    "titles": {
+      "ko": "아나이스 인 러브",
+      "en": "Anaïs in Love"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

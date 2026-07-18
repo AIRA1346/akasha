@@ -1,0 +1,96 @@
+{
+  "wk_000001828": {
+    "workId": "wk_000001828",
+    "title": "용루각: 비정도시",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103412263"
+    },
+    "titles": {
+      "ko": "용루각: 비정도시",
+      "en": "Dragon Inn Part 1: The City of Sadness",
+      "ja": "龍楼閣 非情都市"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005782": {
+    "workId": "wk_000005782",
+    "title": "보더랜드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106329715"
+    },
+    "titles": {
+      "ko": "보더랜드",
+      "en": "Borderlands",
+      "ja": "ボーダーランズ"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006572": {
+    "workId": "wk_000006572",
+    "title": "체이서",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068029"
+    },
+    "titles": {
+      "ko": "체이서",
+      "en": "Chasers",
+      "ja": "逃げる天使"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009003": {
+    "workId": "wk_000009003",
+    "title": "폭포",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108393005"
+    },
+    "titles": {
+      "ko": "폭포",
+      "en": "The Falls",
+      "ja": "瀑布"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009725": {
+    "workId": "wk_000009725",
+    "title": "나의 이름",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108838148"
+    },
+    "titles": {
+      "ko": "나의 이름",
+      "en": "The Name"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

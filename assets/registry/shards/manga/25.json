@@ -1,0 +1,165 @@
+{
+  "wk_000000149": {
+    "workId": "wk_000000149",
+    "title": "수학도둑",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "송도수 / 서정은",
+    "releaseYear": 2006,
+    "tags": [
+      "학습만화",
+      "모험",
+      "수학",
+      "메이플"
+    ],
+    "legacyIds": [
+      "gen_manga_math-thief_2006"
+    ],
+    "titles": {
+      "en": "Math Thief",
+      "ko": "수학도둑"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q16181743"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001291": {
+    "workId": "wk_000001291",
+    "title": "철근 콘크리트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111988774"
+    },
+    "titles": {
+      "ko": "철근 콘크리트",
+      "en": "Tekkonkinkreet",
+      "ja": "鉄コン筋クリート"
+    },
+    "creator": "Taiyō Matsumoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002130": {
+    "workId": "wk_000002130",
+    "title": "엑소시스트를 타락시킬 수 없어",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113493155"
+    },
+    "titles": {
+      "ko": "엑소시스트를 타락시킬 수 없어",
+      "en": "Make the Exorcist Fall in Love",
+      "ja": "エクソシストを堕とせない"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002784": {
+    "workId": "wk_000002784",
+    "title": "닌자 핫토리군+파만 닌자 괴수 짓포우 VS 미라클 타마고",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11490775"
+    },
+    "titles": {
+      "ko": "닌자 핫토리군+파만 닌자 괴수 짓포우 VS 미라클 타마고",
+      "en": "Q11490775",
+      "ja": "忍者ハットリくん+パーマン 忍者怪獣ジッポウVSミラクル卵"
+    },
+    "releaseYear": 1985,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003255": {
+    "workId": "wk_000003255",
+    "title": "바다에 타락 삼키기",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11558602"
+    },
+    "titles": {
+      "ko": "바다에 타락 삼키기",
+      "en": "Umi ni Ochiru Tsubame",
+      "ja": "海に墜ちるツバメ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006254": {
+    "workId": "wk_000006254",
+    "title": "용사 파티에 귀여운 애가 있어서, 고백해봤다.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135208555"
+    },
+    "titles": {
+      "ko": "용사 파티에 귀여운 애가 있어서, 고백해봤다.",
+      "en": "There Was a Cute Girl in the Hero's Party, So I Tried Confessing to Her",
+      "ja": "勇者パーティーにかわいい子がいたので、告白してみた。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006388": {
+    "workId": "wk_000006388",
+    "title": "도박묵시록 카이지",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1365044"
+    },
+    "titles": {
+      "ko": "도박묵시록 카이지",
+      "en": "Kaiji",
+      "ja": "賭博黙示録カイジ"
+    },
+    "creator": "Nobuyuki Fukumoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006596": {
+    "workId": "wk_000006596",
+    "title": "피치걸",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1446272"
+    },
+    "titles": {
+      "ko": "피치걸",
+      "en": "Peach Girl",
+      "ja": "ピーチガール"
+    },
+    "creator": "Miwa Ueda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

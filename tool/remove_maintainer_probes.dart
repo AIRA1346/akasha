@@ -63,10 +63,10 @@ void main(List<String> args) async {
 
   if (apply && build && removed > 0) {
     print('');
-    print('==> registry_builder --sync-assets');
+    print('==> registry_builder (source only)');
     final result = await Process.run(
       Platform.resolvedExecutable,
-      ['run', 'tool/registry_builder.dart', '--sync-assets'],
+      ['run', 'tool/registry_builder.dart'],
       workingDirectory: root.path,
       runInShell: true,
     );

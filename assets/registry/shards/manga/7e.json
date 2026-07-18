@@ -1,0 +1,96 @@
+{
+  "wk_000000446": {
+    "workId": "wk_000000446",
+    "title": "ボーイミーツマリア",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101110410"
+    },
+    "titles": {
+      "en": "Boy Meets Maria",
+      "ja": "ボーイミーツマリア"
+    },
+    "releaseYear": 2018,
+    "creator": "Kōsei Eguchi",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  },
+  "wk_000000873": {
+    "workId": "wk_000000873",
+    "title": "야마다 군과 Lv999의 사랑을 하다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109512122"
+    },
+    "titles": {
+      "ko": "야마다 군과 Lv999의 사랑을 하다",
+      "en": "My Love Story with Yamada-kun at Lv999",
+      "ja": "山田くんとLv999の恋をする"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001948": {
+    "workId": "wk_000001948",
+    "title": "도라 Q 파만",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11323168"
+    },
+    "titles": {
+      "ko": "도라 Q 파만",
+      "en": "Dora. Q. Perman",
+      "ja": "ドラQパーマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005605": {
+    "workId": "wk_000005605",
+    "title": "시드 크래프트의 최종 추리",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131251634"
+    },
+    "titles": {
+      "ko": "시드 크래프트의 최종 추리",
+      "en": "Syd Craft: Love Is a Mystery",
+      "ja": "シド・クラフトの最終推理"
+    },
+    "creator": "Taishi Tsutsui",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008692": {
+    "workId": "wk_000008692",
+    "title": "작열의 탁구소녀",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q23843627"
+    },
+    "titles": {
+      "ko": "작열의 탁구소녀",
+      "en": "Scorching Ping Pong Girls",
+      "ja": "灼熱の卓球娘"
+    },
+    "creator": "Yagura Asano",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

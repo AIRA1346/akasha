@@ -1,0 +1,112 @@
+{
+  "wk_000000329": {
+    "workId": "wk_000000329",
+    "title": "고블린 슬레이어",
+    "titles": {
+      "ko": "고블린 슬레이어",
+      "en": "Goblin Slayer",
+      "ja": "ゴブリンスレイヤー"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "카가유 카우스",
+    "releaseYear": 2016,
+    "tags": [
+      "판타지",
+      "다크",
+      "액션",
+      "던전"
+    ],
+    "extensions": {
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_manga_goblin-slayer_2016"
+    ],
+    "externalIds": {
+      "tmdb": "82307",
+      "wikidata": "Q63435666"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000438": {
+    "workId": "wk_000000438",
+    "title": "갤럭시 엔젤 2nd",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101015812"
+    },
+    "titles": {
+      "en": "Galaxy Angel 2nd",
+      "ja": "ギャラクシーエンジェル2nd",
+      "ko": "갤럭시 엔젤 2nd"
+    },
+    "creator": "大月悠祐子",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  },
+  "wk_000001194": {
+    "workId": "wk_000001194",
+    "title": "4명은 각자 거짓말을 한다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111423065"
+    },
+    "titles": {
+      "ko": "4명은 각자 거짓말을 한다",
+      "en": "4-Nin wa Sorezore Uso o Tsuku",
+      "ja": "4人はそれぞれウソをつく"
+    },
+    "releaseYear": 2020,
+    "creator": "Madoka Kashihara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005012": {
+    "workId": "wk_000005012",
+    "title": "아카바네 호네코의 보디가드",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124421712"
+    },
+    "titles": {
+      "ko": "아카바네 호네코의 보디가드",
+      "en": "Honeko Akabane's Bodyguards",
+      "ja": "赤羽骨子のボディガード"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005129": {
+    "workId": "wk_000005129",
+    "title": "카난 님은 초보 악마",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124496871"
+    },
+    "titles": {
+      "ko": "카난 님은 초보 악마",
+      "en": "Mistress Kanan Is Devilishly Easy",
+      "ja": "カナン様はあくまでチョロい"
+    },
+    "creator": "nonco",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

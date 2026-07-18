@@ -1,0 +1,59 @@
+{
+  "wk_000000444": {
+    "workId": "wk_000000444",
+    "title": "요괴 학교 선생님이 되었습니다!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101100537"
+    },
+    "titles": {
+      "en": "A Terrified Teacher at Ghoul School!",
+      "ja": "妖怪学校の先生はじめました!",
+      "ko": "요괴 학교 선생님이 되었습니다!"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  },
+  "wk_000004743": {
+    "workId": "wk_000004743",
+    "title": "섹시 타나카 씨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121074593"
+    },
+    "titles": {
+      "ko": "섹시 타나카 씨",
+      "en": "Sexy Tanaka-san",
+      "ja": "セクシー田中さん"
+    },
+    "creator": "Hinako Ashihara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005609": {
+    "workId": "wk_000005609",
+    "title": "샹피뇽의 마녀",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131437080"
+    },
+    "titles": {
+      "ko": "샹피뇽의 마녀",
+      "en": "Champignon Witch",
+      "ja": "シャンピニオンの魔女"
+    },
+    "creator": "Tachibana Higuchi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

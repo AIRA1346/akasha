@@ -14,6 +14,8 @@
 | [ADR-006](ADR-006-franchise-boundary-hierarchy.md) | **Franchise 경계·계층·깊이** | 초안 | ✅ |
 | [ADR-007](ADR-007-app-layering.md) | App 레이어 가드레일 | **승인** | — |
 | [ADR-008](ADR-008-record-entity-time-model.md) | **ArchiveRecord** · Entity · Time · Link | **승인** | — |
+| [ADR-010](ADR-010-bundle-eager-only.md) | App Bundle — Eager Shards Only | **대체됨** | — |
+| [ADR-015](../../architecture/ADR-015-full-local-registry-bundle.md) | 작품 레지스트리 전체 로컬 번들 | **승인** | — |
 
 **리뷰 메모:** ADR-002 음악 — A/B 유지 · **B안(곡=Work) 가중** (미결정).
 

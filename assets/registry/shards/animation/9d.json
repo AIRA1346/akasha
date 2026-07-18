@@ -1,0 +1,93 @@
+{
+  "wk_000001818": {
+    "workId": "wk_000001818",
+    "title": "사신 짱 드롭킥",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113434592"
+    },
+    "titles": {
+      "ko": "사신 짱 드롭킥",
+      "en": "Dropkick on My Devil!",
+      "ja": "邪神ちゃんドロップキック"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003460": {
+    "workId": "wk_000003460",
+    "title": "그래도 세계는 아름다워",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124472489"
+    },
+    "titles": {
+      "ko": "그래도 세계는 아름다워",
+      "en": "The World is Still Beautiful",
+      "ja": "それでも世界は美しい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004887": {
+    "workId": "wk_000004887",
+    "title": "최강은하 얼티밋 제로 ~배틀 스피리츠~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15866163"
+    },
+    "titles": {
+      "ko": "최강은하 얼티밋 제로 ~배틀 스피리츠~",
+      "en": "Battle Spirits: Saikyou Ginga Ultimate Zero",
+      "ja": "最強銀河 究極ゼロ 〜バトルスピリッツ〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006530": {
+    "workId": "wk_000006530",
+    "title": "유유백서",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q286950"
+    },
+    "titles": {
+      "ko": "유유백서",
+      "en": "Yu Yu Hakusho",
+      "ja": "幽☆遊☆白書"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007590": {
+    "workId": "wk_000007590",
+    "title": "DRAMAtical Murder",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q5206006"
+    },
+    "titles": {
+      "ko": "DRAMAtical Murder",
+      "en": "Dramatical Murder",
+      "ja": "DRAMAtical Murder"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

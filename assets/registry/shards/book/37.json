@@ -1,0 +1,61 @@
+{
+  "wk_000002979": {
+    "workId": "wk_000002979",
+    "title": "비너스와 아도니스",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1066765"
+    },
+    "titles": {
+      "ko": "비너스와 아도니스",
+      "en": "Venus and Adonis",
+      "ja": "ヴィーナスとアドーニス"
+    },
+    "releaseYear": 1593,
+    "creator": "William Shakespeare",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008260": {
+    "workId": "wk_000008260",
+    "title": "디자이너 베이비",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11320389"
+    },
+    "titles": {
+      "ko": "디자이너 베이비",
+      "en": "Designer Baby",
+      "ja": "デザイナーベイビー (小説)"
+    },
+    "releaseYear": 2011,
+    "creator": "Takashi Okai",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009653": {
+    "workId": "wk_000009653",
+    "title": "하타요가프라디피카",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1144373"
+    },
+    "titles": {
+      "ko": "하타요가프라디피카",
+      "en": "Hatha Yoga Pradipika",
+      "ja": "ハタ・ヨーガ・プラディーピカー"
+    },
+    "creator": "スヴァートマーラーマ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

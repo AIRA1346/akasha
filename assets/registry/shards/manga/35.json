@@ -1,0 +1,78 @@
+{
+  "wk_000004131": {
+    "workId": "wk_000004131",
+    "title": "타다노 공고의 일상",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117769396"
+    },
+    "titles": {
+      "ko": "타다노 공고의 일상",
+      "en": "Tadano Kogyo Koko No Nichijo",
+      "ja": "只野工業高校の日常"
+    },
+    "creator": "Chisato Oga",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004413": {
+    "workId": "wk_000004413",
+    "title": "빈곤자매 이야기",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193039"
+    },
+    "titles": {
+      "ko": "빈곤자매 이야기",
+      "en": "Binbō Shimai Monogatari",
+      "ja": "貧乏姉妹物語"
+    },
+    "creator": "Izumi Kazuto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008417": {
+    "workId": "wk_000008417",
+    "title": "히나코 노트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22125922"
+    },
+    "titles": {
+      "ko": "히나코 노트",
+      "en": "Hinako Note",
+      "ja": "ひなこのーと"
+    },
+    "creator": "三月",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008486": {
+    "workId": "wk_000008486",
+    "title": "가형의 앨리스",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22131208"
+    },
+    "titles": {
+      "ko": "가형의 앨리스",
+      "en": "Alice in Murderland",
+      "ja": "架刑のアリス"
+    },
+    "creator": "Kaori Yuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

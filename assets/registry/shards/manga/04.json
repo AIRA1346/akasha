@@ -1,0 +1,117 @@
+{
+  "wk_000003699": {
+    "workId": "wk_000003699",
+    "title": "푸른 미부로",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116865404"
+    },
+    "titles": {
+      "ko": "푸른 미부로",
+      "en": "The Blue Wolves of Mibu",
+      "ja": "青のミブロ"
+    },
+    "releaseYear": 2021,
+    "creator": "Tsuyoshi Yasuda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004798": {
+    "workId": "wk_000004798",
+    "title": "카구라바치",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122713274"
+    },
+    "titles": {
+      "ko": "카구라바치",
+      "en": "Kagurabachi",
+      "ja": "カグラバチ"
+    },
+    "creator": "Takeru Hokazono",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007746": {
+    "workId": "wk_000007746",
+    "title": "가난뱅이 신이!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q195105"
+    },
+    "titles": {
+      "ko": "가난뱅이 신이!",
+      "en": "Good Luck Girl!",
+      "ja": "貧乏神が!"
+    },
+    "creator": "Yoshiaki Sukeno",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008005": {
+    "workId": "wk_000008005",
+    "title": "사랑은 비가 갠 뒤처럼",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20044164"
+    },
+    "titles": {
+      "ko": "사랑은 비가 갠 뒤처럼",
+      "en": "After the Rain",
+      "ja": "恋は雨上がりのように"
+    },
+    "creator": "Jun Mayuzuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008360": {
+    "workId": "wk_000008360",
+    "title": "플리니우스",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22124801"
+    },
+    "titles": {
+      "ko": "플리니우스",
+      "en": "Plinivs",
+      "ja": "プリニウス"
+    },
+    "creator": "Mari Yamazaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008615": {
+    "workId": "wk_000008615",
+    "title": "포켓몬스터 PiPiPi 어드벤처",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2279127"
+    },
+    "titles": {
+      "ko": "포켓몬스터 PiPiPi 어드벤처",
+      "en": "Magical Pokémon Journey",
+      "ja": "ポケットモンスター PiPiPi★アドベンチャー"
+    },
+    "creator": "Yumi Tsukirino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

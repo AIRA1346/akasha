@@ -1,0 +1,78 @@
+{
+  "wk_000005724": {
+    "workId": "wk_000005724",
+    "title": "챕터 27",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1062846"
+    },
+    "titles": {
+      "ko": "챕터 27",
+      "en": "Chapter 27",
+      "ja": "チャプター27"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007427": {
+    "workId": "wk_000007427",
+    "title": "드라큘라",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107325"
+    },
+    "titles": {
+      "ko": "드라큘라",
+      "en": "Bram Stoker's Dracula",
+      "ja": "ドラキュラ"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007679": {
+    "workId": "wk_000007679",
+    "title": "도시의 블루스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10750378"
+    },
+    "titles": {
+      "ko": "도시의 블루스",
+      "en": "Outlaw Blues",
+      "ja": "アウトローブルース"
+    },
+    "releaseYear": 1978,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009786": {
+    "workId": "wk_000009786",
+    "title": "아마겟돈 타임",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108877975"
+    },
+    "titles": {
+      "ko": "아마겟돈 타임",
+      "en": "Armageddon Time",
+      "ja": "アーマゲドン・タイム"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

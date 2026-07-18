@@ -1,0 +1,37 @@
+{
+  "wk_000002377": {
+    "workId": "wk_000002377",
+    "title": "덴마 (만화)",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12592914"
+    },
+    "titles": {
+      "ko": "덴마 (만화)",
+      "en": "Denma"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002608": {
+    "workId": "wk_000002608",
+    "title": "별을 품은 소드마스터",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136774553"
+    },
+    "titles": {
+      "ko": "별을 품은 소드마스터",
+      "en": "The Stellar Swordmaster",
+      "ja": "星剣のソードマスター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

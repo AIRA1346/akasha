@@ -1,0 +1,276 @@
+{
+  "wk_000000100": {
+    "workId": "wk_000000100",
+    "title": "폴아웃 4",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Bethesda",
+    "releaseYear": 2015,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid377160_2015"
+    ],
+    "titles": {
+      "en": "Fallout 4",
+      "ko": "폴아웃 4"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "377160",
+      "wikidata": "Q10493813"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000132": {
+    "workId": "wk_000000132",
+    "title": "슬라임 랜처",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Monomi Park",
+    "releaseYear": 2016,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid960090_2016"
+    ],
+    "titles": {
+      "en": "Bloons TD 6",
+      "ko": "슬라임 랜처"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "960090",
+      "wikidata": "Q65555252"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000961": {
+    "workId": "wk_000000961",
+    "title": "동방풍신록 ~ Mountain of Faith",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1045759"
+    },
+    "titles": {
+      "ko": "동방풍신록 ~ Mountain of Faith",
+      "en": "Touhou Fuujinroku ~ Mountain of Faith",
+      "ja": "東方風神録 〜 Mountain of Faith."
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002551": {
+    "workId": "wk_000002551",
+    "title": "미해결사건부",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107999617"
+    },
+    "titles": {
+      "ko": "미해결사건부",
+      "en": "Tears of Themis",
+      "ja": "未定事件簿"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002832": {
+    "workId": "wk_000002832",
+    "title": "노부나가의 야망 천상기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856194"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 천상기",
+      "en": "Nobunaga's Ambition: Tenshouki",
+      "ja": "信長の野望・天翔記"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003293": {
+    "workId": "wk_000003293",
+    "title": "호라이즌 콜 오브 더 마운틴",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110422709"
+    },
+    "titles": {
+      "ko": "호라이즌 콜 오브 더 마운틴",
+      "en": "Horizon Call of the Mountain"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003799": {
+    "workId": "wk_000003799",
+    "title": "아쿠아 (게임)",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11189516"
+    },
+    "titles": {
+      "ko": "아쿠아 (게임)",
+      "en": "AQUA",
+      "ja": "AQUA"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004448": {
+    "workId": "wk_000004448",
+    "title": "케인 앤 린치: 데드맨",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1130541"
+    },
+    "titles": {
+      "ko": "케인 앤 린치: 데드맨",
+      "en": "Kane & Lynch: Dead Men",
+      "ja": "KANE&LYNCH: DEAD MEN"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005420": {
+    "workId": "wk_000005420",
+    "title": "스트라이커즈 1945",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1145665"
+    },
+    "titles": {
+      "ko": "스트라이커즈 1945",
+      "en": "Strikers 1945",
+      "ja": "ストライカーズ1945"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007357": {
+    "workId": "wk_000007357",
+    "title": "괴혼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1206519"
+    },
+    "titles": {
+      "ko": "괴혼",
+      "en": "Katamari Damacy",
+      "ja": "塊魂"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007807": {
+    "workId": "wk_000007807",
+    "title": "판도라의 궁전",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124397678"
+    },
+    "titles": {
+      "ko": "판도라의 궁전",
+      "en": "Pandora's Palace",
+      "ja": "Pandora's Palace"
+    },
+    "releaseYear": 1984,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007812": {
+    "workId": "wk_000007812",
+    "title": "Winter Memories",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124548040"
+    },
+    "titles": {
+      "ko": "Winter Memories",
+      "en": "Winter Memories",
+      "ja": "あまえんぼ冬"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009443": {
+    "workId": "wk_000009443",
+    "title": "타이탄폴",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13473778"
+    },
+    "titles": {
+      "ko": "타이탄폴",
+      "en": "Q13473778",
+      "ja": "タイタンフォール"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

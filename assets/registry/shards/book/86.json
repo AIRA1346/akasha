@@ -1,0 +1,22 @@
+{
+  "wk_000008786": {
+    "workId": "wk_000008786",
+    "title": "아서 왕의 죽음",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1136104"
+    },
+    "titles": {
+      "ko": "아서 왕의 죽음",
+      "en": "Le Morte d'Arthur",
+      "ja": "アーサー王の死"
+    },
+    "releaseYear": 1485,
+    "creator": "Thomas Malory",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

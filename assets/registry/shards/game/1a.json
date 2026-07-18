@@ -1,0 +1,97 @@
+{
+  "wk_000000503": {
+    "workId": "wk_000000503",
+    "title": "진심으로 날 사랑해라!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1010585"
+    },
+    "titles": {
+      "ko": "진심으로 날 사랑해라!",
+      "en": "Majikoi! Love Me Seriously!",
+      "ja": "真剣で私に恋しなさい!"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002968": {
+    "workId": "wk_000002968",
+    "title": "THE IDOLM@STER SHINY FESTA",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10888950"
+    },
+    "titles": {
+      "ko": "THE IDOLM@STER SHINY FESTA",
+      "en": "The Idolmaster Shiny Festa",
+      "ja": "THE IDOLM@STER SHINY FESTA"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005239": {
+    "workId": "wk_000005239",
+    "title": "다크 에이지 오브 카멜롯",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143206"
+    },
+    "titles": {
+      "ko": "다크 에이지 오브 카멜롯",
+      "en": "Dark Age of Camelot",
+      "ja": "ダークエイジオブキャメロット"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006625": {
+    "workId": "wk_000006625",
+    "title": "마법사의 밤",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1188925"
+    },
+    "titles": {
+      "ko": "마법사의 밤",
+      "en": "Witch on the Holy Night",
+      "ja": "魔法使いの夜"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009301": {
+    "workId": "wk_000009301",
+    "title": "철권 레볼루션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13423675"
+    },
+    "titles": {
+      "ko": "철권 레볼루션",
+      "en": "Tekken Revolution",
+      "ja": "鉄拳レボリューション"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

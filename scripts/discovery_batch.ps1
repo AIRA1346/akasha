@@ -1,4 +1,4 @@
-# wikidata_ko discovery batch — eager-only app bundle (ADR-010 Option A)
+# wikidata_ko discovery batch — source generation only (bundle is a release step)
 # Usage:
 #   .\scripts\discovery_batch.ps1
 #   .\scripts\discovery_batch.ps1 -Rounds 6 -Limit 20
@@ -56,10 +56,10 @@ if (-not $SkipDiscovery) {
         Write-Host "$cat : 0 (no match in output)"
       }
     }
-    Write-Host "==> registry_builder --sync-assets --bundle-eager-only"
+    Write-Host "==> registry_builder (source only)"
     $prevEap = $ErrorActionPreference
     $ErrorActionPreference = 'Continue'
-    & $Dart run tool/registry_builder.dart --sync-assets --bundle-eager-only 2>&1 | Out-Null
+    & $Dart run tool/registry_builder.dart 2>&1 | Out-Null
     $buildExit = $LASTEXITCODE
     $ErrorActionPreference = $prevEap
     if ($buildExit -ne 0) { exit $buildExit }
@@ -68,10 +68,10 @@ if (-not $SkipDiscovery) {
     Write-Host ''
   }
 } else {
-  Write-Host '==> registry_builder --sync-assets --bundle-eager-only'
+  Write-Host '==> registry_builder (source only)'
   $prevEap = $ErrorActionPreference
   $ErrorActionPreference = 'Continue'
-  & $Dart run tool/registry_builder.dart --sync-assets --bundle-eager-only 2>&1 | Out-Null
+  & $Dart run tool/registry_builder.dart 2>&1 | Out-Null
   $buildExit = $LASTEXITCODE
   $ErrorActionPreference = $prevEap
   if ($buildExit -ne 0) { exit $buildExit }

@@ -1,0 +1,40 @@
+{
+  "wk_000001432": {
+    "workId": "wk_000001432",
+    "title": "광녀들의 무도회",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102076397"
+    },
+    "titles": {
+      "ko": "광녀들의 무도회",
+      "en": "The Mad Woman's Ball",
+      "ja": "社会から虐げられた女たち"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001832": {
+    "workId": "wk_000001832",
+    "title": "망각의 땅",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1034984"
+    },
+    "titles": {
+      "ko": "망각의 땅",
+      "en": "The Land That Time Forgot",
+      "ja": "恐竜の島"
+    },
+    "releaseYear": 1978,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

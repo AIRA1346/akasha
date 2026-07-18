@@ -1,0 +1,54 @@
+{
+  "wk_000000361": {
+    "workId": "wk_000000361",
+    "title": "노다메 칸타빌레",
+    "titles": {
+      "ko": "노다메 칸타빌레",
+      "en": "Nodame Cantabile",
+      "ja": "のだめカンタービレ"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "니시노 에무",
+    "releaseYear": 2001,
+    "tags": [
+      "음악",
+      "로맨스",
+      "코미디",
+      "성장"
+    ],
+    "legacyIds": [
+      "sub_manga_nodame-cantabile_2001"
+    ],
+    "externalIds": {
+      "wikidata": "Q1046959"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000008011": {
+    "workId": "wk_000008011",
+    "title": "머더 프린세스",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q204280"
+    },
+    "titles": {
+      "ko": "머더 프린세스",
+      "en": "Murder Princess",
+      "ja": "MURDER PRINCESS"
+    },
+    "releaseYear": 2007,
+    "creator": "Sekihiko Inui",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

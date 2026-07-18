@@ -1,0 +1,76 @@
+{
+  "wk_000002218": {
+    "workId": "wk_000002218",
+    "title": "베이비 레인디어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115516641"
+    },
+    "titles": {
+      "ko": "베이비 레인디어",
+      "en": "Baby Reindeer",
+      "ja": "私のトナカイちゃん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005134": {
+    "workId": "wk_000005134",
+    "title": "극장판 마법소녀 마도카☆마기카 [신편] 반역의 이야기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17479150"
+    },
+    "titles": {
+      "ko": "극장판 마법소녀 마도카☆마기카 [신편] 반역의 이야기",
+      "en": "Puella Magi Madoka Magica: Rebellion",
+      "ja": "劇場版 魔法少女まどか☆マギカ［新編］叛逆の物語"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006529": {
+    "workId": "wk_000006529",
+    "title": "츠키노 예능 프로덕션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q28691816"
+    },
+    "titles": {
+      "ko": "츠키노 예능 프로덕션",
+      "en": "Tsukipro the Animation",
+      "ja": "TSUKIPRO THE ANIMATION"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008192": {
+    "workId": "wk_000008192",
+    "title": "더 스탠드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q61774261"
+    },
+    "titles": {
+      "ko": "더 스탠드",
+      "en": "The Stand",
+      "ja": "ザ・スタンド"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

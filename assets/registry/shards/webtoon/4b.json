@@ -1,0 +1,19 @@
+{
+  "wk_000002073": {
+    "workId": "wk_000002073",
+    "title": "청춘 블라썸",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113187856"
+    },
+    "titles": {
+      "ko": "청춘 블라썸",
+      "en": "Seasons of Blossom"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

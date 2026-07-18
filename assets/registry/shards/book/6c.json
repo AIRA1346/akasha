@@ -1,0 +1,81 @@
+{
+  "wk_000003308": {
+    "workId": "wk_000003308",
+    "title": "야간비행",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1070729"
+    },
+    "titles": {
+      "ko": "야간비행",
+      "en": "Night Flight",
+      "ja": "夜間飛行"
+    },
+    "releaseYear": 1931,
+    "creator": "Antoine de Saint-Exupéry",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004312": {
+    "workId": "wk_000004312",
+    "title": "내일은 맑음",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856112"
+    },
+    "titles": {
+      "ko": "내일은 맑음",
+      "en": "Q10856112",
+      "ja": "てるてるあした"
+    },
+    "creator": "Tomoko Kanō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007017": {
+    "workId": "wk_000007017",
+    "title": "고래",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112035719"
+    },
+    "titles": {
+      "ko": "고래",
+      "en": "Whale",
+      "ja": "鯨"
+    },
+    "releaseYear": 2004,
+    "creator": "천명관",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007677": {
+    "workId": "wk_000007677",
+    "title": "사요나라, 갱들이여",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11268269"
+    },
+    "titles": {
+      "ko": "사요나라, 갱들이여",
+      "en": "Sayōnara, Gang-tachi",
+      "ja": "さようなら、ギャングたち"
+    },
+    "releaseYear": 1982,
+    "creator": "Genichiro Takahashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

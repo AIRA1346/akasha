@@ -1,0 +1,130 @@
+{
+  "wk_000003105": {
+    "workId": "wk_000003105",
+    "title": "망각 배터리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121095332"
+    },
+    "titles": {
+      "ko": "망각 배터리",
+      "en": "Oblivion Battery",
+      "ja": "忘却バッテリー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004428": {
+    "workId": "wk_000004428",
+    "title": "초 로봇 생명체 트랜스포머 마이크론 전설",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1348354"
+    },
+    "titles": {
+      "ko": "초 로봇 생명체 트랜스포머 마이크론 전설",
+      "en": "Transformers: Armada",
+      "ja": "超ロボット生命体トランスフォーマー マイクロン伝説"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005758": {
+    "workId": "wk_000005758",
+    "title": "오소마츠상",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22341701"
+    },
+    "titles": {
+      "ko": "오소마츠상",
+      "en": "Mr. Osomatsu",
+      "ja": "おそ松さん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008136": {
+    "workId": "wk_000008136",
+    "title": "인피니트 덴드로그램",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q61039776"
+    },
+    "titles": {
+      "ko": "인피니트 덴드로그램",
+      "en": "Infinite Dendrogram",
+      "ja": "インフィニット・デンドログラム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008436": {
+    "workId": "wk_000008436",
+    "title": "니노쿠니",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q65007238"
+    },
+    "titles": {
+      "ko": "니노쿠니",
+      "en": "Ni no Kuni",
+      "ja": "二ノ国"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008705": {
+    "workId": "wk_000008705",
+    "title": "소녀혁명 우테나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q696377"
+    },
+    "titles": {
+      "ko": "소녀혁명 우테나",
+      "en": "Revolutionary Girl Utena",
+      "ja": "少女革命ウテナ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010050": {
+    "workId": "wk_000010050",
+    "title": "연맹공군 항공마법음악대 루미너스 위치스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q98821973"
+    },
+    "titles": {
+      "ko": "연맹공군 항공마법음악대 루미너스 위치스",
+      "en": "Luminous Witches",
+      "ja": "連盟空軍航空魔法音楽隊ルミナスウィッチーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

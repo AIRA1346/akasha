@@ -1,0 +1,230 @@
+{
+  "wk_000001147": {
+    "workId": "wk_000001147",
+    "title": "이상의 아들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1053156"
+    },
+    "titles": {
+      "ko": "이상의 아들",
+      "en": "Perfect Son",
+      "ja": "理想の息子"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001148": {
+    "workId": "wk_000001148",
+    "title": "투 굿 투 비 트루",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105320222"
+    },
+    "titles": {
+      "ko": "투 굿 투 비 트루",
+      "en": "2 Good 2 Be True"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002437": {
+    "workId": "wk_000002437",
+    "title": "아무나",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109298133"
+    },
+    "titles": {
+      "ko": "아무나",
+      "en": "List of Amouna episodes"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002587": {
+    "workId": "wk_000002587",
+    "title": "체인지 데이즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109415351"
+    },
+    "titles": {
+      "ko": "체인지 데이즈",
+      "en": "Q109415351"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003066": {
+    "workId": "wk_000003066",
+    "title": "운명에서 시작되는 사랑 -You are my Destiny-",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458682"
+    },
+    "titles": {
+      "ko": "운명에서 시작되는 사랑 -You are my Destiny-",
+      "en": "Q109458682"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004555": {
+    "workId": "wk_000004555",
+    "title": "모범가족",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110637991"
+    },
+    "titles": {
+      "ko": "모범가족",
+      "en": "A Model Family",
+      "ja": "模範家族"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004932": {
+    "workId": "wk_000004932",
+    "title": "오늘부터 우리는",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111534290"
+    },
+    "titles": {
+      "ko": "오늘부터 우리는",
+      "en": "Woori the Virgin",
+      "ja": "私たちは今日から"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005000": {
+    "workId": "wk_000005000",
+    "title": "소닉: 크라이시스 어드벤처",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111746906"
+    },
+    "titles": {
+      "ko": "소닉: 크라이시스 어드벤처",
+      "en": "Sonic: Crisis Legacy"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005515": {
+    "workId": "wk_000005515",
+    "title": "아름다운 도전자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11256147"
+    },
+    "titles": {
+      "ko": "아름다운 도전자",
+      "en": "Utsukushiki Challenger",
+      "ja": "美しきチャレンジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005598": {
+    "workId": "wk_000005598",
+    "title": "오네다리 마스캇토DX!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262060"
+    },
+    "titles": {
+      "ko": "오네다리 마스캇토DX!",
+      "en": "Q11262060",
+      "ja": "おねだりマスカットDX!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006385": {
+    "workId": "wk_000006385",
+    "title": "뉴스 도야마인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11324846"
+    },
+    "titles": {
+      "ko": "뉴스 도야마인",
+      "en": "News Toyamajin",
+      "ja": "ニュース富山人"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008892": {
+    "workId": "wk_000008892",
+    "title": "베라보 ~쓰타주 영화의 꿈 이야기~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118196407"
+    },
+    "titles": {
+      "ko": "베라보 ~쓰타주 영화의 꿈 이야기~",
+      "en": "Berabou",
+      "ja": "べらぼう 〜蔦重栄華乃夢噺〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009912": {
+    "workId": "wk_000009912",
+    "title": "WIN",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124079095"
+    },
+    "titles": {
+      "ko": "WIN",
+      "en": "Q124079095"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

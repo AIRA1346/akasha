@@ -1,0 +1,214 @@
+{
+  "wk_000000482": {
+    "workId": "wk_000000482",
+    "title": "사다카트시즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100200874"
+    },
+    "titles": {
+      "ko": "사다카트시즈",
+      "en": "Sadakatsiz"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002438": {
+    "workId": "wk_000002438",
+    "title": "퍼스트 레이디",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109299052"
+    },
+    "titles": {
+      "ko": "퍼스트 레이디",
+      "en": "First Lady"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004052": {
+    "workId": "wk_000004052",
+    "title": "바람소리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115030"
+    },
+    "titles": {
+      "ko": "바람소리",
+      "en": "Q110115030"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004619": {
+    "workId": "wk_000004619",
+    "title": "애정의 조건",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11073743"
+    },
+    "titles": {
+      "ko": "애정의 조건",
+      "en": "Terms of Endearment",
+      "ja": "愛情の条件"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004921": {
+    "workId": "wk_000004921",
+    "title": "클리닝 업",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111384306"
+    },
+    "titles": {
+      "ko": "클리닝 업",
+      "en": "Cleaning Up"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005110": {
+    "workId": "wk_000005110",
+    "title": "엑스오, 키티",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111951059"
+    },
+    "titles": {
+      "ko": "엑스오, 키티",
+      "en": "XO, Kitty",
+      "ja": "愛をこめて、キティより"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005380": {
+    "workId": "wk_000005380",
+    "title": "바닐라기분!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11242776"
+    },
+    "titles": {
+      "ko": "바닐라기분!",
+      "en": "Q11242776",
+      "ja": "バニラ気分!"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005447": {
+    "workId": "wk_000005447",
+    "title": "테게테게",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11248499"
+    },
+    "titles": {
+      "ko": "테게테게",
+      "en": "TEGE2",
+      "ja": "てゲてゲ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005522": {
+    "workId": "wk_000005522",
+    "title": "아일랜드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11256866"
+    },
+    "titles": {
+      "ko": "아일랜드",
+      "en": "Ireland",
+      "ja": "アイルランド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006084": {
+    "workId": "wk_000006084",
+    "title": "유리의 성",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1129628"
+    },
+    "titles": {
+      "ko": "유리의 성",
+      "en": "City of Glass",
+      "ja": "ガラスの城"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006659": {
+    "workId": "wk_000006659",
+    "title": "욘더",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113518072"
+    },
+    "titles": {
+      "ko": "욘더",
+      "en": "Yonder"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006974": {
+    "workId": "wk_000006974",
+    "title": "익명탐정",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11404718"
+    },
+    "titles": {
+      "ko": "익명탐정",
+      "en": "Tokumei Tantei",
+      "ja": "匿名探偵"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

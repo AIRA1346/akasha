@@ -1,0 +1,169 @@
+{
+  "wk_000000174": {
+    "workId": "wk_000000174",
+    "title": "블랙 클로버",
+    "titles": {
+      "ko": "블랙 클로버",
+      "en": "Black Clover",
+      "ja": "ブラッククローバー"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "타바타 유키",
+    "releaseYear": 2017,
+    "tags": [
+      "판타지",
+      "마법",
+      "액션",
+      "우정"
+    ],
+    "extensions": {
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2017,
+          "episodes": 170
+        }
+      ],
+      "latestSeason": "1기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_animation_black-clover_2017"
+    ],
+    "externalIds": {
+      "wikidata": "Q70331950"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001388": {
+    "workId": "wk_000001388",
+    "title": "기동전사 건담 수성의 마녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109252646"
+    },
+    "titles": {
+      "ko": "기동전사 건담 수성의 마녀",
+      "en": "Mobile Suit Gundam: The Witch from Mercury",
+      "ja": "機動戦士ガンダム 水星の魔女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002391": {
+    "workId": "wk_000002391",
+    "title": "신비와 금비의 도깨비 전래동화 깹",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117083349"
+    },
+    "titles": {
+      "ko": "신비와 금비의 도깨비 전래동화 깹",
+      "en": "Q117083349"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003463": {
+    "workId": "wk_000003463",
+    "title": "Occultic;Nine",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124514496"
+    },
+    "titles": {
+      "ko": "Occultic;Nine",
+      "en": "Occultic;Nine",
+      "ja": "Occultic;Nine -オカルティック・ナイン-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005626": {
+    "workId": "wk_000005626",
+    "title": "이누야샤",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21587460"
+    },
+    "titles": {
+      "ko": "이누야샤",
+      "en": "Inuyasha",
+      "ja": "犬夜叉"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006604": {
+    "workId": "wk_000006604",
+    "title": "케모노 프렌즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q29469179"
+    },
+    "titles": {
+      "ko": "케모노 프렌즈",
+      "en": "Kemono Friends",
+      "ja": "けものフレンズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007213": {
+    "workId": "wk_000007213",
+    "title": "드래곤볼 Z",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q477916"
+    },
+    "titles": {
+      "ko": "드래곤볼 Z",
+      "en": "Dragon Ball Z",
+      "ja": "ドラゴンボールZ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008973": {
+    "workId": "wk_000008973",
+    "title": "베를린 알렉산더 광장",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q705694"
+    },
+    "titles": {
+      "ko": "베를린 알렉산더 광장",
+      "en": "Berlin Alexanderplatz",
+      "ja": "ベルリン・アレクサンダー広場"
+    },
+    "releaseYear": 1980,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

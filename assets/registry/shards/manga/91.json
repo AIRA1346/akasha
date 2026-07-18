@@ -1,0 +1,136 @@
+{
+  "wk_000000327": {
+    "workId": "wk_000000327",
+    "title": "가치아쿠타",
+    "titles": {
+      "ko": "가치아쿠타",
+      "en": "Gachiakuta",
+      "ja": "ガチアクタ"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "하시리 오케",
+    "releaseYear": 2022,
+    "tags": [
+      "액션",
+      "다크",
+      "생존",
+      "미스터리"
+    ],
+    "legacyIds": [
+      "sub_manga_gachiakuta_2022"
+    ],
+    "externalIds": {
+      "wikidata": "Q112874546"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000332": {
+    "workId": "wk_000000332",
+    "title": "그랜드 블루",
+    "titles": {
+      "ko": "그랜드 블루",
+      "en": "Grand Blue Dreaming",
+      "ja": "ぐらんぶる"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이노우에 켄지",
+    "releaseYear": 2014,
+    "tags": [
+      "코미디",
+      "대학",
+      "다이빙",
+      "일상"
+    ],
+    "legacyIds": [
+      "sub_manga_grand-blue_2014"
+    ],
+    "externalIds": {
+      "wikidata": "Q20044054"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000388": {
+    "workId": "wk_000000388",
+    "title": "전생했더니 슬라임이었던 건",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후세이 / 미와타리",
+    "releaseYear": 2014,
+    "tags": [
+      "이세계",
+      "판타지",
+      "슬라임",
+      "건국"
+    ],
+    "legacyIds": [
+      "sub_manga_tensura_2014"
+    ],
+    "titles": {
+      "en": "Tensura",
+      "ko": "전생했더니 슬라임이었던 건"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q61779948"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000002691": {
+    "workId": "wk_000002691",
+    "title": "소년 메이드",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11464645"
+    },
+    "titles": {
+      "ko": "소년 메이드",
+      "en": "Shōnen Maid",
+      "ja": "少年メイド"
+    },
+    "creator": "Ototachibana",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009176": {
+    "workId": "wk_000009176",
+    "title": "스틸 볼 런",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2738699"
+    },
+    "titles": {
+      "ko": "스틸 볼 런",
+      "en": "Steel Ball Run",
+      "ja": "スティール・ボール・ラン"
+    },
+    "creator": "荒木飛呂彦",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

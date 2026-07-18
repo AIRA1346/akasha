@@ -1,0 +1,129 @@
+{
+  "wk_000000131": {
+    "workId": "wk_000000131",
+    "title": "Resident Evil 3",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Capcom",
+    "releaseYear": 2020,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid952060_2020"
+    ],
+    "titles": {
+      "en": "Save 80% on Resident Evil 3",
+      "ko": "Resident Evil 3"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "952060",
+      "wikidata": "Q78059950"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000002159": {
+    "workId": "wk_000002159",
+    "title": "더 킹 오브 파이터즈 96",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071034"
+    },
+    "titles": {
+      "ko": "더 킹 오브 파이터즈 96",
+      "en": "The King of Fighters '96",
+      "ja": "ザ・キング・オブ・ファイターズ '96"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002556": {
+    "workId": "wk_000002556",
+    "title": "소닉 컬러즈: 얼티밋",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108254416"
+    },
+    "titles": {
+      "ko": "소닉 컬러즈: 얼티밋",
+      "en": "Sonic Colors: Ultimate",
+      "ja": "ソニックカラーズ アルティメット"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004007": {
+    "workId": "wk_000004007",
+    "title": "프린세스 파티",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11239972"
+    },
+    "titles": {
+      "ko": "프린세스 파티",
+      "en": "Princess Party",
+      "ja": "Princess Party 〜プリンセスパーティー〜"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004653": {
+    "workId": "wk_000004653",
+    "title": "미라이다갓키",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11342771"
+    },
+    "titles": {
+      "ko": "미라이다갓키",
+      "en": "Future TomTom",
+      "ja": "ミライダガッキ"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007359": {
+    "workId": "wk_000007359",
+    "title": "레드스틸 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1207061"
+    },
+    "titles": {
+      "ko": "레드스틸 2",
+      "en": "Red Steel 2"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

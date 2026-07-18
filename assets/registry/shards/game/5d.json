@@ -1,0 +1,203 @@
+{
+  "wk_000000051": {
+    "workId": "wk_000000051",
+    "title": "Age of Empires IV",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Relic",
+    "releaseYear": 2021,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid1466860_2021"
+    ],
+    "titles": {
+      "en": "Save 65% on Age of Empires IV: Anniversary Edition",
+      "ko": "Age of Empires IV"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "1466860",
+      "wikidata": "Q55154676"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001507": {
+    "workId": "wk_000001507",
+    "title": "월즈 엔드 클럽",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105701093"
+    },
+    "titles": {
+      "ko": "월즈 엔드 클럽",
+      "en": "World's End Club",
+      "ja": "ワールズエンドクラブ"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002912": {
+    "workId": "wk_000002912",
+    "title": "미소녀 만화경 -저주받은 전설의 소녀-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108600637"
+    },
+    "titles": {
+      "ko": "미소녀 만화경 -저주받은 전설의 소녀-",
+      "en": "Bishoujo Mangekyou -Norowareshi Densetsu no Shoujo-",
+      "ja": "美少女万華鏡 -呪われし伝説の少女-"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004228": {
+    "workId": "wk_000004228",
+    "title": "스타워즈 제다이: 서바이버",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112704136"
+    },
+    "titles": {
+      "ko": "스타워즈 제다이: 서바이버",
+      "en": "Star Wars Jedi: Survivor",
+      "ja": "Star Wars ジェダイ：サバイバー"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004771": {
+    "workId": "wk_000004771",
+    "title": "더 파이널스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113586393"
+    },
+    "titles": {
+      "ko": "더 파이널스",
+      "en": "The Finals",
+      "ja": "The Finals"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006122": {
+    "workId": "wk_000006122",
+    "title": "WWE 2K23",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116393383"
+    },
+    "titles": {
+      "ko": "WWE 2K23",
+      "en": "WWE 2K23"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007003": {
+    "workId": "wk_000007003",
+    "title": "요시 New 아일랜드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11955502"
+    },
+    "titles": {
+      "ko": "요시 New 아일랜드",
+      "en": "Yoshi's New Island",
+      "ja": "ヨッシー New アイランド"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007065": {
+    "workId": "wk_000007065",
+    "title": "피크민 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1196801"
+    },
+    "titles": {
+      "ko": "피크민 2",
+      "en": "Pikmin 2",
+      "ja": "ピクミン2"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007817": {
+    "workId": "wk_000007817",
+    "title": "아발론 온라인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12472851"
+    },
+    "titles": {
+      "ko": "아발론 온라인",
+      "en": "Avalon Heroes"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010135": {
+    "workId": "wk_000010135",
+    "title": "파이널 판타지 VII 레벌레이션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q140074828"
+    },
+    "titles": {
+      "ko": "파이널 판타지 VII 레벌레이션",
+      "en": "Q140074828"
+    },
+    "releaseYear": 2027,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "wk_000001196": {
+    "workId": "wk_000001196",
+    "title": "내일, 나는 누군가의 여자친구",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111514537"
+    },
+    "titles": {
+      "ko": "내일, 나는 누군가의 여자친구",
+      "en": "Ashita, Watashi wa Dareka no Kanojo",
+      "ja": "明日、私は誰かのカノジョ"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004134": {
+    "workId": "wk_000004134",
+    "title": "야쿠자에게 처녀를 바치다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118218476"
+    },
+    "titles": {
+      "ko": "야쿠자에게 처녀를 바치다",
+      "en": "Q118218476",
+      "ja": "漣蒼士に処女を捧ぐ〜さあ、じっくり愛でましょうか"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007207": {
+    "workId": "wk_000007207",
+    "title": "12세.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17214606"
+    },
+    "titles": {
+      "ko": "12세.",
+      "en": "Age 12",
+      "ja": "12歳。"
+    },
+    "creator": "Nao Maita",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007335": {
+    "workId": "wk_000007335",
+    "title": "사이렌",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17228587"
+    },
+    "titles": {
+      "ko": "사이렌",
+      "en": "Siren",
+      "ja": "サイレーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

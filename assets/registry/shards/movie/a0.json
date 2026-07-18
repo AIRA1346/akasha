@@ -1,0 +1,40 @@
+{
+  "wk_000006366": {
+    "workId": "wk_000006366",
+    "title": "그의 연인 프라이데이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1066714"
+    },
+    "titles": {
+      "ko": "그의 연인 프라이데이",
+      "en": "His Girl Friday",
+      "ja": "ヒズ・ガール・フライデー"
+    },
+    "releaseYear": 1940,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009526": {
+    "workId": "wk_000009526",
+    "title": "에디푸스 왕",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1086921"
+    },
+    "titles": {
+      "ko": "에디푸스 왕",
+      "en": "Oedipus Rex",
+      "ja": "アポロンの地獄"
+    },
+    "releaseYear": 1967,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "wk_000001347": {
+    "workId": "wk_000001347",
+    "title": "트로이 전쟁은 일어나지 않으리",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1040297"
+    },
+    "titles": {
+      "ko": "트로이 전쟁은 일어나지 않으리",
+      "en": "The Trojan War Will Not Take Place",
+      "ja": "トロイ戦争は起こらないだろう"
+    },
+    "releaseYear": 1935,
+    "creator": "Jean Giraudoux",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003218": {
+    "workId": "wk_000003218",
+    "title": "출사표",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068836"
+    },
+    "titles": {
+      "ko": "출사표",
+      "en": "Chu Shi Biao",
+      "ja": "出師表"
+    },
+    "creator": "Zhuge Liang",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009519": {
+    "workId": "wk_000009519",
+    "title": "메이드",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114289268"
+    },
+    "titles": {
+      "ko": "메이드",
+      "en": "The Maid"
+    },
+    "releaseYear": 2022,
+    "creator": "Nita Prose",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

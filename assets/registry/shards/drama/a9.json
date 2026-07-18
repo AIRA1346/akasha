@@ -1,0 +1,231 @@
+{
+  "wk_000002015": {
+    "workId": "wk_000002015",
+    "title": "네프리그",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856134"
+    },
+    "titles": {
+      "ko": "네프리그",
+      "en": "NEP LEAGUE",
+      "ja": "ネプリーグ"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002442": {
+    "workId": "wk_000002442",
+    "title": "불가살",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109313195"
+    },
+    "titles": {
+      "ko": "불가살",
+      "en": "Bulgasal: Immortal Souls",
+      "ja": "不可殺"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002757": {
+    "workId": "wk_000002757",
+    "title": "여자들의 은밀한 파티",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456061"
+    },
+    "titles": {
+      "ko": "여자들의 은밀한 파티",
+      "en": "women's secret party"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003153": {
+    "workId": "wk_000003153",
+    "title": "Devil's RUNWAY",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458907"
+    },
+    "titles": {
+      "ko": "Devil's RUNWAY",
+      "en": "Q109458907"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004185": {
+    "workId": "wk_000004185",
+    "title": "13세 소년",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115691"
+    },
+    "titles": {
+      "ko": "13세 소년",
+      "en": "Q110115691"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004192": {
+    "workId": "wk_000004192",
+    "title": "EBS TV 고교 공통사회",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115889"
+    },
+    "titles": {
+      "ko": "EBS TV 고교 공통사회",
+      "en": "Q110115889"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004995": {
+    "workId": "wk_000004995",
+    "title": "원:아워",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1116894"
+    },
+    "titles": {
+      "ko": "원:아워",
+      "en": "Eleventh Hour",
+      "ja": "イレブンス・アワー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005123": {
+    "workId": "wk_000005123",
+    "title": "Venue101",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112043482"
+    },
+    "titles": {
+      "ko": "Venue101",
+      "en": "Venue101",
+      "ja": "Venue101"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005462": {
+    "workId": "wk_000005462",
+    "title": "비바비바 V6",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11253000"
+    },
+    "titles": {
+      "ko": "비바비바 V6",
+      "en": "VivaVivaV6",
+      "ja": "VivaVivaV6"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005945": {
+    "workId": "wk_000005945",
+    "title": "태양옆에서 편지써두고 싶다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112818259"
+    },
+    "titles": {
+      "ko": "태양옆에서 편지써두고 싶다",
+      "en": "Daung Yin Pyan Bon Nabay Mhar Sar Yay Loh Htar Chin Dal"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007191": {
+    "workId": "wk_000007191",
+    "title": "호호! 강시 걸 ~ 도쿄 전시대 전기 ~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11446666"
+    },
+    "titles": {
+      "ko": "호호! 강시 걸 ~ 도쿄 전시대 전기 ~",
+      "en": "Q11446666",
+      "ja": "好好!キョンシーガール〜東京電視台戦記〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007631": {
+    "workId": "wk_000007631",
+    "title": "오늘도 사랑스럽개",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115412432"
+    },
+    "titles": {
+      "ko": "오늘도 사랑스럽개",
+      "en": "A Good Day to Be a Dog"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008112": {
+    "workId": "wk_000008112",
+    "title": "준짱의 응원가",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11605390"
+    },
+    "titles": {
+      "ko": "준짱의 응원가",
+      "en": "Q11605390",
+      "ja": "純ちゃんの応援歌"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

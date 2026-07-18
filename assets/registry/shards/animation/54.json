@@ -1,0 +1,58 @@
+{
+  "wk_000003458": {
+    "workId": "wk_000003458",
+    "title": "나의 히어로 아카데미아 더 무비: YOU'RE NEXT",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124388041"
+    },
+    "titles": {
+      "ko": "나의 히어로 아카데미아 더 무비: YOU'RE NEXT",
+      "en": "My Hero Academia: You're Next",
+      "ja": "僕のヒーローアカデミア THE MOVIE ユアネクスト"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006809": {
+    "workId": "wk_000006809",
+    "title": "달링 인 더 프랑키스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q36498848"
+    },
+    "titles": {
+      "ko": "달링 인 더 프랑키스",
+      "en": "Darling in the Franxx",
+      "ja": "ダーリン・イン・ザ・フランキス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009871": {
+    "workId": "wk_000009871",
+    "title": "망상대리인",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q947799"
+    },
+    "titles": {
+      "ko": "망상대리인",
+      "en": "Paranoia Agent",
+      "ja": "妄想代理人"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "wk_000002098": {
+    "workId": "wk_000002098",
+    "title": "테트리스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104044312"
+    },
+    "titles": {
+      "ko": "테트리스",
+      "en": "Tetris",
+      "ja": "テトリス"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002850": {
+    "workId": "wk_000002850",
+    "title": "뱅퀴시",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104856354"
+    },
+    "titles": {
+      "ko": "뱅퀴시",
+      "en": "Vanquish",
+      "ja": "ヴァンキッシュ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006571": {
+    "workId": "wk_000006571",
+    "title": "세틀러스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106778096"
+    },
+    "titles": {
+      "ko": "세틀러스",
+      "en": "Settlers",
+      "ja": "マーズ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008524": {
+    "workId": "wk_000008524",
+    "title": "블루 비틀",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107808351"
+    },
+    "titles": {
+      "ko": "블루 비틀",
+      "en": "Blue Beetle",
+      "ja": "ブルービートル"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008666": {
+    "workId": "wk_000008666",
+    "title": "신부가 된 복서",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108031233"
+    },
+    "titles": {
+      "ko": "신부가 된 복서",
+      "en": "Father Stu",
+      "ja": "ファーザー・スチュー 闘い続けた男"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

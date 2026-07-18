@@ -1,0 +1,79 @@
+{
+  "wk_000002134": {
+    "workId": "wk_000002134",
+    "title": "와일드 마운틴",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11351241"
+    },
+    "titles": {
+      "ko": "와일드 마운틴",
+      "en": "Wild Mountain",
+      "ja": "ワイルドマウンテン"
+    },
+    "releaseYear": 2003,
+    "creator": "Hideyasu Moto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004137": {
+    "workId": "wk_000004137",
+    "title": "몽환전설",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1185573"
+    },
+    "titles": {
+      "ko": "몽환전설",
+      "en": "Dream Saga",
+      "ja": "夢幻伝説 タカマガハラ"
+    },
+    "releaseYear": 1997,
+    "creator": "Megumi Tachikawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006248": {
+    "workId": "wk_000006248",
+    "title": "마왕의 딸은 너무 친절해!!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134711807"
+    },
+    "titles": {
+      "ko": "마왕의 딸은 너무 친절해!!",
+      "en": "The Daughter of the Demon Lord Is Too Kind!",
+      "ja": "魔王の娘は優しすぎる!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007393": {
+    "workId": "wk_000007393",
+    "title": "행복 그래피티",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17388958"
+    },
+    "titles": {
+      "ko": "행복 그래피티",
+      "en": "Gourmet Girl Graffiti",
+      "ja": "幸腹グラフィティ"
+    },
+    "creator": "Makoto Kawai",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

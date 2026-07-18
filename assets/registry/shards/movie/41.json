@@ -1,0 +1,78 @@
+{
+  "wk_000000857": {
+    "workId": "wk_000000857",
+    "title": "LA 캅스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1004433"
+    },
+    "titles": {
+      "ko": "LA 캅스",
+      "en": "Bulletproof",
+      "ja": "ダーティ・ボーイズ"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003892": {
+    "workId": "wk_000003892",
+    "title": "프레쉬",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105393880"
+    },
+    "titles": {
+      "ko": "프레쉬",
+      "en": "Fresh",
+      "ja": "フレッシュ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005650": {
+    "workId": "wk_000005650",
+    "title": "트리거 포인트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106103618"
+    },
+    "titles": {
+      "ko": "트리거 포인트",
+      "en": "Trigger Point",
+      "ja": "トリガー・ポイント"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006066": {
+    "workId": "wk_000006066",
+    "title": "죽음의 추적자",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1064553"
+    },
+    "titles": {
+      "ko": "죽음의 추적자",
+      "en": "Death Hunt",
+      "ja": "デス・ハント"
+    },
+    "releaseYear": 1981,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

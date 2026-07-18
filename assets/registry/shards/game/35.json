@@ -1,0 +1,151 @@
+{
+  "wk_000002242": {
+    "workId": "wk_000002242",
+    "title": "쥬라기 월드 에볼루션 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107217236"
+    },
+    "titles": {
+      "ko": "쥬라기 월드 에볼루션 2",
+      "en": "Jurassic World Evolution 2"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004591": {
+    "workId": "wk_000004591",
+    "title": "큐피드 비스트로!!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11330640"
+    },
+    "titles": {
+      "ko": "큐피드 비스트로!!",
+      "en": "Cupid Bistro!!",
+      "ja": "ビストロ・きゅーぴっと"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006046": {
+    "workId": "wk_000006046",
+    "title": "홍련화",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11605294"
+    },
+    "titles": {
+      "ko": "홍련화",
+      "en": "Q11605294",
+      "ja": "紅蓮華 -ぐれんか-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007164": {
+    "workId": "wk_000007164",
+    "title": "메탈슬러그 5",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1199043"
+    },
+    "titles": {
+      "ko": "메탈슬러그 5",
+      "en": "Metal Slug 5",
+      "ja": "メタルスラッグ5"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009092": {
+    "workId": "wk_000009092",
+    "title": "지하철 퇴마 소녀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133233834"
+    },
+    "titles": {
+      "ko": "지하철 퇴마 소녀",
+      "en": "Subway Exorcist Girl",
+      "ja": "電車除霊少女"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009383": {
+    "workId": "wk_000009383",
+    "title": "배고픈 괴수 공주 : 은하 미식 여행",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134519559"
+    },
+    "titles": {
+      "ko": "배고픈 괴수 공주 : 은하 미식 여행",
+      "en": "Kaiju Princess 2",
+      "ja": "大食い怪獣姫：惑星のグルメ"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009885": {
+    "workId": "wk_000009885",
+    "title": "스타폭스 64 3D",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1371603"
+    },
+    "titles": {
+      "ko": "스타폭스 64 3D",
+      "en": "Star Fox 64 3D",
+      "ja": "スターフォックス64 3D"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010282": {
+    "workId": "wk_000010282",
+    "title": "반지의 제왕: 북부 전쟁",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1440462"
+    },
+    "titles": {
+      "ko": "반지의 제왕: 북부 전쟁",
+      "en": "The Lord of the Rings: War in the North"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "wk_000000923": {
+    "workId": "wk_000000923",
+    "title": "하트 커넥트",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104253727"
+    },
+    "titles": {
+      "ko": "하트 커넥트",
+      "en": "Kokoro Connect",
+      "ja": "ココロコネクト"
+    },
+    "creator": "Sadanatsu Anda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003539": {
+    "workId": "wk_000003539",
+    "title": "여신강림",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q97236326"
+    },
+    "titles": {
+      "ko": "여신강림",
+      "en": "True Beauty",
+      "ja": "『女神降臨』"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

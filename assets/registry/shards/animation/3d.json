@@ -1,0 +1,162 @@
+{
+  "wk_000000227": {
+    "workId": "wk_000000227",
+    "title": "핑퐁",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "TMS",
+    "releaseYear": 2014,
+    "tags": [
+      "스포츠",
+      "탁구",
+      "청춘",
+      "드라마"
+    ],
+    "legacyIds": [
+      "sub_animation_ping-pong_2014"
+    ],
+    "titles": {
+      "en": "Ping Pong",
+      "ko": "핑퐁"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q27974430"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000794": {
+    "workId": "wk_000000794",
+    "title": "짱구는 못말려 극장판: 태풍을 부르는 나와 우주의 프린세스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055108"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 태풍을 부르는 나와 우주의 프린세스",
+      "en": "Crayon Shin-chan: Fierceness That Invites Storm! Me and the Space Princess",
+      "ja": "クレヨンしんちゃん 嵐を呼ぶ!オラと宇宙のプリンセス"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005138": {
+    "workId": "wk_000005138",
+    "title": "시고후미",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1754944"
+    },
+    "titles": {
+      "ko": "시고후미",
+      "en": "Shigofumi: Letters from the Departed",
+      "ja": "シゴフミ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005285": {
+    "workId": "wk_000005285",
+    "title": "모노노케 히메",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q186572"
+    },
+    "titles": {
+      "ko": "모노노케 히메",
+      "en": "Princess Mononoke",
+      "ja": "もののけ姫"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005614": {
+    "workId": "wk_000005614",
+    "title": "에그엔젤 코코밍",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21011084"
+    },
+    "titles": {
+      "ko": "에그엔젤 코코밍",
+      "en": "Kamisama Minarai: Himitsu no Cocotama",
+      "ja": "かみさまみならい ヒミツのここたま"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008016": {
+    "workId": "wk_000008016",
+    "title": "블렌드 S",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q60241128"
+    },
+    "titles": {
+      "ko": "블렌드 S",
+      "en": "Blend S",
+      "ja": "ブレンド・S"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008070": {
+    "workId": "wk_000008070",
+    "title": "Our Skyy",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q60507886"
+    },
+    "titles": {
+      "ko": "Our Skyy",
+      "en": "Our Skyy",
+      "ja": "Our Skyy"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008074": {
+    "workId": "wk_000008074",
+    "title": "시키자쿠라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q60746537"
+    },
+    "titles": {
+      "ko": "시키자쿠라",
+      "en": "Shikizakura",
+      "ja": "シキザクラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

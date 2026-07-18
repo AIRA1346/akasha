@@ -1,0 +1,136 @@
+{
+  "wk_000003217": {
+    "workId": "wk_000003217",
+    "title": "넬라의 비밀 약방",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106879969"
+    },
+    "titles": {
+      "ko": "넬라의 비밀 약방",
+      "en": "The Lost Apothecary: A Novel"
+    },
+    "releaseYear": 2021,
+    "creator": "Sarah Penner",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003736": {
+    "workId": "wk_000003736",
+    "title": "도둑 호첸플로츠",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107437994"
+    },
+    "titles": {
+      "ko": "도둑 호첸플로츠",
+      "en": "The Robber Hotzenplotz",
+      "ja": "大どろぼうホッツェンプロッツ"
+    },
+    "releaseYear": 1962,
+    "creator": "Otfried Preußler",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004456": {
+    "workId": "wk_000004456",
+    "title": "동문선",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10870286"
+    },
+    "titles": {
+      "ko": "동문선",
+      "en": "Q10870286",
+      "ja": "東文選"
+    },
+    "releaseYear": 1478,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004598": {
+    "workId": "wk_000004598",
+    "title": "사림광기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10879998"
+    },
+    "titles": {
+      "ko": "사림광기",
+      "en": "Shilin Guangji",
+      "ja": "事林広記"
+    },
+    "creator": "Chen Yuanjing",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005914": {
+    "workId": "wk_000005914",
+    "title": "제범",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11060125"
+    },
+    "titles": {
+      "ko": "제범",
+      "en": "Emperor's Model",
+      "zh": "Difan 帝範"
+    },
+    "creator": "太宗",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009447": {
+    "workId": "wk_000009447",
+    "title": "인명입정리론",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11420265"
+    },
+    "titles": {
+      "ko": "인명입정리론",
+      "en": "Q11420265",
+      "ja": "因明入正理論"
+    },
+    "creator": "Śaṅkarasvāmin",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010088": {
+    "workId": "wk_000010088",
+    "title": "우리가 세상을 이해하길 멈출 때",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114762016"
+    },
+    "titles": {
+      "ko": "우리가 세상을 이해하길 멈출 때",
+      "en": "When We Cease to Understand the World"
+    },
+    "releaseYear": 2021,
+    "creator": "Benjamín Labatut",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

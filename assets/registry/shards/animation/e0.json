@@ -1,0 +1,94 @@
+{
+  "wk_000005685": {
+    "workId": "wk_000005685",
+    "title": "하이 스쿨 플릿",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21682689"
+    },
+    "titles": {
+      "ko": "하이 스쿨 플릿",
+      "en": "High School Fleet",
+      "ja": "ハイスクール・フリート"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005969": {
+    "workId": "wk_000005969",
+    "title": "O.J.: 메이드 인 아메리카",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24514708"
+    },
+    "titles": {
+      "ko": "O.J.: 메이드 인 아메리카",
+      "en": "O.J.: Made in America",
+      "ja": "O.J.：メイド・イン・アメリカ"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006034": {
+    "workId": "wk_000006034",
+    "title": "퍼즐앤드래곤 크로스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24866855"
+    },
+    "titles": {
+      "ko": "퍼즐앤드래곤 크로스",
+      "en": "Puzzle & Dragons X",
+      "ja": "パズドラクロス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008913": {
+    "workId": "wk_000008913",
+    "title": "완소! 퍼펙트 반장",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q704211"
+    },
+    "titles": {
+      "ko": "완소! 퍼펙트 반장",
+      "en": "Gokujō!! Mecha Mote Iinchō",
+      "ja": "極上!!めちゃモテ委員長"
+    },
+    "creator": "Tomoko Nishimura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010054": {
+    "workId": "wk_000010054",
+    "title": "여친, 빌리겠습니다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q98923955"
+    },
+    "titles": {
+      "ko": "여친, 빌리겠습니다",
+      "en": "Rent-A-Girlfriend",
+      "ja": "彼女、お借りします"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

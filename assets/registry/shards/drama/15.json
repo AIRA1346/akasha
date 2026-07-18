@@ -1,0 +1,126 @@
+{
+  "wk_000001462": {
+    "workId": "wk_000001462",
+    "title": "라이어 게임 (2007년 드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106590122"
+    },
+    "titles": {
+      "ko": "라이어 게임 (2007년 드라마)",
+      "en": "Liar Game",
+      "ja": "ライアーゲーム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003080": {
+    "workId": "wk_000003080",
+    "title": "헬로! 플레이트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458886"
+    },
+    "titles": {
+      "ko": "헬로! 플레이트",
+      "en": "Q109458886"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004792": {
+    "workId": "wk_000004792",
+    "title": "시맨틱 에러: 더 무비",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111137623"
+    },
+    "titles": {
+      "ko": "시맨틱 에러: 더 무비",
+      "en": "Semantic Error",
+      "ja": "セマンティックエラー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005459": {
+    "workId": "wk_000005459",
+    "title": "소설 목민심서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11251968"
+    },
+    "titles": {
+      "ko": "소설 목민심서",
+      "en": "Novel Mokminsimseo",
+      "ja": "牧民心書 〜実学者チョン・ヤギョンの生涯〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007901": {
+    "workId": "wk_000007901",
+    "title": "고양이 변",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11572020"
+    },
+    "titles": {
+      "ko": "고양이 변",
+      "en": "Nekoben",
+      "ja": "猫弁"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008111": {
+    "workId": "wk_000008111",
+    "title": "라 프로메사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116051911"
+    },
+    "titles": {
+      "ko": "라 프로메사",
+      "en": "La promesa"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008893": {
+    "workId": "wk_000008893",
+    "title": "야에의 벚꽃",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1182753"
+    },
+    "titles": {
+      "ko": "야에의 벚꽃",
+      "en": "Yae no Sakura",
+      "ja": "八重の桜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000002202": {
+    "workId": "wk_000002202",
+    "title": "혈액형에 관한 간단한 고찰",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11625954"
+    },
+    "titles": {
+      "ko": "혈액형에 관한 간단한 고찰",
+      "en": "A Simple Thinking About Blood Type",
+      "ja": "血液型くん!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "wk_000004270": {
+    "workId": "wk_000004270",
+    "title": "트로트 엑스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110117962"
+    },
+    "titles": {
+      "ko": "트로트 엑스",
+      "en": "Q110117962"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004628": {
+    "workId": "wk_000004628",
+    "title": "우월한 하루",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110811082"
+    },
+    "titles": {
+      "ko": "우월한 하루",
+      "en": "A Superior Day"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005312": {
+    "workId": "wk_000005312",
+    "title": "실크로드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235413"
+    },
+    "titles": {
+      "ko": "실크로드",
+      "en": "The Silk Road",
+      "ja": "NHK特集 シルクロード"
+    },
+    "releaseYear": 1980,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005453": {
+    "workId": "wk_000005453",
+    "title": "서궁",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11250158"
+    },
+    "titles": {
+      "ko": "서궁",
+      "en": "West Palace",
+      "ja": "宮廷女官キム尚宮"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005512": {
+    "workId": "wk_000005512",
+    "title": "썸데이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11255636"
+    },
+    "titles": {
+      "ko": "썸데이",
+      "en": "Someday",
+      "ja": "サムデイ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005996": {
+    "workId": "wk_000005996",
+    "title": "아이돌 맨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11282319"
+    },
+    "titles": {
+      "ko": "아이돌 맨",
+      "en": "Idle Man",
+      "ja": "アイドルマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006907": {
+    "workId": "wk_000006907",
+    "title": "모험 록배트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11394978"
+    },
+    "titles": {
+      "ko": "모험 록배트",
+      "en": "Q11394978",
+      "ja": "冒険ロックバット"
+    },
+    "releaseYear": 1975,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008051": {
+    "workId": "wk_000008051",
+    "title": "히데요시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11594523"
+    },
+    "titles": {
+      "ko": "히데요시",
+      "en": "Hideyoshi",
+      "ja": "秀吉"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008677": {
+    "workId": "wk_000008677",
+    "title": "하늘의 인연",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116947895"
+    },
+    "titles": {
+      "ko": "하늘의 인연",
+      "en": "Mean To Be"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009419": {
+    "workId": "wk_000009419",
+    "title": "낮에 뜨는 달",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120753622"
+    },
+    "titles": {
+      "ko": "낮에 뜨는 달",
+      "en": "Moon in the Day"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

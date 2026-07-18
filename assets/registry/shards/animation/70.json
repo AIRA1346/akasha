@@ -1,0 +1,148 @@
+{
+  "wk_000003457": {
+    "workId": "wk_000003457",
+    "title": "누키타시 THE ANIMATION",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124370198"
+    },
+    "titles": {
+      "ko": "누키타시 THE ANIMATION",
+      "en": "Nukitashi the Animation",
+      "ja": "ぬきたし THE ANIMATION"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004884": {
+    "workId": "wk_000004884",
+    "title": "시끌별 녀석들 2 - 뷰티풀 드리머",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1582185"
+    },
+    "titles": {
+      "ko": "시끌별 녀석들 2 - 뷰티풀 드리머",
+      "en": "Urusei Yatsura 2: Beautiful Dreamer",
+      "ja": "うる星やつら2 ビューティフル・ドリーマー"
+    },
+    "releaseYear": 1984,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006189": {
+    "workId": "wk_000006189",
+    "title": "핸드 셰이커",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q25915278"
+    },
+    "titles": {
+      "ko": "핸드 셰이커",
+      "en": "Hand Shakers",
+      "ja": "ハンドシェイカー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007757": {
+    "workId": "wk_000007757",
+    "title": "로드 오브 버밀리온: 홍련의 왕",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q55529976"
+    },
+    "titles": {
+      "ko": "로드 오브 버밀리온: 홍련의 왕",
+      "en": "Lord of Vermilion: The Crimson King",
+      "ja": "ロード オブ ヴァーミリオン 紅蓮の王"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007852": {
+    "workId": "wk_000007852",
+    "title": "꿈의 크레용 왕국",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q576806"
+    },
+    "titles": {
+      "ko": "꿈의 크레용 왕국",
+      "en": "Yume no Crayon Oukoku",
+      "ja": "夢のクレヨン王国"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008432": {
+    "workId": "wk_000008432",
+    "title": "미루타이츠",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q64788686"
+    },
+    "titles": {
+      "ko": "미루타이츠",
+      "en": "Miru Tights",
+      "ja": "みるタイツ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009082": {
+    "workId": "wk_000009082",
+    "title": "시대를 초월한 마음",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q719497"
+    },
+    "titles": {
+      "ko": "시대를 초월한 마음",
+      "en": "Inuyasha the Movie: Affections Touching Across Time",
+      "ja": "犬夜叉 時代を越える想い"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009366": {
+    "workId": "wk_000009366",
+    "title": "그레이트 프리텐더",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q83712396"
+    },
+    "titles": {
+      "ko": "그레이트 프리텐더",
+      "en": "Great Pretender",
+      "ja": "GREAT PRETENDER"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

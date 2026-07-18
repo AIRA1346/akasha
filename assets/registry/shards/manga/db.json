@@ -1,0 +1,95 @@
+{
+  "wk_000001249": {
+    "workId": "wk_000001249",
+    "title": "Lv1 마왕과 원룸 용사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111945836"
+    },
+    "titles": {
+      "ko": "Lv1 마왕과 원룸 용사",
+      "en": "Level 1 Demon Lord and One Room Hero",
+      "ja": "Lv1魔王とワンルーム勇者"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001663": {
+    "workId": "wk_000001663",
+    "title": "플레이 플레이 소녀",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11283461"
+    },
+    "titles": {
+      "ko": "플레이 플레이 소녀",
+      "en": "Q11283461",
+      "ja": "フレフレ少女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003619": {
+    "workId": "wk_000003619",
+    "title": "전파교사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11660508"
+    },
+    "titles": {
+      "ko": "전파교사",
+      "en": "Ultimate Otaku Teacher",
+      "ja": "電波教師"
+    },
+    "creator": "東毅",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006016": {
+    "workId": "wk_000006016",
+    "title": "신의 정원이 딸린 쿠스노키 저택",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132631900"
+    },
+    "titles": {
+      "ko": "신의 정원이 딸린 쿠스노키 저택",
+      "en": "Kusunoki's Garden of Gods",
+      "ja": "神の庭付き楠木邸"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006918": {
+    "workId": "wk_000006918",
+    "title": "언덕길의 아폴론",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1670019"
+    },
+    "titles": {
+      "ko": "언덕길의 아폴론",
+      "en": "Kids on the Slope",
+      "ja": "坂道のアポロン"
+    },
+    "creator": "小玉ユキ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

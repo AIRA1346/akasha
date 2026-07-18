@@ -1,0 +1,96 @@
+{
+  "wk_000000942": {
+    "workId": "wk_000000942",
+    "title": "두더지",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110029700"
+    },
+    "titles": {
+      "ko": "두더지",
+      "en": "Himizu",
+      "ja": "ヒミズ"
+    },
+    "releaseYear": 2001,
+    "creator": "Minoru Furuya",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002879": {
+    "workId": "wk_000002879",
+    "title": "세스타스",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11497871"
+    },
+    "titles": {
+      "ko": "세스타스",
+      "en": "Cestvs: The Roman Fighter",
+      "ja": "セスタスシリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006015": {
+    "workId": "wk_000006015",
+    "title": "가짜 연금술사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132560833"
+    },
+    "titles": {
+      "ko": "가짜 연금술사",
+      "en": "The Fake Alchemist",
+      "ja": "ニセモノの錬金術師"
+    },
+    "creator": "Jirō Sugiura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007154": {
+    "workId": "wk_000007154",
+    "title": "성우전대 보이스톰7",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17212786"
+    },
+    "titles": {
+      "ko": "성우전대 보이스톰7",
+      "en": "Seiyuu Sentai Voicetorm 7",
+      "ja": "声優戦隊ボイストーム7"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007956": {
+    "workId": "wk_000007956",
+    "title": "다가시카시",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20043638"
+    },
+    "titles": {
+      "ko": "다가시카시",
+      "en": "Dagashi Kashi",
+      "ja": "だがしかし"
+    },
+    "creator": "Kotoyama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

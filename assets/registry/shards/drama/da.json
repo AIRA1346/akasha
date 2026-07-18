@@ -1,0 +1,357 @@
+{
+  "wk_000002123": {
+    "workId": "wk_000002123",
+    "title": "세계의 끝",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10869121"
+    },
+    "titles": {
+      "ko": "세계의 끝",
+      "en": "The End of the World (TV series)",
+      "ja": "世界の終わり"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002182": {
+    "workId": "wk_000002182",
+    "title": "스타 트렉: 딥 스페이스 나인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108774"
+    },
+    "titles": {
+      "ko": "스타 트렉: 딥 스페이스 나인",
+      "en": "Star Trek: Deep Space Nine",
+      "ja": "スタートレック:ディープ・スペース・ナイン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003414": {
+    "workId": "wk_000003414",
+    "title": "조선판스타",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461309"
+    },
+    "titles": {
+      "ko": "조선판스타",
+      "en": "Q109461309"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003507": {
+    "workId": "wk_000003507",
+    "title": "5월의 여행",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464071"
+    },
+    "titles": {
+      "ko": "5월의 여행",
+      "en": "Q109464071"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003959": {
+    "workId": "wk_000003959",
+    "title": "글로벌 슈퍼 아이돌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114325"
+    },
+    "titles": {
+      "ko": "글로벌 슈퍼 아이돌",
+      "en": "Q110114325"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004053": {
+    "workId": "wk_000004053",
+    "title": "배니축풍비상",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115096"
+    },
+    "titles": {
+      "ko": "배니축풍비상",
+      "en": "Q110115096"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004259": {
+    "workId": "wk_000004259",
+    "title": "KBS 뉴스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115972"
+    },
+    "titles": {
+      "ko": "KBS 뉴스",
+      "en": "KBS NEWS (1050)",
+      "ja": "KBSニュース (1050)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004556": {
+    "workId": "wk_000004556",
+    "title": "더 패뷸러스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110638016"
+    },
+    "titles": {
+      "ko": "더 패뷸러스",
+      "en": "The Fabulous",
+      "ja": "ザ・ファビュラス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004683": {
+    "workId": "wk_000004683",
+    "title": "캐시백 (텔레비전 프로그램)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110832980"
+    },
+    "titles": {
+      "ko": "캐시백 (텔레비전 프로그램)",
+      "en": "Q110832980"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004785": {
+    "workId": "wk_000004785",
+    "title": "라 에렌시아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111018941"
+    },
+    "titles": {
+      "ko": "라 에렌시아",
+      "en": "La herencia"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005591": {
+    "workId": "wk_000005591",
+    "title": "노래하는 나무",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11260484"
+    },
+    "titles": {
+      "ko": "노래하는 나무",
+      "en": "Uta no Naru Ki",
+      "ja": "うたのなる木"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005798": {
+    "workId": "wk_000005798",
+    "title": "종합병원 2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11271760"
+    },
+    "titles": {
+      "ko": "종합병원 2",
+      "en": "General Hospital 2",
+      "ja": "総合病院2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007087": {
+    "workId": "wk_000007087",
+    "title": "꿈을 주다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11431531"
+    },
+    "titles": {
+      "ko": "꿈을 주다",
+      "en": "Yumewoataeru",
+      "ja": "夢を与える"
+    },
+    "releaseYear": 2007,
+    "creator": "Risa Wataya",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007821": {
+    "workId": "wk_000007821",
+    "title": "온천에 가자 !",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11562923"
+    },
+    "titles": {
+      "ko": "온천에 가자 !",
+      "en": "Let's Go to Onsen",
+      "ja": "温泉へ行こう!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007888": {
+    "workId": "wk_000007888",
+    "title": "특수전대 데카레인저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1156862"
+    },
+    "titles": {
+      "ko": "특수전대 데카레인저",
+      "en": "Tokusou Sentai Dekaranger",
+      "ja": "特捜戦隊デカレンジャー"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008682": {
+    "workId": "wk_000008682",
+    "title": "뮤트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116995834"
+    },
+    "titles": {
+      "ko": "뮤트",
+      "en": "Mute",
+      "ja": "Silencio/シレンシオ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009550": {
+    "workId": "wk_000009550",
+    "title": "아찔한 소개팅",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121872811"
+    },
+    "titles": {
+      "ko": "아찔한 소개팅",
+      "en": "Thrilling Blind Date"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009846": {
+    "workId": "wk_000009846",
+    "title": "마킬링",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123878578"
+    },
+    "titles": {
+      "ko": "마킬링",
+      "en": "Makiling"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010106": {
+    "workId": "wk_000010106",
+    "title": "조립식 가족",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124611032"
+    },
+    "titles": {
+      "ko": "조립식 가족",
+      "en": "Family by Choice",
+      "ja": "組み立て式家族〜僕らの恋の在処〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010172": {
+    "workId": "wk_000010172",
+    "title": "글래이즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247408"
+    },
+    "titles": {
+      "ko": "글래이즈",
+      "en": "The Glades",
+      "ja": "ザ・グレイズ 〜フロリダ殺人事件簿"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

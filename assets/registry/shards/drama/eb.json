@@ -1,0 +1,233 @@
+{
+  "wk_000000999": {
+    "workId": "wk_000000999",
+    "title": "결혼작사 이혼작곡",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104772941"
+    },
+    "titles": {
+      "ko": "결혼작사 이혼작곡",
+      "en": "Love (ft. Marriage and Divorce)",
+      "ja": "結婚作詞 離婚作曲"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001007": {
+    "workId": "wk_000001007",
+    "title": "후와그 캉 망암바",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104865289"
+    },
+    "titles": {
+      "ko": "후와그 캉 망암바",
+      "en": "Huwag Kang Mangamba",
+      "ja": "フワグ・カング・マンアムバ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001901": {
+    "workId": "wk_000001901",
+    "title": "탱크 톱 파이터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10852865"
+    },
+    "titles": {
+      "ko": "탱크 톱 파이터",
+      "en": "TANK-TOP FIGHTER",
+      "ja": "タンクトップファイター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002993": {
+    "workId": "wk_000002993",
+    "title": "블라인드 뮤지션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458032"
+    },
+    "titles": {
+      "ko": "블라인드 뮤지션",
+      "en": "Q109458032"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003505": {
+    "workId": "wk_000003505",
+    "title": "씨씨엠스타",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461881"
+    },
+    "titles": {
+      "ko": "씨씨엠스타",
+      "en": "Q109461881"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006915": {
+    "workId": "wk_000006915",
+    "title": "형사 요시나가 세이치 눈물의 사건부",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11396333"
+    },
+    "titles": {
+      "ko": "형사 요시나가 세이치 눈물의 사건부",
+      "en": "Keiji yoshinaga seiichi namida no jiken-bo",
+      "ja": "刑事吉永誠一・涙の事件簿"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007041": {
+    "workId": "wk_000007041",
+    "title": "테이크 원",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114234890"
+    },
+    "titles": {
+      "ko": "테이크 원",
+      "en": "Take 1",
+      "ja": "TAKE ONE ～マイ・ラスト・ソング～"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008342": {
+    "workId": "wk_000008342",
+    "title": "주간신간서적",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11640028"
+    },
+    "titles": {
+      "ko": "주간신간서적",
+      "en": "Weekly Book Review",
+      "ja": "週刊ブックレビュー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008747": {
+    "workId": "wk_000008747",
+    "title": "힙(HIP)하게",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117280410"
+    },
+    "titles": {
+      "ko": "힙(HIP)하게",
+      "en": "Behind your Touch",
+      "ja": "ヒップタッチの女王"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008751": {
+    "workId": "wk_000008751",
+    "title": "폭싹 속았수다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117353211"
+    },
+    "titles": {
+      "ko": "폭싹 속았수다",
+      "en": "When Life Gives You Tangerines",
+      "ja": "おつかれさま"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009742": {
+    "workId": "wk_000009742",
+    "title": "뉴스퀸",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123278341"
+    },
+    "titles": {
+      "ko": "뉴스퀸",
+      "en": "The Queen of News"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009795": {
+    "workId": "wk_000009795",
+    "title": "애적영요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123500386"
+    },
+    "titles": {
+      "ko": "애적영요",
+      "en": "Glory of Love"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010102": {
+    "workId": "wk_000010102",
+    "title": "폭상전대 분붐저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124608588"
+    },
+    "titles": {
+      "ko": "폭상전대 분붐저",
+      "en": "Bakuage Sentai Boonboomger",
+      "ja": "爆上戦隊ブンブンジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,11 +1,14 @@
 # ADR-010: App Bundle — Eager Shards Only (Phase 2.3)
 
-> **상태:** Accepted (2026-06-14)  
+> **상태:** Superseded (2026-07-18) — [ADR-015](../../architecture/ADR-015-full-local-registry-bundle.md)
 > **Phase:** [architecture-evolution-phases.md](../programs/architecture-evolution-phases.md) §2.3
 
 ---
 
 ## Context
+
+> 이 문서는 eager-only/CDN 중심 구조의 역사적 결정이다. 현재 전체 로컬 번들
+> 결정과 생성 계약은 ADR-015를 따른다.
 
 - `assets/registry/shards/**`에 **전체 카탈로그** 동봉 → APK·설치 크기 선형 증가
 - Phase 2.1~2.2: search_index 분할 + browse 윈도우 → **나머지 shard는 on-demand** 가능

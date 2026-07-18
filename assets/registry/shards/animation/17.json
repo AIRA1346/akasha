@@ -1,0 +1,250 @@
+{
+  "wk_000000171": {
+    "workId": "wk_000000171",
+    "title": "약사의 혼잣말",
+    "titles": {
+      "ko": "약사의 혼잣말",
+      "en": "The Apothecary Diaries",
+      "ja": "薬屋のひとりごと"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "히나타 네코",
+    "releaseYear": 2023,
+    "tags": [
+      "미스터리",
+      "역사",
+      "궁중",
+      "약학"
+    ],
+    "extensions": {
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2023,
+          "episodes": 24
+        },
+        {
+          "label": "2기",
+          "year": 2025,
+          "episodes": 24
+        }
+      ],
+      "latestSeason": "2기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "tmdb": "220542",
+      "wikidata": "Q116787865"
+    },
+    "legacyIds": [
+      "sub_animation_apothecary-diaries_2023"
+    ],
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001561": {
+    "workId": "wk_000001561",
+    "title": "어셔가의 몰락",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110156249"
+    },
+    "titles": {
+      "ko": "어셔가의 몰락",
+      "en": "The Fall of the House of Usher",
+      "ja": "アッシャー家の崩壊 (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002079": {
+    "workId": "wk_000002079",
+    "title": "스티치! 새로운 모험",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151166"
+    },
+    "titles": {
+      "ko": "스티치! 새로운 모험",
+      "en": "Stitch!",
+      "ja": "スティッチ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002804": {
+    "workId": "wk_000002804",
+    "title": "장화 신은 고양이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1195553"
+    },
+    "titles": {
+      "ko": "장화 신은 고양이",
+      "en": "The Wonderful World of Puss 'n Boots",
+      "ja": "長靴猫シリーズ"
+    },
+    "releaseYear": 1971,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003855": {
+    "workId": "wk_000003855",
+    "title": "아포칼립스 호텔",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129978638"
+    },
+    "titles": {
+      "ko": "아포칼립스 호텔",
+      "en": "Apocalypse Hotel",
+      "ja": "アポカリプスホテル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004748": {
+    "workId": "wk_000004748",
+    "title": "Wake Up, Girls!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q14550419"
+    },
+    "titles": {
+      "ko": "Wake Up, Girls!",
+      "en": "Wake Up, Girls!",
+      "ja": "Wake Up, Girls!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005343": {
+    "workId": "wk_000005343",
+    "title": "아키라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1905968"
+    },
+    "titles": {
+      "ko": "아키라",
+      "en": "Akira",
+      "ja": "AKIRA"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006612": {
+    "workId": "wk_000006612",
+    "title": "신칸센 변형로보 신카리온",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q30114481"
+    },
+    "titles": {
+      "ko": "신칸센 변형로보 신카리온",
+      "en": "Shinkansen Henkei Robo Shinkalion",
+      "ja": "新幹線変形ロボ シンカリオン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006805": {
+    "workId": "wk_000006805",
+    "title": "아쿠아 키즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3621081"
+    },
+    "titles": {
+      "ko": "아쿠아 키즈",
+      "en": "Aqua Kids",
+      "ja": "アクアキッズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006868": {
+    "workId": "wk_000006868",
+    "title": "무적강인 다이탄3",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3700936"
+    },
+    "titles": {
+      "ko": "무적강인 다이탄3",
+      "en": "Invincible Steel Man Daitarn 3",
+      "ja": "無敵鋼人ダイターン3"
+    },
+    "releaseYear": 1978,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009050": {
+    "workId": "wk_000009050",
+    "title": "도쿄 매그니튜드 8.0",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q714520"
+    },
+    "titles": {
+      "ko": "도쿄 매그니튜드 8.0",
+      "en": "Tokyo Magnitude 8.0",
+      "ja": "東京マグニチュード8.0"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009690": {
+    "workId": "wk_000009690",
+    "title": "극장판 포켓몬스터 AG: 뮤와 파동의 용사 루카리오",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q890720"
+    },
+    "titles": {
+      "ko": "극장판 포켓몬스터 AG: 뮤와 파동의 용사 루카리오",
+      "en": "Pokémon: Lucario and the Mystery of Mew",
+      "ja": "劇場版ポケットモンスター アドバンスジェネレーション ミュウと波導の勇者 ルカリオ"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

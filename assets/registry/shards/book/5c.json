@@ -1,0 +1,97 @@
+{
+  "wk_000003579": {
+    "workId": "wk_000003579",
+    "title": "7년의 밤",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107363167"
+    },
+    "titles": {
+      "ko": "7년의 밤",
+      "en": "Seven Years of Darkness",
+      "ja": "7年の夜"
+    },
+    "creator": "정유정",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004381": {
+    "workId": "wk_000004381",
+    "title": "삼동주낭",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10866362"
+    },
+    "titles": {
+      "ko": "삼동주낭",
+      "en": "A Bag of Pearls from the Three Caverns",
+      "ja": "三洞珠囊"
+    },
+    "creator": "Wang Xuanhe",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006491": {
+    "workId": "wk_000006491",
+    "title": "창조 연금술사는 자유를 구가한다 고향에서 추방당해, 마왕의 슬하에서 초절 효과의 매직 아이템을 맘껏 만들었습니다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111305282"
+    },
+    "titles": {
+      "ko": "창조 연금술사는 자유를 구가한다 고향에서 추방당해, 마왕의 슬하에서 초절 효과의 매직 아이템을 맘껏 만들었습니다",
+      "en": "Sōzō Renkinjutsushi wa Jiyū o Ōka suru: Kokyō o Tsuihō saretara, Maō no Ohizamoto de Chōzetsu Kōka no Magic Item Tsukuri-hōdai ni Narimashita",
+      "ja": "創造錬金術師は自由を謳歌する 故郷を追放されたら、魔王のお膝元で超絶効果のマジックアイテム作り放題になりました"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008584": {
+    "workId": "wk_000008584",
+    "title": "바보들의 배",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134909"
+    },
+    "titles": {
+      "ko": "바보들의 배",
+      "en": "Ship of Fools"
+    },
+    "releaseYear": 1962,
+    "creator": "Katherine Anne Porter",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008727": {
+    "workId": "wk_000008727",
+    "title": "삼교평심론",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11355467"
+    },
+    "titles": {
+      "ko": "삼교평심론",
+      "en": "Treatise on the Three Teachings",
+      "ja": "三教平心論"
+    },
+    "creator": "Liu Mi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

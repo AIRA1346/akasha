@@ -1,0 +1,40 @@
+{
+  "wk_000007549": {
+    "workId": "wk_000007549",
+    "title": "스트링",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1073856"
+    },
+    "titles": {
+      "ko": "스트링",
+      "en": "Strings",
+      "ja": "ストリングス〜愛と絆の旅路〜"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009319": {
+    "workId": "wk_000009319",
+    "title": "에이리언 3",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108543"
+    },
+    "titles": {
+      "ko": "에이리언 3",
+      "en": "Alien 3",
+      "ja": "エイリアン3"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

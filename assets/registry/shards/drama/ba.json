@@ -1,0 +1,176 @@
+{
+  "wk_000001909": {
+    "workId": "wk_000001909",
+    "title": "37세에 의사가 된 나~연수의 순정 이야기~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854384"
+    },
+    "titles": {
+      "ko": "37세에 의사가 된 나~연수의 순정 이야기~",
+      "en": "37-Sai de isha ni natta boku",
+      "ja": "37歳で医者になった僕〜研修医純情物語〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003335": {
+    "workId": "wk_000003335",
+    "title": "류수영의 동물티비",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460917"
+    },
+    "titles": {
+      "ko": "류수영의 동물티비",
+      "en": "Q109460917"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003503": {
+    "workId": "wk_000003503",
+    "title": "지혜의 한 수, 회초리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461753"
+    },
+    "titles": {
+      "ko": "지혜의 한 수, 회초리",
+      "en": "Q109461753"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003515": {
+    "workId": "wk_000003515",
+    "title": "생생경제 정보톡톡",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464384"
+    },
+    "titles": {
+      "ko": "생생경제 정보톡톡",
+      "en": "Q109464384"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006653": {
+    "workId": "wk_000006653",
+    "title": "리버스 ~ 경시청 수사일과 팀 Z~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11348308"
+    },
+    "titles": {
+      "ko": "리버스 ~ 경시청 수사일과 팀 Z~",
+      "en": "Reverse - Tokyo Metropolitan Police Department investigation one Division team Z~",
+      "ja": "リバース〜警視庁捜査一課チームZ〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007903": {
+    "workId": "wk_000007903",
+    "title": "캐나다 체크인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115727135"
+    },
+    "titles": {
+      "ko": "캐나다 체크인",
+      "en": "Q115727135"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007941": {
+    "workId": "wk_000007941",
+    "title": "바이 나 페",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115748489"
+    },
+    "titles": {
+      "ko": "바이 나 페",
+      "en": "Vai na Fé"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008181": {
+    "workId": "wk_000008181",
+    "title": "황야의 TV맨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11618857"
+    },
+    "titles": {
+      "ko": "황야의 TV맨",
+      "en": "Koyano Television Man",
+      "ja": "荒野のテレビマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008740": {
+    "workId": "wk_000008740",
+    "title": "삼식이 삼촌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117197428"
+    },
+    "titles": {
+      "ko": "삼식이 삼촌",
+      "en": "Uncle Samsik",
+      "ja": "サムシクおじさん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010266": {
+    "workId": "wk_000010266",
+    "title": "개창자 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124812137"
+    },
+    "titles": {
+      "ko": "개창자 (드라마)",
+      "en": "My Secret, Terrius"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

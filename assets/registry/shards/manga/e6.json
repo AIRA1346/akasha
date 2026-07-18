@@ -1,0 +1,97 @@
+{
+  "wk_000000455": {
+    "workId": "wk_000000455",
+    "title": "우리 스승님은 꼬리가 없다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101244679"
+    },
+    "titles": {
+      "en": "My Master Has No Tail",
+      "ja": "うちの師匠はしっぽがない",
+      "ko": "우리 스승님은 꼬리가 없다"
+    },
+    "creator": "TNSK",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  },
+  "wk_000003347": {
+    "workId": "wk_000003347",
+    "title": "Life 선상의 우리들",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116025492"
+    },
+    "titles": {
+      "ko": "Life 선상의 우리들",
+      "en": "Life: Senjou no Bokura",
+      "ja": "Life 線上の僕ら"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006791": {
+    "workId": "wk_000006791",
+    "title": "아인",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15732099"
+    },
+    "titles": {
+      "ko": "아인",
+      "en": "Ajin",
+      "ja": "亜人"
+    },
+    "creator": "Tsuina Miura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006987": {
+    "workId": "wk_000006987",
+    "title": "오빠지만 사랑만 있으면 상관없잖아?",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16878957"
+    },
+    "titles": {
+      "ko": "오빠지만 사랑만 있으면 상관없잖아?",
+      "en": "Oniichan dakedo Ai sae Areba Kankeinai yo ne!",
+      "ja": "お兄ちゃんだけど愛さえあれば関係ないよねっ"
+    },
+    "releaseYear": 2011,
+    "creator": "Daisuke Suzuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008420": {
+    "workId": "wk_000008420",
+    "title": "블렌드 S",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22126791"
+    },
+    "titles": {
+      "ko": "블렌드 S",
+      "en": "Blend S",
+      "ja": "ブレンド・S"
+    },
+    "creator": "Miyuki Nakayama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

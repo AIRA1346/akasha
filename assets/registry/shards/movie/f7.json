@@ -1,0 +1,97 @@
+{
+  "wk_000002425": {
+    "workId": "wk_000002425",
+    "title": "굿바이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1044598"
+    },
+    "titles": {
+      "ko": "굿바이",
+      "en": "Departures",
+      "ja": "おくりびと"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002579": {
+    "workId": "wk_000002579",
+    "title": "아이스 로드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104681809"
+    },
+    "titles": {
+      "ko": "아이스 로드",
+      "en": "The Ice Road",
+      "ja": "アイス・ロード"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004679": {
+    "workId": "wk_000004679",
+    "title": "더 박스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105759565"
+    },
+    "titles": {
+      "ko": "더 박스",
+      "en": "The Box",
+      "ja": "ぼくの歌が聴こえたら"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007558": {
+    "workId": "wk_000007558",
+    "title": "사라진 총",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1074295"
+    },
+    "titles": {
+      "ko": "사라진 총",
+      "en": "The Missing Gun",
+      "ja": "ミッシング・ガン"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008528": {
+    "workId": "wk_000008528",
+    "title": "여자들의 꿈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1078811"
+    },
+    "titles": {
+      "ko": "여자들의 꿈",
+      "en": "Secrets of Women",
+      "ja": "シークレット・オブ・ウーマン"
+    },
+    "releaseYear": 1952,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

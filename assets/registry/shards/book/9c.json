@@ -1,0 +1,22 @@
+{
+  "wk_000006891": {
+    "workId": "wk_000006891",
+    "title": "하얀 악마",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1117565"
+    },
+    "titles": {
+      "ko": "하얀 악마",
+      "en": "The White Devil",
+      "ja": "白い悪魔"
+    },
+    "releaseYear": 1612,
+    "creator": "John Webster",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

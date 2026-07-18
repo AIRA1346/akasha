@@ -1,0 +1,179 @@
+{
+  "wk_000000954": {
+    "workId": "wk_000000954",
+    "title": "코요테",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104651297"
+    },
+    "titles": {
+      "ko": "코요테",
+      "en": "Coyote"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001045": {
+    "workId": "wk_000001045",
+    "title": "올 인 더 패밀리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048856"
+    },
+    "titles": {
+      "ko": "올 인 더 패밀리",
+      "en": "All in the Family",
+      "ja": "オール・イン・ザ・ファミリー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004182": {
+    "workId": "wk_000004182",
+    "title": "아이돌Pick크닉",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115594"
+    },
+    "titles": {
+      "ko": "아이돌Pick크닉",
+      "en": "Q110115594"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004775": {
+    "workId": "wk_000004775",
+    "title": "목부풍운",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11092979"
+    },
+    "titles": {
+      "ko": "목부풍운",
+      "en": "Turbulence of the Mu Clan The Mu Saga",
+      "ja": "木府风云"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005588": {
+    "workId": "wk_000005588",
+    "title": "가장 소중한 사람",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11259561"
+    },
+    "titles": {
+      "ko": "가장 소중한 사람",
+      "en": "Precious Friends",
+      "ja": "いちばん大切なひと"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006431": {
+    "workId": "wk_000006431",
+    "title": "넥스트 프린세스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11325329"
+    },
+    "titles": {
+      "ko": "넥스트 프린세스",
+      "en": "Next Princess",
+      "ja": "ネクストプリンセス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006977": {
+    "workId": "wk_000006977",
+    "title": "스파이더위크가의 비밀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114056639"
+    },
+    "titles": {
+      "ko": "스파이더위크가의 비밀",
+      "en": "The Spiderwick Chronicles"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008684": {
+    "workId": "wk_000008684",
+    "title": "더 시드 오브 러브",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117018423"
+    },
+    "titles": {
+      "ko": "더 시드 오브 러브",
+      "en": "The Seed of Love",
+      "ja": "ザ・シード・オブ・ラブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009257": {
+    "workId": "wk_000009257",
+    "title": "먼데이 나잇 나이트로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193741"
+    },
+    "titles": {
+      "ko": "먼데이 나잇 나이트로",
+      "en": "WCW Monday Nitro",
+      "ja": "WCWマンデー・ナイトロ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009686": {
+    "workId": "wk_000009686",
+    "title": "Necesito una Amiga",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123088076"
+    },
+    "titles": {
+      "ko": "Necesito una Amiga",
+      "en": "Necesito una Amiga"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

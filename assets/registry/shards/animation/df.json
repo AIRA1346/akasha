@@ -1,0 +1,167 @@
+{
+  "wk_000001394": {
+    "workId": "wk_000001394",
+    "title": "야다몽",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1093416"
+    },
+    "titles": {
+      "ko": "야다몽",
+      "en": "Yadamon",
+      "ja": "ヤダモン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001980": {
+    "workId": "wk_000001980",
+    "title": "크러시기어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1142076"
+    },
+    "titles": {
+      "ko": "크러시기어",
+      "en": "Crush Gear Turbo",
+      "ja": "激闘!クラッシュギアTURBO"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004288": {
+    "workId": "wk_000004288",
+    "title": "종말 투어링",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132731773"
+    },
+    "titles": {
+      "ko": "종말 투어링",
+      "en": "Touring After the Apocalypse",
+      "ja": "終末ツーリング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004346": {
+    "workId": "wk_000004346",
+    "title": "짱구아빠 노하라 히로시의 점심",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133262007"
+    },
+    "titles": {
+      "ko": "짱구아빠 노하라 히로시의 점심",
+      "en": "Nohara Hiroshi Hirumeshi no Ryūgi",
+      "ja": "野原ひろし 昼メシの流儀"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004803": {
+    "workId": "wk_000004803",
+    "title": "소년 사루토비 사스케",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1513926"
+    },
+    "titles": {
+      "ko": "소년 사루토비 사스케",
+      "en": "Magic Boy",
+      "ja": "少年猿飛佐助"
+    },
+    "releaseYear": 1959,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004805": {
+    "workId": "wk_000004805",
+    "title": "꼬마마녀 요요와 네네",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15178574"
+    },
+    "titles": {
+      "ko": "꼬마마녀 요요와 네네",
+      "en": "Yoyo and Nene, the Little Witch Sisters",
+      "ja": "魔女っこ姉妹のヨヨとネネ"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005812": {
+    "workId": "wk_000005812",
+    "title": "마법의 요정 페르샤",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2253218"
+    },
+    "titles": {
+      "ko": "마법의 요정 페르샤",
+      "en": "Persia, the Magic Fairy",
+      "ja": "魔法の妖精ペルシャ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007710": {
+    "workId": "wk_000007710",
+    "title": "미라클☆트레인",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q5368766"
+    },
+    "titles": {
+      "ko": "미라클☆트레인",
+      "en": "Miracle Train: Ōedo-sen e Yōkoso",
+      "ja": "ミラクル☆トレイン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009220": {
+    "workId": "wk_000009220",
+    "title": "도라에몽: 스탠바이미 2",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q78185552"
+    },
+    "titles": {
+      "ko": "도라에몽: 스탠바이미 2",
+      "en": "Stand by Me Doraemon 2",
+      "ja": "STAND BY ME ドラえもん 2"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

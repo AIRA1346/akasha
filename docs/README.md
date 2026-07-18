@@ -25,6 +25,11 @@
 문서를 둔다. 상위 원칙과 충돌하면 Active의 Constitution, format specification,
 CURRENT_STATE가 우선한다.
 
+현재 작품 레지스트리 packaging 결정은
+[ADR-015: 전체 로컬 번들](architecture/ADR-015-full-local-registry-bundle.md)을 따른다.
+이는 역사적 eager-only 결정인 ADR-010을 대체하되, production CDN 호출 제거와 cache
+migration은 Phase 2 경계로 남긴다.
+
 ## Draft
 
 `docs/draft/`에는 승인되지 않았거나 장기 후보인 계획을 둔다. 특히

@@ -1,0 +1,111 @@
+{
+  "wk_000001821": {
+    "workId": "wk_000001821",
+    "title": "리틀 위치 아카데미아",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113448921"
+    },
+    "titles": {
+      "ko": "리틀 위치 아카데미아",
+      "en": "Little Witch Academia"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004286": {
+    "workId": "wk_000004286",
+    "title": "고양이와 용",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132651824"
+    },
+    "titles": {
+      "ko": "고양이와 용",
+      "en": "The Cat and the Dragon",
+      "ja": "猫と竜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004718": {
+    "workId": "wk_000004718",
+    "title": "타이타닉",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1426605"
+    },
+    "titles": {
+      "ko": "타이타닉",
+      "en": "Titanic",
+      "ja": "ザ・タイタニック"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009219": {
+    "workId": "wk_000009219",
+    "title": "왕 노릇하기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7811076"
+    },
+    "titles": {
+      "ko": "왕 노릇하기",
+      "en": "To Play the King"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009222": {
+    "workId": "wk_000009222",
+    "title": "세 번의 크리스마스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q78191292"
+    },
+    "titles": {
+      "ko": "세 번의 크리스마스",
+      "en": "Holiday Secrets",
+      "ja": "ホリデイ・シークレット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009426": {
+    "workId": "wk_000009426",
+    "title": "부호형사 Balance:UNLIMITED",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q84627446"
+    },
+    "titles": {
+      "ko": "부호형사 Balance:UNLIMITED",
+      "en": "The Millionaire Detective - Balance: Unlimited",
+      "ja": "富豪刑事 Balance:UNLIMITED"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

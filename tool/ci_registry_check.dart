@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 // CI/로컬 레지스트리 검증 — 샤드 유효성 + 프랜차이즈 누락 탐지
 //
-// Usage: dart run tool/ci_registry_check.dart [--skip-builder] [--skip-dedupe]
+// Usage: dart run tool/ci_registry_check.dart [--skip-bundle] [--skip-dedupe]
 //
 // Exit 0 = OK, 1 = validation or franchise linter issues
 
@@ -10,15 +10,16 @@ import 'dart:io';
 
 void main(List<String> args) {
   final root = _findProjectRoot();
-  final skipBuilder = args.contains('--skip-builder');
+  final skipBundle =
+      args.contains('--skip-bundle') || args.contains('--skip-builder');
   final skipDedupe = args.contains('--skip-dedupe');
   var failed = false;
 
-  if (!skipBuilder) {
-    print('==> registry_builder (validate shards)');
+  if (!skipBundle) {
+    print('==> deterministic full-bundle contract');
     final builder = Process.runSync(
       Platform.resolvedExecutable,
-      ['run', 'tool/registry_builder.dart'],
+      ['run', 'tool/registry_bundle_ci.dart'],
       workingDirectory: root.path,
       runInShell: true,
     );
@@ -26,9 +27,9 @@ void main(List<String> args) {
     stderr.write(builder.stderr);
     if (builder.exitCode != 0) {
       failed = true;
-      print('FAIL: registry_builder exited ${builder.exitCode}');
+      print('FAIL: registry_bundle_ci exited ${builder.exitCode}');
     } else {
-      print('OK: registry_builder');
+      print('OK: registry_bundle_ci');
     }
   }
 

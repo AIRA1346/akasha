@@ -1,0 +1,115 @@
+{
+  "wk_000002921": {
+    "workId": "wk_000002921",
+    "title": "무쌍 오로치",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087832"
+    },
+    "titles": {
+      "ko": "무쌍 오로치",
+      "en": "Warriors Orochi",
+      "ja": "無双OROCHI"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005973": {
+    "workId": "wk_000005973",
+    "title": "데스 스트랜딩 2: 온 더 비치",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115641709"
+    },
+    "titles": {
+      "ko": "데스 스트랜딩 2: 온 더 비치",
+      "en": "Death Stranding 2: On the Beach",
+      "ja": "DEATH STRANDING 2: ON THE BEACH"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007113": {
+    "workId": "wk_000007113",
+    "title": "끝내주게 춤춰라 메이드 인 와리오",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119821345"
+    },
+    "titles": {
+      "ko": "끝내주게 춤춰라 메이드 인 와리오",
+      "en": "WarioWare: Move It!",
+      "ja": "超おどる メイド イン ワリオ"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007479": {
+    "workId": "wk_000007479",
+    "title": "쿠나도 국기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122342329"
+    },
+    "titles": {
+      "ko": "쿠나도 국기",
+      "en": "Kunado Chronicles",
+      "ja": "クナド国記"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008387": {
+    "workId": "wk_000008387",
+    "title": "크로노스: 더 뉴 던",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130550355"
+    },
+    "titles": {
+      "ko": "크로노스: 더 뉴 던",
+      "en": "Cronos: The New Dawn"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009138": {
+    "workId": "wk_000009138",
+    "title": "니드 포 스피드 라이벌",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13375520"
+    },
+    "titles": {
+      "ko": "니드 포 스피드 라이벌",
+      "en": "Need for Speed Rivals",
+      "ja": "ニード・フォー・スピード ライバルズ"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

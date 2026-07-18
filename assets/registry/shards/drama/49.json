@@ -1,0 +1,109 @@
+{
+  "wk_000001459": {
+    "workId": "wk_000001459",
+    "title": "천사들의 합창",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1065778"
+    },
+    "titles": {
+      "ko": "천사들의 합창",
+      "en": "Carrusel",
+      "ja": "カルーセル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002017": {
+    "workId": "wk_000002017",
+    "title": "눈으로 말해요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856238"
+    },
+    "titles": {
+      "ko": "눈으로 말해요",
+      "en": "Say It with Your Eyes",
+      "ja": "目で話します"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006432": {
+    "workId": "wk_000006432",
+    "title": "하이 는",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11326211"
+    },
+    "titles": {
+      "ko": "하이 는",
+      "en": "High Noon",
+      "ja": "ハイ・ヌーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006512": {
+    "workId": "wk_000006512",
+    "title": "숙제",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11338440"
+    },
+    "titles": {
+      "ko": "숙제",
+      "en": "Homework",
+      "ja": "ホームワーク"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006726": {
+    "workId": "wk_000006726",
+    "title": "어쩌다 전원일기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113611791"
+    },
+    "titles": {
+      "ko": "어쩌다 전원일기",
+      "en": "Once Upon a Small Town",
+      "ja": "田舎町ダイアリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007943": {
+    "workId": "wk_000007943",
+    "title": "팽",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115760820"
+    },
+    "titles": {
+      "ko": "팽",
+      "en": "PENG"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

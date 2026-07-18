@@ -1,0 +1,197 @@
+{
+  "wk_000002596": {
+    "workId": "wk_000002596",
+    "title": "핫도그랑 만들어 볼까요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109454297"
+    },
+    "titles": {
+      "ko": "핫도그랑 만들어 볼까요",
+      "en": "Q109454297"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003234": {
+    "workId": "wk_000003234",
+    "title": "캔디싱어즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459689"
+    },
+    "titles": {
+      "ko": "캔디싱어즈",
+      "en": "Q109459689"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006163": {
+    "workId": "wk_000006163",
+    "title": "콜베어 리포트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1130799"
+    },
+    "titles": {
+      "ko": "콜베어 리포트",
+      "en": "The Colbert Report",
+      "ja": "コルベア・リポート"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006437": {
+    "workId": "wk_000006437",
+    "title": "한도쿠!!!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11327116"
+    },
+    "titles": {
+      "ko": "한도쿠!!!",
+      "en": "Q11327116",
+      "ja": "ハンドク!!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006505": {
+    "workId": "wk_000006505",
+    "title": "프로포즈 형제 ~ 출생 순서 다른 남자가 결혼하는 방법 ~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11336162"
+    },
+    "titles": {
+      "ko": "프로포즈 형제 ~ 출생 순서 다른 남자가 결혼하는 방법 ~",
+      "en": "Propose Brothers",
+      "ja": "プロポーズ兄弟〜生まれ順別 男が結婚する方法〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007082": {
+    "workId": "wk_000007082",
+    "title": "킹더랜드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114243955"
+    },
+    "titles": {
+      "ko": "킹더랜드",
+      "en": "King the Land",
+      "ja": "キング・ザ・ランド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007257": {
+    "workId": "wk_000007257",
+    "title": "장기의 시간",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11458590"
+    },
+    "titles": {
+      "ko": "장기의 시간",
+      "en": "Q11458590",
+      "ja": "将棋の時間"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007820": {
+    "workId": "wk_000007820",
+    "title": "온천 대작전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11562919"
+    },
+    "titles": {
+      "ko": "온천 대작전",
+      "en": "Onsen Daisakusen",
+      "ja": "温泉 (秘) 大作戦"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008277": {
+    "workId": "wk_000008277",
+    "title": "그림자 미녀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116251473"
+    },
+    "titles": {
+      "ko": "그림자 미녀",
+      "en": "Shadow Beauty"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008469": {
+    "workId": "wk_000008469",
+    "title": "음악 판타지 꿈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11664236"
+    },
+    "titles": {
+      "ko": "음악 판타지 꿈",
+      "en": "Music, Fantasy, and Dream",
+      "ja": "音楽ファンタジーゆめ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008473": {
+    "workId": "wk_000008473",
+    "title": "수도권 뉴스 845",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11667064"
+    },
+    "titles": {
+      "ko": "수도권 뉴스 845",
+      "en": "Shutoken News 845",
+      "ja": "首都圏ニュース845"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

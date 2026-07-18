@@ -48,11 +48,7 @@ void main() {
   file.writeAsStringSync('${const JsonEncoder.withIndent('  ').convert(aliases)}\n');
   print('OK: added $added wk_ 8→9 alias(es)');
 
-  final assets = File('${root.path}/assets/registry/legacy_aliases.json');
-  if (assets.existsSync()) {
-    assets.writeAsStringSync(file.readAsStringSync());
-    print('  synced assets/registry/legacy_aliases.json');
-  }
+  print('  source only; generate the app bundle after source review/commit');
 }
 
 Directory _findProjectRoot() {

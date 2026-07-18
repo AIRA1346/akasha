@@ -1,0 +1,58 @@
+{
+  "wk_000005332": {
+    "workId": "wk_000005332",
+    "title": "너와 넘어 사랑이 된다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127162621"
+    },
+    "titles": {
+      "ko": "너와 넘어 사랑이 된다",
+      "en": "With You, Our Love Will Make It Through",
+      "ja": "キミと越えて恋になる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008061": {
+    "workId": "wk_000008061",
+    "title": "스트롭 에지",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2070560"
+    },
+    "titles": {
+      "ko": "스트롭 에지",
+      "en": "Strobe Edge",
+      "ja": "ストロボ・エッジ"
+    },
+    "creator": "Io Sakisaka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009032": {
+    "workId": "wk_000009032",
+    "title": "사모님은 여고생",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2618476"
+    },
+    "titles": {
+      "ko": "사모님은 여고생",
+      "en": "Oku-sama wa Joshi Kōsei",
+      "ja": "おくさまは女子高生"
+    },
+    "creator": "Hiyoko Kobayashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "wk_000000934": {
+    "workId": "wk_000000934",
+    "title": "여성향 게임 세계는 모브에게 가혹한 세계입니다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102245803"
+    },
+    "titles": {
+      "ko": "여성향 게임 세계는 모브에게 가혹한 세계입니다",
+      "en": "Trapped in a Dating Sim: The World of Otome Games is Tough for Mobs",
+      "ja": "乙女ゲー世界はモブに厳しい世界です"
+    },
+    "creator": "三嶋与夢",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002478": {
+    "workId": "wk_000002478",
+    "title": "스테이트 오브 테러",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105846897"
+    },
+    "titles": {
+      "ko": "스테이트 오브 테러",
+      "en": "State of Terror"
+    },
+    "releaseYear": 2021,
+    "creator": "Hillary Clinton",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006633": {
+    "workId": "wk_000006633",
+    "title": "해국도지",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11150428"
+    },
+    "titles": {
+      "ko": "해국도지",
+      "en": "Illustrated Treatise on the Maritime Kingdoms",
+      "ja": "海国図志"
+    },
+    "creator": "Wei Yuan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006704": {
+    "workId": "wk_000006704",
+    "title": "할관자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11156385"
+    },
+    "titles": {
+      "ko": "할관자",
+      "en": "Heguanzi",
+      "ja": "鶡冠子"
+    },
+    "creator": "Heguanzi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007226": {
+    "workId": "wk_000007226",
+    "title": "렌즈와 악마",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11237355"
+    },
+    "titles": {
+      "ko": "렌즈와 악마",
+      "en": "Q11237355",
+      "ja": "レンズと悪魔"
+    },
+    "creator": "Akira Mutsuzuka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008788": {
+    "workId": "wk_000008788",
+    "title": "그늘에서 지킨다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1136152"
+    },
+    "titles": {
+      "ko": "그늘에서 지킨다",
+      "en": "Kage Kara Mamoru!",
+      "ja": "陰からマモル!"
+    },
+    "releaseYear": 2003,
+    "creator": "Taro Achi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008934": {
+    "workId": "wk_000008934",
+    "title": "인형은 왜 살해되는가",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11375991"
+    },
+    "titles": {
+      "ko": "인형은 왜 살해되는가",
+      "en": "Q11375991",
+      "ja": "人形はなぜ殺される"
+    },
+    "creator": "Akimitsu Takagi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

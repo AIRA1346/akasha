@@ -1,0 +1,95 @@
+{
+  "wk_000001331": {
+    "workId": "wk_000001331",
+    "title": "성검학원의 마검사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109025546"
+    },
+    "titles": {
+      "ko": "성검학원의 마검사",
+      "en": "The Demon Sword Master of Excalibur Academy",
+      "ja": "聖剣学院の魔剣使い"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001870": {
+    "workId": "wk_000001870",
+    "title": "쾌도천사 트윈 엔젤",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1135578"
+    },
+    "titles": {
+      "ko": "쾌도천사 트윈 엔젤",
+      "en": "Kaitō Tenshi Twin Angel",
+      "ja": "快盗天使ツインエンジェルシリーズ"
+    },
+    "creator": "Hideyuki Kurata",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004811": {
+    "workId": "wk_000004811",
+    "title": "도라에몽: 스탠바이미",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15293047"
+    },
+    "titles": {
+      "ko": "도라에몽: 스탠바이미",
+      "en": "Stand by Me Doraemon",
+      "ja": "STAND BY ME ドラえもん"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004961": {
+    "workId": "wk_000004961",
+    "title": "은하철도 999: 유리의 클레어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16173673"
+    },
+    "titles": {
+      "ko": "은하철도 999: 유리의 클레어",
+      "en": "Galaxy Express 999: Claire of Glass",
+      "ja": "銀河鉄道999 ガラスのクレア"
+    },
+    "releaseYear": 1980,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005030": {
+    "workId": "wk_000005030",
+    "title": "류가죠 나나나의 매장금",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16892453"
+    },
+    "titles": {
+      "ko": "류가죠 나나나의 매장금",
+      "en": "Nanana's Buried Treasure",
+      "ja": "龍ヶ嬢七々々の埋蔵金"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

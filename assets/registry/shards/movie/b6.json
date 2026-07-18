@@ -1,0 +1,127 @@
+{
+  "wk_000000150": {
+    "workId": "wk_000000150",
+    "title": "어벤져스: 엔드게임",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "루소 형제",
+    "releaseYear": 2019,
+    "tags": [
+      "히어로",
+      "액션",
+      "SF",
+      "MCU"
+    ],
+    "legacyIds": [
+      "gen_movie_avengers-endgame_2019"
+    ],
+    "externalIds": {
+      "wikidata": "Q23781191"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Avengers Endgame",
+      "ko": "어벤져스: 엔드게임"
+    }
+  },
+  "wk_000000984": {
+    "workId": "wk_000000984",
+    "title": "위플래쉬",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100803056"
+    },
+    "titles": {
+      "ko": "위플래쉬",
+      "en": "Whiplash"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006219": {
+    "workId": "wk_000006219",
+    "title": "여름날 우리",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106551383"
+    },
+    "titles": {
+      "ko": "여름날 우리",
+      "en": "My Love"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007309": {
+    "workId": "wk_000007309",
+    "title": "장진호",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107273994"
+    },
+    "titles": {
+      "ko": "장진호",
+      "en": "The Battle at Lake Changjin",
+      "ja": "長津湖"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008213": {
+    "workId": "wk_000008213",
+    "title": "대외비: 권력의 탄생",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107639040"
+    },
+    "titles": {
+      "ko": "대외비: 권력의 탄생",
+      "en": "The Devil's Deal",
+      "ja": "対外秘"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010023": {
+    "workId": "wk_000010023",
+    "title": "참극의 선착장",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1089809"
+    },
+    "titles": {
+      "ko": "참극의 선착장",
+      "en": "Min and Bill",
+      "ja": "惨劇の波止場"
+    },
+    "releaseYear": 1930,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "wk_000000265": {
+    "workId": "wk_000000265",
+    "title": "명일방주",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Hypergryph",
+    "releaseYear": 2019,
+    "tags": [
+      "타워디펜스",
+      "전략",
+      "SF",
+      "수집"
+    ],
+    "legacyIds": [
+      "sub_game_arknights_2019"
+    ],
+    "titles": {
+      "en": "Arknights",
+      "ko": "명일방주"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q63789030"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000064": {
+    "workId": "wk_000000064",
+    "title": "레딧 리데임",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Digixart",
+    "releaseYear": 2023,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid1966720_2023"
+    ],
+    "titles": {
+      "en": "Lethal Company",
+      "ko": "레딧 리데임"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "1966720",
+      "wikidata": "Q123404756"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000002833": {
+    "workId": "wk_000002833",
+    "title": "노부나가의 야망 천하창세",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856195"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 천하창세",
+      "en": "Nobunaga's Ambition: Tenkasousei",
+      "ja": "信長の野望・天下創世"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003378": {
+    "workId": "wk_000003378",
+    "title": "연희",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11074351"
+    },
+    "titles": {
+      "ko": "연희",
+      "en": "Koihime",
+      "ja": "恋姫"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004298": {
+    "workId": "wk_000004298",
+    "title": "포트리스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11282014"
+    },
+    "titles": {
+      "ko": "포트리스",
+      "en": "Fortress",
+      "ja": "ポトリス"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005560": {
+    "workId": "wk_000005560",
+    "title": "신세기 에반게리온 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1150974"
+    },
+    "titles": {
+      "ko": "신세기 에반게리온 2",
+      "en": "Neon Genesis Evangelion 2",
+      "ja": "新世紀エヴァンゲリオン2"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006120": {
+    "workId": "wk_000006120",
+    "title": "초 극장판 개구리 중사 케로로 더 무비 천공대모험",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11636211"
+    },
+    "titles": {
+      "ko": "초 극장판 개구리 중사 케로로 더 무비 천공대모험",
+      "en": "Q11636211",
+      "ja": "超劇場版ケロロ軍曹3 天空大冒険であります!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007814": {
+    "workId": "wk_000007814",
+    "title": "슈퍼 몽키 볼 바나나 럼블",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124629204"
+    },
+    "titles": {
+      "ko": "슈퍼 몽키 볼 바나나 럼블",
+      "en": "Super Monkey Ball: Banana Rumble",
+      "ja": "スーパーモンキーボール バナナランブル"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008644": {
+    "workId": "wk_000008644",
+    "title": "마녀의 샘3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131718640"
+    },
+    "titles": {
+      "ko": "마녀의 샘3",
+      "en": "WitchSpring3",
+      "ja": "魔女の泉3"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009826": {
+    "workId": "wk_000009826",
+    "title": "카오스;헤드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1368299"
+    },
+    "titles": {
+      "ko": "카오스;헤드",
+      "en": "Chaos;Head",
+      "ja": "CHAOS;HEAD"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010228": {
+    "workId": "wk_000010228",
+    "title": "멋진 이 세계",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1416303"
+    },
+    "titles": {
+      "ko": "멋진 이 세계",
+      "en": "The World Ends with You",
+      "ja": "すばらしきこのせかい"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010231": {
+    "workId": "wk_000010231",
+    "title": "소울 엣지",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1418354"
+    },
+    "titles": {
+      "ko": "소울 엣지",
+      "en": "Soul Edge",
+      "ja": "ソウルエッジ"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

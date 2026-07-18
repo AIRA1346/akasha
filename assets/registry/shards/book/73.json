@@ -1,0 +1,73 @@
+{
+  "wk_000000015": {
+    "workId": "wk_000000015",
+    "title": "셜록 홈즈: 단홍색 연구",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "아서 코난 도일",
+    "releaseYear": 1887,
+    "tags": [
+      "추리",
+      "미스터리",
+      "고전",
+      "명작"
+    ],
+    "legacyIds": [
+      "gen_book_sherlock-holmes_1887"
+    ],
+    "titles": {
+      "en": "Sherlock Holmes",
+      "ko": "셜록 홈즈: 단홍색 연구"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q2316684"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000008388": {
+    "workId": "wk_000008388",
+    "title": "무게",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113278352"
+    },
+    "titles": {
+      "ko": "무게",
+      "en": "Heft"
+    },
+    "releaseYear": 2012,
+    "creator": "Liz Moore",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008935": {
+    "workId": "wk_000008935",
+    "title": "인형관의 살인",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11376016"
+    },
+    "titles": {
+      "ko": "인형관의 살인",
+      "en": "Q11376016",
+      "ja": "人形館の殺人"
+    },
+    "releaseYear": 1989,
+    "creator": "Yukito Ayatsuji",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

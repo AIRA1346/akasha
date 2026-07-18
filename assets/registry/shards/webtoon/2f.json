@@ -1,0 +1,22 @@
+{
+  "wk_000003533": {
+    "workId": "wk_000003533",
+    "title": "이두나!",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q97206242"
+    },
+    "titles": {
+      "ko": "이두나!",
+      "en": "The Girl Downstairs (manhwa)",
+      "ja": "下の階には澪がいる"
+    },
+    "releaseYear": 2022,
+    "creator": "민송아",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "wk_000000967": {
+    "workId": "wk_000000967",
+    "title": "극장판 바이올렛 에버가든",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106434135"
+    },
+    "titles": {
+      "ko": "극장판 바이올렛 에버가든",
+      "en": "Violet Evergarden: The Movie",
+      "ja": "劇場版 ヴァイオレット・エヴァーガーデン"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002964": {
+    "workId": "wk_000002964",
+    "title": "퍼펙트 블루",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1205051"
+    },
+    "titles": {
+      "ko": "퍼펙트 블루",
+      "en": "Perfect Blue",
+      "ja": "パーフェクトブルー"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003275": {
+    "workId": "wk_000003275",
+    "title": "사쿠라다 리셋",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123022495"
+    },
+    "titles": {
+      "ko": "사쿠라다 리셋",
+      "en": "Sagrada Reset",
+      "ja": "サクラダリセット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007347": {
+    "workId": "wk_000007347",
+    "title": "쥬로링 동물탐정",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q493744"
+    },
+    "titles": {
+      "ko": "쥬로링 동물탐정",
+      "en": "Anyamaru Tantei Kiruminzuu",
+      "ja": "あにゃまる探偵 キルミンずぅ"
+    },
+    "creator": "Kaori Hanzawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007962": {
+    "workId": "wk_000007962",
+    "title": "우라시마 타로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q598490"
+    },
+    "titles": {
+      "ko": "우라시마 타로",
+      "en": "Urashima Tarō",
+      "ja": "浦島太郎"
+    },
+    "releaseYear": 1918,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008633": {
+    "workId": "wk_000008633",
+    "title": "인사이드 빌 게이츠",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q68319034"
+    },
+    "titles": {
+      "ko": "인사이드 빌 게이츠",
+      "en": "Inside Bill's Brain: Decoding Bill Gates",
+      "ja": "天才の頭の中: ビル・ゲイツを解読する"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008698": {
+    "workId": "wk_000008698",
+    "title": "기동전사 건담 더블 오",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q696062"
+    },
+    "titles": {
+      "ko": "기동전사 건담 더블 오",
+      "en": "Mobile Suit Gundam 00",
+      "ja": "機動戦士ガンダム00"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

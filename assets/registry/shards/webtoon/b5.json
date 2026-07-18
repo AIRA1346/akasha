@@ -1,0 +1,21 @@
+{
+  "wk_000000737": {
+    "workId": "wk_000000737",
+    "title": "하나노이군과 상사병",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102244022"
+    },
+    "titles": {
+      "ko": "하나노이군과 상사병",
+      "en": "A Condition Called Love",
+      "ja": "花野井くんと恋の病"
+    },
+    "creator": "Megumi Morino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

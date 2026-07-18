@@ -1,0 +1,206 @@
+{
+  "wk_000000528": {
+    "workId": "wk_000000528",
+    "title": "더 리버레이터: 500일의 오디세이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101421664"
+    },
+    "titles": {
+      "ko": "더 리버레이터: 500일의 오디세이",
+      "en": "The Liberator",
+      "ja": "リベレーター: 勝利へ、地獄の行軍500日"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001862": {
+    "workId": "wk_000001862",
+    "title": "짱구는 못말려 극장판: 헨더랜드의 대모험",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134775"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 헨더랜드의 대모험",
+      "en": "Crayon Shin-chan: Great Adventure in Henderland",
+      "ja": "クレヨンしんちゃん ヘンダーランドの大冒険"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004573": {
+    "workId": "wk_000004573",
+    "title": "블리치: Fade to Black 너의 이름을 부른다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1363909"
+    },
+    "titles": {
+      "ko": "블리치: Fade to Black 너의 이름을 부른다",
+      "en": "Bleach: Fade to Black",
+      "ja": "劇場版BLEACH Fade to Black 君の名を呼ぶ"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004629": {
+    "workId": "wk_000004629",
+    "title": "스마일 프리큐어!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1368327"
+    },
+    "titles": {
+      "ko": "스마일 프리큐어!",
+      "en": "Smile PreCure!",
+      "ja": "スマイルプリキュア!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005021": {
+    "workId": "wk_000005021",
+    "title": "괭이갈매기 울 적에",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q166060"
+    },
+    "titles": {
+      "ko": "괭이갈매기 울 적에",
+      "en": "Umineko When They Cry",
+      "ja": "うみねこのなく頃に"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005621": {
+    "workId": "wk_000005621",
+    "title": "짱구는 못말려 극장판: 폭풍수면! 꿈꾸는 세계 대돌격",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21283519"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 폭풍수면! 꿈꾸는 세계 대돌격",
+      "en": "Crayon Shin-chan: Fast Asleep! Dreaming World Big Assault!",
+      "ja": "クレヨンしんちゃん 爆睡!ユメミーワールド大突撃"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006538": {
+    "workId": "wk_000006538",
+    "title": "오빠를 고칠 약은 없어!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q28914820"
+    },
+    "titles": {
+      "ko": "오빠를 고칠 약은 없어!",
+      "en": "Please Take My Brother Away!",
+      "ja": "兄に付ける薬はない!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007400": {
+    "workId": "wk_000007400",
+    "title": "기동경찰 패트레이버 극장판 2",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q497292"
+    },
+    "titles": {
+      "ko": "기동경찰 패트레이버 극장판 2",
+      "en": "Patlabor 2: The Movie",
+      "ja": "機動警察パトレイバー 2 the Movie"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007472": {
+    "workId": "wk_000007472",
+    "title": "치비데비!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q5095336"
+    },
+    "titles": {
+      "ko": "치비데비!",
+      "en": "Chibi Devi!",
+      "ja": "ちび☆デビ!"
+    },
+    "creator": "Hiromu Shinozuka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007914": {
+    "workId": "wk_000007914",
+    "title": "펭귄 하이웨이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q59488276"
+    },
+    "titles": {
+      "ko": "펭귄 하이웨이",
+      "en": "Penguin Highway",
+      "ja": "ペンギン・ハイウェイ"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009075": {
+    "workId": "wk_000009075",
+    "title": "기동무투전 G 건담",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q716172"
+    },
+    "titles": {
+      "ko": "기동무투전 G 건담",
+      "en": "Mobile Fighter G Gundam",
+      "ja": "機動武闘伝Gガンダム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000005304": {
+    "workId": "wk_000005304",
+    "title": "비극의 원흉이 되는 최강악역 최종보스 여왕은 국민을 위해 헌신합니다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109357576"
+    },
+    "titles": {
+      "ko": "비극의 원흉이 되는 최강악역 최종보스 여왕은 국민을 위해 헌신합니다",
+      "en": "The Most Heretical Last Boss Queen",
+      "ja": "悲劇の元凶となる最強外道ラスボス女王は民の為に尽くします。"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

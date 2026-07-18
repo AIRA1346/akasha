@@ -1,0 +1,77 @@
+{
+  "wk_000007537": {
+    "workId": "wk_000007537",
+    "title": "퍼스트 디센던트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122914946"
+    },
+    "titles": {
+      "ko": "퍼스트 디센던트",
+      "en": "The First Descendant"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007809": {
+    "workId": "wk_000007809",
+    "title": "서브노티카 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124464991"
+    },
+    "titles": {
+      "ko": "서브노티카 2",
+      "en": "Subnautica 2",
+      "ja": "サブノーティカ2"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007860": {
+    "workId": "wk_000007860",
+    "title": "룽다오섬",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125038651"
+    },
+    "titles": {
+      "ko": "룽다오섬",
+      "en": "Dragon Island",
+      "ja": "ドラゴン アイランド"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009637": {
+    "workId": "wk_000009637",
+    "title": "알렉스 키드의 미라클 월드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1354273"
+    },
+    "titles": {
+      "ko": "알렉스 키드의 미라클 월드",
+      "en": "Alex Kidd in Miracle World",
+      "ja": "アレックスキッドのミラクルワールド"
+    },
+    "releaseYear": 1986,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "wk_000000024": {
+    "workId": "wk_000000024",
+    "title": "더 오피스",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "Greg Daniels",
+    "releaseYear": 2005,
+    "tags": [
+      "코미디",
+      "목업",
+      "직장",
+      "명작"
+    ],
+    "legacyIds": [
+      "gen_drama_the-office-us_2005"
+    ],
+    "titles": {
+      "en": "THE Office US",
+      "ko": "더 오피스"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q23831"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001681": {
+    "workId": "wk_000001681",
+    "title": "쿠안도 메 에나모로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1080808"
+    },
+    "titles": {
+      "ko": "쿠안도 메 에나모로",
+      "en": "Cuando Me Enamoro",
+      "ja": "クアンド・メ・エナモロ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003424": {
+    "workId": "wk_000003424",
+    "title": "실연박물관",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461575"
+    },
+    "titles": {
+      "ko": "실연박물관",
+      "en": "Q109461575"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004114": {
+    "workId": "wk_000004114",
+    "title": "북으로 간 여배우",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115173"
+    },
+    "titles": {
+      "ko": "북으로 간 여배우",
+      "en": "Q110115173",
+      "ja": "北に行った女優"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006228": {
+    "workId": "wk_000006228",
+    "title": "뉴스 라이브 저녁 5시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113107117"
+    },
+    "titles": {
+      "ko": "뉴스 라이브 저녁 5시",
+      "en": "News LIVE! Yu 5 o'clock",
+      "ja": "ニュースLIVE! ゆう5時"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007081": {
+    "workId": "wk_000007081",
+    "title": "토요 프리미엄",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11423613"
+    },
+    "titles": {
+      "ko": "토요 프리미엄",
+      "en": "PREMIUM SATURDAY",
+      "ja": "土曜プレミアム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008059": {
+    "workId": "wk_000008059",
+    "title": "왓 아이 라이크 어바웃 유",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1160221"
+    },
+    "titles": {
+      "ko": "왓 아이 라이크 어바웃 유",
+      "en": "What I Like About You",
+      "ja": "恋するマンハッタン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009263": {
+    "workId": "wk_000009263",
+    "title": "오릴리아와 블루 문",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1195044"
+    },
+    "titles": {
+      "ko": "오릴리아와 블루 문",
+      "en": "Extraterrestrial",
+      "ja": "E.T.の住む星"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010168": {
+    "workId": "wk_000010168",
+    "title": "예나 데 아모르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247351"
+    },
+    "titles": {
+      "ko": "예나 데 아모르",
+      "en": "Llena de amor"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010315": {
+    "workId": "wk_000010315",
+    "title": "스타 인생극장-소녀시대 편",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12484216"
+    },
+    "titles": {
+      "ko": "스타 인생극장-소녀시대 편",
+      "en": "Girls' Generation Star Life Theater",
+      "ja": "スター人生劇場 少女時代編"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

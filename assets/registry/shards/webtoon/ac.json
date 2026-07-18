@@ -1,0 +1,19 @@
+{
+  "wk_000003095": {
+    "workId": "wk_000003095",
+    "title": "루어",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3453337"
+    },
+    "titles": {
+      "ko": "루어",
+      "en": "Rure"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

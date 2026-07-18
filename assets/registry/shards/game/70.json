@@ -1,0 +1,128 @@
+{
+  "wk_000000081": {
+    "workId": "wk_000000081",
+    "title": "더 포레스트",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Endnight",
+    "releaseYear": 2018,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid242760_2018"
+    ],
+    "titles": {
+      "en": "Save 78% on The Forest",
+      "ko": "더 포레스트"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "242760",
+      "wikidata": "Q16267841"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000003647": {
+    "workId": "wk_000003647",
+    "title": "포켓몬 토로제",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1113003"
+    },
+    "titles": {
+      "ko": "포켓몬 토로제",
+      "en": "Pokémon Trozei!",
+      "ja": "ポケモントローゼ"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006038": {
+    "workId": "wk_000006038",
+    "title": "하야쿠 모노가타리",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11580818"
+    },
+    "titles": {
+      "ko": "하야쿠 모노가타리",
+      "en": "Hyaku Monogatari: Honto ni Atta Kowai Hanashi",
+      "ja": "百物語〜ほんとにあった怖い話〜"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007412": {
+    "workId": "wk_000007412",
+    "title": "브로큰 애로우 (비디오 게임)",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121169485"
+    },
+    "titles": {
+      "ko": "브로큰 애로우 (비디오 게임)",
+      "en": "Broken Arrow"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007533": {
+    "workId": "wk_000007533",
+    "title": "어나더 코드 리컬렉션: 2개의 기억/기억의 문",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122666151"
+    },
+    "titles": {
+      "ko": "어나더 코드 리컬렉션: 2개의 기억/기억의 문",
+      "en": "Another Code: Recollection",
+      "ja": "アナザーコード リコレクション：2つの記憶 / 記憶の扉"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010281": {
+    "workId": "wk_000010281",
+    "title": "어반 케이어스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1440402"
+    },
+    "titles": {
+      "ko": "어반 케이어스",
+      "en": "Urban Chaos"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

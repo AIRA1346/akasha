@@ -1,0 +1,118 @@
+{
+  "wk_000001403": {
+    "workId": "wk_000001403",
+    "title": "지옥변",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041621"
+    },
+    "titles": {
+      "ko": "지옥변",
+      "en": "Hell Screen",
+      "ja": "地獄変"
+    },
+    "releaseYear": 1918,
+    "creator": "Ryūnosuke Akutagawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006058": {
+    "workId": "wk_000006058",
+    "title": "종소리",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110716546"
+    },
+    "titles": {
+      "ko": "종소리",
+      "en": "The Toll"
+    },
+    "releaseYear": 2019,
+    "creator": "Neal Shusterman",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007171": {
+    "workId": "wk_000007171",
+    "title": "공작의 여인",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112262248"
+    },
+    "titles": {
+      "ko": "공작의 여인",
+      "en": "The Duke and I"
+    },
+    "releaseYear": 2000,
+    "creator": "Julia Quinn",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007544": {
+    "workId": "wk_000007544",
+    "title": "어느 할아버지의 무덤에 향을",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11258724"
+    },
+    "titles": {
+      "ko": "어느 할아버지의 무덤에 향을",
+      "en": "Q11258724",
+      "ja": "あるジーサンに線香を"
+    },
+    "creator": "東野圭吾",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010015": {
+    "workId": "wk_000010015",
+    "title": "형성의 책",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1147199"
+    },
+    "titles": {
+      "ko": "형성의 책",
+      "en": "Sefer Yetzirah",
+      "ja": "形成の書"
+    },
+    "creator": "아브라함",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010142": {
+    "workId": "wk_000010142",
+    "title": "강한 개미",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11487716"
+    },
+    "titles": {
+      "ko": "강한 개미",
+      "en": "Q11487716",
+      "ja": "強き蟻"
+    },
+    "releaseYear": 1971,
+    "creator": "Seichō Matsumoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

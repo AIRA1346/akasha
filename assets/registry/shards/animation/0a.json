@@ -1,0 +1,132 @@
+{
+  "wk_000001614": {
+    "workId": "wk_000001614",
+    "title": "영구소년 Eternal Boys",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111937696"
+    },
+    "titles": {
+      "ko": "영구소년 Eternal Boys",
+      "en": "Eternal Boys",
+      "ja": "永久少年 Eternal Boys"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006523": {
+    "workId": "wk_000006523",
+    "title": "기동전사 건담 SEED DESTINY",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q286569"
+    },
+    "titles": {
+      "ko": "기동전사 건담 SEED DESTINY",
+      "en": "Mobile Suit Gundam SEED Destiny",
+      "ja": "機動戦士ガンダムSEED DESTINY"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006930": {
+    "workId": "wk_000006930",
+    "title": "파이널 판타지 VII 어드벤트 칠드런",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q387674"
+    },
+    "titles": {
+      "ko": "파이널 판타지 VII 어드벤트 칠드런",
+      "en": "Final Fantasy VII: Advent Children",
+      "ja": "ファイナルファンタジーVII アドベントチルドレン"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007001": {
+    "workId": "wk_000007001",
+    "title": "이쪽으로 와! 미이코",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q4251500"
+    },
+    "titles": {
+      "ko": "이쪽으로 와! 미이코",
+      "en": "Kocchi Muite! Miiko",
+      "ja": "こっちむいて!みい子"
+    },
+    "creator": "Eriko Ono",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008434": {
+    "workId": "wk_000008434",
+    "title": "공룡모험기 쥬라트립퍼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q649385"
+    },
+    "titles": {
+      "ko": "공룡모험기 쥬라트립퍼",
+      "en": "Jura Tripper",
+      "ja": "恐竜冒険記ジュラトリッパー"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009073": {
+    "workId": "wk_000009073",
+    "title": "파워 디지몬",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q715731"
+    },
+    "titles": {
+      "ko": "파워 디지몬",
+      "en": "Digimon Adventure 02",
+      "ja": "デジモンアドベンチャー02"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009984": {
+    "workId": "wk_000009984",
+    "title": "도라에몽 노비타와 초록의 거인전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q972569"
+    },
+    "titles": {
+      "ko": "도라에몽 노비타와 초록의 거인전",
+      "en": "Doraemon: Nobita and the Green Giant Legend",
+      "ja": "ドラえもん のび太と緑の巨人伝"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "wk_000001017": {
+    "workId": "wk_000001017",
+    "title": "역전세계의 전지소녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106652303"
+    },
+    "titles": {
+      "ko": "역전세계의 전지소녀",
+      "en": "Rumble Garanndoll",
+      "ja": "逆転世界ノ電池少女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001590": {
+    "workId": "wk_000001590",
+    "title": "유레이데코",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111231823"
+    },
+    "titles": {
+      "ko": "유레이데코",
+      "en": "Yurei Deco",
+      "ja": "ユーレイデコ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002047": {
+    "workId": "wk_000002047",
+    "title": "극장판 PSYCHO-PASS PROVIDENCE",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115040005"
+    },
+    "titles": {
+      "ko": "극장판 PSYCHO-PASS PROVIDENCE",
+      "en": "Psycho-Pass Providence",
+      "ja": "劇場版 PSYCHO-PASS サイコパス PROVIDENCE"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002228": {
+    "workId": "wk_000002228",
+    "title": "유유시키",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115786588"
+    },
+    "titles": {
+      "ko": "유유시키",
+      "en": "Yuyushiki",
+      "ja": "ゆゆ式"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003781": {
+    "workId": "wk_000003781",
+    "title": "누더기 영애는 언니의 전 약혼자에게 익애받는다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128037635"
+    },
+    "titles": {
+      "ko": "누더기 영애는 언니의 전 약혼자에게 익애받는다",
+      "en": "Betrothed to My Sister's Ex",
+      "ja": "ずたぼろ令嬢は姉の元婚約者に溺愛される"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004058": {
+    "workId": "wk_000004058",
+    "title": "악식영애와 광혈공작 ~그 마물, 제가 맛있게 먹겠습니다!~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130600180"
+    },
+    "titles": {
+      "ko": "악식영애와 광혈공작 ~그 마물, 제가 맛있게 먹겠습니다!~",
+      "en": "Pass the Monster Meat, Milady!",
+      "ja": "悪食令嬢と狂血公爵 〜その魔物、私が美味しくいただきます！〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004430": {
+    "workId": "wk_000004430",
+    "title": "사랑해 게임을 끝내고 싶어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134880954"
+    },
+    "titles": {
+      "ko": "사랑해 게임을 끝내고 싶어",
+      "en": "I Want to End This Love Game",
+      "ja": "愛してるゲームを終わらせたい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005970": {
+    "workId": "wk_000005970",
+    "title": "오즈의 마법사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2454867"
+    },
+    "titles": {
+      "ko": "오즈의 마법사",
+      "en": "The Wonderful Wizard of Oz",
+      "ja": "オズの魔法使い"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006396": {
+    "workId": "wk_000006396",
+    "title": "오바케의 Q 타로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2723478"
+    },
+    "titles": {
+      "ko": "오바케의 Q 타로",
+      "en": "Obake no Q-tarō",
+      "ja": "オバケのQ太郎"
+    },
+    "creator": "藤子不二雄",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006466": {
+    "workId": "wk_000006466",
+    "title": "칼리프: 나는 무죄다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q28127381"
+    },
+    "titles": {
+      "ko": "칼리프: 나는 무죄다",
+      "en": "TIME: The Kalief Browder Story",
+      "ja": "投獄: カリーフ・ブラウダーの失われた時間"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007961": {
+    "workId": "wk_000007961",
+    "title": "미즈 아메리카",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q59833414"
+    },
+    "titles": {
+      "ko": "미즈 아메리카",
+      "en": "Mrs. America",
+      "ja": "ミセス・アメリカ～時代に挑んだ女たち～"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010057": {
+    "workId": "wk_000010057",
+    "title": "하늘의 유실물",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q99135396"
+    },
+    "titles": {
+      "ko": "하늘의 유실물",
+      "en": "Heaven's Lost Property",
+      "ja": "そらのおとしもの"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "wk_000000325": {
+    "workId": "wk_000000325",
+    "title": "강철의 연금술사",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아라카와 히로",
+    "releaseYear": 2001,
+    "tags": [
+      "판타지",
+      "연금술",
+      "전쟁",
+      "형제"
+    ],
+    "externalIds": {
+      "tmdb": "31911",
+      "wikidata": "Q189562"
+    },
+    "legacyIds": [
+      "sub_manga_fullmetal-alchemist_2001"
+    ],
+    "titles": {
+      "ko": "강철의 연금술사",
+      "en": "Fullmetal Alchemist",
+      "ja": "鋼の錬金術師",
+      "romaji": "Hagane no Renkinjutsushi"
+    },
+    "aliases": [
+      "FMA",
+      "Fullmetal Alchemist"
+    ],
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001953": {
+    "workId": "wk_000001953",
+    "title": "퍼머넌트 노바라",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11329879"
+    },
+    "titles": {
+      "ko": "퍼머넌트 노바라",
+      "en": "Permanent Nobara",
+      "ja": "パーマネント野ばら"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002063": {
+    "workId": "wk_000002063",
+    "title": "섹시 보이스 앤 로보",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134035"
+    },
+    "titles": {
+      "ko": "섹시 보이스 앤 로보",
+      "en": "Sexy Voice and Robo",
+      "ja": "セクシーボイスアンドロボ"
+    },
+    "releaseYear": 2007,
+    "creator": "Iou Kuroda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002201": {
+    "workId": "wk_000002201",
+    "title": "주식회사 마지루미에",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113549301"
+    },
+    "titles": {
+      "ko": "주식회사 마지루미에",
+      "en": "Magilumiere Co. Ltd.",
+      "ja": "株式会社マジルミエ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005608": {
+    "workId": "wk_000005608",
+    "title": "노아 선배는 친구.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131432636"
+    },
+    "titles": {
+      "ko": "노아 선배는 친구.",
+      "en": "Noa-senpai wa Tomodachi",
+      "ja": "のあ先輩はともだち。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007046": {
+    "workId": "wk_000007046",
+    "title": "공의 경계 미래복음-Extra Chorus",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17002320"
+    },
+    "titles": {
+      "ko": "공의 경계 미래복음-Extra Chorus",
+      "en": "The Garden of Sinners: Future Gospel",
+      "ja": "空の境界 未来福音"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

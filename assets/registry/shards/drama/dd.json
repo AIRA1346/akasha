@@ -1,0 +1,163 @@
+{
+  "wk_000001305": {
+    "workId": "wk_000001305",
+    "title": "노는언니",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105949888"
+    },
+    "titles": {
+      "ko": "노는언니",
+      "en": "Q105949888"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002189": {
+    "workId": "wk_000002189",
+    "title": "유루캠△",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108816674"
+    },
+    "titles": {
+      "ko": "유루캠△",
+      "en": "Laid-Back Camp",
+      "ja": "ゆるキャン△"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004470": {
+    "workId": "wk_000004470",
+    "title": "소림사전기 제3부: 대막영호",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11036568"
+    },
+    "titles": {
+      "ko": "소림사전기 제3부: 대막영호",
+      "en": "Q11036568"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005251": {
+    "workId": "wk_000005251",
+    "title": "프랭클린",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112316871"
+    },
+    "titles": {
+      "ko": "프랭클린",
+      "en": "Franklin",
+      "ja": "フランクリン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005934": {
+    "workId": "wk_000005934",
+    "title": "파라다이스 GoGo!!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11279959"
+    },
+    "titles": {
+      "ko": "파라다이스 GoGo!!",
+      "en": "Paradise GoGo!",
+      "ja": "パラダイスGoGo!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006233": {
+    "workId": "wk_000006233",
+    "title": "스튜어디스의 애인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11312176"
+    },
+    "titles": {
+      "ko": "스튜어디스의 애인",
+      "en": "Stewardess's Sweetheart",
+      "ja": "スチュワーデスの恋人"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006853": {
+    "workId": "wk_000006853",
+    "title": "체인지 디바",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138559"
+    },
+    "titles": {
+      "ko": "체인지 디바",
+      "en": "Drop Dead Diva",
+      "ja": "私はラブ・リーガル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007036": {
+    "workId": "wk_000007036",
+    "title": "나라 훔친 이야기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11421196"
+    },
+    "titles": {
+      "ko": "나라 훔친 이야기",
+      "en": "Kunitori Monogatari",
+      "ja": "国盗り物語"
+    },
+    "releaseYear": 1973,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008115": {
+    "workId": "wk_000008115",
+    "title": "조직 범죄 대책과 야가미 에이코 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11606340"
+    },
+    "titles": {
+      "ko": "조직 범죄 대책과 야가미 에이코 시리즈",
+      "en": "Soshiki hanzai taisakuka Yagami Eiko Series",
+      "ja": "組織犯罪対策課八神瑛子シリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

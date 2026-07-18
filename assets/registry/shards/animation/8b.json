@@ -1,0 +1,148 @@
+{
+  "wk_000000968": {
+    "workId": "wk_000000968",
+    "title": "조제, 호랑이 그리고 물고기들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106452140"
+    },
+    "titles": {
+      "ko": "조제, 호랑이 그리고 물고기들",
+      "en": "Josee, the Tiger and the Fish",
+      "ja": "ジョゼと虎と魚たち"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003989": {
+    "workId": "wk_000003989",
+    "title": "착각하는 공방주 ~영웅 파티의 전 잡무 담당이, 실은 전투 이외가 SSS 랭크였다는 흔히 있는 이야기~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130553563"
+    },
+    "titles": {
+      "ko": "착각하는 공방주 ~영웅 파티의 전 잡무 담당이, 실은 전투 이외가 SSS 랭크였다는 흔히 있는 이야기~",
+      "en": "The Unaware Atelier Master",
+      "ja": "勘違いの工房主～英雄パーティの元雑用係が、実は戦闘以外がSSSランクだったというよくある話～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005407": {
+    "workId": "wk_000005407",
+    "title": "Classroom☆Crisis",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q19693243"
+    },
+    "titles": {
+      "ko": "Classroom☆Crisis",
+      "en": "Classroom Crisis",
+      "ja": "クラスルーム☆クライシス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006020": {
+    "workId": "wk_000006020",
+    "title": "전쟁과 추억(미니시리즈)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q245929"
+    },
+    "titles": {
+      "ko": "전쟁과 추억(미니시리즈)",
+      "en": "War and Remembrance",
+      "ja": "戦争の黙示録"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006261": {
+    "workId": "wk_000006261",
+    "title": "마법소녀 메구쨩",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2628322"
+    },
+    "titles": {
+      "ko": "마법소녀 메구쨩",
+      "en": "Majokko Megu-chan",
+      "ja": "魔女っ子メグちゃん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006799": {
+    "workId": "wk_000006799",
+    "title": "카케구루이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q35085291"
+    },
+    "titles": {
+      "ko": "카케구루이",
+      "en": "Kakegurui",
+      "ja": "賭󠄀ケグルイ"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007760": {
+    "workId": "wk_000007760",
+    "title": "인그레스: 디 애니메이션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q55614467"
+    },
+    "titles": {
+      "ko": "인그레스: 디 애니메이션",
+      "en": "Ingress",
+      "ja": "INGRESS THE ANIMATION"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009425": {
+    "workId": "wk_000009425",
+    "title": "리스너즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q84561047"
+    },
+    "titles": {
+      "ko": "리스너즈",
+      "en": "Listeners",
+      "ja": "LISTENERS リスナーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

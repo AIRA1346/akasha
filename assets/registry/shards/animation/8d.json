@@ -1,0 +1,167 @@
+{
+  "wk_000000668": {
+    "workId": "wk_000000668",
+    "title": "결혼의 풍경",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104631095"
+    },
+    "titles": {
+      "ko": "결혼의 풍경",
+      "en": "Scenes from a Marriage"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001823": {
+    "workId": "wk_000001823",
+    "title": "원피스 - 진귀한 동물의 섬 쵸파왕국",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134544"
+    },
+    "titles": {
+      "ko": "원피스 - 진귀한 동물의 섬 쵸파왕국",
+      "en": "One Piece: Chopper's Kingdom on the Island of Strange Animals",
+      "ja": "ONE PIECE 珍獣島のチョッパー王国"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004216": {
+    "workId": "wk_000004216",
+    "title": "BanG Dream!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132166124"
+    },
+    "titles": {
+      "ko": "BanG Dream!",
+      "en": "BanG Dream!",
+      "ja": "BanG Dream!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004429": {
+    "workId": "wk_000004429",
+    "title": "소·라·노·오·토",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1348637"
+    },
+    "titles": {
+      "ko": "소·라·노·오·토",
+      "en": "Sound of the Sky",
+      "ja": "ソ・ラ・ノ・ヲ・ト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005141": {
+    "workId": "wk_000005141",
+    "title": "요르문간드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1771347"
+    },
+    "titles": {
+      "ko": "요르문간드",
+      "en": "Jormungand",
+      "ja": "ヨルムンガンド"
+    },
+    "creator": "Yōsuke Kuroda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005757": {
+    "workId": "wk_000005757",
+    "title": "매직걸",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2234128"
+    },
+    "titles": {
+      "ko": "매직걸",
+      "en": "Magikano",
+      "ja": "マジカノ"
+    },
+    "creator": "Hideki Mitsui",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006030": {
+    "workId": "wk_000006030",
+    "title": "디지몬 유니버스 어플리 몬스터즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24862800"
+    },
+    "titles": {
+      "ko": "디지몬 유니버스 어플리 몬스터즈",
+      "en": "Digimon Universe: App Monsters",
+      "ja": "デジモンユニバース アプリモンスターズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006879": {
+    "workId": "wk_000006879",
+    "title": "빙하전사 가이스라가",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3780068"
+    },
+    "titles": {
+      "ko": "빙하전사 가이스라가",
+      "en": "Hyōga Senshi Gaislugger",
+      "ja": "氷河戦士ガイスラッガー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009424": {
+    "workId": "wk_000009424",
+    "title": "코텐코텐코",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q845507"
+    },
+    "titles": {
+      "ko": "코텐코텐코",
+      "en": "Kotencotenco",
+      "ja": "こてんこてんこ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

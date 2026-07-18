@@ -1,0 +1,193 @@
+{
+  "wk_000001052": {
+    "workId": "wk_000001052",
+    "title": "오! 마이 걸 !!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049666"
+    },
+    "titles": {
+      "ko": "오! 마이 걸 !!",
+      "en": "Oh! My Girl!!",
+      "ja": "オー!マイ・ガール!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003517": {
+    "workId": "wk_000003517",
+    "title": "KNN 뉴스특보",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464395"
+    },
+    "titles": {
+      "ko": "KNN 뉴스특보",
+      "en": "Q109464395"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003518": {
+    "workId": "wk_000003518",
+    "title": "TBC 뉴스특보",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464396"
+    },
+    "titles": {
+      "ko": "TBC 뉴스특보",
+      "en": "Q109464396"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003680": {
+    "workId": "wk_000003680",
+    "title": "캠퍼스 꼭짓점 댄스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546019"
+    },
+    "titles": {
+      "ko": "캠퍼스 꼭짓점 댄스",
+      "en": "Q109546019"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004174": {
+    "workId": "wk_000004174",
+    "title": "스트릿 맨즈 파이터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115457"
+    },
+    "titles": {
+      "ko": "스트릿 맨즈 파이터",
+      "en": "Street Man Fighter"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004867": {
+    "workId": "wk_000004867",
+    "title": "톨 걸",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111286339"
+    },
+    "titles": {
+      "ko": "톨 걸",
+      "en": "Tall Girl"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005596": {
+    "workId": "wk_000005596",
+    "title": "오네가이! 마스캇토",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262039"
+    },
+    "titles": {
+      "ko": "오네가이! 마스캇토",
+      "en": "Q11262039",
+      "ja": "おねがい!マスカット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005735": {
+    "workId": "wk_000005735",
+    "title": "세상에서 나만",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11266659"
+    },
+    "titles": {
+      "ko": "세상에서 나만",
+      "en": "Konoyo de Ore/ Boku dake",
+      "ja": "この世で俺/僕だけ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007576": {
+    "workId": "wk_000007576",
+    "title": "도큐 실베스터 콘서트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11526959"
+    },
+    "titles": {
+      "ko": "도큐 실베스터 콘서트",
+      "en": "Q11526959",
+      "ja": "東急ジルベスターコンサート"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009268": {
+    "workId": "wk_000009268",
+    "title": "사랑의 안단테",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119572515"
+    },
+    "titles": {
+      "ko": "사랑의 안단테",
+      "en": "Love Andante"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009910": {
+    "workId": "wk_000009910",
+    "title": "텔마니아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12407705"
+    },
+    "titles": {
+      "ko": "텔마니아",
+      "en": "Telmania"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

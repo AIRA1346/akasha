@@ -1,0 +1,37 @@
+{
+  "wk_000002955": {
+    "workId": "wk_000002955",
+    "title": "열렙전사",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24000269"
+    },
+    "titles": {
+      "ko": "열렙전사",
+      "en": "Hardcore Leveling Warrior"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003360": {
+    "workId": "wk_000003360",
+    "title": "순정만화",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6691375"
+    },
+    "titles": {
+      "ko": "순정만화",
+      "en": "Love Story"
+    },
+    "creator": "Kang Full",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

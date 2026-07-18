@@ -1,0 +1,135 @@
+{
+  "wk_000001288": {
+    "workId": "wk_000001288",
+    "title": "관상",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103928082"
+    },
+    "titles": {
+      "ko": "관상",
+      "en": "Gwansang"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002330": {
+    "workId": "wk_000002330",
+    "title": "침구갑을경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10564086"
+    },
+    "titles": {
+      "ko": "침구갑을경",
+      "en": "AB Canon of Acupuncture and Moxibustion",
+      "ja": "鍼灸甲乙経"
+    },
+    "creator": "Huangfu Mi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002924": {
+    "workId": "wk_000002924",
+    "title": "젊은 개예술가의 초상",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10638035"
+    },
+    "titles": {
+      "ko": "젊은 개예술가의 초상",
+      "en": "Portrait of the Artist as a Young Dog"
+    },
+    "releaseYear": 1940,
+    "creator": "Dylan Thomas",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004173": {
+    "workId": "wk_000004173",
+    "title": "노예들의 축제",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108528001"
+    },
+    "titles": {
+      "ko": "노예들의 축제",
+      "en": "Assassin of Gor",
+      "ja": "ゴルの暗殺者"
+    },
+    "releaseYear": 1970,
+    "creator": "John Norman",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004376": {
+    "workId": "wk_000004376",
+    "title": "에다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108652"
+    },
+    "titles": {
+      "ko": "에다",
+      "en": "Edda",
+      "ja": "エッダ"
+    },
+    "releaseYear": 1270,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004458": {
+    "workId": "wk_000004458",
+    "title": "동서양고",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10870955"
+    },
+    "titles": {
+      "ko": "동서양고",
+      "en": "Q10870955",
+      "ja": "東西洋考"
+    },
+    "creator": "Xie Zhang",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007870": {
+    "workId": "wk_000007870",
+    "title": "옛날에 내가 죽은 집",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11279531"
+    },
+    "titles": {
+      "ko": "옛날에 내가 죽은 집",
+      "en": "Q11279531",
+      "ja": "むかし僕が死んだ家"
+    },
+    "releaseYear": 1994,
+    "creator": "Keigo Higashino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000002482": {
+    "workId": "wk_000002482",
+    "title": "가장 어두운 방",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10594901"
+    },
+    "titles": {
+      "ko": "가장 어두운 방",
+      "en": "The Darkest Room"
+    },
+    "creator": "ヨハン・テオリン",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

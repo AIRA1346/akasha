@@ -1,0 +1,115 @@
+{
+  "wk_000002749": {
+    "workId": "wk_000002749",
+    "title": "스파이 코드명 포춘",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104822312"
+    },
+    "titles": {
+      "ko": "스파이 코드명 포춘",
+      "en": "Operation Fortune: Ruse de Guerre",
+      "ja": "オペレーション・フォーチュン:ルセ・ド・ゲール"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006957": {
+    "workId": "wk_000006957",
+    "title": "박치기!",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1070030"
+    },
+    "titles": {
+      "ko": "박치기!",
+      "en": "Break Through!",
+      "ja": "パッチギ!"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008217": {
+    "workId": "wk_000008217",
+    "title": "드래곤볼 슈퍼: 슈퍼 히어로",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107656066"
+    },
+    "titles": {
+      "ko": "드래곤볼 슈퍼: 슈퍼 히어로",
+      "en": "Dragon Ball Super: Super Hero",
+      "ja": "ドラゴンボール超 スーパーヒーロー"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008457": {
+    "workId": "wk_000008457",
+    "title": "007 썬더볼 작전",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107724"
+    },
+    "titles": {
+      "ko": "007 썬더볼 작전",
+      "en": "Thunderball",
+      "ja": "007 サンダーボール作戦"
+    },
+    "releaseYear": 1966,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008665": {
+    "workId": "wk_000008665",
+    "title": "위민 토킹",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108030443"
+    },
+    "titles": {
+      "ko": "위민 토킹",
+      "en": "Women Talking",
+      "ja": "ウーマン・トーキング 私たちの選択"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009593": {
+    "workId": "wk_000009593",
+    "title": "헬레이저",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108739919"
+    },
+    "titles": {
+      "ko": "헬레이저",
+      "en": "Hellraiser"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

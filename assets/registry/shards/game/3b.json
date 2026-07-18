@@ -1,0 +1,77 @@
+{
+  "wk_000003876": {
+    "workId": "wk_000003876",
+    "title": "디스라이트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111995158"
+    },
+    "titles": {
+      "ko": "디스라이트",
+      "en": "Dislyte"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006205": {
+    "workId": "wk_000006205",
+    "title": "용과 같이 1&2 HD EDITION",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11679165"
+    },
+    "titles": {
+      "ko": "용과 같이 1&2 HD EDITION",
+      "en": "Q11679165",
+      "ja": "龍が如く1&2 HD EDITION"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006353": {
+    "workId": "wk_000006353",
+    "title": "맥스 페인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1175156"
+    },
+    "titles": {
+      "ko": "맥스 페인",
+      "en": "Max Payne",
+      "ja": "マックスペイン"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007535": {
+    "workId": "wk_000007535",
+    "title": "사이코데믹 ~특수 수사 사건부 X-FILE~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122829134"
+    },
+    "titles": {
+      "ko": "사이코데믹 ~특수 수사 사건부 X-FILE~",
+      "en": "Tokyo Psychodemic",
+      "ja": "東京サイコデミック 公安調査庁特別事象科学情報分析室 特殊捜査事件簿"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

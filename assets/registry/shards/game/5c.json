@@ -1,0 +1,165 @@
+{
+  "wk_000000069": {
+    "workId": "wk_000000069",
+    "title": "Ghost of Tsushima",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Sucker Punch",
+    "releaseYear": 2024,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid2218500_2024"
+    ],
+    "titles": {
+      "en": "Vector Wave",
+      "ko": "Ghost of Tsushima"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "2218500",
+      "wikidata": "Q42564798"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000782": {
+    "workId": "wk_000000782",
+    "title": "이블 데드: 더 게임",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104172911"
+    },
+    "titles": {
+      "ko": "이블 데드: 더 게임",
+      "en": "Evil Dead: The Game"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000902": {
+    "workId": "wk_000000902",
+    "title": "데이 오브 디피트: 소스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1045397"
+    },
+    "titles": {
+      "ko": "데이 오브 디피트: 소스",
+      "en": "Day of Defeat: Source"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001382": {
+    "workId": "wk_000001382",
+    "title": "바이오하자드 0",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1056069"
+    },
+    "titles": {
+      "ko": "바이오하자드 0",
+      "en": "Resident Evil Zero",
+      "ja": "バイオハザード0"
+    },
+    "releaseYear": 2019,
+    "creator": "S. D. Perry",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002024": {
+    "workId": "wk_000002024",
+    "title": "네크로문다: 하이어 건",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106967650"
+    },
+    "titles": {
+      "ko": "네크로문다: 하이어 건",
+      "en": "Necromunda: Hired Gun"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002320": {
+    "workId": "wk_000002320",
+    "title": "미소녀 만화경 -죄와 벌의 소녀-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107368516"
+    },
+    "titles": {
+      "ko": "미소녀 만화경 -죄와 벌의 소녀-",
+      "en": "Bishoujo Mangekyou -Tsumi to Batsu no Shoujo-",
+      "ja": "美少女万華鏡 -罪と罰の少女-"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003725": {
+    "workId": "wk_000003725",
+    "title": "9-nine- 하루이로하루코이하루노카제",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111541645"
+    },
+    "titles": {
+      "ko": "9-nine- 하루이로하루코이하루노카제",
+      "en": "9-nine-:Episode 3"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008646": {
+    "workId": "wk_000008646",
+    "title": "퍼즐 컴뱃",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1317811"
+    },
+    "titles": {
+      "ko": "퍼즐 컴뱃",
+      "en": "Mortal Kombat: Deception",
+      "ja": "モータルコンバット：デセプション"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

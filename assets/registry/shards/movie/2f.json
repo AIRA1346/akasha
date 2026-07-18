@@ -1,0 +1,75 @@
+{
+  "wk_000001435": {
+    "workId": "wk_000001435",
+    "title": "더 스토닝",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1021571"
+    },
+    "titles": {
+      "ko": "더 스토닝",
+      "en": "The Stoning of Soraya M."
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006299": {
+    "workId": "wk_000006299",
+    "title": "구구는 고양이다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106606948"
+    },
+    "titles": {
+      "ko": "구구는 고양이다",
+      "en": "Gu-Gu Datte Neko de Aru",
+      "ja": "グーグーだって猫である"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006960": {
+    "workId": "wk_000006960",
+    "title": "낫아웃 (영화)",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107021394"
+    },
+    "titles": {
+      "ko": "낫아웃 (영화)",
+      "en": "NOT OUT"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009785": {
+    "workId": "wk_000009785",
+    "title": "나는 나를 해고하지 않는다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108874777"
+    },
+    "titles": {
+      "ko": "나는 나를 해고하지 않는다",
+      "en": "I Don't Fire Myself"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

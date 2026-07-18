@@ -1,0 +1,111 @@
+{
+  "wk_000001182": {
+    "workId": "wk_000001182",
+    "title": "플라스틱 바다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101124034"
+    },
+    "titles": {
+      "ko": "플라스틱 바다",
+      "en": "Sea of Plastic"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002106": {
+    "workId": "wk_000002106",
+    "title": "10억",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041472"
+    },
+    "titles": {
+      "ko": "10억",
+      "en": "A Million",
+      "ja": "10億"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002755": {
+    "workId": "wk_000002755",
+    "title": "FBI 덴저러스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104834192"
+    },
+    "titles": {
+      "ko": "FBI 덴저러스",
+      "en": "Dangerous",
+      "ja": "デンジャラス"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004243": {
+    "workId": "wk_000004243",
+    "title": "누군가의 남편의 배에 탄 누군가의 부인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105555840"
+    },
+    "titles": {
+      "ko": "누군가의 남편의 배에 탄 누군가의 부인",
+      "en": "Someone's Wife in the Boat of Someone's Husband"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004605": {
+    "workId": "wk_000004605",
+    "title": "굿 보스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105702167"
+    },
+    "titles": {
+      "ko": "굿 보스",
+      "en": "The Good Boss"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010027": {
+    "workId": "wk_000010027",
+    "title": "빅 트러블",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1090108"
+    },
+    "titles": {
+      "ko": "빅 트러블",
+      "en": "Big Trouble",
+      "ja": "ビッグ・トラブル"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

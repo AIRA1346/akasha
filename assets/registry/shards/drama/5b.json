@@ -1,0 +1,266 @@
+{
+  "wk_000000021": {
+    "workId": "wk_000000021",
+    "title": "오징어 게임",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "황동혁 (Hwang Dong-hyuk)",
+    "releaseYear": 2021,
+    "tags": [
+      "서바이벌",
+      "데스게임",
+      "스릴러",
+      "넷플릭스"
+    ],
+    "legacyIds": [
+      "gen_drama_squid-game_2021"
+    ],
+    "titles": {
+      "en": "Squid Game",
+      "ko": "오징어 게임"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q106582931"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000895": {
+    "workId": "wk_000000895",
+    "title": "기계전대 젠카이저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104416096"
+    },
+    "titles": {
+      "ko": "기계전대 젠카이저",
+      "en": "Kikai Sentai Zenkaiger",
+      "ja": "機界戦隊ゼンカイジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004051": {
+    "workId": "wk_000004051",
+    "title": "밀레니엄 탐험, 리얼 코리아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115022"
+    },
+    "titles": {
+      "ko": "밀레니엄 탐험, 리얼 코리아",
+      "en": "Q110115022"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004121": {
+    "workId": "wk_000004121",
+    "title": "생방송 이슈＆이슈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115287"
+    },
+    "titles": {
+      "ko": "생방송 이슈＆이슈",
+      "en": "Q110115287"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005260": {
+    "workId": "wk_000005260",
+    "title": "NHK 뉴스라인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11234965"
+    },
+    "titles": {
+      "ko": "NHK 뉴스라인",
+      "en": "NHK Newsline",
+      "ja": "NHK NEWSLINE"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005311": {
+    "workId": "wk_000005311",
+    "title": "도쿄 타워",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235210"
+    },
+    "titles": {
+      "ko": "도쿄 타워",
+      "en": "Q11235210",
+      "ja": "東京タワー 〜オカンとボクと、時々、オトン〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006780": {
+    "workId": "wk_000006780",
+    "title": "일당백집사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113659069"
+    },
+    "titles": {
+      "ko": "일당백집사",
+      "en": "May I Help You?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006849": {
+    "workId": "wk_000006849",
+    "title": "로열 페인스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138359"
+    },
+    "titles": {
+      "ko": "로열 페인스",
+      "en": "Royal Pains",
+      "ja": "救命医ハンク セレブ診療ファイル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007189": {
+    "workId": "wk_000007189",
+    "title": "여자의 훈장",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11446237"
+    },
+    "titles": {
+      "ko": "여자의 훈장",
+      "en": "On'na no Kunshō",
+      "ja": "女の勲章"
+    },
+    "releaseYear": 1961,
+    "creator": "Toyoko Yamasaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007569": {
+    "workId": "wk_000007569",
+    "title": "말대 황제",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11519637"
+    },
+    "titles": {
+      "ko": "말대 황제",
+      "en": "Last Emperor",
+      "ja": "ラストエンペラー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007629": {
+    "workId": "wk_000007629",
+    "title": "검사 · 아사히 나요코",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11540906"
+    },
+    "titles": {
+      "ko": "검사 · 아사히 나요코",
+      "en": "Kenji Asahi Nayōko",
+      "ja": "検事・朝日奈耀子"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008749": {
+    "workId": "wk_000008749",
+    "title": "애정이이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117288990"
+    },
+    "titles": {
+      "ko": "애정이이",
+      "en": "Nothing But You"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009679": {
+    "workId": "wk_000009679",
+    "title": "세 번째 결혼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122853221"
+    },
+    "titles": {
+      "ko": "세 번째 결혼",
+      "en": "The Third Marriage"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010363": {
+    "workId": "wk_000010363",
+    "title": "이 사랑 통역 되나요?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125121395"
+    },
+    "titles": {
+      "ko": "이 사랑 통역 되나요?",
+      "en": "Can This Love Be Translated?",
+      "ja": "恋の通訳、できますか?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

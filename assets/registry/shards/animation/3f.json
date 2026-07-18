@@ -1,0 +1,179 @@
+{
+  "wk_000000224": {
+    "workId": "wk_000000224",
+    "title": "최애의 아이",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Doga Kobo",
+    "releaseYear": 2023,
+    "tags": [
+      "연예",
+      "드라마",
+      "미스터리",
+      "복수"
+    ],
+    "externalIds": {
+      "tmdb": "203737",
+      "wikidata": "Q112305523"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_animation_oshi-no-ko_2023"
+    ],
+    "titles": {
+      "en": "Oshi NO KO",
+      "ko": "최애의 아이"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000002305": {
+    "workId": "wk_000002305",
+    "title": "번 업 스크램블",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1163433"
+    },
+    "titles": {
+      "ko": "번 업 스크램블",
+      "en": "Burn-Up Scramble",
+      "ja": "BURN-UP SCRAMBLE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002813": {
+    "workId": "wk_000002813",
+    "title": "꽃의 천사 메리벨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1196333"
+    },
+    "titles": {
+      "ko": "꽃의 천사 메리벨",
+      "en": "Floral Magician Mary Bell",
+      "ja": "花の魔法使いマリーベル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007714": {
+    "workId": "wk_000007714",
+    "title": "웹 고스트 피포파",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q540997"
+    },
+    "titles": {
+      "ko": "웹 고스트 피포파",
+      "en": "Net Ghost PiPoPa",
+      "ja": "ネットゴーストPIPOPA"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008071": {
+    "workId": "wk_000008071",
+    "title": "두근두근! 프리큐어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q605298"
+    },
+    "titles": {
+      "ko": "두근두근! 프리큐어",
+      "en": "Dokidoki! PreCure",
+      "ja": "ドキドキ!プリキュア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008832": {
+    "workId": "wk_000008832",
+    "title": "UFO 로보 그랜다이저",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q700424"
+    },
+    "titles": {
+      "ko": "UFO 로보 그랜다이저",
+      "en": "Grendizer",
+      "ja": "UFOロボ グレンダイザー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009047": {
+    "workId": "wk_000009047",
+    "title": "닌자보이 란타로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q713975"
+    },
+    "titles": {
+      "ko": "닌자보이 란타로",
+      "en": "Nintama Rantarō",
+      "ja": "忍たま乱太郎"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009221": {
+    "workId": "wk_000009221",
+    "title": "누가 어린 그레고리를 죽였나?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q78191135"
+    },
+    "titles": {
+      "ko": "누가 어린 그레고리를 죽였나?",
+      "en": "Who Killed Little Gregory?",
+      "ja": "グレゴリー事件: 迷宮入りの謎に迫る"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009987": {
+    "workId": "wk_000009987",
+    "title": "THE 빅오",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q974411"
+    },
+    "titles": {
+      "ko": "THE 빅오",
+      "en": "The Big O",
+      "ja": "THE ビッグオー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

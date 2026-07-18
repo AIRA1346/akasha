@@ -1,0 +1,205 @@
+{
+  "wk_000001803": {
+    "workId": "wk_000001803",
+    "title": "Cities XL",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1067441"
+    },
+    "titles": {
+      "ko": "Cities XL",
+      "en": "Cities XL",
+      "ja": "シティーズXL"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002468": {
+    "workId": "wk_000002468",
+    "title": "솔로몬 키",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1075814"
+    },
+    "titles": {
+      "ko": "솔로몬 키",
+      "en": "Solomon's Key",
+      "ja": "ソロモンの鍵"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007488": {
+    "workId": "wk_000007488",
+    "title": "썸썸 편의점",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122386583"
+    },
+    "titles": {
+      "ko": "썸썸 편의점",
+      "en": "Some Some Convenience Store",
+      "ja": "SOME SOME コンビニエンスストア"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008019": {
+    "workId": "wk_000008019",
+    "title": "영웅서기2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12607450"
+    },
+    "titles": {
+      "ko": "영웅서기2",
+      "en": "Heroes Lore 2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008242": {
+    "workId": "wk_000008242",
+    "title": "스노우 브라더스 스페셜",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128399028"
+    },
+    "titles": {
+      "ko": "스노우 브라더스 스페셜",
+      "en": "Snow Bros. Nick and Tom Special",
+      "ja": "スノーブラザーズスペシャル"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008320": {
+    "workId": "wk_000008320",
+    "title": "아이코토바",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129924037"
+    },
+    "titles": {
+      "ko": "아이코토바",
+      "en": "Aikotoba",
+      "ja": "アイコトバ"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008502": {
+    "workId": "wk_000008502",
+    "title": "MiSide",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131382498"
+    },
+    "titles": {
+      "ko": "MiSide",
+      "en": "MiSide",
+      "ja": "MiSide -ミサイド-"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008987": {
+    "workId": "wk_000008987",
+    "title": "포켓몬 챔피언스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132798308"
+    },
+    "titles": {
+      "ko": "포켓몬 챔피언스",
+      "en": "Pokémon Champions",
+      "ja": "Pokémon Champions"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009504": {
+    "workId": "wk_000009504",
+    "title": "바이트파이트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1348432"
+    },
+    "titles": {
+      "ko": "바이트파이트",
+      "en": "BiteFight"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009506": {
+    "workId": "wk_000009506",
+    "title": "스텔라 블레이드: 블러드 레인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134950995"
+    },
+    "titles": {
+      "ko": "스텔라 블레이드: 블러드 레인",
+      "en": "Q134950995"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010243": {
+    "workId": "wk_000010243",
+    "title": "탱크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1431857"
+    },
+    "titles": {
+      "ko": "탱크",
+      "en": "Tank"
+    },
+    "releaseYear": 1974,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

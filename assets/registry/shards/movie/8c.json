@@ -1,0 +1,59 @@
+{
+  "wk_000004609": {
+    "workId": "wk_000004609",
+    "title": "철도원",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057098"
+    },
+    "titles": {
+      "ko": "철도원",
+      "en": "The Railroad Man",
+      "ja": "鉄道員"
+    },
+    "releaseYear": 1965,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007234": {
+    "workId": "wk_000007234",
+    "title": "모가디슈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107208538"
+    },
+    "titles": {
+      "ko": "모가디슈",
+      "en": "Escape from Mogadishu",
+      "ja": "モガディシュ 脱出までの14日間"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009664": {
+    "workId": "wk_000009664",
+    "title": "에너미 마인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1088058"
+    },
+    "titles": {
+      "ko": "에너미 마인",
+      "en": "Enemy Mine",
+      "ja": "第5惑星"
+    },
+    "releaseYear": 1985,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

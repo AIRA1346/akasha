@@ -1,0 +1,38 @@
+{
+  "wk_000002529": {
+    "workId": "wk_000002529",
+    "title": "약 파는 황태자",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136344941"
+    },
+    "titles": {
+      "ko": "약 파는 황태자",
+      "en": "The Apothecary Prince"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003630": {
+    "workId": "wk_000003630",
+    "title": "입시명문사립 정글고등학교",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q54879"
+    },
+    "titles": {
+      "ko": "입시명문사립 정글고등학교",
+      "en": "Q54879"
+    },
+    "releaseYear": 2006,
+    "creator": "김규삼",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

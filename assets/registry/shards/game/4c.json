@@ -1,0 +1,77 @@
+{
+  "wk_000000498": {
+    "workId": "wk_000000498",
+    "title": "록맨 X2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100096"
+    },
+    "titles": {
+      "ko": "록맨 X2",
+      "en": "Mega Man X2",
+      "ja": "ロックマンX2"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001168": {
+    "workId": "wk_000001168",
+    "title": "카드 샤크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105150685"
+    },
+    "titles": {
+      "ko": "카드 샤크",
+      "en": "Card Shark"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002465": {
+    "workId": "wk_000002465",
+    "title": "니켈로디언 올스타 난투",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107530622"
+    },
+    "titles": {
+      "ko": "니켈로디언 올스타 난투",
+      "en": "Nickelodeon All-Star Brawl",
+      "ja": "ニコロデオン オールスター大乱闘"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008153": {
+    "workId": "wk_000008153",
+    "title": "패미컴 탐정 크루: 에미오 -웃는 남자-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127328367"
+    },
+    "titles": {
+      "ko": "패미컴 탐정 크루: 에미오 -웃는 남자-",
+      "en": "Emio – The Smiling Man: Famicom Detective Club",
+      "ja": "ファミコン探偵倶楽部 笑み男"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

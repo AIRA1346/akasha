@@ -1,0 +1,21 @@
+{
+  "wk_000001810": {
+    "workId": "wk_000001810",
+    "title": "세컨드 라이프",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106827"
+    },
+    "titles": {
+      "ko": "세컨드 라이프",
+      "en": "Second Life",
+      "ja": "Second Life"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

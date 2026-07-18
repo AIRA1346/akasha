@@ -1,0 +1,77 @@
+{
+  "wk_000002484": {
+    "workId": "wk_000002484",
+    "title": "코코 샤넬",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1044859"
+    },
+    "titles": {
+      "ko": "코코 샤넬",
+      "en": "Coco Before Chanel",
+      "ja": "ココ・アヴァン・シャネル"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004543": {
+    "workId": "wk_000004543",
+    "title": "오늘, 우리 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105699138"
+    },
+    "titles": {
+      "ko": "오늘, 우리 2",
+      "en": "Today, Together 2"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006963": {
+    "workId": "wk_000006963",
+    "title": "어바웃 체리",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1070339"
+    },
+    "titles": {
+      "ko": "어바웃 체리",
+      "en": "About Cherry",
+      "ja": "チェリーについて"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009320": {
+    "workId": "wk_000009320",
+    "title": "5쿼터",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854398"
+    },
+    "titles": {
+      "ko": "5쿼터",
+      "en": "The 5th Quarter",
+      "ja": "5thクォーター"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

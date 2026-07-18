@@ -1,0 +1,74 @@
+{
+  "wk_000000005": {
+    "workId": "wk_000000005",
+    "title": "듄",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "프랭크 허버트",
+    "releaseYear": 1965,
+    "tags": [
+      "SF",
+      "고전",
+      "정치",
+      "명작"
+    ],
+    "legacyIds": [
+      "gen_book_dune_1965"
+    ],
+    "titles": {
+      "en": "Dune",
+      "ko": "듄"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q190192"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000003305": {
+    "workId": "wk_000003305",
+    "title": "가장 파란 눈",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1069956"
+    },
+    "titles": {
+      "ko": "가장 파란 눈",
+      "en": "The Bluest Eye",
+      "ja": "青い眼が欲しい"
+    },
+    "releaseYear": 1970,
+    "creator": "Toni Morrison",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003943": {
+    "workId": "wk_000003943",
+    "title": "녹색서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107790"
+    },
+    "titles": {
+      "ko": "녹색서",
+      "en": "The Green Book",
+      "ja": "緑の書"
+    },
+    "releaseYear": 1975,
+    "creator": "Muammar Gaddafi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "wk_000002374": {
+    "workId": "wk_000002374",
+    "title": "나이트런",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12589615"
+    },
+    "titles": {
+      "ko": "나이트런",
+      "en": "Knight Run"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002708": {
+    "workId": "wk_000002708",
+    "title": "기기괴괴",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16171387"
+    },
+    "titles": {
+      "ko": "기기괴괴",
+      "en": "Tales of the Unusual",
+      "ja": "奇々怪々"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

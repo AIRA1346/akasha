@@ -76,7 +76,9 @@ void main() {
     }
 
     final content = file.readAsStringSync();
-    final actualSha = sha256HexUtf8(content);
+    final actualSha = sha256HexUtf8(
+      content.replaceAll('\r\n', '\n').replaceAll('\r', '\n'),
+    );
     if (expectedSha.isEmpty) {
       errors.add('shard $id missing sha256');
     } else if (expectedSha != actualSha) {

@@ -1,0 +1,99 @@
+{
+  "wk_000002090": {
+    "workId": "wk_000002090",
+    "title": "어떻게 지내요",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105320057"
+    },
+    "titles": {
+      "ko": "어떻게 지내요",
+      "en": "What Are You Going Through"
+    },
+    "releaseYear": 2020,
+    "creator": "Sigrid Nunez",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005989": {
+    "workId": "wk_000005989",
+    "title": "괴소소설",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11065463"
+    },
+    "titles": {
+      "ko": "괴소소설",
+      "en": "Q11065463",
+      "ja": "怪笑小説"
+    },
+    "releaseYear": 1995,
+    "creator": "Keigo Higashino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006700": {
+    "workId": "wk_000006700",
+    "title": "무너진 다리",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111542076"
+    },
+    "titles": {
+      "ko": "무너진 다리",
+      "en": "A Broken Bridge"
+    },
+    "releaseYear": 2019,
+    "creator": "チョン・ソンラン",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006950": {
+    "workId": "wk_000006950",
+    "title": "괴수 보존 협회",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111948867"
+    },
+    "titles": {
+      "ko": "괴수 보존 협회",
+      "en": "The Kaiju Preservation Society"
+    },
+    "releaseYear": 2022,
+    "creator": "John Scalzi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008726": {
+    "workId": "wk_000008726",
+    "title": "포션빨로 연명합니다!",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113549411"
+    },
+    "titles": {
+      "ko": "포션빨로 연명합니다!",
+      "en": "I Shall Survive Using Potions!",
+      "ja": "ポーション頼みで生き延びます!"
+    },
+    "releaseYear": 2017,
+    "creator": "FUNA",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

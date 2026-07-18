@@ -1,0 +1,187 @@
+{
+  "wk_000000142": {
+    "workId": "wk_000000142",
+    "title": "오버워치 2",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Blizzard",
+    "releaseYear": 2022,
+    "tags": [
+      "FPS",
+      "팀전",
+      "히어로",
+      "PvP"
+    ],
+    "legacyIds": [
+      "gen_game_overwatch-2_2022"
+    ],
+    "titles": {
+      "en": "Overwatch®",
+      "ko": "오버워치 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "2357570",
+      "wikidata": "Q18515944"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000497": {
+    "workId": "wk_000000497",
+    "title": "유그드라 유니온",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1000547"
+    },
+    "titles": {
+      "ko": "유그드라 유니온",
+      "en": "Yggdra Union",
+      "ja": "ユグドラ・ユニオン"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001170": {
+    "workId": "wk_000001170",
+    "title": "동방신령묘 ~ Ten Desires",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051713"
+    },
+    "titles": {
+      "ko": "동방신령묘 ~ Ten Desires",
+      "en": "Touhou Shinreibyou ~ Ten Desires",
+      "ja": "東方神霊廟 〜 Ten Desires."
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003208": {
+    "workId": "wk_000003208",
+    "title": "아크 레이더스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110029330"
+    },
+    "titles": {
+      "ko": "아크 레이더스",
+      "en": "ARC Raiders"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005835": {
+    "workId": "wk_000005835",
+    "title": "만져라 메이드 인 와리오",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1154907"
+    },
+    "titles": {
+      "ko": "만져라 메이드 인 와리오",
+      "en": "WarioWare: Touched!",
+      "ja": "さわるメイド イン ワリオ"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006937": {
+    "workId": "wk_000006937",
+    "title": "타운으로 놀러가요 동물의 숲",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1195260"
+    },
+    "titles": {
+      "ko": "타운으로 놀러가요 동물의 숲",
+      "en": "Animal Crossing: City Folk",
+      "ja": "街へいこうよ どうぶつの森"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007062": {
+    "workId": "wk_000007062",
+    "title": "모여라!! 메이드 인 와리오",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1196761"
+    },
+    "titles": {
+      "ko": "모여라!! 메이드 인 와리오",
+      "en": "WarioWare, Inc.: Mega Party Games!",
+      "ja": "あつまれ!!メイド イン ワリオ"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007285": {
+    "workId": "wk_000007285",
+    "title": "D.C. 다카포 II",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1201073"
+    },
+    "titles": {
+      "ko": "D.C. 다카포 II",
+      "en": "Da Capo II",
+      "ja": "D.C.II 〜ダ・カーポII〜"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008781": {
+    "workId": "wk_000008781",
+    "title": "나이트 트랩",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1323428"
+    },
+    "titles": {
+      "ko": "나이트 트랩",
+      "en": "Night Trap",
+      "ja": "ナイトトラップ"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

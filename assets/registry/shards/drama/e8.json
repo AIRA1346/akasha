@@ -1,0 +1,110 @@
+{
+  "wk_000005725": {
+    "workId": "wk_000005725",
+    "title": "월드 프로레슬링",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11263857"
+    },
+    "titles": {
+      "ko": "월드 프로레슬링",
+      "en": "World Pro Wrestling",
+      "ja": "ワールドプロレスリング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006000": {
+    "workId": "wk_000006000",
+    "title": "하로! SATOYAMA 라이프",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11284224"
+    },
+    "titles": {
+      "ko": "하로! SATOYAMA 라이프",
+      "en": "Q11284224",
+      "ja": "ハロー!SATOYAMAライフ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006511": {
+    "workId": "wk_000006511",
+    "title": "홈 드라마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11338413"
+    },
+    "titles": {
+      "ko": "홈 드라마",
+      "en": "Home Drama!",
+      "ja": "ホームドラマ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006854": {
+    "workId": "wk_000006854",
+    "title": "우리들의 교과서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138680"
+    },
+    "titles": {
+      "ko": "우리들의 교과서",
+      "en": "Watashitachi no Kyōkasho",
+      "ja": "わたしたちの教科書"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007566": {
+    "workId": "wk_000007566",
+    "title": "도쿄 대공습",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151749"
+    },
+    "titles": {
+      "ko": "도쿄 대공습",
+      "en": "Tokyo Daikushu",
+      "ja": "東京大空襲"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007686": {
+    "workId": "wk_000007686",
+    "title": "때리는 여자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11547050"
+    },
+    "titles": {
+      "ko": "때리는 여자",
+      "en": "Q11547050",
+      "ja": "殴る女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

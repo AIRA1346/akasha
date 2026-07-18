@@ -1,0 +1,213 @@
+{
+  "wk_000001295": {
+    "workId": "wk_000001295",
+    "title": "뮤즈의 거울",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058051"
+    },
+    "titles": {
+      "ko": "뮤즈의 거울",
+      "en": "Muse no Kagami",
+      "ja": "ミューズの鏡"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002434": {
+    "workId": "wk_000002434",
+    "title": "2050: 벼랑 끝 인류",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109285270"
+    },
+    "titles": {
+      "ko": "2050: 벼랑 끝 인류",
+      "en": "Extrapolations",
+      "ja": "エクストラポレーションズ すぐそこにある未来"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003003": {
+    "workId": "wk_000003003",
+    "title": "Target : Billboard - KILL BILL",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458416"
+    },
+    "titles": {
+      "ko": "Target : Billboard - KILL BILL",
+      "en": "Target: Billboard - KILL BILL"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003325": {
+    "workId": "wk_000003325",
+    "title": "배니일기장대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460798"
+    },
+    "titles": {
+      "ko": "배니일기장대",
+      "en": "Q109460798"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003834": {
+    "workId": "wk_000003834",
+    "title": "베를린",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109850709"
+    },
+    "titles": {
+      "ko": "베를린",
+      "en": "Berlin",
+      "ja": "ベルリン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006499": {
+    "workId": "wk_000006499",
+    "title": "플라이트 패닉",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11333455"
+    },
+    "titles": {
+      "ko": "플라이트 패닉",
+      "en": "Flight Panic",
+      "ja": "フライトパニック"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006583": {
+    "workId": "wk_000006583",
+    "title": "모노란 모노란",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11344458"
+    },
+    "titles": {
+      "ko": "모노란 모노란",
+      "en": "Monoran Monoran",
+      "ja": "モノランモノラン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007689": {
+    "workId": "wk_000007689",
+    "title": "수요일 스페셜",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11548704"
+    },
+    "titles": {
+      "ko": "수요일 스페셜",
+      "en": "Wednesday Special",
+      "ja": "水曜スペシャル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008547": {
+    "workId": "wk_000008547",
+    "title": "지구마불 세계여행",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116790313"
+    },
+    "titles": {
+      "ko": "지구마불 세계여행",
+      "en": "World Dice Tour"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009478": {
+    "workId": "wk_000009478",
+    "title": "악인전기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121323033"
+    },
+    "titles": {
+      "ko": "악인전기",
+      "en": "Evillive",
+      "ja": "悪人伝記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009613": {
+    "workId": "wk_000009613",
+    "title": "100세 시대 건강하이소",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122375771"
+    },
+    "titles": {
+      "ko": "100세 시대 건강하이소",
+      "en": "Q122375771"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009741": {
+    "workId": "wk_000009741",
+    "title": "이애위영",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123270245"
+    },
+    "titles": {
+      "ko": "이애위영",
+      "en": "Only for Love"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "wk_000000679": {
+    "workId": "wk_000000679",
+    "title": "아담스 패밀리 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100292318"
+    },
+    "titles": {
+      "ko": "아담스 패밀리 2",
+      "en": "The Addams Family 2",
+      "ja": "アダムス・ファミリー2 アメリカ横断旅行!"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002341": {
+    "workId": "wk_000002341",
+    "title": "왕이 되려던 사나이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1042931"
+    },
+    "titles": {
+      "ko": "왕이 되려던 사나이",
+      "en": "The Man Who Would Be King",
+      "ja": "王になろうとした男 (映画)"
+    },
+    "releaseYear": 1977,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004675": {
+    "workId": "wk_000004675",
+    "title": "내일도 우린 사랑하고 있을까",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105731009"
+    },
+    "titles": {
+      "ko": "내일도 우린 사랑하고 있을까",
+      "en": "I Remember"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009532": {
+    "workId": "wk_000009532",
+    "title": "택시더미아",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087225"
+    },
+    "titles": {
+      "ko": "택시더미아",
+      "en": "Taxidermia",
+      "ja": "タクシデルミア ある剥製師の遺言"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

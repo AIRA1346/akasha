@@ -1,0 +1,165 @@
+{
+  "wk_000000960": {
+    "workId": "wk_000000960",
+    "title": "이블 웨스트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104568362"
+    },
+    "titles": {
+      "ko": "이블 웨스트",
+      "en": "Evil West"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001910": {
+    "workId": "wk_000001910",
+    "title": "소닉 어드벤처",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1069059"
+    },
+    "titles": {
+      "ko": "소닉 어드벤처",
+      "en": "Sonic Adventure",
+      "ja": "ソニックアドベンチャー"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003213": {
+    "workId": "wk_000003213",
+    "title": "클라이브 바커의 언다잉",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1101863"
+    },
+    "titles": {
+      "ko": "클라이브 바커의 언다잉",
+      "en": "Clive Barker's Undying"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004438": {
+    "workId": "wk_000004438",
+    "title": "크로스 헌터",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11299749"
+    },
+    "titles": {
+      "ko": "크로스 헌터",
+      "en": "Cross Hunter",
+      "ja": "クロスハンター"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004769": {
+    "workId": "wk_000004769",
+    "title": "아틀라스 폴른",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113586084"
+    },
+    "titles": {
+      "ko": "아틀라스 폴른",
+      "en": "Atlas Fallen"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007608": {
+    "workId": "wk_000007608",
+    "title": "리스크 오브 레인 리턴즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123397277"
+    },
+    "titles": {
+      "ko": "리스크 오브 레인 리턴즈",
+      "en": "Risk of Rain Returns"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007983": {
+    "workId": "wk_000007983",
+    "title": "데드록",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126042383"
+    },
+    "titles": {
+      "ko": "데드록",
+      "en": "Deadlock",
+      "ja": "Deadlock"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008311": {
+    "workId": "wk_000008311",
+    "title": "스나이퍼 엘리트: 레지스탕스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129437626"
+    },
+    "titles": {
+      "ko": "스나이퍼 엘리트: 레지스탕스",
+      "en": "Sniper Elite: Resistance"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009650": {
+    "workId": "wk_000009650",
+    "title": "검은 신화: 종규",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135910158"
+    },
+    "titles": {
+      "ko": "검은 신화: 종규",
+      "en": "Q135910158"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

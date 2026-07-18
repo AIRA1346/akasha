@@ -1,0 +1,96 @@
+{
+  "wk_000007419": {
+    "workId": "wk_000007419",
+    "title": "슬랩스틱 브라더스",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11254209"
+    },
+    "titles": {
+      "ko": "슬랩스틱 브라더스",
+      "en": "Manzai Gang",
+      "ja": "漫才ギャング"
+    },
+    "creator": "Hiroshi Shinagawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007764": {
+    "workId": "wk_000007764",
+    "title": "증보산림경제",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11272424"
+    },
+    "titles": {
+      "ko": "증보산림경제",
+      "en": "Chŭngbo sallim kyŏngje",
+      "ja": "増補山林経済"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010084": {
+    "workId": "wk_000010084",
+    "title": "섬",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114761908"
+    },
+    "titles": {
+      "ko": "섬",
+      "en": "An Island"
+    },
+    "releaseYear": 2020,
+    "creator": "Karen Jennings",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010139": {
+    "workId": "wk_000010139",
+    "title": "정훈왕래",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11486217"
+    },
+    "titles": {
+      "ko": "정훈왕래",
+      "en": "Q11486217",
+      "ja": "庭訓往来"
+    },
+    "creator": "Gen'e",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010337": {
+    "workId": "wk_000010337",
+    "title": "고양이 여행 리포트",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11504510"
+    },
+    "titles": {
+      "ko": "고양이 여행 리포트",
+      "en": "The Travelling Cat Chronicles",
+      "ja": "旅猫リポート"
+    },
+    "creator": "Hiro Arikawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

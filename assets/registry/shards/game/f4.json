@@ -1,0 +1,95 @@
+{
+  "wk_000001378": {
+    "workId": "wk_000001378",
+    "title": "스쿨데이즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055893"
+    },
+    "titles": {
+      "ko": "스쿨데이즈",
+      "en": "School Days",
+      "ja": "School Days"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002167": {
+    "workId": "wk_000002167",
+    "title": "더 킹 오브 파이터즈 95",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071721"
+    },
+    "titles": {
+      "ko": "더 킹 오브 파이터즈 95",
+      "en": "The King of Fighters '95",
+      "ja": "ザ・キング・オブ・ファイターズ '95"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005498": {
+    "workId": "wk_000005498",
+    "title": "메탈슬러그 컴플리트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1150627"
+    },
+    "titles": {
+      "ko": "메탈슬러그 컴플리트",
+      "en": "Metal Slug Anthology"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005695": {
+    "workId": "wk_000005695",
+    "title": "타이리안 2000",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1152304"
+    },
+    "titles": {
+      "ko": "타이리안 2000",
+      "en": "Tyrian"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007921": {
+    "workId": "wk_000007921",
+    "title": "Rance VI -제스 붕괴-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125522975"
+    },
+    "titles": {
+      "ko": "Rance VI -제스 붕괴-",
+      "en": "Rance VI - Zeth Houkai -",
+      "ja": "Rance VI -ゼス崩壊-"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

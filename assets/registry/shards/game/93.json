@@ -1,0 +1,147 @@
+{
+  "wk_000000124": {
+    "workId": "wk_000000124",
+    "title": "블러드본",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "FromSoftware",
+    "releaseYear": 2015,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid774361_2015"
+    ],
+    "titles": {
+      "en": "Blasphemous",
+      "ko": "블러드본"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "774361",
+      "wikidata": "Q67317244"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000784": {
+    "workId": "wk_000000784",
+    "title": "트릭스터",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041815"
+    },
+    "titles": {
+      "ko": "트릭스터",
+      "en": "Trickster Online",
+      "ja": "トリックスター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004086": {
+    "workId": "wk_000004086",
+    "title": "사라만다 포터블",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11248216"
+    },
+    "titles": {
+      "ko": "사라만다 포터블",
+      "en": "Salamander Portable",
+      "ja": "沙羅曼蛇 ポータブル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004821": {
+    "workId": "wk_000004821",
+    "title": "불가사의 던전 떠돌이 시렌 GB: 달빛마을의 괴물",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11361733"
+    },
+    "titles": {
+      "ko": "불가사의 던전 떠돌이 시렌 GB: 달빛마을의 괴물",
+      "en": "Shiren the Wanderer GB: Moonlight Village Monster",
+      "ja": "不思議のダンジョン 風来のシレンGB 月影村の怪物"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005761": {
+    "workId": "wk_000005761",
+    "title": "드래곤네스트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1153316"
+    },
+    "titles": {
+      "ko": "드래곤네스트",
+      "en": "Dragon Nest",
+      "ja": "ドラゴンネスト"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006619": {
+    "workId": "wk_000006619",
+    "title": "마피",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1188338"
+    },
+    "titles": {
+      "ko": "마피",
+      "en": "Mappy",
+      "ja": "マッピー"
+    },
+    "releaseYear": 1984,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007287": {
+    "workId": "wk_000007287",
+    "title": "테일즈 오브 그레이세스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1202172"
+    },
+    "titles": {
+      "ko": "테일즈 오브 그레이세스",
+      "en": "Tales of Graces",
+      "ja": "テイルズ オブ グレイセス"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "wk_000000558": {
+    "workId": "wk_000000558",
+    "title": "도시남녀의 사랑법",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101243720"
+    },
+    "titles": {
+      "ko": "도시남녀의 사랑법",
+      "en": "Lovestruck in the City",
+      "ja": "都会の男女の恋愛法"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001209": {
+    "workId": "wk_000001209",
+    "title": "파트너",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1054879"
+    },
+    "titles": {
+      "ko": "파트너",
+      "en": "AIBOU: Tokyo Detective Duo",
+      "ja": "相棒"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004627": {
+    "workId": "wk_000004627",
+    "title": "오센",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11080552"
+    },
+    "titles": {
+      "ko": "오센",
+      "en": "Q11080552",
+      "ja": "おせん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005005": {
+    "workId": "wk_000005005",
+    "title": "불타 오르는듯한",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11180718"
+    },
+    "titles": {
+      "ko": "불타 오르는듯한",
+      "en": "Flamboyant",
+      "ja": "龍飛鳳舞"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005055": {
+    "workId": "wk_000005055",
+    "title": "11PM",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11185217"
+    },
+    "titles": {
+      "ko": "11PM",
+      "en": "11PM",
+      "ja": "11PM"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005878": {
+    "workId": "wk_000005878",
+    "title": "태양은 지지 않는다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11278212"
+    },
+    "titles": {
+      "ko": "태양은 지지 않는다",
+      "en": "The Sun Never Sets",
+      "ja": "太陽は沈まない"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007328": {
+    "workId": "wk_000007328",
+    "title": "한문철의 블랙박스 리뷰",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114867109"
+    },
+    "titles": {
+      "ko": "한문철의 블랙박스 리뷰",
+      "en": "Han Moon-chul's Dashcam Review"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007688": {
+    "workId": "wk_000007688",
+    "title": "미토코몬 (제 39-43 부)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11548662"
+    },
+    "titles": {
+      "ko": "미토코몬 (제 39-43 부)",
+      "en": "Mito Komon (Part 39-43)",
+      "ja": "水戸黄門 (第39-43部)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009790": {
+    "workId": "wk_000009790",
+    "title": "유쾌한 왕따",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123473989"
+    },
+    "titles": {
+      "ko": "유쾌한 왕따",
+      "en": "Yukwaehan Wangtta"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

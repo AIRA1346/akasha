@@ -1,0 +1,218 @@
+{
+  "wk_000000269": {
+    "workId": "wk_000000269",
+    "title": "페이트/그랜드 오더",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "TYPE-MOON / Aniplex",
+    "releaseYear": 2015,
+    "tags": [
+      "수집형RPG",
+      "판타지",
+      "서번트",
+      "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_game_fate-grand-order_2015"
+    ],
+    "titles": {
+      "en": "Fate Grand Order",
+      "ko": "페이트/그랜드 오더"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q24843248"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000094": {
+    "workId": "wk_000000094",
+    "title": "Don't Starve Together",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Klei",
+    "releaseYear": 2016,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid322330_2016"
+    ],
+    "titles": {
+      "en": "Don't Starve Together",
+      "ko": "Don't Starve Together"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "322330",
+      "wikidata": "Q22344573"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000002729": {
+    "workId": "wk_000002729",
+    "title": "Bleach: 해방된 야망",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854458"
+    },
+    "titles": {
+      "ko": "Bleach: 해방된 야망",
+      "en": "Bleach: Hanatareshi Yabou",
+      "ja": "BLEACH 〜放たれし野望〜"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007297": {
+    "workId": "wk_000007297",
+    "title": "평양레이서",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12047670"
+    },
+    "titles": {
+      "ko": "평양레이서",
+      "en": "Pyongyang Racer",
+      "ja": "平壌レーサー"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007815": {
+    "workId": "wk_000007815",
+    "title": "포켓몬 레전즈 Z-A",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124672125"
+    },
+    "titles": {
+      "ko": "포켓몬 레전즈 Z-A",
+      "en": "Pokémon Legends: Z-A",
+      "ja": "Pokémon LEGENDS Z-A"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007929": {
+    "workId": "wk_000007929",
+    "title": "나 혼자만 레벨업:어라이즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125526141"
+    },
+    "titles": {
+      "ko": "나 혼자만 레벨업:어라이즈",
+      "en": "Solo Leveling: Arise"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008447": {
+    "workId": "wk_000008447",
+    "title": "킬링 플로어",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130887"
+    },
+    "titles": {
+      "ko": "킬링 플로어",
+      "en": "Killing Floor",
+      "ja": "Killing Floor"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008860": {
+    "workId": "wk_000008860",
+    "title": "퍼블 플레이스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1324740"
+    },
+    "titles": {
+      "ko": "퍼블 플레이스",
+      "en": "Purble Place",
+      "ja": "Purble Place"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009820": {
+    "workId": "wk_000009820",
+    "title": "쿠킹마마",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1367120"
+    },
+    "titles": {
+      "ko": "쿠킹마마",
+      "en": "Cooking Mama",
+      "ja": "クッキングママ"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010236": {
+    "workId": "wk_000010236",
+    "title": "솔저 오브 포춘",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1427606"
+    },
+    "titles": {
+      "ko": "솔저 오브 포춘",
+      "en": "Soldier of Fortune",
+      "ja": "Soldier of Fortune"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

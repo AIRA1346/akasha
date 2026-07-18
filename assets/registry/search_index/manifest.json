@@ -45,5 +45,9 @@
       "entryCount": 301,
       "sha256": "65fc4ec29b7748ea3662a984677857b0d1b890933272ebbe13a35e7c389ea968"
     }
-  ]
+  ],
+  "releaseId": "registry-8ada29d5d3cd061563c86a282f1a2f907bd12ee4",
+  "sourceRevision": "8ada29d5d3cd061563c86a282f1a2f907bd12ee4",
+  "schemaVersion": 4,
+  "bundleMode": "full"
 }

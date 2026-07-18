@@ -1,0 +1,78 @@
+{
+  "wk_000003230": {
+    "workId": "wk_000003230",
+    "title": "마지막 지하철",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049604"
+    },
+    "titles": {
+      "ko": "마지막 지하철",
+      "en": "The Last Metro",
+      "ja": "終電車"
+    },
+    "releaseYear": 1981,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003399": {
+    "workId": "wk_000003399",
+    "title": "스위트 무비",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050548"
+    },
+    "titles": {
+      "ko": "스위트 무비",
+      "en": "Sweet Movie",
+      "ja": "スウィート・ムービー"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008459": {
+    "workId": "wk_000008459",
+    "title": "패스워드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1077315"
+    },
+    "titles": {
+      "ko": "패스워드",
+      "en": "Antitrust",
+      "ja": "サベイランス -監視-"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009455": {
+    "workId": "wk_000009455",
+    "title": "조커: 폴리 아 되",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108628759"
+    },
+    "titles": {
+      "ko": "조커: 폴리 아 되",
+      "en": "Joker: Folie à Deux",
+      "ja": "ジョーカー2"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

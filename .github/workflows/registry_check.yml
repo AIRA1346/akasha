@@ -6,6 +6,10 @@ on:
       - 'akasha-db/**'
       - 'assets/registry/**'
       - 'tool/**'
+      - 'lib/models/registry_models.dart'
+      - 'test/*registry*'
+      - 'test/*bundle*'
+      - 'scripts/build_release.ps1'
       - 'pubspec.yaml'
       - 'pubspec.lock'
       - '.github/workflows/registry_check.yml'
@@ -14,6 +18,10 @@ on:
       - 'akasha-db/**'
       - 'assets/registry/**'
       - 'tool/**'
+      - 'lib/models/registry_models.dart'
+      - 'test/*registry*'
+      - 'test/*bundle*'
+      - 'scripts/build_release.ps1'
       - 'pubspec.yaml'
       - 'pubspec.lock'
       - '.github/workflows/registry_check.yml'
@@ -39,7 +47,15 @@ jobs:
         run: dart run tool/preflight_check.dart
 
       - name: Validate registry shards and franchise groups
-        run: dart run tool/ci_registry_check.dart --skip-builder --skip-dedupe
+        run: dart run tool/ci_registry_check.dart --skip-bundle --skip-dedupe
+
+      - name: Full-bundle focused tests
+        run: >-
+          flutter test
+          test/registry_bundle_builder_test.dart
+          test/registry_provenance_model_test.dart
+          test/bundle_full_registry_test.dart
+          test/catalog_scale_baseline_strict_test.dart
 
       - name: Catalog bundle baseline (strict)
         run: dart run tool/catalog_scale_baseline.dart --strict

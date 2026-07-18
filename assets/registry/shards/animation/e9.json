@@ -1,0 +1,112 @@
+{
+  "wk_000001119": {
+    "workId": "wk_000001119",
+    "title": "용자왕 가오가이가",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071984"
+    },
+    "titles": {
+      "ko": "용자왕 가오가이가",
+      "en": "The King of Braves GaoGaiGar",
+      "ja": "勇者王ガオガイガー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003462": {
+    "workId": "wk_000003462",
+    "title": "여고생의 낭비",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124477015"
+    },
+    "titles": {
+      "ko": "여고생의 낭비",
+      "en": "Wasteful Days of High School Girls",
+      "ja": "女子高生の無駄づかい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006800": {
+    "workId": "wk_000006800",
+    "title": "이별의 아침에 약속의 꽃을 장식하자",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q35236709"
+    },
+    "titles": {
+      "ko": "이별의 아침에 약속의 꽃을 장식하자",
+      "en": "Maquia: When the Promised Flower Blooms",
+      "ja": "さよならの朝に約束の花をかざろう"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006802": {
+    "workId": "wk_000006802",
+    "title": "우라하라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q35538280"
+    },
+    "titles": {
+      "ko": "우라하라",
+      "en": "Urahara",
+      "ja": "URAHARA"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006933": {
+    "workId": "wk_000006933",
+    "title": "프리티 리듬: 디어 마이 퓨처",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3911299"
+    },
+    "titles": {
+      "ko": "프리티 리듬: 디어 마이 퓨처",
+      "en": "Pretty Rhythm: Dear My Future",
+      "ja": "プリティーリズム・ディアマイフューチャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007782": {
+    "workId": "wk_000007782",
+    "title": "모모와 다락방의 수상한 요괴들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q559417"
+    },
+    "titles": {
+      "ko": "모모와 다락방의 수상한 요괴들",
+      "en": "A Letter to Momo",
+      "ja": "ももへの手紙"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,11 +1,11 @@
 // ignore_for_file: avoid_print
 // AKASHA Registry Builder (akasha-db v4)
-// Usage: dart run tool/registry_builder.dart [--sync-assets] [--bundle-eager-only]
+// Usage: dart run tool/registry_builder.dart
 //
-// G1+ (entryCount > 2500): use --sync-assets --bundle-eager-only (ADR-010).
+// This is an explicit source-data operation. App bundle generation is handled
+// separately by registry_bundle_builder.dart and never writes this source.
 // - Validates hash shards under akasha-db/shards/{category}/{00..ff}.json
 // - Regenerates manifest.json (v4) and search_index.json (searchTokens)
-// - Optionally copies akasha-db → assets/registry for app bundle
 
 import 'dart:convert';
 import 'dart:io';
@@ -44,8 +44,16 @@ const _validCategories = {
 const _validDomains = {'subculture'};
 
 void main(List<String> args) {
-  final syncAssets = args.contains('--sync-assets');
-  final bundleEagerOnly = args.contains('--bundle-eager-only');
+  if (args.any(
+    {'--sync-assets', '--bundle-all', '--bundle-eager-only'}.contains,
+  )) {
+    stderr.writeln(
+      'ERROR: source generation and app bundle generation are separate.\n'
+      'Run registry_builder.dart without bundle flags, commit/review the source,\n'
+      'then run registry_bundle_builder.dart with an explicit source revision.',
+    );
+    exit(64);
+  }
   final projectRoot = _findProjectRoot();
   final dbRoot = Directory('${projectRoot.path}/akasha-db');
   final shardsRoot = Directory('${dbRoot.path}/shards');
@@ -117,7 +125,7 @@ void main(List<String> args) {
         'path': relativePath,
         'eager': eager,
         'entryCount': entryCount,
-        'sha256': sha256HexUtf8(rawContent),
+        'sha256': sha256HexUtf8(_canonicalJsonText(rawContent)),
       });
     }
   }
@@ -207,79 +215,6 @@ void main(List<String> args) {
   print('  → ${dbRoot.path}/manifest.json');
   print('  → ${dbRoot.path}/search_index.json');
   print('  → ${dbRoot.path}/search_index/ (v2 sharded)');
-
-  if (syncAssets) {
-    final assetsRoot = Directory('${projectRoot.path}/assets/registry');
-    _syncAssetsRegistry(
-      dbRoot: dbRoot,
-      assetsRoot: assetsRoot,
-      shardMetas: shardMetas,
-      eagerOnly: bundleEagerOnly,
-    );
-    print('  → synced to ${assetsRoot.path}');
-  }
-}
-
-/// 앱 번들: 메타 + search_index + (기본) 전체 샤드 · [--bundle-eager-only] eager만
-void _syncAssetsRegistry({
-  required Directory dbRoot,
-  required Directory assetsRoot,
-  required List<Map<String, dynamic>> shardMetas,
-  bool eagerOnly = false,
-}) {
-  if (!assetsRoot.existsSync()) assetsRoot.createSync(recursive: true);
-
-  for (final name in [
-    'manifest.json',
-    'search_index.json',
-    'legacy_aliases.json',
-    'id_registry.json',
-    'franchise_groups.json',
-  ]) {
-    final src = File('${dbRoot.path}/$name');
-    if (src.existsSync()) {
-      src.copySync('${assetsRoot.path}/$name');
-    }
-  }
-
-  final searchIndexDir = Directory('${dbRoot.path}/search_index');
-  if (searchIndexDir.existsSync()) {
-    _copyDirectory(
-      searchIndexDir,
-      Directory('${assetsRoot.path}/search_index'),
-    );
-  }
-
-  final allPaths = <String>{
-    for (final meta in shardMetas) meta['path'] as String,
-  };
-  final bundlePaths = eagerOnly
-      ? <String>{
-          for (final meta in shardMetas)
-            if (meta['eager'] == true) meta['path'] as String,
-        }
-      : allPaths;
-
-  var copied = 0;
-  for (final relativePath in bundlePaths) {
-    final src = File('${dbRoot.path}/$relativePath');
-    if (!src.existsSync()) continue;
-
-    final dest = File('${assetsRoot.path}/$relativePath');
-    dest.parent.createSync(recursive: true);
-    src.copySync(dest.path);
-    copied++;
-  }
-
-  _pruneOrphanAssetShards(assetsRoot, bundlePaths);
-
-  if (eagerOnly) {
-    print(
-      '  → bundle shards: $copied eager (${allPaths.length} total in akasha-db)',
-    );
-  } else {
-    print('  → bundle shards: $copied total (full catalog)');
-  }
 }
 
 Set<String> _loadFranchisePrimaryWorkIds(Directory dbRoot) {
@@ -314,22 +249,6 @@ Set<String> _loadFranchiseMemberWorkIds(Directory dbRoot) {
     ids.addAll(members.where((id) => id.isNotEmpty));
   });
   return ids;
-}
-
-void _pruneOrphanAssetShards(Directory assetsRoot, Set<String> keepPaths) {
-  final shardsRoot = Directory('${assetsRoot.path}/shards');
-  if (!shardsRoot.existsSync()) return;
-
-  for (final categoryDir in shardsRoot.listSync().whereType<Directory>()) {
-    for (final file in categoryDir.listSync().whereType<File>()) {
-      if (!file.path.endsWith('.json')) continue;
-      final relative =
-          'shards/${p.basename(categoryDir.path)}/${p.basename(file.path)}';
-      if (!keepPaths.contains(relative)) {
-        file.deleteSync();
-      }
-    }
-  }
 }
 
 bool _isAnilistBulkWork(String workId, Map<String, dynamic> work) {
@@ -427,6 +346,9 @@ void _writeJson(String path, Object data) {
   File(path).writeAsStringSync('${encoder.convert(data)}\n');
 }
 
+String _canonicalJsonText(String value) =>
+    value.replaceAll('\r\n', '\n').replaceAll('\r', '\n');
+
 /// Phase 2.1 — 카테고리별 search_index + manifest (ADR-009)
 void _writeShardedSearchIndex({
   required Directory dbRoot,
@@ -491,39 +413,5 @@ Directory _findProjectRoot() {
       return Directory.current;
     }
     dir = parent;
-  }
-}
-
-void _copyDirectory(Directory source, Directory destination) {
-  if (!destination.existsSync()) destination.createSync(recursive: true);
-  for (final entity in source.listSync(recursive: false)) {
-    final name = PathHelper.basename(entity.path);
-    final targetPath = PathHelper.join(destination.path, name);
-    if (entity is Directory) {
-      _copyDirectory(entity, Directory(targetPath));
-    } else if (entity is File) {
-      entity.copySync(targetPath);
-    }
-  }
-}
-
-// Minimal path basename helper without package:path in tool
-class PathHelper {
-  static String basename(String path) {
-    final normalized = path.replaceAll('\\', '/');
-    return normalized.split('/').last;
-  }
-
-  static String basenameWithoutExtension(String path) {
-    final base = basename(path);
-    final dot = base.lastIndexOf('.');
-    return dot == -1 ? base : base.substring(0, dot);
-  }
-
-  static String join(String part1, String part2) {
-    if (part1.endsWith('/') || part1.endsWith('\\')) {
-      return '$part1$part2';
-    }
-    return '$part1/$part2';
   }
 }

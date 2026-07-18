@@ -1,0 +1,69 @@
+{
+  "wk_000000163": {
+    "workId": "wk_000000163",
+    "title": "스파이더맨: 노 웨이 홈",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "Jon Watts",
+    "releaseYear": 2021,
+    "tags": [
+      "영화",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_movie_spider-man-nwh_2021"
+    ],
+    "externalIds": {
+      "wikidata": "Q63466944"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Spider MAN NWH",
+      "ko": "스파이더맨: 노 웨이 홈"
+    }
+  },
+  "wk_000005993": {
+    "workId": "wk_000005993",
+    "title": "007 골드핑거",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106440"
+    },
+    "titles": {
+      "ko": "007 골드핑거",
+      "en": "Goldfinger",
+      "ja": "007 ゴールドフィンガー"
+    },
+    "releaseYear": 1964,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006563": {
+    "workId": "wk_000006563",
+    "title": "인생",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10676596"
+    },
+    "titles": {
+      "ko": "인생",
+      "en": "Run for Your Life"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

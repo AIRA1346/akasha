@@ -10,7 +10,7 @@ import 'package:akasha/screens/home/home_registry_prefetch.dart';
 import 'package:akasha/services/registry_sync_service.dart';
 import 'package:akasha/services/works_registry.dart';
 
-/// ADR-010 eager-only 번들: non-eager shard는 CDN mock으로 fetch
+/// Phase 1 full bundle에서도 남아 있는 remote-provider 경로를 격리해 테스트한다.
 void _mockAkashaDbShardFetcher() {
   RegistrySyncService.setTextFetcherForTesting((url) async {
     final uri = Uri.parse(url);
@@ -63,7 +63,7 @@ void main() {
       expect(loaded, lessThan(total));
     });
 
-    test('loadMore prefetch accumulates shard entries (CDN fetch)', () async {
+    test('loadMore prefetch accumulates locally bundled shard entries', () async {
       WorksRegistry.loader.resetLoadedShardsForTesting();
       await WorksRegistry.clearDiskCacheAndReloadBundle();
       _mockAkashaDbShardFetcher();

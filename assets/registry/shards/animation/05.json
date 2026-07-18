@@ -1,0 +1,152 @@
+{
+  "wk_000000196": {
+    "workId": "wk_000000196",
+    "title": "골든 카무이",
+    "titles": {
+      "ko": "골든 카무이",
+      "en": "Golden Kamuy",
+      "ja": "ゴールデンカムイ"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "야기 노리코",
+    "releaseYear": 2018,
+    "tags": [
+      "모험",
+      "역사",
+      "액션",
+      "코미디"
+    ],
+    "extensions": {
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2018,
+          "episodes": 12
+        },
+        {
+          "label": "2기",
+          "year": 2018,
+          "episodes": 12
+        },
+        {
+          "label": "3기",
+          "year": 2021,
+          "episodes": 12
+        },
+        {
+          "label": "4기",
+          "year": 2023,
+          "episodes": 13
+        }
+      ],
+      "latestSeason": "4기",
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_animation_golden-kamuy_2018"
+    ],
+    "externalIds": {
+      "tmdb": "74061",
+      "wikidata": "Q63441927"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001655": {
+    "workId": "wk_000001655",
+    "title": "블루 자이언트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112664641"
+    },
+    "titles": {
+      "ko": "블루 자이언트",
+      "en": "Blue Giant",
+      "ja": "BLUE GIANT"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002039": {
+    "workId": "wk_000002039",
+    "title": "옆자리 괴물군",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114665393"
+    },
+    "titles": {
+      "ko": "옆자리 괴물군",
+      "en": "My Little Monster",
+      "ja": "となりの怪物くん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004639": {
+    "workId": "wk_000004639",
+    "title": "극장판 짱구는 못말려: 기기괴괴! 나의 요괴 베케이션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137379883"
+    },
+    "titles": {
+      "ko": "극장판 짱구는 못말려: 기기괴괴! 나의 요괴 베케이션",
+      "en": "Crayon Shin-chan the Movie: Super Strange! My Yōkai Monster Vacation",
+      "ja": "クレヨンしんちゃん 奇々怪々!オラの妖怪バケ～ション"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004815": {
+    "workId": "wk_000004815",
+    "title": "제너레이션 킬",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q154194"
+    },
+    "titles": {
+      "ko": "제너레이션 킬",
+      "en": "Generation Kill",
+      "ja": "ジェネレーション・キル 兵士たちのイラク戦争"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006608": {
+    "workId": "wk_000006608",
+    "title": "Go! Go! 고마짱",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q30002868"
+    },
+    "titles": {
+      "ko": "Go! Go! 고마짱",
+      "en": "Shonen Ashibe Go! Go! Goma-chan",
+      "ja": "少年アシベ GO! GO! ゴマちゃん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

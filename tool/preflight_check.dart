@@ -1,17 +1,18 @@
 // ignore_for_file: avoid_print
 // Registry 변경 후 4종 핵심 gate 일괄 실행.
 //
-// Usage: dart run tool/preflight_check.dart [--skip-builder] [--skip-dedupe]
+// Usage: dart run tool/preflight_check.dart [--skip-bundle] [--skip-dedupe]
 
 import 'dart:io';
 
 void main(List<String> args) {
   final root = _root();
-  final skipBuilder = args.contains('--skip-builder');
+  final skipBundle =
+      args.contains('--skip-bundle') || args.contains('--skip-builder');
   final skipDedupe = args.contains('--skip-dedupe');
   final steps = [
-    if (!skipBuilder)
-      ('registry_builder', ['run', 'tool/registry_builder.dart']),
+    if (!skipBundle)
+      ('registry_bundle_ci', ['run', 'tool/registry_bundle_ci.dart']),
     if (!skipDedupe) ('dedupe_linter', ['run', 'tool/dedupe_linter.dart']),
     ('quality_gate --strict', ['run', 'tool/quality_gate.dart', '--strict']),
     ('coverage_dashboard', ['run', 'tool/coverage_dashboard.dart']),

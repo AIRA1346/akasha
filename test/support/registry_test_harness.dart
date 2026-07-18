@@ -15,7 +15,7 @@ void installRegistryTestBindings() {
       .setMockMethodCallHandler(channel, (call) async => '.');
 }
 
-/// ADR-010 eager-only: non-eager shard는 akasha-db 로컬 파일에서 fetch
+/// Phase 2 전까지 보존하는 remote-provider 경로용 local source fixture.
 void mockAkashaDbShardFetcher() {
   RegistrySyncService.setTextFetcherForTesting((url) async {
     final uri = Uri.parse(url);

@@ -1,0 +1,207 @@
+{
+  "wk_000000252": {
+    "workId": "wk_000000252",
+    "title": "좀비랜드 사가",
+    "titles": {
+      "ko": "좀비랜드 사가",
+      "en": "Zom 100: Bucket List of the Dead",
+      "ja": "ゾンビ100～ゾンビになるまでにしたい100のこと～"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "하루코사와 아쿠",
+    "releaseYear": 2023,
+    "tags": [
+      "좀비",
+      "코미디",
+      "액션",
+      "성장"
+    ],
+    "extensions": {
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2023,
+          "episodes": 12
+        }
+      ],
+      "latestSeason": "1기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_animation_zom-100_2023"
+    ],
+    "externalIds": {
+      "wikidata": "Q118289307"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000518": {
+    "workId": "wk_000000518",
+    "title": "고스트 바둑왕",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100606348"
+    },
+    "titles": {
+      "ko": "고스트 바둑왕",
+      "en": "Hikaru no Go",
+      "ja": "ヒカルの碁"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001071": {
+    "workId": "wk_000001071",
+    "title": "프리티 올 프렌즈 셀렉션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106943954"
+    },
+    "titles": {
+      "ko": "프리티 올 프렌즈 셀렉션",
+      "en": "Pretty All Friends Selection",
+      "ja": "プリティーオールフレンズセレクション"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001235": {
+    "workId": "wk_000001235",
+    "title": "팬티 앤드 스타킹 위드 가터벨트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1077331"
+    },
+    "titles": {
+      "ko": "팬티 앤드 스타킹 위드 가터벨트",
+      "en": "Panty & Stocking with Garterbelt",
+      "ja": "パンティ&ストッキングwithガーターベルト"
+    },
+    "creator": "Jun Sasaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003364": {
+    "workId": "wk_000003364",
+    "title": "주식회사 마지루미에",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123574057"
+    },
+    "titles": {
+      "ko": "주식회사 마지루미에",
+      "en": "Magilumiere Co. Ltd.",
+      "ja": "株式会社マジルミエ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003983": {
+    "workId": "wk_000003983",
+    "title": "우에노 선배는 서툴러",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130458175"
+    },
+    "titles": {
+      "ko": "우에노 선배는 서툴러",
+      "en": "How Clumsy You Are, Miss Ueno",
+      "ja": "上野さんは不器用"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004637": {
+    "workId": "wk_000004637",
+    "title": "듀얼마스터즈 LOST",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137322938"
+    },
+    "titles": {
+      "ko": "듀얼마스터즈 LOST",
+      "en": "Duel Masters LOST",
+      "ja": "Duel Masters LOST"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007784": {
+    "workId": "wk_000007784",
+    "title": "엔드로~!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q56034480"
+    },
+    "titles": {
+      "ko": "엔드로~!",
+      "en": "Endro!",
+      "ja": "えんどろ〜!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008491": {
+    "workId": "wk_000008491",
+    "title": "도라에몽 노비타의 신공룡",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q65022408"
+    },
+    "titles": {
+      "ko": "도라에몽 노비타의 신공룡",
+      "en": "Doraemon: Nobita's New Dinosaur",
+      "ja": "映画ドラえもん のび太の新恐竜"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009924": {
+    "workId": "wk_000009924",
+    "title": "너와 나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q962969"
+    },
+    "titles": {
+      "ko": "너와 나",
+      "en": "Kimi to Boku",
+      "ja": "君と僕。"
+    },
+    "creator": "Kiichi Hotta",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

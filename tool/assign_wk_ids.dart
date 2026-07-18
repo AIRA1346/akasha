@@ -10,7 +10,7 @@
 //   akasha-db/id_registry.json
 //   akasha-db/legacy_aliases.json (전 legacy → wk_ 매핑)
 //   샤드 workId/key → wk_ + legacyIds[]
-//   assets/registry/franchise_groups.json members 갱신
+//   akasha-db/franchise_groups.json members 갱신
 
 import 'dart:convert';
 import 'dart:io';
@@ -127,7 +127,7 @@ void main(List<String> args) async {
   if (syncAssets) {
     final builder = await Process.start(
       Platform.resolvedExecutable,
-      ['run', 'tool/registry_builder.dart', '--sync-assets'],
+      ['run', 'tool/registry_builder.dart'],
       workingDirectory: root.path,
       runInShell: true,
     );
@@ -136,7 +136,8 @@ void main(List<String> args) async {
     final code = await builder.exitCode;
     if (code != 0) exit(code);
   } else {
-    print('Run: dart run tool/registry_builder.dart --sync-assets');
+    print('Run: dart run tool/registry_builder.dart');
+    print('After source review/commit, generate the app bundle separately.');
   }
 }
 
@@ -292,13 +293,8 @@ void _applyShards(
 }
 
 void _updateFranchiseGroups(Directory root, Map<String, String> legacyToWk) {
-  final assetsPath = '${root.path}/assets/registry/franchise_groups.json';
   final dbPath = '${root.path}/akasha-db/franchise_groups.json';
-  if (!File(dbPath).existsSync() && File(assetsPath).existsSync()) {
-    File(assetsPath).copySync(dbPath);
-  }
-
-  for (final path in [assetsPath, dbPath]) {
+  for (final path in [dbPath]) {
     final file = File(path);
     if (!file.existsSync()) continue;
 

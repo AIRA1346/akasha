@@ -59,7 +59,7 @@ void main(List<String> args) {
   _applyLegacyAliases(root, survivor, retireSet, mergedLegacy);
   _applyFranchiseGroups(root, survivor, retireSet);
 
-  print('OK: retired ${retirees.length} work(s); run registry_builder --sync-assets');
+  print('OK: retired ${retirees.length} work(s); run registry_builder');
 }
 
 List<String> _collectMergedLegacy(

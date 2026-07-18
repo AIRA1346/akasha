@@ -3,10 +3,11 @@
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
 > **원칙:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) — 구현이 원칙과 충돌하면 구현·본 문서를 교정한다.
 > **제품 범위:** [VISION.md](VISION.md)
-> **갱신:** 2026-07-17
+> **갱신:** 2026-07-18
 > **Git:** `git rev-parse HEAD` (문서 커밋 tip과 어긋나면 tip을 따름)
 >
-> **Verification snapshot (2026-07-16):**
+> **Verification snapshot (2026-07-18):**
+> - **Registry full-bundle Phase 0–1** — 10,048 works · v4 JSON shard 1,713개 전체 asset · read-only source/staging builder · root/search provenance · deterministic double-build/allowlist/SHA/scale gate. Production CDN 호출 제거와 registry cache migration은 Phase 2로 분리.
 > - P0 recoverable Vault write · SA-01/02/03 derived-index foundation
 > - P1 local CLI: bounded `record lookup`/`record read` · user-started `candidate.create`
 > - Candidate provenance review UX · Vault-spec self-description
@@ -20,7 +21,7 @@
 > - **Derived index update ownership** — Entity/Work/Journal/Timeline 저장 계층이 `ArchiveIndexManager` 결과를 이벤트의 `derivedIndexesUpdated`에 전달하고, Home은 성공 표시가 있는 경우 중복 갱신하지 않는다. 실패는 `false`로 유지되어 기존 fallback이 실행되며 Home debounce는 pending path flag를 **AND-coalesce**한다.
 > - **HomeShell vault-watch dispose lifecycle (ACTION A)** — God Class 전면 리팩터 **기각** (상태 소유권은 이미 coordinator로 분리). `HomeVaultWatchReactor` generation cancel + dispose 순서(reactor → vault sub/debounce → workbench) + `WorkbenchController.syncEntityTabs` await 후 `_disposed` guard. **COUPLED/DEFERRED 유지:** timeline token 과다 bump · 이중 rebuild · Catalog `isCatalogLoading` 직접 set · Vault cold-start bootstrap 추출
 > - **Package modularization audit (closed)** — 단일 Flutter 앱 + `akasha_commerce_domain`(유일한 성공 공유 package) + 별도 backend 유지 · package graph **비순환** · 신규 EXTRACT_NOW **없음** · Melos / `akasha_core`·database·ui 전면 분할·줄 수 기준 분리 **기각**. Archive format/codec = PREPARE_BOUNDARY · Vault I/O / UI / Home orchestration = KEEP_IN_APP · Steam bridge는 production IAP·no-IAP 빌드 제외 요구 시 **CMake optional부터** 재검토 · Melos는 package 수·공통 orchestration 필요성이 실제로 늘 때만. **재오픈 트리거:** 앱 외 제2 소비자 · 플랫폼 완전 빌드 제외 · 안정 API/의존 방향 · 앱 타입 역참조 없음 · 독립 테스트·배포·CI 격리 실측 · unrelated 동시 변경 반복
-> - Flutter app: `flutter analyze` **0** · `flutter test` **1213**
+> - Flutter app: `flutter analyze` **0** · `flutter test` **1258**
 > - Commerce packages: domain `dart test` **17** · backend `dart test` **18** · domain/root `dart analyze` **0**
 > - Tooling: `dart analyze tool` **0** · CI registry workflow에서 전용 분석 단계 실행
 > - Windows debug/default release/sandbox release build **OK (2026-07-16)**
@@ -58,7 +59,7 @@
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
 
-**v1 blocking에 가까운 검증:** root `flutter test` **1213** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
+**v1 blocking에 가까운 검증:** root `flutter test` **1258** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
 **v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.  
 **IAP:** `FeatureFlags.steamInAppPurchasesEnabled = false` — 정상 build의 구매 CTA와 playtime reward trigger는 비활성이다. 별도 내부 sandbox define에서만 거래/reward adapter를 열 수 있으며, 실제 Steamworks checklist 검증 전 production 결제 가능 표시·재심사 주장은 금지한다.
 ---
@@ -90,7 +91,7 @@
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| root `flutter test` | **1213 PASS** | ✅ |
+| root `flutter test` | **1258 PASS** | ✅ |
 | commerce domain `dart test` | **17 PASS** | ✅ |
 | commerce backend `dart test` | **18 PASS** | ✅ |
 | root `flutter analyze` | 0 issue | ✅ |

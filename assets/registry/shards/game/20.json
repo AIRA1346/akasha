@@ -1,0 +1,187 @@
+{
+  "wk_000000286": {
+    "workId": "wk_000000286",
+    "title": "언더테일",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Toby Fox",
+    "releaseYear": 2015,
+    "tags": [
+      "인디",
+      "RPG",
+      "선택",
+      "명작"
+    ],
+    "legacyIds": [
+      "sub_game_undertale_2015"
+    ],
+    "titles": {
+      "en": "UNDERTALE",
+      "ko": "언더테일"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "coverageSprint04R2Fix": "W2_e2_title_fix",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "391540",
+      "wikidata": "Q21039924"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001166": {
+    "workId": "wk_000001166",
+    "title": "슈퍼 마리오 3D 월드 + 퓨리 월드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105106422"
+    },
+    "titles": {
+      "ko": "슈퍼 마리오 3D 월드 + 퓨리 월드",
+      "en": "Super Mario 3D World + Bowser's Fury",
+      "ja": "スーパーマリオ 3Dワールド + フューリーワールド"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002031": {
+    "workId": "wk_000002031",
+    "title": "파퓰러스: 더 비기닝",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1070478"
+    },
+    "titles": {
+      "ko": "파퓰러스: 더 비기닝",
+      "en": "Populous: The Beginning",
+      "ja": "ポピュラス ザ・ビギニング"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004592": {
+    "workId": "wk_000004592",
+    "title": "러브플러스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1133126"
+    },
+    "titles": {
+      "ko": "러브플러스",
+      "en": "LovePlus",
+      "ja": "ラブプラス"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005636": {
+    "workId": "wk_000005636",
+    "title": "스노우 브라더스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1152295"
+    },
+    "titles": {
+      "ko": "스노우 브라더스",
+      "en": "Snow Bros.: Nick and Tom",
+      "ja": "スノーブラザーズ"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007816": {
+    "workId": "wk_000007816",
+    "title": "포켓몬 카드 게임 Pocket",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124672332"
+    },
+    "titles": {
+      "ko": "포켓몬 카드 게임 Pocket",
+      "en": "Pokémon Trading Card Game Pocket",
+      "ja": "Pokémon Trading Card Game Pocket"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008031": {
+    "workId": "wk_000008031",
+    "title": "아스트로봇",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126199700"
+    },
+    "titles": {
+      "ko": "아스트로봇",
+      "en": "Q126199700",
+      "ja": "アストロボット"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009999": {
+    "workId": "wk_000009999",
+    "title": "티타늄 코트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137840078"
+    },
+    "titles": {
+      "ko": "티타늄 코트",
+      "en": "Q137840078"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010184": {
+    "workId": "wk_000010184",
+    "title": "세븐스 드래곤",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1413167"
+    },
+    "titles": {
+      "ko": "세븐스 드래곤",
+      "en": "7th Dragon",
+      "ja": "セブンスドラゴン"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "wk_000000576": {
+    "workId": "wk_000000576",
+    "title": "썬더일레븐 (애니메이션)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102283726"
+    },
+    "titles": {
+      "ko": "썬더일레븐 (애니메이션)",
+      "en": "Inazuma Eleven",
+      "ja": "イナズマイレブン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000671": {
+    "workId": "wk_000000671",
+    "title": "원피스 - 에피소드 오브 쵸파 플러스 겨울에 피는 기적의 벚꽃",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048722"
+    },
+    "titles": {
+      "ko": "원피스 - 에피소드 오브 쵸파 플러스 겨울에 피는 기적의 벚꽃",
+      "en": "One Piece Movie 9: Episode of Chopper Plus - Fuyu ni Saku, Kiseki no Sakura",
+      "ja": "ONE PIECE THE MOVIE エピソードオブチョッパー+ 冬に咲く、奇跡の桜"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000792": {
+    "workId": "wk_000000792",
+    "title": "하느님의 메모장",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105427062"
+    },
+    "titles": {
+      "ko": "하느님의 메모장",
+      "en": "Heaven's Memo Pad",
+      "ja": "神様のメモ帳"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001575": {
+    "workId": "wk_000001575",
+    "title": "여름색 기적",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1107521"
+    },
+    "titles": {
+      "ko": "여름색 기적",
+      "en": "Natsuiro Kiseki",
+      "ja": "夏色キセキ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001577": {
+    "workId": "wk_000001577",
+    "title": "꿈의 라이브 프리즘스톤",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11088406"
+    },
+    "titles": {
+      "ko": "꿈의 라이브 프리즘스톤",
+      "en": "Pretty Rhythm Rainbow Live",
+      "ja": "プリティーリズム・レインボーライブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002897": {
+    "workId": "wk_000002897",
+    "title": "야마다와 7인의 마녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120104025"
+    },
+    "titles": {
+      "ko": "야마다와 7인의 마녀",
+      "en": "Yamada-kun and the Seven Witches",
+      "ja": "山田くんと7人の魔女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003282": {
+    "workId": "wk_000003282",
+    "title": "도서관 전쟁",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123151554"
+    },
+    "titles": {
+      "ko": "도서관 전쟁",
+      "en": "Library War",
+      "ja": "図書館戦争"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003860": {
+    "workId": "wk_000003860",
+    "title": "사라왓 야이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13022632"
+    },
+    "titles": {
+      "ko": "사라왓 야이",
+      "en": "Sarawat Yai"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004356": {
+    "workId": "wk_000004356",
+    "title": "캐리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133852728"
+    },
+    "titles": {
+      "ko": "캐리",
+      "en": "Carrie"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005035": {
+    "workId": "wk_000005035",
+    "title": "은하순찰대",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17005134"
+    },
+    "titles": {
+      "ko": "은하순찰대",
+      "en": "Galactic Patrol Lensman",
+      "ja": "GALACTIC PATROL レンズマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005283": {
+    "workId": "wk_000005283",
+    "title": "짱구는 못말려 극장판: 나의 이사 이야기 선인장 대습격",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18618791"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 나의 이사 이야기 선인장 대습격",
+      "en": "Crayon Shin-Chan: My Moving Story! Cactus Large Attack!",
+      "ja": "クレヨンしんちゃん オラの引越し物語 サボテン大襲撃"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006535": {
+    "workId": "wk_000006535",
+    "title": "달이 아름답다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q28790213"
+    },
+    "titles": {
+      "ko": "달이 아름답다",
+      "en": "Tsuki ga Kirei",
+      "ja": "月がきれい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007587": {
+    "workId": "wk_000007587",
+    "title": "천하무적 크래쉬비드맨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q5182341"
+    },
+    "titles": {
+      "ko": "천하무적 크래쉬비드맨",
+      "en": "Crash B-Daman",
+      "ja": "爆球Hit! クラッシュビーダマン"
+    },
+    "creator": "Tomoya Kuratani",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007918": {
+    "workId": "wk_000007918",
+    "title": "프로메어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q59683349"
+    },
+    "titles": {
+      "ko": "프로메어",
+      "en": "Promare",
+      "ja": "プロメア"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008839": {
+    "workId": "wk_000008839",
+    "title": "시골소녀 폴리아나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q702039"
+    },
+    "titles": {
+      "ko": "시골소녀 폴리아나",
+      "en": "The Story of Pollyanna, Girl of Love",
+      "ja": "愛少女ポリアンナ物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009431": {
+    "workId": "wk_000009431",
+    "title": "열혈최강 고자우라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q848928"
+    },
+    "titles": {
+      "ko": "열혈최강 고자우라",
+      "en": "Nekketsu Saikyō Go-Saurer",
+      "ja": "熱血最強ゴウザウラー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

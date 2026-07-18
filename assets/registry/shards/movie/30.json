@@ -1,0 +1,78 @@
+{
+  "wk_000002753": {
+    "workId": "wk_000002753",
+    "title": "비둘기, 가지에 앉아 존재를 성찰하다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10483256"
+    },
+    "titles": {
+      "ko": "비둘기, 가지에 앉아 존재를 성찰하다",
+      "en": "A Pigeon Sat on a Branch Reflecting on Existence",
+      "ja": "さよなら、人類"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003816": {
+    "workId": "wk_000003816",
+    "title": "Castle Falls",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105332658"
+    },
+    "titles": {
+      "ko": "Castle Falls",
+      "en": "Castle Falls",
+      "ja": "Castle Falls"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005716": {
+    "workId": "wk_000005716",
+    "title": "엑스맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106182"
+    },
+    "titles": {
+      "ko": "엑스맨",
+      "en": "X-Men",
+      "ja": "X-メン"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007177": {
+    "workId": "wk_000007177",
+    "title": "캣츠 아이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071567"
+    },
+    "titles": {
+      "ko": "캣츠 아이",
+      "en": "Cat's Eye",
+      "ja": "キャッツ・アイ"
+    },
+    "releaseYear": 1986,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

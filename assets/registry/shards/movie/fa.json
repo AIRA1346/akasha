@@ -1,0 +1,21 @@
+{
+  "wk_000007878": {
+    "workId": "wk_000007878",
+    "title": "비스트 스토커 2 증인 두번째 이야기",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1075645"
+    },
+    "titles": {
+      "ko": "비스트 스토커 2 증인 두번째 이야기",
+      "en": "The Stool Pigeon",
+      "ja": "密告・者"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

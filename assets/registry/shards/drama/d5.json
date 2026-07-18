@@ -1,0 +1,179 @@
+{
+  "wk_000001366": {
+    "workId": "wk_000001366",
+    "title": "아모르 파티 - 사랑하라, 지금",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106165179"
+    },
+    "titles": {
+      "ko": "아모르 파티 - 사랑하라, 지금",
+      "en": "Amor Fati"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001734": {
+    "workId": "wk_000001734",
+    "title": "타이스쩐투도",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10825797"
+    },
+    "titles": {
+      "ko": "타이스쩐투도",
+      "en": "Tran Thu Do (Tv-serie)",
+      "ja": "陳守度太師"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005003": {
+    "workId": "wk_000005003",
+    "title": "롯폰기 클라쓰",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111785507"
+    },
+    "titles": {
+      "ko": "롯폰기 클라쓰",
+      "en": "Class of Roppongi",
+      "ja": "六本木クラス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005185": {
+    "workId": "wk_000005185",
+    "title": "슬로댄스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11220158"
+    },
+    "titles": {
+      "ko": "슬로댄스",
+      "en": "Slow Dance",
+      "ja": "スローダンス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005594": {
+    "workId": "wk_000005594",
+    "title": "아빠와 함께",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11261887"
+    },
+    "titles": {
+      "ko": "아빠와 함께",
+      "en": "Otousan to Issho",
+      "ja": "おとうさんといっしょ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006965": {
+    "workId": "wk_000006965",
+    "title": "언유주얼즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1139660"
+    },
+    "titles": {
+      "ko": "언유주얼즈",
+      "en": "The Unusuals"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007945": {
+    "workId": "wk_000007945",
+    "title": "고슈 전기 사쿠라이저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11577751"
+    },
+    "titles": {
+      "ko": "고슈 전기 사쿠라이저",
+      "en": "Kōshū senki sakuraizer",
+      "ja": "甲州戦記サクライザー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008741": {
+    "workId": "wk_000008741",
+    "title": "닥터 슬럼프",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117219597"
+    },
+    "titles": {
+      "ko": "닥터 슬럼프",
+      "en": "Doctor Slump",
+      "ja": "ドクタースランプ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009027": {
+    "workId": "wk_000009027",
+    "title": "로맨스 빌런",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119077193"
+    },
+    "titles": {
+      "ko": "로맨스 빌런",
+      "en": "The Villain of Romance"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009536": {
+    "workId": "wk_000009536",
+    "title": "수사반장 1958",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121438415"
+    },
+    "titles": {
+      "ko": "수사반장 1958",
+      "en": "Chief Detective 1958"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "wk_000000625": {
+    "workId": "wk_000000625",
+    "title": "마더링 선데이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100249839"
+    },
+    "titles": {
+      "ko": "마더링 선데이",
+      "en": "Mothering Sunday",
+      "ja": "マザリング・サンデー"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003813": {
+    "workId": "wk_000003813",
+    "title": "CUBE 한번 들어가면 마지막",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105326306"
+    },
+    "titles": {
+      "ko": "CUBE 한번 들어가면 마지막",
+      "en": "Cube",
+      "ja": "CUBE 一度入ったら、最後"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006835": {
+    "workId": "wk_000006835",
+    "title": "DC 리그 오브 슈퍼-펫",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106953528"
+    },
+    "titles": {
+      "ko": "DC 리그 오브 슈퍼-펫",
+      "en": "DC League of Super-Pets",
+      "ja": "DC がんばれ!スーパーペット"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009250": {
+    "workId": "wk_000009250",
+    "title": "언터처블",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108525"
+    },
+    "titles": {
+      "ko": "언터처블",
+      "en": "The Untouchables",
+      "ja": "アンタッチャブル"
+    },
+    "releaseYear": 1987,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

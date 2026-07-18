@@ -87,14 +87,12 @@ void main(List<String> args) async {
   }
 
   if (apply && build && !hadFailure) {
-    print('==> registry_builder --sync-assets --bundle-eager-only');
+    print('==> registry_builder (source only)');
     final buildResult = await Process.run(
       dart,
       [
         'run',
         'tool/registry_builder.dart',
-        '--sync-assets',
-        '--bundle-eager-only',
       ],
       workingDirectory: root.path,
       runInShell: true,

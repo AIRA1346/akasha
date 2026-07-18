@@ -1,0 +1,40 @@
+{
+  "wk_000007014": {
+    "workId": "wk_000007014",
+    "title": "신사와 유리 구두",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111993992"
+    },
+    "titles": {
+      "ko": "신사와 유리 구두",
+      "en": "An Offer From a Gentleman"
+    },
+    "creator": "Julia Quinn",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008656": {
+    "workId": "wk_000008656",
+    "title": "비용의 아내",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11352055"
+    },
+    "titles": {
+      "ko": "비용의 아내",
+      "en": "Villon's Wife",
+      "ja": "ヴィヨンの妻"
+    },
+    "releaseYear": 1947,
+    "creator": "다자이 오사무",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

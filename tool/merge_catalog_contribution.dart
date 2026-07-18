@@ -124,10 +124,10 @@ void main(List<String> args) {
     return;
   }
 
-  print('\n==> registry_builder --sync-assets');
+  print('\n==> registry_builder (source only)');
   final builder = Process.runSync(
     Platform.resolvedExecutable,
-    ['run', 'tool/registry_builder.dart', '--sync-assets'],
+    ['run', 'tool/registry_builder.dart'],
     workingDirectory: root.path,
     runInShell: true,
   );

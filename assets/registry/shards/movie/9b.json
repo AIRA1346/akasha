@@ -1,0 +1,96 @@
+{
+  "wk_000000622": {
+    "workId": "wk_000000622",
+    "title": "버팔로 66",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1002142"
+    },
+    "titles": {
+      "ko": "버팔로 66",
+      "en": "Buffalo '66",
+      "ja": "バッファロー'66"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000928": {
+    "workId": "wk_000000928",
+    "title": "맨 인 더 다크 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100701374"
+    },
+    "titles": {
+      "ko": "맨 인 더 다크 2",
+      "en": "Don't Breathe 2",
+      "ja": "ドント・ブリーズ2"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004677": {
+    "workId": "wk_000004677",
+    "title": "기기협",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057524"
+    },
+    "titles": {
+      "ko": "기기협",
+      "en": "Kung Fu Cyborg",
+      "ja": "カンフーサイボーグ"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006956": {
+    "workId": "wk_000006956",
+    "title": "교환학생 다이어리",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106998019"
+    },
+    "titles": {
+      "ko": "교환학생 다이어리",
+      "en": "The Secret Diary of an Exchange Student",
+      "ja": "ヒミツの留学ダイアリー"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010308": {
+    "workId": "wk_000010308",
+    "title": "걸리버 리턴즈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109264711"
+    },
+    "titles": {
+      "ko": "걸리버 리턴즈",
+      "en": "Gulliver returns"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

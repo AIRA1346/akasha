@@ -1,0 +1,217 @@
+{
+  "wk_000000180": {
+    "workId": "wk_000000180",
+    "title": "체인소 맨",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "MAPPA",
+    "releaseYear": 2022,
+    "tags": [
+      "액션",
+      "다크",
+      "악마",
+      "카오스"
+    ],
+    "externalIds": {
+      "tmdb": "114410",
+      "wikidata": "Q104211858"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_animation_chainsaw-man_2022"
+    ],
+    "titles": {
+      "en": "Chainsaw MAN",
+      "ko": "체인소 맨"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001417": {
+    "workId": "wk_000001417",
+    "title": "극장판 시로바코",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458733"
+    },
+    "titles": {
+      "ko": "극장판 시로바코",
+      "en": "Shirobako: The Movie",
+      "ja": "劇場版 SHIROBAKO"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001581": {
+    "workId": "wk_000001581",
+    "title": "유녀전기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111017057"
+    },
+    "titles": {
+      "ko": "유녀전기",
+      "en": "The Saga of Tanya the Evil",
+      "ja": "幼女戦記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003547": {
+    "workId": "wk_000003547",
+    "title": "뿌리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247168"
+    },
+    "titles": {
+      "ko": "뿌리",
+      "en": "Roots",
+      "ja": "ルーツ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003634": {
+    "workId": "wk_000003634",
+    "title": "언젠가 최강의 연금술사?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125857118"
+    },
+    "titles": {
+      "ko": "언젠가 최강의 연금술사?",
+      "en": "Possibly the Greatest Alchemist of All Time",
+      "ja": "いずれ最強の錬金術師?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004075": {
+    "workId": "wk_000004075",
+    "title": "너와 아이돌 프리큐어♪",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131352155"
+    },
+    "titles": {
+      "ko": "너와 아이돌 프리큐어♪",
+      "en": "You and Idol Pretty Cure",
+      "ja": "キミとアイドルプリキュア♪"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004804": {
+    "workId": "wk_000004804",
+    "title": "존 애덤스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1516431"
+    },
+    "titles": {
+      "ko": "존 애덤스",
+      "en": "John Adams",
+      "ja": "ジョン・アダムズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004958": {
+    "workId": "wk_000004958",
+    "title": "글라스립",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16062412"
+    },
+    "titles": {
+      "ko": "글라스립",
+      "en": "Glasslip",
+      "ja": "グラスリップ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005417": {
+    "workId": "wk_000005417",
+    "title": "부탁해! 미라클 캣츠",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20039313"
+    },
+    "titles": {
+      "ko": "부탁해! 미라클 캣츠",
+      "en": "Omakase! Miracle Cat-dan",
+      "ja": "おまかせ!みらくるキャット団"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006409": {
+    "workId": "wk_000006409",
+    "title": "극장판 셀렉터: 디스트럭티드 위크로스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q27954036"
+    },
+    "titles": {
+      "ko": "극장판 셀렉터: 디스트럭티드 위크로스",
+      "en": "Selector Destructed WIXOSS the Movie",
+      "ja": "劇場版selector destructed WIXOSS"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006801": {
+    "workId": "wk_000006801",
+    "title": "역전 잇파츠맨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3543735"
+    },
+    "titles": {
+      "ko": "역전 잇파츠맨",
+      "en": "Gyakuten! Ippatsuman",
+      "ja": "逆転イッパツマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

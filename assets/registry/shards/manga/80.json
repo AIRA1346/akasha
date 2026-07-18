@@ -1,0 +1,163 @@
+{
+  "wk_000000333": {
+    "workId": "wk_000000333",
+    "title": "GTO",
+    "titles": {
+      "ko": "GTO",
+      "en": "Great Teacher Onizuka",
+      "ja": "GTO"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후지이 카즈히로",
+    "releaseYear": 1997,
+    "tags": [
+      "학원",
+      "코미디",
+      "성장",
+      "교육"
+    ],
+    "extensions": {
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_manga_gto_1997"
+    ],
+    "externalIds": {
+      "tmdb": "42701",
+      "wikidata": "Q457981"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000360": {
+    "workId": "wk_000000360",
+    "title": "니세코이",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "칸노 코스키",
+    "releaseYear": 2011,
+    "tags": [
+      "로맨스",
+      "코미디",
+      "학원",
+      "하렘"
+    ],
+    "legacyIds": [
+      "sub_manga_nisekoi_2011"
+    ],
+    "titles": {
+      "en": "Nisekoi",
+      "ko": "니세코이"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q2757796"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000464": {
+    "workId": "wk_000000464",
+    "title": "シュヴァリエ",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101424703"
+    },
+    "titles": {
+      "en": "Le Chevalier D'Eon",
+      "ja": "シュヴァリエ"
+    },
+    "creator": "Tow Ubukata",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  },
+  "wk_000001088": {
+    "workId": "wk_000001088",
+    "title": "금장의 벨메이유 ~벼랑 끝 마술사는 최강의 재액과 마법세계를 헤쳐나간다~",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111190454"
+    },
+    "titles": {
+      "ko": "금장의 벨메이유 ~벼랑 끝 마술사는 최강의 재액과 마법세계를 헤쳐나간다~",
+      "en": "Vermeil in Gold",
+      "ja": "金装のヴェルメイユ〜崖っぷち魔術師は最強の厄災と魔法世界を突き進む〜"
+    },
+    "releaseYear": 2018,
+    "creator": "Kōta Amana",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006863": {
+    "workId": "wk_000006863",
+    "title": "이니셜 D",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q164883"
+    },
+    "titles": {
+      "ko": "이니셜 D",
+      "en": "Initial D",
+      "ja": "頭文字D"
+    },
+    "creator": "Shūichi Shigeno",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007389": {
+    "workId": "wk_000007389",
+    "title": "나만이 없는 거리",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17230217"
+    },
+    "titles": {
+      "ko": "나만이 없는 거리",
+      "en": "Erased",
+      "ja": "僕だけがいない街"
+    },
+    "creator": "Kei Sanbe",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007510": {
+    "workId": "wk_000007510",
+    "title": "스텔라의 마법",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17994479"
+    },
+    "titles": {
+      "ko": "스텔라의 마법",
+      "en": "Magic of Stella",
+      "ja": "ステラのまほう"
+    },
+    "creator": "Cloba.U",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

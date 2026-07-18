@@ -1,0 +1,95 @@
+{
+  "wk_000001765": {
+    "workId": "wk_000001765",
+    "title": "캔디맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1033108"
+    },
+    "titles": {
+      "ko": "캔디맨",
+      "en": "Candyman",
+      "ja": "キャンディマン"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006568": {
+    "workId": "wk_000006568",
+    "title": "캐스퍼 앤 엠마 풋 온 어 플레이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106774342"
+    },
+    "titles": {
+      "ko": "캐스퍼 앤 엠마 풋 온 어 플레이",
+      "en": "Casper and Emma at the Theatre"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008875": {
+    "workId": "wk_000008875",
+    "title": "미스 파르 쿠 - 핀란드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10831867"
+    },
+    "titles": {
+      "ko": "미스 파르 쿠 - 핀란드",
+      "en": "Miss Farkku-Suomi",
+      "ja": "ミスファークク - フィンランド"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009667": {
+    "workId": "wk_000009667",
+    "title": "암흑 같은 밤",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108827983"
+    },
+    "titles": {
+      "ko": "암흑 같은 밤",
+      "en": "Black as Night",
+      "ja": "ブラック・アズ・ナイト"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009841": {
+    "workId": "wk_000009841",
+    "title": "영웅출격",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10889271"
+    },
+    "titles": {
+      "ko": "영웅출격",
+      "en": "Proud and Confident"
+    },
+    "releaseYear": 1989,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

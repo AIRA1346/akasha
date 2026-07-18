@@ -1,0 +1,168 @@
+{
+  "wk_000001320": {
+    "workId": "wk_000001320",
+    "title": "포켓몬 에볼루션즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108383955"
+    },
+    "titles": {
+      "ko": "포켓몬 에볼루션즈",
+      "en": "Pokémon Evolutions",
+      "ja": "Pokémon Evolutions"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002221": {
+    "workId": "wk_000002221",
+    "title": "월드 다이 스타",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115623684"
+    },
+    "titles": {
+      "ko": "월드 다이 스타",
+      "en": "World Dai Star",
+      "ja": "ワールドダイスター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002306": {
+    "workId": "wk_000002306",
+    "title": "디지몬 어드벤처 02 THE BEGINNING",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116486283"
+    },
+    "titles": {
+      "ko": "디지몬 어드벤처 02 THE BEGINNING",
+      "en": "Digimon Adventure 02: The Beginning",
+      "ja": "デジモンアドベンチャー02 THE BEGINNING"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003710": {
+    "workId": "wk_000003710",
+    "title": "배트맨 닌자 대 야쿠자 리그",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126680699"
+    },
+    "titles": {
+      "ko": "배트맨 닌자 대 야쿠자 리그",
+      "en": "Batman Ninja vs. Yakuza League",
+      "ja": "ニンジャバットマン対ヤクザリーグ"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006748": {
+    "workId": "wk_000006748",
+    "title": "초속변형 자이로제타",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q333687"
+    },
+    "titles": {
+      "ko": "초속변형 자이로제타",
+      "en": "Chōsoku Henkei Gyrozetter",
+      "ja": "超速変形ジャイロゼッター"
+    },
+    "creator": "佐藤大",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007724": {
+    "workId": "wk_000007724",
+    "title": "신나는 과학 어드벤쳐 아하! 그렇구나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q5507962"
+    },
+    "titles": {
+      "ko": "신나는 과학 어드벤쳐 아하! 그렇구나",
+      "en": "Full-Blast Science Adventure – So That's How It Is",
+      "ja": "おもいっきり科学アドベンチャー そーなんだ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007908": {
+    "workId": "wk_000007908",
+    "title": "기동전사 V 건담",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q590129"
+    },
+    "titles": {
+      "ko": "기동전사 V 건담",
+      "en": "Mobile Suit Victory Gundam",
+      "ja": "機動戦士Vガンダム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008073": {
+    "workId": "wk_000008073",
+    "title": "단간론파 희망의 학교와 절망의 고교생",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q60740094"
+    },
+    "titles": {
+      "ko": "단간론파 희망의 학교와 절망의 고교생",
+      "en": "Danganronpa: The Animation",
+      "ja": "ダンガンロンパ 希望の学園と絶望の高校生 THE ANIMATION"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009633": {
+    "workId": "wk_000009633",
+    "title": "극장판 포켓몬스터 DP: 디아루가 VS 펄기아 VS 다크라이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q890660"
+    },
+    "titles": {
+      "ko": "극장판 포켓몬스터 DP: 디아루가 VS 펄기아 VS 다크라이",
+      "en": "Pokémon: The Rise of Darkrai",
+      "ja": "劇場版ポケットモンスター ダイヤモンド&パール ディアルガVSパルキアVSダークライ"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

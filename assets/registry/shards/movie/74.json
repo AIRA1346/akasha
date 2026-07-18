@@ -1,0 +1,140 @@
+{
+  "wk_000000402": {
+    "workId": "wk_000000402",
+    "title": "형색의 보이스",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "야마다 나오코",
+    "releaseYear": 2016,
+    "tags": [
+      "영화",
+      "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_movie_a-silent-voice_2016"
+    ],
+    "externalIds": {
+      "wikidata": "Q2740501"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    },
+    "titles": {
+      "en": "A Silent Voice",
+      "ko": "형색의 보이스"
+    }
+  },
+  "wk_000000167": {
+    "workId": "wk_000000167",
+    "title": "대부",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "프란시스 포드 코폴라",
+    "releaseYear": 1972,
+    "tags": [
+      "범죄",
+      "가족",
+      "명작",
+      "드라마"
+    ],
+    "legacyIds": [
+      "gen_movie_the-godfather_1972"
+    ],
+    "externalIds": {
+      "wikidata": "Q47703"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    },
+    "titles": {
+      "en": "THE Godfather",
+      "ko": "대부"
+    }
+  },
+  "wk_000001712": {
+    "workId": "wk_000001712",
+    "title": "프리 윌리 3",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1032889"
+    },
+    "titles": {
+      "ko": "프리 윌리 3",
+      "en": "Free Willy 3: The Rescue",
+      "ja": "フリー・ウィリー3"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004845": {
+    "workId": "wk_000004845",
+    "title": "사다코 3D",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058489"
+    },
+    "titles": {
+      "ko": "사다코 3D",
+      "en": "Sadako 3D",
+      "ja": "貞子3D"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005167": {
+    "workId": "wk_000005167",
+    "title": "밤은 돌아오지 않는다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058934"
+    },
+    "titles": {
+      "ko": "밤은 돌아오지 않는다",
+      "en": "Tender Is the Night",
+      "ja": "夜は帰ってこない"
+    },
+    "releaseYear": 1962,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006147": {
+    "workId": "wk_000006147",
+    "title": "콘크리트 유토피아",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106514501"
+    },
+    "titles": {
+      "ko": "콘크리트 유토피아",
+      "en": "Concrete Utopia",
+      "ja": "コンクリート・ユートピア"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

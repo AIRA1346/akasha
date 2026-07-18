@@ -1,0 +1,20 @@
+{
+  "wk_000003093": {
+    "workId": "wk_000003093",
+    "title": "원",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3352566"
+    },
+    "titles": {
+      "ko": "원",
+      "en": "One"
+    },
+    "creator": "Lee Bin",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

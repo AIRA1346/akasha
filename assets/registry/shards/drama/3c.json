@@ -1,0 +1,164 @@
+{
+  "wk_000001207": {
+    "workId": "wk_000001207",
+    "title": "Donkey Hodie",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105473484"
+    },
+    "titles": {
+      "ko": "Donkey Hodie",
+      "en": "Donkey Hodie",
+      "ja": "Donkey Hodie"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002108": {
+    "workId": "wk_000002108",
+    "title": "이웃의 치카라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108605562"
+    },
+    "titles": {
+      "ko": "이웃의 치카라",
+      "en": "Next Door",
+      "ja": "となりのチカラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005007": {
+    "workId": "wk_000005007",
+    "title": "별들에게 물어봐",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111820593"
+    },
+    "titles": {
+      "ko": "별들에게 물어봐",
+      "en": "When the Stars Gossip",
+      "ja": "星がウワサするから"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005587": {
+    "workId": "wk_000005587",
+    "title": "에어포스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11259550"
+    },
+    "titles": {
+      "ko": "에어포스",
+      "en": "Air Force",
+      "ja": "エアフォース"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007143": {
+    "workId": "wk_000007143",
+    "title": "천황의 요리번",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11443124"
+    },
+    "titles": {
+      "ko": "천황의 요리번",
+      "en": "The Emperor's Cook",
+      "ja": "天皇の料理番"
+    },
+    "releaseYear": 1979,
+    "creator": "Hisahide Sugimori",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007501": {
+    "workId": "wk_000007501",
+    "title": "봄이여 오라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11513383"
+    },
+    "titles": {
+      "ko": "봄이여 오라",
+      "en": "Q11513383",
+      "ja": "春よ、来い"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008280": {
+    "workId": "wk_000008280",
+    "title": "사랑이라 말해요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116259714"
+    },
+    "titles": {
+      "ko": "사랑이라 말해요",
+      "en": "Call It Love"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009735": {
+    "workId": "wk_000009735",
+    "title": "블랙 도브",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123153922"
+    },
+    "titles": {
+      "ko": "블랙 도브",
+      "en": "Black Doves",
+      "ja": "ブラック・ダヴ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010222": {
+    "workId": "wk_000010222",
+    "title": "클라세 406",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247625"
+    },
+    "titles": {
+      "ko": "클라세 406",
+      "en": "Clase 406"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

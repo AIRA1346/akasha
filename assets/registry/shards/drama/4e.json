@@ -1,0 +1,126 @@
+{
+  "wk_000001960": {
+    "workId": "wk_000001960",
+    "title": "JNN 뉴스데스크",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854598"
+    },
+    "titles": {
+      "ko": "JNN 뉴스데스크",
+      "en": "JNN News Desk",
+      "ja": "JNNニュースデスク"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005062": {
+    "workId": "wk_000005062",
+    "title": "BAZOOKA!!!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11190907"
+    },
+    "titles": {
+      "ko": "BAZOOKA!!!",
+      "en": "BAZOOKA!!!",
+      "ja": "BAZOOKA!!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005263": {
+    "workId": "wk_000005263",
+    "title": "NHK 뉴스 11",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235025"
+    },
+    "titles": {
+      "ko": "NHK 뉴스 11",
+      "en": "NHK News 11",
+      "ja": "NHKニュース11"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008047": {
+    "workId": "wk_000008047",
+    "title": "후쿠오카 연애 백서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11592392"
+    },
+    "titles": {
+      "ko": "후쿠오카 연애 백서",
+      "en": "Fukuoka ren'aihakusho",
+      "ja": "福岡恋愛白書"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008055": {
+    "workId": "wk_000008055",
+    "title": "포토그래퍼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115983087"
+    },
+    "titles": {
+      "ko": "포토그래퍼",
+      "en": "Q115983087"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008686": {
+    "workId": "wk_000008686",
+    "title": "남남",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117031722"
+    },
+    "titles": {
+      "ko": "남남",
+      "en": "Not Others",
+      "ja": "ラブ・パッセンジャー ～私たちの恋愛事情～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010209": {
+    "workId": "wk_000010209",
+    "title": "아모르시토 코라손",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247433"
+    },
+    "titles": {
+      "ko": "아모르시토 코라손",
+      "en": "Amorcito Corazón"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

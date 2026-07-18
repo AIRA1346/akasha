@@ -1,0 +1,160 @@
+{
+  "wk_000001255": {
+    "workId": "wk_000001255",
+    "title": "사키 가케 온가쿠 반즈케 !",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10566904"
+    },
+    "titles": {
+      "ko": "사키 가케 온가쿠 반즈케 !",
+      "en": "Sakigake! Ongaku Bandzuke",
+      "ja": "魁!音楽番付"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001458": {
+    "workId": "wk_000001458",
+    "title": "페이퍼 걸스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106547128"
+    },
+    "titles": {
+      "ko": "페이퍼 걸스",
+      "en": "Paper Girls"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003504": {
+    "workId": "wk_000003504",
+    "title": "광망",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461835"
+    },
+    "titles": {
+      "ko": "광망",
+      "en": "Q109461835"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004405": {
+    "workId": "wk_000004405",
+    "title": "나의 해방일지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110245384"
+    },
+    "titles": {
+      "ko": "나의 해방일지",
+      "en": "My Liberation Notes",
+      "ja": "私の解放日誌"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005388": {
+    "workId": "wk_000005388",
+    "title": "shin-D",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11246014"
+    },
+    "titles": {
+      "ko": "shin-D",
+      "en": "Q11246014",
+      "ja": "shin-D"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007193": {
+    "workId": "wk_000007193",
+    "title": "물 건너온 아빠들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114482223"
+    },
+    "titles": {
+      "ko": "물 건너온 아빠들",
+      "en": "Q114482223"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008540": {
+    "workId": "wk_000008540",
+    "title": "넘버스 : 빌딩숲의 감시자들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116771987"
+    },
+    "titles": {
+      "ko": "넘버스 : 빌딩숲의 감시자들",
+      "en": "Numbers",
+      "ja": "ナンバーズ - ビルの森の監視者たち -"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009807": {
+    "workId": "wk_000009807",
+    "title": "우리, 집",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123762174"
+    },
+    "titles": {
+      "ko": "우리, 집",
+      "en": "Bitter Sweet Hell"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009965": {
+    "workId": "wk_000009965",
+    "title": "우리들의 조부님",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124300767"
+    },
+    "titles": {
+      "ko": "우리들의 조부님",
+      "en": "Q124300767"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

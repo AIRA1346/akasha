@@ -1,0 +1,58 @@
+{
+  "wk_000001630": {
+    "workId": "wk_000001630",
+    "title": "붓센",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11277419"
+    },
+    "titles": {
+      "ko": "붓센",
+      "en": "Bussen",
+      "ja": "ぶっせん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002514": {
+    "workId": "wk_000002514",
+    "title": "미나미 카마쿠라 고교 여자 자전거부",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11408689"
+    },
+    "titles": {
+      "ko": "미나미 카마쿠라 고교 여자 자전거부",
+      "en": "Minami Kamakura High School Girls Cycling Club",
+      "ja": "南鎌倉高校女子自転車部"
+    },
+    "creator": "Noriyuki Matsumoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008354": {
+    "workId": "wk_000008354",
+    "title": "샤먼킹",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q219610"
+    },
+    "titles": {
+      "ko": "샤먼킹",
+      "en": "Shaman King",
+      "ja": "シャーマンキング"
+    },
+    "creator": "Hiroyuki Takei",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

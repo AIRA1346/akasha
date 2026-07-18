@@ -1,0 +1,59 @@
+{
+  "wk_000002930": {
+    "workId": "wk_000002930",
+    "title": "혜성가",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106623226"
+    },
+    "titles": {
+      "ko": "혜성가",
+      "en": "Q106623226"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006486": {
+    "workId": "wk_000006486",
+    "title": "링컨 차를 타는 변호사",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11125816"
+    },
+    "titles": {
+      "ko": "링컨 차를 타는 변호사",
+      "en": "The Lincoln Lawyer",
+      "ja": "リンカーン弁護士"
+    },
+    "releaseYear": 2005,
+    "creator": "Michael Connelly",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009153": {
+    "workId": "wk_000009153",
+    "title": "전현고실",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11397827"
+    },
+    "titles": {
+      "ko": "전현고실",
+      "en": "Zenken Kojitsu",
+      "ja": "前賢故実"
+    },
+    "releaseYear": 1843,
+    "creator": "Kikuchi Yōsai",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

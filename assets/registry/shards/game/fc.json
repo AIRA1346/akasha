@@ -1,0 +1,146 @@
+{
+  "wk_000000052": {
+    "workId": "wk_000000052",
+    "title": "배틀필드 2042",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "DICE",
+    "releaseYear": 2021,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid1517290_2021"
+    ],
+    "titles": {
+      "en": "Battlefield™ 2042",
+      "ko": "배틀필드 2042"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "1517290",
+      "wikidata": "Q106686950"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000002728": {
+    "workId": "wk_000002728",
+    "title": "3LDK",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854387"
+    },
+    "titles": {
+      "ko": "3LDK",
+      "en": "3LDK"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003299": {
+    "workId": "wk_000003299",
+    "title": "유희왕 마스터 듀얼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110619297"
+    },
+    "titles": {
+      "ko": "유희왕 마스터 듀얼",
+      "en": "Yu-Gi-Oh! Master Duel",
+      "ja": "遊戯王マスターデュエル"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003870": {
+    "workId": "wk_000003870",
+    "title": "블래스터 마스터 제로 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111966956"
+    },
+    "titles": {
+      "ko": "블래스터 마스터 제로 3",
+      "en": "Blaster Master Zero 3"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005360": {
+    "workId": "wk_000005360",
+    "title": "바이오하자드 더 머서너리즈 3D",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1145370"
+    },
+    "titles": {
+      "ko": "바이오하자드 더 머서너리즈 3D",
+      "en": "Resident Evil: The Mercenaries 3D",
+      "ja": "バイオハザード ザ・マーセナリーズ 3D"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007597": {
+    "workId": "wk_000007597",
+    "title": "갱스 오브 셔우드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123091797"
+    },
+    "titles": {
+      "ko": "갱스 오브 셔우드",
+      "en": "Gangs of Sherwood",
+      "ja": "Gangs of Sherwood"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010077": {
+    "workId": "wk_000010077",
+    "title": "사월요화 ~4월 8일~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138741041"
+    },
+    "titles": {
+      "ko": "사월요화 ~4월 8일~",
+      "en": "Shigatsu Youka",
+      "ja": "死月妖花"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

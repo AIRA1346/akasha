@@ -1,0 +1,41 @@
+{
+  "wk_000003053": {
+    "workId": "wk_000003053",
+    "title": "미드나잇 라이브러리",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106814534"
+    },
+    "titles": {
+      "ko": "미드나잇 라이브러리",
+      "en": "The Midnight Library"
+    },
+    "releaseYear": 2020,
+    "creator": "マット・ヘイグ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004912": {
+    "workId": "wk_000004912",
+    "title": "아무것도 남지 않은 남자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1089502"
+    },
+    "titles": {
+      "ko": "아무것도 남지 않은 남자",
+      "en": "The Man That Was Used Up",
+      "ja": "使い果たされた男"
+    },
+    "releaseYear": 1839,
+    "creator": "Edgar Allan Poe",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

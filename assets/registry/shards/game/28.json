@@ -1,0 +1,258 @@
+{
+  "wk_000000071": {
+    "workId": "wk_000000071",
+    "title": "폴아웃: 뉴 베가스",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Obsidian",
+    "releaseYear": 2010,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid22380_2010"
+    ],
+    "titles": {
+      "en": "Fallout: New Vegas",
+      "ko": "폴아웃: 뉴 베가스"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "22380",
+      "wikidata": "Q753749"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000839": {
+    "workId": "wk_000000839",
+    "title": "선검기협전 7",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104415519"
+    },
+    "titles": {
+      "ko": "선검기협전 7",
+      "en": "The Legend of Sword and Fairy 7",
+      "ja": "仙剣奇侠伝七"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002243": {
+    "workId": "wk_000002243",
+    "title": "아카네 매니악스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1072198"
+    },
+    "titles": {
+      "ko": "아카네 매니악스",
+      "en": "Akane Maniax",
+      "ja": "アカネマニアックス〜流れ星伝説剛田〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002731": {
+    "workId": "wk_000002731",
+    "title": "Filsnown",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854537"
+    },
+    "titles": {
+      "ko": "Filsnown",
+      "en": "Filsnown"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003381": {
+    "workId": "wk_000003381",
+    "title": "예익의 유스티아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1107526"
+    },
+    "titles": {
+      "ko": "예익의 유스티아",
+      "en": "Aiyoku no Eustia",
+      "ja": "穢翼のユースティア"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003382": {
+    "workId": "wk_000003382",
+    "title": "디모 II",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110768068"
+    },
+    "titles": {
+      "ko": "디모 II",
+      "en": "Deemo II",
+      "ja": "Deemo II"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005431": {
+    "workId": "wk_000005431",
+    "title": "사일런트 힐 f",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114772020"
+    },
+    "titles": {
+      "ko": "사일런트 힐 f",
+      "en": "Q114772020",
+      "ja": "サイレントヒルf"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005487": {
+    "workId": "wk_000005487",
+    "title": "도돈파치 최대왕생",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11491465"
+    },
+    "titles": {
+      "ko": "도돈파치 최대왕생",
+      "en": "DoDonPachi Saidaioujou",
+      "ja": "怒首領蜂最大往生"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005493": {
+    "workId": "wk_000005493",
+    "title": "전여신 ZERO",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11496056"
+    },
+    "titles": {
+      "ko": "전여신 ZERO",
+      "en": "Sen megami ZERO",
+      "ja": "戦女神ZERO"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005901": {
+    "workId": "wk_000005901",
+    "title": "아이돌마스터 신데렐라 걸즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115508"
+    },
+    "titles": {
+      "ko": "아이돌마스터 신데렐라 걸즈",
+      "en": "The Idolmaster Cinderella Girls",
+      "ja": "アイドルマスター シンデレラガールズ"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007799": {
+    "workId": "wk_000007799",
+    "title": "메이드 오브 더 데드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124290966"
+    },
+    "titles": {
+      "ko": "메이드 오브 더 데드",
+      "en": "Maid of the Dead",
+      "ja": "メイド・オブ・ザ・デッド"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009703": {
+    "workId": "wk_000009703",
+    "title": "붕괴: 넥서스 아니마",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135998000"
+    },
+    "titles": {
+      "ko": "붕괴: 넥서스 아니마",
+      "en": "Honkai: Nexus Anima",
+      "ja": "崩壊:ネクサスアニマ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009939": {
+    "workId": "wk_000009939",
+    "title": "셜록 홈즈: 미라의 미스터리",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1374448"
+    },
+    "titles": {
+      "ko": "셜록 홈즈: 미라의 미스터리",
+      "en": "Sherlock Holmes: The Mystery of the Mummy"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

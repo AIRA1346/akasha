@@ -4,48 +4,81 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 
-/// ADR-010 Option A — G1+ assets bundle must stay eager-only (mirrors --strict).
+import '../tool/registry_bundle_contract.dart';
+
 void main() {
-  test('G1+ assets bundle is eager-only and under 15MB (ADR-010)', () {
+  test('reviewed release is a complete full bundle within scale gates', () {
     final root = _projectRoot();
-    final manifestFile = File(p.join(root.path, 'akasha-db', 'manifest.json'));
+    final output = Directory(p.join(root.path, 'assets', 'registry'));
     final manifest =
-        json.decode(manifestFile.readAsStringSync()) as Map<String, dynamic>;
-    final entryCount = manifest['entryCount'] as int;
-    final shards = manifest['shards'] as List;
-
-    final eagerCount =
-        shards.where((s) => s is Map && s['eager'] == true).length;
-    expect(eagerCount, greaterThan(0));
-    expect(eagerCount, lessThan(shards.length));
-
-    var bundled = 0;
-    var assetsBytes = 0;
-    final assetsRoot = Directory(p.join(root.path, 'assets', 'registry'));
-    for (final entity in assetsRoot.listSync(recursive: true)) {
-      if (entity is! File) continue;
-      assetsBytes += entity.lengthSync();
-      if (entity.path.contains('${Platform.pathSeparator}shards${Platform.pathSeparator}') &&
-          entity.path.endsWith('.json')) {
-        bundled++;
-      }
-    }
-
-    expect(bundled, eagerCount);
-
-    if (entryCount > 2500) {
-      expect(
-        bundled,
-        lessThan(shards.length),
-        reason: 'G1+ must not bundle full catalog shards',
-      );
-    }
-
-    const bundleMaxBytes = 15 * 1024 * 1024;
+        jsonDecode(
+              File(p.join(output.path, 'manifest.json')).readAsStringSync(),
+            )
+            as Map<String, dynamic>;
+    final sourceRevision = manifest['sourceRevision']?.toString() ?? '';
     expect(
-      assetsBytes,
-      lessThanOrEqualTo(bundleMaxBytes),
-      reason: 'assets/registry must stay under 15MB ADR-010 trigger',
+      sourceRevision,
+      isNotEmpty,
+      reason: 'bundle manifest must identify the immutable source revision',
+    );
+
+    final audit = auditRegistryBundle(
+      RegistryBundleSpec(
+        source: Directory(p.join(root.path, 'akasha-db')),
+        output: output,
+        mode: RegistryBundleMode.all,
+        sourceRevision: sourceRevision,
+      ),
+    );
+    expect(
+      audit.errors,
+      isEmpty,
+      reason: 'full-bundle contract violations:\n${audit.errors.join('\n')}',
+    );
+    expect(audit.entryCount, CatalogReleaseBaseline.entryCount);
+    expect(audit.manifestShardCount, CatalogReleaseBaseline.manifestShardCount);
+    expect(
+      audit.sourceShardFileCount,
+      CatalogReleaseBaseline.manifestShardCount,
+    );
+    expect(audit.eagerShardCount, CatalogReleaseBaseline.eagerShardCount);
+    expect(
+      audit.registrySchemaVersion,
+      CatalogReleaseBaseline.registrySchemaVersion,
+    );
+    expect(
+      audit.canonicalGeneralCultureCount,
+      CatalogReleaseBaseline.canonicalGeneralCultureCount,
+    );
+    expect(audit.bundledShardCount, audit.manifestShardCount);
+    expect(audit.missingBundleShardCount, 0);
+    expect(audit.orphanBundleShardCount, 0);
+    expect(audit.manifestShaMismatchCount, 0);
+    expect(audit.searchShaMismatchCount, 0);
+    expect(audit.searchMissingIdCount, 0);
+    expect(audit.searchOrphanIdCount, 0);
+
+    expect(
+      audit.entryCount,
+      lessThanOrEqualTo(CatalogScaleCeilings.entryCount),
+      reason:
+          'catalog exceeded the JSON search architecture gate; redesign before release',
+    );
+    expect(
+      audit.manifestShardCount,
+      lessThanOrEqualTo(CatalogScaleCeilings.shardCount),
+      reason: 'catalog exceeded the seven-category v4 shard topology',
+    );
+    expect(
+      audit.bundleAssetBytes,
+      lessThanOrEqualTo(CatalogScaleCeilings.bundleBytes),
+      reason:
+          'bundle exceeded the local-asset gate; re-evaluate remote/data pack',
+    );
+    expect(
+      audit.searchIndexBytes,
+      lessThanOrEqualTo(CatalogScaleCeilings.searchIndexBytes),
+      reason: 'master search index exceeded its redesign gate',
     );
   });
 }

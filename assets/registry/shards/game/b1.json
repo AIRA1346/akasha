@@ -1,0 +1,163 @@
+{
+  "wk_000000266": {
+    "workId": "wk_000000266",
+    "title": "블루 아카이브",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "NEXON Games",
+    "releaseYear": 2021,
+    "tags": [
+      "학원물",
+      "수집형RPG",
+      "청춘",
+      "OST"
+    ],
+    "legacyIds": [
+      "sub_game_blue-archive_2021"
+    ],
+    "titles": {
+      "en": "Blue Archive",
+      "ko": "블루 아카이브"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "coverageSprint04R2Fix": "W3_blue_archive",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "3557620",
+      "wikidata": "Q105344455"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000111": {
+    "workId": "wk_000000111",
+    "title": "스카이림 SE",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Bethesda",
+    "releaseYear": 2016,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid489830_2016"
+    ],
+    "titles": {
+      "en": "The Elder Scrolls V: Skyrim Special Edition",
+      "ko": "스카이림 SE"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "489830",
+      "wikidata": "Q31602948"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000005906": {
+    "workId": "wk_000005906",
+    "title": "하원기가의 일족",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11553587"
+    },
+    "titles": {
+      "ko": "하원기가의 일족",
+      "en": "Kawarazaki-ke no Ichizoku",
+      "ja": "河原崎家の一族"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008087": {
+    "workId": "wk_000008087",
+    "title": "문명 VII",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126405953"
+    },
+    "titles": {
+      "ko": "문명 VII",
+      "en": "Civilization VII",
+      "ja": "シドマイヤーズ シヴィライゼーションVII"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009935": {
+    "workId": "wk_000009935",
+    "title": "스타워즈: 갤럭틱 레이서",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137363888"
+    },
+    "titles": {
+      "ko": "스타워즈: 갤럭틱 레이서",
+      "en": "Q137363888"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010178": {
+    "workId": "wk_000010178",
+    "title": "천주 3: 천벌",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1407885"
+    },
+    "titles": {
+      "ko": "천주 3: 천벌",
+      "en": "Tenchu: Wrath of Heaven",
+      "ja": "天誅 参"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010235": {
+    "workId": "wk_000010235",
+    "title": "리틀 컴퓨터 피플",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1424936"
+    },
+    "titles": {
+      "ko": "리틀 컴퓨터 피플",
+      "en": "Little Computer People",
+      "ja": "リトル・コンピュータ・ピープル"
+    },
+    "releaseYear": 1985,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

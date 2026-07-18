@@ -1,0 +1,174 @@
+{
+  "wk_000001733": {
+    "workId": "wk_000001733",
+    "title": "슈퍼주니어의 선견지명",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10822166"
+    },
+    "titles": {
+      "ko": "슈퍼주니어의 선견지명",
+      "en": "Q10822166"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003602": {
+    "workId": "wk_000003602",
+    "title": "백련성강",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109533884"
+    },
+    "titles": {
+      "ko": "백련성강",
+      "en": "Q109533884"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003604": {
+    "workId": "wk_000003604",
+    "title": "2020 추석특집 아이돌 멍멍 선수권대회",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109534094"
+    },
+    "titles": {
+      "ko": "2020 추석특집 아이돌 멍멍 선수권대회",
+      "en": "Q109534094"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004127": {
+    "workId": "wk_000004127",
+    "title": "슈퍼탤런트 메가 인플루언서 어워즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115442"
+    },
+    "titles": {
+      "ko": "슈퍼탤런트 메가 인플루언서 어워즈",
+      "en": "Q110115442"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004788": {
+    "workId": "wk_000004788",
+    "title": "서울임사부",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11106066"
+    },
+    "titles": {
+      "ko": "서울임사부",
+      "en": "Q11106066"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004854": {
+    "workId": "wk_000004854",
+    "title": "아메리칸 본 차이니즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111169509"
+    },
+    "titles": {
+      "ko": "아메리칸 본 차이니즈",
+      "en": "Karate kid leyends"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005733": {
+    "workId": "wk_000005733",
+    "title": "구~초코 란탄",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11265778"
+    },
+    "titles": {
+      "ko": "구~초코 란탄",
+      "en": "Goo Choco Lantan",
+      "ja": "ぐ～チョコランタン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005869": {
+    "workId": "wk_000005869",
+    "title": "나를 사랑하지 않는 X에게",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112772221"
+    },
+    "titles": {
+      "ko": "나를 사랑하지 않는 X에게",
+      "en": "To X Who Doesn't Love Me"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007894": {
+    "workId": "wk_000007894",
+    "title": "화사쇼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115690059"
+    },
+    "titles": {
+      "ko": "화사쇼",
+      "en": "Q115690059"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008286": {
+    "workId": "wk_000008286",
+    "title": "경시 후카마치 세이지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11632383"
+    },
+    "titles": {
+      "ko": "경시 후카마치 세이지",
+      "en": "Keishi Fukamachi Seiji",
+      "ja": "警視・深町征爾"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

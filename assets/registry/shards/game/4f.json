@@ -1,0 +1,135 @@
+{
+  "wk_000002030": {
+    "workId": "wk_000002030",
+    "title": "에너미 테리토리: 퀘이크 워즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1070466"
+    },
+    "titles": {
+      "ko": "에너미 테리토리: 퀘이크 워즈",
+      "en": "Enemy Territory: Quake Wars",
+      "ja": "Enemy Territory: Quake Wars"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005353": {
+    "workId": "wk_000005353",
+    "title": "귀무자",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1144140"
+    },
+    "titles": {
+      "ko": "귀무자",
+      "en": "Onimusha: Warlords",
+      "ja": "鬼武者"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006819": {
+    "workId": "wk_000006819",
+    "title": "그라디우스 III",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1194133"
+    },
+    "titles": {
+      "ko": "그라디우스 III",
+      "en": "Gradius III",
+      "ja": "グラディウスIII -伝説から神話へ-"
+    },
+    "releaseYear": 1989,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007115": {
+    "workId": "wk_000007115",
+    "title": "슈퍼 마리오 RPG",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119822934"
+    },
+    "titles": {
+      "ko": "슈퍼 마리오 RPG",
+      "en": "Super Mario RPG",
+      "ja": "スーパーマリオRPG"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007865": {
+    "workId": "wk_000007865",
+    "title": "드래곤나이트4",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1254867"
+    },
+    "titles": {
+      "ko": "드래곤나이트4",
+      "en": "Dragon Knight 4",
+      "ja": "ドラゴンナイト4"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008992": {
+    "workId": "wk_000008992",
+    "title": "넥쉬즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1328237"
+    },
+    "titles": {
+      "ko": "넥쉬즈",
+      "en": "Nexuiz",
+      "ja": "Nexuiz"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010129": {
+    "workId": "wk_000010129",
+    "title": "PC 원시인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1399011"
+    },
+    "titles": {
+      "ko": "PC 원시인",
+      "en": "Bonk's Adventure",
+      "ja": "PC原人"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

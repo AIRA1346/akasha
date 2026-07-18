@@ -1,0 +1,217 @@
+{
+  "wk_000000116": {
+    "workId": "wk_000000116",
+    "title": "레인월드",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Videocult",
+    "releaseYear": 2017,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid548570_2017"
+    ],
+    "titles": {
+      "en": "RAGE 2",
+      "ko": "레인월드"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "548570",
+      "wikidata": "Q24877479"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000287": {
+    "workId": "wk_000000287",
+    "title": "명조: 워더링 웨이브",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Kuro Games",
+    "releaseYear": 2024,
+    "tags": [
+      "오픈월드",
+      "액션",
+      "SF",
+      "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_game_wuthering-waves_2024"
+    ],
+    "titles": {
+      "en": "Wuthering Waves",
+      "ko": "명조: 워더링 웨이브"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q117750031"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000596": {
+    "workId": "wk_000000596",
+    "title": "문명: 콜 투 파워",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1027136"
+    },
+    "titles": {
+      "ko": "문명: 콜 투 파워",
+      "en": "Civilization: Call to Power"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001504": {
+    "workId": "wk_000001504",
+    "title": "파이널 판타지 VII: 에버 크라이시스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105689376"
+    },
+    "titles": {
+      "ko": "파이널 판타지 VII: 에버 크라이시스",
+      "en": "Final Fantasy VII: Ever Crisis",
+      "ja": "ファイナルファンタジーVII エバークライシス"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003211": {
+    "workId": "wk_000003211",
+    "title": "헨타이 프리즌",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110072006"
+    },
+    "titles": {
+      "ko": "헨타이 프리즌",
+      "en": "Hentai Prison",
+      "ja": "ヘンタイ・プリズン"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005098": {
+    "workId": "wk_000005098",
+    "title": "마리오와 소닉 베이징 올림픽",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1141627"
+    },
+    "titles": {
+      "ko": "마리오와 소닉 베이징 올림픽",
+      "en": "Mario & Sonic at the Olympic Games",
+      "ja": "マリオ&ソニック AT 北京オリンピック"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006885": {
+    "workId": "wk_000006885",
+    "title": "슈퍼 메트로이드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1194825"
+    },
+    "titles": {
+      "ko": "슈퍼 메트로이드",
+      "en": "Super Metroid",
+      "ja": "スーパーメトロイド"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007116": {
+    "workId": "wk_000007116",
+    "title": "돌아온 명탐정 피카츄",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119833218"
+    },
+    "titles": {
+      "ko": "돌아온 명탐정 피카츄",
+      "en": "Detective Pikachu Returns",
+      "ja": "帰ってきた 名探偵ピカチュウ"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007478": {
+    "workId": "wk_000007478",
+    "title": "언리얼 라이프",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122341735"
+    },
+    "titles": {
+      "ko": "언리얼 라이프",
+      "en": "UNREAL LIFE",
+      "ja": "アンリアルライフ"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007864": {
+    "workId": "wk_000007864",
+    "title": "마우스: P.I. 포 하이어",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125420041"
+    },
+    "titles": {
+      "ko": "마우스: P.I. 포 하이어",
+      "en": "MOUSE: P.I. For Hire"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

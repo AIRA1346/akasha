@@ -1,0 +1,72 @@
+{
+  "wk_000000157": {
+    "workId": "wk_000000157",
+    "title": "인터스텔라",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "크리스토퍼 놀란 (Christopher Nolan)",
+    "releaseYear": 2014,
+    "tags": [
+      "SF",
+      "우주",
+      "가족",
+      "블랙홀"
+    ],
+    "legacyIds": [
+      "gen_movie_interstellar_2014"
+    ],
+    "externalIds": {
+      "wikidata": "Q12103133"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Interstellar",
+      "ko": "인터스텔라"
+    }
+  },
+  "wk_000005508": {
+    "workId": "wk_000005508",
+    "title": "다이하드 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105993"
+    },
+    "titles": {
+      "ko": "다이하드 2",
+      "en": "Die Hard 2",
+      "ja": "ダイ・ハード2"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010148": {
+    "workId": "wk_000010148",
+    "title": "위대한 독재자",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109116"
+    },
+    "titles": {
+      "ko": "위대한 독재자",
+      "en": "The Great Dictator",
+      "ja": "独裁者"
+    },
+    "releaseYear": 1960,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "wk_000000201": {
+    "workId": "wk_000000201",
+    "title": "호리미야",
+    "titles": {
+      "ko": "호리미야",
+      "en": "Horimiya",
+      "ja": "ホリミヤ"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "하기와라 히로",
+    "releaseYear": 2021,
+    "tags": [
+      "로맨스",
+      "학원",
+      "일상",
+      "성장"
+    ],
+    "extensions": {
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2021,
+          "episodes": 13
+        },
+        {
+          "label": "피스",
+          "year": 2023,
+          "episodes": 13
+        }
+      ],
+      "latestSeason": "피스",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_animation_horimiya_2021"
+    ],
+    "externalIds": {
+      "wikidata": "Q104815263"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000228": {
+    "workId": "wk_000000228",
+    "title": "사이코 패스",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Production I.G",
+    "releaseYear": 2012,
+    "tags": [
+      "SF",
+      "스릴러",
+      "디스토피아",
+      "수사"
+    ],
+    "legacyIds": [
+      "sub_animation_psycho-pass_2012"
+    ],
+    "titles": {
+      "en": "Psycho Pass",
+      "ko": "사이코 패스"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q1315951"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000722": {
+    "workId": "wk_000000722",
+    "title": "원피스 - 오마츠리 남작과 비밀의 섬",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048742"
+    },
+    "titles": {
+      "ko": "원피스 - 오마츠리 남작과 비밀의 섬",
+      "en": "One Piece: Baron Omatsuri and the Secret Island",
+      "ja": "ONE PIECE THE MOVIE オマツリ男爵と秘密の島"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001068": {
+    "workId": "wk_000001068",
+    "title": "인류는 쇠퇴했습니다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106919090"
+    },
+    "titles": {
+      "ko": "인류는 쇠퇴했습니다",
+      "en": "Humanity Has Declined",
+      "ja": "人類は衰退しました"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001520": {
+    "workId": "wk_000001520",
+    "title": "돼지의 간은 가열해라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110060930"
+    },
+    "titles": {
+      "ko": "돼지의 간은 가열해라",
+      "en": "Heat the Pig Liver",
+      "ja": "豚のレバーは加熱しろ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005411": {
+    "workId": "wk_000005411",
+    "title": "드래곤볼 슈퍼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q19839121"
+    },
+    "titles": {
+      "ko": "드래곤볼 슈퍼",
+      "en": "Dragon Ball Super",
+      "ja": "ドラゴンボール超"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005613": {
+    "workId": "wk_000005613",
+    "title": "브레이브 비츠",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21011055"
+    },
+    "titles": {
+      "ko": "브레이브 비츠",
+      "en": "Brave Beats",
+      "ja": "ブレイブビーツ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008835": {
+    "workId": "wk_000008835",
+    "title": "기동전함 나데시코",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q701317"
+    },
+    "titles": {
+      "ko": "기동전함 나데시코",
+      "en": "Martian Successor Nadesico",
+      "ja": "機動戦艦ナデシコ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008975": {
+    "workId": "wk_000008975",
+    "title": "기동전함 나데시코 - The Prince of Darkness",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q706746"
+    },
+    "titles": {
+      "ko": "기동전함 나데시코 - The Prince of Darkness",
+      "en": "Martian Successor Nadesico: The Motion Picture – Prince of Darkness",
+      "ja": "機動戦艦ナデシコ -The prince of darkness-"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

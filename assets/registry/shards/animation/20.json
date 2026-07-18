@@ -1,0 +1,132 @@
+{
+  "wk_000001418": {
+    "workId": "wk_000001418",
+    "title": "철야의 노래",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109523881"
+    },
+    "titles": {
+      "ko": "철야의 노래",
+      "en": "Call of the Night",
+      "ja": "よふかしのうた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002633": {
+    "workId": "wk_000002633",
+    "title": "용기폭발 뱅브레이번",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118868959"
+    },
+    "titles": {
+      "ko": "용기폭발 뱅브레이번",
+      "en": "Brave Bang Bravern!",
+      "ja": "勇気爆発バーンブレイバーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003916": {
+    "workId": "wk_000003916",
+    "title": "조금 사랑이 과한 다크엘프가 이세계에서 따라왔다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130244349"
+    },
+    "titles": {
+      "ko": "조금 사랑이 과한 다크엘프가 이세계에서 따라왔다",
+      "en": "Yandere Dark Elf",
+      "ja": "ちょっとだけ愛が重いダークエルフが異世界から追いかけてきた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006674": {
+    "workId": "wk_000006674",
+    "title": "원피스 - 스트롱 월드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q303929"
+    },
+    "titles": {
+      "ko": "원피스 - 스트롱 월드",
+      "en": "One Piece Film: Strong World",
+      "ja": "ONE PIECE FILM STRONG WORLD"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008492": {
+    "workId": "wk_000008492",
+    "title": "후타코이 얼터너티브",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6503143"
+    },
+    "titles": {
+      "ko": "후타코이 얼터너티브",
+      "en": "Futakoi Alternative",
+      "ja": "フタコイ オルタナティブ"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008559": {
+    "workId": "wk_000008559",
+    "title": "던전에서 만남을 추구하면 안 되는 걸까",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q65242485"
+    },
+    "titles": {
+      "ko": "던전에서 만남을 추구하면 안 되는 걸까",
+      "en": "Is It Wrong to Try to Pick Up Girls in a Dungeon?: Arrow of the Orion",
+      "ja": "劇場版 ダンジョンに出会いを求めるのは間違っているだろうか －オリオンの矢－"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008970": {
+    "workId": "wk_000008970",
+    "title": "모모타로 바다의 신병",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q705003"
+    },
+    "titles": {
+      "ko": "모모타로 바다의 신병",
+      "en": "Momotaro: Sacred Sailors",
+      "ja": "桃太郎 海の神兵"
+    },
+    "releaseYear": 1945,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

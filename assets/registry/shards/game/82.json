@@ -1,0 +1,207 @@
+{
+  "wk_000001107": {
+    "workId": "wk_000001107",
+    "title": "스트리트 리갈 레이싱: 레드라인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049210"
+    },
+    "titles": {
+      "ko": "스트리트 리갈 레이싱: 레드라인",
+      "en": "Street Legal Racing: Redline"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001267": {
+    "workId": "wk_000001267",
+    "title": "톰 클랜시의 스플린터 셀: 판도라 투머로",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1053110"
+    },
+    "titles": {
+      "ko": "톰 클랜시의 스플린터 셀: 판도라 투머로",
+      "en": "Tom Clancy's Splinter Cell: Pandora Tomorrow",
+      "ja": "スプリンターセル パンドラトゥモロー"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002238": {
+    "workId": "wk_000002238",
+    "title": "포르자 호라이즌 5",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107214683"
+    },
+    "titles": {
+      "ko": "포르자 호라이즌 5",
+      "en": "Forza Horizon 5",
+      "ja": "Forza Horizon 5"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002406": {
+    "workId": "wk_000002406",
+    "title": "FIFA 23",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107486489"
+    },
+    "titles": {
+      "ko": "FIFA 23",
+      "en": "FIFA 23",
+      "ja": "FIFA 23"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003045": {
+    "workId": "wk_000003045",
+    "title": "헤븐 번즈 레드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109359002"
+    },
+    "titles": {
+      "ko": "헤븐 번즈 레드",
+      "en": "Heaven Burns Red",
+      "ja": "Heaven Burns Red"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006124": {
+    "workId": "wk_000006124",
+    "title": "유희왕 온라인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11640282"
+    },
+    "titles": {
+      "ko": "유희왕 온라인",
+      "en": "Yu-Gi-Oh! Online Duel Evolution",
+      "ja": "遊☆戯☆王ONLINE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006133": {
+    "workId": "wk_000006133",
+    "title": "기타 히어로",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116578"
+    },
+    "titles": {
+      "ko": "기타 히어로",
+      "en": "Guitar Hero",
+      "ja": "ギターヒーロー"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006759": {
+    "workId": "wk_000006759",
+    "title": "쥬라기 공원 2: 혼돈의 섬",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11929495"
+    },
+    "titles": {
+      "ko": "쥬라기 공원 2: 혼돈의 섬",
+      "en": "Jurassic Park: Chaos Island"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008448": {
+    "workId": "wk_000008448",
+    "title": "니드 포 스피드: 하이 스테이크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1309459"
+    },
+    "titles": {
+      "ko": "니드 포 스피드: 하이 스테이크",
+      "en": "Need for Speed: High Stakes"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008578": {
+    "workId": "wk_000008578",
+    "title": "스텔라 소라",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131470049"
+    },
+    "titles": {
+      "ko": "스텔라 소라",
+      "en": "Stella Sora",
+      "ja": "ステラソラ"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009441": {
+    "workId": "wk_000009441",
+    "title": "렘넌트의 바다",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134710439"
+    },
+    "titles": {
+      "ko": "렘넌트의 바다",
+      "en": "Q134710439",
+      "ja": "シー オブ レムナンツ"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

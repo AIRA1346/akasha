@@ -1,0 +1,215 @@
+{
+  "wk_000000493": {
+    "workId": "wk_000000493",
+    "title": "대시 & 릴리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100893315"
+    },
+    "titles": {
+      "ko": "대시 & 릴리",
+      "en": "Dash & Lily",
+      "ja": "ダッシュ&リリー"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000768": {
+    "workId": "wk_000000768",
+    "title": "본키커스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1036337"
+    },
+    "titles": {
+      "ko": "본키커스",
+      "en": "Bonekickers",
+      "ja": "ボーンキッカーズ 考古学調査班"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001050": {
+    "workId": "wk_000001050",
+    "title": "오! 주인님",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104903632"
+    },
+    "titles": {
+      "ko": "오! 주인님",
+      "en": "Oh My Ladylord",
+      "ja": "Oh!ご主人様"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001903": {
+    "workId": "wk_000001903",
+    "title": "더 베스트텐",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10852992"
+    },
+    "titles": {
+      "ko": "더 베스트텐",
+      "en": "The Best Ten",
+      "ja": "ザ・ベストテン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002500": {
+    "workId": "wk_000002500",
+    "title": "인민적정의",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109349262"
+    },
+    "titles": {
+      "ko": "인민적정의",
+      "en": "Q109349262"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003835": {
+    "workId": "wk_000003835",
+    "title": "디 아이돌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109875642"
+    },
+    "titles": {
+      "ko": "디 아이돌",
+      "en": "The Idol"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004263": {
+    "workId": "wk_000004263",
+    "title": "정치를 한다면",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110116272"
+    },
+    "titles": {
+      "ko": "정치를 한다면",
+      "en": "Q110116272"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005667": {
+    "workId": "wk_000005667",
+    "title": "와카바",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262360"
+    },
+    "titles": {
+      "ko": "와카바",
+      "en": "Q11262360",
+      "ja": "わかば"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006375": {
+    "workId": "wk_000006375",
+    "title": "데어데블: 본 어게인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113244844"
+    },
+    "titles": {
+      "ko": "데어데블: 본 어게인",
+      "en": "Daredevil: Born Again",
+      "ja": "デアデビル: ボーン・アゲイン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009410": {
+    "workId": "wk_000009410",
+    "title": "I-LAND2 N/a",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120495966"
+    },
+    "titles": {
+      "ko": "I-LAND2 N/a",
+      "en": "I-LAND 2: N/α",
+      "ja": "I-LAND 2:N/α"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009856": {
+    "workId": "wk_000009856",
+    "title": "7인의 부활",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124043227"
+    },
+    "titles": {
+      "ko": "7인의 부활",
+      "en": "The Escape of the Seven-Resurrection"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010033": {
+    "workId": "wk_000010033",
+    "title": "과부의 전쟁",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124391682"
+    },
+    "titles": {
+      "ko": "과부의 전쟁",
+      "en": "Widows' War",
+      "ja": "未亡人の戦争"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

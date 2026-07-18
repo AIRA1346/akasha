@@ -1,0 +1,59 @@
+{
+  "wk_000006916": {
+    "workId": "wk_000006916",
+    "title": "이누×보쿠SS",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1657773"
+    },
+    "titles": {
+      "ko": "이누×보쿠SS",
+      "en": "Inu × Boku SS",
+      "ja": "妖狐×僕SS"
+    },
+    "creator": "Cocoa Fujiwara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007457": {
+    "workId": "wk_000007457",
+    "title": "학교생활!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17751436"
+    },
+    "titles": {
+      "ko": "학교생활!",
+      "en": "School-Live!",
+      "ja": "がっこうぐらし!"
+    },
+    "creator": "Norimitsu Kaihō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007953": {
+    "workId": "wk_000007953",
+    "title": "데미짱은 이야기하고 싶어",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20041549"
+    },
+    "titles": {
+      "ko": "데미짱은 이야기하고 싶어",
+      "en": "Interviews with Monster Girls",
+      "ja": "亜人ちゃんは語りたい"
+    },
+    "creator": "Petos",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

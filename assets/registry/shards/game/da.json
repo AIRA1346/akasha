@@ -1,0 +1,151 @@
+{
+  "wk_000001464": {
+    "workId": "wk_000001464",
+    "title": "전국무쌍 5",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105608598"
+    },
+    "titles": {
+      "ko": "전국무쌍 5",
+      "en": "Samurai Warriors 5",
+      "ja": "戦国無双5"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001689": {
+    "workId": "wk_000001689",
+    "title": "얼굴없는 달",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1065959"
+    },
+    "titles": {
+      "ko": "얼굴없는 달",
+      "en": "Moonlight Lady",
+      "ja": "顔のない月"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002400": {
+    "workId": "wk_000002400",
+    "title": "아랑전설 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1074309"
+    },
+    "titles": {
+      "ko": "아랑전설 3",
+      "en": "Fatal Fury 3: Road to the Final Victory",
+      "ja": "餓狼伝説3"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004296": {
+    "workId": "wk_000004296",
+    "title": "판타지 골프 팡야 포터블",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11280589"
+    },
+    "titles": {
+      "ko": "판타지 골프 팡야 포터블",
+      "en": "Pangya: Fantasy Golf",
+      "ja": "ファンタジーゴルフ パンヤ PORTABLE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004826": {
+    "workId": "wk_000004826",
+    "title": "슈퍼피플",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113623675"
+    },
+    "titles": {
+      "ko": "슈퍼피플",
+      "en": "Super People 2"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004905": {
+    "workId": "wk_000004905",
+    "title": "슈프림 커맨더 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138297"
+    },
+    "titles": {
+      "ko": "슈프림 커맨더 2",
+      "en": "Supreme Commander 2",
+      "ja": "スプリームコマンダー2"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006196": {
+    "workId": "wk_000006196",
+    "title": "다크사이더스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1166313"
+    },
+    "titles": {
+      "ko": "다크사이더스",
+      "en": "Darksiders",
+      "ja": "ダークサイダーズ 〜審判の時〜"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007968": {
+    "workId": "wk_000007968",
+    "title": "강진축구",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12583122"
+    },
+    "titles": {
+      "ko": "강진축구",
+      "en": "Gangjin Football",
+      "zh": "강진축구"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "wk_000008325": {
+    "workId": "wk_000008325",
+    "title": "아무도 대령에게 편지하지 않다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1132408"
+    },
+    "titles": {
+      "ko": "아무도 대령에게 편지하지 않다",
+      "en": "No One Writes to the Colonel",
+      "ja": "大佐に手紙は来ない"
+    },
+    "releaseYear": 1961,
+    "creator": "ガブリエル・ガルシア＝マルケス",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010137": {
+    "workId": "wk_000010137",
+    "title": "오경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1148214"
+    },
+    "titles": {
+      "ko": "오경",
+      "en": "Five Classics",
+      "ja": "五経"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

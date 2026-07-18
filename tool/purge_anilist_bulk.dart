@@ -130,7 +130,7 @@ void main(List<String> args) {
   print('  shard files updated: $filesWritten');
   print('  empty shard files deleted: $filesDeleted');
   print('  legacy_aliases entries: ${newAliases.length} (+$aliasAdded)');
-  print('\nNext: dart run tool/registry_builder.dart --sync-assets');
+  print('\nNext: dart run tool/registry_builder.dart (source only)');
 }
 
 bool _isAnilistBulk(String workId, Map<String, dynamic> work) {

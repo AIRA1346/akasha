@@ -1,0 +1,127 @@
+{
+  "wk_000000047": {
+    "workId": "wk_000000047",
+    "title": "Nioh 2",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Team Ninja",
+    "releaseYear": 2020,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid1325200_2020"
+    ],
+    "titles": {
+      "en": "Save 60% on Nioh 2 – The Complete Edition",
+      "ko": "Nioh 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "1325200",
+      "wikidata": "Q67482292"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000003872": {
+    "workId": "wk_000003872",
+    "title": "마이 타임 앳 샌드록",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111968979"
+    },
+    "titles": {
+      "ko": "마이 타임 앳 샌드록",
+      "en": "My Time at Sandrock"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006622": {
+    "workId": "wk_000006622",
+    "title": "아이 워너비 더 가이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1188638"
+    },
+    "titles": {
+      "ko": "아이 워너비 더 가이",
+      "en": "I Wanna Be the Guy",
+      "ja": "I Wanna Be the Guy"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008777": {
+    "workId": "wk_000008777",
+    "title": "사로스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132258586"
+    },
+    "titles": {
+      "ko": "사로스",
+      "en": "Saros",
+      "ja": "サロス"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009140": {
+    "workId": "wk_000009140",
+    "title": "컨슘 미",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133786512"
+    },
+    "titles": {
+      "ko": "컨슘 미",
+      "en": "Consume Me"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010134": {
+    "workId": "wk_000010134",
+    "title": "바이오하자드 RE: 베로니카",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q140073669"
+    },
+    "titles": {
+      "ko": "바이오하자드 RE: 베로니카",
+      "en": "Q140073669",
+      "ja": "バイオハザード RE:ベロニカ"
+    },
+    "releaseYear": 2027,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

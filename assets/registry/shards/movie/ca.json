@@ -1,0 +1,40 @@
+{
+  "wk_000009396": {
+    "workId": "wk_000009396",
+    "title": "나는 선생님이 좋아요",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855969"
+    },
+    "titles": {
+      "ko": "나는 선생님이 좋아요",
+      "en": "Q10855969",
+      "ja": "兎の眼"
+    },
+    "releaseYear": 1979,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009453": {
+    "workId": "wk_000009453",
+    "title": "엽문 4: 종극일전",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10862358"
+    },
+    "titles": {
+      "ko": "엽문 4: 종극일전",
+      "en": "Ip Man: The Final Fight",
+      "ja": "イップ・マン 最終章"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

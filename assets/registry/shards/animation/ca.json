@@ -1,0 +1,149 @@
+{
+  "wk_000005081": {
+    "workId": "wk_000005081",
+    "title": "어떤 마술의 금서목록",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17219196"
+    },
+    "titles": {
+      "ko": "어떤 마술의 금서목록",
+      "en": "A Certain Magical Index",
+      "ja": "とある魔術の禁書目録"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006108": {
+    "workId": "wk_000006108",
+    "title": "몸을 긋는 소녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q25206010"
+    },
+    "titles": {
+      "ko": "몸을 긋는 소녀",
+      "en": "Sharp Objects",
+      "ja": "シャープ・オブジェクト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007346": {
+    "workId": "wk_000007346",
+    "title": "엘리먼트 헌터",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q491585"
+    },
+    "titles": {
+      "ko": "엘리먼트 헌터",
+      "en": "Element Hunters",
+      "ja": "エレメントハンター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007518": {
+    "workId": "wk_000007518",
+    "title": "쏙 빠져들것 같아",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q5118980"
+    },
+    "titles": {
+      "ko": "쏙 빠져들것 같아",
+      "en": "Chō Kuse ni Narisō",
+      "ja": "超くせになりそう"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007753": {
+    "workId": "wk_000007753",
+    "title": "가이스터즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q5530257"
+    },
+    "titles": {
+      "ko": "가이스터즈",
+      "en": "Geisters",
+      "ja": "ガイスターズ FRACTIONS OF THE EARTH"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008626": {
+    "workId": "wk_000008626",
+    "title": "짱구는 못말려 극장판: 격돌! 낙서 왕국과 대강 네 명의 용사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q67000951"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 격돌! 낙서 왕국과 대강 네 명의 용사",
+      "en": "Crayon Shin-Chan The Movie: Crash! Graffiti Kingdom and Almost Four Heroes",
+      "ja": "クレヨンしんちゃん 激突! ラクガキングダムとほぼ四人の勇者"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009183": {
+    "workId": "wk_000009183",
+    "title": "루 가루: 기피 해야 할 늑대",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q755253"
+    },
+    "titles": {
+      "ko": "루 가루: 기피 해야 할 늑대",
+      "en": "Loups=Garous",
+      "ja": "ルー=ガルー 忌避すべき狼"
+    },
+    "releaseYear": 2011,
+    "creator": "Natsuhiko Kyōgoku",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009488": {
+    "workId": "wk_000009488",
+    "title": "스페이스벅스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q85871914"
+    },
+    "titles": {
+      "ko": "스페이스벅스",
+      "en": "The Journey Home",
+      "ja": "スペースバグ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

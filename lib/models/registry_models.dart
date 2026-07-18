@@ -43,6 +43,10 @@ class RegistryShardMeta {
 class RegistryManifest {
   final int version;
   final String? generatedAt;
+  final String? releaseId;
+  final String? sourceRevision;
+  final int? schemaVersion;
+  final String? bundleMode;
   final List<RegistryShardMeta> shards;
 
   /// v4 — `hash(wk_) % 2^shardBits`
@@ -52,6 +56,10 @@ class RegistryManifest {
   const RegistryManifest({
     required this.version,
     this.generatedAt,
+    this.releaseId,
+    this.sourceRevision,
+    this.schemaVersion,
+    this.bundleMode,
     required this.shards,
     this.shardBits,
     this.entryCount,
@@ -62,6 +70,10 @@ class RegistryManifest {
     return RegistryManifest(
       version: int.tryParse(json['version']?.toString() ?? '') ?? 1,
       generatedAt: json['generatedAt']?.toString(),
+      releaseId: json['releaseId']?.toString(),
+      sourceRevision: json['sourceRevision']?.toString(),
+      schemaVersion: int.tryParse(json['schemaVersion']?.toString() ?? ''),
+      bundleMode: json['bundleMode']?.toString(),
       shardBits: int.tryParse(json['shardBits']?.toString() ?? ''),
       entryCount: int.tryParse(json['entryCount']?.toString() ?? ''),
       shards: shardList
@@ -115,12 +127,20 @@ class RegistrySearchIndexManifest {
   final int version;
   final int entryCount;
   final String? generatedAt;
+  final String? releaseId;
+  final String? sourceRevision;
+  final int? schemaVersion;
+  final String? bundleMode;
   final List<RegistrySearchIndexShardMeta> shards;
 
   const RegistrySearchIndexManifest({
     required this.version,
     required this.entryCount,
     this.generatedAt,
+    this.releaseId,
+    this.sourceRevision,
+    this.schemaVersion,
+    this.bundleMode,
     required this.shards,
   });
 
@@ -130,6 +150,10 @@ class RegistrySearchIndexManifest {
       version: int.tryParse(json['version']?.toString() ?? '') ?? 1,
       entryCount: int.tryParse(json['entryCount']?.toString() ?? '') ?? 0,
       generatedAt: json['generatedAt']?.toString(),
+      releaseId: json['releaseId']?.toString(),
+      sourceRevision: json['sourceRevision']?.toString(),
+      schemaVersion: int.tryParse(json['schemaVersion']?.toString() ?? ''),
+      bundleMode: json['bundleMode']?.toString(),
       shards: shardList
           .whereType<Map>()
           .map(

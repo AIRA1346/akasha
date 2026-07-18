@@ -1,0 +1,320 @@
+{
+  "wk_000000644": {
+    "workId": "wk_000000644",
+    "title": "호보 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102405516"
+    },
+    "titles": {
+      "ko": "호보 (드라마)",
+      "en": "The Littlest Hobo",
+      "ja": "名犬ロンドン物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001452": {
+    "workId": "wk_000001452",
+    "title": "쌍둥이 에디슨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1065288"
+    },
+    "titles": {
+      "ko": "쌍둥이 에디슨",
+      "en": "The Edison Twins"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001740": {
+    "workId": "wk_000001740",
+    "title": "수당연의",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10831289"
+    },
+    "titles": {
+      "ko": "수당연의",
+      "en": "Heroes in Sui and Tang Dynasties",
+      "ja": "隋唐演義 〜集いし46人の英雄と滅びゆく帝国〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002503": {
+    "workId": "wk_000002503",
+    "title": "어떡할래 이에야스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109359210"
+    },
+    "titles": {
+      "ko": "어떡할래 이에야스",
+      "en": "Dousuru Ieyasu",
+      "ja": "どうする家康"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003002": {
+    "workId": "wk_000003002",
+    "title": "생방송 뉴스 따라잡기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458359"
+    },
+    "titles": {
+      "ko": "생방송 뉴스 따라잡기",
+      "en": "Q109458359"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003154": {
+    "workId": "wk_000003154",
+    "title": "백지연의 피플 INSIDE",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459013"
+    },
+    "titles": {
+      "ko": "백지연의 피플 INSIDE",
+      "en": "Q109459013"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003241": {
+    "workId": "wk_000003241",
+    "title": "리얼드라마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460168"
+    },
+    "titles": {
+      "ko": "리얼드라마",
+      "en": "Q109460168"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003415": {
+    "workId": "wk_000003415",
+    "title": "스타일 웨이브",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461312"
+    },
+    "titles": {
+      "ko": "스타일 웨이브",
+      "en": "Q109461312"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003685": {
+    "workId": "wk_000003685",
+    "title": "익스트림 서바이벌 레이싱퀸",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546040"
+    },
+    "titles": {
+      "ko": "익스트림 서바이벌 레이싱퀸",
+      "en": "Q109546040"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005315": {
+    "workId": "wk_000005315",
+    "title": "NNN 뉴스 플러스1",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235779"
+    },
+    "titles": {
+      "ko": "NNN 뉴스 플러스1",
+      "en": "NNN NEWS PLUS 1",
+      "ja": "NNNニュースプラス1"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006580": {
+    "workId": "wk_000006580",
+    "title": "뮤직드래곤",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11342675"
+    },
+    "titles": {
+      "ko": "뮤직드래곤",
+      "en": "Music Dragon",
+      "ja": "ミュージックドラゴン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007034": {
+    "workId": "wk_000007034",
+    "title": "회랑정 살인사건",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11420201"
+    },
+    "titles": {
+      "ko": "회랑정 살인사건",
+      "en": "Kairō-tei no satsujin",
+      "ja": "回廊亭の殺人"
+    },
+    "releaseYear": 1991,
+    "creator": "Keigo Higashino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007136": {
+    "workId": "wk_000007136",
+    "title": "케빈과 시간 도둑들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114414740"
+    },
+    "titles": {
+      "ko": "케빈과 시간 도둑들",
+      "en": "Time Bandits",
+      "ja": "タイム・バンディット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008120": {
+    "workId": "wk_000008120",
+    "title": "예뻐지고 싶다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11607262"
+    },
+    "titles": {
+      "ko": "예뻐지고 싶다",
+      "en": "Kireininaritai",
+      "ja": "綺麗になりたい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009018": {
+    "workId": "wk_000009018",
+    "title": "더 모멘트 오브 트루스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118904772"
+    },
+    "titles": {
+      "ko": "더 모멘트 오브 트루스",
+      "en": "The Moment of Truth"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009541": {
+    "workId": "wk_000009541",
+    "title": "수퍼특공대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1216349"
+    },
+    "titles": {
+      "ko": "수퍼특공대",
+      "en": "Misfits of Science",
+      "ja": "ミラクル・エスパーズ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010272": {
+    "workId": "wk_000010272",
+    "title": "센티미엔토스 아헤노스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1248310"
+    },
+    "titles": {
+      "ko": "센티미엔토스 아헤노스",
+      "en": "Sentimientos Ajenos"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010319": {
+    "workId": "wk_000010319",
+    "title": "열염",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124853278"
+    },
+    "titles": {
+      "ko": "열염",
+      "en": "Burning Flames",
+      "ja": "烈焔"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -708,7 +708,7 @@ Future<List<_WikidataSearchHit>> _searchWikidata(
 
 Future<void> _runRegistryBuilder(Directory root) async {
   print('');
-  print('==> registry_builder --sync-assets');
+  print('==> registry_builder (source only)');
   final sdkFile = File(p.join(root.path, 'tool', 'flutter_sdk.path'));
   final flutterRoot = sdkFile.existsSync()
       ? sdkFile.readAsStringSync().trim()
@@ -716,7 +716,7 @@ Future<void> _runRegistryBuilder(Directory root) async {
   final dart = p.join(flutterRoot, 'bin', 'dart.bat');
   final result = await Process.run(
     dart,
-    ['run', 'tool/registry_builder.dart', '--sync-assets'],
+    ['run', 'tool/registry_builder.dart'],
     workingDirectory: root.path,
     runInShell: true,
   );

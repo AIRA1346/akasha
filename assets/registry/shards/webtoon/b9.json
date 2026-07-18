@@ -1,0 +1,21 @@
+{
+  "wk_000000976": {
+    "workId": "wk_000000976",
+    "title": "우리 회사의 작은 선배 이야기",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104709894"
+    },
+    "titles": {
+      "ko": "우리 회사의 작은 선배 이야기",
+      "en": "My Tiny Senpai",
+      "ja": "うちの会社の小さい先輩の話"
+    },
+    "creator": "Itsuki Hajime",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "wk_000000262": {
+    "workId": "wk_000000262",
+    "title": "늑대와 향신료",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "히세키 아야",
+    "releaseYear": 2006,
+    "tags": [
+      "라이트노벨",
+      "판타지",
+      "경제",
+      "로맨스"
+    ],
+    "legacyIds": [
+      "sub_book_spice-and-wolf_2006"
+    ],
+    "titles": {
+      "en": "Spice AND Wolf",
+      "ko": "늑대와 향신료"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q385228"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000988": {
+    "workId": "wk_000000988",
+    "title": "레프트 비하인드",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1027525"
+    },
+    "titles": {
+      "ko": "레프트 비하인드",
+      "en": "Left Behind",
+      "ja": "レフトビハインド"
+    },
+    "creator": "Tim LaHaye",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001033": {
+    "workId": "wk_000001033",
+    "title": "고산자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103037616"
+    },
+    "titles": {
+      "ko": "고산자",
+      "en": "Q103037616"
+    },
+    "releaseYear": 2009,
+    "creator": "Park Bum-shin",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005053": {
+    "workId": "wk_000005053",
+    "title": "퍼레이드",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10917653"
+    },
+    "titles": {
+      "ko": "퍼레이드",
+      "en": "Q10917653",
+      "ja": "パレード"
+    },
+    "releaseYear": 2010,
+    "creator": "Shuichi Yoshida",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007015": {
+    "workId": "wk_000007015",
+    "title": "페이트 스트레인지 페이크",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11200035"
+    },
+    "titles": {
+      "ko": "페이트 스트레인지 페이크",
+      "en": "Fate/strange Fake",
+      "ja": "Fate/strange Fake"
+    },
+    "releaseYear": 2015,
+    "creator": "Ryohgo Narita",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009107": {
+    "workId": "wk_000009107",
+    "title": "육화의 용사",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11392504"
+    },
+    "titles": {
+      "ko": "육화의 용사",
+      "en": "Rokka no Yūsha",
+      "ja": "六花の勇者"
+    },
+    "releaseYear": 2011,
+    "creator": "Ishio Yamagata",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

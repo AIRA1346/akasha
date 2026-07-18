@@ -1,0 +1,234 @@
+{
+  "wk_000000182": {
+    "workId": "wk_000000182",
+    "title": "실력 지상주의 교실",
+    "titles": {
+      "ko": "실력 지상주의 교실",
+      "en": "Classroom of the Elite",
+      "ja": "ようこそ実力至上主義の教室へ"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "시무라 킨고",
+    "releaseYear": 2017,
+    "tags": [
+      "학원",
+      "심리",
+      "전략",
+      "드라마"
+    ],
+    "extensions": {
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2017,
+          "episodes": 12
+        },
+        {
+          "label": "2기",
+          "year": 2022,
+          "episodes": 13
+        },
+        {
+          "label": "3기",
+          "year": 2024,
+          "episodes": 13
+        }
+      ],
+      "latestSeason": "3기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_animation_classroom-of-the-elite_2017"
+    ],
+    "externalIds": {
+      "wikidata": "Q61648728"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001065": {
+    "workId": "wk_000001065",
+    "title": "익스플레인: 돈을 해설하다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106893388"
+    },
+    "titles": {
+      "ko": "익스플레인: 돈을 해설하다",
+      "en": "Money, Explained",
+      "ja": "\"お金\"をダイジェスト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001326": {
+    "workId": "wk_000001326",
+    "title": "극장판 머나먼 시공 속에서 무일야",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855670"
+    },
+    "titles": {
+      "ko": "극장판 머나먼 시공 속에서 무일야",
+      "en": "Harukanaru Toki no Naka de: Maihitoyo",
+      "ja": "劇場版 遙かなる時空の中で 舞一夜"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001758": {
+    "workId": "wk_000001758",
+    "title": "나나마루 산바츠",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11323928"
+    },
+    "titles": {
+      "ko": "나나마루 산바츠",
+      "en": "Nana Maru San Batsu",
+      "ja": "ナナマル サンバツ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001988": {
+    "workId": "wk_000001988",
+    "title": "성자무쌍 ~샐러리맨이 이세계에서 살아남기 위해 걷는 길~/애니메이션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114443133"
+    },
+    "titles": {
+      "ko": "성자무쌍 ~샐러리맨이 이세계에서 살아남기 위해 걷는 길~/애니메이션",
+      "en": "The Great Cleric",
+      "ja": "聖者無双〜サラリーマン、異世界で生き残るために歩む道〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002398": {
+    "workId": "wk_000002398",
+    "title": "결혼반지 이야기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117291160"
+    },
+    "titles": {
+      "ko": "결혼반지 이야기",
+      "en": "Tales of Wedding Rings",
+      "ja": "結婚指輪物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005406": {
+    "workId": "wk_000005406",
+    "title": "VAMPIRE HOLMES",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q19688552"
+    },
+    "titles": {
+      "ko": "VAMPIRE HOLMES",
+      "en": "Vampire Holmes",
+      "ja": "VAMPIRE HOLMES"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006932": {
+    "workId": "wk_000006932",
+    "title": "파워 스톤",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3909667"
+    },
+    "titles": {
+      "ko": "파워 스톤",
+      "en": "Power Stone",
+      "ja": "パワーストーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008841": {
+    "workId": "wk_000008841",
+    "title": "소공녀 세라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q702071"
+    },
+    "titles": {
+      "ko": "소공녀 세라",
+      "en": "Princess Sara",
+      "ja": "小公女セーラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009125": {
+    "workId": "wk_000009125",
+    "title": "프린세스 츄츄",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q739135"
+    },
+    "titles": {
+      "ko": "프린세스 츄츄",
+      "en": "Princess Tutu",
+      "ja": "プリンセスチュチュ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009432": {
+    "workId": "wk_000009432",
+    "title": "위 아 후 위 아",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q85115721"
+    },
+    "titles": {
+      "ko": "위 아 후 위 아",
+      "en": "We Are Who We Are",
+      "ja": "僕らのままで/WE ARE WHO WE ARE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

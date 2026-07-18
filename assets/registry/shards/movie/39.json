@@ -1,0 +1,148 @@
+{
+  "wk_000000168": {
+    "workId": "wk_000000168",
+    "title": "매트릭스",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "워쇼스키 자매 (The Wachowskis)",
+    "releaseYear": 1999,
+    "tags": [
+      "사이버펑크",
+      "SF",
+      "액션",
+      "철학"
+    ],
+    "legacyIds": [
+      "gen_movie_the-matrix_1999"
+    ],
+    "externalIds": {
+      "wikidata": "Q83495"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    },
+    "titles": {
+      "en": "THE Matrix",
+      "ko": "매트릭스"
+    }
+  },
+  "wk_000001344": {
+    "workId": "wk_000001344",
+    "title": "바이 바이 버디",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1018487"
+    },
+    "titles": {
+      "ko": "바이 바이 버디",
+      "en": "Bye Bye Birdie",
+      "ja": "バイ・バイ・バーディー"
+    },
+    "releaseYear": 1963,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002574": {
+    "workId": "wk_000002574",
+    "title": "프린세스 다이어리",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1046295"
+    },
+    "titles": {
+      "ko": "프린세스 다이어리",
+      "en": "The Princess Diaries",
+      "ja": "プリティ・プリンセス"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007877": {
+    "workId": "wk_000007877",
+    "title": "무리나",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107562966"
+    },
+    "titles": {
+      "ko": "무리나",
+      "en": "Murina",
+      "ja": "ムリナ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007883": {
+    "workId": "wk_000007883",
+    "title": "달링스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107584214"
+    },
+    "titles": {
+      "ko": "달링스",
+      "en": "Darlings",
+      "ja": "ダーリンズ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008873": {
+    "workId": "wk_000008873",
+    "title": "레트리뷰션",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108314793"
+    },
+    "titles": {
+      "ko": "레트리뷰션",
+      "en": "Retribution",
+      "ja": "バッド・デイ・ドライブ"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010349": {
+    "workId": "wk_000010349",
+    "title": "시티 오브 더 리빙 데드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1093026"
+    },
+    "titles": {
+      "ko": "시티 오브 더 리빙 데드",
+      "en": "City of the Living Dead",
+      "ja": "地獄の門"
+    },
+    "releaseYear": 1980,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

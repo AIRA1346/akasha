@@ -1,0 +1,300 @@
+{
+  "wk_000000647": {
+    "workId": "wk_000000647",
+    "title": "몸과 마음",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10264499"
+    },
+    "titles": {
+      "ko": "몸과 마음",
+      "en": "De Corpo e Alma"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001732": {
+    "workId": "wk_000001732",
+    "title": "콘티고 시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108168338"
+    },
+    "titles": {
+      "ko": "콘티고 시",
+      "en": "Contigo sí",
+      "ja": "コンティゴ・シ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002505": {
+    "workId": "wk_000002505",
+    "title": "큰 빨간와 작은 늑대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10937261"
+    },
+    "titles": {
+      "ko": "큰 빨간와 작은 늑대",
+      "en": "Big Red Riding Hood",
+      "ja": "ビッグ赤ずきんと小い狼"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003252": {
+    "workId": "wk_000003252",
+    "title": "너의 뺨에 입맞추리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460660"
+    },
+    "titles": {
+      "ko": "너의 뺨에 입맞추리",
+      "en": "Q109460660"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004403": {
+    "workId": "wk_000004403",
+    "title": "내과 박원장",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110224034"
+    },
+    "titles": {
+      "ko": "내과 박원장",
+      "en": "Internal Medicine Park Won Jang"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004858": {
+    "workId": "wk_000004858",
+    "title": "마녀는 살아있다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111183793"
+    },
+    "titles": {
+      "ko": "마녀는 살아있다",
+      "en": "The Witch Is Alive"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005517": {
+    "workId": "wk_000005517",
+    "title": "아빠! 어디가?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11256374"
+    },
+    "titles": {
+      "ko": "아빠! 어디가?",
+      "en": "Dad! Where Are We Going?",
+      "ja": "パパ! どこ行くの?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005792": {
+    "workId": "wk_000005792",
+    "title": "공소",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112704343"
+    },
+    "titles": {
+      "ko": "공소",
+      "en": "Prosecution Elite"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006449": {
+    "workId": "wk_000006449",
+    "title": "뷰티 7",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11330945"
+    },
+    "titles": {
+      "ko": "뷰티 7",
+      "en": "Beauty 7",
+      "ja": "ビューティ7"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007944": {
+    "workId": "wk_000007944",
+    "title": "관계자 외 출입금지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115772342"
+    },
+    "titles": {
+      "ko": "관계자 외 출입금지",
+      "en": "Q115772342"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008683": {
+    "workId": "wk_000008683",
+    "title": "비밀의 비밀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117005456"
+    },
+    "titles": {
+      "ko": "비밀의 비밀",
+      "en": "Fool Me Once",
+      "ja": "偽りの銃弾"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008755": {
+    "workId": "wk_000008755",
+    "title": "외교관",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117425241"
+    },
+    "titles": {
+      "ko": "외교관",
+      "en": "The Diplomat",
+      "ja": "ザ・ディプロマット (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009270": {
+    "workId": "wk_000009270",
+    "title": "신문연파",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1196286"
+    },
+    "titles": {
+      "ko": "신문연파",
+      "en": "Xinwen Lianbo",
+      "ja": "新聞聯播"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009418": {
+    "workId": "wk_000009418",
+    "title": "마이데몬",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120721044"
+    },
+    "titles": {
+      "ko": "마이데몬",
+      "en": "My Demon",
+      "ja": "マイ・デーモン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009618": {
+    "workId": "wk_000009618",
+    "title": "Meet the MP",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122443068"
+    },
+    "titles": {
+      "ko": "Meet the MP",
+      "en": "Meet the MP"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009669": {
+    "workId": "wk_000009669",
+    "title": "여왕의 교실",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12252305"
+    },
+    "titles": {
+      "ko": "여왕의 교실",
+      "en": "The Queen's Classroom",
+      "ja": "女王の教室"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010035": {
+    "workId": "wk_000010035",
+    "title": "연애 지상주의 구역",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124425917"
+    },
+    "titles": {
+      "ko": "연애 지상주의 구역",
+      "en": "Love for Love's Sake"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

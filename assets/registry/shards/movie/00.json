@@ -1,0 +1,96 @@
+{
+  "wk_000000680": {
+    "workId": "wk_000000680",
+    "title": "그로잉 업 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1003092"
+    },
+    "titles": {
+      "ko": "그로잉 업 2",
+      "en": "Going Steady",
+      "ja": "グローイング・アップ2/ゴーイング・ステディ"
+    },
+    "releaseYear": 1989,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001427": {
+    "workId": "wk_000001427",
+    "title": "엽표행동",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102036299"
+    },
+    "titles": {
+      "ko": "엽표행동",
+      "en": "Cheetah on Fire"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001429": {
+    "workId": "wk_000001429",
+    "title": "나 홀로 즐거운 집에",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102046208"
+    },
+    "titles": {
+      "ko": "나 홀로 즐거운 집에",
+      "en": "Home Sweet Home Alone",
+      "ja": "ホーム・スイート・ホーム・アローン"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005781": {
+    "workId": "wk_000005781",
+    "title": "죽은 시인의 사회",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106316"
+    },
+    "titles": {
+      "ko": "죽은 시인의 사회",
+      "en": "Dead Poets Society",
+      "ja": "いまを生きる"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009895": {
+    "workId": "wk_000009895",
+    "title": "사탄의 인형 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1089281"
+    },
+    "titles": {
+      "ko": "사탄의 인형 2",
+      "en": "Child's Play 2",
+      "ja": "チャイルド・プレイ2"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

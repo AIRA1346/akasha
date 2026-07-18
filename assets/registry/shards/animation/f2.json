@@ -1,0 +1,131 @@
+{
+  "wk_000000611": {
+    "workId": "wk_000000611",
+    "title": "용과 주근깨 공주",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104184744"
+    },
+    "titles": {
+      "ko": "용과 주근깨 공주",
+      "en": "Belle",
+      "ja": "竜とそばかすの姫"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004882": {
+    "workId": "wk_000004882",
+    "title": "유희왕 ARC-V",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15633150"
+    },
+    "titles": {
+      "ko": "유희왕 ARC-V",
+      "en": "Yu-Gi-Oh! Arc-V",
+      "ja": "遊☆戯☆王ARC-V"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005479": {
+    "workId": "wk_000005479",
+    "title": "기동전사 건담 철혈의 오펀스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20668445"
+    },
+    "titles": {
+      "ko": "기동전사 건담 철혈의 오펀스",
+      "en": "Mobile Suit Gundam: Iron-Blooded Orphans",
+      "ja": "機動戦士ガンダム 鉄血のオルフェンズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006864": {
+    "workId": "wk_000006864",
+    "title": "극장판 카드캡터 사쿠라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3658413"
+    },
+    "titles": {
+      "ko": "극장판 카드캡터 사쿠라",
+      "en": "Cardcaptor Sakura: The Movie",
+      "ja": "劇場版カードキャプターさくら"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007524": {
+    "workId": "wk_000007524",
+    "title": "열공의 방문자 테오키스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q515045"
+    },
+    "titles": {
+      "ko": "열공의 방문자 테오키스",
+      "en": "Pokémon: Destiny Deoxys",
+      "ja": "劇場版ポケットモンスター アドバンスジェネレーション 裂空の訪問者 デオキシス"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009206": {
+    "workId": "wk_000009206",
+    "title": "재판",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q76475001"
+    },
+    "titles": {
+      "ko": "재판",
+      "en": "The Trial",
+      "ja": "プロチェッソ - 少女が語らなかったこと -"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009877": {
+    "workId": "wk_000009877",
+    "title": "풍인물어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q960545"
+    },
+    "titles": {
+      "ko": "풍인물어",
+      "en": "Windy Tales",
+      "ja": "風人物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

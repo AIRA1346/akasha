@@ -1,0 +1,115 @@
+{
+  "wk_000003582": {
+    "workId": "wk_000003582",
+    "title": "첫눈에 반할 통계적 확률",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105095346"
+    },
+    "titles": {
+      "ko": "첫눈에 반할 통계적 확률",
+      "en": "Love at First Sight",
+      "ja": "カレとカノジョの確率"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004846": {
+    "workId": "wk_000004846",
+    "title": "런닝맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058512"
+    },
+    "titles": {
+      "ko": "런닝맨",
+      "en": "The Running Man",
+      "ja": "バトルランナー"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006224": {
+    "workId": "wk_000006224",
+    "title": "설리반의 여행",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1065711"
+    },
+    "titles": {
+      "ko": "설리반의 여행",
+      "en": "Sullivan's Travels",
+      "ja": "サリヴァンの旅"
+    },
+    "releaseYear": 1942,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008660": {
+    "workId": "wk_000008660",
+    "title": "애프터매스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107976778"
+    },
+    "titles": {
+      "ko": "애프터매스",
+      "en": "Aftermath",
+      "ja": "アフターマス　余波"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010092": {
+    "workId": "wk_000010092",
+    "title": "포커 페이스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109041631"
+    },
+    "titles": {
+      "ko": "포커 페이스",
+      "en": "Poker Face",
+      "ja": "ポーカーフェイス　裏切りのカード"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010201": {
+    "workId": "wk_000010201",
+    "title": "성난 바다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1091178"
+    },
+    "titles": {
+      "ko": "성난 바다",
+      "en": "The Sea"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

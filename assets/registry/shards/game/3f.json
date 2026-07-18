@@ -1,0 +1,165 @@
+{
+  "wk_000000036": {
+    "workId": "wk_000000036",
+    "title": "호라이즌 제로 던",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Guerrilla",
+    "releaseYear": 2020,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid1151640_2020"
+    ],
+    "titles": {
+      "en": "Horizon Zero Dawn™ Complete Edition",
+      "ko": "호라이즌 제로 던"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "1151640",
+      "wikidata": "Q20155528"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000778": {
+    "workId": "wk_000000778",
+    "title": "이삭의 구속",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041427"
+    },
+    "titles": {
+      "ko": "이삭의 구속",
+      "en": "The Binding of Isaac",
+      "ja": "ザ・バインディング・オブ・アイザック"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004307": {
+    "workId": "wk_000004307",
+    "title": "레고 레이서",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1128672"
+    },
+    "titles": {
+      "ko": "레고 레이서",
+      "en": "Lego Racers"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007669": {
+    "workId": "wk_000007669",
+    "title": "땡크 굿니스 유어 히어!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123739339"
+    },
+    "titles": {
+      "ko": "땡크 굿니스 유어 히어!",
+      "en": "Thank Goodness You're Here!"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009229": {
+    "workId": "wk_000009229",
+    "title": "파라파 더 래퍼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1340462"
+    },
+    "titles": {
+      "ko": "파라파 더 래퍼",
+      "en": "PaRappa the Rapper",
+      "ja": "パラッパラッパー"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009300": {
+    "workId": "wk_000009300",
+    "title": "갓 오브 워: 체인 오브 올림푸스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1341921"
+    },
+    "titles": {
+      "ko": "갓 오브 워: 체인 오브 올림푸스",
+      "en": "God of War: Chains of Olympus",
+      "ja": "ゴッド・オブ・ウォー 落日の悲愴曲"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009881": {
+    "workId": "wk_000009881",
+    "title": "시스템 쇼크 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1371495"
+    },
+    "titles": {
+      "ko": "시스템 쇼크 2",
+      "en": "System Shock 2",
+      "ja": "System Shock 2"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010230": {
+    "workId": "wk_000010230",
+    "title": "레이맨 3: 후드럼 대소동",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1416931"
+    },
+    "titles": {
+      "ko": "레이맨 3: 후드럼 대소동",
+      "en": "Rayman 3: Hoodlum Havoc"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

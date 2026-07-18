@@ -1,0 +1,78 @@
+{
+  "wk_000001199": {
+    "workId": "wk_000001199",
+    "title": "쿨하고 바보 같은 남자",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111693578"
+    },
+    "titles": {
+      "ko": "쿨하고 바보 같은 남자",
+      "en": "Play It Cool, Guys",
+      "ja": "クールドジ男子"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006326": {
+    "workId": "wk_000006326",
+    "title": "미유키",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1355719"
+    },
+    "titles": {
+      "ko": "미유키",
+      "en": "Miyuki",
+      "ja": "みゆき"
+    },
+    "creator": "Mitsuru Adachi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007772": {
+    "workId": "wk_000007772",
+    "title": "오늘, 사랑을 시작합니다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1960006"
+    },
+    "titles": {
+      "ko": "오늘, 사랑을 시작합니다",
+      "en": "Kyō, Koi o Hajimemasu",
+      "ja": "今日、恋をはじめます"
+    },
+    "creator": "Kanan Minami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008489": {
+    "workId": "wk_000008489",
+    "title": "마녀의 하인과 마왕의 뿔",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22131515"
+    },
+    "titles": {
+      "ko": "마녀의 하인과 마왕의 뿔",
+      "en": "Majo no Geboku to Maō no Tsuno",
+      "ja": "魔女の下僕と魔王のツノ"
+    },
+    "creator": "Mochi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

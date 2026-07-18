@@ -1,0 +1,126 @@
+{
+  "wk_000001737": {
+    "workId": "wk_000001737",
+    "title": "아메리카 퍼니스트 홈 비디오: 동물 에디션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108292848"
+    },
+    "titles": {
+      "ko": "아메리카 퍼니스트 홈 비디오: 동물 에디션",
+      "en": "America's Funniest Home Videos: Animal Edition"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004777": {
+    "workId": "wk_000004777",
+    "title": "내셔널 트레져",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110938022"
+    },
+    "titles": {
+      "ko": "내셔널 트레져",
+      "en": "National Treasure: Edge of History",
+      "ja": "ナショナル・トレジャー 一族の謎"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005316": {
+    "workId": "wk_000005316",
+    "title": "뒤돌아보면 녀석이 있다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235931"
+    },
+    "titles": {
+      "ko": "뒤돌아보면 녀석이 있다",
+      "en": "Q11235931",
+      "ja": "振り返れば奴がいる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005600": {
+    "workId": "wk_000005600",
+    "title": "오하요 5",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262124"
+    },
+    "titles": {
+      "ko": "오하요 5",
+      "en": "Ohayō 5",
+      "ja": "おはよう5"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007024": {
+    "workId": "wk_000007024",
+    "title": "나고야 행 막차",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11415248"
+    },
+    "titles": {
+      "ko": "나고야 행 막차",
+      "en": "Nagoya Iki Saishū Ressha",
+      "ja": "名古屋行き最終列車"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009158": {
+    "workId": "wk_000009158",
+    "title": "마스 사베 엘 디아블로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1191179"
+    },
+    "titles": {
+      "ko": "마스 사베 엘 디아블로",
+      "en": "Más Sabe el Diablo"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009337": {
+    "workId": "wk_000009337",
+    "title": "과학전대 다이너맨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1200102"
+    },
+    "titles": {
+      "ko": "과학전대 다이너맨",
+      "en": "Kagaku Sentai Dynaman",
+      "ja": "科学戦隊ダイナマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

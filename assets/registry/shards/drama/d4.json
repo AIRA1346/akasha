@@ -1,0 +1,161 @@
+{
+  "wk_000003238": {
+    "workId": "wk_000003238",
+    "title": "애적이상생활",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459865"
+    },
+    "titles": {
+      "ko": "애적이상생활",
+      "en": "Q109459865"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003416": {
+    "workId": "wk_000003416",
+    "title": "게임돌림픽",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461384"
+    },
+    "titles": {
+      "ko": "게임돌림픽",
+      "en": "Q109461384"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004617": {
+    "workId": "wk_000004617",
+    "title": "정의",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11073295"
+    },
+    "titles": {
+      "ko": "정의",
+      "en": "Friendship"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005583": {
+    "workId": "wk_000005583",
+    "title": "억만장자와 결혼하는 방법",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11259047"
+    },
+    "titles": {
+      "ko": "억만장자와 결혼하는 방법",
+      "en": "Q11259047",
+      "ja": "億万長者と結婚する方法"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007508": {
+    "workId": "wk_000007508",
+    "title": "월요일부터 밤 흐림",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11516120"
+    },
+    "titles": {
+      "ko": "월요일부터 밤 흐림",
+      "en": "Monday Late Night Show",
+      "ja": "月曜から夜ふかし"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008544": {
+    "workId": "wk_000008544",
+    "title": "드 S 형사 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11677996"
+    },
+    "titles": {
+      "ko": "드 S 형사 시리즈",
+      "en": "Do S Deka",
+      "ja": "ドS刑事シリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009406": {
+    "workId": "wk_000009406",
+    "title": "가면라이더 스트롱거",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1204069"
+    },
+    "titles": {
+      "ko": "가면라이더 스트롱거",
+      "en": "Kamen Rider Stronger",
+      "ja": "仮面ライダーストロンガー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009470": {
+    "workId": "wk_000009470",
+    "title": "선재 업고 튀어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121144610"
+    },
+    "titles": {
+      "ko": "선재 업고 튀어",
+      "en": "Lovely Runner",
+      "ja": "ソンジェ背負って走れ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010032": {
+    "workId": "wk_000010032",
+    "title": "로얄로더",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124389049"
+    },
+    "titles": {
+      "ko": "로얄로더",
+      "en": "The Impossible Heir",
+      "ja": "予期せぬ相続者"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

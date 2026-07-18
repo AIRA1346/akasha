@@ -1,0 +1,128 @@
+{
+  "wk_000000095": {
+    "workId": "wk_000000095",
+    "title": "Grand Theft Auto III",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Rockstar",
+    "releaseYear": 2001,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid3240220_2001"
+    ],
+    "titles": {
+      "en": "Grand Theft Auto V Enhanced",
+      "ko": "Grand Theft Auto III"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "3240220",
+      "wikidata": "Q149106"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000003295": {
+    "workId": "wk_000003295",
+    "title": "쇼와 아메리칸 스토리",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110476247"
+    },
+    "titles": {
+      "ko": "쇼와 아메리칸 스토리",
+      "en": "Showa American Story",
+      "ja": "昭和米国物語"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008032": {
+    "workId": "wk_000008032",
+    "title": "카르마 온라인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12620344"
+    },
+    "titles": {
+      "ko": "카르마 온라인",
+      "en": "Karma Online"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008252": {
+    "workId": "wk_000008252",
+    "title": "반조 카주이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129000"
+    },
+    "titles": {
+      "ko": "반조 카주이",
+      "en": "Banjo-Kazooie",
+      "ja": "バンジョーとカズーイの大冒険"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009781": {
+    "workId": "wk_000009781",
+    "title": "빅토리아 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1366277"
+    },
+    "titles": {
+      "ko": "빅토리아 2",
+      "en": "Victoria II",
+      "ja": "Victoria II"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010079": {
+    "workId": "wk_000010079",
+    "title": "최악의 재액인간에게 바친다",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139093201"
+    },
+    "titles": {
+      "ko": "최악의 재액인간에게 바친다",
+      "en": "Saiaku Naru Saiyaku Ningen ni Sasagu",
+      "ja": "最悪なる災厄人間に捧ぐ"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "wk_000004725": {
+    "workId": "wk_000004725",
+    "title": "불수반열반약설교계경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10886832"
+    },
+    "titles": {
+      "ko": "불수반열반약설교계경",
+      "en": "Bequeathed Teachings Sutra",
+      "ja": "仏垂般涅槃略説教誡経"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005568": {
+    "workId": "wk_000005568",
+    "title": "메그레와 벤치의 사나이",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1095224"
+    },
+    "titles": {
+      "ko": "메그레와 벤치의 사나이",
+      "en": "Maigret and the Man on the Boulevard"
+    },
+    "releaseYear": 1953,
+    "creator": "Georges Simenon",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006893": {
+    "workId": "wk_000006893",
+    "title": "흑소소설",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11179390"
+    },
+    "titles": {
+      "ko": "흑소소설",
+      "en": "Q11179390",
+      "ja": "黒笑小説"
+    },
+    "releaseYear": 2005,
+    "creator": "東野圭吾",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008253": {
+    "workId": "wk_000008253",
+    "title": "그림자 영웅의 일상담 용사의 뒤에서 암약하고 있던 최강의 에이전트. 조직이 해체되었으므로, 정체를 숨기고 남들 만큼의 일상을 구가한다.",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113159311"
+    },
+    "titles": {
+      "ko": "그림자 영웅의 일상담 용사의 뒤에서 암약하고 있던 최강의 에이전트. 조직이 해체되었으므로, 정체를 숨기고 남들 만큼의 일상을 구가한다.",
+      "en": "Kage no Eiyū no Nichijō Tan: Yūsha no Ura de Anyaku Shiteita Saikyō no Agent. Soshiki ga Kaitai Sareta no de, Shōtai Kakushite Hitonami no Nichijō o Ōka Suru",
+      "ja": "影の英雄の日常譚 勇者の裏で暗躍していた最強のエージェント。組織が解体されたので、正体隠して人並みの日常を謳歌する。"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008866": {
+    "workId": "wk_000008866",
+    "title": "예지몽",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11371100"
+    },
+    "titles": {
+      "ko": "예지몽",
+      "en": "Precognitive Dreams",
+      "ja": "予知夢"
+    },
+    "releaseYear": 2000,
+    "creator": "히가시노 게이고",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010198": {
+    "workId": "wk_000010198",
+    "title": "악당 (야쿠마루 가쿠)",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11492550"
+    },
+    "titles": {
+      "ko": "악당 (야쿠마루 가쿠)",
+      "en": "Akutō (Gaku Yakumaru)",
+      "ja": "悪党 (薬丸岳)"
+    },
+    "releaseYear": 2009,
+    "creator": "Gaku Yakumaru",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

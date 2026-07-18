@@ -1,0 +1,147 @@
+{
+  "wk_000000058": {
+    "workId": "wk_000000058",
+    "title": "킹덤 컴 2",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Warhorse",
+    "releaseYear": 2024,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid1771300_2024"
+    ],
+    "titles": {
+      "en": "Save 50% on Kingdom Come: Deliverance II",
+      "ko": "킹덤 컴 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "1771300",
+      "wikidata": "Q125430996"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000003477": {
+    "workId": "wk_000003477",
+    "title": "Eggs of Steel: Charlie's Eggcellent Adventure",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110951921"
+    },
+    "titles": {
+      "ko": "Eggs of Steel: Charlie's Eggcellent Adventure",
+      "en": "Eggs of Steel: Charlie's Eggcellent Adventure"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006475": {
+    "workId": "wk_000006475",
+    "title": "델타 포스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1184892"
+    },
+    "titles": {
+      "ko": "델타 포스",
+      "en": "Delta Force",
+      "ja": "デルタフォース"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008307": {
+    "workId": "wk_000008307",
+    "title": "라이덴",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1290054"
+    },
+    "titles": {
+      "ko": "라이덴",
+      "en": "Raiden",
+      "ja": "雷電"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008780": {
+    "workId": "wk_000008780",
+    "title": "마리오와 소닉 소치 동계올림픽",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13233160"
+    },
+    "titles": {
+      "ko": "마리오와 소닉 소치 동계올림픽",
+      "en": "Mario & Sonic at the Sochi 2014 Olympic Winter Games",
+      "ja": "マリオ&ソニック AT ソチオリンピック"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009831": {
+    "workId": "wk_000009831",
+    "title": "아이온2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136951346"
+    },
+    "titles": {
+      "ko": "아이온2",
+      "en": "Aion 2"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009946": {
+    "workId": "wk_000009946",
+    "title": "용과 같이 극 3 / 용과 같이 3 외전 Dark Ties",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137779656"
+    },
+    "titles": {
+      "ko": "용과 같이 극 3 / 용과 같이 3 외전 Dark Ties",
+      "en": "Yakuza Kiwami 3 & Dark Ties",
+      "ja": "龍が如く 極3 / 龍が如く3外伝 Dark Ties"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

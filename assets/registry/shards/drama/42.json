@@ -1,0 +1,126 @@
+{
+  "wk_000001043": {
+    "workId": "wk_000001043",
+    "title": "창조영 2021",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104883373"
+    },
+    "titles": {
+      "ko": "창조영 2021",
+      "en": "Produce Camp 2021",
+      "ja": "創造営2021"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001146": {
+    "workId": "wk_000001146",
+    "title": "자정 클럽",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105304384"
+    },
+    "titles": {
+      "ko": "자정 클럽",
+      "en": "The Midnight Club",
+      "ja": "ミッドナイト・クラブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003327": {
+    "workId": "wk_000003327",
+    "title": "캐스팅 콜",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460816"
+    },
+    "titles": {
+      "ko": "캐스팅 콜",
+      "en": "Q109460816"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003681": {
+    "workId": "wk_000003681",
+    "title": "우리가 응원한다! 청춘하라!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546022"
+    },
+    "titles": {
+      "ko": "우리가 응원한다! 청춘하라!",
+      "en": "Q109546022"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003895": {
+    "workId": "wk_000003895",
+    "title": "창란결",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110106538"
+    },
+    "titles": {
+      "ko": "창란결",
+      "en": "Love Between Fairy and Devil",
+      "ja": "蒼蘭訣"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005859": {
+    "workId": "wk_000005859",
+    "title": "고양이 택시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11275041"
+    },
+    "titles": {
+      "ko": "고양이 택시",
+      "en": "Q11275041",
+      "ja": "ねこタクシー"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009976": {
+    "workId": "wk_000009976",
+    "title": "마레아 데 파시오네스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124344819"
+    },
+    "titles": {
+      "ko": "마레아 데 파시오네스",
+      "en": "Marea de pasiones"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

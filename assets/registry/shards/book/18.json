@@ -1,0 +1,97 @@
+{
+  "wk_000000629": {
+    "workId": "wk_000000629",
+    "title": "불설수능엄삼매경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1005610"
+    },
+    "titles": {
+      "ko": "불설수능엄삼매경",
+      "en": "Shurangama Samadhi Sutra",
+      "ja": "首楞厳三昧経"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001936": {
+    "workId": "wk_000001936",
+    "title": "무와타",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050556"
+    },
+    "titles": {
+      "ko": "무와타",
+      "en": "al-Muwaṭṭaʼ",
+      "ja": "ムワッター"
+    },
+    "creator": "말리크 이븐 아나스",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006632": {
+    "workId": "wk_000006632",
+    "title": "못해 그리고 안 할 거야",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111466925"
+    },
+    "titles": {
+      "ko": "못해 그리고 안 할 거야",
+      "en": "Can't and Won't"
+    },
+    "creator": "Lydia Davis",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007304": {
+    "workId": "wk_000007304",
+    "title": "섀도우",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11250132"
+    },
+    "titles": {
+      "ko": "섀도우",
+      "en": "Who's the shadow?",
+      "ja": "シャドウ"
+    },
+    "releaseYear": 2006,
+    "creator": "Shūsuke Michio",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007424": {
+    "workId": "wk_000007424",
+    "title": "클락성 살인사건",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11256416"
+    },
+    "titles": {
+      "ko": "클락성 살인사건",
+      "en": "[Clock-jō] Satsujin Jiken",
+      "ja": "『クロック城』殺人事件"
+    },
+    "releaseYear": 2002,
+    "creator": "Takekuni Kitayama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

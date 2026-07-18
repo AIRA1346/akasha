@@ -1,0 +1,110 @@
+{
+  "wk_000000154": {
+    "workId": "wk_000000154",
+    "title": "파이트 클럽",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "데이비드 핀처",
+    "releaseYear": 1999,
+    "tags": [
+      "스릴러",
+      "심리",
+      "반항",
+      "명작"
+    ],
+    "legacyIds": [
+      "gen_movie_fight-club_1999"
+    ],
+    "externalIds": {
+      "wikidata": "Q190050"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Fight Club",
+      "ko": "파이트 클럽"
+    }
+  },
+  "wk_000003664": {
+    "workId": "wk_000003664",
+    "title": "선과 악의 학교",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105103910"
+    },
+    "titles": {
+      "ko": "선과 악의 학교",
+      "en": "The School for Good and Evil",
+      "ja": "スクール・フォー・グッド・アンド・イービル"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005375": {
+    "workId": "wk_000005375",
+    "title": "수퍼 소닉 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105970894"
+    },
+    "titles": {
+      "ko": "수퍼 소닉 2",
+      "en": "Sonic the Hedgehog 2",
+      "ja": "ソニック・ザ・ムービー/ソニック VS ナックルズ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008458": {
+    "workId": "wk_000008458",
+    "title": "이상한 정열",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1077309"
+    },
+    "titles": {
+      "ko": "이상한 정열",
+      "en": "Él",
+      "ja": "エル"
+    },
+    "releaseYear": 1953,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009530": {
+    "workId": "wk_000009530",
+    "title": "라빠",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087039"
+    },
+    "titles": {
+      "ko": "라빠",
+      "en": "The Bait",
+      "ja": "ひとりぼっちの狩人たち"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "wk_000002860": {
+    "workId": "wk_000002860",
+    "title": "다채로운 아침",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456845"
+    },
+    "titles": {
+      "ko": "다채로운 아침",
+      "en": "Q109456845"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004035": {
+    "workId": "wk_000004035",
+    "title": "대학토론배틀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114666"
+    },
+    "titles": {
+      "ko": "대학토론배틀",
+      "en": "Q110114666"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006496": {
+    "workId": "wk_000006496",
+    "title": "토미카히어로 레스큐포스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1133231"
+    },
+    "titles": {
+      "ko": "토미카히어로 레스큐포스",
+      "en": "Tomica Hero: Rescue Force",
+      "ja": "トミカヒーロー レスキューフォース"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009546": {
+    "workId": "wk_000009546",
+    "title": "이인지하",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121811198"
+    },
+    "titles": {
+      "ko": "이인지하",
+      "en": "I Am Nobody",
+      "ja": "異人之下 アウトサイダーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010159": {
+    "workId": "wk_000010159",
+    "title": "L.A. 로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247212"
+    },
+    "titles": {
+      "ko": "L.A. 로",
+      "en": "L.A. Law",
+      "ja": "L.A.ロー 七人の弁護士"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "wk_000001550": {
+    "workId": "wk_000001550",
+    "title": "운 레푸히오 파라 엘 아모르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068093"
+    },
+    "titles": {
+      "ko": "운 레푸히오 파라 엘 아모르",
+      "en": "Un Refugio para el Amor"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001967": {
+    "workId": "wk_000001967",
+    "title": "검은 여교사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855167"
+    },
+    "titles": {
+      "ko": "검은 여교사",
+      "en": "Kuro no Onna Kyōshi",
+      "ja": "黒の女教師"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002279": {
+    "workId": "wk_000002279",
+    "title": "경시청 수사 일과 9 계",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10902062"
+    },
+    "titles": {
+      "ko": "경시청 수사 일과 9 계",
+      "en": "Keishichō Sōsaikka 9 Kakari",
+      "ja": "警視庁捜査一課9係"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002668": {
+    "workId": "wk_000002668",
+    "title": "친애적니재나리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455077"
+    },
+    "titles": {
+      "ko": "친애적니재나리",
+      "en": "Q109455077"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004118": {
+    "workId": "wk_000004118",
+    "title": "사이공 억류기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115228"
+    },
+    "titles": {
+      "ko": "사이공 억류기",
+      "en": "Q110115228"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004395": {
+    "workId": "wk_000004395",
+    "title": "현재는 아름다워",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118449"
+    },
+    "titles": {
+      "ko": "현재는 아름다워",
+      "en": "It's Beautiful Now",
+      "ja": "ヒョンジェは美しい～ボクが結婚する理由（わけ）～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004919": {
+    "workId": "wk_000004919",
+    "title": "금소대하2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111370583"
+    },
+    "titles": {
+      "ko": "금소대하2",
+      "en": "Barrack O'Karma 1968",
+      "ja": "バラックオカルマ2/金宵大厦2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005384": {
+    "workId": "wk_000005384",
+    "title": "버스스톱",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11244351"
+    },
+    "titles": {
+      "ko": "버스스톱",
+      "en": "Q11244351",
+      "ja": "バスストップ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005742": {
+    "workId": "wk_000005742",
+    "title": "자니스 카운트다운 라이브",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11268282"
+    },
+    "titles": {
+      "ko": "자니스 카운트다운 라이브",
+      "en": "Johnny's Count Down Live",
+      "ja": "ジャニーズカウントダウンライブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006241": {
+    "workId": "wk_000006241",
+    "title": "소돔의 사과 ~ 롯을 죽인 딸들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11315144"
+    },
+    "titles": {
+      "ko": "소돔의 사과 ~ 롯을 죽인 딸들",
+      "en": "Sodom no Ringo",
+      "ja": "ソドムの林檎〜ロトを殺した娘たち"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007502": {
+    "workId": "wk_000007502",
+    "title": "라파엘 오로스코, 아이돌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11514133"
+    },
+    "titles": {
+      "ko": "라파엘 오로스코, 아이돌",
+      "en": "Rafael Orozco, el ídolo",
+      "ja": "ラファエル・オロスコ、アイドル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007890": {
+    "workId": "wk_000007890",
+    "title": "조인전대 제트맨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1156870"
+    },
+    "titles": {
+      "ko": "조인전대 제트맨",
+      "en": "Chōjin Sentai Jetman",
+      "ja": "鳥人戦隊ジェットマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008406": {
+    "workId": "wk_000008406",
+    "title": "오인 버린 남자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11655465"
+    },
+    "titles": {
+      "ko": "오인 버린 남자",
+      "en": "The Man who Is Mistaken",
+      "ja": "間違われちゃった男"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008810": {
+    "workId": "wk_000008810",
+    "title": "비벌리힐스 아이들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117590"
+    },
+    "titles": {
+      "ko": "비벌리힐스 아이들",
+      "en": "Beverly Hills, 90210",
+      "ja": "ビバリーヒルズ高校白書"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009469": {
+    "workId": "wk_000009469",
+    "title": "매트릭스 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1210827"
+    },
+    "titles": {
+      "ko": "매트릭스 시리즈",
+      "en": "The Matrix series",
+      "ja": "マトリックス"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009752": {
+    "workId": "wk_000009752",
+    "title": "유니버스 티켓",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123461131"
+    },
+    "titles": {
+      "ko": "유니버스 티켓",
+      "en": "Universe Ticket",
+      "ja": "UNIVERSE TICKET"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

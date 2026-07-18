@@ -1,0 +1,167 @@
+{
+  "wk_000000166": {
+    "workId": "wk_000000166",
+    "title": "다크 나이트",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "크리스토퍼 놀란",
+    "releaseYear": 2008,
+    "tags": [
+      "히어로",
+      "범죄",
+      "스릴러",
+      "명작"
+    ],
+    "legacyIds": [
+      "gen_movie_the-dark-knight_2008"
+    ],
+    "externalIds": {
+      "wikidata": "Q163872"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    },
+    "titles": {
+      "en": "THE Dark Knight",
+      "ko": "다크 나이트"
+    }
+  },
+  "wk_000000865": {
+    "workId": "wk_000000865",
+    "title": "삼진그룹 영어토익반",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100683417"
+    },
+    "titles": {
+      "ko": "삼진그룹 영어토익반",
+      "en": "Samjin Company English Class",
+      "ja": "三振グループの英語、TOEICの半分"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002932": {
+    "workId": "wk_000002932",
+    "title": "러브 하드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104858962"
+    },
+    "titles": {
+      "ko": "러브 하드",
+      "en": "Love Hard",
+      "ja": "ラブ・ハード"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003493": {
+    "workId": "wk_000003493",
+    "title": "해피 땡큐 유 모어 프리즈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050720"
+    },
+    "titles": {
+      "ko": "해피 땡큐 유 모어 프리즈",
+      "en": "Happythankyoumoreplease",
+      "ja": "ハッピーサンキューモアプリーズ"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003667": {
+    "workId": "wk_000003667",
+    "title": "다이어리",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051184"
+    },
+    "titles": {
+      "ko": "다이어리",
+      "en": "Diary",
+      "ja": "妄想 ｄｉａｒｙ"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003815": {
+    "workId": "wk_000003815",
+    "title": "마이 폴리스맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105332215"
+    },
+    "titles": {
+      "ko": "마이 폴리스맨",
+      "en": "My Policeman",
+      "ja": "僕の巡査"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007879": {
+    "workId": "wk_000007879",
+    "title": "딥: 잠들면 죽는다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107570735"
+    },
+    "titles": {
+      "ko": "딥: 잠들면 죽는다",
+      "en": "Deep",
+      "ja": "DEEP: 覚醒ゲーム"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009726": {
+    "workId": "wk_000009726",
+    "title": "예전에 알던 사람",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108841266"
+    },
+    "titles": {
+      "ko": "예전에 알던 사람",
+      "en": "Somebody I Used to Know",
+      "ja": "彼女の面影"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

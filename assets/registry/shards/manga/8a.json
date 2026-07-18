@@ -1,0 +1,92 @@
+{
+  "wk_000000305": {
+    "workId": "wk_000000305",
+    "title": "캡틴 츠바사",
+    "titles": {
+      "ko": "캡틴 츠바사",
+      "en": "Captain Tsubasa",
+      "ja": "キャプテン翼"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타카하시 요이치",
+    "releaseYear": 1981,
+    "tags": [
+      "스포츠",
+      "축구",
+      "성장",
+      "청춘"
+    ],
+    "extensions": {
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_manga_captain-tsubasa_1981"
+    ],
+    "externalIds": {
+      "tmdb": "28248",
+      "wikidata": "Q647486"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000003610": {
+    "workId": "wk_000003610",
+    "title": "아카도 스즈노스케",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11635957"
+    },
+    "titles": {
+      "ko": "아카도 스즈노스케",
+      "en": "Akadō Suzunosuke",
+      "ja": "赤胴鈴之助"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006793": {
+    "workId": "wk_000006793",
+    "title": "히메고토",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15813728"
+    },
+    "titles": {
+      "ko": "히메고토",
+      "en": "Himegoto",
+      "ja": "ひめゴト"
+    },
+    "creator": "Norio Tsukudani",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009114": {
+    "workId": "wk_000009114",
+    "title": "뱀파이어 기사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q270595"
+    },
+    "titles": {
+      "ko": "뱀파이어 기사",
+      "en": "Vampire Knight",
+      "ja": "ヴァンパイア騎士"
+    },
+    "creator": "樋野まつり",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "wk_000001339": {
+    "workId": "wk_000001339",
+    "title": "더 길티",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101666960"
+    },
+    "titles": {
+      "ko": "더 길티",
+      "en": "The Guilty",
+      "ja": "THE GUILTY／ギルティ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006830": {
+    "workId": "wk_000006830",
+    "title": "설득",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106911865"
+    },
+    "titles": {
+      "ko": "설득",
+      "en": "Persuasion",
+      "ja": "説得"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

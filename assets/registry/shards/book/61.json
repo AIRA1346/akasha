@@ -1,0 +1,93 @@
+{
+  "wk_000000003": {
+    "workId": "wk_000000003",
+    "title": "1984",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "조지 오웰",
+    "releaseYear": 1949,
+    "tags": [
+      "디스토피아",
+      "정치",
+      "고전",
+      "소설"
+    ],
+    "legacyIds": [
+      "gen_book_1984_1949"
+    ],
+    "titles": {
+      "en": "1984",
+      "ko": "1984"
+    },
+    "extensions": {
+      "coverageSprint03": "latin_title",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q208460"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001401": {
+    "workId": "wk_000001401",
+    "title": "속일본후기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041301"
+    },
+    "titles": {
+      "ko": "속일본후기",
+      "en": "Shoku Nihon Kōki",
+      "ja": "続日本後紀"
+    },
+    "creator": "후지와라노 요시후사",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001529": {
+    "workId": "wk_000001529",
+    "title": "일인칭 단수",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104520732"
+    },
+    "titles": {
+      "ko": "일인칭 단수",
+      "en": "First Person Singular",
+      "ja": "一人称単数"
+    },
+    "releaseYear": 2020,
+    "creator": "Haruki Murakami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005992": {
+    "workId": "wk_000005992",
+    "title": "배빗",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1107000"
+    },
+    "titles": {
+      "ko": "배빗",
+      "en": "Babbitt",
+      "ja": "バビット"
+    },
+    "releaseYear": 1922,
+    "creator": "Sinclair Lewis",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

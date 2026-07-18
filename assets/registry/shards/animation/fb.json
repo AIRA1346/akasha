@@ -1,0 +1,168 @@
+{
+  "wk_000001814": {
+    "workId": "wk_000001814",
+    "title": "꽃나라 요술봉",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1133370"
+    },
+    "titles": {
+      "ko": "꽃나라 요술봉",
+      "en": "Pastel Yumi, the Magic Idol",
+      "ja": "魔法のアイドルパステルユーミ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003104": {
+    "workId": "wk_000003104",
+    "title": "LAZARUS 라자로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121095142"
+    },
+    "titles": {
+      "ko": "LAZARUS 라자로",
+      "en": "Lazarus",
+      "ja": "LAZARUS ラザロ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004061": {
+    "workId": "wk_000004061",
+    "title": "이세계 사정은 사축 하기 나름",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130748787"
+    },
+    "titles": {
+      "ko": "이세계 사정은 사축 하기 나름",
+      "en": "The Other World's Books Depend on the Bean Counter",
+      "ja": "異世界の沙汰は社畜次第"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005890": {
+    "workId": "wk_000005890",
+    "title": "턴에이 건담",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2352026"
+    },
+    "titles": {
+      "ko": "턴에이 건담",
+      "en": "Turn A Gundam",
+      "ja": "∀ガンダム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007915": {
+    "workId": "wk_000007915",
+    "title": "헬로! 샌디벨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q594935"
+    },
+    "titles": {
+      "ko": "헬로! 샌디벨",
+      "en": "Hello! Sandybell",
+      "ja": "ハロー!サンディベル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008078": {
+    "workId": "wk_000008078",
+    "title": "이어즈&이어즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q60776367"
+    },
+    "titles": {
+      "ko": "이어즈&이어즈",
+      "en": "Years and Years",
+      "ja": "イヤーズ・アンド・イヤーズ"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008371": {
+    "workId": "wk_000008371",
+    "title": "극장판 시티헌터: 신주쿠 프라이빗 아이즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q64029281"
+    },
+    "titles": {
+      "ko": "극장판 시티헌터: 신주쿠 프라이빗 아이즈",
+      "en": "City Hunter: Shinjuku Private Eyes",
+      "ja": "劇場版シティーハンター 〈新宿プライベート・アイズ〉"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008771": {
+    "workId": "wk_000008771",
+    "title": "강철의 연금술사 - 샴발라를 정복한 자",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q699684"
+    },
+    "titles": {
+      "ko": "강철의 연금술사 - 샴발라를 정복한 자",
+      "en": "Fullmetal Alchemist the Movie: Conqueror of Shamballa",
+      "ja": "劇場版 鋼の錬金術師 シャンバラを征く者"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009427": {
+    "workId": "wk_000009427",
+    "title": "걸리버의 우주여행",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q846685"
+    },
+    "titles": {
+      "ko": "걸리버의 우주여행",
+      "en": "Gulliver's Travels Beyond the Moon",
+      "ja": "ガリバーの宇宙旅行"
+    },
+    "releaseYear": 1965,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

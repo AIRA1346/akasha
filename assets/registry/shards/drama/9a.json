@@ -1,0 +1,161 @@
+{
+  "wk_000001463": {
+    "workId": "wk_000001463",
+    "title": "팸 & 토미",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106609866"
+    },
+    "titles": {
+      "ko": "팸 & 토미",
+      "en": "Pam & Tommy",
+      "ja": "パム&トミー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003071": {
+    "workId": "wk_000003071",
+    "title": "미늘",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458823"
+    },
+    "titles": {
+      "ko": "미늘",
+      "en": "Q109458823"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004044": {
+    "workId": "wk_000004044",
+    "title": "마우스2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114884"
+    },
+    "titles": {
+      "ko": "마우스2",
+      "en": "Q110114884"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004406": {
+    "workId": "wk_000004406",
+    "title": "작은 아씨들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110246392"
+    },
+    "titles": {
+      "ko": "작은 아씨들",
+      "en": "Little Women",
+      "ja": "新・若草物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004610": {
+    "workId": "wk_000004610",
+    "title": "눈동자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110659987"
+    },
+    "titles": {
+      "ko": "눈동자",
+      "en": "Q110659987"
+    },
+    "releaseYear": 1981,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005659": {
+    "workId": "wk_000005659",
+    "title": "오하요 세계",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262202"
+    },
+    "titles": {
+      "ko": "오하요 세계",
+      "en": "Wake Up To The World",
+      "ja": "おはよう世界"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006984": {
+    "workId": "wk_000006984",
+    "title": "요시다 루이의 술집방랑기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11414167"
+    },
+    "titles": {
+      "ko": "요시다 루이의 술집방랑기",
+      "en": "SAKABA: Bar Hopping Report by Rui Yoshida",
+      "ja": "吉田類の酒場放浪記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008739": {
+    "workId": "wk_000008739",
+    "title": "오피스 빌런",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117195662"
+    },
+    "titles": {
+      "ko": "오피스 빌런",
+      "en": "Q117195662"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010361": {
+    "workId": "wk_000010361",
+    "title": "스파르타쿠스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249642"
+    },
+    "titles": {
+      "ko": "스파르타쿠스",
+      "en": "Spartacus",
+      "ja": "スパルタカス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

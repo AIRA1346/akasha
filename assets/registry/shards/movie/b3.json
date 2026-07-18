@@ -1,0 +1,146 @@
+{
+  "wk_000000406": {
+    "workId": "wk_000000406",
+    "title": "주술회전 0",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "MAPPA",
+    "releaseYear": 2021,
+    "tags": [
+      "액션",
+      "초자연",
+      "극장판",
+      "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_movie_jujutsu-kaisen-0_2021"
+    ],
+    "externalIds": {
+      "wikidata": "Q109914608"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Jujutsu Kaisen 0",
+      "ko": "주술회전 0"
+    }
+  },
+  "wk_000000982": {
+    "workId": "wk_000000982",
+    "title": "큐어드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100801141"
+    },
+    "titles": {
+      "ko": "큐어드",
+      "en": "Cured"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001705": {
+    "workId": "wk_000001705",
+    "title": "늑대의 제국",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1031257"
+    },
+    "titles": {
+      "ko": "늑대의 제국",
+      "en": "Empire of the Wolves",
+      "ja": "エンパイア・オブ・ザ・ウルフ"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004729": {
+    "workId": "wk_000004729",
+    "title": "극장판 울트라맨 우주 몬스터 대결전",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057720"
+    },
+    "titles": {
+      "ko": "극장판 울트라맨 우주 몬스터 대결전",
+      "en": "Mega Monster Battle: Ultra Galaxy",
+      "ja": "大怪獣バトル ウルトラ銀河伝説 THE MOVIE"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005173": {
+    "workId": "wk_000005173",
+    "title": "제이니 존스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059303"
+    },
+    "titles": {
+      "ko": "제이니 존스",
+      "en": "Janie Jones"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006494": {
+    "workId": "wk_000006494",
+    "title": "굿 럭 투 유, 리오 그랜드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106740037"
+    },
+    "titles": {
+      "ko": "굿 럭 투 유, 리오 그랜드",
+      "en": "Good Luck to You, Leo Grande",
+      "ja": "グッド・ラック・トゥ・ユー、レオ・グランデ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008209": {
+    "workId": "wk_000008209",
+    "title": "안토니우스와 클레오파트라",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1076226"
+    },
+    "titles": {
+      "ko": "안토니우스와 클레오파트라",
+      "en": "Antony and Cleopatra",
+      "ja": "アントニーとクレオパトラ"
+    },
+    "releaseYear": 1972,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

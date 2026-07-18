@@ -1,0 +1,116 @@
+{
+  "wk_000000745": {
+    "workId": "wk_000000745",
+    "title": "퓨리오사",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100361125"
+    },
+    "titles": {
+      "ko": "퓨리오사",
+      "en": "Furiosa: A Mad Max Saga",
+      "ja": "マッドマックス:フュリオサ"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000806": {
+    "workId": "wk_000000806",
+    "title": "매란방",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1004392"
+    },
+    "titles": {
+      "ko": "매란방",
+      "en": "Forever Enthralled",
+      "ja": "花の生涯〜梅蘭芳〜"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006495": {
+    "workId": "wk_000006495",
+    "title": "그리즐리 맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1067409"
+    },
+    "titles": {
+      "ko": "그리즐리 맨",
+      "en": "Grizzly Man",
+      "ja": "グリズリーマン"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006708": {
+    "workId": "wk_000006708",
+    "title": "히즈 올 댓",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106880756"
+    },
+    "titles": {
+      "ko": "히즈 올 댓",
+      "en": "He's All That",
+      "ja": "ヒーズ・オール・ザット"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009897": {
+    "workId": "wk_000009897",
+    "title": "사탄의 인형 4: 처키의 신부",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1089303"
+    },
+    "titles": {
+      "ko": "사탄의 인형 4: 처키의 신부",
+      "en": "Bride of Chucky",
+      "ja": "チャイルド・プレイ4/チャッキーの花嫁"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010028": {
+    "workId": "wk_000010028",
+    "title": "디스 이즈 40",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1090390"
+    },
+    "titles": {
+      "ko": "디스 이즈 40",
+      "en": "This Is 40",
+      "ja": "40歳からの家族ケーカク"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

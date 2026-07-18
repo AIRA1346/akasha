@@ -1,0 +1,40 @@
+{
+  "wk_000003059": {
+    "workId": "wk_000003059",
+    "title": "썸 오브 올 피어스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048846"
+    },
+    "titles": {
+      "ko": "썸 오브 올 피어스",
+      "en": "The Sum of All Fears",
+      "ja": "トータル・フィアーズ"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009251": {
+    "workId": "wk_000009251",
+    "title": "더 챌린지",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108528962"
+    },
+    "titles": {
+      "ko": "더 챌린지",
+      "en": "The Challenge",
+      "ja": "挑戦"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

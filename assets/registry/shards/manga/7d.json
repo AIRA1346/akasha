@@ -1,0 +1,21 @@
+{
+  "wk_000001534": {
+    "workId": "wk_000001534",
+    "title": "여자아이 이야기",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11259959"
+    },
+    "titles": {
+      "ko": "여자아이 이야기",
+      "en": "Onnanoko Monogatari",
+      "ja": "女の子ものがたり"
+    },
+    "creator": "Rieko Saibara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

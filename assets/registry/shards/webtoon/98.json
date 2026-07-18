@@ -1,0 +1,19 @@
+{
+  "wk_000003184": {
+    "workId": "wk_000003184",
+    "title": "천행기",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q4762124"
+    },
+    "titles": {
+      "ko": "천행기",
+      "en": "Angel Diary"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

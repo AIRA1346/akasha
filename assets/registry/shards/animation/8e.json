@@ -1,0 +1,114 @@
+{
+  "wk_000001176": {
+    "workId": "wk_000001176",
+    "title": "아이의 노랫소리를 들려줘",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107463193"
+    },
+    "titles": {
+      "ko": "아이의 노랫소리를 들려줘",
+      "en": "Sing a Bit of Harmony",
+      "ja": "アイの歌声を聴かせて"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001422": {
+    "workId": "wk_000001422",
+    "title": "극장판 요괴워치♪: 케이타와 나의 만남편이다냥♪ 저, 저도~♪♪",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109599287"
+    },
+    "titles": {
+      "ko": "극장판 요괴워치♪: 케이타와 나의 만남편이다냥♪ 저, 저도~♪♪",
+      "en": "Q109599287",
+      "ja": "映画 妖怪ウォッチ♪ ケータとオレっちの出会い編だニャン♪ワ、ワタクシも〜♪♪"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001594": {
+    "workId": "wk_000001594",
+    "title": "연애 플롭스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111367751"
+    },
+    "titles": {
+      "ko": "연애 플롭스",
+      "en": "Renai Flops",
+      "ja": "恋愛フロップス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001816": {
+    "workId": "wk_000001816",
+    "title": "만화로 배우는 심신의학",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11341509"
+    },
+    "titles": {
+      "ko": "만화로 배우는 심신의학",
+      "en": "Comical Psychosomatic Medicine",
+      "ja": "マンガで分かる心療内科"
+    },
+    "creator": "Yū Yūki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006037": {
+    "workId": "wk_000006037",
+    "title": "초전자머신 볼테스 V",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2487098"
+    },
+    "titles": {
+      "ko": "초전자머신 볼테스 V",
+      "en": "Voltes V",
+      "ja": "超電磁マシーン ボルテスV"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006798": {
+    "workId": "wk_000006798",
+    "title": "천일야화",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3478808"
+    },
+    "titles": {
+      "ko": "천일야화",
+      "en": "One Thousand and One Arabian Nights",
+      "ja": "千夜一夜物語"
+    },
+    "releaseYear": 1969,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

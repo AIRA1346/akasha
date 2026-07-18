@@ -1,0 +1,114 @@
+{
+  "wk_000000672": {
+    "workId": "wk_000000672",
+    "title": "짱구는 못말려 극장판: 태풍을 부르는 황금 스파이 대작전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048726"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 태풍을 부르는 황금 스파이 대작전",
+      "en": "Crayon Shin-chan: Fierceness That Invites Storm! Operation Golden Spy",
+      "ja": "クレヨンしんちゃん 嵐を呼ぶ黄金のスパイ大作戦"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002904": {
+    "workId": "wk_000002904",
+    "title": "스위트 프리큐어♪",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1202553"
+    },
+    "titles": {
+      "ko": "스위트 프리큐어♪",
+      "en": "Suite PreCure",
+      "ja": "スイートプリキュア♪"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004892": {
+    "workId": "wk_000004892",
+    "title": "프리파라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15965930"
+    },
+    "titles": {
+      "ko": "프리파라",
+      "en": "PriPara",
+      "ja": "プリパラ"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005818": {
+    "workId": "wk_000005818",
+    "title": "극장판 카드캡터 사쿠라: 봉인된 카드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2279734"
+    },
+    "titles": {
+      "ko": "극장판 카드캡터 사쿠라: 봉인된 카드",
+      "en": "Cardcaptor Sakura Movie 2: The Sealed Card",
+      "ja": "劇場版カードキャプターさくら 封印されたカード"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007399": {
+    "workId": "wk_000007399",
+    "title": "용자 엑스카이저",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q4958359"
+    },
+    "titles": {
+      "ko": "용자 엑스카이저",
+      "en": "Brave Exkaiser",
+      "ja": "勇者エクスカイザー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009932": {
+    "workId": "wk_000009932",
+    "title": "동물의 숲",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q967090"
+    },
+    "titles": {
+      "ko": "동물의 숲",
+      "en": "Dōbutsu no Mori",
+      "ja": "劇場版 どうぶつの森"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}
