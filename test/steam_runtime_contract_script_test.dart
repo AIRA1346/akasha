@@ -106,6 +106,65 @@ void main() {
     },
   );
 
+  test(
+    'release verifier scans binary paths and permits neutral source URIs',
+    () async {
+      final temp = await Directory.systemTemp.createTemp(
+        'akasha-binary-payload-test-',
+      );
+      addTearDown(() => temp.delete(recursive: true));
+      File(p.join(temp.path, 'akasha.exe')).createSync(recursive: true);
+      File(p.join(temp.path, 'steam_api64.dll')).createSync(recursive: true);
+      Directory(
+        p.join(temp.path, 'data', 'flutter_assets'),
+      ).createSync(recursive: true);
+      final appSo = File(p.join(temp.path, 'data', 'app.so'));
+
+      appSo.writeAsBytesSync([
+        0,
+        1,
+        ...r'file:///C:/Users/Alice/src/.dart_tool/flutter_build/dart_plugin_registrant.dart'
+            .codeUnits,
+        0,
+      ]);
+      var result = await _runVerifier(verifierPath, temp.path);
+      expect(result.exitCode, isNot(0));
+      expect(
+        '${result.stdout}${result.stderr}',
+        contains('personal_path_content'),
+      );
+
+      appSo.writeAsBytesSync([
+        0,
+        ...r'file:///C:/AKASHA_BUILD/22918860/.dart_tool/flutter_build/dart_plugin_registrant.dart'
+            .codeUnits,
+        0,
+        ...' package:akasha/screens/home/view.dart dart:core org-dartlang-app:'
+            .codeUnits,
+      ]);
+      result = await _runVerifier(verifierPath, temp.path);
+      expect(result.exitCode, 0, reason: '${result.stderr}');
+
+      appSo.writeAsStringSync(
+        r'file:///C:/AKASHA_BUILD/RuneAtelier/akasha/main.dart',
+      );
+      result = await _runVerifier(verifierPath, temp.path);
+      expect(result.exitCode, isNot(0));
+      expect(
+        '${result.stdout}${result.stderr}',
+        contains('personal_repository_path_content'),
+      );
+
+      appSo.writeAsStringSync('steam_guard_code=123456');
+      result = await _runVerifier(verifierPath, temp.path);
+      expect(result.exitCode, isNot(0));
+      expect(
+        '${result.stdout}${result.stderr}',
+        contains('credential_content'),
+      );
+    },
+  );
+
   test('build and launcher scripts preserve the Debug/Release boundary', () {
     final runnerCmake = File(
       p.join(repoRoot, 'windows', 'runner', 'CMakeLists.txt'),

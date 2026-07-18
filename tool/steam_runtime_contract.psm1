@@ -166,8 +166,52 @@ function Get-AkashaSensitiveContentCategory {
         return $null
     }
     if ($Content -match '(?i)[A-Za-z]:[\\/]Users[\\/][^\\/\r\n]+' -or
-        $Content -match '(?i)/(Users|home)/[^/\r\n]+') {
+        $Content -match (
+            '(?i)(^|file://|[\x00\s"''=])/(Users|home)/' +
+            '[^/\x00\r\n]+(?:/|$)'
+        )) {
         return 'personal_path_content'
+    }
+    if ($Content -match '(?i)RuneAtelier' -or
+        $Content -match '(?i)akasha-build-identity-upload-[0-9a-f]+') {
+        return 'personal_repository_path_content'
+    }
+    if ($Content -match (
+        '(?i)(password|passwd|steam[_-]?guard(?:[_-]?code)?|' +
+        'api[_-]?key|access[_-]?token|auth[_-]?token|client[_-]?secret)' +
+        '\s*[:=]\s*["'']?[A-Za-z0-9+/_=-]{6,}'
+    )) {
+        return 'credential_content'
+    }
+    return $null
+}
+
+function Get-AkashaPayloadFileContentCategory {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory = $true)]
+        [IO.FileInfo]$File
+    )
+
+    # Release AOT artifacts can retain source URIs in binary snapshots. Scan
+    # decoded byte content instead of limiting the hygiene check to text files.
+    # Neutral build roots such as C:\AKASHA_BUILD remain allowed; the category
+    # matcher rejects only personal profiles, repository paths, and credentials.
+    try {
+        $bytes = [IO.File]::ReadAllBytes($File.FullName)
+        foreach ($encoding in @(
+            [Text.Encoding]::UTF8,
+            [Text.Encoding]::Unicode,
+            [Text.Encoding]::BigEndianUnicode
+        )) {
+            $category = Get-AkashaSensitiveContentCategory `
+                -Content $encoding.GetString($bytes)
+            if ($null -ne $category) {
+                return $category
+            }
+        }
+    } catch {
+        # Filename/path rules still cover unreadable payload entries.
     }
     return $null
 }
@@ -193,22 +237,12 @@ function Find-AkashaReleasePayloadViolation {
             continue
         }
 
-        if ($file.Length -le 4MB -and
-            $file.Extension.ToLowerInvariant() -in @(
-                '.txt', '.json', '.yaml', '.yml', '.xml', '.cfg', '.ini', '.vdf'
-            )) {
-            try {
-                $content = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8
-                $contentCategory = Get-AkashaSensitiveContentCategory -Content $content
-                if ($null -ne $contentCategory) {
-                    [pscustomobject]@{
-                        category = $contentCategory
-                        relativePath = $relative
-                        fullPath = $file.FullName
-                    }
-                }
-            } catch {
-                # Binary or non-UTF8 text is covered by filename/path rules.
+        $contentCategory = Get-AkashaPayloadFileContentCategory -File $file
+        if ($null -ne $contentCategory) {
+            [pscustomobject]@{
+                category = $contentCategory
+                relativePath = $relative
+                fullPath = $file.FullName
             }
         }
     }
