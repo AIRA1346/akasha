@@ -28,7 +28,7 @@ CURRENT_STATE가 우선한다.
 현재 작품 레지스트리 packaging 결정은
 [ADR-015: 전체 로컬 번들](architecture/ADR-015-full-local-registry-bundle.md)을 따른다.
 이는 역사적 eager-only 결정인 ADR-010을 대체하되, production CDN 호출 제거와 cache
-migration은 Phase 2 경계로 남긴다.
+migration까지 Phase 2에서 완료했다. 현재 production 작품 레지스트리는 bundle-only다.
 
 ## Draft
 

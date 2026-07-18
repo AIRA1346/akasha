@@ -22,7 +22,6 @@ import 'package:akasha/features/workbench/data/workbench_controller.dart';
 import 'fakes/fake_vault_port.dart';
 import 'fakes/fake_registry_port.dart';
 import 'fakes/fake_user_catalog_port.dart';
-import 'fakes/fake_registry_sync_port.dart';
 
 class FakeVaultPathResolver extends DefaultVaultPathResolver {
   final String preferredPathResult;
@@ -48,7 +47,6 @@ class FakeVaultPathResolver extends DefaultVaultPathResolver {
     return fallbackPathResult;
   }
 }
-
 class TestVaultPort extends FakeVaultPort {
   String? _path;
 
@@ -108,16 +106,12 @@ void main() {
 
             final catalog = HomeCatalogCoordinator(
               registry: FakeRegistryPort(),
-              registrySyncPort: FakeRegistrySyncPort(),
               isMounted: () => true,
               scheduleRebuild: (_) {},
               filterCtrl: HomeBrowseFilterController(),
               dashboardCtrl: HomeDashboardController(),
               isPersonalLibraryMode: () => false,
-              showSuccess: (_) {},
               showError: (_) {},
-              reloadItems: () async {},
-              autoArchiveWorks: ({bool showFeedback = false}) async {},
             );
 
             final filterCoord = HomeFilterCoordinator(
@@ -255,16 +249,12 @@ void main() {
 
             final catalog = HomeCatalogCoordinator(
               registry: FakeRegistryPort(),
-              registrySyncPort: FakeRegistrySyncPort(),
               isMounted: () => true,
               scheduleRebuild: (_) {},
               filterCtrl: HomeBrowseFilterController(),
               dashboardCtrl: HomeDashboardController(),
               isPersonalLibraryMode: () => false,
-              showSuccess: (_) {},
               showError: (_) {},
-              reloadItems: () async {},
-              autoArchiveWorks: ({bool showFeedback = false}) async {},
             );
 
             final filterCoord = HomeFilterCoordinator(

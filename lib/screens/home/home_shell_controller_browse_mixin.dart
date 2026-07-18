@@ -29,19 +29,6 @@ mixin HomeShellControllerBrowseMixin on HomeShellControllerBase {
 
   Widget buildPosterCard(BrowseCard card) => browse.buildPosterCard(card);
 
-  Future<void> clearRegistryCache() => registryUi.clearDiskCacheAndReload(
-    host.context,
-    registry: registry,
-    dashboardCtrl: dashboardCtrl,
-    filterCtrl: filterCtrl,
-    onCatalogLoadingChanged: (v) => catalog.isCatalogLoading = v,
-    isMounted: () => host.mounted,
-    setState: wrapSetState,
-    onDataChanged: rebuild,
-  );
-
-  Future<void> showCustomUrlDialog() => dialogs.showCustomUrlDialog();
-
   Future<void> showAppThemePicker() => dialogs.showAppThemePicker();
 
   Future<void> openCatalogContributionsInbox() =>

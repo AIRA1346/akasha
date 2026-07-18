@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:akasha/models/enums.dart';
@@ -15,18 +13,11 @@ void installRegistryTestBindings() {
       .setMockMethodCallHandler(channel, (call) async => '.');
 }
 
-/// Phase 2 전까지 보존하는 remote-provider 경로용 local source fixture.
+/// Isolated provider guard: production-style fixture reads must stay local.
 void mockAkashaDbShardFetcher() {
-  RegistrySyncService.setTextFetcherForTesting((url) async {
-    final uri = Uri.parse(url);
-    var path = uri.path;
-    if (path.startsWith('/')) path = path.substring(1);
-    if (path.startsWith('shards/')) {
-      final file = File('akasha-db/$path');
-      if (file.existsSync()) return file.readAsStringSync();
-    }
-    return null;
-  });
+  RegistrySyncService.setTextFetcherForTesting(
+    (url) => throw StateError('registry network access is forbidden: $url'),
+  );
 }
 
 void clearRegistryTestFetcher() {
@@ -35,8 +26,7 @@ void clearRegistryTestFetcher() {
 
 Future<void> prefetchRegistryFixtureQueries(Iterable<String> queries) async {
   for (final q in queries) {
-    await RegistrySyncService().syncShardsForQuery(q);
-    await WorksRegistry.loader.ensureShardsForQuery(q);
+    await WorksRegistry.searchAsync(q);
   }
 }
 
@@ -45,7 +35,7 @@ Future<void> initRegistryForGameCategoryFixtures() async {
   installRegistryTestBindings();
   await WorksRegistry.init();
   WorksRegistry.loader.resetLoadedShardsForTesting();
-  await WorksRegistry.clearDiskCacheAndReloadBundle();
+  await WorksRegistry.reloadBundleForTesting();
   mockAkashaDbShardFetcher();
   await WorksRegistry.prefetchForFilters(categories: {MediaCategory.game});
 }
@@ -56,10 +46,8 @@ Future<void> initRegistryForFranchiseFixtures() async {
   await WorksRegistry.init();
   await FranchiseRegistry.init();
   WorksRegistry.loader.resetLoadedShardsForTesting();
-  await WorksRegistry.clearDiskCacheAndReloadBundle();
+  await WorksRegistry.reloadBundleForTesting();
   mockAkashaDbShardFetcher();
 
-  await prefetchRegistryFixtureQueries(
-    const ['rezero', '제로', '86', '에이티식스'],
-  );
+  await prefetchRegistryFixtureQueries(const ['rezero', '제로', '86', '에이티식스']);
 }

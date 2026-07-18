@@ -4,8 +4,9 @@ import '../models/work_id_codec.dart';
 import '../utils/registry_catalog_filter.dart';
 import '../utils/registry_search_utils.dart';
 import '../utils/app_log.dart';
+import 'registry_bundle_only_migration.dart';
 import 'registry_shard_loader.dart';
-import 'registry_sync_service.dart';
+import 'registry_source.dart';
 
 export '../models/registry_work.dart';
 
@@ -16,6 +17,7 @@ class WorksRegistry {
     shardEntriesMerger: mergeShardEntries,
   );
   static bool _initialized = false;
+  static RegistrySourceException? _initializationError;
 
   static RegistryShardLoader get loader => _loader;
 
@@ -26,38 +28,27 @@ class WorksRegistry {
   static Future<void> init() async {
     if (_initialized) return;
     // E1-A3b: loader·reload 콜백을 sync service에 주입해 순환 import 제거
-    final syncService = RegistrySyncService();
-    syncService.bindLoader(_loader);
-    syncService.registerOnSyncSuccess(reloadAfterRemoteSync);
-    await _loader.loadBundledBootstrap();
-    if (await _loader.isDiskCacheStaleComparedToBundle()) {
-      await _loader.clearDiskCache();
-      await syncService.clearLegacyRegistryCache();
-    } else {
-      await loadCachedRegistry();
+    await RegistryBundleOnlyMigration().run();
+    try {
+      await _loader.loadBundledBootstrap();
+    } on RegistrySourceException catch (error) {
+      _initializationError = error;
+      appLog('[WorksRegistry] bundled bootstrap failed: $error');
     }
     _initialized = true;
   }
 
-  /// 원격 manifest 갱신 후 메모리·캐시 기준으로 레지스트리를 다시 구성합니다.
-  static Future<void> reloadAfterRemoteSync() async {
+  /// Test-only process restart simulation using the bundled source.
+  static Future<void> reloadBundleForTesting() async {
     _registry.clear();
-    _loader.resetLoadedShards();
-    await _loader.loadCachedBootstrap();
-    final legacyJson = await RegistrySyncService().readCachedRegistry();
-    // TODO(remove): R3 — docs/draft/LEGACY_REMOVAL_POLICY.md §3.2
-    if (legacyJson != null && legacyJson.isNotEmpty) {
-      await _loader.mergeLegacyMonolithicJson(legacyJson);
-    }
+    _loader.resetBundleStateForTesting();
+    _initializationError = null;
+    await _loader.loadBundledBootstrap();
   }
 
-  /// 디스크·레거시 캐시 삭제 후 앱 번들 사전으로 메모리를 재구성합니다.
-  static Future<void> clearDiskCacheAndReloadBundle() async {
-    _registry.clear();
-    _loader.resetLoadedShards();
-    await _loader.clearDiskCache();
-    await RegistrySyncService().clearLegacyRegistryCache();
-    await _loader.loadBundledBootstrap();
+  static void _ensureAvailable() {
+    final error = _initializationError;
+    if (error != null) throw error;
   }
 
   static void mergeShardEntries(Map<String, dynamic> entries) {
@@ -87,9 +78,17 @@ class WorksRegistry {
   }
 
   static RegistryWork? getWorkById(String workId) {
+    _ensureAvailable();
     if (workId.isEmpty) return null;
     final resolved = _loader.resolveWorkId(workId);
     return _registry[resolved] ?? _registry[workId];
+  }
+
+  static Future<RegistryWork?> getWorkByIdAsync(String workId) async {
+    _ensureAvailable();
+    if (workId.isEmpty) return null;
+    await _loader.ensureShardForWorkId(resolveWorkId(workId));
+    return getWorkById(workId);
   }
 
   static List<RegistryWork> _uniqueWorks() {
@@ -101,6 +100,7 @@ class WorksRegistry {
   }
 
   static List<RegistryWork> search(String query) {
+    _ensureAvailable();
     if (query.isEmpty) return _uniqueWorks();
     final q = normalizeRegistryQuery(query);
     final results = <String, RegistryWork>{};
@@ -129,23 +129,26 @@ class WorksRegistry {
     return false;
   }
 
-  /// 온디맨드 검색: 원격 shard fetch → 캐시/번들 로드 → 메모리 검색
-  /// [금지] sync(), loadEagerShards(), ensureShardsForFilters() 호출 없음
+  /// 온디맨드 검색: bundled index → bundled shard → 메모리 검색.
   static Future<List<RegistryWork>> searchAsync(String query) async {
+    _ensureAvailable();
     final trimmed = query.trim();
     if (trimmed.isEmpty) return [];
 
-    await RegistrySyncService().syncShardsForQuery(trimmed);
     await _loader.ensureShardsForQuery(trimmed);
     return search(trimmed);
   }
 
-  static List<RegistryWork> get allWorks => _uniqueWorks();
+  static List<RegistryWork> get allWorks {
+    _ensureAvailable();
+    return _uniqueWorks();
+  }
 
   static Future<List<RegistryWork>> getFilteredWorks({
     AppDomain? domain,
     MediaCategory? category,
   }) async {
+    _ensureAvailable();
     await _loader.ensureShardsForFilters(domain: domain, category: category);
     return _uniqueWorks().where((work) {
       if (isMaintainerCatalogProbe(work)) return false;
@@ -168,21 +171,6 @@ class WorksRegistry {
     }).toList();
   }
 
-  static Future<void> loadCachedRegistry() async {
-    try {
-      await _loader.loadCachedBootstrap();
-
-      // 레거시 단일 JSON 캐시 하위 호환
-      // TODO(remove): R4 — docs/draft/LEGACY_REMOVAL_POLICY.md §3.2
-      final legacyJson = await RegistrySyncService().readCachedRegistry();
-      if (legacyJson != null && legacyJson.isNotEmpty) {
-        await _loader.mergeLegacyMonolithicJson(legacyJson);
-      }
-    } catch (e) {
-      appLog('Error loading cached sharded registry: $e');
-    }
-  }
-
   /// browse 첫 화면에 로드할 search_index 윈도우 (Phase 2.2)
   static const int browsePrefetchWindowSize = 48;
 
@@ -190,14 +178,13 @@ class WorksRegistry {
   static const int browseFullCatalogThreshold = 2500;
 
   /// master_index·무필터 browse — search_index 품질순 윈도우만 prefetch
-  /// [fetchRemote] true면 윈도우 shard만 원격 갱신 (전 카테고리 bulk fetch 없음)
   static Future<void> prefetchBrowseWindow({
     AppDomain? domain,
     MediaCategory? category,
     int offset = 0,
     int limit = browsePrefetchWindowSize,
-    bool fetchRemote = false,
   }) async {
+    _ensureAvailable();
     final total = catalogIndexEntryCount(domain: domain, category: category);
     final useFullBundledCatalog =
         domain == null &&
@@ -209,12 +196,6 @@ class WorksRegistry {
     if (useFullBundledCatalog) {
       await _loader.ensureSearchIndexLoaded();
       await _loader.ensureAllManifestShardsLoaded();
-      if (fetchRemote) {
-        final shardIds =
-            _loader.manifest?.shards.map((s) => s.id).toSet() ?? const {};
-        await RegistrySyncService().syncShardsByIds(shardIds);
-        await _loader.ensureAllManifestShardsLoaded();
-      }
       return;
     }
 
@@ -224,27 +205,10 @@ class WorksRegistry {
       offset: offset,
       limit: limit,
     );
-
-    if (!fetchRemote) return;
-
-    final shardIds = _loader.resolveShardIdsForBrowseWindow(
-      domain: domain,
-      category: category,
-      offset: offset,
-      limit: limit,
-    );
-    await RegistrySyncService().syncShardsByIds(shardIds);
-    await _loader.ensureShardsForBrowseWindow(
-      domain: domain,
-      category: category,
-      offset: offset,
-      limit: limit,
-    );
   }
 
   /// @deprecated Phase 2.2 — [prefetchBrowseWindow] 사용. 하위 호환 alias.
-  static Future<void> prefetchMasterCatalog({bool fetchRemote = false}) =>
-      prefetchBrowseWindow(fetchRemote: fetchRemote);
+  static Future<void> prefetchMasterCatalog() => prefetchBrowseWindow();
 
   static int catalogIndexEntryCount({
     AppDomain? domain,
@@ -275,11 +239,6 @@ class WorksRegistry {
     AppDomain? domain,
     MediaCategory? category,
   }) async {
-    await _loader.ensureShardsForFilters(domain: domain, category: category);
-    await RegistrySyncService().syncShardsForFilters(
-      domain: domain,
-      category: category,
-    );
     await _loader.ensureShardsForFilters(domain: domain, category: category);
   }
 

@@ -1,6 +1,6 @@
 # AKASHA Privacy Policy
 
-> **Effective:** 2026-06-10  
+> **Effective:** 2026-07-18
 > **Developer:** Rune Atelier  
 > **Contact:** GitHub Issues on [akasha](https://github.com/AIRA1346/akasha) (or your support email when published)
 
@@ -24,14 +24,16 @@ You choose the vault folder. You can back up, sync, or edit files outside the ap
 
 ---
 
-## Data fetched from the network
+## Bundled catalog data
 
-AKASHA may download **read-only catalog metadata** from our public CDN (`akasha-db`):
+AKASHA ships its read-only `akasha-db` catalog metadata inside the application:
 
 - Work titles, years, creators, categories, search tokens
 - **No** posters, descriptions, ratings, or user content in the catalog
 
-Optional: registry sync checks for catalog updates. No account is required.
+Production search, browse, filters, and work details do not download registry data or
+check a registry CDN. Catalog updates arrive with an application update. No account is
+required.
 
 ---
 

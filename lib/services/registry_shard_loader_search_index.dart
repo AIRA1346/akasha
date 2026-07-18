@@ -8,36 +8,40 @@ mixin _RegistryShardLoaderSearchIndex
   Set<String> resolveShardIdsForFilters({
     AppDomain? domain,
     MediaCategory? category,
-  }) =>
-      shardIdsForFilters(
-        _searchIndex,
-        domain: domain,
-        category: category,
-      );
+  }) => shardIdsForFilters(_searchIndex, domain: domain, category: category);
 
   Future<void> _loadBundledSearchIndex() async {
     if (await _tryLoadBundledSearchIndexManifest()) return;
 
-    try {
-      final raw = await rootBundle.loadString(RegistryShardLoader.bundledSearchIndexAsset);
-      _parseMonolithicSearchIndex(raw);
-    } catch (e) {
-      appLog('[RegistryShardLoader] Failed to load bundled search index: $e');
+    if (!_allowLegacyManifest) {
+      throw sourceError(
+        RegistrySourceFailureType.missing,
+        RegistryShardLoader.bundledSearchIndexManifestAsset,
+      );
     }
+    final raw = await _source.readRequired(
+      RegistryShardLoader.bundledSearchIndexAsset,
+    );
+    _parseMonolithicSearchIndex(raw);
   }
 
   Future<bool> _tryLoadBundledSearchIndexManifest() async {
+    final path = RegistryShardLoader.bundledSearchIndexManifestAsset;
+    if (!await _source.exists(path)) return false;
     try {
-      final raw = await rootBundle.loadString(
-        RegistryShardLoader.bundledSearchIndexManifestAsset,
-      );
+      final raw = await _source.readRequired(path);
       _searchIndexManifest = RegistrySearchIndexManifest.fromJson(
         json.decode(raw) as Map<String, dynamic>,
       );
       _useShardedSearchIndex = true;
       return true;
-    } catch (_) {
-      return false;
+    } catch (error) {
+      if (error is RegistrySourceException) rethrow;
+      throw sourceError(
+        RegistrySourceFailureType.malformedJson,
+        path,
+        cause: error,
+      );
     }
   }
 
@@ -54,9 +58,10 @@ mixin _RegistryShardLoaderSearchIndex
     if (decoded is! List) return const [];
     return decoded
         .whereType<Map>()
-        .map((e) => RegistrySearchIndexEntry.fromJson(
-              Map<String, dynamic>.from(e),
-            ))
+        .map(
+          (e) =>
+              RegistrySearchIndexEntry.fromJson(Map<String, dynamic>.from(e)),
+        )
         .where((e) => e.workId.isNotEmpty)
         .toList();
   }
@@ -76,7 +81,8 @@ mixin _RegistryShardLoaderSearchIndex
 
     await Future.wait(
       _searchIndexManifest!.shards.map(
-        (shard) => _ensureCategorySearchIndexLoaded(shard.category, bundled: true),
+        (shard) =>
+            _ensureCategorySearchIndexLoaded(shard.category, bundled: true),
       ),
     );
     _rebuildMergedSearchIndex();
@@ -96,18 +102,40 @@ mixin _RegistryShardLoaderSearchIndex
 
     String? raw;
     if (bundled) {
-      try {
-        raw = await rootBundle.loadString('assets/registry/${shard.path}');
-      } catch (_) {}
+      raw = await _source.readRequired(shard.path);
+    } else {
+      raw = await _readCachedText(shard.path);
     }
-    raw ??= await _readCachedText(shard.path);
 
     if (raw == null) {
       _searchIndexByCategory[category] = const [];
       return;
     }
 
-    _searchIndexByCategory[category] = _parseSearchIndexList(json.decode(raw));
+    try {
+      final decoded = json.decode(raw);
+      if (decoded is! List) {
+        throw const FormatException('search index shard must be a JSON list');
+      }
+      if (bundled) {
+        // Search-index manifests hash the builder's compact JSON encoding,
+        // independent of whitespace and line endings in the packaged asset.
+        verifySha256(
+          content: jsonEncode(decoded),
+          expected: shard.sha256,
+          relativePath: shard.path,
+        );
+      }
+      _searchIndexByCategory[category] = _parseSearchIndexList(decoded);
+    } on RegistrySourceException {
+      rethrow;
+    } catch (error) {
+      throw sourceError(
+        RegistrySourceFailureType.malformedJson,
+        shard.path,
+        cause: error,
+      );
+    }
   }
 
   void _rebuildMergedSearchIndex() {
@@ -119,9 +147,7 @@ mixin _RegistryShardLoaderSearchIndex
   void _rebuildSearchIndexWorkIdMap() {
     _searchIndexByWorkId
       ..clear()
-      ..addEntries(
-        _searchIndex.map((entry) => MapEntry(entry.workId, entry)),
-      );
+      ..addEntries(_searchIndex.map((entry) => MapEntry(entry.workId, entry)));
   }
 
   Iterable<RegistrySearchIndexEntry> _entriesForFilters({
@@ -168,13 +194,16 @@ mixin _RegistryShardLoaderSearchIndex
 
       await Future.wait(
         _searchIndexManifest!.shards.map(
-          (shard) => _ensureCategorySearchIndexLoaded(shard.category, bundled: false),
+          (shard) =>
+              _ensureCategorySearchIndexLoaded(shard.category, bundled: false),
         ),
       );
       _rebuildMergedSearchIndex();
       return true;
     } catch (e) {
-      appLog('[RegistryShardLoader] Failed to load cached search index manifest: $e');
+      appLog(
+        '[RegistryShardLoader] Failed to load cached search index manifest: $e',
+      );
       return false;
     }
   }
@@ -212,12 +241,17 @@ mixin _RegistryShardLoaderSearchIndex
       await file.writeAsString(content);
       return true;
     } catch (e) {
-      appLog('[RegistryShardLoader] Failed to cache remote search index manifest: $e');
+      appLog(
+        '[RegistryShardLoader] Failed to cache remote search index manifest: $e',
+      );
     }
     return false;
   }
 
-  Future<bool> cacheRemoteSearchIndexShard(String relativePath, String content) async {
+  Future<bool> cacheRemoteSearchIndexShard(
+    String relativePath,
+    String content,
+  ) async {
     try {
       final decoded = json.decode(content);
       if (decoded is! List) return false;
@@ -252,12 +286,13 @@ mixin _RegistryShardLoaderSearchIndex
   }) {
     if (limit <= 0) return const {};
 
-    final entries = _entriesForFilters(domain: domain, category: category).toList()
-      ..sort((a, b) {
-        final score = b.qualityScore.compareTo(a.qualityScore);
-        if (score != 0) return score;
-        return a.title.compareTo(b.title);
-      });
+    final entries =
+        _entriesForFilters(domain: domain, category: category).toList()
+          ..sort((a, b) {
+            final score = b.qualityScore.compareTo(a.qualityScore);
+            if (score != 0) return score;
+            return a.title.compareTo(b.title);
+          });
 
     final shardIds = <String>{};
     for (final entry in entries.skip(offset).take(limit)) {
@@ -274,7 +309,8 @@ mixin _RegistryShardLoaderSearchIndex
         if (loaded != null) {
           return _entriesForFilters(domain: domain, category: category).length;
         }
-        return _searchIndexManifest!.shardForCategory(category)?.entryCount ?? 0;
+        return _searchIndexManifest!.shardForCategory(category)?.entryCount ??
+            0;
       }
       if (_searchIndex.isNotEmpty || _searchIndexByCategory.isNotEmpty) {
         return _entriesForFilters(domain: domain, category: category).length;

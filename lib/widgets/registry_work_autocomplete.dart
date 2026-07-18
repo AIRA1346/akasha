@@ -29,6 +29,7 @@ class _RegistryWorkAutocompleteState extends State<RegistryWorkAutocomplete> {
   Timer? _debounce;
   List<RegistryWork> _options = [];
   bool _isSearching = false;
+  String? _searchError;
 
   @override
   void initState() {
@@ -66,11 +67,15 @@ class _RegistryWorkAutocompleteState extends State<RegistryWorkAutocomplete> {
       setState(() {
         _options = [];
         _isSearching = false;
+        _searchError = null;
       });
       return;
     }
 
-    setState(() => _isSearching = true);
+    setState(() {
+      _isSearching = true;
+      _searchError = null;
+    });
     _debounce = Timer(const Duration(milliseconds: 300), () async {
       try {
         final results = await WorksRegistry.searchAsync(trimmed);
@@ -78,12 +83,14 @@ class _RegistryWorkAutocompleteState extends State<RegistryWorkAutocomplete> {
         setState(() {
           _options = results;
           _isSearching = false;
+          _searchError = null;
         });
-      } catch (_) {
+      } catch (error) {
         if (!mounted) return;
         setState(() {
           _options = [];
           _isSearching = false;
+          _searchError = '작품 레지스트리를 불러오지 못했습니다: $error';
         });
       }
     });
@@ -137,6 +144,14 @@ class _RegistryWorkAutocompleteState extends State<RegistryWorkAutocomplete> {
           ),
           onChanged: _onQueryChanged,
         ),
+        if (_searchError != null)
+          Padding(
+            padding: const EdgeInsets.only(top: 6),
+            child: Text(
+              _searchError!,
+              style: const TextStyle(color: Colors.orangeAccent, fontSize: 11),
+            ),
+          ),
         if (_options.isNotEmpty && widget.selectedWork == null)
           Container(
             margin: const EdgeInsets.only(top: 4),

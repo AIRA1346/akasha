@@ -8,7 +8,6 @@ PreferredSizeWidget _homeShellScaffoldAppBar(
   return HomeAppBar(
     toolbarHeight: layoutSpec.appBarHeight,
     isSidebarOpen: controller.isSidebarOpen,
-    isSyncing: controller.isSyncing,
     vaultLinked: controller.vaultLinked,
     onCommerce: controller.toggleCommerceSurface,
     commerceSelected: controller.isCommerceSurfaceOpen,
@@ -23,11 +22,8 @@ PreferredSizeWidget _homeShellScaffoldAppBar(
     onToggleSidebar: controller.toggleSidebar,
     onTimelineCapture: controller.openTimelineQuickCapture,
     onClipboardImport: controller.openClipboardImportDialog,
-    onSync: controller.syncRegistry,
-    onSyncSettings: controller.showCustomUrlDialog,
     onPromptTemplates: () => HomeDialogsFacade.showPromptTemplates(context),
     onVaultSettings: controller.openVaultSettingsDialog,
-    onClearRegistryCache: controller.clearRegistryCache,
     onCatalogInbox: FeatureFlags.catalogContributions
         ? controller.openCatalogContributionsInbox
         : null,

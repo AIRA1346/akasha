@@ -22,20 +22,20 @@ mixin _RegistryShardLoaderShards
   Future<void> ensureShardLoaded(String shardId) async {
     if (shardId.isEmpty || _loadedShardIds.contains(shardId)) return;
     final meta = _manifest?.shardById(shardId);
-    if (meta == null) return;
-
-    Map<String, dynamic>? shardMap;
-
-    // 1) 번들 asset (로컬 수정본 우선)
-    shardMap = await _readBundledShardMap(meta.path);
-
-    // 2) 디스크 캐시
-    shardMap ??= await _readCachedShardMap(meta.path);
-
-    if (shardMap != null) {
-      _shardEntriesMerger?.call(shardMap);
-      _loadedShardIds.add(shardId);
+    if (meta == null) {
+      throw RegistrySourceException(
+        type: RegistrySourceFailureType.manifestMismatch,
+        relativePath: 'manifest.json',
+        sourceId: _source.sourceId,
+        shardId: shardId,
+        releaseId: _manifest?.releaseId,
+        cause: 'shard id is not declared by the active manifest',
+      );
     }
+
+    final shardMap = await _readBundledShardMap(meta);
+    _shardEntriesMerger?.call(shardMap);
+    _loadedShardIds.add(shardId);
   }
 
   Future<void> ensureShardsForQuery(String query) async {
@@ -57,7 +57,10 @@ mixin _RegistryShardLoaderShards
     }
 
     final shardIds = <String>{};
-    for (final entry in _entriesForFilters(domain: domain, category: category)) {
+    for (final entry in _entriesForFilters(
+      domain: domain,
+      category: category,
+    )) {
       shardIds.add(entry.shardId);
     }
     for (final id in shardIds) {
@@ -90,20 +93,42 @@ mixin _RegistryShardLoaderShards
   }
 
   Future<bool> hasBundledShard(String relativePath) async {
-    try {
-      await rootBundle.loadString('assets/registry/$relativePath');
-      return true;
-    } catch (_) {
-      return false;
-    }
+    return _source.exists(relativePath);
   }
 
-  Future<Map<String, dynamic>?> _readBundledShardMap(String relativePath) async {
+  Future<void> ensureShardForWorkId(String workId) async {
+    if (workId.isEmpty) return;
+    await ensureSearchIndexLoaded();
+    final entry = _searchIndexByWorkId[workId];
+    if (entry == null) return;
+    await ensureShardLoaded(entry.shardId);
+  }
+
+  Future<Map<String, dynamic>> _readBundledShardMap(
+    RegistryShardMeta meta,
+  ) async {
+    final relativePath = meta.path;
+    final raw = await _source.readRequired(relativePath);
+    verifySha256(
+      content: raw,
+      expected: meta.sha256,
+      relativePath: relativePath,
+      shardId: meta.id,
+    );
     try {
-      final raw = await rootBundle.loadString('assets/registry/$relativePath');
       final decoded = json.decode(raw);
       if (decoded is Map<String, dynamic>) return decoded;
-    } catch (_) {}
-    return null;
+      throw const FormatException('shard root must be a JSON object');
+    } catch (error) {
+      if (error is RegistrySourceException) rethrow;
+      throw RegistrySourceException(
+        type: RegistrySourceFailureType.malformedJson,
+        relativePath: relativePath,
+        sourceId: _source.sourceId,
+        shardId: meta.id,
+        releaseId: _manifest?.releaseId,
+        cause: error,
+      );
+    }
   }
 }

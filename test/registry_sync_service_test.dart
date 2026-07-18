@@ -19,7 +19,6 @@ class _FakePathProvider extends Fake
   @override
   Future<String?> getApplicationDocumentsPath() async => root.path;
 }
-
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -32,6 +31,8 @@ void main() {
     RegistrySyncService.setTextFetcherForTesting(null);
     RegistrySyncService().resetForTesting();
     await WorksRegistry.init();
+    await WorksRegistry.reloadBundleForTesting();
+    RegistrySyncService().bindLoader(WorksRegistry.loader);
   });
 
   tearDown(() async {
@@ -189,7 +190,7 @@ void main() {
     test('syncShardsByIds skips a bundled shard when manifest matches local',
         () async {
       WorksRegistry.loader.resetLoadedShardsForTesting();
-      await WorksRegistry.clearDiskCacheAndReloadBundle();
+      await WorksRegistry.reloadBundleForTesting();
 
       final loader = WorksRegistry.loader;
       final manifest = loader.manifest;

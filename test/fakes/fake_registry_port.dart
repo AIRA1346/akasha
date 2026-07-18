@@ -8,6 +8,7 @@ class FakeRegistryPort implements RegistryPort {
   int browsePrefetchWindowSizeValue = 48;
   int browseFullCatalogThresholdValue = 2500;
   int catalogIndexTotal = 0;
+  Object? prefetchFailure;
 
   void addWork(RegistryWork work) {
     _works.add(work);
@@ -23,6 +24,10 @@ class FakeRegistryPort implements RegistryPort {
     }
     return null;
   }
+
+  @override
+  Future<RegistryWork?> getWorkByIdAsync(String workId) async =>
+      getWorkById(workId);
 
   @override
   List<RegistryWork> get allWorks => _works;
@@ -73,28 +78,27 @@ class FakeRegistryPort implements RegistryPort {
   int get browseFullCatalogThreshold => browseFullCatalogThresholdValue;
 
   @override
-  Future<void> loadCachedRegistry() async {}
-
-  @override
   Future<void> prefetchBrowseWindow({
     AppDomain? domain,
     MediaCategory? category,
     int offset = 0,
     int? limit,
-    bool fetchRemote = false,
-  }) async {}
+  }) async {
+    final failure = prefetchFailure;
+    if (failure != null) throw failure;
+  }
 
   @override
   Future<void> prefetchForFilters({
     AppDomain? domain,
     Set<MediaCategory>? categories,
-  }) async {}
+  }) async {
+    final failure = prefetchFailure;
+    if (failure != null) throw failure;
+  }
 
   @override
-  int catalogIndexEntryCount({
-    AppDomain? domain,
-    MediaCategory? category,
-  }) {
+  int catalogIndexEntryCount({AppDomain? domain, MediaCategory? category}) {
     if (catalogIndexTotal > 0) return catalogIndexTotal;
     return _works.where((w) {
       if (domain != null && w.domain != domain) return false;
@@ -102,7 +106,4 @@ class FakeRegistryPort implements RegistryPort {
       return true;
     }).length;
   }
-
-  @override
-  Future<void> clearDiskCacheAndReloadBundle() async {}
 }

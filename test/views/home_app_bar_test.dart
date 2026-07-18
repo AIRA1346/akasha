@@ -58,10 +58,9 @@ void main() {
     await tester.tap(find.byTooltip('More tools'));
     await tester.pumpAndSettle();
 
-    expect(
-      find.text('Sync global works catalog (long-press for settings)'),
-      findsOneWidget,
-    );
+    expect(find.textContaining('Sync global works catalog'), findsNothing);
+    expect(find.textContaining('catalog URL'), findsNothing);
+    expect(find.textContaining('registry cache'), findsNothing);
     expect(find.text('Import AI markdown'), findsOneWidget);
     expect(find.text('Copy AI prompt templates'), findsOneWidget);
     if (FeatureFlags.showTimeline) {
@@ -224,16 +223,12 @@ HomeAppBar _appBar({
 }) {
   return HomeAppBar(
     isSidebarOpen: true,
-    isSyncing: false,
     vaultLinked: vaultLinked,
     onToggleSidebar: () {},
     onClipboardImport: () {},
     onTimelineCapture: onTimelineCapture,
-    onSync: () {},
-    onSyncSettings: () {},
     onPromptTemplates: () {},
     onVaultSettings: () {},
-    onClearRegistryCache: () {},
     onCatalogInbox: onCatalogInbox,
     catalogContributionCount: catalogContributionCount,
     onSettings: onSettings ?? () {},

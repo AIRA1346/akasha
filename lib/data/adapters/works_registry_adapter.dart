@@ -3,7 +3,8 @@ import '../../models/enums.dart';
 import '../../services/works_registry.dart';
 
 class WorksRegistryAdapter implements RegistryPort {
-  static final WorksRegistryAdapter _instance = WorksRegistryAdapter._internal();
+  static final WorksRegistryAdapter _instance =
+      WorksRegistryAdapter._internal();
   factory WorksRegistryAdapter() => _instance;
   WorksRegistryAdapter._internal();
 
@@ -14,10 +15,15 @@ class WorksRegistryAdapter implements RegistryPort {
   RegistryWork? getWorkById(String workId) => WorksRegistry.getWorkById(workId);
 
   @override
+  Future<RegistryWork?> getWorkByIdAsync(String workId) =>
+      WorksRegistry.getWorkByIdAsync(workId);
+
+  @override
   List<RegistryWork> get allWorks => WorksRegistry.allWorks;
 
   @override
-  Future<List<RegistryWork>> searchAsync(String query) => WorksRegistry.searchAsync(query);
+  Future<List<RegistryWork>> searchAsync(String query) =>
+      WorksRegistry.searchAsync(query);
 
   @override
   Future<List<RegistryWork>> getFilteredWorks({
@@ -42,10 +48,8 @@ class WorksRegistryAdapter implements RegistryPort {
   int get browsePrefetchWindowSize => WorksRegistry.browsePrefetchWindowSize;
 
   @override
-  int get browseFullCatalogThreshold => WorksRegistry.browseFullCatalogThreshold;
-
-  @override
-  Future<void> loadCachedRegistry() => WorksRegistry.loadCachedRegistry();
+  int get browseFullCatalogThreshold =>
+      WorksRegistry.browseFullCatalogThreshold;
 
   @override
   Future<void> prefetchBrowseWindow({
@@ -53,15 +57,12 @@ class WorksRegistryAdapter implements RegistryPort {
     MediaCategory? category,
     int offset = 0,
     int? limit,
-    bool fetchRemote = false,
-  }) =>
-      WorksRegistry.prefetchBrowseWindow(
-        domain: domain,
-        category: category,
-        offset: offset,
-        limit: limit ?? WorksRegistry.browsePrefetchWindowSize,
-        fetchRemote: fetchRemote,
-      );
+  }) => WorksRegistry.prefetchBrowseWindow(
+    domain: domain,
+    category: category,
+    offset: offset,
+    limit: limit ?? WorksRegistry.browsePrefetchWindowSize,
+  );
 
   @override
   Future<void> prefetchForFilters({
@@ -71,13 +72,6 @@ class WorksRegistryAdapter implements RegistryPort {
       WorksRegistry.prefetchForFilters(domain: domain, categories: categories);
 
   @override
-  int catalogIndexEntryCount({
-    AppDomain? domain,
-    MediaCategory? category,
-  }) =>
+  int catalogIndexEntryCount({AppDomain? domain, MediaCategory? category}) =>
       WorksRegistry.catalogIndexEntryCount(domain: domain, category: category);
-
-  @override
-  Future<void> clearDiskCacheAndReloadBundle() =>
-      WorksRegistry.clearDiskCacheAndReloadBundle();
 }

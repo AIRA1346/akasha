@@ -1,9 +1,7 @@
 import '../../../core/ports/registry_port.dart';
-import '../../../core/ports/registry_sync_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/ports/vault_port.dart';
 import '../../../data/adapters/markdown_vault_adapter.dart';
-import '../../../data/adapters/registry_sync_adapter.dart';
 import '../../../data/adapters/user_catalog_store_adapter.dart';
 import '../../../data/adapters/works_registry_adapter.dart';
 import '../../../features/workbench/data/workbench_controller.dart';
@@ -61,7 +59,6 @@ class HomeShellCoordinatorBundle {
     required HomeSectionPreferences sectionPrefs,
     required RegistryPort registry,
     required UserCatalogPort userCatalog,
-    required RegistrySyncPort registrySyncPort,
     required void Function(String message) showSnack,
     required void Function() rebuild,
     required void Function(void Function()) wrapSetState,
@@ -169,22 +166,13 @@ class HomeShellCoordinatorBundle {
 
     catalog = HomeCatalogCoordinator(
       registry: registry,
-      registrySyncPort: registrySyncPort,
       isMounted: () => host.mounted,
       scheduleRebuild: host.scheduleRebuild,
       filterCtrl: filterCtrl,
       dashboardCtrl: dashboardCtrl,
       isPersonalLibraryMode: () => navigation.isPersonalLibraryMode,
-      showSuccess: showSnack,
       showError: showSnack,
-      reloadItems: () => vault.loadItems(),
-      autoArchiveWorks: ({bool showFeedback = false}) =>
-          vault.autoArchiveRegistryWorks(
-            showFeedback: showFeedback,
-            showMessage: showFeedback ? showSnack : null,
-          ),
     );
-    catalog.init();
 
     final browse = HomeBrowseCoordinator(
       hostContext: () => host.context,
@@ -253,6 +241,5 @@ class HomeShellCoordinatorBundle {
 abstract final class HomeShellDefaultPorts {
   static final RegistryPort registry = WorksRegistryAdapter();
   static final UserCatalogPort userCatalog = UserCatalogStoreAdapter();
-  static final RegistrySyncPort registrySync = RegistrySyncAdapter();
   static final VaultPort vault = MarkdownVaultAdapter();
 }

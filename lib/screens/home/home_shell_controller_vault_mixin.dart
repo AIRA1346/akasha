@@ -31,7 +31,6 @@ mixin HomeShellControllerVaultMixin on HomeShellControllerBase {
     await loadRecentExploration();
     await vault.runStartupAutoArchiveIfNeeded();
     await prefetchRegistryForCurrentFilters();
-    await refreshLastSyncTime();
     vault.bindVaultWatch(
       onVaultChanged: (change) => vaultWatchReactor.onVaultChanged(
         applyVaultChange: () => vault.applyVaultChange(change),
@@ -46,7 +45,6 @@ mixin HomeShellControllerVaultMixin on HomeShellControllerBase {
         },
       ),
     );
-    catalog.registrySync.checkAutoSync();
   }
 
   Future<void> loadItems() => vault.loadItems();
@@ -65,10 +63,6 @@ mixin HomeShellControllerVaultMixin on HomeShellControllerBase {
   Future<void> refreshRecentExploration() => recentExplore.refresh();
 
   Future<void> loadRecentExploration() => recentExplore.load();
-
-  Future<void> refreshLastSyncTime() => catalog.refreshLastSyncTime();
-
-  Future<void> syncRegistry() => catalog.syncRegistry();
 
   Future<void> syncCatalogContributionCount() =>
       catalog.syncCatalogContributionCount();

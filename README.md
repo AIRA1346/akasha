@@ -23,7 +23,7 @@ Steam v1은 그 비전을 **작품 감상 아카이브**로 검증한다. Sanctu
 | 영역 | 설명 |
 |------|------|
 | **Sanctum 볼트** | 로컬 `.md` + YAML front-matter, 폴더 연동·자동 감시 |
-| **엄선 작품 사전** | GitHub raw sync (`akasha-db`), 샤딩·온디맨드 로드 |
+| **엄선 작품 사전** | 검증된 전체 로컬 bundle (`akasha-db`), 샤딩·온디맨드 asset 로드 |
 | **IP 1카드 그리드** | 같은 IP는 카드 1장, 매체는 하단 칩으로 전부 표시 |
 | **나의 서재** *(신규 구현)* | 아카이브한 작품 전용 뷰 + 번들 무료 테마 2종. Premium 테마 3종은 commerce 검증 후 판매 계획 |
 
@@ -73,20 +73,21 @@ Steam v1은 그 비전을 **작품 감상 아카이브**로 검증한다. Sanctu
 | **철학** | **자체 DB 구축** — 가공·검증 후 적재; 무분별 API 복제 금지 ([akasha-db-policy.md](docs/history/policy/akasha-db-policy.md)) |
 | **스키마** | **v4** (현재) — `wk_` 영구 ID · `hash(wk_)%256` 샤딩 · sha256 manifest — [SCHEMA.md](akasha-db/SCHEMA.md) |
 | **규모 목표** | 2026 **10k** (현재 **10,048** ✅) · 2027 ~50k · 2028 ~100k · 2030 ~500k |
-| **샤딩** | **v4 해시 샤딩 완료** — 351 샤드 ([v4-migration-plan.md](docs/history/v4-migration-plan.md) Phase A~E ✅) |
+| **샤딩** | **v4 해시 샤딩 완료** — 비어 있지 않은 1,713 shard ([v4-migration-plan.md](docs/history/v4-migration-plan.md) Phase A~E ✅) |
 | **포스터** | **대시보드 서재 미표시** · 나만의 서재에서만 유저 Sanctum vault `poster:` / `posters/` 표시 |
 | **볼트** | 아카이브한 작품**만** `.md` — 사전 전체가 md가 되지 않음 |
 | **장기 확장** | **Registry Pipeline** (AI extract → dedupe → shard → Git) |
-| **기술** | GitHub → Cloudflare CDN → 앱 (서버 비용 0) |
+| **기술** | Git source → 결정적 full-bundle builder → 앱 asset (production registry network 0) |
 | **글로벌화** | `searchTokens` · [locale-catalog-policy.md](docs/history/policy/locale-catalog-policy.md) |
 
-동기화 base URL (CDN read):
+공개 replica(현재 production 앱에서는 사용하지 않음):
 
 ```
 https://akasha-db.pages.dev/
 ```
 
-소스(Git): [akasha-db](https://github.com/AIRA1346/akasha-db) — push 시 Pages 자동 배포
+소스(Git): [akasha-db](https://github.com/AIRA1346/akasha-db) — Pages 배포는
+독립 데이터 배포와 미래 provider 검증을 위해 보존하지만 앱은 CDN으로 fallback하지 않습니다.
 
 ---
 
@@ -140,7 +141,7 @@ flowchart LR
 | Framework | Flutter (Windows Desktop 우선) |
 | Storage | Local Markdown + YAML front-matter |
 | State | `ChangeNotifier` + Coordinator (Riverpod는 v1 이후 검토) |
-| Registry | JSON **v4 해시 샤딩** (`wk_` 영구 ID), 온디맨드 fetch, `searchTokens` 교차 언어 검색 |
+| Registry | JSON **v4 해시 샤딩** (`wk_` 영구 ID), 전체 로컬 bundle의 lazy asset read, `searchTokens` 교차 언어 검색 |
 | Locale | `CatalogLocale` + `titles` fallback (UI i18n은 v1.1) |
 | Commerce | `EntitlementService` — cosmetic(Steam) / content(제휴) 분리 |
 | CI | `flutter_ci`, `ci_registry_check`, `franchise_linter` |
@@ -198,15 +199,18 @@ flutter test
 dart run tool/ci_registry_check.dart
 dart run tool/preflight_check.dart          # 4종 핵심 gate 일괄
 # 도구 전체 인덱스: tool/README.md
-# G1+ (entryCount > 2500): eager shard만 번들 — ADR-010
-dart run tool/registry_builder.dart --sync-assets --bundle-eager-only
-dart run tool/catalog_scale_baseline.dart --strict   # 번들 모드·15MB 게이트
+# production full bundle — source manifest를 재생성하지 않는 read-only builder
+dart run tool/registry_bundle_builder.dart --source akasha-db --output assets/registry --source-revision <immutable-akasha-db-commit> --bundle-all
+dart run tool/catalog_scale_baseline.dart --strict
 # Discovery 배치 SSOT:
 #   .\scripts\discovery_batch.ps1
 flutter build windows
 ```
 
-앱 번들에는 **search_index(전체)** 와 **eager 샤드만** (`franchise primary` 등 cold-start 필수)이 포함됩니다. 나머지 샤드는 CDN·캐시 on-demand ([ADR-010](docs/history/adr/ADR-010-bundle-eager-only.md)). 사전 확장은 **수동 큐레이션·wikidata_ko trial** 경로를 사용합니다 (AniList API bulk·온디맨드 미사용).
+앱 번들에는 search index와 manifest가 선언한 **전체 1,713 shard**가 포함됩니다. 시작 시
+manifest/index/eager shard만 읽고 나머지는 로컬 asset에서 lazy read하며, CDN·registry cache
+fallback은 없습니다 ([ADR-015](docs/architecture/ADR-015-full-local-registry-bundle.md)).
+사전 확장은 **수동 큐레이션·wikidata_ko trial** 경로를 사용합니다 (AniList API bulk·온디맨드 미사용).
 
 Windows 실행 파일: `build/windows/x64/runner/Release/akasha.exe`
 

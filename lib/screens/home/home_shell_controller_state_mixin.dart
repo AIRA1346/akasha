@@ -32,12 +32,10 @@ mixin HomeShellControllerStateMixin on HomeShellControllerBase {
   String get displayName => vault.displayName;
   bool get autoArchiveRegistry => vault.autoArchiveRegistry;
 
-  bool get isSyncing => catalog.isSyncing;
   bool get isCatalogLoading => catalog.isCatalogLoading;
   bool get isCatalogLoadingMore => catalog.isCatalogLoadingMore;
   int get catalogBrowseOffset => catalog.catalogBrowseOffset;
   int get catalogTotalEntries => catalog.catalogTotalEntries;
-  DateTime? get lastSyncTime => catalog.lastSyncTime;
   int get catalogContributionCount => catalog.catalogContributionCount;
   bool get catalogUsesWindowedPrefetch => catalog.catalogUsesWindowedPrefetch;
   bool get catalogHasMore => catalog.catalogHasMore;

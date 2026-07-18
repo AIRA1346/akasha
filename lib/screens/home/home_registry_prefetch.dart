@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/foundation.dart';
 
 import '../../core/ports/registry_port.dart';
@@ -52,21 +50,6 @@ Future<void> prefetchRegistryForFilters({
       onCatalogLoadingChanged(false);
     }
     if (isMounted()) onDataChanged();
-
-    final remotePrefetch = registry
-        .prefetchBrowseWindow(
-          offset: browseOffset,
-          limit: registry.browsePrefetchWindowSize,
-          fetchRemote: true,
-        )
-        .then((_) {
-      if (isMounted()) onDataChanged();
-    });
-    if (append) {
-      await remotePrefetch;
-    } else {
-      unawaited(remotePrefetch);
-    }
     return;
   }
 
@@ -95,7 +78,8 @@ void _emitCatalogWindowState(
     category: filters.categories.length == 1 ? filters.categories.first : null,
   );
   final hasActiveIndexFilters = filters.categories.isNotEmpty;
-  final useFullCatalog = fullCatalogAtOffsetZero &&
+  final useFullCatalog =
+      fullCatalogAtOffsetZero &&
       filters.categories.isEmpty &&
       total > 0 &&
       total <= registry.browseFullCatalogThreshold;

@@ -1,17 +1,5 @@
 part of 'home_dialogs_coordinator.dart';
 
-Future<void> _homeDialogsCoordinatorShowCustomUrlDialog(
-  HomeDialogsCoordinator coord,
-) async {
-  await HomeDialogsFacade.showRegistrySync(
-    context: coord.hostContext(),
-    isSyncing: coord.isSyncing,
-    lastSyncTime: coord.lastSyncTime,
-    onSyncNow: coord.catalog.syncRegistry,
-    onUrlSaved: coord.catalog.refreshLastSyncTime,
-  );
-}
-
 Future<void> _homeDialogsCoordinatorShowAppThemePicker(
   HomeDialogsCoordinator coord,
 ) async {

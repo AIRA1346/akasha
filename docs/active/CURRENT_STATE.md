@@ -7,7 +7,7 @@
 > **Git:** `git rev-parse HEAD` (문서 커밋 tip과 어긋나면 tip을 따름)
 >
 > **Verification snapshot (2026-07-18):**
-> - **Registry full-bundle Phase 0–1** — 10,048 works · v4 JSON shard 1,713개 전체 asset · read-only source/staging builder · root/search provenance · deterministic double-build/allowlist/SHA/scale gate. Production CDN 호출 제거와 registry cache migration은 Phase 2로 분리.
+> - **Registry full-bundle Phase 0–2** — 10,048 works · v4 JSON shard 1,713개 전체 asset · read-only source/staging builder · root/search provenance · deterministic double-build/allowlist/SHA/scale gate · production `BundledRegistrySource` only. 검색·browse·category·상세에서 registry CDN 호출과 remote fallback은 0이며, 기존 registry cache와 sync/URL preference만 1회 멱등 무효화한다. 사용자 Vault는 migration 대상이 아니다.
 > - P0 recoverable Vault write · SA-01/02/03 derived-index foundation
 > - P1 local CLI: bounded `record lookup`/`record read` · user-started `candidate.create`
 > - Candidate provenance review UX · Vault-spec self-description
@@ -21,10 +21,11 @@
 > - **Derived index update ownership** — Entity/Work/Journal/Timeline 저장 계층이 `ArchiveIndexManager` 결과를 이벤트의 `derivedIndexesUpdated`에 전달하고, Home은 성공 표시가 있는 경우 중복 갱신하지 않는다. 실패는 `false`로 유지되어 기존 fallback이 실행되며 Home debounce는 pending path flag를 **AND-coalesce**한다.
 > - **HomeShell vault-watch dispose lifecycle (ACTION A)** — God Class 전면 리팩터 **기각** (상태 소유권은 이미 coordinator로 분리). `HomeVaultWatchReactor` generation cancel + dispose 순서(reactor → vault sub/debounce → workbench) + `WorkbenchController.syncEntityTabs` await 후 `_disposed` guard. **COUPLED/DEFERRED 유지:** timeline token 과다 bump · 이중 rebuild · Catalog `isCatalogLoading` 직접 set · Vault cold-start bootstrap 추출
 > - **Package modularization audit (closed)** — 단일 Flutter 앱 + `akasha_commerce_domain`(유일한 성공 공유 package) + 별도 backend 유지 · package graph **비순환** · 신규 EXTRACT_NOW **없음** · Melos / `akasha_core`·database·ui 전면 분할·줄 수 기준 분리 **기각**. Archive format/codec = PREPARE_BOUNDARY · Vault I/O / UI / Home orchestration = KEEP_IN_APP · Steam bridge는 production IAP·no-IAP 빌드 제외 요구 시 **CMake optional부터** 재검토 · Melos는 package 수·공통 orchestration 필요성이 실제로 늘 때만. **재오픈 트리거:** 앱 외 제2 소비자 · 플랫폼 완전 빌드 제외 · 안정 API/의존 방향 · 앱 타입 역참조 없음 · 독립 테스트·배포·CI 격리 실측 · unrelated 동시 변경 반복
-> - Flutter app: `flutter analyze` **0** · `flutter test` **1258**
+> - Flutter app: `flutter analyze` **0** · `flutter test` **1273**
 > - Commerce packages: domain `dart test` **17** · backend `dart test` **18** · domain/root `dart analyze` **0**
 > - Tooling: `dart analyze tool` **0** · CI registry workflow에서 전용 분석 단계 실행
 > - Windows debug/default release/sandbox release build **OK (2026-07-16)**
+> - **Registry Phase 2 Windows Release (2026-07-18)** — 1,757 files · 70,880,296 bytes · registry asset 1,725 files/16,698,606 bytes · packaged shard 1,713. Phase 0–1 baseline보다 65,536 bytes 작고 Steam Release payload verifier PASS.
 > - **UX-5A Theme package regression foundation** — 5 preset asset namespace/fallback/reduced-motion 계약 · 핵심 surface 3 viewport/125% text geometry · Classic Dark/Midnight Blue Windows golden · **done**. 실제 bundled artwork 검증은 아래 UX-5B로 확장.
 > - **UX-5B Bundled theme artwork** — Classic Dark·Midnight Blue 실제 backdrop/Hero 4개 · asset bundle/hash 검증 · 실제 decode/paint golden · **done**.
 > - **UX-5C Premium theme artwork** — Sakura·Amethyst·Nocturne reference·palette·effect 확정 · 실제 backdrop/Hero 6개 · 공식 5테마 Windows golden · **done**. Commerce·entitlement는 계속 비활성.
@@ -59,7 +60,7 @@
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
 
-**v1 blocking에 가까운 검증:** root `flutter test` **1258** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
+**v1 blocking에 가까운 검증:** root `flutter test` **1273** · vault 아카이브·Sanctum 저장·기록 UI · dogfood(사용자 직접).
 **v1 blocking 아님:** registry 작품 수 · recall@10 · Wikidata 확장 · CDN scale.  
 **IAP:** `FeatureFlags.steamInAppPurchasesEnabled = false` — 정상 build의 구매 CTA와 playtime reward trigger는 비활성이다. 별도 내부 sandbox define에서만 거래/reward adapter를 열 수 있으며, 실제 Steamworks checklist 검증 전 production 결제 가능 표시·재심사 주장은 금지한다.
 ---
@@ -72,6 +73,7 @@
 * **샤딩:** v4 hex shards · `wk_` 영구 ID · dedupe **0**
 * **역할:** 작품 **검색·starter catalog** 보조. 삭제·축소 없음.
 * **데이터 원칙:** posterPath·description Tier 1 금지 · Fact-only CI 유지
+* **production read:** 앱에 포함된 full bundle만 사용. CDN/remote sync는 production dependency graph에 연결하지 않으며, 미래 provider 실험용 코드와 공개 배포 인프라만 비활성 상태로 보존한다.
 
 ### Ⅱ. Tier 2 (Sanctum Vault) — **v1 핵심**
 * 로컬 파일 시스템 연동 및 Watch 시스템 구현 완료.
@@ -86,12 +88,13 @@
 
 * `search_index` 인메모리 검색 — **볼트·직접 등록과 함께** 작품 찾기 보조.
 * 다언어 제목·aliases 검색.
+* manifest·category index와 필요한 v4 shard를 bundle에서 lazy read. 누락·malformed JSON·SHA/provenance/schema 오류는 빈 결과나 CDN fallback으로 숨기지 않는다.
 
 ### Ⅱ. CI 검증
 
 | 도구 | 결과 | v1 blocking |
 |------|:----:|:-----------:|
-| root `flutter test` | **1258 PASS** | ✅ |
+| root `flutter test` | **1273 PASS** | ✅ |
 | commerce domain `dart test` | **17 PASS** | ✅ |
 | commerce backend `dart test` | **18 PASS** | ✅ |
 | root `flutter analyze` | 0 issue | ✅ |

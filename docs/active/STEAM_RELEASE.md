@@ -5,7 +5,7 @@
 > `steam_appid.txt` and PDB files; the manifest must validate before upload.
 > See [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md).
 
-> **Updated:** 2026-07-17
+> **Updated:** 2026-07-18
 > **Status:** Architecture Closure declared. Active gate = [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md).
 > **Release stance:** Early Access가 아니라 **무료 일반 출시**.  
 > **IAP:** **미구현** (`FeatureFlags.steamInAppPurchasesEnabled = false`). Store Page 인앱 구매 표시는 결제 흐름 완성 전까지 **제거 가능**. 부분 구현으로 구매가 있다고 표시·재제출하지 않는다.
@@ -51,7 +51,8 @@ Short: Esc → Preferences → Display language → English.
 | `flutter test` | PASS — 현재 개수는 [CURRENT_STATE.md](CURRENT_STATE.md) 참조 |
 | `flutter analyze lib` | PASS, **0 issue** |
 | `dogfood_precheck.ps1 -Build` | PASS |
-| Windows release build | PASS |
+| Windows release build | PASS — 70,880,296 bytes; Phase 0–1 baseline 대비 -65,536 bytes |
+| Full registry bundle | 10,048 works · 1,713 shards · production registry network 0 |
 | Manual dogfood | PASS, user-confirmed |
 | Store Presence | Coming Soon posted, user-confirmed |
 | SteamPipe upload | PASS, BuildID **24015480** |
@@ -62,7 +63,7 @@ Known non-blockers for v1:
 
 - Remaining UI/UX friction after dogfood can be handled after launch.
 - Existing URL posters do not need migration; re-entering the URL localizes again.
-- Registry manifest 4 files may be dirty after local rebuild because only `generatedAt` changes.
+- Registry remote/CDN infrastructure may remain deployed, but the production app does not depend on it.
 
 Blocking before final release:
 
@@ -197,7 +198,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\dogfood_precheck.ps1 -Build
 
 Then:
 
-1. Confirm `git status` has only expected registry manifest `generatedAt` changes, or is clean.
+1. Confirm the release worktree is clean and contains no unintended `akasha-db/**` source changes.
+   Run the deterministic full-bundle gate; do not regenerate source manifests as a packaging side effect.
 2. Push the release baseline to `origin/main`.
 3. Capture screenshots from `build\windows\x64\runner\Release\akasha.exe`.
 4. Upload the Windows build with:

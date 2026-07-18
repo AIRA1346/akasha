@@ -87,8 +87,6 @@ class HomeDialogsCoordinator {
   final void Function(AkashaItem item)? onPreviewLocalWork;
   final void Function(UserCatalogEntity entity)? onPreviewEntity;
 
-  bool get isSyncing => catalog.isSyncing;
-  DateTime? get lastSyncTime => catalog.lastSyncTime;
   String get displayName => vault.displayName;
   bool get autoArchiveRegistry => vault.autoArchiveRegistry;
 
@@ -108,9 +106,6 @@ class HomeDialogsCoordinator {
 
   Future<void> onAddWorksFromLibraryEdit() =>
       _homeDialogsCoordinatorOnAddWorksFromLibraryEdit(this);
-
-  Future<void> showCustomUrlDialog() =>
-      _homeDialogsCoordinatorShowCustomUrlDialog(this);
 
   Future<void> showAppThemePicker() =>
       _homeDialogsCoordinatorShowAppThemePicker(this);

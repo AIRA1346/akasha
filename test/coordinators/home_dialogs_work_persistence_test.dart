@@ -16,7 +16,6 @@ import 'package:akasha/utils/helpers.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../fakes/fake_registry_port.dart';
-import '../fakes/fake_registry_sync_port.dart';
 import '../fakes/fake_user_catalog_port.dart';
 import '../fakes/fake_vault_port.dart';
 
@@ -65,16 +64,12 @@ void main() {
     );
     final catalog = HomeCatalogCoordinator(
       registry: FakeRegistryPort(),
-      registrySyncPort: FakeRegistrySyncPort(),
       isMounted: () => true,
       scheduleRebuild: (mutate) => mutate(),
       filterCtrl: filterCtrl,
       dashboardCtrl: dashboardCtrl,
       isPersonalLibraryMode: () => false,
-      showSuccess: (_) {},
       showError: (_) {},
-      reloadItems: () async => fullLoadCalls++,
-      autoArchiveWorks: ({bool showFeedback = false}) async {},
     );
     final navigation = HomeNavigationCoordinator(
       isMounted: () => true,

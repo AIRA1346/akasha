@@ -8,14 +8,17 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/enums.dart';
 import '../models/registry_models.dart';
 import '../utils/app_log.dart';
+import 'registry_cache_contract.dart';
 import 'registry_shard_loader.dart';
 
 typedef RegistryTextFetcher = Future<String?> Function(String url);
 
 /// Git 기반 글로벌 작품 사전 동기화 서비스 (샤딩 아키텍처)
 class RegistrySyncService {
-  static const String _prefLastSyncKey = 'akasha_last_sync_time';
-  static const String _prefCustomUrlKey = 'akasha_custom_db_url';
+  static const String _prefLastSyncKey =
+      RegistryCacheContract.lastSyncPreferenceKey;
+  static const String _prefCustomUrlKey =
+      RegistryCacheContract.customDbUrlPreferenceKey;
 
   /// Read path: Cloudflare Pages (GitHub akasha-db push → auto deploy).
   static const String defaultDbBaseUrl = 'https://akasha-db.pages.dev/';
@@ -24,8 +27,20 @@ class RegistrySyncService {
       '${defaultDbBaseUrl}works_registry.json';
 
   static final RegistrySyncService _instance = RegistrySyncService._internal();
-  factory RegistrySyncService() => _instance;
+  static int _factoryInvocationCount = 0;
+  factory RegistrySyncService() {
+    _factoryInvocationCount++;
+    return _instance;
+  }
   RegistrySyncService._internal();
+
+  @visibleForTesting
+  static int get factoryInvocationCountForTesting => _factoryInvocationCount;
+
+  @visibleForTesting
+  static void resetFactoryInvocationCountForTesting() {
+    _factoryInvocationCount = 0;
+  }
 
   SharedPreferences? _prefs;
   static RegistryTextFetcher? _textFetcherOverride;
@@ -47,8 +62,10 @@ class RegistrySyncService {
 
   RegistryShardLoader get _effectiveLoader {
     final l = _loader;
-    assert(l != null,
-        'RegistrySyncService: loader not bound. Call bindLoader() during WorksRegistry.init().');
+    assert(
+      l != null,
+      'RegistrySyncService: loader not bound. Call bindLoader() during WorksRegistry.init().',
+    );
     return l!;
   }
 
@@ -93,7 +110,7 @@ class RegistrySyncService {
 
   Future<File> get _legacyCacheFile async {
     final dir = await getApplicationDocumentsDirectory();
-    return File(p.join(dir.path, 'local_works_registry.json'));
+    return File(p.join(dir.path, RegistryCacheContract.legacyRegistryFileName));
   }
 
   /// `local_works_registry.json` — v3 이전 단일 캐시.
@@ -159,12 +176,13 @@ class RegistrySyncService {
     await clearLegacyRegistryCache();
     success = await loader.cacheRemoteManifest(manifestContent);
 
-    final indexManifestContent =
-        await _fetchText('${baseUrl}search_index/manifest.json');
+    final indexManifestContent = await _fetchText(
+      '${baseUrl}search_index/manifest.json',
+    );
     if (indexManifestContent != null) {
       success =
           (await loader.cacheRemoteSearchIndexManifest(indexManifestContent)) ||
-              success;
+          success;
       try {
         final indexManifest = RegistrySearchIndexManifest.fromJson(
           json.decode(indexManifestContent) as Map<String, dynamic>,
@@ -172,7 +190,8 @@ class RegistrySyncService {
         for (final shard in indexManifest.shards) {
           final shardContent = await _fetchText('$baseUrl${shard.path}');
           if (shardContent != null) {
-            success = (await loader.cacheRemoteSearchIndexShard(
+            success =
+                (await loader.cacheRemoteSearchIndexShard(
                   shard.path,
                   shardContent,
                 )) ||
@@ -185,7 +204,8 @@ class RegistrySyncService {
     } else {
       final indexContent = await _fetchText('${baseUrl}search_index.json');
       if (indexContent != null) {
-        success = (await loader.cacheRemoteSearchIndex(indexContent)) || success;
+        success =
+            (await loader.cacheRemoteSearchIndex(indexContent)) || success;
       }
     }
 
@@ -228,16 +248,10 @@ class RegistrySyncService {
   }
 
   Future<void> _updateLastSyncTime() async {
-    await _prefs?.setString(
-      _prefLastSyncKey,
-      DateTime.now().toIso8601String(),
-    );
+    await _prefs?.setString(_prefLastSyncKey, DateTime.now().toIso8601String());
   }
 
-  bool _isManifestUpToDate(
-    RegistryManifest? local,
-    RegistryManifest remote,
-  ) {
+  bool _isManifestUpToDate(RegistryManifest? local, RegistryManifest remote) {
     if (local == null) return false;
     final localAt = _parseGeneratedAt(local.generatedAt);
     final remoteAt = _parseGeneratedAt(remote.generatedAt);
@@ -359,7 +373,8 @@ class RegistrySyncService {
 
   Future<bool> _remoteManifestIsNewerThanLocal() async {
     final loader = _effectiveLoader;
-    final localAt = _parseGeneratedAt(loader.manifest?.generatedAt) ??
+    final localAt =
+        _parseGeneratedAt(loader.manifest?.generatedAt) ??
         loader.bundledManifestGeneratedAt;
     if (localAt == null) return true;
 

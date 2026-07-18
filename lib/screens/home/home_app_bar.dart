@@ -4,30 +4,19 @@ import '../../config/feature_flags.dart';
 import '../../theme/akasha_palette.dart';
 import '../../utils/app_l10n.dart';
 
-enum _HomeAppBarMenuAction {
-  sync,
-  syncSettings,
-  clipboardImport,
-  promptTemplates,
-  clearRegistryCache,
-  timelineCapture,
-}
+enum _HomeAppBarMenuAction { clipboardImport, promptTemplates, timelineCapture }
 
 /// 홈 화면 AppBar — 볼트·제안함은 노출, 나머지 도구는 overflow 메뉴.
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({
     super.key,
     required this.isSidebarOpen,
-    required this.isSyncing,
     required this.vaultLinked,
     required this.onToggleSidebar,
     required this.onClipboardImport,
     this.onTimelineCapture,
-    required this.onSync,
-    required this.onSyncSettings,
     required this.onPromptTemplates,
     required this.onVaultSettings,
-    required this.onClearRegistryCache,
     this.onCatalogInbox,
     this.catalogContributionCount = 0,
     required this.onSettings,
@@ -39,16 +28,12 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   });
 
   final bool isSidebarOpen;
-  final bool isSyncing;
   final bool vaultLinked;
   final VoidCallback onToggleSidebar;
   final VoidCallback onClipboardImport;
   final VoidCallback? onTimelineCapture;
-  final VoidCallback onSync;
-  final VoidCallback onSyncSettings;
   final VoidCallback onPromptTemplates;
   final VoidCallback onVaultSettings;
-  final VoidCallback onClearRegistryCache;
   final VoidCallback? onCatalogInbox;
   final int catalogContributionCount;
   final VoidCallback onSettings;
@@ -66,16 +51,10 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   void _onMenuSelected(_HomeAppBarMenuAction action) {
     switch (action) {
-      case _HomeAppBarMenuAction.sync:
-        if (!isSyncing) onSync();
-      case _HomeAppBarMenuAction.syncSettings:
-        onSyncSettings();
       case _HomeAppBarMenuAction.clipboardImport:
         onClipboardImport();
       case _HomeAppBarMenuAction.promptTemplates:
         onPromptTemplates();
-      case _HomeAppBarMenuAction.clearRegistryCache:
-        onClearRegistryCache();
       case _HomeAppBarMenuAction.timelineCapture:
         onTimelineCapture?.call();
     }
@@ -86,29 +65,6 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   ) {
     final l10n = lookupAppL10n(context);
     return [
-      PopupMenuItem(
-        value: _HomeAppBarMenuAction.sync,
-        enabled: !isSyncing,
-        child: _OverflowMenuRow(
-          icon: Icons.sync,
-          label: l10n?.appBarSyncRegistry ?? '글로벌 작품 사전 동기화',
-          trailing: isSyncing
-              ? const SizedBox(
-                  width: 16,
-                  height: 16,
-                  child: CircularProgressIndicator(strokeWidth: 2),
-                )
-              : null,
-        ),
-      ),
-      PopupMenuItem(
-        value: _HomeAppBarMenuAction.syncSettings,
-        child: _OverflowMenuRow(
-          icon: Icons.settings_ethernet,
-          label: l10n?.appBarSyncUrlSettings ?? '사전 동기화 URL 설정',
-        ),
-      ),
-      const PopupMenuDivider(),
       PopupMenuItem(
         value: _HomeAppBarMenuAction.clipboardImport,
         child: _OverflowMenuRow(
@@ -133,16 +89,6 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ],
-      const PopupMenuDivider(),
-      PopupMenuItem(
-        value: _HomeAppBarMenuAction.clearRegistryCache,
-        child: _OverflowMenuRow(
-          icon: Icons.delete_sweep_outlined,
-          label:
-              l10n?.appBarClearRegistryCache ?? '글로벌 사전 JSON 캐시 삭제 (이미지 파일 아님)',
-          destructive: true,
-        ),
-      ),
     ];
   }
 
@@ -176,15 +122,6 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               isLabelVisible: catalogContributionCount > 0,
               label: Text('$catalogContributionCount'),
               child: const Icon(Icons.inbox_outlined),
-            ),
-          ),
-        if (isSyncing)
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8),
-            child: SizedBox(
-              width: 20,
-              height: 20,
-              child: CircularProgressIndicator(strokeWidth: 2),
             ),
           ),
         IconButton(
@@ -278,30 +215,18 @@ class HomeUtilityCluster extends StatelessWidget {
 }
 
 class _OverflowMenuRow extends StatelessWidget {
-  const _OverflowMenuRow({
-    required this.icon,
-    required this.label,
-    this.trailing,
-    this.destructive = false,
-  });
+  const _OverflowMenuRow({required this.icon, required this.label});
 
   final IconData icon;
   final String label;
-  final Widget? trailing;
-  final bool destructive;
 
   @override
   Widget build(BuildContext context) {
-    final color = destructive ? Colors.redAccent : null;
-
     return Row(
       children: [
-        Icon(icon, size: 20, color: color),
+        Icon(icon, size: 20),
         const SizedBox(width: 12),
-        Expanded(
-          child: Text(label, style: TextStyle(color: color)),
-        ),
-        ?trailing,
+        Expanded(child: Text(label)),
       ],
     );
   }

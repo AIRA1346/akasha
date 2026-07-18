@@ -26,7 +26,6 @@ import 'home_dashboard_ui.dart';
 import 'home_library_ui.dart';
 import 'home_personal_library_controller.dart';
 import 'home_personal_library_ui.dart';
-import 'home_registry_ui.dart';
 import 'home_section_preferences.dart';
 import 'home_shell_controller_base.dart';
 import 'home_shell_controller_browse_mixin.dart';
@@ -93,12 +92,9 @@ class HomeShellController extends HomeShellControllerBase
   @override
   final WorkbenchController workbench = WorkbenchController();
   @override
-  final HomeRegistryUi registryUi = const HomeRegistryUi();
-  @override
   final RegistryPort registry = HomeShellDefaultPorts.registry;
   @override
   final UserCatalogPort userCatalog = HomeShellDefaultPorts.userCatalog;
-  final registrySyncPort = HomeShellDefaultPorts.registrySync;
 
   @override
   final HomeVaultWatchReactor vaultWatchReactor = HomeVaultWatchReactor();
@@ -154,7 +150,6 @@ class HomeShellController extends HomeShellControllerBase
       sectionPrefs: sectionPrefs,
       registry: registry,
       userCatalog: userCatalog,
-      registrySyncPort: registrySyncPort,
       showSnack: showSnack,
       rebuild: rebuild,
       wrapSetState: wrapSetState,

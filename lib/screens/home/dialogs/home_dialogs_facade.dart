@@ -28,7 +28,6 @@ import 'catalog_add_contribution_dialog.dart';
 import 'catalog_contributions_inbox_dialog.dart';
 import 'clipboard_import_dialog.dart';
 import 'prompt_templates_dialog.dart';
-import 'registry_sync_dialog.dart';
 import 'journal_quick_capture_dialog.dart';
 import 'timeline_quick_capture_dialog.dart';
 import 'vault_settings_dialog.dart';
@@ -303,22 +302,6 @@ class HomeDialogsFacade {
           onItemImportedInMemory(item);
         }
       },
-    );
-  }
-
-  static Future<void> showRegistrySync({
-    required BuildContext context,
-    required bool isSyncing,
-    required DateTime? lastSyncTime,
-    required Future<void> Function() onSyncNow,
-    required Future<void> Function() onUrlSaved,
-  }) async {
-    await showRegistrySyncDialog(
-      context,
-      isSyncing: isSyncing,
-      lastSyncTime: lastSyncTime,
-      onSyncNow: onSyncNow,
-      onUrlSaved: onUrlSaved,
     );
   }
 

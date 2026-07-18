@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -10,18 +8,11 @@ import 'package:akasha/screens/home/home_registry_prefetch.dart';
 import 'package:akasha/services/registry_sync_service.dart';
 import 'package:akasha/services/works_registry.dart';
 
-/// Phase 1 full bundle에서도 남아 있는 remote-provider 경로를 격리해 테스트한다.
+/// Isolated provider guard: any registry network access fails this test.
 void _mockAkashaDbShardFetcher() {
-  RegistrySyncService.setTextFetcherForTesting((url) async {
-    final uri = Uri.parse(url);
-    var path = uri.path;
-    if (path.startsWith('/')) path = path.substring(1);
-    if (path.startsWith('shards/')) {
-      final file = File('akasha-db/$path');
-      if (file.existsSync()) return file.readAsStringSync();
-    }
-    return null;
-  });
+  RegistrySyncService.setTextFetcherForTesting(
+    (url) => throw StateError('registry network access is forbidden: $url'),
+  );
 }
 
 void main() {
@@ -50,7 +41,7 @@ void main() {
 
     test('first prefetch loads window not full catalog', () async {
       WorksRegistry.loader.resetLoadedShardsForTesting();
-      await WorksRegistry.clearDiskCacheAndReloadBundle();
+      await WorksRegistry.reloadBundleForTesting();
 
       final total = WorksRegistry.catalogIndexEntryCount();
       await WorksRegistry.prefetchBrowseWindow(
@@ -65,7 +56,7 @@ void main() {
 
     test('loadMore prefetch accumulates locally bundled shard entries', () async {
       WorksRegistry.loader.resetLoadedShardsForTesting();
-      await WorksRegistry.clearDiskCacheAndReloadBundle();
+      await WorksRegistry.reloadBundleForTesting();
       _mockAkashaDbShardFetcher();
 
       final total = WorksRegistry.catalogIndexEntryCount();
@@ -77,7 +68,6 @@ void main() {
       await WorksRegistry.prefetchBrowseWindow(
         offset: window,
         limit: window,
-        fetchRemote: true,
       );
       final afterSecond = WorksRegistry.allWorks.length;
 
@@ -88,7 +78,7 @@ void main() {
 
     test('prefetchRegistryForFilters emits window progress state', () async {
       WorksRegistry.loader.resetLoadedShardsForTesting();
-      await WorksRegistry.clearDiskCacheAndReloadBundle();
+      await WorksRegistry.reloadBundleForTesting();
 
       final filters = HomeBrowseFilterController();
       CatalogWindowState? state;
@@ -111,7 +101,7 @@ void main() {
 
     test('master_index filter prefetch emits scoped catalog window state', () async {
       WorksRegistry.loader.resetLoadedShardsForTesting();
-      await WorksRegistry.clearDiskCacheAndReloadBundle();
+      await WorksRegistry.reloadBundleForTesting();
 
       final filters = HomeBrowseFilterController()
         ..toggleCategory(MediaCategory.webtoon);
@@ -139,7 +129,7 @@ void main() {
 
     test('append prefetch advances catalog window offset', () async {
       WorksRegistry.loader.resetLoadedShardsForTesting();
-      await WorksRegistry.clearDiskCacheAndReloadBundle();
+      await WorksRegistry.reloadBundleForTesting();
 
       final filters = HomeBrowseFilterController();
       CatalogWindowState? first;
@@ -177,7 +167,7 @@ void main() {
 
     test('webtoon category filter loads category-scoped works', () async {
       WorksRegistry.loader.resetLoadedShardsForTesting();
-      await WorksRegistry.clearDiskCacheAndReloadBundle();
+      await WorksRegistry.reloadBundleForTesting();
 
       final indexTotal = WorksRegistry.catalogIndexEntryCount(
         category: MediaCategory.webtoon,

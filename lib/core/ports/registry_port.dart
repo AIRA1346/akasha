@@ -4,6 +4,7 @@ import '../../models/registry_work.dart';
 abstract class RegistryPort {
   Future<void> init();
   RegistryWork? getWorkById(String workId);
+  Future<RegistryWork?> getWorkByIdAsync(String workId);
   List<RegistryWork> get allWorks;
   Future<List<RegistryWork>> searchAsync(String query);
   Future<List<RegistryWork>> getFilteredWorks({
@@ -20,14 +21,11 @@ abstract class RegistryPort {
   int get browsePrefetchWindowSize;
   int get browseFullCatalogThreshold;
 
-  Future<void> loadCachedRegistry();
-
   Future<void> prefetchBrowseWindow({
     AppDomain? domain,
     MediaCategory? category,
     int offset = 0,
     int? limit,
-    bool fetchRemote = false,
   });
 
   Future<void> prefetchForFilters({
@@ -35,10 +33,5 @@ abstract class RegistryPort {
     Set<MediaCategory>? categories,
   });
 
-  int catalogIndexEntryCount({
-    AppDomain? domain,
-    MediaCategory? category,
-  });
-
-  Future<void> clearDiskCacheAndReloadBundle();
+  int catalogIndexEntryCount({AppDomain? domain, MediaCategory? category});
 }

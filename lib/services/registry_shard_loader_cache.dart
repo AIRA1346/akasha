@@ -76,20 +76,11 @@ mixin _RegistryShardLoaderCache on _RegistryShardLoaderBase {
     return null;
   }
 
-  Future<Map<String, dynamic>?> _readCachedShardMap(String relativePath) async {
-    try {
-      final file = await _cacheFile(relativePath);
-      if (await file.exists()) {
-        final decoded = json.decode(await file.readAsString());
-        if (decoded is Map<String, dynamic>) return decoded;
-      }
-    } catch (_) {}
-    return null;
-  }
-
   Future<Directory> _cacheDirectory() async {
     final dir = await getApplicationDocumentsDirectory();
-    return Directory(p.join(dir.path, 'registry_cache'));
+    return Directory(
+      p.join(dir.path, RegistryCacheContract.cacheDirectoryName),
+    );
   }
 
   Future<File> _cacheFile(String relativePath) async {

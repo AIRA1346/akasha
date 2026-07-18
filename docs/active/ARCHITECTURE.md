@@ -1,7 +1,7 @@
 # AKASHA 데이터 아키텍처 재설계
 
-> **상태:** 설계 확정 v2 · **v4 런타임 운영 중** (10,048 works · 1,713 shards)
-> **기준일:** 2026-07-02
+> **상태:** 설계 확정 v2 · **v4 full-bundle 런타임 운영 중** (10,048 works · 1,713 shards)
+> **기준일:** 2026-07-18
 > **제품·포스터 SSOT:** [VISION.md](VISION.md) · **아카이빙 북극성:** [history/product/ultimate-archiving-vision.md](../history/product/ultimate-archiving-vision.md)
 
 관련: [history/policy/akasha-db-policy.md](../history/policy/akasha-db-policy.md) · [history/policy/catalog-ownership.md](../history/policy/catalog-ownership.md) · [ROADMAP.md](ROADMAP.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](../history/closure-2026-07/ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md)
@@ -71,7 +71,7 @@
 │  Tier 1 — Global Registry     akasha-db (모든 유저 공유)            │
 │  · 제목, 카테고리, searchTokens, franchise, externalIds (Fact)      │
 │  · posterPath·description **없음** (v1)                             │
-│  · GitHub → Cloudflare → 앱 sync / 번들                           │
+│  · production 앱은 검증된 전체 로컬 bundle만 읽음                 │
 ├──────────────────────────────────────────────────────────────────┤
 │  Tier 2 — User Archive        Sanctum 볼트 (사용자만, 희소)        │
 │  · 아카이브·기록한 작품만 .md 생성                                 │
@@ -88,7 +88,8 @@
 | **설명·감상** | ❌ **미제공** | Markdown 본문 + YAML 자유 |
 | **역할** | 「원피스 검색 → Fact 카드」 | 「내가 쓴 기록 + 내 커버」 |
 
-**검색 서비스 관점:** Tier 1은 **텍스트 Fact + searchTokens**만 CDN에 둔다.  
+**검색 서비스 관점:** Tier 1은 **텍스트 Fact + searchTokens**만 배포한다. 현재
+production은 이를 전체 로컬 bundle에서 읽으며 CDN을 호출하지 않는다.
 이미지·창작 표현은 AKASHA가 **호스팅·큐레이션하지 않음** — [history/policy/data-policy.md §0.3](../history/policy/data-policy.md#03-tier-1-포스터-미제공-v1-steam).
 
 ```json
@@ -128,40 +129,41 @@
 │ Registry    │ ────────────► │ GitHub   │  소스 오브 트루스
 │ Pipeline    │               │ akasha-db│
 └─────────────┘               └────┬─────┘
-                                   │ raw HTTPS
-                                   ▼
-                            ┌──────────────┐
-                            │ Cloudflare   │  edge CDN (= 사실상 read DB)
-                            └──────┬───────┘
-                                   │
-              ┌────────────────────┼────────────────────┐
-              ▼                    ▼                    ▼
-        앱 번들 (subset)     registry_cache/      search_index
-        cold start           증분 sync            전용 fetch
+                 ┌─────────────────┴─────────────────┐
+                 ▼                                   ▼
+        결정적 full-bundle builder          GitHub raw / Cloudflare
+                 │                           공개 replica (비활성 provider)
+                 ▼
+        앱 번들 (전체 1,713 shard)
+        manifest/index bootstrap + lazy shard read
 ```
 
 | 계층 | v1~2027 | 2028+ (50k~) |
 |------|---------|--------------|
 | Write | Git PR / Pipeline commit | 동일 + 자동화 bot |
-| Read | GitHub raw + Cloudflare | + R2 mirror, search_index brotli |
-| App bundle | 엄선 subset (eager + lazy) | manifest만 번들, 샤드 on-demand |
+| Read | **production full local bundle**; GitHub raw/Cloudflare는 공개 replica | 규모 gate 이후 검증된 remote/data pack 재평가 |
+| App bundle | 전체 v4 shard + search index; shard는 asset에서 lazy read | 50k/64 MiB gate에서 재설계 |
 | Server DB | **없음** | 50만+ 시 read replica (R2/D1) 검토 |
 
 **2026 Steam v1:** PostgreSQL / Neo4j / Elastic / Vector DB **불필요**.  
 **2030 50만+:** 검색 인덱스·read path만 전용화; Git은 여전히 **기여·감사·버전** 용도.
 
-### 2.2 클라이언트 sync (유지·강화)
+### 2.2 production client read (bundle-only)
 
-1. `GET manifest.json` — `version`, `generatedAt`, `entryCount`, `shards[]`
-2. 샤드별 lazy `GET shards/{category}/{shardKey}.json`
-3. `GET search_index.json` — 자동완성·전역 검색 (별도 파일 유지)
-4. `legacy_aliases.json`, `franchise_groups.json`
+1. bundled root/search manifest의 `releaseId`, `sourceRevision`, `schemaVersion`,
+   `bundleMode=full`을 검증한다.
+2. bundled category search index로 필요한 shard ID를 결정한다.
+3. `assets/registry/shards/{category}/{shardKey}.json`을 lazy read하고 manifest SHA를
+   검증한다.
+4. `legacy_aliases.json`, `franchise_groups.json`도 bundle에서 읽는다.
 
-**증분 규칙:**
+production에는 CDN manifest 확인, remote shard fallback, registry cache 우선순위, 24시간
+auto-sync, 수동 sync/custom URL UI가 없다. 첫 bundle-only release는 registry 전용 cache만
+한 번 삭제한다. 미래 remote provider는 release 전체 provenance와 검증을 갖춘 명시적
+source로만 재도입할 수 있으며 파일별 혼합 fallback은 허용하지 않는다.
 
-- `generatedAt` 동일 → skip  
-- 샤드별 `entryCount` + `sha256` → 변경된 샤드만 fetch  
-- 번들이 원격보다 새면 stale cache 무효화 (기 구현)
+Cloudflare와 remote provider 코드는 독립 source 배포 및 향후 실험을 위해 보존하지만 현재
+production dependency graph에는 연결하지 않는다.
 
 ---
 

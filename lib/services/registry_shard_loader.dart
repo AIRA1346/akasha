@@ -1,14 +1,16 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:crypto/crypto.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import '../models/enums.dart';
 import '../models/registry_models.dart';
 import '../utils/app_log.dart';
 import '../utils/registry_search_utils.dart';
+import 'registry_cache_contract.dart';
+import 'registry_source.dart';
 
 part 'registry_shard_loader_cache.dart';
 part 'registry_shard_loader_search_index.dart';
@@ -22,18 +24,51 @@ typedef ShardEntriesMerger = void Function(Map<String, dynamic> entries);
 // ════════════════════════════════════════════════════════════════
 
 abstract class _RegistryShardLoaderBase {
+  late final RegistrySource _source;
+  late final bool _allowLegacyManifest;
   RegistryManifest? _manifest;
   RegistrySearchIndexManifest? _searchIndexManifest;
   List<RegistrySearchIndexEntry> _searchIndex = [];
   final Map<String, RegistrySearchIndexEntry> _searchIndexByWorkId = {};
-  final Map<MediaCategory, List<RegistrySearchIndexEntry>> _searchIndexByCategory =
-      {};
+  final Map<MediaCategory, List<RegistrySearchIndexEntry>>
+  _searchIndexByCategory = {};
   bool _useShardedSearchIndex = false;
   final Map<String, String> _legacyAliases = {};
   final Set<String> _loadedShardIds = {};
   ShardEntriesMerger? _shardEntriesMerger;
 
   void resetLoadedShards() => _loadedShardIds.clear();
+
+  RegistrySourceException sourceError(
+    RegistrySourceFailureType type,
+    String relativePath, {
+    String? shardId,
+    Object? cause,
+  }) => RegistrySourceException(
+    type: type,
+    relativePath: relativePath,
+    sourceId: _source.sourceId,
+    shardId: shardId,
+    releaseId: _manifest?.releaseId,
+    cause: cause,
+  );
+
+  void verifySha256({
+    required String content,
+    required String? expected,
+    required String relativePath,
+    String? shardId,
+  }) {
+    if (expected == null || expected.isEmpty) return;
+    final actual = sha256.convert(utf8.encode(content)).toString();
+    if (actual == expected) return;
+    throw sourceError(
+      RegistrySourceFailureType.manifestMismatch,
+      relativePath,
+      shardId: shardId,
+      cause: 'SHA-256 expected=$expected actual=$actual',
+    );
+  }
 }
 
 class RegistryShardLoader extends _RegistryShardLoaderBase
@@ -42,15 +77,24 @@ class RegistryShardLoader extends _RegistryShardLoaderBase
         _RegistryShardLoaderSearchIndex,
         _RegistryShardLoaderShards,
         _RegistryShardLoaderSync {
-  static const String bundledManifestAsset = 'assets/registry/manifest.json';
-  static const String bundledSearchIndexAsset = 'assets/registry/search_index.json';
+  static const int supportedSchemaVersion = 4;
+  static const int supportedShardBits = 8;
+  static const String bundledManifestAsset = 'manifest.json';
+  static const String bundledSearchIndexAsset = 'search_index.json';
   static const String bundledSearchIndexManifestAsset =
-      'assets/registry/search_index/manifest.json';
-  static const String bundledLegacyAliasesAsset = 'assets/registry/legacy_aliases.json';
+      'search_index/manifest.json';
+  static const String bundledLegacyAliasesAsset = 'legacy_aliases.json';
+  static const String bundledFranchiseGroupsAsset = 'franchise_groups.json';
   // TODO(remove): R1 — docs/draft/LEGACY_REMOVAL_POLICY.md §3.1
 
-  RegistryShardLoader({ShardEntriesMerger? shardEntriesMerger}) {
+  RegistryShardLoader({
+    ShardEntriesMerger? shardEntriesMerger,
+    RegistrySource? source,
+    bool allowLegacyManifest = false,
+  }) {
     _shardEntriesMerger = shardEntriesMerger;
+    _source = source ?? BundledRegistrySource();
+    _allowLegacyManifest = allowLegacyManifest;
   }
 
   RegistryManifest? get manifest => _manifest;
@@ -58,6 +102,7 @@ class RegistryShardLoader extends _RegistryShardLoaderBase
   List<RegistrySearchIndexEntry> get searchIndex => _searchIndex;
   bool get usesShardedSearchIndex => _useShardedSearchIndex;
   Map<String, String> get legacyAliases => Map.unmodifiable(_legacyAliases);
+  RegistrySource get source => _source;
 
   @visibleForTesting
   set manifestForTesting(RegistryManifest? value) => _manifest = value;
@@ -70,6 +115,12 @@ class RegistryShardLoader extends _RegistryShardLoaderBase
     _searchIndexByWorkId.clear();
     _searchIndexManifest = null;
     _useShardedSearchIndex = false;
+  }
+
+  void resetBundleStateForTesting() {
+    resetLoadedShardsForTesting();
+    _legacyAliases.clear();
+    _manifest = null;
   }
 
   bool isShardLoaded(String shardId) => _loadedShardIds.contains(shardId);

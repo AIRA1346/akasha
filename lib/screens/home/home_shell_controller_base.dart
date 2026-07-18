@@ -16,7 +16,6 @@ import 'home_browse_filter_controller.dart';
 import 'home_collectible_collection_controller.dart';
 import 'home_dashboard_controller.dart';
 import 'home_personal_library_controller.dart';
-import 'home_registry_ui.dart';
 import 'home_section_preferences.dart';
 import 'home_shell_host.dart';
 
@@ -29,7 +28,6 @@ abstract class HomeShellControllerBase {
   HomePersonalLibraryController get personalLibCtrl;
   HomeCollectibleCollectionController get collectionCtrl;
   WorkbenchController get workbench;
-  HomeRegistryUi get registryUi;
   RegistryPort get registry;
   UserCatalogPort get userCatalog;
 

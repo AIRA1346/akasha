@@ -63,15 +63,11 @@ void main() {
               return Scaffold(
                 appBar: HomeAppBar(
                   isSidebarOpen: true,
-                  isSyncing: false,
                   vaultLinked: true,
                   onToggleSidebar: () {},
                   onClipboardImport: () {},
-                  onSync: () {},
-                  onSyncSettings: () {},
                   onPromptTemplates: () {},
                   onVaultSettings: () {},
-                  onClearRegistryCache: () {},
                   onSettings: () {},
                   onCommerce: toggleCommerce,
                   commerceSelected: commerceOpen,
