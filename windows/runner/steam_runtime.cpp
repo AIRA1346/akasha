@@ -226,6 +226,8 @@ std::string CurrentWorkingDirectory() {
 std::string BuildMode() {
 #if defined(_DEBUG)
   return "Debug";
+#elif defined(AKASHA_PROFILE)
+  return "Profile";
 #else
   return "Release";
 #endif

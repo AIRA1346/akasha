@@ -7,11 +7,13 @@ import '../../../dev/steam_inventory_poc/steam_inventory_poc.dart';
 import '../../../dev/steam_inventory_poc/steam_inventory_poc_dialog.dart';
 import '../../../generated/l10n/app_localizations.dart';
 import '../../../services/app_lifecycle.dart';
+import '../../../services/build_identity_controller.dart';
 import '../../../services/catalog_locale_preferences.dart';
 import '../../../services/user_preferences.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
+import '../../../widgets/build_identity_widgets.dart';
 
 Future<void> showAppPreferencesDialog(
   BuildContext hostContext, {
@@ -161,6 +163,10 @@ Future<void> showAppPreferencesDialog(
                       onTap: onOpenVaultSettings == null
                           ? null
                           : () => closeThen(onOpenVaultSettings),
+                    ),
+                    const Divider(height: 28),
+                    BuildIdentityInfoSection(
+                      identity: BuildIdentityScope.of(context),
                     ),
                     if (isSteamInventoryPocEnabled) ...[
                       const Divider(height: 28),

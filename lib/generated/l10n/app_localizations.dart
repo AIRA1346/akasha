@@ -260,6 +260,78 @@ abstract class AppLocalizations {
   /// **'Close'**
   String get appPreferencesClose;
 
+  /// No description provided for @buildIdentityAppInfoTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'App information'**
+  String get buildIdentityAppInfoTitle;
+
+  /// No description provided for @buildIdentityVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'App version'**
+  String get buildIdentityVersion;
+
+  /// No description provided for @buildIdentityBuildNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Build number'**
+  String get buildIdentityBuildNumber;
+
+  /// No description provided for @buildIdentitySteamBuildId.
+  ///
+  /// In en, this message translates to:
+  /// **'Steam BuildID'**
+  String get buildIdentitySteamBuildId;
+
+  /// No description provided for @buildIdentityGitCommit.
+  ///
+  /// In en, this message translates to:
+  /// **'Git commit'**
+  String get buildIdentityGitCommit;
+
+  /// No description provided for @buildIdentityBuildMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Build mode'**
+  String get buildIdentityBuildMode;
+
+  /// No description provided for @buildIdentityExecutionEnvironment.
+  ///
+  /// In en, this message translates to:
+  /// **'Execution environment'**
+  String get buildIdentityExecutionEnvironment;
+
+  /// No description provided for @buildIdentityLocal.
+  ///
+  /// In en, this message translates to:
+  /// **'Local'**
+  String get buildIdentityLocal;
+
+  /// No description provided for @buildIdentitySteamChecking.
+  ///
+  /// In en, this message translates to:
+  /// **'Steam checking'**
+  String get buildIdentitySteamChecking;
+
+  /// No description provided for @buildIdentityUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Unavailable'**
+  String get buildIdentityUnavailable;
+
+  /// No description provided for @buildIdentityCopy.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy build information'**
+  String get buildIdentityCopy;
+
+  /// No description provided for @buildIdentityCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'Build information copied to the clipboard.'**
+  String get buildIdentityCopied;
+
   /// No description provided for @appBarToggleSidebar.
   ///
   /// In en, this message translates to:

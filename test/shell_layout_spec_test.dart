@@ -85,5 +85,48 @@ void main() {
         throwsArgumentError,
       );
     });
+
+    test('build identity preserves dock priority across layout classes', () {
+      expect(
+        resolveBuildIdentityDockPresentation(
+          layoutClass: ShellLayoutClass.wide,
+          viewportWidth: 1600,
+          hasAppVersion: true,
+        ),
+        BuildIdentityDockPresentation.full,
+      );
+      expect(
+        resolveBuildIdentityDockPresentation(
+          layoutClass: ShellLayoutClass.standard,
+          viewportWidth: 1366,
+          hasAppVersion: true,
+        ),
+        BuildIdentityDockPresentation.full,
+      );
+      expect(
+        resolveBuildIdentityDockPresentation(
+          layoutClass: ShellLayoutClass.compact,
+          viewportWidth: 1024,
+          hasAppVersion: true,
+        ),
+        BuildIdentityDockPresentation.condensed,
+      );
+      expect(
+        resolveBuildIdentityDockPresentation(
+          layoutClass: ShellLayoutClass.compact,
+          viewportWidth: 480,
+          hasAppVersion: true,
+        ),
+        BuildIdentityDockPresentation.hidden,
+      );
+      expect(
+        resolveBuildIdentityDockPresentation(
+          layoutClass: ShellLayoutClass.wide,
+          viewportWidth: 1600,
+          hasAppVersion: false,
+        ),
+        BuildIdentityDockPresentation.hidden,
+      );
+    });
   });
 }

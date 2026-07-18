@@ -41,6 +41,22 @@ enum ShellContentConstraint {
 /// How much non-essential visual decoration the shell may render.
 enum ShellDecorationDensity { full, reduced, minimal }
 
+enum BuildIdentityDockPresentation { hidden, condensed, full }
+
+BuildIdentityDockPresentation resolveBuildIdentityDockPresentation({
+  required ShellLayoutClass layoutClass,
+  required double viewportWidth,
+  required bool hasAppVersion,
+}) {
+  if (!hasAppVersion) return BuildIdentityDockPresentation.hidden;
+  if (layoutClass != ShellLayoutClass.compact) {
+    return BuildIdentityDockPresentation.full;
+  }
+  return viewportWidth >= 840
+      ? BuildIdentityDockPresentation.condensed
+      : BuildIdentityDockPresentation.hidden;
+}
+
 /// Theme-independent geometry and presentation policy for the Home shell.
 ///
 /// Themes may change colors, artwork, and effects, but must not alter any value

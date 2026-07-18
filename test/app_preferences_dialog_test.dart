@@ -77,6 +77,11 @@ void main() {
     expect(find.text('App theme'), findsOneWidget);
     expect(find.text('Store & Inventory'), findsOneWidget);
     expect(find.text('Vault settings'), findsOneWidget);
+    expect(find.text('App information'), findsOneWidget);
+    expect(find.text('App version'), findsOneWidget);
+    expect(find.text('Steam BuildID'), findsOneWidget);
+    expect(find.text('Execution environment'), findsOneWidget);
+    expect(find.byTooltip('Copy build information'), findsOneWidget);
     expect(find.text('Quit'), findsOneWidget);
   });
 

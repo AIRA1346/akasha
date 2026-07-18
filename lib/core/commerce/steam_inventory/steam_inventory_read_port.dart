@@ -6,6 +6,8 @@ class SteamInventoryDiagnostic {
   const SteamInventoryDiagnostic({
     required this.status,
     this.appId,
+    this.steamBuildId,
+    this.gitCommit,
     this.initialized = false,
     this.loggedOn = false,
     this.subscribedApp = false,
@@ -33,6 +35,8 @@ class SteamInventoryDiagnostic {
 
   final SteamInventoryReadStatus status;
   final int? appId;
+  final int? steamBuildId;
+  final String? gitCommit;
   final bool initialized;
   final bool loggedOn;
   final bool subscribedApp;

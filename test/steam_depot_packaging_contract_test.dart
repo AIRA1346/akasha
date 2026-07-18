@@ -81,4 +81,27 @@ void main() {
     expect(validate, contains('SteamCMD upload command (NOT executed)'));
     expect(validate, isNot(contains(r'& $SteamCmd +login')));
   });
+
+  test(
+    'runtime build identity uses guarded Steam and build-time Git sources',
+    () {
+      final channel = File(
+        'windows/runner/steam_inventory_poc_channel.cpp',
+      ).readAsStringSync();
+      final cmake = File('windows/runner/CMakeLists.txt').readAsStringSync();
+
+      expect(channel, contains('SteamApps()->GetAppBuildId()'));
+      expect(
+        channel,
+        contains('init && SteamApps() ? SteamApps()->GetAppBuildId() : 0'),
+      );
+      expect(channel, contains('{"steamBuildId"'));
+      expect(channel, contains('{"gitCommit"'));
+      expect(cmake, contains('COMMAND git rev-parse HEAD'));
+      expect(cmake, contains('AKASHA_GIT_COMMIT'));
+      expect(cmake, contains('AKASHA_GIT_COMMIT_LENGTH'));
+      expect(cmake, contains('CMAKE_CONFIGURE_DEPENDS'));
+      expect(cmake, contains('AKASHA_PROFILE=1'));
+    },
+  );
 }

@@ -6,10 +6,12 @@ import 'config/feature_flags.dart';
 import 'config/catalog_locale.dart';
 import 'core/commerce/commerce.dart';
 import 'generated/l10n/app_localizations.dart';
+import 'models/build_identity.dart';
 import 'data/adapters/markdown_vault_adapter.dart';
 import 'data/adapters/works_registry_adapter.dart';
 import 'screens/home/home_shell.dart';
 import 'services/catalog_locale_preferences.dart';
+import 'services/build_identity_controller.dart';
 import 'services/akasha_command_runner.dart';
 import 'services/akasha_theme_controller.dart';
 import 'services/akasha_window_controller.dart';
@@ -43,6 +45,7 @@ void main() async {
 
   final windowController = await initializeAkashaDesktopWindow();
   final themeController = await AkashaThemeController.load();
+  final buildIdentityController = BuildIdentityController.production();
   final commerceController = CommerceController(
     gateway: FeatureFlags.steamCommerceProviderEnabled
         ? SteamInventoryCommerceGateway(
@@ -65,9 +68,11 @@ void main() async {
       themeController: themeController,
       windowController: windowController,
       commerceController: commerceController,
+      buildIdentityController: buildIdentityController,
       playtimeRewardsEnabled: FeatureFlags.steamInventoryPlaytimeRewardsEnabled,
     ),
   );
+  unawaited(buildIdentityController.load());
   unawaited(commerceController.refresh());
 }
 
@@ -84,6 +89,7 @@ class AkashaApp extends StatefulWidget {
     this.themeController,
     this.windowController,
     this.commerceController,
+    this.buildIdentityController,
     this.playtimeRewardsEnabled = false,
     this.home,
   });
@@ -91,6 +97,7 @@ class AkashaApp extends StatefulWidget {
   final AkashaThemeController? themeController;
   final AkashaWindowController? windowController;
   final CommerceController? commerceController;
+  final BuildIdentityController? buildIdentityController;
   final bool playtimeRewardsEnabled;
   final Widget? home;
 
@@ -103,6 +110,8 @@ class _AkashaAppState extends State<AkashaApp> {
   late bool _ownsThemeController;
   late CommerceController _commerceController;
   late bool _ownsCommerceController;
+  late BuildIdentityController _buildIdentityController;
+  late bool _ownsBuildIdentityController;
   CommercePlaytimeRewardScheduler? _playtimeRewardScheduler;
 
   @override
@@ -110,6 +119,7 @@ class _AkashaAppState extends State<AkashaApp> {
     super.initState();
     _installThemeController(widget.themeController);
     _installCommerceController(widget.commerceController);
+    _installBuildIdentityController(widget.buildIdentityController);
     _syncPlaytimeRewardScheduler();
     _syncThemeAccess();
     CatalogLocaleScope.localeListenable.addListener(_onLocaleChanged);
@@ -123,6 +133,7 @@ class _AkashaAppState extends State<AkashaApp> {
     if (_ownsThemeController) _themeController.dispose();
     _commerceController.removeListener(_onCommerceChanged);
     if (_ownsCommerceController) _commerceController.dispose();
+    if (_ownsBuildIdentityController) _buildIdentityController.dispose();
     CatalogLocaleScope.localeListenable.removeListener(_onLocaleChanged);
     UserPreferences.uiScaleListenable.removeListener(_onUiScaleChanged);
     super.dispose();
@@ -143,6 +154,13 @@ class _AkashaAppState extends State<AkashaApp> {
     _commerceController = controller ?? CommerceController.disabled();
     _ownsCommerceController = controller == null;
     _commerceController.addListener(_onCommerceChanged);
+  }
+
+  void _installBuildIdentityController(BuildIdentityController? controller) {
+    _buildIdentityController =
+        controller ??
+        BuildIdentityController.seeded(const BuildIdentity.loading());
+    _ownsBuildIdentityController = controller == null;
   }
 
   void _syncThemeAccess() {
@@ -178,6 +196,10 @@ class _AkashaAppState extends State<AkashaApp> {
       _installCommerceController(widget.commerceController);
       shouldSyncThemeAccess = true;
       shouldSyncPlaytimeRewards = true;
+    }
+    if (oldWidget.buildIdentityController != widget.buildIdentityController) {
+      if (_ownsBuildIdentityController) _buildIdentityController.dispose();
+      _installBuildIdentityController(widget.buildIdentityController);
     }
     if (shouldSyncThemeAccess) _syncThemeAccess();
     if (shouldSyncPlaytimeRewards) _syncPlaytimeRewardScheduler();
@@ -229,9 +251,15 @@ class _AkashaAppState extends State<AkashaApp> {
             child: content,
           );
         }
-        return CommerceScope(
-          controller: _commerceController,
-          child: AkashaThemeScope(controller: _themeController, child: content),
+        return BuildIdentityScope(
+          controller: _buildIdentityController,
+          child: CommerceScope(
+            controller: _commerceController,
+            child: AkashaThemeScope(
+              controller: _themeController,
+              child: content,
+            ),
+          ),
         );
       },
       home: widget.home ?? const HomeShell(),

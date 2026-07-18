@@ -79,6 +79,8 @@ class MethodChannelSteamInventoryReadPort implements SteamInventoryReadPort {
       return SteamInventoryDiagnostic(
         status: SteamInventoryReadStatus.unavailable,
         appId: _asInt(raw?['appId']),
+        steamBuildId: _positiveIntOrNull(raw?['steamBuildId']),
+        gitCommit: _stringOrNull(raw?['gitCommit']),
         initialized: raw?['initialized'] == true,
         loggedOn: raw?['loggedOn'] == true || raw?['online'] == true,
         subscribedApp:
@@ -123,6 +125,8 @@ class MethodChannelSteamInventoryReadPort implements SteamInventoryReadPort {
           ? SteamInventoryReadStatus.success
           : SteamInventoryReadStatus.offline,
       appId: _asInt(raw['appId']),
+      steamBuildId: _positiveIntOrNull(raw['steamBuildId']),
+      gitCommit: _stringOrNull(raw['gitCommit']),
       initialized: raw['initialized'] == true,
       loggedOn: online,
       subscribedApp: raw['subscribedApp'] == true || raw['subscribed'] == true,
@@ -245,6 +249,11 @@ class MethodChannelSteamInventoryReadPort implements SteamInventoryReadPort {
     final num value => value.toInt(),
     _ => null,
   };
+
+  static int? _positiveIntOrNull(Object? value) {
+    final parsed = _asInt(value);
+    return parsed != null && parsed > 0 ? parsed : null;
+  }
 
   static final RegExp _instanceIdPattern = RegExp(r'^[0-9]+$');
 

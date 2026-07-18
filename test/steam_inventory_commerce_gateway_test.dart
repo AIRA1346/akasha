@@ -1509,6 +1509,8 @@ void main() {
         'initializationAttempted': true,
         'restartRequested': false,
         'appId': 4677560,
+        'steamBuildId': 24271481,
+        'gitCommit': 'f9d0b94b00c77feb6483f4df4e13886c78aa8175',
         'buildMode': 'Release',
         'executablePath': r'D:\SteamLibrary\steamapps\common\Akasha\akasha.exe',
         'currentWorkingDirectory': r'D:\SteamLibrary\steamapps\common\Akasha',
@@ -1531,6 +1533,8 @@ void main() {
       expect(result.overlayDeactivatedCallbackCount, 2);
       expect(result.overlayLastCallbackElapsedMs, 14000);
       expect(result.initializationAttempted, isTrue);
+      expect(result.steamBuildId, 24271481);
+      expect(result.gitCommit, 'f9d0b94b00c77feb6483f4df4e13886c78aa8175');
       expect(result.buildMode, 'Release');
       expect(
         result.executionEnvironment,
@@ -1540,6 +1544,17 @@ void main() {
       expect(result.steamTimerTickCount, 123);
       expect(result.overlayNeedsPresentTrueCount, 4);
       expect(result.overlayForceRedrawCount, 3);
+    });
+
+    test('normalizes a Steam BuildID of zero to unavailable', () {
+      final result = MethodChannelSteamInventoryReadPort.parseDiagnostic({
+        'ok': true,
+        'initialized': true,
+        'loggedOn': false,
+        'steamBuildId': 0,
+      });
+
+      expect(result.steamBuildId, isNull);
     });
 
     test('preserves Steam currency and raw current/base amounts', () {

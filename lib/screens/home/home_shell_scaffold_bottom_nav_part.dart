@@ -13,6 +13,7 @@ Widget _homeShellScaffoldBottomNavigationBar(
       unawaited(controller.selectDestination(destination));
     },
   );
+  final buildIdentity = BuildIdentityScope.of(context);
 
   return DecoratedBox(
     key: const ValueKey('home-shell-dock'),
@@ -24,21 +25,47 @@ Widget _homeShellScaffoldBottomNavigationBar(
       top: false,
       child: SizedBox(
         height: layoutSpec.dockHeight,
-        child: Row(
-          children: [
-            for (final destination in destinations)
-              Expanded(
-                child: _homeShellScaffoldBottomTabItem(
-                  key: ValueKey(
-                    'destination-${destination.definition.stableId}-dock',
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final identityPresentation = resolveBuildIdentityDockPresentation(
+              layoutClass: layoutSpec.layoutClass,
+              viewportWidth: constraints.maxWidth,
+              hasAppVersion: buildIdentity.hasAppVersion,
+            );
+            final showCondensedIdentity =
+                identityPresentation == BuildIdentityDockPresentation.condensed;
+            return Row(
+              children: [
+                Expanded(
+                  child: Row(
+                    children: [
+                      for (final destination in destinations)
+                        Expanded(
+                          child: _homeShellScaffoldBottomTabItem(
+                            key: ValueKey(
+                              'destination-${destination.definition.stableId}-dock',
+                            ),
+                            icon: destination.definition.icon,
+                            label: destination.definition.resolveLabel(l10n),
+                            isSelected: destination.isSelected,
+                            onTap: destination.action,
+                          ),
+                        ),
+                    ],
                   ),
-                  icon: destination.definition.icon,
-                  label: destination.definition.resolveLabel(l10n),
-                  isSelected: destination.isSelected,
-                  onTap: destination.action,
                 ),
-              ),
-          ],
+                if (identityPresentation !=
+                    BuildIdentityDockPresentation.hidden)
+                  SizedBox(
+                    width: showCondensedIdentity ? 112 : 276,
+                    child: BuildIdentityDockLabel(
+                      identity: buildIdentity,
+                      condensed: showCondensedIdentity,
+                    ),
+                  ),
+              ],
+            );
+          },
         ),
       ),
     ),

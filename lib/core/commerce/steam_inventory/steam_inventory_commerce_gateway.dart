@@ -434,6 +434,8 @@ class SteamInventoryCommerceGateway
       'AKASHA Steam Commerce Diagnostics',
       'generatedAt=${DateTime.now().toUtc().toIso8601String()}',
       'appId=${diagnostic?.appId ?? SteamInventoryItemDefs.appId}',
+      'steamBuildId=${diagnostic?.steamBuildId ?? 'unavailable'}',
+      'gitCommit=${diagnostic?.gitCommit ?? 'unavailable'}',
       'readStatus=${diagnostic?.status.name ?? 'not_loaded'}',
       'initialized=${diagnostic?.initialized ?? false}',
       'loggedOn=${diagnostic?.loggedOn ?? false}',

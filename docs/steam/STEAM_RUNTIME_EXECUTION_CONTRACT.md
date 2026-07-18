@@ -101,10 +101,9 @@ copyable support report adds an execution classification.
 Full paths may appear in local developer console output. Copyable support text
 uses `<repo>`, `<steam-library>`, `<user-profile>`, or `<redacted>` markers and
 must not expose a user name, Steam ID, persona, authentication token, or full
-personal path. The current app version and Git SHA are not emitted because the
-Windows build has no canonical injected build identity yet; adding one requires
-a separate reproducible-build contract rather than reading a mutable worktree
-at runtime.
+personal path. Runtime build identity contains only public package metadata,
+Steam BuildID, Git commit, build mode, and the sanitized execution
+classification.
 
 Overlay readiness is sampled at most once per second after Steam initializes.
 Diagnostics retain process uptime, the first Overlay value, first true time,
@@ -114,6 +113,30 @@ in the development guide; it does not poll per frame or indefinitely. Depot
 manifests record the exact Git SHA, and successful upload tooling writes an
 ignored local receipt that pairs that SHA with the Steam BuildID when SteamCMD
 prints it.
+
+## Runtime build identity
+
+The identifiers shown in the bottom dock and Preferences > App information have
+separate sources of truth:
+
+| Identifier | Source of truth | Runtime path |
+|---|---|---|
+| App version | `pubspec.yaml` `version` name | `package_info_plus`, loaded once at startup |
+| App build number | `pubspec.yaml` `version` suffix | `package_info_plus`, loaded once at startup |
+| Steam BuildID | SteamPipe publication assigned by Steam | guarded `SteamApps()->GetAppBuildId()` after successful Steam initialization |
+| Git SHA | source commit used by the Windows build | CMake build-time `git rev-parse HEAD`, injected as `AKASHA_GIT_COMMIT` |
+
+The running app never invokes Git and never calls a Steam Web API. CMake tracks
+Git `HEAD` and its current ref as configure dependencies so an incremental build
+does not silently retain an older commit. A missing Steam runtime is a normal
+local fallback, and a missing/zero BuildID is displayed as unavailable rather
+than `Steam 0`. Build identity lookup cannot change Commerce or Inventory
+authority, callback pumping, purchase recovery, or restart behavior.
+
+The compact dock may show only app version/build or omit identity when space is
+tight. Preferences always retains the complete field list and a copy action.
+The copied value never includes user name, Steam ID, persona, credentials, or
+installation paths.
 
 ## Failure response
 

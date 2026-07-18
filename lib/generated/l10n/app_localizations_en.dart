@@ -104,6 +104,43 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appPreferencesClose => 'Close';
 
   @override
+  String get buildIdentityAppInfoTitle => 'App information';
+
+  @override
+  String get buildIdentityVersion => 'App version';
+
+  @override
+  String get buildIdentityBuildNumber => 'Build number';
+
+  @override
+  String get buildIdentitySteamBuildId => 'Steam BuildID';
+
+  @override
+  String get buildIdentityGitCommit => 'Git commit';
+
+  @override
+  String get buildIdentityBuildMode => 'Build mode';
+
+  @override
+  String get buildIdentityExecutionEnvironment => 'Execution environment';
+
+  @override
+  String get buildIdentityLocal => 'Local';
+
+  @override
+  String get buildIdentitySteamChecking => 'Steam checking';
+
+  @override
+  String get buildIdentityUnavailable => 'Unavailable';
+
+  @override
+  String get buildIdentityCopy => 'Copy build information';
+
+  @override
+  String get buildIdentityCopied =>
+      'Build information copied to the clipboard.';
+
+  @override
   String get appBarToggleSidebar => 'Toggle sidebar (Ctrl+B)';
 
   @override

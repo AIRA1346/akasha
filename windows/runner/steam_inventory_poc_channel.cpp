@@ -289,6 +289,8 @@ uint32_t ItemDefCount() {
 flutter::EncodableMap BuildDiagnostics() {
   SteamRuntime::ObserveOverlayEnabled();
   const bool init = SteamRuntime::Initialized();
+  const int32_t steam_build_id =
+      init && SteamApps() ? SteamApps()->GetAppBuildId() : 0;
   const bool logged_on = init && SteamUser() && SteamUser()->BLoggedOn();
   const bool subscribed =
       init && SteamApps() && SteamApps()->BIsSubscribedApp(SteamRuntime::kAppId);
@@ -313,6 +315,8 @@ flutter::EncodableMap BuildDiagnostics() {
        flutter::EncodableValue(SteamRuntime::ShutdownPerformed())},
       {"appId",
        flutter::EncodableValue(static_cast<int32_t>(SteamRuntime::kAppId))},
+      {"steamBuildId", flutter::EncodableValue(steam_build_id)},
+      {"gitCommit", flutter::EncodableValue(AKASHA_GIT_COMMIT)},
       {"steamId", flutter::EncodableValue(steam_id)},
       {"personaName", flutter::EncodableValue(persona)},
       {"loggedOn", flutter::EncodableValue(logged_on)},

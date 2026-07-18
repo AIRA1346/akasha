@@ -100,6 +100,42 @@ class AppLocalizationsKo extends AppLocalizations {
   String get appPreferencesClose => '닫기';
 
   @override
+  String get buildIdentityAppInfoTitle => '앱 정보';
+
+  @override
+  String get buildIdentityVersion => '앱 버전';
+
+  @override
+  String get buildIdentityBuildNumber => '빌드 번호';
+
+  @override
+  String get buildIdentitySteamBuildId => 'Steam BuildID';
+
+  @override
+  String get buildIdentityGitCommit => 'Git 커밋';
+
+  @override
+  String get buildIdentityBuildMode => '빌드 모드';
+
+  @override
+  String get buildIdentityExecutionEnvironment => '실행 환경';
+
+  @override
+  String get buildIdentityLocal => 'Local';
+
+  @override
+  String get buildIdentitySteamChecking => 'Steam 확인 중';
+
+  @override
+  String get buildIdentityUnavailable => '사용 불가';
+
+  @override
+  String get buildIdentityCopy => '빌드 정보 복사';
+
+  @override
+  String get buildIdentityCopied => '빌드 정보를 클립보드에 복사했습니다.';
+
+  @override
   String get appBarToggleSidebar => '사이드바 토글 (Ctrl+B)';
 
   @override
