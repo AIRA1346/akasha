@@ -627,6 +627,35 @@ struct SteamInventoryPocChannel::Impl {
          flutter::EncodableValue(active ? "GameOverlayActivated_t active"
                                         : "GameOverlayActivated_t inactive")},
     }));
+
+    // StartPurchase does not always produce an InventoryResultReady callback
+    // when the user cancels. Correlate overlay lifecycle with the currently
+    // pending purchase so Dart can wait a short grace period and reconcile
+    // inventory instead of leaving the product UI pending forever.
+    std::vector<std::string> purchase_correlations;
+    {
+      std::lock_guard<std::mutex> lock(mu);
+      for (const auto& entry : pending) {
+        if (entry.second.kind == "purchase") {
+          purchase_correlations.push_back(entry.first);
+        }
+      }
+    }
+    for (const auto& corr : purchase_correlations) {
+      Emit(M({
+          {"kind", flutter::EncodableValue("purchase")},
+          {"status", flutter::EncodableValue("pending")},
+          {"phase", flutter::EncodableValue(
+                        active ? "purchase_overlay_active"
+                               : "purchase_overlay_closed")},
+          {"handle", flutter::EncodableValue(corr)},
+          {"overlayActive", flutter::EncodableValue(active)},
+          {"detail", flutter::EncodableValue(
+                         active ? "purchase overlay active"
+                                : "purchase overlay closed; await terminal "
+                                  "result before reconciliation")},
+      }));
+    }
   }
 
   /// ItemDefs must be present before GetAllItems is reliable for a new app.
@@ -1047,10 +1076,26 @@ void SteamInventoryPocChannel::Register(flutter::FlutterEngine* engine) {
           std::vector<uint32> q;
           for (auto x : qtys) q.push_back(static_cast<uint32>(x));
           const std::string corr = impl_->Next("purchase");
+          // Register the correlation before StartPurchase so a re-entrant or
+          // immediately pumped Overlay activation cannot precede the pending
+          // purchase it belongs to.
+          {
+            std::lock_guard<std::mutex> lock(impl_->mu);
+            Impl::Pending p;
+            p.kind = "purchase";
+            p.expect_orphan_result = true;
+            p.item_def_ids = defs;
+            p.quantities = qtys;
+            impl_->pending[corr] = p;
+          }
           SteamAPICall_t call = SteamInventory()->StartPurchase(
               d.data(), q.data(), static_cast<uint32>(d.size()));
           // Phase A: immediate API call failure.
           if (call == k_uAPICallInvalid) {
+            {
+              std::lock_guard<std::mutex> lock(impl_->mu);
+              impl_->pending.erase(corr);
+            }
             result->Success(flutter::EncodableValue(M({
                 {"ok", flutter::EncodableValue(false)},
                 {"status", flutter::EncodableValue("failed")},
@@ -1071,13 +1116,10 @@ void SteamInventoryPocChannel::Register(flutter::FlutterEngine* engine) {
           }
           {
             std::lock_guard<std::mutex> lock(impl_->mu);
-            Impl::Pending p;
-            p.kind = "purchase";
-            p.expect_orphan_result = true;
-            p.item_def_ids = defs;
-            p.quantities = qtys;
-            p.api_call = static_cast<uint64_t>(call);
-            impl_->pending[corr] = p;
+            const auto pending_it = impl_->pending.find(corr);
+            if (pending_it != impl_->pending.end()) {
+              pending_it->second.api_call = static_cast<uint64_t>(call);
+            }
           }
           impl_->cr_purchase.Set(call, impl_.get(), &Impl::OnPurchaseInit);
           // Phase C pending: callback will report B (reject) or C (OK+ids).
@@ -1323,6 +1365,43 @@ void SteamInventoryPocChannel::Register(flutter::FlutterEngine* engine) {
           result->Success(flutter::EncodableValue(M({
               {"ok", flutter::EncodableValue(true)},
               {"ops", flutter::EncodableValue(ops)},
+          })));
+          return;
+        }
+
+        if (method == "releasePurchaseOperation") {
+          if (!args || !std::holds_alternative<flutter::EncodableMap>(*args)) {
+            fail("invalid_args");
+            return;
+          }
+          const auto& map = std::get<flutter::EncodableMap>(*args);
+          const auto hit = map.find(flutter::EncodableValue("handle"));
+          if (hit == map.end() ||
+              !std::holds_alternative<std::string>(hit->second)) {
+            fail("invalid_args");
+            return;
+          }
+          const std::string corr = std::get<std::string>(hit->second);
+          bool released = false;
+          {
+            std::lock_guard<std::mutex> lock(impl_->mu);
+            const auto pending_it = impl_->pending.find(corr);
+            if (pending_it != impl_->pending.end() &&
+                pending_it->second.kind == "purchase") {
+              if (pending_it->second.handle !=
+                  k_SteamInventoryResultInvalid) {
+                impl_->by_handle.erase(pending_it->second.handle);
+              }
+              impl_->pending.erase(pending_it);
+              released = true;
+            }
+          }
+          // No Steam result handle is destroyed here. ResultReady remains the
+          // sole owner and destroys even a late orphan exactly once.
+          result->Success(flutter::EncodableValue(M({
+              {"ok", flutter::EncodableValue(true)},
+              {"released", flutter::EncodableValue(released)},
+              {"handle", flutter::EncodableValue(corr)},
           })));
           return;
         }

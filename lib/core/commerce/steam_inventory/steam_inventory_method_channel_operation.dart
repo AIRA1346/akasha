@@ -33,14 +33,24 @@ class SteamInventoryMethodChannelOperationPoller {
     required MethodChannel channel,
     required this.pollInterval,
     required this.completionTimeout,
+    this.overlayCloseGracePeriod = const Duration(seconds: 3),
+    this.recoverAfterOverlayClose = false,
+    this.clock,
+    this.delay,
   }) : _channel = channel;
 
   final MethodChannel _channel;
   final Duration pollInterval;
   final Duration completionTimeout;
+  final Duration overlayCloseGracePeriod;
+  final bool recoverAfterOverlayClose;
+  final DateTime Function()? clock;
+  final Future<void> Function(Duration duration)? delay;
 
   Future<SteamInventoryPolledOperation> awaitTerminal(String handle) async {
-    final deadline = DateTime.now().add(completionTimeout);
+    final now = clock ?? DateTime.now;
+    final wait = delay ?? Future<void>.delayed;
+    final deadline = now().add(completionTimeout);
     String? orderId;
     String? transactionId;
     String? phase;
@@ -48,7 +58,8 @@ class SteamInventoryMethodChannelOperationPoller {
     int? providerResultCode;
     String? providerResultName;
     String? detail;
-    while (DateTime.now().isBefore(deadline)) {
+    DateTime? overlayClosedAt;
+    while (now().isBefore(deadline)) {
       Map<String, Object?>? raw;
       try {
         raw = await _channel.invokeMapMethod<String, Object?>('poll');
@@ -64,8 +75,20 @@ class SteamInventoryMethodChannelOperationPoller {
 
       for (final value in raw['ops'] as List<dynamic>? ?? const []) {
         if (value is! Map) continue;
-        final operation = parseOperation(Map<String, Object?>.from(value));
+        final event = Map<String, Object?>.from(value);
+        final operation = parseOperation(event);
         if (operation.result.providerHandle != handle) continue;
+        final overlayActive = event['overlayActive'];
+        if (recoverAfterOverlayClose && overlayActive is bool) {
+          if (overlayActive) {
+            overlayClosedAt = null;
+          } else {
+            // The opening callback can arrive before Dart starts polling.
+            // This event is already correlated by native code to the current
+            // purchase, so closure alone may start grace + reconciliation.
+            overlayClosedAt ??= now();
+          }
+        }
         orderId ??= operation.result.orderId;
         transactionId ??= operation.result.transactionId;
         phase = operation.result.phase ?? phase;
@@ -94,8 +117,27 @@ class SteamInventoryMethodChannelOperationPoller {
           grantedItems: operation.grantedItems,
         );
       }
+
+      final closedAt = overlayClosedAt;
+      if (closedAt != null &&
+          !now().isBefore(closedAt.add(overlayCloseGracePeriod))) {
+        return SteamInventoryPolledOperation(
+          result: SteamInventoryTransactionResult(
+            status: SteamInventoryTransactionStatus.indeterminate,
+            providerHandle: handle,
+            orderId: orderId,
+            transactionId: transactionId,
+            phase: 'purchase_overlay_closed_grace_elapsed',
+            apiCallHandle: apiCallHandle,
+            providerResultCode: providerResultCode,
+            providerResultName: providerResultName,
+            detail: detail,
+            issueCode: 'steam_purchase_overlay_closed',
+          ),
+        );
+      }
       if (pollInterval > Duration.zero) {
-        await Future<void>.delayed(pollInterval);
+        await wait(pollInterval);
       }
     }
     return SteamInventoryPolledOperation(

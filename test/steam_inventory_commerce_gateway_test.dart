@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:akasha/core/commerce/commerce.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -524,6 +526,150 @@ void main() {
     );
 
     test(
+      'reconciles an overlay-closed purchase as cancelled and retryable',
+      () async {
+        final inventory = _inventory([
+          _item('10', SteamInventoryItemDefs.astraUnit, 100),
+          _item('20', SteamInventoryItemDefs.echoUnit, 0),
+        ]);
+        final transactionPort = _FakeSteamInventoryTransactionPort(
+          purchaseResult: const SteamInventoryTransactionResult(
+            status: SteamInventoryTransactionStatus.indeterminate,
+            providerHandle: 'purchase_overlay_cancelled',
+            phase: 'purchase_overlay_closed_grace_elapsed',
+            issueCode: 'steam_purchase_overlay_closed',
+          ),
+        );
+        final gateway = SteamInventoryCommerceGateway(
+          port: _FakeSteamInventoryReadPort(
+            itemSequence: [inventory, inventory, inventory],
+          ),
+          transactionPort: transactionPort,
+          transactionsEnabled: true,
+        );
+        await gateway.loadAccount();
+
+        final first = await gateway.purchaseAstraPack(
+          productId: CommerceCatalog.astraPack500ProductId,
+        );
+        final retry = await gateway.purchaseAstraPack(
+          productId: CommerceCatalog.astraPack500ProductId,
+        );
+
+        expect(first.status, CommerceOperationStatus.cancelled);
+        expect(first.issueCode, isNull);
+        expect(first.snapshot.astraBalance, 100);
+        expect(first.snapshot.canTransact, isTrue);
+        expect(retry.status, CommerceOperationStatus.cancelled);
+        expect(transactionPort.purchaseItemDefIds, [40110, 40110]);
+      },
+    );
+
+    test('late purchase outcome wins over the overlay-closed hint', () async {
+      final transactionPort = _FakeSteamInventoryTransactionPort(
+        purchaseResult: const SteamInventoryTransactionResult(
+          status: SteamInventoryTransactionStatus.indeterminate,
+          providerHandle: 'purchase_overlay_late_success',
+          issueCode: 'steam_purchase_overlay_closed',
+        ),
+      );
+      final gateway = SteamInventoryCommerceGateway(
+        port: _FakeSteamInventoryReadPort(
+          itemSequence: [
+            _inventory([_item('10', SteamInventoryItemDefs.astraUnit, 100)]),
+            _inventory([_item('10', SteamInventoryItemDefs.astraUnit, 600)]),
+          ],
+        ),
+        transactionPort: transactionPort,
+        transactionsEnabled: true,
+      );
+      await gateway.loadAccount();
+
+      final result = await gateway.purchaseAstraPack(
+        productId: CommerceCatalog.astraPack500ProductId,
+      );
+
+      expect(result.status, CommerceOperationStatus.confirmed);
+      expect(result.snapshot.astraBalance, 600);
+      expect(result.providerHandle, 'purchase_overlay_late_success');
+    });
+
+    test(
+      'reconciliation failure releases purchase and a later refresh restores retry',
+      () async {
+        final inventory = _inventory([
+          _item('10', SteamInventoryItemDefs.astraUnit, 100),
+        ]);
+        final readPort = _FakeSteamInventoryReadPort(
+          itemSequence: [
+            inventory,
+            const SteamInventoryItemsResult(
+              status: SteamInventoryReadStatus.failed,
+              issueCode: 'steam_inventory_read_failed',
+            ),
+            inventory,
+          ],
+        );
+        final gateway = SteamInventoryCommerceGateway(
+          port: readPort,
+          transactionPort: _FakeSteamInventoryTransactionPort(
+            purchaseResult: const SteamInventoryTransactionResult(
+              status: SteamInventoryTransactionStatus.indeterminate,
+              providerHandle: 'purchase_reconcile_failed',
+              issueCode: 'steam_purchase_overlay_closed',
+            ),
+          ),
+          transactionsEnabled: true,
+        );
+        await gateway.loadAccount();
+
+        final result = await gateway.purchaseAstraPack(
+          productId: CommerceCatalog.astraPack500ProductId,
+        );
+
+        expect(result.status, CommerceOperationStatus.indeterminate);
+        expect(result.issueCode, 'steam_purchase_reconciliation_failed');
+        expect(result.snapshot.canTransact, isFalse);
+
+        final refreshed = await gateway.loadAccount();
+        expect(refreshed.canTransact, isTrue);
+      },
+    );
+
+    test(
+      'bounded purchase timeout reconciles without latching retry',
+      () async {
+        final inventory = _inventory([
+          _item('10', SteamInventoryItemDefs.astraUnit, 100),
+        ]);
+        final transactionPort = _FakeSteamInventoryTransactionPort(
+          purchaseResult: const SteamInventoryTransactionResult(
+            status: SteamInventoryTransactionStatus.indeterminate,
+            providerHandle: 'purchase_timeout',
+            issueCode: 'steam_transaction_timeout',
+          ),
+        );
+        final gateway = SteamInventoryCommerceGateway(
+          port: _FakeSteamInventoryReadPort(
+            itemSequence: [inventory, inventory],
+          ),
+          transactionPort: transactionPort,
+          transactionsEnabled: true,
+        );
+        await gateway.loadAccount();
+
+        final result = await gateway.purchaseAstraPack(
+          productId: CommerceCatalog.astraPack500ProductId,
+        );
+
+        expect(result.status, CommerceOperationStatus.indeterminate);
+        expect(result.issueCode, 'steam_transaction_timeout');
+        expect(result.snapshot.astraBalance, 100);
+        expect(result.snapshot.canTransact, isTrue);
+      },
+    );
+
+    test(
       'exchanges one currency using real instance ids and then owns theme',
       () async {
         final readPort = _FakeSteamInventoryReadPort(
@@ -1024,7 +1170,37 @@ void main() {
       expect(rejected.providerResultName, 'k_uAPICallInvalid');
     });
 
+    test('immediate StartPurchase failure never enters polling', () async {
+      var pollCalls = 0;
+      var releaseCalls = 0;
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+          .setMockMethodCallHandler(channel, (call) async {
+            if (call.method == 'startPurchase') {
+              return <String, Object?>{
+                'ok': false,
+                'status': 'failed',
+                'phase': 'start_purchase_api',
+                'code': 'k_uAPICallInvalid',
+                'steamResultName': 'k_uAPICallInvalid',
+                'handle': 'purchase_not_started',
+              };
+            }
+            if (call.method == 'poll') pollCalls += 1;
+            if (call.method == 'releasePurchaseOperation') releaseCalls += 1;
+            return null;
+          });
+      const port = MethodChannelSteamInventoryTransactionPort(channel: channel);
+
+      final result = await port.startPurchase(itemDefId: 40110);
+
+      expect(result.status, SteamInventoryTransactionStatus.failed);
+      expect(result.issueCode, 'steam_api_call_invalid');
+      expect(pollCalls, 0);
+      expect(releaseCalls, 0);
+    });
+
     test('timeout after API acceptance is indeterminate', () async {
+      var releaseCalls = 0;
       TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
           .setMockMethodCallHandler(channel, (call) async {
             if (call.method == 'startPurchase') {
@@ -1033,6 +1209,10 @@ void main() {
                 'status': 'pending',
                 'handle': 'purchase_12',
               };
+            }
+            if (call.method == 'releasePurchaseOperation') {
+              releaseCalls += 1;
+              return <String, Object?>{'ok': true, 'released': true};
             }
             return <String, Object?>{'ok': true, 'ops': const []};
           });
@@ -1046,7 +1226,266 @@ void main() {
 
       expect(result.status, SteamInventoryTransactionStatus.indeterminate);
       expect(result.issueCode, 'steam_transaction_timeout');
+      expect(releaseCalls, 1);
     });
+
+    test(
+      'overlay close waits for grace then returns a reconciliation hint',
+      () async {
+        final fakeTime = _FakeOperationTime();
+        var pollCount = 0;
+        var releaseCalls = 0;
+        TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+            .setMockMethodCallHandler(channel, (call) async {
+              if (call.method == 'startPurchase') {
+                return <String, Object?>{
+                  'ok': true,
+                  'status': 'pending',
+                  'handle': 'purchase_cancel',
+                };
+              }
+              if (call.method == 'releasePurchaseOperation') {
+                releaseCalls += 1;
+                expect(call.arguments, {'handle': 'purchase_cancel'});
+                return <String, Object?>{'ok': true, 'released': true};
+              }
+              pollCount += 1;
+              final ops = switch (pollCount) {
+                1 => <Object?>[
+                  {
+                    'kind': 'purchase',
+                    'status': 'pending',
+                    'handle': 'purchase_cancel',
+                    'phase': 'purchase_overlay_active',
+                    'overlayActive': true,
+                  },
+                ],
+                2 => <Object?>[
+                  {
+                    'kind': 'purchase',
+                    'status': 'pending',
+                    'handle': 'purchase_cancel',
+                    'phase': 'purchase_overlay_closed',
+                    'overlayActive': false,
+                  },
+                ],
+                _ => const <Object?>[],
+              };
+              return <String, Object?>{'ok': true, 'ops': ops};
+            });
+        final port = MethodChannelSteamInventoryTransactionPort(
+          channel: channel,
+          pollInterval: const Duration(seconds: 1),
+          overlayCloseGracePeriod: const Duration(seconds: 3),
+          completionTimeout: const Duration(seconds: 30),
+          clock: fakeTime.now,
+          delay: fakeTime.delay,
+        );
+
+        final result = await port.startPurchase(itemDefId: 40110);
+
+        expect(result.status, SteamInventoryTransactionStatus.indeterminate);
+        expect(result.issueCode, 'steam_purchase_overlay_closed');
+        expect(result.phase, 'purchase_overlay_closed_grace_elapsed');
+        expect(pollCount, 5);
+        expect(releaseCalls, 1);
+      },
+    );
+
+    test(
+      'correlated overlay close recovers when the opening callback was missed',
+      () async {
+        final fakeTime = _FakeOperationTime();
+        var pollCount = 0;
+        var releaseCalls = 0;
+        TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+            .setMockMethodCallHandler(channel, (call) async {
+              if (call.method == 'startPurchase') {
+                return <String, Object?>{
+                  'ok': true,
+                  'status': 'pending',
+                  'handle': 'purchase_missed_open',
+                };
+              }
+              if (call.method == 'releasePurchaseOperation') {
+                releaseCalls += 1;
+                return <String, Object?>{'ok': true, 'released': true};
+              }
+              pollCount += 1;
+              return <String, Object?>{
+                'ok': true,
+                'ops': pollCount == 1
+                    ? <Object?>[
+                        {
+                          'kind': 'purchase',
+                          'status': 'pending',
+                          'handle': 'purchase_missed_open',
+                          'phase': 'purchase_overlay_closed',
+                          'overlayActive': false,
+                        },
+                      ]
+                    : const <Object?>[],
+              };
+            });
+        final port = MethodChannelSteamInventoryTransactionPort(
+          channel: channel,
+          pollInterval: const Duration(seconds: 1),
+          overlayCloseGracePeriod: const Duration(seconds: 3),
+          completionTimeout: const Duration(seconds: 30),
+          clock: fakeTime.now,
+          delay: fakeTime.delay,
+        );
+
+        final result = await port.startPurchase(itemDefId: 40110);
+
+        expect(result.issueCode, 'steam_purchase_overlay_closed');
+        expect(result.phase, 'purchase_overlay_closed_grace_elapsed');
+        expect(pollCount, 4);
+        expect(releaseCalls, 1);
+      },
+    );
+
+    test(
+      'late terminal success after overlay close wins during grace',
+      () async {
+        final fakeTime = _FakeOperationTime();
+        var pollCount = 0;
+        var releaseCalls = 0;
+        TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+            .setMockMethodCallHandler(channel, (call) async {
+              if (call.method == 'startPurchase') {
+                return <String, Object?>{
+                  'ok': true,
+                  'status': 'pending',
+                  'handle': 'purchase_late',
+                };
+              }
+              if (call.method == 'releasePurchaseOperation') {
+                releaseCalls += 1;
+                return <String, Object?>{'ok': true};
+              }
+              pollCount += 1;
+              final ops = switch (pollCount) {
+                1 => <Object?>[
+                  {
+                    'status': 'pending',
+                    'handle': 'purchase_late',
+                    'overlayActive': true,
+                  },
+                ],
+                2 => <Object?>[
+                  {
+                    'status': 'pending',
+                    'handle': 'purchase_late',
+                    'overlayActive': false,
+                  },
+                ],
+                _ => <Object?>[
+                  {
+                    'status': 'success',
+                    'handle': 'purchase_late',
+                    'phase': 'inventory_result_ready',
+                    'steamResultName': 'k_EResultOK',
+                  },
+                ],
+              };
+              return <String, Object?>{'ok': true, 'ops': ops};
+            });
+        final port = MethodChannelSteamInventoryTransactionPort(
+          channel: channel,
+          pollInterval: const Duration(seconds: 1),
+          overlayCloseGracePeriod: const Duration(seconds: 3),
+          completionTimeout: const Duration(seconds: 30),
+          clock: fakeTime.now,
+          delay: fakeTime.delay,
+        );
+
+        final result = await port.startPurchase(itemDefId: 40110);
+
+        expect(result.status, SteamInventoryTransactionStatus.confirmed);
+        expect(result.phase, 'inventory_result_ready');
+        expect(pollCount, 3);
+        expect(releaseCalls, 0);
+      },
+    );
+
+    test(
+      'stale callback cannot complete or release a newer purchase',
+      () async {
+        final fakeTime = _FakeOperationTime();
+        var pollCount = 0;
+        String? releasedHandle;
+        TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+            .setMockMethodCallHandler(channel, (call) async {
+              if (call.method == 'startPurchase') {
+                return <String, Object?>{
+                  'ok': true,
+                  'status': 'pending',
+                  'handle': 'purchase_new',
+                };
+              }
+              if (call.method == 'releasePurchaseOperation') {
+                releasedHandle = (call.arguments as Map)['handle'] as String;
+                return <String, Object?>{'ok': true, 'released': true};
+              }
+              pollCount += 1;
+              final ops = switch (pollCount) {
+                1 => <Object?>[
+                  {'status': 'success', 'handle': 'purchase_old'},
+                  {
+                    'status': 'pending',
+                    'handle': 'purchase_new',
+                    'overlayActive': true,
+                  },
+                ],
+                2 => <Object?>[
+                  {'status': 'canceled', 'handle': 'purchase_old'},
+                  {
+                    'status': 'pending',
+                    'handle': 'purchase_new',
+                    'overlayActive': false,
+                  },
+                ],
+                _ => const <Object?>[],
+              };
+              return <String, Object?>{'ok': true, 'ops': ops};
+            });
+        final port = MethodChannelSteamInventoryTransactionPort(
+          channel: channel,
+          pollInterval: const Duration(seconds: 1),
+          overlayCloseGracePeriod: const Duration(seconds: 2),
+          completionTimeout: const Duration(seconds: 30),
+          clock: fakeTime.now,
+          delay: fakeTime.delay,
+        );
+
+        final result = await port.startPurchase(itemDefId: 40110);
+
+        expect(result.issueCode, 'steam_purchase_overlay_closed');
+        expect(releasedHandle, 'purchase_new');
+      },
+    );
+  });
+
+  test('native ResultReady remains the only DestroyResult owner', () {
+    final source = File(
+      'windows/runner/steam_inventory_poc_channel.cpp',
+    ).readAsStringSync();
+    final purchaseBlock = source.substring(
+      source.indexOf('if (method == "startPurchase")'),
+      source.indexOf('if (method == "consumeItem")'),
+    );
+
+    expect(
+      RegExp(r'SteamInventory\(\)->DestroyResult\(').allMatches(source),
+      hasLength(1),
+    );
+    expect(source, contains('if (method == "releasePurchaseOperation")'));
+    expect(source, contains('pending.erase(pending_it)'));
+    expect(
+      purchaseBlock.indexOf('impl_->pending[corr] = p;'),
+      lessThan(purchaseBlock.indexOf('SteamInventory()->StartPurchase(')),
+    );
   });
 
   group('MethodChannelSteamInventoryReadPort parsing', () {
@@ -1285,3 +1724,13 @@ SteamInventoryReadItem _item(String instanceId, int itemDefId, int quantity) =>
       itemDefId: itemDefId,
       quantity: quantity,
     );
+
+class _FakeOperationTime {
+  DateTime _value = DateTime.utc(2026, 7, 18);
+
+  DateTime now() => _value;
+
+  Future<void> delay(Duration duration) async {
+    _value = _value.add(duration);
+  }
+}

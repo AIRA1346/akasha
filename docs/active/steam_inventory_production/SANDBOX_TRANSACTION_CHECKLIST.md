@@ -75,6 +75,26 @@ For every row:
    transaction ID.
 4. Restart AKASHA and confirm the same Steam-backed balance.
 
+### Purchase-cancellation regression check
+
+Run this only after the fixed Release build has been uploaded to the private
+`commerce-sandbox` branch by the operator. The code-fix task itself does not
+launch Steam, upload a depot, or claim these checks passed.
+
+1. Install the new BuildID from `commerce-sandbox` through Steam.
+2. Record the displayed Astra balance, then start one approved Astra purchase.
+3. Cancel in the Steam Overlay and return to AKASHA.
+4. Confirm the clicked product leaves `거래 확인 중` within the three-second
+   result grace period plus inventory refresh time.
+5. Confirm the Astra balance and Inventory did not increase.
+6. Confirm the same product can start a new purchase without restarting AKASHA.
+7. Complete one sandbox purchase and confirm exactly the expected Astra delta.
+8. Restart AKASHA and confirm the same Steam-backed balance remains.
+
+Record the BuildID, Git SHA, before/after totals, whether the cancel button
+recovered, and whether the retry opened the Overlay. A closed Overlay alone is
+not success evidence; the post-close `GetAllItems` snapshot is authoritative.
+
 ### Raw Astra unit probe
 
 The production gateway and MethodChannel transaction port must reject

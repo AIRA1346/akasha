@@ -216,6 +216,7 @@ class SteamInventoryCommerceGateway
         outcomeObserved: (snapshot) =>
             (snapshot.astraBalance ?? -1) >=
             before + product.grantPremiumAmount!,
+        recoverClosedPurchase: true,
       );
     } catch (_) {
       _reconciliationRequired = true;
@@ -497,6 +498,7 @@ class SteamInventoryCommerceGateway
   Future<CommerceOperationResult> _reconcileMutation({
     required SteamInventoryTransactionResult transaction,
     required bool Function(CommerceAccountSnapshot snapshot) outcomeObserved,
+    bool recoverClosedPurchase = false,
   }) async {
     final refreshed = await loadAccount();
     final observed =
@@ -510,6 +512,42 @@ class SteamInventoryCommerceGateway
         providerHandle: transaction.providerHandle,
         providerOrderId: transaction.orderId,
         providerTransactionId: transaction.transactionId,
+      );
+    }
+
+    final purchaseOverlayClosed =
+        recoverClosedPurchase &&
+        transaction.issueCode == 'steam_purchase_overlay_closed';
+    final purchaseTimedOut =
+        recoverClosedPurchase &&
+        transaction.issueCode == 'steam_transaction_timeout';
+    if (purchaseOverlayClosed || purchaseTimedOut) {
+      // Overlay closure is only a hint. A fresh authoritative inventory read
+      // above gets the final say before the UI operation is released.
+      if (refreshed.state == CommerceAuthorityState.ready) {
+        _reconciliationRequired = false;
+        return CommerceOperationResult(
+          status: purchaseOverlayClosed
+              ? CommerceOperationStatus.cancelled
+              : CommerceOperationStatus.indeterminate,
+          snapshot: refreshed,
+          providerHandle: transaction.providerHandle,
+          providerOrderId: transaction.orderId,
+          providerTransactionId: transaction.transactionId,
+          issueCode: purchaseOverlayClosed ? null : transaction.issueCode,
+        );
+      }
+      // A failed refresh already disables mutations in the snapshot. Do not
+      // latch the session-wide reconciliation guard: a later refresh may
+      // restore a retryable provider state without restarting the app.
+      _reconciliationRequired = false;
+      return CommerceOperationResult(
+        status: CommerceOperationStatus.indeterminate,
+        snapshot: refreshed,
+        providerHandle: transaction.providerHandle,
+        providerOrderId: transaction.orderId,
+        providerTransactionId: transaction.transactionId,
+        issueCode: 'steam_purchase_reconciliation_failed',
       );
     }
 

@@ -18,12 +18,18 @@ class MethodChannelSteamInventoryTransactionPort
       SteamInventoryChannelContract.methods,
     ),
     this.pollInterval = const Duration(milliseconds: 250),
-    this.completionTimeout = const Duration(minutes: 5),
+    this.completionTimeout = const Duration(minutes: 2),
+    this.overlayCloseGracePeriod = const Duration(seconds: 3),
+    this.clock,
+    this.delay,
   }) : _channel = channel;
 
   final MethodChannel _channel;
   final Duration pollInterval;
   final Duration completionTimeout;
+  final Duration overlayCloseGracePeriod;
+  final DateTime Function()? clock;
+  final Future<void> Function(Duration duration)? delay;
 
   @override
   Future<SteamInventoryTransactionResult> startPurchase({
@@ -49,6 +55,7 @@ class MethodChannelSteamInventoryTransactionPort
         'quantities': [quantity],
       },
       acceptedKey: null,
+      recoverPurchaseCancellation: true,
     );
   }
 
@@ -88,6 +95,7 @@ class MethodChannelSteamInventoryTransactionPort
         'destroyQuantities': [for (final item in destroyItems) item.quantity],
       },
       acceptedKey: 'exchangeApiAccepted',
+      recoverPurchaseCancellation: false,
     );
   }
 
@@ -95,6 +103,7 @@ class MethodChannelSteamInventoryTransactionPort
     required String method,
     required Map<String, Object> arguments,
     required String? acceptedKey,
+    required bool recoverPurchaseCancellation,
   }) async {
     Map<String, Object?>? raw;
     try {
@@ -135,16 +144,44 @@ class MethodChannelSteamInventoryTransactionPort
         issueCode: 'steam_transaction_handle_missing',
       );
     }
-    return _awaitTerminal(handle);
+    return _awaitTerminal(
+      handle,
+      recoverPurchaseCancellation: recoverPurchaseCancellation,
+    );
   }
 
-  Future<SteamInventoryTransactionResult> _awaitTerminal(String handle) async {
+  Future<SteamInventoryTransactionResult> _awaitTerminal(
+    String handle, {
+    required bool recoverPurchaseCancellation,
+  }) async {
     final operation = await SteamInventoryMethodChannelOperationPoller(
       channel: _channel,
       pollInterval: pollInterval,
       completionTimeout: completionTimeout,
+      overlayCloseGracePeriod: overlayCloseGracePeriod,
+      recoverAfterOverlayClose: recoverPurchaseCancellation,
+      clock: clock,
+      delay: delay,
     ).awaitTerminal(handle);
+    if (recoverPurchaseCancellation &&
+        (operation.result.issueCode == 'steam_purchase_overlay_closed' ||
+            operation.result.issueCode == 'steam_transaction_timeout')) {
+      await _releaseNativePurchaseOperation(handle);
+    }
     return operation.result;
+  }
+
+  Future<void> _releaseNativePurchaseOperation(String handle) async {
+    try {
+      await _channel.invokeMapMethod<String, Object?>(
+        'releasePurchaseOperation',
+        {'handle': handle},
+      );
+    } on MissingPluginException {
+      // The bounded Dart result still releases UI state.
+    } on PlatformException {
+      // Reconciliation remains authoritative even if native cleanup fails.
+    }
   }
 
   static SteamInventoryTransactionResult parseOperation(

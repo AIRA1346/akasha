@@ -242,6 +242,85 @@ void main() {
   );
 
   test(
+    'cancelled purchase clears the product token and allows retry',
+    () async {
+      final completion = Completer<CommerceOperationResult>();
+      const initial = CommerceAccountSnapshot(
+        state: CommerceAuthorityState.ready,
+        astraBalance: 500,
+        echoBalance: 500,
+        transactionsEnabled: true,
+      );
+      final gateway = _TestCommerceGateway(
+        loadResult: Future.value(initial),
+        purchaseResult: completion.future,
+      );
+      final controller = CommerceController(gateway: gateway, enabled: true);
+      addTearDown(controller.dispose);
+      await controller.refresh();
+
+      final first = controller.purchaseAstraPack(
+        CommerceCatalog.astraPack500ProductId,
+      );
+      expect(controller.activeProductId, CommerceCatalog.astraPack500ProductId);
+      completion.complete(
+        const CommerceOperationResult(
+          status: CommerceOperationStatus.cancelled,
+          snapshot: initial,
+        ),
+      );
+      expect((await first).status, CommerceOperationStatus.cancelled);
+      expect(controller.operationInFlight, isFalse);
+      expect(controller.activeProductId, isNull);
+
+      final retry = await controller.purchaseAstraPack(
+        CommerceCatalog.astraPack500ProductId,
+      );
+      expect(retry.status, CommerceOperationStatus.cancelled);
+      expect(gateway.purchaseCalls, 2);
+    },
+  );
+
+  test(
+    'dispose ignores a late purchase completion and clears its token',
+    () async {
+      final completion = Completer<CommerceOperationResult>();
+      const initial = CommerceAccountSnapshot(
+        state: CommerceAuthorityState.ready,
+        astraBalance: 500,
+        echoBalance: 500,
+        transactionsEnabled: true,
+      );
+      final gateway = _TestCommerceGateway(
+        loadResult: Future.value(initial),
+        purchaseResult: completion.future,
+      );
+      final controller = CommerceController(gateway: gateway, enabled: true);
+      await controller.refresh();
+      var notifications = 0;
+      controller.addListener(() => notifications += 1);
+
+      final pending = controller.purchaseAstraPack(
+        CommerceCatalog.astraPack500ProductId,
+      );
+      expect(controller.operationInFlight, isTrue);
+      final notificationsBeforeDispose = notifications;
+      controller.dispose();
+      completion.complete(
+        const CommerceOperationResult(
+          status: CommerceOperationStatus.cancelled,
+          snapshot: initial,
+        ),
+      );
+
+      await pending;
+      expect(controller.operationInFlight, isFalse);
+      expect(controller.activeProductId, isNull);
+      expect(notifications, notificationsBeforeDispose);
+    },
+  );
+
+  test(
     'theme exchange publishes the reconciled entitlement snapshot',
     () async {
       const initial = CommerceAccountSnapshot(
