@@ -79,7 +79,7 @@
 
 ## 5. 수동 dogfood 체크리스트
 
-**UI/UX 리뷰 (코드·fixture 기준):** [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) §7
+**UI/UX 리뷰 (코드·fixture 기준):** [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](ux-discovery/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) §7
 
 | # | 항목 | Pass |
 |---|------|:----:|

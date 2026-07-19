@@ -116,9 +116,10 @@ These matter, but they are not the current ultimate-archive core.
 | D-001 | Steam BuildID `24015480` Set Live / review update | Release/ops, not archive architecture |
 | D-002 | Paid themes / IAP / Astra·Echo | [COMMERCE_CURRENCY_CONTRACT.md](../active/COMMERCE_CURRENCY_CONTRACT.md); flag off until P5–P6 verified |
 | D-003 | Agent/player implementation layer | AKASHA must not become the player/orchestrator |
-| D-004 | akasha-db ownership A/B/C decision | Repo/registry operations track — see [AKASHA_DB_OWNERSHIP_AUDIT.md](AKASHA_DB_OWNERSHIP_AUDIT.md) |
+| D-004 | akasha-db ownership A/B/C decision | **Pending** — choose A (vendored SSOT) / B (submodule·subtree) / C (dual push). Snapshot audit: [AKASHA_DB_OWNERSHIP_AUDIT.md](../history/programs/akasha-db-ownership/AKASHA_DB_OWNERSHIP_AUDIT.md) |
 | D-005 | Registry manifest 4 generated files | Keep excluded from commit unless intentionally rebuilding registry |
 | D-006 | Large UI cleanup hotspots | Separate code-health track: workbench/entity/home/editor files |
+| D-007 | Journal preview polish (dogfood carry-forward) | Still open vs code after 2026-07-19 triage: **P1-2** hard 180-char cut · **P1-3** `평가 없음` with memo/tags · **P1-4** watchlist status hidden · **P1-5** tag overflow (no max+N) · **P1-6** Sanctum memo title outside card · **P1-8** raw wiki link · **P1-9** Home center personal-reflection density. Historical observations unchanged in [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../history/closure-2026-07/ux-discovery/AGENT_VAULT_UI_DOGFOOD_REVIEW.md). Resolved there only: P0-1 · P1-1 · P1-7 |
 
 ## 9. Current Next Step
 

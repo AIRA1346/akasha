@@ -26,7 +26,7 @@
 | **사이드바 서재** | `나만의 서재` 목록·active·`+`·select·삭제·DnD ✅ |
 | **Poster Localizing** | URL 입력 → vault `posters/` 저장 → `poster: "posters/..."` ✅ |
 | **Canvas Editor (지식 지도)** | v0.3-B.1 ✅ · v0.3-A.5 viewport persist ✅ · v0.3-B.2a inertia zoom guard ✅ · Work/Entity 더블클릭 → Workbench · Canvas+Detail 2탭 — [CANVAS_NODE_OPEN_v0.3-B.1_IMPLEMENTATION_PLAN.md](../programs/canvas-editor/CANVAS_NODE_OPEN_v0.3-B.1_IMPLEMENTATION_PLAN.md) |
-| **Agent Vault UI** | Work Journal 감상 카드 slice ✅ · dogfood 관찰은 [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
+| **Agent Vault UI** | Work Journal 감상 카드 slice ✅ · dogfood 관찰은 [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](ux-discovery/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
 | **Infinite Taste Archive** | 외부 도구/AI가 읽기 쉬운 개인 취향 아카이브 ADR ✅ · `.akasha/record_index.json` slice ✅ — [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](../../active/AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) |
 | **Infinite Archive Hardening** | 무한 확장을 위한 index · taste signal · agent write contract · ID path 계획 ✅ — [INFINITE_ARCHIVE_HARDENING_PLAN.md](../../active/INFINITE_ARCHIVE_HARDENING_PLAN.md) |
 | **Pre-release Architecture Audit** | Vault Layout v3 canonical 후보 — ID path · unified operation · candidate/taste 계약 감사 ✅ — [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) |
@@ -48,7 +48,7 @@
 | **Phase 1** | Record Foundation ✅ |
 | **Sanctum** | C1~C4 ✅ · Vault agent 가이드 ✅ |
 | **코드 건강** | Phase 0~7 ✅ · Foundation P2 분해 ✅ |
-| **Registry (akasha-db)** | **10,048 works** · **이중 추적 감사 중** — [AKASHA_DB_OWNERSHIP_AUDIT.md](../../draft/AKASHA_DB_OWNERSHIP_AUDIT.md) |
+| **Registry (akasha-db)** | **10,048 works** · **이중 추적 감사 중** — [AKASHA_DB_OWNERSHIP_AUDIT.md](../programs/akasha-db-ownership/AKASHA_DB_OWNERSHIP_AUDIT.md) |
 | **다음** | BuildID **24015480** default branch Set Live · Steamworks Build review 갱신 · akasha-db 구조 A/B/C 결정 **보류** |
 | **Steam** | 자동 gate ✅ · 수동 dogfood ✅ · 무료 출시 copy ✅ · no-IAP BuildID **24015480** 업로드 완료 |
 
@@ -188,14 +188,14 @@
 
 | ID | 항목 | 상태 | SSOT |
 |:--:|------|:----:|------|
-| **301** | akasha-db **이중 추적** 구조 감사 (vendored + nested `.git`) | ✅ draft | [AKASHA_DB_OWNERSHIP_AUDIT.md](../../draft/AKASHA_DB_OWNERSHIP_AUDIT.md) |
+| **301** | akasha-db **이중 추적** 구조 감사 (vendored + nested `.git`) | ✅ draft | [AKASHA_DB_OWNERSHIP_AUDIT.md](../programs/akasha-db-ownership/AKASHA_DB_OWNERSHIP_AUDIT.md) |
 | **302** | 내부 `akasha-db` **148파일** → `backup/local-sync-20260630` @ **`bef52e7`** | ✅ pushed | audit §6 |
 | **303** | 장기 구조 결정 — **A** vendored+`.git` 제거 · **B** submodule/subtree · **C** dual push | ⏸️ 보류 | audit §5 |
 | **304** | `AIRA1346/akasha-db` remote vs 앱 repo shard 커밋 **동기화** | 🔶 | audit §3.1 |
 | **305** | registry manifest 4파일 — 동일 `generatedAt` metadata를 별도 커밋으로 정렬 | ✅ `8ada29d5` | 본 문서 헤더 |
 | **306** | Home UI 정리 — search-first · Slice 1 앱 테마 · Slice 2 사이드바 서재 · dead wiring cleanup | ✅ | `0db21d38` |
 | **307** | root `flutter test` **952** · `flutter analyze` **0** 유지 | ✅ | §2 Gate |
-| **308** | Agent Vault UI dogfood — P1-8 raw wiki link · P1-9 중앙 감상 밀도 · P1-10 앱 테마 범위 | 🔶 | [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
+| **308** | Agent Vault UI dogfood — P1-8 raw wiki link · P1-9 중앙 감상 밀도 · P1-10 앱 테마 범위 | 🔶 | [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](ux-discovery/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
 | **309** | M3 · Agent/player implementation layer · 대규모 index/path migration | 🚫 **금지** (본 스프린트) | — |
 | **310** | 중복 dormant `PreviewMemoBar`와 `showPreviewMemoBar` 제거 — `내 감상`을 단일 진입점으로 유지 | ✅ UX-4A | [UX_DESIGN_SYSTEM.md](../../active/UX_DESIGN_SYSTEM.md) §11 |
 | **311** | Poster URL localizing — URL 입력 → vault `posters/` 저장 → YAML 상대경로 | ✅ | `6922f0a` |

@@ -7,7 +7,8 @@
 > **Git:** `git rev-parse HEAD` (문서 커밋 tip과 어긋나면 tip을 따름)
 >
 > **Verification snapshot (2026-07-19):**
-> - **Steam/build identity hardening** — `ae18be4c` `build(steam): reject personal paths in binary payloads` (binary payload scan · personal/repo path · credential content). `codex/build-identity-ui` remote tip sealed. Temporary worktrees 5개 종료 · remaining worktree = canonical repository only. Steam release evidence sealed at `AKASHA_Product/release-evidence/steam` · `depot_windows` binary stage intentionally not retained. IAP release gate unchanged (`steamInAppPurchasesEnabled=false`). Worktree closure ≠ Steam IAP readiness.
+> - **Docs hygiene baseline** — cleanup started from sealed main tip `e5cf61f4` (`test(registry): skip provenance live check on shallow clones`). Ownership Audit·Agent Vault UI Dogfood Review archived to `docs/history/`; open decisions tracked in backlog D-004/D-007. External sandbox worktree may remain dirty and is out of scope for automatic cleanup. IAP release gate unchanged (`steamInAppPurchasesEnabled=false`).
+> - **Steam/build identity hardening** — `ae18be4c` `build(steam): reject personal paths in binary payloads` (binary payload scan · personal/repo path · credential content). Steam release evidence sealed at `AKASHA_Product/release-evidence/steam` · `depot_windows` binary stage intentionally not retained. Worktree closure ≠ Steam IAP readiness.
 > - **Registry full-bundle Phase 0–2** — 10,048 works · v4 JSON shard 1,713개 전체 asset · read-only source/staging builder · root/search provenance · deterministic double-build/allowlist/SHA/scale gate · production `BundledRegistrySource` only. 검색·browse·category·상세에서 registry CDN 호출과 remote fallback은 0이며, 기존 registry cache와 sync/URL preference만 1회 멱등 무효화한다. 사용자 Vault는 migration 대상이 아니다.
 > - P0 recoverable Vault write · SA-01/02/03 derived-index foundation
 > - P1 local CLI: bounded `record lookup`/`record read` · user-started `candidate.create`

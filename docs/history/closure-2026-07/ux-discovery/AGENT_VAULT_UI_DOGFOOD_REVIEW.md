@@ -1,9 +1,11 @@
 # Agent Vault UI Dogfood Review — Work Journal 감상 카드
 
+> **Archived:** 2026-07-19 — moved from `docs/draft/` (historical dogfood snapshot).
+> **Live carry-forward:** 현재도 유효한 open 항목은 [ULTIMATE_ARCHIVE_BACKLOG.md](../../../draft/ULTIMATE_ARCHIVE_BACKLOG.md) **D-007** · 테마 residual은 [UX_THEME_REGRESSION_MATRIX.md](../../../active/UX_THEME_REGRESSION_MATRIX.md) §5.
 > **일자:** 2026-06-30
-> **지위:** Non-binding draft — 구현 확장 **전** UI/UX 관찰·리뷰 (open checklist)
+> **지위:** Non-binding historical review — 구현 확장 **전** UI/UX 관찰·리뷰 (당시 open checklist)
 > **범위:** Windows/desktop · Home 프리뷰 `내 감상` · Workbench Sanctum `# 📝 메모`
-> **상위:** [AGENT_VAULT_LOOP_SLICE.md](../history/closure-2026-07/AGENT_VAULT_LOOP_SLICE.md) · [AGENT_VAULT_PROTOCOL_V1.md](../active/AGENT_VAULT_PROTOCOL_V1.md)
+> **상위:** [AGENT_VAULT_LOOP_SLICE.md](../AGENT_VAULT_LOOP_SLICE.md) · [AGENT_VAULT_PROTOCOL_V1.md](../../../active/AGENT_VAULT_PROTOCOL_V1.md)
 > **초기 리뷰 기준:** `8840986` (`feat: add Agent Vault work journal UI slice`) · **P0-1 적용:** 이번 커밋
 
 ---
@@ -186,7 +188,7 @@ Text(' / 5', style: AkashaTypography.caption),
 | 6 | Sanctum 보기 탭 — memo가 **명대사 카드**와 구분됨 | ☐ |
 | 7 | P0-1 — 핵심 정보 **4.5 / 5**와 내 감상 별점 일치 | ☐ |
 
-결과는 [AGENT_VAULT_LOOP_SLICE.md](../history/closure-2026-07/AGENT_VAULT_LOOP_SLICE.md) §5에 이어 기록.
+결과는 [AGENT_VAULT_LOOP_SLICE.md](../AGENT_VAULT_LOOP_SLICE.md) §5에 이어 기록.
 
 ---
 

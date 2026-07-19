@@ -1,9 +1,11 @@
 # akasha-db 소유권·백업 구조 감사 (Read-only)
 
+> **Archived:** 2026-07-19 — moved from `docs/draft/` (historical snapshot; not an active contract).
+> **Open decision:** A/B/C 선택지는 본문에 보존. 현재 추적 상태는 [ULTIMATE_ARCHIVE_BACKLOG.md](../../../draft/ULTIMATE_ARCHIVE_BACKLOG.md) **D-004**.
 > **일자:** 2026-06-30
-> **지위:** Non-binding draft — 구조 감사·A/B/C **결정 전** (not an active contract) — **destructive 변경 없음**
+> **지위:** Non-binding historical audit — 구조 감사·A/B/C **결정 전** (not an active contract) — **destructive 변경 없음**
 
-> **상위:** [PROJECT_STATUS.md](../history/closure-2026-07/PROJECT_STATUS.md) · [catalog-ownership.md](../history/policy/catalog-ownership.md)
+> **상위:** [PROJECT_STATUS.md](../../closure-2026-07/PROJECT_STATUS.md) · [catalog-ownership.md](../../policy/catalog-ownership.md)
 > **앱 repo tip:** `45f89b7` (`origin/main` 동기화)
 
 ---
@@ -39,7 +41,7 @@ akasha/  (AIRA1346/akasha)
 | 관점 | 판정 |
 |------|------|
 | 앱 빌드·CI 관점 | **Vendored catalog data** — `registry_builder --sync-assets`가 `akasha-db` → `assets/registry` 복사 |
-| GitHub Pages / CDN 관점 | **별도 repo mirror** — `akasha-db` push → Pages 배포 ([README.md](../../README.md)) |
+| GitHub Pages / CDN 관점 | **별도 repo mirror** — `akasha-db` push → Pages 배포 ([README.md](../../../../README.md)) |
 | Git 메타데이터 관점 | **비정규** — 동일 트리에 두 개의 독립 history (루트 vs 중첩) |
 
 **결론:** “vendored copy + pipeline용 nested clone”에 가깝고, 정식 submodule/subtree는 **아님**.
@@ -119,7 +121,7 @@ manifest working hash는 앱 repo `HEAD` manifest와도 **다름** (최신 rebui
 
 1. `AIRA1346/akasha-db`에 앱 repo shard 커밋을 **어떻게 반영할지** (cherry-pick vs 일괄 PR)
 2. Pages 배포가 **어느 repo tip**을 따르는지 운영 확인
-3. A/B/C 중 하나 선택 후 [catalog-ownership.md](../history/policy/catalog-ownership.md)에 **단일 SSOT** 문장 추가
+3. A/B/C 중 하나 선택 후 [catalog-ownership.md](../../policy/catalog-ownership.md)에 **단일 SSOT** 문장 추가
 
 ---
 
