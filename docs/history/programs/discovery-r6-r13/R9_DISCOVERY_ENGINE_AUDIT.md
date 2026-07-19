@@ -1,9 +1,9 @@
 # R9 Discovery Engine Audit
 
-> **일자:** 2026-06-22  
-> **유형:** 코드 기준 Engine·Surface 경계 분석 (코드 수정 없음)  
-> **선행:** [R6_DISCOVERY_AUDIT.md](./R6_DISCOVERY_AUDIT.md), [R7_DISCOVERY_FOUNDATION_AUDIT.md](./R7_DISCOVERY_FOUNDATION_AUDIT.md), [R8_DISCOVERY_IMPLEMENTATION_PLAN.md](./R8_DISCOVERY_IMPLEMENTATION_PLAN.md), [R8_P1_LINK_CANDIDATE_DESIGN.md](./R8_P1_LINK_CANDIDATE_DESIGN.md), [R8_P2_DISCOVERY_SURFACE_AUDIT.md](./R8_P2_DISCOVERY_SURFACE_AUDIT.md), [R8_P2_IMPLEMENTATION_REPORT.md](./R8_P2_IMPLEMENTATION_REPORT.md)  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)
+> **일자:** 2026-06-22
+> **유형:** 코드 기준 Engine·Surface 경계 분석 (코드 수정 없음)
+> **선행:** [R6_DISCOVERY_AUDIT.md](./R6_DISCOVERY_AUDIT.md), [R7_DISCOVERY_FOUNDATION_AUDIT.md](./R7_DISCOVERY_FOUNDATION_AUDIT.md), [R8_DISCOVERY_IMPLEMENTATION_PLAN.md](./R8_DISCOVERY_IMPLEMENTATION_PLAN.md), [R8_P1_LINK_CANDIDATE_DESIGN.md](./R8_P1_LINK_CANDIDATE_DESIGN.md), [R8_P2_DISCOVERY_SURFACE_AUDIT.md](./R8_P2_DISCOVERY_SURFACE_AUDIT.md), [R8_P2_IMPLEMENTATION_REPORT.md](./R8_P2_IMPLEMENTATION_REPORT.md)
+> **SSOT:** [PROJECT_CONSTITUTION.md](../../closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../../../active/CURRENT_STATE.md)
 
 **방법:** 추측 금지 · 아래 인용 파일·함수 기준만 사용.
 
@@ -183,7 +183,7 @@ if (characters.length < characterLimit) {
 
 ### 3.4 Fusion Search (Registry)
 
-`fusion_search_service.dart` L75–80: local `creator` · `tags` **검색 토큰**.  
+`fusion_search_service.dart` L75–80: local `creator` · `tags` **검색 토큰**.
 **쿼리 필수** · neighbor expansion **없음** · 개인 그래프 **미반영**.
 
 ### 3.5 Q2 종합

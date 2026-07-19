@@ -1,12 +1,12 @@
 # R8 P2 Discovery Surface Audit
 
-> **일자:** 2026-06-22  
-> **Sprint:** R8-P2 Discovery Surface  
-> **전제:** R8-P0/P1 Foundation 완료 — 첫 연결 생성 경로 확보  
-> **선행:** [R6_DISCOVERY_AUDIT.md](./R6_DISCOVERY_AUDIT.md), [R7_DISCOVERY_FOUNDATION_AUDIT.md](./R7_DISCOVERY_FOUNDATION_AUDIT.md), [R8_P1_IMPLEMENTATION_REPORT.md](./R8_P1_IMPLEMENTATION_REPORT.md)  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)
+> **일자:** 2026-06-22
+> **Sprint:** R8-P2 Discovery Surface
+> **전제:** R8-P0/P1 Foundation 완료 — 첫 연결 생성 경로 확보
+> **선행:** [R6_DISCOVERY_AUDIT.md](./R6_DISCOVERY_AUDIT.md), [R7_DISCOVERY_FOUNDATION_AUDIT.md](./R7_DISCOVERY_FOUNDATION_AUDIT.md), [R8_P1_IMPLEMENTATION_REPORT.md](./R8_P1_IMPLEMENTATION_REPORT.md)
+> **SSOT:** [PROJECT_CONSTITUTION.md](../../closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../../../active/CURRENT_STATE.md)
 
-**금지 준수:** Search Index · Recall Validation · Link Index Schema · Discovery Semantics · Collection Pipeline · Registry Sync · Preview Stack · Save Return **무변경**  
+**금지 준수:** Search Index · Recall Validation · Link Index Schema · Discovery Semantics · Collection Pipeline · Registry Sync · Preview Stack · Save Return **무변경**
 **범위:** Discovery **Engine** 수정 없음 · **Surface** (Home · Preview · Graph UI) 강화만
 
 ---
@@ -21,7 +21,7 @@
 | Q4 Graph | **단순 조회** (리스트형) · 연결 밀도 정렬 · pull-only |
 | Q5 링크 후 능동 노출 | neighbors · connectedWorks 2홉 · 홈 하이라이트(지연) — **「다음 연결」제안 없음** |
 
-**P1이 해결한 것:** 연결 **전** (Cold Graph)  
+**P1이 해결한 것:** 연결 **전** (Cold Graph)
 **P2가 해결할 것:** 연결 **후** (Warm Graph) — 앱이 관계를 **보여주고 이어갈 경로를 제안**
 
 ---
@@ -353,7 +353,7 @@ LinkCandidateService.candidatesForWork({
 
 ## 관련 산출물 (예정)
 
-- `docs/draft/R8_P2_IMPLEMENTATION_REPORT.md` — 구현 후
+- `docs/history/programs/discovery-r6-r13/R8_P2_IMPLEMENTATION_REPORT.md` — 구현 후
 
 ---
 

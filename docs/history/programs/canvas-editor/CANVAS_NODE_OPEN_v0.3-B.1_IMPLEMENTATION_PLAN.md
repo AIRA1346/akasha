@@ -1,9 +1,9 @@
 # Canvas Node Open v0.3-B.1 — Implementation Plan
 
-> **작성:** 2026-07-08  
-> **상태:** ✅ 구현 완료 (`f65e2a03`) · tests **830 PASS** · analyze **0** · Windows release build PASS  
-> **선행:** Canvas Editor Stabilization v0.3-A.4 ✅ · `origin/main` push 완료  
-> **분해 계획:** [CANVAS_EDITOR_DECOMPOSITION_PLAN.md](CANVAS_EDITOR_DECOMPOSITION_PLAN.md)
+> **작성:** 2026-07-08
+> **상태:** ✅ 구현 완료 (`f65e2a03`) · tests **830 PASS** · analyze **0** · Windows release build PASS
+> **선행:** Canvas Editor Stabilization v0.3-A.4 ✅ · `origin/main` push 완료
+> **분해 계획:** [CANVAS_EDITOR_DECOMPOSITION_PLAN.md](../../../draft/CANVAS_EDITOR_DECOMPOSITION_PLAN.md)
 
 ---
 
@@ -64,7 +64,7 @@ void openWork(AkashaItem item) {
 
 `openEntity` / `openCanvas`도 동일하게 **`tabs.clear()`** 후 1탭만 유지.
 
-**함의:** Canvas 탭에서 기존 `openWork()`를 그대로 호출하면 **캔버스 탭이 사라지고** Work 탭만 남음.  
+**함의:** Canvas 탭에서 기존 `openWork()`를 그대로 호출하면 **캔버스 탭이 사라지고** Work 탭만 남음.
 더블클릭 후 Workbench 탭을 닫으면 browse로 돌아가며 **캔버스 컨텍스트 복귀 불가**.
 
 → v0.3-B.1에서 **탭 push semantics** 최소 도입 필요 (§5.2).
@@ -78,7 +78,7 @@ void openWork(AkashaItem item) {
 | `work` | `localItems.firstWhere(workId == node.workId)` | `AkashaItem` → `openBrowseItem` |
 | `entity` | `_entities.firstWhere(entityId == node.entityId)` | `EntityJournalEntry` → `UserCatalogEntity` + journal |
 
-Entity는 `UserCatalogEntity.userLocal(entityId, type, title, tags, ...)` 로 변환 후  
+Entity는 `UserCatalogEntity.userLocal(entityId, type, title, tags, ...)` 로 변환 후
 `HomeWorkbenchCoordinator.openEntity(entity)` 호출 (journal은 coordinator가 vault에서 재로드하거나, 이미 로드된 entry 전달).
 
 ### 3.4 제스처 충돌
@@ -170,7 +170,7 @@ void openDetailBesideCanvas(CollectibleTab detailTab) {
 
 3. `HomeWorkbenchCoordinator`에 `openWorkFromCanvas` / `openEntityFromCanvas` thin wrapper
 
-**범위 통제:** browse에서 Work 여는 기존 `openWork(clear)` 동작은 **변경하지 않음**.  
+**범위 통제:** browse에서 Work 여는 기존 `openWork(clear)` 동작은 **변경하지 않음**.
 push는 **active tab이 CanvasCollectibleTab일 때만**.
 
 ### 4.3 text 노드 정책
@@ -181,7 +181,7 @@ push는 **active tab이 CanvasCollectibleTab일 때만**.
 
 ### 4.4 missing / stale node
 
-- Work/Entity lookup 실패 → SnackBar 2초  
+- Work/Entity lookup 실패 → SnackBar 2초
   `"아카이브에서 해당 항목을 찾을 수 없습니다."`
 - layout.json 변경 없음 (노드 ID는 그대로)
 

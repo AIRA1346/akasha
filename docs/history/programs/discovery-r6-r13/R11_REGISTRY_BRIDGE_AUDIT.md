@@ -1,9 +1,9 @@
 # R11 Registry ↔ Vault Discovery Bridge Audit
 
-> **일자:** 2026-06-22  
-> **유형:** 갭 분석 + Bridge 구현 스프린트 (R11)  
-> **선행:** [R9_DISCOVERY_ENGINE_AUDIT.md](./R9_DISCOVERY_ENGINE_AUDIT.md), [R10_PLACE_ORG_AUDIT.md](./R10_PLACE_ORG_AUDIT.md)  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)
+> **일자:** 2026-06-22
+> **유형:** 갭 분석 + Bridge 구현 스프린트 (R11)
+> **선행:** [R9_DISCOVERY_ENGINE_AUDIT.md](./R9_DISCOVERY_ENGINE_AUDIT.md), [R10_PLACE_ORG_AUDIT.md](./R10_PLACE_ORG_AUDIT.md)
+> **SSOT:** [PROJECT_CONSTITUTION.md](../../closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../../../active/CURRENT_STATE.md)
 
 **방법:** 코드 인용 기준 · Engine / Index / Registry 구조 변경 없음.
 

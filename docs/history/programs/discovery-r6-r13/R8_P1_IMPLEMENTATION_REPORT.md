@@ -1,8 +1,8 @@
 # R8 P1 Implementation Report — LinkCandidateService
 
-> **일자:** 2026-06-22  
-> **Sprint:** R8-P1 Link Candidate  
-> **Audit:** [R8_P1_IMPLEMENTATION_AUDIT.md](./R8_P1_IMPLEMENTATION_AUDIT.md)  
+> **일자:** 2026-06-22
+> **Sprint:** R8-P1 Link Candidate
+> **Audit:** [R8_P1_IMPLEMENTATION_AUDIT.md](./R8_P1_IMPLEMENTATION_AUDIT.md)
 > **설계:** [R8_P1_LINK_CANDIDATE_DESIGN.md](./R8_P1_LINK_CANDIDATE_DESIGN.md)
 
 ---
@@ -21,7 +21,7 @@ Work 맥락에서 **연결 후보를 자동 계산**하는 `LinkCandidateService
 |------|------|
 | `lib/services/link_candidate_service.dart` | `candidatesForWork` · score · `resolveSelection` |
 | `test/link_candidate_service_test.dart` | 서비스 단위 테스트 7건 |
-| `docs/draft/R8_P1_IMPLEMENTATION_AUDIT.md` | Step 1 Audit |
+| `docs/history/programs/discovery-r6-r13/R8_P1_IMPLEMENTATION_AUDIT.md` | Step 1 Audit |
 
 ### 수정
 
@@ -152,7 +152,7 @@ P1은 **제안 레이어**만 추가한다. 그래프 semantics는 링크가 생
 
 ### 서사
 
-**P0**는 「막다른 길 제거」— ent 0에서도 연결 **가능**해졌다.  
+**P0**는 「막다른 길 제거」— ent 0에서도 연결 **가능**해졌다.
 **P1**는 「무엇을 연결할지 **제안**」— 특히 Registry에서 아카이브된 Work는 `creator`가 이미 있어, **앱이 첫 인물을 맞춰 보여준다**.
 
 남는 마찰:

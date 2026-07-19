@@ -3,7 +3,7 @@
 > **지위:** Sprint B 품질 다듬기의 **실사용 검증 SSOT**
 > **갱신:** 2026-06-25
 > **상위:** [PROJECT_STATUS.md](PROJECT_STATUS.md) · [STEAM_RELEASE.md](../../active/STEAM_RELEASE.md)
-> **UX 참고:** [R14_UI_UX_AUDIT.md](../../draft/R14_UI_UX_AUDIT.md) (Engine/Preview stack 변경 금지)
+> **UX 참고:** [R14_UI_UX_AUDIT.md](ux-discovery/R14_UI_UX_AUDIT.md) (Engine/Preview stack 변경 금지)
 
 ---
 

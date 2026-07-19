@@ -1,10 +1,10 @@
 # R7 Discovery Foundation Audit
 
-> **일자:** 2026-06-22  
-> **전제:** R3~R5 UX Sprint **종료** · UX 재개편 **없음**  
-> **목표:** `기록 + 연결` → `기록 + 연결 + 발견` 이동을 위한 **엔지니어링 기반** 분석  
-> **선행:** [R6_DISCOVERY_AUDIT.md](./R6_DISCOVERY_AUDIT.md)  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)
+> **일자:** 2026-06-22
+> **전제:** R3~R5 UX Sprint **종료** · UX 재개편 **없음**
+> **목표:** `기록 + 연결` → `기록 + 연결 + 발견` 이동을 위한 **엔지니어링 기반** 분석
+> **선행:** [R6_DISCOVERY_AUDIT.md](./R6_DISCOVERY_AUDIT.md)
+> **SSOT:** [PROJECT_CONSTITUTION.md](../../closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../../../active/CURRENT_STATE.md)
 
 **금지 준수:** UX 리디자인 · Preview · Navigation · Workbench 수정 없음 · 코드 수정 없음.
 
@@ -314,8 +314,8 @@ flowchart LR
 
 R7 Foundation의 **첫 구현 타겟**은 UX 개편이 아니라:
 
-1. **Link Candidate 서비스** (기존 creator/tags/seed/catalog)  
-2. **Cold Graph Path A 완결** (Picker·Search·catalog 승격)  
-3. **Place/Org neighbors 완성**  
+1. **Link Candidate 서비스** (기존 creator/tags/seed/catalog)
+2. **Cold Graph Path A 완결** (Picker·Search·catalog 승격)
+3. **Place/Org neighbors 완성**
 
 이다. 이 세 가지가 갖춰져야 R6의 **P2 Proactive surfacing**과 **Registry bridge**가 의미를 갖는다.

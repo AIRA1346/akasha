@@ -7,6 +7,8 @@
 > Scope: process launch, Steam initialization, development identity files,
 > diagnostics, and release payload boundaries. Commerce products, ItemDefs,
 > prices, and transaction semantics are out of scope.
+>
+> Related (release/commerce, not this file): [STEAM_SERVICE_RELEASE_READINESS.md](../active/STEAM_SERVICE_RELEASE_READINESS.md) · [STEAM_RELEASE.md](../active/STEAM_RELEASE.md) · [steam_inventory_production](../active/steam_inventory_production/README.md) · [Windows Steam Development](WINDOWS_STEAM_DEVELOPMENT.md)
 
 ## Official Steamworks findings
 

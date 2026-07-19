@@ -1,63 +1,31 @@
 # Ultimate Archive Backlog
 
-> **Status:** Active backlog
-> **Date:** 2026-07-12
-> **Scope:** Do not forget the architecture work discovered while hardening AKASHA as an ultimate archive substrate.
+> **Status:** Non-binding draft backlog
+> **Date:** 2026-07-12 · header corrected 2026-07-19
+> **Authority:** Not an active contract. Implementation facts: [CURRENT_STATE.md](../active/CURRENT_STATE.md). Active hardening plan: [INFINITE_ARCHIVE_HARDENING_PLAN.md](../active/INFINITE_ARCHIVE_HARDENING_PLAN.md).
+> **Scope:** Remember architecture follow-ups discovered while hardening AKASHA as an ultimate archive substrate.
 > **Boundary:** AKASHA is the durable archive layer. AI agents, media playback, recommendations, and external automation remain outside AKASHA unless they write/read through explicit archive contracts.
-> **Related:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](../active/INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](../history/closure-2026-07/ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) · [ROADMAP.md](../active/ROADMAP.md) · [PROJECT_STATUS.md](../history/closure-2026-07/PROJECT_STATUS.md)
+> **Related:** [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](../history/closure-2026-07/ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) · [ROADMAP.md](../active/ROADMAP.md) · [PROJECT_STATUS.md](../history/closure-2026-07/PROJECT_STATUS.md) (historical)
 
-## 1. Already Landed
+## 1. Already Landed (summary)
 
-These are done enough to treat as current architecture baseline.
+Landed baseline is tracked in [CURRENT_STATE.md](../active/CURRENT_STATE.md) and [ARCHITECTURE_CLOSURE_AUDIT.md](../history/closure-2026-07/ARCHITECTURE_CLOSURE_AUDIT.md). Do not treat this backlog as the live SSOT for done work.
 
-| ID | Work | Status | Anchor |
-| --- | --- | --- | --- |
-| UA-001 | Vault Layout v3 path identity for new Work/Entity records | ✅ done | `works/{category}/{work_id}.md`, `entities/{type}/{entity_id}.md` |
-| UA-002 | `schema_version: 3` and `record_id` emitted for new archive serializers | ✅ done | Work/Entity/Journal/Timeline serializers |
-| UA-003 | Central `VaultRecordPathResolver` | ✅ done | [vault_record_path_resolver.dart](../../lib/services/vault_record_path_resolver.dart) |
-| UA-004 | `ArchiveOperation` write-intent model | ✅ done | [archive_operation.dart](../../lib/core/archiving/archive_operation.dart) |
-| UA-005 | `ArchiveOperationValidator` safety gate | ✅ done | [archive_operation_validator.dart](../../lib/core/archiving/archive_operation_validator.dart) |
-| UA-006 | `ArchiveCandidate` model and lifecycle | ✅ done | `candidate` · `promoted` · `dismissed` · `merged` |
-| UA-007 | Durable Candidate Store | ✅ done | legacy `catalog/candidates.json` read compatibility plus sharded `system/candidates/*` writes |
-| UA-008 | Candidate promotion validator | ✅ done | duplicate title/id · type mismatch · missing evidence/source |
-| UA-009 | Operation execution service for `promoteCandidate` | ✅ done | [archive_operation_executor.dart](../../lib/services/archive_operation_executor.dart) |
-| UA-102 | Operation idempotency and applied log | ✅ done | [archive_operation_applied_log.dart](../../lib/services/archive_operation_applied_log.dart) · `system/ops/applied.jsonl` |
-| UA-103 | Operation conflict checks for executable operations | ✅ done | [archive_record_revision_service.dart](../../lib/services/archive_record_revision_service.dart) · `operation_conflict` |
+Compact ID list (details live in code + CURRENT_STATE):
 
-| UA-105a | Candidate duplicate guard for normalized title/alias variants | done | strips bracket/punctuation noise and compares open candidate title/aliases |
-| UA-118 | Operation crash recovery marker for `promoteCandidate` | done | `source_operation_id` roll-forward accepts matching partial writes and rejects mismatches |
-| UA-119 | Reverse lookup before new Work/Entity path writes | done | same `work_id`/`entity_id` legacy files are reused when `filePath` or path index is missing |
-| UA-120 | Entity journal alias frontmatter | done | `aliases: []` round-trips in entity journal Markdown and catalog sync |
-| UA-106 | Record contract schema freeze | done | `ArchiveRecordContract` standardizes v3 metadata across Work/Entity/Journal/Timeline while preserving v1/v2 reads |
-| UA-111 | Unicode NFC normalization guard | ✅ done | `UnicodeHelper.toNfc` composition handles macOS/Windows Hangul compatibility in files/indexes |
-| UA-112 | YAML implicit casting bypass type guard | ✅ done | Prevents automatic conversion of unquoted values (e.g. `yes` to bool) to protect raw string data |
-| UA-113 | System timestamp parsing timezone guard | ✅ done | `_parseVaultInstantAsUtc` isolates record summary indexing from local machine timezone drift |
-| UA-114 | Date Semantics Audit | ✅ done | Whole-codebase audit report classifying date/time fields by instant, local date, and partial types |
-| UA-115 | Vault Timestamp Contract Alignment | ✅ done | Aligned all parsers/stores (`ArchiveRecordContract` helper) to enforce strict UTC Z-suffix writing and parsing |
-| UA-116 | Timeline Time Semantics Plan | ✅ done | Planning document detailing short-term local timezone guards and long-term split model for timeline occurredAt/timeAnchor |
-| UA-117 | Entity Custom-to-Object Migration | ✅ done | Transformed `custom` entity type to `object` (`ob_` prefix) and added backward-compatible fallback for `cu_` IDs |
-| UA-201 | Index manager wrapper | done | `ArchiveIndexManager` rebuilds record/record-path/entity/link/candidate/taste derived indexes with per-index results |
-| UA-202a | Incremental record/taste index update API | done | `ArchiveIndexManager.updateChangedRecord/removeRecord` updates record, sharded record-path, and taste indexes for one Markdown path |
-| UA-202b | Incremental index wiring into archive writes | done | Work/Entity/Journal/Timeline save/delete flows now call the manager instead of directly mutating record-only indexes |
-| UA-206a | Link/entity-path incremental coverage | done | changed/deleted Markdown paths update link outgoing/incoming and entity path indexes through `ArchiveIndexManager` |
-| UA-204 | Sharded title/alias lookup index | done | `.akasha/title_alias_index/names/{shard}.json` resolves normalized title/alias/original/localized names to stable IDs without Markdown scans |
-| UA-208 | Index rebuild validator | done | `ArchiveIndexValidatorService` rebuilds and audits record/record-path/entity-path/title-alias/link/candidate/taste indexes against Markdown source |
-| UA-209 | Candidate store sharded scale path | done | candidates write to `system/candidates/{type}/{shard}.json` with sharded name indexes |
-| UA-209a | Candidate name index rebuild/fallback | done | candidate duplicate guard falls back to source shards and `rebuildDerivedIndexes` restores name indexes |
-| UA-301 | Taste index schema and first extractor | done | `.akasha/indexes/taste_index.json` derives evidence-backed rating/status/favorite/tag/memo/quote/link signals |
-| UA-107 | Entity subtype/role model | ✅ done | `entity_subtype` metadata support and structured relations parser/serializer validated |
-| UA-108 | Music/OST representation decision | ✅ done | `MediaCategory.music` added and soundtrack/track structured relations mapping validated |
+- **Vault / ops:** UA-001–UA-009 · UA-102–UA-103 · UA-105a · UA-106 · UA-111–UA-120
+- **Indexes:** UA-201 · UA-202a/b · UA-204 · UA-206a · UA-208 · UA-209/a
+- **Taste / taxonomy seeds:** UA-301 · UA-107 · UA-108
+- **Also landed from former §2:** UA-104 (candidate review UI) · UA-109 (mixed-vault validation)
 
-## 2. P0 Pre-Release Architecture Work
+## 2. P0 Pre-Release Architecture Work (open)
 
 These should stay visible because they protect the archive before external/AI writes become powerful.
 
 | ID | Work | Why It Matters | Suggested Next Slice |
 | --- | --- | --- | --- |
-| UA-104 | Candidate review/promotion UI | done | Candidate tab shows durable proposals, provenance, and promote/dismiss actions |
 | UA-105 | Candidate duplicate detection beyond exact title | Basic normalized title/alias guard is landed; stronger fuzzy merge review is still useful | Add similarity scoring and candidate merge suggestions instead of only hard rejects |
-| UA-106 | Record contract schema freeze | Base contract landed; future slices may extend relation semantics | Keep validators and fixtures aligned as new operation executors land |
-| UA-109 | v1/v2/v3 mixed-vault validation | done | Mixed legacy/title/ID fixture rebuild and validation coverage is landed |
+| UA-106 | Record contract schema freeze (follow-ups) | Base contract landed; future slices may extend relation semantics | Keep validators and fixtures aligned as new operation executors land |
 | UA-110 | Explicit v3 migration command | Existing files should never move accidentally | Build opt-in migration that updates paths, indexes, and backlinks atomically |
 | UA-121 | Extend conflict guards to future mutating operations | Update/append/link operations are validated but not executable yet | Reuse revision guard when those operation executors land |
 | UA-122 | §7 implementation contract ADR | Constitution §7 principles are fixed; storage/revision/aggregate schema and promotion UX are not | **Deferred until implementation begins** — do not write the ADR before semantic history or behavioral aggregates work starts |
@@ -148,13 +116,13 @@ These matter, but they are not the current ultimate-archive core.
 | D-001 | Steam BuildID `24015480` Set Live / review update | Release/ops, not archive architecture |
 | D-002 | Paid themes / IAP / Astra·Echo | [COMMERCE_CURRENCY_CONTRACT.md](../active/COMMERCE_CURRENCY_CONTRACT.md); flag off until P5–P6 verified |
 | D-003 | Agent/player implementation layer | AKASHA must not become the player/orchestrator |
-| D-004 | akasha-db ownership A/B/C decision | Repo/registry operations track |
+| D-004 | akasha-db ownership A/B/C decision | Repo/registry operations track — see [AKASHA_DB_OWNERSHIP_AUDIT.md](AKASHA_DB_OWNERSHIP_AUDIT.md) |
 | D-005 | Registry manifest 4 generated files | Keep excluded from commit unless intentionally rebuilding registry |
 | D-006 | Large UI cleanup hotspots | Separate code-health track: workbench/entity/home/editor files |
 
 ## 9. Current Next Step
 
-**Architecture Closure:** [ARCHITECTURE_CLOSURE_AUDIT.md](../history/closure-2026-07/ARCHITECTURE_CLOSURE_AUDIT.md) — **declared** (S0 closed · analyze 0 · test 930). No further generic architecture audits.
+**Architecture Closure:** [ARCHITECTURE_CLOSURE_AUDIT.md](../history/closure-2026-07/ARCHITECTURE_CLOSURE_AUDIT.md) — **declared**. Baseline numbers in that snapshot are historical; live quality gates are only in [CURRENT_STATE.md](../active/CURRENT_STATE.md).
 
 **Product track:** [STEAM_SERVICE_RELEASE_READINESS.md](../active/STEAM_SERVICE_RELEASE_READINESS.md) — Steam-library transaction/recovery evidence · IAP honesty · [Astra/Echo commerce](../active/COMMERCE_CURRENCY_CONTRACT.md).
 

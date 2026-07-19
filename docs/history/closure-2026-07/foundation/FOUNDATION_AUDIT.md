@@ -1,9 +1,9 @@
 # Foundation Audit — 기초 다지기 감사 (F0)
 
 > **일자:** 2026-06-25 (F0) · **재검토:** 2026-06-30 (Post-P2 분해 SSOT)
-> **지위:** Foundation Sprint 감사 SSOT (draft)  
-> **상위:** [PROJECT_STATUS.md](../history/closure-2026-07/PROJECT_STATUS.md) · [CURRENT_STATE.md](../active/CURRENT_STATE.md)
-> **레거시:** [LEGACY_REMOVAL_POLICY.md](LEGACY_REMOVAL_POLICY.md)
+> **지위:** Foundation Sprint 감사 SSOT (draft)
+> **상위:** [PROJECT_STATUS.md](../PROJECT_STATUS.md) · [CURRENT_STATE.md](../../../active/CURRENT_STATE.md)
+> **레거시:** [LEGACY_REMOVAL_POLICY.md](../../../active/LEGACY_REMOVAL_POLICY.md)
 
 ---
 
@@ -34,7 +34,7 @@
 | `VAULT_README.md` 자동 생성 | ✅ `2af7872` |
 | `entity_path_index.json` | ✅ |
 | Entity 제목 변경 → 파일 rename | ✅ |
-| SSOT | [VAULT_AGENT_GUIDE.md](../active/VAULT_AGENT_GUIDE.md) |
+| SSOT | [VAULT_AGENT_GUIDE.md](../../../active/VAULT_AGENT_GUIDE.md) |
 
 ## 2. F0 자동 검증 로그
 
@@ -117,7 +117,7 @@
 
 ## 5. 레거시 `TODO(remove)` (9건)
 
-> **제거 조건 SSOT:** [LEGACY_REMOVAL_POLICY.md](LEGACY_REMOVAL_POLICY.md) (F4 ✅)
+> **제거 조건 SSOT:** [LEGACY_REMOVAL_POLICY.md](../../../active/LEGACY_REMOVAL_POLICY.md) (F4 ✅)
 
 | 파일 | 건수 | F4 결정 |
 |------|:----:|---------|

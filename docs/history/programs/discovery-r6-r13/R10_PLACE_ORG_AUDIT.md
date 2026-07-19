@@ -1,9 +1,9 @@
 # R10 Place / Organization Discovery Audit
 
-> **일자:** 2026-06-22  
-> **유형:** 갭 분석 + 구현 스프린트 (R10)  
-> **선행:** [R9_DISCOVERY_ENGINE_AUDIT.md](./R9_DISCOVERY_ENGINE_AUDIT.md)  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)
+> **일자:** 2026-06-22
+> **유형:** 갭 분석 + 구현 스프린트 (R10)
+> **선행:** [R9_DISCOVERY_ENGINE_AUDIT.md](./R9_DISCOVERY_ENGINE_AUDIT.md)
+> **SSOT:** [PROJECT_CONSTITUTION.md](../../closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../../../active/CURRENT_STATE.md)
 
 **방법:** 코드 인용 기준 · Link Index Schema / Discovery Semantics / Registry 구조 변경 없음.
 

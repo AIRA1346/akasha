@@ -2,19 +2,19 @@
 
 ## 현재 (v4)
 
-`manifest.json` → `"version": 4`, `"shardBits": 8`  
-샤딩: **해시 기반** (`shards/{category}/{hh}.json`, `hash(wk_)%256`)  
-규모: **430작** / **331 sparse 버킷** (Steam v1 엄선)
+`manifest.json` → `"version": 4`, `"shardBits": 8`
+샤딩: **해시 기반** (`shards/{category}/{hh}.json`, `hash(wk_)%256`)
+규모: **10,048작** / 비어 있지 않은 샤드 **1,713** (manifest.entryCount 기준 · [CURRENT_STATE.md](../docs/active/CURRENT_STATE.md))
 
-데이터 권리 (최상위): [docs/data-policy.md](../docs/data-policy.md)  
-상세 정책: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)  
-아키텍처 로드맵: [docs/strategy/data-architecture-redesign.md](../docs/strategy/data-architecture-redesign.md)  
-**Wikidata spine:** [docs/strategy/wikidata-spine-plan.md](../docs/strategy/wikidata-spine-plan.md)
+데이터 권리 (최상위): [data-policy.md](../docs/history/policy/data-policy.md)
+상세 정책: [akasha-db-policy.md](../docs/history/policy/akasha-db-policy.md)
+제품·구현 SSOT: [VISION.md](../docs/active/VISION.md) · [CURRENT_STATE.md](../docs/active/CURRENT_STATE.md) · [ADR-015](../docs/architecture/ADR-015-full-local-registry-bundle.md)
+**Wikidata spine:** [wikidata-spine-plan.md](../docs/history/strategy/wikidata-spine-plan.md)
 
 ### Registry Minimal Core (등록 최소)
 
-`workId` + `title` + `category` + (`releaseYear` 또는 `externalIds`) + (`creator` 권장).  
-`tags`는 선택. **`description`·`posterPath`는 Tier 1 금지** (v1, null만 허용·신규 추가 ❌). 상세: [data-policy.md §1.2](../docs/data-policy.md#12-registry-minimal-core-필수-영구-저장)
+`workId` + `title` + `category` + (`releaseYear` 또는 `externalIds`) + (`creator` 권장).
+`tags`는 선택. **`description`·`posterPath`는 Tier 1 금지** (v1, null만 허용·신규 추가 ❌). 상세: [data-policy.md §1.2](../docs/history/policy/data-policy.md#12-registry-minimal-core-필수-영구-저장)
 
 ### Work entry (shard JSON)
 
@@ -51,7 +51,7 @@
 ```
 
 - Q-id 형식: `Q` + 10진수 (`^Q\d+$`) · CI `data_policy_linter`
-- 시즌별 `wk_` 기본 **금지** — [canonicalization-policy.md](../docs/policy/canonicalization-policy.md)
+- 시즌별 `wk_` 기본 **금지** — [canonicalization-policy.md](../docs/history/policy/canonicalization-policy.md)
 
 #### franchise_groups v2+
 
@@ -83,7 +83,7 @@
 
 tier (파생): 0–19→0, 20–39→1, 40–59→2, 60–79→3, 80–94→4, 95+→5
 
-**Canonicalization**(franchise·edition·dedupe)은 Quality와 **독립 축** — [canonicalization-policy.md](../docs/policy/canonicalization-policy.md)
+**Canonicalization**(franchise·edition·dedupe)은 Quality와 **독립 축** — [canonicalization-policy.md](../docs/history/policy/canonicalization-policy.md)
 
 ### search_index.json (빌드 산출)
 
@@ -102,7 +102,7 @@ tier (파생): 0–19→0, 20–39→1, 40–59→2, 60–79→3, 80–94→4, 9
 | **샤드 키** | 슬러그 첫 글자·연대 | **`sha256(wk_)[0] % 256`** → `{hh}.json` |
 | **manifest** | `version: 3` | `version: 4`, `shardBits: 8`, per-shard `sha256` |
 
-전환 기록: [docs/archive/v4-migration-plan.md](../docs/archive/v4-migration-plan.md)
+전환 기록: [v4-migration-plan.md](../docs/history/v4-migration-plan.md)
 
 ### id_registry.json
 
@@ -121,8 +121,8 @@ tier (파생): 0–19→0, 20–39→1, 40–59→2, 60–79→3, 80–94→4, 9
 
 - **AniList API bulk 시드 금지**
 - 신규 작품: 수동 PR + (장기) Registry Pipeline
-- **`description`·`posterPath`:** Tier 1 **금지** — [POSTER_POLICY.md](POSTER_POLICY.md) · [product-vision.md](../docs/product-vision.md)
-- 중복: [canonicalization-policy.md](../docs/policy/canonicalization-policy.md)
+- **`description`·`posterPath`:** Tier 1 **금지** — [POSTER_POLICY.md](POSTER_POLICY.md) · [VISION.md](../docs/active/VISION.md)
+- 중복: [canonicalization-policy.md](../docs/history/policy/canonicalization-policy.md)
 
 ---
 
@@ -130,7 +130,8 @@ tier (파생): 0–19→0, 20–39→1, 40–59→2, 60–79→3, 80–94→4, 9
 
 ```bash
 cd ..  # akasha 앱 루트
-dart run tool/registry_builder.dart --sync-assets
+dart run tool/registry_builder.dart
+dart run tool/registry_bundle_builder.dart --bundle-all --source-rev <rev> ...
 dart run tool/ci_registry_check.dart
 dart run tool/data_policy_linter.dart
 dart run tool/franchise_linter.dart

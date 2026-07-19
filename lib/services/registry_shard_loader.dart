@@ -85,7 +85,7 @@ class RegistryShardLoader extends _RegistryShardLoaderBase
       'search_index/manifest.json';
   static const String bundledLegacyAliasesAsset = 'legacy_aliases.json';
   static const String bundledFranchiseGroupsAsset = 'franchise_groups.json';
-  // TODO(remove): R1 — docs/draft/LEGACY_REMOVAL_POLICY.md §3.1
+  // TODO(remove): R1 — docs/active/LEGACY_REMOVAL_POLICY.md §3.1
 
   RegistryShardLoader({
     ShardEntriesMerger? shardEntriesMerger,

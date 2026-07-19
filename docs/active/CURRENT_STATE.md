@@ -130,7 +130,7 @@
 * **상세 편집:** Markdown 본문 편집과 YAML frontmatter 폼 편집 기능이 완결되어 상호 탭 싱크 처리.
 * **연결 패널:** Work·Entity 각각 `*ConnectionsCoordinator`로 incoming / sameDay / link neighbors·vault 외부 편집 감지 분리.
 * **공유 ops:** `workbench_linked_record_ops`, `workbench_vault_disk_ops`, `*draft_ops`, `*delete_ops`, `*save_ops`, `workbench_save_shortcuts`.
-* **Canvas Editor (지식 지도):** Knowledge Graph → Workbench 탭 — **v0.3-B.1** (post-v1 P1, v1 blocking 아님). 분해 계획: [CANVAS_EDITOR_DECOMPOSITION_PLAN.md](../draft/CANVAS_EDITOR_DECOMPOSITION_PLAN.md) · 구현 계획: [CANVAS_NODE_OPEN_v0.3-B.1_IMPLEMENTATION_PLAN.md](../draft/CANVAS_NODE_OPEN_v0.3-B.1_IMPLEMENTATION_PLAN.md)
+* **Canvas Editor (지식 지도):** Knowledge Graph → Workbench 탭 — **v0.3-B.1** (post-v1 P1, v1 blocking 아님). 분해 계획: [CANVAS_EDITOR_DECOMPOSITION_PLAN.md](../draft/CANVAS_EDITOR_DECOMPOSITION_PLAN.md) · 구현 계획(historical): [CANVAS_NODE_OPEN_v0.3-B.1_IMPLEMENTATION_PLAN.md](../history/programs/canvas-editor/CANVAS_NODE_OPEN_v0.3-B.1_IMPLEMENTATION_PLAN.md)
 
 | 슬라이스 | 기능 | 상태 |
 |:---:|------|:---:|
@@ -169,12 +169,12 @@
 
 ### Ⅲ. Foundation Sprint (2026-06)
 
-* 감사 SSOT: [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md)
+* Foundation 감사(historical snapshot): [FOUNDATION_AUDIT.md](../history/closure-2026-07/foundation/FOUNDATION_AUDIT.md)
 * **F0** ✅ — test 605 · `dogfood_precheck` PASS
 * **F1** ✅ — SSOT·B1 Sanctum 시나리오 D7~D9
 * **F2** ✅ — `work_sanctum_section_editor` 분해 · `work_detail_sanctum_ops`
 * **F3** ✅ — R14-B Preview·Neighbors·Sanctum hint 토큰
-* **F4** ✅ — [LEGACY_REMOVAL_POLICY.md](../draft/LEGACY_REMOVAL_POLICY.md) · 9건 게이트 · v1.0 works=false
+* **F4** ✅ — [LEGACY_REMOVAL_POLICY.md](LEGACY_REMOVAL_POLICY.md) · 9건 게이트 · v1.0 works=false
 
 ### Ⅳ. Sprint B1 (Dogfood) — ✅ 완료
 

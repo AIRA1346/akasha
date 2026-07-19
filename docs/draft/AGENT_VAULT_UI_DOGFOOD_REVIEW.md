@@ -1,7 +1,7 @@
 # Agent Vault UI Dogfood Review — Work Journal 감상 카드
 
 > **일자:** 2026-06-30
-> **지위:** 구현 확장 **전** UI/UX 관찰·리뷰 (draft)
+> **지위:** Non-binding draft — 구현 확장 **전** UI/UX 관찰·리뷰 (open checklist)
 > **범위:** Windows/desktop · Home 프리뷰 `내 감상` · Workbench Sanctum `# 📝 메모`
 > **상위:** [AGENT_VAULT_LOOP_SLICE.md](../history/closure-2026-07/AGENT_VAULT_LOOP_SLICE.md) · [AGENT_VAULT_PROTOCOL_V1.md](../active/AGENT_VAULT_PROTOCOL_V1.md)
 > **초기 리뷰 기준:** `8840986` (`feat: add Agent Vault work journal UI slice`) · **P0-1 적용:** 이번 커밋

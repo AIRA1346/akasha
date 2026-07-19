@@ -16,6 +16,8 @@
 - 종료된 Steam blocker/commerce feasibility gate
 - P1 English UI 증거와 Steam Inventory POC 증거
 - 대체된 `PROJECT_STATUS`와 constitution stub
+- [ux-discovery/](ux-discovery/README.md) — UX Recovery / R3–R5 / R14 감사·보고 (2026-07-19 draft 이관)
+- [foundation/](foundation/README.md) — Foundation F0–F4 감사 스냅샷 (2026-07-19 draft 이관)
 
 현재 권위 문서는 [docs 문서 인덱스](../../README.md)와
 [CURRENT_STATE.md](../../active/CURRENT_STATE.md)를 따른다.

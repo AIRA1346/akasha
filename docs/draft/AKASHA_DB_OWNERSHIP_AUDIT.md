@@ -1,7 +1,8 @@
 # akasha-db 소유권·백업 구조 감사 (Read-only)
 
-> **일자:** 2026-06-30  
-> **지위:** 구조 감사·결정 전 SSOT (draft) — **destructive 변경 없음**  
+> **일자:** 2026-06-30
+> **지위:** Non-binding draft — 구조 감사·A/B/C **결정 전** (not an active contract) — **destructive 변경 없음**
+
 > **상위:** [PROJECT_STATUS.md](../history/closure-2026-07/PROJECT_STATUS.md) · [catalog-ownership.md](../history/policy/catalog-ownership.md)
 > **앱 repo tip:** `45f89b7` (`origin/main` 동기화)
 
@@ -82,8 +83,8 @@ akasha/  (AIRA1346/akasha)
 
 샘플: **138개 shard** 전부 `git rev-parse HEAD:akasha-db/<path>` == `akasha-db` working tree hash.
 
-→ 내부 repo의 dirty shard 내용은 **이미 앱 repo `origin/main`에 커밋된 blob과 동일**합니다.  
-→ **데이터 유실 위험은 낮음** (앱 repo가 사실상 백업 역할).  
+→ 내부 repo의 dirty shard 내용은 **이미 앱 repo `origin/main`에 커밋된 blob과 동일**합니다.
+→ **데이터 유실 위험은 낮음** (앱 repo가 사실상 백업 역할).
 → **갭**은 `AIRA1346/akasha-db` remote가 앱 repo에 반영된 shard 갱신을 **아직 못 받은 것**.
 
 manifest working hash는 앱 repo `HEAD` manifest와도 **다름** (최신 rebuild 산출물).
@@ -99,7 +100,7 @@ manifest working hash는 앱 repo `HEAD` manifest와도 **다름** (최신 rebui
 | 로컬 unstaged (akasha-db) | manifest 2종만 (`manifest.json`, `search_index/manifest.json`) |
 | shard 본문 | **committed** on `origin/main` (내부 dirty와 일치) |
 
-**판정:** 카탈로그 **본문 데이터는 앱 repo에 백업 완료**.  
+**판정:** 카탈로그 **본문 데이터는 앱 repo에 백업 완료**.
 미백업/미동기화 채널: **`AIRA1346/akasha-db` Git remote** + 로컬 rebuild manifest 4종.
 
 ---
@@ -135,7 +136,7 @@ manifest working hash는 앱 repo `HEAD` manifest와도 **다름** (최신 rebui
 | **변경** | 148 files · +633 / −633 |
 | **base** | internal `main` @ `7a27249` |
 
-**PR:** merge **하지 않음** — backup branch로만 보존.  
+**PR:** merge **하지 않음** — backup branch로만 보존.
 **다음:** `main` merge 여부는 구조 결정(§5) 후 별도 검토.
 
 <details>

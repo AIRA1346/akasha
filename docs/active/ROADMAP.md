@@ -1,7 +1,7 @@
 # AKASHA Roadmap (로드맵)
 
 > **지위:** 프로젝트 개발 로드맵 SSOT (5대 정체성 카테고리 기준)
-> **갱신:** 2026-07-16 — Steamworks pre-upload operation allowlist 반영
+> **갱신:** 2026-07-19 — CURRENT_STATE와 동기 (Steam/build identity hardening · registry full-bundle Phase 0–2). 테스트 수는 [CURRENT_STATE.md](CURRENT_STATE.md)만 갱신
 > **최상위 지침:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) · [VISION.md](VISION.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](../history/closure-2026-07/ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md)
 > **기능 거부 기준:** [Constitution §8](AKASHA_ARCHIVE_CONSTITUTION.md) (구 PROJECT_CONSTITUTION 필터는 [historical](../history/PROJECT_CONSTITUTION.md))
 

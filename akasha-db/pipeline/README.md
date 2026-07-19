@@ -1,8 +1,8 @@
 # AKASHA Pipeline (akasha-db)
 
-> **CDN·앱 sync 제외** — `pipeline/`은 빌드·Discovery 전용.  
-> 정책: [docs/discovery-policy.md](../../docs/discovery-policy.md)  
-> 소스 결정: [docs/discovery-source-decision.md](../../docs/discovery-source-decision.md)
+> **CDN·앱 sync 제외** — `pipeline/`은 빌드·Discovery 전용.
+> 정책: [discovery-policy.md](../../docs/history/policy/discovery-policy.md)
+> 소스 결정: [discovery-source-decision.md](../../docs/history/policy/discovery-source-decision.md)
 
 ## Git에 들어가는 것
 

@@ -1,9 +1,9 @@
 # R5 Dogfood Round 2 — UX 검증 보고서
 
-> **일자:** 2026-06-22  
-> **범위:** R4-A ~ R4-C 반영 후 · 코드·UI 흐름 추적 + widget test  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)
-> **선행 Dogfood:** [R3H_DOGFOOD_VALIDATION.md](./R3H_DOGFOOD_VALIDATION.md)  
+> **일자:** 2026-06-22
+> **범위:** R4-A ~ R4-C 반영 후 · 코드·UI 흐름 추적 + widget test
+> **SSOT:** [PROJECT_CONSTITUTION.md](../PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../../../active/CURRENT_STATE.md)
+> **선행 Dogfood:** [R3H_DOGFOOD_VALIDATION.md](./R3H_DOGFOOD_VALIDATION.md)
 > **선행 구현:** [R4A](./R4A_IMPLEMENTATION_REPORT.md) · [R4B](./R4B_IMPLEMENTATION_REPORT.md) · [R4C](./R4C_IMPLEMENTATION_REPORT.md)
 
 ---
@@ -274,11 +274,11 @@
 
 R3H와 동일 — 아래를 **실기기 클릭·스크린샷·타이밍**으로 교차 검증:
 
-1. Scenario A: vault 10 · entity 0 → **첫 인물 연결**까지 클릭 수  
-2. Scenario B: Library 그리드 → Preview (**Workbench 우회 없음** 확인)  
-3. Scenario C: Person + Concept(프로젝트) + Work 링크 → Preview 체인  
-4. Autosave 2초 후 힌트 **가독성**  
-5. 연결 목록 50작품 **첫 로딩** 체감  
+1. Scenario A: vault 10 · entity 0 → **첫 인물 연결**까지 클릭 수
+2. Scenario B: Library 그리드 → Preview (**Workbench 우회 없음** 확인)
+3. Scenario C: Person + Concept(프로젝트) + Work 링크 → Preview 체인
+4. Autosave 2초 후 힌트 **가독성**
+5. 연결 목록 50작품 **첫 로딩** 체감
 
 ---
 

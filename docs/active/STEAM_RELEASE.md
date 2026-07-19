@@ -231,8 +231,8 @@ evidence only and is not accepted by SteamCMD as an upload script.
 
 This document replaces these as the operational Steam release reference:
 
-- `docs/active/STEAM_EARLY_ACCESS.md`
-- `docs/draft/STEAM_RC_DOGFOOD_CHECKLIST_2026-06-30.md`
+- `docs/active/STEAM_EARLY_ACCESS.md` (removed)
+- `docs/draft/STEAM_RC_DOGFOOD_CHECKLIST_2026-06-30.md` (removed; use [SANDBOX_TRANSACTION_CHECKLIST.md](steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md))
 - `docs/history/programs/m2-steam-store-page.md`
 - `docs/history/release-readiness-checklist.md`
 

@@ -66,7 +66,7 @@ class UserPreferences {
   }
 
   /// Wave 2 — 신규 work journal을 `{vault}/works/{subtype}/`에 저장.
-  /// 기본값 false: 기존 볼트 호환. TODO(remove): L1 — docs/draft/LEGACY_REMOVAL_POLICY.md §2.2
+  /// 기본값 false: 기존 볼트 호환. TODO(remove): L1 — docs/active/LEGACY_REMOVAL_POLICY.md §2.2
   static Future<bool> isVaultWorksLayoutEnabled() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(vaultWorksLayoutKey) ?? true;

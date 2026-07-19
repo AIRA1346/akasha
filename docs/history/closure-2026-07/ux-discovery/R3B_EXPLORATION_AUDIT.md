@@ -1,9 +1,9 @@
 # R3-B Knowledge Exploration Audit
 
-> **갱신:** 2026-06-22  
-> **범위:** P0–P7 UX Recovery Sprint 이후 실측  
-> **방법:** `lib/` 코드 추적만. 런타임 테스트·추측 없음.  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md) — 문화 지식 그래프 기반 개인 지식 우주
+> **갱신:** 2026-06-22
+> **범위:** P0–P7 UX Recovery Sprint 이후 실측
+> **방법:** `lib/` 코드 추적만. 런타임 테스트·추측 없음.
+> **SSOT:** [PROJECT_CONSTITUTION.md](../PROJECT_CONSTITUTION_STUB.md) — 문화 지식 그래프 기반 개인 지식 우주
 
 ---
 
@@ -259,10 +259,10 @@ Preview / Workbench — 그래프
 
 ### 5.2 Dead End TOP (cold start 코드 기준)
 
-1. **오늘의 연결** — 링크 0이면 안내만, 다음 행동 없음  
-2. **Work Preview 빈 연결** — `onLinkCta` 미배선, `기록하기`만 노출  
-3. **Graph 전체 연결 0** — subtitle 외 상호작용 없음  
-4. **Entity 체인 불가** — 엔티티 0이면 Person/Event/Concept 탐험 경로 전무  
+1. **오늘의 연결** — 링크 0이면 안내만, 다음 행동 없음
+2. **Work Preview 빈 연결** — `onLinkCta` 미배선, `기록하기`만 노출
+3. **Graph 전체 연결 0** — subtitle 외 상호작용 없음
+4. **Entity 체인 불가** — 엔티티 0이면 Person/Event/Concept 탐험 경로 전무
 5. **계속 탐험 빈 상태** — 볼트에 10작품 있어도 이력 없으면 빈 (최근 발견과 분리)
 
 ### 5.3 첫 「연결 발견」까지 최소 경로 (코드상)

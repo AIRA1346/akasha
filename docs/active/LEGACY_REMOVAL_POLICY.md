@@ -1,8 +1,8 @@
 # Legacy Removal Policy — Foundation F4
 
-> **일자:** 2026-06-25  
-> **지위:** `TODO(remove)` 9건 제거 조건 SSOT (draft)  
-> **상위:** [FOUNDATION_AUDIT.md](FOUNDATION_AUDIT.md) · [vault-layout-v2.md](../history/product/vault-layout-v2.md)  
+> **일자:** 2026-06-25
+> **지위:** active removal-gate contract — `TODO(remove)` 9건 제거 조건 SSOT
+> **상위:** [FOUNDATION_AUDIT.md](../history/closure-2026-07/foundation/FOUNDATION_AUDIT.md) · [vault-layout-v2.md](../history/product/vault-layout-v2.md)
 > **원칙:** [vault-layout-v2 §2 V1](../history/product/vault-layout-v2.md) — **Breaking migration 없음**
 
 ---

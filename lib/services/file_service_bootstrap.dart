@@ -110,7 +110,7 @@ mixin _AkashaFileServiceBootstrap
       ).create(recursive: true);
     }
 
-    // TODO(remove): L4 — docs/draft/LEGACY_REMOVAL_POLICY.md §2.3
+    // TODO(remove): L4 — docs/active/LEGACY_REMOVAL_POLICY.md §2.3
     for (final cat in MediaCategory.values) {
       await Directory(p.join(_vaultPath!, cat.name)).create(recursive: true);
     }

@@ -1,8 +1,8 @@
 # R4 Planning Master Plan
 
-> **일자:** 2026-06-22  
-> **지위:** R4 Sprint 범위 SSOT (Planning 전용 — 구현 전)  
-> **근거:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md), [R3H_DOGFOOD_VALIDATION.md](./R3H_DOGFOOD_VALIDATION.md), [R4_UX_DIRECTION_AUDIT.md](./R4_UX_DIRECTION_AUDIT.md)
+> **일자:** 2026-06-22
+> **지위:** R4 Sprint 범위 SSOT (Planning 전용 — 구현 전)
+> **근거:** [PROJECT_CONSTITUTION.md](../PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../../../active/CURRENT_STATE.md), [R3H_DOGFOOD_VALIDATION.md](./R3H_DOGFOOD_VALIDATION.md), [R4_UX_DIRECTION_AUDIT.md](./R4_UX_DIRECTION_AUDIT.md)
 
 ---
 
@@ -10,7 +10,7 @@
 
 > R3가 **닫은 탐험 루프**를 앱의 **첫 30초·기본 진입**으로 승격한다.
 
-R3 = 「이미 탐험하는 사용자」를 위한 Sprint.  
+R3 = 「이미 탐험하는 사용자」를 위한 Sprint.
 R4 = 「처음 여는 사용자」에게 **기록 → 연결 → 발견**이 default narrative가 되게 하는 Sprint.
 
 ---
@@ -97,7 +97,7 @@ R4 = 「처음 여는 사용자」에게 **기록 → 연결 → 발견**이 def
 
 ## ROI 우선순위 (확정)
 
-> **ROI = (First 30s + Cold Start + Loop 진입률 + 우주 체감) / 구현 비용**  
+> **ROI = (First 30s + Cold Start + Loop 진입률 + 우주 체감) / 구현 비용**
 > Audit Top 10 기준 — **새 문제 탐색 없음**.
 
 | Rank | 항목 | Phase | First 30s | Cold Start | Loop 진입 | 우주 체감 | 비용 | **ROI** |

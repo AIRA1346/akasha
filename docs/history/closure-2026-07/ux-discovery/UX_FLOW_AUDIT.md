@@ -1,9 +1,9 @@
 # UX Flow Audit — AKASHA
 
-> **Sprint:** UX Recovery  
-> **갱신:** 2026-06-22  
-> **기준:** 실제 코드 (`lib/`) + [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md)
-> **주의:** [CURRENT_STATE.md](../active/CURRENT_STATE.md), [ROADMAP.md](../active/ROADMAP.md)는 일부 항목이 코드보다 뒤처져 있음 (본 문서는 **코드 우선**)
+> **Sprint:** UX Recovery
+> **갱신:** 2026-06-22
+> **기준:** 실제 코드 (`lib/`) + [PROJECT_CONSTITUTION.md](../PROJECT_CONSTITUTION_STUB.md)
+> **주의:** [CURRENT_STATE.md](../../../active/CURRENT_STATE.md), [ROADMAP.md](../../../active/ROADMAP.md)는 일부 항목이 코드보다 뒤처져 있음 (본 문서는 **코드 우선**)
 
 ---
 
@@ -73,7 +73,7 @@ HomeShellScaffold
 
 ### 성격
 
-**표면: 지식 탐험 UI / 실체: 라이브러리 관리 대시보드에 가까움**  
+**표면: 지식 탐험 UI / 실체: 라이브러리 관리 대시보드에 가까움**
 (볼트·서재·컬렉션·설정이 동일 가중치로 노출)
 
 ### 숨겨진 기능

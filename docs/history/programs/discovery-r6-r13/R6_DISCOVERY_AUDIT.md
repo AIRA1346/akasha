@@ -1,8 +1,8 @@
 # R6 Discovery Audit — 발견(Discovery) 계층 분석
 
-> **일자:** 2026-06-22  
-> **전제:** R3/R4 UX Sprint **종료** · 현재 UX **충분** ([R5](./R5_DOGFOOD_ROUND2_REPORT.md) 판정 A)  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)
+> **일자:** 2026-06-22
+> **전제:** R3/R4 UX Sprint **종료** · 현재 UX **충분** ([R5](../../closure-2026-07/ux-discovery/R5_DOGFOOD_ROUND2_REPORT.md) 판정 A)
+> **SSOT:** [PROJECT_CONSTITUTION.md](../../closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../../../active/CURRENT_STATE.md)
 > **질문:** 「어떻게 더 보기 좋게 만들까?」가 아니라 **「왜 사용자가 새로운 것을 발견하지 못하는가?」**
 
 **금지 준수:** UX/UI/Navigation/Preview/Workbench 변경 없음 · 코드 수정 없음.
@@ -13,7 +13,7 @@
 
 AKASHA의 **개인 지식 그래프 발견**은 `RecordLinkIndex` + `EntityRelatedWorksDiscovery` + `WorkLinkNeighbors` / `EntityLinkNeighbors`로 **1~2홉(hop) 링크 그래프**를 구현한다. 사용자가 A에 B를 `[[링크]]`로 연결하면 **B와 B를 공유하는 다른 Work**는 Preview·연결 목록·Workbench에서 **볼 수 있다**.
 
-그러나 **발견은 전부 pull(사용자가 열어야 함)** 이고, 홈의 「최근 발견」은 **관계가 아닌 최신 추가순**이다. **Level 3(관계 패턴)·Level 4(예상 밖 발견)** 엔진은 **없다**. 헌법이 말하는 「관계를 통해 발견」은 **링크를 직접 만든 이후**에만 작동하며, **연결 0 plateau**([R5](./R5_DOGFOOD_ROUND2_REPORT.md) Scenario A)에서는 Discovery 축이 **사실상 비활성**이다.
+그러나 **발견은 전부 pull(사용자가 열어야 함)** 이고, 홈의 「최근 발견」은 **관계가 아닌 최신 추가순**이다. **Level 3(관계 패턴)·Level 4(예상 밖 발견)** 엔진은 **없다**. 헌법이 말하는 「관계를 통해 발견」은 **링크를 직접 만든 이후**에만 작동하며, **연결 0 plateau**([R5](../../closure-2026-07/ux-discovery/R5_DOGFOOD_ROUND2_REPORT.md) Scenario A)에서는 Discovery 축이 **사실상 비활성**이다.
 
 **Constitution 갭:** 글로벌 10k Fact 검색(Fusion)은 강하지만, **개인 볼트 그래프 발견**과 **분리**되어 있다. Phase 3~5(CURRENT_STATE 미착수)와 맞물려 Place·Organization·개인 지식 타입의 발견도 **파이프라인 밖**이다.
 
@@ -224,7 +224,7 @@ Work A ──links──► Entity B ◄──links── Work C
 | 병목 | 메커니즘 |
 |------|----------|
 | Proactive feed 없음 | 새 이웃이 생겨도 **홈이 알려주지 않음** (오늘의 연결 3건 제외) |
-| 연결 목록 passive | N작품 × 펼치기 — **피로** ([R5](./R5_DOGFOOD_ROUND2_REPORT.md)) |
+| 연결 목록 passive | N작품 × 펼치기 — **피로** ([R5](../../closure-2026-07/ux-discovery/R5_DOGFOOD_ROUND2_REPORT.md)) |
 | Preview Stack | 발견은 **사용자가 이웃 탭**할 때만 |
 
 ### 5.3 표현 병목 (엔진은 있는데 안 보임)
@@ -278,7 +278,7 @@ Work A ──links──► Entity B ◄──links── Work C
 | **P2** | **Proactive surfacing** — 홈/피드가 recency가 아닌 **link_index 파생** 하이라이트 (새 이웃·새 2홉) | Pull-only | Level 2→3 **입구** |
 | **P3** | **Registry ↔ Vault 브릿지** — 검색/Fact에서 「내 볼트에 연결」·「이 Entity의 다른 Fact」 | 모델 병목 · Fusion 분리 | Level 3 |
 | **P4** | **관계 패턴 / 다중홉** — 공유 Entity 클러스터·경로 요약 (엔진; UI는 기존 Preview/Graph 소비) | Level 3~4 공백 | Level 3~4 |
-| **P5** | **Phase 3 개인 Entity** — 프로젝트·비문화 타입 SSOT | 개인 지식 ([R5](./R5_DOGFOOD_ROUND2_REPORT.md) C) | 전 축 |
+| **P5** | **Phase 3 개인 Entity** — 프로젝트·비문화 타입 SSOT | 개인 지식 ([R5](../../closure-2026-07/ux-discovery/R5_DOGFOOD_ROUND2_REPORT.md) C) | 전 축 |
 
 **의존성:** P0·P1은 **Link Index·Discovery 코드** 확장 — R4 Do-Not-Touch(UX)와 **충돌 없음**. P3는 Registry/Search **읽기** 확장. P4는 **Graph Engine** 신규 계층 (R4에서 UI만 touch했던 영역의 **백엔드**).
 
@@ -304,14 +304,14 @@ Work A ──links──► Entity B ◄──links── Work C
 
 ## 9. 결론
 
-AKASHA Discovery는 **「사용자가 만든 wiki 링크의 1~2홉 조회기」**로 잘 구현되어 있다. **A→B 연결 후 B와 공유 Work C를 보는** Scenario B 경험은 **실제로 작동**한다([R5](./R5_DOGFOOD_ROUND2_REPORT.md)).
+AKASHA Discovery는 **「사용자가 만든 wiki 링크의 1~2홉 조회기」**로 잘 구현되어 있다. **A→B 연결 후 B와 공유 Work C를 보는** Scenario B 경험은 **실제로 작동**한다([R5](../../closure-2026-07/ux-discovery/R5_DOGFOOD_ROUND2_REPORT.md)).
 
 사용자가 **새로운 것을 발견하지 못하는** 주된 이유는:
 
-1. **발견이 링크 이후에만 켜진다** (cold graph dead zone)  
-2. **발견이 전부 pull**이고 홈은 **recency를 발견으로 표기**한다  
-3. **Level 3~4 관계·세렌디피티 엔진이 없다**  
-4. **Registry 강점과 개인 그래프가 분리**되어 있다  
+1. **발견이 링크 이후에만 켜진다** (cold graph dead zone)
+2. **발견이 전부 pull**이고 홈은 **recency를 발견으로 표기**한다
+3. **Level 3~4 관계·세렌디피티 엔진이 없다**
+4. **Registry 강점과 개인 그래프가 분리**되어 있다
 5. **Place/Org·개인 지식 타입**이 파이프라인에서 **빠져 있다**
 
 R5의 「UX 충분 → Discovery 강화」 판정과 **정합**한다. 다음 작업은 Preview/Navigation이 아니라 **Discovery 엔진·서피스 데이터** 층이다.

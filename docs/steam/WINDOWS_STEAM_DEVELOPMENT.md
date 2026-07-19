@@ -4,6 +4,8 @@ This guide implements the boundaries in
 [`STEAM_RUNTIME_EXECUTION_CONTRACT.md`](STEAM_RUNTIME_EXECUTION_CONTRACT.md).
 It does not enable release commerce or alter ItemDefs.
 
+Release/commerce docs: [STEAM_SERVICE_RELEASE_READINESS.md](../active/STEAM_SERVICE_RELEASE_READINESS.md) · [STEAM_RELEASE.md](../active/STEAM_RELEASE.md) · [steam_inventory_production](../active/steam_inventory_production/README.md).
+
 ## Local UI development
 
 To build and launch the current worktree while allowing Steam to be absent:

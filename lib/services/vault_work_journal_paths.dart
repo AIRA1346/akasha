@@ -43,7 +43,7 @@ abstract final class VaultWorkJournalPaths {
       return [filePath];
     }
     final safeTitle = _makeSafeFilename(title);
-    // TODO(remove): L3 — docs/draft/LEGACY_REMOVAL_POLICY.md §2.3
+    // TODO(remove): L3 — docs/active/LEGACY_REMOVAL_POLICY.md §2.3
     return {
       if (workId != null && workId.trim().isNotEmpty)
         VaultRecordPathResolver.resolveWorkPath(

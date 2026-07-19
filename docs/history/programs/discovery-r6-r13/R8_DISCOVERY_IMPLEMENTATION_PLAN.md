@@ -1,11 +1,11 @@
 # R8 Discovery Implementation Plan — 코드 기준 Audit
 
-> **일자:** 2026-06-22  
-> **Sprint:** R8 Discovery Foundation  
-> **선행:** [R6_DISCOVERY_AUDIT.md](./R6_DISCOVERY_AUDIT.md), [R7_DISCOVERY_FOUNDATION_AUDIT.md](./R7_DISCOVERY_FOUNDATION_AUDIT.md)  
-> **SSOT:** [PROJECT_CONSTITUTION.md](../history/closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../active/CURRENT_STATE.md)
+> **일자:** 2026-06-22
+> **Sprint:** R8 Discovery Foundation
+> **선행:** [R6_DISCOVERY_AUDIT.md](./R6_DISCOVERY_AUDIT.md), [R7_DISCOVERY_FOUNDATION_AUDIT.md](./R7_DISCOVERY_FOUNDATION_AUDIT.md)
+> **SSOT:** [PROJECT_CONSTITUTION.md](../../closure-2026-07/PROJECT_CONSTITUTION_STUB.md), [CURRENT_STATE.md](../../../active/CURRENT_STATE.md)
 
-**범위:** Discovery Foundation (P0 Cold Graph · P1 Link Candidate 설계)  
+**범위:** Discovery Foundation (P0 Cold Graph · P1 Link Candidate 설계)
 **금지 준수:** Search Index · Recall Validation · Link Index Schema · Discovery Semantics · Collection Pipeline · Registry Sync · Workbench Layout · Preview Stack · Save Return **무변경**
 
 ---

@@ -2,20 +2,20 @@
 
 Rune Atelier **자체 작품 사전**을 수동 큐레이션·PR로 확장하는 저장소입니다.
 
-> **현재:** v4 해시 샤드, **G1+ (5k+)** · eager-only app bundle (ADR-010)  
-> **장기:** 전 작품 사전 + `wk_` ID + 해시 샤딩 — [docs/strategy/data-architecture-redesign.md](../docs/strategy/data-architecture-redesign.md)  
-> **마스터 정책:** [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)
+> **현재:** v4 해시 샤드 · **10,048작** / 비어 있지 않은 샤드 **1,713** · production **full local bundle** ([ADR-015](../docs/architecture/ADR-015-full-local-registry-bundle.md))
+> **장기:** 전 작품 사전 확장 — [VISION.md](../docs/active/VISION.md)
+> **마스터 정책:** [akasha-db-policy.md](../docs/history/policy/akasha-db-policy.md)
 
 ## 빠른 시작
 
 1. `shards/{category}/` 아래 적절한 샤드 JSON 파일을 수정하거나 새 샤드를 추가합니다.
-2. `workId`는 [SCHEMA.md](SCHEMA.md) 규칙을 따릅니다 (v4에서 `wk_`로 전환 예정).
+2. `workId`는 [SCHEMA.md](SCHEMA.md) 규칙을 따릅니다 (`wk_` 영구 ID).
 3. 로컬 검증:
 
 ```bash
 cd ../  # akasha 앱 루트
-# G1+ (entryCount > 2500): --bundle-eager-only 필수 (ADR-010)
-dart run tool/registry_builder.dart --sync-assets --bundle-eager-only
+dart run tool/registry_builder.dart
+dart run tool/registry_bundle_builder.dart --bundle-all --source-rev <rev> ...
 dart run tool/catalog_scale_baseline.dart --strict
 dart run tool/ci_registry_check.dart
 ```
@@ -38,28 +38,27 @@ dart run tool/apply_catalog_contributions.dart --import path/to/bundle.json
 ## 작품 1건 추가 체크리스트
 
 - [ ] `workId`가 기존 항목과 **중복되지 않음** (동일 작품·externalId 재확인)
-- [ ] `category` / `domain` enum 값 준수
-- [ ] **`description`·`posterPath` 추가 금지** (v1 — [POSTER_POLICY.md](POSTER_POLICY.md) · [product-vision.md](../docs/product-vision.md))
+- [ ] `category` enum 값 준수 (`domain`은 deprecated — [DOMAIN_DEPRECATION_PLAN](../docs/active/DOMAIN_DEPRECATION_PLAN.md))
+- [ ] **`description`·`posterPath` 추가 금지** (v1 — [POSTER_POLICY.md](POSTER_POLICY.md) · [VISION.md](../docs/active/VISION.md))
 - [ ] 같은 IP의 다른 매체는 `franchise_groups.json` 확인
-- [ ] `registry_builder` + `ci_registry_check` 통과
+- [ ] `registry_builder` + `registry_bundle_builder --bundle-all` + `ci_registry_check` 통과
 
-## 샤딩 규칙 (v3 — 현재)
+## 샤딩 규칙 (v4 — 현재)
 
-| 카테고리 | 샤드 네이밍 예 |
-|----------|----------------|
-| manga | `manga_K.json` (슬러그 첫 글자) |
-| animation | `animation_2020s.json` (연대) 또는 `animation_F.json` |
-| game | `game_A.json` 또는 `game_steam_124.json` |
-| book / movie / drama / webtoon | 제목 슬러그 첫 글자 |
+| 항목 | 규칙 |
+|------|------|
+| ID | `wk_` + 9자리 |
+| 경로 | `shards/{category}/{hh}.json` where `hh = hash(wk_) % 256` (hex) |
+| 카테고리 | manga · animation · game · book · movie · drama · webtoon |
 
 한 샤드 파일이 **~500KB**를 넘기면 분할 PR을 권장합니다.
 
-**v4 (계획):** `shard_{hash(wk_)%256}.json` — 슬러그 샤드 deprecated.
+슬러그 기반 v3 샤드 네이밍은 deprecated입니다.
 
 ## 중복·정체성
 
 - 동일 `externalIds`·유사 제목이 있으면 **새 workId 추가 전** 기존 항목 확인
-- 자세한 규칙: [docs/policy/canonicalization-policy.md](../docs/policy/canonicalization-policy.md)
+- 자세한 규칙: [canonicalization-policy.md](../docs/history/policy/canonicalization-policy.md)
 
 ## 저작권
 

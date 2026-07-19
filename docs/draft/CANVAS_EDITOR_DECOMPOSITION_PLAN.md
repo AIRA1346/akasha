@@ -1,6 +1,7 @@
 # Canvas Editor Decomposition Plan
 
 > **작성:** 2026-07-08 (Stabilization v0.3-A.4)
+> **Status:** Draft plan (open) — B1–B6 not started
 > **목적:** `canvas_editor_view.dart` (~1,200줄)를 기능 추가 전에 점진적으로 분해하기 위한 계획
 > **원칙:** 동작 변경 없는 behavior-preserving extraction만. 한 PR/슬라이스당 1~2 파일 분리.
 

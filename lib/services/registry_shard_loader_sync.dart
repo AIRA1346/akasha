@@ -292,7 +292,7 @@ mixin _RegistryShardLoaderSync
   }
 
   /// 레거시 단일 JSON(works_registry.json) 병합 — 하위 호환
-  /// TODO(remove): R2 — docs/draft/LEGACY_REMOVAL_POLICY.md §3.2
+  /// TODO(remove): R2 — docs/active/LEGACY_REMOVAL_POLICY.md §3.2
   Future<void> mergeLegacyMonolithicJson(String jsonStr) async {
     try {
       final decoded = json.decode(jsonStr);

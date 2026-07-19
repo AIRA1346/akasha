@@ -1,10 +1,10 @@
 # Project Status Snapshot
- 
-> **지위:** Gate·Registry·프로그램 **운영 SSOT**  
-> **원칙:** [AKASHA_ARCHIVE_CONSTITUTION.md](../../active/AKASHA_ARCHIVE_CONSTITUTION.md) · **비전:** [VISION.md](../../active/VISION.md) · **구현:** [CURRENT_STATE.md](../../active/CURRENT_STATE.md)
+
+> **지위:** Historical snapshot (2026-07-16) — **superseded** by [CURRENT_STATE.md](../../active/CURRENT_STATE.md) for live implementation facts
+> **원칙:** [AKASHA_ARCHIVE_CONSTITUTION.md](../../active/AKASHA_ARCHIVE_CONSTITUTION.md) · **비전:** [VISION.md](../../active/VISION.md) · **구현 SSOT:** [CURRENT_STATE.md](../../active/CURRENT_STATE.md)
 > **출시:** [STEAM_RELEASE.md](../../active/STEAM_RELEASE.md)
 > **갱신:** 2026-07-16
-> **Git:** `git rev-parse HEAD`  
+> **Git:** `git rev-parse HEAD`
 >
 > **Verification snapshot (2026-07-16):** root analyze **0** · root test **1195** · commerce domain **17** · backend **18** · Steam Inventory sandbox E2E POC passed · Windows debug/default release/sandbox release build OK · Release runtime F11/Esc window bounds restore passed · `system/` durable vs `.akasha/` derived · **UX-3 Home complete · UX-4A/B/C/D core surfaces done · UX-5A/B/C/D five-theme package, artwork, extensibility hardening done · UX-6 window frame and theme gallery done · Commerce catalog foundation done · Steamworks ItemDef upload candidate/gateway, Store/Inventory UX, guarded sandbox transaction and Echo reward foundation, final operation-port allowlist hardening done** · **Locator index atomic+`.bak` recovery done** (concurrent write lock = follow-up only) · **Entity vault load diagnostics done** · **Entity path index rebuild/upsert issue exposure = follow-up only** · **Workbench recovery draft I/O transition diagnostics done** · **Entity `derivedIndexesUpdated` Home skip + debounce AND-coalesce done** (Work/Journal/Timeline = follow-up) · **HomeShell God Class 전면 리팩터 기각** · **vault-watch dispose lifecycle ACTION A done** · **Package modularization audit closed** — 단일 앱 + `akasha_commerce_domain` only · graph acyclic · no new EXTRACT_NOW · Melos/lib 전면 분할 기각 · Archive=PREPARE_BOUNDARY · Vault/UI/Home=KEEP_IN_APP · Steam→CMake optional when IAP/no-IAP exclude needed · reopen only on documented triggers
 > **현재 실행:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) — Architecture Closure 선언 후 Steam 출시 블로커 트랙
@@ -12,7 +12,7 @@
 ---
 
 ## Executive Summary
- 
+
 | 항목 | 상태 |
 |------|------|
 | **root flutter test** | **1195 PASS** |
@@ -25,7 +25,7 @@
 | **Steam Inventory** | 기존 POC purchase/exchange·Overlay E2E 통과 ✅ · production `40110-40112` KRW 가격 조회 통과 · 세 판매 팩의 `store_hidden=true`가 callback `k_EResultFail`/transaction ID `0`을 유발했고 `40110.store_hidden=false` 단일 변수 A/B에서 Steam checkout Overlay가 열려 원인 확정 ✅ · `40001`은 숨김 유지, 실제 판매 팩 3종만 store-visible · `40111-40112` 동일 revision 게시·checkout 검증 대기 · production IAP는 계속 비활성 |
 | **사이드바 서재** | `나만의 서재` 목록·active·`+`·select·삭제·DnD ✅ |
 | **Poster Localizing** | URL 입력 → vault `posters/` 저장 → `poster: "posters/..."` ✅ |
-| **Canvas Editor (지식 지도)** | v0.3-B.1 ✅ · v0.3-A.5 viewport persist ✅ · v0.3-B.2a inertia zoom guard ✅ · Work/Entity 더블클릭 → Workbench · Canvas+Detail 2탭 — [CANVAS_NODE_OPEN_v0.3-B.1_IMPLEMENTATION_PLAN.md](../../draft/CANVAS_NODE_OPEN_v0.3-B.1_IMPLEMENTATION_PLAN.md) |
+| **Canvas Editor (지식 지도)** | v0.3-B.1 ✅ · v0.3-A.5 viewport persist ✅ · v0.3-B.2a inertia zoom guard ✅ · Work/Entity 더블클릭 → Workbench · Canvas+Detail 2탭 — [CANVAS_NODE_OPEN_v0.3-B.1_IMPLEMENTATION_PLAN.md](../programs/canvas-editor/CANVAS_NODE_OPEN_v0.3-B.1_IMPLEMENTATION_PLAN.md) |
 | **Agent Vault UI** | Work Journal 감상 카드 slice ✅ · dogfood 관찰은 [AGENT_VAULT_UI_DOGFOOD_REVIEW.md](../../draft/AGENT_VAULT_UI_DOGFOOD_REVIEW.md) |
 | **Infinite Taste Archive** | 외부 도구/AI가 읽기 쉬운 개인 취향 아카이브 ADR ✅ · `.akasha/record_index.json` slice ✅ — [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](../../active/AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) |
 | **Infinite Archive Hardening** | 무한 확장을 위한 index · taste signal · agent write contract · ID path 계획 ✅ — [INFINITE_ARCHIVE_HARDENING_PLAN.md](../../active/INFINITE_ARCHIVE_HARDENING_PLAN.md) |
@@ -157,7 +157,7 @@
 
 **P27~P31·P30 후속:** `work_library_panel` **162** · `dashboard_sidebar` **152** · `browse_dashboard_sections` **165** · `collectible_collection_edit_dialog` **73** · P30 dialog 저장 widget test **4** · `poster_card_layouts` **~270** (P24) · markdown editor 6 parts (P26)
 
-감사 SSOT: [FOUNDATION_AUDIT.md](../../draft/FOUNDATION_AUDIT.md) · Vault: [AGENT_VAULT_PROTOCOL_V1.md](../../active/AGENT_VAULT_PROTOCOL_V1.md) · [VAULT_AGENT_GUIDE.md](../../active/VAULT_AGENT_GUIDE.md)
+감사 SSOT: [FOUNDATION_AUDIT.md](foundation/FOUNDATION_AUDIT.md) · Vault: [AGENT_VAULT_PROTOCOL_V1.md](../../active/AGENT_VAULT_PROTOCOL_V1.md) · [VAULT_AGENT_GUIDE.md](../../active/VAULT_AGENT_GUIDE.md)
 
 ---
 
@@ -248,7 +248,7 @@
 | 2026-06-16 | E2-5 Port DI · E2-6 workspace 분리 · E1-A3b 순환 제거 · test 318 |
 | 2026-06-24 | 코드 건강 Phase 0~6 — vault·FeatureFlags·workbench coordinator·`tool/` archive·polling · test **580** |
 | 2026-06-24 | 코드 건강 Phase 7b — save ops·collection reorder·docs SSOT · test **591** |
-| 2026-06-25 | **Sanctum C1~C4** · Foundation F0 감사 · test **605** · [FOUNDATION_AUDIT.md](../../draft/FOUNDATION_AUDIT.md) |
+| 2026-06-25 | **Sanctum C1~C4** · Foundation F0 감사 · test **605** · [FOUNDATION_AUDIT.md](foundation/FOUNDATION_AUDIT.md) |
 | 2026-06-30 | **Steam v1 재정렬** — 개인 Sanctum 아카이브 중심 · registry scale post-v1 · code **5526ce4** |
 | 2026-06-30 | **Agent Vault Protocol v1** — [AGENT_VAULT_PROTOCOL_V1.md](../../active/AGENT_VAULT_PROTOCOL_V1.md) 범위 문서 |
 | 2026-06-30 | **Post-P2 SSOT** — scaffold·dialogs·fusion 분해 · SSOT **57c66fd** · code **5526ce4** · test **614** |
