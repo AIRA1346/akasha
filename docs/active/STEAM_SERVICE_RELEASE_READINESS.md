@@ -1,20 +1,26 @@
 # Steam Service and Commerce Release Readiness
 
+> **Role:** Steam **service and Commerce readiness** detail (purchase / cancel /
+> complete / inventory sync / restart / recovery, Overlay, PC2, Cloud gates, and
+> why Commerce remains No-Go). Not the live-identity SSOT.
 > **Status:** Active release gate
-> **Updated:** 2026-07-20 (REL-DOC-01 identity note)
+> **Updated:** 2026-07-20 (REL-DOC-04B role split)
+> **Current evaluated release:** see [STEAM_RELEASE.md](STEAM_RELEASE.md)
+> (identity, packaging, SteamPipe ops).
+> **Acceptance results and canonical tallies:** see
+> [STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md)
+> (**CURRENT-RC-PASS = 0**, Overall **No-Go**).
 > **Current verdict:** **Commerce No-Go** until a Steam-library build completes
 > the purchase, inventory, restart, and recovery matrix
-> **Live identity (not Commerce Go):** BuildID `24282729` @ `default`
-> (**Operator-confirmed** Set Live) · Git `5e95fefe` (**Artifact-verified**)
 > **AppID:** `4677560`
 > **Economy SSOT:** [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md)
-> **Acceptance Matrix:** [STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md)
 > **Transaction matrix:**
 > [steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md](steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md)
 
-This document is the operational source of truth for connecting AKASHA to
-Steam reliably. It complements the product/economy contract; it does not change
-the Astra, Echo, or theme pricing policy.
+This document is the readiness detail for connecting AKASHA to Steam reliably.
+It complements the product/economy contract and does not redefine live release
+identity or Acceptance Matrix tallies. It does not change Astra, Echo, or theme
+pricing policy.
 
 ## 1. Observed incident
 
@@ -238,10 +244,9 @@ Release commerce is **Go** only when all of the following are true:
 
 Until the Commerce Go criteria above are met:
 
-- Overall Commerce readiness remains **No-Go** even though the live train
-  already has `FeatureFlags.steamInAppPurchasesEnabled = true` and
-  BuildID `24282729` is on `default` (**Operator-confirmed**);
-- default Set Live alone does not complete purchase / restore / recovery evidence;
+- Overall Commerce readiness remains **No-Go** (see live-train IAP flag and
+  default Set Live identity in [STEAM_RELEASE.md](STEAM_RELEASE.md); those facts
+  alone do not complete purchase / restore / recovery evidence);
 - Store Page copy must not claim Commerce matrix completion or Overall Go
   until [STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md)
   CURRENT-RC-PASS requirements are actually met.

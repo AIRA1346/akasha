@@ -1,5 +1,10 @@
 # Local Agent Command Protocol v1
 
+> **Role:** **Implemented local CLI command and transport contract**
+> (`record lookup` / `record read` / `candidate propose`). Normative AI write
+> boundary → [AI_ARCHIVE_WRITE_GATEWAY_ADR.md](AI_ARCHIVE_WRITE_GATEWAY_ADR.md).
+> How-to → [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md). Read/editor
+> compatibility → [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md).
 > **Status:** Implemented local CLI entry for bounded Record lookup/read and
 > `candidate propose`.
 > **Scope:** A command-capable AI or external tool can discover one exact

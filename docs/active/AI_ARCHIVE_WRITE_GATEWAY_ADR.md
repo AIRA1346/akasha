@@ -1,5 +1,12 @@
 # AI Archive Write Gateway ADR
 
+> **Role:** **Recommended AI write-path normative SSOT** (candidate boundary,
+> no canonical direct write by default, Gateway scope, permission/receipt
+> relationship). CLI verb/transport detail →
+> [LOCAL_AGENT_COMMAND_PROTOCOL.md](LOCAL_AGENT_COMMAND_PROTOCOL.md).
+> External-editor / read compatibility →
+> [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md).
+> Non-normative how-to → [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md).
 > **Status:** Accepted; bounded local Record lookup/read plus the deliberately
 > narrow local `candidate.create` boundary and JSON-file CLI transport are
 > implemented. No AI service,
@@ -7,7 +14,7 @@
 > introduced by this ADR.
 > **Date:** 2026-07-11  
 > **Scope:** External AI, scripts, and tools writing to a user-owned AKASHA Vault.  
-> **Related:** [VISION.md](VISION.md), [P1_A_CORE_ARCHIVE_ONTOLOGY_CASES.md](../history/closure-2026-07/P1_A_CORE_ARCHIVE_ONTOLOGY_CASES.md), [P0_RECOVERABLE_VAULT_WRITE_GATE.md](../history/closure-2026-07/P0_RECOVERABLE_VAULT_WRITE_GATE.md), [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md), [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md)
+> **Related:** [VISION.md](VISION.md), [LOCAL_AGENT_COMMAND_PROTOCOL.md](LOCAL_AGENT_COMMAND_PROTOCOL.md), [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md), [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md), [GATEWAY_PERMISSION_AND_RECEIPT_ADR.md](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md), [P1_A_CORE_ARCHIVE_ONTOLOGY_CASES.md](../history/closure-2026-07/P1_A_CORE_ARCHIVE_ONTOLOGY_CASES.md), [P0_RECOVERABLE_VAULT_WRITE_GATE.md](../history/closure-2026-07/P0_RECOVERABLE_VAULT_WRITE_GATE.md), [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md), [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md)
 > **Cases:** [AI_ARCHIVE_WRITE_GATEWAY_CASES.md](../history/closure-2026-07/AI_ARCHIVE_WRITE_GATEWAY_CASES.md)
 
 ## 1. Decision

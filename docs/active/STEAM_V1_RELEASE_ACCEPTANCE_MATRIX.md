@@ -1,20 +1,25 @@
 # Steam v1 Release Acceptance Matrix
 
+> **Role:** Steam **acceptance criteria, evidence, and verdict ledger SSOT**
+> (canonical rows, evidence IDs, PASS/BLOCKED/UNVERIFIED/OPERATOR-CONFIRMED,
+> tallies, Overall Go math). Live-identity narrative, packaging, and SteamPipe
+> ops → [STEAM_RELEASE.md](STEAM_RELEASE.md). Service/commerce readiness detail →
+> [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md).
 > **Status:** Active release gate (docs-only SSOT; evidence collection in progress)
-> **Created:** 2026-07-19 · **REL-DOC-01 update:** 2026-07-20
+> **Created:** 2026-07-19 · **REL-DOC-01 update:** 2026-07-20 · **REL-DOC-04B:** role pin
 > **Baseline Git SHA (matrix authoring):** `8f4cf35a0ca1e31b0eb4753fad4e61b6e35dda7f`
-> **Live IAP-on Git SHA:** `5e95fefeace1f7658f7b9da7597f12fce4777593` (**Artifact-verified**)
-> **Live Steam BuildID:** `24282729` · branch `default` Set Live (**Operator-confirmed**)
+> **Evaluated IAP-on Git SHA (pin):** `5e95fefeace1f7658f7b9da7597f12fce4777593` (**Artifact-verified**)
+> **Evaluated Steam BuildID (pin):** `24282729` · branch `default` Set Live (**Operator-confirmed**)
 > **AppID:** `4677560` · **Windows Depot:** `4677561`
 > **IAP flag (live train):** `FeatureFlags.steamInAppPurchasesEnabled = true` (**not** Overall Go)
 > **Echo rewards:** follow IAP (`steamInventoryPlaytimeRewardsEnabled` true without sandbox dart-define)
 > **Sandbox transactions default:** `false`
 > **IAP-off rollback source SHA:** `0ce9e052` · rollback BuildID still **BLOCKED** if unsealed
-> **Related:** [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md) · [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md) · [steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md](steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md) · [CURRENT_STATE.md](CURRENT_STATE.md) · [STEAM_RELEASE.md](STEAM_RELEASE.md)
+> **Related:** [STEAM_RELEASE.md](STEAM_RELEASE.md) · [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md) · [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md) · [steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md](steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md) · [CURRENT_STATE.md](CURRENT_STATE.md)
 
-This matrix is the executable acceptance record for the **single Commerce-inclusive Steam v1** release train. It consolidates the master launch checklist into canonical requirements, links repeated pack/theme scenarios as cases, and keeps full traceability in the appendix.
+This matrix is the executable acceptance ledger for the **single Commerce-inclusive Steam v1** release train. It consolidates the master launch checklist into canonical requirements, links repeated pack/theme scenarios as cases, and keeps full traceability in the appendix. It does not redefine SteamPipe packaging or Set Live procedure (see [STEAM_RELEASE.md](STEAM_RELEASE.md)).
 
-**Evidence labels used in this revision:** **Artifact-verified** = repository/worktree SteamPipe or seal files; **Operator-confirmed** = human confirmation without a matching repository receipt (do not mix).
+**Evidence labels used in this revision:** **Artifact-verified** = repository/worktree SteamPipe or seal files; **Operator-confirmed** = human confirmation without a matching repository receipt (do not mix). Release-ops narrative for those labels lives in [STEAM_RELEASE.md](STEAM_RELEASE.md).
 
 **Out of scope for this document revision:** product/code changes, Steamworks mutation, new uploads, inventing CURRENT-RC-PASS without Steam-installed RC evidence, sandbox worktree cleanup.
 

@@ -1,9 +1,16 @@
 # Steam Release - AKASHA
 
+> **Role:** Steam **release operations and current release-identity SSOT**
+> (live Git SHA / BuildID / branch Set Live, packaging, SteamPipe ops, upload
+> receipts). Detailed commerce/service gates →
+> [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md).
+> Acceptance row tallies and Overall verdict ledger →
+> [STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md).
+
 > **Packaging contract:** SteamPipe uploads only the verified
 > `build/steam/depot_windows` stage. The stage and VDF both exclude
 > `steam_appid.txt` and PDB files; the manifest must validate before upload.
-> See [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md).
+> See §7b and [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md).
 
 > **Updated:** 2026-07-20
 > **Status:** Architecture Closure declared. Active gates =

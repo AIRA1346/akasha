@@ -1,23 +1,32 @@
-# Vault Agent Guide — Sanctum `.md` SSOT
+# Vault Agent Guide — Sanctum 운영 안내
+
+> **Role:** **Non-normative operating guide.** This guide explains operation and
+> does **not** override the Vault Format, Gateway ADR, or Local Agent Command
+> Protocol.
+> **형식 SSOT:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md)
+> **권장 AI 쓰기:** [AI_ARCHIVE_WRITE_GATEWAY_ADR.md](AI_ARCHIVE_WRITE_GATEWAY_ADR.md)
+> **로컬 CLI transport:** [LOCAL_AGENT_COMMAND_PROTOCOL.md](LOCAL_AGENT_COMMAND_PROTOCOL.md)
+> **권한·receipt:** [GATEWAY_PERMISSION_AND_RECEIPT_ADR.md](GATEWAY_PERMISSION_AND_RECEIPT_ADR.md)
+> **읽기/외부편집기 호환:** [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md)
 
 > **2026-07-11 status correction:** Direct Markdown editing remains an
 > external-editor compatibility guide. It is not the recommended interface for
-> an AI integration; use the
-> [AI Archive Write Gateway ADR](AI_ARCHIVE_WRITE_GATEWAY_ADR.md) for new AI
-> candidate or authorized-application design.
+> an AI integration; use the Gateway ADR for new AI candidate or
+> authorized-application design.
 
-> **지위:** 볼트 내 파일·에이전트·외부 편집기용 **운영 SSOT**  
-> **갱신:** 2026-07-06
-> **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md) — 필드·타입·시간·관계 규칙의 **최상위 기준** (볼트 내 `.akasha/spec/spec_v3.md` 동봉)
+> **지위:** 비규범 **운영 가이드** (형식·쓰기·CLI 계약을 재정의하지 않음)
+> **갱신:** 2026-07-06 · REL-DOC-04B 역할 정리 2026-07-20
 > **볼트 현장:** `{vault}/VAULT_README.md` (앱이 볼트 연결 시 자동 생성)
-> **프로토콜:** [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) — 읽기·쓰기 범위 · operation · 충돌 · dogfood (v1 계약)
 > **상위:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [vault-layout-v2.md](../history/product/vault-layout-v2.md) · [user-local-catalog-policy.md](../history/policy/user-local-catalog-policy.md) · [entity-record-storage-masterplan.md](../history/programs/entity-record-storage-masterplan.md)
 
 ---
 
 ## 1. 한 줄
 
-**제품 SSOT = Tier 2 `.md` Record.** `entity_id` / `work_id`는 불변 닻. 에이전트는 `.md`를 편집하고 ID는 바꾸지 않는다.
+제품 durable record는 Tier 2 `.md`이다 (`entity_id` / `work_id`는 불변 닻).
+직렬화 규칙은 Vault Format v3를, 신규 AI 쓰기는 Gateway ADR을, 구현된 CLI는
+Local Agent Command Protocol을 따른다. 이 가이드는 사용 순서와 현장 안내만
+제공한다.
 
 ---
 

@@ -1,9 +1,15 @@
 # Agent Entity Creation & Infinite Taste Archive Architecture
 
-> **Status:** Active ADR
+> **Role:** **Entity creation and scale design-boundary document** (identity,
+> collision, promotion principles, structural constraints). Residual hardening
+> schedule and OPEN/PARTIAL execution backlog →
+> [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md).
+> Recommended AI write path → [AI_ARCHIVE_WRITE_GATEWAY_ADR.md](AI_ARCHIVE_WRITE_GATEWAY_ADR.md).
+> Top-level future backlog → [ROADMAP.md](ROADMAP.md).
+> **Status:** Active design ADR (not the hardening Phase ledger)
 > **Date:** 2026-06-30
 > **Scope:** AKASHA as a personal taste archive that external tools and AI agents can read/write safely
-> **Related:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md), [VISION.md](VISION.md), [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md), [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md), [ARCHITECTURE.md](ARCHITECTURE.md)
+> **Related:** [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md), [AI_ARCHIVE_WRITE_GATEWAY_ADR.md](AI_ARCHIVE_WRITE_GATEWAY_ADR.md), [LOCAL_AGENT_COMMAND_PROTOCOL.md](LOCAL_AGENT_COMMAND_PROTOCOL.md), [VISION.md](VISION.md), [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md), [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md), [ARCHITECTURE.md](ARCHITECTURE.md)
 
 ---
 
@@ -33,17 +39,22 @@ The design question is:
 
 ---
 
-### 1.1 2026-07-03 Hardening Priority
+### 1.1 Hardening relationship
 
-[INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) is the current execution plan for turning this ADR into a long-term archive contract.
+This document owns **design boundaries** for Entity creation and scale.
+[INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) owns the
+**residual execution backlog** (Phase status, OPEN/PARTIAL items, order). Do not
+treat this ADR as a second Phase 0–6 schedule or as a claim that Gateway/CLI
+work is still unimplemented — those baselines are recorded in the Hardening
+plan and Active write ADRs.
 
-The priority order is:
+Design constraints that remain in force here:
 
 1. keep the vault `.md` records as source of truth
 2. make derived indexes strict and rebuildable
 3. model taste as evidence-backed signals, not opaque AI memory
-4. require agent writes to use an explicit operation contract
-5. move toward stable ID paths through the pre-release Vault Layout v3 audit or an explicit later migration
+4. require agent writes to use an explicit operation contract (Gateway ADR)
+5. move toward stable ID paths only through an accepted Layout/path decision
 
 ---
 

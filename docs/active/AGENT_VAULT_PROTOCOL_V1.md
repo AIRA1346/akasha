@@ -1,17 +1,26 @@
 # Agent Vault Protocol v1
 
-> **2026-07-11 status correction:** This document's direct-file agent write
-> workflow is retained only for external-editor compatibility and historical
-> dogfood. It is no longer AKASHA's recommended AI integration path. New AI
-> candidate/application work follows
+> **Role:** **Compatibility and read-interoperability protocol** for external
+> editors and tools that work with Sanctum vault files.
+> The recommended AI write path is governed by
 > [AI_ARCHIVE_WRITE_GATEWAY_ADR.md](AI_ARCHIVE_WRITE_GATEWAY_ADR.md).
+> The implemented local command transport is governed by
+> [LOCAL_AGENT_COMMAND_PROTOCOL.md](LOCAL_AGENT_COMMAND_PROTOCOL.md).
+> Serialization / format SSOT:
+> [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md).
 
-> **지위:** Steam v1 **Agent ↔ Sanctum vault** 상호작용 SSOT
-> **갱신:** 2026-07-06 (형식 명세 v3 동기화)
+> **2026-07-11 status correction:** This document's direct-file agent write
+> workflow is retained as **legacy compatibility**, **external-editor
+> interoperability**, and **historical dogfood**. It is **not** the recommended
+> canonical AI integration path.
+
+> **지위:** 외부 편집기·도구용 **읽기 상호운용 / 호환 계약** (AI 쓰기 SSOT 아님)
+> **갱신:** 2026-07-06 (형식 명세 v3 동기화) · REL-DOC-04B 역할 정리 2026-07-20
 > **형식 명세:** [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md) — 필드·시간·관계 규칙은 명세가 최상위 기준 (볼트 내 `.akasha/spec/spec_v3.md` 동봉)
 > **Git:** code/test baseline **7be7b51b** · current tip은 `git log -1` 기준
-> **상위:** [VISION.md](VISION.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md) · [SPRINT_B1_DOGFOOD.md](../history/closure-2026-07/SPRINT_B1_DOGFOOD.md)
-> **구현 참고:** `AkashaFileService` watch · `TimelineEntryParser` · `EntityVaultStore` (제품 코드 — 본 문서는 **파일 프로토콜 계약**)
+> **운영 가이드 (비규범):** [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)
+> **상위:** [VISION.md](VISION.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [SPRINT_B1_DOGFOOD.md](../history/closure-2026-07/SPRINT_B1_DOGFOOD.md)
+> **구현 참고:** `AkashaFileService` watch · `TimelineEntryParser` · `EntityVaultStore`
 
 ---
 
@@ -21,14 +30,18 @@ AKASHA v1의 제품 핵심은 **글로벌 catalog가 아니라 Personal Sanctum 
 
 ```
 사용자 대화 / 직접 작성
-  → Agent(또는 앱)가 vault .md / YAML에 기록
+  → (권장 AI 경로) Gateway / Local Agent Command → candidate / authorized ops
+  → (호환 경로) 외부 편집기·도구가 vault .md를 직접 읽고 legacy 규칙으로 편집
   → Flutter UI가 볼트를 읽어 예쁘게 표시
-  → 사용자·Agent가 같은 파일을 안전하게 편집
 ```
 
-**Agent Vault Protocol v1**은 외부 에이전트(Cursor·CLI·자동화)가 위 루프에 **안전하게 참여**하기 위한 **파일 기반** 읽기·쓰기·금지·충돌 규칙이다. v1 검증은 **수동·Agent dogfood**(§8)로 수행한다.
+**Agent Vault Protocol v1**은 외부 도구가 Vault를 **안전하게 읽고**, 필요한 경우
+**legacy direct-file** 규칙으로 편집하기 위한 호환·상호운용 계약이다. v1 검증은
+**수동·Agent dogfood**(§8)로 수행한다. 신규 AI 후보는 Gateway ADR을 따른다.
 
-이 문서는 v1의 파일 프로토콜 계약이다. 대량 agent write, batch import, structured operation layer, taste/index 확장은 [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)의 post-v1 hardening 범위로 다룬다.
+대량 agent write, batch import, structured operation layer, taste/index 확장은
+[INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)의 잔여
+hardening 범위로 다룬다.
 
 | 구분 | v1 | post-v1 |
 |------|:--:|:-------:|
