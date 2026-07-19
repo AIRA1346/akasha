@@ -56,9 +56,10 @@ class UnwiredCommerceApiClient implements CommerceApiClient {
   const UnwiredCommerceApiClient();
 
   Never _notWired() => throw UnsupportedError(
-        'Commerce backend HTTP is not wired. '
-        'steamInAppPurchasesEnabled stays false until sandbox verification.',
-      );
+    'Commerce backend HTTP is not wired. '
+    'Commerce transaction acceptance is not yet sealed; '
+    'an enabled IAP feature flag does not establish readiness.',
+  );
 
   @override
   Future<WalletProjection> getWallet({required String authTicketHex}) async =>
@@ -67,16 +68,14 @@ class UnwiredCommerceApiClient implements CommerceApiClient {
   @override
   Future<List<CommerceProduct>> listProducts({
     required String authTicketHex,
-  }) async =>
-      _notWired();
+  }) async => _notWired();
 
   @override
   Future<CommerceOrderDto> beginPremiumPackPurchase({
     required String authTicketHex,
     required String productId,
     required String idempotencyKey,
-  }) async =>
-      _notWired();
+  }) async => _notWired();
 
   @override
   Future<WalletProjection> completePremiumPackPurchase({
@@ -85,6 +84,5 @@ class UnwiredCommerceApiClient implements CommerceApiClient {
     required String orderId,
     required bool authorized,
     required String finalizeIdempotencyKey,
-  }) async =>
-      _notWired();
+  }) async => _notWired();
 }

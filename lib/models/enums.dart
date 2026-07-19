@@ -7,7 +7,8 @@ import '../theme/akasha_colors.dart';
 // ════════════════════════════════════════════════════════════════
 
 /// Registry·YAML 레거시 메타. 신규·UI에서는 **subculture만** 사용.
-/// @see [DOMAIN_DEPRECATION_PLAN.md](../../docs/active/DOMAIN_DEPRECATION_PLAN.md)
+/// @see current compatibility: [LEGACY_REMOVAL_POLICY.md](../../docs/active/LEGACY_REMOVAL_POLICY.md) §4b
+/// @see historical plan: [DOMAIN_DEPRECATION_PLAN.md](../../docs/history/closure-2026-07/DOMAIN_DEPRECATION_PLAN.md)
 enum AppDomain {
   subculture('Subculture', Icons.auto_awesome),
 
