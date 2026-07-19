@@ -59,7 +59,7 @@
 | **Personal Library · Collection** | 내가 아카이브한 것의 큐레이션 | **핵심** |
 | **Workbench · Sanctum UI** | 예쁜 기록·편집 | **핵심** |
 | **Vault Format Spec v3** | 독립 명세 확립 — 7종 타입 · 관계 어휘 · 시간 이원화 · 자기 서술(`.akasha/spec/`) · 독립 검증기 · 명세-템플릿 동기화 가드 | [AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md](AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md) |
-| **Agent Vault** | v1 프로토콜 문서화 완료 및 명세 v3 동기화 (source·시간·관계 규약) | [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) |
+| **Agent Vault** | 권장 AI 쓰기는 Gateway candidate 경로 · Protocol은 읽기·외부 편집기 호환 · 명세 v3 동기화 | [AI_ARCHIVE_WRITE_GATEWAY_ADR.md](AI_ARCHIVE_WRITE_GATEWAY_ADR.md) · [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) |
 | **Infinite Archive Hardening** | index · taste signal · agent write · ID path 기준 정렬 | **pre-release decision / post-v1 guard** |
 | **Tier 1 akasha-db** | starter / optional catalog | **보조** |
 | **Discovery · Scale (10k+)** | Wikidata · CDN · recall gate | **post-v1** |
@@ -186,9 +186,11 @@
 
 ### Ⅳ-b. Vault Agent (2026-06-26)
 
-* [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) — Agent ↔ vault v1 계약
-* [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) — index · taste signal · structured operation · ID path 계획
-* [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md) — 볼트 경로·ID·예시
+* [AI_ARCHIVE_WRITE_GATEWAY_ADR.md](AI_ARCHIVE_WRITE_GATEWAY_ADR.md) — 권장 AI 쓰기 (candidate 기반)
+* [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) — 읽기·외부 편집기 호환 계약
+* [LOCAL_AGENT_COMMAND_PROTOCOL.md](LOCAL_AGENT_COMMAND_PROTOCOL.md) — 구현된 로컬 CLI transport
+* [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md) — 비규범 운영 가이드
+* [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) — index · taste signal · structured operation · ID path 잔여 계획
 * 볼트 `VAULT_README.md` 자동 생성 · `.akasha/entity_path_index.json`
 
 ---

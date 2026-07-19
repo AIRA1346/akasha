@@ -161,7 +161,7 @@ AKASHA가 예쁘게 정리 — 나만의 서재 · Collection · 갤러리
     ↓
 (선택) starter catalog 검색으로 작품 발견 → 아카이브
     ↓
-에이전트가 vault 읽기·편집 — [Agent Vault Protocol v1](AGENT_VAULT_PROTOCOL_V1.md)
+에이전트는 [Agent Vault Protocol v1](AGENT_VAULT_PROTOCOL_V1.md)으로 읽기·외부 편집기와 호환하고, 쓰기 제안은 [AI Archive Write Gateway](AI_ARCHIVE_WRITE_GATEWAY_ADR.md)의 사용자 통제 candidate 경계를 따른다
     ↓
 (장기) Entity · Timeline · Connection · 의미 이력(§7.1) · 최소 행동 집계(§7.2)
 ```
