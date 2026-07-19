@@ -29,9 +29,10 @@ if ($BundleStatus) {
   throw "assets/registry must be clean before a release build:`n$BundleStatus"
 }
 
-$SourceRevision = (& git log -1 --format=%H -- akasha-db).Trim()
+# Provenance must match registry_bundle_ci.dart: data inputs only (not *.md).
+$SourceRevision = (& $Dart run tool/registry_source_revision.dart).Trim()
 if ($LASTEXITCODE -ne 0 -or -not $SourceRevision) {
-  throw 'Could not resolve the committed akasha-db source revision'
+  throw 'Could not resolve the committed akasha-db registry data source revision'
 }
 
 Write-Host '==> verify deterministic full registry bundle'

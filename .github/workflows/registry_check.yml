@@ -56,6 +56,7 @@ jobs:
           flutter test
           test/registry_bundle_builder_test.dart
           test/registry_provenance_model_test.dart
+          test/registry_source_revision_test.dart
           test/bundle_full_registry_test.dart
           test/catalog_scale_baseline_strict_test.dart
 

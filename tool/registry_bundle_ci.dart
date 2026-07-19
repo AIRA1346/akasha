@@ -3,20 +3,17 @@
 import 'dart:io';
 
 import 'registry_bundle_contract.dart';
+import 'registry_source_revision.dart';
 
 void main() {
-  final root = _projectRoot();
+  final root = registryProjectRoot();
   final source = Directory('${root.path}/akasha-db');
   final assets = Directory('${root.path}/assets/registry');
-  final sourceRevision = _git(root, [
-    'log',
-    '-1',
-    '--format=%H',
-    '--',
-    'akasha-db',
-  ]).trim();
-  if (sourceRevision.isEmpty) {
-    stderr.writeln('FAIL: could not resolve the akasha-db source revision');
+  late final String sourceRevision;
+  try {
+    sourceRevision = resolveRegistrySourceRevision(root: root);
+  } catch (error) {
+    stderr.writeln('FAIL: $error');
     exitCode = 1;
     return;
   }
@@ -97,14 +94,4 @@ String _git(Directory root, List<String> args) {
     throw StateError('git ${args.join(' ')} failed: ${result.stderr}');
   }
   return result.stdout.toString();
-}
-
-Directory _projectRoot() {
-  var dir = Directory.current;
-  while (true) {
-    if (File('${dir.path}/pubspec.yaml').existsSync()) return dir;
-    final parent = dir.parent;
-    if (parent.path == dir.path) return Directory.current;
-    dir = parent;
-  }
 }
