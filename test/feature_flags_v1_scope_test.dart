@@ -15,11 +15,19 @@ void main() {
     expect(FeatureFlags.showKnowledgeGraph, isFalse);
   });
 
-  test('Steam IAP remains disabled until payment flow is verified', () {
-    expect(FeatureFlags.steamInAppPurchasesEnabled, isFalse);
+  test('Steam v1 production Commerce candidate enables IAP without sandbox', () {
+    expect(FeatureFlags.steamInAppPurchasesEnabled, isTrue);
     expect(FeatureFlags.steamInventorySandboxTransactionsEnabled, isFalse);
-    expect(FeatureFlags.steamInventoryPlaytimeRewardsEnabled, isFalse);
-    expect(FeatureFlags.steamCommerceProviderEnabled, isFalse);
-    expect(FeatureFlags.steamCommerceTransactionsEnabled, isFalse);
+    expect(FeatureFlags.steamInventoryPlaytimeRewardsEnabled, isTrue);
+    expect(FeatureFlags.steamCommerceProviderEnabled, isTrue);
+    expect(FeatureFlags.steamCommerceTransactionsEnabled, isTrue);
+  });
+
+  test('Production Commerce does not enable post-v1 experimental surfaces', () {
+    // Debug/POC/sandbox defaults must not be confused with production IAP.
+    expect(FeatureFlags.steamInventorySandboxTransactionsEnabled, isFalse);
+    expect(FeatureFlags.showRecallCard, isFalse);
+    expect(FeatureFlags.showKnowledgeGraph, isFalse);
+    expect(FeatureFlags.showDiscoveryHome, isFalse);
   });
 }

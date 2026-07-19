@@ -2,42 +2,46 @@
 class FeatureFlags {
   /// Steam Wallet production purchase / exchange entry points.
   ///
-  /// **false = current production transaction entry points disabled**
-  /// (safety gate). Steam v1 **release scope includes Commerce** (Astra packs,
-  /// paid themes, Echo rewards, Inventory restore). A build with this flag
-  /// false must not be submitted or marketed as a Commerce-enabled final RC,
-  /// and must not claim live purchase availability.
+  /// **true** on the Steam v1 **production Commerce candidate** (reviewed
+  /// release change): Astra packs `40110–40112`, theme exchange, and Inventory
+  /// provider entry points. This is not final store Go by itself — seal the RC
+  /// BuildID, complete Steam-installed Matrix CURRENT-RC evidence, and Set Live
+  /// separately.
   ///
-  /// Set **true** only in a **separate reviewed change** after
-  /// docs/active/STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md Commerce P0 and
-  /// IAP-off rollback evidence pass. Enabling IAP is out of scope for
-  /// docs-only alignment work.
+  /// **false** on the IAP-off rollback source (`0ce9e052`) and any rollback
+  /// BuildID derived from it. A false build must not be marketed as
+  /// purchase-ready.
   ///
-  /// Track: docs/active/STEAM_SERVICE_RELEASE_READINESS.md
+  /// Track: docs/active/STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md
+  /// · docs/active/STEAM_SERVICE_RELEASE_READINESS.md
   /// Historical POC: docs/history/closure-2026-07/steam_inventory_poc/README.md
-  static const bool steamInAppPurchasesEnabled = false;
+  static const bool steamInAppPurchasesEnabled = true;
 
   /// Explicit internal build gate for the production ItemDef sandbox flow.
   ///
   /// Enable only with
   /// `--dart-define=AKASHA_STEAM_SANDBOX_TRANSACTIONS=true` in a reviewed
   /// Steamworks developer build. Sandbox defines are **not** release IAP
-  /// enablement and do not authorize public purchase claims.
+  /// enablement and stay **false** by default on Production Release builds.
   static const bool steamInventorySandboxTransactionsEnabled =
       bool.fromEnvironment(
         'AKASHA_STEAM_SANDBOX_TRANSACTIONS',
         defaultValue: false,
       );
 
-  /// Independent gate for Steam-verified Echo playtime reward evaluation.
+  /// Steam-verified Echo playtime reward evaluation.
   ///
-  /// Sandbox/reward defines are not release IAP enablement. Steam remains the
-  /// eligibility and daily window authority; the app only calls
+  /// Production IAP candidate builds always enable Echo rewards. When IAP is
+  /// false (rollback / no-IAP), rewards stay off unless
+  /// `--dart-define=AKASHA_STEAM_PLAYTIME_REWARDS=true` for an internal sandbox.
+  /// Steam remains the eligibility and window authority; the app only calls
   /// TriggerItemDrop and reconciles.
-  static const bool steamInventoryPlaytimeRewardsEnabled = bool.fromEnvironment(
-    'AKASHA_STEAM_PLAYTIME_REWARDS',
-    defaultValue: false,
-  );
+  static const bool steamInventoryPlaytimeRewardsEnabled =
+      steamInAppPurchasesEnabled ||
+      bool.fromEnvironment(
+        'AKASHA_STEAM_PLAYTIME_REWARDS',
+        defaultValue: false,
+      );
 
   static const bool steamCommerceProviderEnabled =
       steamInAppPurchasesEnabled ||

@@ -11,9 +11,11 @@
 > [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md).
 > **Release stance:** Early Access가 아니라 **무료 기본 앱 + Steam Commerce 포함** 일반 출시.
 > **Release scope:** Steam v1 includes optional Astra packs, paid themes, Echo rewards, and Inventory restore.
-> **Current production IAP:** **Disabled / Commerce No-Go**
-> (`FeatureFlags.steamInAppPurchasesEnabled = false`) — safety gate until P0 evidence, not “IAP out of scope”.
-> **Public/store claim:** Do not submit or market an unsealed build as purchase-ready. Enablement is a separate reviewed change after Matrix P0.
+> **Production Commerce candidate:** `FeatureFlags.steamInAppPurchasesEnabled = true`
+> (Echo rewards follow IAP; sandbox transactions default `false`).
+> **Overall acceptance:** still **No-Go** until sealed RC BuildID + Steam-installed CURRENT-RC evidence + Set Live.
+> **IAP-off rollback source SHA:** `0ce9e052` (rollback BuildID still **BLOCKED** if unsealed).
+> **Public/store claim:** Do not submit or market an unsealed candidate as final purchase-ready store Go.
 
 Distinguish three layers:
 
@@ -63,11 +65,13 @@ Acceptance detail: [STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](STEAM_V1_RELEASE_ACCE
 
 ### Current readiness (not the same as scope)
 
-- Production purchase / exchange / reward entry points remain **off** while
-  `steamInAppPurchasesEnabled=false`
-- Commerce verdict remains **No-Go** until Matrix Commerce P0 and rollback evidence pass
-- Final IAP-on RC and IAP-off rollback RC identities are **unsealed (BLOCKED)**
-- Until then: no active purchase CTA on normal Release builds; do not claim live Steam Wallet checkout in public store copy
+- Production Commerce **candidate** flags are on (`steamInAppPurchasesEnabled=true`;
+  Echo rewards follow; sandbox default `false`)
+- This is **not** final store Go — Overall Matrix verdict remains **No-Go**
+- Final IAP-on RC BuildID and IAP-off rollback BuildID identities are **unsealed (BLOCKED)**
+- IAP-off rollback **source** SHA = `0ce9e052` (BuildID still TBD)
+- Steamworks ItemDef publication SHA remains **UNKNOWN / BLOCKED**
+- Do not Set Live default or claim public purchase readiness until CURRENT-RC P0 seals
 
 ---
 
@@ -90,9 +94,12 @@ Short: Esc → Preferences → Display language → English.
 | Full registry bundle | 10,048 works · 1,713 shards · production registry network 0 |
 | Manual dogfood | PASS, user-confirmed |
 | Store Presence | Coming Soon posted, user-confirmed |
-| Production IAP flag | `false` — safety gate |
-| Commerce acceptance | **No-Go** — see Matrix + readiness |
+| Production IAP flag | `true` — Commerce **candidate** (not final Go) |
+| Echo playtime rewards | `true` when IAP true (no sandbox dart-define required) |
+| Sandbox transactions default | `false` |
+| Commerce acceptance | **No-Go** — CURRENT-RC-PASS still 0 until sealed Steam RC |
 | Final IAP-on RC BuildID | **TBD / BLOCKED** |
+| IAP-off rollback source SHA | `0ce9e052` |
 | IAP-off rollback BuildID | **TBD / BLOCKED** |
 | Store page review / Build review | Pending sealed RC |
 
@@ -130,7 +137,7 @@ Minimum blockers:
 10. IAP-off rollback rehearsal (CTA off; Inventory read-only)
 11. Full Korean / English Release UI audit
 12. Store parity (copy, screenshots, IAP disclosure) on sealed RC
-13. **Last:** reviewed change to enable `steamInAppPurchasesEnabled`
+13. Production Commerce candidate flag change landed — still need sealed RC + Set Live (not automatic Go)
 
 ---
 
@@ -143,7 +150,7 @@ Minimum blockers:
 | Platform | Windows |
 | Release type | Free base app with Steam in-app purchases |
 | Base price | Free |
-| IAP | Included in first-release **scope**; **not** enabled on the current unsealed production build |
+| IAP | Included in first-release **scope**; candidate flag **on**; final RC / Set Live still **unsealed** |
 | Languages | Korean, English (Interface) |
 | Paid themes | Sakura, Amethyst, Nocturne |
 | Steam Cloud (Vault) | Unsupported / off — **Steamworks console confirmation pending** |
@@ -204,7 +211,7 @@ Steam v1 출시 범위 기능
 
 • 위 Commerce 기능은 Steam v1 출시 범위에 포함됩니다.
 • 실제 상점 문구·스크린샷은 최종 Commerce RC와 Acceptance Matrix P0 통과 후 확정합니다.
-• 현재 미봉인 빌드에서는 구매·교환·보상 거래가 비활성입니다 (`steamInAppPurchasesEnabled=false`).
+• Production Commerce 후보 플래그는 켜져 있으나, 최종 RC BuildID·Set Live·Acceptance Matrix CURRENT-RC 봉인 전까지 상점 Go를 주장하지 않습니다.
 
 AKASHA는 출시 후에도 실제 사용자의 vault dogfood를 바탕으로 UI/UX, 대량 기록 관리, 가져오기/내보내기, 안정성을 계속 개선합니다.
 
@@ -242,7 +249,7 @@ Boundaries
 
 • Commerce above is in the Steam v1 release train.
 • Final store copy and screenshots are locked only after the sealed Commerce RC and Acceptance Matrix P0 pass.
-• Current unsealed builds keep purchase, exchange, and reward transactions disabled (`steamInAppPurchasesEnabled=false`).
+• Production Commerce candidate flags are on, but do not claim store Go until the sealed RC BuildID, Set Live, and Acceptance Matrix CURRENT-RC evidence are complete.
 
 After launch, AKASHA will continue to improve based on real vault dogfood: UI/UX polish, large personal archives, import/export reliability, and stability.
 
@@ -294,13 +301,13 @@ Aligned order (detail in the Acceptance Matrix):
 1. Confirm the release worktree is clean and contains no unintended `akasha-db/**` source changes.
    Run the deterministic full-bundle gate; do not regenerate source manifests as a packaging side effect.
 2. Collect Matrix P0 evidence on a Steam-downloaded private-branch RC (not only a local exe).
-3. Seal **IAP-on** RC identity and a separate **IAP-off rollback** RC; rehearse rollback (CTA off; Inventory read-only).
+3. Seal **IAP-on** RC identity (candidate flags already reviewed) and a separate **IAP-off rollback** RC from source `0ce9e052`; rehearse rollback (CTA off; Inventory read-only).
 4. Capture screenshots from the sealed RC executable (demo/owned/generated assets only).
 5. Stage depot (`prepare_steam_depot.ps1`), verify manifest (`steam_appid.txt` / PDB excluded), upload via SteamPipe.
    For commerce sandbox contracts see
    [STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md](steam_inventory_production/STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md).
 6. Confirm remote ItemDef publication vs LF canonical candidate; retain Steamworks revision/time.
-7. Only after Matrix Commerce P0 + rollback: reviewed change enabling `steamInAppPurchasesEnabled`.
+7. Complete Matrix Commerce P0 + rollback evidence on the Steam-installed sealed RC.
 8. Upload the final IAP-on build; Set Live on the intended review/default branch.
 9. Submit Store Page review and Build review.
 10. After approval and required Coming Soon time, use Steamworks release controls.

@@ -4,12 +4,15 @@
 > **Created:** 2026-07-19
 > **Baseline Git SHA:** `8f4cf35a0ca1e31b0eb4753fad4e61b6e35dda7f`
 > **AppID:** `4677560` · **Windows Depot:** `4677561`
-> **IAP flag (current):** `FeatureFlags.steamInAppPurchasesEnabled = false` (safety gate; not a scope reduction)
+> **IAP flag (candidate):** `FeatureFlags.steamInAppPurchasesEnabled = true` (Production Commerce candidate; **not** final store Go)
+> **Echo rewards:** follow IAP (`steamInventoryPlaytimeRewardsEnabled` true without sandbox dart-define)
+> **Sandbox transactions default:** `false`
+> **IAP-off rollback source SHA:** `0ce9e052` · rollback BuildID still **BLOCKED** if unsealed
 > **Related:** [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md) · [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md) · [steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md](steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md) · [CURRENT_STATE.md](CURRENT_STATE.md) · [STEAM_RELEASE.md](STEAM_RELEASE.md)
 
 This matrix is the executable acceptance record for the **single Commerce-inclusive Steam v1** release train. It consolidates the master launch checklist into canonical requirements, links repeated pack/theme scenarios as cases, and keeps full traceability in the appendix.
 
-**Out of scope for this document revision:** code changes, Steamworks mutation, build upload, Registry/asset edits, IAP enablement, sandbox worktree cleanup.
+**Out of scope for this document revision:** Steamworks mutation, Steam upload / Set Live, Registry/asset edits, sandbox worktree cleanup, inventing CURRENT-RC-PASS without sealed-RC evidence.
 
 ---
 
@@ -27,8 +30,8 @@ This matrix is the executable acceptance record for the **single Commerce-inclus
 | Astra packs (real money) | `40110` (+500), `40111` (+1000), `40112` (+2500) |
 | Echo | Playtime reward via `40220` → Echo unit `40002` (+10 / eligible grant; max 6 / window) |
 | Paid themes | Sakura `41001`, Amethyst `41002`, Nocturne `41003` via wrappers `41101`–`41103` at **500 Astra or 500 Echo** |
-| Rollback | Separate **IAP-off** rollback BuildID must exist and be rehearsed; purchase/exchange CTA off; **Inventory remains read-only** (Steam account authority unchanged) |
-| Production purchase UI | Remains disabled until all P0 Current-RC evidence passes; then a **separate reviewed change** may set `steamInAppPurchasesEnabled=true` |
+| Rollback | Separate **IAP-off** rollback BuildID must exist and be rehearsed; purchase/exchange CTA off; **Inventory remains read-only** (Steam account authority unchanged). Rollback **source** SHA = `0ce9e052` |
+| Production purchase UI | Candidate flag **true** on the reviewed release branch; final store Go still requires sealed RC BuildID + CURRENT-RC P0 evidence + Set Live |
 
 ### Explicitly in v1 (P0 commerce)
 
@@ -54,8 +57,8 @@ This matrix is the executable acceptance record for the **single Commerce-inclus
 |---|---|
 | **Overall Steam v1 Go/No-Go** | **No-Go** |
 | Commerce transaction matrix | **No-Go** |
-| Final RC identity | **BLOCKED** (template only; no sealed RC) |
-| Production IAP enablement | **Forbidden** until Current-RC P0 = 100% |
+| Final RC identity | **BLOCKED** (template only; no sealed RC — BuildID **TBD**) |
+| Production IAP candidate flag | **Enabled** in tree (`true`) — does **not** auto-raise CURRENT-RC-PASS or Overall Go |
 | Active FAIL count (Current-RC Go math) | **0** |
 | Historical `store_hidden=true` checkout failure | **Not a current FAIL** — see §10 ledger |
 
@@ -70,17 +73,17 @@ Go requires: every P0 row reaches **CURRENT-RC-PASS** (or justified **N/A**), **
 
 | Identity field | IAP-on candidate RC | IAP-off rollback RC | Status |
 |---|---|---|---|
-| Git SHA | _TBD_ | _TBD_ | BLOCKED |
-| App version / build number | `1.0.0+1` (pubspec at baseline; not RC-sealed) | _TBD_ | BLOCKED |
+| Git SHA | _TBD_ (candidate branch pending seal) | `0ce9e052` (IAP-off **source**; BuildID TBD) | BLOCKED |
+| App version / build number | `1.0.0+1` (pubspec; not RC-sealed) | `1.0.0+1` @ source | BLOCKED |
 | Executable SHA-256 | _TBD_ | _TBD_ | BLOCKED |
 | Staged depot manifest SHA-256 | _TBD_ | _TBD_ | BLOCKED |
 | Steam BuildID | _TBD_ | _TBD_ (rollback) | BLOCKED |
 | Depot ID | `4677561` (expected) | `4677561` (expected) | documented / unsealed |
-| Steam branch | _TBD_ (e.g. private `commerce-sandbox` then review branch) | _TBD_ | BLOCKED |
+| Steam branch | _TBD_ (default Set Live **not** done) | _TBD_ | BLOCKED |
 | ItemDef JSON SHA-256 (local candidate @ baseline) | `9653df2609d9ec88dcc7b8b18c0e59c149221113a5c45360570c96dd67235ff3` | same schema family | candidate only (LF / git-canonical) |
-| ItemDef Steamworks publication time / revision | _TBD_ | _TBD_ | BLOCKED |
+| ItemDef Steamworks publication time / revision | _TBD_ | _TBD_ | BLOCKED (publication SHA **UNKNOWN**) |
 | Registry | v4 · 10,048 works · `generatedAt` `2026-07-12T07:58:11.178685Z` | same unless RC rebuilds | baseline snapshot; digest seal TBD |
-| `steamInAppPurchasesEnabled` | must be `true` only on reviewed IAP-on RC | must remain `false` | current tree = `false` |
+| `steamInAppPurchasesEnabled` | `true` on Production Commerce candidate | must remain `false` on rollback | candidate tree = `true`; source `0ce9e052` = `false` |
 | Supported language snapshot | ko, en | ko, en | UNVERIFIED on final RC |
 | Steamworks feature snapshot | Overlay, Inventory, IAP, Cloud=off (assumed) | same + purchase CTA absent | BLOCKED |
 | Test account type | _TBD_ partner/dev | _TBD_ | BLOCKED |
@@ -143,7 +146,7 @@ Owner default: Release captain (unset). Environment default: Windows Steam unles
 | ID | Requirement | Verify | Status | Evidence | Notes / retest |
 |---|---|---|---|---|---|
 | REL-SCOPE-01 | Active launch docs and flag commentary describe the **Commerce-inclusive** v1 train (not “free / no-IAP forever”) | Doc review | IMPLEMENTATION-PASS / UNVERIFIED-RC | Aligned [STEAM_RELEASE.md](STEAM_RELEASE.md), [privacy.md](privacy.md), `lib/config/feature_flags.dart` commentary | Release-scope conflict closed in repository; final Store/RC parity still requires sealed RC verification |
-| REL-SCOPE-02 | `steamInAppPurchasesEnabled` stays `false` until Current-RC commerce P0 passes | Code read @ baseline | IMPLEMENTATION-PASS | `feature_flags.dart` | Retest when enabling IAP in separate change |
+| REL-SCOPE-02 | Production Commerce candidate sets `steamInAppPurchasesEnabled=true`, Echo rewards follow IAP, sandbox default `false`; IAP-off source remains `0ce9e052` | Code read | IMPLEMENTATION-PASS / UNVERIFIED-RC | `feature_flags.dart` · tests | Candidate flag landed; sealed Steam RC / CURRENT-RC evidence still required — not automatic Go |
 | REL-SCOPE-03 | Rollback train is an IAP-off build: purchase/exchange CTA absent; Inventory stays read-only (no wipe/mutation of Steam balances or entitlements) | Steam RC + local Release | BLOCKED | — | Needs sealed rollback BuildID; see BUILD-09 |
 | CLOUD-01 | Vault Steam Cloud **unsupported** for v1; store page must not claim Cloud; confirm Steamworks setting matches | Steamworks + store | BLOCKED | Assumed local-only ([privacy.md](privacy.md), [STEAM_RELEASE.md](STEAM_RELEASE.md)) | P0 policy row; not CURRENT-RC-PASS until console confirmed |
 
@@ -630,13 +633,13 @@ None. Repository release-scope conflict (`REL-SCOPE-01`) closed; remaining work 
 10. Theme exchanges CASE-EX-SAKURA-ASTRA … CASE-EX-NOCTURNE-ECHO (6 paths)
 11. Echo window CASE-ECHO-BEFORE … CASE-ECHO-RECON
 12. Failure/recovery CASE-FAIL-OFFLINE … CASE-FAIL-REFUND
-13. BUILD-09 / REL-SCOPE-03 — IAP-off rollback rehearsal (CTA off, Inventory read-only)
+13. BUILD-09 / REL-SCOPE-03 — IAP-off rollback rehearsal from source `0ce9e052` (CTA off, Inventory read-only; BuildID still BLOCKED)
 14. L10N-01…07 — full KO/EN RC audit
 15. STORE-01…03 — store parity on sealed RC
 16. BUILD-01 — default/review branch Set Live on sealed RC
 17. COM-SAFE-01 — Release binary audit on sealed IAP-on + rollback
 18. EV-EXT-RELEASE — relocate external evidence root
-19. Reviewed change to set `steamInAppPurchasesEnabled=true` (**always last**; never before items 1–18)
+19. Production Commerce candidate flag change — **landed** (`true`); does not replace items 1–18 or raise CURRENT-RC-PASS
 
 ### Go criteria (restate)
 
@@ -649,13 +652,13 @@ None. Repository release-scope conflict (`REL-SCOPE-01`) closed; remaining work 
 - Data-loss **0** on fault suite
 - Debug/Sandbox/Consume/Reset/POC absent on Release
 - Store languages/features/images match RC
-- IAP-off rollback RC rehearsed (CTA off; Inventory read-only preserved)
+- IAP-off rollback RC rehearsed from source `0ce9e052` (CTA off; Inventory read-only preserved; BuildID sealed)
 - RC Identity + Steamworks snapshots sealed
-- Only then consider separate change to `steamInAppPurchasesEnabled=true`
+- Production Commerce candidate flag is already `true` — still require sealed RC evidence before Overall Go
 
 ### Scope-alignment note
 
-Repository release-scope docs and flag commentary were aligned to Commerce-inclusive v1 on branch `docs/steam-v1-commerce-scope-alignment` (authoring baseline Matrix tip `94905aab` remains the prior seal point). IAP flag value unchanged (`false`).
+Repository release-scope docs and flag commentary were aligned to Commerce-inclusive v1 (`0ce9e052`). Production Commerce **candidate** enablement is a separate reviewed release change on `release/steam-v1-production-commerce`. Enabling the candidate flag does **not** promote rows to CURRENT-RC-PASS or change Overall **No-Go**.
 
 ---
 
@@ -664,7 +667,7 @@ Repository release-scope docs and flag commentary were aligned to Commerce-inclu
 | Item | Value |
 |---|---|
 | Matrix path | `docs/active/STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md` |
-| Authoring baseline | `8f4cf35a` (Matrix creation); ItemDef hash fix `94905aab` |
+| Authoring baseline | `8f4cf35a` (Matrix creation); ItemDef hash fix `94905aab`; scope align `0ce9e052` |
 | Sandbox worktree | Untouched by this revision |
-| IAP flag | Remains `false` |
-| Changelog | 2026-07-19 — initial matrix · ItemDef LF-canonical SHA · **REL-SCOPE-01** closed after Commerce-first scope alignment (`STEAM_RELEASE` / `privacy` / flag commentary); FAIL 0; overall No-Go unchanged |
+| IAP flag | Candidate `true` (Overall Go still No-Go; CURRENT-RC-PASS still 0) |
+| Changelog | 2026-07-19 — initial matrix · ItemDef LF-canonical SHA · **REL-SCOPE-01** closed · Production Commerce **candidate** flag documented (`true`); FAIL 0; CURRENT-RC-PASS 0; overall No-Go unchanged |
