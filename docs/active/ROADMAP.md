@@ -1,13 +1,14 @@
 # AKASHA Roadmap (로드맵)
 
-> **지위:** 프로젝트 개발 로드맵 SSOT (5대 정체성 카테고리 기준)
-> **갱신:** 2026-07-19 — CURRENT_STATE와 동기 (Steam/build identity hardening · registry full-bundle Phase 0–2). 테스트 수는 [CURRENT_STATE.md](CURRENT_STATE.md)만 갱신
-> **최상위 지침:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) · [VISION.md](VISION.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](../history/closure-2026-07/ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md)
+> **지위:** **앞으로 할 일** SSOT (백로그·우선순위). 구현 현실·출시 운영 사실이 **아니다**.
+> **갱신:** 2026-07-20 — REL-DOC-02 (역할 수렴). 완료 현황·수치·BuildID는 [CURRENT_STATE.md](CURRENT_STATE.md) · [STEAM_RELEASE.md](STEAM_RELEASE.md)만 본다.
+> **최상위 지침:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) · [VISION.md](VISION.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md)
 > **기능 거부 기준:** [Constitution §8](AKASHA_ARCHIVE_CONSTITUTION.md) (구 PROJECT_CONSTITUTION 필터는 [historical](../history/PROJECT_CONSTITUTION.md))
+> **역사 스냅샷:** [PROJECT_STATUS.md](../history/closure-2026-07/PROJECT_STATUS.md) (2026-07-16) — 운영 SSOT 아님
 
 ---
 
-## Steam v1 우선순위 (2026-06-30)
+## Steam v1 우선순위
 
 **v1은 글로벌 작품 사전 앱이 아니라 개인 아카이브 앱이다.**
 
@@ -19,19 +20,30 @@
 | — | B. Discovery | **optional** — starter catalog 검색 유지 |
 | — | E. Scale | **post-v1** — vault 파생 인덱스 · akasha-db/CDN |
 
-**Steam v1 무료 출시:** [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md) release gate. Architecture Closure는 선언됐고, IAP는 `steamInAppPurchasesEnabled=false`다. 승인 catalog/가격 preview는 가능하지만 Steam-library transaction/recovery matrix가 닫히기 전 활성 구매로 표시하지 않는다.
+### Steam / Commerce — 남은 일
+
+출시 운영·라이브 identity·Overall Go 판정은 [STEAM_RELEASE.md](STEAM_RELEASE.md)와
+[STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md)가 SSOT다.
+이 로드맵에서는 **아직 열린 후속만** 적는다.
+
+* [ ] Steam-installed CURRENT-RC: Astra 취소/완료·정확 델타 · 테마 교환 6경로 · Echo 창 · 실패/불확정 복구
+* [ ] 재시작·다른 PC Inventory 복원 증거
+* [ ] IAP-off rollback BuildID 봉인·리허설 (source `0ce9e052`)
+* [ ] Steamworks ItemDef publication SHA / Overlay·Cloud 콘솔 확인
+* [ ] Store 카피·스크린샷·Build review를 live RC와 정합
+* [ ] (운영) 이후 코드 변경 시: 커밋 → 중성 경로 Release → SteamPipe → 의도한 branch Set Live
 
 ---
 
-## 횡단 트랙: UX & Theme (2026-07-13)
+## 횡단 트랙: UX & Theme — 남은 일
 
-사용자 경험과 시각 표현은 A–E 제품 카테고리를 가로지르는 공통 계약이다. 정보 구조, Desktop Shell, 컴포넌트 규격, 테마 확장 기준은 [UX_DESIGN_SYSTEM.md](UX_DESIGN_SYSTEM.md)를 따른다.
+사용자 경험 계약은 [UX_DESIGN_SYSTEM.md](UX_DESIGN_SYSTEM.md).
+UX-1~6 foundation·Gallery·Commerce UI 골격의 **완료 사실**은 [CURRENT_STATE.md](CURRENT_STATE.md)에만 둔다.
 
-구현 순서는 Theme foundation → Responsive Shell → Graph/Timeline 기존 경로 복원 → Home 고도화 → Preview·핵심 화면 정돈 → 테마별 asset/effect와 회귀 검증이다. 기존 Graph/Timeline 내비게이션을 다시 보이게 하는 일은 새 그래프 엔진, 완성 캘린더, `SA-05 Timeline projection` 완료를 의미하지 않는다.
-
-**현재:** UX-1/2 Theme foundation·Responsive Shell, UX-3 Home, UX-4 핵심 surface, UX-5 테마 package·회귀 기반, UX-6 Window frame·Theme Gallery와 Commerce catalog foundation을 완료했다. Production ItemDef registry와 Steam read/transaction/reward gateway가 연결되었고, Store/Inventory도 승인 Astra pack·테마 package 구분, loading·offline·retry·owned 상태, compact/125% text 회귀를 갖춘 단일 snapshot 소비 화면으로 고도화했다. 정상 빌드는 release IAP와 두 sandbox define이 모두 false라 구매 CTA와 playtime reward trigger가 비활성이며, 명시적 내부 Sandbox 빌드만 `StartPurchase`·단일 재화 `ExchangeItems`·`TriggerItemDrop(40220)`·terminal result·`GetAllItems` reconciliation을 실행한다. Gateway와 production port는 purchase `40110-40112`, exchange `41101-41103`, reward `40220 -> 40002`만 허용하며 raw unit/POC ID는 native call 전에 거절한다. `40110.store_hidden=false` 단일 변수 A/B에서 Steam checkout Overlay가 열려 판매 팩 visibility 원인을 확정했으며, 구성품 `40001`은 숨김을 유지하고 실제 판매 팩 `40110-40112`만 store-visible로 관리한다. 다음 단계는 갱신된 [Steamworks upload candidate](steam_inventory_production/itemdefs_steamworks_upload.json)를 게시해 `40111-40112` checkout을 확인하고, [Sandbox checklist](steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md)의 취소/완료, 6개 테마 경로, Echo 6회/7번째 거절, 재시작·2PC·GetReport 증거를 수행하는 것이다. Touch effect와 background particle은 Interaction/Motion/Backdrop 계약 위에서 별도 성능·reduced-motion 검증과 함께 확장한다.
-
-공식 테마 카탈로그는 무료 `classicDark`·`midnightBlue`, premium `sakura`·`amethyst`·`nocturne`다. premium 3종은 `planned`와 승인 가격 `500 Astra 또는 500 Echo`를 표시하되 commerce 활성 전 구매 CTA는 노출하지 않는다. 잔여 style 이관은 [UX_THEME_MIGRATION_INVENTORY.md](../history/closure-2026-07/UX_THEME_MIGRATION_INVENTORY.md)에서 추적한다.
+* [ ] Touch / background particle: Interaction·Motion·Backdrop 위 성능·reduced-motion 검증
+* [ ] 잔여 style 이관: [UX_THEME_MIGRATION_INVENTORY.md](../history/closure-2026-07/UX_THEME_MIGRATION_INVENTORY.md)
+* [ ] (post-v1) Graph/Timeline **새** projection·엔진 — UX-2가 복원한 기존 조회 경로와 혼동하지 말 것
+* [ ] (v1.1+) 서재 진열 커스텀 · Mixed Library (아래 D절과 동일)
 
 ---
 
@@ -106,12 +118,14 @@
 
 * **[x] 나의 서재 기본 뷰:** 아카이브한 작품만 모아 보는 전용 홈 모드 구축
 * **[x] 대시보드-서재 역할 분리:** 카탈로그 탐색 공간(Dashboard)과 나의 기록 공간(Library) 정비
-* **[x] UX-1/6 공식 테마 foundation·gallery:** canonical 5종 · app-root theme · 공식 5종 gallery · 무료/보유 테마만 적용 · premium 3종 planned 상태 · 승인 가격 preview · Commerce 활성 전 구매 CTA 미노출
-* **[x] UX-2 Responsive Shell:** 단일 `AppDestination`·`PreviewTarget`, 3단계 `ShellLayoutSpec`, Sidebar/Dock selection SSOT, 기존 Graph/Timeline 접근성, provider 없는 utility slot 숨김
-* **[x] UX-5 Theme packages:** 공식 5테마 실제 backdrop/Hero 10개, 공통 geometry·fallback·reduced-motion 계약, Windows decode/paint golden, 단일 registry와 surface별 effect 계약. Premium 구매·entitlement와 runtime 다운로드 pack은 계속 후속
+* **[x] UX-1/6 공식 테마 foundation·gallery:** canonical 5종 · app-root theme · gallery (완료 세부: CURRENT_STATE)
+* **[x] UX-2 Responsive Shell:** destination/preview SSOT · 3단계 layout (완료 세부: CURRENT_STATE)
+* **[x] UX-5 Theme packages:** 공식 5테마 artwork·golden·registry (완료 세부: CURRENT_STATE)
 * **[x] Cast Collection / Hero Collection:** 인물·속성별 큐레이션 컬렉션 연동 기능
+* **[ ] (후속) Premium entitlement·구매 경로 Steam-installed 증거:** Matrix Commerce 행 — STEAM_RELEASE 게이트
 * **[ ] (v1.1+) 서재 진열 방식 커스텀:** 그리드 밀도 및 표시 항목 개인화 (보류)
 * **[ ] (장기) Mixed Library:** 서로 다른 매체의 기록을 하나의 컬렉션으로 통합 (보류)
+* **[ ] (장기) runtime 테마 pack 다운로드:** 현재 번들 5종 밖 확장 시
 
 ---
 
@@ -121,7 +135,7 @@
 * **[x] v4 해시 샤딩:** manifest v4 · CDN — **optional catalog 인프라**
 * **[x] registry_builder · CI gates:** 품질 자동화 — post-v1 scale 관측
 * **[x] 10,048 works milestone:** 성과 보존 — v1 메시지에서 과장하지 않음
-* **[x] Steam 릴리즈 빌드 패키징:** M2 (installer · 스토어 · 무료 출시)
+* **[x] Steam 릴리즈 빌드 패키징:** M2 기준 정리 (live identity·게이트: STEAM_RELEASE)
 * **[x] SA-03 derived index / Work projection:** 페이지·필터 ms급 · full rebuild는 명시적 복구 작업
 * **[ ] (next scale gate) SA-05 Timeline projection:** 도메인별 bounded projection — Universal Record 금지
 * **[ ] (post-v1) Derived vault indexes 확장:** tag · link · incoming · taste · snippet index
@@ -132,11 +146,11 @@
 
 ---
 
-## 🗓️ 주요 마일스톤 진행 이력
+## 🗓️ 주요 마일스톤 (이력 + 열린 트랙)
 
 * **M1 (기능 동결) ✅** — 기본 체크리스트 완료 및 430작 카탈로그 배포 (2026 Q2)
 * **M-v4 (데이터 아키텍처 v4) ✅** — `wk_` 영구 ID, 해시 샤딩 v4 CDN 배포 완료 (2026-06-10)
 * **M2 (Steam 출시 준비) ✅** — depot, 스토어 페이지, 무료 출시 기준 정리 (2026-06-13)
 * **Wave 1 (Home 리팩터) ✅** — 홈 화면 뷰어 리팩터링 및 코디네이터 분리 (2026-06-14)
 * **Phase 1 E2E ✅** — 발견/아카이브/기록/큐레이션 E2E 품질 검증 완료 (2026-06-14)
-* **M3 (Steam v1 무료 출시) 🔶** — **개인 아카이브 중심** 무료 출시 진행 중
+* **M3 (Steam v1) 🔶** — default live·IAP 트레인은 [STEAM_RELEASE.md](STEAM_RELEASE.md)에 기록. **남은 일:** Acceptance Matrix CURRENT-RC Commerce·rollback·store 정합 (위 Steam 절). Overall Go는 Matrix가 판정한다.

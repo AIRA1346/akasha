@@ -1,14 +1,21 @@
 # Project Status Snapshot
 
-> **지위:** Historical snapshot (2026-07-16) — **superseded** by [CURRENT_STATE.md](../../active/CURRENT_STATE.md) for live implementation facts
-> **원칙:** [AKASHA_ARCHIVE_CONSTITUTION.md](../../active/AKASHA_ARCHIVE_CONSTITUTION.md) · **비전:** [VISION.md](../../active/VISION.md) · **구현 SSOT:** [CURRENT_STATE.md](../../active/CURRENT_STATE.md)
-> **출시:** [STEAM_RELEASE.md](../../active/STEAM_RELEASE.md)
-> **갱신:** 2026-07-16
-> **Git:** `git rev-parse HEAD`
+> **지위:** **Historical snapshot only** — frozen as of **2026-07-16**.
+> **이 문서는 운영 SSOT가 아니다.** 아래 표·수치·“다음”·게이트는 당시 기록이며 갱신하지 않는다.
 >
-> **Verification snapshot (2026-07-16):** root analyze **0** · root test **1195** · commerce domain **17** · backend **18** · Steam Inventory sandbox E2E POC passed · Windows debug/default release/sandbox release build OK · Release runtime F11/Esc window bounds restore passed · `system/` durable vs `.akasha/` derived · **UX-3 Home complete · UX-4A/B/C/D core surfaces done · UX-5A/B/C/D five-theme package, artwork, extensibility hardening done · UX-6 window frame and theme gallery done · Commerce catalog foundation done · Steamworks ItemDef upload candidate/gateway, Store/Inventory UX, guarded sandbox transaction and Echo reward foundation, final operation-port allowlist hardening done** · **Locator index atomic+`.bak` recovery done** (concurrent write lock = follow-up only) · **Entity vault load diagnostics done** · **Entity path index rebuild/upsert issue exposure = follow-up only** · **Workbench recovery draft I/O transition diagnostics done** · **Entity `derivedIndexesUpdated` Home skip + debounce AND-coalesce done** (Work/Journal/Timeline = follow-up) · **HomeShell God Class 전면 리팩터 기각** · **vault-watch dispose lifecycle ACTION A done** · **Package modularization audit closed** — 단일 앱 + `akasha_commerce_domain` only · graph acyclic · no new EXTRACT_NOW · Melos/lib 전면 분할 기각 · Archive=PREPARE_BOUNDARY · Vault/UI/Home=KEEP_IN_APP · Steam→CMake optional when IAP/no-IAP exclude needed · reopen only on documented triggers
-> **현재 실행:** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md) — Architecture Closure 선언 후 Steam 출시 블로커 트랙
-> **IAP:** production 비활성 (`steamInAppPurchasesEnabled = false`). 내부 sandbox define에서만 승인 거래 adapter를 열며, Steamworks 실거래 checklist 완료 전 production 구매·Steam IAP 가능 표시·재심사 주장은 금지.
+> | 역할 | 문서 |
+> |---|---|
+> | 구현 현실 SSOT | [CURRENT_STATE.md](../../active/CURRENT_STATE.md) |
+> | Steam 출시 운영 SSOT | [STEAM_RELEASE.md](../../active/STEAM_RELEASE.md) |
+> | 앞으로 할 일 | [ROADMAP.md](../../active/ROADMAP.md) |
+> | Acceptance | [STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](../../active/STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md) |
+>
+> **원칙 / 비전 (active):** [Constitution](../../active/AKASHA_ARCHIVE_CONSTITUTION.md) · [VISION](../../active/VISION.md)
+> **당시 출시 블로커 트랙 (history):** [STEAM_RELEASE_BLOCKER_CLOSURE.md](STEAM_RELEASE_BLOCKER_CLOSURE.md)
+> **스냅샷 일자:** 2026-07-16 · **REL-DOC-02:** 역할 경계만 명시 (본문 수치 재검증·재작성 없음)
+>
+> **Verification snapshot (2026-07-16, frozen):** root analyze **0** · root test **1195** · commerce domain **17** · backend **18** · Steam Inventory sandbox E2E POC passed · Windows debug/default release/sandbox release build OK · Release runtime F11/Esc window bounds restore passed · `system/` durable vs `.akasha/` derived · UX-3…UX-6 · Commerce catalog foundation · ItemDef/gateway/Store UX · locator/entity/workbench/HomeShell/package audit notes as captured on that date
+> **IAP (as of this snapshot):** production 비활성 (`steamInAppPurchasesEnabled = false`) — **이후 라이브 트레인 값은 CURRENT_STATE / STEAM_RELEASE를 본다.**
 ---
 
 ## Executive Summary
@@ -49,8 +56,8 @@
 | **Sanctum** | C1~C4 ✅ · Vault agent 가이드 ✅ |
 | **코드 건강** | Phase 0~7 ✅ · Foundation P2 분해 ✅ |
 | **Registry (akasha-db)** | **10,048 works** · **이중 추적 감사 중** — [AKASHA_DB_OWNERSHIP_AUDIT.md](../programs/akasha-db-ownership/AKASHA_DB_OWNERSHIP_AUDIT.md) |
-| **다음** | BuildID **24015480** default branch Set Live · Steamworks Build review 갱신 · akasha-db 구조 A/B/C 결정 **보류** |
-| **Steam** | 자동 gate ✅ · 수동 dogfood ✅ · 무료 출시 copy ✅ · no-IAP BuildID **24015480** 업로드 완료 |
+| **다음 (2026-07-16 당시)** | BuildID **24015480** default Set Live · Build review · akasha-db A/B/C **보류** — **현재 “다음”은 ROADMAP / STEAM_RELEASE** |
+| **Steam (2026-07-16 당시)** | 자동 gate ✅ · 수동 dogfood ✅ · 무료 출시 copy ✅ · no-IAP BuildID **24015480** 업로드 완료 — **이후 live identity는 STEAM_RELEASE** |
 
 ---
 
@@ -76,7 +83,7 @@
 
 **akasha-db / registry:** 삭제하지 않음 — **optional catalog support** · starter catalog · **post-v1 scale track**.
 
-**Steam 출시:** Early Access가 아니라 **무료 일반 출시**로 진행. 앱 내 구매/유료 테마는 post-launch로 보류.
+**Steam 출시 (스냅샷 시점 문구):** Early Access가 아니라 **무료 일반 출시**. 당시 문서는 IAP/유료 테마를 post-launch로 보류한다고 적었으나, **이후 출시 범위·라이브 상태는 active STEAM_RELEASE / CURRENT_STATE가 우선**한다.
 
 ### 이전 운영 결정 (2026-06-10, 역사 보존)
 
@@ -106,15 +113,19 @@
 
 ---
 
-## 3. Release Readiness — Steam v1
+## 3. Release Readiness — Steam v1 (frozen 2026-07-16)
 
-| 게이트 | 상태 | v1 blocking | 비고 |
+> 이 표는 **당시** 게이트 기록이다. 현재 BuildID·Set Live·Overall Go는
+> [STEAM_RELEASE.md](../../active/STEAM_RELEASE.md) /
+> [STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](../../active/STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md)만 본다.
+
+| 게이트 | 상태 | v1 blocking | 비고 (당시) |
 |--------|:----:|:-----------:|------|
 | **G-AUTO** | ✅ | ✅ | app **1159** · domain **17** · backend **18** · analyze **0** · debug/release build **PASS** |
 | **G-VAULT** | ✅ | **✅** | 볼트 연동·아카이브·Sanctum 저장·기록 UI — 사용자 수동 dogfood 완료 |
 | **G-QA** | ✅ | ✅ | P0 수동 **12/12** (2026-06-13) · 사용자 dogfood 확인 |
-| **G-STEAM** | 🔶 | ✅ | no-IAP BuildID **24015480** 업로드 완료 · Set Live/review 대기 |
-| **G-COPY** | ✅ | ✅ | Privacy doc · [STEAM_RELEASE.md](../../active/STEAM_RELEASE.md) copy |
+| **G-STEAM** | 🔶 | ✅ | no-IAP BuildID **24015480** 업로드 완료 · Set Live/review 대기 (**이후 갱신 금지 — active SSOT 참조**) |
+| **G-COPY** | ✅ | ✅ | Privacy doc · STEAM_RELEASE copy |
 | **G-CATALOG** | ✅ | — | 10048작 · recall 87/87 — **optional / post-v1 scale** |
 | **G-DISCOVERY** | ✅ | — | Wikidata spine — **v1 메시지·blocking 아님** |
 
@@ -132,7 +143,7 @@
 | **Foundation P2** | ✅ scaffold · dialogs · fusion | — |
 | **Catalog / akasha-db** | optional starter · CI 관측 | post-v1 |
 | **Discovery / Scale** | Wikidata · 10k+ 확장 | post-v1 |
-| **Steam 무료 출시** | **진행** (사용자 지시) | ✅ |
+| **Steam 무료 출시** | **진행** (2026-07-16 기록) — 이후 상태는 STEAM_RELEASE | ✅ |
 
 ---
 
