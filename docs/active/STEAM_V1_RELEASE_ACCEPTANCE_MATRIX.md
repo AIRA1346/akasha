@@ -551,9 +551,9 @@ Prices → each pack cancel+complete → exact Astra deltas → restart → PC2 
 | EV-HIST-EN-UI | Historical UI | [p1-english-ui-2026-07-12](../history/closure-2026-07/evidence/p1-english-ui-2026-07-12/README.md) | HISTORICAL-PASS L10N chrome |
 | EV-HIST-SAFE-GATE | Historical gate | [P0_RECOVERABLE_VAULT_WRITE_GATE.md](../history/closure-2026-07/P0_RECOVERABLE_VAULT_WRITE_GATE.md) | IMPLEMENTATION lineage |
 | EV-CHECKLIST-OPEN | Open matrix | [SANDBOX_TRANSACTION_CHECKLIST.md](steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md) §2–5 all `[ ]` | UNVERIFIED/BLOCKED commerce |
-| EV-EXT-RELEASE | External | `AKASHA_Product/release-evidence/steam` (referenced; absent in this workspace) | re-locate before seal |
+| EV-EXT-RELEASE | External | [`AKASHA_Product/release-evidence/steam`](../../AKASHA_Product/release-evidence/steam/README.md) — receipt + pre-upload seal archived (**REL-EVID-01**; archive present ≠ CURRENT-RC-PASS / Commerce Go) | Identity evidence root present |
 | EV-RC-SEAL | Live IAP-on identity (partial) | Git `5e95fefe` · BuildID `24282729` · exe `3C387A21…6069` · pre-upload manifest `C92B7E33…DF85` · files `1756` / bytes `70978364` · version `1.0.0+1` (**Artifact-verified** seal + receipt); default Set Live (**Operator-confirmed**) | Identity / BUILD-01 only — **not** blanket CURRENT-RC-PASS |
-| EV-UPLOAD-24282729 | SteamPipe receipt | External worktree `…/upload_receipts/20260719T115647Z.json` (app `4677560`, depot `4677561`, branch `commerce-sandbox`, gitSha `5e95fefe`, buildId `24282729`) | BUILD-01 Artifact-verified half |
+| EV-UPLOAD-24282729 | SteamPipe receipt | [`build-24282729/upload_receipts/20260719T115647Z.json`](../../AKASHA_Product/release-evidence/steam/build-24282729/upload_receipts/20260719T115647Z.json) (app `4677560`, depot `4677561`, branch `commerce-sandbox`, gitSha `5e95fefe`, buildId `24282729`) | BUILD-01 Artifact-verified half |
 
 ---
 
@@ -655,7 +655,7 @@ None. Repository release-scope conflict (`REL-SCOPE-01`) closed; remaining work 
 15. STORE-01…03 — store parity vs live RC
 16. BUILD-01 — default Set Live for `24282729` — **OPERATOR-CONFIRMED** (not Overall Go)
 17. COM-SAFE-01 — Release binary audit on Steam-installed IAP-on + rollback
-18. EV-EXT-RELEASE — relocate external evidence root
+18. EV-EXT-RELEASE — evidence root archived at `AKASHA_Product/release-evidence/steam` (**REL-EVID-01**; archive ≠ CURRENT-RC-PASS / Commerce Go)
 19. Production IAP flag — **landed** (`true` on live train); does not replace items 1–15/17–18 or raise CURRENT-RC-PASS
 
 ### Go criteria (restate)

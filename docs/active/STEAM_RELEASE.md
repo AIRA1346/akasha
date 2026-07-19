@@ -355,9 +355,12 @@ BuildIDs from preparation snapshots as live identity):
   Set `AKASHA_STEAM_CONTENT_BUILDER` or the gitignored
   `scripts/steam/steam_content_builder.path` for the machine-local SDK path.
 - Retain upload receipts under the build worktree
-  `build/steam/upload_receipts/` when produced; live identity and Overall Go
-  remain governed by the Acceptance Matrix (still **No-Go** / CURRENT-RC-PASS 0
-  until sealed).
+  `build/steam/upload_receipts/` when produced. Canonical durable copies of the
+  live receipt and pre-upload seal live under
+  [`AKASHA_Product/release-evidence/steam`](../../AKASHA_Product/release-evidence/steam/README.md)
+  (**REL-EVID-01**). Live identity and Overall Go remain governed by the
+  Acceptance Matrix (still **No-Go** / CURRENT-RC-PASS 0 until sealed).
+  Evidence archive presence does **not** clear Commerce CURRENT-RC rows.
 
 Historical pre-upload sandbox notes:
 [STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md](../history/closure-2026-07/STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md).
