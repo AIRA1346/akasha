@@ -1,10 +1,10 @@
 # Steam v1 Release Acceptance Matrix
 
-> **Status:** Active release gate (docs-only SSOT; evidence collection in progress)  
-> **Created:** 2026-07-19  
-> **Baseline Git SHA:** `8f4cf35a0ca1e31b0eb4753fad4e61b6e35dda7f`  
-> **AppID:** `4677560` · **Windows Depot:** `4677561`  
-> **IAP flag (current):** `FeatureFlags.steamInAppPurchasesEnabled = false` (safety gate; not a scope reduction)  
+> **Status:** Active release gate (docs-only SSOT; evidence collection in progress)
+> **Created:** 2026-07-19
+> **Baseline Git SHA:** `8f4cf35a0ca1e31b0eb4753fad4e61b6e35dda7f`
+> **AppID:** `4677560` · **Windows Depot:** `4677561`
+> **IAP flag (current):** `FeatureFlags.steamInAppPurchasesEnabled = false` (safety gate; not a scope reduction)
 > **Related:** [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md) · [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md) · [steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md](steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md) · [CURRENT_STATE.md](CURRENT_STATE.md) · [STEAM_RELEASE.md](STEAM_RELEASE.md)
 
 This matrix is the executable acceptance record for the **single Commerce-inclusive Steam v1** release train. It consolidates the master launch checklist into canonical requirements, links repeated pack/theme scenarios as cases, and keeps full traceability in the appendix.
@@ -32,18 +32,18 @@ This matrix is the executable acceptance record for the **single Commerce-inclus
 
 ### Explicitly in v1 (P0 commerce)
 
-- Steam store launch with real Astra pack sales  
-- Echo playtime rewards  
-- Paid theme unlock via Astra/Echo exchange  
-- Steam Inventory restore after restart and on another PC  
-- Cancel / fail / offline / indeterminate reconciliation  
-- IAP-off rollback build  
+- Steam store launch with real Astra pack sales
+- Echo playtime rewards
+- Paid theme unlock via Astra/Echo exchange
+- Steam Inventory restore after restart and on another PC
+- Cancel / fail / offline / indeterminate reconciliation
+- IAP-off rollback build
 
 ### Deferred / N/A for this train
 
-- Friend-invite Echo, starter Echo promo  
-- Custom MicroTxn / Cloud Run commerce backend  
-- Early Access label, controller support claims  
+- Friend-invite Echo, starter Echo promo
+- Custom MicroTxn / Cloud Run commerce backend
+- Early Access label, controller support claims
 - Vault Steam Cloud sync (assumed unsupported; confirm Steamworks before store parity PASS)
 
 ---
@@ -56,7 +56,7 @@ This matrix is the executable acceptance record for the **single Commerce-inclus
 | Commerce transaction matrix | **No-Go** |
 | Final RC identity | **BLOCKED** (template only; no sealed RC) |
 | Production IAP enablement | **Forbidden** until Current-RC P0 = 100% |
-| Active FAIL count (Current-RC Go math) | **1** — release-scope doc conflict (`REL-SCOPE-01`) |
+| Active FAIL count (Current-RC Go math) | **0** |
 | Historical `store_hidden=true` checkout failure | **Not a current FAIL** — see §10 ledger |
 
 Go requires: every P0 row reaches **CURRENT-RC-PASS** (or justified **N/A**), **FAIL = 0**, **BLOCKED = 0**, and §12 checklist.
@@ -65,7 +65,7 @@ Go requires: every P0 row reaches **CURRENT-RC-PASS** (or justified **N/A**), **
 
 ## 3. RC Identity
 
-> Final RC is **not sealed**. All identity fields below are a **BLOCKED template**.  
+> Final RC is **not sealed**. All identity fields below are a **BLOCKED template**.
 > Past BuildIDs `24240688` and `24015480` are **Historical evidence only** — never counted as Current-RC PASS.
 
 | Identity field | IAP-on candidate RC | IAP-off rollback RC | Status |
@@ -119,14 +119,14 @@ Go requires: every P0 row reaches **CURRENT-RC-PASS** (or justified **N/A**), **
 
 ### Evidence levels (reference)
 
-1. Code presence  
-2. Unit tests  
-3. Widget / integration tests  
-4. Local Release executable manual run  
-5. Staged Steam depot verification  
-6. Steam private-branch downloaded BuildID  
-7. Other PC / other session  
-8. Steamworks web configuration / transaction reports  
+1. Code presence
+2. Unit tests
+3. Widget / integration tests
+4. Local Release executable manual run
+5. Staged Steam depot verification
+6. Steam private-branch downloaded BuildID
+7. Other PC / other session
+8. Steamworks web configuration / transaction reports
 
 Steam RC-required rows must not be promoted to CURRENT-RC-PASS from levels 1–3 alone.
 
@@ -142,7 +142,7 @@ Owner default: Release captain (unset). Environment default: Windows Steam unles
 
 | ID | Requirement | Verify | Status | Evidence | Notes / retest |
 |---|---|---|---|---|---|
-| REL-SCOPE-01 | Active launch docs and flag commentary describe the **Commerce-inclusive** v1 train (not “free / no-IAP forever”) | Doc review | **FAIL** | [STEAM_RELEASE.md](STEAM_RELEASE.md), [privacy.md](privacy.md), `lib/config/feature_flags.dart` comments | **Active blocker.** Docs-only follow-up; do not flip IAP flag in that follow-up |
+| REL-SCOPE-01 | Active launch docs and flag commentary describe the **Commerce-inclusive** v1 train (not “free / no-IAP forever”) | Doc review | IMPLEMENTATION-PASS / UNVERIFIED-RC | Aligned [STEAM_RELEASE.md](STEAM_RELEASE.md), [privacy.md](privacy.md), `lib/config/feature_flags.dart` commentary | Release-scope conflict closed in repository; final Store/RC parity still requires sealed RC verification |
 | REL-SCOPE-02 | `steamInAppPurchasesEnabled` stays `false` until Current-RC commerce P0 passes | Code read @ baseline | IMPLEMENTATION-PASS | `feature_flags.dart` | Retest when enabling IAP in separate change |
 | REL-SCOPE-03 | Rollback train is an IAP-off build: purchase/exchange CTA absent; Inventory stays read-only (no wipe/mutation of Steam balances or entitlements) | Steam RC + local Release | BLOCKED | — | Needs sealed rollback BuildID; see BUILD-09 |
 | CLOUD-01 | Vault Steam Cloud **unsupported** for v1; store page must not claim Cloud; confirm Steamworks setting matches | Steamworks + store | BLOCKED | Assumed local-only ([privacy.md](privacy.md), [STEAM_RELEASE.md](STEAM_RELEASE.md)) | P0 policy row; not CURRENT-RC-PASS until console confirmed |
@@ -293,7 +293,7 @@ Shared rules. Per-pack / per-theme **results** live in §7.
 
 | ID | Requirement | Verify | Status | Evidence | Notes / retest |
 |---|---|---|---|---|---|
-| STORE-01 | Store features ⊆ sealed RC features; no future-as-present | Steamworks + RC | BLOCKED | conflict with free/no-IAP copy until REL-SCOPE-01 fixed | |
+| STORE-01 | Store features ⊆ sealed RC features; no future-as-present | Steamworks + RC | BLOCKED | Repo release-plan copy aligned; Steamworks store fields still pending sealed RC | |
 | STORE-02 | Languages / OS / min specs match tested reality | Steamworks | BLOCKED | — | |
 | STORE-03 | IAP / Astra / Echo / theme structure & prices described accurately when commerce live | Steamworks | BLOCKED | blocked on scope doc fix + RC | |
 | STORE-04 | Local Vault / Markdown / Obsidian compatibility not overstated; absolute claims evidenced | Copy review | UNVERIFIED | — | |
@@ -328,7 +328,7 @@ Shared rules. Per-pack / per-theme **results** live in §7.
 | ERR-03 | Registry failure still allows local vault use | Release UI | IMPLEMENTATION-PASS / UNVERIFIED-RC | production registry is bundled | |
 | ERR-04 | Inventory checking vs offline vs not-owned distinguished; cancelled/failed/rejected/indeterminate distinguished; accepted-but-unknown not treated as safe failure | Sandbox/RC | IMPLEMENTATION-PASS / UNVERIFIED-RC | commerce UI states | |
 | ERR-05 | Error reports exclude persona, SteamID, Vault body, absolute sensitive paths | Diagnostics audit | IMPLEMENTATION-PASS / UNVERIFIED-RC | STEAM-12 | |
-| PRIV-01 | Data location explained; no vault upload to developer servers; Steam platform data per Valve policy | Privacy + store | IMPLEMENTATION-PASS / UNVERIFIED-RC | [privacy.md](privacy.md) | Copy must be updated with commerce scope (REL-SCOPE-01) |
+| PRIV-01 | Data location explained; no vault upload to developer servers; Steam platform data per Valve policy | Privacy + store | IMPLEMENTATION-PASS / UNVERIFIED-RC | [privacy.md](privacy.md) (Commerce-inclusive IAP section) | Store-page privacy link still needs sealed-RC check |
 | PRIV-02 | No unnecessary admin/broad permissions; no analytics without notice (v1: none claimed) | Audit | IMPLEMENTATION-PASS / UNVERIFIED-RC | — | |
 | PRIV-03 | Fonts/images/icons/registry poster rights reviewed for ship | Legal review | UNVERIFIED | artwork provenance docs | |
 | PRIV-04 | Free core without purchase; themes don’t gate Vault | Release RC | IMPLEMENTATION-PASS / UNVERIFIED-RC | Cross-ref COM-SAFE-02 | — |
@@ -480,23 +480,23 @@ Suites map to canonical IDs (not extra Pass/Fail votes). Execute on **sealed Ste
 
 ### Suite S-NEW — New user
 
-Install → Library launch → new Vault → add work → add entity → link → journal → search → quit → relaunch → data OK → KO path → EN path → free theme change → paid Theme Store entry → Steam connection status.  
+Install → Library launch → new Vault → add work → add entity → link → journal → search → quit → relaunch → data OK → KO path → EN path → free theme change → paid Theme Store entry → Steam connection status.
 **Maps:** INST-* · VAULT-* · WORK-* · ENT-* · JRN-* · SRCH-* · L10N-* · SET-01 · STEAM-* · COM-SAFE-02
 
 ### Suite S-EXISTING — Existing user
 
-Prior Vault connect → migration → records + custom YAML kept → edit → external md edit → re-recognize → delete indexes → rebuild → update → rollback preserves Vault.  
+Prior Vault connect → migration → records + custom YAML kept → edit → external md edit → re-recognize → delete indexes → rebuild → update → rollback preserves Vault.
 **Maps:** VAULT-04 · WORK-05 · JRN-05 · SAFE-* · BUILD-08/09
 
 ### Suite S-FAULT — Fault injection
 
-Force-kill during save · readonly file/dir · disk full · moved Vault · yanked USB · OneDrive conflict · Registry N/A · Steam offline · Overlay off · corrupt YAML · JSONL tail damage · conflict copies · leftover staging · stale recovery draft.  
-**Expect:** originals preserved; actionable errors; no crash.  
+Force-kill during save · readonly file/dir · disk full · moved Vault · yanked USB · OneDrive conflict · Registry N/A · Steam offline · Overlay off · corrupt YAML · JSONL tail damage · conflict copies · leftover staging · stale recovery draft.
+**Expect:** originals preserved; actionable errors; no crash.
 **Maps:** SAFE-* · INST-09/10 · STEAM-07 · ERR-*
 
 ### Suite S-BUY — Purchaser
 
-Prices → each pack cancel+complete → exact Astra deltas → restart → PC2 → offline/provider/poll/indeterminate → six theme exchanges → Echo window → refund check → rollback RC CTA off + Inventory read-only.  
+Prices → each pack cancel+complete → exact Astra deltas → restart → PC2 → offline/provider/poll/indeterminate → six theme exchanges → Echo window → refund check → rollback RC CTA off + Inventory read-only.
 **Maps:** §7 all cases · COM-* · REL-SCOPE-03 · BUILD-09
 
 ---
@@ -514,7 +514,7 @@ Prices → each pack cancel+complete → exact Astra deltas → restart → PC2 
 | `40110–40112` store_hidden | `false` | local true; remote 40111/12 pending per active docs | BLOCKED |
 | `40001` store_hidden | `true` | local JSON | IMPLEMENTATION-PASS (candidate) |
 | Steam Cloud for Vault | **Off / unsupported** | not confirmed in console from this audit | BLOCKED (`CLOUD-01`) |
-| Store IAP disclosure | Accurate when commerce ships | conflicts with free/no-IAP SSOT | FAIL via REL-SCOPE-01 |
+| Store IAP disclosure | Accurate when commerce ships | Repo plan aligned; Steamworks store pending sealed RC | BLOCKED |
 | Default branch BuildID | Sealed Go RC only | `24015480` historical | BLOCKED |
 
 ---
@@ -581,8 +581,8 @@ Master checklist §5.x → Matrix IDs. Every master bullet is covered by at leas
 
 ### Traceability coverage statement
 
-- Master sections **5.1–5.21**: **100%** mapped (canonical, case, suite, or N/A/deferred).  
-- Commerce master bullets that repeat per pack/theme: covered once in **COM-*** + results in **CASE-***.  
+- Master sections **5.1–5.21**: **100%** mapped (canonical, case, suite, or N/A/deferred).
+- Commerce master bullets that repeat per pack/theme: covered once in **COM-*** + results in **CASE-***.
 - Deferred invite Echo / custom backend: **N/A** via release profile (not Commerce N/A abuse—explicitly out of train).
 
 ---
@@ -600,63 +600,62 @@ Master checklist §5.x → Matrix IDs. Every master bullet is covered by at leas
 | Commerce cases (§7, non-canonical) | **29** unique CASE IDs = **29** result rows |
 | Manual suites | **4** (`S-NEW`, `S-EXISTING`, `S-FAULT`, `S-BUY`) |
 | CURRENT-RC-PASS | **0** |
-| IMPLEMENTATION-PASS (incl. `/ UNVERIFIED-RC`) | **86** |
+| IMPLEMENTATION-PASS (incl. `/ UNVERIFIED-RC`) | **87** |
 | HISTORICAL-PASS | **7** |
 | UNVERIFIED | **60** |
 | BLOCKED | **18** |
-| FAIL | **1** (`REL-SCOPE-01` only) |
+| FAIL | **0** |
 | N/A | **6** (all P1/P2; **P0 N/A = 0**; **COM-* N/A = 0**) |
 
-> Status tallies count **canonical rows only** (§5–§6).  
-> **Go PASS math uses CURRENT-RC-PASS only.** IMPLEMENTATION-PASS and HISTORICAL-PASS never count toward Go.  
-> Case rows (§7) are tracked separately and must all reach CURRENT-RC-PASS (or BLOCKED cleared) before commerce Go.  
+> Status tallies count **canonical rows only** (§5–§6).
+> **Go PASS math uses CURRENT-RC-PASS only.** IMPLEMENTATION-PASS and HISTORICAL-PASS never count toward Go.
+> Case rows (§7) are tracked separately and must all reach CURRENT-RC-PASS (or BLOCKED cleared) before commerce Go.
 > With CURRENT-RC-PASS = 0, overall verdict remains **No-Go**.
 
 ### Active FAIL
 
-1. **REL-SCOPE-01** — Commerce-first v1 vs free/no-IAP narrative in `STEAM_RELEASE.md`, `privacy.md`, and feature-flag commentary.
+None. Repository release-scope conflict (`REL-SCOPE-01`) closed; remaining work is sealed-RC / Steamworks evidence.
 
 ### Top blockers (execution order)
 
-1. REL-SCOPE-01 — docs conflict FAIL  
-2. RC-ID seal — §3 template BLOCKED  
-3. CLOUD-01 — Steamworks Cloud setting confirm  
-4. STEAM-09 — Overlay Software publish evidence  
-5. COM-ID-02 / CASE-ASTRA-40111/40112 — remote `store_hidden=false` + checkout  
-6. CASE-ASTRA-40110 cancel/complete/exact +500  
-7. CASE-ASTRA-40111 cancel/complete/exact +1000  
-8. CASE-ASTRA-40112 cancel/complete/exact +2500  
-9. COM-REST-01 — restart inventory  
-10. COM-REST-02 / CASE-FAIL-PC2-RECON — second PC  
-11. Theme exchanges CASE-EX-SAKURA-ASTRA … CASE-EX-NOCTURNE-ECHO (6 paths)  
-12. Echo window CASE-ECHO-BEFORE … CASE-ECHO-RECON  
-13. Failure/recovery CASE-FAIL-OFFLINE … CASE-FAIL-REFUND  
-14. BUILD-09 / REL-SCOPE-03 — IAP-off rollback rehearsal (CTA off, Inventory read-only)  
-15. L10N-01…07 — full KO/EN RC audit  
-16. STORE-01…03 — store parity after scope fix  
-17. BUILD-01 — default/review branch Set Live on sealed RC  
-18. COM-SAFE-01 — Release binary audit on sealed IAP-on + rollback  
-19. EV-EXT-RELEASE — relocate external evidence root  
-20. Reviewed change to set `steamInAppPurchasesEnabled=true` (**always last**; never before items 1–19)
+1. RC-ID seal — §3 template BLOCKED
+2. CLOUD-01 — Steamworks Cloud setting confirm
+3. STEAM-09 — Overlay Software publish evidence
+4. COM-ID-02 / CASE-ASTRA-40111/40112 — remote `store_hidden=false` + checkout
+5. CASE-ASTRA-40110 cancel/complete/exact +500
+6. CASE-ASTRA-40111 cancel/complete/exact +1000
+7. CASE-ASTRA-40112 cancel/complete/exact +2500
+8. COM-REST-01 — restart inventory
+9. COM-REST-02 / CASE-FAIL-PC2-RECON — second PC
+10. Theme exchanges CASE-EX-SAKURA-ASTRA … CASE-EX-NOCTURNE-ECHO (6 paths)
+11. Echo window CASE-ECHO-BEFORE … CASE-ECHO-RECON
+12. Failure/recovery CASE-FAIL-OFFLINE … CASE-FAIL-REFUND
+13. BUILD-09 / REL-SCOPE-03 — IAP-off rollback rehearsal (CTA off, Inventory read-only)
+14. L10N-01…07 — full KO/EN RC audit
+15. STORE-01…03 — store parity on sealed RC
+16. BUILD-01 — default/review branch Set Live on sealed RC
+17. COM-SAFE-01 — Release binary audit on sealed IAP-on + rollback
+18. EV-EXT-RELEASE — relocate external evidence root
+19. Reviewed change to set `steamInAppPurchasesEnabled=true` (**always last**; never before items 1–18)
 
 ### Go criteria (restate)
 
-- P0 canonical: **100% CURRENT-RC-PASS** (justified N/A only if Applicability locks it out; none today)  
-- FAIL **0** · BLOCKED **0**  
-- **Only CURRENT-RC-PASS counts as Go PASS** — IMPLEMENTATION-PASS / HISTORICAL-PASS / UNVERIFIED do not  
-- Historical BuildIDs `24240688` / `24015480` are never final-RC evidence  
-- All 29 §7 commerce CASE rows CURRENT-RC-PASS on sealed RC (+ PC2 where required)  
-- Suites S-NEW / S-EXISTING / S-FAULT / S-BUY executed on Steam-downloaded RC  
-- Data-loss **0** on fault suite  
-- Debug/Sandbox/Consume/Reset/POC absent on Release  
-- Store languages/features/images match RC  
-- IAP-off rollback RC rehearsed (CTA off; Inventory read-only preserved)  
-- RC Identity + Steamworks snapshots sealed  
+- P0 canonical: **100% CURRENT-RC-PASS** (justified N/A only if Applicability locks it out; none today)
+- FAIL **0** · BLOCKED **0**
+- **Only CURRENT-RC-PASS counts as Go PASS** — IMPLEMENTATION-PASS / HISTORICAL-PASS / UNVERIFIED do not
+- Historical BuildIDs `24240688` / `24015480` are never final-RC evidence
+- All 29 §7 commerce CASE rows CURRENT-RC-PASS on sealed RC (+ PC2 where required)
+- Suites S-NEW / S-EXISTING / S-FAULT / S-BUY executed on Steam-downloaded RC
+- Data-loss **0** on fault suite
+- Debug/Sandbox/Consume/Reset/POC absent on Release
+- Store languages/features/images match RC
+- IAP-off rollback RC rehearsed (CTA off; Inventory read-only preserved)
+- RC Identity + Steamworks snapshots sealed
 - Only then consider separate change to `steamInAppPurchasesEnabled=true`
 
-### Next approved docs-only follow-up (not this change)
+### Scope-alignment note
 
-Align [STEAM_RELEASE.md](STEAM_RELEASE.md), [privacy.md](privacy.md), and `feature_flags.dart` comments with Commerce-inclusive v1 — **without** enabling IAP.
+Repository release-scope docs and flag commentary were aligned to Commerce-inclusive v1 on branch `docs/steam-v1-commerce-scope-alignment` (authoring baseline Matrix tip `94905aab` remains the prior seal point). IAP flag value unchanged (`false`).
 
 ---
 
@@ -665,7 +664,7 @@ Align [STEAM_RELEASE.md](STEAM_RELEASE.md), [privacy.md](privacy.md), and `featu
 | Item | Value |
 |---|---|
 | Matrix path | `docs/active/STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md` |
-| Authoring baseline | `8f4cf35a` |
+| Authoring baseline | `8f4cf35a` (Matrix creation); ItemDef hash fix `94905aab` |
 | Sandbox worktree | Untouched by this revision |
 | IAP flag | Remains `false` |
-| Changelog | 2026-07-19 — initial matrix from approved audit · ItemDef SHA corrected to LF/git-canonical `9653df26…` (CRLF `BB20770F…` demoted to non-authoritative) |
+| Changelog | 2026-07-19 — initial matrix · ItemDef LF-canonical SHA · **REL-SCOPE-01** closed after Commerce-first scope alignment (`STEAM_RELEASE` / `privacy` / flag commentary); FAIL 0; overall No-Go unchanged |

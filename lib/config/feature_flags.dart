@@ -1,10 +1,19 @@
 /// v1 출시 범위 플래그 — 스토어 스코프와 UI 노출을 맞춥니다.
 class FeatureFlags {
-  /// Steam Wallet / microtxn 인앱 구매.
+  /// Steam Wallet production purchase / exchange entry points.
   ///
-  /// **false = 미구현.** Store Page에 IAP를 표시하거나 재심사에서 구매가
-  /// 있다고 주장하지 않는다. Inventory POC / GetReport 증거가 검증되기 전에
-  /// true로 올리지 말 것. 트랙: docs/active/STEAM_SERVICE_RELEASE_READINESS.md
+  /// **false = current production transaction entry points disabled**
+  /// (safety gate). Steam v1 **release scope includes Commerce** (Astra packs,
+  /// paid themes, Echo rewards, Inventory restore). A build with this flag
+  /// false must not be submitted or marketed as a Commerce-enabled final RC,
+  /// and must not claim live purchase availability.
+  ///
+  /// Set **true** only in a **separate reviewed change** after
+  /// docs/active/STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md Commerce P0 and
+  /// IAP-off rollback evidence pass. Enabling IAP is out of scope for
+  /// docs-only alignment work.
+  ///
+  /// Track: docs/active/STEAM_SERVICE_RELEASE_READINESS.md
   /// Historical POC: docs/history/closure-2026-07/steam_inventory_poc/README.md
   static const bool steamInAppPurchasesEnabled = false;
 
@@ -12,7 +21,8 @@ class FeatureFlags {
   ///
   /// Enable only with
   /// `--dart-define=AKASHA_STEAM_SANDBOX_TRANSACTIONS=true` in a reviewed
-  /// Steamworks developer build. This does not change the release IAP claim.
+  /// Steamworks developer build. Sandbox defines are **not** release IAP
+  /// enablement and do not authorize public purchase claims.
   static const bool steamInventorySandboxTransactionsEnabled =
       bool.fromEnvironment(
         'AKASHA_STEAM_SANDBOX_TRANSACTIONS',
@@ -21,8 +31,9 @@ class FeatureFlags {
 
   /// Independent gate for Steam-verified Echo playtime reward evaluation.
   ///
-  /// This does not enable purchases. Steam remains the eligibility and daily
-  /// window authority; the app only calls TriggerItemDrop and reconciles.
+  /// Sandbox/reward defines are not release IAP enablement. Steam remains the
+  /// eligibility and daily window authority; the app only calls
+  /// TriggerItemDrop and reconciles.
   static const bool steamInventoryPlaytimeRewardsEnabled = bool.fromEnvironment(
     'AKASHA_STEAM_PLAYTIME_REWARDS',
     defaultValue: false,

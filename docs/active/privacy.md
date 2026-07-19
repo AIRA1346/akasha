@@ -1,6 +1,6 @@
 # AKASHA Privacy Policy
 
-> **Effective:** 2026-07-18
+> **Effective:** 2026-07-19
 > **Developer:** Rune Atelier  
 > **Contact:** GitHub Issues on [akasha](https://github.com/AIRA1346/akasha) (or your support email when published)
 
@@ -49,7 +49,15 @@ Steam may collect platform data per [Valve's privacy policy](https://store.steam
 
 ## In-app purchases
 
-AKASHA v1 launches as a free app and does not rely on paid IAP. If cosmetic/supporter purchases are enabled later, purchases will be processed by **Steam**. Rune Atelier does not receive your payment card details.
+AKASHA’s **base app is free**. Steam v1 includes optional **cosmetic** in-app purchases (Astra currency packs and paid theme packages).
+
+- Astra purchases are processed through the **Steam Wallet**.
+- Rune Atelier does **not** receive your payment card or other payment-instrument details.
+- **Steam Inventory** is the account authority for Astra balances, Echo balances, and theme entitlements. The app reads Inventory results to show balances and ownership.
+- Your personal vault contents are **not** uploaded for purchase processing.
+- Rune Atelier does **not** operate its own payment server or an external checkout path around Steam.
+
+Steam platform processing of purchases and Inventory follows [Valve’s privacy policy](https://store.steampowered.com/privacy_agreement/).
 
 ---
 
