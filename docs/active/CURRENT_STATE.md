@@ -3,10 +3,11 @@
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
 > **원칙:** [AKASHA_ARCHIVE_CONSTITUTION.md](AKASHA_ARCHIVE_CONSTITUTION.md) — 구현이 원칙과 충돌하면 구현·본 문서를 교정한다.
 > **제품 범위:** [VISION.md](VISION.md)
-> **갱신:** 2026-07-18
+> **갱신:** 2026-07-19
 > **Git:** `git rev-parse HEAD` (문서 커밋 tip과 어긋나면 tip을 따름)
 >
-> **Verification snapshot (2026-07-18):**
+> **Verification snapshot (2026-07-19):**
+> - **Steam/build identity hardening** — `ae18be4c` `build(steam): reject personal paths in binary payloads` (binary payload scan · personal/repo path · credential content). `codex/build-identity-ui` remote tip sealed. Temporary worktrees 5개 종료 · remaining worktree = canonical repository only. Steam release evidence sealed at `AKASHA_Product/release-evidence/steam` · `depot_windows` binary stage intentionally not retained. IAP release gate unchanged (`steamInAppPurchasesEnabled=false`). Worktree closure ≠ Steam IAP readiness.
 > - **Registry full-bundle Phase 0–2** — 10,048 works · v4 JSON shard 1,713개 전체 asset · read-only source/staging builder · root/search provenance · deterministic double-build/allowlist/SHA/scale gate · production `BundledRegistrySource` only. 검색·browse·category·상세에서 registry CDN 호출과 remote fallback은 0이며, 기존 registry cache와 sync/URL preference만 1회 멱등 무효화한다. 사용자 Vault는 migration 대상이 아니다.
 > - P0 recoverable Vault write · SA-01/02/03 derived-index foundation
 > - P1 local CLI: bounded `record lookup`/`record read` · user-started `candidate.create`
