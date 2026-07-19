@@ -1,8 +1,11 @@
 # AppDomain (서브컬처 / 일반 문화) 폐기 계획
 
-> **지위:** `AppDomain` 제거 로드맵 SSOT  
-> **갱신:** 2026-06-24  
-> **배경:** Registry 98.4% `subculture` · VISION은 PKU(작품→Entity) · category가 1차 축
+> **Status:** Historical closure snapshot  
+> **Completed:** Phase 1–4  
+> **갱신 (원문):** 2026-06-24  
+> **배경:** Registry 98.4% `subculture` · VISION은 PKU(작품→Entity) · category가 1차 축  
+> **Current compatibility and removal gates:** [CURRENT_STATE.md](../../active/CURRENT_STATE.md) ·
+> [LEGACY_REMOVAL_POLICY.md](../../active/LEGACY_REMOVAL_POLICY.md)
 
 ---
 

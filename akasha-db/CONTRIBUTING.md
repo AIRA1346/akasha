@@ -38,7 +38,7 @@ dart run tool/apply_catalog_contributions.dart --import path/to/bundle.json
 ## 작품 1건 추가 체크리스트
 
 - [ ] `workId`가 기존 항목과 **중복되지 않음** (동일 작품·externalId 재확인)
-- [ ] `category` enum 값 준수 (`domain`은 deprecated — [DOMAIN_DEPRECATION_PLAN](../docs/active/DOMAIN_DEPRECATION_PLAN.md))
+- [ ] `category` enum 값 준수 (`domain`은 deprecated — [DOMAIN_DEPRECATION_PLAN](../docs/history/closure-2026-07/DOMAIN_DEPRECATION_PLAN.md) · historical; compatibility: [LEGACY_REMOVAL_POLICY](../docs/active/LEGACY_REMOVAL_POLICY.md) §4b)
 - [ ] **`description`·`posterPath` 추가 금지** (v1 — [POSTER_POLICY.md](POSTER_POLICY.md) · [VISION.md](../docs/active/VISION.md))
 - [ ] 같은 IP의 다른 매체는 `franchise_groups.json` 확인
 - [ ] `registry_builder` + `registry_bundle_builder --bundle-all` + `ci_registry_check` 통과

@@ -120,6 +120,20 @@
 
 ---
 
+## 4b. AppDomain compatibility (post-deprecation)
+
+Completed plan (historical): [DOMAIN_DEPRECATION_PLAN.md](../history/closure-2026-07/DOMAIN_DEPRECATION_PLAN.md).
+Domain UI/runtime removal is done; the following remain required for vault and
+registry compatibility and are **not** M3 removal targets:
+
+| 항목 | 이유 |
+|------|------|
+| `AkashaItem.domain` · YAML `domain:` | 읽기 시 `AppDomain.fromStorage` → subculture |
+| `WorkIdCodec` `sub_`/`gen_` | 레거시 마스터 ID |
+| `RegistryWork.domain` | Tier 1 필드 — 값은 항상 subculture |
+
+---
+
 ## 5. 제거 PR 체크리스트
 
 제거 PR을 열기 전:

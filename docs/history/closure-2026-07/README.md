@@ -18,6 +18,8 @@
 - 대체된 `PROJECT_STATUS`와 constitution stub
 - [ux-discovery/](ux-discovery/README.md) — UX Recovery / R3–R5 / R14 감사·보고 (2026-07-19 draft 이관)
 - [foundation/](foundation/README.md) — Foundation F0–F4 감사 스냅샷 (2026-07-19 draft 이관)
+- [DOMAIN_DEPRECATION_PLAN.md](DOMAIN_DEPRECATION_PLAN.md) — completed AppDomain deprecation plan (2026-07-20 active 이관)
+- [STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md](STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md) — historical commerce-sandbox SteamPipe preparation (2026-07-20 active 이관)
 
 현재 권위 문서는 [docs 문서 인덱스](../../README.md)와
 [CURRENT_STATE.md](../../active/CURRENT_STATE.md)를 따른다.

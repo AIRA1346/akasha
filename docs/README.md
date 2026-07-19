@@ -14,8 +14,8 @@
 | 구현 현실 | [Current State](active/CURRENT_STATE.md), [Architecture](active/ARCHITECTURE.md), [Roadmap](active/ROADMAP.md) |
 | Vault 형식·프로토콜 | [Vault Format v3](active/AKASHA_VAULT_FORMAT_SPECIFICATION_V3.md), [Agent Vault Protocol](active/AGENT_VAULT_PROTOCOL_V1.md), [Vault Agent Guide](active/VAULT_AGENT_GUIDE.md), [Local Agent Command Protocol](active/LOCAL_AGENT_COMMAND_PROTOCOL.md) |
 | Archive 계약 ADR | [AI Write Gateway](active/AI_ARCHIVE_WRITE_GATEWAY_ADR.md), [Provenance](active/PROVENANCE_AND_DERIVED_INPUT_ADR.md), [Relation Tiers](active/RELATION_TIERS_AND_ASSERTIONS_ADR.md), [Lifecycle](active/LIFECYCLE_TOMBSTONE_SUPERSESSION_ADR.md), [Extension Namespace](active/EXTENSION_NAMESPACE_AND_RESERVED_FIELDS_ADR.md), [Gateway Permission](active/GATEWAY_PERMISSION_AND_RECEIPT_ADR.md) |
-| 활성 보강 계획 | [Infinite Archive Hardening](active/INFINITE_ARCHIVE_HARDENING_PLAN.md), [Agent Entity Creation and Scale](active/AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md), [Domain Deprecation](active/DOMAIN_DEPRECATION_PLAN.md) |
-| 현재 release gate | [Steam Service Release Readiness](active/STEAM_SERVICE_RELEASE_READINESS.md), [Steam Release](active/STEAM_RELEASE.md), [Commerce Contract](active/COMMERCE_CURRENCY_CONTRACT.md), [Steam inventory production](active/steam_inventory_production/README.md) |
+| 활성 보강 계획 | [Infinite Archive Hardening](active/INFINITE_ARCHIVE_HARDENING_PLAN.md), [Agent Entity Creation and Scale](active/AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) |
+| 현재 release gate | [Steam Service Release Readiness](active/STEAM_SERVICE_RELEASE_READINESS.md), [Steam Release](active/STEAM_RELEASE.md), [Steam v1 Acceptance Matrix](active/STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md), [Commerce Contract](active/COMMERCE_CURRENCY_CONTRACT.md), [Steam inventory production](active/steam_inventory_production/README.md), [Sandbox Transaction Checklist](active/steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md) |
 | UX 계약 | [UX Design System](active/UX_DESIGN_SYSTEM.md), [Theme Regression Matrix](active/UX_THEME_REGRESSION_MATRIX.md) |
 | 제거 게이트 | [Legacy Removal Policy](active/LEGACY_REMOVAL_POLICY.md) |
 | 저장소 경계·정책 | [Research Boundary](active/RESEARCH_BOUNDARY.md), [Privacy](active/privacy.md) |
@@ -29,7 +29,7 @@
 | [Steam Runtime Execution Contract](steam/STEAM_RUNTIME_EXECUTION_CONTRACT.md) | AppID, Overlay, `steam_appid.txt`, release payload 경계 (commerce 범위 밖) |
 | [Windows Steam Development](steam/WINDOWS_STEAM_DEVELOPMENT.md) | `tool/run_windows_steam_dev.ps1` 등 로컬 Steam-library 개발 가이드 |
 
-Release/commerce SSOT: [STEAM_SERVICE_RELEASE_READINESS.md](active/STEAM_SERVICE_RELEASE_READINESS.md) · [STEAM_RELEASE.md](active/STEAM_RELEASE.md) · [steam_inventory_production](active/steam_inventory_production/README.md).
+Release/commerce SSOT: [STEAM_SERVICE_RELEASE_READINESS.md](active/STEAM_SERVICE_RELEASE_READINESS.md) · [STEAM_RELEASE.md](active/STEAM_RELEASE.md) · [STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](active/STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md) · [steam_inventory_production](active/steam_inventory_production/README.md) · [SANDBOX_TRANSACTION_CHECKLIST.md](active/steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md).
 
 ## Architecture
 
@@ -69,6 +69,8 @@ Ownership Audit·Agent Vault UI Dogfood Review는 `history/`로 이동했다 (�
 
 - [closure-2026-07/ux-discovery](history/closure-2026-07/ux-discovery/README.md) — UX Recovery / R3–R5 / R14 · Agent Vault UI dogfood
 - [closure-2026-07/foundation](history/closure-2026-07/foundation/README.md) — Foundation F0–F4 audit
+- [DOMAIN_DEPRECATION_PLAN.md](history/closure-2026-07/DOMAIN_DEPRECATION_PLAN.md) — completed domain deprecation plan
+- [STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md](history/closure-2026-07/STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md) — historical commerce sandbox upload preparation
 - [programs/discovery-r6-r13](history/programs/discovery-r6-r13/README.md) — Discovery R6–R13
 - [programs/canvas-editor](history/programs/canvas-editor/README.md) — Canvas B.1 completed plan
 - [programs/akasha-db-ownership](history/programs/akasha-db-ownership/README.md) — akasha-db ownership A/B/C audit snapshot

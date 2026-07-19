@@ -312,9 +312,10 @@ Aligned order (detail in the Acceptance Matrix):
 2. Collect Matrix P0 evidence on a Steam-downloaded private-branch RC (not only a local exe).
 3. Keep **IAP-on** live identity (`5e95fefe` / `24282729`) recorded; seal a separate **IAP-off rollback** RC from source `0ce9e052` and rehearse rollback (CTA off; Inventory read-only).
 4. Capture screenshots from the Steam-installed live RC (demo/owned/generated assets only).
-5. For later uploads: stage depot (`prepare_steam_depot.ps1`), verify manifest (`steam_appid.txt` / PDB excluded), upload via SteamPipe.
-   For commerce sandbox contracts see
-   [STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md](steam_inventory_production/STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md).
+5. For later uploads: follow §7b SteamPipe local contract
+   (`prepare_steam_depot.ps1` → validate → `upload_steam_build.ps1`). Historical
+   commerce-sandbox preparation notes:
+   [STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md](../history/closure-2026-07/STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md).
 6. Confirm remote ItemDef publication vs LF canonical candidate; retain Steamworks revision/time.
 7. Complete Matrix Commerce P0 + rollback evidence on the Steam-installed live RC.
 8. Default Set Live for BuildID `24282729` — **Operator-confirmed** (already done; not automatic Overall Go).
@@ -322,6 +323,37 @@ Aligned order (detail in the Acceptance Matrix):
 10. After approval and required Coming Soon time, use Steamworks release controls for public launch timing.
 
 Do not treat historical BuildIDs `24015480` / `24240688` as the current default-live identity.
+
+### 7b. SteamPipe local contract (current ops)
+
+Current packaging rules (do not use historical staged-file counts or past
+BuildIDs from preparation snapshots as live identity):
+
+| Setting | Value |
+|---|---|
+| ContentRoot / upload stage | `build/steam/depot_windows` only |
+| Exclusions | `steam_appid.txt`, `*.pdb` (stage + VDF) |
+| Internal verify manifest | `build/steam/manifests/depot_windows.json` (not read by SteamCMD) |
+| App / depot VDF (commerce-sandbox track) | `scripts/steam/app_build_4677560_commerce_sandbox.vdf` · `scripts/steam/depot_build_4677561.vdf` |
+| Stage | `scripts/steam/prepare_steam_depot.ps1` |
+| Validate | `scripts/steam/validate_steam_pipe_config.ps1` |
+| Upload wrapper | `scripts/steam/upload_steam_build.ps1` |
+
+- VDF `ContentRoot` resolves relative to `scripts/steam` to
+  `<repository>\build\steam\depot_windows`.
+- Do not upload from Steamworks SDK `output\_akasha_app_build.vdf` /
+  `_akasha_depot_build.vdf` (they point at raw Flutter Release, not the verified
+  stage).
+- Do not store Steam account passwords or Steam Guard codes in the repository.
+  Set `AKASHA_STEAM_CONTENT_BUILDER` or the gitignored
+  `scripts/steam/steam_content_builder.path` for the machine-local SDK path.
+- Retain upload receipts under the build worktree
+  `build/steam/upload_receipts/` when produced; live identity and Overall Go
+  remain governed by the Acceptance Matrix (still **No-Go** / CURRENT-RC-PASS 0
+  until sealed).
+
+Historical pre-upload sandbox notes:
+[STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md](../history/closure-2026-07/STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md).
 
 ### Upload Log
 

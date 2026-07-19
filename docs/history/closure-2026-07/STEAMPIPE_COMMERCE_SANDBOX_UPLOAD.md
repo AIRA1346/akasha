@@ -1,8 +1,14 @@
 # SteamPipe Commerce Sandbox Upload
 
-> **Status:** upload configuration prepared and locally validated
+> **Status:** Historical upload-preparation snapshot.
+> This document records the pre-upload sandbox state and is **not** the current
+> release operations contract. Current release status is governed by
+> [STEAM_RELEASE.md](../../active/STEAM_RELEASE.md),
+> [STEAM_SERVICE_RELEASE_READINESS.md](../../active/STEAM_SERVICE_RELEASE_READINESS.md),
+> and [STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](../../active/STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md).
 >
-> **Upload executed by this task:** no
+> **Original task status (preserved):** upload configuration prepared and
+> locally validated · **Upload executed by this task:** no
 >
 > **AppID:** `4677560`
 >
