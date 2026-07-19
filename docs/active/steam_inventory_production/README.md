@@ -136,7 +136,13 @@ Internal transaction/reward builds use
 `--dart-define=AKASHA_STEAM_SANDBOX_TRANSACTIONS=true` and
 `--dart-define=AKASHA_STEAM_PLAYTIME_REWARDS=true` through
 [`scripts/build_steam_inventory_sandbox.ps1`](../../../scripts/build_steam_inventory_sandbox.ps1).
-Neither define changes `steamInAppPurchasesEnabled`, which remains false.
+Those defines do not themselves flip `steamInAppPurchasesEnabled`. The current
+live train already has `steamInAppPurchasesEnabled = true` (BuildID `24282729`
+includes that code state). Flag enablement is not production transaction
+acceptance — commerce remains **No-Go** until CURRENT-RC transaction and
+recovery evidence required by
+[`../STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md`](../STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md)
+is sealed.
 
 ## Astra unit price and direct-purchase probe
 
@@ -183,7 +189,8 @@ pack checkout failure.
    denied in the same 1,440-minute window.
 7. Complete every transaction, reward, recovery, restart, and second-PC row in
    the sandbox checklist.
-8. Enable release IAP only in a separate reviewed change.
+8. Treat the checklist and Acceptance Matrix CURRENT-RC rows as incomplete until
+   sealed; do not treat live-train IAP flag enablement as Overall Go.
 
 Uploading or publishing ItemDefs is an external Steamworks action and is never
 performed by repository tests.

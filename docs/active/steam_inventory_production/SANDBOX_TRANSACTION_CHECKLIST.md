@@ -3,10 +3,14 @@
 > **Status:** `40110.store_hidden=false` A/B opened Steam checkout; apply the
 > confirmed sale-bundle visibility rule to `40111-40112` and complete the
 > cancel/complete/reconciliation matrix
-> **Release IAP:** disabled
+> **Current live train:** IAP-enabled (`steamInAppPurchasesEnabled = true` on
+> BuildID `24282729`). Checklist status: transaction acceptance incomplete.
+> This checklist does **not** establish production commerce readiness or Overall
+> Go.
 > **Build:** `scripts/build_steam_inventory_sandbox.ps1`
 > **ItemDefs:** `itemdefs_steamworks_upload.json`
 > **Readiness gate:** [`../STEAM_SERVICE_RELEASE_READINESS.md`](../STEAM_SERVICE_RELEASE_READINESS.md)
+> **Acceptance Matrix:** [`../STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md`](../STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md)
 
 This checklist verifies the guarded production adapter. It does not replace the
 historical POC and does not authorize release commerce.
@@ -51,9 +55,11 @@ or SteamPipe change. Keep `40001.store_hidden=true`, publish
 `40110-40112.store_hidden=false`, and retain **Copy Steam diagnostics** for each
 remaining cancel/complete test.
 
-Do not set `steamInAppPurchasesEnabled=true`. The internal build enables only
-`AKASHA_STEAM_SANDBOX_TRANSACTIONS` and
-`AKASHA_STEAM_PLAYTIME_REWARDS`.
+For this sandbox checklist build path, use the internal defines
+`AKASHA_STEAM_SANDBOX_TRANSACTIONS` and `AKASHA_STEAM_PLAYTIME_REWARDS` rather
+than treating a source edit of `steamInAppPurchasesEnabled` as part of the
+checklist. The separate live train already has production IAP enabled; that
+does not complete or waive this checklist.
 
 ## 2. Astra pack matrix
 
@@ -184,6 +190,8 @@ inventory reconciliation establishes the outcome.
 - screenshots for cancel, confirmed, insufficient, no-grant, and indeterminate
   states.
 
-Only after this checklist and the release gates in
-`../COMMERCE_CURRENCY_CONTRACT.md` pass may a separate reviewed change consider
-enabling release IAP.
+This checklist and the release gates in
+`../COMMERCE_CURRENCY_CONTRACT.md` must be completed before CURRENT-RC commerce
+acceptance or an Overall Go decision under
+`../STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md`. Flag enablement alone does not
+satisfy those gates.

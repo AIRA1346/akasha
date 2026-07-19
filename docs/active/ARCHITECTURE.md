@@ -2,7 +2,7 @@
 
 > **상태:** 설계 확정 v2 · **v4 full-bundle 런타임 운영 중** (10,048 works · 1,713 shards)
 > **기준일:** 2026-07-18
-> **제품·포스터 SSOT:** [VISION.md](VISION.md) · **아카이빙 북극성:** [history/product/ultimate-archiving-vision.md](../history/product/ultimate-archiving-vision.md)
+> **제품·포스터 SSOT:** [VISION.md](VISION.md) · **아카이빙 장기 비전 (historical rationale):** [history/product/ultimate-archiving-vision.md](../history/product/ultimate-archiving-vision.md)
 
 관련: [history/policy/akasha-db-policy.md](../history/policy/akasha-db-policy.md) · [history/policy/catalog-ownership.md](../history/policy/catalog-ownership.md) · [ROADMAP.md](ROADMAP.md) · [INFINITE_ARCHIVE_HARDENING_PLAN.md](INFINITE_ARCHIVE_HARDENING_PLAN.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](../history/closure-2026-07/ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md)
 
@@ -27,7 +27,7 @@
 
 ### 0.1 최종 비전
 
-> **제품 SSOT:** [ultimate-archiving-vision.md](../history/product/ultimate-archiving-vision.md) — 아래는 인프라 문서 관점 요약.
+> **제품 SSOT:** [VISION.md](VISION.md) · **prior vision baseline (historical):** [ultimate-archiving-vision.md](../history/product/ultimate-archiving-vision.md) — 아래는 인프라 문서 관점 요약.
 
 **AKASHA = 지식 정보(Entity Anchor) + 나만의 일기(Subjective Journal) + 시각적 감상(Appreciation) + 외부 도구/AI가 읽을 수 있는 지식 그래프**
 
@@ -321,7 +321,7 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 
 ## 7. 엔티티 및 저널이 「저장」되는 경로 (감상 융합)
 
-> **제품·로드맵 SSOT:** [ultimate-archiving-vision.md](../history/product/ultimate-archiving-vision.md) §3–§6
+> **제품 SSOT:** [VISION.md](VISION.md) · **decision background (historical):** [ultimate-archiving-vision.md](../history/product/ultimate-archiving-vision.md) §3–§6
 
 ### 7.1 레지스트리에 추가 (공식 사전 - 객체 닻)
 
@@ -460,10 +460,10 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 | [VISION.md](VISION.md) | **제품·Tier 1/2 SSOT** |
 | [README.md](../README.md) | 「전 작품 사전」목표, 현재 엄선 단계 |
 | [ROADMAP.md](ROADMAP.md) | 출시·데이터 백로그 |
-| [akasha-db-policy.md](../history/policy/akasha-db-policy.md) | 구축·운영·법무 마스터 |
-| [canonicalization-policy.md](../history/policy/canonicalization-policy.md) | identity·dedupe 규칙 |
-| [catalog-ownership.md](../history/policy/catalog-ownership.md) | 3계층·소유권 |
-| [v4-migration-plan.md](../history/v4-migration-plan.md) | **Steam 전 실행 계획** |
+| [akasha-db-policy.md](../history/policy/akasha-db-policy.md) | historical policy snapshot — 구축·운영·법무 |
+| [canonicalization-policy.md](../history/policy/canonicalization-policy.md) | historical policy snapshot — identity·dedupe |
+| [catalog-ownership.md](../history/policy/catalog-ownership.md) | historical policy snapshot — 3계층·소유권 |
+| [v4-migration-plan.md](../history/v4-migration-plan.md) | completed execution plan / superseded baseline (v4 런타임 이전) |
 | [akasha-db/SCHEMA.md](../../akasha-db/SCHEMA.md) | v3 현재 · v4 `wk_`·해시 샤드 |
 
 ---

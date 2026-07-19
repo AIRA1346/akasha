@@ -1,7 +1,7 @@
 # Legacy Removal Policy — Foundation F4
 
-> **일자:** 2026-06-25
-> **지위:** active removal-gate contract — `TODO(remove)` 9건 제거 조건 SSOT
+> **일자:** 2026-06-25 · marker inventory note 2026-07-20
+> **지위:** active removal-gate contract — `TODO(remove)` 제거 조건 SSOT
 > **상위:** [FOUNDATION_AUDIT.md](../history/closure-2026-07/foundation/FOUNDATION_AUDIT.md) · [vault-layout-v2.md](../history/product/vault-layout-v2.md)
 > **원칙:** [vault-layout-v2 §2 V1](../history/product/vault-layout-v2.md) — **Breaking migration 없음**
 
@@ -11,7 +11,8 @@
 
 | 항목 | 결정 |
 |------|------|
-| `TODO(remove)` 건수 | **9건** (6파일) |
+| `TODO(remove)` 이전 문서 기준 (2026-06-25) | **9건** (6파일) — 정책 ID L1–L4 · R1–R5 |
+| `TODO(remove)` 현재 저장소 관측 (2026-07-20) | **`lib/` 내 마커 6건** — 아래 §4. 건수 불일치만으로 제거 완료를 단정하지 않음 |
 | **M3 Steam v1.0** | **전부 유지** — 제거 PR 없음 |
 | Works 레이아웃 기본값 | **`false` 유지** (v1.2+ 검토) |
 | `legacy_aliases.json` | **889건** — 해석 경로 **필수 유지** |
@@ -99,19 +100,23 @@
 
 ---
 
-## 4. 제거 조건표 (9건 ↔ 코드)
+## 4. 제거 조건표 (정책 ID ↔ 코드)
 
-| ID | 파일 | TODO 위치 | 제거 게이트 | 최조 목표 |
-|:--:|------|-----------|-------------|-----------|
-| **L1** | `user_preferences.dart` | `isVaultWorksLayoutEnabled` 기본값 | §2.2 G1~G3 | v1.2 |
-| **L2** | `vault_work_journal_paths.dart` | `resolveNewPath` legacy 분기 | §2.3 G4~G7 | v1.2+ |
-| **L3** | `vault_work_journal_paths.dart` | `resolveDeleteCandidates` legacy 후보 | §2.3 G4~G7 | v1.2+ |
-| **L4** | `file_service.dart` | 구 `{category}/` 폴더 생성 | §2.3 G4~G7 | v1.2+ |
-| **R1** | `registry_shard_loader.dart` | `legacy_aliases` 로드 | §3.1 G8~G9 | **보류** |
-| **R2** | `registry_shard_loader.dart` | `mergeLegacyMonolithicJson` | §3.2 G10~G12 | M3+2 릴리즈 |
-| **R3** | `works_registry.dart` | bootstrap `mergeLegacy…` | §3.2 (R2 동시) | M3+2 릴리즈 |
-| **R4** | `works_registry.dart` | sync 후 `mergeLegacy…` | §3.2 (R2 동시) | M3+2 릴리즈 |
-| **R5** | `registry_sync_service.dart` | `clearLegacyRegistryCache` | §3.2 (R2 동시) | M3+2 릴리즈 |
+게이트와 제거 규칙은 유지한다. 아래 **현재 관측**은 2026-07-20 `lib/` 내
+`TODO(remove)` 검색 결과이며, 마커 부재만으로 정책 충족·삭제 완료로 보지 않는다
+(리팩터링·경로 이동·마커 소멸 가능).
+
+| ID | 파일 (정책 대상 / 현재 관측) | TODO 위치 | 제거 게이트 | 최조 목표 | 현재 관측 |
+|:--:|------|-----------|-------------|-----------|-----------|
+| **L1** | `user_preferences.dart` | `isVaultWorksLayoutEnabled` 기본값 | §2.2 G1~G3 | v1.2 | 마커 있음 |
+| **L2** | `vault_work_journal_paths.dart` | `resolveNewPath` legacy 분기 | §2.3 G4~G7 | v1.2+ | **마커 검색 안 됨** (미충족으로 보지 않음) |
+| **L3** | `vault_work_journal_paths.dart` | `resolveDeleteCandidates` legacy 후보 | §2.3 G4~G7 | v1.2+ | 마커 있음 |
+| **L4** | 정책: `file_service.dart` · 관측: `file_service_bootstrap.dart` | 구 `{category}/` 폴더 생성 | §2.3 G4~G7 | v1.2+ | 마커 있음 (경로 이동) |
+| **R1** | `registry_shard_loader.dart` | `legacy_aliases` 로드 | §3.1 G8~G9 | **보류** | 마커 있음 |
+| **R2** | 정책: `registry_shard_loader.dart` · 관측: `registry_shard_loader_sync.dart` | `mergeLegacyMonolithicJson` | §3.2 G10~G12 | M3+2 릴리즈 | 마커 있음 (경로 분리) |
+| **R3** | `works_registry.dart` | bootstrap `mergeLegacy…` | §3.2 (R2 동시) | M3+2 릴리즈 | **마커 검색 안 됨** (미충족으로 보지 않음) |
+| **R4** | `works_registry.dart` | sync 후 `mergeLegacy…` | §3.2 (R2 동시) | M3+2 릴리즈 | **마커 검색 안 됨** (미충족으로 보지 않음) |
+| **R5** | `registry_sync_service.dart` | `clearLegacyRegistryCache` | §3.2 (R2 동시) | M3+2 릴리즈 | 마커 있음 |
 
 ---
 

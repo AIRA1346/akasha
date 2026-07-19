@@ -177,7 +177,7 @@
 * **F1** ✅ — SSOT·B1 Sanctum 시나리오 D7~D9
 * **F2** ✅ — `work_sanctum_section_editor` 분해 · `work_detail_sanctum_ops`
 * **F3** ✅ — R14-B Preview·Neighbors·Sanctum hint 토큰
-* **F4** ✅ — [LEGACY_REMOVAL_POLICY.md](LEGACY_REMOVAL_POLICY.md) · 9건 게이트 · v1.0 works=false
+* **F4** ✅ — [LEGACY_REMOVAL_POLICY.md](LEGACY_REMOVAL_POLICY.md) · removal-gate established · previous documented baseline 9 `TODO(remove)` · current scoped `lib/` observation 6 markers (not directly comparable; path/marker drift) · gate still active · v1.0 works=false
 
 ### Ⅳ. Sprint B1 (Dogfood) — ✅ 완료
 

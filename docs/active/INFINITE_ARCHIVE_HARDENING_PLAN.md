@@ -1,10 +1,11 @@
 # Infinite Archive Hardening Plan
 
-> **Status:** Active architecture plan
+> **Status:** Residual hardening plan — implemented phases are historical
+> implementation baselines; only explicitly open items remain active work.
 > **Date:** 2026-07-03
-> **Last architecture review:** 2026-07-10
+> **Last architecture review:** 2026-07-10 · status/phase labels 2026-07-20
 > **Scope:** Make AKASHA safe for unbounded personal archiving and external AI/tool use without making AKASHA an AI service, media player, or orchestrator.
-> **Related:** [P0_RECOVERABLE_VAULT_WRITE_GATE.md](../history/closure-2026-07/P0_RECOVERABLE_VAULT_WRITE_GATE.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](../history/closure-2026-07/ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) · [VISION.md](VISION.md) · [ARCHITECTURE.md](ARCHITECTURE.md) · [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) · [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md)
+> **Related:** [P0_RECOVERABLE_VAULT_WRITE_GATE.md](../history/closure-2026-07/P0_RECOVERABLE_VAULT_WRITE_GATE.md) · [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](../history/closure-2026-07/ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) · [VISION.md](VISION.md) · [ARCHITECTURE.md](ARCHITECTURE.md) · [AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md](AGENT_ENTITY_CREATION_AND_SCALE_ARCHITECTURE.md) · [AGENT_VAULT_PROTOCOL_V1.md](AGENT_VAULT_PROTOCOL_V1.md) · [AI_ARCHIVE_WRITE_GATEWAY_ADR.md](AI_ARCHIVE_WRITE_GATEWAY_ADR.md) · [CURRENT_STATE.md](CURRENT_STATE.md) · [ROADMAP.md](ROADMAP.md)
 
 ## 1. Decision
 
@@ -19,7 +20,7 @@ The next architecture hardening target is not "add AI." The target is:
 
 > Keep AKASHA as the archive substrate, then make indexes, taste signals, agent writes, and ID paths strict enough that the archive can grow without losing meaning, speed, or trust.
 
-Pre-release note: because Steam v1 has not shipped yet, [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](../history/closure-2026-07/ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) may override the earlier "post-v1 only" posture for ID paths and operation contracts if the migration is contained and well-tested.
+Historical audits such as [ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md](../history/closure-2026-07/ULTIMATE_ARCHIVE_PRE_RELEASE_ARCHITECTURE_AUDIT.md) provide rationale and prior evidence only. Current timing and normative posture are governed by Active SSOTs, accepted ADRs, [CURRENT_STATE.md](CURRENT_STATE.md), and [ROADMAP.md](ROADMAP.md).
 
 ## 2. Product Boundary
 
@@ -260,17 +261,25 @@ Rules:
 
 ## 5. Roadmap
 
-| Phase | Timing | Goal |
-| --- | --- | --- |
-| Phase 0 | Now | Align active docs and audit whether Vault Layout v3 should land before release |
-| Phase 1 | Pre-release if contained, otherwise post-v1 | Add schema fixtures, validation docs, and agent operation examples |
-| Phase 2 | Pre-release if contained, otherwise post-v1 | Make new Work/Entity paths ID-canonical |
-| Phase 3 | Pre-release if contained, otherwise post-v1 | Add Candidate Store and validated promotion |
-| Phase 4 | Post-v1 | Expand derived indexes into tag/link/incoming/taste/snippet surfaces |
-| Phase 5 | Post-v1 | Introduce structured import/edit contract for batch agent writes |
-| Phase 6 | Later | Expose stable local query surfaces for external agents/tools |
+Implemented baselines already landed outside this table (do not re-plan as open
+work): recoverable Vault write; durable canonical `system/` paths; AI Archive
+Write Gateway; bounded `candidate.create`; permission/receipt slice; bounded
+Record lookup/read; Local Agent Command Protocol; bounded `promoteCandidate`.
+Direct-file agent write as the recommended AI path is **SUPERSEDED** by the
+Gateway ADR.
 
-Phase 0 is documentation and decision alignment. It should not force risky vault migrations, but pre-release is the right time to decide whether new records should switch to Vault Layout v3.
+| Phase | Timing | Goal | Status |
+| --- | --- | --- | --- |
+| Phase 0 | Now | Align active docs and audit whether Vault Layout v3 should land before release | PARTIALLY IMPLEMENTED |
+| Phase 1 | Pre-release if contained, otherwise post-v1 | Add schema fixtures, validation docs, and agent operation examples | PARTIALLY IMPLEMENTED |
+| Phase 2 | Pre-release if contained, otherwise post-v1 | Make new Work/Entity paths ID-canonical | PARTIALLY IMPLEMENTED |
+| Phase 3 | Pre-release if contained, otherwise post-v1 | Add Candidate Store and validated promotion | IMPLEMENTED |
+| Phase 4 | Post-v1 | Expand derived indexes into tag/link/incoming/taste/snippet surfaces | PARTIALLY IMPLEMENTED |
+| Phase 5 | Post-v1 | Introduce structured import/edit contract for batch agent writes | OPEN |
+| Phase 6 | Later | Expose stable local query surfaces for external agents/tools | OPEN |
+
+Phase 0 documentation alignment is largely done; remaining Vault Layout v3
+full-convergence decisions stay open and must not force risky vault migrations.
 
 ## 6. Risks And Mitigations
 

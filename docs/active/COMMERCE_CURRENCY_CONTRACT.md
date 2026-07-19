@@ -1,10 +1,14 @@
 # AKASHA Commerce, Currency, Store, and Inventory Contract
 
-> **Status:** Active product SSOT (2026-07-15)
+> **Status:** Active product SSOT (2026-07-15; IAP identity note 2026-07-20)
 > **Authority path:** Steam Inventory Service
 > **Shared domain:** `packages/akasha_commerce_domain/`
 > **Flutter boundary:** `lib/core/commerce/`
-> **Feature flag:** `FeatureFlags.steamInAppPurchasesEnabled = false` until production transaction verification
+> **Feature flag:** live train `FeatureFlags.steamInAppPurchasesEnabled = true`
+> (BuildID `24282729` includes that code state). Flag enablement is **not**
+> production commerce acceptance — CURRENT-RC transaction validation remains
+> incomplete and the overall commerce verdict remains **No-Go** under
+> [STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md).
 > **Steam upload candidate:** [`steam_inventory_production/itemdefs_steamworks_upload.json`](steam_inventory_production/itemdefs_steamworks_upload.json)
 
 This document is the single source of truth for the launch economy, product
@@ -68,9 +72,11 @@ Each theme entitlement includes the complete theme-specific package:
 The same entitlement is granted regardless of whether Astra or Echo was used.
 Owning the entitlement disables every alternate purchase recipe for that theme.
 
-All three products remain `planned` while the production feature flag is false.
-The app may show the approved catalog and prices, but it must not show an active
-purchase action or claim that Steam purchases are live.
+When the IAP feature flag is disabled, purchase entry points must remain hidden
+and the app must not claim that Steam purchases are live. For the current
+IAP-enabled live train, purchase availability does not imply production
+acceptance; the release Acceptance Matrix remains authoritative for CURRENT-RC
+evidence and the overall commerce verdict.
 
 ## 3. Future product expansion
 
@@ -130,8 +136,10 @@ The Store and Theme Gallery read the same `CommerceCatalog` product ids,
 entitlement keys, and price policy.
 
 - Theme Gallery always exposes all five official themes.
-- Planned paid themes show `500 Astra or 500 Echo` and a non-transactional
-  launch-preparation state while the flag is false.
+- Planned paid themes show `500 Astra or 500 Echo`. When the IAP feature flag is
+  disabled, they remain in a non-transactional launch-preparation state. When
+  the flag is enabled, transactional availability still does not mean production
+  acceptance until the Acceptance Matrix CURRENT-RC evidence is sealed.
 - Store shows only approved products; it never invents a balance, discount,
   avatar, notification, or localized Steam price.
 - Store separates approved Astra packs from the launch theme package section.
@@ -253,15 +261,21 @@ production code imports only the capability-scoped read/transaction facades.
 
 ## 8. Gates and deferred systems
 
-Production purchase actions stay disabled until all of the following pass:
+`steamInAppPurchasesEnabled` is already enabled in the current live train.
+The listed gates remain production acceptance conditions and must not be treated
+as satisfied merely because the flag is enabled. CURRENT-RC evidence for
+purchase, cancellation, completion, inventory reconciliation, restart
+persistence, recovery, and related production proof stays incomplete until the
+Acceptance Matrix records it; overall commerce verdict remains **No-Go**.
+
+Acceptance gates that still apply:
 
 - production ItemDefs and localized Steam prices are published;
 - depot/library-launch build verifies purchase, exchange, restart, and
   cross-device ownership refresh;
 - cancellation, timeout, duplicate callback, insufficient balance, and
   indeterminate recovery tests pass;
-- GetReport evidence tooling and release documentation are ready;
-- `steamInAppPurchasesEnabled` is deliberately enabled in a reviewed change.
+- GetReport evidence tooling and release documentation are ready.
 
 Deferred:
 
