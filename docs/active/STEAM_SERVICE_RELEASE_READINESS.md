@@ -1,11 +1,14 @@
 # Steam Service and Commerce Release Readiness
 
 > **Status:** Active release gate
-> **Updated:** 2026-07-17
+> **Updated:** 2026-07-20 (REL-DOC-01 identity note)
 > **Current verdict:** **Commerce No-Go** until a Steam-library build completes
 > the purchase, inventory, restart, and recovery matrix
+> **Live identity (not Commerce Go):** BuildID `24282729` @ `default`
+> (**Operator-confirmed** Set Live) · Git `5e95fefe` (**Artifact-verified**)
 > **AppID:** `4677560`
 > **Economy SSOT:** [COMMERCE_CURRENCY_CONTRACT.md](COMMERCE_CURRENCY_CONTRACT.md)
+> **Acceptance Matrix:** [STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md)
 > **Transaction matrix:**
 > [steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md](steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md)
 
@@ -232,11 +235,15 @@ Release commerce is **Go** only when all of the following are true:
 - normal non-sandbox builds remain unable to call test-only operations;
 - the release rollback procedure has been rehearsed.
 
-Until then:
+Until the Commerce Go criteria above are met:
 
-- `FeatureFlags.steamInAppPurchasesEnabled` remains `false`;
-- the current sandbox build is an internal diagnostic build only;
-- Store Page copy must not claim that paid themes or Astra purchases are live.
+- Overall Commerce readiness remains **No-Go** even though the live train
+  already has `FeatureFlags.steamInAppPurchasesEnabled = true` and
+  BuildID `24282729` is on `default` (**Operator-confirmed**);
+- default Set Live alone does not complete purchase / restore / recovery evidence;
+- Store Page copy must not claim Commerce matrix completion or Overall Go
+  until [STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md)
+  CURRENT-RC-PASS requirements are actually met.
 
 ## 8. Primary Steamworks references
 

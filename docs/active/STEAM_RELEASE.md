@@ -5,17 +5,20 @@
 > `steam_appid.txt` and PDB files; the manifest must validate before upload.
 > See [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md).
 
-> **Updated:** 2026-07-19
+> **Updated:** 2026-07-20
 > **Status:** Architecture Closure declared. Active gates =
 > [STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md) ·
 > [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md).
 > **Release stance:** Early Access가 아니라 **무료 기본 앱 + Steam Commerce 포함** 일반 출시.
 > **Release scope:** Steam v1 includes optional Astra packs, paid themes, Echo rewards, and Inventory restore.
-> **Production Commerce candidate:** `FeatureFlags.steamInAppPurchasesEnabled = true`
-> (Echo rewards follow IAP; sandbox transactions default `false`).
-> **Overall acceptance:** still **No-Go** until sealed RC BuildID + Steam-installed CURRENT-RC evidence + Set Live.
+> **Steam default Set Live:** completed for BuildID **24282729** (**Operator-confirmed**).
+> **Live Git SHA:** `5e95fefeace1f7658f7b9da7597f12fce4777593` (**Artifact-verified**).
+> **Upload receipt (Artifact-verified):** AppID `4677560` · Depot `4677561` · BuildID `24282729` ·
+> receipt branch `commerce-sandbox` · gitSha `5e95fefe` (default-branch switch itself is Operator-confirmed only).
+> **IAP flag on live train:** `steamInAppPurchasesEnabled = true` (Echo follows IAP; sandbox transactions default `false`).
+> **Overall acceptance:** still **No-Go** — default live ≠ CURRENT-RC Commerce P0 complete.
 > **IAP-off rollback source SHA:** `0ce9e052` (rollback BuildID still **BLOCKED** if unsealed).
-> **Public/store claim:** Do not submit or market an unsealed candidate as final purchase-ready store Go.
+> **Public/store claim:** Do not treat default Set Live alone as purchase-matrix Go or store-review closure.
 
 Distinguish three layers:
 
@@ -65,13 +68,17 @@ Acceptance detail: [STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](STEAM_V1_RELEASE_ACCE
 
 ### Current readiness (not the same as scope)
 
-- Production Commerce **candidate** flags are on (`steamInAppPurchasesEnabled=true`;
+- Steam **default** branch Set Live for BuildID **24282729** is **Operator-confirmed**
+- IAP-on live identity (**partial seal**): Git SHA `5e95fefe` · BuildID `24282729` ·
+  exe / pre-upload manifest SHA **Artifact-verified** on the neutral-path seal
+  (see Matrix §3); IAP-off rollback BuildID still **BLOCKED**
+- Production IAP flags are on (`steamInAppPurchasesEnabled=true`;
   Echo rewards follow; sandbox default `false`)
-- This is **not** final store Go — Overall Matrix verdict remains **No-Go**
-- Final IAP-on RC BuildID and IAP-off rollback BuildID identities are **unsealed (BLOCKED)**
-- IAP-off rollback **source** SHA = `0ce9e052` (BuildID still TBD)
+- Overall Matrix / Commerce transaction verdict remains **No-Go**
+  (CURRENT-RC-PASS still 0; Steam-installed purchase/restore matrix unfinished)
 - Steamworks ItemDef publication SHA remains **UNKNOWN / BLOCKED**
-- Do not Set Live default or claim public purchase readiness until CURRENT-RC P0 seals
+- Default live does **not** by itself authorize marketing claims that the
+  Commerce acceptance matrix is complete
 
 ---
 
@@ -94,24 +101,26 @@ Short: Esc → Preferences → Display language → English.
 | Full registry bundle | 10,048 works · 1,713 shards · production registry network 0 |
 | Manual dogfood | PASS, user-confirmed |
 | Store Presence | Coming Soon posted, user-confirmed |
-| Production IAP flag | `true` — Commerce **candidate** (not final Go) |
+| Production IAP flag | `true` on live train (not Overall Go) |
 | Echo playtime rewards | `true` when IAP true (no sandbox dart-define required) |
 | Sandbox transactions default | `false` |
-| Commerce acceptance | **No-Go** — CURRENT-RC-PASS still 0 until sealed Steam RC |
-| Final IAP-on RC BuildID | **TBD / BLOCKED** |
+| Commerce acceptance | **No-Go** — CURRENT-RC-PASS still 0 |
+| Live IAP-on BuildID | **24282729** (default Set Live **Operator-confirmed**) |
+| Live Git SHA | `5e95fefeace1f7658f7b9da7597f12fce4777593` (**Artifact-verified**) |
 | IAP-off rollback source SHA | `0ce9e052` |
 | IAP-off rollback BuildID | **TBD / BLOCKED** |
-| Store page review / Build review | Pending sealed RC |
+| Store page review / Build review | Pending CURRENT-RC evidence (default live alone insufficient) |
 
-### Historical BuildIDs (not final RC)
+### Live / historical BuildIDs
 
 | BuildID | Role |
 |---------|------|
+| **24282729** | Current default-live IAP-on build (**Operator-confirmed** on `default`; SteamPipe receipt **Artifact-verified**, upload branch `commerce-sandbox`) |
 | **24015480** | Historical free / no-IAP SteamPipe upload evidence only |
 | **24240688** | Historical commerce-sandbox library evidence (prices, depot packaging, `40110` Overlay A/B) |
 | **24013902** | Superseded earlier upload |
 
-Do **not** Set Live `24015480` (or any historical BuildID) as the final Commerce RC. Default / review branch Set Live happens only after a **sealed** IAP-on RC (and a prepared IAP-off rollback RC) exists.
+Do **not** treat historical BuildIDs `24015480` / `24240688` as the current default-live identity. IAP-off rollback still needs its own sealed BuildID.
 
 Known non-blockers for vault product polish:
 
@@ -125,7 +134,7 @@ Canonical rows and cases live in
 [STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md).
 Minimum blockers:
 
-1. Seal RC identity (IAP-on + IAP-off rollback)
+1. Complete Steam-installed CURRENT-RC Commerce P0 on live BuildID `24282729` (not local exe alone)
 2. Confirm Steamworks Vault Cloud **off** / unsupported store claim
 3. Software Overlay publish evidence
 4. Remote ItemDef publication vs local LF candidate
@@ -134,10 +143,10 @@ Minimum blockers:
 7. Theme exchange × 6 paths
 8. Echo reward window matrix
 9. Failure / indeterminate / refund recovery
-10. IAP-off rollback rehearsal (CTA off; Inventory read-only)
+10. IAP-off rollback BuildID seal + rehearsal from source `0ce9e052` (CTA off; Inventory read-only)
 11. Full Korean / English Release UI audit
-12. Store parity (copy, screenshots, IAP disclosure) on sealed RC
-13. Production Commerce candidate flag change landed — still need sealed RC + Set Live (not automatic Go)
+12. Store parity (copy, screenshots, IAP disclosure) vs live RC
+13. Default Set Live for `24282729` — **Operator-confirmed** (does not clear items 1–12 or Overall No-Go)
 
 ---
 
@@ -150,7 +159,7 @@ Minimum blockers:
 | Platform | Windows |
 | Release type | Free base app with Steam in-app purchases |
 | Base price | Free |
-| IAP | Included in first-release **scope**; candidate flag **on**; final RC / Set Live still **unsealed** |
+| IAP | Included in first-release **scope**; live flag **on** (BuildID `24282729` @ `default`); Commerce matrix still **No-Go** |
 | Languages | Korean, English (Interface) |
 | Paid themes | Sakura, Amethyst, Nocturne |
 | Steam Cloud (Vault) | Unsupported / off — **Steamworks console confirmation pending** |
@@ -211,7 +220,7 @@ Steam v1 출시 범위 기능
 
 • 위 Commerce 기능은 Steam v1 출시 범위에 포함됩니다.
 • 실제 상점 문구·스크린샷은 최종 Commerce RC와 Acceptance Matrix P0 통과 후 확정합니다.
-• Production Commerce 후보 플래그는 켜져 있으나, 최종 RC BuildID·Set Live·Acceptance Matrix CURRENT-RC 봉인 전까지 상점 Go를 주장하지 않습니다.
+• Steam default Set Live(BuildID `24282729`)는 완료됐으나, Acceptance Matrix CURRENT-RC Commerce 증거 봉인 전까지 전체 상점/Commerce Go를 주장하지 않습니다.
 
 AKASHA는 출시 후에도 실제 사용자의 vault dogfood를 바탕으로 UI/UX, 대량 기록 관리, 가져오기/내보내기, 안정성을 계속 개선합니다.
 
@@ -249,7 +258,7 @@ Boundaries
 
 • Commerce above is in the Steam v1 release train.
 • Final store copy and screenshots are locked only after the sealed Commerce RC and Acceptance Matrix P0 pass.
-• Production Commerce candidate flags are on, but do not claim store Go until the sealed RC BuildID, Set Live, and Acceptance Matrix CURRENT-RC evidence are complete.
+• Steam default Set Live (BuildID `24282729`) is done, but do not claim full store/Commerce Go until Acceptance Matrix CURRENT-RC evidence is complete.
 
 After launch, AKASHA will continue to improve based on real vault dogfood: UI/UX polish, large personal archives, import/export reliability, and stability.
 
@@ -301,25 +310,26 @@ Aligned order (detail in the Acceptance Matrix):
 1. Confirm the release worktree is clean and contains no unintended `akasha-db/**` source changes.
    Run the deterministic full-bundle gate; do not regenerate source manifests as a packaging side effect.
 2. Collect Matrix P0 evidence on a Steam-downloaded private-branch RC (not only a local exe).
-3. Seal **IAP-on** RC identity (candidate flags already reviewed) and a separate **IAP-off rollback** RC from source `0ce9e052`; rehearse rollback (CTA off; Inventory read-only).
-4. Capture screenshots from the sealed RC executable (demo/owned/generated assets only).
-5. Stage depot (`prepare_steam_depot.ps1`), verify manifest (`steam_appid.txt` / PDB excluded), upload via SteamPipe.
+3. Keep **IAP-on** live identity (`5e95fefe` / `24282729`) recorded; seal a separate **IAP-off rollback** RC from source `0ce9e052` and rehearse rollback (CTA off; Inventory read-only).
+4. Capture screenshots from the Steam-installed live RC (demo/owned/generated assets only).
+5. For later uploads: stage depot (`prepare_steam_depot.ps1`), verify manifest (`steam_appid.txt` / PDB excluded), upload via SteamPipe.
    For commerce sandbox contracts see
    [STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md](steam_inventory_production/STEAMPIPE_COMMERCE_SANDBOX_UPLOAD.md).
 6. Confirm remote ItemDef publication vs LF canonical candidate; retain Steamworks revision/time.
-7. Complete Matrix Commerce P0 + rollback evidence on the Steam-installed sealed RC.
-8. Upload the final IAP-on build; Set Live on the intended review/default branch.
-9. Submit Store Page review and Build review.
-10. After approval and required Coming Soon time, use Steamworks release controls.
+7. Complete Matrix Commerce P0 + rollback evidence on the Steam-installed live RC.
+8. Default Set Live for BuildID `24282729` — **Operator-confirmed** (already done; not automatic Overall Go).
+9. Submit Store Page review and Build review when CURRENT-RC evidence supports claims.
+10. After approval and required Coming Soon time, use Steamworks release controls for public launch timing.
 
-Do not treat historical BuildIDs `24015480` / `24240688` as the final Set Live target.
+Do not treat historical BuildIDs `24015480` / `24240688` as the current default-live identity.
 
-### Upload Log (historical)
+### Upload Log
 
 | Date | BuildID | Result | Notes |
 |------|---------|--------|-------|
+| 2026-07-19 | **24282729** | Uploaded + default Set Live | Git `5e95fefe` · receipt branch `commerce-sandbox` (**Artifact-verified**) · default Set Live (**Operator-confirmed**) |
 | 2026-07-02 | **24013902** | Uploaded | Superseded earlier upload |
-| 2026-07-02 | **24015480** | Uploaded | Historical free/no-IAP upload evidence only — not final Commerce RC |
+| 2026-07-02 | **24015480** | Uploaded | Historical free/no-IAP upload evidence only |
 | 2026-07-16 | **24240688** | Sandbox library | Historical commerce-sandbox evidence (see readiness) |
 
 ---

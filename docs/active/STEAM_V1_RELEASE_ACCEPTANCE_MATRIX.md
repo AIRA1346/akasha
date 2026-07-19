@@ -1,10 +1,12 @@
 # Steam v1 Release Acceptance Matrix
 
 > **Status:** Active release gate (docs-only SSOT; evidence collection in progress)
-> **Created:** 2026-07-19
-> **Baseline Git SHA:** `8f4cf35a0ca1e31b0eb4753fad4e61b6e35dda7f`
+> **Created:** 2026-07-19 · **REL-DOC-01 update:** 2026-07-20
+> **Baseline Git SHA (matrix authoring):** `8f4cf35a0ca1e31b0eb4753fad4e61b6e35dda7f`
+> **Live IAP-on Git SHA:** `5e95fefeace1f7658f7b9da7597f12fce4777593` (**Artifact-verified**)
+> **Live Steam BuildID:** `24282729` · branch `default` Set Live (**Operator-confirmed**)
 > **AppID:** `4677560` · **Windows Depot:** `4677561`
-> **IAP flag (candidate):** `FeatureFlags.steamInAppPurchasesEnabled = true` (Production Commerce candidate; **not** final store Go)
+> **IAP flag (live train):** `FeatureFlags.steamInAppPurchasesEnabled = true` (**not** Overall Go)
 > **Echo rewards:** follow IAP (`steamInventoryPlaytimeRewardsEnabled` true without sandbox dart-define)
 > **Sandbox transactions default:** `false`
 > **IAP-off rollback source SHA:** `0ce9e052` · rollback BuildID still **BLOCKED** if unsealed
@@ -12,7 +14,9 @@
 
 This matrix is the executable acceptance record for the **single Commerce-inclusive Steam v1** release train. It consolidates the master launch checklist into canonical requirements, links repeated pack/theme scenarios as cases, and keeps full traceability in the appendix.
 
-**Out of scope for this document revision:** Steamworks mutation, Steam upload / Set Live, Registry/asset edits, sandbox worktree cleanup, inventing CURRENT-RC-PASS without sealed-RC evidence.
+**Evidence labels used in this revision:** **Artifact-verified** = repository/worktree SteamPipe or seal files; **Operator-confirmed** = human confirmation without a matching repository receipt (do not mix).
+
+**Out of scope for this document revision:** product/code changes, Steamworks mutation, new uploads, inventing CURRENT-RC-PASS without Steam-installed RC evidence, sandbox worktree cleanup.
 
 ---
 
@@ -31,7 +35,7 @@ This matrix is the executable acceptance record for the **single Commerce-inclus
 | Echo | Playtime reward via `40220` → Echo unit `40002` (+10 / eligible grant; max 6 / window) |
 | Paid themes | Sakura `41001`, Amethyst `41002`, Nocturne `41003` via wrappers `41101`–`41103` at **500 Astra or 500 Echo** |
 | Rollback | Separate **IAP-off** rollback BuildID must exist and be rehearsed; purchase/exchange CTA off; **Inventory remains read-only** (Steam account authority unchanged). Rollback **source** SHA = `0ce9e052` |
-| Production purchase UI | Candidate flag **true** on the reviewed release branch; final store Go still requires sealed RC BuildID + CURRENT-RC P0 evidence + Set Live |
+| Production purchase UI | IAP flag **true** on live BuildID `24282729`; Overall store/Commerce Go still requires CURRENT-RC P0 evidence (default Set Live alone insufficient) |
 
 ### Explicitly in v1 (P0 commerce)
 
@@ -57,8 +61,10 @@ This matrix is the executable acceptance record for the **single Commerce-inclus
 |---|---|
 | **Overall Steam v1 Go/No-Go** | **No-Go** |
 | Commerce transaction matrix | **No-Go** |
-| Final RC identity | **BLOCKED** (template only; no sealed RC — BuildID **TBD**) |
-| Production IAP candidate flag | **Enabled** in tree (`true`) — does **not** auto-raise CURRENT-RC-PASS or Overall Go |
+| Default Set Live | **OPERATOR-CONFIRMED** (BuildID `24282729` @ `default`) — not Overall Go |
+| IAP-on build identity | **PARTIAL** — Git SHA / BuildID / exe+manifest seal **Artifact-verified**; Steam-installed CURRENT-RC retest open |
+| IAP-off rollback identity | **BLOCKED** (source `0ce9e052`; BuildID unsealed) |
+| Production IAP flag | **Enabled** in tree (`true`) — does **not** auto-raise CURRENT-RC-PASS or Overall Go |
 | Active FAIL count (Current-RC Go math) | **0** |
 | Historical `store_hidden=true` checkout failure | **Not a current FAIL** — see §10 ledger |
 
@@ -68,23 +74,24 @@ Go requires: every P0 row reaches **CURRENT-RC-PASS** (or justified **N/A**), **
 
 ## 3. RC Identity
 
-> Final RC is **not sealed**. All identity fields below are a **BLOCKED template**.
-> Past BuildIDs `24240688` and `24015480` are **Historical evidence only** — never counted as Current-RC PASS.
+> IAP-on live identity is a **partial seal** (SteamPipe + local seal files + Operator-confirmed default Set Live).
+> This is **not** Commerce CURRENT-RC-PASS and **not** Overall Go.
+> Past BuildIDs `24240688` and `24015480` remain **Historical evidence only**.
 
-| Identity field | IAP-on candidate RC | IAP-off rollback RC | Status |
+| Identity field | IAP-on live RC | IAP-off rollback RC | Status |
 |---|---|---|---|
-| Git SHA | _TBD_ (candidate branch pending seal) | `0ce9e052` (IAP-off **source**; BuildID TBD) | BLOCKED |
-| App version / build number | `1.0.0+1` (pubspec; not RC-sealed) | `1.0.0+1` @ source | BLOCKED |
-| Executable SHA-256 | _TBD_ | _TBD_ | BLOCKED |
-| Staged depot manifest SHA-256 | _TBD_ | _TBD_ | BLOCKED |
-| Steam BuildID | _TBD_ | _TBD_ (rollback) | BLOCKED |
-| Depot ID | `4677561` (expected) | `4677561` (expected) | documented / unsealed |
-| Steam branch | _TBD_ (default Set Live **not** done) | _TBD_ | BLOCKED |
+| Git SHA | `5e95fefeace1f7658f7b9da7597f12fce4777593` (**Artifact-verified**) | `0ce9e052` (IAP-off **source**; BuildID TBD) | PARTIAL / BLOCKED (rollback) |
+| App version / build number | `1.0.0+1` (**Artifact-verified** pubspec + exe `ProductVersion`) | `1.0.0+1` @ source | PARTIAL |
+| Executable SHA-256 | `3C387A2166A965EACE5F3C555D7088721117BBA3D66BBD07ADF1508D72066069` (**Artifact-verified** neutral-path seal) | _TBD_ | PARTIAL / BLOCKED (rollback) |
+| Staged depot manifest SHA-256 | `C92B7E33018B61046ED512EF7DF57CAED87F4AAED4D1D24DB9BADA939831DF85` (**Artifact-verified** pre-upload seal; files `1756` · bytes `70978364`) | _TBD_ | PARTIAL / BLOCKED (rollback) |
+| Steam BuildID | `24282729` (**Artifact-verified** upload receipt) | _TBD_ (rollback) | PARTIAL / BLOCKED (rollback) |
+| Depot ID | `4677561` (**Artifact-verified** receipt) | `4677561` (expected) | documented |
+| Steam branch | `default` Set Live (**Operator-confirmed**); upload receipt branch was `commerce-sandbox` (**Artifact-verified**) | _TBD_ | OPERATOR-CONFIRMED / BLOCKED (rollback) |
 | ItemDef JSON SHA-256 (local candidate @ baseline) | `9653df2609d9ec88dcc7b8b18c0e59c149221113a5c45360570c96dd67235ff3` | same schema family | candidate only (LF / git-canonical) |
-| ItemDef Steamworks publication time / revision | _TBD_ | _TBD_ | BLOCKED (publication SHA **UNKNOWN**) |
+| ItemDef Steamworks publication time / revision | _TBD_ | _TBD_ | BLOCKED (publication SHA **UNKNOWN** — evidence not present in repository) |
 | Registry | v4 · 10,048 works · `generatedAt` `2026-07-12T07:58:11.178685Z` | same unless RC rebuilds | baseline snapshot; digest seal TBD |
-| `steamInAppPurchasesEnabled` | `true` on Production Commerce candidate | must remain `false` on rollback | candidate tree = `true`; source `0ce9e052` = `false` |
-| Supported language snapshot | ko, en | ko, en | UNVERIFIED on final RC |
+| `steamInAppPurchasesEnabled` | `true` on live train | must remain `false` on rollback | live tree = `true`; source `0ce9e052` = `false` |
+| Supported language snapshot | ko, en | ko, en | UNVERIFIED on Steam-installed RC |
 | Steamworks feature snapshot | Overlay, Inventory, IAP, Cloud=off (assumed) | same + purchase CTA absent | BLOCKED |
 | Test account type | _TBD_ partner/dev | _TBD_ | BLOCKED |
 | Windows version / DPI under test | _TBD_ | _TBD_ | BLOCKED |
@@ -102,6 +109,7 @@ Go requires: every P0 row reaches **CURRENT-RC-PASS** (or justified **N/A**), **
 
 | BuildID | Role | May be cited as |
 |---|---|---|
+| `24282729` | Current default-live IAP-on build (Git `5e95fefe`) | Identity / BUILD-01 Operator-confirmed; **not** automatic CURRENT-RC-PASS for Commerce rows |
 | `24015480` | Free / no-IAP SteamPipe upload | HISTORICAL-PASS only |
 | `24240688` | commerce-sandbox library install; prices; depot packaging; `40110` Overlay A/B | HISTORICAL-PASS only |
 
@@ -115,6 +123,7 @@ Go requires: every P0 row reaches **CURRENT-RC-PASS** (or justified **N/A**), **
 | **IMPLEMENTATION-PASS** | Code and/or automated tests at baseline SHA prove behavior; **not** Steam RC proof | No |
 | **IMPLEMENTATION-PASS / UNVERIFIED-RC** | Implementation evidence exists **and** Steam/private-branch or Release RC measurement is still required | No |
 | **HISTORICAL-PASS** | Proven on a past BuildID/SHA; informative only; **retest on final RC** | No |
+| **OPERATOR-CONFIRMED** | Human operator confirmation without a matching repository artifact for that exact claim | No |
 | **UNVERIFIED** | Plausible / partially implemented; no adequate evidence yet | No |
 | **BLOCKED** | Cannot verify until a prerequisite (Steamworks, RC seal, 2nd PC, account, publish) exists | No |
 | **FAIL** | Reproduced failure or confirmed requirement violation **against the current release train** | No (blocks Go) |
@@ -311,7 +320,7 @@ Shared rules. Per-pack / per-theme **results** live in §7.
 
 | ID | Requirement | Verify | Status | Evidence | Notes / retest |
 |---|---|---|---|---|---|
-| BUILD-01 | Review BuildID set on intended branch; default is verified build only when Go | Steamworks | BLOCKED | `24015480` historical upload only | |
+| BUILD-01 | Review BuildID set on intended branch; default carries the intended live build | Steamworks | OPERATOR-CONFIRMED | Upload receipt BuildID `24282729` / gitSha `5e95fefe` / receipt branch `commerce-sandbox` (**Artifact-verified**); default Set Live (**Operator-confirmed**) | Not CURRENT-RC-PASS; does not clear Commerce P0 or Overall No-Go |
 | BUILD-02 | Password-protected internal branch exists for RC testing | Steamworks | HISTORICAL-PASS | `commerce-sandbox` narrative | Confirm still true |
 | BUILD-03 | Acceptance uses Steam-downloaded build — not only dev-folder exe | Process | UNVERIFIED | readiness Gate A | |
 | BUILD-04 | Release payload: no debug menus/test buttons; no API keys/secrets; no test vaults/logs; VC++ redist considered | Package scan + RC | IMPLEMENTATION-PASS / UNVERIFIED-RC | `prepare_steam_depot.ps1`, verify scripts | |
@@ -518,7 +527,7 @@ Prices → each pack cancel+complete → exact Astra deltas → restart → PC2 
 | `40001` store_hidden | `true` | local JSON | IMPLEMENTATION-PASS (candidate) |
 | Steam Cloud for Vault | **Off / unsupported** | not confirmed in console from this audit | BLOCKED (`CLOUD-01`) |
 | Store IAP disclosure | Accurate when commerce ships | Repo plan aligned; Steamworks store pending sealed RC | BLOCKED |
-| Default branch BuildID | Sealed Go RC only | `24015480` historical | BLOCKED |
+| Default branch BuildID | Live BuildID recorded; Overall Go still open | `24282729` @ `default` (**Operator-confirmed**); upload receipt **Artifact-verified** | OPERATOR-CONFIRMED (not Overall Go) |
 
 ---
 
@@ -538,7 +547,8 @@ Prices → each pack cancel+complete → exact Astra deltas → restart → PC2 
 | EV-HIST-SAFE-GATE | Historical gate | [P0_RECOVERABLE_VAULT_WRITE_GATE.md](../history/closure-2026-07/P0_RECOVERABLE_VAULT_WRITE_GATE.md) | IMPLEMENTATION lineage |
 | EV-CHECKLIST-OPEN | Open matrix | [SANDBOX_TRANSACTION_CHECKLIST.md](steam_inventory_production/SANDBOX_TRANSACTION_CHECKLIST.md) §2–5 all `[ ]` | UNVERIFIED/BLOCKED commerce |
 | EV-EXT-RELEASE | External | `AKASHA_Product/release-evidence/steam` (referenced; absent in this workspace) | re-locate before seal |
-| EV-RC-SEAL | Final RC | _empty_ | CURRENT-RC-PASS only when filled |
+| EV-RC-SEAL | Live IAP-on identity (partial) | Git `5e95fefe` · BuildID `24282729` · exe `3C387A21…6069` · pre-upload manifest `C92B7E33…DF85` · files `1756` / bytes `70978364` · version `1.0.0+1` (**Artifact-verified** seal + receipt); default Set Live (**Operator-confirmed**) | Identity / BUILD-01 only — **not** blanket CURRENT-RC-PASS |
+| EV-UPLOAD-24282729 | SteamPipe receipt | External worktree `…/upload_receipts/20260719T115647Z.json` (app `4677560`, depot `4677561`, branch `commerce-sandbox`, gitSha `5e95fefe`, buildId `24282729`) | BUILD-01 Artifact-verified half |
 
 ---
 
@@ -592,7 +602,7 @@ Master checklist §5.x → Matrix IDs. Every master bullet is covered by at leas
 
 ## 12. Go/No-Go summary
 
-### Counts @ matrix authoring (baseline `8f4cf35a`)
+### Counts @ REL-DOC-01 (`5e95fefe` live identity; authoring baseline `8f4cf35a`)
 
 | Metric | Count |
 |---:|---:|
@@ -605,23 +615,25 @@ Master checklist §5.x → Matrix IDs. Every master bullet is covered by at leas
 | CURRENT-RC-PASS | **0** |
 | IMPLEMENTATION-PASS (incl. `/ UNVERIFIED-RC`) | **87** |
 | HISTORICAL-PASS | **7** |
+| OPERATOR-CONFIRMED | **1** (`BUILD-01`) |
 | UNVERIFIED | **60** |
-| BLOCKED | **18** |
+| BLOCKED | **17** |
 | FAIL | **0** |
 | N/A | **6** (all P1/P2; **P0 N/A = 0**; **COM-* N/A = 0**) |
 
 > Status tallies count **canonical rows only** (§5–§6).
-> **Go PASS math uses CURRENT-RC-PASS only.** IMPLEMENTATION-PASS and HISTORICAL-PASS never count toward Go.
+> **Go PASS math uses CURRENT-RC-PASS only.** IMPLEMENTATION-PASS, HISTORICAL-PASS, and OPERATOR-CONFIRMED never count toward Go.
 > Case rows (§7) are tracked separately and must all reach CURRENT-RC-PASS (or BLOCKED cleared) before commerce Go.
 > With CURRENT-RC-PASS = 0, overall verdict remains **No-Go**.
+> Default Set Live for BuildID `24282729` does **not** change this Go math.
 
 ### Active FAIL
 
-None. Repository release-scope conflict (`REL-SCOPE-01`) closed; remaining work is sealed-RC / Steamworks evidence.
+None. Repository release-scope conflict (`REL-SCOPE-01`) closed; remaining work is Steam-installed CURRENT-RC / Steamworks / rollback evidence.
 
 ### Top blockers (execution order)
 
-1. RC-ID seal — §3 template BLOCKED
+1. Steam-installed CURRENT-RC Commerce P0 on BuildID `24282729` (identity partial; evidence open)
 2. CLOUD-01 — Steamworks Cloud setting confirm
 3. STEAM-09 — Overlay Software publish evidence
 4. COM-ID-02 / CASE-ASTRA-40111/40112 — remote `store_hidden=false` + checkout
@@ -635,30 +647,30 @@ None. Repository release-scope conflict (`REL-SCOPE-01`) closed; remaining work 
 12. Failure/recovery CASE-FAIL-OFFLINE … CASE-FAIL-REFUND
 13. BUILD-09 / REL-SCOPE-03 — IAP-off rollback rehearsal from source `0ce9e052` (CTA off, Inventory read-only; BuildID still BLOCKED)
 14. L10N-01…07 — full KO/EN RC audit
-15. STORE-01…03 — store parity on sealed RC
-16. BUILD-01 — default/review branch Set Live on sealed RC
-17. COM-SAFE-01 — Release binary audit on sealed IAP-on + rollback
+15. STORE-01…03 — store parity vs live RC
+16. BUILD-01 — default Set Live for `24282729` — **OPERATOR-CONFIRMED** (not Overall Go)
+17. COM-SAFE-01 — Release binary audit on Steam-installed IAP-on + rollback
 18. EV-EXT-RELEASE — relocate external evidence root
-19. Production Commerce candidate flag change — **landed** (`true`); does not replace items 1–18 or raise CURRENT-RC-PASS
+19. Production IAP flag — **landed** (`true` on live train); does not replace items 1–15/17–18 or raise CURRENT-RC-PASS
 
 ### Go criteria (restate)
 
 - P0 canonical: **100% CURRENT-RC-PASS** (justified N/A only if Applicability locks it out; none today)
 - FAIL **0** · BLOCKED **0**
-- **Only CURRENT-RC-PASS counts as Go PASS** — IMPLEMENTATION-PASS / HISTORICAL-PASS / UNVERIFIED do not
-- Historical BuildIDs `24240688` / `24015480` are never final-RC evidence
-- All 29 §7 commerce CASE rows CURRENT-RC-PASS on sealed RC (+ PC2 where required)
+- **Only CURRENT-RC-PASS counts as Go PASS** — IMPLEMENTATION-PASS / HISTORICAL-PASS / OPERATOR-CONFIRMED / UNVERIFIED do not
+- Historical BuildIDs `24240688` / `24015480` are never final-RC Commerce evidence
+- Live BuildID `24282729` is the current default identity but still requires CURRENT-RC case evidence
+- All 29 §7 commerce CASE rows CURRENT-RC-PASS on Steam-installed RC (+ PC2 where required)
 - Suites S-NEW / S-EXISTING / S-FAULT / S-BUY executed on Steam-downloaded RC
 - Data-loss **0** on fault suite
 - Debug/Sandbox/Consume/Reset/POC absent on Release
 - Store languages/features/images match RC
 - IAP-off rollback RC rehearsed from source `0ce9e052` (CTA off; Inventory read-only preserved; BuildID sealed)
-- RC Identity + Steamworks snapshots sealed
-- Production Commerce candidate flag is already `true` — still require sealed RC evidence before Overall Go
+- Steamworks ItemDef publication SHA sealed (currently UNKNOWN in repository)
 
 ### Scope-alignment note
 
-Repository release-scope docs and flag commentary were aligned to Commerce-inclusive v1 (`0ce9e052`). Production Commerce **candidate** enablement is a separate reviewed release change on `release/steam-v1-production-commerce`. Enabling the candidate flag does **not** promote rows to CURRENT-RC-PASS or change Overall **No-Go**.
+Repository release-scope docs were aligned to Commerce-inclusive v1 (`0ce9e052`), then Production IAP enablement landed on `5e95fefe` and uploaded as BuildID `24282729`. Default Set Live is Operator-confirmed. None of these steps alone promote Commerce rows to CURRENT-RC-PASS or change Overall **No-Go**.
 
 ---
 
@@ -667,7 +679,7 @@ Repository release-scope docs and flag commentary were aligned to Commerce-inclu
 | Item | Value |
 |---|---|
 | Matrix path | `docs/active/STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md` |
-| Authoring baseline | `8f4cf35a` (Matrix creation); ItemDef hash fix `94905aab`; scope align `0ce9e052` |
+| Authoring baseline | `8f4cf35a` (Matrix creation); ItemDef hash fix `94905aab`; scope align `0ce9e052`; IAP enable `5e95fefe` |
 | Sandbox worktree | Untouched by this revision |
-| IAP flag | Candidate `true` (Overall Go still No-Go; CURRENT-RC-PASS still 0) |
-| Changelog | 2026-07-19 — initial matrix · ItemDef LF-canonical SHA · **REL-SCOPE-01** closed · Production Commerce **candidate** flag documented (`true`); FAIL 0; CURRENT-RC-PASS 0; overall No-Go unchanged |
+| IAP flag | Live train `true` (Overall Go still No-Go; CURRENT-RC-PASS still 0) |
+| Changelog | 2026-07-20 — **REL-DOC-01**: record default-live identity `24282729` / `5e95fefe` with Artifact-verified vs Operator-confirmed split; BUILD-01 → OPERATOR-CONFIRMED; BLOCKED 18→17; CURRENT-RC-PASS 0; overall No-Go unchanged |
