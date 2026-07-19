@@ -77,7 +77,7 @@ Go requires: every P0 row reaches **CURRENT-RC-PASS** (or justified **N/A**), **
 | Steam BuildID | _TBD_ | _TBD_ (rollback) | BLOCKED |
 | Depot ID | `4677561` (expected) | `4677561` (expected) | documented / unsealed |
 | Steam branch | _TBD_ (e.g. private `commerce-sandbox` then review branch) | _TBD_ | BLOCKED |
-| ItemDef JSON SHA-256 (local candidate @ baseline) | `BB20770FB7196CE4ABCC60C7086B43DC6BA868093E3F10B0A18712C29C23E88E` | same schema family | candidate only |
+| ItemDef JSON SHA-256 (local candidate @ baseline) | `9653df2609d9ec88dcc7b8b18c0e59c149221113a5c45360570c96dd67235ff3` | same schema family | candidate only (LF / git-canonical) |
 | ItemDef Steamworks publication time / revision | _TBD_ | _TBD_ | BLOCKED |
 | Registry | v4 · 10,048 works · `generatedAt` `2026-07-12T07:58:11.178685Z` | same unless RC rebuilds | baseline snapshot; digest seal TBD |
 | `steamInAppPurchasesEnabled` | must be `true` only on reviewed IAP-on RC | must remain `false` | current tree = `false` |
@@ -87,6 +87,13 @@ Go requires: every P0 row reaches **CURRENT-RC-PASS** (or justified **N/A**), **
 | Windows version / DPI under test | _TBD_ | _TBD_ | BLOCKED |
 
 **Retest rule:** If any sealed identity field changes, re-run every P0 row whose Evidence level ≥ Steam private-branch RC (see §4).
+
+### ItemDef hash policy
+
+- Canonical ItemDef SHA-256 is computed over the **Git-committed LF bytes**, or over bytes **explicitly normalized to LF**.
+- A raw Windows checkout `Get-FileHash` is **not** a release artifact identity: with `core.autocrlf=true` it may hash CRLF-materialized bytes and disagree with the git blob while the schema content is identical.
+- Audit note (non-authoritative): CRLF checkout hash `BB20770FB7196CE4ABCC60C7086B43DC6BA868093E3F10B0A18712C29C23E88E` measured the **same content** as LF canonical `9653df2609d9ec88dcc7b8b18c0e59c149221113a5c45360570c96dd67235ff3`. Do not treat `BB20770F…` as a different ItemDef revision.
+- Steamworks **published** byte SHA remains **UNKNOWN** until partner evidence exists; remote match stays **BLOCKED**.
 
 ### Historical BuildIDs (not Current-RC)
 
@@ -503,7 +510,7 @@ Prices → each pack cancel+complete → exact Astra deltas → restart → PC2 
 | Asset Server | Configured | readiness R3 | HISTORICAL / reconfirm |
 | Item visibility | Private (partner) until release policy | readiness R3 | HISTORICAL / reconfirm |
 | Overlay for Software | Enabled + **Published** | checklist precondition | BLOCKED (publication evidence) |
-| ItemDefs remote vs local SHA | Match candidate `BB20770F…E88E` | local candidate only | BLOCKED |
+| ItemDefs remote vs local SHA | Match LF canonical local `9653df26…35ff3` | Published Steamworks bytes SHA **UNKNOWN**; local candidate only | BLOCKED |
 | `40110–40112` store_hidden | `false` | local true; remote 40111/12 pending per active docs | BLOCKED |
 | `40001` store_hidden | `true` | local JSON | IMPLEMENTATION-PASS (candidate) |
 | Steam Cloud for Vault | **Off / unsupported** | not confirmed in console from this audit | BLOCKED (`CLOUD-01`) |
@@ -519,7 +526,7 @@ Prices → each pack cancel+complete → exact Astra deltas → restart → PC2 
 | EV-BASE-SHA | Baseline | Git `8f4cf35a` clean `main` | IMPLEMENTATION-* @ baseline |
 | EV-TESTS-ROOT | Auto | `flutter test` **1273** · analyze **0** ([CURRENT_STATE.md](CURRENT_STATE.md)) | IMPLEMENTATION-PASS only |
 | EV-TESTS-COM | Auto | commerce domain **17** · backend **18** · `test/steam_inventory_commerce_gateway_test.dart` | IMPLEMENTATION-PASS |
-| EV-ITEMDEF-LOCAL | Artifact | `itemdefs_steamworks_upload.json` SHA-256 `BB20770FB7196CE4ABCC60C7086B43DC6BA868093E3F10B0A18712C29C23E88E` | COM-ID-* candidate |
+| EV-ITEMDEF-LOCAL | Artifact | `itemdefs_steamworks_upload.json` LF/git-canonical SHA-256 `9653df2609d9ec88dcc7b8b18c0e59c149221113a5c45360570c96dd67235ff3` (CRLF `Get-FileHash` `BB20770F…E88E` is non-authoritative; same content) | COM-ID-* candidate |
 | EV-HIST-24015480 | Historical BuildID | [STEAM_RELEASE.md](STEAM_RELEASE.md) upload log | HISTORICAL-PASS packaging/no-IAP upload |
 | EV-HIST-24240688 | Historical BuildID | [STEAM_SERVICE_RELEASE_READINESS.md](STEAM_SERVICE_RELEASE_READINESS.md) | HISTORICAL-PASS prices, depot, Overlay A/B |
 | EV-HIST-HIDDEN-FAIL | Historical failure | sandbox checklist §1 | root-cause record — **not current FAIL** |
@@ -661,4 +668,4 @@ Align [STEAM_RELEASE.md](STEAM_RELEASE.md), [privacy.md](privacy.md), and `featu
 | Authoring baseline | `8f4cf35a` |
 | Sandbox worktree | Untouched by this revision |
 | IAP flag | Remains `false` |
-| Changelog | 2026-07-19 — initial matrix from approved audit |
+| Changelog | 2026-07-19 — initial matrix from approved audit · ItemDef SHA corrected to LF/git-canonical `9653df26…` (CRLF `BB20770F…` demoted to non-authoritative) |
