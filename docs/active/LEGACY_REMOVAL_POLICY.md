@@ -1,6 +1,6 @@
 # Legacy Removal Policy — Foundation F4
 
-> **일자:** 2026-06-25 · marker inventory note 2026-07-20
+> **일자:** 2026-06-25 · marker inventory note 2026-07-20 · works-layout contract note 2026-07-20
 > **지위:** active removal-gate contract — `TODO(remove)` 제거 조건 SSOT
 > **상위:** [FOUNDATION_AUDIT.md](../history/closure-2026-07/foundation/FOUNDATION_AUDIT.md) · [vault-layout-v2.md](../history/product/vault-layout-v2.md)
 > **원칙:** [vault-layout-v2 §2 V1](../history/product/vault-layout-v2.md) — **Breaking migration 없음**
@@ -14,7 +14,7 @@
 | `TODO(remove)` 이전 문서 기준 (2026-06-25) | **9건** (6파일) — 정책 ID L1–L4 · R1–R5 |
 | `TODO(remove)` 현재 저장소 관측 (2026-07-20) | **`lib/` 내 마커 6건** — 아래 §4. 건수 불일치만으로 제거 완료를 단정하지 않음 |
 | **M3 Steam v1.0** | **전부 유지** — 제거 PR 없음 |
-| Works 레이아웃 기본값 | **`false` 유지** (v1.2+ 검토) |
+| Works 레이아웃 preference fallback | Wave2 도입 **`false`** → **UA-131부터 shipping `true`** · L1 잔여 = preference key/getter/setter 호환 표면 제거 |
 | `legacy_aliases.json` | **889건** — 해석 경로 **필수 유지** |
 | 레거시 볼트 경로 읽기 | **영구 지원** (이동 강제 없음) |
 
@@ -26,25 +26,37 @@
 
 ### 2.1 현재 동작
 
-| 설정 | 키 | 기본값 | 신규 저장 경로 |
-|------|-----|:------:|----------------|
-| Works 레이아웃 | `akasha_vault_use_works_layout` | **`false`** | `false` → `{vault}/{category}/` · `true` → `{vault}/works/{category}/` |
+| 설정 | 키 | 도입 당시 기본값 | 현재 shipping fallback | 경로 계약 |
+|------|-----|:------:|:------:|----------------|
+| Works 레이아웃 | `akasha_vault_use_works_layout` | **`false`** (Wave2) | **`true`** (UA-131) | ID 있음 → 항상 `{vault}/works/{category}/{workId}.md` (flag 무관). ID 없는 title-only만 `false` → `{vault}/{category}/` · `true` → `{vault}/works/{category}/` |
 
-- 구현: `VaultWorkJournalPaths`, `UserPreferences`, `FileService._ensureVaultDirs`
-- **기존 `filePath`는 항상 우선** — 저장 시 경로 강제 이동 없음 ([vault-layout-v2 §3.1](../history/product/vault-layout-v2.md))
+- 구현: `VaultWorkJournalPaths`, `VaultRecordPathResolver`, `UserPreferences`, `FileService._ensureFolderStructure`
+- **기존 `filePath`는 항상 우선** — 이 preference만으로 저장 시 경로 강제 이동 없음 ([vault-layout-v2 §3.1](../history/product/vault-layout-v2.md))
+- bootstrap은 `works/{category}/`와 legacy `{category}/`를 **모두** 생성하지만 preference key는 **저장하지 않음**
 - UI 노출: 없음 (SharedPreferences·테스트만 설정) — v1.1+ 설정 화면 후보
+- 자동 migration·key backfill 없음 — opt-in 도구는 `tool/migrations/migrate_personal_vault.dart`
 
-### 2.2 기본값 `true` 전환 조건 (L1)
+### 2.2 Works layout preference 제거 조건 (L1)
 
-**대상:** `user_preferences.dart` `isVaultWorksLayoutEnabled()` 기본값
+**대상:** works-layout preference 호환 표면 — `vaultWorksLayoutKey`, `isVaultWorksLayoutEnabled()`, `setVaultWorksLayoutEnabled()`, 및 title-only 경로 선택에서의 preference 소비. legacy 경로 분기·삭제 후보·bootstrap legacy 디렉터리는 **L2–L4**에서 별도 관리한다.
 
-| # | 게이트 | 검증 |
-|---|--------|------|
-| G1 | Steam v1.0 dogfood **B1 완료** | Sprint B1 §5 체크리스트 |
-| G2 | 신규 유저 온보딩에서 works 경로 **문서화** | vault-layout-v2 사용자 안내 |
-| G3 | **v1.2 마일스톤** 합의 | PROJECT_STATUS · release-readiness |
+**원래 결정 (2026-06-25):** v1.0 출시 전 기본값 **`false`**를 유지하고, v1.2에서 다음 G1–G3를 재평가한 뒤 `true` 전환을 검토하기로 했다.
 
-**결정 (2026-06-25):** v1.0 출시 전 기본값 **`false` 고정**. v1.2에서 G1~G3 재평가.
+| # | 원래 게이트 | 검증 | 현재 증거 상태 |
+|---|-------------|------|----------------|
+| G1 | Steam v1.0 dogfood **B1 완료** | Sprint B1 §5 체크리스트 | 이번 정리에서 충족 증거 미확인 |
+| G2 | 신규 유저 온보딩에서 works 경로 **문서화** | vault-layout-v2 사용자 안내 | 이번 정리에서 충족 증거 미확인 |
+| G3 | **v1.2 마일스톤** 합의 | PROJECT_STATUS · release-readiness | 원 계획 이후 UA-131이 선행됐으나 원 게이트 충족으로 간주하지 않음 |
+
+**현재 구현 상태 (UA-131 이후):** 원래 G1–G3의 충족 여부와 별개로, key 미설정 fallback은 코드에서 이미 **`true`**로 전환됐다. ID 기반 Work는 preference와 관계없이 canonical `works/{category}/{workId}.md` 경로를 사용한다. 이 변경은 원래 제거 게이트가 충족됐음을 의미하지 않는다.
+
+**현재 L1 잔여 조건** (원래 G1–G3를 대체하지 않음):
+
+| ID | 현재 L1 잔여 조건 | 상태 |
+|----|-------------------|:----:|
+| L1-R1 | key 없음과 key=`false` 사용자에서 ID 기반 저장 경로가 동일함을 회귀 테스트로 고정 | 미충족 |
+| L1-R2 | ID 없는 title-only 레코드의 지원·migration·rollback 정책 확정 (기존 `filePath`·dual-path 상태 포함) | 미충족 |
+| L1-R3 | preference 소비처가 0이 되거나 L2–L4 제거와 함께 대체됨을 확인 | 미충족 |
 
 ### 2.3 레거시 경로 코드 제거 조건 (L2~L5)
 
@@ -52,12 +64,14 @@
 
 | # | 게이트 | 검증 |
 |---|--------|------|
-| G4 | 기본값 `true` 전환 **배포 완료** | L1 충족 후 1 릴리즈 |
+| G4 | L1 제거 조건 충족 후 최소 1개 실제 배포 릴리즈 관찰 | release evidence · 회귀 결과 |
 | G5 | 선택적 **일괄 마이그레이션 도구** (opt-in) 또는 공식 가이드 | `tool/migrations/` 또는 문서 |
 | G6 | dogfood·테스트에서 legacy-only 신규 저장 **0건** 2연속 릴리즈 | B1 회귀 + vault_archive_test |
 | G7 | `resolveDeleteCandidates` legacy 후보 제거 시 **삭제 회귀 테스트** green | `vault_archive_test.dart` |
 
-**결정:** G4~G7 전부 충족 전까지 `{vault}/{category}/` 분기 **삭제 금지**. 읽기·삭제 후보 경로는 레거시 볼트 호환을 위해 **마지막에 제거**.
+UA-131의 코드 변경 존재만으로 G4의 실제 배포·관찰 조건을 충족했다고 간주하지 않는다.
+
+**결정:** G4~G7 전부 충족 전까지 `{vault}/{category}/` 분기 **삭제 금지**. 읽기·삭제 후보 경로는 레거시 볼트 호환을 위해 **마지막에 제거**. legacy 파일을 자동 삭제하지 않으며, 데이터 손실 방지 게이트를 우회하지 않는다.
 
 ---
 
@@ -108,7 +122,7 @@
 
 | ID | 파일 (정책 대상 / 현재 관측) | TODO 위치 | 제거 게이트 | 최조 목표 | 현재 관측 |
 |:--:|------|-----------|-------------|-----------|-----------|
-| **L1** | `user_preferences.dart` | `isVaultWorksLayoutEnabled` 기본값 | §2.2 G1~G3 | v1.2 | 마커 있음 |
+| **L1** | `user_preferences.dart` 및 preference 소비처 | works-layout key/getter/setter 호환 표면 | §2.2 원래 G1–G3 기록 + L1-R1~R3 | v1.2+ | 마커 있음 · fallback은 UA-131에서 `true`, preference 제거 조건은 미충족 |
 | **L2** | `vault_work_journal_paths.dart` | `resolveNewPath` legacy 분기 | §2.3 G4~G7 | v1.2+ | **마커 검색 안 됨** (미충족으로 보지 않음) |
 | **L3** | `vault_work_journal_paths.dart` | `resolveDeleteCandidates` legacy 후보 | §2.3 G4~G7 | v1.2+ | 마커 있음 |
 | **L4** | 정책: `file_service.dart` · 관측: `file_service_bootstrap.dart` | 구 `{category}/` 폴더 생성 | §2.3 G4~G7 | v1.2+ | 마커 있음 (경로 이동) |
@@ -151,3 +165,4 @@ registry compatibility and are **not** M3 removal targets:
 | 일자 | 변경 |
 |------|------|
 | 2026-06-25 | F4 초안 — 9건 조건표 · works 레이아웃 v1.0=false 고정 · alias 889 유지 |
+| 2026-07-20 | Works layout 계약 정합 — UA-131 shipping fallback=`true` 반영 · ID canonical path의 flag 비의존 명시 · 원래 G1–G3는 미입증 상태로 보존 · L1 preference 제거 잔여 조건 분리 |

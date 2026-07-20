@@ -65,8 +65,11 @@ class UserPreferences {
     }
   }
 
-  /// Wave 2 — 신규 work journal을 `{vault}/works/{subtype}/`에 저장.
-  /// 기본값 false: 기존 볼트 호환. TODO(remove): L1 — docs/active/LEGACY_REMOVAL_POLICY.md §2.2
+  /// ID가 없는 title 기반 Work 경로의 `works/` 레이아웃 호환 preference.
+  ///
+  /// preference가 없으면 `true`가 기본값이다. ID 기반 Work는 이 값과 무관하게
+  /// `works/{category}/{workId}.md`에 저장되며, 기존 `filePath`는 강제 이동하지 않는다.
+  /// TODO(remove): L1 — docs/active/LEGACY_REMOVAL_POLICY.md §2.2
   static Future<bool> isVaultWorksLayoutEnabled() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(vaultWorksLayoutKey) ?? true;
