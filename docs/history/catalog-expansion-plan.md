@@ -1,7 +1,7 @@
 # 작품 카탈로그 확장 계획 — 애니·만화 우선
 
 > **⚠️ 역사 문서 (2026-06-08)** — 작성 시점에는 Tier 1 `posterPath`·`description` 큐레이션이 전제였습니다.  
-> **현행 SSOT (2026-06-10):** [product-vision.md](../product-vision.md) · Registry **430작** · Tier 1 = **Fact only** · 포스터·감상은 **Sanctum vault**만.
+> **당시 SSOT (2026-06-10):** `product-vision.md` (당시 SSOT · 현재 파일 없음 · 후계: [VISION.md](../active/VISION.md)) · Registry **430작** · Tier 1 = **Fact only** · 포스터·감상은 **Sanctum vault**만.
 
 > **목적:** akasha-db에 **인지도 높은 애니·만화**를 엄선 추가 (Steam v1 단계)  
 > **전제:** [akasha-db-policy.md](../akasha-db-policy.md) 법무·운영 방침 **절대 우선**  

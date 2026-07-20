@@ -1,7 +1,7 @@
 # externalId Coverage Economics Plan — Sprint 04 (P1 / Q2)
 
 > **⚠️ 역사 문서 (@402)** — Sprint 04 계획 시점 기록. **최종 결과:** [sprint-04-e1-resolution.md](../sprint-04-e1-resolution.md) (G2 **50%** @430).  
-> **현행:** [product-vision.md](../product-vision.md) · Tier 1 Fact only · 포스터 attach 전략 **폐기**.
+> **당시:** `product-vision.md` (당시 문서 · 현재 파일 없음 · 후계: [VISION.md](../active/VISION.md)) · Tier 1 Fact only · 포스터 attach 전략 **폐기**.
 
 > **목적:** Sprint 04 범위 확정 — **externalId G2 50%** Economics 검증 계획.  
 > **전제:** Sprint 03 이후 · [phase2-late-stage-plan.md](phase2-late-stage-plan.md) Q2 · [phase2-governance-review.md](../phase2-governance-review.md)  

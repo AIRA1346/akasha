@@ -1,7 +1,7 @@
 # Sanctum `.md` 작품 페이지 커스터마이징
 
 > **상태:** v1 P0~P3 ✅ · P2 watch ✅ (2026-06-14) · P4 block 확장 예정  
-> **북극성:** [ultimate-archiving-vision.md](ultimate-archiving-vision.md) · [product-vision.md](../product-vision.md) §5
+> **북극성:** [ultimate-archiving-vision.md](ultimate-archiving-vision.md) · `product-vision.md` §5 (당시 문서 · 현재 파일 없음 · 후계: [VISION.md](../../active/VISION.md))
 
 ---
 

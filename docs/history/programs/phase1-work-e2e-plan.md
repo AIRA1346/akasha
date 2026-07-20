@@ -115,7 +115,7 @@
 | 문서 | 역할 |
 |------|------|
 | [ultimate-archiving-vision.md](../product/ultimate-archiving-vision.md) | 장기 북극성 |
-| [product-vision.md](../product-vision.md) | Tier 1/2 · v1 In/Out |
+| `product-vision.md` (당시 문서 · 현재 파일 없음 · 후계: [VISION.md](../../active/VISION.md)) | Tier 1/2 · v1 In/Out |
 | [catalog-growth-charter.md](catalog-growth-charter.md) | G1 insert (Sprint C) |
 | [registry-scaling-review.md](../validation/registry-scaling-review.md) | **참고만** — 지금 수정 트리거 아님 |
 

@@ -161,7 +161,7 @@ Connection           [[wiki]] · RecordLink · Phase 5
 | **1.5** | User Local Catalog | 사용자 발급 `*_u_*` Fact | ❌ (Fact만) |
 | **2** | Sanctum Record | Entity **참조** | ✅ `.md` |
 
-Tier 2는 Tier 1·1.5 Fact를 **덮어쓰지 않음** — [product-vision.md](../product-vision.md).
+Tier 2는 Tier 1·1.5 Fact를 **덮어쓰지 않음** — `product-vision.md` (당시 선행 문서 · 현재 파일 없음 · 후계: [VISION.md](../../active/VISION.md)).
 
 ### 2.7 Franchise (ADR-001) — 변경 없음
 

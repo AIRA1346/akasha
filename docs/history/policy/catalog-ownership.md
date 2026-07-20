@@ -18,7 +18,7 @@
 
 | **externalIds** (`steam`, `tmdb`, …) | Fact — 식별·중복 탐지용 (**포스터 URL attach 금지**) |
 
-**감상·설명·포스터**는 Tier 2 Sanctum vault만 — [product-vision.md]](../product-vision.md).
+**감상·설명·포스터**는 Tier 2 Sanctum vault만 — `product-vision.md` (당시 문서 · 현재 파일 없음 · 후계: [VISION.md](../../active/VISION.md)).
 
 ---
 

@@ -41,7 +41,7 @@
 | [docs/README.md](../README.md) | Registry 430 → 490 |
 | [ROADMAP.md](../../ROADMAP.md) | **현재 섹션** 사전 규모 · test 96/96 |
 | [project-status-snapshot.md](../project-status-snapshot.md) | §2 `250/250` → 254 · 운영 결정 문맥 |
-| [product-vision.md](../product-vision.md) | v1 범위 「430+」 |
+| `product-vision.md` (당시 문서 · 현재 파일 없음 · 후계: [VISION.md](../../active/VISION.md)) | v1 범위 「430+」 |
 | [release-readiness-checklist.md](../release-readiness-checklist.md) | 유지 (이미 490/254) |
 | [programs/m2-steam-store-page.md](m2-steam-store-page.md) | 유지 (이미 490+) |
 | [programs/catalog-growth-charter.md](catalog-growth-charter.md) | 「430」→ **「@430 시점 결정」** footnote 유지 |
