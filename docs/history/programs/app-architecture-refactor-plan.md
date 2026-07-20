@@ -3,7 +3,7 @@
 > **상태:** Wave 1 ✅ (2026-06-16) · Wave 2~ 실행 SSOT → [extensibility-hardening-plan.md](extensibility-hardening-plan.md)  
 > **목적:** 490 → 5k → 50k+ · AI 연동 · 기능 추가에도 **변경 지점 1~2곳**으로 수렴하는 구조  
 > **전제:** 리라이트 없음 · **스팀 M2 완료** · **정식 릴리즈 전 Wave 1(Home 해부) 완수 우선**  
-> **상위:** `data-architecture-redesign.md` (당시 상위 문서 · 현재 문서: [ARCHITECTURE.md](../../active/ARCHITECTURE.md)) · [code-quality-review-plan.md](code-quality-review-plan.md) · [ROADMAP.md](../../ROADMAP.md)
+> **상위:** `data-architecture-redesign.md` (당시 상위 문서 · 현재 문서: [ARCHITECTURE.md](../../active/ARCHITECTURE.md)) · [code-quality-review-plan.md](code-quality-review-plan.md) · [ROADMAP.md](../../active/ROADMAP.md)
 
 ---
 
@@ -20,7 +20,7 @@
 | R1 | `HomeRegistryCoordinator` 등 **신규 이름 남발** | 기존 `HomeRegistrySync`·`Home*Controller` **이름 유지** · 신규만 `*Coordinator` 또는 `*Sync` |
 | R2 | 최상위 `application/` **일괄 신설** | W1은 `screens/home/` 유지 · W2에 `core/ports/` · W3에 `features/` **점진 이전** |
 | R3 | `home_screen.dart` **즉시 삭제** | `home_shell.dart`로 **분할·대체** 후 import 경로 정리 · 한 PR에 삭제+대체 |
-| R4 | Riverpod **전면 전제** | [ROADMAP](../../ROADMAP.md) 정렬 — W3 **feature scope만** · W2까지는 **생성자 주입** |
+| R4 | Riverpod **전면 전제** | [ROADMAP](../../active/ROADMAP.md) 정렬 — W3 **feature scope만** · W2까지는 **생성자 주입** |
 | R5 | Port **과다** (5종 동시) | W2: `RegistryPort`·`VaultPort` **2종만** · Entitlement·Search는 **사용처 안정 후** |
 | R6 | `workbench` 경로 미언급 | `lib/workbench/` + `lib/screens/workbench/` → W2에 `features/workbench/` **통합** |
 | R7 | MVR Should-fix **미매핑** | §8 표로 W1 PR과 1:1 연결 |
@@ -412,7 +412,7 @@ gantt
 | [repo-cleanup-plan.md](repo-cleanup-plan.md) | W0 동결 정책 일치 |
 | [release-readiness-checklist.md](../release-readiness-checklist.md) | M2 게이트 |
 | `data-architecture-redesign.md` (당시 경로 · 현재 문서: [ARCHITECTURE.md](../../active/ARCHITECTURE.md)) | Tier0/1/2 정렬 |
-| [ROADMAP.md](../../ROADMAP.md) | Riverpod · AI pipeline 순서 |
+| [ROADMAP.md](../../active/ROADMAP.md) | Riverpod · AI pipeline 순서 |
 
 ---
 

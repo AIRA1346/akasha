@@ -101,7 +101,7 @@
 | [search-index-architecture-options.md](search-index-architecture-options.md) | 옵션 **E1**~**E3** | **active** (설계) | 없음 |
 | [search-workload-profile.md](search-workload-profile.md) | POC **E1**(A+B) | **active** | 없음 |
 | [search-index-validation-plan.md](search-index-validation-plan.md) | POC **E1** 참조 | **active** | 없음 |
-| [ROADMAP.md](../ROADMAP.md) | Milestone **E1** + search **E1** | **active** | 없음 |
+| [ROADMAP.md](../active/ROADMAP.md) | Milestone **E1** + search **E1** | **active** | 없음 |
 
 ### 2.7 V4 · ML — 기타 (`E1`~`E4` / `E1`~`E2`)
 

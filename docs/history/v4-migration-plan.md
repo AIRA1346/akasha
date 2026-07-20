@@ -163,5 +163,5 @@
 
 - `data-architecture-redesign.md` (당시 경로 · 현재 문서: [ARCHITECTURE.md](../active/ARCHITECTURE.md)) — 비전·ADR
 - [canonicalization-policy.md](canonicalization-policy.md) — dedupe 규칙
-- [ROADMAP.md](../ROADMAP.md) — 마일스톤
+- [ROADMAP.md](../active/ROADMAP.md) — 마일스톤
 - [akasha-db/SCHEMA.md](../akasha-db/SCHEMA.md) — v4 필드

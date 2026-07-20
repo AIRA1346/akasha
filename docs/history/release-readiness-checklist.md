@@ -10,7 +10,7 @@
 
 > **지위 (당시):** M2→M3 출시 게이트 **운영 SSOT**
 > **갱신:** 2026-06-19 (Release 리허설 · @10048 · CDN push)
-> **상위 (당시):** [ROADMAP.md](../ROADMAP.md) M2 · [m2-steam-store-page.md](programs/m2-steam-store-page.md)
+> **상위 (당시):** [ROADMAP.md](../../ROADMAP.md) M2 · [m2-steam-store-page.md](programs/m2-steam-store-page.md)
 
 ---
 
@@ -20,7 +20,7 @@
 
 | ID | 조건 | 상태 (2026-06-19) |
 |----|------|:-----------------:|
-| R1 | Steam v1 기능 동결 ([ROADMAP](ROADMAP.md) §체크리스트) | ✅ |
+| R1 | Steam v1 기능 동결 ([ROADMAP](../active/ROADMAP.md) §체크리스트) | ✅ |
 | R2 | 자동 게이트 green (§2) | ✅ |
 | R3 | P0 수동 QA 12/12 (§3) | 🔶 Release 빌드 기준 재확인 권장 |
 | R4 | Steamworks depot·스토어·IAP (§4) | ✅ |

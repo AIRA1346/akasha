@@ -137,7 +137,7 @@ dedupe >0 · quality FAIL · SW1 recall 하락 시 **일시 감속** — 전면 
 | [a5-scale-operational-decisions.md](a5-scale-operational-decisions.md) | SD2.6 **폐기** |
 | [../strategy/registry-growth-strategy.md](../strategy/registry-growth-strategy.md) | 병행 성장 프레임 |
 | [../strategy/wikidata-spine-plan.md](../strategy/wikidata-spine-plan.md) | **Wikidata 1차 연동·그래프·확장 SSOT** |
-| [../ROADMAP.md](../ROADMAP.md) | 병행 트랙 |
+| [../ROADMAP.md](../../active/ROADMAP.md) | 병행 트랙 |
 
 ---
 

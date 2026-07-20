@@ -3,7 +3,7 @@
 > **상태:** v1 curated **구현 완료** (2026-06-10) · v1.1 백로그: E2 워크벤치 polish · Case D 잔여  
 > **기준일:** 2026-06-10  
 > **지위:** `PersonalLibraryConfig` · `MyLibraryPipeline` 확장 SSOT  
-> **상위:** `product-vision.md` (당시 상위 문서 · 현재 파일 없음 · 후계: [VISION.md](../../active/VISION.md)) · [ROADMAP.md](../../ROADMAP.md) M1 나만의 서재
+> **상위:** `product-vision.md` (당시 상위 문서 · 현재 파일 없음 · 후계: [VISION.md](../../active/VISION.md)) · [ROADMAP.md](../../active/ROADMAP.md) M1 나만의 서재
 
 ---
 
