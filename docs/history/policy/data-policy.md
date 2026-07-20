@@ -2,10 +2,10 @@
 
 > **상태:** v1.1 (2026-06-10)  
 > **지위:** Discovery·Expansion·Registry 설계의 **최상위 정책**  
-> **제품 SSOT:** [product-vision.md](product-vision.md)  
+> **제품 SSOT:** [VISION.md](../../active/VISION.md)
 > **전제:** AKASHA 목표는 **「작품 발견」** 이지 **「외부 DB 복제」** 가 아니다.
 
-**이 문서보다 하위:** [akasha-db-policy.md](akasha-db-policy.md) · [discovery-policy.md](discovery-policy.md) · [catalog-ownership.md](../policy/catalog-ownership.md) · [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md) · [canonicalization-policy.md](../policy/canonicalization-policy.md)
+**이 문서보다 하위:** [akasha-db-policy.md](akasha-db-policy.md) · [discovery-policy.md](discovery-policy.md) · [catalog-ownership.md](../policy/catalog-ownership.md) · [POSTER_POLICY.md](../../../akasha-db/POSTER_POLICY.md) · [canonicalization-policy.md](../policy/canonicalization-policy.md)
 
 > 아래는 **변호사 자문이 아닌** 1인 스튜디오 실무 판단입니다. Steam 상업 배포·대규모 ingest 전 현지 IP 전문가 검토를 권장합니다.
 
@@ -340,7 +340,7 @@ Discovery 채널 확장 **전에** 아래를 확정한다.
 | 순위 | 항목 | 상태 |
 |:----:|------|------|
 | **1** | **Data Policy** (본 문서) | ✅ v1 |
-| **2** | Registry Minimal Core + SCHEMA | ✅ [SCHEMA.md](../akasha-db/SCHEMA.md) |
+| **2** | Registry Minimal Core + SCHEMA | ✅ [SCHEMA.md](../../../akasha-db/SCHEMA.md) |
 | **3** | Legal-safe Field Matrix + CI gate | ✅ `tier1_poster` · `tier1_description` |
 | **4** | Quality (`qualitySignals` → score) | 🔶 구현 중 |
 | **5** | Canonicalization (franchise·edition) | 🔶 문서·linter |
@@ -397,8 +397,8 @@ dart run tool/cleanup_poster_source.dart --apply --sync-assets
 | [akasha-db-policy.md](akasha-db-policy.md) | 운영·구축 방침 |
 | [catalog-ownership.md](../policy/catalog-ownership.md) | 3계층 소유권 |
 | [canonicalization-policy.md](../policy/canonicalization-policy.md) | identity·franchise (Quality와 독립) |
-| [SCHEMA.md](../akasha-db/SCHEMA.md) | WorkEntry 스키마 |
-| [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md) | 포스터 URL |
+| [SCHEMA.md](../../../akasha-db/SCHEMA.md) | WorkEntry 스키마 |
+| [POSTER_POLICY.md](../../../akasha-db/POSTER_POLICY.md) | 포스터 URL |
 
 ---
 
