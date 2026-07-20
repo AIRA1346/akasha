@@ -13,7 +13,13 @@ import 'registry_shard_loader.dart';
 
 typedef RegistryTextFetcher = Future<String?> Function(String url);
 
-/// Git 기반 글로벌 작품 사전 동기화 서비스 (샤딩 아키텍처)
+/// Git 기반 글로벌 작품 사전 동기화 서비스 (샤딩 아키텍처).
+///
+/// 기능적 sync seam을 제공한다. 현재 production composition에는 배선되지 않으며,
+/// 앱 시작은 bundled Registry bootstrap만 사용한다.
+///
+/// 이 서비스와 관련 adapter는 격리 테스트 또는 향후 명시적으로 활성화될
+/// sync composition을 위해 유지되고 있다.
 class RegistrySyncService {
   static const String _prefLastSyncKey =
       RegistryCacheContract.lastSyncPreferenceKey;
@@ -45,17 +51,28 @@ class RegistrySyncService {
   SharedPreferences? _prefs;
   static RegistryTextFetcher? _textFetcherOverride;
 
-  /// sync() 성공 후 레지스트리를 메모리에 재로드할 콜백 — WorksRegistry가 주입.
+  /// sync() 성공 후 메모리 Registry를 다시 로드할 콜백.
+  ///
+  /// 현재 production composition은 registry sync를 배선하지 않으므로
+  /// production startup에서는 주입되지 않는다.
   Future<void> Function()? _onSyncSuccess;
 
-  /// [WorksRegistry.init] 에서 한 번 등록. 이후 변경 없음.
+  /// sync 성공 후 메모리 Registry를 다시 로드할 콜백을 등록한다.
+  ///
+  /// 현재 production composition은 registry sync를 배선하지 않으므로
+  /// production startup에서는 호출되지 않는다. 격리 테스트나 향후
+  /// 명시적으로 활성화된 sync composition을 위한 seam이다.
   void registerOnSyncSuccess(Future<void> Function() callback) {
     _onSyncSuccess = callback;
   }
 
   RegistryShardLoader? _loader;
 
-  /// WorksRegistry가 init 시 한 번 주입. 이후 변경 없음.
+  /// 이 optional sync service가 사용할 loader를 바인딩한다.
+  ///
+  /// 현재 production composition은 registry sync를 배선하지 않으며,
+  /// 앱 시작은 bundled bootstrap을 사용한다. 격리 테스트나 향후
+  /// 명시적으로 활성화된 sync composition을 위한 seam이다.
   void bindLoader(RegistryShardLoader loader) {
     _loader = loader;
   }

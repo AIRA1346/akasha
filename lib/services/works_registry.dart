@@ -24,10 +24,12 @@ class WorksRegistry {
   /// search_index 빌드 산출 품질 점수 (0–100, 파생값)
   static int qualityScoreFor(String workId) => _loader.qualityScoreFor(workId);
 
-  /// 앱 시작 시 번들 샤드 + (유효한) 캐시 + 레거시 병합
+  /// 앱 시작 시 bundled Registry bootstrap만 로드한다.
+  ///
+  /// remote/CDN Registry sync는 production dependency graph에 배선되지 않는다.
+  /// sync seam이 남아 있어도 현재 [init] 동작의 일부가 아니다.
   static Future<void> init() async {
     if (_initialized) return;
-    // E1-A3b: loader·reload 콜백을 sync service에 주입해 순환 import 제거
     await RegistryBundleOnlyMigration().run();
     try {
       await _loader.loadBundledBootstrap();
