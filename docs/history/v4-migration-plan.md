@@ -1,7 +1,7 @@
 # akasha-db v4 마이그레이션 실행 계획 (Steam 출시 게이트)
 
 > **결정 (2026-06-08):** Steam v1 출시 **전에** 데이터 아키텍처 v4 런타임을 완료한다.  
-> **설계:** [data-architecture-redesign.md](data-architecture-redesign.md) · **정책:** [akasha-db-policy.md](akasha-db-policy.md)  
+> **설계:** `data-architecture-redesign.md` (당시 경로 · 현재 문서: [ARCHITECTURE.md](../active/ARCHITECTURE.md)) · **정책:** [akasha-db-policy.md](akasha-db-policy.md)  
 > **기준일:** 2026-06-08
 
 ---
@@ -161,7 +161,7 @@
 
 ## 6. 관련 문서
 
-- [data-architecture-redesign.md](data-architecture-redesign.md) — 비전·ADR
+- `data-architecture-redesign.md` (당시 경로 · 현재 문서: [ARCHITECTURE.md](../active/ARCHITECTURE.md)) — 비전·ADR
 - [canonicalization-policy.md](canonicalization-policy.md) — dedupe 규칙
 - [ROADMAP.md](../ROADMAP.md) — 마일스톤
 - [akasha-db/SCHEMA.md](../akasha-db/SCHEMA.md) — v4 필드

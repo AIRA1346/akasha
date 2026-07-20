@@ -3,7 +3,7 @@
 * **상태:** 승인 (Accepted)  
 * **날짜:** 2026-06-13  
 * **상위 계획:** [app-architecture-refactor-plan.md](../programs/app-architecture-refactor-plan.md)  
-* **관련:** [data-architecture-redesign.md](../strategy/data-architecture-redesign.md) · [ultimate-archiving-vision.md](../product/ultimate-archiving-vision.md)
+* **관련:** `data-architecture-redesign.md` (당시 관련 문서 · 현재 문서: [ARCHITECTURE.md](../../active/ARCHITECTURE.md)) · [ultimate-archiving-vision.md](../product/ultimate-archiving-vision.md)
 
 ---
 

@@ -4,7 +4,7 @@
 |------|------|
 | **상태** | **승인** (2026-06-08) |
 | **범위** | Universal Works Registry 전체 |
-| **선행** | [data-architecture-redesign.md](../data-architecture-redesign.md) v4 |
+| **선행** | `data-architecture-redesign.md` (당시 선행 문서 · 현재 문서: [ARCHITECTURE.md](../../active/ARCHITECTURE.md)) v4 |
 
 ---
 

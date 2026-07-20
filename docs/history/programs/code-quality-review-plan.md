@@ -5,7 +5,7 @@
 > **범위:** `lib/` + `test/` (**앱 검토**) · `tool/`은 **3모듈 spot check**만 · `akasha-db`는 gate 확인  
 > **산출:** [reviews/](../reviews/) — [baseline](../reviews/code-metrics-baseline.md) · [structure](../reviews/code-quality-structure-review.md) · [report](../reviews/code-quality-review-report.md)  
 > **개편 계획:** [app-architecture-refactor-plan.md](app-architecture-refactor-plan.md) (MVR Should-fix → Wave 매핑)  
-> **상위:** `product-vision.md` (당시 상위 문서 · 현재 파일 없음 · 후계: [VISION.md](../../active/VISION.md)) · [data-architecture-redesign.md](../strategy/data-architecture-redesign.md) · [baseline-v1.md](../strategy/baseline-v1.md)
+> **상위:** `product-vision.md` (당시 상위 문서 · 현재 파일 없음 · 후계: [VISION.md](../../active/VISION.md)) · `data-architecture-redesign.md` (당시 상위 문서 · 현재 문서: [ARCHITECTURE.md](../../active/ARCHITECTURE.md)) · [baseline-v1.md](../strategy/baseline-v1.md)
 
 ---
 

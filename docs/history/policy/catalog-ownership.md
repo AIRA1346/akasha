@@ -2,7 +2,7 @@
 
 > **AKASHA는 남의 데이터베이스를 빌려 쓰지 않습니다.**  
 > `akasha-db`는 Rune Atelier가 **직접 구축·검수**하는 작품 메타데이터입니다.  
-> **장기 목표:** 세상의 모든 작품 사전 — [data-architecture-redesign.md]](../strategy/data-architecture-redesign.md)  
+> **장기 목표:** 세상의 모든 작품 사전 — `data-architecture-redesign.md` (당시 경로 · 현재 문서: [ARCHITECTURE.md](../../active/ARCHITECTURE.md))  
 > **필드·Discovery 법무:** [data-policy.md]](../data-policy.md)
 
 ---
@@ -50,7 +50,7 @@ Tier 2 — User Archive 볼트 YAML·posters/ (아카이브한 작품만, 희소
 
 | 순위 | 과제 | 문서 |
 |------|------|------|
-| 1 | `wk_` 영구 ID | [data-architecture-redesign.md]](../strategy/data-architecture-redesign.md) |
+| 1 | `wk_` 영구 ID | `data-architecture-redesign.md` (당시 경로 · 현재 문서: [ARCHITECTURE.md](../../active/ARCHITECTURE.md)) |
 | 2 | canonicalization·dedupe | [canonicalization-policy.md]](../policy/canonicalization-policy.md) |
 | 3 | 해시 샤딩 | SCHEMA v4 |
 

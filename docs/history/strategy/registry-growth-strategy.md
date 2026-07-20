@@ -132,7 +132,7 @@
 
 | 항목 | 방식 |
 |------|------|
-| 저장 | Git **소스** + CDN/R2 **read replica** ([data-architecture-redesign]](../strategy/data-architecture-redesign.md)) |
+| 저장 | Git **소스** + CDN/R2 **read replica** — `data-architecture-redesign.md` (당시 경로 · 현재 문서: [ARCHITECTURE.md](../../active/ARCHITECTURE.md)) |
 | 파이프라인 | 다소스 (Steam·OL·TMDB·Wikidata Signal) · confidence tier |
 | Franchise | universe/subseries **지연 생성** · tier 2 human |
 | SW1/URV | recall·canonical **회귀 CI** |

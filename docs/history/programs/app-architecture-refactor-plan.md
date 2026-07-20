@@ -3,7 +3,7 @@
 > **상태:** Wave 1 ✅ (2026-06-16) · Wave 2~ 실행 SSOT → [extensibility-hardening-plan.md](extensibility-hardening-plan.md)  
 > **목적:** 490 → 5k → 50k+ · AI 연동 · 기능 추가에도 **변경 지점 1~2곳**으로 수렴하는 구조  
 > **전제:** 리라이트 없음 · **스팀 M2 완료** · **정식 릴리즈 전 Wave 1(Home 해부) 완수 우선**  
-> **상위:** [data-architecture-redesign.md](../strategy/data-architecture-redesign.md) · [code-quality-review-plan.md](code-quality-review-plan.md) · [ROADMAP.md](../../ROADMAP.md)
+> **상위:** `data-architecture-redesign.md` (당시 상위 문서 · 현재 문서: [ARCHITECTURE.md](../../active/ARCHITECTURE.md)) · [code-quality-review-plan.md](code-quality-review-plan.md) · [ROADMAP.md](../../ROADMAP.md)
 
 ---
 
@@ -162,7 +162,7 @@ abstract class AiImportPort {
 |------|-----|-----------|
 | 490~5k | `RegistryPort` + prefetch | G1 supply · [scale-5k](../validation/scale-5k-risk-analysis.md) |
 | 5k~50k | `SearchPort` 구현 교체 가능 | search index 분리 |
-| 50k+ | cold start budget gate | CDN/R2 ([data-architecture](../strategy/data-architecture-redesign.md) §0.2) |
+| 50k+ | cold start budget gate | CDN/R2 (`data-architecture-redesign.md` §0.2 · 당시 경로 · 현재 문서: [ARCHITECTURE.md](../../active/ARCHITECTURE.md)) |
 
 ---
 
@@ -411,7 +411,7 @@ gantt
 | [code-quality-review-report.md](../reviews/code-quality-review-report.md) | 입력 · Amber 판정 |
 | [repo-cleanup-plan.md](repo-cleanup-plan.md) | W0 동결 정책 일치 |
 | [release-readiness-checklist.md](../release-readiness-checklist.md) | M2 게이트 |
-| [data-architecture-redesign.md](../strategy/data-architecture-redesign.md) | Tier0/1/2 정렬 |
+| `data-architecture-redesign.md` (당시 경로 · 현재 문서: [ARCHITECTURE.md](../../active/ARCHITECTURE.md)) | Tier0/1/2 정렬 |
 | [ROADMAP.md](../../ROADMAP.md) | Riverpod · AI pipeline 순서 |
 
 ---

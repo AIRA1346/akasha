@@ -2,7 +2,7 @@
 
 > **상태:** 설계 초안 (Wikidata spine 정합 2026-06-10)  
 > **기준일:** 2026-06-10  
-> **상위 문서:** [data-architecture-redesign.md]](../strategy/data-architecture-redesign.md) · [wikidata-spine-plan.md](../strategy/wikidata-spine-plan.md)  
+> **상위 문서:** `data-architecture-redesign.md` (당시 상위 문서 · 현재 문서: [ARCHITECTURE.md](../../active/ARCHITECTURE.md)) · [wikidata-spine-plan.md](../strategy/wikidata-spine-plan.md)  
 > **구현 일정:** Phase C — [v4-migration-plan.md]](../archive/v4-migration-plan.md) (Steam 게이트)
 
 AKASHA가 커질수록 **검색보다** 아래 질문이 더 중요해진다.
@@ -84,6 +84,6 @@ Pipeline·CI가 **후보**를 만들 때 참고하는 신호:
 
 ## 7. 관련 문서
 
-- [data-architecture-redesign.md]](../strategy/data-architecture-redesign.md)
+- `data-architecture-redesign.md` (당시 경로 · 현재 문서: [ARCHITECTURE.md](../../active/ARCHITECTURE.md))
 - [akasha-db-policy.md]](../akasha-db-policy.md)
 - [catalog-ownership.md](catalog-ownership.md)
