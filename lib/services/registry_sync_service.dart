@@ -81,7 +81,7 @@ class RegistrySyncService {
     final l = _loader;
     assert(
       l != null,
-      'RegistrySyncService: loader not bound. Call bindLoader() during WorksRegistry.init().',
+      'RegistrySyncService: loader not bound. Call bindLoader() before invoking sync operations.',
     );
     return l!;
   }
