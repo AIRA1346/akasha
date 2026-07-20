@@ -528,7 +528,7 @@ Prices → each pack cancel+complete → exact Astra deltas → restart → PC2 
 | Item visibility | Private (partner) until release policy | readiness R3 | HISTORICAL / reconfirm |
 | Overlay for Software | Enabled + **Published** | checklist precondition | BLOCKED (publication evidence) |
 | ItemDefs remote vs local SHA | Match LF canonical local `9653df26…35ff3` | Published Steamworks bytes SHA **UNKNOWN**; local candidate only | BLOCKED |
-| `40110–40112` store_hidden | `false` | local true; remote 40111/12 pending per active docs | BLOCKED |
+| `40110–40112` store_hidden | `false` | local false; remote 40111/12 pending per active docs | BLOCKED |
 | `40001` store_hidden | `true` | local JSON | IMPLEMENTATION-PASS (candidate) |
 | Steam Cloud for Vault | **Off / unsupported** | not confirmed in console from this audit | BLOCKED (`CLOUD-01`) |
 | Store IAP disclosure | Accurate when commerce ships | Repo plan aligned; Steamworks store pending sealed RC | BLOCKED |

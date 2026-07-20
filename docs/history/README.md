@@ -61,4 +61,4 @@
 | [rule-id-collision-analysis.md](rule-id-collision-analysis.md) | E1~E5 namespace 충돌 조사 |
 | [externalid-quality-risk-review.md](externalid-quality-risk-review.md) | externalId 품질 리스크 |
 | [assumption-register.md](assumption-register.md) | A1~A6 가정 인벤토리 |
-| [sanctum-md-page-customization.md](sanctum-md-page-customization.md) · [workbench-layout.md](workbench-layout.md) | → **[product/](../product/)** 로 이동 (리다이렉트 stub) |
+| [sanctum-md-page-customization.md](sanctum-md-page-customization.md) · [workbench-layout.md](workbench-layout.md) | → **[product/](product/)** 로 이동 (리다이렉트 stub) |

@@ -1,8 +1,16 @@
 # Release Readiness Checklist — Steam v1
 
-> **지위:** M2→M3 출시 게이트 **운영 SSOT**  
-> **갱신:** 2026-06-19 (Release 리허설 · @10048 · CDN push)  
-> **상위:** [ROADMAP.md](../ROADMAP.md) M2 · [m2-steam-store-page.md](programs/m2-steam-store-page.md)
+> **Status:** Historical snapshot
+>
+> 이 문서는 특정 시점(2026-06-19)의 release-readiness snapshot이다.
+> 현재 Steam 출시 상태와 판정은 active Steam 문서를 따른다:
+> [STEAM_RELEASE.md](../active/STEAM_RELEASE.md) ·
+> [STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md](../active/STEAM_V1_RELEASE_ACCEPTANCE_MATRIX.md).
+> 당시 체크 결과·판정·증거는 덮어쓰지 않는다.
+
+> **지위 (당시):** M2→M3 출시 게이트 **운영 SSOT**
+> **갱신:** 2026-06-19 (Release 리허설 · @10048 · CDN push)
+> **상위 (당시):** [ROADMAP.md](../ROADMAP.md) M2 · [m2-steam-store-page.md](programs/m2-steam-store-page.md)
 
 ---
 
