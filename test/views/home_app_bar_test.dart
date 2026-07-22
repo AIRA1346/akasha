@@ -70,6 +70,28 @@ void main() {
     }
   });
 
+  testWidgets('inspector control exposes state and toggles from the app bar', (
+    tester,
+  ) async {
+    var toggleCount = 0;
+    await tester.pumpWidget(
+      _testApp(
+        appBar: _appBar(
+          isInspectorOpen: false,
+          onToggleInspector: () => toggleCount++,
+        ),
+      ),
+    );
+
+    final toggle = find.byKey(const ValueKey('home-toggle-inspector'));
+    expect(toggle, findsOneWidget);
+    expect(find.byTooltip('Toggle inspector (Ctrl+N)'), findsOneWidget);
+    expect(tester.widget<IconButton>(toggle).isSelected, isFalse);
+
+    await tester.tap(toggle);
+    expect(toggleCount, 1);
+  });
+
   testWidgets('optional utility slots keep currency, settings, avatar order', (
     tester,
   ) async {
@@ -212,19 +234,23 @@ Widget _testApp({required PreferredSizeWidget appBar, TextScaler? textScaler}) {
 
 HomeAppBar _appBar({
   bool vaultLinked = false,
+  bool isInspectorOpen = true,
   VoidCallback? onTimelineCapture,
   VoidCallback? onCatalogInbox,
   int catalogContributionCount = 0,
   VoidCallback? onSettings,
   VoidCallback? onCommerce,
+  VoidCallback? onToggleInspector,
   bool commerceSelected = false,
   Widget? currencySlot,
   Widget? avatarSlot,
 }) {
   return HomeAppBar(
     isSidebarOpen: true,
+    isInspectorOpen: isInspectorOpen,
     vaultLinked: vaultLinked,
     onToggleSidebar: () {},
+    onToggleInspector: onToggleInspector ?? () {},
     onClipboardImport: () {},
     onTimelineCapture: onTimelineCapture,
     onPromptTemplates: () {},

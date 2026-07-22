@@ -63,8 +63,10 @@ void main() {
               return Scaffold(
                 appBar: HomeAppBar(
                   isSidebarOpen: true,
+                  isInspectorOpen: true,
                   vaultLinked: true,
                   onToggleSidebar: () {},
+                  onToggleInspector: () {},
                   onClipboardImport: () {},
                   onPromptTemplates: () {},
                   onVaultSettings: () {},

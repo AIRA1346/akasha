@@ -24,7 +24,7 @@ void _homeShellHandleEscape(
     layoutSpec: layoutSpec,
     sidebarOpen: controller.isSidebarOpen,
     commerceOpen: controller.isCommerceSurfaceOpen,
-    previewOpen: controller.hasOpenPreview,
+    previewOpen: controller.hasOpenPreview && controller.isInspectorOpen,
     fullscreen: windowController?.isFullScreen ?? false,
   )) {
     case ShellEscapeTarget.fullscreen:
@@ -69,6 +69,11 @@ Widget _homeShellScaffoldRoot(
       const SingleActivator(LogicalKeyboardKey.keyB, control: true): () {
         if (ModalRoute.of(context)?.isCurrent == true) {
           controller.toggleSidebar();
+        }
+      },
+      homeInspectorToggleActivator: () {
+        if (ModalRoute.of(context)?.isCurrent == true) {
+          controller.toggleInspector();
         }
       },
       const SingleActivator(LogicalKeyboardKey.keyK, control: true): () {

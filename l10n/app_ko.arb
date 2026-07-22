@@ -40,6 +40,7 @@
   "buildIdentityCopy": "빌드 정보 복사",
   "buildIdentityCopied": "빌드 정보를 클립보드에 복사했습니다.",
   "appBarToggleSidebar": "사이드바 토글 (Ctrl+B)",
+  "appBarToggleInspector": "인스펙터 토글 (Ctrl+N)",
   "appBarSearch": "검색",
   "appBarTimelineCapture": "타임라인 기록",
   "appBarCatalogInbox": "카탈로그 제안함",

@@ -14,6 +14,7 @@ mixin HomeShellControllerVaultMixin on HomeShellControllerBase {
     // the same vault that FileService just activated (indexes + notify).
     await LocalDerivedIndexLifecycle.app.refresh();
     await navigation.loadSidebarState();
+    await navigation.loadInspectorState();
     await navigation.loadDashboards();
     await navigation.loadPersonalLibraries();
     await navigation.loadCollectibleCollections();

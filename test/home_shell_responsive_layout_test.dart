@@ -45,7 +45,11 @@ void main() {
     expect(centerWithPreview, const Rect.fromLTWH(232, 0, 846, 768));
     expect(preview, const Rect.fromLTWH(1078, 0, 288, 768));
 
-    await _pumpFrame(tester, size: size, showPreview: false);
+    await _pumpFrame(
+      tester,
+      size: size,
+      preview: const _Slot(label: 'Replacement inspector content'),
+    );
     expect(
       tester.getRect(find.byKey(ShellLayoutFrame.centerKey)),
       centerWithPreview,
@@ -53,7 +57,7 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('1272x720 keeps the inspector without shifting the canvas', (
+  testWidgets('1272x720 inspector toggle releases and restores canvas width', (
     tester,
   ) async {
     addTearDown(() => tester.binding.setSurfaceSize(null));
@@ -69,7 +73,13 @@ void main() {
       const Rect.fromLTWH(984, 0, 288, 720),
     );
 
-    await _pumpFrame(tester, size: size, showPreview: false);
+    await _pumpFrame(tester, size: size, previewVisible: false);
+    expect(
+      tester.getRect(find.byKey(ShellLayoutFrame.centerKey)),
+      const Rect.fromLTWH(232, 0, 1040, 720),
+    );
+
+    await _pumpFrame(tester, size: size);
     expect(
       tester.getRect(find.byKey(ShellLayoutFrame.centerKey)),
       centerWithPreview,
@@ -149,7 +159,7 @@ void main() {
     },
   );
 
-  testWidgets('center state and scroll survive preview close and reopen', (
+  testWidgets('inspector toggle preserves center and preview state', (
     tester,
   ) async {
     addTearDown(() => tester.binding.setSurfaceSize(null));
@@ -188,7 +198,10 @@ void main() {
     expect(tester.state(find.byKey(centerKey)), same(centerState));
     expect(centerState.mounted, isTrue);
     expect(scrollController.offset, 320);
-    expect(tester.getRect(find.byKey(ShellLayoutFrame.centerKey)), centerRect);
+    expect(
+      tester.getRect(find.byKey(ShellLayoutFrame.centerKey)),
+      const Rect.fromLTWH(232, 0, 1134, 768),
+    );
 
     await _pumpFrame(tester, size: size, center: center, preview: preview);
     expect(find.byKey(ShellLayoutFrame.previewKey), findsOneWidget);

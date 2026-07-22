@@ -5,6 +5,7 @@ import 'package:akasha/screens/home/app_destination.dart';
 import 'package:akasha/screens/home/home_personal_library_controller.dart';
 import 'package:akasha/screens/home/home_shell_body.dart';
 import 'package:akasha/screens/home/home_shell_body_center.dart';
+import 'package:akasha/screens/home/home_shell_scaffold.dart';
 import 'package:akasha/screens/home/shell_layout_spec.dart';
 import 'package:akasha/theme/akasha_theme.dart';
 import 'package:akasha/widgets/dashboard_sidebar.dart';
@@ -13,6 +14,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  test('Ctrl+N is the canonical inspector toggle shortcut', () {
+    expect(
+      homeInspectorToggleActivator,
+      const SingleActivator(LogicalKeyboardKey.keyN, control: true),
+    );
+  });
+
   testWidgets(
     'Sidebar renders every registry destination and dispatches Graph/Timeline',
     (tester) async {

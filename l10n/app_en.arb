@@ -57,6 +57,7 @@
   "buildIdentityCopy": "Copy build information",
   "buildIdentityCopied": "Build information copied to the clipboard.",
   "appBarToggleSidebar": "Toggle sidebar (Ctrl+B)",
+  "appBarToggleInspector": "Toggle inspector (Ctrl+N)",
   "appBarSearch": "Search",
   "appBarTimelineCapture": "Timeline note",
   "appBarCatalogInbox": "Catalog suggestions inbox",

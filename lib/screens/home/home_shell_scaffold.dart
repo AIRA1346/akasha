@@ -27,6 +27,11 @@ part 'home_shell_scaffold_app_bar_part.dart';
 part 'home_shell_scaffold_body_part.dart';
 part 'home_shell_scaffold_bottom_nav_part.dart';
 
+const homeInspectorToggleActivator = SingleActivator(
+  LogicalKeyboardKey.keyN,
+  control: true,
+);
+
 /// CallbackShortcuts · Scaffold · AppBar · HomeShellBody (Wave 1.4).
 class HomeShellScaffold extends StatefulWidget {
   const HomeShellScaffold({super.key, required this.controller});

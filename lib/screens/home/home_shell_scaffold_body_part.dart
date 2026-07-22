@@ -10,6 +10,7 @@ Widget _homeShellScaffoldBody(
     layoutSpec: layoutSpec,
     onToggleSidebar: controller.toggleSidebar,
     isSidebarOpen: controller.isSidebarOpen,
+    isInspectorOpen: controller.isInspectorOpen,
     destination: controller.currentDestination,
     activeUtilitySurface: controller.activeUtilitySurface,
     onCloseUtilitySurface: controller.closeUtilitySurface,

@@ -61,6 +61,7 @@ void runHomeShellSidebarNavigation({
 class HomeShellBody extends StatelessWidget {
   final ShellLayoutSpec layoutSpec;
   final bool isSidebarOpen;
+  final bool isInspectorOpen;
   final AppDestination destination;
   final HomeUtilitySurface? activeUtilitySurface;
   final VoidCallback onCloseUtilitySurface;
@@ -206,6 +207,7 @@ class HomeShellBody extends StatelessWidget {
     super.key,
     required this.layoutSpec,
     required this.isSidebarOpen,
+    required this.isInspectorOpen,
     required this.destination,
     required this.activeUtilitySurface,
     required this.onCloseUtilitySurface,
@@ -558,7 +560,8 @@ class HomeShellBody extends StatelessWidget {
         ),
       ),
       preview: keyedPreview,
-      previewVisible: persistentInspector || showSelectionPreview,
+      previewVisible:
+          isInspectorOpen && (persistentInspector || showSelectionPreview),
     );
   }
 }

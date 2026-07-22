@@ -42,6 +42,7 @@ mixin HomeShellControllerStateMixin on HomeShellControllerBase {
   int get catalogLoadedThrough => catalog.catalogLoadedThrough;
 
   bool get isSidebarOpen => navigation.isSidebarOpen;
+  bool get isInspectorOpen => navigation.isInspectorOpen;
   AppDestination get currentDestination => navigation.currentDestination;
   int get timelineReloadToken => navigation.timelineReloadToken;
   bool get isCuratedLibraryActive => navigation.isCuratedLibraryActive;

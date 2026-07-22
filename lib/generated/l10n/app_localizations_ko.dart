@@ -139,6 +139,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get appBarToggleSidebar => '사이드바 토글 (Ctrl+B)';
 
   @override
+  String get appBarToggleInspector => '인스펙터 토글 (Ctrl+N)';
+
+  @override
   String get appBarSearch => '검색';
 
   @override

@@ -338,6 +338,12 @@ abstract class AppLocalizations {
   /// **'Toggle sidebar (Ctrl+B)'**
   String get appBarToggleSidebar;
 
+  /// No description provided for @appBarToggleInspector.
+  ///
+  /// In en, this message translates to:
+  /// **'Toggle inspector (Ctrl+N)'**
+  String get appBarToggleInspector;
+
   /// No description provided for @appBarSearch.
   ///
   /// In en, this message translates to:
