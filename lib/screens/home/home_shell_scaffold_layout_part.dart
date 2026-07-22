@@ -72,9 +72,7 @@ Widget _homeShellScaffoldRoot(
         }
       },
       homeInspectorToggleActivator: () {
-        if (ModalRoute.of(context)?.isCurrent == true) {
-          controller.toggleInspector();
-        }
+        handleHomeInspectorToggleShortcut(context, controller.toggleInspector);
       },
       const SingleActivator(LogicalKeyboardKey.keyK, control: true): () {
         if (ModalRoute.of(context)?.isCurrent == true) {
