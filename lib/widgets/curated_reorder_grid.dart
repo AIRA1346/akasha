@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/browse_card.dart';
+import '../theme/akasha_theme_preset.dart';
 
 /// DnD-B — curated 서재 그리드 내 순서 변경 (좌측 핸들만)
 ///
@@ -31,8 +32,9 @@ class CuratedReorderGrid extends StatelessWidget {
         const verticalPadding = 8.0;
         const spacing = 12.0;
 
-        final crossAxisCount =
-            (constraints.maxWidth / cardMinWidth).floor().clamp(2, 8);
+        final crossAxisCount = (constraints.maxWidth / cardMinWidth)
+            .floor()
+            .clamp(2, 8);
         final contentWidth = constraints.maxWidth - horizontalPadding * 2;
         final cellWidth =
             (contentWidth - spacing * (crossAxisCount - 1)) / crossAxisCount;
@@ -68,11 +70,12 @@ class CuratedReorderGrid extends StatelessWidget {
       },
       builder: (context, candidate, rejected) {
         final highlighted = candidate.isNotEmpty;
+        final motion = context.resolvedAkashaThemeVisuals.effects.motion;
         return Stack(
           clipBehavior: Clip.none,
           children: [
             AnimatedContainer(
-              duration: const Duration(milliseconds: 120),
+              duration: motion.quickDuration,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 border: highlighted

@@ -23,6 +23,7 @@ void main() {
       const cases = [
         (width: 1600.0, expected: ShellLayoutClass.wide),
         (width: 1366.0, expected: ShellLayoutClass.standard),
+        (width: 1272.0, expected: ShellLayoutClass.standard),
         (width: 1024.0, expected: ShellLayoutClass.compact),
       ];
 
@@ -47,21 +48,23 @@ void main() {
       expect(spec.mainContentMinWidth, 800);
       expect(spec.appBarHeight, 64);
       expect(spec.dockHeight, 56);
+      expect(spec.showsBottomDock, isFalse);
       expect(spec.decorationDensity, ShellDecorationDensity.full);
     });
 
-    test('standard overlays preview and reduces decoration', () {
+    test('standard keeps the inspector inline and reduces decoration', () {
       const spec = ShellLayoutSpec.standard;
 
       expect(spec.sidebarPresentation, ShellSidebarPresentation.persistent);
-      expect(spec.previewPresentation, ShellPreviewPresentation.overlay);
+      expect(spec.previewPresentation, ShellPreviewPresentation.inline);
       expect(spec.sidebarWidth, 232);
       expect(spec.previewWidth, 288);
       expect(spec.reservedSidebarWidth, 232);
-      expect(spec.reservedPreviewWidth, 0);
+      expect(spec.reservedPreviewWidth, 288);
       expect(spec.mainContentMinWidth, 800);
       expect(spec.appBarHeight, 64);
       expect(spec.dockHeight, 56);
+      expect(spec.showsBottomDock, isFalse);
       expect(spec.decorationDensity, ShellDecorationDensity.reduced);
     });
 
@@ -75,6 +78,7 @@ void main() {
       expect(spec.mainContentMinWidth, 0);
       expect(spec.appBarHeight, 64);
       expect(spec.dockHeight, 56);
+      expect(spec.showsBottomDock, isTrue);
       expect(spec.decorationDensity, ShellDecorationDensity.minimal);
     });
 

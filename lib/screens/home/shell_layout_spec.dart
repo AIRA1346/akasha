@@ -75,6 +75,9 @@ final class ShellLayoutSpec {
   });
 
   static const double wideBreakpoint = 1440;
+  // Keep the persistent inspector available at the existing desktop boundary.
+  // Standard-page content must adapt to the remaining flexible center width;
+  // below this boundary both navigation and inspector become overlays.
   static const double standardBreakpoint = 1180;
 
   static const double wideSidebarWidth = 256;
@@ -98,7 +101,7 @@ final class ShellLayoutSpec {
   static const standard = ShellLayoutSpec._(
     layoutClass: ShellLayoutClass.standard,
     sidebarPresentation: ShellSidebarPresentation.persistent,
-    previewPresentation: ShellPreviewPresentation.overlay,
+    previewPresentation: ShellPreviewPresentation.inline,
     contentConstraint: ShellContentConstraint.desktopMinimum,
     decorationDensity: ShellDecorationDensity.reduced,
     sidebarWidth: standardSidebarWidth,
@@ -130,6 +133,10 @@ final class ShellLayoutSpec {
   final double dockHeight;
 
   double get mainContentMinWidth => contentConstraint.minWidth;
+
+  /// The dock is the compact navigation surface. Desktop layouts already
+  /// expose the same destinations in the persistent sidebar.
+  bool get showsBottomDock => layoutClass == ShellLayoutClass.compact;
 
   double get reservedSidebarWidth =>
       sidebarPresentation == ShellSidebarPresentation.persistent

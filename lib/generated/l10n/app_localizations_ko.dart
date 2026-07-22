@@ -2764,4 +2764,25 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get htmlExportSaveFirst => 'HTML보내기 전에 md를 저장해 주세요.';
+
+  @override
+  String get inspectorTitle => '컨텍스트 인스펙터';
+
+  @override
+  String get inspectorHomeDescription => '현재 아카이브 맥락과 최근 활동을 확인합니다.';
+
+  @override
+  String get inspectorArchiveSummary => '아카이브 요약';
+
+  @override
+  String get inspectorRecords => '기록';
+
+  @override
+  String get inspectorRecent => '최근 활동';
+
+  @override
+  String get inspectorVaultConnected => '로컬 볼트 연결됨';
+
+  @override
+  String get inspectorVaultDisconnected => '기록을 시작하려면 로컬 볼트를 연결하세요';
 }

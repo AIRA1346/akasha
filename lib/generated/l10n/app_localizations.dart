@@ -5107,6 +5107,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please save the md file before exporting HTML.'**
   String get htmlExportSaveFirst;
+
+  /// No description provided for @inspectorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Context inspector'**
+  String get inspectorTitle;
+
+  /// No description provided for @inspectorHomeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Review the current archive context and recent activity.'**
+  String get inspectorHomeDescription;
+
+  /// No description provided for @inspectorArchiveSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive summary'**
+  String get inspectorArchiveSummary;
+
+  /// No description provided for @inspectorRecords.
+  ///
+  /// In en, this message translates to:
+  /// **'Records'**
+  String get inspectorRecords;
+
+  /// No description provided for @inspectorRecent.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent'**
+  String get inspectorRecent;
+
+  /// No description provided for @inspectorVaultConnected.
+  ///
+  /// In en, this message translates to:
+  /// **'Local vault connected'**
+  String get inspectorVaultConnected;
+
+  /// No description provided for @inspectorVaultDisconnected.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect a local vault to start archiving'**
+  String get inspectorVaultDisconnected;
 }
 
 class _AppLocalizationsDelegate

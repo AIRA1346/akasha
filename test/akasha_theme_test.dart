@@ -1,6 +1,7 @@
 import 'package:akasha/theme/akasha_theme_registry.dart';
 import 'package:akasha/theme/akasha_palette.dart';
 import 'package:akasha/theme/akasha_theme.dart';
+import 'package:akasha/theme/akasha_effect_spec.dart';
 import 'package:akasha/theme/akasha_theme_preset.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,6 +18,7 @@ void main() {
       expect(visuals!.assets, same(preset.assets), reason: preset.id);
       expect(visuals.effects, same(preset.effects), reason: preset.id);
       expect(preset.hasValidAssetNamespace, isTrue, reason: preset.id);
+      expect(preset.effects.hasValidExtensions, isTrue, reason: preset.id);
       expect(preset.assetNamespace, 'assets/themes/${preset.id}/');
       expect(
         AkashaPalette.contrastRatio(palette!.onAccent, palette.accent),
@@ -55,6 +57,17 @@ void main() {
           ambientOpacity: 0.9,
         ),
         hero: AkashaHeroEffects(glowIntensity: 0.6, shadowIntensity: 0.4),
+        extensions: [
+          AkashaEffectSpec(
+            id: 'fixture-motion',
+            layer: AkashaEffectLayer.background,
+          ),
+          AkashaEffectSpec(
+            id: 'fixture-static',
+            layer: AkashaEffectLayer.background,
+            requiresMotion: false,
+          ),
+        ],
       ),
     );
 
@@ -80,6 +93,9 @@ void main() {
     expect(resolved.effects.hero, same(visuals.effects.hero));
     expect(resolved.effects.interaction, same(visuals.effects.interaction));
     expect(resolved.effects.motion.isReduced, isTrue);
+    expect(resolved.effects.extensions.map((effect) => effect.id), [
+      'fixture-static',
+    ]);
     expect(
       identical(visuals.resolveForMotion(reduceMotion: false), visuals),
       isTrue,

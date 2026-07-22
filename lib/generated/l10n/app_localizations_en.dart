@@ -2836,4 +2836,27 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get htmlExportSaveFirst =>
       'Please save the md file before exporting HTML.';
+
+  @override
+  String get inspectorTitle => 'Context inspector';
+
+  @override
+  String get inspectorHomeDescription =>
+      'Review the current archive context and recent activity.';
+
+  @override
+  String get inspectorArchiveSummary => 'Archive summary';
+
+  @override
+  String get inspectorRecords => 'Records';
+
+  @override
+  String get inspectorRecent => 'Recent';
+
+  @override
+  String get inspectorVaultConnected => 'Local vault connected';
+
+  @override
+  String get inspectorVaultDisconnected =>
+      'Connect a local vault to start archiving';
 }

@@ -14,6 +14,7 @@ import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_palette.dart';
 import '../../../theme/akasha_radius.dart';
 import '../../../theme/akasha_spacing.dart';
+import '../../../theme/akasha_theme_preset.dart';
 import '../../../theme/akasha_typography.dart';
 import '../../../utils/app_l10n.dart';
 import '../../../utils/relation_localizer.dart';
@@ -1260,6 +1261,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
   Widget _buildNodeWidget(CanvasNode node, AkashaPalette palette) {
     final bool isSelected = _selectedSourceNodeId == node.nodeId;
     final bool isConnectingMode = _interactionMode != CanvasInteractionMode.none;
+    final motion = context.resolvedAkashaThemeVisuals.effects.motion;
 
     return Positioned(
       left: CanvasEditorViewportConfig.workspaceOrigin + node.x,
@@ -1298,7 +1300,7 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
           CanvasStore.instance.saveLayoutDebounced(widget.vaultPath, widget.canvasId, _layout!);
         },
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 150),
+          duration: motion.quickDuration,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(AkashaRadius.md),
             boxShadow: isSelected
@@ -1325,5 +1327,4 @@ class _CanvasEditorWorkspaceState extends State<CanvasEditorWorkspace> {
     );
   }
 }
-
 

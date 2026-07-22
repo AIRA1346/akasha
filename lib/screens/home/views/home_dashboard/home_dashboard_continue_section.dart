@@ -6,6 +6,7 @@ import '../../../../theme/akasha_palette.dart';
 import '../../../../theme/akasha_radius.dart';
 import '../../../../theme/akasha_spacing.dart';
 import '../../../../theme/akasha_typography.dart';
+import '../../../../theme/akasha_theme_preset.dart';
 import '../../../../utils/app_l10n.dart';
 import '../../../../widgets/poster_image.dart';
 import '../../../home/views/preview_record_view_model.dart';
@@ -146,9 +147,15 @@ class _HomeDashboardContinueSectionState
       _scrollController.position.minScrollExtent,
       _scrollController.position.maxScrollExtent,
     );
+    final duration =
+        context.resolvedAkashaThemeVisuals.effects.motion.standardDuration;
+    if (duration == Duration.zero) {
+      _scrollController.jumpTo(target);
+      return;
+    }
     _scrollController.animateTo(
       target,
-      duration: const Duration(milliseconds: 280),
+      duration: duration,
       curve: Curves.easeOutCubic,
     );
   }

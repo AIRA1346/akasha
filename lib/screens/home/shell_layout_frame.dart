@@ -121,10 +121,10 @@ class _ShellLayoutFrameState extends State<ShellLayoutFrame> {
                 ShellSidebarPresentation.persistent
         ? widget.layoutSpec.sidebarWidth
         : 0.0;
+    // An inline inspector owns stable geometry even while its content is
+    // temporarily offstage. Closing a preview must not resize the canvas.
     final centerRight =
-        showsPreview &&
-            widget.layoutSpec.previewPresentation ==
-                ShellPreviewPresentation.inline
+        widget.layoutSpec.previewPresentation == ShellPreviewPresentation.inline
         ? widget.layoutSpec.previewWidth
         : 0.0;
 

@@ -27,6 +27,7 @@ class UniverseOrbitWidget extends StatefulWidget {
 class _UniverseOrbitWidgetState extends State<UniverseOrbitWidget>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
+  bool _motionEnabled = false;
 
   @override
   void initState() {
@@ -34,7 +35,25 @@ class _UniverseOrbitWidgetState extends State<UniverseOrbitWidget>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 24),
-    )..repeat();
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final mediaQuery = MediaQuery.maybeOf(context);
+    final enabled =
+        !(mediaQuery?.disableAnimations ?? false) &&
+        !(mediaQuery?.accessibleNavigation ?? false) &&
+        TickerMode.valuesOf(context).enabled;
+    if (enabled == _motionEnabled) return;
+    _motionEnabled = enabled;
+    if (enabled) {
+      _controller.repeat();
+    } else {
+      _controller.stop();
+      _controller.value = 0;
+    }
   }
 
   @override
@@ -51,20 +70,17 @@ class _UniverseOrbitWidgetState extends State<UniverseOrbitWidget>
         final height = math.min(220.0, math.max(160.0, width * 0.52));
 
         return ClipRect(
-          child: AnimatedBuilder(
-            animation: _controller,
-            builder: (context, child) {
-              return CustomPaint(
-                size: Size(width, height),
-                painter: _UniverseOrbitPainter(
-                  progress: _controller.value,
-                  workCount: widget.workCount,
-                  personCount: widget.personCount,
-                  placeCount: widget.placeCount,
-                  eventCount: widget.eventCount,
-                ),
-              );
-            },
+          child: RepaintBoundary(
+            child: CustomPaint(
+              size: Size(width, height),
+              painter: _UniverseOrbitPainter(
+                progress: _controller,
+                workCount: widget.workCount,
+                personCount: widget.personCount,
+                placeCount: widget.placeCount,
+                eventCount: widget.eventCount,
+              ),
+            ),
           ),
         );
       },
@@ -79,9 +95,9 @@ class _UniverseOrbitPainter extends CustomPainter {
     required this.personCount,
     required this.placeCount,
     required this.eventCount,
-  });
+  }) : super(repaint: progress);
 
-  final double progress;
+  final Animation<double> progress;
   final int workCount;
   final int personCount;
   final int placeCount;
@@ -116,10 +132,7 @@ class _UniverseOrbitPainter extends CustomPainter {
 
     final sunCorePaint = Paint()
       ..shader = RadialGradient(
-        colors: const [
-          Color(0xFFFFD700),
-          Color(0xFFFF4500),
-        ],
+        colors: const [Color(0xFFFFD700), Color(0xFFFF4500)],
       ).createShader(Rect.fromCircle(center: center, radius: baseR * 0.07));
     canvas.drawCircle(center, baseR * 0.07, sunCorePaint);
 
@@ -188,7 +201,7 @@ class _UniverseOrbitPainter extends CustomPainter {
       canvas.save();
       canvas.translate(centerX, centerY);
       canvas.rotate(orbit.tiltAngle);
-      
+
       orbitLinePaint.color = orbit.color.withValues(alpha: 0.14);
       canvas.drawOval(
         Rect.fromLTRB(-orbit.a, -orbit.b, orbit.a, orbit.b),
@@ -197,13 +210,18 @@ class _UniverseOrbitPainter extends CustomPainter {
       canvas.restore();
 
       // (2) 공전하는 노드(행성) 좌표 계산
-      final t = (progress * 2 * math.pi * orbit.speedFactor) + orbit.phase;
+      final t =
+          (progress.value * 2 * math.pi * orbit.speedFactor) + orbit.phase;
       final localX = orbit.a * math.cos(t);
       final localY = orbit.b * math.sin(t);
 
       // 회전 변환 적용
-      final rotatedX = localX * math.cos(orbit.tiltAngle) - localY * math.sin(orbit.tiltAngle);
-      final rotatedY = localX * math.sin(orbit.tiltAngle) + localY * math.cos(orbit.tiltAngle);
+      final rotatedX =
+          localX * math.cos(orbit.tiltAngle) -
+          localY * math.sin(orbit.tiltAngle);
+      final rotatedY =
+          localX * math.sin(orbit.tiltAngle) +
+          localY * math.cos(orbit.tiltAngle);
 
       final nodePos = Offset(centerX + rotatedX, centerY + rotatedY);
 
@@ -254,26 +272,20 @@ class _UniverseOrbitPainter extends CustomPainter {
       )..layout();
 
       // 카테고리 라벨 그리기 (위쪽)
-      labelPainter.paint(
-        canvas,
-        Offset(staticPos.dx, staticPos.dy - 12),
-      );
+      labelPainter.paint(canvas, Offset(staticPos.dx, staticPos.dy - 12));
 
       // 수치 그리기 (아래쪽)
-      countPainter.paint(
-        canvas,
-        Offset(staticPos.dx, staticPos.dy + 3),
-      );
+      countPainter.paint(canvas, Offset(staticPos.dx, staticPos.dy + 3));
     }
   }
 
   @override
   bool shouldRepaint(covariant _UniverseOrbitPainter oldDelegate) {
     return oldDelegate.progress != progress ||
-           oldDelegate.workCount != workCount ||
-           oldDelegate.personCount != personCount ||
-           oldDelegate.placeCount != placeCount ||
-           oldDelegate.eventCount != eventCount;
+        oldDelegate.workCount != workCount ||
+        oldDelegate.personCount != personCount ||
+        oldDelegate.placeCount != placeCount ||
+        oldDelegate.eventCount != eventCount;
   }
 }
 

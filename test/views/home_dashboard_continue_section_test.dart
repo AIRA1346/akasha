@@ -56,6 +56,7 @@ Widget _wrap({
   AkashaItem? selectedItem,
   VoidCallback? onExplore,
   double textScale = 1,
+  bool disableAnimations = false,
 }) {
   return MaterialApp(
     theme: AkashaTheme.dark(),
@@ -63,9 +64,10 @@ Widget _wrap({
     localizationsDelegates: AppLocalizations.localizationsDelegates,
     supportedLocales: AppLocalizations.supportedLocales,
     builder: (context, child) => MediaQuery(
-      data: MediaQuery.of(
-        context,
-      ).copyWith(textScaler: TextScaler.linear(textScale)),
+      data: MediaQuery.of(context).copyWith(
+        textScaler: TextScaler.linear(textScale),
+        disableAnimations: disableAnimations,
+      ),
       child: child!,
     ),
     home: Scaffold(
@@ -152,6 +154,24 @@ void main() {
 
       expect(controller.offset, greaterThan(0));
       expect(find.byTooltip('이전'), findsOneWidget);
+    });
+
+    testWidgets('reduced motion scrolls immediately without animation errors', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        _wrap(items: _sampleItems(8), width: 480, disableAnimations: true),
+      );
+      await tester.pump();
+
+      final controller = tester
+          .widget<Scrollable>(find.byType(Scrollable).first)
+          .controller!;
+      await tester.tap(find.byTooltip('다음'));
+      await tester.pump();
+
+      expect(controller.offset, greaterThan(0));
+      expect(tester.takeException(), isNull);
     });
 
     testWidgets('keeps rail offset when selection changes with the same IDs', (

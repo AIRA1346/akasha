@@ -90,15 +90,17 @@ Widget _homeShellScaffoldRoot(
           child: ExcludeFocus(excluding: modalDrawerOpen, child: appBar),
         ),
         body: _homeShellScaffoldBody(context, controller, filtered, layoutSpec),
-        bottomNavigationBar: ExcludeFocus(
-          excluding: modalDrawerOpen,
-          child: _homeShellScaffoldBottomNavigationBar(
-            context,
-            controller,
-            palette,
-            layoutSpec,
-          ),
-        ),
+        bottomNavigationBar: layoutSpec.showsBottomDock
+            ? ExcludeFocus(
+                excluding: modalDrawerOpen,
+                child: _homeShellScaffoldBottomNavigationBar(
+                  context,
+                  controller,
+                  palette,
+                  layoutSpec,
+                ),
+              )
+            : null,
       ),
     ),
   );

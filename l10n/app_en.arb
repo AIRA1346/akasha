@@ -1533,5 +1533,12 @@
     }
   },
   "resetToDefaultsSuccess": "Reset to registry defaults. (work_id preserved)",
-  "htmlExportSaveFirst": "Please save the md file before exporting HTML."
+  "htmlExportSaveFirst": "Please save the md file before exporting HTML.",
+  "inspectorTitle": "Context inspector",
+  "inspectorHomeDescription": "Review the current archive context and recent activity.",
+  "inspectorArchiveSummary": "Archive summary",
+  "inspectorRecords": "Records",
+  "inspectorRecent": "Recent",
+  "inspectorVaultConnected": "Local vault connected",
+  "inspectorVaultDisconnected": "Connect a local vault to start archiving"
 }

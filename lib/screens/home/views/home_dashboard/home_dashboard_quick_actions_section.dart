@@ -5,6 +5,7 @@ import '../../../../theme/akasha_palette.dart';
 import '../../../../theme/akasha_radius.dart';
 import '../../../../theme/akasha_spacing.dart';
 import '../../../../theme/akasha_typography.dart';
+import '../../../../theme/akasha_theme_preset.dart';
 import '../../../../utils/app_l10n.dart';
 import 'home_dashboard_styles.dart';
 
@@ -157,13 +158,14 @@ class _ActionCardState extends State<_ActionCard> {
   @override
   Widget build(BuildContext context) {
     final palette = context.akashaPalette;
+    final motion = context.resolvedAkashaThemeVisuals.effects.motion;
     final highlighted = _focused || _hovered;
 
     return Semantics(
       button: true,
       label: widget.title,
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 140),
+        duration: motion.quickDuration,
         decoration: BoxDecoration(
           color: highlighted ? palette.hoverSurface : palette.surfaceElevated,
           borderRadius: AkashaRadius.lgBorder,

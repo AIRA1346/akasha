@@ -1213,5 +1213,12 @@
     }
   },
   "resetToDefaultsSuccess": "사전 기본값으로 되돌렸습니다. (work_id는 유지)",
-  "htmlExportSaveFirst": "HTML보내기 전에 md를 저장해 주세요."
+  "htmlExportSaveFirst": "HTML보내기 전에 md를 저장해 주세요.",
+  "inspectorTitle": "컨텍스트 인스펙터",
+  "inspectorHomeDescription": "현재 아카이브 맥락과 최근 활동을 확인합니다.",
+  "inspectorArchiveSummary": "아카이브 요약",
+  "inspectorRecords": "기록",
+  "inspectorRecent": "최근 활동",
+  "inspectorVaultConnected": "로컬 볼트 연결됨",
+  "inspectorVaultDisconnected": "기록을 시작하려면 로컬 볼트를 연결하세요"
 }

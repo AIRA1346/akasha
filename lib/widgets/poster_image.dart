@@ -4,6 +4,7 @@ import 'package:path/path.dart' as p;
 import '../core/app_vault.dart';
 import '../models/akasha_item.dart';
 import '../models/enums.dart';
+import '../theme/akasha_theme_preset.dart';
 import 'safe_local_image.dart';
 
 // ════════════════════════════════════════════════════════════════
@@ -146,9 +147,11 @@ class _PosterImageState extends State<PosterImage> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final width = widget.width ??
+        final width =
+            widget.width ??
             (constraints.hasBoundedWidth ? constraints.maxWidth : null);
-        final height = widget.height ??
+        final height =
+            widget.height ??
             (constraints.hasBoundedHeight ? constraints.maxHeight : null);
 
         final placeholder = CategoryPosterPlaceholder(
@@ -160,6 +163,13 @@ class _PosterImageState extends State<PosterImage> {
 
         if (_networkCandidates.isNotEmpty) {
           final url = _networkCandidates[_candidateIndex];
+          final devicePixelRatio =
+              MediaQuery.maybeDevicePixelRatioOf(context) ?? 1;
+          final cacheWidth = _decodeSize(width, devicePixelRatio);
+          final cacheHeight = cacheWidth == null
+              ? _decodeSize(height, devicePixelRatio)
+              : null;
+          final motion = context.resolvedAkashaThemeVisuals.effects.motion;
           return _boundedImage(
             width: width,
             height: height,
@@ -171,6 +181,9 @@ class _PosterImageState extends State<PosterImage> {
               width: width,
               height: height,
               headers: _networkImageHeaders,
+              cacheWidth: cacheWidth,
+              cacheHeight: cacheHeight,
+              filterQuality: FilterQuality.medium,
               gaplessPlayback: true,
               errorBuilder: (_, error, stackTrace) {
                 debugPrint(
@@ -187,17 +200,14 @@ class _PosterImageState extends State<PosterImage> {
                 if (wasSynchronouslyLoaded) return child;
                 return AnimatedOpacity(
                   opacity: frame == null ? 0.0 : 1.0,
-                  duration: const Duration(milliseconds: 300),
+                  duration: motion.standardDuration,
                   curve: Curves.easeOut,
                   child: child,
                 );
               },
               loadingBuilder: (context, child, loadingProgress) {
                 if (loadingProgress == null) return child;
-                return ShimmerLoadingPlaceholder(
-                  width: width,
-                  height: height,
-                );
+                return ShimmerLoadingPlaceholder(width: width, height: height);
               },
             ),
           );
@@ -245,15 +255,22 @@ class _PosterImageState extends State<PosterImage> {
     return SizedBox(
       width: width,
       height: height,
-      child: ColoredBox(
-        color: const Color(0xFF12121A),
-        child: image,
-      ),
+      child: ColoredBox(color: const Color(0xFF12121A), child: image),
     );
   }
 
   bool _isNetworkUrl(String path) =>
       path.startsWith('http://') || path.startsWith('https://');
+
+  int? _decodeSize(double? logicalSize, double devicePixelRatio) {
+    if (logicalSize == null ||
+        !logicalSize.isFinite ||
+        logicalSize <= 0 ||
+        devicePixelRatio <= 0) {
+      return null;
+    }
+    return (logicalSize * devicePixelRatio).ceil().clamp(1, 4096);
+  }
 
   File? _resolveLocalFile(String path) {
     final absFile = File(path);
@@ -272,19 +289,17 @@ class ShimmerLoadingPlaceholder extends StatefulWidget {
   final double? width;
   final double? height;
 
-  const ShimmerLoadingPlaceholder({
-    super.key,
-    this.width,
-    this.height,
-  });
+  const ShimmerLoadingPlaceholder({super.key, this.width, this.height});
 
   @override
-  State<ShimmerLoadingPlaceholder> createState() => _ShimmerLoadingPlaceholderState();
+  State<ShimmerLoadingPlaceholder> createState() =>
+      _ShimmerLoadingPlaceholderState();
 }
 
 class _ShimmerLoadingPlaceholderState extends State<ShimmerLoadingPlaceholder>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
+  bool _motionEnabled = false;
 
   @override
   void initState() {
@@ -292,7 +307,25 @@ class _ShimmerLoadingPlaceholderState extends State<ShimmerLoadingPlaceholder>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1500),
-    )..repeat();
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final mediaQuery = MediaQuery.maybeOf(context);
+    final enabled =
+        !(mediaQuery?.disableAnimations ?? false) &&
+        !(mediaQuery?.accessibleNavigation ?? false) &&
+        TickerMode.valuesOf(context).enabled;
+    if (enabled == _motionEnabled) return;
+    _motionEnabled = enabled;
+    if (enabled) {
+      _controller.repeat();
+    } else {
+      _controller.stop();
+      _controller.value = 0.45;
+    }
   }
 
   @override
@@ -303,6 +336,13 @@ class _ShimmerLoadingPlaceholderState extends State<ShimmerLoadingPlaceholder>
 
   @override
   Widget build(BuildContext context) {
+    if (!_motionEnabled) {
+      return SizedBox(
+        width: widget.width ?? double.infinity,
+        height: widget.height,
+        child: const ColoredBox(color: Color(0xFF242436)),
+      );
+    }
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, child) {

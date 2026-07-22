@@ -40,6 +40,7 @@ import 'home_utility_surface.dart';
 import 'preview_frame.dart';
 import 'shell_layout_frame.dart';
 import 'shell_layout_spec.dart';
+import 'views/home_inspector_panel.dart';
 
 /// Runs a sidebar row action and dismisses only an open modal drawer.
 @visibleForTesting
@@ -447,12 +448,36 @@ class HomeShellBody extends StatelessWidget {
       onPreviewRegistryWork: onPreviewRegistryWork,
       onArchiveRegistryWorkFromPreview: onArchiveRegistryWorkFromPreview,
     );
-    final keyedPreview = previewPanels.isEmpty
-        ? null
-        : KeyedSubtree(
+    final persistentInspector =
+        layoutSpec.previewPresentation == ShellPreviewPresentation.inline;
+    final hasSelectionPreview = previewPanels.isNotEmpty;
+    final inspectorSnapshot = HomeInspectorSnapshot(
+      destination: destination,
+      vaultLinked: vaultLinked,
+      archiveCount: items.length,
+      collectionCount: collectionCtrl.collections.length,
+      recentCount: recentExploreItems.length,
+    );
+    final selectionPreview = hasSelectionPreview
+        ? KeyedSubtree(
             key: const ValueKey('home-shell-preview-content'),
             child: previewPanels.single,
-          );
+          )
+        : null;
+    final showSelectionPreview =
+        hasSelectionPreview &&
+        activeUtilitySurface != HomeUtilitySurface.commerce;
+    final keyedPreview = persistentInspector
+        ? HomeInspectorRail(
+            defaultPanel: HomeInspectorPanel(
+              width: previewWidth,
+              presentation: layoutSpec.previewPresentation,
+              snapshot: inspectorSnapshot,
+            ),
+            contextualPanel: selectionPreview,
+            showContextual: showSelectionPreview,
+          )
+        : selectionPreview;
 
     return ShellLayoutFrame(
       layoutSpec: layoutSpec,
@@ -533,7 +558,7 @@ class HomeShellBody extends StatelessWidget {
         ),
       ),
       preview: keyedPreview,
-      previewVisible: activeUtilitySurface != HomeUtilitySurface.commerce,
+      previewVisible: persistentInspector || showSelectionPreview,
     );
   }
 }

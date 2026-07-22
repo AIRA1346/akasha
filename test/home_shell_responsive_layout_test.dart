@@ -26,7 +26,7 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('1366x768 overlays preview without shrinking center', (
+  testWidgets('1366x768 reserves a stable inline inspector rail', (
     tester,
   ) async {
     addTearDown(() => tester.binding.setSurfaceSize(null));
@@ -42,8 +42,32 @@ void main() {
     final preview = tester.getRect(find.byKey(ShellLayoutFrame.previewKey));
 
     expect(sidebar, const Rect.fromLTWH(0, 0, 232, 768));
-    expect(centerWithPreview, const Rect.fromLTWH(232, 0, 1134, 768));
+    expect(centerWithPreview, const Rect.fromLTWH(232, 0, 846, 768));
     expect(preview, const Rect.fromLTWH(1078, 0, 288, 768));
+
+    await _pumpFrame(tester, size: size, showPreview: false);
+    expect(
+      tester.getRect(find.byKey(ShellLayoutFrame.centerKey)),
+      centerWithPreview,
+    );
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('1272x720 keeps the inspector without shifting the canvas', (
+    tester,
+  ) async {
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+    const size = Size(1272, 720);
+    await _pumpFrame(tester, size: size);
+
+    final centerWithPreview = tester.getRect(
+      find.byKey(ShellLayoutFrame.centerKey),
+    );
+    expect(centerWithPreview, const Rect.fromLTWH(232, 0, 752, 720));
+    expect(
+      tester.getRect(find.byKey(ShellLayoutFrame.previewKey)),
+      const Rect.fromLTWH(984, 0, 288, 720),
+    );
 
     await _pumpFrame(tester, size: size, showPreview: false);
     expect(

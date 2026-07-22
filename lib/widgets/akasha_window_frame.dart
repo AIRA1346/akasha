@@ -6,6 +6,7 @@ import 'package:window_manager/window_manager.dart';
 
 import '../services/akasha_window_controller.dart';
 import '../theme/akasha_palette.dart';
+import '../theme/akasha_theme_preset.dart';
 import '../utils/app_l10n.dart';
 
 /// App-owned Windows frame. Geometry is intentionally independent of themes.
@@ -172,6 +173,7 @@ class _WindowControlButtonState extends State<_WindowControlButton> {
   @override
   Widget build(BuildContext context) {
     final palette = context.akashaPalette;
+    final motion = context.resolvedAkashaThemeVisuals.effects.motion;
     final Color background;
     if (widget.isClose && _pressed) {
       background = const Color(0xFFB12418);
@@ -200,7 +202,7 @@ class _WindowControlButtonState extends State<_WindowControlButton> {
           onTapUp: (_) => _setInteraction(pressed: false),
           onTap: _activate,
           child: AnimatedContainer(
-            duration: const Duration(milliseconds: 80),
+            duration: motion.quickDuration,
             curve: Curves.easeOut,
             width: 46,
             height: 32,

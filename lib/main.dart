@@ -6,6 +6,7 @@ import 'config/feature_flags.dart';
 import 'config/catalog_locale.dart';
 import 'core/commerce/commerce.dart';
 import 'generated/l10n/app_localizations.dart';
+import 'effects/akasha_effect_runtime.dart';
 import 'models/build_identity.dart';
 import 'data/adapters/markdown_vault_adapter.dart';
 import 'data/adapters/works_registry_adapter.dart';
@@ -232,7 +233,7 @@ class _AkashaAppState extends State<AkashaApp> {
       builder: (context, child) {
         Widget content = AkashaThemeBackdrop(
           preset: effectivePreset,
-          child: child ?? const SizedBox.shrink(),
+          child: AkashaEffectsHost(child: child ?? const SizedBox.shrink()),
         );
         if (widget.windowController case final windowController?) {
           content = AkashaWindowFrame(
