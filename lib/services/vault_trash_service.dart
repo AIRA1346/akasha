@@ -6,6 +6,7 @@ import 'package:path/path.dart' as p;
 
 import '../core/archiving/canvas_record.dart';
 import 'vault_recovery_write_service.dart';
+import 'vault_trash_transaction_manifest.dart';
 
 /// Wire/state-machine values for composite vault trash transactions.
 enum VaultTrashTransactionState {
@@ -207,19 +208,39 @@ class CanvasTrashResult {
 }
 
 class CanvasRestoreResult {
-  const CanvasRestoreResult({required this.succeeded, this.state, this.error});
+  const CanvasRestoreResult({
+    required this.succeeded,
+    this.state,
+    this.error,
+    this.errorCode,
+  });
 
   final bool succeeded;
   final String? state;
   final String? error;
+
+  /// Structured code such as [invalidStateErrorCode].
+  final String? errorCode;
+
+  static const invalidStateErrorCode = 'invalidState';
 }
 
 class VaultTrashService {
-  const VaultTrashService();
+  const VaultTrashService({this.manifestStore});
+
+  /// Optional injectable store (fault-injection / tests). Defaults to durable store.
+  final VaultTrashTransactionManifestStore? manifestStore;
 
   static const trashDirName = '.trash';
   static const manifestFileName = 'trash_entry.json';
-  static const transactionManifestFileName = 'trash_transaction.json';
+  static const transactionManifestFileName =
+      VaultTrashTransactionManifestStore.primaryName;
+
+  /// Current user canvas ID contract: `cv_u_` + 8 lowercase alphanumerics.
+  static final RegExp canvasIdPattern = RegExp(r'^cv_u_[a-z0-9]{8}$');
+
+  VaultTrashTransactionManifestStore get _manifests =>
+      manifestStore ?? VaultTrashTransactionManifestStore();
 
   Future<VaultTrashEntry?> moveFileToTrash({
     required String vaultPath,
@@ -273,15 +294,29 @@ class VaultTrashService {
     required String canvasId,
     String? reason,
   }) async {
-    if (vaultPath.isEmpty || canvasId.isEmpty) {
+    if (vaultPath.isEmpty) {
       return const CanvasTrashResult(
         succeeded: false,
-        error: 'Invalid vault path or canvas ID.',
+        error: 'Invalid vault path.',
       );
     }
+    final idError = validateCanvasId(canvasId);
+    if (idError != null) {
+      return CanvasTrashResult(succeeded: false, error: idError);
+    }
+
     final normalizedVault = _normalizeAbsolute(vaultPath);
-    final canvasDir = Directory(p.join(normalizedVault, 'canvases', canvasId));
+    final canvasesRoot = Directory(p.join(normalizedVault, 'canvases'));
+    final canvasDir = Directory(p.join(canvasesRoot.path, canvasId));
     final normalizedCanvasDir = _normalizeAbsolute(canvasDir.path);
+    final normalizedCanvasesRoot = _normalizeAbsolute(canvasesRoot.path);
+
+    if (p.dirname(normalizedCanvasDir) != normalizedCanvasesRoot) {
+      return const CanvasTrashResult(
+        succeeded: false,
+        error: 'Canvas directory parent must be <vault>/canvases.',
+      );
+    }
 
     _assertInsideVault(
       vaultPath: normalizedVault,
@@ -307,9 +342,8 @@ class VaultTrashService {
       );
     }
 
-    // Required members must exist; additional non-link sidecar files may travel
-    // with the canvas directory as part of the same composite unit.
     final entities = await canvasDir.list(recursive: false).toList();
+    final regularFiles = <File>[];
     for (final entity in entities) {
       final entityStat = await entity.stat();
       if (entityStat.type == FileSystemEntityType.link) {
@@ -317,6 +351,15 @@ class VaultTrashService {
           succeeded: false,
           error: 'Canvas directory contains a symlink or junction.',
         );
+      }
+      if (entity is Directory) {
+        return const CanvasTrashResult(
+          succeeded: false,
+          error: 'Canvas directory contains nested directories.',
+        );
+      }
+      if (entity is File) {
+        regularFiles.add(entity);
       }
     }
 
@@ -380,34 +423,27 @@ class VaultTrashService {
     );
     final transactionId = p.basename(trashRoot.path);
 
-    final mdBytes = await mdFile.readAsBytes();
-    final mdHash = crypto.sha256.convert(mdBytes).toString();
-    final layoutBytes = await layoutFile.readAsBytes();
-    final layoutHash = crypto.sha256.convert(layoutBytes).toString();
-
     final relCanvasDir = p.relative(normalizedCanvasDir, from: normalizedVault);
     final targetCanvasDir = p.join(trashRoot.path, relCanvasDir);
 
-    final members = [
-      VaultTrashMember(
-        relativeOriginalPath: p.join(relCanvasDir, 'canvas.md'),
-        relativeTrashPath: p.relative(
-          p.join(targetCanvasDir, 'canvas.md'),
-          from: trashRoot.path,
+    final members = <VaultTrashMember>[];
+    for (final file in regularFiles) {
+      final bytes = await file.readAsBytes();
+      final name = p.basename(file.path);
+      final required = name == 'canvas.md' || name == 'layout.json';
+      members.add(
+        VaultTrashMember(
+          relativeOriginalPath: p.join(relCanvasDir, name),
+          relativeTrashPath: p.relative(
+            p.join(targetCanvasDir, name),
+            from: trashRoot.path,
+          ),
+          size: bytes.length,
+          sha256: crypto.sha256.convert(bytes).toString(),
+          required: required,
         ),
-        size: mdBytes.length,
-        sha256: mdHash,
-      ),
-      VaultTrashMember(
-        relativeOriginalPath: p.join(relCanvasDir, 'layout.json'),
-        relativeTrashPath: p.relative(
-          p.join(targetCanvasDir, 'layout.json'),
-          from: trashRoot.path,
-        ),
-        size: layoutBytes.length,
-        sha256: layoutHash,
-      ),
-    ];
+      );
+    }
 
     // State 1: prepared
     final preparedTx = VaultTrashTransaction(
@@ -443,7 +479,7 @@ class VaultTrashService {
 
     // Perform rename of the whole canvas directory (required + sidecar files).
     await Directory(p.dirname(targetCanvasDir)).create(recursive: true);
-    canvasDir.renameSync(targetCanvasDir);
+    await canvasDir.rename(targetCanvasDir);
 
     final postMoveError = await _verifyMembersAt(
       rootPath: trashRoot.path,
@@ -491,6 +527,30 @@ class VaultTrashService {
     return CanvasTrashResult(succeeded: true, transaction: committedTx);
   }
 
+  /// Returns null when [canvasId] is a safe single-segment canvas identity.
+  static String? validateCanvasId(String canvasId) {
+    if (canvasId.isEmpty) return 'Canvas ID is empty.';
+    if (p.isAbsolute(canvasId)) {
+      return 'Canvas ID must not be an absolute path.';
+    }
+    if (canvasId.contains('/') || canvasId.contains(r'\')) {
+      return 'Canvas ID must not contain path separators.';
+    }
+    final parts = p.split(canvasId);
+    if (parts.length != 1) return 'Canvas ID must be a single path segment.';
+    final segment = parts.single;
+    if (segment == '.' || segment == '..') {
+      return 'Canvas ID must not be "." or "..".';
+    }
+    if (p.normalize(canvasId) != canvasId) {
+      return 'Canvas ID must already be normalized.';
+    }
+    if (!canvasIdPattern.hasMatch(canvasId)) {
+      return 'Canvas ID must match ${canvasIdPattern.pattern}.';
+    }
+    return null;
+  }
+
   Future<bool> restoreFile(
     VaultTrashEntry entry, {
     bool overwrite = false,
@@ -527,6 +587,39 @@ class VaultTrashService {
   Future<CanvasRestoreResult> restoreCanvasTransaction(
     VaultTrashTransaction transaction,
   ) async {
+    final parsed = transaction.parsedState;
+    if (parsed != VaultTrashTransactionState.committed) {
+      return CanvasRestoreResult(
+        succeeded: false,
+        state: transaction.state,
+        errorCode: CanvasRestoreResult.invalidStateErrorCode,
+        error:
+            'invalidState: public restore requires committed, got ${transaction.state}',
+      );
+    }
+    return _restoreCanvasTransactionBody(transaction);
+  }
+
+  /// Recovery-only resume for interrupted restores (`restoring` state).
+  Future<CanvasRestoreResult> resumeInterruptedCanvasRestore(
+    VaultTrashTransaction transaction,
+  ) async {
+    final parsed = transaction.parsedState;
+    if (parsed != VaultTrashTransactionState.restoring) {
+      return CanvasRestoreResult(
+        succeeded: false,
+        state: transaction.state,
+        errorCode: CanvasRestoreResult.invalidStateErrorCode,
+        error:
+            'invalidState: interrupted restore resume requires restoring, got ${transaction.state}',
+      );
+    }
+    return _restoreCanvasTransactionBody(transaction);
+  }
+
+  Future<CanvasRestoreResult> _restoreCanvasTransactionBody(
+    VaultTrashTransaction transaction,
+  ) async {
     final manifestValidationError = _validateManifestPaths(transaction);
     if (manifestValidationError != null) {
       return CanvasRestoreResult(
@@ -542,7 +635,7 @@ class VaultTrashService {
             p.join(normalizedVault, trashDirName, transaction.transactionId),
           );
 
-    if (!trashRoot.existsSync()) {
+    if (!await trashRoot.exists()) {
       return const CanvasRestoreResult(
         succeeded: false,
         error: 'Trash transaction directory does not exist.',
@@ -552,7 +645,7 @@ class VaultTrashService {
     // NON-DESTRUCTIVE: Never overwrite existing files/directories!
     for (final member in transaction.members) {
       final origPath = p.join(normalizedVault, member.relativeOriginalPath);
-      if (File(origPath).existsSync() || Directory(origPath).existsSync()) {
+      if (await File(origPath).exists() || await Directory(origPath).exists()) {
         return CanvasRestoreResult(
           succeeded: false,
           state: VaultTrashTransactionState.restoreConflict.wireName,
@@ -566,7 +659,7 @@ class VaultTrashService {
       transaction.members.first.relativeOriginalPath,
     );
     final targetCanvasDir = Directory(p.join(normalizedVault, canvasDirRel));
-    if (targetCanvasDir.existsSync()) {
+    if (await targetCanvasDir.exists()) {
       return CanvasRestoreResult(
         succeeded: false,
         state: VaultTrashTransactionState.restoreConflict.wireName,
@@ -608,8 +701,8 @@ class VaultTrashService {
       ),
     );
 
-    targetCanvasDir.parent.createSync(recursive: true);
-    trashCanvasDir.renameSync(targetCanvasDir.path);
+    await targetCanvasDir.parent.create(recursive: true);
+    await trashCanvasDir.rename(targetCanvasDir.path);
 
     final postRestoreError = await _verifyMembersAt(
       rootPath: normalizedVault,
@@ -720,6 +813,7 @@ class VaultTrashService {
       followLinks: false,
     )) {
       if (entity is! Directory) continue;
+      _manifests.converge(entity);
       final manifestFile = File(
         p.join(entity.path, transactionManifestFileName),
       );
@@ -767,6 +861,7 @@ class VaultTrashService {
     final results = <VaultTrashRecoveryResult>[];
     await for (final entity in trashRoot.list(recursive: false)) {
       if (entity is! Directory) continue;
+      _manifests.converge(entity);
       final manifestFile = File(
         p.join(entity.path, transactionManifestFileName),
       );
@@ -881,7 +976,7 @@ class VaultTrashService {
           if (presence.origFound == 0 &&
               presence.trashFound == tx.members.length &&
               presence.trashHashesValid) {
-            final restoreRes = await restoreCanvasTransaction(tx);
+            final restoreRes = await resumeInterruptedCanvasRestore(tx);
             if (restoreRes.succeeded) {
               results.add(
                 VaultTrashRecoveryResult(
@@ -990,6 +1085,11 @@ class VaultTrashService {
   Future<bool> deleteTransactionPermanently(
     VaultTrashTransaction transaction,
   ) async {
+    final parsed = transaction.parsedState;
+    if (parsed != VaultTrashTransactionState.committed) {
+      return false;
+    }
+
     final validationError = _validateManifestPaths(transaction);
     if (validationError != null) return false;
 
@@ -1007,8 +1107,8 @@ class VaultTrashService {
       return false;
     }
 
-    if (trashRoot.existsSync()) {
-      trashRoot.deleteSync(recursive: true);
+    if (await trashRoot.exists()) {
+      await trashRoot.delete(recursive: true);
       return true;
     }
     return false;
@@ -1024,19 +1124,16 @@ class VaultTrashService {
     if (transaction.recordId.trim().isEmpty) {
       return 'Empty recordId';
     }
-    final recordIdParts = p.split(transaction.recordId);
-    if (recordIdParts.length != 1 ||
-        recordIdParts.single.isEmpty ||
-        recordIdParts.single == '.' ||
-        recordIdParts.single == '..') {
-      return 'Invalid recordId path component';
+    final recordIdError = validateCanvasId(transaction.recordId);
+    if (recordIdError != null) {
+      return 'Invalid recordId: $recordIdError';
     }
     if (transaction.transactionId.trim().isEmpty ||
         !RegExp(r'^[a-zA-Z0-9_\-\.:]+$').hasMatch(transaction.transactionId)) {
       return 'Invalid transactionId format';
     }
-    if (transaction.members.length != 2) {
-      return 'Canvas transaction must contain exactly 2 members';
+    if (transaction.members.length < 2) {
+      return 'Canvas transaction must contain at least canvas.md and layout.json';
     }
 
     final normalizedVault = _normalizeAbsolute(transaction.vaultPath);
@@ -1052,21 +1149,6 @@ class VaultTrashService {
       p.join('canvases', transaction.recordId, 'layout.json'),
     );
 
-    final memberOriginals = <String>[];
-    final memberTrashPaths = <String>[];
-    for (final member in transaction.members) {
-      memberOriginals.add(p.normalize(member.relativeOriginalPath));
-      memberTrashPaths.add(p.normalize(member.relativeTrashPath));
-    }
-    if (memberOriginals.toSet().length != memberOriginals.length ||
-        memberTrashPaths.toSet().length != memberTrashPaths.length) {
-      return 'Duplicate transaction members are not allowed';
-    }
-    if (!memberOriginals.contains(expectedMdRel) ||
-        !memberOriginals.contains(expectedJsonRel)) {
-      return 'Transaction member original paths must match canonical canvases/<recordId>/ layout';
-    }
-
     final expectedTrashRoot = _normalizeAbsolute(
       p.join(normalizedVault, trashDirName, transaction.transactionId),
     );
@@ -1081,6 +1163,10 @@ class VaultTrashService {
         ? _normalizeAbsolute(transaction.trashRootPath!)
         : expectedTrashRoot;
 
+    final memberOriginals = <String>[];
+    final memberTrashPaths = <String>[];
+    var mdCount = 0;
+    var jsonCount = 0;
     for (final member in transaction.members) {
       final origParts = p.split(member.relativeOriginalPath);
       final trashParts = p.split(member.relativeTrashPath);
@@ -1106,17 +1192,35 @@ class VaultTrashService {
         return 'Member trash path outside transaction root: $absTrash';
       }
 
-      final expectedTrashRel = p.normalize(
+      final expectedMemberRel = p.normalize(
         p.join(
           'canvases',
           transaction.recordId,
           p.basename(member.relativeOriginalPath),
         ),
       );
-      if (p.normalize(member.relativeTrashPath) != expectedTrashRel) {
+      if (p.normalize(member.relativeOriginalPath) != expectedMemberRel) {
+        return 'Transaction member original paths must stay under canvases/<recordId>/';
+      }
+      if (p.normalize(member.relativeTrashPath) != expectedMemberRel) {
         return 'Transaction member trash paths must match canvases/<recordId>/ layout';
       }
+
+      final origNorm = p.normalize(member.relativeOriginalPath);
+      final trashNorm = p.normalize(member.relativeTrashPath);
+      memberOriginals.add(origNorm);
+      memberTrashPaths.add(trashNorm);
+      if (origNorm == expectedMdRel) mdCount++;
+      if (origNorm == expectedJsonRel) jsonCount++;
     }
+    if (memberOriginals.toSet().length != memberOriginals.length ||
+        memberTrashPaths.toSet().length != memberTrashPaths.length) {
+      return 'Duplicate transaction members are not allowed';
+    }
+    if (mdCount != 1 || jsonCount != 1) {
+      return 'Canvas transaction must contain exactly one canvas.md and one layout.json';
+    }
+
     return null;
   }
 
@@ -1219,14 +1323,7 @@ class VaultTrashService {
     Directory trashRoot,
     VaultTrashTransaction transaction,
   ) async {
-    // Trash transaction manifests are recovery metadata inside `.trash`.
-    // Use durable sync writes so composite restore/trash can complete under
-    // widget-test fake-async without VaultRecoveryWriteService queue stalls.
-    final manifest = File(p.join(trashRoot.path, transactionManifestFileName));
-    manifest.writeAsStringSync(
-      const JsonEncoder.withIndent('  ').convert(transaction.toJson()),
-      flush: true,
-    );
+    await _manifests.write(trashRoot, transaction);
   }
 
   Future<void> _deleteTrashRootForEntry(VaultTrashEntry entry) async {

@@ -73,9 +73,12 @@ class CanvasStore {
   }
 
   /// Discovers complete and incomplete canvas records in the vault's canvases directory.
+  ///
+  /// P1 backlog: discovery currently uses synchronous FS APIs for FakeAsync-safe
+  /// widget tests. Scope today is a small local `canvases/` tree (typically tens
+  /// of folders, two files each). Migrate to async listing + injectable
+  /// discoverer-only production path once archive scale requires it.
   Future<CanvasDiscoveryResult> discoverCanvases(String vaultPath) async {
-    // Local vault scanning uses synchronous FS APIs so widget tests under
-    // fake-async can complete without runAsync/File I/O deadlocks.
     return discoverCanvasesSync(vaultPath);
   }
 
