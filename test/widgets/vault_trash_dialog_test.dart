@@ -74,7 +74,8 @@ void main() {
       );
 
       await tester.tap(find.text('Open Trash'));
-      await tester.pumpAndSettle();
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
 
       // Verify dialog renders both items
       expect(find.text('Vault 휴지통'), findsOneWidget);
@@ -86,7 +87,8 @@ void main() {
       expect(restoreButtons, findsNWidgets(2));
 
       await tester.tap(restoreButtons.at(0));
-      await tester.pumpAndSettle();
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
 
       // Canvas should be restored to active canvases dir
       final activeCanvasMd = File(
