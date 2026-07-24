@@ -501,6 +501,11 @@ class AppLocalizationsKo extends AppLocalizations {
   String get trashRestoredSuccess => '휴지통에서 복구했습니다.';
 
   @override
+  String trashRestoredSuccessCanvas(String title) {
+    return '지식 지도 「$title」을(를) 복구했습니다.';
+  }
+
+  @override
   String get trashRestoredFailedFileExists => '원래 위치에 파일이 있어 복구하지 못했습니다.';
 
   @override
@@ -512,6 +517,38 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String trashDeleteConfirm(String fileName) {
     return '「$fileName」을(를) 휴지통에서도 삭제할까요?\n이 작업은 되돌릴 수 없습니다.';
+  }
+
+  @override
+  String trashDeleteConfirmCanvas(String title) {
+    return '지식 지도 「$title」을(를) 휴지통에서도 영구 삭제할까요?\n이 작업은 되돌릴 수 없습니다.';
+  }
+
+  @override
+  String trashUnsafeStateWarning(String state) {
+    return '안전한 자동 복구/영구삭제가 제한된 항목입니다. (상태: $state)';
+  }
+
+  @override
+  String get incompleteKnowledgeMapsFound => '불완전한 지식 지도를 발견했습니다';
+
+  @override
+  String incompleteKnowledgeMapsCount(int count) {
+    return '불완전한 지식 지도 $count개가 감지되었습니다.';
+  }
+
+  @override
+  String get missingFilesLabel => '누락 파일';
+
+  @override
+  String get existingFilesLabel => '존재 파일';
+
+  @override
+  String get diagnosticLabel => '진단';
+
+  @override
+  String trashTransactionStatus(String status) {
+    return '상태: $status';
   }
 
   @override

@@ -513,6 +513,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get trashRestoredSuccess => 'Successfully restored from trash.';
 
   @override
+  String trashRestoredSuccessCanvas(String title) {
+    return 'Restored knowledge map \"$title\".';
+  }
+
+  @override
   String get trashRestoredFailedFileExists =>
       'Could not restore. File already exists at original location.';
 
@@ -525,6 +530,38 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String trashDeleteConfirm(String fileName) {
     return 'Permanently delete \'$fileName\' from trash?\nThis action cannot be undone.';
+  }
+
+  @override
+  String trashDeleteConfirmCanvas(String title) {
+    return 'Permanently delete knowledge map \"$title\" from trash?\nThis action cannot be undone.';
+  }
+
+  @override
+  String trashUnsafeStateWarning(String state) {
+    return 'Safe automatic restore/delete restricted for this item. (Status: $state)';
+  }
+
+  @override
+  String get incompleteKnowledgeMapsFound => 'Incomplete knowledge maps found';
+
+  @override
+  String incompleteKnowledgeMapsCount(int count) {
+    return '$count incomplete knowledge map(s) detected.';
+  }
+
+  @override
+  String get missingFilesLabel => 'Missing files';
+
+  @override
+  String get existingFilesLabel => 'Existing files';
+
+  @override
+  String get diagnosticLabel => 'Diagnostic';
+
+  @override
+  String trashTransactionStatus(String status) {
+    return 'Status: $status';
   }
 
   @override

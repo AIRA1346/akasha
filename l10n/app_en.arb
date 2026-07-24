@@ -264,6 +264,12 @@
   "vaultChangeFolder": "Change Folder",
   "vaultLinkFolder": "Link Folder",
   "trashRestoredSuccess": "Successfully restored from trash.",
+  "trashRestoredSuccessCanvas": "Restored knowledge map \"{title}\".",
+  "@trashRestoredSuccessCanvas": {
+    "placeholders": {
+      "title": { "type": "String" }
+    }
+  },
   "trashRestoredFailedFileExists": "Could not restore. File already exists at original location.",
   "trashRestore": "Restore",
   "trashDeletePermanently": "Delete Permanently",
@@ -273,6 +279,34 @@
       "fileName": {
         "type": "String"
       }
+    }
+  },
+  "trashDeleteConfirmCanvas": "Permanently delete knowledge map \"{title}\" from trash?\nThis action cannot be undone.",
+  "@trashDeleteConfirmCanvas": {
+    "placeholders": {
+      "title": { "type": "String" }
+    }
+  },
+  "trashUnsafeStateWarning": "Safe automatic restore/delete restricted for this item. (Status: {state})",
+  "@trashUnsafeStateWarning": {
+    "placeholders": {
+      "state": { "type": "String" }
+    }
+  },
+  "incompleteKnowledgeMapsFound": "Incomplete knowledge maps found",
+  "incompleteKnowledgeMapsCount": "{count} incomplete knowledge map(s) detected.",
+  "@incompleteKnowledgeMapsCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "missingFilesLabel": "Missing files",
+  "existingFilesLabel": "Existing files",
+  "diagnosticLabel": "Diagnostic",
+  "trashTransactionStatus": "Status: {status}",
+  "@trashTransactionStatus": {
+    "placeholders": {
+      "status": { "type": "String" }
     }
   },
   "actionCancel": "Cancel",

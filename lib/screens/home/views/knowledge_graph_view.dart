@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../generated/l10n/app_localizations.dart';
 import '../../../core/ports/record_link_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/akasha_item.dart';
@@ -54,7 +55,9 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
   var _loadGeneration = 0;
 
   List<CanvasRecord> _canvases = [];
+  List<IncompleteCanvasRecord> _incompleteCanvases = [];
   bool _loadingCanvases = false;
+  int _canvasLoadGeneration = 0;
   int _activeTabIndex = 0; // 0 = Canvas, 1 = Connections List
 
   @override
@@ -82,23 +85,39 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
   }
 
   Future<void> _loadCanvases() async {
+    final generation = ++_canvasLoadGeneration;
     if (widget.vaultPath.isEmpty) {
-      _canvases = const [];
-      _loadingCanvases = false;
+      if (!mounted) return;
+      setState(() {
+        _canvases = const [];
+        _incompleteCanvases = const [];
+        _loadingCanvases = false;
+      });
       return;
     }
     setState(() => _loadingCanvases = true);
     try {
-      final list = await CanvasStore.instance.listCanvases(widget.vaultPath);
-      if (!mounted) return;
+      final discovery = await CanvasStore.instance.discoverCanvases(
+        widget.vaultPath,
+      );
+      if (!mounted || generation != _canvasLoadGeneration) return;
       setState(() {
-        _canvases = list;
+        _canvases = discovery.complete;
+        _incompleteCanvases = discovery.incomplete;
         _loadingCanvases = false;
       });
-    } catch (_) {
-      if (mounted) {
-        setState(() => _loadingCanvases = false);
-      }
+    } catch (error, stackTrace) {
+      assert(() {
+        // ignore: avoid_print
+        print('KnowledgeGraphView._loadCanvases failed: $error\n$stackTrace');
+        return true;
+      }());
+      if (!mounted || generation != _canvasLoadGeneration) return;
+      setState(() {
+        _canvases = const [];
+        _incompleteCanvases = const [];
+        _loadingCanvases = false;
+      });
     }
   }
 
@@ -371,9 +390,64 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
       return _buildVaultRequiredState();
     }
 
+    if (_loadingCanvases) {
+      return const Center(child: CircularProgressIndicator(strokeWidth: 2));
+    }
+
+    // State 1: complete 0, incomplete 0 -> standard empty state
+    if (_canvases.isEmpty && _incompleteCanvases.isEmpty) {
+      return DestinationEmptyState(
+        stateId: 'graph-canvas-empty',
+        icon: Icons.map_outlined,
+        title: l10n?.graphEmptyCanvases ?? '아직 지식 지도가 없습니다.',
+        body:
+            l10n?.graphEmptyCanvasBody ??
+            '캔버스에 작품과 엔티티를 직접 배치해 나만의 관계를 정리해 보세요.',
+        action: OutlinedButton.icon(
+          onPressed: _showCreateCanvasDialog,
+          icon: const Icon(Icons.add, size: 16),
+          label: Text(l10n?.graphBtnCreateFirstCanvas ?? '새 지식 지도 만들기'),
+        ),
+      );
+    }
+
+    // State 2: complete 0, incomplete >= 1 -> Full incomplete discovery alert
+    if (_canvases.isEmpty && _incompleteCanvases.isNotEmpty) {
+      return ListView(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AkashaSpacing.lg,
+          vertical: AkashaSpacing.md,
+        ),
+        children: [
+          _buildIncompleteCanvasHeader(palette, l10n),
+          const SizedBox(height: AkashaSpacing.md),
+          ..._incompleteCanvases.map(
+            (record) => _buildIncompleteCanvasCard(record, palette, l10n),
+          ),
+          const SizedBox(height: AkashaSpacing.lg),
+          Center(
+            child: OutlinedButton.icon(
+              onPressed: _showCreateCanvasDialog,
+              icon: const Icon(Icons.add, size: 16),
+              label: Text(l10n?.graphBtnCreateFirstCanvas ?? '새 지식 지도 만들기'),
+            ),
+          ),
+        ],
+      );
+    }
+
+    // State 3: complete >= 1, incomplete >= 1 -> Normal list with non-blocking top warning banner
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        if (_incompleteCanvases.isNotEmpty)
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: AkashaSpacing.lg,
+              vertical: AkashaSpacing.xs,
+            ),
+            child: _buildIncompleteCanvasBanner(palette, l10n),
+          ),
         Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: AkashaSpacing.lg,
@@ -388,41 +462,23 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
             ),
           ),
         ),
-        if (_loadingCanvases)
-          const Expanded(
-            child: Center(child: CircularProgressIndicator(strokeWidth: 2)),
-          )
-        else if (_canvases.isEmpty)
-          Expanded(
-            child: DestinationEmptyState(
-              stateId: 'graph-canvas-empty',
-              icon: Icons.map_outlined,
-              title: l10n?.graphEmptyCanvases ?? '아직 지식 지도가 없습니다.',
-              body:
-                  l10n?.graphEmptyCanvasBody ??
-                  '캔버스에 작품과 엔티티를 직접 배치해 나만의 관계를 정리해 보세요.',
-              action: OutlinedButton.icon(
-                onPressed: _showCreateCanvasDialog,
-                icon: const Icon(Icons.add, size: 16),
-                label: Text(l10n?.graphBtnCreateFirstCanvas ?? '첫 지식 지도 만들기'),
-              ),
+        Expanded(
+          child: ListView.builder(
+            padding: const EdgeInsets.fromLTRB(
+              AkashaSpacing.lg,
+              AkashaSpacing.xs,
+              AkashaSpacing.lg,
+              AkashaSpacing.xl,
             ),
-          )
-        else
-          Expanded(
-            child: ListView.builder(
-              padding: const EdgeInsets.fromLTRB(
-                AkashaSpacing.lg,
-                AkashaSpacing.sm,
-                AkashaSpacing.lg,
-                AkashaSpacing.xl,
-              ),
-              itemCount: _canvases.length,
-              itemBuilder: (_, index) {
-                final canvas = _canvases[index];
-                return Container(
-                  margin: const EdgeInsets.only(bottom: AkashaSpacing.sm),
-                  decoration: palette.surfaceCard(radius: AkashaRadius.lg),
+            itemCount: _canvases.length,
+            itemBuilder: (context, index) {
+              final canvas = _canvases[index];
+              return Container(
+                margin: const EdgeInsets.only(bottom: AkashaSpacing.sm),
+                decoration: palette.surfaceCard(radius: AkashaRadius.md),
+                child: Material(
+                  color: Colors.transparent,
+                  borderRadius: AkashaRadius.mdBorder,
                   child: ListTile(
                     contentPadding: const EdgeInsets.symmetric(
                       horizontal: AkashaSpacing.md,
@@ -430,34 +486,175 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                     ),
                     leading: CircleAvatar(
                       backgroundColor: palette.accentSoft,
-                      child: Icon(
-                        Icons.map_outlined,
-                        color: palette.accent,
-                        size: 20,
-                      ),
+                      child: Icon(Icons.map_outlined, color: palette.accent),
                     ),
                     title: Text(
                       canvas.title,
                       style: AkashaTypography.listItemTitle,
                     ),
                     subtitle: Text(
-                      l10n != null
-                          ? l10n.graphLastModified(
-                              canvas.updatedAt.toLocal().toString().split(
-                                '.',
-                              )[0],
-                            )
-                          : '수정일: ${canvas.updatedAt.toLocal().toString().split('.')[0]}',
+                      'ID: ${canvas.canvasId}',
                       style: AkashaTypography.bodySecondary,
                     ),
                     trailing: const Icon(Icons.chevron_right, size: 20),
-                    onTap: () => _enterCanvas(canvas),
+                    onTap: () => widget.onOpenCanvas(canvas),
                   ),
-                );
-              },
+                ),
+              );
+            },
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildIncompleteCanvasHeader(
+    AkashaPalette palette,
+    AppLocalizations? l10n,
+  ) {
+    return Container(
+      padding: const EdgeInsets.all(AkashaSpacing.md),
+      decoration: BoxDecoration(
+        color: palette.danger.withValues(alpha: 0.1),
+        borderRadius: AkashaRadius.mdBorder,
+        border: Border.all(color: palette.danger.withValues(alpha: 0.3)),
+      ),
+      child: Row(
+        children: [
+          Icon(Icons.warning_amber_rounded, color: palette.danger, size: 24),
+          const SizedBox(width: AkashaSpacing.md),
+          Expanded(
+            child: Text(
+              l10n?.incompleteKnowledgeMapsFound ?? '불완전한 지식 지도를 발견했습니다',
+              style: AkashaTypography.compactLabel.copyWith(
+                color: palette.danger,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-      ],
+        ],
+      ),
+    );
+  }
+
+  Widget _buildIncompleteCanvasBanner(
+    AkashaPalette palette,
+    AppLocalizations? l10n,
+  ) {
+    final text =
+        l10n?.incompleteKnowledgeMapsCount(_incompleteCanvases.length) ??
+        '불완전한 지식 지도 ${_incompleteCanvases.length}개가 감지되었습니다.';
+    return Container(
+      margin: const EdgeInsets.only(bottom: AkashaSpacing.xs),
+      decoration: BoxDecoration(
+        color: palette.warning.withValues(alpha: 0.1),
+        borderRadius: AkashaRadius.smBorder,
+        border: Border.all(color: palette.warning.withValues(alpha: 0.3)),
+      ),
+      child: Material(
+        color: Colors.transparent,
+        borderRadius: AkashaRadius.smBorder,
+        child: ExpansionTile(
+          tilePadding: const EdgeInsets.symmetric(
+            horizontal: AkashaSpacing.md,
+            vertical: 0,
+          ),
+          leading: Icon(
+            Icons.warning_amber_rounded,
+            color: palette.warning,
+            size: 20,
+          ),
+          title: Text(
+            text,
+            style: AkashaTypography.bodySecondary.copyWith(
+              color: palette.warning,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          children: _incompleteCanvases
+              .map(
+                (rec) => Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    AkashaSpacing.md,
+                    0,
+                    AkashaSpacing.md,
+                    AkashaSpacing.sm,
+                  ),
+                  child: _buildIncompleteCanvasCard(rec, palette, l10n),
+                ),
+              )
+              .toList(),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildIncompleteCanvasCard(
+    IncompleteCanvasRecord record,
+    AkashaPalette palette,
+    AppLocalizations? l10n,
+  ) {
+    final missingLabel = l10n?.missingFilesLabel ?? '누락 파일';
+    final existingLabel = l10n?.existingFilesLabel ?? '존재 파일';
+    final diagLabel = l10n?.diagnosticLabel ?? '진단';
+
+    return Container(
+      padding: const EdgeInsets.all(AkashaSpacing.md),
+      decoration: palette.surfaceCard(radius: AkashaRadius.md),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(
+                Icons.broken_image_outlined,
+                color: palette.warning,
+                size: 18,
+              ),
+              const SizedBox(width: AkashaSpacing.xs),
+              Text(
+                'Canvas ID: ${record.inferredCanvasId}',
+                style: AkashaTypography.compactLabel.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const Spacer(),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                decoration: BoxDecoration(
+                  color: palette.warning.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: Text(
+                  record.status.name,
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: palette.warning,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: AkashaSpacing.xs),
+          Text(
+            '$existingLabel: ${record.existingFiles.join(", ")}',
+            style: AkashaTypography.bodySecondary,
+          ),
+          if (record.missingFiles.isNotEmpty)
+            Text(
+              '$missingLabel: ${record.missingFiles.join(", ")}',
+              style: AkashaTypography.bodySecondary.copyWith(
+                color: palette.danger,
+              ),
+            ),
+          const SizedBox(height: 4),
+          Text(
+            '$diagLabel: ${record.diagnosticMessage}',
+            style: AkashaTypography.caption.copyWith(color: palette.textMuted),
+          ),
+        ],
+      ),
     );
   }
 
