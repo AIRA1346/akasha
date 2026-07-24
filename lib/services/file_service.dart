@@ -80,6 +80,15 @@ class AkashaFileService extends _AkashaFileServiceBase
     _archiveIndexManager = manager;
   }
 
+  /// Ordered activation phases recorded when [debugActivationPhases] is non-null.
+  @visibleForTesting
+  static List<String>? debugActivationPhases;
+
+  /// Optional trash recovery override for ordering / fault-injection tests.
+  @visibleForTesting
+  static Future<List<VaultTrashRecoveryResult>> Function(String vaultPath)?
+  debugTrashRecoveryOverride;
+
   /// 외부 편집 감지 폴링 간격 — directory watch 실패 시 fallback.
   static Duration vaultPollInterval = const Duration(seconds: 2);
 

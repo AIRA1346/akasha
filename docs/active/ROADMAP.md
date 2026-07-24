@@ -40,7 +40,8 @@
 사용자 경험 계약은 [UX_DESIGN_SYSTEM.md](UX_DESIGN_SYSTEM.md).
 UX-1~6 foundation·Gallery·Commerce UI 골격의 **완료 사실**은 [CURRENT_STATE.md](CURRENT_STATE.md)에만 둔다.
 
-* [ ] Touch / background particle: Interaction·Motion·Backdrop 위 성능·reduced-motion 검증
+* [x] Touch / background effect 확장 기반: declarative spec·registry·root compositor·성능 예산·reduced-motion 계약
+* [ ] 실제 Touch / background particle 구현: 효과별 시각 QA·장시간 frame/memory 측정
 * [ ] 잔여 style 이관: [UX_THEME_MIGRATION_INVENTORY.md](../history/closure-2026-07/UX_THEME_MIGRATION_INVENTORY.md)
 * [ ] (post-v1) Graph/Timeline **새** projection·엔진 — UX-2가 복원한 기존 조회 경로와 혼동하지 말 것
 * [ ] (v1.1+) 서재 진열 커스텀 · Mixed Library (아래 D절과 동일)

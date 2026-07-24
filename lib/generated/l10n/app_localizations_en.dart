@@ -144,6 +144,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appBarToggleSidebar => 'Toggle sidebar (Ctrl+B)';
 
   @override
+  String get appBarToggleInspector => 'Toggle inspector (Ctrl+N)';
+
+  @override
   String get appBarSearch => 'Search';
 
   @override
@@ -510,6 +513,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get trashRestoredSuccess => 'Successfully restored from trash.';
 
   @override
+  String trashRestoredSuccessCanvas(String title) {
+    return 'Restored knowledge map \"$title\".';
+  }
+
+  @override
   String get trashRestoredFailedFileExists =>
       'Could not restore. File already exists at original location.';
 
@@ -522,6 +530,48 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String trashDeleteConfirm(String fileName) {
     return 'Permanently delete \'$fileName\' from trash?\nThis action cannot be undone.';
+  }
+
+  @override
+  String trashDeleteConfirmCanvas(String title) {
+    return 'Permanently delete knowledge map \"$title\" from trash?\nThis action cannot be undone.';
+  }
+
+  @override
+  String trashUnsafeStateWarning(String state) {
+    return 'Safe automatic restore/delete restricted for this item. (Status: $state)';
+  }
+
+  @override
+  String get incompleteKnowledgeMapsFound => 'Incomplete knowledge maps found';
+
+  @override
+  String incompleteKnowledgeMapsCount(int count) {
+    return '$count incomplete knowledge map(s) detected.';
+  }
+
+  @override
+  String get missingFilesLabel => 'Missing files';
+
+  @override
+  String get existingFilesLabel => 'Existing files';
+
+  @override
+  String get diagnosticLabel => 'Diagnostic';
+
+  @override
+  String get graphCanvasDiscoveryFailedTitle => 'Could not read knowledge maps';
+
+  @override
+  String get graphCanvasDiscoveryFailedBody =>
+      'Something went wrong while reading the knowledge maps folder. Please try again.';
+
+  @override
+  String get graphCanvasDiscoveryRetry => 'Retry';
+
+  @override
+  String trashTransactionStatus(String status) {
+    return 'Status: $status';
   }
 
   @override
@@ -2836,4 +2886,27 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get htmlExportSaveFirst =>
       'Please save the md file before exporting HTML.';
+
+  @override
+  String get inspectorTitle => 'Context inspector';
+
+  @override
+  String get inspectorHomeDescription =>
+      'Review the current archive context and recent activity.';
+
+  @override
+  String get inspectorArchiveSummary => 'Archive summary';
+
+  @override
+  String get inspectorRecords => 'Records';
+
+  @override
+  String get inspectorRecent => 'Recent';
+
+  @override
+  String get inspectorVaultConnected => 'Local vault connected';
+
+  @override
+  String get inspectorVaultDisconnected =>
+      'Connect a local vault to start archiving';
 }

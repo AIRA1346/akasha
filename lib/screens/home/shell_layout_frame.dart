@@ -121,6 +121,8 @@ class _ShellLayoutFrameState extends State<ShellLayoutFrame> {
                 ShellSidebarPresentation.persistent
         ? widget.layoutSpec.sidebarWidth
         : 0.0;
+    // Context changes keep the rail stable; an explicit user toggle releases
+    // the rail so the center can use the available width.
     final centerRight =
         showsPreview &&
             widget.layoutSpec.previewPresentation ==

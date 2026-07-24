@@ -11,8 +11,10 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({
     super.key,
     required this.isSidebarOpen,
+    required this.isInspectorOpen,
     required this.vaultLinked,
     required this.onToggleSidebar,
+    required this.onToggleInspector,
     required this.onClipboardImport,
     this.onTimelineCapture,
     required this.onPromptTemplates,
@@ -28,8 +30,10 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   });
 
   final bool isSidebarOpen;
+  final bool isInspectorOpen;
   final bool vaultLinked;
   final VoidCallback onToggleSidebar;
+  final VoidCallback onToggleInspector;
   final VoidCallback onClipboardImport;
   final VoidCallback? onTimelineCapture;
   final VoidCallback onPromptTemplates;
@@ -114,6 +118,15 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       centerTitle: true,
       actions: [
+        IconButton(
+          key: const ValueKey('home-toggle-inspector'),
+          tooltip:
+              l10n?.appBarToggleInspector ?? 'Inspector toggle (Ctrl+N)',
+          onPressed: onToggleInspector,
+          isSelected: isInspectorOpen,
+          selectedIcon: const Icon(Icons.view_sidebar),
+          icon: const Icon(Icons.view_sidebar_outlined),
+        ),
         if (onCatalogInbox != null)
           IconButton(
             tooltip: l10n?.appBarCatalogInbox ?? '카탈로그 제안함',

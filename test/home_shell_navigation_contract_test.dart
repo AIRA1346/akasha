@@ -5,6 +5,7 @@ import 'package:akasha/screens/home/app_destination.dart';
 import 'package:akasha/screens/home/home_personal_library_controller.dart';
 import 'package:akasha/screens/home/home_shell_body.dart';
 import 'package:akasha/screens/home/home_shell_body_center.dart';
+import 'package:akasha/screens/home/home_shell_scaffold.dart';
 import 'package:akasha/screens/home/shell_layout_spec.dart';
 import 'package:akasha/theme/akasha_theme.dart';
 import 'package:akasha/widgets/dashboard_sidebar.dart';
@@ -13,6 +14,90 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  test('Ctrl+N is the canonical inspector toggle shortcut', () {
+    expect(
+      homeInspectorToggleActivator,
+      const SingleActivator(LogicalKeyboardKey.keyN, control: true),
+    );
+  });
+
+  testWidgets('Ctrl+N toggles Inspector exactly once without text focus', (
+    tester,
+  ) async {
+    var toggleCount = 0;
+    final shortcutFocusNode = FocusNode();
+    final editorFocusNode = FocusNode();
+    addTearDown(shortcutFocusNode.dispose);
+    addTearDown(editorFocusNode.dispose);
+
+    await tester.pumpWidget(
+      _InspectorShortcutHarness(
+        shortcutFocusNode: shortcutFocusNode,
+        editorFocusNode: editorFocusNode,
+        onToggleInspector: () => toggleCount++,
+      ),
+    );
+    await tester.pump();
+
+    expect(editorFocusNode.hasFocus, isFalse);
+    await _sendCtrlN(tester);
+
+    expect(toggleCount, 1);
+  });
+
+  testWidgets('Ctrl+N does not toggle Inspector while TextField has focus', (
+    tester,
+  ) async {
+    var toggleCount = 0;
+    final shortcutFocusNode = FocusNode();
+    final editorFocusNode = FocusNode();
+    addTearDown(shortcutFocusNode.dispose);
+    addTearDown(editorFocusNode.dispose);
+
+    await tester.pumpWidget(
+      _InspectorShortcutHarness(
+        shortcutFocusNode: shortcutFocusNode,
+        editorFocusNode: editorFocusNode,
+        onToggleInspector: () => toggleCount++,
+      ),
+    );
+    await tester.tap(find.byKey(const ValueKey('shortcut-editor')));
+    await tester.pump();
+
+    expect(editorFocusNode.hasFocus, isTrue);
+    await _sendCtrlN(tester);
+
+    expect(toggleCount, 0);
+  });
+
+  testWidgets('Ctrl+N toggles Inspector again after text focus is cleared', (
+    tester,
+  ) async {
+    var toggleCount = 0;
+    final shortcutFocusNode = FocusNode();
+    final editorFocusNode = FocusNode();
+    addTearDown(shortcutFocusNode.dispose);
+    addTearDown(editorFocusNode.dispose);
+
+    await tester.pumpWidget(
+      _InspectorShortcutHarness(
+        shortcutFocusNode: shortcutFocusNode,
+        editorFocusNode: editorFocusNode,
+        onToggleInspector: () => toggleCount++,
+      ),
+    );
+    await tester.tap(find.byKey(const ValueKey('shortcut-editor')));
+    await tester.pump();
+    expect(editorFocusNode.hasFocus, isTrue);
+
+    shortcutFocusNode.requestFocus();
+    await tester.pump();
+    expect(editorFocusNode.hasFocus, isFalse);
+    await _sendCtrlN(tester);
+
+    expect(toggleCount, 1);
+  });
+
   testWidgets(
     'Sidebar renders every registry destination and dispatches Graph/Timeline',
     (tester) async {
@@ -196,4 +281,49 @@ void main() {
     await tester.tap(addButton);
     expect(createCount, 1);
   });
+}
+
+class _InspectorShortcutHarness extends StatelessWidget {
+  const _InspectorShortcutHarness({
+    required this.shortcutFocusNode,
+    required this.editorFocusNode,
+    required this.onToggleInspector,
+  });
+
+  final FocusNode shortcutFocusNode;
+  final FocusNode editorFocusNode;
+  final VoidCallback onToggleInspector;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Builder(
+        builder: (context) {
+          return CallbackShortcuts(
+            bindings: {
+              homeInspectorToggleActivator: () {
+                handleHomeInspectorToggleShortcut(context, onToggleInspector);
+              },
+            },
+            child: Focus(
+              focusNode: shortcutFocusNode,
+              autofocus: true,
+              child: Scaffold(
+                body: TextField(
+                  key: const ValueKey('shortcut-editor'),
+                  focusNode: editorFocusNode,
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+Future<void> _sendCtrlN(WidgetTester tester) async {
+  await tester.sendKeyDownEvent(LogicalKeyboardKey.controlLeft);
+  await tester.sendKeyEvent(LogicalKeyboardKey.keyN);
+  await tester.sendKeyUpEvent(LogicalKeyboardKey.controlLeft);
 }

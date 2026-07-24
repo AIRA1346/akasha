@@ -1,3 +1,4 @@
+import 'dart:collection';
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
@@ -6,6 +7,8 @@ import 'package:flutter/material.dart';
 /// Flutter의 Image.file이 네이티브 레벨에서 디스크 경로를 찾지 못하고 로드 실패하는 현상을 방지하기 위해
 /// Dart VM 단에서 File.readAsBytes()로 안전하게 바이너리를 읽어와 Image.memory로 렌더링하는 위젯입니다.
 class SafeLocalImage extends StatefulWidget {
+  static final _byteCache = _LocalImageBytesCache();
+
   final File file;
   final BoxFit fit;
   final double? width;
@@ -30,6 +33,7 @@ class _SafeLocalImageState extends State<SafeLocalImage> {
   Object? _error;
   StackTrace? _stackTrace;
   bool _loading = true;
+  int _loadGeneration = 0;
 
   @override
   void initState() {
@@ -47,6 +51,8 @@ class _SafeLocalImageState extends State<SafeLocalImage> {
 
   Future<void> _loadBytes() async {
     if (!mounted) return;
+    final generation = ++_loadGeneration;
+    final file = widget.file;
     setState(() {
       _loading = true;
       _bytes = null;
@@ -55,19 +61,15 @@ class _SafeLocalImageState extends State<SafeLocalImage> {
     });
 
     try {
-      final exists = await widget.file.exists();
-      if (!exists) {
-        throw FileSystemException('File does not exist', widget.file.path);
-      }
-      final bytes = await widget.file.readAsBytes();
-      if (mounted) {
+      final bytes = await SafeLocalImage._byteCache.read(file);
+      if (mounted && generation == _loadGeneration) {
         setState(() {
           _bytes = bytes;
           _loading = false;
         });
       }
     } catch (e, st) {
-      if (mounted) {
+      if (mounted && generation == _loadGeneration) {
         setState(() {
           _error = e;
           _stackTrace = st;
@@ -95,12 +97,82 @@ class _SafeLocalImageState extends State<SafeLocalImage> {
       return const SizedBox.shrink();
     }
 
+    final devicePixelRatio = MediaQuery.maybeDevicePixelRatioOf(context) ?? 1;
+    final cacheWidth = _decodeSize(widget.width, devicePixelRatio);
+    final cacheHeight = cacheWidth == null
+        ? _decodeSize(widget.height, devicePixelRatio)
+        : null;
+
     return Image.memory(
       _bytes!,
       fit: widget.fit,
       width: widget.width,
       height: widget.height,
+      cacheWidth: cacheWidth,
+      cacheHeight: cacheHeight,
+      filterQuality: FilterQuality.medium,
       errorBuilder: widget.errorBuilder,
     );
+  }
+
+  int? _decodeSize(double? logicalSize, double devicePixelRatio) {
+    if (logicalSize == null ||
+        !logicalSize.isFinite ||
+        logicalSize <= 0 ||
+        devicePixelRatio <= 0) {
+      return null;
+    }
+    return (logicalSize * devicePixelRatio).ceil().clamp(1, 4096);
+  }
+}
+
+/// Bounded LRU for user-owned image bytes.
+///
+/// Multiple cards showing the same poster share both the byte buffer and the
+/// resulting MemoryImage cache key. File timestamp and length participate in
+/// the key, so a replaced poster is not confused with its previous revision.
+class _LocalImageBytesCache {
+  static const int _maximumBytes = 64 * 1024 * 1024;
+
+  final LinkedHashMap<String, Uint8List> _entries = LinkedHashMap();
+  final Map<String, Future<Uint8List>> _pending = {};
+  int _totalBytes = 0;
+
+  Future<Uint8List> read(File file) async {
+    final stat = await file.stat();
+    if (stat.type != FileSystemEntityType.file) {
+      throw FileSystemException('File does not exist', file.path);
+    }
+    final key =
+        '${file.path}\u0000${stat.modified.microsecondsSinceEpoch}\u0000${stat.size}';
+    final cached = _entries.remove(key);
+    if (cached != null) {
+      _entries[key] = cached;
+      return cached;
+    }
+
+    final existingRead = _pending[key];
+    if (existingRead != null) return existingRead;
+
+    final read = file.readAsBytes();
+    _pending[key] = read;
+    try {
+      final bytes = await read;
+      _store(key, bytes);
+      return bytes;
+    } finally {
+      _pending.remove(key);
+    }
+  }
+
+  void _store(String key, Uint8List bytes) {
+    if (bytes.lengthInBytes > _maximumBytes) return;
+    _entries[key] = bytes;
+    _totalBytes += bytes.lengthInBytes;
+    while (_totalBytes > _maximumBytes && _entries.isNotEmpty) {
+      final oldestKey = _entries.keys.first;
+      final removed = _entries.remove(oldestKey);
+      if (removed != null) _totalBytes -= removed.lengthInBytes;
+    }
   }
 }

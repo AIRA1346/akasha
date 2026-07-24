@@ -28,9 +28,34 @@ ShellEscapeTarget resolveShellEscapeTarget({
   return ShellEscapeTarget.none;
 }
 
+/// Whether the shell preview surface should occupy layout space.
+///
+/// Desktop inline inspector is gated by [isInspectorOpen]. Compact selection
+/// sheets follow actual selection visibility and ignore the inspector pref.
+bool resolveShellPreviewVisible({
+  required bool persistentInspector,
+  required bool isInspectorOpen,
+  required bool showSelectionPreview,
+}) {
+  return persistentInspector ? isInspectorOpen : showSelectionPreview;
+}
+
+/// Whether Escape should treat the preview/inspector surface as open.
+bool resolveShellPreviewEscapeOpen({
+  required ShellLayoutSpec layoutSpec,
+  required bool hasOpenPreview,
+  required bool isInspectorOpen,
+}) {
+  if (!hasOpenPreview) return false;
+  if (layoutSpec.previewPresentation == ShellPreviewPresentation.inline) {
+    return isInspectorOpen;
+  }
+  return true;
+}
+
 /// The minimum-width policy for the center canvas.
 enum ShellContentConstraint {
-  desktopMinimum(minWidth: 800),
+  desktopMinimum(minWidth: ShellLayoutSpec.desktopCenterMinWidth),
   viewportBound(minWidth: 0);
 
   const ShellContentConstraint({required this.minWidth});
@@ -74,12 +99,18 @@ final class ShellLayoutSpec {
     required this.dockHeight,
   });
 
-  static const double wideBreakpoint = 1440;
-  static const double standardBreakpoint = 1180;
+  /// Minimum center width for desktop (wide/standard) layouts.
+  static const double desktopCenterMinWidth = 800;
 
+  static const double wideBreakpoint = 1440;
   static const double wideSidebarWidth = 256;
   static const double standardSidebarWidth = 232;
   static const double previewRailWidth = 288;
+
+  /// First width where sidebar + inspector + center minimum all fit inline.
+  static const double standardBreakpoint =
+      standardSidebarWidth + previewRailWidth + desktopCenterMinWidth;
+
   static const double appBarContractHeight = 64;
   static const double dockContractHeight = 56;
 
@@ -98,7 +129,7 @@ final class ShellLayoutSpec {
   static const standard = ShellLayoutSpec._(
     layoutClass: ShellLayoutClass.standard,
     sidebarPresentation: ShellSidebarPresentation.persistent,
-    previewPresentation: ShellPreviewPresentation.overlay,
+    previewPresentation: ShellPreviewPresentation.inline,
     contentConstraint: ShellContentConstraint.desktopMinimum,
     decorationDensity: ShellDecorationDensity.reduced,
     sidebarWidth: standardSidebarWidth,
@@ -131,6 +162,10 @@ final class ShellLayoutSpec {
 
   double get mainContentMinWidth => contentConstraint.minWidth;
 
+  /// The dock is the compact navigation surface. Desktop layouts already
+  /// expose the same destinations in the persistent sidebar.
+  bool get showsBottomDock => layoutClass == ShellLayoutClass.compact;
+
   double get reservedSidebarWidth =>
       sidebarPresentation == ShellSidebarPresentation.persistent
       ? sidebarWidth
@@ -138,6 +173,10 @@ final class ShellLayoutSpec {
 
   double get reservedPreviewWidth =>
       previewPresentation == ShellPreviewPresentation.inline ? previewWidth : 0;
+
+  /// Inline layouts must reserve enough width for both rails and the center min.
+  double get minimumInlineViewportWidth =>
+      reservedSidebarWidth + reservedPreviewWidth + mainContentMinWidth;
 
   static ShellLayoutSpec resolve(double viewportWidth) {
     if (!viewportWidth.isFinite || viewportWidth < 0) {

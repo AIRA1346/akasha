@@ -338,6 +338,12 @@ abstract class AppLocalizations {
   /// **'Toggle sidebar (Ctrl+B)'**
   String get appBarToggleSidebar;
 
+  /// No description provided for @appBarToggleInspector.
+  ///
+  /// In en, this message translates to:
+  /// **'Toggle inspector (Ctrl+N)'**
+  String get appBarToggleInspector;
+
   /// No description provided for @appBarSearch.
   ///
   /// In en, this message translates to:
@@ -980,6 +986,12 @@ abstract class AppLocalizations {
   /// **'Successfully restored from trash.'**
   String get trashRestoredSuccess;
 
+  /// No description provided for @trashRestoredSuccessCanvas.
+  ///
+  /// In en, this message translates to:
+  /// **'Restored knowledge map \"{title}\".'**
+  String trashRestoredSuccessCanvas(String title);
+
   /// No description provided for @trashRestoredFailedFileExists.
   ///
   /// In en, this message translates to:
@@ -1003,6 +1015,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Permanently delete \'{fileName}\' from trash?\nThis action cannot be undone.'**
   String trashDeleteConfirm(String fileName);
+
+  /// No description provided for @trashDeleteConfirmCanvas.
+  ///
+  /// In en, this message translates to:
+  /// **'Permanently delete knowledge map \"{title}\" from trash?\nThis action cannot be undone.'**
+  String trashDeleteConfirmCanvas(String title);
+
+  /// No description provided for @trashUnsafeStateWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Safe automatic restore/delete restricted for this item. (Status: {state})'**
+  String trashUnsafeStateWarning(String state);
+
+  /// No description provided for @incompleteKnowledgeMapsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Incomplete knowledge maps found'**
+  String get incompleteKnowledgeMapsFound;
+
+  /// No description provided for @incompleteKnowledgeMapsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} incomplete knowledge map(s) detected.'**
+  String incompleteKnowledgeMapsCount(int count);
+
+  /// No description provided for @missingFilesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Missing files'**
+  String get missingFilesLabel;
+
+  /// No description provided for @existingFilesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Existing files'**
+  String get existingFilesLabel;
+
+  /// No description provided for @diagnosticLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Diagnostic'**
+  String get diagnosticLabel;
+
+  /// No description provided for @graphCanvasDiscoveryFailedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not read knowledge maps'**
+  String get graphCanvasDiscoveryFailedTitle;
+
+  /// No description provided for @graphCanvasDiscoveryFailedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong while reading the knowledge maps folder. Please try again.'**
+  String get graphCanvasDiscoveryFailedBody;
+
+  /// No description provided for @graphCanvasDiscoveryRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get graphCanvasDiscoveryRetry;
+
+  /// No description provided for @trashTransactionStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Status: {status}'**
+  String trashTransactionStatus(String status);
 
   /// No description provided for @actionCancel.
   ///
@@ -5107,6 +5185,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please save the md file before exporting HTML.'**
   String get htmlExportSaveFirst;
+
+  /// No description provided for @inspectorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Context inspector'**
+  String get inspectorTitle;
+
+  /// No description provided for @inspectorHomeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Review the current archive context and recent activity.'**
+  String get inspectorHomeDescription;
+
+  /// No description provided for @inspectorArchiveSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive summary'**
+  String get inspectorArchiveSummary;
+
+  /// No description provided for @inspectorRecords.
+  ///
+  /// In en, this message translates to:
+  /// **'Records'**
+  String get inspectorRecords;
+
+  /// No description provided for @inspectorRecent.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent'**
+  String get inspectorRecent;
+
+  /// No description provided for @inspectorVaultConnected.
+  ///
+  /// In en, this message translates to:
+  /// **'Local vault connected'**
+  String get inspectorVaultConnected;
+
+  /// No description provided for @inspectorVaultDisconnected.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect a local vault to start archiving'**
+  String get inspectorVaultDisconnected;
 }
 
 class _AppLocalizationsDelegate

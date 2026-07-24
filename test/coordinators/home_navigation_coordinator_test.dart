@@ -81,6 +81,21 @@ void main() {
       );
     });
 
+    test('Inspector toggle uses one navigation SSOT', () {
+      expect(navigation.isInspectorOpen, isTrue);
+
+      navigation.toggleInspector();
+      expect(navigation.isInspectorOpen, isFalse);
+      navigation.toggleInspector();
+      expect(navigation.isInspectorOpen, isTrue);
+    });
+
+    test('Inspector restores its persisted startup state', () async {
+      SharedPreferences.setMockInitialValues({'akasha_inspector_open': false});
+      await navigation.loadInspectorState();
+      expect(navigation.isInspectorOpen, isFalse);
+    });
+
     test(
       'goHome clears explore mode and filters for premium dashboard',
       () async {

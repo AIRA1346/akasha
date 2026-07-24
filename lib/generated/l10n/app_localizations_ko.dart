@@ -139,6 +139,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get appBarToggleSidebar => '사이드바 토글 (Ctrl+B)';
 
   @override
+  String get appBarToggleInspector => '인스펙터 토글 (Ctrl+N)';
+
+  @override
   String get appBarSearch => '검색';
 
   @override
@@ -498,6 +501,11 @@ class AppLocalizationsKo extends AppLocalizations {
   String get trashRestoredSuccess => '휴지통에서 복구했습니다.';
 
   @override
+  String trashRestoredSuccessCanvas(String title) {
+    return '지식 지도 「$title」을(를) 복구했습니다.';
+  }
+
+  @override
   String get trashRestoredFailedFileExists => '원래 위치에 파일이 있어 복구하지 못했습니다.';
 
   @override
@@ -509,6 +517,48 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String trashDeleteConfirm(String fileName) {
     return '「$fileName」을(를) 휴지통에서도 삭제할까요?\n이 작업은 되돌릴 수 없습니다.';
+  }
+
+  @override
+  String trashDeleteConfirmCanvas(String title) {
+    return '지식 지도 「$title」을(를) 휴지통에서도 영구 삭제할까요?\n이 작업은 되돌릴 수 없습니다.';
+  }
+
+  @override
+  String trashUnsafeStateWarning(String state) {
+    return '안전한 자동 복구/영구삭제가 제한된 항목입니다. (상태: $state)';
+  }
+
+  @override
+  String get incompleteKnowledgeMapsFound => '불완전한 지식 지도를 발견했습니다';
+
+  @override
+  String incompleteKnowledgeMapsCount(int count) {
+    return '불완전한 지식 지도 $count개가 감지되었습니다.';
+  }
+
+  @override
+  String get missingFilesLabel => '누락 파일';
+
+  @override
+  String get existingFilesLabel => '존재 파일';
+
+  @override
+  String get diagnosticLabel => '진단';
+
+  @override
+  String get graphCanvasDiscoveryFailedTitle => '지식 지도 목록을 읽지 못했습니다';
+
+  @override
+  String get graphCanvasDiscoveryFailedBody =>
+      '볼트의 지식 지도 폴더를 읽는 중 문제가 발생했습니다. 다시 시도해 주세요.';
+
+  @override
+  String get graphCanvasDiscoveryRetry => '재시도';
+
+  @override
+  String trashTransactionStatus(String status) {
+    return '상태: $status';
   }
 
   @override
@@ -2764,4 +2814,25 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get htmlExportSaveFirst => 'HTML보내기 전에 md를 저장해 주세요.';
+
+  @override
+  String get inspectorTitle => '컨텍스트 인스펙터';
+
+  @override
+  String get inspectorHomeDescription => '현재 아카이브 맥락과 최근 활동을 확인합니다.';
+
+  @override
+  String get inspectorArchiveSummary => '아카이브 요약';
+
+  @override
+  String get inspectorRecords => '기록';
+
+  @override
+  String get inspectorRecent => '최근 활동';
+
+  @override
+  String get inspectorVaultConnected => '로컬 볼트 연결됨';
+
+  @override
+  String get inspectorVaultDisconnected => '기록을 시작하려면 로컬 볼트를 연결하세요';
 }

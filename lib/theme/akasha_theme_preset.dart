@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'akasha_effect_spec.dart';
+
 /// Optional artwork layers owned by a visual theme preset.
 ///
 /// A null path intentionally selects the shared gradient/solid fallback. Asset
@@ -207,13 +209,17 @@ class AkashaThemeEffects {
   final AkashaHeroEffects hero;
   final AkashaInteractionEffects interaction;
   final AkashaMotionEffects motion;
+  final List<AkashaEffectSpec> extensions;
 
   const AkashaThemeEffects({
     required this.backdrop,
     required this.hero,
     this.interaction = AkashaInteractionEffects.neutral,
     this.motion = AkashaMotionEffects.standard,
+    this.extensions = const [],
   });
+
+  bool get hasValidExtensions => _hasUniqueEffectIds(extensions);
 
   static const neutral = AkashaThemeEffects(
     backdrop: AkashaBackdropEffects(
@@ -230,12 +236,14 @@ class AkashaThemeEffects {
     AkashaHeroEffects? hero,
     AkashaInteractionEffects? interaction,
     AkashaMotionEffects? motion,
+    List<AkashaEffectSpec>? extensions,
   }) {
     return AkashaThemeEffects(
       backdrop: backdrop ?? this.backdrop,
       hero: hero ?? this.hero,
       interaction: interaction ?? this.interaction,
       motion: motion ?? this.motion,
+      extensions: extensions ?? this.extensions,
     );
   }
 
@@ -244,6 +252,10 @@ class AkashaThemeEffects {
     return copyWith(
       backdrop: backdrop.copyWith(ambientOpacity: 0),
       motion: AkashaMotionEffects.reduced,
+      extensions: [
+        for (final effect in extensions)
+          if (!effect.requiresMotion) effect,
+      ],
     );
   }
 
@@ -253,6 +265,7 @@ class AkashaThemeEffects {
       hero: hero.lerp(other.hero, t),
       interaction: interaction.lerp(other.interaction, t),
       motion: motion.lerp(other.motion, t),
+      extensions: t < 0.5 ? extensions : other.extensions,
     );
   }
 }
@@ -364,4 +377,9 @@ Duration _lerpDuration(Duration a, Duration b, double t) {
       t,
     ).round(),
   );
+}
+
+bool _hasUniqueEffectIds(List<AkashaEffectSpec> effects) {
+  final ids = <String>{};
+  return effects.every((effect) => ids.add(effect.id));
 }

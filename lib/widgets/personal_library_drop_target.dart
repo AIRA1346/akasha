@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/work_drag_payload.dart';
+import '../theme/akasha_theme_preset.dart';
 
 /// 사이드바 curated 서재 행 — DnD-A drop zone
 class PersonalLibraryDropTarget extends StatelessWidget {
@@ -22,8 +23,9 @@ class PersonalLibraryDropTarget extends StatelessWidget {
       onAcceptWithDetails: (details) => onAccept(details.data),
       builder: (context, candidate, rejected) {
         final hovering = candidate.isNotEmpty;
+        final motion = context.resolvedAkashaThemeVisuals.effects.motion;
         return AnimatedContainer(
-          duration: const Duration(milliseconds: 150),
+          duration: motion.quickDuration,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(6),
             color: hovering

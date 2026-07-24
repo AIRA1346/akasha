@@ -6,6 +6,8 @@ import 'home_shell_controller_base.dart';
 mixin HomeShellControllerNavigationMixin on HomeShellControllerBase {
   void toggleSidebar() => navigation.toggleSidebar();
 
+  void toggleInspector() => navigation.toggleInspector();
+
   Future<void> loadDashboards() => navigation.loadDashboards();
 
   Future<void> loadPersonalLibraries() => navigation.loadPersonalLibraries();

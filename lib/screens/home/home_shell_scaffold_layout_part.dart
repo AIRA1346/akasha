@@ -24,7 +24,11 @@ void _homeShellHandleEscape(
     layoutSpec: layoutSpec,
     sidebarOpen: controller.isSidebarOpen,
     commerceOpen: controller.isCommerceSurfaceOpen,
-    previewOpen: controller.hasOpenPreview,
+    previewOpen: resolveShellPreviewEscapeOpen(
+      layoutSpec: layoutSpec,
+      hasOpenPreview: controller.hasOpenPreview,
+      isInspectorOpen: controller.isInspectorOpen,
+    ),
     fullscreen: windowController?.isFullScreen ?? false,
   )) {
     case ShellEscapeTarget.fullscreen:
@@ -71,6 +75,9 @@ Widget _homeShellScaffoldRoot(
           controller.toggleSidebar();
         }
       },
+      homeInspectorToggleActivator: () {
+        handleHomeInspectorToggleShortcut(context, controller.toggleInspector);
+      },
       const SingleActivator(LogicalKeyboardKey.keyK, control: true): () {
         if (ModalRoute.of(context)?.isCurrent == true) {
           controller.openSearchDialog();
@@ -90,15 +97,17 @@ Widget _homeShellScaffoldRoot(
           child: ExcludeFocus(excluding: modalDrawerOpen, child: appBar),
         ),
         body: _homeShellScaffoldBody(context, controller, filtered, layoutSpec),
-        bottomNavigationBar: ExcludeFocus(
-          excluding: modalDrawerOpen,
-          child: _homeShellScaffoldBottomNavigationBar(
-            context,
-            controller,
-            palette,
-            layoutSpec,
-          ),
-        ),
+        bottomNavigationBar: layoutSpec.showsBottomDock
+            ? ExcludeFocus(
+                excluding: modalDrawerOpen,
+                child: _homeShellScaffoldBottomNavigationBar(
+                  context,
+                  controller,
+                  palette,
+                  layoutSpec,
+                ),
+              )
+            : null,
       ),
     ),
   );

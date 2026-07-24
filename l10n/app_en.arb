@@ -57,6 +57,7 @@
   "buildIdentityCopy": "Copy build information",
   "buildIdentityCopied": "Build information copied to the clipboard.",
   "appBarToggleSidebar": "Toggle sidebar (Ctrl+B)",
+  "appBarToggleInspector": "Toggle inspector (Ctrl+N)",
   "appBarSearch": "Search",
   "appBarTimelineCapture": "Timeline note",
   "appBarCatalogInbox": "Catalog suggestions inbox",
@@ -263,6 +264,12 @@
   "vaultChangeFolder": "Change Folder",
   "vaultLinkFolder": "Link Folder",
   "trashRestoredSuccess": "Successfully restored from trash.",
+  "trashRestoredSuccessCanvas": "Restored knowledge map \"{title}\".",
+  "@trashRestoredSuccessCanvas": {
+    "placeholders": {
+      "title": { "type": "String" }
+    }
+  },
   "trashRestoredFailedFileExists": "Could not restore. File already exists at original location.",
   "trashRestore": "Restore",
   "trashDeletePermanently": "Delete Permanently",
@@ -272,6 +279,37 @@
       "fileName": {
         "type": "String"
       }
+    }
+  },
+  "trashDeleteConfirmCanvas": "Permanently delete knowledge map \"{title}\" from trash?\nThis action cannot be undone.",
+  "@trashDeleteConfirmCanvas": {
+    "placeholders": {
+      "title": { "type": "String" }
+    }
+  },
+  "trashUnsafeStateWarning": "Safe automatic restore/delete restricted for this item. (Status: {state})",
+  "@trashUnsafeStateWarning": {
+    "placeholders": {
+      "state": { "type": "String" }
+    }
+  },
+  "incompleteKnowledgeMapsFound": "Incomplete knowledge maps found",
+  "incompleteKnowledgeMapsCount": "{count} incomplete knowledge map(s) detected.",
+  "@incompleteKnowledgeMapsCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "missingFilesLabel": "Missing files",
+  "existingFilesLabel": "Existing files",
+  "diagnosticLabel": "Diagnostic",
+  "graphCanvasDiscoveryFailedTitle": "Could not read knowledge maps",
+  "graphCanvasDiscoveryFailedBody": "Something went wrong while reading the knowledge maps folder. Please try again.",
+  "graphCanvasDiscoveryRetry": "Retry",
+  "trashTransactionStatus": "Status: {status}",
+  "@trashTransactionStatus": {
+    "placeholders": {
+      "status": { "type": "String" }
     }
   },
   "actionCancel": "Cancel",
@@ -1533,5 +1571,12 @@
     }
   },
   "resetToDefaultsSuccess": "Reset to registry defaults. (work_id preserved)",
-  "htmlExportSaveFirst": "Please save the md file before exporting HTML."
+  "htmlExportSaveFirst": "Please save the md file before exporting HTML.",
+  "inspectorTitle": "Context inspector",
+  "inspectorHomeDescription": "Review the current archive context and recent activity.",
+  "inspectorArchiveSummary": "Archive summary",
+  "inspectorRecords": "Records",
+  "inspectorRecent": "Recent",
+  "inspectorVaultConnected": "Local vault connected",
+  "inspectorVaultDisconnected": "Connect a local vault to start archiving"
 }

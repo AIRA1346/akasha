@@ -8,6 +8,7 @@ PreferredSizeWidget _homeShellScaffoldAppBar(
   return HomeAppBar(
     toolbarHeight: layoutSpec.appBarHeight,
     isSidebarOpen: controller.isSidebarOpen,
+    isInspectorOpen: controller.isInspectorOpen,
     vaultLinked: controller.vaultLinked,
     onCommerce: controller.toggleCommerceSurface,
     commerceSelected: controller.isCommerceSurfaceOpen,
@@ -20,6 +21,7 @@ PreferredSizeWidget _homeShellScaffoldAppBar(
       ),
     ),
     onToggleSidebar: controller.toggleSidebar,
+    onToggleInspector: controller.toggleInspector,
     onTimelineCapture: controller.openTimelineQuickCapture,
     onClipboardImport: controller.openClipboardImportDialog,
     onPromptTemplates: () => HomeDialogsFacade.showPromptTemplates(context),

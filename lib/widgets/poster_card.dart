@@ -5,6 +5,7 @@ import '../models/format_slot.dart';
 import '../models/enums.dart';
 import '../core/app_vault.dart';
 import '../theme/akasha_palette.dart';
+import '../theme/akasha_theme_preset.dart';
 import 'poster_card_layouts.dart';
 import 'poster_card_style.dart';
 
@@ -53,6 +54,7 @@ class _PosterCardState extends State<PosterCard> {
   Widget build(BuildContext context) {
     final item = widget.item;
     final palette = context.akashaPalette;
+    final motion = context.resolvedAkashaThemeVisuals.effects.motion;
     final showArchivedBadge = AppVault.port.isArchivedInVault(item);
     final gradColors = categoryGradient(item.category);
     final chrome = PosterCardStyle.resolveChrome(
@@ -73,7 +75,7 @@ class _PosterCardState extends State<PosterCard> {
           ? () => _openContextMenu(_cardCenterGlobal())
           : null,
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
+        duration: motion.standardDuration,
         curve: Curves.easeOut,
         transform: _isHovered
             ? Matrix4.translationValues(0.0, -4.0, 0.0)

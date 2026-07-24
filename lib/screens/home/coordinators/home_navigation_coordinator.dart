@@ -2,6 +2,7 @@ import '../../../models/browse_entity_scope.dart';
 import '../../../models/personal_library_config.dart';
 import '../../../features/workbench/data/workbench_controller.dart';
 import '../app_destination.dart';
+import '../home_inspector_preferences.dart';
 import '../home_personal_library_controller.dart';
 import '../home_sidebar_preferences.dart';
 import 'home_filter_coordinator.dart';
@@ -44,6 +45,7 @@ class HomeNavigationCoordinator {
   final void Function()? onNavigationCommitted;
 
   bool isSidebarOpen = false;
+  bool isInspectorOpen = true;
   int timelineReloadToken = 0;
   int _navigationGeneration = 0;
   Future<bool>? _workbenchGuardInFlight;
@@ -99,6 +101,11 @@ class HomeNavigationCoordinator {
     if (isMounted()) scheduleRebuild(() => isSidebarOpen = open);
   }
 
+  Future<void> loadInspectorState() async {
+    final open = await HomeInspectorPreferences.loadOpen();
+    if (isMounted()) scheduleRebuild(() => isInspectorOpen = open);
+  }
+
   Future<void> saveSidebarState(bool open) =>
       HomeSidebarPreferences.saveOpen(open);
 
@@ -106,6 +113,13 @@ class HomeNavigationCoordinator {
     scheduleRebuild(() {
       isSidebarOpen = !isSidebarOpen;
       saveSidebarState(isSidebarOpen);
+    });
+  }
+
+  void toggleInspector() {
+    scheduleRebuild(() {
+      isInspectorOpen = !isInspectorOpen;
+      HomeInspectorPreferences.saveOpen(isInspectorOpen);
     });
   }
 

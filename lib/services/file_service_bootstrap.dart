@@ -59,16 +59,63 @@ mixin _AkashaFileServiceBootstrap
       await prefs.setString(AkashaFileService._prefVaultKey, path);
     }
 
+    _recordActivationPhase('ensure_folders');
     await _ensureFolderStructure();
+
+    _recordActivationPhase('trash_recovery_start');
+    await _recoverPendingTrashTransactions(path);
+    _recordActivationPhase('trash_recovery_done');
+
     await VaultReadmeWriter().write(path);
     await VaultSpecWriter().write(path);
     await EntityPathIndexService().ensureIndex(path);
     await RecordSummaryIndexService().ensureIndex(path);
     await TitleAliasIndexService().ensureIndex(path);
     await const RecordPathIndexService().ensureIndex(path);
+
+    _recordActivationPhase('start_watching');
     _startWatching();
     await _refreshVaultFingerprint();
+    _recordActivationPhase('notify_vault_updated');
     _notifyVaultUpdated();
+  }
+
+  void _recordActivationPhase(String phase) {
+    AkashaFileService.debugActivationPhases?.add(phase);
+  }
+
+  /// Converges interrupted composite trash transactions before indexes/watchers.
+  Future<void> _recoverPendingTrashTransactions(String vaultPath) async {
+    try {
+      final recover =
+          AkashaFileService.debugTrashRecoveryOverride ??
+          ((path) => const VaultTrashService()
+              .recoverPendingTrashTransactionsDetail(vaultPath: path));
+      final results = await recover(vaultPath);
+      for (final result in results) {
+        if (result.action == 'error' ||
+            result.resultState ==
+                VaultTrashTransactionState.rollbackRequired.wireName ||
+            result.resultState ==
+                VaultTrashTransactionState.restoreConflict.wireName) {
+          appLog(
+            'Vault trash recovery '
+            'tx=${result.transactionId} '
+            'from=${result.previousState} '
+            'to=${result.resultState} '
+            'action=${result.action}'
+            '${result.error == null ? '' : ' detail=${result.error}'}',
+          );
+        }
+      }
+    } on FileSystemException catch (error) {
+      // Listing `.trash` failed at the OS level — do not wipe evidence.
+      appLog(
+        'Vault trash recovery could not enumerate pending transactions: $error',
+      );
+    } catch (error) {
+      appLog('Vault trash recovery failed unexpectedly: $error');
+    }
   }
 
   /// 볼트에 필요한 기본 폴더 구조(posters, 카테고리별)를 생성합니다.
