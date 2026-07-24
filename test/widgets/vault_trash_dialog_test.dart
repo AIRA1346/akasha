@@ -119,18 +119,19 @@ void main() {
       (tester) async {
         const canvasId = 'cv_u_widget01';
         var onRestoredCalls = 0;
+        const vaultPath = '/tmp/akasha_vault_trash_ui';
         final service = _RecordingTrashService(
           legacy: [
             VaultTrashEntry(
-              vaultPath: r'C:\tmp\vault',
-              originalPath: r'C:\tmp\vault\works\wk_legacy.md',
-              trashPath: r'C:\tmp\vault\.trash\stamp1\works\wk_legacy.md',
+              vaultPath: vaultPath,
+              originalPath: '$vaultPath/works/wk_legacy.md',
+              trashPath: '$vaultPath/.trash/stamp1/works/wk_legacy.md',
               trashedAt: DateTime.utc(2026, 7, 24, 9),
             ),
           ],
           transactions: [
             _sampleTx(
-              vaultPath: r'C:\tmp\vault',
+              vaultPath: vaultPath,
               canvasId: canvasId,
               title: 'Composite Trash Canvas',
               stamp: '2026-07-24T10-00-00-000000z',
@@ -145,7 +146,7 @@ void main() {
                 builder: (context) => ElevatedButton(
                   onPressed: () => showVaultTrashDialog(
                     context,
-                    vaultPath: r'C:\tmp\vault',
+                    vaultPath: vaultPath,
                     trashService: service,
                     onRestored: () async {
                       onRestoredCalls++;
@@ -185,10 +186,11 @@ void main() {
       'permanent delete tap shows confirm dialog then deletes via service',
       (tester) async {
         const canvasId = 'cv_u_delete01';
+        const vaultPath = '/tmp/akasha_vault_trash_ui';
         final service = _RecordingTrashService(
           transactions: [
             _sampleTx(
-              vaultPath: r'C:\tmp\vault',
+              vaultPath: vaultPath,
               canvasId: canvasId,
               title: 'Canvas To Delete',
               stamp: '2026-07-24T11-00-00-000000z',
@@ -203,7 +205,7 @@ void main() {
                 builder: (context) => ElevatedButton(
                   onPressed: () => showVaultTrashDialog(
                     context,
-                    vaultPath: r'C:\tmp\vault',
+                    vaultPath: vaultPath,
                     trashService: service,
                   ),
                   child: const Text('Open Trash'),
@@ -238,11 +240,12 @@ void main() {
       'restoreConflict path surfaces snackbar from service error',
       (tester) async {
         const canvasId = 'cv_u_conflc01';
+        const vaultPath = '/tmp/akasha_vault_trash_ui';
         final service =
             _RecordingTrashService(
                 transactions: [
                   _sampleTx(
-                    vaultPath: r'C:\tmp\vault',
+                    vaultPath: vaultPath,
                     canvasId: canvasId,
                     title: 'Conflict Canvas',
                     stamp: '2026-07-24T12-00-00-000000z',
@@ -262,7 +265,7 @@ void main() {
                 builder: (context) => ElevatedButton(
                   onPressed: () => showVaultTrashDialog(
                     context,
-                    vaultPath: r'C:\tmp\vault',
+                    vaultPath: vaultPath,
                     trashService: service,
                   ),
                   child: const Text('Open Trash'),
@@ -292,10 +295,11 @@ void main() {
       'hides restore and delete buttons for rollbackRequired unsafe transaction',
       (tester) async {
         const canvasId = 'cv_u_unsafe01';
+        const vaultPath = '/tmp/akasha_vault_trash_ui';
         final service = _RecordingTrashService(
           transactions: [
             _sampleTx(
-              vaultPath: r'C:\tmp\vault',
+              vaultPath: vaultPath,
               canvasId: canvasId,
               title: 'Unsafe Canvas',
               stamp: '2026-07-24T13-00-00-000000z',
@@ -311,7 +315,7 @@ void main() {
                 builder: (context) => ElevatedButton(
                   onPressed: () => showVaultTrashDialog(
                     context,
-                    vaultPath: r'C:\tmp\vault',
+                    vaultPath: vaultPath,
                     trashService: service,
                   ),
                   child: const Text('Open Trash'),
