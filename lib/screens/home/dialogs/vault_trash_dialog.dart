@@ -2,53 +2,101 @@ import 'package:flutter/material.dart';
 
 import '../../../generated/l10n/app_localizations.dart';
 import '../../../services/vault_trash_service.dart';
-import '../../../theme/akasha_colors.dart';
 import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
 import '../../../utils/app_l10n.dart';
+
+sealed class VaultTrashListItem {
+  const VaultTrashListItem();
+  DateTime get timestamp;
+}
+
+class LegacyTrashListItem extends VaultTrashListItem {
+  const LegacyTrashListItem(this.entry);
+  final VaultTrashEntry entry;
+
+  @override
+  DateTime get timestamp => entry.trashedAt;
+}
+
+class CompositeTrashListItem extends VaultTrashListItem {
+  const CompositeTrashListItem(this.transaction);
+  final VaultTrashTransaction transaction;
+
+  @override
+  DateTime get timestamp => transaction.createdAt;
+}
 
 Future<void> showVaultTrashDialog(
   BuildContext context, {
   required String vaultPath,
   Future<void> Function()? onRestored,
+  VaultTrashService? trashService,
 }) async {
   await showDialog(
     context: context,
-    builder: (ctx) =>
-        _VaultTrashDialog(vaultPath: vaultPath, onRestored: onRestored),
+    builder: (ctx) => _VaultTrashDialog(
+      vaultPath: vaultPath,
+      onRestored: onRestored,
+      trashService: trashService ?? const VaultTrashService(),
+    ),
   );
 }
 
 class _VaultTrashDialog extends StatefulWidget {
-  const _VaultTrashDialog({required this.vaultPath, this.onRestored});
+  const _VaultTrashDialog({
+    required this.vaultPath,
+    required this.trashService,
+    this.onRestored,
+  });
 
   final String vaultPath;
   final Future<void> Function()? onRestored;
+  final VaultTrashService trashService;
 
   @override
   State<_VaultTrashDialog> createState() => _VaultTrashDialogState();
 }
 
 class _VaultTrashDialogState extends State<_VaultTrashDialog> {
-  final _trash = const VaultTrashService();
-  late Future<List<VaultTrashEntry>> _entriesFuture;
+  late Future<List<VaultTrashListItem>> _itemsFuture;
+
+  VaultTrashService get _trash => widget.trashService;
 
   @override
   void initState() {
     super.initState();
-    _entriesFuture = _load();
+    _itemsFuture = _load();
   }
 
-  Future<List<VaultTrashEntry>> _load() =>
-      _trash.listEntries(vaultPath: widget.vaultPath);
+  Future<List<VaultTrashListItem>> _load() async {
+    final results = await Future.wait([
+      _trash.listEntries(vaultPath: widget.vaultPath),
+      _trash.listTransactions(vaultPath: widget.vaultPath),
+    ]);
+
+    final legacyList = (results[0] as List<VaultTrashEntry>)
+        .map(LegacyTrashListItem.new)
+        .toList();
+    final compositeList = (results[1] as List<VaultTrashTransaction>)
+        .map(CompositeTrashListItem.new)
+        .toList();
+
+    final combined = <VaultTrashListItem>[...legacyList, ...compositeList];
+    combined.sort((a, b) => b.timestamp.compareTo(a.timestamp));
+    return combined;
+  }
 
   void _refresh() {
     setState(() {
-      _entriesFuture = _load();
+      _itemsFuture = _load();
     });
   }
 
-  Future<void> _restore(VaultTrashEntry entry, AppLocalizations? l10n) async {
+  Future<void> _restoreLegacy(
+    VaultTrashEntry entry,
+    AppLocalizations? l10n,
+  ) async {
     final restored = await _trash.restoreFile(entry);
     if (!mounted) return;
     if (restored) {
@@ -56,19 +104,43 @@ class _VaultTrashDialogState extends State<_VaultTrashDialog> {
       _showSnack(l10n?.trashRestoredSuccess ?? '휴지통에서 복구했습니다.');
       _refresh();
     } else {
-      _showSnack(l10n?.trashRestoredFailedFileExists ?? '원래 위치에 파일이 있어 복구하지 못했습니다.');
+      _showSnack(
+        l10n?.trashRestoredFailedFileExists ?? '원래 위치에 파일이 있어 복구하지 못했습니다.',
+      );
     }
   }
 
-  Future<void> _deletePermanently(VaultTrashEntry entry, AppLocalizations? l10n) async {
+  Future<void> _restoreComposite(
+    VaultTrashTransaction tx,
+    AppLocalizations? l10n,
+  ) async {
+    final result = await _trash.restoreCanvasTransaction(tx);
+    if (!mounted) return;
+    if (result.succeeded) {
+      await widget.onRestored?.call();
+      final title = tx.title ?? tx.recordId;
+      _showSnack(
+        l10n?.trashRestoredSuccessCanvas(title) ?? '지식 지도 「$title」을(를) 복구했습니다.',
+      );
+      _refresh();
+    } else {
+      final msg = result.error ?? '원래 위치에 파일이 있어 복구하지 못했습니다.';
+      _showSnack(msg);
+    }
+  }
+
+  Future<void> _deleteLegacyPermanently(
+    VaultTrashEntry entry,
+    AppLocalizations? l10n,
+  ) async {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(l10n?.trashDeletePermanently ?? '영구 삭제'),
         content: Text(
           l10n?.trashDeleteConfirm(entry.originalFileName) ??
-          '「${entry.originalFileName}」을(를) 휴지통에서도 삭제할까요?\n'
-          '이 작업은 되돌릴 수 없습니다.',
+              '「${entry.originalFileName}」을(를) 휴지통에서도 삭제할까요?\n'
+                  '이 작업은 되돌릴 수 없습니다.',
         ),
         actions: [
           TextButton(
@@ -95,9 +167,51 @@ class _VaultTrashDialogState extends State<_VaultTrashDialog> {
     _refresh();
   }
 
+  Future<void> _deleteCompositePermanently(
+    VaultTrashTransaction tx,
+    AppLocalizations? l10n,
+  ) async {
+    final title = tx.title ?? tx.recordId;
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(l10n?.trashDeletePermanently ?? '영구 삭제'),
+        content: Text(
+          l10n?.trashDeleteConfirmCanvas(title) ??
+              '지식 지도 「$title」을(를) 휴지통에서도 영구 삭제할까요?\n'
+                  '이 작업은 되돌릴 수 없습니다.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: Text(l10n?.actionCancel ?? '취소'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            style: TextButton.styleFrom(foregroundColor: Colors.redAccent),
+            child: Text(l10n?.trashDeletePermanently ?? '영구 삭제'),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true) return;
+
+    final deleted = await _trash.deleteTransactionPermanently(tx);
+    if (!mounted) return;
+    _showSnack(
+      deleted
+          ? (l10n?.trashDeletedSuccess ?? '휴지통에서 영구 삭제했습니다.')
+          : (l10n?.trashDeleteFailedNotFound ?? '삭제할 파일을 찾지 못했습니다.'),
+    );
+    _refresh();
+  }
+
   void _showSnack(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message), duration: const Duration(seconds: 2)),
+    ScaffoldMessenger.maybeOf(context)?.showSnackBar(
+      SnackBar(
+        content: Text(message),
+        duration: const Duration(milliseconds: 500),
+      ),
     );
   }
 
@@ -108,9 +222,9 @@ class _VaultTrashDialogState extends State<_VaultTrashDialog> {
     return AlertDialog(
       title: Text(l10n?.vaultTrashTitle ?? 'Vault 휴지통'),
       content: SizedBox(
-        width: 560,
-        child: FutureBuilder<List<VaultTrashEntry>>(
-          future: _entriesFuture,
+        width: 580,
+        child: FutureBuilder<List<VaultTrashListItem>>(
+          future: _itemsFuture,
           builder: (context, snapshot) {
             if (snapshot.connectionState != ConnectionState.done) {
               return const SizedBox(
@@ -118,8 +232,21 @@ class _VaultTrashDialogState extends State<_VaultTrashDialog> {
                 child: Center(child: CircularProgressIndicator()),
               );
             }
-            final entries = snapshot.data ?? const [];
-            if (entries.isEmpty) {
+            if (snapshot.hasError) {
+              return SizedBox(
+                height: 120,
+                child: Center(
+                  child: Text(
+                    snapshot.error.toString(),
+                    style: AkashaTypography.bodySecondary.copyWith(
+                      color: Colors.redAccent,
+                    ),
+                  ),
+                ),
+              );
+            }
+            final items = snapshot.data ?? const [];
+            if (items.isEmpty) {
               return SizedBox(
                 height: 120,
                 child: Center(
@@ -131,19 +258,31 @@ class _VaultTrashDialogState extends State<_VaultTrashDialog> {
               );
             }
             return ConstrainedBox(
-              constraints: const BoxConstraints(maxHeight: 420),
+              constraints: const BoxConstraints(maxHeight: 440),
               child: ListView.separated(
                 shrinkWrap: true,
-                itemCount: entries.length,
+                itemCount: items.length,
                 separatorBuilder: (_, _) =>
                     const SizedBox(height: AkashaSpacing.sm),
                 itemBuilder: (context, index) {
-                  final entry = entries[index];
-                  return _VaultTrashTile(
-                    entry: entry,
-                    onRestore: () => _restore(entry, l10n),
-                    onDeletePermanently: () => _deletePermanently(entry, l10n),
-                  );
+                  final item = items[index];
+                  if (item is LegacyTrashListItem) {
+                    return _LegacyTrashTile(
+                      entry: item.entry,
+                      onRestore: () => _restoreLegacy(item.entry, l10n),
+                      onDeletePermanently: () =>
+                          _deleteLegacyPermanently(item.entry, l10n),
+                    );
+                  } else if (item is CompositeTrashListItem) {
+                    return _CompositeTrashTile(
+                      transaction: item.transaction,
+                      onRestore: () =>
+                          _restoreComposite(item.transaction, l10n),
+                      onDeletePermanently: () =>
+                          _deleteCompositePermanently(item.transaction, l10n),
+                    );
+                  }
+                  return const SizedBox.shrink();
                 },
               ),
             );
@@ -151,10 +290,9 @@ class _VaultTrashDialogState extends State<_VaultTrashDialog> {
         ),
       ),
       actions: [
-        TextButton.icon(
+        TextButton(
           onPressed: _refresh,
-          icon: const Icon(Icons.refresh, size: 16),
-          label: Text(l10n?.trashRefresh ?? '새로고침'),
+          child: Text(l10n?.trashRefresh ?? '새로고침'),
         ),
         TextButton(
           onPressed: () => Navigator.pop(context),
@@ -165,8 +303,8 @@ class _VaultTrashDialogState extends State<_VaultTrashDialog> {
   }
 }
 
-class _VaultTrashTile extends StatelessWidget {
-  const _VaultTrashTile({
+class _LegacyTrashTile extends StatelessWidget {
+  const _LegacyTrashTile({
     required this.entry,
     required this.onRestore,
     required this.onDeletePermanently,
@@ -179,68 +317,196 @@ class _VaultTrashTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = lookupAppL10n(context);
-    final trashedAt = entry.trashedAt.toLocal();
-    final time =
-        '${trashedAt.year.toString().padLeft(4, '0')}-'
-        '${trashedAt.month.toString().padLeft(2, '0')}-'
-        '${trashedAt.day.toString().padLeft(2, '0')} '
-        '${trashedAt.hour.toString().padLeft(2, '0')}:'
-        '${trashedAt.minute.toString().padLeft(2, '0')}';
+    final timeStr = entry.trashedAt.toLocal().toString().split('.').first;
 
-    return DecoratedBox(
+    return Container(
+      padding: const EdgeInsets.all(AkashaSpacing.sm),
       decoration: BoxDecoration(
-        color: AkashaColors.surface,
+        color: Colors.grey.shade900,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AkashaColors.borderSubtle(0.08)),
+        border: Border.all(color: Colors.grey.shade800),
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(AkashaSpacing.md),
-        child: Row(
-          children: [
-            const Icon(Icons.delete_outline, color: AkashaColors.textSecondary),
-            const SizedBox(width: AkashaSpacing.md),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    entry.originalFileName,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: AkashaTypography.body.copyWith(
-                      fontWeight: FontWeight.w700,
+      child: Row(
+        children: [
+          Icon(
+            Icons.insert_drive_file_outlined,
+            color: Colors.grey.shade400,
+            size: 24,
+          ),
+          const SizedBox(width: AkashaSpacing.sm),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  entry.originalFileName,
+                  style: AkashaTypography.compactLabel.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
+                  entry.originalPathRelativeToVault(),
+                  style: AkashaTypography.caption.copyWith(
+                    color: Colors.grey.shade400,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
+                  l10n?.trashDeletedTime(timeStr) ?? '삭제됨 $timeStr',
+                  style: TextStyle(fontSize: 10, color: Colors.grey.shade500),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(width: AkashaSpacing.xs),
+          TextButton(
+            key: ValueKey<String>(
+              'trash-restore-legacy-${entry.originalFileName}',
+            ),
+            onPressed: onRestore,
+            child: Text(l10n?.trashRestore ?? '복구'),
+          ),
+          TextButton(
+            key: ValueKey<String>(
+              'trash-delete-legacy-${entry.originalFileName}',
+            ),
+            onPressed: onDeletePermanently,
+            style: TextButton.styleFrom(foregroundColor: Colors.redAccent),
+            child: Text(l10n?.trashDeletePermanently ?? '영구 삭제'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _CompositeTrashTile extends StatelessWidget {
+  const _CompositeTrashTile({
+    required this.transaction,
+    required this.onRestore,
+    required this.onDeletePermanently,
+  });
+
+  final VaultTrashTransaction transaction;
+  final VoidCallback onRestore;
+  final VoidCallback onDeletePermanently;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+    final timeStr = transaction.createdAt.toLocal().toString().split('.').first;
+    final isCommitted =
+        transaction.state == VaultTrashTransactionState.committed.wireName;
+    final title = transaction.title ?? transaction.recordId;
+
+    return Container(
+      padding: const EdgeInsets.all(AkashaSpacing.sm),
+      decoration: BoxDecoration(
+        color: Colors.grey.shade900,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(
+          color: isCommitted
+              ? Colors.grey.shade800
+              : Colors.orange.withValues(alpha: 0.5),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.map_outlined, color: Colors.amber, size: 24),
+              const SizedBox(width: AkashaSpacing.sm),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            title,
+                            style: AkashaTypography.compactLabel.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 6,
+                            vertical: 1,
+                          ),
+                          decoration: BoxDecoration(
+                            color: isCommitted
+                                ? Colors.blue.withValues(alpha: 0.2)
+                                : Colors.orange.withValues(alpha: 0.2),
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Text(
+                            transaction.state,
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: isCommitted
+                                  ? Colors.lightBlue
+                                  : Colors.orangeAccent,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                  const SizedBox(height: AkashaSpacing.xs),
-                  Text(
-                    entry.originalPathRelativeToVault(),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: AkashaTypography.caption,
-                  ),
-                  const SizedBox(height: AkashaSpacing.xs),
-                  Text(
-                    l10n?.trashDeletedTime(time) ?? '삭제됨 $time',
-                    style: AkashaTypography.caption,
-                  ),
-                ],
+                    Text(
+                      'ID: ${transaction.recordId} · ${transaction.members.length} files (canvas.md, layout.json)',
+                      style: AkashaTypography.caption.copyWith(
+                        color: Colors.grey.shade400,
+                      ),
+                    ),
+                    Text(
+                      l10n?.trashDeletedTime(timeStr) ?? '삭제됨 $timeStr',
+                      style: TextStyle(
+                        fontSize: 10,
+                        color: Colors.grey.shade500,
+                      ),
+                    ),
+                  ],
+                ),
               ),
+            ],
+          ),
+          if (!isCommitted) ...[
+            const SizedBox(height: AkashaSpacing.xs),
+            Text(
+              l10n?.trashUnsafeStateWarning(transaction.state) ??
+                  '안전한 자동 복구/영구삭제가 제한된 항목입니다. (상태: ${transaction.state})',
+              style: const TextStyle(fontSize: 11, color: Colors.orangeAccent),
             ),
-            const SizedBox(width: AkashaSpacing.md),
-            IconButton(
-              tooltip: l10n?.trashRestore ?? '복구',
-              onPressed: onRestore,
-              icon: const Icon(Icons.restore, size: 18),
-            ),
-            IconButton(
-              tooltip: l10n?.trashDeletePermanently ?? '영구 삭제',
-              onPressed: onDeletePermanently,
-              color: Colors.redAccent,
-              icon: const Icon(Icons.delete_forever_outlined, size: 18),
+          ] else ...[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                  key: ValueKey<String>(
+                    'trash-restore-canvas-${transaction.recordId}',
+                  ),
+                  onPressed: onRestore,
+                  child: Text(l10n?.trashRestore ?? '복구'),
+                ),
+                TextButton(
+                  key: ValueKey<String>(
+                    'trash-delete-canvas-${transaction.recordId}',
+                  ),
+                  onPressed: onDeletePermanently,
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.redAccent,
+                  ),
+                  child: Text(l10n?.trashDeletePermanently ?? '영구 삭제'),
+                ),
+              ],
             ),
           ],
-        ),
+        ],
       ),
     );
   }
