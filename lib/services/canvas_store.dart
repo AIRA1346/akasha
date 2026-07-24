@@ -6,11 +6,49 @@ import 'package:path/path.dart' as p;
 
 import '../core/archiving/canvas_record.dart';
 import 'vault_recovery_write_service.dart';
+import 'vault_trash_service.dart';
 
 class CanvasData {
   CanvasData({required this.record, required this.layout});
   final CanvasRecord record;
   final CanvasLayout layout;
+}
+
+enum IncompleteCanvasStatus {
+  missingMetadata,
+  missingLayout,
+  invalidMetadata,
+  invalidLayout,
+  idMismatch,
+  layoutRefMismatch,
+}
+
+class IncompleteCanvasRecord {
+  const IncompleteCanvasRecord({
+    required this.canvasDirectory,
+    required this.inferredCanvasId,
+    required this.status,
+    required this.existingFiles,
+    required this.missingFiles,
+    required this.diagnosticMessage,
+  });
+
+  final String canvasDirectory;
+  final String inferredCanvasId;
+  final IncompleteCanvasStatus status;
+  final List<String> existingFiles;
+  final List<String> missingFiles;
+  final String diagnosticMessage;
+}
+
+class CanvasDiscoveryResult {
+  const CanvasDiscoveryResult({
+    required this.complete,
+    required this.incomplete,
+  });
+
+  final List<CanvasRecord> complete;
+  final List<IncompleteCanvasRecord> incomplete;
 }
 
 class CanvasStore {
@@ -34,31 +72,173 @@ class CanvasStore {
     return buffer.toString();
   }
 
-  /// Lists all custom canvas records in the vault's canvases directory.
-  Future<List<CanvasRecord>> listCanvases(String vaultPath) async {
-    if (vaultPath.isEmpty) return [];
+  /// Discovers complete and incomplete canvas records in the vault's canvases directory.
+  Future<CanvasDiscoveryResult> discoverCanvases(String vaultPath) async {
+    if (vaultPath.isEmpty) {
+      return const CanvasDiscoveryResult(complete: [], incomplete: []);
+    }
     final canvasesDir = Directory(p.join(vaultPath, 'canvases'));
-    if (!canvasesDir.existsSync()) return [];
+    if (!canvasesDir.existsSync()) {
+      return const CanvasDiscoveryResult(complete: [], incomplete: []);
+    }
 
-    final records = <CanvasRecord>[];
+    final complete = <CanvasRecord>[];
+    final incomplete = <IncompleteCanvasRecord>[];
+
     try {
       final entities = await canvasesDir.list(recursive: false).toList();
       for (final entity in entities) {
         if (entity is Directory) {
-          final canvasMdFile = File(p.join(entity.path, 'canvas.md'));
-          if (canvasMdFile.existsSync()) {
-            final content = await canvasMdFile.readAsString();
-            final record = CanvasRecord.fromMarkdown(content);
-            if (record != null) {
-              records.add(record);
-            }
+          final inferredId = p.basename(entity.path);
+          final mdFile = File(p.join(entity.path, 'canvas.md'));
+          final jsonFile = File(p.join(entity.path, 'layout.json'));
+
+          final hasMd = mdFile.existsSync();
+          final hasJson = jsonFile.existsSync();
+
+          final existingFiles = <String>[];
+          final missingFiles = <String>[];
+          if (hasMd) {
+            existingFiles.add('canvas.md');
+          } else {
+            missingFiles.add('canvas.md');
           }
+          if (hasJson) {
+            existingFiles.add('layout.json');
+          } else {
+            missingFiles.add('layout.json');
+          }
+
+          if (!hasMd) {
+            incomplete.add(
+              IncompleteCanvasRecord(
+                canvasDirectory: entity.path,
+                inferredCanvasId: inferredId,
+                status: IncompleteCanvasStatus.missingMetadata,
+                existingFiles: existingFiles,
+                missingFiles: missingFiles,
+                diagnosticMessage: 'canvas.md metadata file is missing.',
+              ),
+            );
+            continue;
+          }
+
+          if (!hasJson) {
+            incomplete.add(
+              IncompleteCanvasRecord(
+                canvasDirectory: entity.path,
+                inferredCanvasId: inferredId,
+                status: IncompleteCanvasStatus.missingLayout,
+                existingFiles: existingFiles,
+                missingFiles: missingFiles,
+                diagnosticMessage: 'layout.json layout file is missing.',
+              ),
+            );
+            continue;
+          }
+
+          String? mdContent;
+          CanvasRecord? record;
+          try {
+            mdContent = await mdFile.readAsString();
+            record = CanvasRecord.fromMarkdown(mdContent);
+          } catch (_) {}
+
+          if (record == null) {
+            incomplete.add(
+              IncompleteCanvasRecord(
+                canvasDirectory: entity.path,
+                inferredCanvasId: inferredId,
+                status: IncompleteCanvasStatus.invalidMetadata,
+                existingFiles: existingFiles,
+                missingFiles: missingFiles,
+                diagnosticMessage:
+                    'canvas.md content is invalid or missing required frontmatter.',
+              ),
+            );
+            continue;
+          }
+
+          Map<String, dynamic>? layoutJson;
+          try {
+            final jsonContent = await jsonFile.readAsString();
+            layoutJson = jsonDecode(jsonContent) as Map<String, dynamic>?;
+          } catch (_) {}
+
+          if (layoutJson == null) {
+            incomplete.add(
+              IncompleteCanvasRecord(
+                canvasDirectory: entity.path,
+                inferredCanvasId: inferredId,
+                status: IncompleteCanvasStatus.invalidLayout,
+                existingFiles: existingFiles,
+                missingFiles: missingFiles,
+                diagnosticMessage: 'layout.json is not valid JSON.',
+              ),
+            );
+            continue;
+          }
+
+          final jsonCanvasId = layoutJson['canvas_id']?.toString() ?? '';
+          if (record.canvasId != inferredId || jsonCanvasId != inferredId) {
+            incomplete.add(
+              IncompleteCanvasRecord(
+                canvasDirectory: entity.path,
+                inferredCanvasId: inferredId,
+                status: IncompleteCanvasStatus.idMismatch,
+                existingFiles: existingFiles,
+                missingFiles: missingFiles,
+                diagnosticMessage:
+                    'Canvas ID mismatch between folder, canvas.md ($record.canvasId), or layout.json ($jsonCanvasId).',
+              ),
+            );
+            continue;
+          }
+
+          if (record.layoutRef != './layout.json') {
+            incomplete.add(
+              IncompleteCanvasRecord(
+                canvasDirectory: entity.path,
+                inferredCanvasId: inferredId,
+                status: IncompleteCanvasStatus.layoutRefMismatch,
+                existingFiles: existingFiles,
+                missingFiles: missingFiles,
+                diagnosticMessage:
+                    'layout_ref in canvas.md is ${record.layoutRef}, expected ./layout.json.',
+              ),
+            );
+            continue;
+          }
+
+          complete.add(record);
         }
       }
     } catch (_) {
       // Ignore directory read/OS permission errors
     }
-    return records;
+
+    return CanvasDiscoveryResult(complete: complete, incomplete: incomplete);
+  }
+
+  /// Backward compatible wrapper for discoverCanvases.
+  Future<List<CanvasRecord>> listCanvases(String vaultPath) async {
+    final result = await discoverCanvases(vaultPath);
+    return result.complete;
+  }
+
+  /// Trashes an entire canvas directory (canvas.md + layout.json) as one unit.
+  Future<CanvasTrashResult> deleteCanvas(
+    String vaultPath,
+    String canvasId, {
+    String? reason,
+  }) async {
+    cancelPendingSave(canvasId);
+    unregisterLayoutSession(canvasId);
+    return const VaultTrashService().moveCanvasToTrash(
+      vaultPath: vaultPath,
+      canvasId: canvasId,
+      reason: reason,
+    );
   }
 
   /// Creates a new Canvas in the vault.
@@ -133,11 +313,13 @@ class CanvasStore {
         ),
       ],
     );
-    _openedRevisions[_revisionKey(vaultPath, canvasId)] =
-        _CanvasRevisionSnapshot(
-          record: batch.writes[0].newRevision,
-          layout: batch.writes[1].newRevision,
-        );
+    _openedRevisions[_revisionKey(
+      vaultPath,
+      canvasId,
+    )] = _CanvasRevisionSnapshot(
+      record: batch.writes[0].newRevision,
+      layout: batch.writes[1].newRevision,
+    );
 
     return CanvasData(record: record, layout: layout);
   }
@@ -160,17 +342,19 @@ class CanvasStore {
       final jsonContent = await jsonFile.readAsString();
       final layoutJson = jsonDecode(jsonContent) as Map<String, dynamic>;
       final layout = CanvasLayout.fromJson(layoutJson);
-      _openedRevisions[_revisionKey(vaultPath, canvasId)] =
-          _CanvasRevisionSnapshot(
-            record: VaultFileRevision.fromText(
-              mdContent,
-              modifiedAtUtc: (await mdFile.lastModified()).toUtc(),
-            ),
-            layout: VaultFileRevision.fromText(
-              jsonContent,
-              modifiedAtUtc: (await jsonFile.lastModified()).toUtc(),
-            ),
-          );
+      _openedRevisions[_revisionKey(
+        vaultPath,
+        canvasId,
+      )] = _CanvasRevisionSnapshot(
+        record: VaultFileRevision.fromText(
+          mdContent,
+          modifiedAtUtc: (await mdFile.lastModified()).toUtc(),
+        ),
+        layout: VaultFileRevision.fromText(
+          jsonContent,
+          modifiedAtUtc: (await jsonFile.lastModified()).toUtc(),
+        ),
+      );
 
       return CanvasData(record: record, layout: layout);
     } catch (_) {
@@ -251,16 +435,18 @@ class CanvasStore {
     final mdContent = await mdFile.readAsString();
     final existingLayoutContent = await layoutFile.readAsString();
     final key = _revisionKey(vaultPath, canvasId);
-    final expected = _openedRevisions[key] ?? _CanvasRevisionSnapshot(
-      record: VaultFileRevision.fromText(
-        mdContent,
-        modifiedAtUtc: (await mdFile.lastModified()).toUtc(),
-      ),
-      layout: VaultFileRevision.fromText(
-        existingLayoutContent,
-        modifiedAtUtc: (await layoutFile.lastModified()).toUtc(),
-      ),
-    );
+    final expected =
+        _openedRevisions[key] ??
+        _CanvasRevisionSnapshot(
+          record: VaultFileRevision.fromText(
+            mdContent,
+            modifiedAtUtc: (await mdFile.lastModified()).toUtc(),
+          ),
+          layout: VaultFileRevision.fromText(
+            existingLayoutContent,
+            modifiedAtUtc: (await layoutFile.lastModified()).toUtc(),
+          ),
+        );
     final updatedLayout = CanvasLayout(
       layoutSchemaVersion: layout.layoutSchemaVersion,
       canvasId: layout.canvasId,
