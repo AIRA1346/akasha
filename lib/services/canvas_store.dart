@@ -74,6 +74,13 @@ class CanvasStore {
 
   /// Discovers complete and incomplete canvas records in the vault's canvases directory.
   Future<CanvasDiscoveryResult> discoverCanvases(String vaultPath) async {
+    // Local vault scanning uses synchronous FS APIs so widget tests under
+    // fake-async can complete without runAsync/File I/O deadlocks.
+    return discoverCanvasesSync(vaultPath);
+  }
+
+  /// Synchronous discovery used by [discoverCanvases] and tests.
+  CanvasDiscoveryResult discoverCanvasesSync(String vaultPath) {
     if (vaultPath.isEmpty) {
       return const CanvasDiscoveryResult(complete: [], incomplete: []);
     }
@@ -85,136 +92,145 @@ class CanvasStore {
     final complete = <CanvasRecord>[];
     final incomplete = <IncompleteCanvasRecord>[];
 
+    final List<FileSystemEntity> entities;
     try {
-      final entities = await canvasesDir.list(recursive: false).toList();
-      for (final entity in entities) {
-        if (entity is Directory) {
-          final inferredId = p.basename(entity.path);
-          final mdFile = File(p.join(entity.path, 'canvas.md'));
-          final jsonFile = File(p.join(entity.path, 'layout.json'));
+      entities = canvasesDir.listSync(recursive: false, followLinks: false);
+    } on FileSystemException catch (error) {
+      throw StateError('Failed to list canvases directory: $error');
+    }
 
-          final hasMd = mdFile.existsSync();
-          final hasJson = jsonFile.existsSync();
+    for (final entity in entities) {
+      if (entity is! Directory) continue;
 
-          final existingFiles = <String>[];
-          final missingFiles = <String>[];
-          if (hasMd) {
-            existingFiles.add('canvas.md');
-          } else {
-            missingFiles.add('canvas.md');
-          }
-          if (hasJson) {
-            existingFiles.add('layout.json');
-          } else {
-            missingFiles.add('layout.json');
-          }
+      final inferredId = p.basename(entity.path);
+      final mdFile = File(p.join(entity.path, 'canvas.md'));
+      final jsonFile = File(p.join(entity.path, 'layout.json'));
 
-          if (!hasMd) {
-            incomplete.add(
-              IncompleteCanvasRecord(
-                canvasDirectory: entity.path,
-                inferredCanvasId: inferredId,
-                status: IncompleteCanvasStatus.missingMetadata,
-                existingFiles: existingFiles,
-                missingFiles: missingFiles,
-                diagnosticMessage: 'canvas.md metadata file is missing.',
-              ),
-            );
-            continue;
-          }
+      final hasMd = mdFile.existsSync();
+      final hasJson = jsonFile.existsSync();
 
-          if (!hasJson) {
-            incomplete.add(
-              IncompleteCanvasRecord(
-                canvasDirectory: entity.path,
-                inferredCanvasId: inferredId,
-                status: IncompleteCanvasStatus.missingLayout,
-                existingFiles: existingFiles,
-                missingFiles: missingFiles,
-                diagnosticMessage: 'layout.json layout file is missing.',
-              ),
-            );
-            continue;
-          }
-
-          String? mdContent;
-          CanvasRecord? record;
-          try {
-            mdContent = await mdFile.readAsString();
-            record = CanvasRecord.fromMarkdown(mdContent);
-          } catch (_) {}
-
-          if (record == null) {
-            incomplete.add(
-              IncompleteCanvasRecord(
-                canvasDirectory: entity.path,
-                inferredCanvasId: inferredId,
-                status: IncompleteCanvasStatus.invalidMetadata,
-                existingFiles: existingFiles,
-                missingFiles: missingFiles,
-                diagnosticMessage:
-                    'canvas.md content is invalid or missing required frontmatter.',
-              ),
-            );
-            continue;
-          }
-
-          Map<String, dynamic>? layoutJson;
-          try {
-            final jsonContent = await jsonFile.readAsString();
-            layoutJson = jsonDecode(jsonContent) as Map<String, dynamic>?;
-          } catch (_) {}
-
-          if (layoutJson == null) {
-            incomplete.add(
-              IncompleteCanvasRecord(
-                canvasDirectory: entity.path,
-                inferredCanvasId: inferredId,
-                status: IncompleteCanvasStatus.invalidLayout,
-                existingFiles: existingFiles,
-                missingFiles: missingFiles,
-                diagnosticMessage: 'layout.json is not valid JSON.',
-              ),
-            );
-            continue;
-          }
-
-          final jsonCanvasId = layoutJson['canvas_id']?.toString() ?? '';
-          if (record.canvasId != inferredId || jsonCanvasId != inferredId) {
-            incomplete.add(
-              IncompleteCanvasRecord(
-                canvasDirectory: entity.path,
-                inferredCanvasId: inferredId,
-                status: IncompleteCanvasStatus.idMismatch,
-                existingFiles: existingFiles,
-                missingFiles: missingFiles,
-                diagnosticMessage:
-                    'Canvas ID mismatch between folder, canvas.md ($record.canvasId), or layout.json ($jsonCanvasId).',
-              ),
-            );
-            continue;
-          }
-
-          if (record.layoutRef != './layout.json') {
-            incomplete.add(
-              IncompleteCanvasRecord(
-                canvasDirectory: entity.path,
-                inferredCanvasId: inferredId,
-                status: IncompleteCanvasStatus.layoutRefMismatch,
-                existingFiles: existingFiles,
-                missingFiles: missingFiles,
-                diagnosticMessage:
-                    'layout_ref in canvas.md is ${record.layoutRef}, expected ./layout.json.',
-              ),
-            );
-            continue;
-          }
-
-          complete.add(record);
-        }
+      final existingFiles = <String>[];
+      final missingFiles = <String>[];
+      if (hasMd) {
+        existingFiles.add('canvas.md');
+      } else {
+        missingFiles.add('canvas.md');
       }
-    } catch (_) {
-      // Ignore directory read/OS permission errors
+      if (hasJson) {
+        existingFiles.add('layout.json');
+      } else {
+        missingFiles.add('layout.json');
+      }
+
+      if (!hasMd) {
+        incomplete.add(
+          IncompleteCanvasRecord(
+            canvasDirectory: entity.path,
+            inferredCanvasId: inferredId,
+            status: IncompleteCanvasStatus.missingMetadata,
+            existingFiles: existingFiles,
+            missingFiles: missingFiles,
+            diagnosticMessage: 'canvas.md metadata file is missing.',
+          ),
+        );
+        continue;
+      }
+
+      if (!hasJson) {
+        incomplete.add(
+          IncompleteCanvasRecord(
+            canvasDirectory: entity.path,
+            inferredCanvasId: inferredId,
+            status: IncompleteCanvasStatus.missingLayout,
+            existingFiles: existingFiles,
+            missingFiles: missingFiles,
+            diagnosticMessage: 'layout.json layout file is missing.',
+          ),
+        );
+        continue;
+      }
+
+      CanvasRecord? record;
+      Object? metadataError;
+      try {
+        record = CanvasRecord.fromMarkdown(mdFile.readAsStringSync());
+      } catch (error) {
+        metadataError = error;
+      }
+
+      if (record == null) {
+        incomplete.add(
+          IncompleteCanvasRecord(
+            canvasDirectory: entity.path,
+            inferredCanvasId: inferredId,
+            status: IncompleteCanvasStatus.invalidMetadata,
+            existingFiles: existingFiles,
+            missingFiles: missingFiles,
+            diagnosticMessage: metadataError == null
+                ? 'canvas.md content is invalid or missing required frontmatter.'
+                : 'canvas.md could not be parsed: $metadataError',
+          ),
+        );
+        continue;
+      }
+
+      Map<String, dynamic>? layoutJson;
+      Object? layoutError;
+      try {
+        layoutJson =
+            jsonDecode(jsonFile.readAsStringSync()) as Map<String, dynamic>?;
+      } catch (error) {
+        layoutError = error;
+      }
+
+      if (layoutJson == null) {
+        incomplete.add(
+          IncompleteCanvasRecord(
+            canvasDirectory: entity.path,
+            inferredCanvasId: inferredId,
+            status: IncompleteCanvasStatus.invalidLayout,
+            existingFiles: existingFiles,
+            missingFiles: missingFiles,
+            diagnosticMessage: layoutError == null
+                ? 'layout.json is not valid JSON.'
+                : 'layout.json could not be parsed: $layoutError',
+          ),
+        );
+        continue;
+      }
+
+      final jsonCanvasId = layoutJson['canvas_id']?.toString() ?? '';
+      if (record.canvasId != inferredId || jsonCanvasId != inferredId) {
+        incomplete.add(
+          IncompleteCanvasRecord(
+            canvasDirectory: entity.path,
+            inferredCanvasId: inferredId,
+            status: IncompleteCanvasStatus.idMismatch,
+            existingFiles: existingFiles,
+            missingFiles: missingFiles,
+            diagnosticMessage:
+                'Canvas ID mismatch between folder, canvas.md (${record.canvasId}), or layout.json ($jsonCanvasId).',
+          ),
+        );
+        continue;
+      }
+
+      if (record.layoutRef != './layout.json') {
+        incomplete.add(
+          IncompleteCanvasRecord(
+            canvasDirectory: entity.path,
+            inferredCanvasId: inferredId,
+            status: IncompleteCanvasStatus.layoutRefMismatch,
+            existingFiles: existingFiles,
+            missingFiles: missingFiles,
+            diagnosticMessage:
+                'layout_ref in canvas.md is ${record.layoutRef}, expected ./layout.json.',
+          ),
+        );
+        continue;
+      }
+
+      complete.add(record);
     }
 
     return CanvasDiscoveryResult(complete: complete, incomplete: incomplete);

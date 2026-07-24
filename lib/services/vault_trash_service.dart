@@ -7,6 +7,29 @@ import 'package:path/path.dart' as p;
 import '../core/archiving/canvas_record.dart';
 import 'vault_recovery_write_service.dart';
 
+/// Wire/state-machine values for composite vault trash transactions.
+enum VaultTrashTransactionState {
+  prepared,
+  moving,
+  committed,
+  restoring,
+  restored,
+  restoreConflict,
+  rollbackRequired,
+}
+
+extension VaultTrashTransactionStateWire on VaultTrashTransactionState {
+  String get wireName => name;
+
+  static VaultTrashTransactionState? tryParse(String? raw) {
+    if (raw == null || raw.isEmpty) return null;
+    for (final value in VaultTrashTransactionState.values) {
+      if (value.name == raw) return value;
+    }
+    return null;
+  }
+}
+
 class VaultTrashEntry {
   const VaultTrashEntry({
     required this.vaultPath,
@@ -89,7 +112,7 @@ class VaultTrashTransaction {
     required this.recordId,
     this.title,
     this.reason,
-    required this.state, // prepared, moving, committed, restoring, restored, restoreConflict, rollbackRequired
+    required this.state,
     required this.createdAt,
     required this.members,
     this.trashRootPath,
@@ -102,10 +125,15 @@ class VaultTrashTransaction {
   final String recordId;
   final String? title;
   final String? reason;
+
+  /// Serialized [VaultTrashTransactionState.wireName] value.
   final String state;
   final DateTime createdAt;
   final List<VaultTrashMember> members;
   final String? trashRootPath;
+
+  VaultTrashTransactionState? get parsedState =>
+      VaultTrashTransactionStateWire.tryParse(state);
 
   Map<String, Object?> toJson() => {
     'version': version,
@@ -146,6 +174,24 @@ class VaultTrashTransaction {
       trashRootPath: trashRootPath,
     );
   }
+}
+
+class VaultTrashRecoveryResult {
+  const VaultTrashRecoveryResult({
+    required this.transactionId,
+    required this.previousState,
+    required this.resultState,
+    required this.action,
+    this.error,
+  });
+
+  final String transactionId;
+  final String previousState;
+  final String resultState;
+
+  /// cleaned | committed | restored | markedRollbackRequired | skipped | error
+  final String action;
+  final String? error;
 }
 
 class CanvasTrashResult {
@@ -261,14 +307,17 @@ class VaultTrashService {
       );
     }
 
-    // Check for unexpected extra files in canvas directory
+    // Required members must exist; additional non-link sidecar files may travel
+    // with the canvas directory as part of the same composite unit.
     final entities = await canvasDir.list(recursive: false).toList();
-    if (entities.length != 2) {
-      return CanvasTrashResult(
-        succeeded: false,
-        error:
-            'Canvas directory contains unexpected extra files (${entities.length} items found, expected 2).',
-      );
+    for (final entity in entities) {
+      final entityStat = await entity.stat();
+      if (entityStat.type == FileSystemEntityType.link) {
+        return const CanvasTrashResult(
+          succeeded: false,
+          error: 'Canvas directory contains a symlink or junction.',
+        );
+      }
     }
 
     final mdFile = File(p.join(canvasDir.path, 'canvas.md'));
@@ -369,7 +418,7 @@ class VaultTrashService {
       recordId: canvasId,
       title: title,
       reason: reason ?? 'user_delete',
-      state: 'prepared',
+      state: VaultTrashTransactionState.prepared.wireName,
       createdAt: trashedAt,
       members: members,
       trashRootPath: trashRoot.path,
@@ -385,16 +434,43 @@ class VaultTrashService {
       recordId: canvasId,
       title: title,
       reason: reason ?? 'user_delete',
-      state: 'moving',
+      state: VaultTrashTransactionState.moving.wireName,
       createdAt: trashedAt,
       members: members,
       trashRootPath: trashRoot.path,
     );
     await _writeTransactionManifest(trashRoot, movingTx);
 
-    // Perform rename
+    // Perform rename of the whole canvas directory (required + sidecar files).
     await Directory(p.dirname(targetCanvasDir)).create(recursive: true);
-    await canvasDir.rename(targetCanvasDir);
+    canvasDir.renameSync(targetCanvasDir);
+
+    final postMoveError = await _verifyMembersAt(
+      rootPath: trashRoot.path,
+      members: members,
+      relativePathOf: (m) => m.relativeTrashPath,
+    );
+    if (postMoveError != null) {
+      final rollbackTx = VaultTrashTransaction(
+        version: 1,
+        transactionId: transactionId,
+        vaultPath: normalizedVault,
+        recordKind: 'canvas',
+        recordId: canvasId,
+        title: title,
+        reason: reason ?? 'user_delete',
+        state: VaultTrashTransactionState.rollbackRequired.wireName,
+        createdAt: trashedAt,
+        members: members,
+        trashRootPath: trashRoot.path,
+      );
+      await _writeTransactionManifest(trashRoot, rollbackTx);
+      return CanvasTrashResult(
+        succeeded: false,
+        transaction: rollbackTx,
+        error: postMoveError,
+      );
+    }
 
     // State 3: committed
     final committedTx = VaultTrashTransaction(
@@ -405,7 +481,7 @@ class VaultTrashService {
       recordId: canvasId,
       title: title,
       reason: reason ?? 'user_delete',
-      state: 'committed',
+      state: VaultTrashTransactionState.committed.wireName,
       createdAt: trashedAt,
       members: members,
       trashRootPath: trashRoot.path,
@@ -466,7 +542,7 @@ class VaultTrashService {
             p.join(normalizedVault, trashDirName, transaction.transactionId),
           );
 
-    if (!await trashRoot.exists()) {
+    if (!trashRoot.existsSync()) {
       return const CanvasRestoreResult(
         succeeded: false,
         error: 'Trash transaction directory does not exist.',
@@ -476,10 +552,10 @@ class VaultTrashService {
     // NON-DESTRUCTIVE: Never overwrite existing files/directories!
     for (final member in transaction.members) {
       final origPath = p.join(normalizedVault, member.relativeOriginalPath);
-      if (await File(origPath).exists() || await Directory(origPath).exists()) {
+      if (File(origPath).existsSync() || Directory(origPath).existsSync()) {
         return CanvasRestoreResult(
           succeeded: false,
-          state: 'restoreConflict',
+          state: VaultTrashTransactionState.restoreConflict.wireName,
           error:
               'Original target already exists ($origPath). Automatic overwrite is strictly forbidden.',
         );
@@ -490,34 +566,23 @@ class VaultTrashService {
       transaction.members.first.relativeOriginalPath,
     );
     final targetCanvasDir = Directory(p.join(normalizedVault, canvasDirRel));
-    if (await targetCanvasDir.exists()) {
+    if (targetCanvasDir.existsSync()) {
       return CanvasRestoreResult(
         succeeded: false,
-        state: 'restoreConflict',
+        state: VaultTrashTransactionState.restoreConflict.wireName,
         error:
             'Target canvas directory already exists (${targetCanvasDir.path}). Automatic overwrite is strictly forbidden.',
       );
     }
 
-    // Verify SHA-256 of trash members
-    for (final member in transaction.members) {
-      final trashMemberPath = p.join(trashRoot.path, member.relativeTrashPath);
-      final file = File(trashMemberPath);
-      if (!await file.exists()) {
-        return CanvasRestoreResult(
-          succeeded: false,
-          error: 'Trash member file missing: ${member.relativeTrashPath}',
-        );
-      }
-      final bytes = await file.readAsBytes();
-      final hash = crypto.sha256.convert(bytes).toString();
-      if (hash != member.sha256) {
-        return CanvasRestoreResult(
-          succeeded: false,
-          error:
-              'SHA-256 hash mismatch for trash member: ${member.relativeTrashPath}',
-        );
-      }
+    // Verify size + SHA-256 of trash members before mutating anything.
+    final trashVerifyError = await _verifyMembersAt(
+      rootPath: trashRoot.path,
+      members: transaction.members,
+      relativePathOf: (m) => m.relativeTrashPath,
+    );
+    if (trashVerifyError != null) {
+      return CanvasRestoreResult(succeeded: false, error: trashVerifyError);
     }
 
     // State 1: restoring
@@ -529,7 +594,7 @@ class VaultTrashService {
       recordId: transaction.recordId,
       title: transaction.title,
       reason: transaction.reason,
-      state: 'restoring',
+      state: VaultTrashTransactionState.restoring.wireName,
       createdAt: transaction.createdAt,
       members: transaction.members,
       trashRootPath: trashRoot.path,
@@ -543,8 +608,35 @@ class VaultTrashService {
       ),
     );
 
-    await targetCanvasDir.parent.create(recursive: true);
-    await trashCanvasDir.rename(targetCanvasDir.path);
+    targetCanvasDir.parent.createSync(recursive: true);
+    trashCanvasDir.renameSync(targetCanvasDir.path);
+
+    final postRestoreError = await _verifyMembersAt(
+      rootPath: normalizedVault,
+      members: transaction.members,
+      relativePathOf: (m) => m.relativeOriginalPath,
+    );
+    if (postRestoreError != null) {
+      final rollbackTx = VaultTrashTransaction(
+        version: transaction.version,
+        transactionId: transaction.transactionId,
+        vaultPath: transaction.vaultPath,
+        recordKind: transaction.recordKind,
+        recordId: transaction.recordId,
+        title: transaction.title,
+        reason: transaction.reason,
+        state: VaultTrashTransactionState.rollbackRequired.wireName,
+        createdAt: transaction.createdAt,
+        members: transaction.members,
+        trashRootPath: trashRoot.path,
+      );
+      await _writeTransactionManifest(trashRoot, rollbackTx);
+      return CanvasRestoreResult(
+        succeeded: false,
+        state: VaultTrashTransactionState.rollbackRequired.wireName,
+        error: postRestoreError,
+      );
+    }
 
     // State 2: restored (Keep transaction record with restored state)
     final restoredTx = VaultTrashTransaction(
@@ -555,30 +647,38 @@ class VaultTrashService {
       recordId: transaction.recordId,
       title: transaction.title,
       reason: transaction.reason,
-      state: 'restored',
+      state: VaultTrashTransactionState.restored.wireName,
       createdAt: transaction.createdAt,
       members: transaction.members,
       trashRootPath: trashRoot.path,
     );
     await _writeTransactionManifest(trashRoot, restoredTx);
 
-    return const CanvasRestoreResult(succeeded: true, state: 'restored');
+    return CanvasRestoreResult(
+      succeeded: true,
+      state: VaultTrashTransactionState.restored.wireName,
+    );
   }
 
   Future<List<VaultTrashEntry>> listEntries({required String vaultPath}) async {
+    return listEntriesSync(vaultPath: vaultPath);
+  }
+
+  List<VaultTrashEntry> listEntriesSync({required String vaultPath}) {
     final normalizedVault = _normalizeAbsolute(vaultPath);
     final trashRoot = Directory(p.join(normalizedVault, trashDirName));
-    if (!await trashRoot.exists()) return const [];
+    if (!trashRoot.existsSync()) return const [];
 
     final entries = <VaultTrashEntry>[];
-    await for (final entity in trashRoot.list(
-      recursive: true,
+    for (final entity in trashRoot.listSync(
+      recursive: false,
       followLinks: false,
     )) {
-      if (entity is! File) continue;
-      if (p.basename(entity.path) != manifestFileName) continue;
+      if (entity is! Directory) continue;
+      final manifestFile = File(p.join(entity.path, manifestFileName));
+      if (!manifestFile.existsSync()) continue;
       try {
-        final decoded = jsonDecode(await entity.readAsString());
+        final decoded = jsonDecode(manifestFile.readAsStringSync());
         if (decoded is! Map<String, dynamic>) continue;
         final entry = VaultTrashEntry.fromJson(decoded);
         if (entry.vaultPath.isEmpty ||
@@ -586,9 +686,15 @@ class VaultTrashService {
             entry.trashPath.isEmpty) {
           continue;
         }
-        if (!await File(entry.trashPath).exists()) continue;
+        if (!File(entry.trashPath).existsSync()) continue;
         entries.add(entry);
-      } catch (_) {}
+      } catch (error) {
+        assert(() {
+          // ignore: avoid_print
+          print('VaultTrashService.listEntries skip: $error');
+          return true;
+        }());
+      }
     }
 
     entries.sort((a, b) => b.trashedAt.compareTo(a.trashedAt));
@@ -598,28 +704,44 @@ class VaultTrashService {
   Future<List<VaultTrashTransaction>> listTransactions({
     required String vaultPath,
   }) async {
+    return listTransactionsSync(vaultPath: vaultPath);
+  }
+
+  List<VaultTrashTransaction> listTransactionsSync({
+    required String vaultPath,
+  }) {
     final normalizedVault = _normalizeAbsolute(vaultPath);
     final trashRoot = Directory(p.join(normalizedVault, trashDirName));
-    if (!await trashRoot.exists()) return const [];
+    if (!trashRoot.existsSync()) return const [];
 
     final transactions = <VaultTrashTransaction>[];
-    await for (final entity in trashRoot.list(
-      recursive: true,
+    for (final entity in trashRoot.listSync(
+      recursive: false,
       followLinks: false,
     )) {
-      if (entity is! File) continue;
-      if (p.basename(entity.path) != transactionManifestFileName) continue;
+      if (entity is! Directory) continue;
+      final manifestFile = File(
+        p.join(entity.path, transactionManifestFileName),
+      );
+      if (!manifestFile.existsSync()) continue;
       try {
-        final decoded = jsonDecode(await entity.readAsString());
+        final decoded = jsonDecode(manifestFile.readAsStringSync());
         if (decoded is! Map<String, dynamic>) continue;
         final tx = VaultTrashTransaction.fromJson(
           decoded,
-          trashRootPath: entity.parent.path,
+          trashRootPath: entity.path,
         );
         if (tx.transactionId.isEmpty || tx.vaultPath.isEmpty) continue;
-        if (tx.state == 'restored') continue; // Exclude already restored tx
+        if (tx.state == VaultTrashTransactionState.restored.wireName) continue;
         transactions.add(tx);
-      } catch (_) {}
+      } catch (error) {
+        // Skip unreadable/corrupt manifests; listing must not abort.
+        assert(() {
+          // ignore: avoid_print
+          print('VaultTrashService.listTransactions skip: $error');
+          return true;
+        }());
+      }
     }
 
     transactions.sort((a, b) => b.createdAt.compareTo(a.createdAt));
@@ -629,11 +751,20 @@ class VaultTrashService {
   Future<List<String>> recoverPendingTrashTransactions({
     required String vaultPath,
   }) async {
+    final details = await recoverPendingTrashTransactionsDetail(
+      vaultPath: vaultPath,
+    );
+    return details.map((d) => d.transactionId).toList();
+  }
+
+  Future<List<VaultTrashRecoveryResult>> recoverPendingTrashTransactionsDetail({
+    required String vaultPath,
+  }) async {
     final normalizedVault = _normalizeAbsolute(vaultPath);
     final trashRoot = Directory(p.join(normalizedVault, trashDirName));
     if (!await trashRoot.exists()) return const [];
 
-    final recoveredIds = <String>[];
+    final results = <VaultTrashRecoveryResult>[];
     await for (final entity in trashRoot.list(recursive: false)) {
       if (entity is! Directory) continue;
       final manifestFile = File(
@@ -649,29 +780,46 @@ class VaultTrashService {
           trashRootPath: entity.path,
         );
 
-        if (_validateManifestPaths(tx) != null) continue;
+        final validationErr = _validateManifestPaths(
+          tx,
+          expectedVaultPath: normalizedVault,
+        );
+        if (validationErr != null) {
+          results.add(
+            VaultTrashRecoveryResult(
+              transactionId: p.basename(entity.path),
+              previousState: tx.state,
+              resultState: 'error',
+              action: 'error',
+              error: validationErr,
+            ),
+          );
+          continue;
+        }
 
-        if (tx.state == 'prepared' || tx.state == 'moving') {
-          // Check original files vs trash files state
-          int origFound = 0;
-          int trashFound = 0;
-          for (final member in tx.members) {
-            final origFile = File(
-              p.join(normalizedVault, member.relativeOriginalPath),
-            );
-            final trashFile = File(
-              p.join(entity.path, member.relativeTrashPath),
-            );
-            if (await origFile.exists()) origFound++;
-            if (await trashFile.exists()) trashFound++;
-          }
+        if (tx.state == VaultTrashTransactionState.prepared.wireName ||
+            tx.state == VaultTrashTransactionState.moving.wireName) {
+          final presence = await _inspectMemberPresence(
+            vaultPath: normalizedVault,
+            trashRootPath: entity.path,
+            members: tx.members,
+          );
 
-          if (origFound == tx.members.length && trashFound == 0) {
-            // Rename was aborted before directory move -> clean up aborted trash folder
+          if (presence.origFound == tx.members.length &&
+              presence.trashFound == 0 &&
+              presence.originalHashesValid) {
             await entity.delete(recursive: true);
-            recoveredIds.add(tx.transactionId);
-          } else if (origFound == 0 && trashFound == tx.members.length) {
-            // Directory move succeeded, but crash occurred before writing committed manifest
+            results.add(
+              VaultTrashRecoveryResult(
+                transactionId: tx.transactionId,
+                previousState: tx.state,
+                resultState: 'cleaned',
+                action: 'cleaned',
+              ),
+            );
+          } else if (presence.origFound == 0 &&
+              presence.trashFound == tx.members.length &&
+              presence.trashHashesValid) {
             final committedTx = VaultTrashTransaction(
               version: tx.version,
               transactionId: tx.transactionId,
@@ -680,7 +828,7 @@ class VaultTrashService {
               recordId: tx.recordId,
               title: tx.title,
               reason: tx.reason,
-              state: 'committed',
+              state: VaultTrashTransactionState.committed.wireName,
               createdAt: tx.createdAt,
               members: tx.members,
               trashRootPath: entity.path,
@@ -689,9 +837,15 @@ class VaultTrashService {
               Directory(entity.path),
               committedTx,
             );
-            recoveredIds.add(tx.transactionId);
+            results.add(
+              VaultTrashRecoveryResult(
+                transactionId: tx.transactionId,
+                previousState: tx.state,
+                resultState: VaultTrashTransactionState.committed.wireName,
+                action: 'committed',
+              ),
+            );
           } else {
-            // Partial presence -> mark rollbackRequired
             final rollbackTx = VaultTrashTransaction(
               version: tx.version,
               transactionId: tx.transactionId,
@@ -700,35 +854,59 @@ class VaultTrashService {
               recordId: tx.recordId,
               title: tx.title,
               reason: tx.reason,
-              state: 'rollbackRequired',
+              state: VaultTrashTransactionState.rollbackRequired.wireName,
               createdAt: tx.createdAt,
               members: tx.members,
               trashRootPath: entity.path,
             );
             await _writeTransactionManifest(Directory(entity.path), rollbackTx);
-          }
-        } else if (tx.state == 'restoring') {
-          int origFound = 0;
-          int trashFound = 0;
-          for (final member in tx.members) {
-            final origFile = File(
-              p.join(normalizedVault, member.relativeOriginalPath),
+            results.add(
+              VaultTrashRecoveryResult(
+                transactionId: tx.transactionId,
+                previousState: tx.state,
+                resultState:
+                    VaultTrashTransactionState.rollbackRequired.wireName,
+                action: 'markedRollbackRequired',
+                error: 'Partial presence or hash mismatch during recovery',
+              ),
             );
-            final trashFile = File(
-              p.join(entity.path, member.relativeTrashPath),
-            );
-            if (await origFile.exists()) origFound++;
-            if (await trashFile.exists()) trashFound++;
           }
+        } else if (tx.state == VaultTrashTransactionState.restoring.wireName) {
+          final presence = await _inspectMemberPresence(
+            vaultPath: normalizedVault,
+            trashRootPath: entity.path,
+            members: tx.members,
+          );
 
-          if (origFound == 0 && trashFound == tx.members.length) {
-            // Interrupted during restore before rename -> resume restore
+          if (presence.origFound == 0 &&
+              presence.trashFound == tx.members.length &&
+              presence.trashHashesValid) {
             final restoreRes = await restoreCanvasTransaction(tx);
             if (restoreRes.succeeded) {
-              recoveredIds.add(tx.transactionId);
+              results.add(
+                VaultTrashRecoveryResult(
+                  transactionId: tx.transactionId,
+                  previousState: tx.state,
+                  resultState: VaultTrashTransactionState.restored.wireName,
+                  action: 'restored',
+                ),
+              );
+            } else {
+              results.add(
+                VaultTrashRecoveryResult(
+                  transactionId: tx.transactionId,
+                  previousState: tx.state,
+                  resultState:
+                      restoreRes.state ??
+                      VaultTrashTransactionState.restoreConflict.wireName,
+                  action: 'error',
+                  error: restoreRes.error,
+                ),
+              );
             }
-          } else if (origFound == tx.members.length && trashFound == 0) {
-            // Restore rename succeeded, but crash occurred before writing restored state -> mark restored
+          } else if (presence.origFound == tx.members.length &&
+              presence.trashFound == 0 &&
+              presence.originalHashesValid) {
             final restoredTx = VaultTrashTransaction(
               version: tx.version,
               transactionId: tx.transactionId,
@@ -737,13 +915,20 @@ class VaultTrashService {
               recordId: tx.recordId,
               title: tx.title,
               reason: tx.reason,
-              state: 'restored',
+              state: VaultTrashTransactionState.restored.wireName,
               createdAt: tx.createdAt,
               members: tx.members,
               trashRootPath: entity.path,
             );
             await _writeTransactionManifest(Directory(entity.path), restoredTx);
-            recoveredIds.add(tx.transactionId);
+            results.add(
+              VaultTrashRecoveryResult(
+                transactionId: tx.transactionId,
+                previousState: tx.state,
+                resultState: VaultTrashTransactionState.restored.wireName,
+                action: 'restored',
+              ),
+            );
           } else {
             final rollbackTx = VaultTrashTransaction(
               version: tx.version,
@@ -753,18 +938,39 @@ class VaultTrashService {
               recordId: tx.recordId,
               title: tx.title,
               reason: tx.reason,
-              state: 'rollbackRequired',
+              state: VaultTrashTransactionState.rollbackRequired.wireName,
               createdAt: tx.createdAt,
               members: tx.members,
               trashRootPath: entity.path,
             );
             await _writeTransactionManifest(Directory(entity.path), rollbackTx);
+            results.add(
+              VaultTrashRecoveryResult(
+                transactionId: tx.transactionId,
+                previousState: tx.state,
+                resultState:
+                    VaultTrashTransactionState.rollbackRequired.wireName,
+                action: 'markedRollbackRequired',
+                error:
+                    'Partial presence or hash mismatch during restore recovery',
+              ),
+            );
           }
         }
-      } catch (_) {}
+      } catch (e) {
+        results.add(
+          VaultTrashRecoveryResult(
+            transactionId: p.basename(entity.path),
+            previousState: 'unknown',
+            resultState: 'error',
+            action: 'error',
+            error: e.toString(),
+          ),
+        );
+      }
     }
 
-    return recoveredIds;
+    return results;
   }
 
   Future<bool> deleteEntryPermanently(VaultTrashEntry entry) async {
@@ -784,56 +990,105 @@ class VaultTrashService {
   Future<bool> deleteTransactionPermanently(
     VaultTrashTransaction transaction,
   ) async {
+    final validationError = _validateManifestPaths(transaction);
+    if (validationError != null) return false;
+
+    final normalizedVault = _normalizeAbsolute(transaction.vaultPath);
+    final trashDir = Directory(p.join(normalizedVault, trashDirName));
     final trashRoot = transaction.trashRootPath != null
-        ? Directory(transaction.trashRootPath!)
+        ? Directory(_normalizeAbsolute(transaction.trashRootPath!))
         : Directory(
-            p.join(
-              _normalizeAbsolute(transaction.vaultPath),
-              trashDirName,
-              transaction.transactionId,
-            ),
+            p.join(normalizedVault, trashDirName, transaction.transactionId),
           );
 
-    if (await trashRoot.exists()) {
-      await trashRoot.delete(recursive: true);
+    // Validate trashRoot is strictly inside <vault>/.trash/ and matches transactionId
+    if (!p.isWithin(trashDir.path, trashRoot.path) ||
+        p.basename(trashRoot.path) != transaction.transactionId) {
+      return false;
+    }
+
+    if (trashRoot.existsSync()) {
+      trashRoot.deleteSync(recursive: true);
       return true;
     }
     return false;
   }
 
-  static String? _validateManifestPaths(VaultTrashTransaction transaction) {
+  static String? _validateManifestPaths(
+    VaultTrashTransaction transaction, {
+    String? expectedVaultPath,
+  }) {
     if (transaction.recordKind != 'canvas') {
       return 'Unsupported recordKind: ${transaction.recordKind}';
     }
     if (transaction.recordId.trim().isEmpty) {
       return 'Empty recordId';
     }
+    final recordIdParts = p.split(transaction.recordId);
+    if (recordIdParts.length != 1 ||
+        recordIdParts.single.isEmpty ||
+        recordIdParts.single == '.' ||
+        recordIdParts.single == '..') {
+      return 'Invalid recordId path component';
+    }
+    if (transaction.transactionId.trim().isEmpty ||
+        !RegExp(r'^[a-zA-Z0-9_\-\.:]+$').hasMatch(transaction.transactionId)) {
+      return 'Invalid transactionId format';
+    }
     if (transaction.members.length != 2) {
       return 'Canvas transaction must contain exactly 2 members';
     }
 
     final normalizedVault = _normalizeAbsolute(transaction.vaultPath);
-    final expectedMdRel = p.join('canvases', transaction.recordId, 'canvas.md');
-    final expectedJsonRel = p.join(
-      'canvases',
-      transaction.recordId,
-      'layout.json',
+    if (expectedVaultPath != null &&
+        normalizedVault != _normalizeAbsolute(expectedVaultPath)) {
+      return 'Transaction vaultPath does not match expected vaultPath';
+    }
+
+    final expectedMdRel = p.normalize(
+      p.join('canvases', transaction.recordId, 'canvas.md'),
+    );
+    final expectedJsonRel = p.normalize(
+      p.join('canvases', transaction.recordId, 'layout.json'),
     );
 
-    final memberOriginals = transaction.members
-        .map((m) => p.normalize(m.relativeOriginalPath))
-        .toSet();
-    if (!memberOriginals.contains(p.normalize(expectedMdRel)) ||
-        !memberOriginals.contains(p.normalize(expectedJsonRel))) {
+    final memberOriginals = <String>[];
+    final memberTrashPaths = <String>[];
+    for (final member in transaction.members) {
+      memberOriginals.add(p.normalize(member.relativeOriginalPath));
+      memberTrashPaths.add(p.normalize(member.relativeTrashPath));
+    }
+    if (memberOriginals.toSet().length != memberOriginals.length ||
+        memberTrashPaths.toSet().length != memberTrashPaths.length) {
+      return 'Duplicate transaction members are not allowed';
+    }
+    if (!memberOriginals.contains(expectedMdRel) ||
+        !memberOriginals.contains(expectedJsonRel)) {
       return 'Transaction member original paths must match canonical canvases/<recordId>/ layout';
     }
 
+    final expectedTrashRoot = _normalizeAbsolute(
+      p.join(normalizedVault, trashDirName, transaction.transactionId),
+    );
+    if (transaction.trashRootPath != null) {
+      final normTrashRootPath = _normalizeAbsolute(transaction.trashRootPath!);
+      if (normTrashRootPath != expectedTrashRoot) {
+        return 'trashRootPath must match <vault>/.trash/<transactionId>';
+      }
+    }
+
+    final trashRootForMembers = transaction.trashRootPath != null
+        ? _normalizeAbsolute(transaction.trashRootPath!)
+        : expectedTrashRoot;
+
     for (final member in transaction.members) {
-      // Path traversal check
+      final origParts = p.split(member.relativeOriginalPath);
+      final trashParts = p.split(member.relativeTrashPath);
+
       if (p.isAbsolute(member.relativeOriginalPath) ||
           p.isAbsolute(member.relativeTrashPath) ||
-          member.relativeOriginalPath.contains('..') ||
-          member.relativeTrashPath.contains('..')) {
+          origParts.contains('..') ||
+          trashParts.contains('..')) {
         return 'Path traversal or absolute path detected in transaction member';
       }
 
@@ -843,8 +1098,88 @@ class VaultTrashService {
       if (!p.isWithin(normalizedVault, absOrig)) {
         return 'Member original path outside vault: $absOrig';
       }
+
+      final absTrash = _normalizeAbsolute(
+        p.join(trashRootForMembers, member.relativeTrashPath),
+      );
+      if (!p.isWithin(trashRootForMembers, absTrash)) {
+        return 'Member trash path outside transaction root: $absTrash';
+      }
+
+      final expectedTrashRel = p.normalize(
+        p.join(
+          'canvases',
+          transaction.recordId,
+          p.basename(member.relativeOriginalPath),
+        ),
+      );
+      if (p.normalize(member.relativeTrashPath) != expectedTrashRel) {
+        return 'Transaction member trash paths must match canvases/<recordId>/ layout';
+      }
     }
     return null;
+  }
+
+  static Future<String?> _verifyMembersAt({
+    required String rootPath,
+    required List<VaultTrashMember> members,
+    required String Function(VaultTrashMember member) relativePathOf,
+  }) async {
+    for (final member in members) {
+      final file = File(p.join(rootPath, relativePathOf(member)));
+      if (!file.existsSync()) {
+        return 'Member file missing: ${relativePathOf(member)}';
+      }
+      final bytes = file.readAsBytesSync();
+      if (bytes.length != member.size) {
+        return 'Size mismatch for member: ${relativePathOf(member)}';
+      }
+      final hash = crypto.sha256.convert(bytes).toString();
+      if (hash != member.sha256) {
+        return 'SHA-256 hash mismatch for member: ${relativePathOf(member)}';
+      }
+    }
+    return null;
+  }
+
+  static Future<_MemberPresence> _inspectMemberPresence({
+    required String vaultPath,
+    required String trashRootPath,
+    required List<VaultTrashMember> members,
+  }) async {
+    var origFound = 0;
+    var trashFound = 0;
+    var originalHashesValid = true;
+    var trashHashesValid = true;
+
+    for (final member in members) {
+      final origFile = File(p.join(vaultPath, member.relativeOriginalPath));
+      final trashFile = File(p.join(trashRootPath, member.relativeTrashPath));
+
+      if (await origFile.exists()) {
+        origFound++;
+        final bytes = await origFile.readAsBytes();
+        if (bytes.length != member.size ||
+            crypto.sha256.convert(bytes).toString() != member.sha256) {
+          originalHashesValid = false;
+        }
+      }
+      if (await trashFile.exists()) {
+        trashFound++;
+        final bytes = await trashFile.readAsBytes();
+        if (bytes.length != member.size ||
+            crypto.sha256.convert(bytes).toString() != member.sha256) {
+          trashHashesValid = false;
+        }
+      }
+    }
+
+    return _MemberPresence(
+      origFound: origFound,
+      trashFound: trashFound,
+      originalHashesValid: originalHashesValid,
+      trashHashesValid: trashHashesValid,
+    );
   }
 
   Future<Directory> _createTrashRoot({
@@ -884,12 +1219,13 @@ class VaultTrashService {
     Directory trashRoot,
     VaultTrashTransaction transaction,
   ) async {
+    // Trash transaction manifests are recovery metadata inside `.trash`.
+    // Use durable sync writes so composite restore/trash can complete under
+    // widget-test fake-async without VaultRecoveryWriteService queue stalls.
     final manifest = File(p.join(trashRoot.path, transactionManifestFileName));
-    await VaultRecoveryWriteService().writeText(
-      vaultPath: transaction.vaultPath,
-      targetPath: manifest.path,
-      content: const JsonEncoder.withIndent('  ').convert(transaction.toJson()),
-      reason: 'write_trash_transaction_manifest',
+    manifest.writeAsStringSync(
+      const JsonEncoder.withIndent('  ').convert(transaction.toJson()),
+      flush: true,
     );
   }
 
@@ -948,11 +1284,30 @@ class VaultTrashService {
     required String absolutePath,
   }) {
     final relative = p.relative(absolutePath, from: vaultPath);
-    final parts = p.split(relative);
-    if (parts.isNotEmpty && parts.first == 'canvases') {
+    final parts = p.split(p.normalize(relative));
+    // Only the known composite members cannot be trashed independently.
+    // Future sidecar files under canvases/<id>/ may use single-file trash.
+    if (parts.length >= 3 &&
+        parts.first == 'canvases' &&
+        (parts.last == 'canvas.md' || parts.last == 'layout.json') &&
+        !parts.contains('..')) {
       throw ArgumentError(
         'Canvas member files cannot be trashed independently. Use the Canvas composite trash operation.',
       );
     }
   }
+}
+
+class _MemberPresence {
+  const _MemberPresence({
+    required this.origFound,
+    required this.trashFound,
+    required this.originalHashesValid,
+    required this.trashHashesValid,
+  });
+
+  final int origFound;
+  final int trashFound;
+  final bool originalHashesValid;
+  final bool trashHashesValid;
 }
