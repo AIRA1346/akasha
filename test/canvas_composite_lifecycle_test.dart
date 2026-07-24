@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:crypto/crypto.dart' as crypto;
 import 'package:akasha/services/canvas_store.dart';
 import 'package:akasha/services/vault_trash_service.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -77,7 +78,7 @@ void main() {
     });
 
     test(
-      'Composite moveCanvasToTrash rejects extra unexpected files in canvas folder',
+      'Composite moveCanvasToTrash keeps sidecar files with the canvas directory',
       () async {
         final canvasData = await canvasStore.createCanvas(
           vaultPath: tempVault.path,
@@ -88,14 +89,25 @@ void main() {
         final extraFile = File(
           p.join(tempVault.path, 'canvases', canvasId, 'extra.txt'),
         );
-        await extraFile.writeAsString('unexpected extra content');
+        await extraFile.writeAsString('sidecar content');
 
         final trashResult = await canvasStore.deleteCanvas(
           tempVault.path,
           canvasId,
         );
-        expect(trashResult.succeeded, isFalse);
-        expect(trashResult.error, contains('unexpected extra files'));
+        expect(trashResult.succeeded, isTrue);
+        expect(extraFile.existsSync(), isFalse);
+
+        final trashExtra = File(
+          p.join(
+            trashResult.transaction!.trashRootPath!,
+            'canvases',
+            canvasId,
+            'extra.txt',
+          ),
+        );
+        expect(trashExtra.existsSync(), isTrue);
+        expect(await trashExtra.readAsString(), equals('sidecar content'));
       },
     );
 
@@ -153,11 +165,14 @@ void main() {
         final tx = trashResult.transaction!;
         expect(tx.recordKind, equals('canvas'));
         expect(tx.recordId, equals(canvasId));
-        expect(tx.state, equals('committed'));
+        expect(tx.state, equals(VaultTrashTransactionState.committed.wireName));
 
         final restoreResult = await trashService.restoreCanvasTransaction(tx);
         expect(restoreResult.succeeded, isTrue);
-        expect(restoreResult.state, equals('restored'));
+        expect(
+          restoreResult.state,
+          equals(VaultTrashTransactionState.restored.wireName),
+        );
 
         expect(canvasDir.existsSync(), isTrue);
         expect(mdFile.existsSync(), isTrue);
@@ -216,7 +231,7 @@ void main() {
           vaultPath: tempVault.path,
           recordKind: 'canvas',
           recordId: 'cv_u_hacker',
-          state: 'committed',
+          state: VaultTrashTransactionState.committed.wireName,
           createdAt: DateTime.now().toUtc(),
           members: [
             VaultTrashMember(
@@ -257,6 +272,12 @@ void main() {
           slug: 'interrupted-prepared',
         );
         final canvasId = canvasData.record.canvasId;
+        final mdBytes = await File(
+          p.join(tempVault.path, 'canvases', canvasId, 'canvas.md'),
+        ).readAsBytes();
+        final jsonBytes = await File(
+          p.join(tempVault.path, 'canvases', canvasId, 'layout.json'),
+        ).readAsBytes();
 
         final trashStampDir = Directory(
           p.join(tempVault.path, '.trash', '2026-07-24T10-00-00-000000z'),
@@ -269,20 +290,20 @@ void main() {
           vaultPath: tempVault.path,
           recordKind: 'canvas',
           recordId: canvasId,
-          state: 'prepared',
+          state: VaultTrashTransactionState.prepared.wireName,
           createdAt: DateTime.now().toUtc(),
           members: [
             VaultTrashMember(
               relativeOriginalPath: p.join('canvases', canvasId, 'canvas.md'),
               relativeTrashPath: p.join('canvases', canvasId, 'canvas.md'),
-              size: 100,
-              sha256: 'abc',
+              size: mdBytes.length,
+              sha256: crypto.sha256.convert(mdBytes).toString(),
             ),
             VaultTrashMember(
               relativeOriginalPath: p.join('canvases', canvasId, 'layout.json'),
               relativeTrashPath: p.join('canvases', canvasId, 'layout.json'),
-              size: 100,
-              sha256: 'def',
+              size: jsonBytes.length,
+              sha256: crypto.sha256.convert(jsonBytes).toString(),
             ),
           ],
         );
@@ -321,26 +342,36 @@ void main() {
         await targetTrashCanvasDir.parent.create(recursive: true);
         await canvasDir.rename(targetTrashCanvasDir.path);
 
+        final trashMdFile = File(
+          p.join(targetTrashCanvasDir.path, 'canvas.md'),
+        );
+        final trashJsonFile = File(
+          p.join(targetTrashCanvasDir.path, 'layout.json'),
+        );
+
+        final mdBytes = await trashMdFile.readAsBytes();
+        final jsonBytes = await trashJsonFile.readAsBytes();
+
         final movingTx = VaultTrashTransaction(
           version: 1,
           transactionId: '2026-07-24T11-00-00-000000z',
           vaultPath: tempVault.path,
           recordKind: 'canvas',
           recordId: canvasId,
-          state: 'moving',
+          state: VaultTrashTransactionState.moving.wireName,
           createdAt: DateTime.now().toUtc(),
           members: [
             VaultTrashMember(
               relativeOriginalPath: p.join('canvases', canvasId, 'canvas.md'),
               relativeTrashPath: p.join('canvases', canvasId, 'canvas.md'),
-              size: 100,
-              sha256: 'abc',
+              size: mdBytes.length,
+              sha256: crypto.sha256.convert(mdBytes).toString(),
             ),
             VaultTrashMember(
               relativeOriginalPath: p.join('canvases', canvasId, 'layout.json'),
               relativeTrashPath: p.join('canvases', canvasId, 'layout.json'),
-              size: 100,
-              sha256: 'def',
+              size: jsonBytes.length,
+              sha256: crypto.sha256.convert(jsonBytes).toString(),
             ),
           ],
         );
@@ -360,7 +391,10 @@ void main() {
         final recoveredTx = txList.firstWhere(
           (t) => t.transactionId == '2026-07-24T11-00-00-000000z',
         );
-        expect(recoveredTx.state, equals('committed'));
+        expect(
+          recoveredTx.state,
+          equals(VaultTrashTransactionState.committed.wireName),
+        );
       },
     );
 
@@ -386,7 +420,7 @@ void main() {
           vaultPath: tx.vaultPath,
           recordKind: tx.recordKind,
           recordId: tx.recordId,
-          state: 'restoring',
+          state: VaultTrashTransactionState.restoring.wireName,
           createdAt: tx.createdAt,
           members: tx.members,
           trashRootPath: tx.trashRootPath,
@@ -435,7 +469,7 @@ void main() {
           vaultPath: tempVault.path,
           recordKind: 'canvas',
           recordId: canvasId,
-          state: 'prepared',
+          state: VaultTrashTransactionState.prepared.wireName,
           createdAt: DateTime.now().toUtc(),
           members: [
             VaultTrashMember(
@@ -462,7 +496,198 @@ void main() {
         );
 
         final updatedManifest = jsonDecode(await manifestFile.readAsString());
-        expect(updatedManifest['state'], equals('rollbackRequired'));
+        expect(
+          updatedManifest['state'],
+          equals(VaultTrashTransactionState.rollbackRequired.wireName),
+        );
+      },
+    );
+
+    test(
+      'restoreCanvasTransaction rejects SHA-256 mismatch without mutating active vault',
+      () async {
+        final canvasData = await canvasStore.createCanvas(
+          vaultPath: tempVault.path,
+          title: 'Hash Mismatch Canvas',
+          slug: 'hash-mismatch',
+        );
+        final canvasId = canvasData.record.canvasId;
+        final trashResult = await canvasStore.deleteCanvas(
+          tempVault.path,
+          canvasId,
+        );
+        expect(trashResult.succeeded, isTrue);
+        final tx = trashResult.transaction!;
+
+        final trashMd = File(
+          p.join(tx.trashRootPath!, 'canvases', canvasId, 'canvas.md'),
+        );
+        await trashMd.writeAsString('${await trashMd.readAsString()}\nmutated');
+
+        final restoreResult = await trashService.restoreCanvasTransaction(tx);
+        expect(restoreResult.succeeded, isFalse);
+        expect(
+          restoreResult.error,
+          anyOf(contains('SHA-256 hash mismatch'), contains('Size mismatch')),
+        );
+        expect(
+          Directory(p.join(tempVault.path, 'canvases', canvasId)).existsSync(),
+          isFalse,
+        );
+      },
+    );
+
+    test('restoreCanvasTransaction rejects absolute member paths', () async {
+      final badTx = VaultTrashTransaction(
+        version: 1,
+        transactionId: '2026-07-24T13-00-00-000000z',
+        vaultPath: tempVault.path,
+        recordKind: 'canvas',
+        recordId: 'cv_u_abs',
+        state: VaultTrashTransactionState.committed.wireName,
+        createdAt: DateTime.now().toUtc(),
+        members: [
+          VaultTrashMember(
+            relativeOriginalPath: p.join(
+              tempVault.path,
+              'canvases',
+              'cv_u_abs',
+              'canvas.md',
+            ),
+            relativeTrashPath: p.join('canvases', 'cv_u_abs', 'canvas.md'),
+            size: 10,
+            sha256: 'abc',
+          ),
+          VaultTrashMember(
+            relativeOriginalPath: p.join('canvases', 'cv_u_abs', 'layout.json'),
+            relativeTrashPath: p.join('canvases', 'cv_u_abs', 'layout.json'),
+            size: 10,
+            sha256: 'def',
+          ),
+        ],
+      );
+
+      final restoreResult = await trashService.restoreCanvasTransaction(badTx);
+      expect(restoreResult.succeeded, isFalse);
+      expect(
+        restoreResult.error,
+        anyOf(
+          contains('Path traversal or absolute path detected'),
+          contains('Transaction member original paths must match canonical'),
+        ),
+      );
+    });
+
+    test(
+      'recovery hash mismatch for prepared originals marks rollbackRequired',
+      () async {
+        final canvasData = await canvasStore.createCanvas(
+          vaultPath: tempVault.path,
+          title: 'Hash Rollback',
+          slug: 'hash-rollback',
+        );
+        final canvasId = canvasData.record.canvasId;
+        final trashStampDir = Directory(
+          p.join(tempVault.path, '.trash', '2026-07-24T14-00-00-000000z'),
+        );
+        await trashStampDir.create(recursive: true);
+
+        final preparedTx = VaultTrashTransaction(
+          version: 1,
+          transactionId: '2026-07-24T14-00-00-000000z',
+          vaultPath: tempVault.path,
+          recordKind: 'canvas',
+          recordId: canvasId,
+          state: VaultTrashTransactionState.prepared.wireName,
+          createdAt: DateTime.now().toUtc(),
+          members: [
+            VaultTrashMember(
+              relativeOriginalPath: p.join('canvases', canvasId, 'canvas.md'),
+              relativeTrashPath: p.join('canvases', canvasId, 'canvas.md'),
+              size: 1,
+              sha256: 'deadbeef',
+            ),
+            VaultTrashMember(
+              relativeOriginalPath: p.join('canvases', canvasId, 'layout.json'),
+              relativeTrashPath: p.join('canvases', canvasId, 'layout.json'),
+              size: 1,
+              sha256: 'cafebabe',
+            ),
+          ],
+        );
+        final manifestFile = File(
+          p.join(trashStampDir.path, 'trash_transaction.json'),
+        );
+        await manifestFile.writeAsString(jsonEncode(preparedTx.toJson()));
+
+        final details = await trashService
+            .recoverPendingTrashTransactionsDetail(vaultPath: tempVault.path);
+        expect(
+          details.single.resultState,
+          equals(VaultTrashTransactionState.rollbackRequired.wireName),
+        );
+        expect(trashStampDir.existsSync(), isTrue);
+        expect(
+          Directory(p.join(tempVault.path, 'canvases', canvasId)).existsSync(),
+          isTrue,
+        );
+      },
+    );
+
+    test(
+      'deleteTransactionPermanently rejects mismatched trashRootPath',
+      () async {
+        final outside = await Directory.systemTemp.createTemp(
+          'canvas_outside_trash',
+        );
+        addTearDown(() async {
+          if (outside.existsSync()) await outside.delete(recursive: true);
+        });
+
+        final tx = VaultTrashTransaction(
+          version: 1,
+          transactionId: '2026-07-24T15-00-00-000000z',
+          vaultPath: tempVault.path,
+          recordKind: 'canvas',
+          recordId: 'cv_u_delpath',
+          state: VaultTrashTransactionState.committed.wireName,
+          createdAt: DateTime.now().toUtc(),
+          trashRootPath: outside.path,
+          members: [
+            VaultTrashMember(
+              relativeOriginalPath: p.join(
+                'canvases',
+                'cv_u_delpath',
+                'canvas.md',
+              ),
+              relativeTrashPath: p.join(
+                'canvases',
+                'cv_u_delpath',
+                'canvas.md',
+              ),
+              size: 10,
+              sha256: 'abc',
+            ),
+            VaultTrashMember(
+              relativeOriginalPath: p.join(
+                'canvases',
+                'cv_u_delpath',
+                'layout.json',
+              ),
+              relativeTrashPath: p.join(
+                'canvases',
+                'cv_u_delpath',
+                'layout.json',
+              ),
+              size: 10,
+              sha256: 'def',
+            ),
+          ],
+        );
+
+        final deleted = await trashService.deleteTransactionPermanently(tx);
+        expect(deleted, isFalse);
+        expect(outside.existsSync(), isTrue);
       },
     );
   });
