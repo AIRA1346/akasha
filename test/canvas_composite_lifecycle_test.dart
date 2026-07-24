@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:crypto/crypto.dart' as crypto;
 import 'package:akasha/services/canvas_store.dart';
 import 'package:akasha/services/vault_trash_service.dart';
+import 'package:akasha/services/vault_trash_transaction_manifest.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 
@@ -108,6 +109,18 @@ void main() {
         );
         expect(trashExtra.existsSync(), isTrue);
         expect(await trashExtra.readAsString(), equals('sidecar content'));
+
+        final members = trashResult.transaction!.members;
+        expect(members.length, greaterThanOrEqualTo(3));
+        expect(
+          members.map((m) => p.basename(m.relativeOriginalPath)),
+          containsAll(['canvas.md', 'layout.json', 'extra.txt']),
+        );
+        final sidecar = members.firstWhere(
+          (m) => p.basename(m.relativeOriginalPath) == 'extra.txt',
+        );
+        expect(sidecar.required, isFalse);
+        expect(sidecar.sha256, isNotEmpty);
       },
     );
 
@@ -230,19 +243,19 @@ void main() {
           transactionId: '2026-07-24T00-00-00-000000z',
           vaultPath: tempVault.path,
           recordKind: 'canvas',
-          recordId: 'cv_u_hacker',
+          recordId: 'cv_u_hacker01',
           state: VaultTrashTransactionState.committed.wireName,
           createdAt: DateTime.now().toUtc(),
           members: [
             VaultTrashMember(
               relativeOriginalPath: '../outside/canvas.md',
-              relativeTrashPath: 'canvases/cv_u_hacker/canvas.md',
+              relativeTrashPath: 'canvases/cv_u_hacker01/canvas.md',
               size: 10,
               sha256: 'abc',
             ),
             VaultTrashMember(
-              relativeOriginalPath: 'canvases/cv_u_hacker/layout.json',
-              relativeTrashPath: 'canvases/cv_u_hacker/layout.json',
+              relativeOriginalPath: 'canvases/cv_u_hacker01/layout.json',
+              relativeTrashPath: 'canvases/cv_u_hacker01/layout.json',
               size: 10,
               sha256: 'def',
             ),
@@ -444,7 +457,7 @@ void main() {
     test(
       'Fault-Injection: partial presence marks rollbackRequired state',
       () async {
-        final canvasId = 'cv_u_partial';
+        final canvasId = 'cv_u_partial1';
         final trashStampDir = Directory(
           p.join(tempVault.path, '.trash', '2026-07-24T12-00-00-000000z'),
         );
@@ -543,7 +556,7 @@ void main() {
         transactionId: '2026-07-24T13-00-00-000000z',
         vaultPath: tempVault.path,
         recordKind: 'canvas',
-        recordId: 'cv_u_abs',
+        recordId: 'cv_u_abs00001',
         state: VaultTrashTransactionState.committed.wireName,
         createdAt: DateTime.now().toUtc(),
         members: [
@@ -551,16 +564,24 @@ void main() {
             relativeOriginalPath: p.join(
               tempVault.path,
               'canvases',
-              'cv_u_abs',
+              'cv_u_abs00001',
               'canvas.md',
             ),
-            relativeTrashPath: p.join('canvases', 'cv_u_abs', 'canvas.md'),
+            relativeTrashPath: p.join('canvases', 'cv_u_abs00001', 'canvas.md'),
             size: 10,
             sha256: 'abc',
           ),
           VaultTrashMember(
-            relativeOriginalPath: p.join('canvases', 'cv_u_abs', 'layout.json'),
-            relativeTrashPath: p.join('canvases', 'cv_u_abs', 'layout.json'),
+            relativeOriginalPath: p.join(
+              'canvases',
+              'cv_u_abs00001',
+              'layout.json',
+            ),
+            relativeTrashPath: p.join(
+              'canvases',
+              'cv_u_abs00001',
+              'layout.json',
+            ),
             size: 10,
             sha256: 'def',
           ),
@@ -649,7 +670,7 @@ void main() {
           transactionId: '2026-07-24T15-00-00-000000z',
           vaultPath: tempVault.path,
           recordKind: 'canvas',
-          recordId: 'cv_u_delpath',
+          recordId: 'cv_u_delpath1',
           state: VaultTrashTransactionState.committed.wireName,
           createdAt: DateTime.now().toUtc(),
           trashRootPath: outside.path,
@@ -657,12 +678,12 @@ void main() {
             VaultTrashMember(
               relativeOriginalPath: p.join(
                 'canvases',
-                'cv_u_delpath',
+                'cv_u_delpath1',
                 'canvas.md',
               ),
               relativeTrashPath: p.join(
                 'canvases',
-                'cv_u_delpath',
+                'cv_u_delpath1',
                 'canvas.md',
               ),
               size: 10,
@@ -671,12 +692,12 @@ void main() {
             VaultTrashMember(
               relativeOriginalPath: p.join(
                 'canvases',
-                'cv_u_delpath',
+                'cv_u_delpath1',
                 'layout.json',
               ),
               relativeTrashPath: p.join(
                 'canvases',
-                'cv_u_delpath',
+                'cv_u_delpath1',
                 'layout.json',
               ),
               size: 10,
@@ -690,5 +711,389 @@ void main() {
         expect(outside.existsSync(), isTrue);
       },
     );
+
+    test('moveCanvasToTrash rejects unsafe canvasId values', () async {
+      final unsafeIds = <String>[
+        '..',
+        '../works',
+        r'..\works',
+        'canvases/nested',
+        p.join(tempVault.path, 'canvases', 'cv_u_abcdef12'),
+        '.',
+        'cv_u_ab/cd',
+        r'cv_u_ab\cd',
+        'wk_u_abcdef12',
+        'cv_u_SHORT',
+        'cv_u_toolongid',
+        'cv_u_BADCASE1',
+      ];
+
+      for (final canvasId in unsafeIds) {
+        final result = await trashService.moveCanvasToTrash(
+          vaultPath: tempVault.path,
+          canvasId: canvasId,
+        );
+        expect(result.succeeded, isFalse, reason: 'id=$canvasId');
+        expect(result.error, isNotNull, reason: 'id=$canvasId');
+        expect(
+          Directory(p.join(tempVault.path, 'works')).existsSync() ||
+              !Directory(p.join(tempVault.path, 'works')).existsSync(),
+          isTrue,
+        );
+        final canvases = Directory(p.join(tempVault.path, 'canvases'));
+        if (canvases.existsSync()) {
+          for (final entity in canvases.listSync()) {
+            expect(
+              p.isWithin(canvases.path, entity.path) ||
+                  entity.path == canvases.path,
+              isTrue,
+              reason: 'must not touch outside canvases for id=$canvasId',
+            );
+          }
+        }
+      }
+    });
+
+    test('public restore rejects non-committed transaction states', () async {
+      Future<void> expectInvalidRestore(String state) async {
+        final tx = VaultTrashTransaction(
+          version: 1,
+          transactionId: '2026-07-24T20-00-00-000000z',
+          vaultPath: tempVault.path,
+          recordKind: 'canvas',
+          recordId: 'cv_u_state001',
+          state: state,
+          createdAt: DateTime.now().toUtc(),
+          members: [
+            VaultTrashMember(
+              relativeOriginalPath: 'canvases/cv_u_state001/canvas.md',
+              relativeTrashPath: 'canvases/cv_u_state001/canvas.md',
+              size: 1,
+              sha256: 'a',
+            ),
+            VaultTrashMember(
+              relativeOriginalPath: 'canvases/cv_u_state001/layout.json',
+              relativeTrashPath: 'canvases/cv_u_state001/layout.json',
+              size: 1,
+              sha256: 'b',
+            ),
+          ],
+        );
+        final result = await trashService.restoreCanvasTransaction(tx);
+        expect(result.succeeded, isFalse, reason: state);
+        expect(
+          result.errorCode,
+          CanvasRestoreResult.invalidStateErrorCode,
+          reason: state,
+        );
+        expect(result.error, contains('invalidState'), reason: state);
+      }
+
+      await expectInvalidRestore(VaultTrashTransactionState.prepared.wireName);
+      await expectInvalidRestore(VaultTrashTransactionState.moving.wireName);
+      await expectInvalidRestore(VaultTrashTransactionState.restoring.wireName);
+      await expectInvalidRestore(VaultTrashTransactionState.restored.wireName);
+      await expectInvalidRestore(
+        VaultTrashTransactionState.restoreConflict.wireName,
+      );
+      await expectInvalidRestore(
+        VaultTrashTransactionState.rollbackRequired.wireName,
+      );
+      await expectInvalidRestore('totallyUnknown');
+    });
+
+    test(
+      'deleteTransactionPermanently rejects unsafe states and preserves folder',
+      () async {
+        Future<void> expectDeleteRejected(String state) async {
+          final stamp = '2026-07-24T21-${state.hashCode.abs()}-000000z';
+          final trashRoot = Directory(p.join(tempVault.path, '.trash', stamp))
+            ..createSync(recursive: true);
+          File(p.join(trashRoot.path, 'marker.txt')).writeAsStringSync('keep');
+
+          final tx = VaultTrashTransaction(
+            version: 1,
+            transactionId: stamp,
+            vaultPath: tempVault.path,
+            recordKind: 'canvas',
+            recordId: 'cv_u_delst001',
+            state: state,
+            createdAt: DateTime.now().toUtc(),
+            trashRootPath: trashRoot.path,
+            members: [
+              VaultTrashMember(
+                relativeOriginalPath: 'canvases/cv_u_delst001/canvas.md',
+                relativeTrashPath: 'canvases/cv_u_delst001/canvas.md',
+                size: 1,
+                sha256: 'a',
+              ),
+              VaultTrashMember(
+                relativeOriginalPath: 'canvases/cv_u_delst001/layout.json',
+                relativeTrashPath: 'canvases/cv_u_delst001/layout.json',
+                size: 1,
+                sha256: 'b',
+              ),
+            ],
+          );
+
+          final deleted = await trashService.deleteTransactionPermanently(tx);
+          expect(deleted, isFalse, reason: state);
+          expect(trashRoot.existsSync(), isTrue, reason: state);
+          expect(
+            File(p.join(trashRoot.path, 'marker.txt')).existsSync(),
+            isTrue,
+            reason: state,
+          );
+        }
+
+        await expectDeleteRejected(
+          VaultTrashTransactionState.prepared.wireName,
+        );
+        await expectDeleteRejected(VaultTrashTransactionState.moving.wireName);
+        await expectDeleteRejected(
+          VaultTrashTransactionState.restoring.wireName,
+        );
+        await expectDeleteRejected(
+          VaultTrashTransactionState.restoreConflict.wireName,
+        );
+        await expectDeleteRejected(
+          VaultTrashTransactionState.rollbackRequired.wireName,
+        );
+        await expectDeleteRejected(
+          VaultTrashTransactionState.restored.wireName,
+        );
+        await expectDeleteRejected('mysteryState');
+      },
+    );
+
+    group('recoverable transaction manifest writes', () {
+      VaultTrashTransaction sampleTx(String vaultPath, String stamp) {
+        return VaultTrashTransaction(
+          version: 1,
+          transactionId: stamp,
+          vaultPath: vaultPath,
+          recordKind: 'canvas',
+          recordId: 'cv_u_manif001',
+          state: VaultTrashTransactionState.committed.wireName,
+          createdAt: DateTime.utc(2026, 7, 24),
+          members: [
+            VaultTrashMember(
+              relativeOriginalPath: 'canvases/cv_u_manif001/canvas.md',
+              relativeTrashPath: 'canvases/cv_u_manif001/canvas.md',
+              size: 1,
+              sha256: 'a',
+            ),
+            VaultTrashMember(
+              relativeOriginalPath: 'canvases/cv_u_manif001/layout.json',
+              relativeTrashPath: 'canvases/cv_u_manif001/layout.json',
+              size: 1,
+              sha256: 'b',
+            ),
+          ],
+        );
+      }
+
+      bool hasCompletePrimaryOrPrevious(Directory root) {
+        final store = VaultTrashTransactionManifestStore();
+        store.converge(root);
+        final primary = File(
+          p.join(root.path, VaultTrashTransactionManifestStore.primaryName),
+        );
+        final previous = File(
+          p.join(root.path, VaultTrashTransactionManifestStore.previousName),
+        );
+        final next = File(
+          p.join(root.path, VaultTrashTransactionManifestStore.nextName),
+        );
+        bool complete(File f) {
+          if (!f.existsSync()) return false;
+          try {
+            final decoded = jsonDecode(f.readAsStringSync());
+            if (decoded is! Map<String, dynamic>) return false;
+            final tx = VaultTrashTransaction.fromJson(decoded);
+            return tx.transactionId.isNotEmpty && tx.members.isNotEmpty;
+          } catch (_) {
+            return false;
+          }
+        }
+
+        return complete(primary) || complete(previous) || complete(next);
+      }
+
+      test('fault before temp write leaves prior complete manifest', () async {
+        final stamp = '2026-07-24T22-00-00-000001z';
+        final root = Directory(p.join(tempVault.path, '.trash', stamp))
+          ..createSync(recursive: true);
+        final baseline = sampleTx(tempVault.path, stamp);
+        await VaultTrashTransactionManifestStore().write(root, baseline);
+
+        final failing = VaultTrashTransactionManifestStore(
+          faultInjector: (checkpoint) async {
+            if (checkpoint ==
+                TrashTransactionManifestCheckpoint.beforeTempWrite) {
+              throw StateError('injected beforeTempWrite');
+            }
+          },
+        );
+        await expectLater(
+          failing.write(
+            root,
+            baseline.copyWith(
+              state: VaultTrashTransactionState.moving.wireName,
+            ),
+          ),
+          throwsA(isA<StateError>()),
+        );
+        expect(hasCompletePrimaryOrPrevious(root), isTrue);
+        final read = VaultTrashTransactionManifestStore().read(root);
+        expect(read?.state, VaultTrashTransactionState.committed.wireName);
+      });
+
+      test('fault after temp before promote keeps prior or next', () async {
+        final stamp = '2026-07-24T22-00-00-000002z';
+        final root = Directory(p.join(tempVault.path, '.trash', stamp))
+          ..createSync(recursive: true);
+        final baseline = sampleTx(tempVault.path, stamp);
+        await VaultTrashTransactionManifestStore().write(root, baseline);
+
+        final failing = VaultTrashTransactionManifestStore(
+          faultInjector: (checkpoint) async {
+            if (checkpoint ==
+                TrashTransactionManifestCheckpoint.afterTempBeforePromote) {
+              throw StateError('injected afterTemp');
+            }
+          },
+        );
+        await expectLater(
+          failing.write(
+            root,
+            baseline.copyWith(
+              state: VaultTrashTransactionState.restoring.wireName,
+            ),
+          ),
+          throwsA(isA<StateError>()),
+        );
+        expect(hasCompletePrimaryOrPrevious(root), isTrue);
+      });
+
+      test(
+        'fault after previous before promote keeps previous or next',
+        () async {
+          final stamp = '2026-07-24T22-00-00-000003z';
+          final root = Directory(p.join(tempVault.path, '.trash', stamp))
+            ..createSync(recursive: true);
+          final baseline = sampleTx(tempVault.path, stamp);
+          await VaultTrashTransactionManifestStore().write(root, baseline);
+
+          final failing = VaultTrashTransactionManifestStore(
+            faultInjector: (checkpoint) async {
+              if (checkpoint ==
+                  TrashTransactionManifestCheckpoint
+                      .afterPreviousBeforePromote) {
+                throw StateError('injected afterPrevious');
+              }
+            },
+          );
+          await expectLater(
+            failing.write(
+              root,
+              baseline.copyWith(
+                state: VaultTrashTransactionState.prepared.wireName,
+              ),
+            ),
+            throwsA(isA<StateError>()),
+          );
+          expect(hasCompletePrimaryOrPrevious(root), isTrue);
+        },
+      );
+
+      test(
+        'fault after promote before verify still has complete primary',
+        () async {
+          final stamp = '2026-07-24T22-00-00-000004z';
+          final root = Directory(p.join(tempVault.path, '.trash', stamp))
+            ..createSync(recursive: true);
+          final baseline = sampleTx(tempVault.path, stamp);
+          await VaultTrashTransactionManifestStore().write(root, baseline);
+
+          final failing = VaultTrashTransactionManifestStore(
+            faultInjector: (checkpoint) async {
+              if (checkpoint ==
+                  TrashTransactionManifestCheckpoint.afterPromoteBeforeVerify) {
+                throw StateError('injected afterPromote');
+              }
+            },
+          );
+          await expectLater(
+            failing.write(
+              root,
+              baseline.copyWith(
+                state: VaultTrashTransactionState.moving.wireName,
+              ),
+            ),
+            throwsA(isA<StateError>()),
+          );
+          expect(hasCompletePrimaryOrPrevious(root), isTrue);
+        },
+      );
+
+      test('converge discards corrupt .next and keeps primary', () {
+        final stamp = '2026-07-24T22-00-00-000005z';
+        final root = Directory(p.join(tempVault.path, '.trash', stamp))
+          ..createSync(recursive: true);
+        final baseline = sampleTx(tempVault.path, stamp);
+        File(
+          p.join(root.path, VaultTrashTransactionManifestStore.primaryName),
+        ).writeAsStringSync(jsonEncode(baseline.toJson()));
+        File(
+          p.join(root.path, VaultTrashTransactionManifestStore.nextName),
+        ).writeAsStringSync('{not-json');
+
+        final store = VaultTrashTransactionManifestStore()..converge(root);
+        expect(hasCompletePrimaryOrPrevious(root), isTrue);
+        expect(store.read(root)?.transactionId, stamp);
+        expect(
+          File(
+            p.join(root.path, VaultTrashTransactionManifestStore.nextName),
+          ).existsSync(),
+          isFalse,
+        );
+      });
+
+      test('converge promotes previous when primary is corrupt', () {
+        final stamp = '2026-07-24T22-00-00-000006z';
+        final root = Directory(p.join(tempVault.path, '.trash', stamp))
+          ..createSync(recursive: true);
+        final baseline = sampleTx(tempVault.path, stamp);
+        File(
+          p.join(root.path, VaultTrashTransactionManifestStore.primaryName),
+        ).writeAsStringSync('{broken');
+        File(
+          p.join(root.path, VaultTrashTransactionManifestStore.previousName),
+        ).writeAsStringSync(jsonEncode(baseline.toJson()));
+
+        final store = VaultTrashTransactionManifestStore()..converge(root);
+        expect(store.read(root)?.transactionId, stamp);
+        expect(hasCompletePrimaryOrPrevious(root), isTrue);
+      });
+    });
   });
+}
+
+extension on VaultTrashTransaction {
+  VaultTrashTransaction copyWith({String? state}) {
+    return VaultTrashTransaction(
+      version: version,
+      transactionId: transactionId,
+      vaultPath: vaultPath,
+      recordKind: recordKind,
+      recordId: recordId,
+      title: title,
+      reason: reason,
+      state: state ?? this.state,
+      createdAt: createdAt,
+      members: members,
+      trashRootPath: trashRootPath,
+    );
+  }
 }

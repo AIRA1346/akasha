@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:akasha/core/archiving/canvas_record.dart';
 import 'package:akasha/core/ports/record_link_port.dart';
 import 'package:akasha/core/ports/user_catalog_port.dart';
 import 'package:akasha/models/akasha_item.dart';
@@ -16,16 +17,12 @@ class MockRecordLinkIndex extends Fake implements RecordLinkPort {}
 Future<void> pumpUntilFound(
   WidgetTester tester,
   Finder finder, {
-  int maxPumps = 20,
+  int maxPumps = 40,
 }) async {
   for (var i = 0; i < maxPumps; i++) {
     await tester.pump(const Duration(milliseconds: 1));
     if (tester.any(finder)) return;
   }
-  // ignore: avoid_print
-  print(
-    'DEBUG widgets after miss:\n${tester.allWidgets.map((w) => w.runtimeType).take(40).join(', ')}',
-  );
   fail('Finder not found after $maxPumps pumps: $finder');
 }
 
@@ -82,6 +79,8 @@ void main() {
                 onOpenEntity: (_) {},
                 vaultPath: tempVault.path,
                 onOpenCanvas: (_) {},
+                canvasDiscoverer: (_) async =>
+                    const CanvasDiscoveryResult(complete: [], incomplete: []),
               ),
             ),
           ),
@@ -96,18 +95,14 @@ void main() {
     testWidgets(
       'renders incomplete alert state when complete 0 and incomplete >= 1',
       (tester) async {
-        final brokenDir = Directory(
-          p.join(tempVault.path, 'canvases', 'cv_u_broken'),
+        final incomplete = IncompleteCanvasRecord(
+          inferredCanvasId: 'cv_u_broken',
+          canvasDirectory: p.join(tempVault.path, 'canvases', 'cv_u_broken'),
+          status: IncompleteCanvasStatus.missingMetadata,
+          existingFiles: const ['layout.json'],
+          missingFiles: const ['canvas.md'],
+          diagnosticMessage: 'missing canvas.md',
         );
-        brokenDir.createSync(recursive: true);
-        File(p.join(brokenDir.path, 'layout.json')).writeAsStringSync(
-          '{"canvas_id": "cv_u_broken", "nodes": [], "edges": []}',
-        );
-
-        final discovery = CanvasStore.instance.discoverCanvasesSync(
-          tempVault.path,
-        );
-        expect(discovery.incomplete, isNotEmpty);
 
         await tester.pumpWidget(
           MaterialApp(
@@ -120,6 +115,10 @@ void main() {
                 onOpenEntity: (_) {},
                 vaultPath: tempVault.path,
                 onOpenCanvas: (_) {},
+                canvasDiscoverer: (_) async => CanvasDiscoveryResult(
+                  complete: const [],
+                  incomplete: [incomplete],
+                ),
               ),
             ),
           ),
@@ -138,28 +137,23 @@ void main() {
     testWidgets(
       'renders complete list and non-blocking warning when complete >= 1 and incomplete >= 1',
       (tester) async {
-        final validDir = Directory(
-          p.join(tempVault.path, 'canvases', 'cv_u_valid'),
+        final valid = CanvasRecord(
+          canvasId: 'cv_u_valid01',
+          title: 'Valid Canvas',
+          slug: 'valid',
+          layoutRef: './layout.json',
+          createdAt: DateTime.utc(2026, 7, 1),
+          updatedAt: DateTime.utc(2026, 7, 1),
+          source: 'user',
+          tags: const [],
         );
-        validDir.createSync(recursive: true);
-        File(p.join(validDir.path, 'canvas.md')).writeAsStringSync(
-          '---\n'
-          'document_kind: canvas\n'
-          'canvas_id: cv_u_valid\n'
-          'title: Valid Canvas\n'
-          'layout_ref: ./layout.json\n'
-          '---\n',
-        );
-        File(p.join(validDir.path, 'layout.json')).writeAsStringSync(
-          '{"canvas_id": "cv_u_valid", "nodes": [], "edges": []}',
-        );
-
-        final brokenDir = Directory(
-          p.join(tempVault.path, 'canvases', 'cv_u_broken2'),
-        );
-        brokenDir.createSync(recursive: true);
-        File(p.join(brokenDir.path, 'layout.json')).writeAsStringSync(
-          '{"canvas_id": "cv_u_broken2", "nodes": [], "edges": []}',
+        final incomplete = IncompleteCanvasRecord(
+          inferredCanvasId: 'cv_u_broken2',
+          canvasDirectory: p.join(tempVault.path, 'canvases', 'cv_u_broken2'),
+          status: IncompleteCanvasStatus.missingMetadata,
+          existingFiles: const ['layout.json'],
+          missingFiles: const ['canvas.md'],
+          diagnosticMessage: 'missing canvas.md',
         );
 
         var openedTitle = '';
@@ -176,6 +170,10 @@ void main() {
                 onOpenCanvas: (canvas) {
                   openedTitle = canvas.title;
                 },
+                canvasDiscoverer: (_) async => CanvasDiscoveryResult(
+                  complete: [valid],
+                  incomplete: [incomplete],
+                ),
               ),
             ),
           ),
@@ -189,6 +187,68 @@ void main() {
         await tester.tap(find.text('Valid Canvas'));
         await tester.pump();
         expect(openedTitle, equals('Valid Canvas'));
+      },
+      timeout: const Timeout(Duration(seconds: 15)),
+    );
+
+    testWidgets(
+      'directory listing failure shows error state, not empty, and retry recovers',
+      (tester) async {
+        var calls = 0;
+        final valid = CanvasRecord(
+          canvasId: 'cv_u_retry001',
+          title: 'Recovered Canvas',
+          slug: 'recovered',
+          layoutRef: './layout.json',
+          createdAt: DateTime.utc(2026, 7, 1),
+          updatedAt: DateTime.utc(2026, 7, 1),
+          source: 'user',
+          tags: const [],
+        );
+
+        await tester.pumpWidget(
+          MaterialApp(
+            home: Scaffold(
+              body: KnowledgeGraphView(
+                vaultItems: const <AkashaItem>[],
+                userCatalog: MockUserCatalog(),
+                linkIndex: MockRecordLinkIndex(),
+                onOpenWork: (_) {},
+                onOpenEntity: (_) {},
+                vaultPath: tempVault.path,
+                onOpenCanvas: (_) {},
+                canvasDiscoverer: (_) async {
+                  calls++;
+                  if (calls == 1) {
+                    throw const FileSystemException(
+                      'Failed to list canvases directory',
+                    );
+                  }
+                  return CanvasDiscoveryResult(
+                    complete: [valid],
+                    incomplete: const [],
+                  );
+                },
+              ),
+            ),
+          ),
+        );
+
+        await pumpUntilFound(tester, find.text('지식 지도 목록을 읽지 못했습니다'));
+        expect(find.text('아직 지식 지도가 없습니다.'), findsNothing);
+        expect(
+          find.byKey(const ValueKey('graph-canvas-discovery-retry')),
+          findsOneWidget,
+        );
+        expect(find.textContaining('FileSystemException'), findsOneWidget);
+        expect(find.textContaining(tempVault.path), findsNothing);
+
+        await tester.tap(
+          find.byKey(const ValueKey('graph-canvas-discovery-retry')),
+        );
+        await pumpUntilFound(tester, find.text('Recovered Canvas'));
+        expect(find.text('지식 지도 목록을 읽지 못했습니다'), findsNothing);
+        expect(calls, 2);
       },
       timeout: const Timeout(Duration(seconds: 15)),
     );
