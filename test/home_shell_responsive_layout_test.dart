@@ -57,32 +57,98 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('1272x720 inspector toggle releases and restores canvas width', (
+  testWidgets('1320x720 is the first standard width with center 800', (
+    tester,
+  ) async {
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+    const size = Size(1320, 720);
+    await _pumpFrame(tester, size: size);
+
+    final spec = ShellLayoutSpec.resolve(size.width);
+    expect(spec.layoutClass, ShellLayoutClass.standard);
+    expect(spec.sidebarPresentation, ShellSidebarPresentation.persistent);
+    expect(spec.previewPresentation, ShellPreviewPresentation.inline);
+    expect(spec.showsBottomDock, isFalse);
+
+    expect(
+      tester.getRect(find.byKey(ShellLayoutFrame.sidebarFrameKey)),
+      const Rect.fromLTWH(0, 0, 232, 720),
+    );
+    expect(
+      tester.getRect(find.byKey(ShellLayoutFrame.centerKey)),
+      const Rect.fromLTWH(232, 0, 800, 720),
+    );
+    expect(
+      tester.getRect(find.byKey(ShellLayoutFrame.previewKey)),
+      const Rect.fromLTWH(1032, 0, 288, 720),
+    );
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('1319x720 stays compact with drawer and sheet', (tester) async {
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+    const size = Size(1319, 720);
+    await _pumpFrame(tester, size: size);
+
+    final spec = ShellLayoutSpec.resolve(size.width);
+    expect(spec.layoutClass, ShellLayoutClass.compact);
+    expect(spec.sidebarPresentation, ShellSidebarPresentation.drawer);
+    expect(spec.previewPresentation, ShellPreviewPresentation.sheet);
+    expect(spec.showsBottomDock, isTrue);
+
+    expect(tester.getRect(find.byKey(ShellLayoutFrame.centerKey)).width, 1319);
+    expect(tester.getRect(find.byKey(ShellLayoutFrame.previewKey)).width, 1319);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('1272x720 is compact and no longer uses a 752px center', (
     tester,
   ) async {
     addTearDown(() => tester.binding.setSurfaceSize(null));
     const size = Size(1272, 720);
     await _pumpFrame(tester, size: size);
 
-    final centerWithPreview = tester.getRect(
-      find.byKey(ShellLayoutFrame.centerKey),
-    );
-    expect(centerWithPreview, const Rect.fromLTWH(232, 0, 752, 720));
     expect(
-      tester.getRect(find.byKey(ShellLayoutFrame.previewKey)),
-      const Rect.fromLTWH(984, 0, 288, 720),
+      ShellLayoutSpec.resolve(size.width).layoutClass,
+      ShellLayoutClass.compact,
     );
-
-    await _pumpFrame(tester, size: size, previewVisible: false);
     expect(
       tester.getRect(find.byKey(ShellLayoutFrame.centerKey)),
-      const Rect.fromLTWH(232, 0, 1040, 720),
+      const Rect.fromLTWH(0, 0, 1272, 720),
     );
+    expect(
+      tester.getRect(find.byKey(ShellLayoutFrame.centerKey)).width,
+      greaterThanOrEqualTo(800),
+    );
+    expect(tester.takeException(), isNull);
+  });
 
+  testWidgets('1180x720 remains compact under the new contract', (
+    tester,
+  ) async {
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+    await _pumpFrame(tester, size: const Size(1180, 720));
+    expect(ShellLayoutSpec.resolve(1180).layoutClass, ShellLayoutClass.compact);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('1439x720 stays standard before the wide breakpoint', (
+    tester,
+  ) async {
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+    const size = Size(1439, 720);
     await _pumpFrame(tester, size: size);
     expect(
-      tester.getRect(find.byKey(ShellLayoutFrame.centerKey)),
-      centerWithPreview,
+      ShellLayoutSpec.resolve(size.width).layoutClass,
+      ShellLayoutClass.standard,
+    );
+    expect(
+      tester.getRect(find.byKey(ShellLayoutFrame.sidebarFrameKey)).width,
+      232,
+    );
+    expect(
+      tester.getRect(find.byKey(ShellLayoutFrame.centerKey)).width,
+      greaterThanOrEqualTo(800),
     );
     expect(tester.takeException(), isNull);
   });

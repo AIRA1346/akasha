@@ -3,6 +3,21 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('ShellLayoutSpec', () {
+    test('standardBreakpoint is derived from rail + center contracts', () {
+      expect(ShellLayoutSpec.desktopCenterMinWidth, 800);
+      expect(
+        ShellLayoutSpec.desktopCenterMinWidth,
+        ShellContentConstraint.desktopMinimum.minWidth,
+      );
+      expect(
+        ShellLayoutSpec.standardBreakpoint,
+        ShellLayoutSpec.standardSidebarWidth +
+            ShellLayoutSpec.previewRailWidth +
+            ShellLayoutSpec.desktopCenterMinWidth,
+      );
+      expect(ShellLayoutSpec.standardBreakpoint, 1320);
+    });
+
     test('resolves exact breakpoint boundaries', () {
       expect(ShellLayoutSpec.resolve(1440).layoutClass, ShellLayoutClass.wide);
       expect(
@@ -10,11 +25,19 @@ void main() {
         ShellLayoutClass.standard,
       );
       expect(
-        ShellLayoutSpec.resolve(1180).layoutClass,
+        ShellLayoutSpec.resolve(1320).layoutClass,
         ShellLayoutClass.standard,
       );
       expect(
-        ShellLayoutSpec.resolve(1179).layoutClass,
+        ShellLayoutSpec.resolve(1319).layoutClass,
+        ShellLayoutClass.compact,
+      );
+      expect(
+        ShellLayoutSpec.resolve(1272).layoutClass,
+        ShellLayoutClass.compact,
+      );
+      expect(
+        ShellLayoutSpec.resolve(1180).layoutClass,
         ShellLayoutClass.compact,
       );
     });
@@ -23,7 +46,10 @@ void main() {
       const cases = [
         (width: 1600.0, expected: ShellLayoutClass.wide),
         (width: 1366.0, expected: ShellLayoutClass.standard),
-        (width: 1272.0, expected: ShellLayoutClass.standard),
+        (width: 1320.0, expected: ShellLayoutClass.standard),
+        (width: 1319.0, expected: ShellLayoutClass.compact),
+        (width: 1272.0, expected: ShellLayoutClass.compact),
+        (width: 1180.0, expected: ShellLayoutClass.compact),
         (width: 1024.0, expected: ShellLayoutClass.compact),
       ];
 
@@ -34,6 +60,29 @@ void main() {
           reason: 'viewport width $width',
         );
       }
+    });
+
+    test('inline layouts reserve enough width for center minimum', () {
+      for (final spec in [ShellLayoutSpec.wide, ShellLayoutSpec.standard]) {
+        expect(
+          spec.minimumInlineViewportWidth,
+          greaterThanOrEqualTo(
+            spec.reservedSidebarWidth +
+                spec.reservedPreviewWidth +
+                spec.mainContentMinWidth,
+          ),
+        );
+        expect(
+          spec.minimumInlineViewportWidth,
+          spec.reservedSidebarWidth +
+              spec.reservedPreviewWidth +
+              spec.mainContentMinWidth,
+        );
+      }
+      expect(
+        ShellLayoutSpec.standard.minimumInlineViewportWidth,
+        ShellLayoutSpec.standardBreakpoint,
+      );
     });
 
     test('wide keeps both rails inline with desktop geometry', () {
@@ -80,6 +129,60 @@ void main() {
       expect(spec.dockHeight, 56);
       expect(spec.showsBottomDock, isTrue);
       expect(spec.decorationDensity, ShellDecorationDensity.minimal);
+    });
+
+    test('preview visibility ignores inspector pref on compact sheets', () {
+      expect(
+        resolveShellPreviewVisible(
+          persistentInspector: true,
+          isInspectorOpen: false,
+          showSelectionPreview: true,
+        ),
+        isFalse,
+      );
+      expect(
+        resolveShellPreviewVisible(
+          persistentInspector: false,
+          isInspectorOpen: false,
+          showSelectionPreview: true,
+        ),
+        isTrue,
+      );
+      expect(
+        resolveShellPreviewVisible(
+          persistentInspector: false,
+          isInspectorOpen: true,
+          showSelectionPreview: false,
+        ),
+        isFalse,
+      );
+    });
+
+    test('preview escape open follows layout presentation', () {
+      expect(
+        resolveShellPreviewEscapeOpen(
+          layoutSpec: ShellLayoutSpec.standard,
+          hasOpenPreview: true,
+          isInspectorOpen: false,
+        ),
+        isFalse,
+      );
+      expect(
+        resolveShellPreviewEscapeOpen(
+          layoutSpec: ShellLayoutSpec.compact,
+          hasOpenPreview: true,
+          isInspectorOpen: false,
+        ),
+        isTrue,
+      );
+      expect(
+        resolveShellPreviewEscapeOpen(
+          layoutSpec: ShellLayoutSpec.compact,
+          hasOpenPreview: false,
+          isInspectorOpen: true,
+        ),
+        isFalse,
+      );
     });
 
     test('rejects invalid viewport widths', () {
