@@ -145,7 +145,8 @@ class VaultTrashTransactionManifestStore {
       return tx.transactionId.isNotEmpty &&
           tx.vaultPath.isNotEmpty &&
           tx.recordKind.isNotEmpty &&
-          tx.members.isNotEmpty;
+          tx.members.isNotEmpty &&
+          tx.parsedState != null;
     } catch (_) {
       return false;
     }

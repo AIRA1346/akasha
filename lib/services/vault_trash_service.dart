@@ -162,7 +162,7 @@ class VaultTrashTransaction {
       recordId: json['recordId']?.toString() ?? '',
       title: json['title']?.toString(),
       reason: json['reason']?.toString(),
-      state: json['state']?.toString() ?? 'committed',
+      state: json['state']?.toString() ?? '',
       createdAt:
           DateTime.tryParse(json['createdAt']?.toString() ?? '') ??
           DateTime.fromMillisecondsSinceEpoch(0, isUtc: true),
@@ -587,34 +587,40 @@ class VaultTrashService {
   Future<CanvasRestoreResult> restoreCanvasTransaction(
     VaultTrashTransaction transaction,
   ) async {
-    final parsed = transaction.parsedState;
-    if (parsed != VaultTrashTransactionState.committed) {
+    final loaded = await _reloadAuthoritativeTransaction(
+      caller: transaction,
+      requiredState: VaultTrashTransactionState.committed,
+      operation: 'public restore',
+    );
+    if (loaded.transaction == null) {
       return CanvasRestoreResult(
         succeeded: false,
-        state: transaction.state,
-        errorCode: CanvasRestoreResult.invalidStateErrorCode,
-        error:
-            'invalidState: public restore requires committed, got ${transaction.state}',
+        state: loaded.diskState,
+        errorCode: loaded.errorCode,
+        error: loaded.error,
       );
     }
-    return _restoreCanvasTransactionBody(transaction);
+    return _restoreCanvasTransactionBody(loaded.transaction!);
   }
 
   /// Recovery-only resume for interrupted restores (`restoring` state).
   Future<CanvasRestoreResult> resumeInterruptedCanvasRestore(
     VaultTrashTransaction transaction,
   ) async {
-    final parsed = transaction.parsedState;
-    if (parsed != VaultTrashTransactionState.restoring) {
+    final loaded = await _reloadAuthoritativeTransaction(
+      caller: transaction,
+      requiredState: VaultTrashTransactionState.restoring,
+      operation: 'interrupted restore resume',
+    );
+    if (loaded.transaction == null) {
       return CanvasRestoreResult(
         succeeded: false,
-        state: transaction.state,
-        errorCode: CanvasRestoreResult.invalidStateErrorCode,
-        error:
-            'invalidState: interrupted restore resume requires restoring, got ${transaction.state}',
+        state: loaded.diskState,
+        errorCode: loaded.errorCode,
+        error: loaded.error,
       );
     }
-    return _restoreCanvasTransactionBody(transaction);
+    return _restoreCanvasTransactionBody(loaded.transaction!);
   }
 
   Future<CanvasRestoreResult> _restoreCanvasTransactionBody(
@@ -1085,25 +1091,23 @@ class VaultTrashService {
   Future<bool> deleteTransactionPermanently(
     VaultTrashTransaction transaction,
   ) async {
-    final parsed = transaction.parsedState;
-    if (parsed != VaultTrashTransactionState.committed) {
-      return false;
-    }
+    final loaded = await _reloadAuthoritativeTransaction(
+      caller: transaction,
+      requiredState: VaultTrashTransactionState.committed,
+      operation: 'permanent delete',
+    );
+    if (loaded.transaction == null) return false;
 
-    final validationError = _validateManifestPaths(transaction);
-    if (validationError != null) return false;
-
-    final normalizedVault = _normalizeAbsolute(transaction.vaultPath);
+    final authoritative = loaded.transaction!;
+    final normalizedVault = _normalizeAbsolute(authoritative.vaultPath);
     final trashDir = Directory(p.join(normalizedVault, trashDirName));
-    final trashRoot = transaction.trashRootPath != null
-        ? Directory(_normalizeAbsolute(transaction.trashRootPath!))
-        : Directory(
-            p.join(normalizedVault, trashDirName, transaction.transactionId),
-          );
+    final trashRoot = Directory(
+      authoritative.trashRootPath ??
+          p.join(normalizedVault, trashDirName, authoritative.transactionId),
+    );
 
-    // Validate trashRoot is strictly inside <vault>/.trash/ and matches transactionId
     if (!p.isWithin(trashDir.path, trashRoot.path) ||
-        p.basename(trashRoot.path) != transaction.transactionId) {
+        p.basename(trashRoot.path) != authoritative.transactionId) {
       return false;
     }
 
@@ -1112,6 +1116,93 @@ class VaultTrashService {
       return true;
     }
     return false;
+  }
+
+  /// Reloads and validates the on-disk transaction before any mutation.
+  Future<_AuthoritativeTransactionLoad> _reloadAuthoritativeTransaction({
+    required VaultTrashTransaction caller,
+    required VaultTrashTransactionState requiredState,
+    required String operation,
+  }) async {
+    if (caller.transactionId.trim().isEmpty ||
+        caller.vaultPath.trim().isEmpty ||
+        caller.recordId.trim().isEmpty) {
+      return _AuthoritativeTransactionLoad(
+        errorCode: CanvasRestoreResult.invalidStateErrorCode,
+        error: 'invalidState: caller identity is incomplete for $operation',
+        diskState: caller.state,
+      );
+    }
+
+    final normalizedVault = _normalizeAbsolute(caller.vaultPath);
+    final trashDir = Directory(p.join(normalizedVault, trashDirName));
+    final expectedRoot = Directory(
+      p.join(normalizedVault, trashDirName, caller.transactionId),
+    );
+    final trashRoot = caller.trashRootPath != null
+        ? Directory(_normalizeAbsolute(caller.trashRootPath!))
+        : expectedRoot;
+
+    if (!p.isWithin(trashDir.path, trashRoot.path) ||
+        p.basename(trashRoot.path) != caller.transactionId ||
+        _normalizeAbsolute(trashRoot.path) !=
+            _normalizeAbsolute(expectedRoot.path)) {
+      return const _AuthoritativeTransactionLoad(
+        errorCode: CanvasRestoreResult.invalidStateErrorCode,
+        error: 'invalidState: transaction root is outside vault trash',
+      );
+    }
+
+    if (!await trashRoot.exists()) {
+      return const _AuthoritativeTransactionLoad(
+        error: 'Trash transaction directory does not exist.',
+      );
+    }
+
+    _manifests.converge(trashRoot);
+    final loaded = _manifests.read(trashRoot, trashRootPath: trashRoot.path);
+    if (loaded == null) {
+      return const _AuthoritativeTransactionLoad(
+        errorCode: CanvasRestoreResult.invalidStateErrorCode,
+        error:
+            'invalidState: authoritative trash_transaction.json missing or incomplete',
+      );
+    }
+
+    if (loaded.transactionId != caller.transactionId ||
+        loaded.recordId != caller.recordId ||
+        _normalizeAbsolute(loaded.vaultPath) != normalizedVault) {
+      return _AuthoritativeTransactionLoad(
+        errorCode: CanvasRestoreResult.invalidStateErrorCode,
+        error:
+            'invalidState: caller identity does not match disk manifest for $operation',
+        diskState: loaded.state,
+      );
+    }
+
+    final validationError = _validateManifestPaths(
+      loaded,
+      expectedVaultPath: normalizedVault,
+    );
+    if (validationError != null) {
+      return _AuthoritativeTransactionLoad(
+        error: validationError,
+        diskState: loaded.state,
+      );
+    }
+
+    final diskState = loaded.parsedState;
+    if (diskState != requiredState) {
+      final raw = loaded.state.isEmpty ? '<missing>' : loaded.state;
+      return _AuthoritativeTransactionLoad(
+        errorCode: CanvasRestoreResult.invalidStateErrorCode,
+        error:
+            'invalidState: $operation requires ${requiredState.wireName}, disk has $raw',
+        diskState: loaded.state,
+      );
+    }
+
+    return _AuthoritativeTransactionLoad(transaction: loaded);
   }
 
   static String? _validateManifestPaths(
@@ -1407,4 +1498,18 @@ class _MemberPresence {
   final int trashFound;
   final bool originalHashesValid;
   final bool trashHashesValid;
+}
+
+class _AuthoritativeTransactionLoad {
+  const _AuthoritativeTransactionLoad({
+    this.transaction,
+    this.error,
+    this.errorCode,
+    this.diskState,
+  });
+
+  final VaultTrashTransaction? transaction;
+  final String? error;
+  final String? errorCode;
+  final String? diskState;
 }
