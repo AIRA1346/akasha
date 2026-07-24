@@ -56,19 +56,24 @@ class _VaultTrashDialogState extends State<_VaultTrashDialog> {
       _showSnack(l10n?.trashRestoredSuccess ?? '휴지통에서 복구했습니다.');
       _refresh();
     } else {
-      _showSnack(l10n?.trashRestoredFailedFileExists ?? '원래 위치에 파일이 있어 복구하지 못했습니다.');
+      _showSnack(
+        l10n?.trashRestoredFailedFileExists ?? '원래 위치에 파일이 있어 복구하지 못했습니다.',
+      );
     }
   }
 
-  Future<void> _deletePermanently(VaultTrashEntry entry, AppLocalizations? l10n) async {
+  Future<void> _deletePermanently(
+    VaultTrashEntry entry,
+    AppLocalizations? l10n,
+  ) async {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(l10n?.trashDeletePermanently ?? '영구 삭제'),
         content: Text(
           l10n?.trashDeleteConfirm(entry.originalFileName) ??
-          '「${entry.originalFileName}」을(를) 휴지통에서도 삭제할까요?\n'
-          '이 작업은 되돌릴 수 없습니다.',
+              '「${entry.originalFileName}」을(를) 휴지통에서도 삭제할까요?\n'
+                  '이 작업은 되돌릴 수 없습니다.',
         ),
         actions: [
           TextButton(
