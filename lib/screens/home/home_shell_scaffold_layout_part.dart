@@ -24,7 +24,11 @@ void _homeShellHandleEscape(
     layoutSpec: layoutSpec,
     sidebarOpen: controller.isSidebarOpen,
     commerceOpen: controller.isCommerceSurfaceOpen,
-    previewOpen: controller.hasOpenPreview && controller.isInspectorOpen,
+    previewOpen: resolveShellPreviewEscapeOpen(
+      layoutSpec: layoutSpec,
+      hasOpenPreview: controller.hasOpenPreview,
+      isInspectorOpen: controller.isInspectorOpen,
+    ),
     fullscreen: windowController?.isFullScreen ?? false,
   )) {
     case ShellEscapeTarget.fullscreen:

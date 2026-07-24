@@ -560,8 +560,11 @@ class HomeShellBody extends StatelessWidget {
         ),
       ),
       preview: keyedPreview,
-      previewVisible:
-          isInspectorOpen && (persistentInspector || showSelectionPreview),
+      previewVisible: resolveShellPreviewVisible(
+        persistentInspector: persistentInspector,
+        isInspectorOpen: isInspectorOpen,
+        showSelectionPreview: showSelectionPreview,
+      ),
     );
   }
 }
