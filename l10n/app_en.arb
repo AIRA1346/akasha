@@ -303,6 +303,9 @@
   "missingFilesLabel": "Missing files",
   "existingFilesLabel": "Existing files",
   "diagnosticLabel": "Diagnostic",
+  "graphCanvasDiscoveryFailedTitle": "Could not read knowledge maps",
+  "graphCanvasDiscoveryFailedBody": "Something went wrong while reading the knowledge maps folder. Please try again.",
+  "graphCanvasDiscoveryRetry": "Retry",
   "trashTransactionStatus": "Status: {status}",
   "@trashTransactionStatus": {
     "placeholders": {

@@ -31,27 +31,37 @@ Future<void> showVaultTrashDialog(
   BuildContext context, {
   required String vaultPath,
   Future<void> Function()? onRestored,
+  VaultTrashService? trashService,
 }) async {
   await showDialog(
     context: context,
-    builder: (ctx) =>
-        _VaultTrashDialog(vaultPath: vaultPath, onRestored: onRestored),
+    builder: (ctx) => _VaultTrashDialog(
+      vaultPath: vaultPath,
+      onRestored: onRestored,
+      trashService: trashService ?? const VaultTrashService(),
+    ),
   );
 }
 
 class _VaultTrashDialog extends StatefulWidget {
-  const _VaultTrashDialog({required this.vaultPath, this.onRestored});
+  const _VaultTrashDialog({
+    required this.vaultPath,
+    required this.trashService,
+    this.onRestored,
+  });
 
   final String vaultPath;
   final Future<void> Function()? onRestored;
+  final VaultTrashService trashService;
 
   @override
   State<_VaultTrashDialog> createState() => _VaultTrashDialogState();
 }
 
 class _VaultTrashDialogState extends State<_VaultTrashDialog> {
-  final _trash = const VaultTrashService();
   late Future<List<VaultTrashListItem>> _itemsFuture;
+
+  VaultTrashService get _trash => widget.trashService;
 
   @override
   void initState() {

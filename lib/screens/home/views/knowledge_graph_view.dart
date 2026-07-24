@@ -31,6 +31,7 @@ class KnowledgeGraphView extends StatefulWidget {
     this.onConnectEntity,
     required this.vaultPath,
     required this.onOpenCanvas,
+    this.canvasDiscoverer,
   });
 
   final List<AkashaItem> vaultItems;
@@ -42,6 +43,10 @@ class KnowledgeGraphView extends StatefulWidget {
   final VoidCallback? onConnectEntity;
   final String vaultPath;
   final void Function(CanvasRecord canvas) onOpenCanvas;
+
+  /// Optional override for tests / injectable discovery.
+  final Future<CanvasDiscoveryResult> Function(String vaultPath)?
+  canvasDiscoverer;
 
   @override
   State<KnowledgeGraphView> createState() => _KnowledgeGraphViewState();
@@ -57,6 +62,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
   List<CanvasRecord> _canvases = [];
   List<IncompleteCanvasRecord> _incompleteCanvases = [];
   bool _loadingCanvases = false;
+  Object? _canvasDiscoveryError;
   int _canvasLoadGeneration = 0;
   int _activeTabIndex = 0; // 0 = Canvas, 1 = Connections List
 
@@ -91,19 +97,24 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
       setState(() {
         _canvases = const [];
         _incompleteCanvases = const [];
+        _canvasDiscoveryError = null;
         _loadingCanvases = false;
       });
       return;
     }
-    setState(() => _loadingCanvases = true);
+    setState(() {
+      _loadingCanvases = true;
+      _canvasDiscoveryError = null;
+    });
     try {
-      final discovery = await CanvasStore.instance.discoverCanvases(
-        widget.vaultPath,
-      );
+      final discoverer =
+          widget.canvasDiscoverer ?? CanvasStore.instance.discoverCanvases;
+      final discovery = await discoverer(widget.vaultPath);
       if (!mounted || generation != _canvasLoadGeneration) return;
       setState(() {
         _canvases = discovery.complete;
         _incompleteCanvases = discovery.incomplete;
+        _canvasDiscoveryError = null;
         _loadingCanvases = false;
       });
     } catch (error, stackTrace) {
@@ -116,6 +127,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
       setState(() {
         _canvases = const [];
         _incompleteCanvases = const [];
+        _canvasDiscoveryError = error;
         _loadingCanvases = false;
       });
     }
@@ -392,6 +404,25 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
 
     if (_loadingCanvases) {
       return const Center(child: CircularProgressIndicator(strokeWidth: 2));
+    }
+
+    if (_canvasDiscoveryError != null) {
+      final diagnosis = _sanitizeDiscoveryDiagnosis(_canvasDiscoveryError!);
+      final baseBody =
+          l10n?.graphCanvasDiscoveryFailedBody ??
+          '볼트의 지식 지도 폴더를 읽는 중 문제가 발생했습니다. 다시 시도해 주세요.';
+      return DestinationEmptyState(
+        stateId: 'graph-canvas-discovery-error',
+        icon: Icons.error_outline,
+        title: l10n?.graphCanvasDiscoveryFailedTitle ?? '지식 지도 목록을 읽지 못했습니다',
+        body: '$baseBody\n$diagnosis',
+        action: OutlinedButton.icon(
+          key: const ValueKey<String>('graph-canvas-discovery-retry'),
+          onPressed: _loadCanvases,
+          icon: const Icon(Icons.refresh, size: 16),
+          label: Text(l10n?.graphCanvasDiscoveryRetry ?? '재시도'),
+        ),
+      );
     }
 
     // State 1: complete 0, incomplete 0 -> standard empty state
@@ -800,5 +831,18 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
         ),
       ),
     );
+  }
+
+  /// Short diagnosis without absolute paths or stack traces.
+  static String _sanitizeDiscoveryDiagnosis(Object error) {
+    final typeName = error.runtimeType.toString();
+    var message = error.toString();
+    message = message.replaceAll(RegExp(r'[A-Za-z]:\\[^\s"]+'), '<path>');
+    message = message.replaceAll(RegExp(r'/[^\s"]{3,}'), '<path>');
+    message = message.replaceAll(RegExp(r'\\[^\s"]+'), '<path>');
+    if (message.length > 120) {
+      message = '${message.substring(0, 117)}...';
+    }
+    return '($typeName) $message';
   }
 }

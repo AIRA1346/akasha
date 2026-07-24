@@ -560,6 +560,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get diagnosticLabel => 'Diagnostic';
 
   @override
+  String get graphCanvasDiscoveryFailedTitle => 'Could not read knowledge maps';
+
+  @override
+  String get graphCanvasDiscoveryFailedBody =>
+      'Something went wrong while reading the knowledge maps folder. Please try again.';
+
+  @override
+  String get graphCanvasDiscoveryRetry => 'Retry';
+
+  @override
   String trashTransactionStatus(String status) {
     return 'Status: $status';
   }

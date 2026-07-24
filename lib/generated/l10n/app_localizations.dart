@@ -1058,6 +1058,24 @@ abstract class AppLocalizations {
   /// **'Diagnostic'**
   String get diagnosticLabel;
 
+  /// No description provided for @graphCanvasDiscoveryFailedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not read knowledge maps'**
+  String get graphCanvasDiscoveryFailedTitle;
+
+  /// No description provided for @graphCanvasDiscoveryFailedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong while reading the knowledge maps folder. Please try again.'**
+  String get graphCanvasDiscoveryFailedBody;
+
+  /// No description provided for @graphCanvasDiscoveryRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get graphCanvasDiscoveryRetry;
+
   /// No description provided for @trashTransactionStatus.
   ///
   /// In en, this message translates to:

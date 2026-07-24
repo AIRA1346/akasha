@@ -547,6 +547,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String get diagnosticLabel => '진단';
 
   @override
+  String get graphCanvasDiscoveryFailedTitle => '지식 지도 목록을 읽지 못했습니다';
+
+  @override
+  String get graphCanvasDiscoveryFailedBody =>
+      '볼트의 지식 지도 폴더를 읽는 중 문제가 발생했습니다. 다시 시도해 주세요.';
+
+  @override
+  String get graphCanvasDiscoveryRetry => '재시도';
+
+  @override
   String trashTransactionStatus(String status) {
     return '상태: $status';
   }
