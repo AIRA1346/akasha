@@ -89,7 +89,7 @@ class VaultTrashTransaction {
     required this.recordId,
     this.title,
     this.reason,
-    required this.state,
+    required this.state, // prepared, moving, committed, restoring, restored, restoreConflict, rollbackRequired
     required this.createdAt,
     required this.members,
     this.trashRootPath,
@@ -137,14 +137,12 @@ class VaultTrashTransaction {
       createdAt:
           DateTime.tryParse(json['createdAt']?.toString() ?? '') ??
           DateTime.fromMillisecondsSinceEpoch(0, isUtc: true),
-      members:
-          rawMembers
-              .map(
-                (m) => VaultTrashMember.fromJson(
-                  Map<String, dynamic>.from(m as Map),
-                ),
-              )
-              .toList(),
+      members: rawMembers
+          .map(
+            (m) =>
+                VaultTrashMember.fromJson(Map<String, dynamic>.from(m as Map)),
+          )
+          .toList(),
       trashRootPath: trashRootPath,
     );
   }
@@ -163,9 +161,10 @@ class CanvasTrashResult {
 }
 
 class CanvasRestoreResult {
-  const CanvasRestoreResult({required this.succeeded, this.error});
+  const CanvasRestoreResult({required this.succeeded, this.state, this.error});
 
   final bool succeeded;
+  final String? state;
   final String? error;
 }
 
@@ -262,6 +261,16 @@ class VaultTrashService {
       );
     }
 
+    // Check for unexpected extra files in canvas directory
+    final entities = await canvasDir.list(recursive: false).toList();
+    if (entities.length != 2) {
+      return CanvasTrashResult(
+        succeeded: false,
+        error:
+            'Canvas directory contains unexpected extra files (${entities.length} items found, expected 2).',
+      );
+    }
+
     final mdFile = File(p.join(canvasDir.path, 'canvas.md'));
     final layoutFile = File(p.join(canvasDir.path, 'layout.json'));
 
@@ -272,6 +281,7 @@ class VaultTrashService {
       );
     }
 
+    // Validate canvas.md frontmatter & layoutRef
     String? title;
     try {
       final mdContent = await mdFile.readAsString();
@@ -282,11 +292,35 @@ class VaultTrashService {
           error: 'Canvas ID in canvas.md does not match target canvas ID.',
         );
       }
+      if (record.layoutRef != './layout.json') {
+        return const CanvasTrashResult(
+          succeeded: false,
+          error: 'layout_ref in canvas.md is not ./layout.json',
+        );
+      }
       title = record.title;
     } catch (e) {
       return CanvasTrashResult(
         succeeded: false,
         error: 'Failed to parse canvas.md: $e',
+      );
+    }
+
+    // Validate layout.json parsing & canvas_id
+    try {
+      final layoutContent = await layoutFile.readAsString();
+      final json = jsonDecode(layoutContent) as Map<String, dynamic>;
+      final jsonCanvasId = json['canvas_id']?.toString() ?? '';
+      if (jsonCanvasId != canvasId) {
+        return const CanvasTrashResult(
+          succeeded: false,
+          error: 'Canvas ID in layout.json does not match target canvas ID.',
+        );
+      }
+    } catch (e) {
+      return CanvasTrashResult(
+        succeeded: false,
+        error: 'Failed to parse layout.json: $e',
       );
     }
 
@@ -326,7 +360,8 @@ class VaultTrashService {
       ),
     ];
 
-    final transaction = VaultTrashTransaction(
+    // State 1: prepared
+    final preparedTx = VaultTrashTransaction(
       version: 1,
       transactionId: transactionId,
       vaultPath: normalizedVault,
@@ -339,23 +374,40 @@ class VaultTrashService {
       members: members,
       trashRootPath: trashRoot.path,
     );
+    await _writeTransactionManifest(trashRoot, preparedTx);
 
-    await _writeTransactionManifest(trashRoot, transaction);
+    // State 2: moving
+    final movingTx = VaultTrashTransaction(
+      version: 1,
+      transactionId: transactionId,
+      vaultPath: normalizedVault,
+      recordKind: 'canvas',
+      recordId: canvasId,
+      title: title,
+      reason: reason ?? 'user_delete',
+      state: 'moving',
+      createdAt: trashedAt,
+      members: members,
+      trashRootPath: trashRoot.path,
+    );
+    await _writeTransactionManifest(trashRoot, movingTx);
 
+    // Perform rename
     await Directory(p.dirname(targetCanvasDir)).create(recursive: true);
     await canvasDir.rename(targetCanvasDir);
 
+    // State 3: committed
     final committedTx = VaultTrashTransaction(
-      version: transaction.version,
-      transactionId: transaction.transactionId,
-      vaultPath: transaction.vaultPath,
-      recordKind: transaction.recordKind,
-      recordId: transaction.recordId,
-      title: transaction.title,
-      reason: transaction.reason,
+      version: 1,
+      transactionId: transactionId,
+      vaultPath: normalizedVault,
+      recordKind: 'canvas',
+      recordId: canvasId,
+      title: title,
+      reason: reason ?? 'user_delete',
       state: 'committed',
-      createdAt: transaction.createdAt,
-      members: transaction.members,
+      createdAt: trashedAt,
+      members: members,
       trashRootPath: trashRoot.path,
     );
     await _writeTransactionManifest(trashRoot, committedTx);
@@ -397,20 +449,22 @@ class VaultTrashService {
   }
 
   Future<CanvasRestoreResult> restoreCanvasTransaction(
-    VaultTrashTransaction transaction, {
-    bool overwrite = false,
-  }) async {
+    VaultTrashTransaction transaction,
+  ) async {
+    final manifestValidationError = _validateManifestPaths(transaction);
+    if (manifestValidationError != null) {
+      return CanvasRestoreResult(
+        succeeded: false,
+        error: manifestValidationError,
+      );
+    }
+
     final normalizedVault = _normalizeAbsolute(transaction.vaultPath);
-    final trashRoot =
-        transaction.trashRootPath != null
-            ? Directory(transaction.trashRootPath!)
-            : Directory(
-              p.join(
-                normalizedVault,
-                trashDirName,
-                transaction.transactionId,
-              ),
-            );
+    final trashRoot = transaction.trashRootPath != null
+        ? Directory(transaction.trashRootPath!)
+        : Directory(
+            p.join(normalizedVault, trashDirName, transaction.transactionId),
+          );
 
     if (!await trashRoot.exists()) {
       return const CanvasRestoreResult(
@@ -419,17 +473,33 @@ class VaultTrashService {
       );
     }
 
+    // NON-DESTRUCTIVE: Never overwrite existing files/directories!
     for (final member in transaction.members) {
       final origPath = p.join(normalizedVault, member.relativeOriginalPath);
-      if (await File(origPath).exists() && !overwrite) {
+      if (await File(origPath).exists() || await Directory(origPath).exists()) {
         return CanvasRestoreResult(
           succeeded: false,
+          state: 'restoreConflict',
           error:
-              'Original file already exists: ${member.relativeOriginalPath}',
+              'Original target already exists ($origPath). Automatic overwrite is strictly forbidden.',
         );
       }
     }
 
+    final canvasDirRel = p.dirname(
+      transaction.members.first.relativeOriginalPath,
+    );
+    final targetCanvasDir = Directory(p.join(normalizedVault, canvasDirRel));
+    if (await targetCanvasDir.exists()) {
+      return CanvasRestoreResult(
+        succeeded: false,
+        state: 'restoreConflict',
+        error:
+            'Target canvas directory already exists (${targetCanvasDir.path}). Automatic overwrite is strictly forbidden.',
+      );
+    }
+
+    // Verify SHA-256 of trash members
     for (final member in transaction.members) {
       final trashMemberPath = p.join(trashRoot.path, member.relativeTrashPath);
       final file = File(trashMemberPath);
@@ -450,28 +520,49 @@ class VaultTrashService {
       }
     }
 
-    final canvasDirRel = p.dirname(
-      transaction.members.first.relativeOriginalPath,
+    // State 1: restoring
+    final restoringTx = VaultTrashTransaction(
+      version: transaction.version,
+      transactionId: transaction.transactionId,
+      vaultPath: transaction.vaultPath,
+      recordKind: transaction.recordKind,
+      recordId: transaction.recordId,
+      title: transaction.title,
+      reason: transaction.reason,
+      state: 'restoring',
+      createdAt: transaction.createdAt,
+      members: transaction.members,
+      trashRootPath: trashRoot.path,
     );
-    final targetCanvasDir = Directory(p.join(normalizedVault, canvasDirRel));
+    await _writeTransactionManifest(trashRoot, restoringTx);
+
+    // Perform rename
     final trashCanvasDir = Directory(
       p.dirname(
         p.join(trashRoot.path, transaction.members.first.relativeTrashPath),
       ),
     );
 
-    if (await targetCanvasDir.exists() && overwrite) {
-      await targetCanvasDir.delete(recursive: true);
-    }
-
     await targetCanvasDir.parent.create(recursive: true);
     await trashCanvasDir.rename(targetCanvasDir.path);
 
-    if (await trashRoot.exists()) {
-      await trashRoot.delete(recursive: true);
-    }
+    // State 2: restored (Keep transaction record with restored state)
+    final restoredTx = VaultTrashTransaction(
+      version: transaction.version,
+      transactionId: transaction.transactionId,
+      vaultPath: transaction.vaultPath,
+      recordKind: transaction.recordKind,
+      recordId: transaction.recordId,
+      title: transaction.title,
+      reason: transaction.reason,
+      state: 'restored',
+      createdAt: transaction.createdAt,
+      members: transaction.members,
+      trashRootPath: trashRoot.path,
+    );
+    await _writeTransactionManifest(trashRoot, restoredTx);
 
-    return const CanvasRestoreResult(succeeded: true);
+    return const CanvasRestoreResult(succeeded: true, state: 'restored');
   }
 
   Future<List<VaultTrashEntry>> listEntries({required String vaultPath}) async {
@@ -526,6 +617,7 @@ class VaultTrashService {
           trashRootPath: entity.parent.path,
         );
         if (tx.transactionId.isEmpty || tx.vaultPath.isEmpty) continue;
+        if (tx.state == 'restored') continue; // Exclude already restored tx
         transactions.add(tx);
       } catch (_) {}
     }
@@ -557,29 +649,116 @@ class VaultTrashService {
           trashRootPath: entity.path,
         );
 
-        if (tx.state == 'prepared') {
-          bool allOriginalExist = true;
+        if (_validateManifestPaths(tx) != null) continue;
+
+        if (tx.state == 'prepared' || tx.state == 'moving') {
+          // Check original files vs trash files state
+          int origFound = 0;
+          int trashFound = 0;
           for (final member in tx.members) {
             final origFile = File(
               p.join(normalizedVault, member.relativeOriginalPath),
             );
-            if (!await origFile.exists()) {
-              allOriginalExist = false;
-              break;
-            }
+            final trashFile = File(
+              p.join(entity.path, member.relativeTrashPath),
+            );
+            if (await origFile.exists()) origFound++;
+            if (await trashFile.exists()) trashFound++;
           }
 
-          if (allOriginalExist) {
+          if (origFound == tx.members.length && trashFound == 0) {
+            // Rename was aborted before directory move -> clean up aborted trash folder
             await entity.delete(recursive: true);
             recoveredIds.add(tx.transactionId);
+          } else if (origFound == 0 && trashFound == tx.members.length) {
+            // Directory move succeeded, but crash occurred before writing committed manifest
+            final committedTx = VaultTrashTransaction(
+              version: tx.version,
+              transactionId: tx.transactionId,
+              vaultPath: tx.vaultPath,
+              recordKind: tx.recordKind,
+              recordId: tx.recordId,
+              title: tx.title,
+              reason: tx.reason,
+              state: 'committed',
+              createdAt: tx.createdAt,
+              members: tx.members,
+              trashRootPath: entity.path,
+            );
+            await _writeTransactionManifest(
+              Directory(entity.path),
+              committedTx,
+            );
+            recoveredIds.add(tx.transactionId);
+          } else {
+            // Partial presence -> mark rollbackRequired
+            final rollbackTx = VaultTrashTransaction(
+              version: tx.version,
+              transactionId: tx.transactionId,
+              vaultPath: tx.vaultPath,
+              recordKind: tx.recordKind,
+              recordId: tx.recordId,
+              title: tx.title,
+              reason: tx.reason,
+              state: 'rollbackRequired',
+              createdAt: tx.createdAt,
+              members: tx.members,
+              trashRootPath: entity.path,
+            );
+            await _writeTransactionManifest(Directory(entity.path), rollbackTx);
           }
         } else if (tx.state == 'restoring') {
-          final restoreRes = await restoreCanvasTransaction(
-            tx,
-            overwrite: true,
-          );
-          if (restoreRes.succeeded) {
+          int origFound = 0;
+          int trashFound = 0;
+          for (final member in tx.members) {
+            final origFile = File(
+              p.join(normalizedVault, member.relativeOriginalPath),
+            );
+            final trashFile = File(
+              p.join(entity.path, member.relativeTrashPath),
+            );
+            if (await origFile.exists()) origFound++;
+            if (await trashFile.exists()) trashFound++;
+          }
+
+          if (origFound == 0 && trashFound == tx.members.length) {
+            // Interrupted during restore before rename -> resume restore
+            final restoreRes = await restoreCanvasTransaction(tx);
+            if (restoreRes.succeeded) {
+              recoveredIds.add(tx.transactionId);
+            }
+          } else if (origFound == tx.members.length && trashFound == 0) {
+            // Restore rename succeeded, but crash occurred before writing restored state -> mark restored
+            final restoredTx = VaultTrashTransaction(
+              version: tx.version,
+              transactionId: tx.transactionId,
+              vaultPath: tx.vaultPath,
+              recordKind: tx.recordKind,
+              recordId: tx.recordId,
+              title: tx.title,
+              reason: tx.reason,
+              state: 'restored',
+              createdAt: tx.createdAt,
+              members: tx.members,
+              trashRootPath: entity.path,
+            );
+            await _writeTransactionManifest(Directory(entity.path), restoredTx);
             recoveredIds.add(tx.transactionId);
+          } else {
+            final rollbackTx = VaultTrashTransaction(
+              version: tx.version,
+              transactionId: tx.transactionId,
+              vaultPath: tx.vaultPath,
+              recordKind: tx.recordKind,
+              recordId: tx.recordId,
+              title: tx.title,
+              reason: tx.reason,
+              state: 'rollbackRequired',
+              createdAt: tx.createdAt,
+              members: tx.members,
+              trashRootPath: entity.path,
+            );
+            await _writeTransactionManifest(Directory(entity.path), rollbackTx);
           }
         }
       } catch (_) {}
@@ -605,22 +784,67 @@ class VaultTrashService {
   Future<bool> deleteTransactionPermanently(
     VaultTrashTransaction transaction,
   ) async {
-    final trashRoot =
-        transaction.trashRootPath != null
-            ? Directory(transaction.trashRootPath!)
-            : Directory(
-              p.join(
-                _normalizeAbsolute(transaction.vaultPath),
-                trashDirName,
-                transaction.transactionId,
-              ),
-            );
+    final trashRoot = transaction.trashRootPath != null
+        ? Directory(transaction.trashRootPath!)
+        : Directory(
+            p.join(
+              _normalizeAbsolute(transaction.vaultPath),
+              trashDirName,
+              transaction.transactionId,
+            ),
+          );
 
     if (await trashRoot.exists()) {
       await trashRoot.delete(recursive: true);
       return true;
     }
     return false;
+  }
+
+  static String? _validateManifestPaths(VaultTrashTransaction transaction) {
+    if (transaction.recordKind != 'canvas') {
+      return 'Unsupported recordKind: ${transaction.recordKind}';
+    }
+    if (transaction.recordId.trim().isEmpty) {
+      return 'Empty recordId';
+    }
+    if (transaction.members.length != 2) {
+      return 'Canvas transaction must contain exactly 2 members';
+    }
+
+    final normalizedVault = _normalizeAbsolute(transaction.vaultPath);
+    final expectedMdRel = p.join('canvases', transaction.recordId, 'canvas.md');
+    final expectedJsonRel = p.join(
+      'canvases',
+      transaction.recordId,
+      'layout.json',
+    );
+
+    final memberOriginals = transaction.members
+        .map((m) => p.normalize(m.relativeOriginalPath))
+        .toSet();
+    if (!memberOriginals.contains(p.normalize(expectedMdRel)) ||
+        !memberOriginals.contains(p.normalize(expectedJsonRel))) {
+      return 'Transaction member original paths must match canonical canvases/<recordId>/ layout';
+    }
+
+    for (final member in transaction.members) {
+      // Path traversal check
+      if (p.isAbsolute(member.relativeOriginalPath) ||
+          p.isAbsolute(member.relativeTrashPath) ||
+          member.relativeOriginalPath.contains('..') ||
+          member.relativeTrashPath.contains('..')) {
+        return 'Path traversal or absolute path detected in transaction member';
+      }
+
+      final absOrig = _normalizeAbsolute(
+        p.join(normalizedVault, member.relativeOriginalPath),
+      );
+      if (!p.isWithin(normalizedVault, absOrig)) {
+        return 'Member original path outside vault: $absOrig';
+      }
+    }
+    return null;
   }
 
   Future<Directory> _createTrashRoot({
